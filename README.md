@@ -49,7 +49,7 @@ This downloads the "Freedom in the World" dataset (1972-2016), puts it in countr
 
 You can also download the Freedom House "Electoral Democracies" list (`download_fh_electoral`), the latest version of the Polity IV dataset (updated to 2016; check `?download_polity`), the latest version of the [World Governance Indicators' "Voice and Accountability" index](http://info.worldbank.org/governance/wgi/index.aspx#home) (`download_wgi_voice_and_accountability`), and the regime part of the [REIGN dataset](http://oefresearch.org/datasets/reign) by Curtis Bell and OEF research (a regularly-updated variation of the original [Geddes, Wright, and Frantz's autocratic regimes dataset](http://sites.psu.edu/dictators/)).
 
-Many other datasets containing democracy measures are not regularly updated, including the widely used [DD/ACLP/PACL/CGV dataset](https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited)) and the [Geddes, Wright, and Frantz's autocratic regimes dataset](http://sites.psu.edu/dictators/). These are available directly from this package (no download required), but they can also be "re-downloaded" from the websites of their creaters or maintainers. For example, one can either access PACL directly by typing
+Many other datasets containing democracy measures are not regularly updated, including the widely used [DD/ACLP/PACL/CGV dataset](https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited) and the [Geddes, Wright, and Frantz's autocratic regimes dataset](http://sites.psu.edu/dictators/). These are available directly from this package (no download required), but they can also be "re-downloaded" from the websites of their creators or maintainers. For example, one can either access PACL directly by typing
 
 ``` r
 pacl
@@ -87,7 +87,7 @@ pacl
 #> #   in_GW_system <lgl>
 ```
 
-Or redownload the dataset from Jose Antonio Cheibub's website as follows:
+Or re-download the dataset from Jose Antonio Cheibub's website as follows:
 
 ``` r
 
@@ -141,7 +141,7 @@ You should thus normally use the "archived" versions of these datasets, unless y
 Other democracy datasets
 ------------------------
 
-A number of democracy datasets not available online, usually because they were only ever described in the tables of scholarly articles now found only on JSTOR. These include Zehra Arat's old democracy measure, the Political Regime Change dataset by Gasiorowski (updated by Reich), the Vanhanen index of democratization, and many others. I have archived most these in this package; for a list of all the datasets available, type `democracy_info`:
+A number of democracy datasets are not available online, usually because they were only ever described in the tables of scholarly articles now found only on JSTOR or in out of print books. These include Zehra Arat's old democracy measure, the Political Regime Change dataset by Gasiorowski (updated by Reich in 2002), the Vanhanen index of democratization, and many others. I have archived most these in this package; for a list of all the datasets available, type `democracy_info`:
 
 ``` r
 library(dplyr)
@@ -202,7 +202,7 @@ All datasets in this package are fully documented; type `?pacl` for example to s
 Democracy data not available through this package
 -------------------------------------------------
 
-I have not included the Varieties of Democracy dataset here; you can access version 7.1 of the V-Dem dataset via my `vdem` package (use `devtools::install_github("xmarquez/vdem")` to install).
+I have not included the [Varieties of Democracy](https://www.v-dem.net/en/data/data-version-7-1/) dataset in this pacakge; you can access version 7.1 of this dataset via my [`vdem`](https://github.com/xmarquez/vdem) package (use `devtools::install_github("xmarquez/vdem")` to install).
 
 Combining all democracy datasets
 --------------------------------
@@ -255,7 +255,7 @@ democracy_data
 #> #   wth_democrobust <dbl>
 ```
 
-This can take some time, since it downloads all downloadable datasets (Freedom House, Polity IV, Reign, and the WGI Voice and Accountability index) and processes them. In any case, you can select exactly which datasets to include in your big data frame. See `?generate_democracy_scores_dataset` for further options to customize the output.
+This can take some time, since it downloads all downloadable datasets (Freedom House, Polity IV, Reign, and the WGI Voice and Accountability index), processes them (adds state system information, puts them in coutnry-year format, fixes wrong codes, etc.), and matches them to all the other datasets. In any case, you can select exactly which datasets to include in your big data frame. See `?generate_democracy_scores_dataset` for further options to customize the output.
 
 State system functions
 ----------------------
@@ -284,22 +284,22 @@ my_weird_democracy_data
 #> # A tibble: 16 x 3
 #>                        country  year  my_measure
 #>                          <chr> <dbl>       <dbl>
-#>  1                     Germany  2015 -0.76739005
-#>  2                     Germany  1930 -0.18600176
-#>  3                     Germany  1970  0.85041816
-#>  4                     Germany  1945  0.23449491
-#>  5                East Germany  1949 -1.38961451
-#>  6 Federal Republic of Germany  1992 -0.85253597
-#>  7                  Somaliland  1990 -0.17303762
-#>  8                     Somalia  1990 -0.85353346
-#>  9                   Palestine  1940  0.08040645
-#> 10                      Russia  1917  0.95772037
-#> 11                      Russia  1912  1.34101715
-#> 12                        USSR  1922  0.07192748
-#> 13         Republic of Vietnam  1975 -0.55208404
-#> 14                  Yugoslavia  1990  1.29486347
-#> 15                  Yugoslavia  1991  0.32184437
-#> 16              Vietnam, South  1954 -0.63759608
+#>  1                     Germany  2015  1.11398013
+#>  2                     Germany  1930  0.29042428
+#>  3                     Germany  1970  1.01150110
+#>  4                     Germany  1945  0.05081311
+#>  5                East Germany  1949  0.01567985
+#>  6 Federal Republic of Germany  1992  0.25721489
+#>  7                  Somaliland  1990 -0.35866796
+#>  8                     Somalia  1990 -0.96752288
+#>  9                   Palestine  1940 -1.17489546
+#> 10                      Russia  1917 -1.20438184
+#> 11                      Russia  1912  0.95142867
+#> 12                        USSR  1922 -0.21392720
+#> 13         Republic of Vietnam  1975  1.78506783
+#> 14                  Yugoslavia  1990 -0.06131036
+#> 15                  Yugoslavia  1991 -0.70114513
+#> 16              Vietnam, South  1954 -0.51699856
 ```
 
 and you then want to add state system information. `country_year_coder` does that for you!
@@ -326,26 +326,26 @@ my_weird_democracy_data %>%
 
 | country                     |  year|  my\_measure| extended\_country\_name      |  GWn|  cown|  polity\_ccode| in\_GW\_system | in\_cow\_system | in\_polity\_system | polity\_startdate | polity\_enddate |
 |:----------------------------|-----:|------------:|:-----------------------------|----:|-----:|--------------:|:---------------|:----------------|:-------------------|:------------------|:----------------|
-| Germany                     |  2015|   -0.7673900| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
-| Germany                     |  1930|   -0.1860018| Germany (Prussia)            |  255|   255|            255| TRUE           | TRUE            | TRUE               | 1871-01-19        | 1945-05-07      |
-| Germany                     |  1970|    0.8504182| German Federal Republic      |  260|   260|            260| TRUE           | TRUE            | TRUE               | 1945-05-08        | 1990-10-02      |
-| Germany                     |  1945|    0.2344949| German Federal Republic      |  260|   260|            260| FALSE          | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
-| East Germany                |  1949|   -1.3896145| German Democratic Republic   |  265|   265|            265| TRUE           | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
-| Federal Republic of Germany |  1992|   -0.8525360| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
-| Somaliland                  |  1990|   -0.1730376| Somaliland                   |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
-| Somalia                     |  1990|   -0.8535335| Somalia                      |  520|   520|            520| TRUE           | TRUE            | TRUE               | 1960-07-01        | NA              |
-| Palestine                   |  1940|    0.0804064| British Mandate of Palestine |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
-| Russia                      |  1917|    0.9577204| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
-| Russia                      |  1912|    1.3410171| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
-| USSR                        |  1922|    0.0719275| Russia (Soviet Union)        |  365|   365|            364| TRUE           | TRUE            | TRUE               | 1922-12-30        | 1991-12-31      |
-| Republic of Vietnam         |  1975|   -0.5520840| Vietnam, Republic of         |  817|   817|            817| FALSE          | FALSE           | TRUE               | 1955-10-26        | 1975-12-31      |
-| Yugoslavia                  |  1990|    1.2948635| Yugoslavia                   |  345|   345|            345| TRUE           | TRUE            | TRUE               | 1921-01-01        | 1991-07-01      |
-| Yugoslavia                  |  1991|    0.3218444| Yugoslavia                   |  345|   345|            347| TRUE           | TRUE            | TRUE               | 1991-07-01        | 2003-03-11      |
-| Vietnam, South              |  1954|   -0.6375961| Vietnam, Republic of         |  817|   817|            817| TRUE           | TRUE            | FALSE              | 1955-10-26        | 1975-12-31      |
+| Germany                     |  2015|    1.1139801| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
+| Germany                     |  1930|    0.2904243| Germany (Prussia)            |  255|   255|            255| TRUE           | TRUE            | TRUE               | 1871-01-19        | 1945-05-07      |
+| Germany                     |  1970|    1.0115011| German Federal Republic      |  260|   260|            260| TRUE           | TRUE            | TRUE               | 1945-05-08        | 1990-10-02      |
+| Germany                     |  1945|    0.0508131| German Federal Republic      |  260|   260|            260| FALSE          | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
+| East Germany                |  1949|    0.0156799| German Democratic Republic   |  265|   265|            265| TRUE           | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
+| Federal Republic of Germany |  1992|    0.2572149| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
+| Somaliland                  |  1990|   -0.3586680| Somaliland                   |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
+| Somalia                     |  1990|   -0.9675229| Somalia                      |  520|   520|            520| TRUE           | TRUE            | TRUE               | 1960-07-01        | NA              |
+| Palestine                   |  1940|   -1.1748955| British Mandate of Palestine |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
+| Russia                      |  1917|   -1.2043818| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
+| Russia                      |  1912|    0.9514287| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
+| USSR                        |  1922|   -0.2139272| Russia (Soviet Union)        |  365|   365|            364| TRUE           | TRUE            | TRUE               | 1922-12-30        | 1991-12-31      |
+| Republic of Vietnam         |  1975|    1.7850678| Vietnam, Republic of         |  817|   817|            817| FALSE          | FALSE           | TRUE               | 1955-10-26        | 1975-12-31      |
+| Yugoslavia                  |  1990|   -0.0613104| Yugoslavia                   |  345|   345|            345| TRUE           | TRUE            | TRUE               | 1921-01-01        | 1991-07-01      |
+| Yugoslavia                  |  1991|   -0.7011451| Yugoslavia                   |  345|   345|            347| TRUE           | TRUE            | TRUE               | 1991-07-01        | 2003-03-11      |
+| Vietnam, South              |  1954|   -0.5169986| Vietnam, Republic of         |  817|   817|            817| TRUE           | TRUE            | FALSE              | 1955-10-26        | 1975-12-31      |
 
-`country_year_coder` tries to match not just the country name or the country code (as `countrycode` does), but also to figure out the appropriate state system code *given* the year. (Above, for example, the function figures out that Germany 1970 should get a COW code of 260, but Germany 1992 should get 255 - though it should retain the 260 code in the Gleditsch and Ward system of states). (This is, incidentally, how `download_fh` adds the correct COW and GW country codes to Freedom House's Excel data). It also tries to figure out whether a given country-year is in the specific state system list. (In the example above, Germany in 1945 is not listed as a member of the state system in either COW or Gleditsch and Ward, since it was occupied by the Allies as of 31 December 1945, but is listed as a member of the state system in Polity IV as the Federal Republic, though with a polity score of -66, "interregnum").
+`country_year_coder` tries to match not just the country name or the country code (as `countrycode` does), but also to figure out the appropriate state system code *given* the year. (Above, for example, the function figures out that Germany 1970 should get a COW code of 260, but Germany 1992 should get 255 - though it should retain the 260 code in the Gleditsch and Ward system of states. This is, incidentally, how `download_fh` adds the correct COW and GW country codes to Freedom House's Excel data). It also tries to figure out whether a given country-year is in the specific state system list. (In the example above, Germany in 1945 is not listed as a member of the state system in either COW or Gleditsch and Ward, since it was occupied by the Allies as of 31 December 1945, but is listed as a member of the state system in Polity IV as the Federal Republic, though with a polity score of -66, "interregnum").
 
-One nice thing about `country_year_coder` (in my humble opinion!) is that it can sometimes correct country coding errors; I've run across more than one dataset with the supposed COW code 255 for the Federal Republic of Germany for the period 1955-1990, which is incorrect and would prevent a clean join to a dataset with the correct COW code, but would be caught by `country_year_coder`.
+One nice thing about `country_year_coder` (in my humble opinion!) is that it can sometimes correct country coding errors; I've run across more than one dataset with the supposed COW code 255 for the Federal Republic of Germany for the period 1955-1990, which would prevent a clean join to a dataset with the correct COW code, but would be caught by `country_year_coder`.
 
 There is also a function that allows you to create a blank state system panel for any of the three main state systems:
 
@@ -386,7 +386,7 @@ create_panel(system = "GW")
 Citation
 --------
 
-The standard `citation` function from base R will produce a list of citations for all the datasets included in this package:
+The standard `citation` function from base `R` will produce a list of citations for all the datasets included in this package:
 
 ``` r
 citation(package = "democracyData")
@@ -493,4 +493,4 @@ Feedback welcome! I am trying to get this package ready for submission to CRAN.
 
 Note that some functions in this package can be quite slow: generating a full democracy dataset (including downloading Freedom House, Polity, WGI, and Reign) or applying `country_year_coder` to a large data frame both can take some time. Suggestions to accelerate the code are welcome.
 
-`country_year_coder` fails to give correct answers in some weird edge cases. (Mostly involving Yugoslavia, Germany, or Vietnam). If you run across any of these cases, let me know.
+`country_year_coder` fails to give correct answers in some weird edge cases mostly involving Yugoslavia, Germany, or Vietnam. If you run across any of these cases, let me know.

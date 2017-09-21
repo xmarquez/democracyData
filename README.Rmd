@@ -49,13 +49,13 @@ This downloads the "Freedom in the World" dataset (1972-2016), puts it in countr
 
 You can also download the Freedom House "Electoral Democracies" list (`download_fh_electoral`), the latest version of the Polity IV dataset (updated to 2016; check `?download_polity`), the latest version of the [World Governance Indicators' "Voice and Accountability" index](http://info.worldbank.org/governance/wgi/index.aspx#home) (`download_wgi_voice_and_accountability`), and the regime part of the [REIGN dataset](http://oefresearch.org/datasets/reign) by Curtis Bell and OEF research (a regularly-updated variation of the original [Geddes, Wright, and Frantz's autocratic regimes dataset](http://sites.psu.edu/dictators/)).
 
-Many other datasets containing democracy measures are not regularly updated, including the widely used [DD/ACLP/PACL/CGV dataset](https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited)) and the [Geddes, Wright, and Frantz's autocratic regimes dataset](http://sites.psu.edu/dictators/). These are available directly from this package (no download required), but they can also be "re-downloaded" from the websites of their creaters or maintainers. For example, one can either access PACL directly by typing
+Many other datasets containing democracy measures are not regularly updated, including the widely used [DD/ACLP/PACL/CGV dataset](https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited) and the [Geddes, Wright, and Frantz's autocratic regimes dataset](http://sites.psu.edu/dictators/). These are available directly from this package (no download required), but they can also be "re-downloaded" from the websites of their creators or maintainers. For example, one can either access PACL directly by typing
 
 ```{r}
 pacl
 ```
 
-Or redownload the dataset from Jose Antonio Cheibub's website as follows:
+Or re-download the dataset from Jose Antonio Cheibub's website as follows:
 
 ```{r}
 
@@ -77,7 +77,7 @@ You should thus normally use the "archived" versions of these datasets, unless y
 
 ## Other democracy datasets
 
-A number of democracy datasets not available online, usually because they were only ever described in the tables of scholarly articles now found only on JSTOR.  These include Zehra Arat's old democracy measure, the Political Regime Change dataset by Gasiorowski (updated by Reich), the Vanhanen index of democratization, and many others. I have archived most these in this package; for a list of all the datasets available, type `democracy_info`:
+A number of democracy datasets are not available online, usually because they were only ever described in the tables of scholarly articles now found only on JSTOR or in out of print books.  These include Zehra Arat's old democracy measure, the Political Regime Change dataset by Gasiorowski (updated by Reich in 2002), the Vanhanen index of democratization, and many others. I have archived most these in this package; for a list of all the datasets available, type `democracy_info`:
 
 ```{r}
 library(dplyr)
@@ -93,7 +93,7 @@ All datasets in this package are fully documented; type `?pacl` for example to s
 
 ## Democracy data not available through this package
 
-I have not included the Varieties of Democracy dataset here; you can access version 7.1 of the V-Dem dataset via my `vdem` package (use `devtools::install_github("xmarquez/vdem")` to install).
+I have not included the [Varieties of Democracy](https://www.v-dem.net/en/data/data-version-7-1/) dataset in this pacakge; you can access version 7.1 of this dataset via my [`vdem`](https://github.com/xmarquez/vdem) package (use `devtools::install_github("xmarquez/vdem")` to install).
 
 ## Combining all democracy datasets
 
@@ -106,7 +106,8 @@ democracy_data <- generate_democracy_scores_dataset(output_format = "wide",
 
 democracy_data
 ```
-This can take some time, since it downloads all downloadable datasets (Freedom House, Polity IV, Reign, and the WGI Voice and Accountability index) and processes them. In any case, you can select exactly which datasets to include in your big data frame. See `?generate_democracy_scores_dataset` for further options to customize the output. 
+
+This can take some time, since it downloads all downloadable datasets (Freedom House, Polity IV, Reign, and the WGI Voice and Accountability index), processes them (adds state system information, puts them in coutnry-year format, fixes wrong codes, etc.), and matches them to all the other datasets. In any case, you can select exactly which datasets to include in your big data frame. See `?generate_democracy_scores_dataset` for further options to customize the output. 
 
 ## State system functions
 
@@ -155,9 +156,9 @@ my_weird_democracy_data %>%
   knitr::kable()
 ```
 
-`country_year_coder` tries to match not just the country name or the country code (as `countrycode` does), but also to figure out the appropriate state system code *given* the year. (Above, for example, the function figures out that Germany 1970 should get a COW code of 260, but Germany 1992 should get 255 - though it should retain the 260 code in the Gleditsch and Ward system of states). (This is, incidentally, how `download_fh` adds the correct COW and GW country codes to Freedom House's Excel data). It also tries to figure out whether a given country-year is in the specific state system list. (In the example above, Germany in 1945 is not listed as a member of the state system in either COW or Gleditsch and Ward, since it was occupied by the Allies as of 31 December 1945, but is listed as a member of the state system in Polity IV as the Federal Republic, though with a polity score of -66, "interregnum").
+`country_year_coder` tries to match not just the country name or the country code (as `countrycode` does), but also to figure out the appropriate state system code *given* the year. (Above, for example, the function figures out that Germany 1970 should get a COW code of 260, but Germany 1992 should get 255 - though it should retain the 260 code in the Gleditsch and Ward system of states. This is, incidentally, how `download_fh` adds the correct COW and GW country codes to Freedom House's Excel data). It also tries to figure out whether a given country-year is in the specific state system list. (In the example above, Germany in 1945 is not listed as a member of the state system in either COW or Gleditsch and Ward, since it was occupied by the Allies as of 31 December 1945, but is listed as a member of the state system in Polity IV as the Federal Republic, though with a polity score of -66, "interregnum").
 
-One nice thing about `country_year_coder` (in my humble opinion!) is that it can sometimes correct country coding errors; I've run across more than one dataset with the supposed COW code 255 for the Federal Republic of Germany for the period 1955-1990, which is incorrect and would prevent a clean join to a dataset with the correct COW code, but would be caught by `country_year_coder`.
+One nice thing about `country_year_coder` (in my humble opinion!) is that it can sometimes correct country coding errors; I've run across more than one dataset with the supposed COW code 255 for the Federal Republic of Germany for the period 1955-1990, which would prevent a clean join to a dataset with the correct COW code, but would be caught by `country_year_coder`.
 
 There is also a function that allows you to create a blank state system panel for any of the three main state systems:
 
@@ -169,7 +170,7 @@ create_panel(system = "GW")
 
 ## Citation
 
-The standard `citation` function from base R will produce a list of citations for all the datasets included in this package:
+The standard `citation` function from base `R` will produce a list of citations for all the datasets included in this package:
 
 ```{r, results='asis'}
 citation(package = "democracyData")
@@ -187,4 +188,4 @@ Feedback welcome! I am trying to get this package ready for submission to CRAN.
 
 Note that some functions in this package can be quite slow: generating a full democracy dataset (including downloading Freedom House, Polity, WGI, and Reign) or applying `country_year_coder` to a large data frame both can take some time. Suggestions to accelerate the code are welcome. 
 
-`country_year_coder` fails to give correct answers in some weird edge cases. (Mostly involving Yugoslavia, Germany, or Vietnam). If you run across any of these cases, let me know.
+`country_year_coder` fails to give correct answers in some weird edge cases mostly involving Yugoslavia, Germany, or Vietnam. If you run across any of these cases, let me know.
