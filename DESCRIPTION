@@ -1,0 +1,31 @@
+Package: democracyData
+Type: Package
+Title: Access and manipulate most available democracy datasets 
+Version: 0.1.0
+Description: Contains a number of functions to access and manipulate a large number of democracy datasets, many of historical interest. It also contains a number of functions to determine membership of a country in standard membership lists of the state system (according to Gleditsch and Ward, Correlates of War, or Polity).
+Authors@R: person("Xavier", "Marquez", role=c("aut", "cre"),
+  email = "marquez.x@gmail.com")
+License: GPL-3
+Depends:
+    R (>= 2.10)
+Imports:
+    dplyr,
+    tidyr,
+    stringr,
+    lubridate,
+    haven,
+    rlang,
+    plyr,
+    fuzzyjoin,
+    countrycode,
+    purrr,
+    readxl,
+    readr,
+    googlesheets,
+    RefManageR,
+    knitr
+RoxygenNote: 6.0.1
+Roxygen: list(markdown = TRUE)
+Encoding: UTF-8
+LazyData: true
+Suggests: testthat

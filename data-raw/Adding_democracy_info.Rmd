@@ -1,0 +1,23 @@
+---
+title: "Adding democracy info dataset"
+author: "Xavier Marquez"
+date: "7 September 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Democracy Info dataset
+
+```{r}
+
+democracy_info <- readr::read_csv("democracy_info.csv")
+
+devtools::use_data(democracy_info, overwrite = TRUE)
+
+```
+
+

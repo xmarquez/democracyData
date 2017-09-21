@@ -1,0 +1,20 @@
+---
+title: "Reading bibliography"
+author: "Xavier Marquez"
+date: "5 September 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Reading bibliography
+
+```{r}
+library(RefManageR)
+bibliography <- ReadBib("bibfile.bib")
+
+devtools::use_data(bibliography, overwrite = TRUE)
+```
+

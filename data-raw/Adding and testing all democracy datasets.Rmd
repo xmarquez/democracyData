@@ -1,0 +1,478 @@
+---
+title: "Adding all democracy datasets"
+author: "Xavier Marquez"
+date: "8 September 2017"
+output: 
+  html_document: 
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE,
+                      cache = TRUE,
+                      cache.rebuild = FALSE,
+                      warning=FALSE,
+                      message = TRUE)
+library(tidyverse)
+library(democracyData)
+
+verbose <- TRUE
+include_in_output <-  c("extended_country_name", "GWn", "cown", "in_GW_system")
+devtools::load_all()
+```
+
+## Arat
+
+```{r arat, results = 'asis'}
+cite_dataset("arat")
+pmm_replication <-  prepare_pmm_replication_data(path = "../../../Pemstein Meserve and Melton Code/uds/data/democracy1946.2008.rda",
+                                                 verbose = verbose,
+                                                 include_in_output = include_in_output) 
+
+arat_pmm <- extract_pmm_var(pmm_replication, pmm_arat, 
+                            include_in_output = include_in_output)
+
+devtools::use_data(arat_pmm, overwrite = TRUE)
+```
+
+## BLM
+
+```{r blm, results = 'asis'}
+cite_dataset("blm")
+
+blm <- redownload_blm(verbose = verbose,
+                      include_in_output = include_in_output)
+
+blm_pmm <- extract_pmm_var(pmm_replication, pmm_blm,
+                      include_in_output = include_in_output)
+
+devtools::use_data(blm, overwrite = TRUE)
+devtools::use_data(blm_pmm, overwrite = TRUE)
+
+
+```
+
+# BMR (Boix Miller Rosato)
+
+```{r bmr, results = 'asis'}
+cite_dataset("bmr")
+
+bmr <- redownload_bmr(verbose = verbose, 
+                      include_in_output = include_in_output)
+
+devtools::use_data(bmr, overwrite = TRUE)
+```
+
+# BNR
+
+```{r bnr, results = 'asis'}
+cite_dataset("bnr")
+
+bnr <- redownload_bnr(include_in_output = include_in_output, extend = FALSE)
+
+bnr_extended <- redownload_bnr(include_in_output = include_in_output, extend = TRUE)
+
+anti_join(bnr_extended, bnr %>% select(-bnr_country)) %>%
+        group_by(bnr_country) %>%
+        arrange(bnr_country, cown, year) %>%
+        mutate(period = count_sequence_breaks(year)) %>%
+        group_by(bnr_country, bnr, period) %>%
+        summarise(min= min(year), max = max(year)) %>%
+  knitr::kable()
+
+anti_join(bnr %>% select(-bnr_country), bnr_extended) %>%
+  knitr::kable()
+
+devtools::use_data(bnr, overwrite = TRUE)
+devtools::use_data(bnr_extended, overwrite = TRUE)
+
+```
+
+# Bollen
+
+```{r bollen, results = 'asis'}
+cite_dataset("bollen")
+
+bollen_pmm <- extract_pmm_var(pmm_replication, pmm_bollen,
+                              include_in_output = include_in_output)
+
+devtools::use_data(bollen_pmm, overwrite = TRUE)
+```
+
+# Doorenspleet
+
+```{r doorenspleet, results = 'asis'}
+cite_dataset("doorenspleet")
+
+doorenspleet <- prepare_doorenspleet(path = "../../../Data/Doorenspleet data.csv",
+                                     verbose = verbose, 
+                                     include_in_output = include_in_output)
+
+devtools::use_data(doorenspleet, overwrite = TRUE)
+```
+
+# WGI
+
+```{r wgi, results = 'asis'}
+cite_dataset("wgi")
+
+wgi_democracy <- download_wgi_voice_and_accountability(verbose = verbose, 
+                                                       include_in_output = include_in_output)
+
+```
+
+# Freedom House
+
+```{r fh, results = 'asis'}
+cite_dataset("fh")
+
+fh <- download_fh(verbose = verbose,
+                  include_in_output = include_in_output)
+
+fh_with_territories <- download_fh(verbose = verbose,
+                                   include_in_output = include_in_output,
+                                   include_territories = TRUE)
+
+fh_electoral <- download_fh_electoral(verbose = verbose,
+                                      include_in_output = include_in_output)
+
+fh_pmm <- extract_pmm_var(pmm_replication, pmm_freedomhouse,
+                          include_in_output = include_in_output) 
+
+devtools::use_data(fh_pmm, overwrite = TRUE)
+
+```
+
+# GWF
+
+```{r gwf, results = 'asis'}
+cite_dataset("gwf")
+
+gwf_autocratic <- redownload_gwf(verbose = verbose,
+                                 dataset = "autocratic",
+                                 include_in_output = include_in_output)
+
+gwf_autocratic_extended <- redownload_gwf(verbose = verbose,
+                                          dataset = "autocratic",
+                                          include_in_output = include_in_output,
+                                          extend = TRUE)
+
+gwf_all <- redownload_gwf(verbose = verbose,
+                          dataset = "all",
+                          include_in_output = include_in_output)
+
+gwf_all_extended <- redownload_gwf(verbose = verbose,
+                                   dataset = "all",
+                                   include_in_output = include_in_output,
+                                   extend = TRUE)
+
+devtools::use_data(gwf_autocratic,
+                   gwf_autocratic_extended,
+                   gwf_all, 
+                   gwf_all_extended, overwrite = TRUE)
+
+```
+
+# Hadenius
+
+```{r hadenius, results = 'asis'}
+cite_dataset("hadenius")
+
+hadenius_pmm <- extract_pmm_var(pmm_replication, pmm_hadenius,
+                                include_in_output = include_in_output)
+
+devtools::use_data(hadenius_pmm, overwrite = TRUE)
+```
+
+# Kailitz
+
+```{r kailitz, results = 'asis'}
+cite_dataset("kailitz")
+
+kailitz <- PoliticalDatasets::kailitz.yearly %>%
+  select(kailitz_country, year, cown, combined_regime:transition) %>%
+  mutate(kailitz_cown = cown) %>%
+  country_year_coder(kailitz_country,
+                     year,
+                     code_col = kailitz_cown,
+                     verbose = verbose,
+                     include_in_output = include_in_output,
+                     code_type = "cown",
+                     match_type = "code only") %>%
+  select(kailitz_country, kailitz_cown, year, combined_regime:transition, include_in_output)
+
+devtools::use_data(kailitz, overwrite = TRUE)
+```
+
+
+# LIED
+
+```{r lied, results = 'asis'}
+cite_dataset("LIED")
+      
+LIED <- redownload_lied(verbose = verbose, 
+                      include_in_output = include_in_output)
+
+devtools::use_data(LIED, overwrite = TRUE)
+```
+
+
+# Magaloni
+
+```{r magaloni, results = 'asis'}
+cite_dataset("magaloni")
+
+magaloni <- redownload_magaloni(verbose = verbose, 
+                                include_in_output = include_in_output)
+
+magaloni_extended <- redownload_magaloni(extend = TRUE,
+                                         verbose = verbose, 
+                                         include_in_output = include_in_output)
+
+anti_join(magaloni_extended, magaloni) %>%
+    group_by(magaloni_country, magaloni_ccode, cown) %>% summarise(min(year), max(year), n()) %>%
+  knitr::kable()
+
+
+anti_join(magaloni_extended, magaloni) %>%
+  filter(grepl("Pakis",magaloni_country)) %>%
+  knitr::kable()
+
+devtools::use_data(magaloni, magaloni_extended, overwrite = TRUE)
+```
+
+
+# Mainwaring
+
+```{r mainwaring, results = 'asis'}
+cite_dataset("mainwaring")
+
+mainwaring <- prepare_mainwaring(path = "../../../Data/Mainwaring Linan.txt", 
+                                 verbose = verbose,
+                                 include_in_output = include_in_output)
+
+mainwaring_pmm <- extract_pmm_var(pmm_replication, pmm_mainwaring,
+                                 include_in_output = include_in_output)
+
+devtools::use_data(mainwaring, overwrite = TRUE)
+devtools::use_data(mainwaring_pmm, overwrite = TRUE)
+
+```
+
+# Munck
+
+```{r munck, results = 'asis'}
+cite_dataset("munck")
+
+munck_pmm <- extract_pmm_var(pmm_replication, pmm_munck,
+                                 include_in_output = include_in_output)
+
+devtools::use_data(munck_pmm, overwrite = TRUE)
+```
+
+# PACL
+
+```{r pacl, results = 'asis'}
+cite_dataset("pacl")
+
+pacl_pmm <- extract_pmm_var(pmm_replication, pmm_pacl,
+                                 include_in_output = include_in_output)
+
+pacl <- redownload_pacl(verbose = verbose,
+                        include_in_output = include_in_output)
+
+devtools::use_data(pacl_pmm, overwrite = TRUE)
+devtools::use_data(pacl, overwrite = TRUE)
+
+```
+
+# PEPS 
+
+```{r peps, results = 'asis'}
+cite_dataset("peps")
+
+peps <- redownload_peps(verbose = verbose,
+                        include_in_output = include_in_output)
+
+devtools::use_data(peps, overwrite = TRUE)
+```
+
+# Polity
+
+```{r polity, results = 'asis'}
+cite_dataset("polity")
+
+polity_pmm <- extract_pmm_var(pmm_replication, pmm_polity,
+                              include_in_output = include_in_output)
+
+polity <- download_polity_annual(verbose = verbose,
+                                 include_in_output = include_in_output)
+
+polity2 <- download_polity_annual(verbose = verbose,
+                                 include_in_output = c("extended_country_name",
+                                                       "GWn",
+                                                       "cown",
+                                                       "polity_ccode",
+                                                       "in_GW_system",
+                                                       "in_cow_system",
+                                                       "in_polity_system",
+                                                       "cow_startdate",
+                                                       "cow_enddate",
+                                                       "GW_startdate",
+                                                       "GW_enddate",
+                                                       "polity_startdate",
+                                                       "polity_enddate"))
+
+devtools::use_data(polity_pmm, overwrite = TRUE)
+```
+
+# PITF
+
+```{r pitf, results = 'asis'}
+cite_dataset("pitf")
+
+pitf <- create_pitf_scores(verbose = verbose, include_in_output = include_in_output)
+
+devtools::use_data(pitf, overwrite = TRUE)
+```
+
+# Polyarchy
+
+```{r polyarchy, results = 'asis'}
+cite_dataset("polyarchy")
+
+polyarchy_pmm <- extract_pmm_var(pmm_replication, pmm_polyarchy,
+                                 include_in_output = include_in_output)
+
+polyarchy <- redownload_polyarchy_original(verbose = verbose,
+                                         include_in_output = include_in_output)
+
+polyarchy_dimensions <- redownload_polyarchy_dimensions(verbose = verbose,
+                                                include_in_output = include_in_output)
+
+devtools::use_data(polyarchy, 
+                   polyarchy_pmm,
+                   polyarchy_dimensions,
+                   overwrite = TRUE)
+```
+
+# Political Regime Change (PRC)/Gasiorowski dataset
+
+```{r prc_gasiorowski, results = 'asis'}
+cite_dataset("prc_gasiorowski")
+
+prc_gasiorowski <- prepare_prc(path = "../../../Data/Gasiorowski.csv",
+                               verbose = verbose,
+                               include_in_output = include_in_output)
+
+prc_pmm <- extract_pmm_var(pmm_replication, pmm_prc,
+                           include_in_output = include_in_output)
+
+devtools::use_data(prc_gasiorowski, 
+                   prc_pmm, overwrite = TRUE)
+```
+
+# PIPE
+
+```{r PIPE, results = 'asis'}
+cite_dataset("PIPE")
+
+PIPE <- redownload_pipe(verbose = verbose,
+                        include_in_output = include_in_output)
+
+devtools::use_data(PIPE, overwrite = TRUE)
+```
+
+# REIGN
+
+```{r reign, results = 'asis'}
+cite_dataset("reign")
+
+reign <- download_reign(verbose = verbose,
+                        include_in_output = include_in_output)
+```
+
+# Svolik
+
+```{r svolik, results = 'asis'}
+cite_dataset("svolik")
+
+svolik_regime <- prepare_svolik_regime(path = "../../../Data/Svolik data/regime and no authority spells, country-year, 1946-2008.dta",
+                                       verbose = verbose,
+                                       include_in_output = include_in_output)
+
+devtools::use_data(svolik_regime, overwrite = TRUE)
+```
+
+# UDS
+
+```{r uds, results = 'asis'}
+cite_dataset("uds")
+
+uds_2014 <- redownload_uds(verbose = verbose,
+                           include_in_output = include_in_output)
+
+uds_2011 <- redownload_uds(2011,
+                           verbose = verbose,
+                           include_in_output = include_in_output)
+
+uds_2010 <- redownload_uds(2010,
+                           verbose = verbose,
+                           include_in_output = include_in_output)
+
+devtools::use_data(uds_2014, uds_2011, uds_2010, overwrite = TRUE)
+```
+
+# Ulfelder
+
+```{r ulfelder, results = 'asis'}
+cite_dataset("ulfelder")
+
+ulfelder <- redownload_ulfelder(verbose = verbose,
+                                include_in_output = include_in_output)
+
+ulfelder_extended <- redownload_ulfelder(verbose = verbose,
+                                include_in_output = include_in_output,
+                                extend = TRUE)
+
+devtools::use_data(ulfelder, ulfelder_extended, overwrite = TRUE)
+```
+
+# UTIP
+
+```{r utip, results = 'asis'}
+cite_dataset("utip")
+
+utip <- redownload_utip(verbose = verbose,
+                        include_in_output = include_in_output)
+
+devtools::use_data(utip, overwrite = TRUE)
+```
+
+# Vanhanen
+
+```{r vanhanen, results = 'asis'}
+cite_dataset("vanhanen")
+
+vanhanen <- prepare_vanhanen(path = "../../../Data/Vanhanen data/Study/data/daF1289e.xls",
+                             verbose = verbose,
+                             include_in_output = include_in_output)
+
+vanhanen_pmm <- extract_pmm_var(pmm_replication, pmm_vanhanen,
+                             include_in_output = include_in_output)
+
+devtools::use_data(vanhanen, vanhanen_pmm, overwrite = TRUE)
+```
+
+# Wahman Teorell and Hadenius
+
+```{r wahman_teorell, results = 'asis'}
+cite_dataset("wahman_teorell")
+
+wahman_teorell_hadenius <- redownload_wahman_teorell_hadenius(verbose = verbose,
+                                                              include_in_output = include_in_output)
+
+devtools::use_data(wahman_teorell_hadenius, overwrite = TRUE)
+```
+

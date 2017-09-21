@@ -1,0 +1,7 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^data-raw$
+^\.travis\.yml$
+^man-roxygen$
+^README\.Rmd$
+^README-.*\.png$

@@ -1,0 +1,4 @@
+citHeader("To cite any of the datasets included in this package use:")
+
+sort(democracyData::bibliography)
+

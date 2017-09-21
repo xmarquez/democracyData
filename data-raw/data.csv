@@ -1,0 +1,269 @@
+country_name,GWn,GWc,regex,region,continent,GW_startdate,GW_enddate,microstate,GW_membership,cown,cowc,polity_ccode,polity_country,polity_startdate,polity_enddate,num_periods,problem_history,lon,lat,cow_startdate,cow_enddate
+United States of America,2,USA,^(?!.*islands).*united.?states|^u\.?s\.?a\.?$|^u\.?s\.?$,Northern America,Americas,1816-01-01,NA,FALSE,TRUE,2,USA,2,United States,1800-01-01,NA,1,FALSE,-95.712891,37.09024,1800-01-01,NA
+Canada,20,CAN,canada,Northern America,Americas,1867-07-01,NA,FALSE,TRUE,20,CAN,20,Canada,1867-07-01,NA,1,FALSE,-106.346771,56.130366,1867-07-01,NA
+Bahamas,31,BHM,bahamas,Caribbean,Americas,1973-07-10,NA,FALSE,TRUE,31,NA,31,NA,NA,NA,1,FALSE,-77.39628,25.03428,1973-07-10,NA
+Cuba,40,CUB,\bcuba,Caribbean,Americas,1902-05-20,NA,FALSE,TRUE,40,CUB,40,Cuba,1902-05-20,NA,1,FALSE,-77.781167,21.521757,1902-05-20,NA
+Haiti,41,HAI,haiti|haïti,Caribbean,Americas,1816-01-01,1915-07-04,FALSE,TRUE,41,HAI,41,Haiti,1820-07-01,NA,2,FALSE,-72.285215,18.971187,1804-01-01,1915-07-04
+Haiti,41,HAI,haiti|haïti,Caribbean,Americas,1934-08-15,NA,FALSE,TRUE,41,HAI,41,Haiti,1820-07-01,NA,2,FALSE,-72.285215,18.971187,1934-08-15,NA
+Dominican Republic,42,DOM,dominican,Caribbean,Americas,1844-02-27,NA,FALSE,TRUE,42,DOM,42,Dominican Republic,1844-02-27,NA,1,FALSE,-70.162651,18.735693,1844-02-27,NA
+Jamaica,51,JAM,jamaica,Caribbean,Americas,1962-08-06,NA,FALSE,TRUE,51,JAM,51,Jamaica,1959-07-04,NA,1,FALSE,-77.297508,18.109581,1962-08-06,NA
+Trinidad and Tobago,52,TRI,trinidad|tobago,Caribbean,Americas,1962-08-31,NA,FALSE,TRUE,52,TRI,52,Trinidad,1962-08-31,NA,1,FALSE,-61.222503,10.691803,1962-08-31,NA
+Barbados,53,BAR,barbados,Caribbean,Americas,1966-11-30,NA,FALSE,TRUE,53,NA,53,NA,NA,NA,1,FALSE,-59.543198,13.193887,1966-11-30,NA
+Dominica,54,DMA,dominica(?!n),Caribbean,Americas,1978-11-03,NA,TRUE,TRUE,54,NA,54,NA,NA,NA,1,FALSE,-61.370976,15.414999,1978-11-03,NA
+Grenada,55,GRN,grenada,Caribbean,Americas,1974-02-07,NA,TRUE,TRUE,55,NA,55,NA,NA,NA,1,FALSE,-61.679,12.1165,1974-02-07,NA
+Saint Lucia,56,SLU,\blucia,Caribbean,Americas,1979-02-22,NA,TRUE,TRUE,56,NA,56,NA,NA,NA,1,FALSE,-60.978893,13.909444,1979-02-22,NA
+Saint Vincent and the Grenadines,57,SVG,vincent,Caribbean,Americas,1979-10-27,NA,TRUE,TRUE,57,NA,57,NA,NA,NA,1,FALSE,-61.1971628,13.2528179,1979-10-27,NA
+Antigua & Barbuda,58,AAB,antigua,Caribbean,Americas,1981-11-01,NA,TRUE,TRUE,58,NA,58,NA,NA,NA,1,FALSE,-114.5134396,32.6671352,1981-11-01,NA
+Saint Kitts and Nevis,60,SKN,kitts|\bnevis,Caribbean,Americas,1983-09-19,NA,TRUE,TRUE,60,NA,60,NA,NA,NA,1,FALSE,-62.782998,17.357822,1983-09-19,NA
+Mexico,70,MEX,\bmexic,Central America,Americas,1821-07-01,NA,FALSE,TRUE,70,MEX,70,Mexico,1822-05-19,NA,1,FALSE,-102.552784,23.634501,1821-07-01,NA
+Belize,80,BLZ,belize|^(?=.*british).*honduras,Central America,Americas,1981-09-21,NA,FALSE,TRUE,80,NA,80,NA,NA,NA,1,FALSE,-88.49765,17.189877,1981-09-21,NA
+United Provinces of Central America,89,UPC,united province|CENTRAL AMERICAN UNION|upca|up of central america,Central America,Americas,1823-07-01,1839-12-31,FALSE,TRUE,89,UPC,89,United Provinces,1824-01-01,1838-12-31,1,FALSE,-90.230759,15.783471,1823-07-01,1839-12-31
+Guatemala,90,GUA,guatemala,Central America,Americas,1840-01-01,NA,FALSE,TRUE,90,GUA,90,Guatemala,1839-04-30,NA,1,FALSE,-90.230759,15.783471,1840-01-01,NA
+Honduras,91,HON,^(?!.*brit).*honduras,Central America,Americas,1840-01-01,NA,FALSE,TRUE,91,HON,91,Honduras,1839-01-10,NA,1,FALSE,-86.241905,15.199999,1840-01-01,NA
+El Salvador,92,SAL,el.?salvador,Central America,Americas,1840-01-01,NA,FALSE,TRUE,92,SAL,92,El Salvador,1841-02-16,NA,1,FALSE,-88.89653,13.794185,1840-01-01,NA
+Nicaragua,93,NIC,nicaragua,Central America,Americas,1840-01-01,NA,FALSE,TRUE,93,NIC,93,Nicaragua,1838-04-30,NA,1,FALSE,-85.207229,12.865416,1840-01-01,NA
+Costa Rica,94,COS,costa.?rica,Central America,Americas,1840-01-01,NA,FALSE,TRUE,94,COS,94,Costa Rica,1838-07-01,NA,1,FALSE,-83.753428,9.748917,1840-01-01,NA
+Panama,95,PAN,panama,Central America,Americas,1903-11-03,NA,FALSE,TRUE,95,PAN,95,Panama,1903-11-03,NA,1,FALSE,-80.782127,8.537981,1903-11-03,NA
+Great Colombia,99,GCL,great colombia|gran colombia,South America,Americas,1821-08-30,1830-09-22,FALSE,TRUE,99,GCL,99,Gran Colombia,1821-08-03,1832-02-28,1,FALSE,-74.297333,4.570868,1821-08-30,1830-09-22
+Colombia,100,COL,^(?!.*\bgr).*\bcolombia,South America,Americas,1830-09-23,NA,FALSE,TRUE,100,COL,100,Colombia,1832-02-29,NA,1,FALSE,-74.297333,4.570868,1830-09-23,NA
+Venezuela,101,VEN,venezuela,South America,Americas,1829-01-01,NA,FALSE,TRUE,101,VEN,101,Venezuela,1830-09-22,NA,1,FALSE,-66.58973,6.42375,1829-01-01,NA
+Guyana,110,GUY,guyana|british.?guiana,South America,Americas,1966-05-26,NA,FALSE,TRUE,110,GUY,110,Guyana,1966-05-26,NA,1,FALSE,-58.93018,4.860416,1966-05-26,NA
+Surinam,115,SUR,surinam|dutch.?guiana,South America,Americas,1975-11-25,NA,FALSE,TRUE,115,SUR,115,Suriname,1975-11-25,NA,1,FALSE,-56.027783,3.919305,1975-11-25,NA
+Ecuador,130,ECU,ecuador,South America,Americas,1830-05-13,NA,FALSE,TRUE,130,ECU,130,Ecuador,1830-05-13,NA,1,FALSE,-78.183406,-1.831239,1830-05-13,NA
+Peru,135,PER,peru,South America,Americas,1824-12-09,NA,FALSE,TRUE,135,PER,135,Peru,1821-07-28,NA,1,FALSE,-75.015152,-9.189967,1824-12-09,NA
+Brazil,140,BRA,brazil,South America,Americas,1822-09-07,NA,FALSE,TRUE,140,BRA,140,Brazil,1824-03-25,NA,1,FALSE,-51.92528,-14.235004,1822-09-07,NA
+Bolivia,145,BOL,bolivia,South America,Americas,1825-08-06,NA,FALSE,TRUE,145,BOL,145,Bolivia,1825-08-06,NA,1,FALSE,-63.588653,-16.290154,1825-08-06,NA
+Paraguay,150,PAR,paraguay,South America,Americas,1816-01-01,NA,FALSE,TRUE,150,PAR,150,Paraguay,1811-05-14,NA,1,FALSE,-58.443832,-23.442503,1811-05-14,NA
+Chile,155,CHL,\bchile,South America,Americas,1818-04-01,NA,FALSE,TRUE,155,CHL,155,Chile,1818-02-12,NA,1,FALSE,-71.542969,-35.675147,1818-04-01,NA
+Argentina,160,ARG,argentin,South America,Americas,1816-07-09,NA,FALSE,TRUE,160,ARG,160,Argentina,1825-01-23,NA,1,FALSE,-63.616672,-38.416097,1816-07-09,NA
+Uruguay,165,URU,uruguay,South America,Americas,1830-05-26,NA,FALSE,TRUE,165,URU,165,Uruguay,1830-05-26,NA,1,FALSE,-55.765835,-32.522779,1830-05-26,NA
+United Kingdom,200,UKG,united.?kingdom|britain|^u\.?k\.?$,Northern Europe,Europe,1816-01-01,NA,FALSE,TRUE,200,UKG,200,United Kingdom,1800-01-01,NA,1,FALSE,-3.435973,55.378051,1800-01-01,NA
+Ireland,205,IRE,^(?!.*\bn).*ireland,Northern Europe,Europe,1921-12-06,NA,FALSE,TRUE,205,IRE,205,Ireland,1921-12-06,NA,1,FALSE,-8.24389,53.41291,1921-12-06,NA
+Netherlands,210,NTH,^(?!.*\bant)(?!.*\bcarib).*netherlands,Western Europe,Europe,1816-01-01,NA,FALSE,TRUE,210,NTH,210,Netherlands,1815-06-08,NA,1,FALSE,5.291266,52.132633,1800-01-01,NA
+Belgium,211,BEL,^(?!.*luxem).*belgium,Western Europe,Europe,1830-10-04,NA,FALSE,TRUE,211,BEL,211,Belgium,1830-10-04,NA,1,FALSE,4.469936,50.503887,1830-10-04,NA
+Luxembourg,212,LUX,^(?!.*belg).*luxem,Western Europe,Europe,1867-05-11,NA,FALSE,TRUE,212,NA,212,NA,NA,NA,1,FALSE,6.129583,49.815273,1867-05-11,NA
+France,220,FRN,^(?!.*\bdep).*france|french.?republic|\bgaul,Western Europe,Europe,1816-01-01,NA,FALSE,TRUE,220,FRN,220,France,1800-01-01,NA,1,FALSE,2.213749,46.227638,1800-01-01,NA
+Monaco,221,MNC,monaco,Western Europe,Europe,1816-01-01,NA,TRUE,TRUE,221,NA,221,NA,NA,NA,1,FALSE,7.4246158,43.7384176,1816-01-01,NA
+Liechtenstein,223,LIE,liechtenstein|LIECHSTENSTEIN,Western Europe,Europe,1816-01-01,NA,TRUE,TRUE,223,NA,223,NA,NA,NA,1,FALSE,9.555373,47.166,1816-01-01,NA
+Switzerland,225,SWZ,switz|swiss,Western Europe,Europe,1816-01-01,NA,FALSE,TRUE,225,SWZ,225,Switzerland,1848-09-12,NA,1,FALSE,8.227512,46.818188,1815-06-09,NA
+Spain,230,SPN,spain,Southern Europe,Europe,1816-01-01,NA,FALSE,TRUE,230,SPN,230,Spain,1800-01-01,NA,1,FALSE,-3.74922,40.463667,1800-01-01,NA
+Andorra,232,AND,andorra,Southern Europe,Europe,1816-01-01,NA,TRUE,TRUE,232,NA,232,NA,NA,NA,1,FALSE,1.521801,42.506285,1816-01-01,NA
+Portugal,235,POR,portugal,Southern Europe,Europe,1816-01-01,NA,FALSE,TRUE,235,POR,235,Portugal,1800-01-01,NA,1,FALSE,-8.224454,39.399872,1800-01-01,NA
+Hanover,240,HAN,hanover,Western Europe,Europe,1816-01-01,1871-01-17,FALSE,TRUE,240,NA,240,NA,NA,NA,1,FALSE,-96.8939572,33.020507,1816-01-01,1871-01-17
+Bavaria,245,BAV,bavaria,Western Europe,Europe,1816-01-01,1871-01-17,FALSE,TRUE,245,BAV,245,Bavaria,1800-01-01,1871-01-18,1,FALSE,-81.789749,26.5632108,1806-01-08,1871-01-17
+Germany (Prussia),255,GMY,^(?!.*east).*germany|^(?=.*\bfed.*\brep).*german|prussia,Western Europe,Europe,1816-01-01,1945-05-07,FALSE,TRUE,255,GMY,255,Prussia|Germany,1800-01-01,1945-05-07,1,FALSE,10.451526,51.165691,1800-01-01,1945-05-07
+German Federal Republic,260,GFR,^(?=.*\bfed.*\brep).*german|^f\.?r\.?g\.?$|^b\.?r\.?d\.?$|^(?=.*west).*germany|bonn.?republic|^(?!\beast).*germany(?!.*east),Western Europe,Europe,1949-09-21,NA,FALSE,TRUE,255,GMY,255,Germany,1990-10-03,NA,2,TRUE,7.0982068,50.73743,1990-10-03,NA
+German Federal Republic,260,GFR,^(?=.*\bfed.*\brep).*german|^f\.?r\.?g\.?$|^b\.?r\.?d\.?$|^(?=.*west).*germany|bonn.?republic|^(?!\beast).*germany(?!.*east),Western Europe,Europe,1949-09-21,NA,FALSE,TRUE,260,GFR,260,Germany West,1945-05-08,1990-10-02,2,FALSE,7.0982068,50.73743,1955-05-05,1990-10-02
+German Democratic Republic,265,GDR,german.?democratic.?republic|^(d|g)\.?d\.?r\.?$|^(?=.*east).*germany,Western Europe,Europe,1949-10-05,1990-10-02,FALSE,TRUE,265,GDR,265,Germany East,1945-05-08,1990-10-02,1,FALSE,13.404954,52.5200066,1954-03-25,1990-10-02
+Baden,267,BAD,baden,Western Europe,Europe,1816-01-01,1871-01-17,FALSE,TRUE,267,BAD,267,Baden,1819-07-16,1871-01-18,1,FALSE,-90.2315018,38.7182608,1806-06-08,1871-01-17
+Saxony,269,SAX,saxony,Western Europe,Europe,1816-01-01,1871-01-17,FALSE,TRUE,269,SAX,269,Saxony,1806-12-11,1871-01-18,1,FALSE,-92.3496976,34.663911,1806-06-08,1871-01-17
+Wurttemberg,271,WRT,w(u|ue|ü)rttemb(u|e)rg|wuttemberg|wurttemberg,Western Europe,Europe,1816-01-01,1871-01-17,FALSE,TRUE,271,WRT,271,Wuerttemburg,1800-01-01,1871-01-18,1,FALSE,9.1829321,48.7758459,1806-06-08,1871-01-17
+Hesse-Kassel (Electoral),273,HSE,hesse.*lectoral|hesse.*kassel(?!.*ducal),Western Europe,Europe,1816-01-01,1871-01-17,FALSE,TRUE,273,NA,273,NA,NA,NA,1,FALSE,9.4797461,51.3127114,1813-01-01,1871-01-17
+Hesse-Darmstadt (Ducal),275,HSD,hess.*gran.*ducal|hess.*darms,Western Europe,Europe,1816-01-01,1871-01-17,FALSE,TRUE,275,NA,275,NA,NA,NA,1,FALSE,9.4797461,51.3127114,1815-06-09,1871-01-17
+Mecklenburg-Schwerin,280,MEC,mecklenbur.*schwerin,Western Europe,Europe,1816-01-01,1871-01-17,FALSE,TRUE,280,NA,280,NA,NA,NA,1,FALSE,11.4012499,53.6355022,1815-06-09,1871-01-17
+Poland,290,POL,poland,Eastern Europe,Europe,1918-11-11,NA,FALSE,TRUE,290,POL,290,Poland,1918-11-11,NA,1,FALSE,19.145136,51.919438,1918-11-11,NA
+Austria-Hungary,300,AUH,austria.*hungary|austr.*emp,Central Europe,Europe,1816-01-01,1918-11-13,FALSE,TRUE,300,NA,300,NA,NA,NA,1,FALSE,16.3738189,48.2081743,1800-01-01,1918-11-13
+Austria,305,AUS,^(?!.*hungary).*austria|\baust(?!ralia).*(?!.*hungar),Western Europe,Europe,1918-11-14,NA,FALSE,TRUE,305,AUS,305,Austria,1800-01-01,NA,1,FALSE,14.550072,47.516231,1918-11-14,NA
+Hungary,310,HUN,^(?!.*austr).*hungary,Eastern Europe,Europe,1918-11-03,NA,FALSE,TRUE,310,HUN,310,Hungary,1867-05-29,NA,1,FALSE,19.503304,47.162494,1918-11-03,NA
+Czechoslovakia,315,CZE,czechoslovakia|CZECH REP,Eastern Europe,Europe,1918-11-11,1992-12-31,FALSE,TRUE,315,CZE,315,Czechoslovakia,1918-10-28,1992-12-31,1,FALSE,14.4378005,50.0755381,1918-11-11,1992-12-31
+Czech Republic,316,CZR,^(?=.*rep).*czech|czechia|bohemia,Eastern Europe,Europe,1993-01-01,NA,FALSE,TRUE,316,CZR,316,Czech Republic,1993-01-01,NA,1,FALSE,15.472962,49.817492,1993-01-01,NA
+Slovakia,317,SLO,^(?!.*cze).*slovak,Eastern Europe,Europe,1993-01-01,NA,FALSE,TRUE,317,SLO,317,Slovak Republic,1993-01-01,NA,1,FALSE,19.699024,48.669026,1993-01-01,NA
+Italy/Sardinia,325,ITA,italy|sardinia,Southern Europe,Europe,1816-01-01,NA,FALSE,TRUE,325,SAR,324,Sardinia,1815-06-08,1861-03-16,2,TRUE,9.0128926,40.1208752,1815-06-09,NA
+Italy/Sardinia,325,ITA,italy|sardinia,Southern Europe,Europe,1816-01-01,NA,FALSE,TRUE,325,ITA,325,Italy,1861-03-17,NA,2,FALSE,9.0128926,40.1208752,1815-06-09,NA
+Papal States,327,PAP,holy.?see|vatican|papal.?st,Southern Europe,Europe,1816-01-01,1870-09-22,FALSE,TRUE,327,PAP,327,Papal States,1815-06-08,1870-10-02,1,FALSE,12.453389,41.902916,1815-06-09,1870-09-22
+Sicily (Two Sicilies),329,SIC,two.?sicilies|SICILY,Southern Europe,Europe,1816-01-01,1861-03-16,FALSE,TRUE,329,SIC,329,Two Sicilies,1816-01-01,1860-10-22,1,FALSE,18.6936505,-33.8143653,1800-01-01,1861-03-16
+San Marino,331,SNM,san.?marino,Southern Europe,Europe,1816-01-01,NA,TRUE,TRUE,331,NA,331,NA,NA,NA,1,FALSE,12.457777,43.94236,1816-01-01,NA
+Modena,332,MOD,modena,Southern Europe,Europe,1816-01-01,1861-03-16,FALSE,TRUE,332,MOD,332,Modena,1815-06-08,1860-03-13,1,FALSE,-103.387818,20.6925426,1815-06-09,1861-03-16
+Parma,335,PMA,parma,Southern Europe,Europe,1816-01-01,1861-03-16,FALSE,TRUE,335,PMA,335,Parma,1815-06-08,1860-03-13,1,FALSE,-121.8689106,37.2210163,1815-06-09,1861-03-16
+Tuscany,337,TUS,tuscany,Southern Europe,Europe,1816-01-01,1861-03-16,FALSE,TRUE,337,TUS,337,Tuscany,1815-06-08,1860-03-13,1,FALSE,-97.536104,35.3329639,1815-06-09,1861-03-16
+Malta,338,MLT,\bmalta,Southern Europe,Europe,1964-09-21,NA,FALSE,TRUE,338,NA,338,NA,NA,NA,1,FALSE,14.375416,35.937496,1964-09-21,NA
+Albania,339,ALB,albania,Southern Europe,Europe,1913-01-01,NA,FALSE,TRUE,339,ALB,339,Albania,1914-09-04,NA,1,FALSE,20.168331,41.153332,1913-01-01,NA
+Serbia,340,SER,^(?!.*monte).*serbia|^(?=.*yugo).*serbia,Southern Europe,Europe,1878-07-13,1915-10-01,FALSE,TRUE,345,SER,342,Serbia,1830-08-15,1920-12-31,4,TRUE,21.005859,44.016521,1878-07-13,1915-10-01
+Serbia,340,SER,^(?!.*monte).*serbia|^(?=.*yugo).*serbia,Southern Europe,Europe,1878-07-13,1915-10-01,FALSE,TRUE,345,SER,342,Serbia,2006-06-03,NA,4,TRUE,21.005859,44.016521,1878-07-13,1915-10-01
+Serbia,340,SER,^(?!.*monte).*serbia|^(?=.*yugo).*serbia,Southern Europe,Europe,2006-06-05,NA,FALSE,TRUE,345,SER,342,Serbia,1830-08-15,1920-12-31,4,TRUE,21.005859,44.016521,2006-06-05,NA
+Serbia,340,SER,^(?!.*monte).*serbia|^(?=.*yugo).*serbia,Southern Europe,Europe,2006-06-05,NA,FALSE,TRUE,345,SER,342,Serbia,2006-06-03,NA,4,TRUE,21.005859,44.016521,2006-06-05,NA
+Montenegro,341,MNG,^(?!.*serbia).*montenegro,Southern Europe,Europe,1868-01-01,1915-07-01,FALSE,TRUE,341,MNT,348,Montenegro,2006-06-03,NA,2,TRUE,19.374389999999998,42.708678,1868-01-01,1915-07-01
+Montenegro,341,MNG,^(?!.*serbia).*montenegro,Southern Europe,Europe,2006-06-03,NA,FALSE,TRUE,341,MNT,348,Montenegro,2006-06-03,NA,2,TRUE,19.374389999999998,42.708678,2006-06-03,NA
+Macedonia (Former Yugoslav Republic of),343,MAC,macedonia|^f\.?y\.?r\.?o\.?m\.?$,Southern Europe,Europe,1991-11-20,NA,FALSE,TRUE,343,MAC,343,Macedonia,1991-09-17,NA,1,FALSE,21.745275,41.608635,1991-11-20,NA
+Croatia,344,CRO,croatia,Southern Europe,Europe,1992-04-27,NA,FALSE,TRUE,344,CRO,344,Croatia,1991-06-25,NA,1,FALSE,15.2,45.1,1992-04-27,NA
+Yugoslavia,345,YUG,yugoslavia|serbia,Southern Europe,Europe,1918-12-01,2006-06-04,FALSE,TRUE,345,YUG,345,Yugoslavia,1921-01-01,1991-07-01,2,FALSE,20.28,44.49,1918-12-01,2006-06-04
+Yugoslavia,345,YUG,yugoslavia|serbia,Southern Europe,Europe,1918-12-01,2006-06-04,FALSE,TRUE,345,YGS,347,Yugoslavia|Serbia and Montenegro,1991-07-01,2006-06-02,2,TRUE,20.28,44.49,1918-12-01,2006-06-04
+Bosnia-Herzegovina,346,BOS,herzegovina|bosnia,Southern Europe,Europe,1992-04-27,NA,FALSE,TRUE,346,BOS,346,Bosnia,1992-04-05,NA,1,FALSE,17.679076,43.915886,1992-04-27,NA
+Kosovo,347,KOS,kosovo,Southern Europe,Europe,2008-02-17,NA,FALSE,TRUE,347,KOS,341,Kosovo,2008-02-17,NA,1,FALSE,20.902977,42.6026359,2008-02-17,NA
+Slovenia,349,SLV,slovenia,Southern Europe,Europe,1992-04-27,NA,FALSE,TRUE,349,SLV,349,Slovenia,1991-06-25,NA,1,FALSE,14.995463,46.151241,1992-04-27,NA
+Greece,350,GRC,greece|hellenic|hellas,Southern Europe,Europe,1828-04-25,NA,FALSE,TRUE,350,GRC,350,Greece,1827-05-17,NA,1,FALSE,21.824312,39.074208,1828-04-25,NA
+Cyprus,352,CYP,^(?!.*\bn).*cyprus,Western Asia,Asia,1960-08-16,NA,FALSE,TRUE,352,CYP,352,Cyprus,1960-08-16,NA,1,FALSE,33.429859,35.126413,1960-08-16,NA
+Bulgaria,355,BUL,bulgaria,Eastern Europe,Europe,1878-03-03,NA,FALSE,TRUE,355,BUL,355,Bulgaria,1879-04-29,NA,1,FALSE,25.48583,42.733883,1878-03-03,NA
+Moldova,359,MLD,moldov|b(a|e)ssarabia,Eastern Europe,Europe,1991-08-27,NA,FALSE,TRUE,359,MLD,359,Moldova,1991-08-27,NA,1,FALSE,28.369885,47.411631,1991-08-27,NA
+Romania,360,RUM,r(o|u|ou)mania,Eastern Europe,Europe,1878-07-13,NA,FALSE,TRUE,360,RUM,360,Romania,1859-01-24,NA,1,FALSE,24.96676,45.943161,1878-07-13,NA
+Russia (Soviet Union),365,RUS,\brussia|soviet.?union|u\.?s\.?s\.?r|socialist.?republics,Eastern Europe,Europe,1816-01-01,NA,FALSE,TRUE,365,USR,364,USSR,1922-12-30,1991-12-31,3,TRUE,105.318756,61.52401,1800-01-01,NA
+Russia (Soviet Union),365,RUS,\brussia|soviet.?union|u\.?s\.?s\.?r|socialist.?republics,Eastern Europe,Europe,1816-01-01,NA,FALSE,TRUE,365,RUS,365,Russia,1800-01-01,1922-12-29,3,FALSE,105.318756,61.52401,1800-01-01,NA
+Russia (Soviet Union),365,RUS,\brussia|soviet.?union|u\.?s\.?s\.?r|socialist.?republics,Eastern Europe,Europe,1816-01-01,NA,FALSE,TRUE,365,RUS,365,Russia,1992-01-01,NA,3,FALSE,105.318756,61.52401,1800-01-01,NA
+Estonia,366,EST,estonia,Northern Europe,Europe,1918-11-11,1940-06-01,FALSE,TRUE,366,EST,366,Estonia,1917-04-12,1940-06-16,4,FALSE,25.013607,58.595272,1918-11-11,1940-06-01
+Estonia,366,EST,estonia,Northern Europe,Europe,1918-11-11,1940-06-01,FALSE,TRUE,366,EST,366,Estonia,1991-09-06,NA,4,FALSE,25.013607,58.595272,1918-11-11,1940-06-01
+Estonia,366,EST,estonia,Northern Europe,Europe,1991-09-06,NA,FALSE,TRUE,366,EST,366,Estonia,1917-04-12,1940-06-16,4,FALSE,25.013607,58.595272,1991-09-06,NA
+Estonia,366,EST,estonia,Northern Europe,Europe,1991-09-06,NA,FALSE,TRUE,366,EST,366,Estonia,1991-09-06,NA,4,FALSE,25.013607,58.595272,1991-09-06,NA
+Latvia,367,LAT,latvia,Northern Europe,Europe,1918-11-11,1940-06-01,FALSE,TRUE,367,LAT,367,Latvia,1920-02-01,1940-06-17,4,FALSE,24.603189,56.879635,1918-11-11,1940-06-01
+Latvia,367,LAT,latvia,Northern Europe,Europe,1918-11-11,1940-06-01,FALSE,TRUE,367,LAT,367,Latvia,1991-09-06,NA,4,FALSE,24.603189,56.879635,1918-11-11,1940-06-01
+Latvia,367,LAT,latvia,Northern Europe,Europe,1991-09-06,NA,FALSE,TRUE,367,LAT,367,Latvia,1920-02-01,1940-06-17,4,FALSE,24.603189,56.879635,1991-09-06,NA
+Latvia,367,LAT,latvia,Northern Europe,Europe,1991-09-06,NA,FALSE,TRUE,367,LAT,367,Latvia,1991-09-06,NA,4,FALSE,24.603189,56.879635,1991-09-06,NA
+Lithuania,368,LIT,lithuania,Northern Europe,Europe,1918-02-16,1940-06-01,FALSE,TRUE,368,LIT,368,Lithuania,1918-11-11,1940-08-03,4,FALSE,23.881275,55.169438,1918-02-16,1940-06-01
+Lithuania,368,LIT,lithuania,Northern Europe,Europe,1918-02-16,1940-06-01,FALSE,TRUE,368,LIT,368,Lithuania,1991-09-06,NA,4,FALSE,23.881275,55.169438,1918-02-16,1940-06-01
+Lithuania,368,LIT,lithuania,Northern Europe,Europe,1991-09-06,NA,FALSE,TRUE,368,LIT,368,Lithuania,1918-11-11,1940-08-03,4,FALSE,23.881275,55.169438,1991-09-06,NA
+Lithuania,368,LIT,lithuania,Northern Europe,Europe,1991-09-06,NA,FALSE,TRUE,368,LIT,368,Lithuania,1991-09-06,NA,4,FALSE,23.881275,55.169438,1991-09-06,NA
+Ukraine,369,UKR,ukrain,Eastern Europe,Europe,1991-12-01,NA,FALSE,TRUE,369,UKR,369,Ukraine,1991-12-01,NA,1,FALSE,31.16558,48.379433,1991-12-01,NA
+Belarus (Byelorussia),370,BLR,belarus|byelo,Eastern Europe,Europe,1991-08-25,NA,FALSE,TRUE,370,BLR,370,Belarus,1991-08-25,NA,1,FALSE,27.953389,53.709807,1991-08-25,NA
+Armenia,371,ARM,armenia,Western Asia,Asia,1991-12-21,NA,FALSE,TRUE,371,ARM,371,Armenia,1991-09-23,NA,1,FALSE,45.038189,40.069099,1991-12-21,NA
+Georgia,372,GRG,^(?!.*south).*georgia,Western Asia,Asia,1991-09-06,NA,FALSE,TRUE,372,GRG,372,Georgia,1991-04-09,NA,1,FALSE,43.356892,42.315407,1991-09-06,NA
+Azerbaijan,373,AZE,azerbaijan,Western Asia,Asia,1991-12-21,NA,FALSE,TRUE,373,AZE,373,Azerbaijan,1991-08-30,NA,1,FALSE,47.576927,40.143105,1991-12-21,NA
+Finland,375,FIN,finland,Northern Europe,Europe,1917-12-06,NA,FALSE,TRUE,375,FIN,375,Finland,1917-12-06,NA,1,FALSE,25.748151,61.92411,1917-12-06,NA
+Sweden,380,SWD,sweden,Northern Europe,Europe,1816-01-01,NA,FALSE,TRUE,380,SWD,380,Sweden,1800-01-01,NA,1,FALSE,18.643501,60.128161,1800-01-01,NA
+Norway,385,NOR,norway,Northern Europe,Europe,1905-08-26,NA,FALSE,TRUE,385,NOR,385,Norway,1814-05-17,NA,1,FALSE,8.468946,60.472024,1905-08-26,NA
+Denmark,390,DEN,denmark,Northern Europe,Europe,1816-01-01,NA,FALSE,TRUE,390,DEN,390,Denmark,1800-01-01,NA,1,FALSE,9.501785,56.26392,1800-01-01,NA
+Iceland,395,ICE,iceland,Northern Europe,Europe,1944-06-17,NA,FALSE,TRUE,395,NA,395,NA,NA,NA,1,FALSE,-19.020835,64.963051,1944-06-17,NA
+Abkhazia,396,ABK,abkhazia,Western Asia,Asia,2008-08-26,NA,TRUE,TRUE,NA,NA,NA,NA,NA,NA,1,FALSE,43.356892,42.315407,2008-08-26,NA
+South Ossetia,397,SOT,ossetia,Western Asia,Asia,2008-08-26,NA,TRUE,TRUE,NA,NA,NA,NA,NA,NA,1,FALSE,43.9644051,42.2214597,2008-08-26,NA
+Cape Verde,402,CAP,verde,Western Africa,Africa,1975-07-05,NA,FALSE,TRUE,402,CAP,402,Cape Verde,1975-07-05,NA,1,FALSE,-23.6051721,15.120142,1975-07-05,NA
+Sao Tome and Principe,403,STP,\bs(a|ã)o.?tom(e|é),Middle Africa,Africa,1975-07-12,NA,TRUE,TRUE,403,NA,403,NA,NA,NA,1,FALSE,6.613081,0.18636,1975-07-12,NA
+Guinea-Bissau,404,GNB,bissau|^(?=.*portu).*guinea|GUINEA-BISS,Western Africa,Africa,1974-09-10,NA,FALSE,TRUE,404,GNB,404,Guinea-Bissau,1974-09-10,NA,1,FALSE,-15.180413,11.803749,1974-09-10,NA
+Equatorial Guinea,411,EQG,guine.*eq|eq.*guine|^(?=.*span).*guinea|EQUATORIAL G,Middle Africa,Africa,1968-10-12,NA,FALSE,TRUE,411,EQG,411,Equatorial Guinea,1968-08-12,NA,1,FALSE,10.267895,1.650801,1968-10-12,NA
+Gambia,420,GAM,gambia,Western Africa,Africa,1965-02-18,NA,FALSE,TRUE,420,GAM,420,Gambia,1965-02-18,NA,1,FALSE,-15.310139,13.443182,1965-02-18,NA
+Mali,432,MLI,\bmali\b,Western Africa,Africa,1960-09-22,NA,FALSE,TRUE,432,MLI,432,Mali,1960-09-22,NA,1,FALSE,-3.996166,17.570692,1960-09-22,NA
+Senegal,433,SEN,senegal,Western Africa,Africa,1960-04-04,NA,FALSE,TRUE,433,SEN,433,Senegal,1960-04-04,NA,1,FALSE,-14.452362,14.497401,1960-04-04,NA
+Benin,434,BEN,benin|dahome,Western Africa,Africa,1960-08-01,NA,FALSE,TRUE,434,BEN,434,Benin,1960-08-01,NA,1,FALSE,2.315834,9.30769,1960-08-01,NA
+Mauritania,435,MAA,mauritania,Western Africa,Africa,1960-11-28,NA,FALSE,TRUE,435,MAA,435,Mauritania,1960-11-28,NA,1,FALSE,-10.940835,21.00789,1960-11-28,NA
+Niger,436,NIR,\bniger(?!ia),Western Africa,Africa,1960-08-03,NA,FALSE,TRUE,436,NIR,436,Niger,1960-08-03,NA,1,FALSE,8.081666,17.607789,1960-08-03,NA
+Cote D'Ivoire,437,CDI,ivoire|ivory,Western Africa,Africa,1960-08-07,NA,FALSE,TRUE,437,IVO,437,Ivory Coast,1960-08-07,NA,1,FALSE,-5.54708,7.539989,1960-08-07,NA
+Guinea,438,GUI,^(?!.*eq)(?!.*span)(?!.*bissau)(?!.*portu)(?!.*new)(?!.*papua n).*guinea(?!-biss),Western Africa,Africa,1958-10-02,NA,FALSE,TRUE,438,GUI,438,Guinea,1958-10-02,NA,1,FALSE,-9.696645,9.945587,1958-10-02,NA
+Burkina Faso (Upper Volta),439,BFO,burkina|\bfaso|upper.?volta,Western Africa,Africa,1960-08-05,NA,FALSE,TRUE,439,BFO,439,Burkina Faso,1960-08-05,NA,1,FALSE,-1.561593,12.238333,1960-08-05,NA
+Liberia,450,LBR,liberia,Western Africa,Africa,1847-07-26,NA,FALSE,TRUE,450,LBR,450,Liberia,1847-07-26,NA,1,FALSE,-9.429499,6.428055,1847-07-26,NA
+Sierra Leone,451,SIE,sierra,Western Africa,Africa,1961-04-27,NA,FALSE,TRUE,451,SIE,451,Sierra Leone,1961-04-27,NA,1,FALSE,-11.779889,8.460555,1961-04-27,NA
+Ghana,452,GHA,ghana|gold.?coast,Western Africa,Africa,1957-03-06,NA,FALSE,TRUE,452,GHA,452,Ghana,1960-07-01,NA,1,FALSE,-1.023194,7.946527,1957-03-06,NA
+Togo,461,TOG,togo,Western Africa,Africa,1960-04-27,NA,FALSE,TRUE,461,TOG,461,Togo,1960-04-27,NA,1,FALSE,0.824782,8.619543,1960-04-27,NA
+Cameroon,471,CAO,cameroon,Middle Africa,Africa,1960-01-01,NA,FALSE,TRUE,471,CAO,471,Cameroon,1960-01-01,NA,1,FALSE,12.354722,7.369722,1960-01-01,NA
+Nigeria,475,NIG,nigeria,Western Africa,Africa,1960-10-01,NA,FALSE,TRUE,475,NIG,475,Nigeria,1960-10-01,NA,1,FALSE,8.675277,9.081999,1960-10-01,NA
+Gabon,481,GAB,gabon,Middle Africa,Africa,1960-08-17,NA,FALSE,TRUE,481,GAB,481,Gabon,1960-08-17,NA,1,FALSE,11.609444,-0.803689,1960-08-17,NA
+Central African Republic,482,CEN,\bcen.*\baf|^c\.?a\.?r\.?$,Middle Africa,Africa,1960-08-13,NA,FALSE,TRUE,482,CEN,482,Central African Republic,1960-08-13,NA,1,FALSE,20.939444,6.611111,1960-08-13,NA
+Chad,483,CHA,\bchad,Middle Africa,Africa,1960-08-11,NA,FALSE,TRUE,483,CHA,483,Chad,1960-08-11,NA,1,FALSE,18.732207,15.454166,1960-08-11,NA
+Congo,484,CON,"^(?!.*\bdem)(?!.*\bdr)(?!.*kinshasa)(?!.*zaire)(?!.*belg)(?!.*l\w{1,2}opoldville)(?!.*free).*\bcongo",Middle Africa,Africa,1960-08-15,NA,FALSE,TRUE,484,CON,484,Congo Brazzaville,1960-08-15,NA,1,FALSE,15.827659,-0.228021,1960-08-15,NA
+"Congo, Democratic Republic of (Zaire)",490,DRC,"\bdem.*congo|congo.*\bdem|congo.*\bdr|\bdr.*congo|\bd\.?r\.?c|\bd\.?r\.?o\.?c|\br\.?d\.?c|belgian.?congo|congo.?free.?state|kinshasa|zaire|l\w{1,2}opoldville",Middle Africa,Africa,1960-06-30,NA,FALSE,TRUE,490,ZAI,490,Congo Kinshasa,1960-06-30,NA,1,FALSE,21.758664,-4.038333,1960-06-30,NA
+Uganda,500,UGA,uganda,Eastern Africa,Africa,1962-10-09,NA,FALSE,TRUE,500,UGA,500,Uganda,1962-10-09,NA,1,FALSE,32.290275,1.373333,1962-10-09,NA
+Kenya,501,KEN,kenya|british.?east.?africa|east.?africa.?prot,Eastern Africa,Africa,1963-12-12,NA,FALSE,TRUE,501,KEN,501,Kenya,1963-12-12,NA,1,FALSE,37.906193,-0.023559,1963-12-12,NA
+Tanzania/Tanganyika,510,TAZ,tanzania,Eastern Africa,Africa,1961-12-09,NA,FALSE,TRUE,510,TAZ,510,Tanzania,1961-12-09,NA,1,FALSE,34.888822,-6.369028,1961-12-09,NA
+Zanzibar,511,ZAN,zanz,Eastern Africa,Africa,1963-12-19,1964-04-26,FALSE,TRUE,511,ZAN,511,NA,NA,NA,1,FALSE,-115.2705475,36.1012175,1963-12-19,1964-04-26
+Burundi,516,BUI,burundi,Eastern Africa,Africa,1962-07-01,NA,FALSE,TRUE,516,BUI,516,Burundi,1962-07-01,NA,1,FALSE,29.918886,-3.373056,1962-07-01,NA
+Rwanda,517,RWA,rwanda,Eastern Africa,Africa,1962-01-07,NA,FALSE,TRUE,517,RWA,517,Rwanda,1961-07-01,NA,1,FALSE,29.873888,-1.940278,1962-01-07,NA
+Somalia,520,SOM,somalia,Eastern Africa,Africa,1960-07-01,NA,FALSE,TRUE,520,SOM,520,Somalia,1960-07-01,NA,1,FALSE,46.199616,5.152149,1960-07-01,NA
+Somaliland,NA,NA,somaliland,Eastern Africa,Africa,NA,NA,FALSE,FALSE,NA,NA,NA,NA,NA,NA,1,FALSE,44.03,9.33,NA,NA
+Djibouti,522,DJI,djibouti,Eastern Africa,Africa,1977-06-27,NA,FALSE,TRUE,522,DJI,522,Djibouti,1977-06-27,NA,1,FALSE,42.590275,11.825138,1977-06-27,NA
+Ethiopia,530,ETH,ethiopia|abyssinia,Eastern Africa,Africa,1855-02-11,NA,FALSE,TRUE,530,ETI,529,Ethiopia,1993-05-24,NA,2,TRUE,40.489673,9.145,1855-02-11,NA
+Ethiopia,530,ETH,ethiopia|abyssinia,Eastern Africa,Africa,1855-02-11,NA,FALSE,TRUE,530,ETH,530,Ethiopia,1855-02-11,1993-05-23,2,FALSE,40.489673,9.145,1855-02-11,NA
+Eritrea,531,ERI,eritrea,Eastern Africa,Africa,1993-05-24,NA,FALSE,TRUE,531,ERI,531,Eritrea,1993-05-24,NA,1,FALSE,39.782334,15.179384,1993-05-24,NA
+Angola,540,ANG,angola,Middle Africa,Africa,1975-11-11,NA,FALSE,TRUE,540,ANG,540,Angola,1975-11-11,NA,1,FALSE,17.873887,-11.202692,1975-11-11,NA
+Mozambique,541,MZM,mozambique,Eastern Africa,Africa,1975-06-25,NA,FALSE,TRUE,541,MZM,541,Mozambique,1975-06-25,NA,1,FALSE,35.529562,-18.665695,1975-06-25,NA
+Zambia,551,ZAM,zambia|northern.?rhodesia,Eastern Africa,Africa,1964-10-24,NA,FALSE,TRUE,551,ZAM,551,Zambia,1964-10-24,NA,1,FALSE,27.849332,-13.133897,1964-10-24,NA
+Zimbabwe (Rhodesia),552,ZIM,zimbabwe|^(?!.*northern).*rhodesia,Eastern Africa,Africa,1965-11-11,NA,FALSE,TRUE,552,ZIM,552,Zimbabwe,1970-04-18,NA,1,FALSE,29.154857,-19.015438,1965-11-11,NA
+Malawi,553,MAW,malawi|nyasa,Eastern Africa,Africa,1964-07-06,NA,FALSE,TRUE,553,MAW,553,Malawi,1964-07-06,NA,1,FALSE,34.301525,-13.254308,1964-07-06,NA
+South Africa,560,SAF,\bs\w*.?africa,Southern Africa,Africa,1910-05-31,NA,FALSE,TRUE,560,SAF,560,South Africa,1910-05-31,NA,1,FALSE,22.937506,-30.559482,1910-05-31,NA
+Transvaal,563,TRA,transvaal,Southern Africa,Africa,1852-01-01,1910-05-30,FALSE,TRUE,563,NA,563,NA,NA,NA,1,FALSE,28.189255,-25.7593148,1852-01-01,1910-05-30
+Orange Free State,564,OFS,orange free,Southern Africa,Africa,1854-03-28,1910-05-30,FALSE,TRUE,564,OFS,564,Orange Free State,1854-02-17,1902-05-24,1,FALSE,27.4820657,-26.8831211,1854-03-28,1910-05-30
+Namibia,565,NAM,namibia,Southern Africa,Africa,1990-03-21,NA,FALSE,TRUE,565,NAM,565,Namibia,1990-03-21,NA,1,FALSE,18.49041,-22.95764,1990-03-21,NA
+Lesotho,570,LES,lesotho|basuto,Southern Africa,Africa,1966-10-04,NA,FALSE,TRUE,570,LES,570,Lesotho,1966-10-04,NA,1,FALSE,28.233608,-29.609988,1966-10-04,NA
+Botswana,571,BOT,botswana|bechuana,Southern Africa,Africa,1966-09-30,NA,FALSE,TRUE,571,BOT,571,Botswana,1966-09-30,NA,1,FALSE,24.684866,-22.328474,1966-09-30,NA
+Swaziland,572,SWA,swaziland,Southern Africa,Africa,1968-09-06,NA,FALSE,TRUE,572,SWA,572,Swaziland,1968-09-06,NA,1,FALSE,31.465866,-26.522503,1968-09-06,NA
+Madagascar (Malagasy),580,MAG,madagascar|malagasy,Eastern Africa,Africa,1960-06-26,NA,FALSE,TRUE,580,MAG,580,Madagascar,1960-06-26,NA,2,FALSE,46.869107,-18.766947,1960-06-26,NA
+Madagascar (Malagasy),580,MAG,madagascar|malagasy,Eastern Africa,Africa,1816-01-01,1896-08-05,FALSE,TRUE,580,MAG,580,Madagascar,1960-06-26,NA,2,FALSE,46.869107,-18.766947,1800-01-01,1896-08-05
+Comoros,581,COM,comoro,Eastern Africa,Africa,1975-07-06,NA,FALSE,TRUE,581,COM,581,Comoros,1975-07-06,NA,1,FALSE,43.3333,-11.6455,1975-07-06,NA
+Mauritius,590,MAS,mauritius,Eastern Africa,Africa,1968-03-12,NA,FALSE,TRUE,590,MAS,590,Mauritius,1968-03-12,NA,1,FALSE,57.552152,-20.348404,1968-03-12,NA
+Seychelles,591,SEY,seychell,Eastern Africa,Africa,1976-06-29,NA,TRUE,TRUE,591,NA,591,NA,NA,NA,1,FALSE,55.491977,-4.679574,1976-06-29,NA
+Morocco,600,MOR,morocco|\bmaroc,Northern Africa,Africa,1816-01-01,1904-01-01,FALSE,TRUE,600,MOR,600,Morocco,1800-01-01,1912-03-20,4,FALSE,-7.09262,31.791702,1800-01-01,1904-01-01
+Morocco,600,MOR,morocco|\bmaroc,Northern Africa,Africa,1816-01-01,1904-01-01,FALSE,TRUE,600,MOR,600,Morocco,1956-03-02,NA,4,FALSE,-7.09262,31.791702,1800-01-01,1904-01-01
+Morocco,600,MOR,morocco|\bmaroc,Northern Africa,Africa,1956-03-02,NA,FALSE,TRUE,600,MOR,600,Morocco,1800-01-01,1912-03-20,4,FALSE,-7.09262,31.791702,1956-03-02,NA
+Morocco,600,MOR,morocco|\bmaroc,Northern Africa,Africa,1956-03-02,NA,FALSE,TRUE,600,MOR,600,Morocco,1956-03-02,NA,4,FALSE,-7.09262,31.791702,1956-03-02,NA
+Western Sahara,605,SAH,western sahara|sahrawi,Northern Africa,Africa,1976-02-27,NA,TRUE,FALSE,605,SAH,605,Western Sahara,1976-02-27,NA,1,FALSE,-10.566944,26.158056,NA,NA
+Algeria,615,ALG,algeria,Northern Africa,Africa,1816-01-01,1830-07-05,FALSE,TRUE,615,ALG,615,Algeria,1962-07-05,NA,2,FALSE,1.659626,28.033886,1816-01-01,1830-07-05
+Algeria,615,ALG,algeria,Northern Africa,Africa,1962-07-05,NA,FALSE,TRUE,615,ALG,615,Algeria,1962-07-05,NA,2,FALSE,1.659626,28.033886,1962-07-05,NA
+Tunisia,616,TUN,tunisia,Northern Africa,Africa,1816-01-01,1881-05-12,FALSE,TRUE,616,TUN,616,Tunisia,1959-06-01,NA,2,FALSE,9.537499,33.886917,1800-01-01,1881-05-12
+Tunisia,616,TUN,tunisia,Northern Africa,Africa,1956-01-01,NA,FALSE,TRUE,616,TUN,616,Tunisia,1959-06-01,NA,2,FALSE,9.537499,33.886917,1956-01-01,NA
+Libya,620,LIB,libya,Northern Africa,Africa,1816-01-01,1834-12-31,FALSE,TRUE,620,LIB,620,Libya,1951-12-24,NA,2,FALSE,17.228331,26.3351,1800-01-01,1834-12-31
+Libya,620,LIB,libya,Northern Africa,Africa,1951-12-24,NA,FALSE,TRUE,620,LIB,620,Libya,1951-12-24,NA,2,FALSE,17.228331,26.3351,1951-12-24,NA
+Sudan,625,SUD,^(?!.*\bs(?!u)).*sudan,Northern Africa,Africa,1956-01-01,NA,FALSE,TRUE,625,SUD,625,Sudan,1956-01-01,2011-07-08,2,FALSE,30.217636,12.862807,1956-01-01,NA
+Sudan,625,SUD,^(?!.*\bs(?!u)).*sudan,Northern Africa,Africa,1956-01-01,NA,FALSE,TRUE,625,SDN,626,Sudan,2011-07-09,NA,2,TRUE,30.217636,12.862807,1956-01-01,NA
+South Sudan,626,SSD,\bs\w*.?sudan,Northern Africa,Africa,2011-07-09,NA,FALSE,TRUE,626,SSU,525,South Sudan,2011-07-09,NA,1,FALSE,31.3069788,6.8769919,2011-07-09,NA
+Iran (Persia),630,IRN,\biran|persia,Southern Asia,Asia,1816-01-01,NA,FALSE,TRUE,630,IRN,630,Iran,1800-01-01,NA,1,FALSE,53.688046,32.427908,1800-01-01,NA
+Turkey (Ottoman Empire),640,TUR,turkey|ottoman,Western Asia,Asia,1816-01-01,NA,FALSE,TRUE,640,TUR,640,Turkey,1800-01-01,NA,1,FALSE,35.243322,38.963745,1800-01-01,NA
+Iraq,645,IRQ,\biraq|mesopotamia,Western Asia,Asia,1932-10-03,NA,FALSE,TRUE,645,IRQ,645,Iraq,1924-07-10,NA,1,FALSE,43.679291,33.223191,1932-10-03,NA
+Egypt,651,EGY,egypt,Northern Africa,Africa,1827-01-01,1855-12-31,FALSE,TRUE,651,EGY,651,Egypt,1922-03-01,NA,2,FALSE,30.802498,26.820553,1827-01-01,1855-12-31
+Egypt,651,EGY,egypt,Northern Africa,Africa,1922-02-28,NA,FALSE,TRUE,651,EGY,651,Egypt,1922-03-01,NA,2,FALSE,30.802498,26.820553,1922-02-28,NA
+Syria,652,SYR,syria,Western Asia,Asia,1946-01-01,NA,FALSE,TRUE,652,SYR,652,Syria,1944-07-01,NA,1,FALSE,38.996815,34.802075,1946-01-01,NA
+Lebanon,660,LEB,lebanon,Western Asia,Asia,1944-11-22,NA,FALSE,TRUE,660,LEB,660,Lebanon,1943-11-22,NA,1,FALSE,35.862285,33.854721,1944-11-22,NA
+Jordan,663,JOR,jordan,Western Asia,Asia,1946-05-25,NA,FALSE,TRUE,663,JOR,663,Jordan,1946-05-25,NA,1,FALSE,36.238414,30.585164,1946-05-25,NA
+Israel,666,ISR,israel(?!.+occupied),Western Asia,Asia,1948-05-14,NA,FALSE,TRUE,666,ISR,666,Israel,1948-05-14,NA,1,FALSE,34.851612,31.046051,1948-05-14,NA
+"Israel, pre-1967 borders",666.001,ISR.1,israel.+pre-1967,Western Asia,Asia,1948-05-14,NA,FALSE,TRUE,NA,NA,NA,NA,NA,NA,1,FALSE,34.851612,31.046051,NA,NA
+"Israel, occupied territories only",666.002,ISR.2,israel.+occupied.+only|israel.+occupied.+territor,Western Asia,Asia,1948-05-14,NA,FALSE,FALSE,NA,NA,NA,NA,NA,NA,1,FALSE,34.851612,31.046051,1948-05-14,NA
+"Palestine, State of",NA,NA,^(?!.*british.*)palestin(?!.*british)|west bank|gaza,Western Asia,Asia,1948-05-14,NA,FALSE,FALSE,NA,NA,NA,NA,NA,NA,1,FALSE,34.851612,31.046051,1948-05-14,NA
+British Mandate of Palestine,NA,NA,mandat.*palestine|british.*palestine|palestine.*british|palestine,Western Asia,Asia,1920-04-25,1948-05-13,FALSE,FALSE,NA,NA,NA,NA,NA,NA,1,FALSE,34.851612,31.046051,NA,NA
+Saudi Arabia,670,SAU,\bsa\w*.?arabia,Western Asia,Asia,1932-09-23,NA,FALSE,TRUE,670,SAU,670,Saudi Arabia,1926-01-16,NA,1,FALSE,45.079162,23.885942,1932-09-23,NA
+Yemen (Arab Republic of Yemen),678,YEM,^(?!.*arab)(?!.*north)(?!.*sana)(?!.*peo)(?!.*dem)(?!.*south)(?!.*aden)(?!.*\bp\.?d\.?r).*yemen,Western Asia,Asia,1918-10-30,NA,FALSE,TRUE,678,YAR,678,Yemen North,1918-10-30,1990-05-21,4,FALSE,48.516388,15.552727,1918-10-30,NA
+Yemen (Arab Republic of Yemen),678,YEM,^(?!.*arab)(?!.*north)(?!.*sana)(?!.*peo)(?!.*dem)(?!.*south)(?!.*aden)(?!.*\bp\.?d\.?r).*yemen,Western Asia,Asia,1918-10-30,NA,FALSE,TRUE,679,YEM,679,Yemen,1990-05-22,NA,4,TRUE,48.516388,15.552727,1918-10-30,NA
+Yemen (Arab Republic of Yemen),678,YEM,^(?=.*arab).*yemen|^(?=.*north).*yemen|^(?=.*sana).*yemen,Western Asia,Asia,1918-10-30,NA,FALSE,TRUE,678,YAR,678,Yemen North,1918-10-30,1990-05-21,4,FALSE,48.516388,15.552727,1918-10-30,NA
+Yemen (Arab Republic of Yemen),678,YEM,^(?=.*arab).*yemen|^(?=.*north).*yemen|^(?=.*sana).*yemen,Western Asia,Asia,1918-10-30,NA,FALSE,TRUE,679,YEM,679,Yemen,1990-05-22,NA,4,TRUE,48.516388,15.552727,1918-10-30,NA
+"Yemen, People's Republic of",680,YPR,^(?=.*peo).*yemen|^(?!.*rep)(?=.*dem).*yemen|^(?=.*south).*yemen|^(?=.*aden).*yemen|^(?=.*\bp\.?d\.?r).*yemen,Western Asia,Asia,1967-11-30,1990-05-21,FALSE,TRUE,680,YPR,680,Yemen South,1967-11-30,1990-05-21,1,FALSE,45.033333,12.8,1967-11-30,1990-05-21
+Kuwait,690,KUW,kuwait,Western Asia,Asia,1961-06-19,NA,FALSE,TRUE,690,KUW,690,Kuwait,1963-01-29,NA,1,FALSE,47.481766,29.31166,1961-06-19,NA
+Bahrain,692,BAH,bahrain,Western Asia,Asia,1971-08-15,NA,FALSE,TRUE,692,BAH,692,Bahrain,1971-08-15,NA,1,FALSE,50.5577,26.0667,1971-08-15,NA
+Qatar,694,QAT,qatar,Western Asia,Asia,1971-09-03,NA,FALSE,TRUE,694,QAT,694,Qatar,1971-09-03,NA,1,FALSE,51.183884,25.354826,1971-09-03,NA
+United Arab Emirates,696,UAE,emirates|^u\.?a\.?e\.?$|united.?arab.?e,Western Asia,Asia,1971-12-02,NA,FALSE,TRUE,696,UAE,696,United Arab Emirates,1971-12-02,NA,1,FALSE,53.847818,23.424076,1971-12-02,NA
+Oman,698,OMA,\boman|trucial,Western Asia,Asia,1816-01-01,NA,FALSE,TRUE,698,OMA,698,Oman,1800-01-01,NA,1,FALSE,55.923255,21.512583,1800-01-01,NA
+Afghanistan,700,AFG,afghan,Southern Asia,Asia,1816-01-01,1888-12-30,FALSE,TRUE,700,AFG,700,Afghanistan,1800-01-01,NA,2,FALSE,67.709953,33.93911,1800-01-01,1888-12-30
+Afghanistan,700,AFG,afghan,Southern Asia,Asia,1919-05-01,NA,FALSE,TRUE,700,AFG,700,Afghanistan,1800-01-01,NA,2,FALSE,67.709953,33.93911,1919-05-01,NA
+Turkmenistan,701,TKM,turkmen,Central Asia,Asia,1991-10-27,NA,FALSE,TRUE,701,TKM,701,Turkmenistan,1991-10-27,NA,1,FALSE,59.556278,38.969719,1991-10-27,NA
+Tajikistan,702,TAJ,tajik,Central Asia,Asia,1991-09-09,NA,FALSE,TRUE,702,TAJ,702,Tajikistan,1991-09-09,NA,1,FALSE,71.276093,38.861034,1991-09-09,NA
+Kyrgyz Republic,703,KYR,kyrgyz|kirghiz,Central Asia,Asia,1991-08-31,NA,FALSE,TRUE,703,KYR,703,Kyrgyzstan,1991-08-31,NA,1,FALSE,74.766098,41.20438,1991-08-31,NA
+Uzbekistan,704,UZB,uzbek,Central Asia,Asia,1991-08-31,NA,FALSE,TRUE,704,UZB,704,Uzbekistan,1991-08-31,NA,1,FALSE,64.585262,41.377491,1991-08-31,NA
+Kazakhstan,705,KZK,kazak,Central Asia,Asia,1991-12-16,NA,FALSE,TRUE,705,KZK,705,Kazakhstan,1991-12-16,NA,1,FALSE,66.923684,48.019573,1991-12-16,NA
+China,710,CHN,^(?!.*\bmac)(?!.*\bhong)(?!.*\btai).*china|^p\.?r\.?c\.?$,Eastern Asia,Asia,1816-01-01,NA,FALSE,TRUE,710,CHN,710,China,1800-01-01,NA,1,FALSE,104.195397,35.86166,1800-01-01,NA
+Tibet,711,TBT,tibet,Eastern Asia,Asia,1913-01-01,1950-10-01,FALSE,TRUE,711,NA,711,NA,NA,NA,1,FALSE,-101.6620418,21.194974,1913-01-01,1950-10-01
+Mongolia,712,MON,mongolia,Eastern Asia,Asia,1921-03-13,NA,FALSE,TRUE,712,MON,712,Mongolia,1924-10-26,NA,1,FALSE,103.846656,46.862496,1921-03-13,NA
+Taiwan,713,TAW,taiwan|taipei|formosa,Eastern Asia,Asia,1949-12-08,NA,FALSE,TRUE,713,TAW,713,Taiwan,1949-10-01,NA,1,FALSE,120.960515,23.69781,1949-12-08,NA
+Korea,730,KOR,korea,Eastern Asia,Asia,1816-01-01,1910-08-22,FALSE,TRUE,730,KOR,730,Korea,1800-01-01,1910-08-22,1,FALSE,127.766922,35.907757,1800-01-01,1910-08-22
+"Korea, People's Republic of",731,PRK,^(?=.*dem).*\bkorea|^(?=.*peo).*\bkorea|^(?=.*nor).*\bkorea|\bd\.?p\.?r\.?k,Eastern Asia,Asia,1948-09-09,NA,FALSE,TRUE,731,PRK,731,Korea North,1948-05-01,NA,1,FALSE,127.510093,40.339852,1948-09-09,NA
+"Korea, Republic of",732,ROK,^(?!.*dem)(?!.*peo)(?!.*nor).*\bkorea|\br\.?o\.?k\b,Eastern Asia,Asia,1948-08-15,NA,FALSE,TRUE,732,ROK,732,Korea South,1948-08-15,NA,1,FALSE,127.766922,35.907757,1948-08-15,NA
+Japan,740,JPN,japan,Eastern Asia,Asia,1816-01-01,NA,FALSE,TRUE,740,JPN,740,Japan,1800-01-01,NA,1,FALSE,138.252924,36.204824,1800-01-01,NA
+India,750,IND,india(?!.*ocea)(?!.*kashmir),Southern Asia,Asia,1947-08-15,NA,FALSE,TRUE,750,IND,750,India,1950-01-26,NA,1,FALSE,78.96288,20.593684,1947-08-15,NA
+Hyderabad,751,HYD,hyderab,Southern Asia,Asia,1947-06-30,1948-09-13,FALSE,FALSE,NA,NA,NA,NA,NA,NA,1,FALSE,78.48,17.37,NA,NA
+Bhutan,760,BHU,bhutan,Southern Asia,Asia,1949-01-01,NA,FALSE,TRUE,760,BHU,760,Bhutan,1907-12-17,NA,1,FALSE,90.433601,27.514162,1949-01-01,NA
+Pakistan,770,PAK,^(?!.*east).*paki?stan(?!.*kashmir),Southern Asia,Asia,1947-08-14,NA,FALSE,TRUE,770,PKS,769,Pakistan,1947-08-14,1971-12-31,2,TRUE,69.345116,30.375321,1947-08-14,NA
+Pakistan,770,PAK,^(?!.*east).*paki?stan(?!.*kashmir),Southern Asia,Asia,1947-08-14,NA,FALSE,TRUE,770,PAK,770,Pakistan,1972-01-01,NA,2,FALSE,69.345116,30.375321,1947-08-14,NA
+Bangladesh,771,BNG,bangladesh|^(?=.*east).*paki?stan,Southern Asia,Asia,1971-12-16,NA,FALSE,TRUE,771,BNG,771,Bangladesh,1972-04-18,NA,1,FALSE,90.356331,23.684994,1971-12-16,NA
+Myanmar (Burma),775,MYA,myanmar|burma,South-Eastern Asia,Asia,1816-01-01,1885-12-31,FALSE,TRUE,775,MYA,775,Myanmar (Burma),1948-01-04,NA,2,FALSE,95.956223,21.913965,1800-01-01,1885-12-31
+Myanmar (Burma),775,MYA,myanmar|burma,South-Eastern Asia,Asia,1948-01-04,NA,FALSE,TRUE,775,MYA,775,Myanmar (Burma),1948-01-04,NA,2,FALSE,95.956223,21.913965,1948-01-04,NA
+Sri Lanka (Ceylon),780,SRI,sri.?lanka|ceylon,Southern Asia,Asia,1948-02-04,NA,FALSE,TRUE,780,SRI,780,Sri Lanka,1948-02-04,NA,1,FALSE,80.771797,7.873054,1948-02-04,NA
+Maldives,781,MAD,maldive,Southern Asia,Asia,1965-05-26,NA,FALSE,TRUE,781,NA,781,NA,NA,NA,1,FALSE,73.5361034,1.977247,1965-05-26,NA
+Nepal,790,NEP,nepal,Southern Asia,Asia,1816-01-01,NA,FALSE,TRUE,790,NEP,790,Nepal,1800-01-01,NA,1,FALSE,84.124008,28.394857,1800-01-01,NA
+Thailand,800,THI,thailand|\bsiam,South-Eastern Asia,Asia,1816-01-01,NA,FALSE,TRUE,800,THI,800,Thailand,1800-01-01,NA,1,FALSE,100.992541,15.870032,1800-01-01,NA
+Cambodia (Kampuchea),811,CAM,cambodia|kampuchea|khmer|^p\.?r\.?k\.?$,South-Eastern Asia,Asia,1953-11-09,NA,FALSE,TRUE,811,CAM,811,Cambodia,1953-11-09,NA,1,FALSE,104.990963,12.565679,1953-11-09,NA
+Laos,812,LAO,\blaos?\b,South-Eastern Asia,Asia,1954-05-01,NA,FALSE,TRUE,812,LAO,812,Laos,1954-10-22,NA,1,FALSE,102.495496,19.85627,1954-05-01,NA
+Vietnam (Annam/Cochin China/Tonkin),815,VNM,^(?!.*republic)^(?!.*dem).*viet.?nam,South-Eastern Asia,Asia,1816-01-01,1893-01-01,FALSE,TRUE,816,NA,816,NA,NA,NA,1,FALSE,108.277199,14.058324,1800-01-01,1893-01-01
+"Vietnam, Democratic Republic of",816,DRV,^(?!.*republic)(?!.*south).*viet.?nam(?!.*south)(?!.*s$)|^(?=.*socialist)(?!.*south).*viet.?nam(?!.*south)|(?!.*south).*viet.?nam.*(?=.*socialist)|viet.?nam.*(?=.*democr)|(?=.*democr).*viet.?nam,South-Eastern Asia,Asia,1954-05-01,NA,FALSE,TRUE,816,DRV,816,Vietnam North,1954-05-07,1976-07-01,2,FALSE,105.8341598,21.0277644,1954-05-01,NA
+"Vietnam, Democratic Republic of",816,DRV,^(?!.*republic)(?!.*south).*viet.?nam(?!.*south)(?!.*s$)|^(?=.*socialist)(?!.*south).*viet.?nam(?!.*south)|(?!.*south).*viet.?nam.*(?=.*socialist)|viet.?nam.*(?=.*democr)|(?=.*democr).*viet.?nam,South-Eastern Asia,Asia,1954-05-01,NA,FALSE,TRUE,816,VIE,818,Vietnam,1976-07-02,NA,2,TRUE,105.8341598,21.0277644,1954-05-01,NA
+"Vietnam, Republic of",817,RVN,^(south.*viet.?nam)|(viet.?nam?.*south)|(viet.?nam?(?!.*socialist).*republic)|^(?!.*democratic).*republic of vie.?tnam,South-Eastern Asia,Asia,1954-05-01,1975-04-30,FALSE,TRUE,817,RVN,817,Vietnam South,1955-10-26,1975-12-31,1,FALSE,106.6296638,10.8230989,1954-05-01,1975-04-30
+Malaysia,820,MAL,malaysia,South-Eastern Asia,Asia,1957-08-31,NA,FALSE,TRUE,820,MAL,820,Malaysia,1957-08-31,NA,1,FALSE,101.975766,4.210484,1957-08-31,NA
+Singapore,830,SIN,singapore,South-Eastern Asia,Asia,1965-08-09,NA,FALSE,TRUE,830,SIN,830,Singapore,1959-06-05,NA,1,FALSE,103.819836,1.352083,1965-08-09,NA
+Brunei,835,BRU,brunei,South-Eastern Asia,Asia,1984-01-01,NA,FALSE,TRUE,835,NA,835,NA,NA,NA,1,FALSE,114.727669,4.535277,1984-01-01,NA
+Philippines,840,PHI,philippines,South-Eastern Asia,Asia,1946-07-04,NA,FALSE,TRUE,840,PHI,840,Philippines,1935-11-24,NA,1,FALSE,121.774017,12.879721,1946-07-04,NA
+Indonesia,850,INS,indonesia,South-Eastern Asia,Asia,1945-08-17,NA,FALSE,TRUE,850,INS,850,Indonesia,1945-08-17,NA,1,FALSE,113.921327,-0.789275,1945-08-17,NA
+East Timor,860,ETM,^(?=.*leste).*timor|^(?=.*east).*timor,South-Eastern Asia,Asia,2002-05-20,NA,FALSE,TRUE,860,ETM,860,East Timor,2002-05-20,NA,1,FALSE,125.727539,-8.874217,2002-05-20,NA
+Australia,900,AUL,australia,Australia and New Zealand,Oceania,1901-01-01,NA,FALSE,TRUE,900,AUL,900,Australia,1901-01-01,NA,1,FALSE,133.775136,-25.274398,1901-01-01,NA
+Papua New Guinea,910,PNG,^(?!.*\bwest).*papua|\bp.*\bn.*\bguin.*|^p\.?n\.?g\.?$|new.?guinea|PAPUA N.GUINEA,Melanesia,Oceania,1975-09-16,NA,FALSE,TRUE,910,PNG,910,Papua New Guinea,1975-09-16,NA,1,FALSE,143.95555,-6.314993,1975-09-16,NA
+New Zealand,920,NEW,new.?zealand,Australia and New Zealand,Oceania,1907-09-01,NA,FALSE,TRUE,920,NEW,920,New Zealand,1857-07-01,NA,1,FALSE,174.885971,-40.900557,1907-09-01,NA
+Vanuatu,935,VAN,vanuatu|new.?hebrides,Melanesia,Oceania,1980-06-30,NA,TRUE,TRUE,935,NA,935,NA,NA,NA,1,FALSE,166.959158,-15.376706,1980-06-30,NA
+Solomon Islands,940,SOL,solomon,Melanesia,Oceania,1978-07-07,NA,FALSE,TRUE,940,SOL,940,Solomon Islands,1978-07-07,NA,1,FALSE,160.156194,-9.64571,1978-07-07,NA
+Fiji,950,FJI,fiji,Melanesia,Oceania,1970-10-10,NA,FALSE,TRUE,950,FJI,950,Fiji,1970-10-10,NA,1,FALSE,178.065032,-17.713371,1970-10-10,NA
+Kiribati,970,KBI,kiribati,Micronesia,Oceania,1979-07-12,NA,TRUE,TRUE,946,NA,946,NA,NA,NA,1,FALSE,-157.3626011,1.8709185,1979-07-12,NA
+Nauru,971,NAU,nauru,Micronesia,Oceania,1968-12-31,NA,TRUE,TRUE,970,NA,970,NA,NA,NA,1,FALSE,166.931503,-0.522778,1968-12-31,NA
+Tonga,972,TON,tonga,Polynesia,Oceania,1970-06-04,NA,TRUE,TRUE,955,NA,955,NA,NA,NA,1,FALSE,-175.198242,-21.178986,1970-06-04,NA
+Tuvalu,973,TUV,tuvalu,Polynesia,Oceania,1978-10-01,NA,TRUE,TRUE,947,NA,947,NA,NA,NA,1,FALSE,178.6799214,-7.4784418,1978-10-01,NA
+Marshall Islands,983,MSI,marshall,Micronesia,Oceania,1986-10-21,NA,TRUE,TRUE,983,NA,983,NA,NA,NA,1,FALSE,171.989379,6.0683936,1986-10-21,NA
+Palau,986,PAL,palau,Micronesia,Oceania,1994-10-01,NA,TRUE,TRUE,986,NA,986,NA,NA,NA,1,FALSE,134.58252,7.51498,1994-10-01,NA
+Federated States of Micronesia,987,FSM,micronesia,Micronesia,Oceania,1986-11-03,NA,TRUE,TRUE,987,NA,987,NA,NA,NA,1,FALSE,158.2150717,6.8874813,1986-11-03,NA
+Samoa/Western Samoa,990,WSM,^(?!.*amer).*samoa,Polynesia,Oceania,1962-01-01,NA,TRUE,TRUE,990,NA,990,NA,NA,NA,1,FALSE,-172.104629,-13.759029,1962-01-01,NA
