@@ -167,7 +167,6 @@ $(document).ready(function () {
 <pre><code>## Trying ../../../Pemstein Meserve and Melton Code/uds/data/democracy1946.2008.rda ...</code></pre>
 <pre><code>## Original dataset has 9137 rows.</code></pre>
 <pre><code>## Processing the PMM replication data - adding state system info...</code></pre>
-<pre><code>## Joining, by = c(&quot;cowcode&quot;, &quot;country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -586,7 +585,6 @@ devtools::use_data(arat_pmm, overwrite = TRUE)</code></pre>
 <pre><code>## The downloaded blm dataset has 101 rows</code></pre>
 <pre><code>## Original dataset has 101 rows, but is not in country-year format.</code></pre>
 <pre><code>## Processing the BLM data - converting to country-year format and adding state system info...</code></pre>
-<pre><code>## Joining, by = c(&quot;year&quot;, &quot;country&quot;)</code></pre>
 <pre><code>## costa rica changed to Costa Rica in country column...</code></pre>
 <pre><code>## Resulting dataset after processing has 505 rows.</code></pre>
 <pre><code>## Note: the number of rows in the processed BLM data is different from the number of rows in the original data.</code></pre>
@@ -612,7 +610,6 @@ devtools::use_data(blm, overwrite = TRUE)</code></pre>
 <pre><code>## The downloaded BMR dataset has 17632 rows</code></pre>
 <pre><code>## Original dataset has 17632 rows.</code></pre>
 <pre><code>## Processing the BMR data - adding state system info...</code></pre>
-<pre><code>## Joining, by = c(&quot;country&quot;, &quot;ccode&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following different countries/country codes match to a single country unit in the destination system:</code></pre>
 <table>
 <thead>
@@ -1264,7 +1261,6 @@ devtools::use_data(blm, overwrite = TRUE)</code></pre>
 <pre><code>## The downloaded BNR dataset has 3651 rows</code></pre>
 <pre><code>## Original dataset has 3651 rows.</code></pre>
 <pre><code>## Processing the BNR data - fixing cowcode for Germany, adding state system info...</code></pre>
-<pre><code>## Joining, by = c(&quot;cowcode&quot;, &quot;country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -1503,7 +1499,6 @@ devtools::use_data(blm, overwrite = TRUE)</code></pre>
 <pre><code>## The downloaded BNR dataset has 3651 rows</code></pre>
 <pre><code>## Original dataset has 3651 rows.</code></pre>
 <pre><code>## Processing the BNR data - fixing cowcode for Germany, adding state system info...</code></pre>
-<pre><code>## Joining, by = c(&quot;cowcode&quot;, &quot;country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -1736,7 +1731,6 @@ devtools::use_data(blm, overwrite = TRUE)</code></pre>
 <pre><code>## Creating full panel...</code></pre>
 <pre><code>## Creating bnr column from event column...</code></pre>
 <pre><code>## Joining, by = c(&quot;cowcode&quot;, &quot;year&quot;)</code></pre>
-<pre><code>## Joining, by = c(&quot;country&quot;, &quot;cowcode&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -3796,258 +3790,6 @@ devtools::use_data(blm, overwrite = TRUE)</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">260</td>
-<td align="right">1953</td>
-<td align="right">0</td>
-<td align="left">German Federal Republic</td>
-<td align="right">260</td>
-<td align="right">260</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="right">212</td>
-<td align="right">1919</td>
-<td align="right">0</td>
-<td align="left">Luxembourg</td>
-<td align="right">212</td>
-<td align="right">212</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
-<td align="right">946</td>
-<td align="right">1986</td>
-<td align="right">0</td>
-<td align="left">Kiribati</td>
-<td align="right">970</td>
-<td align="right">946</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="right">920</td>
-<td align="right">1919</td>
-<td align="right">0</td>
-<td align="left">New Zealand</td>
-<td align="right">920</td>
-<td align="right">920</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
-<td align="right">946</td>
-<td align="right">1983</td>
-<td align="right">0</td>
-<td align="left">Kiribati</td>
-<td align="right">970</td>
-<td align="right">946</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="right">946</td>
-<td align="right">1996</td>
-<td align="right">0</td>
-<td align="left">Kiribati</td>
-<td align="right">970</td>
-<td align="right">946</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
-<td align="right">260</td>
-<td align="right">1952</td>
-<td align="right">0</td>
-<td align="left">German Federal Republic</td>
-<td align="right">260</td>
-<td align="right">260</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="right">946</td>
-<td align="right">1991</td>
-<td align="right">0</td>
-<td align="left">Kiribati</td>
-<td align="right">970</td>
-<td align="right">946</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
-<td align="right">316</td>
-<td align="right">1992</td>
-<td align="right">0</td>
-<td align="left">Czechoslovakia</td>
-<td align="right">315</td>
-<td align="right">315</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="right">260</td>
-<td align="right">1954</td>
-<td align="right">0</td>
-<td align="left">German Federal Republic</td>
-<td align="right">260</td>
-<td align="right">260</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
-<td align="right">260</td>
-<td align="right">1951</td>
-<td align="right">0</td>
-<td align="left">German Federal Republic</td>
-<td align="right">260</td>
-<td align="right">260</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="right">946</td>
-<td align="right">1994</td>
-<td align="right">0</td>
-<td align="left">Kiribati</td>
-<td align="right">970</td>
-<td align="right">946</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
-<td align="right">946</td>
-<td align="right">1985</td>
-<td align="right">0</td>
-<td align="left">Kiribati</td>
-<td align="right">970</td>
-<td align="right">946</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="right">946</td>
-<td align="right">1981</td>
-<td align="right">0</td>
-<td align="left">Kiribati</td>
-<td align="right">970</td>
-<td align="right">946</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
-<td align="right">343</td>
-<td align="right">1992</td>
-<td align="right">0</td>
-<td align="left">Macedonia (Former Yugoslav Republic of)</td>
-<td align="right">343</td>
-<td align="right">343</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="right">946</td>
-<td align="right">1998</td>
-<td align="right">0</td>
-<td align="left">Kiribati</td>
-<td align="right">970</td>
-<td align="right">946</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
-<td align="right">20</td>
-<td align="right">1919</td>
-<td align="right">0</td>
-<td align="left">Canada</td>
-<td align="right">20</td>
-<td align="right">20</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="right">260</td>
-<td align="right">1949</td>
-<td align="right">0</td>
-<td align="left">German Federal Republic</td>
-<td align="right">260</td>
-<td align="right">260</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
-<td align="right">349</td>
-<td align="right">1990</td>
-<td align="right">0</td>
-<td align="left">Slovenia</td>
-<td align="right">349</td>
-<td align="right">349</td>
-<td align="left">FALSE</td>
-</tr>
-<tr class="even">
-<td align="right">260</td>
-<td align="right">1950</td>
-<td align="right">0</td>
-<td align="left">German Federal Republic</td>
-<td align="right">260</td>
-<td align="right">260</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
-<td align="right">946</td>
-<td align="right">1987</td>
-<td align="right">0</td>
-<td align="left">Kiribati</td>
-<td align="right">970</td>
-<td align="right">946</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="right">946</td>
-<td align="right">1984</td>
-<td align="right">0</td>
-<td align="left">Kiribati</td>
-<td align="right">970</td>
-<td align="right">946</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
-<td align="right">935</td>
-<td align="right">1980</td>
-<td align="right">0</td>
-<td align="left">Vanuatu</td>
-<td align="right">935</td>
-<td align="right">935</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="right">946</td>
-<td align="right">1993</td>
-<td align="right">0</td>
-<td align="left">Kiribati</td>
-<td align="right">970</td>
-<td align="right">946</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
-<td align="right">946</td>
-<td align="right">1982</td>
-<td align="right">0</td>
-<td align="left">Kiribati</td>
-<td align="right">970</td>
-<td align="right">946</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="right">343</td>
-<td align="right">1991</td>
-<td align="right">0</td>
-<td align="left">Macedonia (Former Yugoslav Republic of)</td>
-<td align="right">343</td>
-<td align="right">343</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
-<td align="right">946</td>
-<td align="right">1988</td>
-<td align="right">0</td>
-<td align="left">Kiribati</td>
-<td align="right">970</td>
-<td align="right">946</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="right">946</td>
-<td align="right">1997</td>
-<td align="right">0</td>
-<td align="left">Kiribati</td>
-<td align="right">970</td>
-<td align="right">946</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
 <td align="right">20</td>
 <td align="right">1918</td>
 <td align="right">0</td>
@@ -4058,7 +3800,7 @@ devtools::use_data(blm, overwrite = TRUE)</code></pre>
 </tr>
 <tr class="even">
 <td align="right">946</td>
-<td align="right">1989</td>
+<td align="right">1981</td>
 <td align="right">0</td>
 <td align="left">Kiribati</td>
 <td align="right">970</td>
@@ -4075,17 +3817,53 @@ devtools::use_data(blm, overwrite = TRUE)</code></pre>
 <td align="left">FALSE</td>
 </tr>
 <tr class="even">
-<td align="right">900</td>
-<td align="right">1919</td>
+<td align="right">946</td>
+<td align="right">1983</td>
 <td align="right">0</td>
-<td align="left">Australia</td>
-<td align="right">900</td>
-<td align="right">900</td>
+<td align="left">Kiribati</td>
+<td align="right">970</td>
+<td align="right">946</td>
 <td align="left">TRUE</td>
 </tr>
 <tr class="odd">
 <td align="right">946</td>
-<td align="right">1980</td>
+<td align="right">1989</td>
+<td align="right">0</td>
+<td align="left">Kiribati</td>
+<td align="right">970</td>
+<td align="right">946</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="right">343</td>
+<td align="right">1992</td>
+<td align="right">0</td>
+<td align="left">Macedonia (Former Yugoslav Republic of)</td>
+<td align="right">343</td>
+<td align="right">343</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="right">316</td>
+<td align="right">1992</td>
+<td align="right">0</td>
+<td align="left">Czechoslovakia</td>
+<td align="right">315</td>
+<td align="right">315</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="right">946</td>
+<td align="right">1992</td>
+<td align="right">0</td>
+<td align="left">Kiribati</td>
+<td align="right">970</td>
+<td align="right">946</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="right">946</td>
+<td align="right">1998</td>
 <td align="right">0</td>
 <td align="left">Kiribati</td>
 <td align="right">970</td>
@@ -4094,7 +3872,151 @@ devtools::use_data(blm, overwrite = TRUE)</code></pre>
 </tr>
 <tr class="even">
 <td align="right">946</td>
+<td align="right">1993</td>
+<td align="right">0</td>
+<td align="left">Kiribati</td>
+<td align="right">970</td>
+<td align="right">946</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="right">20</td>
+<td align="right">1919</td>
+<td align="right">0</td>
+<td align="left">Canada</td>
+<td align="right">20</td>
+<td align="right">20</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="right">946</td>
+<td align="right">1988</td>
+<td align="right">0</td>
+<td align="left">Kiribati</td>
+<td align="right">970</td>
+<td align="right">946</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="right">946</td>
+<td align="right">1986</td>
+<td align="right">0</td>
+<td align="left">Kiribati</td>
+<td align="right">970</td>
+<td align="right">946</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="right">946</td>
+<td align="right">1991</td>
+<td align="right">0</td>
+<td align="left">Kiribati</td>
+<td align="right">970</td>
+<td align="right">946</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="right">260</td>
+<td align="right">1951</td>
+<td align="right">0</td>
+<td align="left">German Federal Republic</td>
+<td align="right">260</td>
+<td align="right">260</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="right">946</td>
+<td align="right">1985</td>
+<td align="right">0</td>
+<td align="left">Kiribati</td>
+<td align="right">970</td>
+<td align="right">946</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="right">946</td>
 <td align="right">1990</td>
+<td align="right">0</td>
+<td align="left">Kiribati</td>
+<td align="right">970</td>
+<td align="right">946</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="right">946</td>
+<td align="right">1987</td>
+<td align="right">0</td>
+<td align="left">Kiribati</td>
+<td align="right">970</td>
+<td align="right">946</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="right">946</td>
+<td align="right">1994</td>
+<td align="right">0</td>
+<td align="left">Kiribati</td>
+<td align="right">970</td>
+<td align="right">946</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="right">349</td>
+<td align="right">1991</td>
+<td align="right">0</td>
+<td align="left">Slovenia</td>
+<td align="right">349</td>
+<td align="right">349</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">900</td>
+<td align="right">1919</td>
+<td align="right">0</td>
+<td align="left">Australia</td>
+<td align="right">900</td>
+<td align="right">900</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="right">946</td>
+<td align="right">1979</td>
+<td align="right">0</td>
+<td align="left">Kiribati</td>
+<td align="right">970</td>
+<td align="right">946</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="right">920</td>
+<td align="right">1919</td>
+<td align="right">0</td>
+<td align="left">New Zealand</td>
+<td align="right">920</td>
+<td align="right">920</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="right">260</td>
+<td align="right">1950</td>
+<td align="right">0</td>
+<td align="left">German Federal Republic</td>
+<td align="right">260</td>
+<td align="right">260</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="right">343</td>
+<td align="right">1991</td>
+<td align="right">0</td>
+<td align="left">Macedonia (Former Yugoslav Republic of)</td>
+<td align="right">343</td>
+<td align="right">343</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="right">946</td>
+<td align="right">1982</td>
 <td align="right">0</td>
 <td align="left">Kiribati</td>
 <td align="right">970</td>
@@ -4111,8 +4033,62 @@ devtools::use_data(blm, overwrite = TRUE)</code></pre>
 <td align="left">TRUE</td>
 </tr>
 <tr class="even">
+<td align="right">260</td>
+<td align="right">1954</td>
+<td align="right">0</td>
+<td align="left">German Federal Republic</td>
+<td align="right">260</td>
+<td align="right">260</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="right">260</td>
+<td align="right">1953</td>
+<td align="right">0</td>
+<td align="left">German Federal Republic</td>
+<td align="right">260</td>
+<td align="right">260</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
 <td align="right">946</td>
-<td align="right">1992</td>
+<td align="right">1980</td>
+<td align="right">0</td>
+<td align="left">Kiribati</td>
+<td align="right">970</td>
+<td align="right">946</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="right">212</td>
+<td align="right">1919</td>
+<td align="right">0</td>
+<td align="left">Luxembourg</td>
+<td align="right">212</td>
+<td align="right">212</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="right">260</td>
+<td align="right">1952</td>
+<td align="right">0</td>
+<td align="left">German Federal Republic</td>
+<td align="right">260</td>
+<td align="right">260</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="right">946</td>
+<td align="right">1997</td>
+<td align="right">0</td>
+<td align="left">Kiribati</td>
+<td align="right">970</td>
+<td align="right">946</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="right">946</td>
+<td align="right">1996</td>
 <td align="right">0</td>
 <td align="left">Kiribati</td>
 <td align="right">970</td>
@@ -4121,7 +4097,7 @@ devtools::use_data(blm, overwrite = TRUE)</code></pre>
 </tr>
 <tr class="odd">
 <td align="right">946</td>
-<td align="right">1979</td>
+<td align="right">1984</td>
 <td align="right">0</td>
 <td align="left">Kiribati</td>
 <td align="right">970</td>
@@ -4130,12 +4106,30 @@ devtools::use_data(blm, overwrite = TRUE)</code></pre>
 </tr>
 <tr class="even">
 <td align="right">349</td>
-<td align="right">1991</td>
+<td align="right">1990</td>
 <td align="right">0</td>
 <td align="left">Slovenia</td>
 <td align="right">349</td>
 <td align="right">349</td>
 <td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">260</td>
+<td align="right">1949</td>
+<td align="right">0</td>
+<td align="left">German Federal Republic</td>
+<td align="right">260</td>
+<td align="right">260</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="right">935</td>
+<td align="right">1980</td>
+<td align="right">0</td>
+<td align="left">Vanuatu</td>
+<td align="right">935</td>
+<td align="right">935</td>
+<td align="left">TRUE</td>
 </tr>
 </tbody>
 </table>
@@ -4173,7 +4167,6 @@ devtools::use_data(bollen_pmm, overwrite = TRUE)</code></pre>
 ## )</code></pre>
 <pre><code>## Original dataset has 667 rows but is not in country-year format</code></pre>
 <pre><code>## Processing the Doorenspleet data - turning to country-year format, adding state system info...</code></pre>
-<pre><code>## Joining, by = c(&quot;country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -4503,9 +4496,9 @@ devtools::use_data(bollen_pmm, overwrite = TRUE)</code></pre>
 <pre><code>## Downloading WGIData.csv data...</code></pre>
 <pre><code>## Trying http://databank.worldbank.org/data/download/WGI_csv.zip ...</code></pre>
 <pre><code>## The files in the archive are:</code></pre>
-<p>[1] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/WGIData.csv”<br />
-[2] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/WGISeries.csv”</p>
-<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/WGIData.csv</code></pre>
+<p>[1] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/WGIData.csv”<br />
+[2] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/WGISeries.csv”</p>
+<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/WGIData.csv</code></pre>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   .default = col_double(),
@@ -4519,7 +4512,6 @@ devtools::use_data(bollen_pmm, overwrite = TRUE)</code></pre>
 <pre><code>## The downloaded WGIData.csv dataset has 7740 rows</code></pre>
 <pre><code>## Original dataset has 1290 rows, but is not in country-year format</code></pre>
 <pre><code>## Processing the WGI data - putting it in country-year format, adding state system info...</code></pre>
-<pre><code>## Joining, by = c(&quot;wb_country&quot;, &quot;wb_code&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -5007,21 +4999,20 @@ devtools::use_data(bollen_pmm, overwrite = TRUE)</code></pre>
 <pre><code>## Downloading /FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls data...</code></pre>
 <pre><code>## Trying https://freedomhouse.org/sites/default/files/FIW2017_Data.zip ...</code></pre>
 <pre><code>## The files in the archive are:</code></pre>
-<p>[1] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/.DS_Store”<br />
-[2] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._.DS_Store&quot;<br />
-[3] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls”<br />
-[4] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls&quot; [5] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/FH_Country_Status_Distribution_1972-2016.xls”<br />
-[6] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._FH_Country_Status_Distribution_1972-2016.xls&quot;<br />
-[7] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls”<br />
-[8] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._FH_Electoral_Democracies_1988-2016.xls&quot;<br />
-[9] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/Subcategory_Scores_FIW2017.xlsx”<br />
-[10] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._Subcategory_Scores_FIW2017.xlsx&quot;<br />
-[11] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/._FIW2017_Data&quot;</p>
-<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls</code></pre>
+<p>[1] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/.DS_Store”<br />
+[2] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._.DS_Store&quot;<br />
+[3] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls”<br />
+[4] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls&quot; [5] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/FH_Country_Status_Distribution_1972-2016.xls”<br />
+[6] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._FH_Country_Status_Distribution_1972-2016.xls&quot;<br />
+[7] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls”<br />
+[8] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._FH_Electoral_Democracies_1988-2016.xls&quot;<br />
+[9] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/Subcategory_Scores_FIW2017.xlsx”<br />
+[10] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._Subcategory_Scores_FIW2017.xlsx&quot;<br />
+[11] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/._FIW2017_Data&quot;</p>
+<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls</code></pre>
 <pre><code>## The downloaded /FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls dataset has 205 rows</code></pre>
 <pre><code>## Original dataset has 205 rows, but is not in country-year format</code></pre>
 <pre><code>## Processing the FH 2017 data - putting it in country-year format, adding state system info...</code></pre>
-<pre><code>## Joining, by = c(&quot;country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -5389,36 +5380,35 @@ devtools::use_data(bollen_pmm, overwrite = TRUE)</code></pre>
 <pre><code>## Downloading /FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls data...</code></pre>
 <pre><code>## Trying https://freedomhouse.org/sites/default/files/FIW2017_Data.zip ...</code></pre>
 <pre><code>## The files in the archive are:</code></pre>
-<p>[1] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/.DS_Store”<br />
-[2] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._.DS_Store&quot;<br />
-[3] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls”<br />
-[4] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls&quot; [5] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/FH_Country_Status_Distribution_1972-2016.xls”<br />
-[6] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._FH_Country_Status_Distribution_1972-2016.xls&quot;<br />
-[7] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls”<br />
-[8] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._FH_Electoral_Democracies_1988-2016.xls&quot;<br />
-[9] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/Subcategory_Scores_FIW2017.xlsx”<br />
-[10] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._Subcategory_Scores_FIW2017.xlsx&quot;<br />
-[11] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/._FIW2017_Data&quot;</p>
-<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls</code></pre>
+<p>[1] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/.DS_Store”<br />
+[2] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._.DS_Store&quot;<br />
+[3] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls”<br />
+[4] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls&quot; [5] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/FH_Country_Status_Distribution_1972-2016.xls”<br />
+[6] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._FH_Country_Status_Distribution_1972-2016.xls&quot;<br />
+[7] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls”<br />
+[8] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._FH_Electoral_Democracies_1988-2016.xls&quot;<br />
+[9] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/Subcategory_Scores_FIW2017.xlsx”<br />
+[10] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._Subcategory_Scores_FIW2017.xlsx&quot;<br />
+[11] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/._FIW2017_Data&quot;</p>
+<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls</code></pre>
 <pre><code>## The downloaded /FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls dataset has 205 rows</code></pre>
 <pre><code>## Downloading /FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls data...</code></pre>
 <pre><code>## Trying https://freedomhouse.org/sites/default/files/FIW2017_Data.zip ...</code></pre>
 <pre><code>## The files in the archive are:</code></pre>
-<p>[1] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/.DS_Store”<br />
-[2] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._.DS_Store&quot;<br />
-[3] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls”<br />
-[4] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls&quot; [5] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/FH_Country_Status_Distribution_1972-2016.xls”<br />
-[6] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._FH_Country_Status_Distribution_1972-2016.xls&quot;<br />
-[7] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls”<br />
-[8] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._FH_Electoral_Democracies_1988-2016.xls&quot;<br />
-[9] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/Subcategory_Scores_FIW2017.xlsx”<br />
-[10] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._Subcategory_Scores_FIW2017.xlsx&quot;<br />
-[11] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/._FIW2017_Data&quot;</p>
-<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls</code></pre>
+<p>[1] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/.DS_Store”<br />
+[2] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._.DS_Store&quot;<br />
+[3] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls”<br />
+[4] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls&quot; [5] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/FH_Country_Status_Distribution_1972-2016.xls”<br />
+[6] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._FH_Country_Status_Distribution_1972-2016.xls&quot;<br />
+[7] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls”<br />
+[8] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._FH_Electoral_Democracies_1988-2016.xls&quot;<br />
+[9] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/Subcategory_Scores_FIW2017.xlsx”<br />
+[10] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._Subcategory_Scores_FIW2017.xlsx&quot;<br />
+[11] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/._FIW2017_Data&quot;</p>
+<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls</code></pre>
 <pre><code>## The downloaded /FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls dataset has 24 rows</code></pre>
 <pre><code>## Original dataset has 229 rows, but is not in country-year format</code></pre>
 <pre><code>## Processing the FH 2017 data - putting it in country-year format, adding state system info...</code></pre>
-<pre><code>## Joining, by = c(&quot;country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following different countries/country codes match to a single country unit in the destination system:</code></pre>
 <table>
 <thead>
@@ -5970,21 +5960,20 @@ devtools::use_data(bollen_pmm, overwrite = TRUE)</code></pre>
 <pre><code>## Downloading /FH_Electoral_Democracies_1988-2016.xls data...</code></pre>
 <pre><code>## Trying https://freedomhouse.org/sites/default/files/FIW2017_Data.zip ...</code></pre>
 <pre><code>## The files in the archive are:</code></pre>
-<p>[1] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/.DS_Store”<br />
-[2] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._.DS_Store&quot;<br />
-[3] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls”<br />
-[4] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls&quot; [5] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/FH_Country_Status_Distribution_1972-2016.xls”<br />
-[6] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._FH_Country_Status_Distribution_1972-2016.xls&quot;<br />
-[7] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls”<br />
-[8] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._FH_Electoral_Democracies_1988-2016.xls&quot;<br />
-[9] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/Subcategory_Scores_FIW2017.xlsx”<br />
-[10] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/FIW2017_Data/._Subcategory_Scores_FIW2017.xlsx&quot;<br />
-[11] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/__MACOSX/._FIW2017_Data&quot;</p>
-<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls</code></pre>
+<p>[1] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/.DS_Store”<br />
+[2] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._.DS_Store&quot;<br />
+[3] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls”<br />
+[4] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls&quot; [5] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/FH_Country_Status_Distribution_1972-2016.xls”<br />
+[6] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._FH_Country_Status_Distribution_1972-2016.xls&quot;<br />
+[7] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls”<br />
+[8] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._FH_Electoral_Democracies_1988-2016.xls&quot;<br />
+[9] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/Subcategory_Scores_FIW2017.xlsx”<br />
+[10] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/FIW2017_Data/._Subcategory_Scores_FIW2017.xlsx&quot;<br />
+[11] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/__MACOSX/._FIW2017_Data&quot;</p>
+<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls</code></pre>
 <pre><code>## The downloaded /FH_Electoral_Democracies_1988-2016.xls dataset has 208 rows</code></pre>
 <pre><code>## Original dataset has 208 rows, but is not in country-year format</code></pre>
 <pre><code>## Processing the FH Electoral Democracies 2017 data - putting it in country-year format, adding state system info...</code></pre>
-<pre><code>## Joining, by = c(&quot;country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following different countries/country codes match to a single country unit in the destination system:</code></pre>
 <table>
 <thead>
@@ -6396,21 +6385,20 @@ devtools::use_data(fh_pmm, overwrite = TRUE)</code></pre>
 <pre><code>## Downloading GWFtscs.dta data...</code></pre>
 <pre><code>## Trying http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip ...</code></pre>
 <pre><code>## The files in the archive are:</code></pre>
-<p>[1] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/clean.do”<br />
-[2] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF All Political Regimes Case List.xls” [3] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF Autocratic Regimes.xlsx”<br />
-[4] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF Codebook.pdf”<br />
-[5] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta”<br />
-[6] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.txt”<br />
-[7] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWFcases.dta”<br />
-[8] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWFtscs.dta”<br />
-[9] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWFtscs.txt”<br />
-[10] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/README.tex”<br />
-[11] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/UPDATES.tex”</p>
-<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWFtscs.dta</code></pre>
+<p>[1] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/clean.do”<br />
+[2] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF All Political Regimes Case List.xls” [3] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF Autocratic Regimes.xlsx”<br />
+[4] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF Codebook.pdf”<br />
+[5] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta”<br />
+[6] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.txt”<br />
+[7] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWFcases.dta”<br />
+[8] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWFtscs.dta”<br />
+[9] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWFtscs.txt”<br />
+[10] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/README.tex”<br />
+[11] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/UPDATES.tex”</p>
+<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWFtscs.dta</code></pre>
 <pre><code>## The downloaded GWFtscs.dta dataset has 4591 rows</code></pre>
 <pre><code>## Original dataset has 4591 rows</code></pre>
 <pre><code>## Processing the Autocratic Regimes dataset - adding state system info, fixing NA values...</code></pre>
-<pre><code>## Joining, by = c(&quot;year&quot;, &quot;gwf_country&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -6690,23 +6678,22 @@ devtools::use_data(fh_pmm, overwrite = TRUE)</code></pre>
 <pre><code>## Downloading GWFtscs.dta data...</code></pre>
 <pre><code>## Trying http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip ...</code></pre>
 <pre><code>## The files in the archive are:</code></pre>
-<p>[1] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/clean.do”<br />
-[2] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF All Political Regimes Case List.xls” [3] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF Autocratic Regimes.xlsx”<br />
-[4] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF Codebook.pdf”<br />
-[5] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta”<br />
-[6] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.txt”<br />
-[7] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWFcases.dta”<br />
-[8] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWFtscs.dta”<br />
-[9] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWFtscs.txt”<br />
-[10] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/README.tex”<br />
-[11] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/UPDATES.tex”</p>
-<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWFtscs.dta</code></pre>
+<p>[1] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/clean.do”<br />
+[2] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF All Political Regimes Case List.xls” [3] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF Autocratic Regimes.xlsx”<br />
+[4] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF Codebook.pdf”<br />
+[5] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta”<br />
+[6] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.txt”<br />
+[7] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWFcases.dta”<br />
+[8] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWFtscs.dta”<br />
+[9] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWFtscs.txt”<br />
+[10] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/README.tex”<br />
+[11] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/UPDATES.tex”</p>
+<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWFtscs.dta</code></pre>
 <pre><code>## The downloaded GWFtscs.dta dataset has 4591 rows</code></pre>
 <pre><code>## Original dataset has 4591 rows</code></pre>
 <pre><code>## Processing the Autocratic Regimes dataset - adding state system info, fixing NA values...</code></pre>
 <pre><code>## Extending the dataset...</code></pre>
 <pre><code>## Joining, by = c(&quot;gwf_casename&quot;, &quot;gwf_country&quot;, &quot;cowcode&quot;, &quot;gwf_spell&quot;, &quot;year&quot;)</code></pre>
-<pre><code>## Joining, by = c(&quot;gwf_country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -6986,21 +6973,20 @@ devtools::use_data(fh_pmm, overwrite = TRUE)</code></pre>
 <pre><code>## Downloading GWF_AllPoliticalRegimes.dta data...</code></pre>
 <pre><code>## Trying http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip ...</code></pre>
 <pre><code>## The files in the archive are:</code></pre>
-<p>[1] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/clean.do”<br />
-[2] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF All Political Regimes Case List.xls” [3] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF Autocratic Regimes.xlsx”<br />
-[4] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF Codebook.pdf”<br />
-[5] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta”<br />
-[6] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.txt”<br />
-[7] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWFcases.dta”<br />
-[8] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWFtscs.dta”<br />
-[9] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWFtscs.txt”<br />
-[10] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/README.tex”<br />
-[11] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/UPDATES.tex”</p>
-<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta</code></pre>
+<p>[1] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/clean.do”<br />
+[2] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF All Political Regimes Case List.xls” [3] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF Autocratic Regimes.xlsx”<br />
+[4] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF Codebook.pdf”<br />
+[5] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta”<br />
+[6] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.txt”<br />
+[7] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWFcases.dta”<br />
+[8] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWFtscs.dta”<br />
+[9] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWFtscs.txt”<br />
+[10] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/README.tex”<br />
+[11] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/UPDATES.tex”</p>
+<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta</code></pre>
 <pre><code>## The downloaded GWF_AllPoliticalRegimes.dta dataset has 7954 rows</code></pre>
 <pre><code>## Original dataset has 7954 rows</code></pre>
 <pre><code>## Processing the Autocratic Regimes dataset - adding state system info, fixing NA values...</code></pre>
-<pre><code>## Joining, by = c(&quot;year&quot;, &quot;gwf_country&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -7361,23 +7347,22 @@ devtools::use_data(fh_pmm, overwrite = TRUE)</code></pre>
 <pre><code>## Downloading GWF_AllPoliticalRegimes.dta data...</code></pre>
 <pre><code>## Trying http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip ...</code></pre>
 <pre><code>## The files in the archive are:</code></pre>
-<p>[1] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/clean.do”<br />
-[2] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF All Political Regimes Case List.xls” [3] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF Autocratic Regimes.xlsx”<br />
-[4] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF Codebook.pdf”<br />
-[5] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta”<br />
-[6] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.txt”<br />
-[7] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWFcases.dta”<br />
-[8] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWFtscs.dta”<br />
-[9] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWFtscs.txt”<br />
-[10] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/README.tex”<br />
-[11] “C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/UPDATES.tex”</p>
-<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpYPM9B8/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta</code></pre>
+<p>[1] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/clean.do”<br />
+[2] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF All Political Regimes Case List.xls” [3] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF Autocratic Regimes.xlsx”<br />
+[4] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF Codebook.pdf”<br />
+[5] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta”<br />
+[6] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.txt”<br />
+[7] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWFcases.dta”<br />
+[8] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWFtscs.dta”<br />
+[9] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWFtscs.txt”<br />
+[10] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/README.tex”<br />
+[11] “C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/UPDATES.tex”</p>
+<pre><code>## Extracting C:/Users/marquexa/AppData/Local/Temp/Rtmp6jG4XK/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta</code></pre>
 <pre><code>## The downloaded GWF_AllPoliticalRegimes.dta dataset has 7954 rows</code></pre>
 <pre><code>## Original dataset has 7954 rows</code></pre>
 <pre><code>## Processing the Autocratic Regimes dataset - adding state system info, fixing NA values...</code></pre>
 <pre><code>## Extending the dataset...</code></pre>
 <pre><code>## Joining, by = c(&quot;gwf_casename&quot;, &quot;gwf_country&quot;, &quot;cowcode&quot;, &quot;gwf_spell&quot;, &quot;year&quot;)</code></pre>
-<pre><code>## Joining, by = c(&quot;gwf_country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -7756,26 +7741,24 @@ devtools::use_data(hadenius_pmm, overwrite = TRUE)</code></pre>
 <p>[1] S. Kailitz. “Classifying political regimes revisited: legitimation and durability”. In: <em>Democratization</em> 20.1 (2013), pp. 39-60. DOI: 10.1080/13510347.2013.738861.</p>
 <pre class="r"><code>kailitz &lt;- PoliticalDatasets::kailitz.yearly %&gt;%
   select(kailitz_country, year, cown, combined_regime:transition) %&gt;%
-  mutate(kailitz_cown = cown) %&gt;%
+  rename(kailitz_cown = cown) 
+
+kailitz &lt;- kailitz %&gt;%
   country_year_coder(kailitz_country,
                      year,
                      code_col = kailitz_cown,
                      verbose = verbose,
                      include_in_output = include_in_output,
-                     code_type = &quot;cown&quot;,
-                     match_type = &quot;code only&quot;) %&gt;%
-  select(kailitz_country, kailitz_cown, year, combined_regime:transition, include_in_output)</code></pre>
-<pre><code>## Matching on code type cown</code></pre>
-<pre><code>## Joining, by = c(&quot;kailitz_country&quot;, &quot;year&quot;, &quot;cown&quot;, &quot;kailitz_cown&quot;)</code></pre>
+                     code_type = &quot;cown&quot;) </code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
 <tr class="header">
 <th align="left">kailitz_country</th>
 <th align="right">kailitz_cown</th>
-<th align="right">cown</th>
 <th align="left">extended_country_name</th>
 <th align="right">GWn</th>
+<th align="right">cown</th>
 <th align="right">min_date</th>
 <th align="right">max_date</th>
 <th align="right">n</th>
@@ -7785,8 +7768,8 @@ devtools::use_data(hadenius_pmm, overwrite = TRUE)</code></pre>
 <tr class="odd">
 <td align="left">Rumania</td>
 <td align="right">360</td>
-<td align="right">360</td>
 <td align="left">Romania</td>
+<td align="right">360</td>
 <td align="right">360</td>
 <td align="right">1946</td>
 <td align="right">2010</td>
@@ -7794,7 +7777,10 @@ devtools::use_data(hadenius_pmm, overwrite = TRUE)</code></pre>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code>devtools::use_data(kailitz, overwrite = TRUE)</code></pre>
+<pre class="r"><code>kailitz &lt;- kailitz %&gt;% 
+  select(kailitz_country, kailitz_cown, year, combined_regime:transition, include_in_output)
+
+devtools::use_data(kailitz, overwrite = TRUE)</code></pre>
 <pre><code>## Saving kailitz as kailitz.rda to D:/marquexa/Documents/Dropbox/R packages/democracyData/data</code></pre>
 </div>
 <div id="lied" class="section level1">
@@ -7807,7 +7793,6 @@ devtools::use_data(hadenius_pmm, overwrite = TRUE)</code></pre>
 <pre><code>## Trying https://dataverse.harvard.edu/api/access/datafile/2863101 ...</code></pre>
 <pre><code>## The downloaded LIED dataset has 18529 rows</code></pre>
 <pre><code>## Changing column names, adding state system information</code></pre>
-<pre><code>## Joining, by = c(&quot;countryn&quot;, &quot;cow&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -8335,7 +8320,6 @@ devtools::use_data(hadenius_pmm, overwrite = TRUE)</code></pre>
 <pre><code>## Downloading Magaloni, Chu, and Min data...</code></pre>
 <pre><code>## Trying http://cddrl.fsi.stanford.edu/sites/default/files/res/Data_Set.xls ...</code></pre>
 <pre><code>## The downloaded Magaloni, Chu, and Min dataset has 8629 rows</code></pre>
-<pre><code>## Joining, by = c(&quot;country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following different countries/country codes match to a single country unit in the destination system:</code></pre>
 <table>
 <thead>
@@ -8712,7 +8696,6 @@ devtools::use_data(hadenius_pmm, overwrite = TRUE)</code></pre>
 <pre><code>## Trying http://cddrl.fsi.stanford.edu/sites/default/files/res/Data_Set.xls ...</code></pre>
 <pre><code>## The downloaded Magaloni, Chu, and Min dataset has 8629 rows</code></pre>
 <pre><code>## Extending the dataset using the duration_nr variable</code></pre>
-<pre><code>## Joining, by = c(&quot;country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country and/or code-years were matched more than once:</code></pre>
 <table>
 <thead>
@@ -9731,9 +9714,33 @@ devtools::use_data(hadenius_pmm, overwrite = TRUE)</code></pre>
 <td align="left">Pakistan</td>
 <td align="right">769</td>
 <td align="right">1</td>
+<td align="left">Democracy</td>
+<td align="right">76901</td>
+<td align="right">1948</td>
+<td align="left">Pakistan</td>
+<td align="right">770</td>
+<td align="right">770</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="left">Pakistan</td>
+<td align="right">769</td>
+<td align="right">1</td>
 <td align="left">Military</td>
 <td align="right">76904</td>
 <td align="right">1970</td>
+<td align="left">Pakistan</td>
+<td align="right">770</td>
+<td align="right">770</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="left">Pakistan</td>
+<td align="right">769</td>
+<td align="right">1</td>
+<td align="left">Democracy</td>
+<td align="right">76901</td>
+<td align="right">1949</td>
 <td align="left">Pakistan</td>
 <td align="right">770</td>
 <td align="right">770</td>
@@ -9755,45 +9762,21 @@ devtools::use_data(hadenius_pmm, overwrite = TRUE)</code></pre>
 <td align="left">Pakistan</td>
 <td align="right">769</td>
 <td align="right">1</td>
-<td align="left">Democracy</td>
-<td align="right">76901</td>
-<td align="right">1948</td>
+<td align="left">Military</td>
+<td align="right">76904</td>
+<td align="right">1969</td>
 <td align="left">Pakistan</td>
 <td align="right">770</td>
 <td align="right">770</td>
 <td align="left">TRUE</td>
 </tr>
 <tr class="even">
-<td align="left">Pakistan</td>
-<td align="right">769</td>
-<td align="right">1</td>
-<td align="left">Democracy</td>
-<td align="right">76901</td>
-<td align="right">1949</td>
-<td align="left">Pakistan</td>
-<td align="right">770</td>
-<td align="right">770</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
 <td align="left">Pakistan</td>
 <td align="right">769</td>
 <td align="right">0</td>
 <td align="left">Military</td>
 <td align="right">76904</td>
 <td align="right">1971</td>
-<td align="left">Pakistan</td>
-<td align="right">770</td>
-<td align="right">770</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="left">Pakistan</td>
-<td align="right">769</td>
-<td align="right">1</td>
-<td align="left">Military</td>
-<td align="right">76904</td>
-<td align="right">1969</td>
 <td align="left">Pakistan</td>
 <td align="right">770</td>
 <td align="right">770</td>
@@ -9827,7 +9810,6 @@ devtools::use_data(hadenius_pmm, overwrite = TRUE)</code></pre>
 ## )</code></pre>
 <pre><code>## Original dataset has 215 rows</code></pre>
 <pre><code>## Processing the Mainwaring data - adding state system info...</code></pre>
-<pre><code>## Joining, by = c(&quot;Country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -9889,7 +9871,6 @@ pacl &lt;- redownload_pacl(verbose = verbose,
 <pre><code>## The downloaded PACL/ACLP dataset has 9159 rows</code></pre>
 <pre><code>## Original dataset has 9159 rows</code></pre>
 <pre><code>## Processing the PACL/ACLP data - adding state system info...</code></pre>
-<pre><code>## Joining, by = c(&quot;ctryname&quot;, &quot;year&quot;, &quot;cowcode&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -10308,7 +10289,6 @@ pacl &lt;- redownload_pacl(verbose = verbose,
 <pre><code>## Original dataset has 16403 rows</code></pre>
 <pre><code>## Processing the PEPS data - fixing country names, adding state system info...</code></pre>
 <pre><code>## New country column combines country names from Pname, Iname, and FHname to fill in blanks...</code></pre>
-<pre><code>## Joining, by = c(&quot;ccode&quot;, &quot;year&quot;, &quot;country&quot;)</code></pre>
 <pre><code>## The following different countries/country codes match to a single country unit in the destination system:</code></pre>
 <table>
 <thead>
@@ -10797,7 +10777,6 @@ polity &lt;- download_polity_annual(verbose = verbose,
 <pre><code>## The downloaded polity dataset has 17228 rows</code></pre>
 <pre><code>## Original dataset has 17228 rows.</code></pre>
 <pre><code>## Processing the Polity IV data - adding state system info...</code></pre>
-<pre><code>## Joining, by = c(&quot;ccode&quot;, &quot;country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following different countries/country codes match to a single country unit in the destination system:</code></pre>
 <table>
 <thead>
@@ -11405,7 +11384,6 @@ polity &lt;- download_polity_annual(verbose = verbose,
 <pre><code>## The downloaded polity dataset has 17228 rows</code></pre>
 <pre><code>## Original dataset has 17228 rows.</code></pre>
 <pre><code>## Processing the Polity IV data - adding state system info...</code></pre>
-<pre><code>## Joining, by = c(&quot;ccode&quot;, &quot;country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country and/or code-years were matched more than once:</code></pre>
 <table>
 <thead>
@@ -12272,7 +12250,6 @@ polity &lt;- download_polity_annual(verbose = verbose,
 <pre><code>## The downloaded polity dataset has 17228 rows</code></pre>
 <pre><code>## Original dataset has 17228 rows.</code></pre>
 <pre><code>## Processing the Polity IV data - adding state system info...</code></pre>
-<pre><code>## Joining, by = c(&quot;ccode&quot;, &quot;country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following different countries/country codes match to a single country unit in the destination system:</code></pre>
 <table>
 <thead>
@@ -12880,7 +12857,6 @@ polyarchy &lt;- redownload_polyarchy_original(verbose = verbose,
 <pre><code>## Trying https://www3.nd.edu/~mcoppedg/crd/poly8500.sav ...</code></pre>
 <pre><code>## The downloaded Polyarchy original dataset has 197 rows</code></pre>
 <pre><code>## Putting the dataset in country-year format and adding state system information.</code></pre>
-<pre><code>## Joining, by = c(&quot;Country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following different countries/country codes match to a single country unit in the destination system:</code></pre>
 <table>
 <thead>
@@ -13346,7 +13322,6 @@ polyarchy &lt;- redownload_polyarchy_original(verbose = verbose,
 <pre><code>## Downloading Polyarchy dimensions data...</code></pre>
 <pre><code>## Trying http://www3.nd.edu/~mcoppedg/crd/DahlDims.sav ...</code></pre>
 <pre><code>## The downloaded Polyarchy dimensions dataset has 7563 rows</code></pre>
-<pre><code>## Joining, by = c(&quot;cname&quot;, &quot;year&quot;, &quot;ccodecow&quot;)</code></pre>
 <pre><code>## The following different countries/country codes match to a single country unit in the destination system:</code></pre>
 <table>
 <thead>
@@ -13848,7 +13823,6 @@ polyarchy &lt;- redownload_polyarchy_original(verbose = verbose,
 ## )</code></pre>
 <pre><code>## The downloaded Political Regime Change (Gasiorowski) dataset has 503 rows</code></pre>
 <pre><code>## Converting to country-year format and adding state system info...</code></pre>
-<pre><code>## Joining, by = c(&quot;country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country and/or code-years were matched more than once:</code></pre>
 <table>
 <thead>
@@ -16093,7 +16067,6 @@ devtools::use_data(prc_gasiorowski,
 <pre><code>## Changing cowcode 'Hungary Empire' to 300</code></pre>
 <pre><code>## Changing cowcode for 'Serbia/Montenegro/Kosovo' to 342</code></pre>
 <pre><code>## Fixing country names for Leeward Islands and West Indies Federation</code></pre>
-<pre><code>## Joining, by = c(&quot;countryn&quot;, &quot;cowcodes&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following different countries/country codes match to a single country unit in the destination system:</code></pre>
 <table>
 <thead>
@@ -17154,7 +17127,6 @@ devtools::use_data(prc_gasiorowski,
 ##   End = col_character(),
 ##   Type = col_character()
 ## )</code></pre>
-<pre><code>## Joining, by = c(&quot;cow&quot;, &quot;COUNTRY&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country and/or code-years were matched more than once:</code></pre>
 <table>
 <thead>
@@ -19888,7 +19860,6 @@ devtools::use_data(prc_gasiorowski,
                                        verbose = verbose,
                                        include_in_output = include_in_output)</code></pre>
 <pre><code>## The downloaded Svolik regime data dataset has 8977 rows</code></pre>
-<pre><code>## Joining, by = c(&quot;ccode&quot;, &quot;cname&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -20263,7 +20234,6 @@ devtools::use_data(prc_gasiorowski,
 ##   pct975 = col_double()
 ## )</code></pre>
 <pre><code>## The downloaded UDS dataset has 9850 rows</code></pre>
-<pre><code>## Joining, by = c(&quot;country&quot;, &quot;year&quot;, &quot;cowcode&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -20682,7 +20652,6 @@ devtools::use_data(prc_gasiorowski,
 ##   pct975 = col_double()
 ## )</code></pre>
 <pre><code>## The downloaded UDS dataset has 9137 rows</code></pre>
-<pre><code>## Joining, by = c(&quot;country&quot;, &quot;year&quot;, &quot;cowcode&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -21101,7 +21070,6 @@ devtools::use_data(prc_gasiorowski,
 ##   pct975 = col_double()
 ## )</code></pre>
 <pre><code>## The downloaded UDS dataset has 7558 rows</code></pre>
-<pre><code>## Joining, by = c(&quot;country&quot;, &quot;year&quot;, &quot;cowcode&quot;)</code></pre>
 <pre><code>## The following country and/or code-years were matched more than once:</code></pre>
 <table>
 <thead>
@@ -21584,7 +21552,6 @@ devtools::use_data(prc_gasiorowski,
 <pre><code>## Column ulfelder_scodes has been created by changing pitfcodes GER, MNE, SRB, UK, USS to polity character codes GMY, MNT, SER, UKG, USR</code></pre>
 <pre><code>## Excluding all rows where rgjtype is NA</code></pre>
 <pre><code>## Matching on code type polity_scode</code></pre>
-<pre><code>## Joining, by = c(&quot;year&quot;, &quot;ulfelder_scode&quot;)</code></pre>
 <pre><code>## The following different countries/country codes match to a single country unit in the destination system:</code></pre>
 <table>
 <thead>
@@ -23259,7 +23226,6 @@ devtools::use_data(prc_gasiorowski,
 <pre><code>## Excluding all rows where rgjtype is NA</code></pre>
 <pre><code>## Extending the data back in time using the duration variable</code></pre>
 <pre><code>## Matching on code type polity_scode</code></pre>
-<pre><code>## Joining, by = c(&quot;ulfelder_scode&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following different countries/country codes match to a single country unit in the destination system:</code></pre>
 <table>
 <thead>
@@ -24925,7 +24891,6 @@ devtools::use_data(prc_gasiorowski,
 <pre><code>## Downloading UTIP data...</code></pre>
 <pre><code>## Trying http://utip.lbj.utexas.edu/data/political%20regime%20data%20set%20RV.xls ...</code></pre>
 <pre><code>## The downloaded UTIP dataset has 8990 rows</code></pre>
-<pre><code>## Joining, by = c(&quot;cname&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following different countries/country codes match to a single country unit in the destination system:</code></pre>
 <table>
 <thead>
@@ -25607,7 +25572,6 @@ devtools::use_data(prc_gasiorowski,
 <pre><code>## The downloaded Vanhanen sheet 2 dataset has 191 rows</code></pre>
 <pre><code>## The downloaded Vanhanen sheet 3 dataset has 191 rows</code></pre>
 <pre><code>## Converted to country-yer format, the dataset has 15735 rows</code></pre>
-<pre><code>## Joining, by = c(&quot;Country&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following country names are different in the destination system:</code></pre>
 <table>
 <thead>
@@ -25966,7 +25930,6 @@ devtools::use_data(vanhanen, vanhanen_pmm, overwrite = TRUE)</code></pre>
 <pre><code>## Downloading Wahman, Teorell, and Hadenius data...</code></pre>
 <pre><code>## Trying https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&amp;d=1 ...</code></pre>
 <pre><code>## The downloaded Wahman, Teorell, and Hadenius dataset has 8231 rows</code></pre>
-<pre><code>## Joining, by = c(&quot;country&quot;, &quot;cowcode&quot;, &quot;year&quot;)</code></pre>
 <pre><code>## The following different countries/country codes match to a single country unit in the destination system:</code></pre>
 <table>
 <thead>

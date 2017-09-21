@@ -575,6 +575,7 @@ cow_startdate <- cow_enddate <- NULL
     join_by <- c(quo_name(country_col), quo_name(date_col))
   } else if(!missing(code_col) & match_type != "code only") {
     join_by <- c(quo_name(country_col), quo_name(code_col), quo_name(date_col))
+
   } else if(match_type  == "code only" & missing(country_col)) {
     join_by <- c(quo_name(code_col), quo_name(date_col))
   } else if(match_type  == "code only" & !missing(country_col)) {

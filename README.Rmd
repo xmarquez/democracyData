@@ -34,7 +34,7 @@ Feedback, pull requests, and contributors welcome.
 
 The package offers two mechanisms for downloading democracy data: the `download_*` family of functions (for large, institutional, or frequently updated democracy datasets, like [Polity IV](http://www.systemicpeace.org/inscrdata.html) and [Freedom House](https://freedomhouse.org/)), and the `redownload_*` family of functions for publicly hosted datasets that are not likely to be regularly updated (like [Geddes, Wright, and Frantz' autocratic regimes dataset](http://sites.psu.edu/dictators/), the [Lexical Index of Electoral Democracy](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106), and the [DD/ACLP/PACL/CGV dataset](https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited)). 
 
-For example, we can download and process the Freedom House "Freedom in the World"" data as follows:
+For example, we can download and process the Freedom House "Freedom in the World" dataset as follows:
 
 ```{r, message = FALSE}
 library(democracyData)
@@ -49,7 +49,7 @@ This downloads the "Freedom in the World" dataset (1972-2016), puts it in countr
 
 You can also download the Freedom House "Electoral Democracies" list (`download_fh_electoral`), the latest version of the Polity IV dataset (updated to 2016; check `?download_polity`), the latest version of the [World Governance Indicators' "Voice and Accountability" index](http://info.worldbank.org/governance/wgi/index.aspx#home) (`download_wgi_voice_and_accountability`), and the regime part of the [REIGN dataset](http://oefresearch.org/datasets/reign) by Curtis Bell and OEF research (a regularly-updated variation of the original [Geddes, Wright, and Frantz's autocratic regimes dataset](http://sites.psu.edu/dictators/)).
 
-Many other datasets containing democracy measures are not regularly updated, including the widely used [DD/ACLP/PACL/CGV dataset](https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited)) and the [Geddes, Wright, and Frantz's autocratic regimes dataset](http://sites.psu.edu/dictators/)). These are available directly from this package (no download required), but they can also be "re-downloaded" from the websites of their creaters or maintainers. For example, one can either access PACL directly by typing
+Many other datasets containing democracy measures are not regularly updated, including the widely used [DD/ACLP/PACL/CGV dataset](https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited)) and the [Geddes, Wright, and Frantz's autocratic regimes dataset](http://sites.psu.edu/dictators/). These are available directly from this package (no download required), but they can also be "re-downloaded" from the websites of their creaters or maintainers. For example, one can either access PACL directly by typing
 
 ```{r}
 pacl

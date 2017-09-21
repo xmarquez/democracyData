@@ -20,12 +20,14 @@ library(democracyData)
 verbose <- TRUE
 include_in_output <-  c("extended_country_name", "GWn", "cown", "in_GW_system")
 devtools::load_all()
+
 ```
 
 ## Arat
 
 ```{r arat, results = 'asis'}
 cite_dataset("arat")
+
 pmm_replication <-  prepare_pmm_replication_data(path = "../../../Pemstein Meserve and Melton Code/uds/data/democracy1946.2008.rda",
                                                  verbose = verbose,
                                                  include_in_output = include_in_output) 
@@ -34,6 +36,7 @@ arat_pmm <- extract_pmm_var(pmm_replication, pmm_arat,
                             include_in_output = include_in_output)
 
 devtools::use_data(arat_pmm, overwrite = TRUE)
+
 ```
 
 ## BLM
@@ -192,14 +195,17 @@ cite_dataset("kailitz")
 
 kailitz <- PoliticalDatasets::kailitz.yearly %>%
   select(kailitz_country, year, cown, combined_regime:transition) %>%
-  mutate(kailitz_cown = cown) %>%
+  rename(kailitz_cown = cown) 
+
+kailitz <- kailitz %>%
   country_year_coder(kailitz_country,
                      year,
                      code_col = kailitz_cown,
                      verbose = verbose,
                      include_in_output = include_in_output,
-                     code_type = "cown",
-                     match_type = "code only") %>%
+                     code_type = "cown") 
+
+kailitz <- kailitz %>% 
   select(kailitz_country, kailitz_cown, year, combined_regime:transition, include_in_output)
 
 devtools::use_data(kailitz, overwrite = TRUE)
