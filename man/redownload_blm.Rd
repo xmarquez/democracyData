@@ -21,8 +21,7 @@
 Bowman, Kirk, Fabrice Lehoucq, and James Mahoney. 2005. Measuring
 Political Democracy: Case Expertise, Data Adequacy, and Central America.
 Comparative Political Studies 38 (8): 939-970.
-\url{http://cps.sagepub.com/content/38/8/939}.
-Data available at
+\url{http://cps.sagepub.com/content/38/8/939}. Data available at
 \url{http://www.blmdemocracy.gatech.edu/}.
 
 Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A Complete
@@ -136,37 +135,55 @@ redownload_pipe(url, verbose = TRUE, return_raw = FALSE, ...)
 }
 \arguments{
 \item{url}{The URL of the dataset. This defaults to:
+
 \itemize{
-\item For \link{blm}: \url{http://www.blmdemocracy.gatech.edu/blm final data.xls}
+
+\item For \link{blm}: \code{http://www.blmdemocracy.gatech.edu/blm final data.xls}
+
 \item For \link{bmr}:
 \url{https://sites.google.com/site/mkmtwo/democracy-v2.0.dta?attredirects=0}
+
 \item For \link{bnr}:
 \url{http://users.clas.ufl.edu/bernhard/content/data/meister1305.dta}
+
 \item For \link{gwf_all} and \link{gwf_autocratic}:
 \url{http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip}
-\item For \link{LIED}: \url{https://dataverse.harvard.edu/api/access/datafile/2863101}
+
+\item For \link{LIED}:
+\url{https://dataverse.harvard.edu/api/access/datafile/2863101}
+
 \item For \link{pacl}:
 \url{https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta}
-\item For \link{peps}: \url{http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta}
-\item For \link{utip}: \url{http://utip.lbj.utexas.edu/data/political regime data set
-  RV.xls}
+
+\item For \link{peps}:
+\url{http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta}
+
+\item For \link{utip}: \code{http://utip.lbj.utexas.edu/data/political regime data set RV.xls}
+
 \item For \link{wahman_teorell_hadenius}:
 \url{https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&d=1}
-\item For \link{polyarchy}: \url{https://www3.nd.edu/~mcoppedg/crd/poly8500.sav}
+
+\item For \link{polyarchy}:
+\url{https://www3.nd.edu/~mcoppedg/crd/poly8500.sav}
+
 \item For \link{polyarchy_dimensions}:
 \url{http://www3.nd.edu/~mcoppedg/crd/DahlDims.sav}
+
 \item For \link{magaloni}:
 \url{http://cddrl.fsi.stanford.edu/sites/default/files/res/Data_Set.xls}
+
 \item For UDS: for the 2014 release, it defaults to
 \url{http://www.unified-democracy-scores.org/files/20140312/z/uds_summary.csv.gz};
 for the the 2011 release, to
 \url{http://www.unified-democracy-scores.org/files/20110104/uds_summary.csv.gz};
 and for the 2010 release, to
 \url{http://www.unified-democracy-scores.org/files/20100726/uds_summary.csv.gz}
+
 \item For \link{ulfelder}:
 \url{https://dataverse.harvard.edu/api/access/datafile/2420018}
-\item For \link{PIPE}: \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}
-}}
+
+\item For \link{PIPE}:
+\url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data} }}
 
 \item{verbose}{Whether to print a running commentary of what the function is
 doing while processing the data.}
@@ -177,43 +194,47 @@ Default is \code{FALSE}.}
 \item{...}{Other parameters passed to \link{country_year_coder}.}
 
 \item{extend}{(Only for \link{redownload_bnr}, \link{redownload_gwf},
-\link{redownload_magaloni}, and \link{redownload_ulfelder}). Whether to extend the
-dataset back in time using a full panel of independent countries (for the
-\link{redownload_bnr} case) or the appropriate duration variable
-(\code{gwf_duration}, \code{duration_nr}, or \code{rgjdura} and \code{rgjdurd}, respectively, for
-\link{redownload_gwf}, \link{redownload_magaloni}, and \link{redownload_ulfelder}). For
-example, the United States enters the GWF dataset in 1946, where
-\code{gwf_duration} is already 75; one can extend the dataset to indicate that
-the country was classified as a democracy from 1872. Default is \code{FALSE}.}
+\link{redownload_magaloni}, and \link{redownload_ulfelder}). Whether to
+extend the dataset back in time using a full panel of independent countries
+(for the \link{redownload_bnr} case) or the appropriate duration variable
+(\code{gwf_duration}, \code{duration_nr}, or \code{rgjdura} and
+\code{rgjdurd}, respectively, for \link{redownload_gwf},
+\link{redownload_magaloni}, and \link{redownload_ulfelder}). For example,
+the United States enters the GWF dataset in 1946, where \code{gwf_duration}
+is already 75; one can extend the dataset to indicate that the country was
+classified as a democracy from 1872. Default is \code{FALSE}.}
 
 \item{dataset}{(Only for \link{redownload_gwf}). The dataset to output. Geddes, Wright, and Frantz provide
 two country-year files, one with autocratic regimes only ("autocratic only"), and one with both
 democratic and non-democratic regimes ("all"). Default is "all".}
 
-\item{release_year}{(Only in \code{redownload_uds}). The year of the UDS release
+\item{release_year}{(Only in \link{redownload_uds}). The year of the UDS release
 to be downloaded. Can be 2014, 2011, or 2010. Default is 2014.}
 }
 \value{
-A \link{tibble} with the processed dataset, unless \code{return_raw} is \code{TRUE},
-in which case the function returns the raw data without processing.
+A \link{tibble} with the processed dataset, unless \code{return_raw}
+is \code{TRUE}, in which case the function returns the raw data without
+processing.
 }
 \description{
 Download and process various democracy datasets. Note that the datasets
-returned by the \code{redownload_*} family of functions (\link{blm}, \link{bmr}, \link{bnr},
-\link{gwf_autocratic}, \link{gwf_autocratic_extended}, \link{gwf_all}, \link{gwf_all_extended},
-\link{LIED}, \link{magaloni}, \link{pacl}, \link{PIPE}, \link{peps}, \link{polyarchy}, \link{polyarchy_dimensions},
-\link{uds_2014}, \link{uds_2010}, \link{uds_2011}, \link{ulfelder}, \link{utip}, \link{wahman_teorell_hadenius}) are
-all available directly from this package and are unlikely to have changed
+returned by the \code{redownload_*} family of functions (\link{blm},
+\link{bmr}, \link{bnr}, \link{gwf_autocratic}, \link{gwf_autocratic_extended},
+\link{gwf_all}, \link{gwf_all_extended}, \link{LIED}, \link{magaloni},
+\link{pacl}, \link{PIPE}, \link{peps}, \link{polyarchy},
+\link{polyarchy_dimensions}, \link{uds_2014}, \link{uds_2010},
+\link{uds_2011}, \link{ulfelder}, \link{utip}, \link{wahman_teorell_hadenius})
+are all available directly from this package and are unlikely to have changed
 since the package was installed. Access the respective dataset by typing its
-name, and refer to their documentation for details. You will not normally
-need to redownload them, unless you want to process the raw data yourself
-(set \code{return_raw} = TRUE) or suspect they have changed since the package was
+name, and refer to their documentation for details. You will not normally need
+to redownload them, unless you want to process the raw data yourself (set
+\code{return_raw = TRUE}) or suspect they have changed since the package was
 installed.
 }
 \examples{
 \dontrun{
-redownload_blm()}
-
+redownload_blm()
+}
 \dontrun{
 bmr <- redownload_bmr()
 bmr

@@ -25,7 +25,7 @@
 #'   column with values) version of the data frame. Default is "long".
 #' @param use_extended Whether to use "extended" (that is, including values
 #'   before 1945 for some regimes) versions of some datasets ([gwf], [ulfelder],
-#'   [bnr], and [magaloni]). Default is `TRUE`.
+#'   [bnr], and [magaloni]). Default is \code{TRUE}.
 #' @param include_extra_pmm Whether to include versions of some measures found
 #'   in Pemstein, Meserve, and Melton's replication dataset for their 2010 piece
 #'   introducing the Unified Democracy Scores (Pemstein, Meserve, and Melton
@@ -33,7 +33,7 @@
 #'   [vanhanen_pmm], and [polity_pmm] for details. This is included mostly for
 #'   use by the [QuickUDS](https://github.com/xmarquez/QuickUDS) package.
 #' @param verbose Provides a running commentary on what the function is is
-#'   doing. Default is `TRUE`.
+#'   doing. Default is \code{TRUE}.
 #' @param target_system Character vector describing which state system to use
 #'   for the combined file, and which country codes to use. Can be one or both
 #'   of "GWn" (Gleditsch and Ward, numeric codes) and "cown" (numeric codes for
@@ -41,22 +41,22 @@
 #'   Correlates of War (`c("GWn", "cown")`).
 #' @param force_redownload Whether to re-download all datasets that can be
 #'   re-downloaded, including those archived with this package. Used only for
-#'   debugging; default is `FALSE`.
+#'   debugging; default is \code{FALSE}.
 #' @param scale_scores Whether to scale each measure (substracting their mean
-#'   and dividing by their standard deviation). Default is `FALSE`.
+#'   and dividing by their standard deviation). Default is \code{FALSE}.
 #' @param keep_only_last_in_year Whether to keep only the last regime
 #'   measurement in a given country-year. Some datasets (e.g., [prc], [reign])
 #'   contain more than one regime measurement per country-year in some cases (if
-#'   the regime changed multiple times during the year); setting this to `TRUE`
+#'   the regime changed multiple times during the year); setting this to \code{TRUE}
 #'   discards all except the regime measurement as of 31 December of the year,
-#'   the standard practice in most datasets. Default is `TRUE`. This setting is
-#'   only of interest if you set `output_format = "long"`, since it is ignored
-#'   when `output_format = "wide"`, which automatically discards all regime
+#'   the standard practice in most datasets. Default is \code{TRUE}. This setting is
+#'   only of interest if you set \code{output_format = "long"}, since it is ignored
+#'   when \code{output_format = "wide"}, which automatically discards all regime
 #'   measurements except the last in the year.
 #' @param exclude_downloadable Whether to exclude all datasets that must be
 #'   explicitly downloaded ([polity], [fh], [reign], [wgi]), using only archived
 #'   datasets. This speeds up the process considerably, but you lose some of the
-#'   better democracy measures out there. Default is `FALSE`.
+#'   better democracy measures out there. Default is \code{FALSE}.
 #'
 #' @import dplyr
 #'
@@ -68,7 +68,7 @@
 #'
 #' @section Long version:
 #'
-#'   In the "long" version of the dataset (`format = "long"`), the output data
+#'   In the "long" version of the dataset (\code{format = "long"}), the output data
 #'   frame also contains the following variables:
 #'
 #' @section Variables:
@@ -76,23 +76,22 @@
 #'   \describe{
 #'
 #'   \item{year}{The calendar year. Most measures of democracy reflect the
-#'   country's situation as of 31 December of the year. If `keep_last_in_year` =
-#'   "FALSE" (and `format = "long"`), a single country year may nevertheless
+#'   country's situation as of 31 December of the year. If \code{keep_last_in_year = FALSE} (and \code{format = "long"}), a single country year may nevertheless
 #'   contain more than one measurement for some measures (e.g., [prc]).}
 #'
 #'   \item{measure}{The dataset whence the measure is taken. (e.g., "blm",
 #'   "fh_total_reversed"). }
 #'
 #'   \item{variable}{The numerical value of the measure, in the original scale
-#'   (if `scale_scores = FALSE`) or as a z-score (if `scale_scores = TRUE`).}
+#'   (if \code{scale_scores = FALSE}) or as a z-score (if \code{scale_scores = TRUE}).}
 #'
 #'   }
 #'
 #' @section Wide version:
 #'
-#'   In the "wide" version of the dataset (`format = "wide"`), the output data
+#'   In the "wide" version of the dataset (\code{format = "wide"}), the output data
 #'   frame can also contain any of the following variables (in the scales
-#'   described below, unless `scale_scores = TRUE`, in which case the measures
+#'   described below, unless \code{scale_scores = TRUE}, in which case the measures
 #'   are converted to z-scores):
 #'
 #'   \describe{
@@ -115,7 +114,7 @@
 #'   type."}
 #'
 #'   \item{bnr}{The [bnr] event measure of democracy, reversed, so that 0
-#'   indicates non-democracy and 1 indicates democracy. Since the `event`
+#'   indicates non-democracy and 1 indicates democracy. Since the \code{event}
 #'   variable of the [bnr] dataset only codes terminations of democracy
 #'   (ignoring years when the country is non-democratic), this variable is
 #'   mostly equal to 1.}
@@ -147,13 +146,13 @@
 #'   extended to the period before 1945 for some countries.}
 #'
 #'   \item{gwf_democracy_strict}{A measure of democracy from [gwf_all], obtained
-#'   by coding all democracies as 1 and all non-democracies as 0.  It is `NA`
+#'   by coding all democracies as 1 and all non-democracies as 0.  It is \code{NA}
 #'   for all non-democratic non-autocracies (e.g., warlord regimes, foreign
 #'   occupation, etc.).}
 #'
 #'   \item{gwf_democracy_extended_strict}{A measure of democracy from
 #'   [gwf_all_extended], obtained by coding all democracies as 1 and all
-#'   non-democracies as 0. It is `NA` for all non-democratic non-autocracies
+#'   non-democracies as 0. It is \code{NA} for all non-democratic non-autocracies
 #'   (e.g., warlord regimes, foreign occupation, etc.). See the documentation
 #'   for [gwf_all_extended] for details on how the dataset was extended to the
 #'   period before 1945 for some countries.}
@@ -230,18 +229,18 @@
 #'   the polity manual).}
 #'
 #'   \item{polyarchy_contestation_dimension}{The contestation dimension
-#'   (`CONTEST`) in [polyarchy_dimensions].}
+#'   (\code{CONTEST}) in [polyarchy_dimensions].}
 #'
-#'   \item{polyarchy_inclusion_dimension}{The inclusion dimension (`INCLUS`) in
+#'   \item{polyarchy_inclusion_dimension}{The inclusion dimension (\code{INCLUS}) in
 #'   [polyarchy_dimensions].}
 #'
-#'   \item{polyarchy_original_contestation}{The contestation dimension (`cont`)
+#'   \item{polyarchy_original_contestation}{The contestation dimension (\code{cont})
 #'   in [polyarchy].}
 #'
-#'   \item{polyarchy_original_polyarchy}{The original polyarchy scale (`poly`)
+#'   \item{polyarchy_original_polyarchy}{The original polyarchy scale (\code{poly})
 #'   in [polyarchy], reversed so that higher values imply more democracy. The
 #'   codebook suggests this was superceded by
-#'   `polyarchy_original_contestation`.}
+#'   \code{polyarchy_original_contestation}.}
 #'
 #'   \item{prc}{The measure of democracy in [prc], where 1 is non-democracy, 3
 #'   are hybrid regimes, and 4 are democracies. Transitional regimes (2 in the
@@ -287,11 +286,11 @@
 #'
 #'   \item{wth_democ1}{A dichotomous measure of democracy from
 #'   [wahman_teorell_hadenius], obtaining by coding 1 all democracies according
-#'   to the `regime1ny` variable, 0 all other regimes.}
+#'   to the \code{regime1ny} variable, 0 all other regimes.}
 #'
 #'   \item{wth_democrobust}{A dichotomous measure of democracy from
 #'   [wahman_teorell_hadenius], obtaining by coding 1 all democracies according
-#'   to the `regimenyrobust` variable, 0 all other regimes.}
+#'   to the \code{regimenyrobust} variable, 0 all other regimes.}
 #'
 #'   }
 #'

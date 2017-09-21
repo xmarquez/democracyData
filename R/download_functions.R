@@ -90,7 +90,7 @@ download_polity_annual <- function(url,
 }
 
 #' Download the latest version (data up to 2015) of the "Democracy, Voice, and
-#' Accountability" index from the World Governance Indicators via
+#' Accountability" index from the World Governance Indicators and process it via
 #' [country_year_coder]
 #'
 #'
@@ -240,7 +240,7 @@ download_wgi_voice_and_accountability <- function(url,
 #' @inheritParams redownload_blm
 #' @param include_territories Whether to include scores from non-independent
 #'   territories (e.g., Indian Kashmir, Northern Ireland) compiled by FH.
-#'   Default is `FALSE`.
+#'   Default is \code{FALSE}.
 #'
 #' @return A time-series tidy version of the FH dataset, with the following
 #'   variables:
@@ -459,7 +459,7 @@ download_fh <- function(url,
 #'   In particular, the year 1981 is "skipped" – a single survey covers Jan.
 #'   1981 - Aug. 1982 and its value is assigned to 1982 here.
 #'
-#'   * electoral: Electoral democracy indicator. `TRUE` = yes, `FALSE` = no.
+#'   * electoral: Electoral democracy indicator. \code{TRUE} = yes, \code{FALSE} = no.
 #'
 #' @template standard-variables
 #' @inheritSection download_polity_annual Note

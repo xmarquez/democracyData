@@ -29,66 +29,99 @@ about country-year matching.}
 \item{code_type}{Type of code to match on (only needed if \code{code_col} is not
 \code{NULL}). Defaults to "cown". Can be any unambiguous substring of the
 following:
+
 \itemize{
-\item "GWn": Numeric code for the country in the \href{http://privatewww.essex.ac.uk/~ksg/statelist.html}{Gleditsch-Ward system ofstates}. This is very
+
+\item "GWn": Numeric code for the country in the Gleditsch-Ward system of
+states (\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}). This is very
 similar, but not identical, to the Correlates of War and Polity codes. See
 the vignette in this package for the differences.
-\item "GWc": Three letter code for the country in the \href{http://privatewww.essex.ac.uk/~ksg/statelist.html}{Gleditsch-Ward system ofstates}. This is very
+
+\item "GWc": Three letter code for the country in the Gleditsch-Ward system of
+states (\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}). This is very
 similar, but not identical, to the Correlates of War and Polity codes. See
 the vignette in this package for an overview of the differences between
 these systems.
+
 \item "extended_GWn": Identical to \code{GWn}, but includes a number of not commonly
 used codes for units of doubtful sovereignty (751 for Hyderabad before its
 incorporation into India, 666.001 and 666.002 for Israel pre 1967 borders
 amd occupied territories, and 605 for Western Sahara). These codes are used
-in some \href{https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO/}{UCDP/PRIO}
+in some UCDP/PRIO (\url{https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO/})
 datasets.
+
 \item "extended_GWc": Identical to \code{GWc}, but includes a number of not commonly
 used codes for units of doubtful sovereignty (HYD for Hyderabad before its
 incorporation into India, ISR.1 and ISR.2 for Israel pre 1967 borders amd
 occupied territories, and SAH for Western Sahara). These codes are used in
-some \href{https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO/}{UCDP/PRIO}
+some UCDP/PRIO (\url{https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO/})
 datasets.
-\item "cown": Numeric code for the country in the \href{http://www.correlatesofwar.org/data-sets/cow-country-codes}{Correlates of War system ofstates}. This
+
+\item "cown": Numeric code for the country in the Correlates of War system of
+states (\url{http://www.correlatesofwar.org/data-sets/cow-country-codes}). This
 is very similar, but not identical, to the Gleditsch and Ward and Polity
 codes. See the vignette in this package for an overview of the differences
 between these systems.
-\item "cowc": Three letter code for the country in the \href{http://www.correlatesofwar.org/data-sets/cow-country-codes}{Correlates of Warsystem ofstates}. This
+
+\item "cowc": Three letter code for the country in the Correlates of War
+system of
+states (\url{http://www.correlatesofwar.org/data-sets/cow-country-codes}). This
 is very similar, but not identical, to the Gleditsch and Ward and Polity
 codes. See the vignette in this package for an overview of the differences
 between these systems.
-\item "polity_ccode": Numeric code for the country in the \href{http://www.systemicpeace.org/polity/polity4.htm}{Polity IVdataset}. This is very
+
+\item "polity_ccode": Numeric code for the country in the Polity IV
+dataset (\url{http://www.systemicpeace.org/polity/polity4.htm}). This is very
 similar, but not identical, to the Gleditsch and Ward and COW codes. See
 the vignette in this package for the differences.
-\item "polity_scode": Three letter code for the country in the \href{http://www.systemicpeace.org/polity/polity4.htm}{Polity IVdataset}. This is very
+
+\item "polity_scode": Three letter code for the country in the Polity IV
+dataset (\url{http://www.systemicpeace.org/polity/polity4.htm}). This is very
 similar, but not identical, to the Gleditsch and Ward and COW codes. See
 the vignette in this package for an overview of the differences between
 these systems.
-\item "eurostat": Eurostat 2-letter country code. Taken from \link{countrycode}.
+
+\item "eurostat": Eurostat 2-letter country code. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
 \item "eu28": Whether the state is a member of the European Union (as of
-December 2015), without special territories. Taken from \link{countrycode}.
+December 2015), without special territories. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
 \item "fao": Food and Agriculture Organization of the United Nations numerical
-country code. Taken from \link{countrycode}.
+country code. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
 \item "fips105": FIPS 10-5 (Federal Information Processing Standard) 2-letter
-country code. Taken from \link{countrycode}.
+country code. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
 \item "icao": International Civil Aviation Organization 2-letter country code.
-Taken from \link{countrycode}.
+Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
 \item "icao_region": International Civil Aviation Organization region code.
-Taken from \link{countrycode}.
+Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
 \item "imf": International Monetary Fund numeric country code. Taken from
-\link{countrycode}.
+\link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
 \item "ioc": International Olympic Committee 3-letter country code. Taken from
-\link{countrycode}.
-\item "iso2c": ISO-2 character. Taken from \link{countrycode}.
-\item "iso3c": ISO-3 character. Taken from \link{countrycode}.
-\item "iso2n": ISO-2 numeric. Taken from \link{countrycode}.
-\item "iso3n": ISO-3 numeric. Taken from \link{countrycode}.
-\item "un": United Nations numerical code. Taken from \link{countrycode}.
+\link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
+\item "iso2c": ISO-2 character. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
+\item "iso3c": ISO-3 character. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
+\item "iso2n": ISO-2 numeric. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
+\item "iso3n": ISO-3 numeric. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
+\item "un": United Nations numerical code. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
 \item "wb": World Bank (very similar but not identical to iso3c). Taken from
-\link{countrycode}.
-\item "wb_api2c": World Bank API 2 character code. Taken from \link{countrycode}.
-\item "wb_api3c": World Bank API 3 character code. Taken from \link{countrycode}.
-\item "wvs": World Values Survey numeric code. Taken from \link{countrycode}.
+\link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
+\item "wb_api2c": World Bank API 2 character code. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
+\item "wb_api3c": World Bank API 3 character code. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
+\item "wvs": World Values Survey numeric code. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 }}
 
 \item{to_system}{State system to match to. Default is Gledistsch and Ward.}
@@ -107,174 +140,217 @@ character vector containing any combination of the column names in the
 internal database of country codes.
 
 The possibilities are:
+
 \itemize{
+
 \item "GW_country_name": The name of the country in the
-\href{http://privatewww.essex.ac.uk/~ksg/statelist.html}{Gleditsch-Ward}
+Gleditsch-Ward system of states (\url{http://privatewww.essex.ac.uk/~ksg/statelist.html})
 (Gleditsch and War 1999).
+
 \item "extended_country_name": The name of the country in the
-\href{http://privatewww.essex.ac.uk/~ksg/statelist.html}{Gleditsch-Ward}
-(Gleditsch and War 1999) system of states, of the official name of the
+Gleditsch-Ward system of states (\url{http://privatewww.essex.ac.uk/~ksg/statelist.html})
+(Gleditsch and War 1999), of the official name of the
 entity (for non-sovereign entities and states not in the Gleditsch and Ward
 system of states) or else a common name for disputed cases that do not have
 an official name (e.g., Western Sahara, Hyderabad).
+
 \item "cow_country_name": The name of the state in the Correlates of War state
 system (2016 version). See
-http://www.correlatesofwar.org/data-sets/cow-country-codes for details. Is
+\url{http://www.correlatesofwar.org/data-sets/cow-country-codes} for details. Is
 \code{NA} if the country is not in the COW system of states.
+
 \item "polity_country_name": The name of the state in the official Polity
 dataset. Is \code{NA} if the country is not in Polity.
+
 \item "country_name_en": The official name of the country (official short
-English country name), as defined by the ISO organization. Taken from the
-package \link{countrycode}. See also
+English country name), as defined by the ISO organization. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}. See also
 \url{https://en.wikipedia.org/wiki/ISO_3166-1}.
 Some names are missing because the state no longer exists or there is
 controversy about its sovereign status.
-\item "GWn": Numeric code for the country in the \href{http://privatewww.essex.ac.uk/~ksg/statelist.html}{Gleditsch-Ward system ofstates}. This is very
+
+\item "GWn": Numeric code for the country in the Gleditsch-Ward system of states (\url{http://privatewww.essex.ac.uk/~ksg/statelist.html})
+(Gleditsch and War 1999). This is very
 similar, but not identical, to the Correlates of War and Polity codes. See
 the vignette in this package for the differences.
+
 \item "extended_GWn": Identical to \code{GWn}, but includes a number of not commonly
 used codes for units of doubtful sovereignty (751 for Hyderabad before its
 incorporation into India, 666.001 and 666.002 for Israel pre 1967 borders
 amd occupied territories, and 605 for Western Sahara). These codes are used
-in some \href{https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO/}{UCDP/PRIO}
+in some UCDP/PRIO (\url{https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO/})
 datasets.
-\item "GWc": Three letter code for the country in the \href{http://privatewww.essex.ac.uk/~ksg/statelist.html}{Gleditsch-Ward system ofstates}. This is very
+
+\item "GWc": Three letter code for the country in the Gleditsch-Ward system of states (\url{http://privatewww.essex.ac.uk/~ksg/statelist.html})
+(Gleditsch and War 1999). This is very
 similar, but not identical, to the Correlates of War and Polity codes. See
 the vignette in this package for an overview of the differences between
 these systems.
+
 \item "extended_GWc": Identical to \code{GWc}, but includes a number of not commonly
 used codes for units of doubtful sovereignty (HYD for Hyderabad before its
 incorporation into India, 666.001 and 666.002 for Israel pre 1967 borders
 amd occupied territories, and 605 for Western Sahara). These codes are used
-in some \href{https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO/}{UCDP/PRIO}
+in some UCDP/PRIO (\url{https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO/})
 datasets.
-\item "cown": Numeric code for the country in the \href{http://www.correlatesofwar.org/data-sets/cow-country-codes}{Correlates of War system ofstates}, 2016
+
+\item "cown": Numeric code for the country in the Correlates of War system of
+states (\url{http://www.correlatesofwar.org/data-sets/cow-country-codes}), 2016
 release. This is very similar, but not identical, to the Gleditsch and Ward
 and Polity codes. See the vignette in this package for an overview of the
 differences between these systems.
-\item "cowc": Three letter code for the country in the \href{http://www.correlatesofwar.org/data-sets/cow-country-codes}{Correlates of Warsystem ofstates}, 2016
+
+\item "cowc": Three letter code for the country in the Correlates of War
+system of
+states (\url{http://www.correlatesofwar.org/data-sets/cow-country-codes}), 2016
 release. This is very similar, but not identical, to the Gleditsch and Ward
 and Polity codes. See the vignette in this package for an overview of the
 differences between these systems.
-\item "polity_ccode": Numeric code for the country in the \href{http://www.systemicpeace.org/polity/polity4.htm}{Polity IVdataset}. This is very
+
+\item "polity_ccode": Numeric code for the country in the Polity IV
+dataset (\url{http://www.systemicpeace.org/polity/polity4.htm}). This is very
 similar, but not identical, to the Gleditsch and Ward and COW codes. See
 the vignette in this package for the differences.
-\item "polity_scode": Three letter code for the country in the \href{http://www.systemicpeace.org/polity/polity4.htm}{Polity IVdataset}. This is very
+
+\item "polity_scode": Three letter code for the country in the Polity IV
+dataset (\url{http://www.systemicpeace.org/polity/polity4.htm}). This is very
 similar, but not identical, to the Gleditsch and Ward and COW codes. See
 the vignette in this package for an overview of the differences between
 these systems.
+
 \item "regex": The regular expression used to match the country name. Useful
 for debugging.
+
 \item "GW_startdate": The entry date of the state into the international system
 (usually the date of independence, though there can be more than one if the
 country entered or exited the state system at different times), according
 to Gleditsch and Ward, or 1 January 1816, whichever is later. Is \code{NA} if
 the country was never in the Gleditsch and Ward system of states.
+
 \item "GW_enddate": The exit date of the state from the international system
 (usually the date the state lost its independence, though there can be more
 than one), according to Gleditsch and Ward, or \code{NA} if the country is still
 in the international system as of the time the dataset was compiled. Is
 \code{NA} if the country was never in the Gleditsch and Ward system of states.
+
 \item "cow_startdate": The entry date of the state into the international
 system (usually the date of independence, though there can be more than one
 if the country entered or exited the state system at different times),
 according to Correlates of War, or 1 January 1800, whichever is later. Is
 always \code{NA} if the country was never in the Correlates of War system of
 states.
+
 \item "cow_enddate": The exit date of the state from the international system
 (usually the date the state lost its independence, though there can be more
 than one), according to the Correlates of War system, or \code{NA} if the
 country is still in the international system as of the time the dataset was
 compiled. Is always \code{NA} if the country was never in the Correlates of War
 system of states.
+
 \item "official_region": Regions as defined in the World Bank Development
-Indicators. Taken form the package \link{countrycode}.
+Indicators. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
 \item "extended_region": The same as "official_region", except it adds region
 information for historical states. It assigns "Austria-Hungary" the
 (invented) region "Central Europe", since Hungary is assigned to Eastern
 Europe and Austria to Western Europe in the World Bank scheme.
+
 \item "official_continent": Continents as defined in the World Bank Development
-Indicators. Taken form the package \link{countrycode}.
+Indicators. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
 \item "extended_continent": The same as "official_continent", except it adds
 continent information for historical states. Is \code{NA} only for Antarctica
 and a number of isolated islands.
+
 \item "lon": The rough longitude of the state, obtained by geocoding the
 official country name via \link[ggmap:geocode]{ggmap::geocode} (with some manual adjustments
 for historical states).
+
 \item "lat": The rough latitude of the state, obtained by geocoding the
 official country name via \link[ggmap:geocode]{ggmap::geocode} (with some manual adjustments
 for historical states).
+
 \item "microstate": Whether the state is a microstate, according to Gleditsch.
 His tentative list of microstates is available at
-http://privatewww.essex.ac.uk/~ksg/statelist.html.
+\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.
+
 \item "in_GW_system": Whether the state is "in system" (that is, is independent
 and sovereign), according to Gleditsch and Ward, for a particular date.
+
 \item "in_cow_system": Whether the state is "in system" (that is, is
 independent and sovereign), according to the Correlates of War system, for
 a particular date.
+
 \item "in_polity_system": Whether the state is "in system" (that is, is
 independent and sovereign), according to the Polity IV system, for a
 particular date.
+
 \item ar5: IPCC's regional mapping used both in the Fifth Assessment Report
 (AR5) and for the Reference Concentration Pathways (RCP). Taken from
-\link{countrycode}.
+\link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
 \item continent: Continent as defined in the World Bank Development Indicators.
-Taken from \link{countrycode}.
+Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
 \item "eurocontrol_pru": European Organisation for the Safety of Air Navigation
-region. Taken from \link{countrycode}.
+region. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
 \item "eurocontrol_statfor": European Organisation for the Safety of Air
-Navigation region. Taken from \link{countrycode}.
-\item "eurostat": Eurostat 2-letter country code. Taken from \link{countrycode}.
+Navigation region. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
+\item "eurostat": Eurostat 2-letter country code. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
 \item "eu28": Whether the state is a member of the European Union (as of
-December 2015), without special territories. Taken from \link{countrycode}.
+December 2015), without special territories. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
 \item "fao": Food and Agriculture Organization of the United Nations numerical
-country code. Taken from \link{countrycode}.
+country code. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+
 \item "fips105": FIPS 10-5 (Federal Information Processing Standard) 2-letter
-country code. Taken from \link{countrycode}.
-}
+country code. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"icao": International Civil Aviation Organization 2-letter country code.
-Taken from \link{countrycode}.
+\item "icao": International Civil Aviation Organization 2-letter country code.
+Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"icao_region": International Civil Aviation Organization region code. Taken
-from \link{countrycode}.
+\item "icao_region": International Civil Aviation Organization region code. Taken
+from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"imf": International Monetary Fund numeric country code. Taken from
-\link{countrycode}.
+\item "imf": International Monetary Fund numeric country code. Taken from
+\link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"ioc": International Olympic Committee 3-letter country code. Taken from
-\link{countrycode}.
+\item "ioc": International Olympic Committee 3-letter country code. Taken from
+\link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"iso2c": ISO-2 character. Taken from \link{countrycode}.
+\item "iso2c": ISO-2 character. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"iso3c": ISO-3 character. Taken from \link{countrycode}.
+\item "iso3c": ISO-3 character. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"iso2n": ISO-2 numeric. Taken from \link{countrycode}.
+\item "iso2n": ISO-2 numeric. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"iso3n": ISO-3 numeric. Taken from \link{countrycode}.
+\item "iso3n": ISO-3 numeric. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"un": United Nations numerical code. Taken from \link{countrycode}.
+\item "un": United Nations numerical code. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"wb": World Bank (very similar but not identical to iso3c). Taken from
-\link{countrycode}.
+\item "wb": World Bank (very similar but not identical to iso3c). Taken from
+\link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"wb_api2c": World Bank API 2 character code. Taken from \link{countrycode}.
+\item "wb_api2c": World Bank API 2 character code. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"wb_api3c": World Bank API 3 character code. Taken from \link{countrycode}.
+\item "wb_api3c": World Bank API 3 character code. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"wvs": World Values Survey numeric code. Taken from \link{countrycode}.
+\item "wvs": World Values Survey numeric code. Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"country_name_ar": country name (Arabic). Taken from \link{countrycode}.
+\item "country_name_ar": country name (Arabic). Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"country_name_de": country name (German). Taken from \link{countrycode}.
+\item "country_name_de": country name (German). Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"country_name_es": country name (Spanish). Taken from \link{countrycode}.
+\item "country_name_es": country name (Spanish). Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"country_name_fr": country name (French). Taken from \link{countrycode}.
+\item "country_name_fr": country name (French). Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"country_name_ru": country name (Russian). Taken from \link{countrycode}.
+\item "country_name_ru": country name (Russian). Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
 
-"country_name_zh": country name (Chinese). Taken from \link{countrycode}.}
+\item "country_name_zh": country name (Chinese). Taken from \link[countrycode:countrycode_data]{countrycode::countrycode_data}.
+}}
 
 \item{verbose}{Prints information about countries matched multiple times,
 name changes, and other problems encountered while processing the data.

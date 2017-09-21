@@ -21,7 +21,8 @@ know about.
 the dataset included in this package, except for datasets with more than
 one version (e.g., \code{gwf} matches \link{gwf_all}, \link{gwf_all_extended},
 \link{gwf_autocratic}, and \link{gwf_autocratic_extended}). It also includes datasets
-not included in this package (e.g., vdem, accessible via the \href{http://github.com/xmarquez/vdem}{vdem packageon Github}, and polity IV, accesible via
+not included in this package (e.g., vdem, accessible via the vdem package
+on Github (\url{http://github.com/xmarquez/vdem}), and polity IV, accesible via
 the \link{download_polity_annual} function in this package).}
 
 \item{long_name}{Longer name of the dataset, or official name, if any.}
@@ -64,7 +65,7 @@ monarchies and military regimes).}
 Some datasets (e.g., \link{gwf}, \link{ulfelder}, \link{bnr}, \link{magaloni}) contain
 information about regime duration that can be used to extend their range
 back in time; others are latent variable indexes that can be extended using
-specific packages (e.g., \link{uds}, which can be extended using the \href{http://github.com/xmarquez/QuickUDS}{QuickUDS package on Github}). The "extended"
+specific packages (e.g., \link{uds}, which can be extended using the QuickUDS package on Github (\url{http://github.com/xmarquez/QuickUDS}). The "extended"
 versions of some datasets are included in this package.}
 
 \item{donwloadable}{Whether this package includes a function to download the
@@ -73,7 +74,7 @@ dataset directly from the original source.}
 \item{included_in_package}{Whether the dataset is included in this package. Some
 are not, either due to use restrictions, or because they are updated with
 some frequency (e.g., \link{fh}), or because they are too big (e.g., vdem, which
-is accessible via the \href{http://github.com/xmarquez/vdem}{vdem package on Github}).}
+is accessible via the vdem package on Github (\url{http://github.com/xmarquez/vdem}).}
 
 \item{first_published_use}{Year of first published use (as far as I know). In
 some cases the data used in the first published use is very different from

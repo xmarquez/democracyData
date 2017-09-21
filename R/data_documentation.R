@@ -77,13 +77,13 @@
 #' @rdname blm
 #' @section Note:
 #'
-#'   The `blm_pmm` version of this data is taken from from Pemstein, Daniel,
+#'   The \code{blm_pmm} version of this data is taken from from Pemstein, Daniel,
 #'   Stephen A. Meserve, and James Melton. 2013. "Replication data for:
 #'   Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
 #'   Type." In: Harvard Dataverse.
 #'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). The
-#'   original dataset is found in `blm`. The `blm_pmm` data only goes back to
-#'   1946, but is otherwise identical to the `blm` data. It is included here for
+#'   original dataset is found in \code{blm}. The \code{blm_pmm} data only goes back to
+#'   1946, but is otherwise identical to the \code{blm} data. It is included here for
 #'   completeness.
 "blm_pmm"
 
@@ -148,7 +148,7 @@
 #'   (Time Series:  1913-2005, n: 3654, N: 126, Mean number of countries per
 #'   year: 39.28 , Mean number of years per country: 29.46).
 #'
-#'   The `event` variable is a binary coding of all democracies from 1913 until
+#'   The \code{event} variable is a binary coding of all democracies from 1913 until
 #'   2005 prepared for use in event history analysis.  Countries that meet the
 #'   minimum conditions for democracy (see below) enter the dataset and are
 #'   coded "0."  When countries cease to meet those minimum criteria they are
@@ -190,8 +190,8 @@
 #'
 #'   \item{bnr}{Only in the \code{bnr_extended} dataset. 0 = non-democracy, 1 =
 #'   democracy. Years with a termination event are coded 0. Note that this is
-#'   the reverse of the `event` variable, where 0 indicates democracy; this is
-#'   because the `bnr` dataset was originally created for survival analysis.}
+#'   the reverse of the \code{event} variable, where 0 indicates democracy; this is
+#'   because the \code{bnr} dataset was originally created for survival analysis.}
 #'
 #'   }
 #' @template standard-variables
@@ -208,12 +208,12 @@
 #' @rdname bnr
 #' @section Note about the "extended" version of the dataset:
 #'
-#'   The `bnr_extended` version of this data is the same as the `bnr` data, but
+#'   The \code{bnr_extended} version of this data is the same as the \code{bnr} data, but
 #'   it uses the COW system of states to impute a value of "non-democracy" to
 #'   years where the state was in the state system but does not appear in the
-#'   original `bnr` dataset. For example, Albania first appears in the `bnr`
+#'   original \code{bnr} dataset. For example, Albania first appears in the \code{bnr}
 #'   dataset in 1992 as a democracy; but it was in the state system since much
-#'   earlier. Since the `bnr` dataset claims to record all democratization
+#'   earlier. Since the \code{bnr} dataset claims to record all democratization
 #'   events in the COW system of states since 1913, we assume Albania was
 #'   non-democratic between 1913 and 1992. This procedure generates a large
 #'   number of additional country-years with information about democracy.
@@ -299,7 +299,7 @@
 #' Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." In:
 #' Harvard Dataverse. \url{http://hdl.handle.net/1902.1/PMM}. It differs for
 #' some country-years from the current version of the Freedom House data, which
-#' can be accessed using [download_fh]; hence its inclusion here.
+#' can be accessed using \link{download_fh}; hence its inclusion here.
 #'
 #' @section Variables:
 #'
@@ -326,7 +326,7 @@
 #' @family Freedom House
 #' @family PMM replication data
 #' @family ordinal democracy indexes
-#' @seealso [download_fh] and [download_fh_electoral]
+#' @seealso \link{download_fh} and \link{download_fh_electoral}
 #' @aliases fh
 "fh_pmm"
 
@@ -385,7 +385,7 @@
 #'   To code the lexical index we make use of five variables developed initially
 #'   in the Political Institutions and Events (\code{PIPE}) dataset
 #'   (Przeworski et al. 2013): LEGSELEC, EXSELEC, OPPOSITION, MALE SUFFRAGE, and
-#'   FEMALE SUFFRAGE. Since `PIPE` does not attempt to measure the
+#'   FEMALE SUFFRAGE. Since \code{PIPE} does not attempt to measure the
 #'   quality of elections, we generate a sixth variable: COMPETITION. All
 #'   variables are binary, coded 1 if the following circumstances obtain, and 0
 #'   otherwise.
@@ -684,14 +684,14 @@
 #' @rdname mainwaring
 #' @section Note:
 #'
-#'   The [mainwaring_pmm] version of this data is taken from from Pemstein,
+#'   The \link{mainwaring_pmm} version of this data is taken from from Pemstein,
 #'   Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
 #'   Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
 #'   Type." In: Harvard Dataverse.
 #'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). It
 #'   only contains a numeric version of the mainwaring Regime indicator, ranging
 #'   from -1 (Authoritarian) to 0 (Semidemocracy) to 1 (Democracy). The original
-#'   dataset is found in [mainwaring]. PMM's replication data is actually
+#'   dataset is found in \link{mainwaring}. PMM's replication data is actually
 #'   missing a fair number of the data points in the original data by Mainwaring
 #'   et al (Mainwaring, Brinks, and Perez Linan 2008), but the original data is
 #'   not missing any of their data points, and there are no differences between
@@ -1014,14 +1014,14 @@
 #' \item{gwf_fail}{Binary indicator for regime failure}
 #'
 #' \item{gwf_disagree}{Binary indicator for country-year observations where GWF
-#' coding of democracy differs from CGV (here [pacl]) coding of democracy}
+#' coding of democracy differs from CGV (here \link{pacl}) coding of democracy}
 #'
 #' \item{gwf_startdate}{Day-Month-Year for the calendar date of the autocratic
-#' regime start event. Only in `gwf_autocratic` datasets.}
+#' regime start event. Only in \code{gwf_autocratic} datasets.}
 #'
 #' \item{gwf_enddate}{Day-Month-Year for the calendar date
 #' of the autocratic regime failure event (31-12-2010 for right-censored
-#' autocratic regimes). Only in `gwf_autocratic` datasets.}
+#' autocratic regimes). Only in \code{gwf_autocratic} datasets.}
 #'
 #' \item{gwf_spell}{Time-invariant duration of autocratic
 #' regime}
@@ -1069,7 +1069,7 @@
 
 #' @rdname gwf_all
 #' @section Note: The "extended" datasets `*_extended` are extended back in time
-#'   using the `gwf_duration` variable, so they include years before 1946.The
+#'   using the \code{gwf_duration} variable, so they include years before 1946.The
 #'   original country-year datasets did not include the period before 1946
 #'   explicitly.
 #' @aliases gwf
@@ -1578,13 +1578,13 @@
 #' @rdname pacl
 #' @section Note:
 #'
-#'   The `pacl_pmm` version of this data is taken from from Pemstein, Daniel,
+#'   The \code{pacl_pmm} version of this data is taken from from Pemstein, Daniel,
 #'   Stephen A. Meserve, and James Melton. 2013. It only contains the numberic
-#'   version of the variable `democracy` in the original dataset. "Replication
+#'   version of the variable \code{democracy} in the original dataset. "Replication
 #'   data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures
 #'   of Regime Type." In: Harvard Dataverse. http://hdl.handle.net/1902.1/PMM.
-#'   The original dataset is found in `pacl`. `pacl_pmm` is missing a few
-#'   country-years when compared with `pacl`.
+#'   The original dataset is found in \code{pacl}. \code{pacl_pmm} is missing a few
+#'   country-years when compared with \code{pacl}.
 "pacl_pmm"
 
 
@@ -1686,7 +1686,7 @@
 #' Meserve, and James Melton. 2013. "Replication data for: Democratic
 #' Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." In:
 #' Harvard Dataverse. http://hdl.handle.net/1902.1/PMM. Higher values are more
-#' democratic. Use [download_polity_annual] to download the latest version of the
+#' democratic. Use \link{download_polity_annual} to download the latest version of the
 #' Polity IV data.
 #'
 #'
@@ -1722,7 +1722,7 @@
 #' @family democracy
 #' @family PMM replication data
 #' @family ordinal democracy indexes
-#' @seealso [download_polity_annual]
+#' @seealso \link{download_polity_annual}
 "polity_pmm"
 
 
@@ -1787,14 +1787,14 @@
 #' @rdname prc_gasiorowski
 #' @section Note:
 #'
-#'   The `prc_pmm` version of this data is taken from from Pemstein, Daniel,
+#'   The \code{prc_pmm} version of this data is taken from from Pemstein, Daniel,
 #'   Stephen A. Meserve, and James Melton. 2013. "Replication data for:
 #'   Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
 #'   Type." In: Harvard Dataverse.
 #'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). The
-#'   original dataset is found in `prc_gasiorowski`. The `prc_pmm` data only goes
+#'   original dataset is found in \code{prc_gasiorowski}. The \code{prc_pmm} data only goes
 #'   back to 1945. It also differs from the original data in a few cases,
-#'   because it only includes one year per country - whereas `prc_gasiorowski`
+#'   because it only includes one year per country - whereas \code{prc_gasiorowski}
 #'   can include more than one regime classificaiton for a given year. For more
 #'   detail on the differences, see the vignette. It is included here for completeness.
 "prc_pmm"
@@ -1881,7 +1881,7 @@
 #'   not free and fair.
 #'   }
 #'
-#'   \item{regime_numeric}{A numeric version of `regime`. 1 = democracy, 0 = non-democracy, everything else is `NA`.}
+#'   \item{regime_numeric}{A numeric version of \code{regime}. 1 = democracy, 0 = non-democracy, everything else is \code{NA}.}
 #'
 #'   \item{start_year}{First year of the regime.}
 #'
@@ -2355,13 +2355,13 @@
 #' @rdname polyarchy
 #' @section Note:
 #'
-#'   The `polyarchy_pmm` version of this data is taken from from Pemstein,
+#'   The \code{polyarchy_pmm} version of this data is taken from from Pemstein,
 #'   Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
 #'   Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
 #'   Type." In: Harvard Dataverse.
 #'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). The
-#'   original dataset is found in `polyarchy`. It only contains a reversed
-#'   version of the `poly` variable in the original `polyarchy` dataset (higher
+#'   original dataset is found in \code{polyarchy}. It only contains a reversed
+#'   version of the \code{poly} variable in the original \code{polyarchy} dataset (higher
 #'   values being more democratic). 22 country-years differ between PMM's
 #'   replication data and the original Polyarchy dataset (Coppedge and Reinicke
 #'   1991), and four are missing. These seem to be due to simple transcription
@@ -2613,9 +2613,9 @@
 #'
 #' This is the dataset documented in Jay Ulfelder. _Democracy/Autocracy Data
 #' Set_. 2012. \url{http://hdl.handle.net/1902.1/18836}. It comes in two
-#' versions: [ulfelder], which only goes back to 1955, and [ulfelder_extended],
-#' which extends the regime classifications back in time using the `rgjdura` and
-#' `rgjdurd` variables, adding 3861 country-years to the original data, mostly
+#' versions: \link{ulfelder}, which only goes back to 1955, and \link{ulfelder_extended},
+#' which extends the regime classifications back in time using the \code{rgjdura} and
+#' \code{rgjdurd} variables, adding 3861 country-years to the original data, mostly
 #' authoritarian regimes.
 #'
 #' @section Variables with values for all years:
@@ -2623,15 +2623,15 @@
 #'   pitfcode: PITF Country Code. Three-character country code matching those
 #'   used by the Political Instability Task Force. Some of these seem off - GER
 #'   for Germany instead of GMY, UK instead of UKG. I've created
-#'   `ulfelder_scode` on the basis of this by converting "GER","MNE","SRB","UK",
+#'   \code{ulfelder_scode} on the basis of this by converting "GER","MNE","SRB","UK",
 #'   and "USS" to"GMY","MNT","SER","UKG", and "USR" respectively.
 #'
-#'   ulfelder_scode: Modified version of `pitfcode`, matching the Polity IV
+#'   ulfelder_scode: Modified version of \code{pitfcode}, matching the Polity IV
 #'   character codes that appear to be the basis of the PITF codes.
 #'
 #'   cowcode: Correlates of War (COW) Country Code. Numeric country code
 #'   matching those used by the Correlates of War project. Missing some. Use
-#'   `cown` instead.
+#'   \code{cown} instead.
 #'
 #'   year: The year.
 #'
@@ -2661,8 +2661,8 @@
 #'
 #' @section Variables with values only for years greater than 1955:
 #'
-#'   The following variables are all `NA` for years before 1955 (by construction
-#'   - I do not impute their values for these years in the [ulfelder_extended]
+#'   The following variables are all \code{NA} for years before 1955 (by construction
+#'   - I do not impute their values for these years in the \link{ulfelder_extended}
 #'   dataset).
 #'
 #'   rgjdem: Undocumented.
@@ -2829,7 +2829,7 @@
 #'
 #'   rgjepd1a: Age at Onset of First Episode of Democracy. Three-digit numeric
 #'   variable indicating age of country at time of onset of first democratic
-#'   episode, including ongoing episode if it is the first. Equal to `rgjepd1``
+#'   episode, including ongoing episode if it is the first. Equal to \code{rgjepd1}
 #'   minus birth-year of country, so equal to 0 for countries that were "born"
 #'   with a democratic regime.
 #'
@@ -3409,12 +3409,12 @@
 #' @rdname vanhanen
 #' @section Note:
 #'
-#'   The `vanhanen_pmm` version of this data is taken from from Pemstein,
+#'   The \code{vanhanen_pmm} version of this data is taken from from Pemstein,
 #'   Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
 #'   Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
 #'   Type." In: Harvard Dataverse.
 #'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). The
-#'   original dataset is found in `vanhanen`. The `vanhanen_pmm` data only goes
+#'   original dataset is found in \code{vanhanen}. The \code{vanhanen_pmm} data only goes
 #'   back to 1945. There are some missing values in PMM's data compared to the
 #'   original Vanhanen dataset. For more detail on the differences, see the
 #'   vignette. The vanhanen_pmm data is included here for completeness.
@@ -3878,7 +3878,7 @@
 
 #' References to all the datasets included in this package.
 #'
-#' This is a [BibEntry] object that can be manipulated using the [RefManageR]
+#' This is a \link{BibEntry} object that can be manipulated using the \link{RefManageR}
 #' package functions or the standard citation functions in R.
 "bibliography"
 
@@ -3952,7 +3952,7 @@
 #'
 #'  \item{PIPE_countryn}{The name of the country at the time. This has been
 #'  partially reconstructed. The original data was missing many names, and did
-#'  not use a consistent scheme for naming countries. Use `GW_country_name`
+#'  not use a consistent scheme for naming countries. Use \code{GW_country_name}
 #'  instead.}
 #'
 #'  \item{country_number}{The number of the country. Note: For historical
@@ -5040,7 +5040,7 @@
 #'  \describe{
 #'
 #'  \item{republic}{Whether the country is a republic during the year.
-#'  (\code{republic_age} is not missing). Calculated from `republic_age`.}
+#'  (\code{republic_age} is not missing). Calculated from \code{republic_age}.}
 #'
 #'  \item{republican_period}{Identifier for periods of republican and
 #'  non-republican rule in a given country. Increases with each change between
@@ -5452,11 +5452,11 @@
 #'
 #'   \item{dataset}{The basic name of the dataset. This usually matches the name of
 #'   the dataset included in this package, except for datasets with more than
-#'   one version (e.g., `gwf` matches [gwf_all], [gwf_all_extended],
-#'   [gwf_autocratic], and [gwf_autocratic_extended]). It also includes datasets
-#'   not included in this package (e.g., vdem, accessible via the [vdem package
-#'   on Github](http://github.com/xmarquez/vdem), and polity IV, accesible via
-#'   the [download_polity_annual] function in this package).}
+#'   one version (e.g., \code{gwf} matches \link{gwf_all}, \link{gwf_all_extended},
+#'   \link{gwf_autocratic}, and \link{gwf_autocratic_extended}). It also includes datasets
+#'   not included in this package (e.g., vdem, accessible via the vdem package
+#'   on Github (\url{http://github.com/xmarquez/vdem}), and polity IV, accesible via
+#'   the \link{download_polity_annual} function in this package).}
 #'
 #'   \item{long_name}{Longer name of the dataset, or official name, if any.}
 #'
@@ -5484,8 +5484,8 @@
 #'   Pemstein, Meserve, and Melton's (2013) replication data for their 2010
 #'   article introducing the Unified Democracy Scores (Pemstein, Meserve, and
 #'   Melton 2010). In some cases this is the only electronic source I have been
-#'   able to identify for the included measure (e.g., [arat_pmm]). It's also
-#'   worth noting that in a few cases (e.g., [prc_gasiorowski], [prc_pmm]) there
+#'   able to identify for the included measure (e.g., \link{arat_pmm}). It's also
+#'   worth noting that in a few cases (e.g., \link{prc_gasiorowski}, \link{prc_pmm}) there
 #'   are some identifiable differences between the original data and the data in
 #'   the replication dataset. See the vignette in this package for further
 #'   discussion.}
@@ -5495,10 +5495,10 @@
 #'   monarchies and military regimes).}
 #'
 #'   \item{user_extendable}{Whether the dataset is extendable in time by the user.
-#'   Some datasets (e.g., [gwf], [ulfelder], [bnr], [magaloni]) contain
+#'   Some datasets (e.g., \link{gwf}, \link{ulfelder}, \link{bnr}, \link{magaloni}) contain
 #'   information about regime duration that can be used to extend their range
 #'   back in time; others are latent variable indexes that can be extended using
-#'   specific packages (e.g., [uds], which can be extended using the [QuickUDS package on Github](http://github.com/xmarquez/QuickUDS)). The "extended"
+#'   specific packages (e.g., \link{uds}, which can be extended using the QuickUDS package on Github (\url{http://github.com/xmarquez/QuickUDS}). The "extended"
 #'   versions of some datasets are included in this package.}
 #'
 #'   \item{donwloadable}{Whether this package includes a function to download the
@@ -5506,8 +5506,8 @@
 #'
 #'   \item{included_in_package}{Whether the dataset is included in this package. Some
 #'   are not, either due to use restrictions, or because they are updated with
-#'   some frequency (e.g., [fh]), or because they are too big (e.g., vdem, which
-#'   is accessible via the [vdem package on Github](http://github.com/xmarquez/vdem)).}
+#'   some frequency (e.g., \link{fh}), or because they are too big (e.g., vdem, which
+#'   is accessible via the vdem package on Github (\url{http://github.com/xmarquez/vdem}).}
 #'
 #'   \item{first_published_use}{Year of first published use (as far as I know). In
 #'   some cases the data used in the first published use is very different from

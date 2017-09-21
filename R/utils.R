@@ -229,8 +229,7 @@ standardize_columns <- function(data,
 
 #' Retrieve the citation for a specific dataset included in this package
 #'
-#' This is a convenient wrapper for `print(bibliography)`, searching by `key =
-#' dataset_name`, with `BibOptions(use.regex = TRUE)`. You can also search and
+#' This is a convenient wrapper for \code{print(bibliography)}, searching by \code{key = dataset_name}, with \code{BibOptions(use.regex = TRUE)}. You can also search and
 #' manipulate the \code{\link{bibliography}} object directly using the
 #' \code{\link{RefManageR}} package functions.
 #'

@@ -102,11 +102,7 @@ more democracy, and that all country-years are appropriately matched.
  \url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
 
  \item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
- Ward list of independent states. For details, see Gleditsch, Kristian S. &
- Michael D. Ward. 1999. "Interstate System Membership: A Revised List of the
- Independent States since 1816." International Interactions 25: 393-413. The
- list can be found at
- \url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
+ Ward list of independent states.}
 
  \item{cown}{The Correlates of War numeric country code, 2016 version. This
  differs from Gleditsch and Ward's numeric country code in a few cases. See
@@ -116,9 +112,9 @@ more democracy, and that all country-years are appropriately matched.
  \item{in_GW_system}{Whether the state is "in system" (that is, is
  independent and sovereign), according to Gleditsch and Ward, for this
  particular date. Matches at the end of the year; so, for example South
- Vietnam 1975 is `FALSE` because, according to Gleditsch and Ward, the
+ Vietnam 1975 is \code{FALSE} because, according to Gleditsch and Ward, the
  country ended on April 1975 (being absorbed by North Vietnam). It is also
- `TRUE` for dates beyond 2012 for countries that did not end by then, depsite
+ \code{TRUE} for dates beyond 2012 for countries that did not end by then, depsite
  the fact that the Gleditsch and Ward list has not been updated since.} }
 }
 
@@ -135,8 +131,7 @@ frame also contains the following variables:
 \describe{
 
 \item{year}{The calendar year. Most measures of democracy reflect the
-country's situation as of 31 December of the year. If \code{keep_last_in_year} =
-"FALSE" (and \code{format = "long"}), a single country year may nevertheless
+country's situation as of 31 December of the year. If \code{keep_last_in_year = FALSE} (and \code{format = "long"}), a single country year may nevertheless
 contain more than one measurement for some measures (e.g., \link{prc}).}
 
 \item{measure}{The dataset whence the measure is taken. (e.g., "blm",
