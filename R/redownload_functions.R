@@ -792,7 +792,7 @@ redownload_wahman_teorell_hadenius <- function(url,
   wahman_teorell_hadenius <- data %>%
     country_year_coder(country,
                        year,
-                       cowcode,
+                       # cowcode,
                        match_type = "country",
                        verbose = verbose,
                        ...)
@@ -913,8 +913,8 @@ redownload_polyarchy_dimensions <- function(url,
   polyarchy_dimensions <- data %>%
     country_year_coder(cname,
                        year,
-                       ccodecow,
-                       code_type = "cown",
+                       # ccodecow,
+                       # code_type = "cown",
                        verbose = verbose,
                        ...)
 
@@ -1067,8 +1067,8 @@ redownload_uds <- function(release_year = 2014,
   uds <- data %>%
     country_year_coder(country,
                        year,
-                       cowcode,
-                       code_type = "cown",
+                       # cowcode,
+                       # code_type = "cown",
                        match_type = "country",
                        verbose = verbose,
                        ...)
@@ -1267,6 +1267,10 @@ redownload_pipe <- function(url,
   PIPE$countryn[ PIPE$countryn == "Serbia/Montenegro/Kosovo" ] <- "Serbia"
   PIPE$countryn[ PIPE$countryn == "Hungary Empire" ] <- "Austria-Hungary (Hungary)"
   PIPE$countryn[ PIPE$countryn == "Austria Empire" ] <- "Austria-Hungary (Austria)"
+
+  PIPE <- PIPE %>%
+    filter(!(cowcodes %in% 255 & year %in% 1946:1989),
+           !(cowcodes %in% 679 & year < 1990))
 
   PIPE <- PIPE %>%
     country_year_coder(countryn,

@@ -11,7 +11,7 @@ output:
 
 knitr::opts_chunk$set(echo = TRUE,
                       cache = TRUE,
-                      cache.rebuild = FALSE,
+                      cache.rebuild = TRUE,
                       warning=FALSE,
                       message = TRUE)
 library(tidyverse)
@@ -63,6 +63,7 @@ cite_dataset("bmr")
 
 bmr <- redownload_bmr(verbose = verbose, 
                       include_in_output = include_in_output)
+
 
 devtools::use_data(bmr, overwrite = TRUE)
 ```

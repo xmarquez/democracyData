@@ -22,8 +22,8 @@ prepare_pmm_replication_data <- function(
     as_tibble() %>%
     country_year_coder(country_col = country,
                        date_col = year,
-                       code_col = cowcode,
-                       code_type = "cown",
+                       # code_col = cowcode,
+                       # code_type = "cown",
                        match_type = "country",
                        verbose = verbose,
                        ...)
