@@ -867,7 +867,9 @@ generate_democracy_scores_dataset <- function(datasets,
     democracy_data <- polyarchy %>%
       rename_at("cont", quo(c("polyarchy_original_contestation"))) %>%
       mutate_at("poly", funs("polyarchy_original_polyarchy" = (10 - .))) %>%
-      tidyr::gather("measure", "value", "polyarchy_original_contestation") %>%
+      tidyr::gather("measure", "value",
+                    "polyarchy_original_contestation",
+                    "polyarchy_original_polyarchy") %>%
       standardize_selection()
   }
 
