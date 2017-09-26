@@ -38,7 +38,14 @@
   <a href="reference/index.html">Reference</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/xmarquez/democracyData">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -699,7 +706,7 @@ democracy_data &lt;-<span class="st"> </span><span class="kw"><a href="reference
                                                     <span class="dt">verbose =</span> <span class="ot">FALSE</span>)
 
 democracy_data
-<span class="co">#&gt; # A tibble: 24,622 x 71</span>
+<span class="co">#&gt; # A tibble: 24,492 x 72</span>
 <span class="co">#&gt;    extended_country_name   GWn  cown in_GW_system  year   blm</span>
 <span class="co">#&gt;                    &lt;chr&gt; &lt;dbl&gt; &lt;int&gt;        &lt;lgl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
 <span class="co">#&gt;  1              Abkhazia   396    NA        FALSE  1997    NA</span>
@@ -712,7 +719,7 @@ democracy_data
 <span class="co">#&gt;  8              Abkhazia   396    NA        FALSE  2004    NA</span>
 <span class="co">#&gt;  9              Abkhazia   396    NA        FALSE  2005    NA</span>
 <span class="co">#&gt; 10              Abkhazia   396    NA        FALSE  2006    NA</span>
-<span class="co">#&gt; # ... with 24,612 more rows, and 65 more variables: bmr_democracy &lt;dbl&gt;,</span>
+<span class="co">#&gt; # ... with 24,482 more rows, and 66 more variables: bmr_democracy &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   bmr_democracy_omitteddata &lt;dbl&gt;, bnr &lt;dbl&gt;, bnr_extended &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   doorenspleet &lt;dbl&gt;, fh_electoral &lt;dbl&gt;, fh_total_reversed &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   gwf_democracy &lt;dbl&gt;, gwf_democracy_extended &lt;dbl&gt;,</span>
@@ -728,10 +735,11 @@ democracy_data
 <span class="co">#&gt; #   pmm_polyarchy &lt;dbl&gt;, pmm_prc &lt;dbl&gt;, pmm_vanhanen &lt;dbl&gt;, polity &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   polity2 &lt;dbl&gt;, polyarchy_contestation_dimension &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   polyarchy_inclusion_dimension &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   polyarchy_original_contestation &lt;dbl&gt;, prc &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   reign_democracy &lt;dbl&gt;, svolik_democracy &lt;dbl&gt;, uds_2010_mean &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   uds_2010_median &lt;dbl&gt;, uds_2011_mean &lt;dbl&gt;, uds_2011_median &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   uds_2014_mean &lt;dbl&gt;, uds_2014_median &lt;dbl&gt;, ulfelder_democracy &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   polyarchy_original_contestation &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   polyarchy_original_polyarchy &lt;dbl&gt;, prc &lt;dbl&gt;, reign_democracy &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   svolik_democracy &lt;dbl&gt;, uds_2010_mean &lt;dbl&gt;, uds_2010_median &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   uds_2011_mean &lt;dbl&gt;, uds_2011_median &lt;dbl&gt;, uds_2014_mean &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   uds_2014_median &lt;dbl&gt;, ulfelder_democracy &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   ulfelder_democracy_extended &lt;dbl&gt;, utip_dichotomous &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   utip_dichotomous_strict &lt;dbl&gt;, utip_trichotomous &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   vanhanen_competition &lt;dbl&gt;, vanhanen_democratization &lt;dbl&gt;,</span>
@@ -762,24 +770,24 @@ democracy_data
 
 my_weird_democracy_data
 <span class="co">#&gt; # A tibble: 16 x 3</span>
-<span class="co">#&gt;                        country  year   my_measure</span>
-<span class="co">#&gt;                          &lt;chr&gt; &lt;dbl&gt;        &lt;dbl&gt;</span>
-<span class="co">#&gt;  1                     Germany  2015 -0.105091219</span>
-<span class="co">#&gt;  2                     Germany  1930  0.088256862</span>
-<span class="co">#&gt;  3                     Germany  1970  0.686670214</span>
-<span class="co">#&gt;  4                     Germany  1945  1.163024482</span>
-<span class="co">#&gt;  5                East Germany  1949  0.001425303</span>
-<span class="co">#&gt;  6 Federal Republic of Germany  1992  1.518878694</span>
-<span class="co">#&gt;  7                  Somaliland  1990  0.091110899</span>
-<span class="co">#&gt;  8                     Somalia  1990  0.104497514</span>
-<span class="co">#&gt;  9                   Palestine  1940 -0.576796373</span>
-<span class="co">#&gt; 10                      Russia  1917 -0.662569973</span>
-<span class="co">#&gt; 11                      Russia  1912 -0.981534608</span>
-<span class="co">#&gt; 12                        USSR  1922 -0.773672336</span>
-<span class="co">#&gt; 13         Republic of Vietnam  1975 -0.945733953</span>
-<span class="co">#&gt; 14                  Yugoslavia  1990  0.718477168</span>
-<span class="co">#&gt; 15                  Yugoslavia  1991 -1.244241601</span>
-<span class="co">#&gt; 16              Vietnam, South  1954  1.182624263</span></code></pre></div>
+<span class="co">#&gt;                        country  year my_measure</span>
+<span class="co">#&gt;                          &lt;chr&gt; &lt;dbl&gt;      &lt;dbl&gt;</span>
+<span class="co">#&gt;  1                     Germany  2015  0.1285681</span>
+<span class="co">#&gt;  2                     Germany  1930 -0.9655177</span>
+<span class="co">#&gt;  3                     Germany  1970 -0.1245479</span>
+<span class="co">#&gt;  4                     Germany  1945  1.0873727</span>
+<span class="co">#&gt;  5                East Germany  1949  0.4697104</span>
+<span class="co">#&gt;  6 Federal Republic of Germany  1992 -1.2458032</span>
+<span class="co">#&gt;  7                  Somaliland  1990  1.4738273</span>
+<span class="co">#&gt;  8                     Somalia  1990 -1.1830631</span>
+<span class="co">#&gt;  9                   Palestine  1940  2.0483262</span>
+<span class="co">#&gt; 10                      Russia  1917 -0.8206145</span>
+<span class="co">#&gt; 11                      Russia  1912  0.6309429</span>
+<span class="co">#&gt; 12                        USSR  1922  1.5767534</span>
+<span class="co">#&gt; 13         Republic of Vietnam  1975 -1.0744173</span>
+<span class="co">#&gt; 14                  Yugoslavia  1990 -0.8470188</span>
+<span class="co">#&gt; 15                  Yugoslavia  1991  0.4426638</span>
+<span class="co">#&gt; 16              Vietnam, South  1954  2.1793583</span></code></pre></div>
 <p>and you then want to add state system information. <code>country_year_coder</code> does that for you!</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
 my_weird_democracy_data &lt;-<span class="st"> </span>my_weird_democracy_data %&gt;%
@@ -817,7 +825,7 @@ my_weird_democracy_data %&gt;%
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="right">2015</td>
-<td align="right">-0.1050912</td>
+<td align="right">0.1285681</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -831,7 +839,7 @@ my_weird_democracy_data %&gt;%
 <tr class="even">
 <td align="left">Germany</td>
 <td align="right">1930</td>
-<td align="right">0.0882569</td>
+<td align="right">-0.9655177</td>
 <td align="left">Germany (Prussia)</td>
 <td align="right">255</td>
 <td align="right">255</td>
@@ -845,7 +853,7 @@ my_weird_democracy_data %&gt;%
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="right">1970</td>
-<td align="right">0.6866702</td>
+<td align="right">-0.1245479</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -859,7 +867,7 @@ my_weird_democracy_data %&gt;%
 <tr class="even">
 <td align="left">Germany</td>
 <td align="right">1945</td>
-<td align="right">1.1630245</td>
+<td align="right">1.0873727</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -873,7 +881,7 @@ my_weird_democracy_data %&gt;%
 <tr class="odd">
 <td align="left">East Germany</td>
 <td align="right">1949</td>
-<td align="right">0.0014253</td>
+<td align="right">0.4697104</td>
 <td align="left">German Democratic Republic</td>
 <td align="right">265</td>
 <td align="right">265</td>
@@ -887,7 +895,7 @@ my_weird_democracy_data %&gt;%
 <tr class="even">
 <td align="left">Federal Republic of Germany</td>
 <td align="right">1992</td>
-<td align="right">1.5188787</td>
+<td align="right">-1.2458032</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -901,7 +909,7 @@ my_weird_democracy_data %&gt;%
 <tr class="odd">
 <td align="left">Somaliland</td>
 <td align="right">1990</td>
-<td align="right">0.0911109</td>
+<td align="right">1.4738273</td>
 <td align="left">Somaliland</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -915,7 +923,7 @@ my_weird_democracy_data %&gt;%
 <tr class="even">
 <td align="left">Somalia</td>
 <td align="right">1990</td>
-<td align="right">0.1044975</td>
+<td align="right">-1.1830631</td>
 <td align="left">Somalia</td>
 <td align="right">520</td>
 <td align="right">520</td>
@@ -929,7 +937,7 @@ my_weird_democracy_data %&gt;%
 <tr class="odd">
 <td align="left">Palestine</td>
 <td align="right">1940</td>
-<td align="right">-0.5767964</td>
+<td align="right">2.0483262</td>
 <td align="left">British Mandate of Palestine</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -943,7 +951,7 @@ my_weird_democracy_data %&gt;%
 <tr class="even">
 <td align="left">Russia</td>
 <td align="right">1917</td>
-<td align="right">-0.6625700</td>
+<td align="right">-0.8206145</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -957,7 +965,7 @@ my_weird_democracy_data %&gt;%
 <tr class="odd">
 <td align="left">Russia</td>
 <td align="right">1912</td>
-<td align="right">-0.9815346</td>
+<td align="right">0.6309429</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -971,7 +979,7 @@ my_weird_democracy_data %&gt;%
 <tr class="even">
 <td align="left">USSR</td>
 <td align="right">1922</td>
-<td align="right">-0.7736723</td>
+<td align="right">1.5767534</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -985,7 +993,7 @@ my_weird_democracy_data %&gt;%
 <tr class="odd">
 <td align="left">Republic of Vietnam</td>
 <td align="right">1975</td>
-<td align="right">-0.9457340</td>
+<td align="right">-1.0744173</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
@@ -999,7 +1007,7 @@ my_weird_democracy_data %&gt;%
 <tr class="even">
 <td align="left">Yugoslavia</td>
 <td align="right">1990</td>
-<td align="right">0.7184772</td>
+<td align="right">-0.8470188</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1013,7 +1021,7 @@ my_weird_democracy_data %&gt;%
 <tr class="odd">
 <td align="left">Yugoslavia</td>
 <td align="right">1991</td>
-<td align="right">-1.2442416</td>
+<td align="right">0.4426638</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1027,7 +1035,7 @@ my_weird_democracy_data %&gt;%
 <tr class="even">
 <td align="left">Vietnam, South</td>
 <td align="right">1954</td>
-<td align="right">1.1826243</td>
+<td align="right">2.1793583</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
@@ -1140,7 +1148,14 @@ my_weird_democracy_data %&gt;%
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2 class="hasAnchor">
-<a href="#sidebar" class="anchor"></a>License</h2>
+<a href="#sidebar" class="anchor"></a>Links</h2>
+<ul class="list-unstyled">
+<li>Browse source code at <br><a href="https://github.com/xmarquez/democracyData">https://​github.com/​xmarquez/​democracyData</a>
+</li>
+<li>Report a bug at <br><a href="https://github.com/xmarquez/democracyData/issues">https://​github.com/​xmarquez/​democracyData/​issues</a>
+</li>
+</ul>
+<h2>License</h2>
 <p><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></p>
 <h2>Citation</h2>
 <ul class="list-unstyled">

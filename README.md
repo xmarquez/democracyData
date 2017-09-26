@@ -216,7 +216,7 @@ democracy_data <- generate_democracy_scores_dataset(output_format = "wide",
                                                     verbose = FALSE)
 
 democracy_data
-#> # A tibble: 24,622 x 71
+#> # A tibble: 24,492 x 72
 #>    extended_country_name   GWn  cown in_GW_system  year   blm
 #>                    <chr> <dbl> <int>        <lgl> <dbl> <dbl>
 #>  1              Abkhazia   396    NA        FALSE  1997    NA
@@ -229,7 +229,7 @@ democracy_data
 #>  8              Abkhazia   396    NA        FALSE  2004    NA
 #>  9              Abkhazia   396    NA        FALSE  2005    NA
 #> 10              Abkhazia   396    NA        FALSE  2006    NA
-#> # ... with 24,612 more rows, and 65 more variables: bmr_democracy <dbl>,
+#> # ... with 24,482 more rows, and 66 more variables: bmr_democracy <dbl>,
 #> #   bmr_democracy_omitteddata <dbl>, bnr <dbl>, bnr_extended <dbl>,
 #> #   doorenspleet <dbl>, fh_electoral <dbl>, fh_total_reversed <dbl>,
 #> #   gwf_democracy <dbl>, gwf_democracy_extended <dbl>,
@@ -245,10 +245,11 @@ democracy_data
 #> #   pmm_polyarchy <dbl>, pmm_prc <dbl>, pmm_vanhanen <dbl>, polity <dbl>,
 #> #   polity2 <dbl>, polyarchy_contestation_dimension <dbl>,
 #> #   polyarchy_inclusion_dimension <dbl>,
-#> #   polyarchy_original_contestation <dbl>, prc <dbl>,
-#> #   reign_democracy <dbl>, svolik_democracy <dbl>, uds_2010_mean <dbl>,
-#> #   uds_2010_median <dbl>, uds_2011_mean <dbl>, uds_2011_median <dbl>,
-#> #   uds_2014_mean <dbl>, uds_2014_median <dbl>, ulfelder_democracy <dbl>,
+#> #   polyarchy_original_contestation <dbl>,
+#> #   polyarchy_original_polyarchy <dbl>, prc <dbl>, reign_democracy <dbl>,
+#> #   svolik_democracy <dbl>, uds_2010_mean <dbl>, uds_2010_median <dbl>,
+#> #   uds_2011_mean <dbl>, uds_2011_median <dbl>, uds_2014_mean <dbl>,
+#> #   uds_2014_median <dbl>, ulfelder_democracy <dbl>,
 #> #   ulfelder_democracy_extended <dbl>, utip_dichotomous <dbl>,
 #> #   utip_dichotomous_strict <dbl>, utip_trichotomous <dbl>,
 #> #   vanhanen_competition <dbl>, vanhanen_democratization <dbl>,
@@ -283,24 +284,24 @@ my_weird_democracy_data <- data_frame(country = c("Germany", "Germany", "Germany
 
 my_weird_democracy_data
 #> # A tibble: 16 x 3
-#>                        country  year  my_measure
-#>                          <chr> <dbl>       <dbl>
-#>  1                     Germany  2015 -0.16697904
-#>  2                     Germany  1930  0.09558026
-#>  3                     Germany  1970  0.82611658
-#>  4                     Germany  1945 -0.56650804
-#>  5                East Germany  1949  1.24213992
-#>  6 Federal Republic of Germany  1992 -1.16409100
-#>  7                  Somaliland  1990 -0.45945990
-#>  8                     Somalia  1990 -1.44904602
-#>  9                   Palestine  1940 -0.45561309
-#> 10                      Russia  1917 -0.43015118
-#> 11                      Russia  1912 -1.45225616
-#> 12                        USSR  1922 -0.77235839
-#> 13         Republic of Vietnam  1975 -0.07962561
-#> 14                  Yugoslavia  1990 -0.33681078
-#> 15                  Yugoslavia  1991  0.91039529
-#> 16              Vietnam, South  1954  0.38147299
+#>                        country  year my_measure
+#>                          <chr> <dbl>      <dbl>
+#>  1                     Germany  2015  0.1099348
+#>  2                     Germany  1930  0.4404554
+#>  3                     Germany  1970  1.3785752
+#>  4                     Germany  1945 -1.1998421
+#>  5                East Germany  1949  1.1631214
+#>  6 Federal Republic of Germany  1992 -1.6013403
+#>  7                  Somaliland  1990  0.4036710
+#>  8                     Somalia  1990  0.3349478
+#>  9                   Palestine  1940  2.5319279
+#> 10                      Russia  1917  1.2633572
+#> 11                      Russia  1912  1.0192890
+#> 12                        USSR  1922  1.7231941
+#> 13         Republic of Vietnam  1975  1.5079377
+#> 14                  Yugoslavia  1990 -1.1677499
+#> 15                  Yugoslavia  1991  0.3758289
+#> 16              Vietnam, South  1954  1.2978536
 ```
 
 and you then want to add state system information. `country_year_coder` does that for you!
@@ -327,22 +328,22 @@ my_weird_democracy_data %>%
 
 | country                     |  year|  my\_measure| extended\_country\_name      |  GWn|  cown|  polity\_ccode| in\_GW\_system | in\_cow\_system | in\_polity\_system | polity\_startdate | polity\_enddate |
 |:----------------------------|-----:|------------:|:-----------------------------|----:|-----:|--------------:|:---------------|:----------------|:-------------------|:------------------|:----------------|
-| Germany                     |  2015|   -0.1669790| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
-| Germany                     |  1930|    0.0955803| Germany (Prussia)            |  255|   255|            255| TRUE           | TRUE            | TRUE               | 1871-01-19        | 1945-05-07      |
-| Germany                     |  1970|    0.8261166| German Federal Republic      |  260|   260|            260| TRUE           | TRUE            | TRUE               | 1945-05-08        | 1990-10-02      |
-| Germany                     |  1945|   -0.5665080| German Federal Republic      |  260|   260|            260| FALSE          | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
-| East Germany                |  1949|    1.2421399| German Democratic Republic   |  265|   265|            265| TRUE           | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
-| Federal Republic of Germany |  1992|   -1.1640910| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
-| Somaliland                  |  1990|   -0.4594599| Somaliland                   |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
-| Somalia                     |  1990|   -1.4490460| Somalia                      |  520|   520|            520| TRUE           | TRUE            | TRUE               | 1960-07-01        | NA              |
-| Palestine                   |  1940|   -0.4556131| British Mandate of Palestine |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
-| Russia                      |  1917|   -0.4301512| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
-| Russia                      |  1912|   -1.4522562| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
-| USSR                        |  1922|   -0.7723584| Russia (Soviet Union)        |  365|   365|            364| TRUE           | TRUE            | TRUE               | 1922-12-30        | 1991-12-31      |
-| Republic of Vietnam         |  1975|   -0.0796256| Vietnam, Republic of         |  817|   817|            817| FALSE          | FALSE           | TRUE               | 1955-10-26        | 1975-12-31      |
-| Yugoslavia                  |  1990|   -0.3368108| Yugoslavia                   |  345|   345|            345| TRUE           | TRUE            | TRUE               | 1921-01-01        | 1991-07-01      |
-| Yugoslavia                  |  1991|    0.9103953| Yugoslavia                   |  345|   345|            347| TRUE           | TRUE            | TRUE               | 1991-07-01        | 2003-03-11      |
-| Vietnam, South              |  1954|    0.3814730| Vietnam, Republic of         |  817|   817|            817| TRUE           | TRUE            | FALSE              | 1955-10-26        | 1975-12-31      |
+| Germany                     |  2015|    0.1099348| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
+| Germany                     |  1930|    0.4404554| Germany (Prussia)            |  255|   255|            255| TRUE           | TRUE            | TRUE               | 1871-01-19        | 1945-05-07      |
+| Germany                     |  1970|    1.3785752| German Federal Republic      |  260|   260|            260| TRUE           | TRUE            | TRUE               | 1945-05-08        | 1990-10-02      |
+| Germany                     |  1945|   -1.1998421| German Federal Republic      |  260|   260|            260| FALSE          | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
+| East Germany                |  1949|    1.1631214| German Democratic Republic   |  265|   265|            265| TRUE           | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
+| Federal Republic of Germany |  1992|   -1.6013403| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
+| Somaliland                  |  1990|    0.4036710| Somaliland                   |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
+| Somalia                     |  1990|    0.3349478| Somalia                      |  520|   520|            520| TRUE           | TRUE            | TRUE               | 1960-07-01        | NA              |
+| Palestine                   |  1940|    2.5319279| British Mandate of Palestine |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
+| Russia                      |  1917|    1.2633572| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
+| Russia                      |  1912|    1.0192890| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
+| USSR                        |  1922|    1.7231941| Russia (Soviet Union)        |  365|   365|            364| TRUE           | TRUE            | TRUE               | 1922-12-30        | 1991-12-31      |
+| Republic of Vietnam         |  1975|    1.5079377| Vietnam, Republic of         |  817|   817|            817| FALSE          | FALSE           | TRUE               | 1955-10-26        | 1975-12-31      |
+| Yugoslavia                  |  1990|   -1.1677499| Yugoslavia                   |  345|   345|            345| TRUE           | TRUE            | TRUE               | 1921-01-01        | 1991-07-01      |
+| Yugoslavia                  |  1991|    0.3758289| Yugoslavia                   |  345|   345|            347| TRUE           | TRUE            | TRUE               | 1991-07-01        | 2003-03-11      |
+| Vietnam, South              |  1954|    1.2978536| Vietnam, Republic of         |  817|   817|            817| TRUE           | TRUE            | FALSE              | 1955-10-26        | 1975-12-31      |
 
 `country_year_coder` tries to match not just the country name or the country code (as `countrycode` does), but also to figure out the appropriate state system code *given* the year. (Above, for example, the function figures out that Germany 1970 should get a COW code of 260, but Germany 1992 should get 255 - though it should retain the 260 code in the Gleditsch and Ward system of states. This is, incidentally, how `download_fh` adds the correct COW and GW country codes to Freedom House's Excel data). It also tries to figure out whether a given country-year is in the specific state system list. (In the example above, Germany in 1945 is not listed as a member of the state system in either COW or Gleditsch and Ward, since it was occupied by the Allies as of 31 December 1945, but is listed as a member of the state system in Polity IV as the Federal Republic, though with a polity score of -66, "interregnum").
 
