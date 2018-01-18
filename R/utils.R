@@ -62,11 +62,11 @@ create_panel <- function(system = c("cow", "GW", "polity"),
 
 }
 
-download_and_read_xls <- function(url, ...) {
-  tmpfile <- tempfile(fileext = ".xls")
+download_and_read_xls <- function(url, fileext, ...) {
+  tmpfile <- tempfile(fileext = fileext)
   utils::download.file(url, tmpfile, mode = "wb")
 
-  data  <- readxl::read_excel(tmpfile, ...) %>%
+  data  <- readxl::read_excel(tmpfile, na = c("-",""), ...) %>%
     distinct()
 
   unlink(tmpfile)
@@ -85,6 +85,7 @@ read_data <- function(path,
                       verbose = TRUE,
                       name = NULL,
                       ...) {
+
 
   file_extension <- match.arg(file_extension)
 
@@ -108,7 +109,7 @@ read_data <- function(path,
 
   if(file_extension %in% c("xls", "xlsx") &
      is_url) {
-    data <- download_and_read_xls(path)
+    data <- download_and_read_xls(path, paste0(".", file_extension), ...)
   } else if(file_extension == "zip" & is_url) {
     tmpfile <- tempfile()
     utils::download.file(path, tmpfile, quiet = !verbose)

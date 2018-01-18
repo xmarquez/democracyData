@@ -4,7 +4,7 @@
 \name{PIPE}
 \alias{PIPE}
 \title{The Political Institutions and Political Events (PIPE) dataset}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18235 rows and 101 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18151 rows and 101 columns.}
 \source{
 Adam Przeworski. 2013. \emph{Political Institutions and Political Events
 (PIPE) Data Set}. Data set.

@@ -549,7 +549,7 @@ cow_startdate <- cow_enddate <- NULL
              in_GW_system + in_polity_system + in_cow_system + !!to_system_col)
 
   result_df <- result_df %>%
-    filter(test_condition(!!date_col, startdate,
+    filter(test_condition(as.integer(!!date_col), startdate,
                           enddate,
                           GW_startdate,
                           GW_enddate,

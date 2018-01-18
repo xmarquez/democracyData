@@ -89,7 +89,7 @@ download_polity_annual <- function(url,
   standardize_columns(polity_annual, country, ccode, verbose = verbose)
 }
 
-#' Download the latest version (data up to 2015) of the "Democracy, Voice, and
+#' Download the latest version (data up to 2016) of the "Democracy, Voice, and
 #' Accountability" index from the World Governance Indicators and process it via
 #' [country_year_coder]
 #'
@@ -101,7 +101,7 @@ download_polity_annual <- function(url,
 #' @export
 #'
 #' @return A dataset containing the country-year version of the latest update
-#'   (to 2015) of the World Governance Indicators "Democracy, Voice and
+#'   (to 2016) of the World Governance Indicators "Democracy, Voice and
 #'   Accountability" Index, compiled by Daniel Kaufmann and Aart Kraay. The
 #'   original data are available at
 #'   http://info.worldbank.org/governance/wgi/index.aspx#home, along with a full
@@ -161,8 +161,8 @@ download_wgi_voice_and_accountability <- function(url,
     url <- "http://databank.worldbank.org/data/download/WGI_csv.zip"
   }
 
-  X22 <- `Indicator Name` <- `Country Name` <- `Indicator Code` <- NULL
-  `Country Code` <- indicator <- `1996` <- `2015` <- Estimate <- NULL
+  X23 <- `Indicator Name` <- `Country Name` <- `Indicator Code` <- NULL
+  `Country Code` <- indicator <- `1996` <- `2016` <- Estimate <- NULL
   variable <- value <-  NULL
   wb_country <- year <-  wb_code <- NULL
 
@@ -180,7 +180,7 @@ download_wgi_voice_and_accountability <- function(url,
   }
 
   data <- data %>%
-    select(-X22) %>%
+    select(-X23) %>%
     filter(grepl("^VA", `Indicator Code`))
 
   if(verbose) {
@@ -208,7 +208,7 @@ download_wgi_voice_and_accountability <- function(url,
                                               "Upper",
                                               "StdErr"),
                                        warn_missing = FALSE)) %>%
-    tidyr::gather(year, value, `1996`:`2015`) %>%
+    tidyr::gather(year, value, `1996`:`2016`) %>%
     tidyr::spread(indicator, value) %>%
     mutate(year = as.numeric(year)) %>%
     select(wb_country, wb_code, year,
@@ -230,13 +230,13 @@ download_wgi_voice_and_accountability <- function(url,
 
 
 
-#' Downloads the 2017 update of the Freedom House "Freedom in the World" data
+#' Downloads the 2018 update of the Freedom House "Freedom in the World" data
 #' and processes it using [country_year_coder].
 #'
 #' The original data is available at
-#' [https://freedomhouse.org/sites/default/files/FIW2017_Data.zip](https://freedomhouse.org/sites/default/files/FIW2017_Data.zip)
+#' [https://freedomhouse.org/report-types/freedom-world](https://freedomhouse.org/report-types/freedom-world)
 #'
-#' @param url The URL of the dataset. Defaults to \url{https://freedomhouse.org/sites/default/files/FIW2017_Data.zip}
+#' @param url The URL of the dataset. Defaults to \url{https://freedomhouse.org/sites/default/files/Country and Territory Ratings and Statuses FIW1973-2018.xlsx}
 #' @inheritParams redownload_blm
 #' @param include_territories Whether to include scores from non-independent
 #'   territories (e.g., Indian Kashmir, Northern Ireland) compiled by FH.
@@ -332,7 +332,7 @@ download_wgi_voice_and_accountability <- function(url,
 #' @family ordinal democracy indexes
 #' @source The "Freedom in the World" dataset from Freedom House, updated to
 #'   2016. Original data and methodology is available at
-#'   \url{https://freedomhouse.org/report/freedom-world/freedom-world-2017}
+#'   \url{https://freedomhouse.org/report/freedom-world/freedom-world-2018}
 #'
 #' @seealso [fh]
 #'
@@ -350,30 +350,28 @@ download_fh <- function(url,
                         ...) {
 
   status <- year <- pr <- cl <- fh_total <- NULL
-  indicator <- value <- pr_1972 <- country <- status_2016 <- NULL
+  indicator <- value <- pr_1972 <- country <- status_2017 <- NULL
 
   if(missing(url)) {
-    url <- "https://freedomhouse.org/sites/default/files/FIW2017_Data.zip"
+    url <- "https://freedomhouse.org/sites/default/files/Country%20and%20Territory%20Ratings%20and%20Statuses%20FIW1973-2018.xlsx"
   }
 
 
   data <- read_data(url,
                     verbose = verbose,
-                    name = "/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls",
+                    # name = "/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls",
                     sheet = 2,
                     skip = 3,
-                    col_names = FALSE,
-                    na = c("","-"))
+                    col_names = FALSE)
 
 
   if(include_territories) {
     territory_data <- read_data(url,
-                      verbose = verbose,
-                      name = "/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls",
-                      sheet = 3,
-                      skip = 3,
-                      col_names = FALSE,
-                      na = c("","-"))
+                                verbose = verbose,
+                                # name = "/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls",
+                                sheet = 3,
+                                skip = 3,
+                                col_names = FALSE)
 
 
     data <- bind_rows(data, territory_data %>%
@@ -391,7 +389,7 @@ download_fh <- function(url,
   if(verbose) {
     message(sprintf("Original dataset has %d rows, but is not in country-year format",
                     nrow(data)))
-    message("Processing the FH 2017 data - putting it in country-year format, adding state system info...")
+    message("Processing the FH 2018 data - putting it in country-year format, adding state system info...")
   }
 
   nYears <- (ncol(data) - 1)/3
@@ -401,7 +399,7 @@ download_fh <- function(url,
   # melt the data, split the variable_year column and voila!
 
   data <- suppressWarnings(data %>%
-    tidyr::gather(indicator, value, pr_1972:status_2016) %>%
+    tidyr::gather(indicator, value, pr_1972:status_2017) %>%
     tidyr::separate(indicator, into = c("status", "year"), sep ="_")  %>%
     filter(!is.na(value)) %>%
     tidyr::spread(status, value) %>%
