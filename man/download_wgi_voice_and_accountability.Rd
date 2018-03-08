@@ -126,12 +126,12 @@ Other democracy: \code{\link{LIED}}, \code{\link{PIPE}},
   \code{\link{bollen_pmm}}, \code{\link{doorenspleet}},
   \code{\link{download_fh_electoral}},
   \code{\link{download_fh}}, \code{\link{download_reign}},
-  \code{\link{fh_pmm}}, \code{\link{gwf_all}},
-  \code{\link{hadenius_pmm}}, \code{\link{kailitz}},
-  \code{\link{magaloni}}, \code{\link{mainwaring}},
-  \code{\link{munck_pmm}}, \code{\link{pacl}},
-  \code{\link{peps}}, \code{\link{pitf}},
-  \code{\link{polity_pmm}},
+  \code{\link{eiu}}, \code{\link{fh_pmm}},
+  \code{\link{gwf_all}}, \code{\link{hadenius_pmm}},
+  \code{\link{kailitz}}, \code{\link{magaloni}},
+  \code{\link{mainwaring}}, \code{\link{munck_pmm}},
+  \code{\link{pacl}}, \code{\link{peps}},
+  \code{\link{pitf}}, \code{\link{polity_pmm}},
   \code{\link{polyarchy_dimensions}},
   \code{\link{polyarchy}}, \code{\link{prc_gasiorowski}},
   \code{\link{svolik_regime}}, \code{\link{uds_2014}},
@@ -140,6 +140,7 @@ Other democracy: \code{\link{LIED}}, \code{\link{PIPE}},
   \code{\link{wahman_teorell_hadenius}}
 
 Other continuous democracy indexes: \code{\link{arat_pmm}},
-  \code{\link{bollen_pmm}}, \code{\link{hadenius_pmm}},
-  \code{\link{munck_pmm}}, \code{\link{vanhanen}}
+  \code{\link{bollen_pmm}}, \code{\link{eiu}},
+  \code{\link{hadenius_pmm}}, \code{\link{munck_pmm}},
+  \code{\link{vanhanen}}
 }

@@ -123,6 +123,47 @@ prepare_mainwaring <- function(path = "../../Data/Mainwaring Linan.txt",
 
 }
 
+prepare_eiu <- function(path = "EIU Democracy Index.csv",
+                        verbose = TRUE,
+                        ...) {
+
+  if(verbose) {
+    message("Preparing EIU data...")
+    message(sprintf("Trying %s ...", path))
+  }
+
+  data <- readr::read_csv(path)
+
+  if(verbose) {
+    message(sprintf("Original dataset has %d rows but is not in country-year format",
+                    nrow(data)))
+    message("Processing the EIU data - turning to country-year format, adding state system info...")
+  }
+
+  year <- country <- extended_country_name <- NULL
+
+  eiu <- data %>%
+    tidyr::gather(year, eiu, matches("^[0-9]{4}$")) %>%
+    mutate(year = as.double(year),
+           country = plyr::mapvalues(country, from = "Saudi", to = "Saudi Arabia")) %>%
+    country_year_coder(country_col = country, date_col = year,
+                       verbose = verbose,
+                       ...) %>%
+    mutate(country = plyr::mapvalues(country, from = "Saudi Arabia", to = "Saudi")) %>%
+    arrange(extended_country_name, year)
+
+  if(verbose) {
+    message(sprintf("Resulting dataset after processing has %d rows.",
+                    nrow(eiu)))
+    if(nrow(eiu) != nrow(data)) {
+      message("Note: the number of rows in the processed data is different from the number of rows in the original data.")
+    }
+  }
+
+  standardize_columns(eiu, country, verbose = verbose)
+
+}
+
 prepare_doorenspleet <- function(path = "../../Data/Doorenspleet data.csv",
                                  verbose = TRUE,
                                  ...) {

@@ -259,6 +259,30 @@
 #' @aliases bollen
 "bollen_pmm"
 
+# EIU ------------------------------------------------------------
+
+
+#' The Economist Intelligence Unit's Democracy Index
+#'
+#' A dataset containing the country-year version of the democracy index compiled
+#' by the Economist Intelligence Unit, 2006-2017. From the report "Democracy
+#' Index 2017: Free Speech under Attack", available at
+#' \url{https://www.eiu.com/topic/democracy-index}.
+#'
+#' \describe{
+#' \item{eiu_country}{Country name as in the original tables.}
+#' \item{eiu}{Democracy index, ranging from 0 (least democratic) to to 10 (most
+#' democratic). The report says that the index "is based on five categories:
+#' electoral process and pluralism; civil liberties; the functioning of
+#' government; political participation; and political culture" which form "one
+#' interrelated whole".}
+#' }
+#' @template standard-variables
+#' @family democracy
+#' @family continuous democracy indexes
+#' @source The economist Intelligence Unit. 2018. Democracy Index 2017: Free
+#'   Speech under Attack. \url{https://www.eiu.com/topic/democracy-index}.
+"eiu"
 
 # Doorenspleet ------------------------------------------------------------
 

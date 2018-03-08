@@ -126,6 +126,16 @@ wgi_democracy <- download_wgi_voice_and_accountability(verbose = verbose,
 
 ```
 
+# EIU
+
+```{r eiu, results= 'asis'}
+cite_dataset("eiu")
+
+eiu <- prepare_eiu(verbose = verbose, include_in_output = include_in_output)
+
+devtools::use_data(eiu, overwrite = TRUE)
+```
+
 # Freedom House
 
 ```{r fh, results = 'asis'}
@@ -482,4 +492,5 @@ wahman_teorell_hadenius <- redownload_wahman_teorell_hadenius(verbose = verbose,
 
 devtools::use_data(wahman_teorell_hadenius, overwrite = TRUE)
 ```
+
 
