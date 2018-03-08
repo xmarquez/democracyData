@@ -66,47 +66,47 @@
 #'   the vignette in this package for an overview of the differences between
 #'   these systems.
 #'
-#'   \item "eurostat": Eurostat 2-letter country code. Taken from [countrycode::countrycode_data].
+#'   \item "eurostat": Eurostat 2-letter country code. Taken from [countrycode].
 #'
 #'   \item "eu28": Whether the state is a member of the European Union (as of
-#'   December 2015), without special territories. Taken from [countrycode::countrycode_data].
+#'   December 2015), without special territories. Taken from [countrycode].
 #'
 #'   \item "fao": Food and Agriculture Organization of the United Nations numerical
-#'   country code. Taken from [countrycode::countrycode_data].
+#'   country code. Taken from [countrycode].
 #'
 #'   \item "fips105": FIPS 10-5 (Federal Information Processing Standard) 2-letter
-#'   country code. Taken from [countrycode::countrycode_data].
+#'   country code. Taken from [countrycode].
 #'
 #'   \item "icao": International Civil Aviation Organization 2-letter country code.
-#'   Taken from [countrycode::countrycode_data].
+#'   Taken from [countrycode].
 #'
 #'   \item "icao_region": International Civil Aviation Organization region code.
-#'   Taken from [countrycode::countrycode_data].
+#'   Taken from [countrycode].
 #'
 #'   \item "imf": International Monetary Fund numeric country code. Taken from
-#'   [countrycode::countrycode_data].
+#'   [countrycode].
 #'
 #'   \item "ioc": International Olympic Committee 3-letter country code. Taken from
-#'   [countrycode::countrycode_data].
+#'   [countrycode].
 #'
-#'   \item "iso2c": ISO-2 character. Taken from [countrycode::countrycode_data].
+#'   \item "iso2c": ISO-2 character. Taken from [countrycode].
 #'
-#'   \item "iso3c": ISO-3 character. Taken from [countrycode::countrycode_data].
+#'   \item "iso3c": ISO-3 character. Taken from [countrycode].
 #'
-#'   \item "iso2n": ISO-2 numeric. Taken from [countrycode::countrycode_data].
+#'   \item "iso2n": ISO-2 numeric. Taken from [countrycode].
 #'
-#'   \item "iso3n": ISO-3 numeric. Taken from [countrycode::countrycode_data].
+#'   \item "iso3n": ISO-3 numeric. Taken from [countrycode].
 #'
-#'   \item "un": United Nations numerical code. Taken from [countrycode::countrycode_data].
+#'   \item "un": United Nations numerical code. Taken from [countrycode].
 #'
 #'   \item "wb": World Bank (very similar but not identical to iso3c). Taken from
-#'   [countrycode::countrycode_data].
+#'   [countrycode].
 #'
-#'   \item "wb_api2c": World Bank API 2 character code. Taken from [countrycode::countrycode_data].
+#'   \item "wb_api2c": World Bank API 2 character code. Taken from [countrycode].
 #'
-#'   \item "wb_api3c": World Bank API 3 character code. Taken from [countrycode::countrycode_data].
+#'   \item "wb_api3c": World Bank API 3 character code. Taken from [countrycode].
 #'
-#'   \item "wvs": World Values Survey numeric code. Taken from [countrycode::countrycode_data].
+#'   \item "wvs": World Values Survey numeric code. Taken from [countrycode].
 #'   }
 #'
 #' @param to_system State system to match to. Default is Gledistsch and Ward.
@@ -139,7 +139,7 @@
 #'   dataset. Is \code{NA} if the country is not in Polity.
 #'
 #'   \item "country_name_en": The official name of the country (official short
-#'   English country name), as defined by the ISO organization. Taken from [countrycode::countrycode_data]. See also
+#'   English country name), as defined by the ISO organization. Taken from [countrycode]. See also
 #'   \url{https://en.wikipedia.org/wiki/ISO_3166-1}.
 #'    Some names are missing because the state no longer exists or there is
 #'   controversy about its sovereign status.
@@ -223,7 +223,7 @@
 #'   system of states.
 #'
 #'   \item "official_region": Regions as defined in the World Bank Development
-#'   Indicators. Taken from [countrycode::countrycode_data].
+#'   Indicators. Taken from [countrycode].
 #'
 #'   \item "extended_region": The same as "official_region", except it adds region
 #'   information for historical states. It assigns "Austria-Hungary" the
@@ -231,7 +231,7 @@
 #'   Europe and Austria to Western Europe in the World Bank scheme.
 #'
 #'   \item "official_continent": Continents as defined in the World Bank Development
-#'   Indicators. Taken from [countrycode::countrycode_data].
+#'   Indicators. Taken from [countrycode].
 #'
 #'   \item "extended_continent": The same as "official_continent", except it adds
 #'   continent information for historical states. Is \code{NA} only for Antarctica
@@ -262,70 +262,70 @@
 #'
 #'   \item ar5: IPCC's regional mapping used both in the Fifth Assessment Report
 #'   (AR5) and for the Reference Concentration Pathways (RCP). Taken from
-#'   [countrycode::countrycode_data].
+#'   [countrycode].
 #'
 #'   \item continent: Continent as defined in the World Bank Development Indicators.
-#'   Taken from [countrycode::countrycode_data].
+#'   Taken from [countrycode].
 #'
 #'   \item "eurocontrol_pru": European Organisation for the Safety of Air Navigation
-#'   region. Taken from [countrycode::countrycode_data].
+#'   region. Taken from [countrycode].
 #'
 #'   \item "eurocontrol_statfor": European Organisation for the Safety of Air
-#'   Navigation region. Taken from [countrycode::countrycode_data].
+#'   Navigation region. Taken from [countrycode].
 #'
-#'   \item "eurostat": Eurostat 2-letter country code. Taken from [countrycode::countrycode_data].
+#'   \item "eurostat": Eurostat 2-letter country code. Taken from [countrycode].
 #'
 #'   \item "eu28": Whether the state is a member of the European Union (as of
-#'   December 2015), without special territories. Taken from [countrycode::countrycode_data].
+#'   December 2015), without special territories. Taken from [countrycode].
 #'
 #'   \item "fao": Food and Agriculture Organization of the United Nations numerical
-#'   country code. Taken from [countrycode::countrycode_data].
+#'   country code. Taken from [countrycode].
 #'
 #'   \item "fips105": FIPS 10-5 (Federal Information Processing Standard) 2-letter
-#'   country code. Taken from [countrycode::countrycode_data].
+#'   country code. Taken from [countrycode].
 #'
 #'   \item "icao": International Civil Aviation Organization 2-letter country code.
-#'   Taken from [countrycode::countrycode_data].
+#'   Taken from [countrycode].
 #'
 #'   \item "icao_region": International Civil Aviation Organization region code. Taken
-#'   from [countrycode::countrycode_data].
+#'   from [countrycode].
 #'
 #'   \item "imf": International Monetary Fund numeric country code. Taken from
-#'   [countrycode::countrycode_data].
+#'   [countrycode].
 #'
 #'   \item "ioc": International Olympic Committee 3-letter country code. Taken from
-#'   [countrycode::countrycode_data].
+#'   [countrycode].
 #'
-#'   \item "iso2c": ISO-2 character. Taken from [countrycode::countrycode_data].
+#'   \item "iso2c": ISO-2 character. Taken from [countrycode].
 #'
-#'   \item "iso3c": ISO-3 character. Taken from [countrycode::countrycode_data].
+#'   \item "iso3c": ISO-3 character. Taken from [countrycode].
 #'
-#'   \item "iso2n": ISO-2 numeric. Taken from [countrycode::countrycode_data].
+#'   \item "iso2n": ISO-2 numeric. Taken from [countrycode].
 #'
-#'   \item "iso3n": ISO-3 numeric. Taken from [countrycode::countrycode_data].
+#'   \item "iso3n": ISO-3 numeric. Taken from [countrycode].
 #'
-#'   \item "un": United Nations numerical code. Taken from [countrycode::countrycode_data].
+#'   \item "un": United Nations numerical code. Taken from [countrycode].
 #'
 #'   \item "wb": World Bank (very similar but not identical to iso3c). Taken from
-#'   [countrycode::countrycode_data].
+#'   [countrycode].
 #'
-#'   \item "wb_api2c": World Bank API 2 character code. Taken from [countrycode::countrycode_data].
+#'   \item "wb_api2c": World Bank API 2 character code. Taken from [countrycode].
 #'
-#'   \item "wb_api3c": World Bank API 3 character code. Taken from [countrycode::countrycode_data].
+#'   \item "wb_api3c": World Bank API 3 character code. Taken from [countrycode].
 #'
-#'   \item "wvs": World Values Survey numeric code. Taken from [countrycode::countrycode_data].
+#'   \item "wvs": World Values Survey numeric code. Taken from [countrycode].
 #'
-#'   \item "country_name_ar": country name (Arabic). Taken from [countrycode::countrycode_data].
+#'   \item "country_name_ar": country name (Arabic). Taken from [countrycode].
 #'
-#'   \item "country_name_de": country name (German). Taken from [countrycode::countrycode_data].
+#'   \item "country_name_de": country name (German). Taken from [countrycode].
 #'
-#'   \item "country_name_es": country name (Spanish). Taken from [countrycode::countrycode_data].
+#'   \item "country_name_es": country name (Spanish). Taken from [countrycode].
 #'
-#'   \item "country_name_fr": country name (French). Taken from [countrycode::countrycode_data].
+#'   \item "country_name_fr": country name (French). Taken from [countrycode].
 #'
-#'   \item "country_name_ru": country name (Russian). Taken from [countrycode::countrycode_data].
+#'   \item "country_name_ru": country name (Russian). Taken from [countrycode].
 #'
-#'   \item "country_name_zh": country name (Chinese). Taken from [countrycode::countrycode_data].
+#'   \item "country_name_zh": country name (Chinese). Taken from [countrycode].
 #'   }
 #'
 #' @param match_type How to match countries when provided with a code column;
