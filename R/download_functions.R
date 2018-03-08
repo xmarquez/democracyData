@@ -738,7 +738,7 @@ download_reign <- function(url,
   COUNTRY <- `COUNTRY CODE` <-  End <- Start <- cow <- year <- NULL
 
   data <- googlesheets::gs_url(url) %>%
-    googlesheets::gs_read(ws = 3)
+    googlesheets::gs_read(ws = "Regime List")
 
   if(return_raw) {
     if(verbose) {
