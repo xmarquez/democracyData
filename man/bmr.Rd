@@ -3,7 +3,7 @@
 \docType{data}
 \name{bmr}
 \alias{bmr}
-\title{Boix-Miller-Rosato dichotomous coding of democracy, 1800-2010, version 3.0}
+\title{Boix-Miller-Rosato dichotomous coding of democracy, 1800-2015, version 3.0}
 \format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18800 rows and 15 columns.}
 \source{
 Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A Complete

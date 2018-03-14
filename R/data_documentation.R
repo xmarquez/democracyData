@@ -91,7 +91,7 @@
 # BMR ---------------------------------------------------------------------
 
 
-#' Boix-Miller-Rosato dichotomous coding of democracy, 1800-2010, version 3.0
+#' Boix-Miller-Rosato dichotomous coding of democracy, 1800-2015, version 3.0
 #'
 #' A dataset containing the Boix-Miller-Rosato (BMR) dichotomous coding of
 #' democracy, used in the paper Boix, Carles, Michael Miller, and Sebastian
