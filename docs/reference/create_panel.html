@@ -120,44 +120,44 @@ and the relevant start and end dates for entry and exit into the system.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>create_panel</span>(<span class='st'>"cow"</span>) <span class='co'># The correlates of War system is the default</span></div><div class='output co'>#&gt; # A tibble: 16,256 x 5
-#&gt;     cown         cow_country_name cow_startdate cow_enddate  year
-#&gt;    &lt;int&gt;                    &lt;chr&gt;        &lt;date&gt;      &lt;date&gt; &lt;dbl&gt;
-#&gt;  1     2 United States of America    1816-01-01          NA  1816
-#&gt;  2     2 United States of America    1816-01-01          NA  1817
-#&gt;  3     2 United States of America    1816-01-01          NA  1818
-#&gt;  4     2 United States of America    1816-01-01          NA  1819
-#&gt;  5     2 United States of America    1816-01-01          NA  1820
-#&gt;  6     2 United States of America    1816-01-01          NA  1821
-#&gt;  7     2 United States of America    1816-01-01          NA  1822
-#&gt;  8     2 United States of America    1816-01-01          NA  1823
-#&gt;  9     2 United States of America    1816-01-01          NA  1824
-#&gt; 10     2 United States of America    1816-01-01          NA  1825
+#&gt;     cown cow_country_name         cow_startdate cow_enddate  year
+#&gt;    &lt;int&gt; &lt;chr&gt;                    &lt;date&gt;        &lt;date&gt;      &lt;dbl&gt;
+#&gt;  1     2 United States of America 1816-01-01    NA           1816
+#&gt;  2     2 United States of America 1816-01-01    NA           1817
+#&gt;  3     2 United States of America 1816-01-01    NA           1818
+#&gt;  4     2 United States of America 1816-01-01    NA           1819
+#&gt;  5     2 United States of America 1816-01-01    NA           1820
+#&gt;  6     2 United States of America 1816-01-01    NA           1821
+#&gt;  7     2 United States of America 1816-01-01    NA           1822
+#&gt;  8     2 United States of America 1816-01-01    NA           1823
+#&gt;  9     2 United States of America 1816-01-01    NA           1824
+#&gt; 10     2 United States of America 1816-01-01    NA           1825
 #&gt; # ... with 16,246 more rows</div><div class='input'><span class='fu'>create_panel</span>(<span class='st'>"GW"</span>) <span class='co'># Use this for the Gleditsch and Ward system</span></div><div class='output co'>#&gt; # A tibble: 19,150 x 5
-#&gt;      GWn          GW_country_name GW_startdate GW_enddate  year
-#&gt;    &lt;dbl&gt;                    &lt;chr&gt;       &lt;date&gt;     &lt;date&gt; &lt;dbl&gt;
-#&gt;  1     2 United States of America   1816-01-01         NA  1816
-#&gt;  2     2 United States of America   1816-01-01         NA  1817
-#&gt;  3     2 United States of America   1816-01-01         NA  1818
-#&gt;  4     2 United States of America   1816-01-01         NA  1819
-#&gt;  5     2 United States of America   1816-01-01         NA  1820
-#&gt;  6     2 United States of America   1816-01-01         NA  1821
-#&gt;  7     2 United States of America   1816-01-01         NA  1822
-#&gt;  8     2 United States of America   1816-01-01         NA  1823
-#&gt;  9     2 United States of America   1816-01-01         NA  1824
-#&gt; 10     2 United States of America   1816-01-01         NA  1825
+#&gt;      GWn GW_country_name          GW_startdate GW_enddate  year
+#&gt;    &lt;dbl&gt; &lt;chr&gt;                    &lt;date&gt;       &lt;date&gt;     &lt;dbl&gt;
+#&gt;  1  2.00 United States of America 1816-01-01   NA          1816
+#&gt;  2  2.00 United States of America 1816-01-01   NA          1817
+#&gt;  3  2.00 United States of America 1816-01-01   NA          1818
+#&gt;  4  2.00 United States of America 1816-01-01   NA          1819
+#&gt;  5  2.00 United States of America 1816-01-01   NA          1820
+#&gt;  6  2.00 United States of America 1816-01-01   NA          1821
+#&gt;  7  2.00 United States of America 1816-01-01   NA          1822
+#&gt;  8  2.00 United States of America 1816-01-01   NA          1823
+#&gt;  9  2.00 United States of America 1816-01-01   NA          1824
+#&gt; 10  2.00 United States of America 1816-01-01   NA          1825
 #&gt; # ... with 19,140 more rows</div><div class='input'><span class='fu'>create_panel</span>(<span class='st'>"polity"</span>, <span class='kw'>max_year</span> <span class='kw'>=</span> <span class='fl'>1997</span>) <span class='co'># You can specify a maximum year</span></div><div class='output co'>#&gt; # A tibble: 13,964 x 5
 #&gt;    polity_ccode polity_country_name polity_startdate polity_enddate  year
-#&gt;           &lt;dbl&gt;               &lt;chr&gt;           &lt;date&gt;         &lt;date&gt; &lt;dbl&gt;
-#&gt;  1            2       United States       1800-01-01             NA  1800
-#&gt;  2            2       United States       1800-01-01             NA  1801
-#&gt;  3            2       United States       1800-01-01             NA  1802
-#&gt;  4            2       United States       1800-01-01             NA  1803
-#&gt;  5            2       United States       1800-01-01             NA  1804
-#&gt;  6            2       United States       1800-01-01             NA  1805
-#&gt;  7            2       United States       1800-01-01             NA  1806
-#&gt;  8            2       United States       1800-01-01             NA  1807
-#&gt;  9            2       United States       1800-01-01             NA  1808
-#&gt; 10            2       United States       1800-01-01             NA  1809
+#&gt;           &lt;dbl&gt; &lt;chr&gt;               &lt;date&gt;           &lt;date&gt;         &lt;dbl&gt;
+#&gt;  1         2.00 United States       1800-01-01       NA              1800
+#&gt;  2         2.00 United States       1800-01-01       NA              1801
+#&gt;  3         2.00 United States       1800-01-01       NA              1802
+#&gt;  4         2.00 United States       1800-01-01       NA              1803
+#&gt;  5         2.00 United States       1800-01-01       NA              1804
+#&gt;  6         2.00 United States       1800-01-01       NA              1805
+#&gt;  7         2.00 United States       1800-01-01       NA              1806
+#&gt;  8         2.00 United States       1800-01-01       NA              1807
+#&gt;  9         2.00 United States       1800-01-01       NA              1808
+#&gt; 10         2.00 United States       1800-01-01       NA              1809
 #&gt; # ... with 13,954 more rows</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

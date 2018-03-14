@@ -388,6 +388,11 @@ data <- data %>% select(ends_with("country_name"),
                         regex, 
                         lat, lon, everything())
 
+# Ad hoc fix for South Sudan regex
+
+data <- data %>% 
+  mutate(regex = ifelse(extended_country_name == "South Sudan", "\\bs\\w*.?sudan|sudan, south", regex))
+
 devtools::use_data(data, internal = TRUE, overwrite = TRUE)
 ```
 

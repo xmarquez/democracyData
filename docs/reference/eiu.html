@@ -6,8 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The University of Texas Inequality Project Categorical Dataset of Political
-Regimes — utip â€¢ democracyData</title>
+<title>The Economist Intelligence Unit's Democracy Index — eiu â€¢ democracyData</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -84,61 +83,37 @@ Regimes — utip â€¢ democracyData</title>
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>The University of Texas Inequality Project Categorical Dataset of Political
-Regimes</h1>
+    <h1>The Economist Intelligence Unit's Democracy Index</h1>
     </div>
 
     
-    <p>The University of Texas Inequality Project Categorical Dataset of Political
-Regimes. Described in Sara Hsu, "The Effect of Political Regimes on
-Inequality, 1963-2002," UTIP Working Paper No. 53 (2008),
-<a href='http://utip.gov.utexas.edu/papers/utip_53.pdf'>http://utip.gov.utexas.edu/papers/utip_53.pdf</a>. Data available for
-download at
-<a href='http://utip.gov.utexas.edu/data/'>http://utip.gov.utexas.edu/data/</a></p>
+    <p>A dataset containing the country-year version of the democracy index compiled
+by the Economist Intelligence Unit, 2006-2017. From the report "Democracy
+Index 2017: Free Speech under Attack", available at
+<a href='https://www.eiu.com/topic/democracy-index'>https://www.eiu.com/topic/democracy-index</a>.</p>
     
 
-    <pre class="usage"><span class='no'>utip</span></pre>
+    <pre class="usage"><span class='no'>eiu</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 6215 rows and 18 columns.</p>
+    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 1503 rows and 7 columns.</p>
     
-    <h2 class="hasAnchor" id="description"><a class="anchor" href="#description"></a>Description</h2>
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
+    <p>The economist Intelligence Unit. 2018. Democracy Index 2017: Free
+Speech under Attack. <a href='https://www.eiu.com/topic/democracy-index'>https://www.eiu.com/topic/democracy-index</a>.</p>
     
-    <p>This is a categorical dataset of regime types, used in papers on inequality
-by the UTIP group. The coding rules are not well documented. The category
-"one party democracy" is particularly difficult to understand. The
-categories are nevertheless mutually exclusive.</p><dl class='dl-horizontal'>
-    <dt>utip_country</dt><dd><p>The original country name in the dataset.</p></dd>
-    <dt>year</dt><dd><p>Calendar year</p></dd>.
-    <dt>other_dictatorship</dt><dd><p>Whether the regime is a non-military
-dictatorship. 0 = no, 1 = yes.</p></dd>
-    <dt>military_dictatorship</dt><dd><p>Whether the regime is a military dictatorship.
-0 = no, 1 = yes.</p></dd>
-    <dt>civil_war</dt><dd><p>Whether the regime is in a civil war. 0 = no, 1 = yes.</p></dd>
-    <dt>one_party_democracy</dt><dd><p>Whether the regime is a "one party democracy",
-where "fair" elections are held but only one party competes. 0 = no, 1 =
-yes.</p></dd>
-    <dt>communist</dt><dd><p>Whether the regime is communist. 0 = no, 1 = yes.</p></dd>
-    <dt>islamic_republic</dt><dd><p>Whether the regime is an Islamic republic. 0 = no,
-1 = yes. In practice, only Libya and Iran qualify.</p></dd>
-    <dt>social_democracy</dt><dd><p>Whether the regime is social democracy, using the
-Esping-Andersen (1990) classification of welfare states. 0 = no, 1 = yes.</p></dd>
-    <dt>conservative_democracy</dt><dd><p>Whether the regime is a democracy with a
-conservative or liberal welfare state, using the Esping-Andersen (1990)
-classification of welfare states. 0 = no, 1 = yes.</p></dd>
-    <dt>utip_dichotomous</dt><dd><p>Calculated, not in original dataset. Dichotomous
-index of whether the regime is a social democracy, conservative democracy,
-or one party democracy. 0 = no, 1 = yes.</p></dd>
-    <dt>utip_dichotomous_strict</dt><dd><p>Calculated, not in original dataset.
-Dichotomous index of whether the regime is a social democracy or a
-conservative democracy (excludes one party democracy). 0 = no, 1 = yes.</p></dd>
-    <dt>utip_trichotomous</dt><dd><p>Calculated, not in original dataset. Trichotomous
-index of democracy: 2= regime is a social democracy or a conservative
-democracy (excludes one party democracy), 1 = regime is a one party
-democracy, 0 = other.</p></dd>
-    </dl>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <dl class='dl-horizontal'>
+<dt>eiu_country</dt><dd><p>Country name as in the original tables.</p></dd>
+<dt>eiu</dt><dd><p>Democracy index, ranging from 0 (least democratic) to to 10 (most
+democratic). The report says that the index "is based on five categories:
+electoral process and pluralism; civil liberties; the functioning of
+government; political participation; and political culture" which form "one
+interrelated whole".</p></dd>
+</dl>
     
     <h2 class="hasAnchor" id="standard-descriptive-variables-generated-by-this-package-"><a class="anchor" href="#standard-descriptive-variables-generated-by-this-package-"></a>Standard descriptive variables (generated by this package)</h2>
 
@@ -179,29 +154,23 @@ democracy, 0 = other.</p></dd>
   <code><a href='download_fh_electoral.html'>download_fh_electoral</a></code>,
   <code><a href='download_fh.html'>download_fh</a></code>, <code><a href='download_reign.html'>download_reign</a></code>,
   <code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a></code>,
-  <code><a href='eiu.html'>eiu</a></code>, <code><a href='fh_pmm.html'>fh_pmm</a></code>,
-  <code><a href='gwf_all.html'>gwf_all</a></code>, <code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
-  <code><a href='kailitz.html'>kailitz</a></code>, <code><a href='magaloni.html'>magaloni</a></code>,
-  <code><a href='mainwaring.html'>mainwaring</a></code>, <code><a href='munck_pmm.html'>munck_pmm</a></code>,
-  <code><a href='pacl.html'>pacl</a></code>, <code><a href='peps.html'>peps</a></code>,
-  <code><a href='pitf.html'>pitf</a></code>, <code><a href='polity_pmm.html'>polity_pmm</a></code>,
+  <code><a href='fh_pmm.html'>fh_pmm</a></code>, <code><a href='gwf_all.html'>gwf_all</a></code>,
+  <code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>, <code><a href='kailitz.html'>kailitz</a></code>,
+  <code><a href='magaloni.html'>magaloni</a></code>, <code><a href='mainwaring.html'>mainwaring</a></code>,
+  <code><a href='munck_pmm.html'>munck_pmm</a></code>, <code><a href='pacl.html'>pacl</a></code>,
+  <code><a href='peps.html'>peps</a></code>, <code><a href='pitf.html'>pitf</a></code>,
+  <code><a href='polity_pmm.html'>polity_pmm</a></code>,
   <code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
   <code><a href='polyarchy.html'>polyarchy</a></code>, <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
   <code><a href='svolik_regime.html'>svolik_regime</a></code>, <code><a href='uds_2014.html'>uds_2014</a></code>,
-  <code><a href='ulfelder.html'>ulfelder</a></code>, <code><a href='vanhanen.html'>vanhanen</a></code>,
+  <code><a href='ulfelder.html'>ulfelder</a></code>, <code><a href='utip.html'>utip</a></code>,
+  <code><a href='vanhanen.html'>vanhanen</a></code>,
   <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
-<p>Other authoritarianism: <code><a href='download_reign.html'>download_reign</a></code>,
-  <code><a href='gwf_all.html'>gwf_all</a></code>, <code><a href='kailitz.html'>kailitz</a></code>,
-  <code><a href='magaloni.html'>magaloni</a></code>,
-  <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
-<p>Other dichotomous democracy indexes: <code><a href='bmr.html'>bmr</a></code>,
-  <code><a href='bnr.html'>bnr</a></code>, <code><a href='doorenspleet.html'>doorenspleet</a></code>,
-  <code><a href='kailitz.html'>kailitz</a></code>, <code><a href='pacl.html'>pacl</a></code>,
-  <code><a href='svolik_regime.html'>svolik_regime</a></code>, <code><a href='ulfelder.html'>ulfelder</a></code>,
-  <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
-<p>Other trichotomous democracy indexes: <code><a href='blm.html'>blm</a></code>,
-  <code><a href='kailitz.html'>kailitz</a></code>, <code><a href='mainwaring.html'>mainwaring</a></code>,
-  <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code></p>
+<p>Other continuous democracy indexes: <code><a href='arat_pmm.html'>arat_pmm</a></code>,
+  <code><a href='bollen_pmm.html'>bollen_pmm</a></code>,
+  <code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a></code>,
+  <code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>, <code><a href='munck_pmm.html'>munck_pmm</a></code>,
+  <code><a href='vanhanen.html'>vanhanen</a></code></p>
     
 
   </div>
@@ -211,7 +180,9 @@ democracy, 0 = other.</p></dd>
       
       <li><a href="#format">Format</a></li>
 
-      <li><a href="#description">Description</a></li>
+      <li><a href="#source">Source</a></li>
+
+      <li><a href="#details">Details</a></li>
 
       <li><a href="#standard-descriptive-variables-generated-by-this-package-">Standard descriptive variables (generated by this package)</a></li>
 

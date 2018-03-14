@@ -11,15 +11,15 @@
 #'   producing the combined data frame. Can be any or all of (an unambiguous
 #'   abbreviation of) "[LIED]", "[PIPE]", "[arat_pmm]", "[blm]", "[blm_pmm]",
 #'   "[bmr]", "[bnr]", "[bnr_extended]", "[bollen_pmm]", "[doorenspleet]",
-#'   "[fh_pmm]", "[gwf_all]", "[gwf_all_extended]", "[hadenius_pmm]",
+#'   "[eiu]", "[fh_pmm]", "[gwf_all]", "[gwf_all_extended]", "[hadenius_pmm]",
 #'   "[kailitz]", "[magaloni]", "[magaloni_extended]", "[mainwaring]",
 #'   "[mainwaring_pmm]", "[munck_pmm]", "[pacl]", "[pacl_pmm]", "[peps]",
 #'   "[pitf]", "[polity_pmm]", "[polyarchy]", "[polyarchy_dimensions]",
 #'   "[polyarchy_pmm]", "[prc_gasiorowski]", "[prc_pmm]", "[svolik_regime]",
 #'   "[uds_2010]", "[uds_2011]", "[uds_2014]", "[ulfelder]",
 #'   "[ulfelder_extended]", "[utip]", "[vanhanen]", "[wahman_teorell_hadenius]",
-#'   "[reign]", "[polity]", "[fh]", "[fh_electoral]", "[wgi]". Default is
-#'   all of them.
+#'   "[reign]", "[polity]", "[fh]", "[fh_electoral]", "[wgi]". Default is all of
+#'   them.
 #' @param output_format Character. Whether to output a "wide" (each measure of
 #'   democracy in a separate column) or a "long" (a column with measure names, a
 #'   column with values) version of the data frame. Default is "long".
@@ -47,12 +47,12 @@
 #' @param keep_only_last_in_year Whether to keep only the last regime
 #'   measurement in a given country-year. Some datasets (e.g., [prc], [reign])
 #'   contain more than one regime measurement per country-year in some cases (if
-#'   the regime changed multiple times during the year); setting this to \code{TRUE}
-#'   discards all except the regime measurement as of 31 December of the year,
-#'   the standard practice in most datasets. Default is \code{TRUE}. This setting is
-#'   only of interest if you set \code{output_format = "long"}, since it is ignored
-#'   when \code{output_format = "wide"}, which automatically discards all regime
-#'   measurements except the last in the year.
+#'   the regime changed multiple times during the year); setting this to
+#'   \code{TRUE} discards all except the regime measurement as of 31 December of
+#'   the year, the standard practice in most datasets. Default is \code{TRUE}.
+#'   This setting is only of interest if you set \code{output_format = "long"},
+#'   since it is ignored when \code{output_format = "wide"}, which automatically
+#'   discards all regime measurements except the last in the year.
 #' @param exclude_downloadable Whether to exclude all datasets that must be
 #'   explicitly downloaded ([polity], [fh], [reign], [wgi]), using only archived
 #'   datasets. This speeds up the process considerably, but you lose some of the
@@ -68,31 +68,34 @@
 #'
 #' @section Long version:
 #'
-#'   In the "long" version of the dataset (\code{format = "long"}), the output data
-#'   frame also contains the following variables:
+#'   In the "long" version of the dataset (\code{format = "long"}), the output
+#'   data frame also contains the following variables:
 #'
 #' @section Variables:
 #'
 #'   \describe{
 #'
 #'   \item{year}{The calendar year. Most measures of democracy reflect the
-#'   country's situation as of 31 December of the year. If \code{keep_last_in_year = FALSE} (and \code{format = "long"}), a single country year may nevertheless
-#'   contain more than one measurement for some measures (e.g., [prc]).}
+#'   country's situation as of 31 December of the year. If
+#'   \code{keep_last_in_year = FALSE} (and \code{format = "long"}), a single
+#'   country year may nevertheless contain more than one measurement for some
+#'   measures (e.g., [prc]).}
 #'
 #'   \item{measure}{The dataset whence the measure is taken. (e.g., "blm",
 #'   "fh_total_reversed"). }
 #'
 #'   \item{variable}{The numerical value of the measure, in the original scale
-#'   (if \code{scale_scores = FALSE}) or as a z-score (if \code{scale_scores = TRUE}).}
+#'   (if \code{scale_scores = FALSE}) or as a z-score (if \code{scale_scores =
+#'   TRUE}).}
 #'
 #'   }
 #'
 #' @section Wide version:
 #'
-#'   In the "wide" version of the dataset (\code{format = "wide"}), the output data
-#'   frame can also contain any of the following variables (in the scales
-#'   described below, unless \code{scale_scores = TRUE}, in which case the measures
-#'   are converted to z-scores):
+#'   In the "wide" version of the dataset (\code{format = "wide"}), the output
+#'   data frame can also contain any of the following variables (in the scales
+#'   described below, unless \code{scale_scores = TRUE}, in which case the
+#'   measures are converted to z-scores):
 #'
 #'   \describe{
 #'
@@ -113,6 +116,10 @@
 #'   variable instead fills in these years as continuations of the same regime
 #'   type."}
 #'
+#'   \item{bmr_democracy_femalesuffrage}{According to the [bmr] codebook, this
+#'   is the same measure as bmr, except that it also requires that at least half
+#'   of adult women have the right to vote. 30 countries change values.}
+#'
 #'   \item{bnr}{The [bnr] event measure of democracy, reversed, so that 0
 #'   indicates non-democracy and 1 indicates democracy. Since the \code{event}
 #'   variable of the [bnr] dataset only codes terminations of democracy
@@ -126,6 +133,12 @@
 #'
 #'   \item{doorenspleet}{The [doorenspleet] measure of democracy, with 1
 #'   indicating non-democracy and 2 indicating democracy.}
+#'
+#'   \item{eiu}{The [eiu] measure of democracy, ranging from 0 (least
+#'   democratic) to 10 (most democratic). The report says that the index "is
+#'   based on five categories: electoral process and pluralism; civil liberties;
+#'   the functioning of government; political participation; and political
+#'   culture" which form "one interrelated whole"}
 #'
 #'   \item{fh_electoral}{The [fh_electoral] measure of electoral democracy, with
 #'   0 indicating a lack of electoral democracy, 1 indicating electoral
@@ -146,16 +159,16 @@
 #'   extended to the period before 1945 for some countries.}
 #'
 #'   \item{gwf_democracy_strict}{A measure of democracy from [gwf_all], obtained
-#'   by coding all democracies as 1 and all non-democracies as 0.  It is \code{NA}
-#'   for all non-democratic non-autocracies (e.g., warlord regimes, foreign
-#'   occupation, etc.).}
+#'   by coding all democracies as 1 and all non-democracies as 0.  It is
+#'   \code{NA} for all non-democratic non-autocracies (e.g., warlord regimes,
+#'   foreign occupation, etc.).}
 #'
 #'   \item{gwf_democracy_extended_strict}{A measure of democracy from
 #'   [gwf_all_extended], obtained by coding all democracies as 1 and all
-#'   non-democracies as 0. It is \code{NA} for all non-democratic non-autocracies
-#'   (e.g., warlord regimes, foreign occupation, etc.). See the documentation
-#'   for [gwf_all_extended] for details on how the dataset was extended to the
-#'   period before 1945 for some countries.}
+#'   non-democracies as 0. It is \code{NA} for all non-democratic
+#'   non-autocracies (e.g., warlord regimes, foreign occupation, etc.). See the
+#'   documentation for [gwf_all_extended] for details on how the dataset was
+#'   extended to the period before 1945 for some countries.}
 #'
 #'   \item{kailitz_binary}{A measure of democracy from [kailitz], obtained by
 #'   coding all liberal democracies as 1 and all other regimes as 0.}
@@ -231,15 +244,15 @@
 #'   \item{polyarchy_contestation_dimension}{The contestation dimension
 #'   (\code{CONTEST}) in [polyarchy_dimensions].}
 #'
-#'   \item{polyarchy_inclusion_dimension}{The inclusion dimension (\code{INCLUS}) in
-#'   [polyarchy_dimensions].}
+#'   \item{polyarchy_inclusion_dimension}{The inclusion dimension
+#'   (\code{INCLUS}) in [polyarchy_dimensions].}
 #'
-#'   \item{polyarchy_original_contestation}{The contestation dimension (\code{cont})
-#'   in [polyarchy].}
+#'   \item{polyarchy_original_contestation}{The contestation dimension
+#'   (\code{cont}) in [polyarchy].}
 #'
-#'   \item{polyarchy_original_polyarchy}{The original polyarchy scale (\code{poly})
-#'   in [polyarchy], reversed so that higher values imply more democracy. The
-#'   codebook suggests this was superceded by
+#'   \item{polyarchy_original_polyarchy}{The original polyarchy scale
+#'   (\code{poly}) in [polyarchy], reversed so that higher values imply more
+#'   democracy. The codebook suggests this was superceded by
 #'   \code{polyarchy_original_contestation}.}
 #'
 #'   \item{prc}{The measure of democracy in [prc], where 1 is non-democracy, 3
@@ -357,7 +370,7 @@ generate_democracy_scores_dataset <- function(datasets,
 
   available_datasets <- c("LIED", "PIPE", "arat_pmm", "blm", "blm_pmm",
                           "bmr", "bnr", "bnr_extended", "bollen_pmm",
-                          "doorenspleet", "fh_pmm", "gwf_all", "gwf_all_extended",
+                          "doorenspleet", "eiu", "fh_pmm", "gwf_all", "gwf_all_extended",
                           "hadenius_pmm", "kailitz", "magaloni",
                           "magaloni_extended", "mainwaring", "mainwaring_pmm",
                           "munck_pmm", "pacl", "pacl_pmm",
@@ -534,9 +547,11 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- suppressWarnings(bmr %>%
-      rename_at(vars(c("democracy", "democracy_omitteddata")),
-                quos(c("bmr_democracy", "bmr_democracy_omitteddata"))) %>%
-      tidyr::gather("measure", "value", "bmr_democracy", "bmr_democracy_omitteddata") %>%
+      rename_at(vars(c("democracy", "democracy_omitteddata", "democracy_femalesuffrage")),
+                quos(c("bmr_democracy",
+                       "bmr_democracy_omitteddata", "bmr_democracy_femalesuffrage"))) %>%
+      tidyr::gather("measure", "value", "bmr_democracy",
+                    "bmr_democracy_omitteddata", "bmr_democracy_femalesuffrage") %>%
       standardize_selection())
   }
 
@@ -607,6 +622,17 @@ generate_democracy_scores_dataset <- function(datasets,
       standardize_selection()
   }
 
+  # EIU ------------------------------------------------------------
+
+
+  if("eiu" %in% datasets) {
+    if(verbose) {
+      message("Adding EIU data")
+    }
+    democracy_data <- democracyData::eiu %>%
+      tidyr::gather("measure", "value", "eiu") %>%
+      standardize_selection()
+  }
 
   # GWF ---------------------------------------------------------------------
 

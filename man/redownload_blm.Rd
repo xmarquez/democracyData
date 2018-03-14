@@ -26,7 +26,7 @@ Comparative Political Studies 38 (8): 939-970.
 
 Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A Complete
 Data Set of Political Regimes, 1800-2007. Comparative Political Studies 46
-(12): 1523-1554. Available at \url{https://sites.google.com/site/mkmtwo/data}
+(12): 1523-1554. Available at \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT}
 
 Michael Bernhard, Timothy Nordstrom, and Christopher Reenock,
 "Economic Performance, Institutional Intermediation and Democratic
@@ -141,7 +141,7 @@ redownload_pipe(url, verbose = TRUE, return_raw = FALSE, ...)
 \item For \link{blm}: \code{http://www.blmdemocracy.gatech.edu/blm final data.xls}
 
 \item For \link{bmr}:
-\url{https://sites.google.com/site/mkmtwo/democracy-v2.0.dta?attredirects=0}
+\url{https://dataverse.harvard.edu/api/access/datafile/3130643}
 
 \item For \link{bnr}:
 \url{http://users.clas.ufl.edu/bernhard/content/data/meister1305.dta}

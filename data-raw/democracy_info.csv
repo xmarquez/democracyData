@@ -1,7 +1,7 @@
 dataset,long_name,main_democracy_measure_col,measure_type,based_on,in_pmm_replication,categorical_regime_types,user_extendable,downloadable,included_in_package,first_published_use,notes
 arat_pmm,The Arat measure of democracy,pmm_arat,continuous,NA,TRUE,FALSE,FALSE,FALSE,TRUE,1991,"Only available via the Pemstein, Meserve, and Melton (2013) replication data. I have not been able to access the original data."
 blm,"The Bowman, Lehoucq, and Mahoney index of democracy for Central America",blm,trichotomous,NA,TRUE,FALSE,FALSE,TRUE,TRUE,2005,NA
-bmr,"The Boix-Miller-Rosato dichotomous coding of democracy, 1800-2010, version 2.0","democracy,democracy_omitteddata",dichotomous,PACL,FALSE,FALSE,FALSE,TRUE,TRUE,2010,NA
+bmr,"The Boix-Miller-Rosato dichotomous coding of democracy, 1800-2015, version 3.0","democracy,democracy_omitteddata,democracy_femalesuffrage",dichotomous,PACL,FALSE,FALSE,FALSE,TRUE,TRUE,2010,NA
 bnr,"The Bernhard, Nordstrom & Reenock Event History Coding of Democratic Breakdowns","event,bnr",dichotomous,NA,FALSE,FALSE,TRUE,TRUE,TRUE,2001,Can be extended using a full panel of sovereign countries  (COW). Extended version included in this package.
 bollen_pmm,The Bollen measure of democracy,pmm_bollen,continuous,NA,TRUE,FALSE,FALSE,FALSE,TRUE,1978,"The original data was compiled in 1978, for Bollen's dissertation; existing data seems to be from the 2000 update. I do not know how much it changed over time. Only available via the Pemstein, Meserve, and Melton (2013) replication data. I have not been able to access the original data."
 doorenspleet,Renske Doorenspleet's Democracy Dataset,"doorenspleet,regime",dichotomous,Polity,FALSE,FALSE,FALSE,FALSE,TRUE,2000,NA

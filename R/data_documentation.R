@@ -91,37 +91,50 @@
 # BMR ---------------------------------------------------------------------
 
 
-#' Boix-Miller-Rosato dichotomous coding of democracy, 1800-2010, version 2.0
+#' Boix-Miller-Rosato dichotomous coding of democracy, 1800-2010, version 3.0
 #'
-#' A dataset containing the Boix-Miller-Rosato (BMR) dichotomous coding of democracy,
-#' used in the paper Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A
-#' Complete Data Set of Political Regimes, 1800-2007. Comparative Political
-#' Studies 46 (12): 1523-1554. The complete dataset can be downloaded here:
-#' \url{https://sites.google.com/site/mkmtwo/BMR-PolRegimes.pdf?attredirects=0}.
-#' The complete codebook is available here:
-#' \url{https://sites.google.com/site/mkmtwo/data}.
+#' A dataset containing the Boix-Miller-Rosato (BMR) dichotomous coding of
+#' democracy, used in the paper Boix, Carles, Michael Miller, and Sebastian
+#' Rosato. 2012. A Complete Data Set of Political Regimes, 1800-2007.
+#' Comparative Political Studies 46 (12): 1523-1554. The complete dataset can be
+#' downloaded here:
+#' \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT}.
+#' The complete codebook is available there as well.
 #'
-#' \describe{
-#'   \item{bmr_country}{The country name in BMR.}
-#'   \item{bmr_ccode}{Numeric polity code code in BMR. }
-#'   \item{abbreviation}{World Bank 3-letter code.}
-#'   \item{year}{Year}
-#'   \item{democracy}{Dichotomous democracy measure. 1 = Democracy.}
-#'   \item{sovereign}{Dichotomous indicator of sovereignty/independence (if 0, democracy is NA).}
-#'   \item{democracy_trans}{-1 if democratic breakdown, 0 if no change, 1 if democratic transition.}
-#'   \item{democracy_breakdowns}{Previous number of democratic breakdowns.}
-#'   \item{democracy_duration}{Consecutive years of current regime type.}
-#'   \item{democracy_omitteddata}{This is the same measure as democracy, except
-#'   it records an NA for countries occupied during an international war (e.g.,
-#'   the Netherlands 1940-44) or experiencing state collapse during a civil war
-#'   (e.g., Lebanon 1976-89). The democracy variable instead fills in these
-#'   years as continuations of the same regime type.}
-#' }
+#' \describe{ \item{bmr_country}{The country name in BMR.}
+#'
+#' \item{bmr_ccode}{Numeric polity code code in BMR. }
+#'
+#' \item{abbreviation}{World Bank 3-letter code.}
+#'
+#' \item{year}{Year}
+#'
+#' \item{democracy}{Dichotomous democracy measure. 1 = Democracy.}
+#'
+#' \item{sovereign}{Dichotomous indicator of sovereignty/independence (if 0,
+#' democracy is NA).}
+#'
+#' \item{democracy_trans}{-1 if democratic breakdown, 0 if no change, 1 if
+#' democratic transition.}
+#'
+#' \item{democracy_breakdowns}{Previous number of democratic breakdowns.}
+#'
+#' \item{democracy_duration}{Consecutive years of current regime type.}
+#'
+#' \item{democracy_omitteddata}{This is the same measure as democracy, except it
+#' records an NA for countries occupied during an international war (e.g., the
+#' Netherlands 1940-44) or experiencing state collapse during a civil war (e.g.,
+#' Lebanon 1976-89). The democracy variable instead fills in these years as
+#' continuations of the same regime type.}
+#'
+#' \item{democracy_femalesuffrage}{This adjusts democracy by also requiring that
+#' at least half of adult women have the right to vote. 30 countries change
+#' values.} }
 #' @template standard-variables
-#' @source Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A
-#' Complete Data Set of Political Regimes, 1800-2007. Comparative Political
-#' Studies 46 (12): 1523-1554. Available at
-#' \url{https://sites.google.com/site/mkmtwo/data}
+#' @source Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A Complete
+#'   Data Set of Political Regimes, 1800-2007. Comparative Political Studies 46
+#'   (12): 1523-1554. Available at
+#'   \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT}
 #' @family democracy
 #' @family events data
 #' @family dichotomous democracy indexes

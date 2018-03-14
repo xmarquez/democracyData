@@ -21,7 +21,7 @@
 #'  \item For \link{blm}: \code{http://www.blmdemocracy.gatech.edu/blm final data.xls}
 #'
 #'  \item For \link{bmr}:
-#'  \url{https://sites.google.com/site/mkmtwo/democracy-v2.0.dta?attredirects=0}
+#'  \url{https://dataverse.harvard.edu/api/access/datafile/3130643}
 #'
 #'  \item For \link{bnr}:
 #'  \url{http://users.clas.ufl.edu/bernhard/content/data/meister1305.dta}
@@ -170,7 +170,7 @@ redownload_blm <- function(url,
 #' @rdname redownload_blm
 #' @source Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A Complete
 #'   Data Set of Political Regimes, 1800-2007. Comparative Political Studies 46
-#'   (12): 1523-1554. Available at \url{https://sites.google.com/site/mkmtwo/data}
+#'   (12): 1523-1554. Available at \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT}
 #' @export
 #' @examples
 #' \dontrun{
@@ -184,15 +184,14 @@ redownload_bmr <- function(url,
   ccode <- country <- year <- NULL
 
   if(missing(url)) {
-    url <-  "https://sites.google.com/site/mkmtwo/democracy-v2.0.dta?attredirects=0"
+    url <-  "https://dataverse.harvard.edu/api/access/datafile/3130643"
   }
 
 
   data <- read_data(url,
                     verbose = verbose,
                     name = "BMR",
-                    file_extension = "dta") %>%
-    haven::as_factor()
+                    file_extension = "tsv")
 
   if(return_raw) {
     if(verbose) {
@@ -204,8 +203,11 @@ redownload_bmr <- function(url,
   if(verbose) {
     message(sprintf("Original dataset has %d rows.",
                     nrow(data)))
-    message("Processing the BMR data - adding state system info...")
+    message("Processing the BMR data - adding state system info, fixing bad ccode...")
   }
+
+  data <- data %>%
+    mutate(ccode = ifelse(ccode == 626, 525, ccode))
 
   bmr <- country_year_coder(data, country, year,
                             code_col = ccode,
@@ -218,7 +220,7 @@ redownload_bmr <- function(url,
     message(sprintf("Resulting dataset after processing has %d rows.",
                     nrow(bmr)))
     if(nrow(data) != nrow(bmr)) {
-      message("Note: the number of rows in the processed BLM data is different from the number of rows in the original data.")
+      message("Note: the number of rows in the processed BMR data is different from the number of rows in the original data.")
       if(nrow(data) != nrow(bmr)) {
         warning(sprintf("There should be %d rows in the final processed data. Something went wrong.",
                         nrow(data)))

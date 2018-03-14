@@ -30,18 +30,18 @@ fh <- download_fh(verbose = FALSE)
 
 fh 
 #> # A tibble: 8,080 x 11
-#>     fh_country  year    cl    pr status fh_total fh_total_reversed
-#>          <chr> <dbl> <dbl> <dbl> <fctr>    <dbl>             <dbl>
-#>  1 Afghanistan  1972     5     4     PF        9                 5
-#>  2 Afghanistan  1973     6     7     NF       13                 1
-#>  3 Afghanistan  1974     6     7     NF       13                 1
-#>  4 Afghanistan  1975     6     7     NF       13                 1
-#>  5 Afghanistan  1976     6     7     NF       13                 1
-#>  6 Afghanistan  1977     6     6     NF       12                 2
-#>  7 Afghanistan  1978     7     7     NF       14                 0
-#>  8 Afghanistan  1979     7     7     NF       14                 0
-#>  9 Afghanistan  1980     7     7     NF       14                 0
-#> 10 Afghanistan  1982     7     7     NF       14                 0
+#>    fh_country   year    cl    pr status fh_total fh_total_reversed
+#>    <chr>       <dbl> <dbl> <dbl> <fct>     <dbl>             <dbl>
+#>  1 Afghanistan  1972  5.00  4.00 PF         9.00              5.00
+#>  2 Afghanistan  1973  6.00  7.00 NF        13.0               1.00
+#>  3 Afghanistan  1974  6.00  7.00 NF        13.0               1.00
+#>  4 Afghanistan  1975  6.00  7.00 NF        13.0               1.00
+#>  5 Afghanistan  1976  6.00  7.00 NF        13.0               1.00
+#>  6 Afghanistan  1977  6.00  6.00 NF        12.0               2.00
+#>  7 Afghanistan  1978  7.00  7.00 NF        14.0               0   
+#>  8 Afghanistan  1979  7.00  7.00 NF        14.0               0   
+#>  9 Afghanistan  1980  7.00  7.00 NF        14.0               0   
+#> 10 Afghanistan  1982  7.00  7.00 NF        14.0               0   
 #> # ... with 8,070 more rows, and 4 more variables:
 #> #   extended_country_name <chr>, GWn <dbl>, cown <int>, in_GW_system <lgl>
 ```
@@ -56,17 +56,17 @@ Many other datasets containing democracy measures are not regularly updated, inc
 pacl
 #> # A tibble: 9,159 x 82
 #>    order pacl_country  year aclpcode pacl_cowcode cowcode2 ccdcodelet
-#>    <dbl>        <chr> <dbl>    <dbl>        <dbl>    <dbl>      <chr>
-#>  1     1  Afghanistan  1946      142          700      700        AFG
-#>  2     2  Afghanistan  1947      142          700      700        AFG
-#>  3     3  Afghanistan  1948      142          700      700        AFG
-#>  4     4  Afghanistan  1949      142          700      700        AFG
-#>  5     5  Afghanistan  1950      142          700      700        AFG
-#>  6     6  Afghanistan  1951      142          700      700        AFG
-#>  7     7  Afghanistan  1952      142          700      700        AFG
-#>  8     8  Afghanistan  1953      142          700      700        AFG
-#>  9     9  Afghanistan  1954      142          700      700        AFG
-#> 10    10  Afghanistan  1955      142          700      700        AFG
+#>    <dbl> <chr>        <dbl>    <dbl>        <dbl>    <dbl> <chr>     
+#>  1  1.00 Afghanistan   1946      142          700      700 AFG       
+#>  2  2.00 Afghanistan   1947      142          700      700 AFG       
+#>  3  3.00 Afghanistan   1948      142          700      700 AFG       
+#>  4  4.00 Afghanistan   1949      142          700      700 AFG       
+#>  5  5.00 Afghanistan   1950      142          700      700 AFG       
+#>  6  6.00 Afghanistan   1951      142          700      700 AFG       
+#>  7  7.00 Afghanistan   1952      142          700      700 AFG       
+#>  8  8.00 Afghanistan   1953      142          700      700 AFG       
+#>  9  9.00 Afghanistan   1954      142          700      700 AFG       
+#> 10 10.0  Afghanistan   1955      142          700      700 AFG       
 #> # ... with 9,149 more rows, and 75 more variables: ccdcodenum <dbl>,
 #> #   aclpyear <dbl>, cowcode2year <dbl>, cowcodeyear <dbl>, chgterr <dbl>,
 #> #   ychgterr <dbl>, flagc_cowcode2 <dbl>, flage_cowcode2 <dbl>,
@@ -97,17 +97,17 @@ pacl_redownloaded <- redownload_pacl(verbose = FALSE)
 pacl_redownloaded
 #> # A tibble: 9,159 x 82
 #>    order pacl_country  year aclpcode pacl_cowcode cowcode2 ccdcodelet
-#>    <dbl>        <chr> <dbl>    <dbl>        <dbl>    <dbl>      <chr>
-#>  1     1  Afghanistan  1946      142          700      700        AFG
-#>  2     2  Afghanistan  1947      142          700      700        AFG
-#>  3     3  Afghanistan  1948      142          700      700        AFG
-#>  4     4  Afghanistan  1949      142          700      700        AFG
-#>  5     5  Afghanistan  1950      142          700      700        AFG
-#>  6     6  Afghanistan  1951      142          700      700        AFG
-#>  7     7  Afghanistan  1952      142          700      700        AFG
-#>  8     8  Afghanistan  1953      142          700      700        AFG
-#>  9     9  Afghanistan  1954      142          700      700        AFG
-#> 10    10  Afghanistan  1955      142          700      700        AFG
+#>    <dbl> <chr>        <dbl>    <dbl>        <dbl>    <dbl> <chr>     
+#>  1  1.00 Afghanistan   1946      142          700      700 AFG       
+#>  2  2.00 Afghanistan   1947      142          700      700 AFG       
+#>  3  3.00 Afghanistan   1948      142          700      700 AFG       
+#>  4  4.00 Afghanistan   1949      142          700      700 AFG       
+#>  5  5.00 Afghanistan   1950      142          700      700 AFG       
+#>  6  6.00 Afghanistan   1951      142          700      700 AFG       
+#>  7  7.00 Afghanistan   1952      142          700      700 AFG       
+#>  8  8.00 Afghanistan   1953      142          700      700 AFG       
+#>  9  9.00 Afghanistan   1954      142          700      700 AFG       
+#> 10 10.0  Afghanistan   1955      142          700      700 AFG       
 #> # ... with 9,149 more rows, and 75 more variables: ccdcodenum <dbl>,
 #> #   aclpyear <dbl>, cowcode2year <dbl>, cowcodeyear <dbl>, chgterr <dbl>,
 #> #   ychgterr <dbl>, flagc_cowcode2 <dbl>, flage_cowcode2 <dbl>,
@@ -164,10 +164,11 @@ democracy_info %>%
 |:--------------------------|:--------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------|:--------------|:----------------|:---------------------|:---------------------------|:-----------------|:-------------|:----------------------|----------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | arat\_pmm                 | The Arat measure of democracy                                                                                 | pmm\_arat                                                                              | continuous    | NA              | TRUE                 | FALSE                      | FALSE            | FALSE        | TRUE                  |                   1991| Only available via the Pemstein, Meserve, and Melton (2013) replication data. I have not been able to access the original data.                                                                                                                                                                                                     |
 | blm                       | The Bowman, Lehoucq, and Mahoney index of democracy for Central America                                       | blm                                                                                    | trichotomous  | NA              | TRUE                 | FALSE                      | FALSE            | TRUE         | TRUE                  |                   2005| NA                                                                                                                                                                                                                                                                                                                                  |
-| bmr                       | The Boix-Miller-Rosato dichotomous coding of democracy, 1800-2010, version 2.0                                | democracy,democracy\_omitteddata                                                       | dichotomous   | PACL            | FALSE                | FALSE                      | FALSE            | TRUE         | TRUE                  |                   2010| NA                                                                                                                                                                                                                                                                                                                                  |
+| bmr                       | The Boix-Miller-Rosato dichotomous coding of democracy, 1800-2015, version 3.0                                | democracy,democracy\_omitteddata,democracy\_femalesuffrage                             | dichotomous   | PACL            | FALSE                | FALSE                      | FALSE            | TRUE         | TRUE                  |                   2010| NA                                                                                                                                                                                                                                                                                                                                  |
 | bnr                       | The Bernhard, Nordstrom & Reenock Event History Coding of Democratic Breakdowns                               | event,bnr                                                                              | dichotomous   | NA              | FALSE                | FALSE                      | TRUE             | TRUE         | TRUE                  |                   2001| Can be extended using a full panel of sovereign countries (COW). Extended version included in this package.                                                                                                                                                                                                                         |
 | bollen\_pmm               | The Bollen measure of democracy                                                                               | pmm\_bollen                                                                            | continuous    | NA              | TRUE                 | FALSE                      | FALSE            | FALSE        | TRUE                  |                   1978| The original data was compiled in 1978, for Bollen's dissertation; existing data seems to be from the 2000 update. I do not know how much it changed over time. Only available via the Pemstein, Meserve, and Melton (2013) replication data. I have not been able to access the original data.                                     |
 | doorenspleet              | Renske Doorenspleet's Democracy Dataset                                                                       | doorenspleet,regime                                                                    | dichotomous   | Polity          | FALSE                | FALSE                      | FALSE            | FALSE        | TRUE                  |                   2000| NA                                                                                                                                                                                                                                                                                                                                  |
+| eiu                       | The Economist Intelligence Unit's Democracy Index                                                             | eiu                                                                                    | continuous    | NA              | FALSE                | FALSE                      | FALSE            | FALSE        | TRUE                  |                   2006| The original data has to be manually extracted from the tables in the EIU's pdf report on the index.                                                                                                                                                                                                                                |
 | fh                        | Freedom House "Freedom in the World" data from Pemstein, Meserve, and Melton's replication dataset            | status,fh\_total,fh\_total\_reversed                                                   | ordinal       | FH              | TRUE                 | FALSE                      | FALSE            | TRUE         | FALSE                 |                   1973| NA                                                                                                                                                                                                                                                                                                                                  |
 | fh\_electoral             | Freedom House "Electoral Democracies" List                                                                    | electoral                                                                              | dichotomous   | PACL            | FALSE                | FALSE                      | FALSE            | TRUE         | FALSE                 |                   1990| The electoral democracy list seems to have only been compiled since the 1990s, but I have not been able to find an exact date of first compilation.                                                                                                                                                                                 |
 | gwf                       | The Geddes Wright and Frantz Autocratic Regimes dataset                                                       | gwf\_regimetype,gwf\_nonautocracy                                                      | dichotomous   | PACL            | FALSE                | TRUE                       | TRUE             | TRUE         | TRUE                  |                   2014| Can be extended using the gwf\_duration variable. Extended version included in this package.                                                                                                                                                                                                                                        |
@@ -217,29 +218,29 @@ democracy_data <- generate_democracy_scores_dataset(output_format = "wide",
                                                     verbose = FALSE)
 
 democracy_data
-#> # A tibble: 24,511 x 72
-#>    extended_country_name   GWn  cown in_GW_system  year   blm
-#>                    <chr> <dbl> <int>        <lgl> <dbl> <dbl>
-#>  1              Abkhazia   396    NA        FALSE  1997    NA
-#>  2              Abkhazia   396    NA        FALSE  1998    NA
-#>  3              Abkhazia   396    NA        FALSE  1999    NA
-#>  4              Abkhazia   396    NA        FALSE  2000    NA
-#>  5              Abkhazia   396    NA        FALSE  2001    NA
-#>  6              Abkhazia   396    NA        FALSE  2002    NA
-#>  7              Abkhazia   396    NA        FALSE  2003    NA
-#>  8              Abkhazia   396    NA        FALSE  2004    NA
-#>  9              Abkhazia   396    NA        FALSE  2005    NA
-#> 10              Abkhazia   396    NA        FALSE  2006    NA
-#> # ... with 24,501 more rows, and 66 more variables: bmr_democracy <dbl>,
-#> #   bmr_democracy_omitteddata <dbl>, bnr <dbl>, bnr_extended <dbl>,
-#> #   doorenspleet <dbl>, fh_electoral <dbl>, fh_total_reversed <dbl>,
-#> #   gwf_democracy <dbl>, gwf_democracy_extended <dbl>,
-#> #   gwf_democracy_extended_strict <dbl>, gwf_democracy_strict <dbl>,
-#> #   kailitz_binary <dbl>, kailitz_tri <dbl>, lexical_index <dbl>,
-#> #   magaloni_democracy <dbl>, magaloni_democracy_extended <dbl>,
-#> #   mainwaring <dbl>, pacl <dbl>, PEPS1i <dbl>, PEPS1q <dbl>,
-#> #   PEPS1v <dbl>, PEPS2i <dbl>, PEPS2q <dbl>, PEPS2v <dbl>,
-#> #   PIPE_democracy <dbl>, PIPE_regime <dbl>, pitf <dbl>,
+#> # A tibble: 24,511 x 74
+#>    extended_country_na~   GWn  cown in_GW_system  year   blm bmr_democracy
+#>    <chr>                <dbl> <int> <lgl>        <dbl> <dbl>         <dbl>
+#>  1 Abkhazia               396    NA F             1997    NA            NA
+#>  2 Abkhazia               396    NA F             1998    NA            NA
+#>  3 Abkhazia               396    NA F             1999    NA            NA
+#>  4 Abkhazia               396    NA F             2000    NA            NA
+#>  5 Abkhazia               396    NA F             2001    NA            NA
+#>  6 Abkhazia               396    NA F             2002    NA            NA
+#>  7 Abkhazia               396    NA F             2003    NA            NA
+#>  8 Abkhazia               396    NA F             2004    NA            NA
+#>  9 Abkhazia               396    NA F             2005    NA            NA
+#> 10 Abkhazia               396    NA F             2006    NA            NA
+#> # ... with 24,501 more rows, and 67 more variables:
+#> #   bmr_democracy_femalesuffrage <dbl>, bmr_democracy_omitteddata <dbl>,
+#> #   bnr <dbl>, bnr_extended <dbl>, doorenspleet <dbl>, eiu <dbl>,
+#> #   fh_electoral <dbl>, fh_total_reversed <dbl>, gwf_democracy <dbl>,
+#> #   gwf_democracy_extended <dbl>, gwf_democracy_extended_strict <dbl>,
+#> #   gwf_democracy_strict <dbl>, kailitz_binary <dbl>, kailitz_tri <dbl>,
+#> #   lexical_index <dbl>, magaloni_democracy <dbl>,
+#> #   magaloni_democracy_extended <dbl>, mainwaring <dbl>, pacl <dbl>,
+#> #   PEPS1i <dbl>, PEPS1q <dbl>, PEPS1v <dbl>, PEPS2i <dbl>, PEPS2q <dbl>,
+#> #   PEPS2v <dbl>, PIPE_democracy <dbl>, PIPE_regime <dbl>, pitf <dbl>,
 #> #   pitf_binary <dbl>, pmm_arat <dbl>, pmm_blm <dbl>, pmm_bollen <dbl>,
 #> #   pmm_fh <dbl>, pmm_hadenius <dbl>, pmm_mainwaring <dbl>,
 #> #   pmm_munck <dbl>, pmm_pacl <dbl>, pmm_polity <dbl>,
@@ -285,24 +286,24 @@ my_weird_democracy_data <- data_frame(country = c("Germany", "Germany", "Germany
 
 my_weird_democracy_data
 #> # A tibble: 16 x 3
-#>                        country  year  my_measure
-#>                          <chr> <dbl>       <dbl>
-#>  1                     Germany  2015 -0.08466199
-#>  2                     Germany  1930  0.90163016
-#>  3                     Germany  1970 -0.76310542
-#>  4                     Germany  1945 -0.35252534
-#>  5                East Germany  1949  0.34746712
-#>  6 Federal Republic of Germany  1992  1.02917441
-#>  7                  Somaliland  1990 -1.13301061
-#>  8                     Somalia  1990 -0.14208428
-#>  9                   Palestine  1940 -0.12434076
-#> 10                      Russia  1917 -1.06084765
-#> 11                      Russia  1912  0.22216578
-#> 12                        USSR  1922 -1.18678975
-#> 13         Republic of Vietnam  1975 -1.98024277
-#> 14                  Yugoslavia  1990 -0.81004612
-#> 15                  Yugoslavia  1991  0.72589830
-#> 16              Vietnam, South  1954 -1.24778650
+#>    country                      year my_measure
+#>    <chr>                       <dbl>      <dbl>
+#>  1 Germany                      2015     0.329 
+#>  2 Germany                      1930     0.0913
+#>  3 Germany                      1970    -0.0544
+#>  4 Germany                      1945    -0.561 
+#>  5 East Germany                 1949    -1.24  
+#>  6 Federal Republic of Germany  1992    -0.407 
+#>  7 Somaliland                   1990    -1.39  
+#>  8 Somalia                      1990    -0.418 
+#>  9 Palestine                    1940     0.178 
+#> 10 Russia                       1917     0.214 
+#> 11 Russia                       1912     0.292 
+#> 12 USSR                         1922    -0.0209
+#> 13 Republic of Vietnam          1975     0.0515
+#> 14 Yugoslavia                   1990    -1.04  
+#> 15 Yugoslavia                   1991    -0.723 
+#> 16 Vietnam, South               1954    -0.893
 ```
 
 and you then want to add state system information. `country_year_coder` does that for you!
@@ -329,22 +330,22 @@ my_weird_democracy_data %>%
 
 | country                     |  year|  my\_measure| extended\_country\_name      |  GWn|  cown|  polity\_ccode| in\_GW\_system | in\_cow\_system | in\_polity\_system | polity\_startdate | polity\_enddate |
 |:----------------------------|-----:|------------:|:-----------------------------|----:|-----:|--------------:|:---------------|:----------------|:-------------------|:------------------|:----------------|
-| Germany                     |  2015|   -0.0846620| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
-| Germany                     |  1930|    0.9016302| Germany (Prussia)            |  255|   255|            255| TRUE           | TRUE            | TRUE               | 1871-01-19        | 1945-05-07      |
-| Germany                     |  1970|   -0.7631054| German Federal Republic      |  260|   260|            260| TRUE           | TRUE            | TRUE               | 1945-05-08        | 1990-10-02      |
-| Germany                     |  1945|   -0.3525253| German Federal Republic      |  260|   260|            260| FALSE          | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
-| East Germany                |  1949|    0.3474671| German Democratic Republic   |  265|   265|            265| TRUE           | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
-| Federal Republic of Germany |  1992|    1.0291744| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
-| Somaliland                  |  1990|   -1.1330106| Somaliland                   |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
-| Somalia                     |  1990|   -0.1420843| Somalia                      |  520|   520|            520| TRUE           | TRUE            | TRUE               | 1960-07-01        | NA              |
-| Palestine                   |  1940|   -0.1243408| British Mandate of Palestine |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
-| Russia                      |  1917|   -1.0608476| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
-| Russia                      |  1912|    0.2221658| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
-| USSR                        |  1922|   -1.1867898| Russia (Soviet Union)        |  365|   365|            364| TRUE           | TRUE            | TRUE               | 1922-12-30        | 1991-12-31      |
-| Republic of Vietnam         |  1975|   -1.9802428| Vietnam, Republic of         |  817|   817|            817| FALSE          | FALSE           | TRUE               | 1955-10-26        | 1975-12-31      |
-| Yugoslavia                  |  1990|   -0.8100461| Yugoslavia                   |  345|   345|            345| TRUE           | TRUE            | TRUE               | 1921-01-01        | 1991-07-01      |
-| Yugoslavia                  |  1991|    0.7258983| Yugoslavia                   |  345|   345|            347| TRUE           | TRUE            | TRUE               | 1991-07-01        | 2003-03-11      |
-| Vietnam, South              |  1954|   -1.2477865| Vietnam, Republic of         |  817|   817|            817| TRUE           | TRUE            | FALSE              | 1955-10-26        | 1975-12-31      |
+| Germany                     |  2015|    0.3288658| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
+| Germany                     |  1930|    0.0912698| Germany (Prussia)            |  255|   255|            255| TRUE           | TRUE            | TRUE               | 1871-01-19        | 1945-05-07      |
+| Germany                     |  1970|   -0.0543807| German Federal Republic      |  260|   260|            260| TRUE           | TRUE            | TRUE               | 1945-05-08        | 1990-10-02      |
+| Germany                     |  1945|   -0.5611271| German Federal Republic      |  260|   260|            260| FALSE          | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
+| East Germany                |  1949|   -1.2422667| German Democratic Republic   |  265|   265|            265| TRUE           | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
+| Federal Republic of Germany |  1992|   -0.4071587| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
+| Somaliland                  |  1990|   -1.3921556| Somaliland                   |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
+| Somalia                     |  1990|   -0.4176227| Somalia                      |  520|   520|            520| TRUE           | TRUE            | TRUE               | 1960-07-01        | NA              |
+| Palestine                   |  1940|    0.1781365| British Mandate of Palestine |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
+| Russia                      |  1917|    0.2143916| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
+| Russia                      |  1912|    0.2920111| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
+| USSR                        |  1922|   -0.0208690| Russia (Soviet Union)        |  365|   365|            364| TRUE           | TRUE            | TRUE               | 1922-12-30        | 1991-12-31      |
+| Republic of Vietnam         |  1975|    0.0515169| Vietnam, Republic of         |  817|   817|            817| FALSE          | FALSE           | TRUE               | 1955-10-26        | 1975-12-31      |
+| Yugoslavia                  |  1990|   -1.0377277| Yugoslavia                   |  345|   345|            345| TRUE           | TRUE            | TRUE               | 1921-01-01        | 1991-07-01      |
+| Yugoslavia                  |  1991|   -0.7226295| Yugoslavia                   |  345|   345|            347| TRUE           | TRUE            | TRUE               | 1991-07-01        | 2003-03-11      |
+| Vietnam, South              |  1954|   -0.8926063| Vietnam, Republic of         |  817|   817|            817| TRUE           | TRUE            | FALSE              | 1955-10-26        | 1975-12-31      |
 
 `country_year_coder` tries to match not just the country name or the country code (as `countrycode` does), but also to figure out the appropriate state system code *given* the year. (Above, for example, the function figures out that Germany 1970 should get a COW code of 260, but Germany 1992 should get 255 - though it should retain the 260 code in the Gleditsch and Ward system of states. This is, incidentally, how `download_fh` adds the correct COW and GW country codes to Freedom House's Excel data). It also tries to figure out whether a given country-year is in the specific state system list. (In the example above, Germany in 1945 is not listed as a member of the state system in either COW or Gleditsch and Ward, since it was occupied by the Allies as of 31 December 1945, but is listed as a member of the state system in Polity IV as the Federal Republic, though with a polity score of -66, "interregnum").
 
@@ -355,34 +356,34 @@ There is also a function that allows you to create a blank state system panel fo
 ``` r
 create_panel(system = "cow")
 #> # A tibble: 16,256 x 5
-#>     cown         cow_country_name cow_startdate cow_enddate  year
-#>    <int>                    <chr>        <date>      <date> <dbl>
-#>  1     2 United States of America    1816-01-01          NA  1816
-#>  2     2 United States of America    1816-01-01          NA  1817
-#>  3     2 United States of America    1816-01-01          NA  1818
-#>  4     2 United States of America    1816-01-01          NA  1819
-#>  5     2 United States of America    1816-01-01          NA  1820
-#>  6     2 United States of America    1816-01-01          NA  1821
-#>  7     2 United States of America    1816-01-01          NA  1822
-#>  8     2 United States of America    1816-01-01          NA  1823
-#>  9     2 United States of America    1816-01-01          NA  1824
-#> 10     2 United States of America    1816-01-01          NA  1825
+#>     cown cow_country_name         cow_startdate cow_enddate  year
+#>    <int> <chr>                    <date>        <date>      <dbl>
+#>  1     2 United States of America 1816-01-01    NA           1816
+#>  2     2 United States of America 1816-01-01    NA           1817
+#>  3     2 United States of America 1816-01-01    NA           1818
+#>  4     2 United States of America 1816-01-01    NA           1819
+#>  5     2 United States of America 1816-01-01    NA           1820
+#>  6     2 United States of America 1816-01-01    NA           1821
+#>  7     2 United States of America 1816-01-01    NA           1822
+#>  8     2 United States of America 1816-01-01    NA           1823
+#>  9     2 United States of America 1816-01-01    NA           1824
+#> 10     2 United States of America 1816-01-01    NA           1825
 #> # ... with 16,246 more rows
 
 create_panel(system = "GW")
 #> # A tibble: 19,150 x 5
-#>      GWn          GW_country_name GW_startdate GW_enddate  year
-#>    <dbl>                    <chr>       <date>     <date> <dbl>
-#>  1     2 United States of America   1816-01-01         NA  1816
-#>  2     2 United States of America   1816-01-01         NA  1817
-#>  3     2 United States of America   1816-01-01         NA  1818
-#>  4     2 United States of America   1816-01-01         NA  1819
-#>  5     2 United States of America   1816-01-01         NA  1820
-#>  6     2 United States of America   1816-01-01         NA  1821
-#>  7     2 United States of America   1816-01-01         NA  1822
-#>  8     2 United States of America   1816-01-01         NA  1823
-#>  9     2 United States of America   1816-01-01         NA  1824
-#> 10     2 United States of America   1816-01-01         NA  1825
+#>      GWn GW_country_name          GW_startdate GW_enddate  year
+#>    <dbl> <chr>                    <date>       <date>     <dbl>
+#>  1  2.00 United States of America 1816-01-01   NA          1816
+#>  2  2.00 United States of America 1816-01-01   NA          1817
+#>  3  2.00 United States of America 1816-01-01   NA          1818
+#>  4  2.00 United States of America 1816-01-01   NA          1819
+#>  5  2.00 United States of America 1816-01-01   NA          1820
+#>  6  2.00 United States of America 1816-01-01   NA          1821
+#>  7  2.00 United States of America 1816-01-01   NA          1822
+#>  8  2.00 United States of America 1816-01-01   NA          1823
+#>  9  2.00 United States of America 1816-01-01   NA          1824
+#> 10  2.00 United States of America 1816-01-01   NA          1825
 #> # ... with 19,140 more rows
 ```
 
@@ -470,6 +471,8 @@ Skaaning S, Gerring J and Bartusevicius H (2015). "A Lexical Index of Electoral 
 Svolik M (2012). *The Politics of Authoritarian Rule*. Cambridge University Press, Cambridge.
 
 Taylor SJ and Ulfelder J (2015). "A Measurement Error Model of Dichotomous Democracy Status." *Available at SSRN*. doi: 10.2139/ssrn.2726962 (URL: <http://doi.org/10.2139/ssrn.2726962>).
+
+The Economist Intelligence Unit (2018). "Democracy Index 2017: Free Speech under Attack." The Economist Intelligence Unit.
 
 Ulfelder J (2012). "Democracy/Autocracy Data Set." &lt;URL: <http://hdl.handle.net/1902.1/18836>&gt;.
 

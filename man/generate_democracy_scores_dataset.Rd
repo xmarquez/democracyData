@@ -16,15 +16,15 @@ generate_democracy_scores_dataset(datasets, output_format = "long",
 producing the combined data frame. Can be any or all of (an unambiguous
 abbreviation of) "\link{LIED}", "\link{PIPE}", "\link{arat_pmm}", "\link{blm}", "\link{blm_pmm}",
 "\link{bmr}", "\link{bnr}", "\link{bnr_extended}", "\link{bollen_pmm}", "\link{doorenspleet}",
-"\link{fh_pmm}", "\link{gwf_all}", "\link{gwf_all_extended}", "\link{hadenius_pmm}",
+"\link{eiu}", "\link{fh_pmm}", "\link{gwf_all}", "\link{gwf_all_extended}", "\link{hadenius_pmm}",
 "\link{kailitz}", "\link{magaloni}", "\link{magaloni_extended}", "\link{mainwaring}",
 "\link{mainwaring_pmm}", "\link{munck_pmm}", "\link{pacl}", "\link{pacl_pmm}", "\link{peps}",
 "\link{pitf}", "\link{polity_pmm}", "\link{polyarchy}", "\link{polyarchy_dimensions}",
 "\link{polyarchy_pmm}", "\link{prc_gasiorowski}", "\link{prc_pmm}", "\link{svolik_regime}",
 "\link{uds_2010}", "\link{uds_2011}", "\link{uds_2014}", "\link{ulfelder}",
 "\link{ulfelder_extended}", "\link{utip}", "\link{vanhanen}", "\link{wahman_teorell_hadenius}",
-"\link{reign}", "\link{polity}", "\link{fh}", "\link{fh_electoral}", "\link{wgi}". Default is
-all of them.}
+"\link{reign}", "\link{polity}", "\link{fh}", "\link{fh_electoral}", "\link{wgi}". Default is all of
+them.}
 
 \item{output_format}{Character. Whether to output a "wide" (each measure of
 democracy in a separate column) or a "long" (a column with measure names, a
@@ -60,12 +60,12 @@ and dividing by their standard deviation). Default is \code{FALSE}.}
 \item{keep_only_last_in_year}{Whether to keep only the last regime
 measurement in a given country-year. Some datasets (e.g., \link{prc}, \link{reign})
 contain more than one regime measurement per country-year in some cases (if
-the regime changed multiple times during the year); setting this to \code{TRUE}
-discards all except the regime measurement as of 31 December of the year,
-the standard practice in most datasets. Default is \code{TRUE}. This setting is
-only of interest if you set \code{output_format = "long"}, since it is ignored
-when \code{output_format = "wide"}, which automatically discards all regime
-measurements except the last in the year.}
+the regime changed multiple times during the year); setting this to
+\code{TRUE} discards all except the regime measurement as of 31 December of
+the year, the standard practice in most datasets. Default is \code{TRUE}.
+This setting is only of interest if you set \code{output_format = "long"},
+since it is ignored when \code{output_format = "wide"}, which automatically
+discards all regime measurements except the last in the year.}
 
 \item{exclude_downloadable}{Whether to exclude all datasets that must be
 explicitly downloaded (\link{polity}, \link{fh}, \link{reign}, \link{wgi}), using only archived
@@ -121,8 +121,8 @@ more democracy, and that all country-years are appropriately matched.
 \section{Long version}{
 
 
-In the "long" version of the dataset (\code{format = "long"}), the output data
-frame also contains the following variables:
+In the "long" version of the dataset (\code{format = "long"}), the output
+data frame also contains the following variables:
 }
 
 \section{Variables}{
@@ -131,14 +131,17 @@ frame also contains the following variables:
 \describe{
 
 \item{year}{The calendar year. Most measures of democracy reflect the
-country's situation as of 31 December of the year. If \code{keep_last_in_year = FALSE} (and \code{format = "long"}), a single country year may nevertheless
-contain more than one measurement for some measures (e.g., \link{prc}).}
+country's situation as of 31 December of the year. If
+\code{keep_last_in_year = FALSE} (and \code{format = "long"}), a single
+country year may nevertheless contain more than one measurement for some
+measures (e.g., \link{prc}).}
 
 \item{measure}{The dataset whence the measure is taken. (e.g., "blm",
 "fh_total_reversed"). }
 
 \item{variable}{The numerical value of the measure, in the original scale
-(if \code{scale_scores = FALSE}) or as a z-score (if \code{scale_scores = TRUE}).}
+(if \code{scale_scores = FALSE}) or as a z-score (if \code{scale_scores =
+  TRUE}).}
 
 }
 }
@@ -146,10 +149,10 @@ contain more than one measurement for some measures (e.g., \link{prc}).}
 \section{Wide version}{
 
 
-In the "wide" version of the dataset (\code{format = "wide"}), the output data
-frame can also contain any of the following variables (in the scales
-described below, unless \code{scale_scores = TRUE}, in which case the measures
-are converted to z-scores):
+In the "wide" version of the dataset (\code{format = "wide"}), the output
+data frame can also contain any of the following variables (in the scales
+described below, unless \code{scale_scores = TRUE}, in which case the
+measures are converted to z-scores):
 
 \describe{
 
@@ -170,6 +173,10 @@ state collapse during a civil war (e.g., Lebanon 1976-89). The democracy
 variable instead fills in these years as continuations of the same regime
 type."}
 
+\item{bmr_democracy_femalesuffrage}{According to the \link{bmr} codebook, this
+is the same measure as bmr, except that it also requires that at least half
+of adult women have the right to vote. 30 countries change values.}
+
 \item{bnr}{The \link{bnr} event measure of democracy, reversed, so that 0
 indicates non-democracy and 1 indicates democracy. Since the \code{event}
 variable of the \link{bnr} dataset only codes terminations of democracy
@@ -183,6 +190,12 @@ years of non-democracy back to 1913.}
 
 \item{doorenspleet}{The \link{doorenspleet} measure of democracy, with 1
 indicating non-democracy and 2 indicating democracy.}
+
+\item{eiu}{The \link{eiu} measure of democracy, ranging from 0 (least
+democratic) to 10 (most democratic). The report says that the index "is
+based on five categories: electoral process and pluralism; civil liberties;
+the functioning of government; political participation; and political
+culture" which form "one interrelated whole"}
 
 \item{fh_electoral}{The \link{fh_electoral} measure of electoral democracy, with
 0 indicating a lack of electoral democracy, 1 indicating electoral
@@ -203,16 +216,16 @@ documentation for \link{gwf_all_extended} for details on how the dataset was
 extended to the period before 1945 for some countries.}
 
 \item{gwf_democracy_strict}{A measure of democracy from \link{gwf_all}, obtained
-by coding all democracies as 1 and all non-democracies as 0.  It is \code{NA}
-for all non-democratic non-autocracies (e.g., warlord regimes, foreign
-occupation, etc.).}
+by coding all democracies as 1 and all non-democracies as 0.  It is
+\code{NA} for all non-democratic non-autocracies (e.g., warlord regimes,
+foreign occupation, etc.).}
 
 \item{gwf_democracy_extended_strict}{A measure of democracy from
 \link{gwf_all_extended}, obtained by coding all democracies as 1 and all
-non-democracies as 0. It is \code{NA} for all non-democratic non-autocracies
-(e.g., warlord regimes, foreign occupation, etc.). See the documentation
-for \link{gwf_all_extended} for details on how the dataset was extended to the
-period before 1945 for some countries.}
+non-democracies as 0. It is \code{NA} for all non-democratic
+non-autocracies (e.g., warlord regimes, foreign occupation, etc.). See the
+documentation for \link{gwf_all_extended} for details on how the dataset was
+extended to the period before 1945 for some countries.}
 
 \item{kailitz_binary}{A measure of democracy from \link{kailitz}, obtained by
 coding all liberal democracies as 1 and all other regimes as 0.}
@@ -288,15 +301,15 @@ the polity manual).}
 \item{polyarchy_contestation_dimension}{The contestation dimension
 (\code{CONTEST}) in \link{polyarchy_dimensions}.}
 
-\item{polyarchy_inclusion_dimension}{The inclusion dimension (\code{INCLUS}) in
-\link{polyarchy_dimensions}.}
+\item{polyarchy_inclusion_dimension}{The inclusion dimension
+(\code{INCLUS}) in \link{polyarchy_dimensions}.}
 
-\item{polyarchy_original_contestation}{The contestation dimension (\code{cont})
-in \link{polyarchy}.}
+\item{polyarchy_original_contestation}{The contestation dimension
+(\code{cont}) in \link{polyarchy}.}
 
-\item{polyarchy_original_polyarchy}{The original polyarchy scale (\code{poly})
-in \link{polyarchy}, reversed so that higher values imply more democracy. The
-codebook suggests this was superceded by
+\item{polyarchy_original_polyarchy}{The original polyarchy scale
+(\code{poly}) in \link{polyarchy}, reversed so that higher values imply more
+democracy. The codebook suggests this was superceded by
 \code{polyarchy_original_contestation}.}
 
 \item{prc}{The measure of democracy in \link{prc}, where 1 is non-democracy, 3

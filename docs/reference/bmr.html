@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Boix-Miller-Rosato dichotomous coding of democracy, 1800-2010, version 2.0 — bmr â€¢ democracyData</title>
+<title>Boix-Miller-Rosato dichotomous coding of democracy, 1800-2010, version 3.0 — bmr â€¢ democracyData</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -83,50 +83,54 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Boix-Miller-Rosato dichotomous coding of democracy, 1800-2010, version 2.0</h1>
+    <h1>Boix-Miller-Rosato dichotomous coding of democracy, 1800-2010, version 3.0</h1>
     </div>
 
     
-    <p>A dataset containing the Boix-Miller-Rosato (BMR) dichotomous coding of democracy,
-used in the paper Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A
-Complete Data Set of Political Regimes, 1800-2007. Comparative Political
-Studies 46 (12): 1523-1554. The complete dataset can be downloaded here:
-<a href='https://sites.google.com/site/mkmtwo/BMR-PolRegimes.pdf?attredirects=0'>https://sites.google.com/site/mkmtwo/BMR-PolRegimes.pdf?attredirects=0</a>.
-The complete codebook is available here:
-<a href='https://sites.google.com/site/mkmtwo/data'>https://sites.google.com/site/mkmtwo/data</a>.</p>
+    <p>A dataset containing the Boix-Miller-Rosato (BMR) dichotomous coding of
+democracy, used in the paper Boix, Carles, Michael Miller, and Sebastian
+Rosato. 2012. A Complete Data Set of Political Regimes, 1800-2007.
+Comparative Political Studies 46 (12): 1523-1554. The complete dataset can be
+downloaded here:
+<a href='https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT'>https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT</a>.
+The complete codebook is available there as well.</p>
     
 
     <pre class="usage"><span class='no'>bmr</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 17632 rows and 14 columns.</p>
+    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 18800 rows and 15 columns.</p>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A
-Complete Data Set of Political Regimes, 1800-2007. Comparative Political
-Studies 46 (12): 1523-1554. Available at
-<a href='https://sites.google.com/site/mkmtwo/data'>https://sites.google.com/site/mkmtwo/data</a></p>
+    <p>Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A Complete
+Data Set of Political Regimes, 1800-2007. Comparative Political Studies 46
+(12): 1523-1554. Available at
+<a href='https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT'>https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT</a></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <dl class='dl-horizontal'>
 <dt>bmr_country</dt><dd><p>The country name in BMR.</p></dd>
-<dt>bmr_ccode</dt><dd><p>Numeric polity code code in BMR.</p></dd>
-<dt>abbreviation</dt><dd><p>World Bank 3-letter code.</p></dd>
-<dt>year</dt><dd><p>Year</p></dd>
-<dt>democracy</dt><dd><p>Dichotomous democracy measure. 1 = Democracy.</p></dd>
-<dt>sovereign</dt><dd><p>Dichotomous indicator of sovereignty/independence (if 0, democracy is NA).</p></dd>
-<dt>democracy_trans</dt><dd><p>-1 if democratic breakdown, 0 if no change, 1 if democratic transition.</p></dd>
-<dt>democracy_breakdowns</dt><dd><p>Previous number of democratic breakdowns.</p></dd>
-<dt>democracy_duration</dt><dd><p>Consecutive years of current regime type.</p></dd>
-<dt>democracy_omitteddata</dt><dd><p>This is the same measure as democracy, except
-it records an NA for countries occupied during an international war (e.g.,
-the Netherlands 1940-44) or experiencing state collapse during a civil war
-(e.g., Lebanon 1976-89). The democracy variable instead fills in these
-years as continuations of the same regime type.</p></dd>
-</dl>
+    <dt>bmr_ccode</dt><dd><p>Numeric polity code code in BMR.</p></dd>
+    <dt>abbreviation</dt><dd><p>World Bank 3-letter code.</p></dd>
+    <dt>year</dt><dd><p>Year</p></dd>
+    <dt>democracy</dt><dd><p>Dichotomous democracy measure. 1 = Democracy.</p></dd>
+    <dt>sovereign</dt><dd><p>Dichotomous indicator of sovereignty/independence (if 0,
+democracy is NA).</p></dd>
+    <dt>democracy_trans</dt><dd><p>-1 if democratic breakdown, 0 if no change, 1 if
+democratic transition.</p></dd>
+    <dt>democracy_breakdowns</dt><dd><p>Previous number of democratic breakdowns.</p></dd>
+    <dt>democracy_duration</dt><dd><p>Consecutive years of current regime type.</p></dd>
+    <dt>democracy_omitteddata</dt><dd><p>This is the same measure as democracy, except it
+records an NA for countries occupied during an international war (e.g., the
+Netherlands 1940-44) or experiencing state collapse during a civil war (e.g.,
+Lebanon 1976-89). The democracy variable instead fills in these years as
+continuations of the same regime type.</p></dd>
+    <dt>democracy_femalesuffrage</dt><dd><p>This adjusts democracy by also requiring that
+at least half of adult women have the right to vote. 30 countries change
+values.</p></dd> </dl>
     
     <h2 class="hasAnchor" id="standard-descriptive-variables-generated-by-this-package-"><a class="anchor" href="#standard-descriptive-variables-generated-by-this-package-"></a>Standard descriptive variables (generated by this package)</h2>
 
@@ -167,12 +171,12 @@ years as continuations of the same regime type.</p></dd>
   <code><a href='download_fh_electoral.html'>download_fh_electoral</a></code>,
   <code><a href='download_fh.html'>download_fh</a></code>, <code><a href='download_reign.html'>download_reign</a></code>,
   <code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a></code>,
-  <code><a href='fh_pmm.html'>fh_pmm</a></code>, <code><a href='gwf_all.html'>gwf_all</a></code>,
-  <code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>, <code><a href='kailitz.html'>kailitz</a></code>,
-  <code><a href='magaloni.html'>magaloni</a></code>, <code><a href='mainwaring.html'>mainwaring</a></code>,
-  <code><a href='munck_pmm.html'>munck_pmm</a></code>, <code><a href='pacl.html'>pacl</a></code>,
-  <code><a href='peps.html'>peps</a></code>, <code><a href='pitf.html'>pitf</a></code>,
-  <code><a href='polity_pmm.html'>polity_pmm</a></code>,
+  <code><a href='eiu.html'>eiu</a></code>, <code><a href='fh_pmm.html'>fh_pmm</a></code>,
+  <code><a href='gwf_all.html'>gwf_all</a></code>, <code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
+  <code><a href='kailitz.html'>kailitz</a></code>, <code><a href='magaloni.html'>magaloni</a></code>,
+  <code><a href='mainwaring.html'>mainwaring</a></code>, <code><a href='munck_pmm.html'>munck_pmm</a></code>,
+  <code><a href='pacl.html'>pacl</a></code>, <code><a href='peps.html'>peps</a></code>,
+  <code><a href='pitf.html'>pitf</a></code>, <code><a href='polity_pmm.html'>polity_pmm</a></code>,
   <code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
   <code><a href='polyarchy.html'>polyarchy</a></code>, <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
   <code><a href='svolik_regime.html'>svolik_regime</a></code>, <code><a href='uds_2014.html'>uds_2014</a></code>,
