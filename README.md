@@ -32,16 +32,16 @@ fh
 #> # A tibble: 8,080 x 11
 #>    fh_country   year    cl    pr status fh_total fh_total_reversed
 #>    <chr>       <dbl> <dbl> <dbl> <fct>     <dbl>             <dbl>
-#>  1 Afghanistan  1972  5.00  4.00 PF         9.00              5.00
-#>  2 Afghanistan  1973  6.00  7.00 NF        13.0               1.00
-#>  3 Afghanistan  1974  6.00  7.00 NF        13.0               1.00
-#>  4 Afghanistan  1975  6.00  7.00 NF        13.0               1.00
-#>  5 Afghanistan  1976  6.00  7.00 NF        13.0               1.00
-#>  6 Afghanistan  1977  6.00  6.00 NF        12.0               2.00
-#>  7 Afghanistan  1978  7.00  7.00 NF        14.0               0   
-#>  8 Afghanistan  1979  7.00  7.00 NF        14.0               0   
-#>  9 Afghanistan  1980  7.00  7.00 NF        14.0               0   
-#> 10 Afghanistan  1982  7.00  7.00 NF        14.0               0   
+#>  1 Afghanistan  1972     5     4 PF            9                 5
+#>  2 Afghanistan  1973     6     7 NF           13                 1
+#>  3 Afghanistan  1974     6     7 NF           13                 1
+#>  4 Afghanistan  1975     6     7 NF           13                 1
+#>  5 Afghanistan  1976     6     7 NF           13                 1
+#>  6 Afghanistan  1977     6     6 NF           12                 2
+#>  7 Afghanistan  1978     7     7 NF           14                 0
+#>  8 Afghanistan  1979     7     7 NF           14                 0
+#>  9 Afghanistan  1980     7     7 NF           14                 0
+#> 10 Afghanistan  1982     7     7 NF           14                 0
 #> # ... with 8,070 more rows, and 4 more variables:
 #> #   extended_country_name <chr>, GWn <dbl>, cown <int>, in_GW_system <lgl>
 ```
@@ -57,16 +57,16 @@ pacl
 #> # A tibble: 9,159 x 82
 #>    order pacl_country  year aclpcode pacl_cowcode cowcode2 ccdcodelet
 #>    <dbl> <chr>        <dbl>    <dbl>        <dbl>    <dbl> <chr>     
-#>  1  1.00 Afghanistan   1946      142          700      700 AFG       
-#>  2  2.00 Afghanistan   1947      142          700      700 AFG       
-#>  3  3.00 Afghanistan   1948      142          700      700 AFG       
-#>  4  4.00 Afghanistan   1949      142          700      700 AFG       
-#>  5  5.00 Afghanistan   1950      142          700      700 AFG       
-#>  6  6.00 Afghanistan   1951      142          700      700 AFG       
-#>  7  7.00 Afghanistan   1952      142          700      700 AFG       
-#>  8  8.00 Afghanistan   1953      142          700      700 AFG       
-#>  9  9.00 Afghanistan   1954      142          700      700 AFG       
-#> 10 10.0  Afghanistan   1955      142          700      700 AFG       
+#>  1     1 Afghanistan   1946      142          700      700 AFG       
+#>  2     2 Afghanistan   1947      142          700      700 AFG       
+#>  3     3 Afghanistan   1948      142          700      700 AFG       
+#>  4     4 Afghanistan   1949      142          700      700 AFG       
+#>  5     5 Afghanistan   1950      142          700      700 AFG       
+#>  6     6 Afghanistan   1951      142          700      700 AFG       
+#>  7     7 Afghanistan   1952      142          700      700 AFG       
+#>  8     8 Afghanistan   1953      142          700      700 AFG       
+#>  9     9 Afghanistan   1954      142          700      700 AFG       
+#> 10    10 Afghanistan   1955      142          700      700 AFG       
 #> # ... with 9,149 more rows, and 75 more variables: ccdcodenum <dbl>,
 #> #   aclpyear <dbl>, cowcode2year <dbl>, cowcodeyear <dbl>, chgterr <dbl>,
 #> #   ychgterr <dbl>, flagc_cowcode2 <dbl>, flage_cowcode2 <dbl>,
@@ -98,16 +98,16 @@ pacl_redownloaded
 #> # A tibble: 9,159 x 82
 #>    order pacl_country  year aclpcode pacl_cowcode cowcode2 ccdcodelet
 #>    <dbl> <chr>        <dbl>    <dbl>        <dbl>    <dbl> <chr>     
-#>  1  1.00 Afghanistan   1946      142          700      700 AFG       
-#>  2  2.00 Afghanistan   1947      142          700      700 AFG       
-#>  3  3.00 Afghanistan   1948      142          700      700 AFG       
-#>  4  4.00 Afghanistan   1949      142          700      700 AFG       
-#>  5  5.00 Afghanistan   1950      142          700      700 AFG       
-#>  6  6.00 Afghanistan   1951      142          700      700 AFG       
-#>  7  7.00 Afghanistan   1952      142          700      700 AFG       
-#>  8  8.00 Afghanistan   1953      142          700      700 AFG       
-#>  9  9.00 Afghanistan   1954      142          700      700 AFG       
-#> 10 10.0  Afghanistan   1955      142          700      700 AFG       
+#>  1     1 Afghanistan   1946      142          700      700 AFG       
+#>  2     2 Afghanistan   1947      142          700      700 AFG       
+#>  3     3 Afghanistan   1948      142          700      700 AFG       
+#>  4     4 Afghanistan   1949      142          700      700 AFG       
+#>  5     5 Afghanistan   1950      142          700      700 AFG       
+#>  6     6 Afghanistan   1951      142          700      700 AFG       
+#>  7     7 Afghanistan   1952      142          700      700 AFG       
+#>  8     8 Afghanistan   1953      142          700      700 AFG       
+#>  9     9 Afghanistan   1954      142          700      700 AFG       
+#> 10    10 Afghanistan   1955      142          700      700 AFG       
 #> # ... with 9,149 more rows, and 75 more variables: ccdcodenum <dbl>,
 #> #   aclpyear <dbl>, cowcode2year <dbl>, cowcodeyear <dbl>, chgterr <dbl>,
 #> #   ychgterr <dbl>, flagc_cowcode2 <dbl>, flage_cowcode2 <dbl>,
@@ -146,7 +146,6 @@ A number of democracy datasets are not available online, usually because they we
 
 ``` r
 library(dplyr)
-#> Warning: package 'dplyr' was built under R version 3.4.2
 #> 
 #> Attaching package: 'dplyr'
 #> The following objects are masked from 'package:stats':
@@ -162,6 +161,7 @@ democracy_info %>%
 
 | dataset                   | long\_name                                                                                                    | main\_democracy\_measure\_col                                                          | measure\_type | based\_on       | in\_pmm\_replication | categorical\_regime\_types | user\_extendable | downloadable | included\_in\_package |  first\_published\_use| notes                                                                                                                                                                                                                                                                                                                               |
 |:--------------------------|:--------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------|:--------------|:----------------|:---------------------|:---------------------------|:-----------------|:-------------|:----------------------|----------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| anckar                    | The Anckar-Fredriksson dataset of political regimes                                                           | democracy                                                                              | dichotomous   | bmr             | FALSE                | TRUE                       | FALSE            | TRUE         | TRUE                  |                   2018| The democracy measure should be equivalent to democracy\_omitteddata from bmr up to 2010; it may have some divergences for the 2011-2016 period.                                                                                                                                                                                    |
 | arat\_pmm                 | The Arat measure of democracy                                                                                 | pmm\_arat                                                                              | continuous    | NA              | TRUE                 | FALSE                      | FALSE            | FALSE        | TRUE                  |                   1991| Only available via the Pemstein, Meserve, and Melton (2013) replication data. I have not been able to access the original data.                                                                                                                                                                                                     |
 | blm                       | The Bowman, Lehoucq, and Mahoney index of democracy for Central America                                       | blm                                                                                    | trichotomous  | NA              | TRUE                 | FALSE                      | FALSE            | TRUE         | TRUE                  |                   2005| NA                                                                                                                                                                                                                                                                                                                                  |
 | bmr                       | The Boix-Miller-Rosato dichotomous coding of democracy, 1800-2015, version 3.0                                | democracy,democracy\_omitteddata,democracy\_femalesuffrage                             | dichotomous   | PACL            | FALSE                | FALSE                      | FALSE            | TRUE         | TRUE                  |                   2010| NA                                                                                                                                                                                                                                                                                                                                  |
@@ -178,7 +178,7 @@ democracy_info %>%
 | magaloni                  | Autocracies of the World, 1950-2012 (Version 1.0).                                                            | demo\_nr,demo\_r,regime\_r,regime\_nr                                                  | dichotomous   | PACL            | FALSE                | TRUE                       | TRUE             | TRUE         | TRUE                  |                   2013| Can be extended using the duration\_nr variable. Extended version included in this package.                                                                                                                                                                                                                                         |
 | mainwaring                | Mainwaring, Brinks, and Perez Linan's democracy measure for Latin America                                     | mainwaring,Regime                                                                      | trichotomous  | NA              | TRUE                 | FALSE                      | FALSE            | FALSE        | TRUE                  |                   2001| NA                                                                                                                                                                                                                                                                                                                                  |
 | munck\_pmm                | Munck Index of Democracy                                                                                      | pmm\_munck                                                                             | continuous    | NA              | TRUE                 | FALSE                      | FALSE            | FALSE        | TRUE                  |                   2009| Only available via the Pemstein, Meserve, and Melton (2013) replication data. I have not been able to access the original data.                                                                                                                                                                                                     |
-| pacl                      | The Democracy and Dictatorship Dataset (DD/PACL/ACLP/CGV)                                                     | democracy,regime                                                                       | dichotomous   | PACL            | TRUE                 | TRUE                       | FALSE            | TRUE         | TRUE                  |                   1996| The original data was first compiled, as far as I know, in the famous ACLP study "Modernization: Theories and Facts" study of 1996. It has been extended and changed by Cheibub, Gandhi, and Vreeland in the latest iteration (2010).                                                                                               |
+| pacl                      | The Democracy and Dictatorship Dataset (DD/PACL/ACLP/CGV)                                                     | democracy,regime                                                                       | dichotomous   | PACL            | TRUE                 | TRUE                       | FALSE            | TRUE         | TRUE                  |                   1996| The original data was first compiled, as far as I know, for the famous ACLP study "Modernization: Theories and Facts" study of 1996. It has been extended and changed by Cheibub, Gandhi, and Vreeland in the latest iteration (2010).                                                                                              |
 | peps                      | Participation-Enhanced Polity Score                                                                           | PEPS1i,PEPS2i,PEPS1q,PEPS2q,PEPS1v,PEPS2v,polity1raw,Polity1,Polity2,Polity3           | continuous    | Polity          | FALSE                | FALSE                      | FALSE            | TRUE         | TRUE                  |                   2006| NA                                                                                                                                                                                                                                                                                                                                  |
 | PIPE                      | The Political Institutions and Political Events (PIPE) dataset                                                | democracy,democracy2,regime                                                            | dichotomous   | PIPE            | FALSE                | FALSE                      | FALSE            | TRUE         | TRUE                  |                   2010| Democracy measures in PIPE are calculated in this package on the basis of imperfect instructions in the codebook. Use with care.                                                                                                                                                                                                    |
 | pitf                      | Political Instability Task Force democracy indicator                                                          | pitf\_binary                                                                           | dichotomous   | Polity          | FALSE                | FALSE                      | FALSE            | FALSE        | TRUE                  |                   2010| Constructed score on the basis of Polity data.                                                                                                                                                                                                                                                                                      |
@@ -188,6 +188,7 @@ democracy_info %>%
 | polyarchy\_dimensions     | Latent Dimensions of Contestation and Inclusiveness by Michael Coppedge, Angel Alvarez, and Claudia Maldonado | CONTEST,INCLUS                                                                         | continuous    | latent variable | FALSE                | FALSE                      | FALSE            | TRUE         | TRUE                  |                   2008| NA                                                                                                                                                                                                                                                                                                                                  |
 | prc\_gasiorowski          | The Political Regime Change (PRC) dataset.                                                                    | regime,prc,prc\_at\_end\_year,prc\_at\_beginning\_year                                 | trichotomous  | NA              | TRUE                 | FALSE                      | FALSE            | FALSE        | TRUE                  |                   1996| NA                                                                                                                                                                                                                                                                                                                                  |
 | reign                     | The Rulers, Elections, and Irregular Governance (REIGN) dataset, regime characteristics worksheet.            | Type                                                                                   | dichotomous   | GWF             | FALSE                | TRUE                       | FALSE            | TRUE         | FALSE                 |                   2016| NA                                                                                                                                                                                                                                                                                                                                  |
+| svmdi                     | Suport Vector Machine Democracy Index by Grundler and Krieger                                                 | svmdi, csvmdi, dsvmdi                                                                  | continuous    | latent variable | FALSE                | FALSE                      | FALSE            | TRUE         | TRUE                  |                   2016| NA                                                                                                                                                                                                                                                                                                                                  |
 | svolik\_regime            | Milan Svolik's Regime Dataset                                                                                 | regime,regime\_numeric                                                                 | dichotomous   | PACL            | FALSE                | FALSE                      | FALSE            | FALSE        | TRUE                  |                   2012| NA                                                                                                                                                                                                                                                                                                                                  |
 | uds                       | The Unified Democracy Scores                                                                                  | mean,median                                                                            | continuous    | latent variable | FALSE                | FALSE                      | TRUE             | TRUE         | TRUE                  |                   2010| Can be extended using the package QuickUDS. (Use "devtools::install\_github("xmarquez/QuickUDS")"; the package is not on CRAN)                                                                                                                                                                                                      |
 | ulfelder                  | The Democracy/Autocracy Dataset by Jay Ulfelder                                                               | rgjtype                                                                                | dichotomous   | Polity          | FALSE                | FALSE                      | TRUE             | TRUE         | TRUE                  |                   2007| Can be extended using the rgjdurd and rgjdura variables. Extended version included in this package.                                                                                                                                                                                                                                 |
@@ -218,29 +219,30 @@ democracy_data <- generate_democracy_scores_dataset(output_format = "wide",
                                                     verbose = FALSE)
 
 democracy_data
-#> # A tibble: 24,511 x 74
-#>    extended_country_na~   GWn  cown in_GW_system  year   blm bmr_democracy
-#>    <chr>                <dbl> <int> <lgl>        <dbl> <dbl>         <dbl>
-#>  1 Abkhazia               396    NA F             1997    NA            NA
-#>  2 Abkhazia               396    NA F             1998    NA            NA
-#>  3 Abkhazia               396    NA F             1999    NA            NA
-#>  4 Abkhazia               396    NA F             2000    NA            NA
-#>  5 Abkhazia               396    NA F             2001    NA            NA
-#>  6 Abkhazia               396    NA F             2002    NA            NA
-#>  7 Abkhazia               396    NA F             2003    NA            NA
-#>  8 Abkhazia               396    NA F             2004    NA            NA
-#>  9 Abkhazia               396    NA F             2005    NA            NA
-#> 10 Abkhazia               396    NA F             2006    NA            NA
-#> # ... with 24,501 more rows, and 67 more variables:
+#> # A tibble: 25,335 x 78
+#>    extended_country~   GWn  cown in_GW_system  year anckar_democracy   blm
+#>    <chr>             <dbl> <int> <lgl>        <dbl>            <dbl> <dbl>
+#>  1 Abkhazia            396    NA FALSE         1997               NA    NA
+#>  2 Abkhazia            396    NA FALSE         1998               NA    NA
+#>  3 Abkhazia            396    NA FALSE         1999               NA    NA
+#>  4 Abkhazia            396    NA FALSE         2000               NA    NA
+#>  5 Abkhazia            396    NA FALSE         2001               NA    NA
+#>  6 Abkhazia            396    NA FALSE         2002               NA    NA
+#>  7 Abkhazia            396    NA FALSE         2003               NA    NA
+#>  8 Abkhazia            396    NA FALSE         2004               NA    NA
+#>  9 Abkhazia            396    NA FALSE         2005               NA    NA
+#> 10 Abkhazia            396    NA FALSE         2006               NA    NA
+#> # ... with 25,325 more rows, and 71 more variables: bmr_democracy <dbl>,
 #> #   bmr_democracy_femalesuffrage <dbl>, bmr_democracy_omitteddata <dbl>,
-#> #   bnr <dbl>, bnr_extended <dbl>, doorenspleet <dbl>, eiu <dbl>,
-#> #   fh_electoral <dbl>, fh_total_reversed <dbl>, gwf_democracy <dbl>,
-#> #   gwf_democracy_extended <dbl>, gwf_democracy_extended_strict <dbl>,
-#> #   gwf_democracy_strict <dbl>, kailitz_binary <dbl>, kailitz_tri <dbl>,
-#> #   lexical_index <dbl>, magaloni_democracy <dbl>,
-#> #   magaloni_democracy_extended <dbl>, mainwaring <dbl>, pacl <dbl>,
-#> #   PEPS1i <dbl>, PEPS1q <dbl>, PEPS1v <dbl>, PEPS2i <dbl>, PEPS2q <dbl>,
-#> #   PEPS2v <dbl>, PIPE_democracy <dbl>, PIPE_regime <dbl>, pitf <dbl>,
+#> #   bnr <dbl>, bnr_extended <dbl>, csvmdi <dbl>, doorenspleet <dbl>,
+#> #   dsvmdi <dbl>, eiu <dbl>, fh_electoral <dbl>, fh_total_reversed <dbl>,
+#> #   gwf_democracy <dbl>, gwf_democracy_extended <dbl>,
+#> #   gwf_democracy_extended_strict <dbl>, gwf_democracy_strict <dbl>,
+#> #   kailitz_binary <dbl>, kailitz_tri <dbl>, lexical_index <dbl>,
+#> #   magaloni_democracy <dbl>, magaloni_democracy_extended <dbl>,
+#> #   mainwaring <dbl>, pacl <dbl>, PEPS1i <dbl>, PEPS1q <dbl>,
+#> #   PEPS1v <dbl>, PEPS2i <dbl>, PEPS2q <dbl>, PEPS2v <dbl>,
+#> #   PIPE_democracy <dbl>, PIPE_regime <dbl>, pitf <dbl>,
 #> #   pitf_binary <dbl>, pmm_arat <dbl>, pmm_blm <dbl>, pmm_bollen <dbl>,
 #> #   pmm_fh <dbl>, pmm_hadenius <dbl>, pmm_mainwaring <dbl>,
 #> #   pmm_munck <dbl>, pmm_pacl <dbl>, pmm_polity <dbl>,
@@ -249,9 +251,9 @@ democracy_data
 #> #   polyarchy_inclusion_dimension <dbl>,
 #> #   polyarchy_original_contestation <dbl>,
 #> #   polyarchy_original_polyarchy <dbl>, prc <dbl>, reign_democracy <dbl>,
-#> #   svolik_democracy <dbl>, uds_2010_mean <dbl>, uds_2010_median <dbl>,
-#> #   uds_2011_mean <dbl>, uds_2011_median <dbl>, uds_2014_mean <dbl>,
-#> #   uds_2014_median <dbl>, ulfelder_democracy <dbl>,
+#> #   svmdi_2016 <dbl>, svolik_democracy <dbl>, uds_2010_mean <dbl>,
+#> #   uds_2010_median <dbl>, uds_2011_mean <dbl>, uds_2011_median <dbl>,
+#> #   uds_2014_mean <dbl>, uds_2014_median <dbl>, ulfelder_democracy <dbl>,
 #> #   ulfelder_democracy_extended <dbl>, utip_dichotomous <dbl>,
 #> #   utip_dichotomous_strict <dbl>, utip_trichotomous <dbl>,
 #> #   vanhanen_competition <dbl>, vanhanen_democratization <dbl>,
@@ -288,22 +290,22 @@ my_weird_democracy_data
 #> # A tibble: 16 x 3
 #>    country                      year my_measure
 #>    <chr>                       <dbl>      <dbl>
-#>  1 Germany                      2015     1.29  
-#>  2 Germany                      1930     1.42  
-#>  3 Germany                      1970    -1.73  
-#>  4 Germany                      1945     0.0429
-#>  5 East Germany                 1949    -0.988 
-#>  6 Federal Republic of Germany  1992     0.869 
-#>  7 Somaliland                   1990    -0.477 
-#>  8 Somalia                      1990    -0.479 
-#>  9 Palestine                    1940    -0.281 
-#> 10 Russia                       1917     1.94  
-#> 11 Russia                       1912    -1.90  
-#> 12 USSR                         1922     0.712 
-#> 13 Republic of Vietnam          1975    -1.26  
-#> 14 Yugoslavia                   1990    -0.894 
-#> 15 Yugoslavia                   1991    -0.630 
-#> 16 Vietnam, South               1954     0.389
+#>  1 Germany                      2015    -0.455 
+#>  2 Germany                      1930    -0.962 
+#>  3 Germany                      1970    -0.329 
+#>  4 Germany                      1945    -1.21  
+#>  5 East Germany                 1949     0.0439
+#>  6 Federal Republic of Germany  1992     0.291 
+#>  7 Somaliland                   1990    -0.0824
+#>  8 Somalia                      1990     1.15  
+#>  9 Palestine                    1940    -1.86  
+#> 10 Russia                       1917    -0.686 
+#> 11 Russia                       1912     0.0549
+#> 12 USSR                         1922    -0.209 
+#> 13 Republic of Vietnam          1975     0.687 
+#> 14 Yugoslavia                   1990     1.30  
+#> 15 Yugoslavia                   1991     0.423 
+#> 16 Vietnam, South               1954    -3.37
 ```
 
 and you then want to add state system information. `country_year_coder` does that for you!
@@ -330,22 +332,22 @@ my_weird_democracy_data %>%
 
 | country                     |  year|  my\_measure| extended\_country\_name      |  GWn|  cown|  polity\_ccode| in\_GW\_system | in\_cow\_system | in\_polity\_system | polity\_startdate | polity\_enddate |
 |:----------------------------|-----:|------------:|:-----------------------------|----:|-----:|--------------:|:---------------|:----------------|:-------------------|:------------------|:----------------|
-| Germany                     |  2015|    1.2934468| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
-| Germany                     |  1930|    1.4209725| Germany (Prussia)            |  255|   255|            255| TRUE           | TRUE            | TRUE               | 1871-01-19        | 1945-05-07      |
-| Germany                     |  1970|   -1.7332129| German Federal Republic      |  260|   260|            260| TRUE           | TRUE            | TRUE               | 1945-05-08        | 1990-10-02      |
-| Germany                     |  1945|    0.0428787| German Federal Republic      |  260|   260|            260| FALSE          | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
-| East Germany                |  1949|   -0.9882063| German Democratic Republic   |  265|   265|            265| TRUE           | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
-| Federal Republic of Germany |  1992|    0.8689036| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
-| Somaliland                  |  1990|   -0.4766759| Somaliland                   |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
-| Somalia                     |  1990|   -0.4794896| Somalia                      |  520|   520|            520| TRUE           | TRUE            | TRUE               | 1960-07-01        | NA              |
-| Palestine                   |  1940|   -0.2812931| British Mandate of Palestine |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
-| Russia                      |  1917|    1.9380048| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
-| Russia                      |  1912|   -1.8995196| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
-| USSR                        |  1922|    0.7116120| Russia (Soviet Union)        |  365|   365|            364| TRUE           | TRUE            | TRUE               | 1922-12-30        | 1991-12-31      |
-| Republic of Vietnam         |  1975|   -1.2632527| Vietnam, Republic of         |  817|   817|            817| FALSE          | FALSE           | TRUE               | 1955-10-26        | 1975-12-31      |
-| Yugoslavia                  |  1990|   -0.8940097| Yugoslavia                   |  345|   345|            345| TRUE           | TRUE            | TRUE               | 1921-01-01        | 1991-07-01      |
-| Yugoslavia                  |  1991|   -0.6299917| Yugoslavia                   |  345|   345|            347| TRUE           | TRUE            | TRUE               | 1991-07-01        | 2003-03-11      |
-| Vietnam, South              |  1954|    0.3892521| Vietnam, Republic of         |  817|   817|            817| TRUE           | TRUE            | FALSE              | 1955-10-26        | 1975-12-31      |
+| Germany                     |  2015|   -0.4550784| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
+| Germany                     |  1930|   -0.9620177| Germany (Prussia)            |  255|   255|            255| TRUE           | TRUE            | TRUE               | 1871-01-19        | 1945-05-07      |
+| Germany                     |  1970|   -0.3286665| German Federal Republic      |  260|   260|            260| TRUE           | TRUE            | TRUE               | 1945-05-08        | 1990-10-02      |
+| Germany                     |  1945|   -1.2103090| German Federal Republic      |  260|   260|            260| FALSE          | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
+| East Germany                |  1949|    0.0438989| German Democratic Republic   |  265|   265|            265| TRUE           | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
+| Federal Republic of Germany |  1992|    0.2908857| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
+| Somaliland                  |  1990|   -0.0824118| Somaliland                   |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
+| Somalia                     |  1990|    1.1479596| Somalia                      |  520|   520|            520| TRUE           | TRUE            | TRUE               | 1960-07-01        | NA              |
+| Palestine                   |  1940|   -1.8642026| British Mandate of Palestine |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
+| Russia                      |  1917|   -0.6864808| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
+| Russia                      |  1912|    0.0548623| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
+| USSR                        |  1922|   -0.2094785| Russia (Soviet Union)        |  365|   365|            364| TRUE           | TRUE            | TRUE               | 1922-12-30        | 1991-12-31      |
+| Republic of Vietnam         |  1975|    0.6873582| Vietnam, Republic of         |  817|   817|            817| FALSE          | FALSE           | TRUE               | 1955-10-26        | 1975-12-31      |
+| Yugoslavia                  |  1990|    1.3044432| Yugoslavia                   |  345|   345|            345| TRUE           | TRUE            | TRUE               | 1921-01-01        | 1991-07-01      |
+| Yugoslavia                  |  1991|    0.4233079| Yugoslavia                   |  345|   345|            347| TRUE           | TRUE            | TRUE               | 1991-07-01        | 2003-03-11      |
+| Vietnam, South              |  1954|   -3.3704067| Vietnam, Republic of         |  817|   817|            817| TRUE           | TRUE            | FALSE              | 1955-10-26        | 1975-12-31      |
 
 `country_year_coder` tries to match not just the country name or the country code (as `countrycode` does), but also to figure out the appropriate state system code *given* the year. (Above, for example, the function figures out that Germany 1970 should get a COW code of 260, but Germany 1992 should get 255 - though it should retain the 260 code in the Gleditsch and Ward system of states. This is, incidentally, how `download_fh` adds the correct COW and GW country codes to Freedom House's Excel data). It also tries to figure out whether a given country-year is in the specific state system list. (In the example above, Germany in 1945 is not listed as a member of the state system in either COW or Gleditsch and Ward, since it was occupied by the Allies as of 31 December 1945, but is listed as a member of the state system in Polity IV as the Federal Republic, though with a polity score of -66, "interregnum").
 
@@ -374,16 +376,16 @@ create_panel(system = "GW")
 #> # A tibble: 19,150 x 5
 #>      GWn GW_country_name          GW_startdate GW_enddate  year
 #>    <dbl> <chr>                    <date>       <date>     <dbl>
-#>  1  2.00 United States of America 1816-01-01   NA          1816
-#>  2  2.00 United States of America 1816-01-01   NA          1817
-#>  3  2.00 United States of America 1816-01-01   NA          1818
-#>  4  2.00 United States of America 1816-01-01   NA          1819
-#>  5  2.00 United States of America 1816-01-01   NA          1820
-#>  6  2.00 United States of America 1816-01-01   NA          1821
-#>  7  2.00 United States of America 1816-01-01   NA          1822
-#>  8  2.00 United States of America 1816-01-01   NA          1823
-#>  9  2.00 United States of America 1816-01-01   NA          1824
-#> 10  2.00 United States of America 1816-01-01   NA          1825
+#>  1     2 United States of America 1816-01-01   NA          1816
+#>  2     2 United States of America 1816-01-01   NA          1817
+#>  3     2 United States of America 1816-01-01   NA          1818
+#>  4     2 United States of America 1816-01-01   NA          1819
+#>  5     2 United States of America 1816-01-01   NA          1820
+#>  6     2 United States of America 1816-01-01   NA          1821
+#>  7     2 United States of America 1816-01-01   NA          1822
+#>  8     2 United States of America 1816-01-01   NA          1823
+#>  9     2 United States of America 1816-01-01   NA          1824
+#> 10     2 United States of America 1816-01-01   NA          1825
 #> # ... with 19,140 more rows
 ```
 
@@ -398,89 +400,95 @@ citation(package = "democracyData")
 
 To cite any of the datasets included in this package use:
 
+Anckar C, Fredriksson C (2018). "Classifying political regimes 1800-2016: a typology and a new dataset." *European Political Science*. doi: 10.1057/s41304-018-0149-8 (URL: <http://doi.org/10.1057/s41304-018-0149-8>), &lt;URL: <https://doi.org/10.1057/s41304-018-0149-8>&gt;.
+
 Arat ZF (1991). *Democracy and human rights in developing countries*. Lynne Rienner Publishers, Boulder.
 
 Bell C (2016). "The Rulers, Elections, and Irregular Governance Dataset (REIGN)." &lt;URL: <http://oefresearch.org/datasets/reign>&gt;.
 
-Bernhard M, Nordstrom T and Reenock C (2001). "Economic Performance, Institutional Intermediation, and Democratic Survival." *Journal of Politics*, *63*(3), pp. 775-803. doi: 10.1111/0022-3816.00087 (URL: <http://doi.org/10.1111/0022-3816.00087>).
+Bernhard M, Nordstrom T, Reenock C (2001). "Economic Performance, Institutional Intermediation, and Democratic Survival." *Journal of Politics*, *63*(3), 775-803. doi: 10.1111/0022-3816.00087 (URL: <http://doi.org/10.1111/0022-3816.00087>).
 
-Boix C, Miller M and Rosato S (2012). "A Complete Dataset of Political Regimes, 1800-2007." *Comparative Political Studies*, *46*(12), pp. 1523-1554. doi: 10.1177/0010414012463905 (URL: <http://doi.org/10.1177/0010414012463905>).
+Boix C, Miller M, Rosato S (2012). "A Complete Dataset of Political Regimes, 1800-2007." *Comparative Political Studies*, *46*(12), 1523-1554. doi: 10.1177/0010414012463905 (URL: <http://doi.org/10.1177/0010414012463905>).
 
 Bollen KA (2001). "Cross-National Indicators of Liberal Democracy, 1950-1990."
 
-Bollen K and Paxton P (2000). "Subjective Measures of Liberal Democracy." *Comparative Political Studies*, *33*(1), pp. 58-86. doi: 10.1177/0010414000033001003 (URL: <http://doi.org/10.1177/0010414000033001003>).
+Bollen K, Paxton P (2000). "Subjective Measures of Liberal Democracy." *Comparative Political Studies*, *33*(1), 58-86. doi: 10.1177/0010414000033001003 (URL: <http://doi.org/10.1177/0010414000033001003>).
 
-Bowman K, Lehoucq F and Mahoney J (2005). "Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America." *Comparative Political Studies*, *38*(8), pp. 939-970. doi: 10.1177/0010414005277083 (URL: <http://doi.org/10.1177/0010414005277083>).
+Bowman K, Lehoucq F, Mahoney J (2005). "Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America." *Comparative Political Studies*, *38*(8), 939-970. doi: 10.1177/0010414005277083 (URL: <http://doi.org/10.1177/0010414005277083>).
 
-Cheibub J, Gandhi J and Vreeland J (2010). "Democracy and dictatorship revisited." *Public Choice*, *143*(1), pp. 67-101. doi: 10.1007/s11127-009-9491-2 (URL: <http://doi.org/10.1007/s11127-009-9491-2>).
+Cheibub J, Gandhi J, Vreeland J (2010). "Democracy and dictatorship revisited." *Public Choice*, *143*(1), 67-101. doi: 10.1007/s11127-009-9491-2 (URL: <http://doi.org/10.1007/s11127-009-9491-2>).
 
-Coppedge M, Alvarez A and Maldonado C (2008). "Two Persistent Dimensions of Democracy: Contestation and Inclusiveness." *The journal of politics*, *70*(03), pp. 632-647. doi: 10.1017/S0022381608080663 (URL: <http://doi.org/10.1017/S0022381608080663>).
+Coppedge M, Alvarez A, Maldonado C (2008). "Two Persistent Dimensions of Democracy: Contestation and Inclusiveness." *The journal of politics*, *70*(03), 632-647. doi: 10.1017/S0022381608080663 (URL: <http://doi.org/10.1017/S0022381608080663>).
 
-Coppedge M, Gerring J, Lindberg SI, Skaaning S, Jan Teorell wDA, Bernhard M, Fish MS, Glynn A, Hicken A, Knutsen CH, Kelly McMann, Paxton P, Pemstein D, Staton J, Zimmerman B, Andersson F, Valeriya Mechkova and Miri F (2016). "V-Dem Codebook v6."
+Coppedge M, Gerring J, Lindberg SI, Skaaning S, Jan Teorell wDA, Bernhard M, Fish MS, Glynn A, Hicken A, Knutsen CH, Kelly McMann, Paxton P, Pemstein D, Staton J, Zimmerman B, Andersson F, Valeriya Mechkova, Miri F (2016). "V-Dem Codebook v6."
 
-Coppedge M, Gerring J, Lindberg SI, Skaaning S, Teorell J, Altman D, Bernhard M, Fish MS, Glynn A, Hicken A, Knutsen CH, Marquardt K, McMann K, Miri F, Paxton P, Pemstein D, Staton J, Tzelgov E, Wang Y and Zimmerman B (2016). "V-Dem \[Country-Year/Country-Date\] Dataset, version 6.1." &lt;URL: <https://www.v-dem.net/en/data/data-version-6-1/>&gt;.
+Coppedge M, Gerring J, Lindberg SI, Skaaning S, Teorell J, Altman D, Bernhard M, Fish MS, Glynn A, Hicken A, Knutsen CH, Marquardt K, McMann K, Miri F, Paxton P, Pemstein D, Staton J, Tzelgov E, Wang Y, Zimmerman B (2016). "V-Dem \[Country-Year/Country-Date\] Dataset, version 6.1." &lt;URL: <https://www.v-dem.net/en/data/data-version-6-1/>&gt;.
 
-Coppedge M and Reinicke WH (1990). "Measuring Polyarchy." *Studies in Comparative International Development*, *25*(1), pp. 51-72. doi: 10.1007/Bf02716905 (URL: <http://doi.org/10.1007/Bf02716905>).
+Coppedge M, Reinicke WH (1990). "Measuring Polyarchy." *Studies in Comparative International Development*, *25*(1), 51-72. doi: 10.1007/Bf02716905 (URL: <http://doi.org/10.1007/Bf02716905>).
 
-Doorenspleet R (2000). "Reassessing the Three Waves of Democratization." *World Politics*, *52*(03), pp. 384-406. doi: 10.1017/S0043887100016580 (URL: <http://doi.org/10.1017/S0043887100016580>).
+Doorenspleet R (2000). "Reassessing the Three Waves of Democratization." *World Politics*, *52*(03), 384-406. doi: 10.1017/S0043887100016580 (URL: <http://doi.org/10.1017/S0043887100016580>).
 
 Freedom House (2018). "Freedom in the World 2018: Democracy in Crisis." Freedom House. &lt;URL: <https://freedomhouse.org/sites/default/files/FH_FITW_Report_2018_Final_SinglePage.pdf>&gt;.
 
-Gasiorowski M (1996). "An Overview of the Political Regime Change Dataset." *Comparative Political Studies*, *29*(4), pp. 469-483. doi: 10.1177/0010414096029004004 (URL: <http://doi.org/10.1177/0010414096029004004>).
+Gasiorowski M (1996). "An Overview of the Political Regime Change Dataset." *Comparative Political Studies*, *29*(4), 469-483. doi: 10.1177/0010414096029004004 (URL: <http://doi.org/10.1177/0010414096029004004>).
 
-Geddes B, Wright J and Frantz E (2014). "Autocratic Breakdown and Regime Transitions: A New Data Set." *Perspectives on Politics*, *12*(1), pp. 313-331. doi: 10.1017/S1537592714000851 (URL: <http://doi.org/10.1017/S1537592714000851>).
+Geddes B, Wright J, Frantz E (2014). "Autocratic Breakdown and Regime Transitions: A New Data Set." *Perspectives on Politics*, *12*(1), 313-331. doi: 10.1017/S1537592714000851 (URL: <http://doi.org/10.1017/S1537592714000851>).
 
-Gleditsch K and Ward MD (1999). "Interstate system membership: A revised list of independent states since the congress of Vienna." *International Interactions*, *25*(4), pp. 393-413. doi: 10.1080/03050629908434958 (URL: <http://doi.org/10.1080/03050629908434958>).
+Gleditsch K, Ward MD (1999). "Interstate system membership: A revised list of independent states since the congress of Vienna." *International Interactions*, *25*(4), 393-413. doi: 10.1080/03050629908434958 (URL: <http://doi.org/10.1080/03050629908434958>).
 
-Goldstone J, Bates R, Epstein D, Gurr T, Lustik M, Marshall M, Ulfelder J and Woodward M (2010). "A Global Model for Forecasting Political Instability." *American Journal of Political Science*, *54*(1), pp. 190-208. doi: 10.1111/j.1540-5907.2009.00426.x (URL: <http://doi.org/10.1111/j.1540-5907.2009.00426.x>).
+Goldstone J, Bates R, Epstein D, Gurr T, Lustik M, Marshall M, Ulfelder J, Woodward M (2010). "A Global Model for Forecasting Political Instability." *American Journal of Political Science*, *54*(1), 190-208. doi: 10.1111/j.1540-5907.2009.00426.x (URL: <http://doi.org/10.1111/j.1540-5907.2009.00426.x>).
+
+Gr: undler K, Krieger T (2016). "Democracy and growth: Evidence from a machine learning indicator." *European Journal of Political Economy*, *45*, 85-107. doi: <https://doi.org/10.1016/j.ejpoleco.2016.05.005> (URL: <http://doi.org/https://doi.org/10.1016/j.ejpoleco.2016.05.005>), &lt;URL: <http://www.sciencedirect.com/science/article/pii/S0176268016300222>&gt;.
+
+Gr: undler K, Krieger T (2018). "Machine Learning Indices, Political Institutions, and Economic Development." CESifo Group Munich. &lt;URL: <https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf>&gt;.
 
 Hadenius A (1992). *Democracy and development*. Cambridge University Press, New York.
 
-Hadenius A and Teorell J (2007). "Pathways from Authoritarianism." *Journal of Democracy*, *18*(1), pp. 143-157.
+Hadenius A, Teorell J (2007). "Pathways from Authoritarianism." *Journal of Democracy*, *18*(1), 143-157.
 
 Hsu S (2008). "The Effect of Political Regimes on Inequality, 1963-2002." *UTIP Working Paper*.
 
-Kailitz S (2013). "Classifying political regimes revisited: legitimation and durability." *Democratization*, *20*(1), pp. 39-60. doi: 10.1080/13510347.2013.738861 (URL: <http://doi.org/10.1080/13510347.2013.738861>).
+Kailitz S (2013). "Classifying political regimes revisited: legitimation and durability." *Democratization*, *20*(1), 39-60. doi: 10.1080/13510347.2013.738861 (URL: <http://doi.org/10.1080/13510347.2013.738861>).
 
-Kaufmann D and Kraay A (2017). "Worldwide Governance Indicators." &lt;URL: <http://www.govindicators.org>&gt;.
+Kaufmann D, Kraay A (2017). "Worldwide Governance Indicators." &lt;URL: <http://www.govindicators.org>&gt;.
 
-Magaloni B, Chu J and Min E (2013). "Autocracies of the World, 1950-2012 (Version 1.0)." &lt;URL: <http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset>&gt;.
+Magaloni B, Chu J, Min E (2013). "Autocracies of the World, 1950-2012 (Version 1.0)." &lt;URL: <http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset>&gt;.
 
-Mainwaring S, Brinks D and Pérez-Liñán A (2001). "Classifying Political Regimes in Latin America." *Studies in Comparative International Development*, *36*(1), pp. 37-65. doi: 10.1007/bf02687584 (URL: <http://doi.org/10.1007/bf02687584>).
+Mainwaring S, Brinks D, Pérez-Liñán A (2001). "Classifying Political Regimes in Latin America." *Studies in Comparative International Development*, *36*(1), 37-65. doi: 10.1007/bf02687584 (URL: <http://doi.org/10.1007/bf02687584>).
 
-Mainwaring S, Pérez-Liñán A and Brinks D (2014). "Political Regimes in Latin America, 1900-2007 (with Daniel Brinks)." In *Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall*, chapter Political Regimes in Latin America, 1900-2007 (with Daniel Brinks). Cambridge University Press, New York.
+Mainwaring S, Pérez-Liñán A, Brinks D (2014). "Political Regimes in Latin America, 1900-2007 (with Daniel Brinks)." In *Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall*, chapter Political Regimes in Latin America, 1900-2007 (with Daniel Brinks). Cambridge University Press, New York.
 
 Márquez X (2017). "democracyData: A package for accessing and manipulating existing measures of democracy." &lt;URL: <http://github.com/xmarquez/democracyData>&gt;.
 
-Marshall MG, Gurr TR and Jaggers K (2015). *Polity IV Project: Political Regime Characteristics and Transitions, 1800-2015. Dataset Users' Manual.*.
+Marshall MG, Gurr TR, Jaggers K (2015). *Polity IV Project: Political Regime Characteristics and Transitions, 1800-2015. Dataset Users' Manual.*.
 
-Moon BE, Birdsall JH, Ciesluk S, Garlett LM, Hermias JJ, Mendenhall E, Schmid PD and Wong WH (2006). "Voting Counts: Participation in the Measurement of Democracy." *Studies in Comparative International Development*, *41*(2), pp. 3-32. doi: 10.1007/BF02686309 (URL: <http://doi.org/10.1007/BF02686309>).
+Moon BE, Birdsall JH, Ciesluk S, Garlett LM, Hermias JJ, Mendenhall E, Schmid PD, Wong WH (2006). "Voting Counts: Participation in the Measurement of Democracy." *Studies in Comparative International Development*, *41*(2), 3-32. doi: 10.1007/BF02686309 (URL: <http://doi.org/10.1007/BF02686309>).
 
 Munck G (2009). *Measuring Democracy: A Bridge between Scholarship and Politics*. The Johns Hopkins University Press, Baltimore.
 
-Pemstein D, Meserve SA and Melton J (2013). "Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." &lt;URL: <http://hdl.handle.net/1902.1/PMM>&gt;.
+Pemstein D, Meserve SA, Melton J (2013). "Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." &lt;URL: <http://hdl.handle.net/1902.1/PMM>&gt;.
 
-Pemstein D, Meserve S and Melton J (2010). "Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." *Political Analysis*, *18*(4), pp. 426-449. doi: 10.1093/pan/mpq020 (URL: <http://doi.org/10.1093/pan/mpq020>).
+Pemstein D, Meserve S, Melton J (2010). "Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." *Political Analysis*, *18*(4), 426-449. doi: 10.1093/pan/mpq020 (URL: <http://doi.org/10.1093/pan/mpq020>).
 
 Przeworski A (2013). "Political Institutions and Political Events (PIPE) Data Set." &lt;URL: <https://sites.google.com/a/nyu.edu/adam-przeworski/home/data>&gt;.
 
-Reich G (2002). "Categorizing Political Regimes: New Data for Old Problems." *Democratization*, *9*(4), pp. 1-24. doi: 10.1080/714000289 (URL: <http://doi.org/10.1080/714000289>).
+Reich G (2002). "Categorizing Political Regimes: New Data for Old Problems." *Democratization*, *9*(4), 1-24. doi: 10.1080/714000289 (URL: <http://doi.org/10.1080/714000289>).
 
-Skaaning S, Gerring J and Bartusevicius H (2015). "A Lexical Index of Electoral Democracy." *Comparative Political Studies*, *48*(12), pp. 1491-1525. doi: 10.1177/0010414015581050 (URL: <http://doi.org/10.1177/0010414015581050>).
+Skaaning S, Gerring J, Bartusevicius H (2015). "A Lexical Index of Electoral Democracy." *Comparative Political Studies*, *48*(12), 1491-1525. doi: 10.1177/0010414015581050 (URL: <http://doi.org/10.1177/0010414015581050>).
 
 Svolik M (2012). *The Politics of Authoritarian Rule*. Cambridge University Press, Cambridge.
 
-Taylor SJ and Ulfelder J (2015). "A Measurement Error Model of Dichotomous Democracy Status." *Available at SSRN*. doi: 10.2139/ssrn.2726962 (URL: <http://doi.org/10.2139/ssrn.2726962>).
+Taylor SJ, Ulfelder J (2015). "A Measurement Error Model of Dichotomous Democracy Status." *Available at SSRN*. doi: 10.2139/ssrn.2726962 (URL: <http://doi.org/10.2139/ssrn.2726962>).
 
 The Economist Intelligence Unit (2018). "Democracy Index 2017: Free Speech under Attack." The Economist Intelligence Unit.
 
 Ulfelder J (2012). "Democracy/Autocracy Data Set." &lt;URL: <http://hdl.handle.net/1902.1/18836>&gt;.
 
-Ulfelder J and Lustik M (2007). "Modelling Transitions To and From Democracy." *Democratization*, *14*(3), pp. 351-387. doi: 10.1080/13510340701303196 (URL: <http://doi.org/10.1080/13510340701303196>).
+Ulfelder J, Lustik M (2007). "Modelling Transitions To and From Democracy." *Democratization*, *14*(3), 351-387. doi: 10.1080/13510340701303196 (URL: <http://doi.org/10.1080/13510340701303196>).
 
 Vanhanen T (2014). "Measures of Democracy 1810-2012." &lt;URL: <http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html>&gt;.
 
-Wahman M, Teorell J and Hadenius A (2013). "Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective." *Contemporary Politics*, *19*(1), pp. 19-34. &lt;URL: <https://sites.google.com/site/authoritarianregimedataset/data>&gt;.
+Wahman M, Teorell J, Hadenius A (2013). "Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective." *Contemporary Politics*, *19*(1), 19-34. &lt;URL: <https://sites.google.com/site/authoritarianregimedataset/data>&gt;.
 
 To see these entries in BibTeX format, use 'print(<citation>, bibtex=TRUE)', 'toBibtex(.)', or set 'options(citation.bibtex.max=999)'.
 
