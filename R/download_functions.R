@@ -759,7 +759,8 @@ download_reign <- function(url,
 
   reign <- data %>%
     mutate(Start = lubridate::mdy(Start),
-           End = lubridate::mdy(End)) %>%
+           End = lubridate::mdy(End),
+           cow = as.double(cow)) %>%
     group_by_all() %>%
     mutate(year = list(lubridate::year(Start):lubridate::year(End))) %>%
     tidyr::unnest() %>%
