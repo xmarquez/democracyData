@@ -4,7 +4,7 @@
 \name{bibliography}
 \alias{bibliography}
 \title{References to all the datasets included in this package.}
-\format{An object of class \code{BibEntry} (inherits from \code{bibentry}) of length 42.}
+\format{An object of class \code{BibEntry} (inherits from \code{bibentry}) of length 45.}
 \usage{
 bibliography
 }

@@ -1,4 +1,5 @@
 dataset,long_name,main_democracy_measure_col,measure_type,based_on,in_pmm_replication,categorical_regime_types,user_extendable,downloadable,included_in_package,first_published_use,notes
+anckar,The Anckar-Fredriksson dataset of political regimes,democracy,dichotomous,bmr,FALSE,TRUE,FALSE,TRUE,TRUE,2018,The democracy measure should be equivalent to democracy_omitteddata from bmr up to 2010; it may have some divergences for the 2011-2016 period.
 arat_pmm,The Arat measure of democracy,pmm_arat,continuous,NA,TRUE,FALSE,FALSE,FALSE,TRUE,1991,"Only available via the Pemstein, Meserve, and Melton (2013) replication data. I have not been able to access the original data."
 blm,"The Bowman, Lehoucq, and Mahoney index of democracy for Central America",blm,trichotomous,NA,TRUE,FALSE,FALSE,TRUE,TRUE,2005,NA
 bmr,"The Boix-Miller-Rosato dichotomous coding of democracy, 1800-2015, version 3.0","democracy,democracy_omitteddata,democracy_femalesuffrage",dichotomous,PACL,FALSE,FALSE,FALSE,TRUE,TRUE,2010,NA
@@ -15,7 +16,7 @@ LIED,"The Lexical Index of Electoral Democracy, v. 3",lexical_index,ordinal,PIPE
 magaloni,"Autocracies of the World, 1950-2012 (Version 1.0).","demo_nr,demo_r,regime_r,regime_nr",dichotomous,PACL,FALSE,TRUE,TRUE,TRUE,TRUE,2013,Can be extended using the duration_nr variable. Extended version included in this package.
 mainwaring,"Mainwaring, Brinks, and Perez Linan's democracy measure for Latin America","mainwaring,Regime",trichotomous,NA,TRUE,FALSE,FALSE,FALSE,TRUE,2001,NA
 munck_pmm,Munck Index of Democracy,pmm_munck,continuous,NA,TRUE,FALSE,FALSE,FALSE,TRUE,2009,"Only available via the Pemstein, Meserve, and Melton (2013) replication data. I have not been able to access the original data."
-pacl,The Democracy and Dictatorship Dataset (DD/PACL/ACLP/CGV),"democracy,regime",dichotomous,PACL,TRUE,TRUE,FALSE,TRUE,TRUE,1996,"The original data was first compiled, as far as I know, in the famous ACLP study ""Modernization: Theories and Facts"" study of 1996. It has been extended and changed by Cheibub, Gandhi, and Vreeland in the latest iteration (2010)."
+pacl,The Democracy and Dictatorship Dataset (DD/PACL/ACLP/CGV),"democracy,regime",dichotomous,PACL,TRUE,TRUE,FALSE,TRUE,TRUE,1996,"The original data was first compiled, as far as I know, for the famous ACLP study ""Modernization: Theories and Facts"" study of 1996. It has been extended and changed by Cheibub, Gandhi, and Vreeland in the latest iteration (2010)."
 peps,Participation-Enhanced Polity Score,"PEPS1i,PEPS2i,PEPS1q,PEPS2q,PEPS1v,PEPS2v,polity1raw,Polity1,Polity2,Polity3",continuous,Polity,FALSE,FALSE,FALSE,TRUE,TRUE,2006,NA
 PIPE,The Political Institutions and Political Events (PIPE) dataset,"democracy,democracy2,regime",dichotomous,PIPE,FALSE,FALSE,FALSE,TRUE,TRUE,2010,Democracy measures in PIPE are calculated in this package on the basis of imperfect instructions in the codebook.  Use with care.
 pitf,Political Instability Task Force democracy indicator,pitf_binary,dichotomous,Polity,FALSE,FALSE,FALSE,FALSE,TRUE,2010,Constructed score on the basis of Polity data.
@@ -25,6 +26,7 @@ polyarchy,The Polyarchy Scale and the Contestation Scale,"cont,poly",ordinal,NA,
 polyarchy_dimensions,"Latent Dimensions of Contestation and Inclusiveness by Michael Coppedge, Angel Alvarez, and Claudia Maldonado","CONTEST,INCLUS",continuous,latent variable,FALSE,FALSE,FALSE,TRUE,TRUE,2008,NA
 prc_gasiorowski,The Political Regime Change (PRC) dataset.,"regime,prc,prc_at_end_year,prc_at_beginning_year",trichotomous,NA,TRUE,FALSE,FALSE,FALSE,TRUE,1996,NA
 reign,"The Rulers, Elections, and Irregular Governance (REIGN) dataset, regime characteristics worksheet.",Type,dichotomous,GWF,FALSE,TRUE,FALSE,TRUE,FALSE,2016,NA
+svmdi,Suport Vector Machine Democracy Index by Grundler and Krieger,"svmdi, csvmdi, dsvmdi",continuous,latent variable,FALSE,FALSE,FALSE,TRUE,TRUE,2016,NA
 svolik_regime,Milan Svolik's Regime Dataset,"regime,regime_numeric",dichotomous,PACL,FALSE,FALSE,FALSE,FALSE,TRUE,2012,NA
 uds,The Unified Democracy Scores,"mean,median",continuous,latent variable,FALSE,FALSE,TRUE,TRUE,TRUE,2010,"Can be extended using the package QuickUDS. (Use ""devtools::install_github(""xmarquez/QuickUDS"")""; the package is not on CRAN)"
 ulfelder,The Democracy/Autocracy Dataset by Jay Ulfelder,rgjtype,dichotomous,Polity,FALSE,FALSE,TRUE,TRUE,TRUE,2007,Can be extended using the rgjdurd and rgjdura variables. Extended version included in this package.

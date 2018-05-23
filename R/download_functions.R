@@ -735,10 +735,17 @@ download_reign <- function(url,
 
   }
 
-  COUNTRY <- `COUNTRY CODE` <-  End <- Start <- cow <- year <- NULL
+  COUNTRY <- NULL
+  cow <-  End <- Start <- datevalue <- year <- NULL
 
   data <- googlesheets::gs_url(url) %>%
-    googlesheets::gs_read(ws = "Regime List")
+    googlesheets::gs_read(ws = "Regime List",
+                          col_names = c("cow",
+                                        "COUNTRY",
+                                        "Start",
+                                        "datevalue",
+                                        "End",
+                                        "Type"))
 
   if(return_raw) {
     if(verbose) {
@@ -747,8 +754,10 @@ download_reign <- function(url,
     return(data)
   }
 
+  data <- data %>%
+    filter(cow != "COUNTRY CODE")
+
   reign <- data %>%
-    rename(cow = `COUNTRY CODE`) %>%
     mutate(Start = lubridate::mdy(Start),
            End = lubridate::mdy(End)) %>%
     group_by_all() %>%
@@ -762,7 +771,8 @@ download_reign <- function(url,
                        code_type = "cown",
                        match_type = "country",
                        verbose = verbose,
-                       ...)
+                       ...) %>%
+    select(-datevalue)
 
   standardize_columns(reign, COUNTRY, cow, verbose = verbose)
 }

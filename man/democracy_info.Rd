@@ -4,7 +4,7 @@
 \name{democracy_info}
 \alias{democracy_info}
 \title{Basic information about existing democracy measures}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 35 rows and 12 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 37 rows and 12 columns.}
 \usage{
 democracy_info
 }

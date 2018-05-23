@@ -2,6 +2,7 @@
 % Please edit documentation in R/redownload_functions.R
 \name{redownload_blm}
 \alias{redownload_blm}
+\alias{redownload_anckar}
 \alias{redownload_bmr}
 \alias{redownload_bnr}
 \alias{redownload_gwf}
@@ -13,6 +14,7 @@
 \alias{redownload_polyarchy_original}
 \alias{redownload_polyarchy_dimensions}
 \alias{redownload_magaloni}
+\alias{redownload_svmdi}
 \alias{redownload_uds}
 \alias{redownload_ulfelder}
 \alias{redownload_pipe}
@@ -23,6 +25,11 @@ Political Democracy: Case Expertise, Data Adequacy, and Central America.
 Comparative Political Studies 38 (8): 939-970.
 \url{http://cps.sagepub.com/content/38/8/939}. Data available at
 \url{http://www.blmdemocracy.gatech.edu/}.
+
+Anckar, Carsten and Cecilia Fredriksson (2018). "Classifying
+political regimes 1800-2016: a typology and a new dataset." European
+Political Science, doi: 10.1057/s41304-018-0149-8. Data, article, and
+codebook available at: \url{https://doi.org/10.1057/s41304-018-0149-8}
 
 Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A Complete
 Data Set of Political Regimes, 1800-2007. Comparative Political Studies 46
@@ -84,6 +91,12 @@ Magaloni, Beatriz, Jonathan Chu, and Eric Min.
 University. Original data and codebook available at
 \url{http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset/}.
 
+Gründler, Klaus, and Tommy Krieger. 2018. “Machine Learning
+Indicators, Political Institutions, and Economic Development.” CESifo
+Working Paper. Original data available at
+\url{http://apps.wiwi.uni-wuerzburg.de/svmdi/}. Working paper available at
+\url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}
+
 Pemstein, Daniel, Stephen Meserve, and James Melton. 2010. Democratic
 Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.
 Political Analysis 18 (4): 426-449. Original data and codebook available at
@@ -97,6 +110,8 @@ Adam Przeworski. 2013 \emph{Political Institutions and Political Events
 }
 \usage{
 redownload_blm(url, verbose = TRUE, return_raw = FALSE, ...)
+
+redownload_anckar(url, verbose = TRUE, return_raw = FALSE, ...)
 
 redownload_bmr(url, verbose = TRUE, return_raw = FALSE, ...)
 
@@ -125,6 +140,9 @@ redownload_polyarchy_dimensions(url, verbose = TRUE, return_raw = FALSE,
 redownload_magaloni(url, verbose = TRUE, extend = FALSE,
   return_raw = FALSE, ...)
 
+redownload_svmdi(url, release_year = 2018, verbose = TRUE,
+  return_raw = FALSE, ...)
+
 redownload_uds(release_year = 2014, verbose = TRUE, return_raw = FALSE,
   ...)
 
@@ -138,7 +156,11 @@ redownload_pipe(url, verbose = TRUE, return_raw = FALSE, ...)
 
 \itemize{
 
-\item For \link{blm}: \code{http://www.blmdemocracy.gatech.edu/blm final data.xls}
+\item For \link{anckar}:
+\url{https://static-content.springer.com/esm/art\%3A10.1057\%2Fs41304-018-0149-8/MediaObjects/41304_2018_149_MOESM2_ESM.xlsx}
+
+\item For \link{blm}: \code{http://www.blmdemocracy.gatech.edu/blm final
+ data.xls}
 
 \item For \link{bmr}:
 \url{https://dataverse.harvard.edu/api/access/datafile/3130643}
@@ -158,7 +180,14 @@ redownload_pipe(url, verbose = TRUE, return_raw = FALSE, ...)
 \item For \link{peps}:
 \url{http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta}
 
-\item For \link{utip}: \code{http://utip.lbj.utexas.edu/data/political regime data set RV.xls}
+\item For \link{svmdi}: There is no default for the 2018 release; navigate
+to \url{http://apps.wiwi.uni-wuerzburg.de/svmdi/}, right-click the download
+button, and copy the link for the csv version of the dataset. For the 2016
+release, it defaults to
+\url{http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta}
+
+\item For \link{utip}: \code{http://utip.lbj.utexas.edu/data/political
+ regime data set RV.xls}
 
 \item For \link{wahman_teorell_hadenius}:
 \url{https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&d=1}
@@ -208,8 +237,10 @@ classified as a democracy from 1872. Default is \code{FALSE}.}
 two country-year files, one with autocratic regimes only ("autocratic only"), and one with both
 democratic and non-democratic regimes ("all"). Default is "all".}
 
-\item{release_year}{(Only in \link{redownload_uds}). The year of the UDS release
-to be downloaded. Can be 2014, 2011, or 2010. Default is 2014.}
+\item{release_year}{(Only in \link{redownload_uds} and
+\link{redownload_svmdi}). The year of the release to be downloaded. For the
+\link{uds}, it can be 2014, 2011, or 2010; default is 2014; for \link{svmdi}, it can
+be 2016 or 2018.}
 }
 \value{
 A \link{tibble} with the processed dataset, unless \code{return_raw}
@@ -223,18 +254,20 @@ returned by the \code{redownload_*} family of functions (\link{blm},
 \link{gwf_all}, \link{gwf_all_extended}, \link{LIED}, \link{magaloni},
 \link{pacl}, \link{PIPE}, \link{peps}, \link{polyarchy},
 \link{polyarchy_dimensions}, \link{uds_2014}, \link{uds_2010},
-\link{uds_2011}, \link{ulfelder}, \link{utip}, \link{wahman_teorell_hadenius})
-are all available directly from this package and are unlikely to have changed
-since the package was installed. Access the respective dataset by typing its
-name, and refer to their documentation for details. You will not normally need
-to redownload them, unless you want to process the raw data yourself (set
-\code{return_raw = TRUE}) or suspect they have changed since the package was
-installed.
+\link{uds_2011}, \link{ulfelder}, \link{utip}, \link{wahman_teorell_hadenius},
+\link{anckar}, \link{svmdi}) are all available directly from this package and
+are unlikely to have changed since the package was installed. Access the
+respective dataset by typing its name, and refer to their documentation for
+details. You will not normally need to redownload them, unless you want to
+process the raw data yourself (set \code{return_raw = TRUE}) or suspect they
+have changed since the package was installed.
 }
 \examples{
 \dontrun{
 redownload_blm()
 }
+\dontrun{
+redownload_anckar()}
 \dontrun{
 bmr <- redownload_bmr()
 bmr
@@ -262,6 +295,8 @@ redownload_polyarchy_original()}
 redownload_polyarchy_dimensions()}
 \dontrun{
 redownload_magaloni()}
+\dontrun{
+redownload_svmdi(release_year = 2016) # For 2018, you must manually specify the URL}
 \dontrun{
 redownload_uds()
 redownload_uds(2011)}

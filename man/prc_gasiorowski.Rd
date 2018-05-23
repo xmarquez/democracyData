@@ -115,8 +115,8 @@ detail on the differences, see the vignette. It is included here for completenes
 
 \seealso{
 Other democracy: \code{\link{LIED}}, \code{\link{PIPE}},
-  \code{\link{arat_pmm}}, \code{\link{blm}},
-  \code{\link{bmr}}, \code{\link{bnr}},
+  \code{\link{anckar}}, \code{\link{arat_pmm}},
+  \code{\link{blm}}, \code{\link{bmr}}, \code{\link{bnr}},
   \code{\link{bollen_pmm}}, \code{\link{doorenspleet}},
   \code{\link{download_fh_electoral}},
   \code{\link{download_fh}}, \code{\link{download_reign}},
@@ -128,9 +128,10 @@ Other democracy: \code{\link{LIED}}, \code{\link{PIPE}},
   \code{\link{pacl}}, \code{\link{peps}},
   \code{\link{pitf}}, \code{\link{polity_pmm}},
   \code{\link{polyarchy_dimensions}},
-  \code{\link{polyarchy}}, \code{\link{svolik_regime}},
-  \code{\link{uds_2014}}, \code{\link{ulfelder}},
-  \code{\link{utip}}, \code{\link{vanhanen}},
+  \code{\link{polyarchy}}, \code{\link{svmdi}},
+  \code{\link{svolik_regime}}, \code{\link{uds_2014}},
+  \code{\link{ulfelder}}, \code{\link{utip}},
+  \code{\link{vanhanen}},
   \code{\link{wahman_teorell_hadenius}}
 
 Other trichotomous democracy indexes: \code{\link{blm}},

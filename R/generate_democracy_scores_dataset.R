@@ -9,17 +9,17 @@
 #'
 #' @param datasets Character vector indicating which datasets to use in
 #'   producing the combined data frame. Can be any or all of (an unambiguous
-#'   abbreviation of) "[LIED]", "[PIPE]", "[arat_pmm]", "[blm]", "[blm_pmm]",
-#'   "[bmr]", "[bnr]", "[bnr_extended]", "[bollen_pmm]", "[doorenspleet]",
-#'   "[eiu]", "[fh_pmm]", "[gwf_all]", "[gwf_all_extended]", "[hadenius_pmm]",
-#'   "[kailitz]", "[magaloni]", "[magaloni_extended]", "[mainwaring]",
-#'   "[mainwaring_pmm]", "[munck_pmm]", "[pacl]", "[pacl_pmm]", "[peps]",
-#'   "[pitf]", "[polity_pmm]", "[polyarchy]", "[polyarchy_dimensions]",
-#'   "[polyarchy_pmm]", "[prc_gasiorowski]", "[prc_pmm]", "[svolik_regime]",
-#'   "[uds_2010]", "[uds_2011]", "[uds_2014]", "[ulfelder]",
-#'   "[ulfelder_extended]", "[utip]", "[vanhanen]", "[wahman_teorell_hadenius]",
-#'   "[reign]", "[polity]", "[fh]", "[fh_electoral]", "[wgi]". Default is all of
-#'   them.
+#'   abbreviation of) "[anckar]", "[LIED]", "[PIPE]", "[arat_pmm]", "[blm]",
+#'   "[blm_pmm]", "[bmr]", "[bnr]", "[bnr_extended]", "[bollen_pmm]",
+#'   "[doorenspleet]", "[eiu]", "[fh_pmm]", "[gwf_all]", "[gwf_all_extended]",
+#'   "[hadenius_pmm]", "[kailitz]", "[magaloni]", "[magaloni_extended]",
+#'   "[mainwaring]", "[mainwaring_pmm]", "[munck_pmm]", "[pacl]", "[pacl_pmm]",
+#'   "[peps]", "[pitf]", "[polity_pmm]", "[polyarchy]",
+#'   "[polyarchy_dimensions]", "[polyarchy_pmm]", "[prc_gasiorowski]",
+#'   "[prc_pmm]", "[svmdi]", "[svolik_regime]", "[uds_2010]", "[uds_2011]",
+#'   "[uds_2014]", "[ulfelder]", "[ulfelder_extended]", "[utip]", "[vanhanen]",
+#'   "[wahman_teorell_hadenius]", "[reign]", "[polity]", "[fh]",
+#'   "[fh_electoral]", "[wgi]". Default is all of them.
 #' @param output_format Character. Whether to output a "wide" (each measure of
 #'   democracy in a separate column) or a "long" (a column with measure names, a
 #'   column with values) version of the data frame. Default is "long".
@@ -103,6 +103,10 @@
 #'   democracy reflect the country's situation as of 31 December of the year as
 #'   much as possible.}
 #'
+#'   \item{anckar_democracy}{The [anckar] measure of democracy, as a numeric value. Up to
+#'   2010 this should be identical to `bmr_democracy_omitteddata`. 0 =
+#'   non-democracy, 1 = democracy.}
+#'
 #'   \item{blm}{The [blm] measure of democracy, as a numeric value. Can be 0
 #'   (authoritarian), 0.5 (hybrid), or 1 (democracy). }
 #'
@@ -117,7 +121,7 @@
 #'   type."}
 #'
 #'   \item{bmr_democracy_femalesuffrage}{According to the [bmr] codebook, this
-#'   is the same measure as bmr, except that it also requires that at least half
+#'   is the same measure as `bmr`, except that it also requires that at least half
 #'   of adult women have the right to vote. 30 countries change values.}
 #'
 #'   \item{bnr}{The [bnr] event measure of democracy, reversed, so that 0
@@ -263,6 +267,12 @@
 #'   coding all presidential and parliamentary democracies as 1, all other
 #'   regimes as 0.}
 #'
+#'   \item{csvmdi}{The continuous Support Vector Machine democracy index from [svmdi], 2018 version.}
+#'
+#'   \item{svmdi_2016}{The continuous Support Vector Machine democracy index from [svmdi], 2016 version.}
+#'
+#'   \item{dsvmdi}{The dichotomous Support Vector Machine democracy index from [svmdi], 2018 version.}
+#'
 #'   \item{svolik_democracy}{A measure of democracy from [svolik_regime]. 0 =
 #'   non-democracy, 1 = democracy. }
 #'
@@ -368,7 +378,7 @@ generate_democracy_scores_dataset <- function(datasets,
 
   output_format <- match.arg(output_format, c("long", "wide"))
 
-  available_datasets <- c("LIED", "PIPE", "arat_pmm", "blm", "blm_pmm",
+  available_datasets <- c("anckar", "LIED", "PIPE", "arat_pmm", "blm", "blm_pmm",
                           "bmr", "bnr", "bnr_extended", "bollen_pmm",
                           "doorenspleet", "eiu", "fh_pmm", "gwf_all", "gwf_all_extended",
                           "hadenius_pmm", "kailitz", "magaloni",
@@ -378,7 +388,7 @@ generate_democracy_scores_dataset <- function(datasets,
                           "polyarchy_dimensions", "polyarchy_pmm",
                           "prc_gasiorowski", "prc_pmm", "svolik_regime",
                           "uds_2010", "uds_2011", "uds_2014",
-                          "ulfelder", "ulfelder_extended",
+                          "ulfelder", "ulfelder_extended", "svmdi", "svmdi_2016",
                           "utip", "vanhanen", "vanhanen_pmm",
                           "wahman_teorell_hadenius",
                           "reign", "polity_annual",
@@ -487,6 +497,27 @@ generate_democracy_scores_dataset <- function(datasets,
         standardize_selection()
     }
 
+  }
+
+  # anckar ---------------------------------------------------------------------
+
+
+  if("anckar" %in% datasets) {
+    if(verbose) {
+      message("Adding Anckar-Fredriksson data")
+    }
+    if(force_redownload) {
+      anckar <- redownload_anckar(verbose = verbose,
+                                  include_in_output = include_in_output)
+    } else {
+      anckar <- democracyData::anckar
+    }
+
+    democracy_data <- anckar %>%
+      rename_at(vars(c("democracy")),
+                quos(c("anckar_democracy"))) %>%
+      tidyr::gather("measure", "value", "anckar_democracy") %>%
+      standardize_selection()
   }
 
   # Arat --------------------------------------------------------------------
@@ -993,7 +1024,33 @@ generate_democracy_scores_dataset <- function(datasets,
       standardize_selection()
   }
 
+  # SVMDI ------------------------------------------------------------------
 
+
+  if("svmdi" %in% datasets) {
+    if(verbose) {
+      message("Adding SVMDI data")
+    }
+    democracy_data <- democracyData::svmdi %>%
+      tidyr::gather("measure", "value",
+                    "csvmdi", "dsvmdi") %>%
+      standardize_selection()
+  }
+
+
+  # SVMDI 2016 ------------------------------------------------------------------
+
+
+  if("svmdi_2016" %in% datasets) {
+    if(verbose) {
+      message("Adding SVMDI 2016 data")
+    }
+    democracy_data <- democracyData::svmdi_2016 %>%
+      rename_at("svmdi", quo(c("svmdi_2016"))) %>%
+      tidyr::gather("measure", "value",
+                    "svmdi_2016") %>%
+      standardize_selection()
+  }
 
   # Svolik ------------------------------------------------------------------
 

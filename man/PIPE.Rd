@@ -83,7 +83,7 @@ considered as supra-units and they are coded as such separately.
 
 \item{PIPE_countryn}{The name of the country at the time. This has been
 partially reconstructed. The original data was missing many names, and did
-not use a consistent scheme for naming countries. Use \code{GW_country_name}
+not use a consistent scheme for naming countries. Use \code{extended_country_name}
 instead.}
 
 \item{country_number}{The number of the country. Note: For historical
@@ -1622,7 +1622,7 @@ Maddison, A. 2003. The World Economy: Historical Statistics, OECD
 Development Centre.
 }
 \seealso{
-Other democracy: \code{\link{LIED}},
+Other democracy: \code{\link{LIED}}, \code{\link{anckar}},
   \code{\link{arat_pmm}}, \code{\link{blm}},
   \code{\link{bmr}}, \code{\link{bnr}},
   \code{\link{bollen_pmm}}, \code{\link{doorenspleet}},
@@ -1637,9 +1637,9 @@ Other democracy: \code{\link{LIED}},
   \code{\link{pitf}}, \code{\link{polity_pmm}},
   \code{\link{polyarchy_dimensions}},
   \code{\link{polyarchy}}, \code{\link{prc_gasiorowski}},
-  \code{\link{svolik_regime}}, \code{\link{uds_2014}},
-  \code{\link{ulfelder}}, \code{\link{utip}},
-  \code{\link{vanhanen}},
+  \code{\link{svmdi}}, \code{\link{svolik_regime}},
+  \code{\link{uds_2014}}, \code{\link{ulfelder}},
+  \code{\link{utip}}, \code{\link{vanhanen}},
   \code{\link{wahman_teorell_hadenius}}
 
 Other institutions: \code{\link{LIED}}

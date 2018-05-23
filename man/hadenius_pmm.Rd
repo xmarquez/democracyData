@@ -76,8 +76,8 @@ available for 129 countries in 1988.} }
 
 \seealso{
 Other democracy: \code{\link{LIED}}, \code{\link{PIPE}},
-  \code{\link{arat_pmm}}, \code{\link{blm}},
-  \code{\link{bmr}}, \code{\link{bnr}},
+  \code{\link{anckar}}, \code{\link{arat_pmm}},
+  \code{\link{blm}}, \code{\link{bmr}}, \code{\link{bnr}},
   \code{\link{bollen_pmm}}, \code{\link{doorenspleet}},
   \code{\link{download_fh_electoral}},
   \code{\link{download_fh}}, \code{\link{download_reign}},
@@ -90,9 +90,9 @@ Other democracy: \code{\link{LIED}}, \code{\link{PIPE}},
   \code{\link{polity_pmm}},
   \code{\link{polyarchy_dimensions}},
   \code{\link{polyarchy}}, \code{\link{prc_gasiorowski}},
-  \code{\link{svolik_regime}}, \code{\link{uds_2014}},
-  \code{\link{ulfelder}}, \code{\link{utip}},
-  \code{\link{vanhanen}},
+  \code{\link{svmdi}}, \code{\link{svolik_regime}},
+  \code{\link{uds_2014}}, \code{\link{ulfelder}},
+  \code{\link{utip}}, \code{\link{vanhanen}},
   \code{\link{wahman_teorell_hadenius}}
 
 Other PMM replication data: \code{\link{arat_pmm}},
@@ -105,6 +105,6 @@ Other continuous democracy indexes: \code{\link{arat_pmm}},
   \code{\link{bollen_pmm}},
   \code{\link{download_wgi_voice_and_accountability}},
   \code{\link{eiu}}, \code{\link{munck_pmm}},
-  \code{\link{vanhanen}}
+  \code{\link{svmdi}}, \code{\link{vanhanen}}
 }
 \keyword{datasets}

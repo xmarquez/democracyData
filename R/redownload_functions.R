@@ -6,19 +6,23 @@
 #'\link{gwf_all}, \link{gwf_all_extended}, \link{LIED}, \link{magaloni},
 #'\link{pacl}, \link{PIPE}, \link{peps}, \link{polyarchy},
 #'\link{polyarchy_dimensions}, \link{uds_2014}, \link{uds_2010},
-#'\link{uds_2011}, \link{ulfelder}, \link{utip}, \link{wahman_teorell_hadenius})
-#'are all available directly from this package and are unlikely to have changed
-#'since the package was installed. Access the respective dataset by typing its
-#'name, and refer to their documentation for details. You will not normally need
-#'to redownload them, unless you want to process the raw data yourself (set
-#'\code{return_raw = TRUE}) or suspect they have changed since the package was
-#'installed.
+#'\link{uds_2011}, \link{ulfelder}, \link{utip}, \link{wahman_teorell_hadenius},
+#'\link{anckar}, \link{svmdi}) are all available directly from this package and
+#'are unlikely to have changed since the package was installed. Access the
+#'respective dataset by typing its name, and refer to their documentation for
+#'details. You will not normally need to redownload them, unless you want to
+#'process the raw data yourself (set \code{return_raw = TRUE}) or suspect they
+#'have changed since the package was installed.
 #'
 #'@param url The URL of the dataset. This defaults to:
 #'
 #'  \itemize{
 #'
-#'  \item For \link{blm}: \code{http://www.blmdemocracy.gatech.edu/blm final data.xls}
+#'  \item For \link{anckar}:
+#'  \url{https://static-content.springer.com/esm/art\%3A10.1057\%2Fs41304-018-0149-8/MediaObjects/41304_2018_149_MOESM2_ESM.xlsx}
+#'
+#'  \item For \link{blm}: \code{http://www.blmdemocracy.gatech.edu/blm final
+#'  data.xls}
 #'
 #'  \item For \link{bmr}:
 #'  \url{https://dataverse.harvard.edu/api/access/datafile/3130643}
@@ -29,9 +33,6 @@
 #'  \item For \link{gwf_all} and \link{gwf_autocratic}:
 #'  \url{http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip}
 #'
-#'
-#'
-#'
 #'  \item For \link{LIED}:
 #'  \url{https://dataverse.harvard.edu/api/access/datafile/2863101}
 #'
@@ -41,13 +42,17 @@
 #'  \item For \link{peps}:
 #'  \url{http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta}
 #'
-#'  \item For \link{utip}: \code{http://utip.lbj.utexas.edu/data/political regime data set RV.xls}
+#'  \item For \link{svmdi}: There is no default for the 2018 release; navigate
+#'  to \url{http://apps.wiwi.uni-wuerzburg.de/svmdi/}, right-click the download
+#'  button, and copy the link for the csv version of the dataset. For the 2016
+#'  release, it defaults to
+#'  \url{http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta}
+#'
+#'  \item For \link{utip}: \code{http://utip.lbj.utexas.edu/data/political
+#'  regime data set RV.xls}
 #'
 #'  \item For \link{wahman_teorell_hadenius}:
 #'  \url{https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&d=1}
-#'
-#'
-#'
 #'
 #'  \item For \link{polyarchy}:
 #'  \url{https://www3.nd.edu/~mcoppedg/crd/poly8500.sav}
@@ -66,13 +71,16 @@
 #'  \url{http://www.unified-democracy-scores.org/files/20100726/uds_summary.csv.gz}
 #'
 #'
-#'
-#'
 #'  \item For \link{ulfelder}:
 #'  \url{https://dataverse.harvard.edu/api/access/datafile/2420018}
 #'
 #'  \item For \link{PIPE}:
 #'  \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data} }
+#'
+#'@param release_year (Only in \link{redownload_uds} and
+#'  \link{redownload_svmdi}). The year of the release to be downloaded. For the
+#'  [uds], it can be 2014, 2011, or 2010; default is 2014; for [svmdi], it can
+#'  be 2016 or 2018.
 #'
 #'@param verbose Whether to print a running commentary of what the function is
 #'  doing while processing the data.
@@ -163,6 +171,107 @@ redownload_blm <- function(url,
   }
 
   standardize_columns(blm, country, verbose = verbose)
+
+}
+
+#' @rdname redownload_blm
+#'
+#' @source Anckar, Carsten and Cecilia Fredriksson (2018). "Classifying
+#'   political regimes 1800-2016: a typology and a new dataset." European
+#'   Political Science, doi: 10.1057/s41304-018-0149-8. Data, article, and
+#'   codebook available at: \url{https://doi.org/10.1057/s41304-018-0149-8}
+#'
+#'
+#' @export
+#' @examples
+#' \dontrun{
+#' redownload_anckar()}
+redownload_anckar <- function(url,
+                            verbose = TRUE,
+                            return_raw = FALSE,
+                            ...) {
+
+  ccode <- country <- year <- democracy <- NULL
+  regimebroadcat <- regimenarrowcat <- abbreviation <- NULL
+
+  if(missing(url)) {
+    url <- "https://static-content.springer.com/esm/art%3A10.1057%2Fs41304-018-0149-8/MediaObjects/41304_2018_149_MOESM2_ESM.xlsx"
+  }
+
+
+  data <- read_data(url,
+                    verbose = verbose,
+                    name = "Anckar and Fredricksson",
+                    file_extension = "xlsx")
+
+  if(return_raw) {
+    if(verbose) {
+      message("Returning raw data, without processing.")
+    }
+    return(data)
+  }
+
+  if(verbose) {
+    message("Fixing country names, adding state system information and regime category names")
+  }
+
+  data <- data %>%
+    mutate(country = country %>%
+             str_replace_all('\\"', ""),
+           abbreviation = abbreviation %>%
+             str_replace_all('\\"', ""),
+           country = case_when(country == "EQUATORIA G" ~ "EQUATORIAL GUINEA",
+                               country == "GUNIEA- BISS" ~ "GUINEA-BISSAU",
+                               country == "CONGO" & ccode == 490 ~ "DEMOCRATIC REPUBLIC OF CONGO",
+                               TRUE ~ country))
+
+  anckar <- data %>%
+    country_year_coder(country,
+                       year, code_col = ccode,
+                       code_type = "cown",
+                       match_type = "country",
+                       verbose = verbose,
+                       ...)
+
+  anckar <- anckar %>%
+    mutate(democracy = if_else(democracy == 99, NA_real_, democracy),
+           regimebroadcat = case_when(regimebroadcat == 0 ~ "Parliamentarism",
+                                      regimebroadcat == 1 ~ "Semi-presidentialism",
+                                      regimebroadcat == 2 ~ "Presidentialism",
+                                      regimebroadcat == 3 ~ "Semi-monarchy",
+                                      regimebroadcat == 4 ~ "Party-based rule",
+                                      regimebroadcat == 5 ~ "Personalist rule",
+                                      regimebroadcat == 6 ~ "Military rule",
+                                      regimebroadcat == 7 ~ "Absolute monarchy",
+                                      regimebroadcat == 8 ~ "Oligarchy",
+                                      TRUE ~ NA_character_),
+           regimebroadcat = as.factor(regimebroadcat),
+           regimenarrowcat = case_when(regimenarrowcat == 0 ~ "Parliamentarism",
+                                       regimenarrowcat == 1 ~ "Semi-presidentialism",
+                                       regimenarrowcat == 2 ~ "Presidentialism",
+                                       regimenarrowcat == 3 ~ "Semi-monarchy",
+                                       regimenarrowcat == 4 ~ "Single-party rule",
+                                       regimenarrowcat == 5 ~ "Multi-party authoritarian rule",
+                                       regimenarrowcat == 6 ~ "Personalist rule",
+                                       regimenarrowcat == 7 ~ "Military rule",
+                                       regimenarrowcat == 8 ~ "Absolute monarchy",
+                                       regimenarrowcat == 9 ~ "Monarchic oligarchy",
+                                       regimenarrowcat == 10 ~ "Other oligarchy",
+                                       TRUE ~ NA_character_),
+           regimenarrowcat = as.factor(regimenarrowcat),
+           monarchy = case_when(monarchy > 7 ~ NA_real_,
+                                TRUE ~ monarchy))
+
+  if(verbose) {
+    message(sprintf("Resulting dataset after processing has %d rows.",
+                    nrow(anckar)))
+    if(nrow(data) != nrow(anckar)) {
+      message("Note: the number of rows in the processed Anckar and Fredriksson data is different from the number of rows in the original data.")
+    }
+  }
+
+
+  standardize_columns(anckar, country, ccode, verbose = verbose)
 
 }
 
@@ -1021,8 +1130,87 @@ redownload_magaloni <- function(url,
 }
 
 #' @rdname redownload_blm
-#' @param release_year (Only in \link{redownload_uds}). The year of the UDS release
-#'   to be downloaded. Can be 2014, 2011, or 2010. Default is 2014.
+#'
+#' @source Gründler, Klaus, and Tommy Krieger. 2018. “Machine Learning
+#'   Indicators, Political Institutions, and Economic Development.” CESifo
+#'   Working Paper. Original data available at
+#'   \url{http://apps.wiwi.uni-wuerzburg.de/svmdi/}. Working paper available at
+#'   \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}
+#'
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' redownload_svmdi(release_year = 2016) # For 2018, you must manually specify the URL}
+redownload_svmdi <- function(url,
+                             release_year = 2018,
+                             verbose = TRUE,
+                             return_raw = FALSE,
+                             ...) {
+  country <- year <- iso <- NULL
+
+  if(!release_year %in% c(2018, 2016)) {
+    release_year <- 2018
+    message("release_year can only be 2018 or 2016. Defaulting to 2018.")
+  }
+
+  if(release_year == 2018 & missing(url)) {
+    stop("You must manually specify the URL for the CSV version of the 2018 SVMDI dataset.
+         Navigate to http://apps.wiwi.uni-wuerzburg.de/svmdi/ and copy the download link.")
+  } else if(release_year == 2016 & missing(url)) {
+    url <- "http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta"
+  }
+
+  if(release_year == 2018) {
+    data <- read_data(url,
+                      verbose = verbose,
+                      name = "svmdi",
+                      file_extension = "csv")
+  } else if(release_year == 2016) {
+    data <- read_data(url,
+                      verbose = verbose,
+                      name = "svmdi",
+                      file_extension = "dta")
+  }
+
+
+
+  data <- data %>%
+    mutate(country = if_else(country == "Congo_Democratic Republic of",
+                             "Democratic Republic of Congo", country))
+
+  if(return_raw) {
+    if(verbose) {
+      message("Returning raw data, without processing.")
+    }
+    return(data)
+  }
+
+  svmdi <- data %>%
+    country_year_coder(country,
+                       year,
+                       # cowcode,
+                       # code_type = "cown",
+                       match_type = "country",
+                       verbose = verbose,
+                       ...)
+
+  if(verbose) {
+    message(sprintf("Resulting dataset after processing has %d rows.",
+                    nrow(svmdi)))
+    if(nrow(data) != nrow(svmdi)) {
+      message("Note: the number of rows in the processed SVMDI Dataset is different from the number of rows in the original data.")
+    }
+  }
+
+  svmdi <- svmdi %>%
+    select(-starts_with("id"), -starts_with("cid"), -starts_with("instrument"))
+
+  standardize_columns(svmdi, country, iso, verbose = verbose)
+
+}
+
+#' @rdname redownload_blm
 #'
 #' @source Pemstein, Daniel, Stephen Meserve, and James Melton. 2010. Democratic
 #'   Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.

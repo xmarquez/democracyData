@@ -1,4 +1,69 @@
 
+# Anckar ------------------------------------------------------------------
+
+#' The Anckar-Fredriksson dataset of political regimes
+#'
+#' Dataset described in C. Anckar and C. Fredriksson. 2018. "Classifying
+#' political regimes 1800-2016: a typology and a new dataset". European
+#' Political Science. DOI: 10.1057/s41304-018-0149-8.
+#' \url{https://doi.org/10.1057/s41304-018-0149-8}. Data and codebook at the
+#' link.
+#'
+#' @section Variables:
+#'
+#'   \describe{
+#'
+#'   \item{anckar_country}{The country name, as in the original dataset, with
+#'   minimal modification. Use \code{extended_country_name} instead if you want
+#'   a consistent name.}
+#'
+#'   \item{anckar_ccode}{The codebook says this is the COW code; it looks like a
+#'   modified version of the Polity code (with the USSR = 364, for example). Use
+#'   \code{cown} or \code{GWn} instead.}
+#'
+#'   \item{abbreviation}{World Bank country abbreviation.}
+#'
+#'   \item{year}{The calendar year.}
+#'
+#'   \item{democracy}{This should be identical to version 2 of Boix, Miller and
+#'   Rosato’s Dichotomous democracy measure (\code{democracy_omitteddata}; see
+#'   [bmr]). (Carles Boix, Michael K. Miller, and Sebastian Rosato. 2013. "A
+#'   Complete Data Set of Political Regimes, 1800-2007." Comparative Political
+#'   Studies 46(12): 1523-54). Supplemented for all countries for the period
+#'   2011-2016, as well as for Liechtenstein 1866-1990, Monaco 1862-2016, and
+#'   San Marino 1800-1992, by Anckar and Fredriksson. 1 = democracy, 0 =
+#'   non-democracy.}
+#'
+#'   \item{monarchy}{Distinguishes between monarchies and republics in
+#'   democratic countries. It is \code{NA} for non-democracies. Vales: 0
+#'   Republic, 1 Monarchy, 7 Hybrid.}
+#'
+#'   \item{regimebroadcat}{Regime type. Classification with broad categories:
+#'   Parliamentarism, Semi-presidentialism, Presidentialism, Semi-monarchy,
+#'   Party-based rule, Personalist rule, Military rule, Absolute monarchy,
+#'   Oligarchy}
+#'
+#'   \item{regimenarrowcat}{Regime type. Classification with narrow categories:
+#'   Parliamentarism, Semi-presidentialism, Presidentialism, Semi-monarchy,
+#'   Single-party rule, Multi-party authoritarian rule, Personalist rule,
+#'   Military rule, Absolute monarchy, Monarchic oligarchy, Other oligarchy.}
+#'
+#'   \item{popelection}{Indicates if the head of state is popularly elected or
+#'   not in democratic republics. Values 0 Head of state not popularly elected;
+#'   1 Head of state popularly elected. In a few cases this variable is not
+#'   \code{NA} for non-democracies; it is unclear why.}
+#'
+#'   }
+#'
+#' @template standard-variables
+#' @family democracy
+#' @family authoritarianism
+#' @family dichotomous democracy indexes
+#' @source C. Anckar and C. Fredriksson. 2018. "Classifying political regimes
+#'   1800-2016: a typology and a new dataset". European Political Science. DOI:
+#'   10.1057/s41304-018-0149-8. \url{https://doi.org/10.1057/s41304-018-0149-8}.
+"anckar"
+
 # Arat --------------------------------------------------------------------
 
 #' The Arat measure of democracy
@@ -16,7 +81,7 @@
 #'   \describe{
 #'
 #'   \item{original_country}{The country name, as in the PMM dataset. Use
-#'   \code{GW_country_name} instead if you want a consistent name.}
+#'   \code{extended_country_name} instead if you want a consistent name.}
 #'
 #'   \item{year}{The calendar year.}
 #'
@@ -252,7 +317,7 @@
 #'   \describe{
 #'
 #'   \item{original_country}{The country name, as in the PMM dataset. Use
-#'   \code{GW_country_name} instead if you want a consistent name.}
+#'   \code{extended_country_name} instead if you want a consistent name.}
 #'
 #'   \item{year}{The calendar year.}
 #'
@@ -1835,6 +1900,89 @@
 #'   can include more than one regime classificaiton for a given year. For more
 #'   detail on the differences, see the vignette. It is included here for completeness.
 "prc_pmm"
+
+
+# svmdi -------------------------------------------------------------------
+
+#' Suport Vector Machine Democracy Index by Grundler and Krieger
+#'
+#' This is the index described in K. Grundler and T. Krieger. 2018. Machine
+#' Learning Indices, Political Institutions, and Economic Development. Report.
+#' CESifo Group Munich, 2018.
+#' \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}. An earlier
+#' version of this index (used in K. Grundler and T. Krieger. 2016. "Democracy
+#' and growth: Evidence from a machine learning indicator". European Journal of
+#' Political Economy 45, pp. 85-107. DOI:
+#' \url{https://doi.org/10.1016/j.ejpoleco.2016.05.005}) is available as
+#' [svmdi_2016]; there are some important differences between the values of the
+#' earlier and later versions of the index.
+#'
+#' @section Variables:
+#'
+#'   \describe{
+#'
+#'   \item{svmdi_country}{The country name, as in the original dataset, with
+#'   minimal modification. Use \code{extended_country_name} instead if you want
+#'   a consistent name.}
+#'
+#'   \item{svmdi_iso}{Three letter ISO country code. In the original dataset.}
+#'
+#'   \item{year}{The calendar year.}
+#'
+#'   \item{status}{Independence status. Undocumented, but appears to be I =
+#'   independent, C = colony, O = Occupied, P = Part of empire - e.g.,
+#'   Azerbaijan between 1960 and 1990. Use `in_GW-system` for a consistent
+#'   indicator.}
+#'
+#'   \item{region}{Geographical region. (In the 2018 release only).}
+#'
+#'   \item{region1}{Geographical region. (In the 2016 release only).}
+#'
+#'   \item{region2}{Geographical region. (In the 2016 release only).}
+#'
+#'   \item{continent}{Continent. (In the 2018 release only).}
+#'
+#'   \item{csvmdi}{Continuous version of the support vector machine democracy
+#'   index (In the 2018 release only). Ranges from 0 = least demcratic to 1 =
+#'   most democratic. }
+#'
+#'   \item{svmdi}{Continuous version of the support vector machine democracy
+#'   index (In the 2016 release only). Ranges from 0 = least demcratic to 1 =
+#'   most democratic. }
+#'
+#'   \item{svmdi_sd}{Standard deviation of the continuous version of the support
+#'   vector machine democracy index (In the 2016 release only). }
+#'
+#'   \item{svmdi_q5}{Lower confidence bound of the continuous version of the
+#'   support vector machine democracy index (In the 2016 release only). }
+#'
+#'   \item{svmdi_q95}{Upper confidence bound of the continuous version of the
+#'   support vector machine democracy index (In the 2016 release only). }
+#'
+#'   \item{csvmdimin}{Lower confidence bound of the continuous version of the
+#'   support vector machine democracy index (In the 2018 release only). }
+#'
+#'   \item{csvmdimin}{Upper confidence bound of the continuous version of the
+#'   support vector machine democracy index. (In the 2018 release only). }
+#'
+#'   \item{dsvmdi}{Dichotomous version of the support vector machine democracy
+#'   index. (In the 2018 release only). 0 = not demcratic,  1 = democratic. }
+#'
+#'   }
+#'
+#' @template standard-variables
+#' @family democracy
+#' @family continuous democracy indexes
+#' @source K. Grundler and T. Krieger. 2018. Machine Learning Indices, Political
+#'   Institutions, and Economic Development. Report. CESifo Group Munich, 2018.
+#'   \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}.
+"svmdi"
+
+#' @rdname svmdi
+#'
+#' @aliases svmdi
+"svmdi_2016"
+
 
 # Svolik ------------------------------------------------------------------
 
@@ -3989,7 +4137,7 @@
 #'
 #'  \item{PIPE_countryn}{The name of the country at the time. This has been
 #'  partially reconstructed. The original data was missing many names, and did
-#'  not use a consistent scheme for naming countries. Use \code{GW_country_name}
+#'  not use a consistent scheme for naming countries. Use \code{extended_country_name}
 #'  instead.}
 #'
 #'  \item{country_number}{The number of the country. Note: For historical
