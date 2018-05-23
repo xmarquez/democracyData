@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Given a set of country-years, find appropriate country codes, standardized
-country names, and determine state system membership — country_year_coder â€¢ democracyData</title>
+country names, and determine state system membership â€” country_year_coder â€¢ democracyData</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -19,13 +19,24 @@ country names, and determine state system membership — country_year_coder â€¢ de
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="Given a set of country-years, find appropriate country codes, standardized
+country names, and determine state system membership â€” country_year_coder" />
+
+<meta property="og:description" content="Given a set of country-years, find appropriate country codes, standardized
+country names, and determine state system membership" />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -48,12 +59,16 @@ country names, and determine state system membership — country_year_coder â€¢ de
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">democracyData</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">democracyData</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.2</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -62,7 +77,7 @@ country names, and determine state system membership — country_year_coder â€¢ de
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -74,6 +89,7 @@ country names, and determine state system membership — country_year_coder â€¢ de
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -81,17 +97,21 @@ country names, and determine state system membership — country_year_coder â€¢ de
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Given a set of country-years, find appropriate country codes, standardized
 country names, and determine state system membership</h1>
+    <small class="dont-index">Source: <a href='https://github.com/xmarquez/democracyData/blob/master/R/country_year_coder.R'><code>R/country_year_coder.R</code></a></small>
+    <div class="hidden name"><code>country_year_coder.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Given a set of country-years, find appropriate country codes, standardized
 country names, and determine state system membership</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>country_year_coder</span>(<span class='no'>tbl</span>, <span class='no'>country_col</span>, <span class='no'>date_col</span>, <span class='no'>code_col</span>, <span class='kw'>code_type</span> <span class='kw'>=</span> <span class='st'>"cown"</span>,
   <span class='kw'>to_system</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"GW"</span>, <span class='st'>"polity"</span>, <span class='st'>"cow"</span>), <span class='kw'>match_type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"country and code"</span>,
@@ -99,7 +119,7 @@ country names, and determine state system membership</p>
   <span class='st'>"in_GW_system"</span>), <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>debug</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>match_final_year</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -128,7 +148,8 @@ about country-year matching.</p></td>
       <th>code_type</th>
       <td><p>Type of code to match on (only needed if <code>code_col</code> is not
 <code>NULL</code>). Defaults to "cown". Can be any unambiguous substring of the
-following:</p><ul>
+following:</p>
+<ul>
 <li><p>"GWn": Numeric code for the country in the Gleditsch-Ward system of
 states (<a href='http://privatewww.essex.ac.uk/~ksg/statelist.html'>http://privatewww.essex.ac.uk/~ksg/statelist.html</a>). This is very
 similar, but not identical, to the Correlates of War and Polity codes. See
@@ -217,7 +238,8 @@ Can be abbreviated (e.g., "country" is the same as "country and code")</p></td>
 c("extended_country_name", "GWn", "cown", "in_GW_system"), but can be any
 character vector containing any combination of the column names in the
 internal database of country codes.</p>
-<p>The possibilities are:</p><ul>
+<p>The possibilities are:</p>
+<ul>
 <li><p>"GW_country_name": The name of the country in the
 Gleditsch-Ward system of states (<a href='http://privatewww.essex.ac.uk/~ksg/statelist.html'>http://privatewww.essex.ac.uk/~ksg/statelist.html</a>)
 (Gleditsch and War 1999).</p></li>
@@ -430,11 +452,14 @@ country names.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

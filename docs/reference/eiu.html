@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The Economist Intelligence Unit's Democracy Index � eiu • democracyData</title>
+<title>The Economist Intelligence Unit's Democracy Index — eiu • democracyData</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,25 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="The Economist Intelligence Unit's Democracy Index — eiu" />
+
+<meta property="og:description" content="A dataset containing the country-year version of the democracy index compiled
+by the Economist Intelligence Unit, 2006-2017. From the report "Democracy
+Index 2017: Free Speech under Attack", available at
+https://www.eiu.com/topic/democracy-index." />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -47,12 +59,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">democracyData</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">democracyData</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.2</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -61,7 +77,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -73,6 +89,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -80,18 +97,22 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>The Economist Intelligence Unit's Democracy Index</h1>
+    <small class="dont-index">Source: <a href='https://github.com/xmarquez/democracyData/blob/master/R/data_documentation.R'><code>R/data_documentation.R</code></a></small>
+    <div class="hidden name"><code>eiu.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>A dataset containing the country-year version of the democracy index compiled
 by the Economist Intelligence Unit, 2006-2017. From the report "Democracy
 Index 2017: Free Speech under Attack", available at
 <a href='https://www.eiu.com/topic/democracy-index'>https://www.eiu.com/topic/democracy-index</a>.</p>
     
+    </div>
 
     <pre class="usage"><span class='no'>eiu</span></pre>
         
@@ -147,9 +168,9 @@ interrelated whole".</p></dd>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>Other democracy: <code><a href='LIED.html'>LIED</a></code>, <code><a href='PIPE.html'>PIPE</a></code>,
-  <code><a href='arat_pmm.html'>arat_pmm</a></code>, <code><a href='blm.html'>blm</a></code>,
-  <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
+    <div class='dont-index'><p>Other democracy: <code><a href='LIED.html'>LIED</a></code>, <code><a href='PIPE.html'>PIPE</a></code>,
+  <code><a href='anckar.html'>anckar</a></code>, <code><a href='arat_pmm.html'>arat_pmm</a></code>,
+  <code><a href='blm.html'>blm</a></code>, <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
   <code><a href='bollen_pmm.html'>bollen_pmm</a></code>, <code><a href='doorenspleet.html'>doorenspleet</a></code>,
   <code><a href='download_fh_electoral.html'>download_fh_electoral</a></code>,
   <code><a href='download_fh.html'>download_fh</a></code>, <code><a href='download_reign.html'>download_reign</a></code>,
@@ -162,15 +183,15 @@ interrelated whole".</p></dd>
   <code><a href='polity_pmm.html'>polity_pmm</a></code>,
   <code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
   <code><a href='polyarchy.html'>polyarchy</a></code>, <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
-  <code><a href='svolik_regime.html'>svolik_regime</a></code>, <code><a href='uds_2014.html'>uds_2014</a></code>,
-  <code><a href='ulfelder.html'>ulfelder</a></code>, <code><a href='utip.html'>utip</a></code>,
-  <code><a href='vanhanen.html'>vanhanen</a></code>,
+  <code>svmdi</code>, <code><a href='svolik_regime.html'>svolik_regime</a></code>,
+  <code><a href='uds_2014.html'>uds_2014</a></code>, <code><a href='ulfelder.html'>ulfelder</a></code>,
+  <code><a href='utip.html'>utip</a></code>, <code><a href='vanhanen.html'>vanhanen</a></code>,
   <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
 <p>Other continuous democracy indexes: <code><a href='arat_pmm.html'>arat_pmm</a></code>,
   <code><a href='bollen_pmm.html'>bollen_pmm</a></code>,
   <code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a></code>,
   <code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>, <code><a href='munck_pmm.html'>munck_pmm</a></code>,
-  <code><a href='vanhanen.html'>vanhanen</a></code></p>
+  <code>svmdi</code>, <code><a href='vanhanen.html'>vanhanen</a></code></p></div>
     
 
   </div>
@@ -198,11 +219,14 @@ interrelated whole".</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

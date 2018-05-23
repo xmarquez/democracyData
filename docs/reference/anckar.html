@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Polity 2 from PMM — polity_pmm • democracyData</title>
+<title>The Anckar-Fredriksson dataset of political regimes — anckar • democracyData</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,14 +28,13 @@
 
 
 
-<meta property="og:title" content="Polity 2 from PMM — polity_pmm" />
+<meta property="og:title" content="The Anckar-Fredriksson dataset of political regimes — anckar" />
 
-<meta property="og:description" content="Polity 2 Index from Polity IV. 2013. Taken from Pemstein, Daniel, Stephen A.
-Meserve, and James Melton. 2013. "Replication data for: Democratic
-Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." In:
-Harvard Dataverse. http://hdl.handle.net/1902.1/PMM. Higher values are more
-democratic. Use download_polity_annual to download the latest version of the
-Polity IV data." />
+<meta property="og:description" content="Dataset described in C. Anckar and C. Fredriksson. 2018. "Classifying
+political regimes 1800-2016: a typology and a new dataset". European
+Political Science. DOI: 10.1057/s41304-018-0149-8.
+https://doi.org/10.1057/s41304-018-0149-8. Data and codebook at the
+link." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -102,51 +101,68 @@ Polity IV data." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Polity 2 from PMM</h1>
+    <h1>The Anckar-Fredriksson dataset of political regimes</h1>
     <small class="dont-index">Source: <a href='https://github.com/xmarquez/democracyData/blob/master/R/data_documentation.R'><code>R/data_documentation.R</code></a></small>
-    <div class="hidden name"><code>polity_pmm.Rd</code></div>
+    <div class="hidden name"><code>anckar.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Polity 2 Index from Polity IV. 2013. Taken from Pemstein, Daniel, Stephen A.
-Meserve, and James Melton. 2013. "Replication data for: Democratic
-Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." In:
-Harvard Dataverse. http://hdl.handle.net/1902.1/PMM. Higher values are more
-democratic. Use <a href='download_polity_annual.html'>download_polity_annual</a> to download the latest version of the
-Polity IV data.</p>
+    <p>Dataset described in C. Anckar and C. Fredriksson. 2018. "Classifying
+political regimes 1800-2016: a typology and a new dataset". European
+Political Science. DOI: 10.1057/s41304-018-0149-8.
+<a href='https://doi.org/10.1057/s41304-018-0149-8'>https://doi.org/10.1057/s41304-018-0149-8</a>. Data and codebook at the
+link.</p>
     
     </div>
 
-    <pre class="usage"><span class='no'>polity_pmm</span></pre>
+    <pre class="usage"><span class='no'>anckar</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 8050 rows and 7 columns.</p>
+    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 18194 rows and 13 columns.</p>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
-"Replication data for: Democratic Compromise: A Latent Variable Analysis of
-Ten Measures of Regime Type." In: Harvard Dataverse.
-http://hdl.handle.net/1902.1/PMM.</p>
-<p>Marshall, Monty G., Ted Robert Gurr, and Keith Jaggers. 2012. "Polity
-IV: Political Regime Characteristics and Transitions, 1800-2012."</p>
+    <p>C. Anckar and C. Fredriksson. 2018. "Classifying political regimes
+1800-2016: a typology and a new dataset". European Political Science. DOI:
+10.1057/s41304-018-0149-8. <a href='https://doi.org/10.1057/s41304-018-0149-8'>https://doi.org/10.1057/s41304-018-0149-8</a>.</p>
     
     <h2 class="hasAnchor" id="variables"><a class="anchor" href="#variables"></a>Variables</h2>
 
     
     <dl class='dl-horizontal'>
-    <dt>pmm_country</dt><dd><p>The original country name in the PMM replication data.</p></dd>
+    <dt>anckar_country</dt><dd><p>The country name, as in the original dataset, with
+minimal modification. Use <code>extended_country_name</code> instead if you want
+a consistent name.</p></dd>
+    <dt>anckar_ccode</dt><dd><p>The codebook says this is the COW code; it looks like a
+modified version of the Polity code (with the USSR = 364, for example). Use
+<code>cown</code> or <code>GWn</code> instead.</p></dd>
+    <dt>abbreviation</dt><dd><p>World Bank country abbreviation.</p></dd>
     <dt>year</dt><dd><p>The calendar year.</p></dd>
-    <dt>polity_pmm</dt><dd><p>Annual polity2 index, interpolating values for
-interruption, interregnum, and transition periods. Higher values are more
-democratic. Taken from Pemstein, Daniel, Stephen A. Meserve, and James
-Melton. 2013. "Replication data for: Democratic Compromise: A Latent
-Variable Analysis of Ten Measures of Regime Type." In: Harvard Dataverse.
-http://hdl.handle.net/1902.1/PMM. In this version the indicator only goes
-to 1945, and it differs from polity2 in a few cases. See the vignette in
-this package for more details.</p></dd>
+    <dt>democracy</dt><dd><p>This should be identical to version 2 of Boix, Miller and
+Rosato’s Dichotomous democracy measure (<code>democracy_omitteddata</code>; see
+<a href='bmr.html'>bmr</a>). (Carles Boix, Michael K. Miller, and Sebastian Rosato. 2013. "A
+Complete Data Set of Political Regimes, 1800-2007." Comparative Political
+Studies 46(12): 1523-54). Supplemented for all countries for the period
+2011-2016, as well as for Liechtenstein 1866-1990, Monaco 1862-2016, and
+San Marino 1800-1992, by Anckar and Fredriksson. 1 = democracy, 0 =
+non-democracy.</p></dd>
+    <dt>monarchy</dt><dd><p>Distinguishes between monarchies and republics in
+democratic countries. It is <code>NA</code> for non-democracies. Vales: 0
+Republic, 1 Monarchy, 7 Hybrid.</p></dd>
+    <dt>regimebroadcat</dt><dd><p>Regime type. Classification with broad categories:
+Parliamentarism, Semi-presidentialism, Presidentialism, Semi-monarchy,
+Party-based rule, Personalist rule, Military rule, Absolute monarchy,
+Oligarchy</p></dd>
+    <dt>regimenarrowcat</dt><dd><p>Regime type. Classification with narrow categories:
+Parliamentarism, Semi-presidentialism, Presidentialism, Semi-monarchy,
+Single-party rule, Multi-party authoritarian rule, Personalist rule,
+Military rule, Absolute monarchy, Monarchic oligarchy, Other oligarchy.</p></dd>
+    <dt>popelection</dt><dd><p>Indicates if the head of state is popularly elected or
+not in democratic republics. Values 0 Head of state not popularly elected;
+1 Head of state popularly elected. In a few cases this variable is not
+<code>NA</code> for non-democracies; it is unclear why.</p></dd>
     </dl>
     
     <h2 class="hasAnchor" id="standard-descriptive-variables-generated-by-this-package-"><a class="anchor" href="#standard-descriptive-variables-generated-by-this-package-"></a>Standard descriptive variables (generated by this package)</h2>
@@ -181,10 +197,9 @@ this package for more details.</p></dd>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='download_polity_annual.html'>download_polity_annual</a></p>
-<p>Other democracy: <code><a href='LIED.html'>LIED</a></code>, <code><a href='PIPE.html'>PIPE</a></code>,
-  <code><a href='anckar.html'>anckar</a></code>, <code><a href='arat_pmm.html'>arat_pmm</a></code>,
-  <code><a href='blm.html'>blm</a></code>, <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
+    <div class='dont-index'><p>Other democracy: <code><a href='LIED.html'>LIED</a></code>, <code><a href='PIPE.html'>PIPE</a></code>,
+  <code><a href='arat_pmm.html'>arat_pmm</a></code>, <code><a href='blm.html'>blm</a></code>,
+  <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
   <code><a href='bollen_pmm.html'>bollen_pmm</a></code>, <code><a href='doorenspleet.html'>doorenspleet</a></code>,
   <code><a href='download_fh_electoral.html'>download_fh_electoral</a></code>,
   <code><a href='download_fh.html'>download_fh</a></code>, <code><a href='download_reign.html'>download_reign</a></code>,
@@ -194,19 +209,22 @@ this package for more details.</p></dd>
   <code><a href='kailitz.html'>kailitz</a></code>, <code><a href='magaloni.html'>magaloni</a></code>,
   <code><a href='mainwaring.html'>mainwaring</a></code>, <code><a href='munck_pmm.html'>munck_pmm</a></code>,
   <code><a href='pacl.html'>pacl</a></code>, <code><a href='peps.html'>peps</a></code>,
-  <code><a href='pitf.html'>pitf</a></code>, <code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
+  <code><a href='pitf.html'>pitf</a></code>, <code><a href='polity_pmm.html'>polity_pmm</a></code>,
+  <code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
   <code><a href='polyarchy.html'>polyarchy</a></code>, <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
   <code>svmdi</code>, <code><a href='svolik_regime.html'>svolik_regime</a></code>,
   <code><a href='uds_2014.html'>uds_2014</a></code>, <code><a href='ulfelder.html'>ulfelder</a></code>,
   <code><a href='utip.html'>utip</a></code>, <code><a href='vanhanen.html'>vanhanen</a></code>,
   <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
-<p>Other PMM replication data: <code><a href='arat_pmm.html'>arat_pmm</a></code>,
-  <code><a href='blm.html'>blm</a></code>, <code><a href='bollen_pmm.html'>bollen_pmm</a></code>,
-  <code><a href='fh_pmm.html'>fh_pmm</a></code>, <code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
-  <code><a href='mainwaring.html'>mainwaring</a></code>, <code><a href='munck_pmm.html'>munck_pmm</a></code>,
-  <code><a href='pacl.html'>pacl</a></code>, <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code></p>
-<p>Other ordinal democracy indexes: <code><a href='download_fh_electoral.html'>download_fh_electoral</a></code>,
-  <code><a href='download_fh.html'>download_fh</a></code>, <code><a href='fh_pmm.html'>fh_pmm</a></code></p></div>
+<p>Other authoritarianism: <code><a href='download_reign.html'>download_reign</a></code>,
+  <code><a href='gwf_all.html'>gwf_all</a></code>, <code><a href='kailitz.html'>kailitz</a></code>,
+  <code><a href='magaloni.html'>magaloni</a></code>, <code><a href='utip.html'>utip</a></code>,
+  <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
+<p>Other dichotomous democracy indexes: <code><a href='bmr.html'>bmr</a></code>,
+  <code><a href='bnr.html'>bnr</a></code>, <code><a href='doorenspleet.html'>doorenspleet</a></code>,
+  <code><a href='kailitz.html'>kailitz</a></code>, <code><a href='pacl.html'>pacl</a></code>,
+  <code><a href='svolik_regime.html'>svolik_regime</a></code>, <code><a href='ulfelder.html'>ulfelder</a></code>,
+  <code><a href='utip.html'>utip</a></code>, <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p></div>
     
 
   </div>

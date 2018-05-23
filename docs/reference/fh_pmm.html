@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Freedom House "Freedom in the World" data from Pemstein, Meserve, and
-Melton's replication dataset — fh_pmm â€¢ democracyData</title>
+Melton's replication dataset â€” fh_pmm â€¢ democracyData</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -19,13 +19,28 @@ Melton's replication dataset — fh_pmm â€¢ democracyData</title>
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="Freedom House "Freedom in the World" data from Pemstein, Meserve, and
+Melton's replication dataset â€” fh_pmm" />
+
+<meta property="og:description" content="This is the Freedom House data included in Pemstein, Daniel, Stephen A.
+Meserve, and James Melton. 2013. "Replication data for: Democratic
+Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." In:
+Harvard Dataverse. http://hdl.handle.net/1902.1/PMM. It differs for
+some country-years from the current version of the Freedom House data, which
+can be accessed using download_fh; hence its inclusion here." />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -48,12 +63,16 @@ Melton's replication dataset — fh_pmm â€¢ democracyData</title>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">democracyData</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">democracyData</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.2</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -62,7 +81,7 @@ Melton's replication dataset — fh_pmm â€¢ democracyData</title>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -74,6 +93,7 @@ Melton's replication dataset — fh_pmm â€¢ democracyData</title>
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -81,13 +101,16 @@ Melton's replication dataset — fh_pmm â€¢ democracyData</title>
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Freedom House "Freedom in the World" data from Pemstein, Meserve, and
 Melton's replication dataset</h1>
+    <small class="dont-index">Source: <a href='https://github.com/xmarquez/democracyData/blob/master/R/data_documentation.R'><code>R/data_documentation.R</code></a></small>
+    <div class="hidden name"><code>fh_pmm.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>This is the Freedom House data included in Pemstein, Daniel, Stephen A.
 Meserve, and James Melton. 2013. "Replication data for: Democratic
@@ -96,6 +119,7 @@ Harvard Dataverse. <a href='http://hdl.handle.net/1902.1/PMM'>http://hdl.handle.
 some country-years from the current version of the Freedom House data, which
 can be accessed using <a href='download_fh.html'>download_fh</a>; hence its inclusion here.</p>
     
+    </div>
 
     <pre class="usage"><span class='no'>fh_pmm</span></pre>
         
@@ -155,10 +179,10 @@ actual FH data).</p></dd> </dl>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><a href='download_fh.html'>download_fh</a> and <a href='download_fh_electoral.html'>download_fh_electoral</a></p>
+    <div class='dont-index'><p><a href='download_fh.html'>download_fh</a> and <a href='download_fh_electoral.html'>download_fh_electoral</a></p>
 <p>Other democracy: <code><a href='LIED.html'>LIED</a></code>, <code><a href='PIPE.html'>PIPE</a></code>,
-  <code><a href='arat_pmm.html'>arat_pmm</a></code>, <code><a href='blm.html'>blm</a></code>,
-  <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
+  <code><a href='anckar.html'>anckar</a></code>, <code><a href='arat_pmm.html'>arat_pmm</a></code>,
+  <code><a href='blm.html'>blm</a></code>, <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
   <code><a href='bollen_pmm.html'>bollen_pmm</a></code>, <code><a href='doorenspleet.html'>doorenspleet</a></code>,
   <code><a href='download_fh_electoral.html'>download_fh_electoral</a></code>,
   <code><a href='download_fh.html'>download_fh</a></code>, <code><a href='download_reign.html'>download_reign</a></code>,
@@ -171,9 +195,9 @@ actual FH data).</p></dd> </dl>
   <code><a href='polity_pmm.html'>polity_pmm</a></code>,
   <code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
   <code><a href='polyarchy.html'>polyarchy</a></code>, <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
-  <code><a href='svolik_regime.html'>svolik_regime</a></code>, <code><a href='uds_2014.html'>uds_2014</a></code>,
-  <code><a href='ulfelder.html'>ulfelder</a></code>, <code><a href='utip.html'>utip</a></code>,
-  <code><a href='vanhanen.html'>vanhanen</a></code>,
+  <code>svmdi</code>, <code><a href='svolik_regime.html'>svolik_regime</a></code>,
+  <code><a href='uds_2014.html'>uds_2014</a></code>, <code><a href='ulfelder.html'>ulfelder</a></code>,
+  <code><a href='utip.html'>utip</a></code>, <code><a href='vanhanen.html'>vanhanen</a></code>,
   <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
 <p>Other Freedom House: <code><a href='download_fh_electoral.html'>download_fh_electoral</a></code>,
   <code><a href='download_fh.html'>download_fh</a></code></p>
@@ -183,7 +207,7 @@ actual FH data).</p></dd> </dl>
   <code><a href='munck_pmm.html'>munck_pmm</a></code>, <code><a href='pacl.html'>pacl</a></code>,
   <code><a href='polity_pmm.html'>polity_pmm</a></code>, <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code></p>
 <p>Other ordinal democracy indexes: <code><a href='download_fh_electoral.html'>download_fh_electoral</a></code>,
-  <code><a href='download_fh.html'>download_fh</a></code>, <code><a href='polity_pmm.html'>polity_pmm</a></code></p>
+  <code><a href='download_fh.html'>download_fh</a></code>, <code><a href='polity_pmm.html'>polity_pmm</a></code></p></div>
     
 
   </div>
@@ -211,11 +235,14 @@ actual FH data).</p></dd> </dl>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

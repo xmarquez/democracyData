@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The Political Institutions and Political Events (PIPE) dataset — PIPE â€¢ democracyData</title>
+<title>The Political Institutions and Political Events (PIPE) dataset â€” PIPE â€¢ democracyData</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,27 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="The Political Institutions and Political Events (PIPE) dataset â€” PIPE" />
+
+<meta property="og:description" content="Przeworski, Adam et al. 2013. Political Institutions and Political Events
+(PIPE) Data Set. Department of Politics, New York University. The original
+data and codebook can be downloaded from
+https://sites.google.com/a/nyu.edu/adam-przeworski/home/data. The
+documentation below is directly derived from the codebook, with some
+modifications." />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -47,12 +61,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">democracyData</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">democracyData</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.2</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -61,7 +79,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -73,6 +91,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -80,12 +99,15 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>The Political Institutions and Political Events (PIPE) dataset</h1>
+    <small class="dont-index">Source: <a href='https://github.com/xmarquez/democracyData/blob/master/R/data_documentation.R'><code>R/data_documentation.R</code></a></small>
+    <div class="hidden name"><code>PIPE.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Przeworski, Adam et al. 2013. Political Institutions and Political Events
 (PIPE) Data Set. Department of Politics, New York University. The original
@@ -94,6 +116,7 @@ data and codebook can be downloaded from
 documentation below is directly derived from the codebook, with some
 modifications.</p>
     
+    </div>
 
     <pre class="usage"><span class='no'>PIPE</span></pre>
         
@@ -160,10 +183,11 @@ Austrio-Hungarian Empire before 1918 and of Czechoslovakia between 1918 and
 territory that would become independent at any time after 1917 and as
 "parts" to those units that composed them. The supra-units need not be
 independent: British India is an example. Colonial empires are not
-considered as supra-units and they are coded as such separately.</p><dl class='dl-horizontal'>
+considered as supra-units and they are coded as such separately.</p>
+<dl class='dl-horizontal'>
     <dt>PIPE_countryn</dt><dd><p>The name of the country at the time. This has been
 partially reconstructed. The original data was missing many names, and did
-not use a consistent scheme for naming countries. Use <code>GW_country_name</code>
+not use a consistent scheme for naming countries. Use <code>extended_country_name</code>
 instead.</p></dd>
     <dt>country_number</dt><dd><p>The number of the country. Note: For historical
 reasons the numbering of countries is haphazard. Countries with numbers less
@@ -307,7 +331,8 @@ constitution is not observed (<code>const_inforce</code>=0) or if it has fallen
 into disuse or was never used. For example, the last royal veto occurred in
 England in 1706 and the last unilateral dissolution in 1834 but because no
 legal acts were passed to curtail these royal prerogatives they are coded as
-present.</p><dl class='dl-horizontal'>
+present.</p>
+<dl class='dl-horizontal'>
     <dt>title_ce</dt><dd><p>Title of the nominal head of government (chief executive,
 as distinct from the head of state), according to the constitution.
 Nominating and dismissing powers are not executive powers. Presiding over
@@ -465,15 +490,15 @@ observed. If it is not observed, as in post-1917 Mexico, the code is 6.
 profession OR educational titles). 6 All the economically independent (not
 personal servants, not debtors, only residence requirement). Includes: (a)
 phrases that explicitly refer to economic independence. Example: "Tener una
-propiedad, o ejercer cualquiera profesión, o arte con título público, u
-ocuparse en alguna industria útil, sin sujeción a otro en clase de sirviente
+propiedad, o ejercer cualquiera profesiÃ³n, o arte con tÃ­tulo pÃºblico, u
+ocuparse en alguna industria Ãºtil, sin sujeciÃ³n a otro en clase de sirviente
 o jornalero." (Peru in 1823) (b) phrases such as known means of subsistence,
 "honest livelihood." Example: "Son ciudadanos todos los habitantes de la
 Republica naturales de pais o naturalizados en el que fueren casados, o
 mayores de diez y ocho anos, siempre que exerzan alguna profesion util o
 tengan medios conocidos de subsistencia." (Costa Rica 1824) (c) phrases that
 suggest clearly broad qualifications. Example: "Son ciudadanos todos los
-salvadoreños mayores de veintiún años que sean padres de familia, o cabezas
+salvadoreÃ±os mayores de veintiÃºn aÃ±os que sean padres de familia, o cabezas
 de casa, o que sepan leer y escribir, o que tengan la propiedad que designa
 la ley." (El Salvador 1841) (d) cases where suffrage is universal but only
 for free men (i.e., not slaves) (e) cases that fall under 4 without explicit
@@ -1079,7 +1104,8 @@ codebook.</p></dd>
 
     
     <p>Note - the instructions in the original codebook for calculating these
-variables are not always clear. Errors may have resulted.</p><dl class='dl-horizontal'>
+variables are not always clear. Errors may have resulted.</p>
+<dl class='dl-horizontal'>
     <dt>republic</dt><dd><p>Whether the country is a republic during the year.
 (<code>republic_age</code> is not missing). Calculated from <code>republic_age</code>.</p></dd>
     <dt>republican_period</dt><dd><p>Identifier for periods of republican and
@@ -1286,7 +1312,8 @@ sequence is coded as ESY,IY,EjESN,WY,E.</p></dd> </dl>
     <h2 class="hasAnchor" id="caveats"><a class="anchor" href="#caveats"></a>Caveats</h2>
 
     
-    <p>Caveats are many and some are consequential.</p><dl class='dl-horizontal'>
+    <p>Caveats are many and some are consequential.</p>
+<dl class='dl-horizontal'>
 <dt>Missing data</dt><dd><p>In principle, the data should cover all
 elections that selected chief executives in all countries that existed at
 any time after 1917, including periods before independence. There are good
@@ -1428,7 +1455,7 @@ Development Centre.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>Other democracy: <code><a href='LIED.html'>LIED</a></code>,
+    <div class='dont-index'><p>Other democracy: <code><a href='LIED.html'>LIED</a></code>, <code><a href='anckar.html'>anckar</a></code>,
   <code><a href='arat_pmm.html'>arat_pmm</a></code>, <code><a href='blm.html'>blm</a></code>,
   <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
   <code><a href='bollen_pmm.html'>bollen_pmm</a></code>, <code><a href='doorenspleet.html'>doorenspleet</a></code>,
@@ -1443,11 +1470,11 @@ Development Centre.</p>
   <code><a href='pitf.html'>pitf</a></code>, <code><a href='polity_pmm.html'>polity_pmm</a></code>,
   <code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
   <code><a href='polyarchy.html'>polyarchy</a></code>, <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
-  <code><a href='svolik_regime.html'>svolik_regime</a></code>, <code><a href='uds_2014.html'>uds_2014</a></code>,
-  <code><a href='ulfelder.html'>ulfelder</a></code>, <code><a href='utip.html'>utip</a></code>,
-  <code><a href='vanhanen.html'>vanhanen</a></code>,
+  <code>svmdi</code>, <code><a href='svolik_regime.html'>svolik_regime</a></code>,
+  <code><a href='uds_2014.html'>uds_2014</a></code>, <code><a href='ulfelder.html'>ulfelder</a></code>,
+  <code><a href='utip.html'>utip</a></code>, <code><a href='vanhanen.html'>vanhanen</a></code>,
   <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
-<p>Other institutions: <code><a href='LIED.html'>LIED</a></code></p>
+<p>Other institutions: <code><a href='LIED.html'>LIED</a></code></p></div>
     
 
   </div>
@@ -1505,11 +1532,14 @@ Development Centre.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

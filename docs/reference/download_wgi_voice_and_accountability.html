@@ -8,7 +8,7 @@
 
 <title>Download the latest version (data up to 2016) of the "Democracy, Voice, and
 Accountability" index from the World Governance Indicators and process it via
-<a href='country_year_coder.html'>country_year_coder</a> � download_wgi_voice_and_accountability • democracyData</title>
+<a href='country_year_coder.html'>country_year_coder</a> — download_wgi_voice_and_accountability • democracyData</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -20,13 +20,26 @@ Accountability" index from the World Governance Indicators and process it via
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="Download the latest version (data up to 2016) of the "Democracy, Voice, and
+Accountability" index from the World Governance Indicators and process it via
+<a href='country_year_coder.html'>country_year_coder</a> — download_wgi_voice_and_accountability" />
+
+<meta property="og:description" content="Download the latest version (data up to 2016) of the "Democracy, Voice, and
+Accountability" index from the World Governance Indicators and process it via
+country_year_coder" />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -49,12 +62,16 @@ Accountability" index from the World Governance Indicators and process it via
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">democracyData</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">democracyData</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.2</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -63,7 +80,7 @@ Accountability" index from the World Governance Indicators and process it via
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -75,6 +92,7 @@ Accountability" index from the World Governance Indicators and process it via
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -82,24 +100,28 @@ Accountability" index from the World Governance Indicators and process it via
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Download the latest version (data up to 2016) of the "Democracy, Voice, and
 Accountability" index from the World Governance Indicators and process it via
 <a href='country_year_coder.html'>country_year_coder</a></h1>
+    <small class="dont-index">Source: <a href='https://github.com/xmarquez/democracyData/blob/master/R/download_functions.R'><code>R/download_functions.R</code></a></small>
+    <div class="hidden name"><code>download_wgi_voice_and_accountability.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Download the latest version (data up to 2016) of the "Democracy, Voice, and
 Accountability" index from the World Governance Indicators and process it via
 <a href='country_year_coder.html'>country_year_coder</a></p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>download_wgi_voice_and_accountability</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -137,7 +159,8 @@ explanation of the methodology used to compile the index.</p>
 <p>According to the compilers, "Voice and accountability captures perceptions
 of the extent to which a country's citizens are able to participate in
 selecting their government, as well as freedom of expression, freedom of
-association, and a free media."</p><dl class='dl-horizontal'>
+association, and a free media."</p>
+<dl class='dl-horizontal'>
 
 <dt>wb_country</dt><dd><p>Country name (World Bank standard).</p></dd>
 
@@ -208,9 +231,9 @@ download them in order to use them.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>Other democracy: <code><a href='LIED.html'>LIED</a></code>, <code><a href='PIPE.html'>PIPE</a></code>,
-  <code><a href='arat_pmm.html'>arat_pmm</a></code>, <code><a href='blm.html'>blm</a></code>,
-  <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
+    <div class='dont-index'><p>Other democracy: <code><a href='LIED.html'>LIED</a></code>, <code><a href='PIPE.html'>PIPE</a></code>,
+  <code><a href='anckar.html'>anckar</a></code>, <code><a href='arat_pmm.html'>arat_pmm</a></code>,
+  <code><a href='blm.html'>blm</a></code>, <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
   <code><a href='bollen_pmm.html'>bollen_pmm</a></code>, <code><a href='doorenspleet.html'>doorenspleet</a></code>,
   <code><a href='download_fh_electoral.html'>download_fh_electoral</a></code>,
   <code><a href='download_fh.html'>download_fh</a></code>, <code><a href='download_reign.html'>download_reign</a></code>,
@@ -222,14 +245,14 @@ download them in order to use them.</p>
   <code><a href='pitf.html'>pitf</a></code>, <code><a href='polity_pmm.html'>polity_pmm</a></code>,
   <code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
   <code><a href='polyarchy.html'>polyarchy</a></code>, <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
-  <code><a href='svolik_regime.html'>svolik_regime</a></code>, <code><a href='uds_2014.html'>uds_2014</a></code>,
-  <code><a href='ulfelder.html'>ulfelder</a></code>, <code><a href='utip.html'>utip</a></code>,
-  <code><a href='vanhanen.html'>vanhanen</a></code>,
+  <code>svmdi</code>, <code><a href='svolik_regime.html'>svolik_regime</a></code>,
+  <code><a href='uds_2014.html'>uds_2014</a></code>, <code><a href='ulfelder.html'>ulfelder</a></code>,
+  <code><a href='utip.html'>utip</a></code>, <code><a href='vanhanen.html'>vanhanen</a></code>,
   <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
 <p>Other continuous democracy indexes: <code><a href='arat_pmm.html'>arat_pmm</a></code>,
   <code><a href='bollen_pmm.html'>bollen_pmm</a></code>, <code><a href='eiu.html'>eiu</a></code>,
   <code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>, <code><a href='munck_pmm.html'>munck_pmm</a></code>,
-  <code><a href='vanhanen.html'>vanhanen</a></code></p>
+  <code>svmdi</code>, <code><a href='vanhanen.html'>vanhanen</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -264,11 +287,14 @@ download them in order to use them.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a panel of countries belonging in the state system. � create_panel • democracyData</title>
+<title>Create a panel of countries belonging in the state system. — create_panel • democracyData</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,22 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="Create a panel of countries belonging in the state system. — create_panel" />
+
+<meta property="og:description" content="Create a panel of countries belonging in the state system." />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -47,12 +56,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">democracyData</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">democracyData</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.2</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -61,7 +74,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -73,6 +86,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -80,19 +94,23 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Create a panel of countries belonging in the state system.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/xmarquez/democracyData/blob/master/R/utils.R'><code>R/utils.R</code></a></small>
+    <div class="hidden name"><code>create_panel.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Create a panel of countries belonging in the state system.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>create_panel</span>(<span class='kw'>system</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"cow"</span>, <span class='st'>"GW"</span>, <span class='st'>"polity"</span>), <span class='kw'>max_year</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -135,29 +153,29 @@ and the relevant start and end dates for entry and exit into the system.</p>
 #&gt; # ... with 16,246 more rows</div><div class='input'><span class='fu'>create_panel</span>(<span class='st'>"GW"</span>) <span class='co'># Use this for the Gleditsch and Ward system</span></div><div class='output co'>#&gt; # A tibble: 19,150 x 5
 #&gt;      GWn GW_country_name          GW_startdate GW_enddate  year
 #&gt;    &lt;dbl&gt; &lt;chr&gt;                    &lt;date&gt;       &lt;date&gt;     &lt;dbl&gt;
-#&gt;  1  2.00 United States of America 1816-01-01   NA          1816
-#&gt;  2  2.00 United States of America 1816-01-01   NA          1817
-#&gt;  3  2.00 United States of America 1816-01-01   NA          1818
-#&gt;  4  2.00 United States of America 1816-01-01   NA          1819
-#&gt;  5  2.00 United States of America 1816-01-01   NA          1820
-#&gt;  6  2.00 United States of America 1816-01-01   NA          1821
-#&gt;  7  2.00 United States of America 1816-01-01   NA          1822
-#&gt;  8  2.00 United States of America 1816-01-01   NA          1823
-#&gt;  9  2.00 United States of America 1816-01-01   NA          1824
-#&gt; 10  2.00 United States of America 1816-01-01   NA          1825
+#&gt;  1     2 United States of America 1816-01-01   NA          1816
+#&gt;  2     2 United States of America 1816-01-01   NA          1817
+#&gt;  3     2 United States of America 1816-01-01   NA          1818
+#&gt;  4     2 United States of America 1816-01-01   NA          1819
+#&gt;  5     2 United States of America 1816-01-01   NA          1820
+#&gt;  6     2 United States of America 1816-01-01   NA          1821
+#&gt;  7     2 United States of America 1816-01-01   NA          1822
+#&gt;  8     2 United States of America 1816-01-01   NA          1823
+#&gt;  9     2 United States of America 1816-01-01   NA          1824
+#&gt; 10     2 United States of America 1816-01-01   NA          1825
 #&gt; # ... with 19,140 more rows</div><div class='input'><span class='fu'>create_panel</span>(<span class='st'>"polity"</span>, <span class='kw'>max_year</span> <span class='kw'>=</span> <span class='fl'>1997</span>) <span class='co'># You can specify a maximum year</span></div><div class='output co'>#&gt; # A tibble: 13,964 x 5
 #&gt;    polity_ccode polity_country_name polity_startdate polity_enddate  year
 #&gt;           &lt;dbl&gt; &lt;chr&gt;               &lt;date&gt;           &lt;date&gt;         &lt;dbl&gt;
-#&gt;  1         2.00 United States       1800-01-01       NA              1800
-#&gt;  2         2.00 United States       1800-01-01       NA              1801
-#&gt;  3         2.00 United States       1800-01-01       NA              1802
-#&gt;  4         2.00 United States       1800-01-01       NA              1803
-#&gt;  5         2.00 United States       1800-01-01       NA              1804
-#&gt;  6         2.00 United States       1800-01-01       NA              1805
-#&gt;  7         2.00 United States       1800-01-01       NA              1806
-#&gt;  8         2.00 United States       1800-01-01       NA              1807
-#&gt;  9         2.00 United States       1800-01-01       NA              1808
-#&gt; 10         2.00 United States       1800-01-01       NA              1809
+#&gt;  1            2 United States       1800-01-01       NA              1800
+#&gt;  2            2 United States       1800-01-01       NA              1801
+#&gt;  3            2 United States       1800-01-01       NA              1802
+#&gt;  4            2 United States       1800-01-01       NA              1803
+#&gt;  5            2 United States       1800-01-01       NA              1804
+#&gt;  6            2 United States       1800-01-01       NA              1805
+#&gt;  7            2 United States       1800-01-01       NA              1806
+#&gt;  8            2 United States       1800-01-01       NA              1807
+#&gt;  9            2 United States       1800-01-01       NA              1808
+#&gt; 10            2 United States       1800-01-01       NA              1809
 #&gt; # ... with 13,954 more rows</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -179,11 +197,14 @@ and the relevant start and end dates for entry and exit into the system.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Generate a data frame containing all the democracy measures accessible from
-this package — generate_democracy_scores_dataset â€¢ democracyData</title>
+this package â€” generate_democracy_scores_dataset â€¢ democracyData</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -19,13 +19,27 @@ this package — generate_democracy_scores_dataset â€¢ democracyData</title>
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="Generate a data frame containing all the democracy measures accessible from
+this package â€” generate_democracy_scores_dataset" />
+
+<meta property="og:description" content="This function automates the process of joinning together all the archived and
+downloadable datasets in this package, producing a comprehensive data frame
+with every democracy measure. It automatically converts each democracy
+measure to a numeric value, ensures that larger values are associated with
+more democracy, and that all country-years are appropriately matched." />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -48,12 +62,16 @@ this package — generate_democracy_scores_dataset â€¢ democracyData</title>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">democracyData</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">democracyData</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.2</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -62,7 +80,7 @@ this package — generate_democracy_scores_dataset â€¢ democracyData</title>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -74,6 +92,7 @@ this package — generate_democracy_scores_dataset â€¢ democracyData</title>
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -81,13 +100,16 @@ this package — generate_democracy_scores_dataset â€¢ democracyData</title>
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Generate a data frame containing all the democracy measures accessible from
 this package</h1>
+    <small class="dont-index">Source: <a href='https://github.com/xmarquez/democracyData/blob/master/R/generate_democracy_scores_dataset.R'><code>R/generate_democracy_scores_dataset.R</code></a></small>
+    <div class="hidden name"><code>generate_democracy_scores_dataset.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>This function automates the process of joinning together all the archived and
 downloadable datasets in this package, producing a comprehensive data frame
@@ -95,6 +117,7 @@ with every democracy measure. It automatically converts each democracy
 measure to a numeric value, ensures that larger values are associated with
 more democracy, and that all country-years are appropriately matched.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>generate_democracy_scores_dataset</span>(<span class='no'>datasets</span>, <span class='kw'>output_format</span> <span class='kw'>=</span> <span class='st'>"long"</span>,
   <span class='kw'>use_extended</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>include_extra_pmm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
@@ -102,24 +125,24 @@ more democracy, and that all country-years are appropriately matched.</p>
   <span class='kw'>scale_scores</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>keep_only_last_in_year</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>exclude_downloadable</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>datasets</th>
       <td><p>Character vector indicating which datasets to use in
 producing the combined data frame. Can be any or all of (an unambiguous
-abbreviation of) "<a href='LIED.html'>LIED</a>", "<a href='PIPE.html'>PIPE</a>", "<a href='arat_pmm.html'>arat_pmm</a>", "<a href='blm.html'>blm</a>", "<a href='blm.html'>blm_pmm</a>",
-"<a href='bmr.html'>bmr</a>", "<a href='bnr.html'>bnr</a>", "<a href='bnr.html'>bnr_extended</a>", "<a href='bollen_pmm.html'>bollen_pmm</a>", "<a href='doorenspleet.html'>doorenspleet</a>",
-"<a href='eiu.html'>eiu</a>", "<a href='fh_pmm.html'>fh_pmm</a>", "<a href='gwf_all.html'>gwf_all</a>", "<a href='gwf_all.html'>gwf_all_extended</a>", "<a href='hadenius_pmm.html'>hadenius_pmm</a>",
-"<a href='kailitz.html'>kailitz</a>", "<a href='magaloni.html'>magaloni</a>", "<a href='magaloni.html'>magaloni_extended</a>", "<a href='mainwaring.html'>mainwaring</a>",
-"<a href='mainwaring.html'>mainwaring_pmm</a>", "<a href='munck_pmm.html'>munck_pmm</a>", "<a href='pacl.html'>pacl</a>", "<a href='pacl.html'>pacl_pmm</a>", "<a href='peps.html'>peps</a>",
-"<a href='pitf.html'>pitf</a>", "<a href='polity_pmm.html'>polity_pmm</a>", "<a href='polyarchy.html'>polyarchy</a>", "<a href='polyarchy_dimensions.html'>polyarchy_dimensions</a>",
-"<a href='polyarchy.html'>polyarchy_pmm</a>", "<a href='prc_gasiorowski.html'>prc_gasiorowski</a>", "<a href='prc_gasiorowski.html'>prc_pmm</a>", "<a href='svolik_regime.html'>svolik_regime</a>",
-"<a href='uds_2014.html'>uds_2010</a>", "<a href='uds_2014.html'>uds_2011</a>", "<a href='uds_2014.html'>uds_2014</a>", "<a href='ulfelder.html'>ulfelder</a>",
-"<a href='ulfelder.html'>ulfelder_extended</a>", "<a href='utip.html'>utip</a>", "<a href='vanhanen.html'>vanhanen</a>", "<a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a>",
-"<a href='download_reign.html'>reign</a>", "<a href='download_polity_annual.html'>polity</a>", "<a href='fh_pmm.html'>fh</a>", "<a href='download_fh_electoral.html'>fh_electoral</a>", "<a href='download_wgi_voice_and_accountability.html'>wgi</a>". Default is all of
-them.</p></td>
+abbreviation of) "<a href='anckar.html'>anckar</a>", "<a href='LIED.html'>LIED</a>", "<a href='PIPE.html'>PIPE</a>", "<a href='arat_pmm.html'>arat_pmm</a>", "<a href='blm.html'>blm</a>",
+"<a href='blm.html'>blm_pmm</a>", "<a href='bmr.html'>bmr</a>", "<a href='bnr.html'>bnr</a>", "<a href='bnr.html'>bnr_extended</a>", "<a href='bollen_pmm.html'>bollen_pmm</a>",
+"<a href='doorenspleet.html'>doorenspleet</a>", "<a href='eiu.html'>eiu</a>", "<a href='fh_pmm.html'>fh_pmm</a>", "<a href='gwf_all.html'>gwf_all</a>", "<a href='gwf_all.html'>gwf_all_extended</a>",
+"<a href='hadenius_pmm.html'>hadenius_pmm</a>", "<a href='kailitz.html'>kailitz</a>", "<a href='magaloni.html'>magaloni</a>", "<a href='magaloni.html'>magaloni_extended</a>",
+"<a href='mainwaring.html'>mainwaring</a>", "<a href='mainwaring.html'>mainwaring_pmm</a>", "<a href='munck_pmm.html'>munck_pmm</a>", "<a href='pacl.html'>pacl</a>", "<a href='pacl.html'>pacl_pmm</a>",
+"<a href='peps.html'>peps</a>", "<a href='pitf.html'>pitf</a>", "<a href='polity_pmm.html'>polity_pmm</a>", "<a href='polyarchy.html'>polyarchy</a>",
+"<a href='polyarchy_dimensions.html'>polyarchy_dimensions</a>", "<a href='polyarchy.html'>polyarchy_pmm</a>", "<a href='prc_gasiorowski.html'>prc_gasiorowski</a>",
+"<a href='prc_gasiorowski.html'>prc_pmm</a>", "svmdi", "<a href='svolik_regime.html'>svolik_regime</a>", "<a href='uds_2014.html'>uds_2010</a>", "<a href='uds_2014.html'>uds_2011</a>",
+"<a href='uds_2014.html'>uds_2014</a>", "<a href='ulfelder.html'>ulfelder</a>", "<a href='ulfelder.html'>ulfelder_extended</a>", "<a href='utip.html'>utip</a>", "<a href='vanhanen.html'>vanhanen</a>",
+"<a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a>", "<a href='download_reign.html'>reign</a>", "<a href='download_polity_annual.html'>polity</a>", "<a href='fh_pmm.html'>fh</a>",
+"<a href='download_fh_electoral.html'>fh_electoral</a>", "<a href='download_wgi_voice_and_accountability.html'>wgi</a>". Default is all of them.</p></td>
     </tr>
     <tr>
       <th>output_format</th>
@@ -251,10 +274,14 @@ measures (e.g., <a href='prc_gasiorowski.html'>prc</a>).</p></dd>
     <p>In the "wide" version of the dataset (<code>format = "wide"</code>), the output
 data frame can also contain any of the following variables (in the scales
 described below, unless <code>scale_scores = TRUE</code>, in which case the
-measures are converted to z-scores):</p><dl class='dl-horizontal'>
+measures are converted to z-scores):</p>
+<dl class='dl-horizontal'>
     <dt>year</dt><dd><p>The calendar year. In the "wide" version, all  measures of
 democracy reflect the country's situation as of 31 December of the year as
 much as possible.</p></dd>
+    <dt>anckar_democracy</dt><dd><p>The <a href='anckar.html'>anckar</a> measure of democracy, as a numeric value. Up to
+2010 this should be identical to <code>bmr_democracy_omitteddata</code>. 0 =
+non-democracy, 1 = democracy.</p></dd>
     <dt>blm</dt><dd><p>The <a href='blm.html'>blm</a> measure of democracy, as a numeric value. Can be 0
 (authoritarian), 0.5 (hybrid), or 1 (democracy).</p></dd>
     <dt>bmr</dt><dd><p>The <a href='bmr.html'>bmr</a> measure of democracy, as a numeric value. Can be 0
@@ -266,7 +293,7 @@ state collapse during a civil war (e.g., Lebanon 1976-89). The democracy
 variable instead fills in these years as continuations of the same regime
 type."</p></dd>
     <dt>bmr_democracy_femalesuffrage</dt><dd><p>According to the <a href='bmr.html'>bmr</a> codebook, this
-is the same measure as bmr, except that it also requires that at least half
+is the same measure as <code>bmr</code>, except that it also requires that at least half
 of adult women have the right to vote. 30 countries change values.</p></dd>
     <dt>bnr</dt><dd><p>The <a href='bnr.html'>bnr</a> event measure of democracy, reversed, so that 0
 indicates non-democracy and 1 indicates democracy. Since the <code>event</code>
@@ -371,6 +398,9 @@ original scale) are coded NA.</p></dd>
     <dt>reign_democracy</dt><dd><p>A measure of democracy from <a href='download_reign.html'>reign</a>, obtained by
 coding all presidential and parliamentary democracies as 1, all other
 regimes as 0.</p></dd>
+    <dt>csvmdi</dt><dd><p>The continuous Support Vector Machine democracy index from svmdi, 2018 version.</p></dd>
+    <dt>svmdi_2016</dt><dd><p>The continuous Support Vector Machine democracy index from svmdi, 2016 version.</p></dd>
+    <dt>dsvmdi</dt><dd><p>The dichotomous Support Vector Machine democracy index from svmdi, 2018 version.</p></dd>
     <dt>svolik_democracy</dt><dd><p>A measure of democracy from <a href='svolik_regime.html'>svolik_regime</a>. 0 =
 non-democracy, 1 = democracy.</p></dd>
     <dt>uds_2010_mean, uds_2010_median, uds_2011_mean, uds_2011_median,
@@ -415,7 +445,7 @@ of Regime Type." In: Harvard Dataverse.
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>democracy_data_long_no_download</span> <span class='kw'>&lt;-</span> <span class='fu'>generate_democracy_scores_dataset</span>(<span class='kw'>exclude_downloadable</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-         <span class='kw'>keep_only_last_in_year</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='message'>Adding Arat data</span></div><div class='output co'>#&gt; <span class='message'>Adding BLM data</span></div><div class='output co'>#&gt; <span class='message'>Adding blm_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding BMR data</span></div><div class='output co'>#&gt; <span class='message'>Adding BNR data</span></div><div class='output co'>#&gt; <span class='message'>Adding BNR data</span></div><div class='output co'>#&gt; <span class='message'>Adding Bollen data</span></div><div class='output co'>#&gt; <span class='message'>Adding Doorenspleet data</span></div><div class='output co'>#&gt; <span class='message'>Adding EIU data</span></div><div class='output co'>#&gt; <span class='message'>Adding GWF data</span></div><div class='output co'>#&gt; <span class='message'>Adding GWF data</span></div><div class='output co'>#&gt; <span class='message'>Adding Hadenius data</span></div><div class='output co'>#&gt; <span class='message'>Adding Kailitz data</span></div><div class='output co'>#&gt; <span class='message'>Adding LIED data</span></div><div class='output co'>#&gt; <span class='message'>Adding Magaloni data</span></div><div class='output co'>#&gt; <span class='message'>Adding Magaloni data</span></div><div class='output co'>#&gt; <span class='message'>Adding Mainwaring data</span></div><div class='output co'>#&gt; <span class='message'>Adding mainwaring_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding Munck data</span></div><div class='output co'>#&gt; <span class='message'>Adding PACL data</span></div><div class='output co'>#&gt; <span class='message'>Adding pacl_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding PEPS data</span></div><div class='output co'>#&gt; <span class='message'>Adding PITF data</span></div><div class='output co'>#&gt; <span class='message'>Adding Polyarchy original data</span></div><div class='output co'>#&gt; <span class='message'>Adding polyarchy_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding Polyarchy Dimensions data</span></div><div class='output co'>#&gt; <span class='message'>Adding PRC/Gasiorowski data</span></div><div class='output co'>#&gt; <span class='message'>Adding prc_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding PIPE data</span></div><div class='output co'>#&gt; <span class='message'>Adding Svolik data</span></div><div class='output co'>#&gt; <span class='message'>Adding UDS 2014 data</span></div><div class='output co'>#&gt; <span class='message'>Adding UDS 2011 data</span></div><div class='output co'>#&gt; <span class='message'>Adding UDS 2010 data</span></div><div class='output co'>#&gt; <span class='message'>Adding Ulfelder data</span></div><div class='output co'>#&gt; <span class='message'>Adding Ulfelder data</span></div><div class='output co'>#&gt; <span class='message'>Adding UTIP data</span></div><div class='output co'>#&gt; <span class='message'>Adding Vanhanen data</span></div><div class='output co'>#&gt; <span class='message'>Adding Vanhanen_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding Wahman, Teorell, and Hadenius data</span></div><div class='output co'>#&gt; <span class='message'>Finalizing</span></div><div class='input'>
+         <span class='kw'>keep_only_last_in_year</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='message'>Adding Anckar-Fredriksson data</span></div><div class='output co'>#&gt; <span class='message'>Adding Arat data</span></div><div class='output co'>#&gt; <span class='message'>Adding BLM data</span></div><div class='output co'>#&gt; <span class='message'>Adding blm_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding BMR data</span></div><div class='output co'>#&gt; <span class='message'>Adding BNR data</span></div><div class='output co'>#&gt; <span class='message'>Adding BNR data</span></div><div class='output co'>#&gt; <span class='message'>Adding Bollen data</span></div><div class='output co'>#&gt; <span class='message'>Adding Doorenspleet data</span></div><div class='output co'>#&gt; <span class='message'>Adding EIU data</span></div><div class='output co'>#&gt; <span class='message'>Adding GWF data</span></div><div class='output co'>#&gt; <span class='message'>Adding GWF data</span></div><div class='output co'>#&gt; <span class='message'>Adding Hadenius data</span></div><div class='output co'>#&gt; <span class='message'>Adding Kailitz data</span></div><div class='output co'>#&gt; <span class='message'>Adding LIED data</span></div><div class='output co'>#&gt; <span class='message'>Adding Magaloni data</span></div><div class='output co'>#&gt; <span class='message'>Adding Magaloni data</span></div><div class='output co'>#&gt; <span class='message'>Adding Mainwaring data</span></div><div class='output co'>#&gt; <span class='message'>Adding mainwaring_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding Munck data</span></div><div class='output co'>#&gt; <span class='message'>Adding PACL data</span></div><div class='output co'>#&gt; <span class='message'>Adding pacl_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding PEPS data</span></div><div class='output co'>#&gt; <span class='message'>Adding PITF data</span></div><div class='output co'>#&gt; <span class='message'>Adding Polyarchy original data</span></div><div class='output co'>#&gt; <span class='message'>Adding polyarchy_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding Polyarchy Dimensions data</span></div><div class='output co'>#&gt; <span class='message'>Adding PRC/Gasiorowski data</span></div><div class='output co'>#&gt; <span class='message'>Adding prc_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding PIPE data</span></div><div class='output co'>#&gt; <span class='message'>Adding SVMDI data</span></div><div class='output co'>#&gt; <span class='message'>Adding SVMDI 2016 data</span></div><div class='output co'>#&gt; <span class='message'>Adding Svolik data</span></div><div class='output co'>#&gt; <span class='message'>Adding UDS 2014 data</span></div><div class='output co'>#&gt; <span class='message'>Adding UDS 2011 data</span></div><div class='output co'>#&gt; <span class='message'>Adding UDS 2010 data</span></div><div class='output co'>#&gt; <span class='message'>Adding Ulfelder data</span></div><div class='output co'>#&gt; <span class='message'>Adding Ulfelder data</span></div><div class='output co'>#&gt; <span class='message'>Adding UTIP data</span></div><div class='output co'>#&gt; <span class='message'>Adding Vanhanen data</span></div><div class='output co'>#&gt; <span class='message'>Adding Vanhanen_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding Wahman, Teorell, and Hadenius data</span></div><div class='output co'>#&gt; <span class='message'>Finalizing</span></div><div class='input'>
 <span class='co'># You can select only some datasets</span>
 
 <span class='no'>democracy_data_gwf</span> <span class='kw'>&lt;-</span> <span class='fu'>generate_democracy_scores_dataset</span>(<span class='kw'>datasets</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"gwf_all"</span>),
@@ -461,11 +491,14 @@ of Regime Type." In: Harvard Dataverse.
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

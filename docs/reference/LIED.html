@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The Lexical Index of Democracy, v. 3 — LIED â€¢ democracyData</title>
+<title>The Lexical Index of Democracy, v. 3 â€” LIED â€¢ democracyData</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,26 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="The Lexical Index of Democracy, v. 3 â€” LIED" />
+
+<meta property="og:description" content="The Lexical Index of Democracy described in Skaaning, Svend-Erik; John
+Gerring; and Henrikas Bartusevicius (2015). "A Lexical Index of Electoral
+Democracy." Comparative Political Studies, Vol. 48, No. 12, pp. 1491-1525.
+Original data and variable descriptions available at
+https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106." />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -47,12 +60,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">democracyData</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">democracyData</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.2</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -61,7 +78,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -73,6 +90,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -80,12 +98,15 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>The Lexical Index of Democracy, v. 3</h1>
+    <small class="dont-index">Source: <a href='https://github.com/xmarquez/democracyData/blob/master/R/data_documentation.R'><code>R/data_documentation.R</code></a></small>
+    <div class="hidden name"><code>LIED.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>The Lexical Index of Democracy described in Skaaning, Svend-Erik; John
 Gerring; and Henrikas Bartusevicius (2015). "A Lexical Index of Electoral
@@ -93,6 +114,7 @@ Democracy." Comparative Political Studies, Vol. 48, No. 12, pp. 1491-1525.
 Original data and variable descriptions available at
 <a href='https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106'>https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106</a>.</p>
     
+    </div>
 
     <pre class="usage"><span class='no'>LIED</span></pre>
         
@@ -117,7 +139,8 @@ in the Political Institutions and Events (<code>PIPE</code>) dataset
 FEMALE SUFFRAGE. Since <code>PIPE</code> does not attempt to measure the
 quality of elections, we generate a sixth variable: COMPETITION. All
 variables are binary, coded 1 if the following circumstances obtain, and 0
-otherwise.</p><dl class='dl-horizontal'>
+otherwise.</p>
+<dl class='dl-horizontal'>
     <dt>lied_country</dt><dd><p>The country name used in the original dataset. 2
 country-years were repeated in the original data and have been dropped.</p></dd>
     <dt>lied_cow</dt><dd><p>The COW country code used in the original dataset.</p></dd>
@@ -210,18 +233,18 @@ SUFFRAGE=1 or FEMALE SUFFRAGE=1).
  <code>TRUE</code> for dates beyond 2012 for countries that did not end by then, depsite
  the fact that the Gleditsch and Ward list has not been updated since.</p></dd> </dl>
     
-    <h2 class="hasAnchor" id="deviations-from-code-pipe-code-"><a class="anchor" href="#deviations-from-code-pipe-code-"></a>Deviations from &lt;code&gt;PIPE&lt;/code&gt;</h2>
+    <h2 class="hasAnchor" id="deviations-from-pipe"><a class="anchor" href="#deviations-from-pipe"></a>Deviations from <code>PIPE</code></h2>
 
     
     <p>The LIED compilers state that:</p>
 <p>Although we employ <code>PIPE</code> as an initial source for coding
 LEGSELEC, EXSELEC, OPPOSITION, MALE SUFFRAGE, and FEMALE SUFFRAGE, we
-deviate from PIPE—based on our reading of countryspecific sources—in
+deviate from PIPEâ€”based on our reading of countryspecific sourcesâ€”in
 several ways. First, with respect to executive elections, in the
 <code>PIPE</code> dataset "Prime ministers are always coded as elected if
 the legislature is open." However, for our purposes we need an indicator
 that also takes into account whether the government is responsible to an
-elected parliament if the executive is not directly elected—a situation
+elected parliament if the executive is not directly electedâ€”a situation
 generated by a number of European monarchies prior to World War I, by
 episodes of international supervision such as Bosnia-Herzegovina in the
 first years following the civil war, and by some monarchies in the Middle
@@ -262,7 +285,7 @@ days.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>Other democracy: <code><a href='PIPE.html'>PIPE</a></code>,
+    <div class='dont-index'><p>Other democracy: <code><a href='PIPE.html'>PIPE</a></code>, <code><a href='anckar.html'>anckar</a></code>,
   <code><a href='arat_pmm.html'>arat_pmm</a></code>, <code><a href='blm.html'>blm</a></code>,
   <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
   <code><a href='bollen_pmm.html'>bollen_pmm</a></code>, <code><a href='doorenspleet.html'>doorenspleet</a></code>,
@@ -277,11 +300,11 @@ days.</p>
   <code><a href='pitf.html'>pitf</a></code>, <code><a href='polity_pmm.html'>polity_pmm</a></code>,
   <code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
   <code><a href='polyarchy.html'>polyarchy</a></code>, <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
-  <code><a href='svolik_regime.html'>svolik_regime</a></code>, <code><a href='uds_2014.html'>uds_2014</a></code>,
-  <code><a href='ulfelder.html'>ulfelder</a></code>, <code><a href='utip.html'>utip</a></code>,
-  <code><a href='vanhanen.html'>vanhanen</a></code>,
+  <code>svmdi</code>, <code><a href='svolik_regime.html'>svolik_regime</a></code>,
+  <code><a href='uds_2014.html'>uds_2014</a></code>, <code><a href='ulfelder.html'>ulfelder</a></code>,
+  <code><a href='utip.html'>utip</a></code>, <code><a href='vanhanen.html'>vanhanen</a></code>,
   <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
-<p>Other institutions: <code><a href='PIPE.html'>PIPE</a></code></p>
+<p>Other institutions: <code><a href='PIPE.html'>PIPE</a></code></p></div>
     
 
   </div>
@@ -297,7 +320,7 @@ days.</p>
 
       <li><a href="#standard-descriptive-variables-generated-by-this-package-">Standard descriptive variables (generated by this package)</a></li>
 
-      <li><a href="#deviations-from-code-pipe-code-">Deviations from &lt;code&gt;PIPE&lt;/code&gt;</a></li>
+      <li><a href="#deviations-from-pipe">Deviations from <code>PIPE</code></a></li>
 
       <li><a href="#see-also">See also</a></li>
           </ul>
@@ -311,11 +334,14 @@ days.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+
