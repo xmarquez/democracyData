@@ -1,6 +1,6 @@
 # Functions for downloading and processing other datasets -----------------
 
-#' Downloads the 2017 update of the Polity IV dataset (annual time series) and
+#' Downloads the 2018 update of the Polity IV dataset (annual time series) and
 #' processes it using [country_year_coder].
 #'
 #' The original data is available at
@@ -40,7 +40,7 @@ download_polity_annual <- function(url,
   ccode <- country <- year <- NULL
 
   if(missing(url)) {
-    url <- "http://www.systemicpeace.org/inscr/p4v2016.sav"
+    url <- "http://www.systemicpeace.org/inscr/p4v2017.sav"
   }
 
 
@@ -101,7 +101,7 @@ download_polity_annual <- function(url,
 #' @export
 #'
 #' @return A dataset containing the country-year version of the latest update
-#'   (to 2016) of the World Governance Indicators "Democracy, Voice and
+#'   (to 2017) of the World Governance Indicators "Democracy, Voice and
 #'   Accountability" Index, compiled by Daniel Kaufmann and Aart Kraay. The
 #'   original data are available at
 #'   http://info.worldbank.org/governance/wgi/index.aspx#home, along with a full
@@ -161,8 +161,8 @@ download_wgi_voice_and_accountability <- function(url,
     url <- "http://databank.worldbank.org/data/download/WGI_csv.zip"
   }
 
-  X23 <- `Indicator Name` <- `Country Name` <- `Indicator Code` <- NULL
-  `Country Code` <- indicator <- `1996` <- `2016` <- Estimate <- NULL
+  X24 <- `Indicator Name` <- `Country Name` <- `Indicator Code` <- NULL
+  `Country Code` <- indicator <- `1996` <- `2017` <- Estimate <- NULL
   variable <- value <-  NULL
   wb_country <- year <-  wb_code <- NULL
 
@@ -180,7 +180,7 @@ download_wgi_voice_and_accountability <- function(url,
   }
 
   data <- data %>%
-    select(-X23) %>%
+    select(-X24) %>%
     filter(grepl("^VA", `Indicator Code`))
 
   if(verbose) {
@@ -208,7 +208,7 @@ download_wgi_voice_and_accountability <- function(url,
                                               "Upper",
                                               "StdErr"),
                                        warn_missing = FALSE)) %>%
-    tidyr::gather(year, value, `1996`:`2016`) %>%
+    tidyr::gather(year, value, `1996`:`2017`) %>%
     tidyr::spread(indicator, value) %>%
     mutate(year = as.numeric(year)) %>%
     select(wb_country, wb_code, year,
@@ -236,7 +236,7 @@ download_wgi_voice_and_accountability <- function(url,
 #' The original data is available at
 #' [https://freedomhouse.org/report-types/freedom-world](https://freedomhouse.org/report-types/freedom-world)
 #'
-#' @param url The URL of the dataset. Defaults to \url{https://freedomhouse.org/sites/default/files/Country and Territory Ratings and Statuses FIW1973-2018.xlsx}
+#' @param url The URL of the dataset. Defaults to \url{https://freedomhouse.org/sites/default/files/Country_and_Territory_Ratings_and_Statuses_FIW1973-2019.xls}
 #' @inheritParams redownload_blm
 #' @param include_territories Whether to include scores from non-independent
 #'   territories (e.g., Indian Kashmir, Northern Ireland) compiled by FH.
@@ -332,7 +332,7 @@ download_wgi_voice_and_accountability <- function(url,
 #' @family ordinal democracy indexes
 #' @source The "Freedom in the World" dataset from Freedom House, updated to
 #'   2016. Original data and methodology is available at
-#'   \url{https://freedomhouse.org/report/freedom-world/freedom-world-2018}
+#'   \url{https://freedomhouse.org/report-types/freedom-world}
 #'
 #' @seealso [fh]
 #'
@@ -350,10 +350,10 @@ download_fh <- function(url,
                         ...) {
 
   status <- year <- pr <- cl <- fh_total <- NULL
-  indicator <- value <- pr_1972 <- country <- status_2017 <- NULL
+  indicator <- value <- pr_1972 <- country <- status_2018 <- NULL
 
   if(missing(url)) {
-    url <- "https://freedomhouse.org/sites/default/files/Country%20and%20Territory%20Ratings%20and%20Statuses%20FIW1973-2018.xlsx"
+    url <- "https://freedomhouse.org/sites/default/files/Country_and_Territory_Ratings_and_Statuses_FIW1973-2019.xls"
   }
 
 
@@ -389,7 +389,7 @@ download_fh <- function(url,
   if(verbose) {
     message(sprintf("Original dataset has %d rows, but is not in country-year format",
                     nrow(data)))
-    message("Processing the FH 2018 data - putting it in country-year format, adding state system info...")
+    message("Processing the FH 2019 data - putting it in country-year format, adding state system info...")
   }
 
   nYears <- (ncol(data) - 1)/3
@@ -399,9 +399,10 @@ download_fh <- function(url,
   # melt the data, split the variable_year column and voila!
 
   data <- suppressWarnings(data %>%
-    tidyr::gather(indicator, value, pr_1972:status_2017) %>%
+    tidyr::gather(indicator, value, pr_1972:status_2018) %>%
     tidyr::separate(indicator, into = c("status", "year"), sep ="_")  %>%
     filter(!is.na(value)) %>%
+    distinct() %>%
     tidyr::spread(status, value) %>%
     mutate_at(vars(year:pr), as.numeric) %>%
     mutate(cl = ifelse(country == "South Africa" & year == 1972, 5, cl),
@@ -487,10 +488,14 @@ download_fh_electoral <- function(url,
 
   if(missing(url)) {
     url <- "https://freedomhouse.org/sites/default/files/FIW2017_Data.zip"
+    url_2018 = "https://freedomhouse.org/sites/default/files/List%20of%20Electoral%20Democracies%20FIW%202018.xlsx"
+    url_2019 = "https://freedomhouse.org/sites/default/files/List_of_Electoral_Democracies_FIW19.xls"
   }
 
   indicator <- value <- electoral_1989 <- electoral_2016 <- electoral_dem <- year <- NULL
-  electoral <- country <- NULL
+  electoral <- country <- Country <- NULL
+  `Electoral Democracy Status in FIW 2018` <- NULL
+  `Electoral Democracy Status in FIW 2019` <- NULL
 
 
   data <- read_data(url,
@@ -501,6 +506,9 @@ download_fh_electoral <- function(url,
                     col_names = FALSE,
                     na = c("","-"))
 
+  data_2018 <- read_data(url_2018, skip = 1)
+  data_2019 <- read_data(url_2019, skip = 1)
+
   if(return_raw) {
     if(verbose) {
       message("Returning raw data, without processing.")
@@ -510,8 +518,8 @@ download_fh_electoral <- function(url,
 
   if(verbose) {
     message(sprintf("Original dataset has %d rows, but is not in country-year format",
-                    nrow(data)))
-    message("Processing the FH Electoral Democracies 2017 data - putting it in country-year format, adding state system info...")
+                    nrow(data) + nrow(data_2018) + nrow(data_2019)))
+    message("Processing the FH Electoral Democracies 2017-2019 data - putting it in country-year format, adding state system info...")
   }
 
   names(data) <- c('country', paste("electoral", 1989:2016, sep = "_"))
@@ -533,6 +541,39 @@ download_fh_electoral <- function(url,
                                             "South Vietnam",
                                             "East Germany"),
                                      warn_missing = FALSE)))
+
+  data_2018 <- suppressWarnings(data_2018 %>%
+                                  rename(electoral = `Electoral Democracy Status in FIW 2018`) %>%
+                                  mutate(year = 2017,
+                                         electoral = ifelse(electoral == "yes", TRUE, FALSE),
+                                         country = plyr::mapvalues(Country,
+                                                              from= c("Yemen, S.",
+                                                                      "Vietnam, S.",
+                                                                      "Germany, E."),
+                                                              to = c("South Yemen",
+                                                                     "South Vietnam",
+                                                                     "East Germany"),
+                                                              warn_missing = FALSE)) %>%
+                                  rename(country = Country))
+
+
+  data_2019 <- suppressWarnings(data_2019 %>%
+                                  rename(electoral = `Electoral Democracy Status in FIW 2019`) %>%
+                                  mutate(year = 2018,
+                                         electoral = ifelse(electoral == "yes", TRUE, FALSE),
+                                         country = plyr::mapvalues(Country,
+                                                                   from= c("Yemen, S.",
+                                                                           "Vietnam, S.",
+                                                                           "Germany, E."),
+                                                                   to = c("South Yemen",
+                                                                          "South Vietnam",
+                                                                          "East Germany"),
+                                                                   warn_missing = FALSE)) %>%
+                                  rename(country = Country))
+
+  data <- bind_rows(data,
+                    data_2018,
+                    data_2019)
 
   fh_electoral <- data %>%
     country_year_coder(country,
@@ -604,15 +645,21 @@ download_fh_electoral <- function(url,
 #'   information generated by [country_year_coder]. The dataset has the
 #'   following variables:
 #'
-#'   reign_cow: The COW code of the country in REIGN.
+#'   reign_cowcode: The COW code of the country in REIGN.
 #'
 #'   reign_country: The country name in REIGN.
+#'
+#'   gwf_casename: The case name in the [gwf] dataset.
+#'
+#'   gwf_startdate: The startdate of the case in the [gwf] dataset.
+#'
+#'   gwf_enddate: The enddate of the case in the [gwf] dataset.
 #'
 #'   Start: The start date of the regime.
 #'
 #'   End: The end date of the regime, or 31 December of the current year.
 #'
-#'   Type: The regime type. This is what the codebook says about the regime
+#'   gwf_regimetype: The regime type. This is what the codebook says about the regime
 #'   types:
 #'
 #'   DEMOCRACIES
@@ -731,21 +778,15 @@ download_reign <- function(url,
                            return_raw = FALSE,
                            ...) {
   if(missing(url)) {
-    url <- "https://docs.google.com/spreadsheets/d/1mrtORyhXw9TJMBYLAGPrikA4VDpla_Eq7L-NsEQ5VXg/edit#gid=1765819258"
+    url <- "https://github.com/OEFDataScience/REIGN.github.io/blob/gh-pages/data_sets/regime_list.csv?raw=true"
 
   }
 
-  COUNTRY <- NULL
-  cow <-  End <- Start <- datevalue <- year <- NULL
+  cowcode <- gwf_country <- gwf_casename <- gwf_startdate <- gwf_enddate <- gwf_regimetype <- NULL
+  Start <- End <- year <- NULL
 
-  data <- googlesheets::gs_url(url) %>%
-    googlesheets::gs_read(ws = "Regime List",
-                          col_names = c("cow",
-                                        "COUNTRY",
-                                        "Start",
-                                        "datevalue",
-                                        "End",
-                                        "Type"))
+  data <- read_data(url,
+                    verbose = verbose, file_extension = "csv")
 
   if(return_raw) {
     if(verbose) {
@@ -754,28 +795,27 @@ download_reign <- function(url,
     return(data)
   }
 
-  data <- data %>%
-    filter(cow != "COUNTRY CODE")
-
   reign <- data %>%
-    mutate(Start = lubridate::mdy(Start),
-           End = lubridate::mdy(End),
-           cow = as.double(cow)) %>%
+    mutate(Start = lubridate::mdy(gwf_startdate),
+           End = lubridate::mdy(gwf_enddate),
+           cow = as.double(cowcode),
+           gwf_country = case_when(gwf_country == "Cananda" ~ "Canada",
+                                   gwf_country == "UKG" ~ "United Kingdom",
+                                   TRUE ~ gwf_country)) %>%
     group_by_all() %>%
     mutate(year = list(lubridate::year(Start):lubridate::year(End))) %>%
     tidyr::unnest() %>%
     ungroup() %>%
     # filter(year < lubridate::year(lubridate::now())) %>% # If excluding the 2017 countries
-    country_year_coder(COUNTRY,
+    country_year_coder(gwf_country,
                        year,
-                       cow,
+                       cowcode,
                        code_type = "cown",
                        match_type = "country",
                        verbose = verbose,
-                       ...) %>%
-    select(-datevalue)
+                       ...)
 
-  standardize_columns(reign, COUNTRY, cow, verbose = verbose)
+  standardize_columns(reign, gwf_country, cowcode, verbose = verbose)
 }
 
 

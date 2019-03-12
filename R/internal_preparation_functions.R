@@ -135,17 +135,15 @@ prepare_eiu <- function(path = "EIU Democracy Index.csv",
   data <- readr::read_csv(path)
 
   if(verbose) {
-    message(sprintf("Original dataset has %d rows but is not in country-year format",
+    message(sprintf("Original dataset has %d rows and is in country-year format",
                     nrow(data)))
-    message("Processing the EIU data - turning to country-year format, adding state system info...")
+    message("Processing the EIU data - adding state system info...")
   }
 
   year <- country <- extended_country_name <- NULL
 
   eiu <- data %>%
-    tidyr::gather(year, eiu, matches("^[0-9]{4}$")) %>%
-    mutate(year = as.double(year),
-           country = plyr::mapvalues(country, from = "Saudi", to = "Saudi Arabia")) %>%
+    mutate(country = plyr::mapvalues(country, from = "Saudi", to = "Saudi Arabia")) %>%
     country_year_coder(country_col = country, date_col = year,
                        verbose = verbose,
                        ...) %>%

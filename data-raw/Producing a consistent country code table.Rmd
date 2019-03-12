@@ -393,7 +393,12 @@ data <- data %>% select(ends_with("country_name"),
 data <- data %>% 
   mutate(regex = ifelse(extended_country_name == "South Sudan", "\\bs\\w*.?sudan|sudan, south", regex))
 
+data <- democracyData::data %>% 
+  mutate(regex = ifelse(extended_country_name == "Swaziland", "swaziland|eswatini", regex))
+
 devtools::use_data(data, internal = TRUE, overwrite = TRUE)
+
+
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.

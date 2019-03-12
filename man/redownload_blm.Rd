@@ -115,11 +115,11 @@ redownload_anckar(url, verbose = TRUE, return_raw = FALSE, ...)
 
 redownload_bmr(url, verbose = TRUE, return_raw = FALSE, ...)
 
-redownload_bnr(url, verbose = TRUE, extend = FALSE, return_raw = FALSE,
-  ...)
+redownload_bnr(url, verbose = TRUE, extend = FALSE,
+  return_raw = FALSE, ...)
 
-redownload_gwf(url, verbose = TRUE, extend = FALSE, dataset = c("all",
-  "autocratic only"), return_raw = FALSE, ...)
+redownload_gwf(url, verbose = TRUE, extend = FALSE,
+  dataset = c("all", "autocratic only"), return_raw = FALSE, ...)
 
 redownload_lied(url, verbose = TRUE, return_raw = FALSE, ...)
 
@@ -129,13 +129,14 @@ redownload_peps(url, verbose = TRUE, return_raw = FALSE, ...)
 
 redownload_utip(url, verbose = TRUE, return_raw = FALSE, ...)
 
-redownload_wahman_teorell_hadenius(url, verbose = TRUE, return_raw = FALSE,
+redownload_wahman_teorell_hadenius(url, verbose = TRUE,
+  return_raw = FALSE, ...)
+
+redownload_polyarchy_original(url, verbose = TRUE, return_raw = FALSE,
   ...)
 
-redownload_polyarchy_original(url, verbose = TRUE, return_raw = FALSE, ...)
-
-redownload_polyarchy_dimensions(url, verbose = TRUE, return_raw = FALSE,
-  ...)
+redownload_polyarchy_dimensions(url, verbose = TRUE,
+  return_raw = FALSE, ...)
 
 redownload_magaloni(url, verbose = TRUE, extend = FALSE,
   return_raw = FALSE, ...)
@@ -143,8 +144,8 @@ redownload_magaloni(url, verbose = TRUE, extend = FALSE,
 redownload_svmdi(url, release_year = 2018, verbose = TRUE,
   return_raw = FALSE, ...)
 
-redownload_uds(release_year = 2014, verbose = TRUE, return_raw = FALSE,
-  ...)
+redownload_uds(release_year = 2014, verbose = TRUE,
+  return_raw = FALSE, ...)
 
 redownload_ulfelder(url, verbose = TRUE, return_raw = FALSE,
   extend = FALSE, ...)

@@ -475,7 +475,7 @@ generate_democracy_scores_dataset <- function(datasets,
       }
 
       democracy_data <- reign %>%
-        mutate_at("Type",
+        mutate_at("gwf_regimetype",
                   funs("reign_democracy" = (. %in% c("presidential",
                                                      "parliamentary")))) %>%
         tidyr::gather("measure", "value",
