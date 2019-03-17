@@ -188,7 +188,7 @@ democracy_info %>%
 | polyarchy                 | The Polyarchy Scale and the Contestation Scale                                                                | cont,poly                                                                              | ordinal       | NA              | TRUE                 | FALSE                      | FALSE            | TRUE         | TRUE                  |                   1990| NA                                                                                                                                                                                                                                                                                                                                  |
 | polyarchy\_dimensions     | Latent Dimensions of Contestation and Inclusiveness by Michael Coppedge, Angel Alvarez, and Claudia Maldonado | CONTEST,INCLUS                                                                         | continuous    | latent variable | FALSE                | FALSE                      | FALSE            | TRUE         | TRUE                  |                   2008| NA                                                                                                                                                                                                                                                                                                                                  |
 | prc\_gasiorowski          | The Political Regime Change (PRC) dataset.                                                                    | regime,prc,prc\_at\_end\_year,prc\_at\_beginning\_year                                 | trichotomous  | NA              | TRUE                 | FALSE                      | FALSE            | FALSE        | TRUE                  |                   1996| NA                                                                                                                                                                                                                                                                                                                                  |
-| reign                     | The Rulers, Elections, and Irregular Governance (REIGN) dataset, regime characteristics worksheet.            | Type                                                                                   | dichotomous   | GWF             | FALSE                | TRUE                       | FALSE            | TRUE         | FALSE                 |                   2016| NA                                                                                                                                                                                                                                                                                                                                  |
+| reign                     | The Rulers, Elections, and Irregular Governance (REIGN) dataset, regime characteristics worksheet.            | gwf\_regimetype                                                                        | dichotomous   | GWF             | FALSE                | TRUE                       | FALSE            | TRUE         | FALSE                 |                   2016| NA                                                                                                                                                                                                                                                                                                                                  |
 | svmdi                     | Suport Vector Machine Democracy Index by Grundler and Krieger                                                 | svmdi, csvmdi, dsvmdi                                                                  | continuous    | latent variable | FALSE                | FALSE                      | FALSE            | TRUE         | TRUE                  |                   2016| NA                                                                                                                                                                                                                                                                                                                                  |
 | svolik\_regime            | Milan Svolik's Regime Dataset                                                                                 | regime,regime\_numeric                                                                 | dichotomous   | PACL            | FALSE                | FALSE                      | FALSE            | FALSE        | TRUE                  |                   2012| NA                                                                                                                                                                                                                                                                                                                                  |
 | uds                       | The Unified Democracy Scores                                                                                  | mean,median                                                                            | continuous    | latent variable | FALSE                | FALSE                      | TRUE             | TRUE         | TRUE                  |                   2010| Can be extended using the package QuickUDS. (Use "devtools::install\_github("xmarquez/QuickUDS")"; the package is not on CRAN)                                                                                                                                                                                                      |
@@ -291,22 +291,22 @@ my_weird_democracy_data
 #> # A tibble: 16 x 3
 #>    country                      year my_measure
 #>    <chr>                       <dbl>      <dbl>
-#>  1 Germany                      2015     0.901 
-#>  2 Germany                      1930     0.981 
-#>  3 Germany                      1970    -0.182 
-#>  4 Germany                      1945    -0.372 
-#>  5 East Germany                 1949     1.52  
-#>  6 Federal Republic of Germany  1992     0.0611
-#>  7 Somaliland                   1990    -0.640 
-#>  8 Somalia                      1990    -0.0781
-#>  9 Palestine                    1940    -1.04  
-#> 10 Russia                       1917    -0.791 
-#> 11 Russia                       1912    -2.01  
-#> 12 USSR                         1922     1.02  
-#> 13 Republic of Vietnam          1975    -2.78  
-#> 14 Yugoslavia                   1990    -1.000 
-#> 15 Yugoslavia                   1991     0.240 
-#> 16 Vietnam, South               1954    -1.64
+#>  1 Germany                      2015      0.604
+#>  2 Germany                      1930     -0.860
+#>  3 Germany                      1970     -0.851
+#>  4 Germany                      1945      1.25 
+#>  5 East Germany                 1949      1.67 
+#>  6 Federal Republic of Germany  1992      1.16 
+#>  7 Somaliland                   1990     -0.219
+#>  8 Somalia                      1990     -0.624
+#>  9 Palestine                    1940     -2.05 
+#> 10 Russia                       1917     -0.662
+#> 11 Russia                       1912     -1.45 
+#> 12 USSR                         1922      0.329
+#> 13 Republic of Vietnam          1975      0.596
+#> 14 Yugoslavia                   1990     -0.345
+#> 15 Yugoslavia                   1991      1.02 
+#> 16 Vietnam, South               1954     -0.842
 ```
 
 and you then want to add state system information. `country_year_coder` does that for you!
@@ -333,22 +333,22 @@ my_weird_democracy_data %>%
 
 | country                     |  year|  my\_measure| extended\_country\_name      |  GWn|  cown|  polity\_ccode| in\_GW\_system | in\_cow\_system | in\_polity\_system | polity\_startdate | polity\_enddate |
 |:----------------------------|-----:|------------:|:-----------------------------|----:|-----:|--------------:|:---------------|:----------------|:-------------------|:------------------|:----------------|
-| Germany                     |  2015|    0.9006793| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
-| Germany                     |  1930|    0.9809178| Germany (Prussia)            |  255|   255|            255| TRUE           | TRUE            | TRUE               | 1871-01-19        | 1945-05-07      |
-| Germany                     |  1970|   -0.1823541| German Federal Republic      |  260|   260|            260| TRUE           | TRUE            | TRUE               | 1945-05-08        | 1990-10-02      |
-| Germany                     |  1945|   -0.3724544| German Federal Republic      |  260|   260|            260| FALSE          | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
-| East Germany                |  1949|    1.5247118| German Democratic Republic   |  265|   265|            265| TRUE           | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
-| Federal Republic of Germany |  1992|    0.0610816| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
-| Somaliland                  |  1990|   -0.6399238| Somaliland                   |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
-| Somalia                     |  1990|   -0.0780780| Somalia                      |  520|   520|            520| TRUE           | TRUE            | TRUE               | 1960-07-01        | NA              |
-| Palestine                   |  1940|   -1.0377382| British Mandate of Palestine |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
-| Russia                      |  1917|   -0.7906426| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
-| Russia                      |  1912|   -2.0122591| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
-| USSR                        |  1922|    1.0230527| Russia (Soviet Union)        |  365|   365|            364| TRUE           | TRUE            | TRUE               | 1922-12-30        | 1991-12-31      |
-| Republic of Vietnam         |  1975|   -2.7837534| Vietnam, Republic of         |  817|   817|            817| FALSE          | FALSE           | TRUE               | 1955-10-26        | 1975-12-31      |
-| Yugoslavia                  |  1990|   -0.9998506| Yugoslavia                   |  345|   345|            345| TRUE           | TRUE            | TRUE               | 1921-01-01        | 1991-07-01      |
-| Yugoslavia                  |  1991|    0.2398071| Yugoslavia                   |  345|   345|            347| TRUE           | TRUE            | TRUE               | 1991-07-01        | 2003-03-11      |
-| Vietnam, South              |  1954|   -1.6436210| Vietnam, Republic of         |  817|   817|            817| TRUE           | TRUE            | FALSE              | 1955-10-26        | 1975-12-31      |
+| Germany                     |  2015|    0.6037535| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
+| Germany                     |  1930|   -0.8601152| Germany (Prussia)            |  255|   255|            255| TRUE           | TRUE            | TRUE               | 1871-01-19        | 1945-05-07      |
+| Germany                     |  1970|   -0.8510557| German Federal Republic      |  260|   260|            260| TRUE           | TRUE            | TRUE               | 1945-05-08        | 1990-10-02      |
+| Germany                     |  1945|    1.2549562| German Federal Republic      |  260|   260|            260| FALSE          | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
+| East Germany                |  1949|    1.6667182| German Democratic Republic   |  265|   265|            265| TRUE           | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
+| Federal Republic of Germany |  1992|    1.1625834| German Federal Republic      |  260|   255|            255| TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
+| Somaliland                  |  1990|   -0.2189714| Somaliland                   |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
+| Somalia                     |  1990|   -0.6244969| Somalia                      |  520|   520|            520| TRUE           | TRUE            | TRUE               | 1960-07-01        | NA              |
+| Palestine                   |  1940|   -2.0497718| British Mandate of Palestine |   NA|    NA|             NA| FALSE          | FALSE           | FALSE              | NA                | NA              |
+| Russia                      |  1917|   -0.6616542| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
+| Russia                      |  1912|   -1.4530739| Russia (Soviet Union)        |  365|   365|            365| TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
+| USSR                        |  1922|    0.3286603| Russia (Soviet Union)        |  365|   365|            364| TRUE           | TRUE            | TRUE               | 1922-12-30        | 1991-12-31      |
+| Republic of Vietnam         |  1975|    0.5962780| Vietnam, Republic of         |  817|   817|            817| FALSE          | FALSE           | TRUE               | 1955-10-26        | 1975-12-31      |
+| Yugoslavia                  |  1990|   -0.3452285| Yugoslavia                   |  345|   345|            345| TRUE           | TRUE            | TRUE               | 1921-01-01        | 1991-07-01      |
+| Yugoslavia                  |  1991|    1.0156704| Yugoslavia                   |  345|   345|            347| TRUE           | TRUE            | TRUE               | 1991-07-01        | 2003-03-11      |
+| Vietnam, South              |  1954|   -0.8416716| Vietnam, Republic of         |  817|   817|            817| TRUE           | TRUE            | FALSE              | 1955-10-26        | 1975-12-31      |
 
 `country_year_coder` tries to match not just the country name or the country code (as `countrycode` does), but also to figure out the appropriate state system code *given* the year. (Above, for example, the function figures out that Germany 1970 should get a COW code of 260, but Germany 1992 should get 255 - though it should retain the 260 code in the Gleditsch and Ward system of states. This is, incidentally, how `download_fh` adds the correct COW and GW country codes to Freedom House's Excel data). It also tries to figure out whether a given country-year is in the specific state system list. (In the example above, Germany in 1945 is not listed as a member of the state system in either COW or Gleditsch and Ward, since it was occupied by the Allies as of 31 December 1945, but is listed as a member of the state system in Polity IV as the Federal Republic, though with a polity score of -66, "interregnum").
 
