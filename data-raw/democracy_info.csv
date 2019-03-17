@@ -25,7 +25,7 @@ polity_annual,The Polity IV dataset,"polity,polity2",ordinal,Polity,TRUE,FALSE,F
 polyarchy,The Polyarchy Scale and the Contestation Scale,"cont,poly",ordinal,NA,TRUE,FALSE,FALSE,TRUE,TRUE,1990,NA
 polyarchy_dimensions,"Latent Dimensions of Contestation and Inclusiveness by Michael Coppedge, Angel Alvarez, and Claudia Maldonado","CONTEST,INCLUS",continuous,latent variable,FALSE,FALSE,FALSE,TRUE,TRUE,2008,NA
 prc_gasiorowski,The Political Regime Change (PRC) dataset.,"regime,prc,prc_at_end_year,prc_at_beginning_year",trichotomous,NA,TRUE,FALSE,FALSE,FALSE,TRUE,1996,NA
-reign,"The Rulers, Elections, and Irregular Governance (REIGN) dataset, regime characteristics worksheet.",Type,dichotomous,GWF,FALSE,TRUE,FALSE,TRUE,FALSE,2016,NA
+reign,"The Rulers, Elections, and Irregular Governance (REIGN) dataset, regime characteristics worksheet.",gwf_regimetype,dichotomous,GWF,FALSE,TRUE,FALSE,TRUE,FALSE,2016,NA
 svmdi,Suport Vector Machine Democracy Index by Grundler and Krieger,"svmdi, csvmdi, dsvmdi",continuous,latent variable,FALSE,FALSE,FALSE,TRUE,TRUE,2016,NA
 svolik_regime,Milan Svolik's Regime Dataset,"regime,regime_numeric",dichotomous,PACL,FALSE,FALSE,FALSE,FALSE,TRUE,2012,NA
 uds,The Unified Democracy Scores,"mean,median",continuous,latent variable,FALSE,FALSE,TRUE,TRUE,TRUE,2010,"Can be extended using the package QuickUDS. (Use ""devtools::install_github(""xmarquez/QuickUDS"")""; the package is not on CRAN)"
