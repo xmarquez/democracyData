@@ -1,3 +1,7 @@
+# democracyData 0.2.3
+
+* Fixed download link for the SVMDI dataset, minor typo fixes.
+
 # democracyData 0.2.2
 
 * Updated `download_fh` and `download_fh_electoral` to download the latest version (2019, with data up to 2018) of Freedom House.

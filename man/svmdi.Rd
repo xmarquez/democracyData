@@ -5,7 +5,7 @@
 \alias{svmdi}
 \alias{svmdi_2016}
 \title{Suport Vector Machine Democracy Index by Grundler and Krieger}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 10230 rows and 14 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18228 rows and 9 columns.}
 \source{
 K. Grundler and T. Krieger. 2018. Machine Learning Indices, Political
 Institutions, and Economic Development. Report. CESifo Group Munich, 2018.
@@ -46,13 +46,9 @@ independent, C = colony, O = Occupied, P = Part of empire - e.g.,
 Azerbaijan between 1960 and 1990. Use \code{in_GW-system} for a consistent
 indicator.}
 
-\item{region}{Geographical region. (In the 2018 release only).}
-
 \item{region1}{Geographical region. (In the 2016 release only).}
 
 \item{region2}{Geographical region. (In the 2016 release only).}
-
-\item{continent}{Continent. (In the 2018 release only).}
 
 \item{csvmdi}{Continuous version of the support vector machine democracy
 index (In the 2018 release only). Ranges from 0 = least demcratic to 1 =
@@ -70,15 +66,6 @@ support vector machine democracy index (In the 2016 release only). }
 
 \item{svmdi_q95}{Upper confidence bound of the continuous version of the
 support vector machine democracy index (In the 2016 release only). }
-
-\item{csvmdimin}{Lower confidence bound of the continuous version of the
-support vector machine democracy index (In the 2018 release only). }
-
-\item{csvmdimin}{Upper confidence bound of the continuous version of the
-support vector machine democracy index. (In the 2018 release only). }
-
-\item{dsvmdi}{Dichotomous version of the support vector machine democracy
-index. (In the 2018 release only). 0 = not demcratic,  1 = democratic. }
 
 }
 }

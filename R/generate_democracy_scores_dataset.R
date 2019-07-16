@@ -1033,7 +1033,7 @@ generate_democracy_scores_dataset <- function(datasets,
     }
     democracy_data <- democracyData::svmdi %>%
       tidyr::gather("measure", "value",
-                    "csvmdi", "dsvmdi") %>%
+                    "csvmdi") %>%
       standardize_selection()
   }
 

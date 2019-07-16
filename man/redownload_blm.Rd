@@ -94,7 +94,7 @@ University. Original data and codebook available at
 Gründler, Klaus, and Tommy Krieger. 2018. “Machine Learning
 Indicators, Political Institutions, and Economic Development.” CESifo
 Working Paper. Original data available at
-\url{http://apps.wiwi.uni-wuerzburg.de/svmdi/}. Working paper available at
+\url{https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index\%20Upload.xlsx?dl=0}. Working paper available at
 \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}
 
 Pemstein, Daniel, Stephen Meserve, and James Melton. 2010. Democratic
@@ -181,10 +181,9 @@ redownload_pipe(url, verbose = TRUE, return_raw = FALSE, ...)
 \item For \link{peps}:
 \url{http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta}
 
-\item For \link{svmdi}: There is no default for the 2018 release; navigate
-to \url{http://apps.wiwi.uni-wuerzburg.de/svmdi/}, right-click the download
-button, and copy the link for the csv version of the dataset. For the 2016
-release, it defaults to
+\item For \link{svmdi}:
+\url{https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index\%20Upload.xlsx?dl=1}.
+For the 2016 release, it defaults to
 \url{http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta}
 
 \item For \link{utip}: \code{http://utip.lbj.utexas.edu/data/political
@@ -297,7 +296,8 @@ redownload_polyarchy_dimensions()}
 \dontrun{
 redownload_magaloni()}
 \dontrun{
-redownload_svmdi(release_year = 2016) # For 2018, you must manually specify the URL}
+redownload_svmdi(release_year = 2016)
+redownload_svmdi() # For release year 2018}
 \dontrun{
 redownload_uds()
 redownload_uds(2011)}

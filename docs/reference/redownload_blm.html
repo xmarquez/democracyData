@@ -203,10 +203,9 @@ have changed since the package was installed.</p>
 <a href='https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta'>https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta</a></p></li>
 <li><p>For <a href='peps.html'>peps</a>:
 <a href='http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta'>http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta</a></p></li>
-<li><p>For <a href='svmdi.html'>svmdi</a>: There is no default for the 2018 release; navigate
-to <a href='http://apps.wiwi.uni-wuerzburg.de/svmdi/'>http://apps.wiwi.uni-wuerzburg.de/svmdi/</a>, right-click the download
-button, and copy the link for the csv version of the dataset. For the 2016
-release, it defaults to
+<li><p>For <a href='svmdi.html'>svmdi</a>:
+<a href='https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index%20Upload.xlsx?dl=1'>https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index%20Upload.xlsx?dl=1</a>.
+For the 2016 release, it defaults to
 <a href='http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta'>http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta</a></p></li>
 <li><p>For <a href='utip.html'>utip</a>: <code>http://utip.lbj.utexas.edu/data/political
  regime data set RV.xls</code></p></li>
@@ -335,7 +334,7 @@ University. Original data and codebook available at
 <p>Gründler, Klaus, and Tommy Krieger. 2018. “Machine Learning
 Indicators, Political Institutions, and Economic Development.” CESifo
 Working Paper. Original data available at
-<a href='http://apps.wiwi.uni-wuerzburg.de/svmdi/'>http://apps.wiwi.uni-wuerzburg.de/svmdi/</a>. Working paper available at
+<a href='https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index%20Upload.xlsx?dl=0'>https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index%20Upload.xlsx?dl=0</a>. Working paper available at
 <a href='https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf'>https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf</a></p>
 <p>Pemstein, Daniel, Stephen Meserve, and James Melton. 2010. Democratic
 Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.
@@ -384,7 +383,8 @@ processing.</p>
 <span class='co'># }</span><span class='co'># NOT RUN {</span>
 <span class='fu'>redownload_magaloni</span>()
 <span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='fu'>redownload_svmdi</span>(<span class='kw'>release_year</span> <span class='kw'>=</span> <span class='fl'>2016</span>) <span class='co'># For 2018, you must manually specify the URL</span>
+<span class='fu'>redownload_svmdi</span>(<span class='kw'>release_year</span> <span class='kw'>=</span> <span class='fl'>2016</span>)
+<span class='fu'>redownload_svmdi</span>() <span class='co'># For release year 2018</span>
 <span class='co'># }</span><span class='co'># NOT RUN {</span>
 <span class='fu'>redownload_uds</span>()
 <span class='fu'>redownload_uds</span>(<span class='fl'>2011</span>)

@@ -21,6 +21,7 @@
 #'  \item For \link{anckar}:
 #'  \url{https://static-content.springer.com/esm/art\%3A10.1057\%2Fs41304-018-0149-8/MediaObjects/41304_2018_149_MOESM2_ESM.xlsx}
 #'
+#'
 #'  \item For \link{blm}: \code{http://www.blmdemocracy.gatech.edu/blm final
 #'  data.xls}
 #'
@@ -33,6 +34,7 @@
 #'  \item For \link{gwf_all} and \link{gwf_autocratic}:
 #'  \url{http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip}
 #'
+#'
 #'  \item For \link{LIED}:
 #'  \url{https://dataverse.harvard.edu/api/access/datafile/2863101}
 #'
@@ -42,10 +44,9 @@
 #'  \item For \link{peps}:
 #'  \url{http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta}
 #'
-#'  \item For \link{svmdi}: There is no default for the 2018 release; navigate
-#'  to \url{http://apps.wiwi.uni-wuerzburg.de/svmdi/}, right-click the download
-#'  button, and copy the link for the csv version of the dataset. For the 2016
-#'  release, it defaults to
+#'  \item For \link{svmdi}:
+#'  \url{https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index\%20Upload.xlsx?dl=1}.
+#'  For the 2016 release, it defaults to
 #'  \url{http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta}
 #'
 #'  \item For \link{utip}: \code{http://utip.lbj.utexas.edu/data/political
@@ -53,6 +54,7 @@
 #'
 #'  \item For \link{wahman_teorell_hadenius}:
 #'  \url{https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&d=1}
+#'
 #'
 #'  \item For \link{polyarchy}:
 #'  \url{https://www3.nd.edu/~mcoppedg/crd/poly8500.sav}
@@ -69,6 +71,7 @@
 #'  \url{http://www.unified-democracy-scores.org/files/20110104/uds_summary.csv.gz};
 #'   and for the 2010 release, to
 #'  \url{http://www.unified-democracy-scores.org/files/20100726/uds_summary.csv.gz}
+#'
 #'
 #'
 #'  \item For \link{ulfelder}:
@@ -1134,20 +1137,21 @@ redownload_magaloni <- function(url,
 #' @source Gründler, Klaus, and Tommy Krieger. 2018. “Machine Learning
 #'   Indicators, Political Institutions, and Economic Development.” CESifo
 #'   Working Paper. Original data available at
-#'   \url{http://apps.wiwi.uni-wuerzburg.de/svmdi/}. Working paper available at
+#'   \url{https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index\%20Upload.xlsx?dl=0}. Working paper available at
 #'   \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}
 #'
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#' redownload_svmdi(release_year = 2016) # For 2018, you must manually specify the URL}
+#' redownload_svmdi(release_year = 2016)
+#' redownload_svmdi() # For release year 2018}
 redownload_svmdi <- function(url,
                              release_year = 2018,
                              verbose = TRUE,
                              return_raw = FALSE,
                              ...) {
-  country <- year <- iso <- NULL
+  country <- year <- iso <- `ML Index` <- NULL
 
   if(!release_year %in% c(2018, 2016)) {
     release_year <- 2018
@@ -1155,8 +1159,7 @@ redownload_svmdi <- function(url,
   }
 
   if(release_year == 2018 & missing(url)) {
-    stop("You must manually specify the URL for the CSV version of the 2018 SVMDI dataset.
-         Navigate to http://apps.wiwi.uni-wuerzburg.de/svmdi/ and copy the download link.")
+    url <- "https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index%20Upload.xlsx?dl=1"
   } else if(release_year == 2016 & missing(url)) {
     url <- "http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta"
   }
@@ -1165,7 +1168,7 @@ redownload_svmdi <- function(url,
     data <- read_data(url,
                       verbose = verbose,
                       name = "svmdi",
-                      file_extension = "csv")
+                      file_extension = "xlsx")
   } else if(release_year == 2016) {
     data <- read_data(url,
                       verbose = verbose,
@@ -1205,6 +1208,11 @@ redownload_svmdi <- function(url,
 
   svmdi <- svmdi %>%
     select(-starts_with("id"), -starts_with("cid"), -starts_with("instrument"))
+
+  if(release_year == 2018) {
+    svmdi <- svmdi %>%
+      rename(csvmdi = `ML Index`)
+  }
 
   standardize_columns(svmdi, country, iso, verbose = verbose)
 

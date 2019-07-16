@@ -1932,13 +1932,9 @@
 #'   Azerbaijan between 1960 and 1990. Use `in_GW-system` for a consistent
 #'   indicator.}
 #'
-#'   \item{region}{Geographical region. (In the 2018 release only).}
-#'
 #'   \item{region1}{Geographical region. (In the 2016 release only).}
 #'
 #'   \item{region2}{Geographical region. (In the 2016 release only).}
-#'
-#'   \item{continent}{Continent. (In the 2018 release only).}
 #'
 #'   \item{csvmdi}{Continuous version of the support vector machine democracy
 #'   index (In the 2018 release only). Ranges from 0 = least demcratic to 1 =
@@ -1956,15 +1952,6 @@
 #'
 #'   \item{svmdi_q95}{Upper confidence bound of the continuous version of the
 #'   support vector machine democracy index (In the 2016 release only). }
-#'
-#'   \item{csvmdimin}{Lower confidence bound of the continuous version of the
-#'   support vector machine democracy index (In the 2018 release only). }
-#'
-#'   \item{csvmdimin}{Upper confidence bound of the continuous version of the
-#'   support vector machine democracy index. (In the 2018 release only). }
-#'
-#'   \item{dsvmdi}{Dichotomous version of the support vector machine democracy
-#'   index. (In the 2018 release only). 0 = not demcratic,  1 = democratic. }
 #'
 #'   }
 #'

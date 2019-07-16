@@ -91,7 +91,7 @@ All datasets in this package are fully documented; type `?pacl` for example to s
 
 ## Democracy data not available through this package
 
-I have not included the [Varieties of Democracy](https://www.v-dem.net/en/data/data-version-7-1/) dataset in this pacakge; you can access version 7.1 of this dataset via my [`vdem`](https://github.com/xmarquez/vdem) package (use `devtools::install_github("xmarquez/vdem")` to install).
+I have not included the [Varieties of Democracy](https://www.v-dem.net/en/data/data-version-9/) dataset in this package; you can access version 9 of this dataset via my [`vdem`](https://github.com/xmarquez/vdem) package (use `devtools::install_github("xmarquez/vdem")` to install).
 
 ## Combining all democracy datasets
 
