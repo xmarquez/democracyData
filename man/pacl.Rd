@@ -5,7 +5,11 @@
 \alias{pacl}
 \alias{pacl_pmm}
 \title{The Democracy and Dictatorship Dataset (DD/PACL/ACLP/CGV)}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 9159 rows and 82 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 9159 rows and 82 columns.
+
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 9067 rows and 7 columns.
+}
 \source{
 Cheibub, Jose Antonio, Jennifer Gandhi, and James Raymond Vreeland.
 2010. "Democracy and Dictatorship Revisited." Public Choice, vol. 143, no.
@@ -462,37 +466,65 @@ country-years when compared with \code{pacl}.
 }
 
 \seealso{
-Other democracy: \code{\link{LIED}}, \code{\link{PIPE}},
-  \code{\link{anckar}}, \code{\link{arat_pmm}},
-  \code{\link{blm}}, \code{\link{bmr}}, \code{\link{bnr}},
-  \code{\link{bollen_pmm}}, \code{\link{doorenspleet}},
-  \code{\link{download_fh_electoral}},
-  \code{\link{download_fh}}, \code{\link{download_reign}},
-  \code{\link{download_wgi_voice_and_accountability}},
-  \code{\link{eiu}}, \code{\link{fh_pmm}},
-  \code{\link{gwf_all}}, \code{\link{hadenius_pmm}},
-  \code{\link{kailitz}}, \code{\link{magaloni}},
-  \code{\link{mainwaring}}, \code{\link{munck_pmm}},
-  \code{\link{peps}}, \code{\link{pitf}},
-  \code{\link{polity_pmm}},
-  \code{\link{polyarchy_dimensions}},
-  \code{\link{polyarchy}}, \code{\link{prc_gasiorowski}},
-  \code{\link{svmdi}}, \code{\link{svolik_regime}},
-  \code{\link{uds_2014}}, \code{\link{ulfelder}},
-  \code{\link{utip}}, \code{\link{vanhanen}},
-  \code{\link{wahman_teorell_hadenius}}
+Other democracy: 
+\code{\link{LIED}},
+\code{\link{PIPE}},
+\code{\link{anckar}},
+\code{\link{arat_pmm}},
+\code{\link{blm}},
+\code{\link{bmr}},
+\code{\link{bnr}},
+\code{\link{bollen_pmm}},
+\code{\link{doorenspleet}},
+\code{\link{download_fh_electoral}()},
+\code{\link{download_fh_full}()},
+\code{\link{download_fh}()},
+\code{\link{download_reign}()},
+\code{\link{download_wgi_voice_and_accountability}()},
+\code{\link{eiu}},
+\code{\link{fh_pmm}},
+\code{\link{gwf_all}},
+\code{\link{hadenius_pmm}},
+\code{\link{kailitz}},
+\code{\link{magaloni}},
+\code{\link{mainwaring}},
+\code{\link{munck_pmm}},
+\code{\link{peps}},
+\code{\link{pitf}},
+\code{\link{polityIV}},
+\code{\link{polity_pmm}},
+\code{\link{polyarchy_dimensions}},
+\code{\link{polyarchy}},
+\code{\link{prc_gasiorowski}},
+\code{\link{svmdi}},
+\code{\link{svolik_regime}},
+\code{\link{uds_2014}},
+\code{\link{ulfelder}},
+\code{\link{utip}},
+\code{\link{vanhanen}},
+\code{\link{wahman_teorell_hadenius}}
 
-Other PMM replication data: \code{\link{arat_pmm}},
-  \code{\link{blm}}, \code{\link{bollen_pmm}},
-  \code{\link{fh_pmm}}, \code{\link{hadenius_pmm}},
-  \code{\link{mainwaring}}, \code{\link{munck_pmm}},
-  \code{\link{polity_pmm}}, \code{\link{prc_gasiorowski}}
+Other PMM replication data: 
+\code{\link{arat_pmm}},
+\code{\link{blm}},
+\code{\link{bollen_pmm}},
+\code{\link{fh_pmm}},
+\code{\link{hadenius_pmm}},
+\code{\link{mainwaring}},
+\code{\link{munck_pmm}},
+\code{\link{polity_pmm}},
+\code{\link{prc_gasiorowski}}
 
-Other dichotomous democracy indexes: \code{\link{anckar}},
-  \code{\link{bmr}}, \code{\link{bnr}},
-  \code{\link{doorenspleet}}, \code{\link{kailitz}},
-  \code{\link{svolik_regime}}, \code{\link{ulfelder}},
-  \code{\link{utip}}, \code{\link{wahman_teorell_hadenius}}
+Other dichotomous democracy indexes: 
+\code{\link{anckar}},
+\code{\link{bmr}},
+\code{\link{bnr}},
+\code{\link{doorenspleet}},
+\code{\link{kailitz}},
+\code{\link{svolik_regime}},
+\code{\link{ulfelder}},
+\code{\link{utip}},
+\code{\link{wahman_teorell_hadenius}}
 }
 \concept{PMM replication data}
 \concept{democracy}

@@ -5,12 +5,19 @@
 \title{Given a set of country-years, find appropriate country codes, standardized
 country names, and determine state system membership}
 \usage{
-country_year_coder(tbl, country_col, date_col, code_col,
-  code_type = "cown", to_system = c("GW", "polity", "cow"),
+country_year_coder(
+  tbl,
+  country_col,
+  date_col,
+  code_col,
+  code_type = "cown",
+  to_system = c("GW", "polity", "cow"),
   match_type = c("country and code", "code only"),
-  include_in_output = c("extended_country_name", "GWn", "cown",
-  "in_GW_system"), verbose = TRUE, debug = FALSE,
-  match_final_year = FALSE)
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = TRUE,
+  debug = FALSE,
+  match_final_year = FALSE
+)
 }
 \arguments{
 \item{tbl}{A data frame with (at least) country and year columns.}

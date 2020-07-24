@@ -7,3 +7,6 @@
 ^README-.*\.png$
 ^docs$
 ^vignettes$
+^\.git$
+^.git$
+^cache$

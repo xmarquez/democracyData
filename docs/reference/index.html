@@ -8,21 +8,29 @@
 
 <title>Function reference • democracyData</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,7 +38,9 @@
 
 
 
+
 <meta property="og:title" content="Function reference" />
+
 
 
 
@@ -44,9 +54,10 @@
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-index">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -60,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4</span>
       </span>
     </div>
 
@@ -68,7 +79,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -79,11 +90,10 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/xmarquez/democracyData">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/xmarquez/democracyData/">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -94,6 +104,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -117,6 +128,11 @@
           <p class="section-desc"></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
@@ -196,21 +212,28 @@ country names, and determine state system membership</p></td>
         <td>
           <p><code><a href="download_fh.html">download_fh()</a></code> </p>
         </td>
-        <td><p>Downloads the 2018 update of the Freedom House "Freedom in the World" data
+        <td><p>Downloads the 2020 update of the Freedom House "Freedom in the World" data
 and processes it using country_year_coder.</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="download_fh_electoral.html">download_fh_electoral()</a></code> </p>
         </td>
-        <td><p>Downloads the 2017 update of the Freedom House Electoral Democracies list
-and processes it using country_year_coder.</p></td>
+        <td><p>Downloads the 2020 update of the Freedom House Electoral Democracies list and
+processes it using country_year_coder.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="download_fh_full.html">download_fh_full()</a></code> </p>
+        </td>
+        <td><p>Downloads the 2020 update of the Freedom House "Freedom in the World" All
+Data 2013-2020 file and processes it using country_year_coder.</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="download_polity_annual.html">download_polity_annual()</a></code> </p>
         </td>
-        <td><p>Downloads the 2018 update of the Polity IV dataset (annual time series) and
+        <td><p>Downloads the 2020 update of the Polity 5 dataset (annual time series) and
 processes it using country_year_coder.</p></td>
       </tr><tr>
         
@@ -223,7 +246,7 @@ processes it using country_year_coder.</p></td>
         <td>
           <p><code><a href="download_wgi_voice_and_accountability.html">download_wgi_voice_and_accountability()</a></code> </p>
         </td>
-        <td><p>Download the latest version (data up to 2016) of the "Democracy, Voice, and
+        <td><p>Download the latest version (data up to 2018) of the "Democracy, Voice, and
 Accountability" index from the World Governance Indicators and process it via
 country_year_coder</p></td>
       </tr><tr>
@@ -269,7 +292,7 @@ this package</p></td>
         <td>
           <p><code><a href="LIED.html">LIED</a></code> </p>
         </td>
-        <td><p>The Lexical Index of Democracy, v. 3</p></td>
+        <td><p>The Lexical Index of Democracy, v. 5.2</p></td>
       </tr><tr>
         
         <td>
@@ -309,9 +332,15 @@ this package</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="pitf.html">pitf</a></code> </p>
+          <p><code><a href="pitf.html">pitf</a></code> <code><a href="pitf.html">pitf_p4</a></code> </p>
         </td>
         <td><p>PITF democracy indicator</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="polityIV.html">polityIV</a></code> </p>
+        </td>
+        <td><p>Polity IV</p></td>
       </tr><tr>
         
         <td>
@@ -340,9 +369,23 @@ Alvarez, and Claudia Maldonado</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="redownload_blm.html">redownload_blm()</a></code> <code><a href="redownload_blm.html">redownload_anckar()</a></code> <code><a href="redownload_blm.html">redownload_bmr()</a></code> <code><a href="redownload_blm.html">redownload_bnr()</a></code> <code><a href="redownload_blm.html">redownload_gwf()</a></code> <code><a href="redownload_blm.html">redownload_lied()</a></code> <code><a href="redownload_blm.html">redownload_pacl()</a></code> <code><a href="redownload_blm.html">redownload_peps()</a></code> <code><a href="redownload_blm.html">redownload_utip()</a></code> <code><a href="redownload_blm.html">redownload_wahman_teorell_hadenius()</a></code> <code><a href="redownload_blm.html">redownload_polyarchy_original()</a></code> <code><a href="redownload_blm.html">redownload_polyarchy_dimensions()</a></code> <code><a href="redownload_blm.html">redownload_magaloni()</a></code> <code><a href="redownload_blm.html">redownload_svmdi()</a></code> <code><a href="redownload_blm.html">redownload_uds()</a></code> <code><a href="redownload_blm.html">redownload_ulfelder()</a></code> <code><a href="redownload_blm.html">redownload_pipe()</a></code> </p>
+          <p><code><a href="redownload_blm.html">redownload_blm()</a></code> <code><a href="redownload_blm.html">redownload_anckar()</a></code> <code><a href="redownload_blm.html">redownload_bmr()</a></code> <code><a href="redownload_blm.html">redownload_bnr()</a></code> <code><a href="redownload_blm.html">redownload_gwf()</a></code> <code><a href="redownload_blm.html">redownload_pacl()</a></code> <code><a href="redownload_blm.html">redownload_peps()</a></code> <code><a href="redownload_blm.html">redownload_utip()</a></code> <code><a href="redownload_blm.html">redownload_wahman_teorell_hadenius()</a></code> <code><a href="redownload_blm.html">redownload_polyarchy_original()</a></code> <code><a href="redownload_blm.html">redownload_polyarchy_dimensions()</a></code> <code><a href="redownload_blm.html">redownload_magaloni()</a></code> <code><a href="redownload_blm.html">redownload_svmdi()</a></code> <code><a href="redownload_blm.html">redownload_ulfelder()</a></code> <code><a href="redownload_blm.html">redownload_pipe()</a></code> </p>
         </td>
         <td><p>Download and process various democracy datasets.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="redownload_lied.html">redownload_lied()</a></code> </p>
+        </td>
+        <td><p>Downloads the 2020 update (v. 5.2) of the Lexical Index of Electoral Democracy (annual time series, data to
+2019) and processes it using country_year_coder.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="redownload_polityIV.html">redownload_polityIV()</a></code> </p>
+        </td>
+        <td><p>Downloads the 2019 update of the Polity IV dataset (annual time series, to
+2018) and processes it using country_year_coder.</p></td>
       </tr><tr>
         
         <td>
@@ -392,13 +435,13 @@ Michael Wahman</p></td>
     </table>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
-    </ul>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -406,13 +449,16 @@ Michael Wahman</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

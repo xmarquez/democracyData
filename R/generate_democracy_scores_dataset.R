@@ -621,7 +621,8 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- bnr %>%
-      mutate_at("event", funs("bnr" = (1 - .))) %>%
+      mutate(across("event", list("bnr" = ~(1 - .)))) %>%
+      rename_at("event_bnr", quo(c("bnr"))) %>%
       tidyr::gather("measure", "value", "bnr") %>%
       standardize_selection()
 
@@ -1074,13 +1075,8 @@ generate_democracy_scores_dataset <- function(datasets,
     if(verbose) {
       message("Adding UDS 2014 data")
     }
-    if(force_redownload) {
-      uds_2014 <- redownload_uds(release_year = 2014,
-                                 verbose = verbose,
-                                 include_in_output = include_in_output)
-    } else {
-      uds_2014 <- democracyData::uds_2014
-    }
+
+    uds_2014 <- democracyData::uds_2014
 
     democracy_data <- uds_2014 %>%
       rename_at(c("mean", "median"),
@@ -1094,13 +1090,7 @@ generate_democracy_scores_dataset <- function(datasets,
     if(verbose) {
       message("Adding UDS 2011 data")
     }
-    if(force_redownload) {
-      uds_2011 <- redownload_uds(release_year = 2011,
-                                 verbose = verbose,
-                                 include_in_output = include_in_output)
-    } else {
-      uds_2011 <- democracyData::uds_2011
-    }
+    uds_2011 <- democracyData::uds_2011
 
     democracy_data <- uds_2011  %>%
       rename_at(c("mean", "median"),
@@ -1114,13 +1104,7 @@ generate_democracy_scores_dataset <- function(datasets,
     if(verbose) {
       message("Adding UDS 2010 data")
     }
-    if(force_redownload) {
-      uds_2010 <- redownload_uds(release_year = 2010,
-                                 verbose = verbose,
-                                 include_in_output = include_in_output)
-    } else {
-      uds_2010 <- democracyData::uds_2010
-    }
+    uds_2010 <- democracyData::uds_2010
 
     democracy_data <- uds_2010  %>%
       rename_at(c("mean", "median"),
@@ -1235,8 +1219,10 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- wahman_teorell_hadenius %>%
-      mutate_at("regime1ny", funs("wth_democ1" = (. == 100))) %>%
-      mutate_at("regimenyrobust", funs("wth_democrobust" = (. == 100))) %>%
+      mutate(across("regime1ny", list("wth_democ1" = ~(haven::zap_label(.) == 100)))) %>%
+      mutate(across("regimenyrobust", list("wth_democrobust" = ~(haven::zap_label(.) == 100)))) %>%
+      rename_at(c("regime1ny_wth_democ1", "regimenyrobust_wth_democrobust"),
+                quos(c("uds_2010_mean", "wth_democrobust"))) %>%
       tidyr::gather("measure", "value",
                     starts_with("wth_")) %>%
       standardize_selection()

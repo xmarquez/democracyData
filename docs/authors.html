@@ -8,21 +8,29 @@
 
 <title>Citation and Authors • democracyData</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="pkgdown.css" rel="stylesheet">
@@ -30,7 +38,9 @@
 
 
 
+
 <meta property="og:title" content="Citation and Authors" />
+
 
 
 
@@ -44,9 +54,10 @@
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-citation-authors">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -60,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4</span>
       </span>
     </div>
 
@@ -68,7 +79,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -79,11 +90,10 @@
   <a href="news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/xmarquez/democracyData">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/xmarquez/democracyData/">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -94,6 +104,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -103,11 +114,7 @@
       <small class="dont-index">Source: <a href='https://github.com/xmarquez/democracyData/blob/master/inst/CITATION'><code>inst/CITATION</code></a></small>
     </div>
 
-    <p>Anckar C, Fredriksson C (2018).
-&ldquo;Classifying political regimes 1800-2016: a typology and a new dataset.&rdquo;
-<em>European Political Science</em>.
-doi: <a href="http://doi.org/10.1057/s41304-018-0149-8">10.1057/s41304-018-0149-8</a>, <a href="https://doi.org/10.1057/s41304-018-0149-8">https://doi.org/10.1057/s41304-018-0149-8</a>. 
-</p>
+    <p></p>
     <pre>@Article{AnckarFredriksson2018,
   author = {Carsten Anckar and Cecilia Fredriksson},
   title = {Classifying political regimes 1800-2016: a typology and a new dataset},
@@ -117,10 +124,7 @@ doi: <a href="http://doi.org/10.1057/s41304-018-0149-8">10.1057/s41304-018-0149-
   year = {2018},
   type = {Journal Article},
 }</pre>
-    <p>Arat ZF (1991).
-<em>Democracy and human rights in developing countries</em>.
-Lynne Rienner Publishers, Boulder. 
-</p>
+    <p></p>
     <pre>@Book{Arat1991,
   author = {Zehra F. Arat},
   title = {Democracy and human rights in developing countries},
@@ -128,10 +132,7 @@ Lynne Rienner Publishers, Boulder.
   address = {Boulder},
   year = {1991},
 }</pre>
-    <p>Bell C (2016).
-&ldquo;The Rulers, Elections, and Irregular Governance Dataset (REIGN).&rdquo;
-<a href="http://oefresearch.org/datasets/reign">http://oefresearch.org/datasets/reign</a>. 
-</p>
+    <p></p>
     <pre>@Misc{reign2016,
   author = {Curtis Bell},
   title = {The Rulers, Elections, and Irregular Governance Dataset (REIGN)},
@@ -139,11 +140,7 @@ Lynne Rienner Publishers, Boulder.
   year = {2016},
   url = {http://oefresearch.org/datasets/reign},
 }</pre>
-    <p>Bernhard M, Nordstrom T, Reenock C (2001).
-&ldquo;Economic Performance, Institutional Intermediation, and Democratic Survival.&rdquo;
-<em>Journal of Politics</em>, <b>63</b>(3), 775-803.
-doi: <a href="http://doi.org/10.1111/0022-3816.00087">10.1111/0022-3816.00087</a>. 
-</p>
+    <p></p>
     <pre>@Article{bnr2001,
   author = {Michael Bernhard and Timothy Nordstrom and Christopher Reenock},
   title = {Economic Performance, Institutional Intermediation, and Democratic Survival},
@@ -154,11 +151,7 @@ doi: <a href="http://doi.org/10.1111/0022-3816.00087">10.1111/0022-3816.00087</a
   year = {2001},
   doi = {10.1111/0022-3816.00087},
 }</pre>
-    <p>Boix C, Miller M, Rosato S (2012).
-&ldquo;A Complete Dataset of Political Regimes, 1800-2007.&rdquo;
-<em>Comparative Political Studies</em>, <b>46</b>(12), 1523-1554.
-doi: <a href="http://doi.org/10.1177/0010414012463905">10.1177/0010414012463905</a>. 
-</p>
+    <p></p>
     <pre>@Article{bmr2007,
   author = {Carles Boix and Michael Miller and Sebastian Rosato},
   title = {A Complete Dataset of Political Regimes, 1800-2007},
@@ -169,9 +162,7 @@ doi: <a href="http://doi.org/10.1177/0010414012463905">10.1177/0010414012463905<
   year = {2012},
   doi = {10.1177/0010414012463905},
 }</pre>
-    <p>Bollen KA (2001).
-&ldquo;Cross-National Indicators of Liberal Democracy, 1950-1990.&rdquo; 
-</p>
+    <p></p>
     <pre>@Misc{Bollen2001,
   author = {Kenneth A. Bollen},
   title = {Cross-National Indicators of Liberal Democracy, 1950-1990},
@@ -179,11 +170,7 @@ doi: <a href="http://doi.org/10.1177/0010414012463905">10.1177/0010414012463905<
   year = {2001},
   type = {Data set},
 }</pre>
-    <p>Bollen K, Paxton P (2000).
-&ldquo;Subjective Measures of Liberal Democracy.&rdquo;
-<em>Comparative Political Studies</em>, <b>33</b>(1), 58-86.
-doi: <a href="http://doi.org/10.1177/0010414000033001003">10.1177/0010414000033001003</a>. 
-</p>
+    <p></p>
     <pre>@Article{BollenPaxton2000,
   author = {Kenneth Bollen and Pamela Paxton},
   title = {Subjective Measures of Liberal Democracy},
@@ -194,11 +181,7 @@ doi: <a href="http://doi.org/10.1177/0010414000033001003">10.1177/00104140000330
   year = {2000},
   doi = {10.1177/0010414000033001003},
 }</pre>
-    <p>Bowman K, Lehoucq F, Mahoney J (2005).
-&ldquo;Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America.&rdquo;
-<em>Comparative Political Studies</em>, <b>38</b>(8), 939-970.
-doi: <a href="http://doi.org/10.1177/0010414005277083">10.1177/0010414005277083</a>. 
-</p>
+    <p></p>
     <pre>@Article{blm2005,
   author = {Kirk Bowman and Fabrice Lehoucq and James Mahoney},
   title = {Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America},
@@ -209,11 +192,7 @@ doi: <a href="http://doi.org/10.1177/0010414005277083">10.1177/0010414005277083<
   year = {2005},
   doi = {10.1177/0010414005277083},
 }</pre>
-    <p>Cheibub J, Gandhi J, Vreeland J (2010).
-&ldquo;Democracy and dictatorship revisited.&rdquo;
-<em>Public Choice</em>, <b>143</b>(1), 67-101.
-doi: <a href="http://doi.org/10.1007/s11127-009-9491-2">10.1007/s11127-009-9491-2</a>. 
-</p>
+    <p></p>
     <pre>@Article{pacl2010,
   author = {José Cheibub and Jennifer Gandhi and James Vreeland},
   title = {Democracy and dictatorship revisited},
@@ -224,11 +203,7 @@ doi: <a href="http://doi.org/10.1007/s11127-009-9491-2">10.1007/s11127-009-9491-
   year = {2010},
   doi = {10.1007/s11127-009-9491-2},
 }</pre>
-    <p>Coppedge M, Alvarez A, Maldonado C (2008).
-&ldquo;Two Persistent Dimensions of Democracy: Contestation and Inclusiveness.&rdquo;
-<em>The journal of politics</em>, <b>70</b>(03), 632-647.
-doi: <a href="http://doi.org/10.1017/S0022381608080663">10.1017/S0022381608080663</a>. 
-</p>
+    <p></p>
     <pre>@Article{polyarchy_dimensions2008,
   author = {Michael Coppedge and Angel Alvarez and Claudia Maldonado},
   title = {Two Persistent Dimensions of Democracy: Contestation and Inclusiveness},
@@ -239,11 +214,7 @@ doi: <a href="http://doi.org/10.1017/S0022381608080663">10.1017/S002238160808066
   year = {2008},
   doi = {10.1017/S0022381608080663},
 }</pre>
-    <p>Coppedge M, Gerring J, Lindberg SI, Skaaning S, Jan Teorell wDA, Bernhard M, Fish MS, Glynn A, Hicken A, Knutsen CH, Kelly
-McMann, Paxton P, Pemstein D, Staton J, Zimmerman B, Andersson F, Valeriya
-Mechkova, Miri F (2016).
-&ldquo;V-Dem Codebook v6.&rdquo; 
-</p>
+    <p></p>
     <pre>@Misc{vdem2016,
   author = {Michael Coppedge and John Gerring and Staffan I. Lindberg and Svend-Erik Skaaning and with David Altman {Jan Teorell} and Michael Bernhard and M. Steven Fish and Adam Glynn and Allen Hicken and Carl Henrik Knutsen and {Kelly
 McMann} and Pamela Paxton and Daniel Pemstein and Jeffrey Staton and Brigitte Zimmerman and Frida Andersson and {Valeriya
@@ -252,10 +223,7 @@ Mechkova} and Farhad Miri},
   year = {2016},
   publisher = {Varieties of Democracy (V-Dem) Project},
 }</pre>
-    <p>Coppedge M, Gerring J, Lindberg SI, Skaaning S, Teorell J, Altman D, Bernhard M, Fish MS, Glynn A, Hicken A, Knutsen CH, Marquardt K, McMann K, Miri F, Paxton P, Pemstein D, Staton J, Tzelgov E, Wang Y, Zimmerman B (2016).
-&ldquo;V-Dem [Country-Year/Country-Date] Dataset, version 6.1.&rdquo;
-<a href="https://www.v-dem.net/en/data/data-version-6-1/">https://www.v-dem.net/en/data/data-version-6-1/</a>. 
-</p>
+    <p></p>
     <pre>@Misc{vdem2016dataset,
   author = {Michael Coppedge and John Gerring and Staffan I. Lindberg and Svend-Erik Skaaning and Jan Teorell and David Altman and Michael Bernhard and M. Steven Fish and Adam Glynn and Allen Hicken and Carl Henrik Knutsen and Kyle Marquardt and Kelly McMann and Farhad Miri and Pamela Paxton and Daniel Pemstein and Jeffrey Staton and Eitan Tzelgov and Yi-ting Wang and Brigitte Zimmerman},
   year = {2016},
@@ -265,11 +233,7 @@ Mechkova} and Farhad Miri},
   publisher = {Varieties of Democracy (V-Dem) Project},
   url = {https://www.v-dem.net/en/data/data-version-6-1/},
 }</pre>
-    <p>Coppedge M, Reinicke WH (1990).
-&ldquo;Measuring Polyarchy.&rdquo;
-<em>Studies in Comparative International Development</em>, <b>25</b>(1), 51-72.
-doi: <a href="http://doi.org/10.1007/Bf02716905">10.1007/Bf02716905</a>. 
-</p>
+    <p></p>
     <pre>@Article{polyarchy1990,
   author = {Michael Coppedge and Wolfgang H. Reinicke},
   title = {Measuring Polyarchy},
@@ -280,11 +244,7 @@ doi: <a href="http://doi.org/10.1007/Bf02716905">10.1007/Bf02716905</a>.
   year = {1990},
   doi = {10.1007/Bf02716905},
 }</pre>
-    <p>Doorenspleet R (2000).
-&ldquo;Reassessing the Three Waves of Democratization.&rdquo;
-<em>World Politics</em>, <b>52</b>(03), 384-406.
-doi: <a href="http://doi.org/10.1017/S0043887100016580">10.1017/S0043887100016580</a>. 
-</p>
+    <p></p>
     <pre>@Article{doorenspleet2000,
   author = {Renske Doorenspleet},
   title = {Reassessing the Three Waves of Democratization},
@@ -295,23 +255,15 @@ doi: <a href="http://doi.org/10.1017/S0043887100016580">10.1017/S004388710001658
   year = {2000},
   doi = {10.1017/S0043887100016580},
 }</pre>
-    <p>Freedom House (2018).
-&ldquo;Freedom in the World 2018: Democracy in Crisis.&rdquo;
-Freedom House.
-<a href="https://freedomhouse.org/sites/default/files/FH_FITW_Report_2018_Final_SinglePage.pdf">https://freedomhouse.org/sites/default/files/FH_FITW_Report_2018_Final_SinglePage.pdf</a>. 
-</p>
-    <pre>@TechReport{fh2018,
+    <p></p>
+    <pre>@TechReport{fh2020,
   author = {{Freedom House}},
-  title = {Freedom in the World 2018: Democracy in Crisis},
+  title = {Freedom in the World 2020: A Leaderless Struggle For Democracy},
   institution = {Freedom House},
-  url = {https://freedomhouse.org/sites/default/files/FH_FITW_Report_2018_Final_SinglePage.pdf},
-  year = {2018},
+  url = {https://freedomhouse.org/report/freedom-world/2020/leaderless-struggle-democracy},
+  year = {2020},
 }</pre>
-    <p>Gasiorowski M (1996).
-&ldquo;An Overview of the Political Regime Change Dataset.&rdquo;
-<em>Comparative Political Studies</em>, <b>29</b>(4), 469-483.
-doi: <a href="http://doi.org/10.1177/0010414096029004004">10.1177/0010414096029004004</a>. 
-</p>
+    <p></p>
     <pre>@Article{prc_gasiorowski1996,
   author = {Mark Gasiorowski},
   title = {An Overview of the Political Regime Change Dataset},
@@ -322,11 +274,7 @@ doi: <a href="http://doi.org/10.1177/0010414096029004004">10.1177/00104140960290
   year = {1996},
   doi = {10.1177/0010414096029004004},
 }</pre>
-    <p>Geddes B, Wright J, Frantz E (2014).
-&ldquo;Autocratic Breakdown and Regime Transitions: A New Data Set.&rdquo;
-<em>Perspectives on Politics</em>, <b>12</b>(1), 313-331.
-doi: <a href="http://doi.org/10.1017/S1537592714000851">10.1017/S1537592714000851</a>. 
-</p>
+    <p></p>
     <pre>@Article{gwf2014,
   author = {Barbara Geddes and Joseph Wright and Erica Frantz},
   title = {Autocratic Breakdown and Regime Transitions: A New Data Set},
@@ -337,11 +285,7 @@ doi: <a href="http://doi.org/10.1017/S1537592714000851">10.1017/S153759271400085
   pages = {313-331},
   year = {2014},
 }</pre>
-    <p>Gleditsch K, Ward MD (1999).
-&ldquo;Interstate system membership: A revised list of independent states since the congress of Vienna.&rdquo;
-<em>International Interactions</em>, <b>25</b>(4), 393-413.
-doi: <a href="http://doi.org/10.1080/03050629908434958">10.1080/03050629908434958</a>. 
-</p>
+    <p></p>
     <pre>@Article{Gleditsch1999,
   author = {Kristian Gleditsch and Michael D. Ward},
   title = {Interstate system membership: A revised list of independent states since the congress of Vienna},
@@ -352,11 +296,7 @@ doi: <a href="http://doi.org/10.1080/03050629908434958">10.1080/0305062990843495
   year = {1999},
   doi = {10.1080/03050629908434958},
 }</pre>
-    <p>Goldstone J, Bates R, Epstein D, Gurr T, Lustik M, Marshall M, Ulfelder J, Woodward M (2010).
-&ldquo;A Global Model for Forecasting Political Instability.&rdquo;
-<em>American Journal of Political Science</em>, <b>54</b>(1), 190-208.
-doi: <a href="http://doi.org/10.1111/j.1540-5907.2009.00426.x">10.1111/j.1540-5907.2009.00426.x</a>. 
-</p>
+    <p></p>
     <pre>@Article{pitf2010,
   author = {Jack Goldstone and Robert Bates and David Epstein and Ted Gurr and Michael Lustik and Monty Marshall and Jay Ulfelder and Mark Woodward},
   title = {A Global Model for Forecasting Political Instability},
@@ -367,13 +307,9 @@ doi: <a href="http://doi.org/10.1111/j.1540-5907.2009.00426.x">10.1111/j.1540-59
   year = {2010},
   doi = {10.1111/j.1540-5907.2009.00426.x},
 }</pre>
-    <p>Gr\: undler K, Krieger T (2016).
-&ldquo;Democracy and growth: Evidence from a machine learning indicator.&rdquo;
-<em>European Journal of Political Economy</em>, <b>45</b>, 85-107.
-doi: <a href="http://doi.org/https://doi.org/10.1016/j.ejpoleco.2016.05.005">https://doi.org/10.1016/j.ejpoleco.2016.05.005</a>, <a href="http://www.sciencedirect.com/science/article/pii/S0176268016300222">http://www.sciencedirect.com/science/article/pii/S0176268016300222</a>. 
-</p>
+    <p></p>
     <pre>@Article{svmdi2016,
-  author = {Klaus Gr\:undler and Tommy Krieger},
+  author = {Klaus Gründler and Tommy Krieger},
   title = {Democracy and growth: Evidence from a machine learning indicator},
   journal = {European Journal of Political Economy},
   volume = {45},
@@ -383,23 +319,16 @@ doi: <a href="http://doi.org/https://doi.org/10.1016/j.ejpoleco.2016.05.005">htt
   year = {2016},
   type = {Journal Article},
 }</pre>
-    <p>Gr\: undler K, Krieger T (2018).
-&ldquo;Machine Learning Indices, Political Institutions, and Economic Development.&rdquo;
-CESifo Group Munich.
-<a href="https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf">https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf</a>. 
-</p>
+    <p></p>
     <pre>@TechReport{svmdi2018,
-  author = {Klaus Gr\:undler and Tommy Krieger},
+  author = {Klaus Gründler and Tommy Krieger},
   title = {Machine Learning Indices, Political Institutions, and Economic Development},
   institution = {CESifo Group Munich},
   year = {2018},
   type = {Report},
   url = {https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf},
 }</pre>
-    <p>Hadenius A (1992).
-<em>Democracy and development</em>.
-Cambridge University Press, New York. 
-</p>
+    <p></p>
     <pre>@Book{hadenius1992,
   author = {Axel Hadenius},
   title = {Democracy and development},
@@ -407,10 +336,7 @@ Cambridge University Press, New York.
   address = {New York},
   year = {1992},
 }</pre>
-    <p>Hadenius A, Teorell J (2007).
-&ldquo;Pathways from Authoritarianism.&rdquo;
-<em>Journal of Democracy</em>, <b>18</b>(1), 143-157. 
-</p>
+    <p></p>
     <pre>@Article{wahman_teorell_hadenius2007,
   author = {Axel Hadenius and Jan Teorell},
   title = {Pathways from Authoritarianism},
@@ -420,10 +346,7 @@ Cambridge University Press, New York.
   pages = {143-157},
   year = {2007},
 }</pre>
-    <p>Hsu S (2008).
-&ldquo;The Effect of Political Regimes on Inequality, 1963-2002.&rdquo;
-<em>UTIP Working Paper</em>. 
-</p>
+    <p></p>
     <pre>@Article{utip2008,
   author = {Sara Hsu},
   title = {The Effect of Political Regimes on Inequality, 1963-2002},
@@ -431,11 +354,7 @@ Cambridge University Press, New York.
   number = {53},
   year = {2008},
 }</pre>
-    <p>Kailitz S (2013).
-&ldquo;Classifying political regimes revisited: legitimation and durability.&rdquo;
-<em>Democratization</em>, <b>20</b>(1), 39-60.
-doi: <a href="http://doi.org/10.1080/13510347.2013.738861">10.1080/13510347.2013.738861</a>. 
-</p>
+    <p></p>
     <pre>@Article{Kailitz2013,
   author = {Steffen Kailitz},
   title = {Classifying political regimes revisited: legitimation and durability},
@@ -446,21 +365,15 @@ doi: <a href="http://doi.org/10.1080/13510347.2013.738861">10.1080/13510347.2013
   doi = {10.1080/13510347.2013.738861},
   year = {2013},
 }</pre>
-    <p>Kaufmann D, Kraay A (2017).
-&ldquo;Worldwide Governance Indicators.&rdquo;
-<a href="http://www.govindicators.org">http://www.govindicators.org</a>. 
-</p>
+    <p></p>
     <pre>@Misc{wgi2017,
   author = {Daniel Kaufmann and Aart Kraay},
   title = {Worldwide Governance Indicators},
   publisher = {The World Bank Research Group},
-  year = {2017},
+  year = {2019},
   url = {http://www.govindicators.org},
 }</pre>
-    <p>Magaloni B, Chu J, Min E (2013).
-&ldquo;Autocracies of the World, 1950-2012 (Version 1.0).&rdquo;
-<a href="http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset">http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset</a>. 
-</p>
+    <p></p>
     <pre>@Misc{MagaloniChuMin2013,
   title = {{Autocracies of the World, 1950-2012 (Version 1.0)}},
   author = {Beatriz Magaloni and Jonathan Chu and Eric Min},
@@ -468,13 +381,9 @@ doi: <a href="http://doi.org/10.1080/13510347.2013.738861">10.1080/13510347.2013
   type = {Dataset},
   url = {http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset},
 }</pre>
-    <p>Mainwaring S, Brinks D, PÃ©rez-LiÃ±Ã¡n A (2001).
-&ldquo;Classifying Political Regimes in Latin America.&rdquo;
-<em>Studies in Comparative International Development</em>, <b>36</b>(1), 37-65.
-doi: <a href="http://doi.org/10.1007/bf02687584">10.1007/bf02687584</a>. 
-</p>
+    <p></p>
     <pre>@Article{mainwaring2001,
-  author = {Scott Mainwaring and Daniel Brinks and AnÃ­bal Pérez-Liñán},
+  author = {Scott Mainwaring and Daniel Brinks and An\'ibal Pérez-Liñán},
   title = {Classifying Political Regimes in Latin America},
   journal = {Studies in Comparative International Development},
   volume = {36},
@@ -483,13 +392,9 @@ doi: <a href="http://doi.org/10.1007/bf02687584">10.1007/bf02687584</a>.
   year = {2001},
   doi = {10.1007/bf02687584},
 }</pre>
-    <p>Mainwaring S, PÃ©rez-LiÃ±Ã¡n A, Brinks D (2014).
-&ldquo;Political Regimes in Latin America, 1900-2007 (with Daniel Brinks).&rdquo;
-In <em>Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall</em>, chapter Political Regimes in Latin America, 1900-2007 (with Daniel Brinks).
-Cambridge University Press, New York. 
-</p>
+    <p></p>
     <pre>@InBook{mainwaring2014,
-  author = {Scott Mainwaring and Aníbal Pérez-Liñán and Daniel Brinks},
+  author = {Scott Mainwaring and An\'ibal Pérez-Liñán and Daniel Brinks},
   chapter = {Political Regimes in Latin America, 1900-2007 (with Daniel Brinks)},
   title = {Political Regimes in Latin America, 1900-2007 (with Daniel Brinks)},
   booktitle = {Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall},
@@ -497,30 +402,28 @@ Cambridge University Press, New York.
   address = {New York},
   year = {2014},
 }</pre>
-    <p>MÃ¡rquez X (2017).
-&ldquo;democracyData: A package for accessing and manipulating existing measures of democracy.&rdquo;
-<a href="http://github.com/xmarquez/democracyData">http://github.com/xmarquez/democracyData</a>. 
-</p>
-    <pre>@Misc{marquez2017democracyData,
+    <p></p>
+    <pre>@Misc{marquez2020democracyData,
   author = {Xavier Márquez},
   title = {democracyData: A package for accessing and manipulating existing measures of democracy.},
-  year = {2017},
+  year = {2020},
   url = {http://github.com/xmarquez/democracyData},
 }</pre>
-    <p>Marshall MG, Gurr TR, Jaggers K (2015).
-<em>Polity IV Project: Political Regime Characteristics and Transitions, 1800-2015. Dataset Users' Manual.</em>. 
-</p>
-    <pre>@Manual{polity2015,
-  author = {Monty G. Marshall and Ted Robert Gurr and Keith Jaggers},
-  title = {Polity IV Project: Political Regime Characteristics and Transitions, 1800-2015. Dataset Users' Manual.},
+    <p></p>
+    <pre>@Manual{polity2020,
+  author = {Monty G. Marshall and Ted Robert Gurr},
+  title = {Polity 5: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual.},
   publisher = {Center for Systemic Peace},
-  year = {2015},
+  year = {2020},
 }</pre>
-    <p>Moon BE, Birdsall JH, Ciesluk S, Garlett LM, Hermias JJ, Mendenhall E, Schmid PD, Wong WH (2006).
-&ldquo;Voting Counts: Participation in the Measurement of Democracy.&rdquo;
-<em>Studies in Comparative International Development</em>, <b>41</b>(2), 3-32.
-doi: <a href="http://doi.org/10.1007/BF02686309">10.1007/BF02686309</a>. 
-</p>
+    <p></p>
+    <pre>@Manual{polity2019,
+  author = {Monty G. Marshall and Ted Robert Gurr and Keith Jaggers},
+  title = {Polity IV Project: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual.},
+  publisher = {Center for Systemic Peace},
+  year = {2019},
+}</pre>
+    <p></p>
     <pre>@Article{peps2006,
   author = {Bruce E. Moon and Jennifer Harvey Birdsall and Sylvia Ciesluk and Lauren M. Garlett and Joshua J. Hermias and Elizabeth Mendenhall and Patrick D. Schmid and Wai Hong Wong},
   title = {Voting Counts: Participation in the Measurement of Democracy},
@@ -531,10 +434,7 @@ doi: <a href="http://doi.org/10.1007/BF02686309">10.1007/BF02686309</a>.
   year = {2006},
   doi = {10.1007/BF02686309},
 }</pre>
-    <p>Munck G (2009).
-<em>Measuring Democracy: A Bridge between Scholarship and Politics</em>.
-The Johns Hopkins University Press, Baltimore. 
-</p>
+    <p></p>
     <pre>@Book{munck2009,
   author = {Gerardo Munck},
   title = {Measuring Democracy: A Bridge between Scholarship and Politics},
@@ -542,10 +442,7 @@ The Johns Hopkins University Press, Baltimore.
   address = {Baltimore},
   year = {2009},
 }</pre>
-    <p>Pemstein D, Meserve SA, Melton J (2013).
-&ldquo;Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.&rdquo;
-<a href="http://hdl.handle.net/1902.1/PMM">http://hdl.handle.net/1902.1/PMM</a>. 
-</p>
+    <p></p>
     <pre>@Misc{pmm2013uds2010,
   author = {Daniel Pemstein and Stephen A. Meserve and James Melton},
   title = {Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type},
@@ -553,11 +450,7 @@ The Johns Hopkins University Press, Baltimore.
   year = {2013},
   url = {http://hdl.handle.net/1902.1/PMM},
 }</pre>
-    <p>Pemstein D, Meserve S, Melton J (2010).
-&ldquo;Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.&rdquo;
-<em>Political Analysis</em>, <b>18</b>(4), 426-449.
-doi: <a href="http://doi.org/10.1093/pan/mpq020">10.1093/pan/mpq020</a>. 
-</p>
+    <p></p>
     <pre>@Article{pmm2010uds2010,
   title = {{Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}},
   author = {Daniel Pemstein and Stephen Meserve and James Melton},
@@ -568,10 +461,7 @@ doi: <a href="http://doi.org/10.1093/pan/mpq020">10.1093/pan/mpq020</a>.
   volume = {18},
   doi = {10.1093/pan/mpq020},
 }</pre>
-    <p>Przeworski A (2013).
-&ldquo;Political Institutions and Political Events (PIPE) Data Set.&rdquo;
-<a href="https://sites.google.com/a/nyu.edu/adam-przeworski/home/data">https://sites.google.com/a/nyu.edu/adam-przeworski/home/data</a>. 
-</p>
+    <p></p>
     <pre>@Misc{PIPE2013,
   title = {{Political Institutions and Political Events (PIPE) Data Set}},
   author = {Adam Przeworski},
@@ -580,11 +470,7 @@ doi: <a href="http://doi.org/10.1093/pan/mpq020">10.1093/pan/mpq020</a>.
   type = {Data set},
   url = {https://sites.google.com/a/nyu.edu/adam-przeworski/home/data},
 }</pre>
-    <p>Reich G (2002).
-&ldquo;Categorizing Political Regimes: New Data for Old Problems.&rdquo;
-<em>Democratization</em>, <b>9</b>(4), 1-24.
-doi: <a href="http://doi.org/10.1080/714000289">10.1080/714000289</a>. 
-</p>
+    <p></p>
     <pre>@Article{prc_gasiorowski2002,
   author = {G. Reich},
   title = {Categorizing Political Regimes: New Data for Old Problems},
@@ -595,11 +481,7 @@ doi: <a href="http://doi.org/10.1080/714000289">10.1080/714000289</a>.
   year = {2002},
   doi = {10.1080/714000289},
 }</pre>
-    <p>Skaaning S, Gerring J, Bartusevicius H (2015).
-&ldquo;A Lexical Index of Electoral Democracy.&rdquo;
-<em>Comparative Political Studies</em>, <b>48</b>(12), 1491-1525.
-doi: <a href="http://doi.org/10.1177/0010414015581050">10.1177/0010414015581050</a>. 
-</p>
+    <p></p>
     <pre>@Article{LIED2015,
   author = {Svend-Erik Skaaning and John Gerring and Henrikas Bartusevičius},
   title = {A Lexical Index of Electoral Democracy},
@@ -610,10 +492,7 @@ doi: <a href="http://doi.org/10.1177/0010414015581050">10.1177/0010414015581050<
   doi = {10.1177/0010414015581050},
   year = {2015},
 }</pre>
-    <p>Svolik M (2012).
-<em>The Politics of Authoritarian Rule</em>.
-Cambridge University Press, Cambridge. 
-</p>
+    <p></p>
     <pre>@Book{svolik2012,
   title = {{The Politics of Authoritarian Rule}},
   author = {Milan Svolik},
@@ -621,11 +500,7 @@ Cambridge University Press, Cambridge.
   year = {2012},
   address = {Cambridge},
 }</pre>
-    <p>Taylor SJ, Ulfelder J (2015).
-&ldquo;A Measurement Error Model of Dichotomous Democracy Status.&rdquo;
-<em>Available at SSRN</em>.
-doi: <a href="http://doi.org/10.2139/ssrn.2726962">10.2139/ssrn.2726962</a>. 
-</p>
+    <p></p>
     <pre>@Article{pitf2015,
   author = {Sean J Taylor and Jay Ulfelder},
   title = {A Measurement Error Model of Dichotomous Democracy Status},
@@ -633,20 +508,14 @@ doi: <a href="http://doi.org/10.2139/ssrn.2726962">10.2139/ssrn.2726962</a>.
   year = {2015},
   doi = {10.2139/ssrn.2726962},
 }</pre>
-    <p>The Economist Intelligence Unit (2018).
-&ldquo;Democracy Index 2017: Free Speech under Attack.&rdquo;
-The Economist Intelligence Unit. 
-</p>
-    <pre>@TechReport{eiu2018,
+    <p></p>
+    <pre>@TechReport{eiu2020,
   author = {{The Economist Intelligence Unit}},
-  title = {Democracy Index 2017: Free Speech under Attack},
+  title = {Democracy Index 2019: A year of democratic setbacks and popular protest},
   institution = {{The Economist Intelligence Unit}},
-  year = {2018},
+  year = {2020},
 }</pre>
-    <p>Ulfelder J (2012).
-&ldquo;Democracy/Autocracy Data Set.&rdquo;
-<a href="http://hdl.handle.net/1902.1/18836">http://hdl.handle.net/1902.1/18836</a>. 
-</p>
+    <p></p>
     <pre>@Misc{ulfelder2012,
   author = {Jay Ulfelder},
   title = {Democracy/Autocracy Data Set},
@@ -654,11 +523,7 @@ The Economist Intelligence Unit.
   year = {2012},
   url = {http://hdl.handle.net/1902.1/18836},
 }</pre>
-    <p>Ulfelder J, Lustik M (2007).
-&ldquo;Modelling Transitions To and From Democracy.&rdquo;
-<em>Democratization</em>, <b>14</b>(3), 351-387.
-doi: <a href="http://doi.org/10.1080/13510340701303196">10.1080/13510340701303196</a>. 
-</p>
+    <p></p>
     <pre>@Article{ulfelder2007,
   author = {Jay Ulfelder and Michael Lustik},
   title = {Modelling Transitions To and From Democracy},
@@ -669,10 +534,7 @@ doi: <a href="http://doi.org/10.1080/13510340701303196">10.1080/1351034070130319
   year = {2007},
   doi = {10.1080/13510340701303196},
 }</pre>
-    <p>Vanhanen T (2014).
-&ldquo;Measures of Democracy 1810-2012.&rdquo;
-<a href="http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html">http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html</a>. 
-</p>
+    <p></p>
     <pre>@Misc{vanhanen2014,
   author = {Tatu Vanhanen},
   title = {Measures of Democracy 1810-2012},
@@ -681,11 +543,7 @@ doi: <a href="http://doi.org/10.1080/13510340701303196">10.1080/1351034070130319
   year = {2014},
   url = {http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html},
 }</pre>
-    <p>Wahman M, Teorell J, Hadenius A (2013).
-&ldquo;Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective.&rdquo;
-<em>Contemporary Politics</em>, <b>19</b>(1), 19-34.
-<a href="https://sites.google.com/site/authoritarianregimedataset/data">https://sites.google.com/site/authoritarianregimedataset/data</a>. 
-</p>
+    <p></p>
     <pre>@Article{wahman_teorell_hadenius2013,
   title = {{Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective}},
   author = {Michael Wahman and Jan Teorell and Axel Hadenius},
@@ -696,6 +554,7 @@ doi: <a href="http://doi.org/10.1080/13510340701303196">10.1080/1351034070130319
   volume = {19},
   url = {https://sites.google.com/site/authoritarianregimedataset/data},
 }</pre>
+
     <div class="page-header">
       <h1>Authors</h1>
     </div>
@@ -712,19 +571,23 @@ doi: <a href="http://doi.org/10.1080/13510340701303196">10.1080/1351034070130319
 </div>
 
 
+
       <footer>
       <div class="copyright">
   <p>Developed by Xavier Marquez.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

@@ -1,4 +1,171 @@
 country,year,eiu
+Canada,2019,9.22
+US,2019,7.96
+Austria,2019,8.29
+Belgium,2019,7.64
+Cyprus,2019,7.59
+Denmark,2019,9.22
+Finland,2019,9.25
+France,2019,8.12
+Germany,2019,8.68
+Greece,2019,7.43
+Iceland,2019,9.58
+Ireland,2019,9.24
+Italy,2019,7.52
+Luxembourg,2019,8.81
+Malta,2019,7.95
+Netherlands,2019,9.01
+Norway,2019,9.87
+Portugal,2019,8.03
+Spain,2019,8.18
+Sweden,2019,9.39
+Switzerland,2019,9.03
+Turkey,2019,4.09
+UK,2019,8.52
+Albania,2019,5.89
+Armenia,2019,5.54
+Azerbaijan,2019,2.75
+Belarus,2019,2.88
+Bosnia and Hercegovina,2019,4.86
+Bulgaria,2019,7.03
+Croatia,2019,6.57
+Czech Republic,2019,7.69
+Estonia,2019,7.9
+Georgia,2019,5.42
+Hungary,2019,6.63
+Kazakhstan,2019,2.94
+Kyrgyz Republic,2019,4.89
+Latvia,2019,7.49
+Lithuania,2019,7.5
+Moldova,2019,5.75
+Montenegro,2019,5.65
+North Macedonia,2019,5.97
+Poland,2019,6.62
+Romania,2019,6.49
+Russia,2019,3.11
+Serbia,2019,6.41
+Slovakia,2019,7.17
+Slovenia,2019,7.5
+Tajikistan,2019,1.93
+Turkmenistan,2019,1.72
+Ukraine,2019,5.9
+Uzbekistan,2019,2.01
+Argentina,2019,7.02
+Bolivia,2019,4.84
+Brazil,2019,6.86
+Chile,2019,8.08
+Colombia,2019,7.13
+Costa Rica,2019,8.13
+Cuba,2019,2.84
+Dominican Republic,2019,6.54
+Ecuador,2019,6.33
+El Salvador,2019,6.15
+Guatemala,2019,5.26
+Guyana,2019,6.15
+Haiti,2019,4.57
+Honduras,2019,5.42
+Jamaica,2019,6.96
+Mexico,2019,6.09
+Nicaragua,2019,3.55
+Panama,2019,7.05
+Paraguay,2019,6.24
+Peru,2019,6.6
+Suriname,2019,6.98
+Trinidad and Tobago,2019,7.16
+Uruguay,2019,8.38
+Venezuela,2019,2.88
+Afghanistan,2019,2.85
+Australia,2019,9.09
+Bangladesh,2019,5.88
+Bhutan,2019,5.3
+Cambodia,2019,3.53
+China,2019,2.26
+Fiji,2019,5.85
+Hong Kong,2019,6.02
+India,2019,6.9
+Indonesia,2019,6.48
+Japan,2019,7.99
+Laos,2019,2.14
+Malaysia,2019,7.16
+Mongolia,2019,6.5
+Myanmar,2019,3.55
+Nepal,2019,5.28
+New Zealand,2019,9.26
+North Korea,2019,1.08
+Pakistan,2019,4.25
+Papua New Guinea,2019,6.03
+Philippines,2019,6.64
+Singapore,2019,6.02
+South Korea,2019,8
+Sri Lanka,2019,6.27
+Taiwan,2019,7.73
+Thailand,2019,6.32
+Timor Leste,2019,7.19
+Vietnam,2019,3.08
+Algeria,2019,4.01
+Bahrain,2019,2.55
+Egypt,2019,3.06
+Iran,2019,2.38
+Iraq,2019,3.74
+Israel,2019,7.86
+Jordan,2019,3.93
+Kuwait,2019,3.93
+Lebanon,2019,4.36
+Libya,2019,2.02
+Morocco,2019,5.1
+Oman,2019,3.06
+Palestine,2019,3.89
+Qatar,2019,3.19
+Saudi Arabia,2019,1.93
+Sudan,2019,2.7
+Syria,2019,1.43
+Tunisia,2019,6.72
+UAE,2019,2.76
+Yemen,2019,1.95
+Angola,2019,3.72
+Benin,2019,5.09
+Botswana,2019,7.81
+Burkina Faso,2019,4.04
+Burundi,2019,2.15
+Cabo Verde,2019,7.78
+Cameroon,2019,2.85
+Central African Republic,2019,1.32
+Chad,2019,1.61
+Comoros,2019,3.15
+Congo (Brazzaville),2019,3.11
+Cote d'Ivoire,2019,4.05
+Democratic Republic of Congo,2019,1.13
+Djibouti,2019,2.77
+Equatorial Guinea,2019,1.92
+Eritrea,2019,2.37
+eSwatini,2019,3.14
+Ethiopia,2019,3.44
+Gabon,2019,3.61
+Gambia,2019,4.33
+Ghana,2019,6.63
+Guinea,2019,3.14
+Guinea-Bissau,2019,2.63
+Kenya,2019,5.18
+Lesotho,2019,6.54
+Liberia,2019,5.45
+Madagascar,2019,5.64
+Malawi,2019,5.5
+Mali,2019,4.92
+Mauritania,2019,3.92
+Mauritius,2019,8.22
+Mozambique,2019,3.65
+Namibia,2019,6.43
+Niger,2019,3.29
+Nigeria,2019,4.12
+Rwanda,2019,3.16
+Senegal,2019,5.81
+Sierra Leone,2019,4.86
+South Africa,2019,7.24
+Tanzania,2019,5.16
+Togo,2019,3.3
+Uganda,2019,5.02
+Zambia,2019,5.09
+Zimbabwe,2019,3.16
 Canada,2018,9.15
 US,2018,7.96
 Austria,2018,8.29
@@ -37,9 +204,9 @@ Kazakhstan,2018,2.94
 Kyrgyz Republic,2018,5.11
 Latvia,2018,7.38
 Lithuania,2018,7.5
-Macedonia,2018,5.87
 Moldova,2018,5.85
 Montenegro,2018,5.74
+North Macedonia,2018,5.87
 Poland,2018,6.67
 Romania,2018,6.38
 Russia,2018,2.94
@@ -138,6 +305,7 @@ Democratic Republic of Congo,2018,1.49
 Djibouti,2018,2.87
 Equatorial Guinea,2018,1.92
 Eritrea,2018,2.37
+eSwatini,2018,3.03
 Ethiopia,2018,3.35
 Gabon,2018,3.61
 Gambia,2018,4.31
@@ -160,7 +328,6 @@ Rwanda,2018,3.35
 Senegal,2018,6.15
 Sierra Leone,2018,4.66
 South Africa,2018,7.24
-Swaziland,2018,3.03
 Tanzania,2018,5.41
 Togo,2018,3.1
 Uganda,2018,5.2
@@ -204,9 +371,9 @@ Kazakhstan,2017,3.06
 Kyrgyz Republic,2017,5.11
 Latvia,2017,7.25
 Lithuania,2017,7.41
-Macedonia,2017,5.57
 Moldova,2017,5.94
 Montenegro,2017,5.69
+North Macedonia,2017,5.57
 Poland,2017,6.67
 Romania,2017,6.44
 Russia,2017,3.17
@@ -305,6 +472,7 @@ Democratic Republic of Congo,2017,1.61
 Djibouti,2017,2.76
 Equatorial Guinea,2017,1.81
 Eritrea,2017,2.37
+eSwatini,2017,3.03
 Ethiopia,2017,3.42
 Gabon,2017,3.61
 Gambia,2017,4.06
@@ -327,7 +495,6 @@ Rwanda,2017,3.19
 Senegal,2017,6.15
 Sierra Leone,2017,4.66
 South Africa,2017,7.24
-Swaziland,2017,3.03
 Tanzania,2017,5.47
 Togo,2017,3.05
 Uganda,2017,5.09
@@ -371,9 +538,9 @@ Kazakhstan,2016,3.06
 Kyrgyz Republic,2016,4.93
 Latvia,2016,7.31
 Lithuania,2016,7.47
-Macedonia,2016,5.23
 Moldova,2016,6.01
 Montenegro,2016,5.72
+North Macedonia,2016,5.23
 Poland,2016,6.83
 Romania,2016,6.62
 Russia,2016,3.24
@@ -472,6 +639,7 @@ Democratic Republic of Congo,2016,1.93
 Djibouti,2016,2.83
 Equatorial Guinea,2016,1.7
 Eritrea,2016,2.37
+eSwatini,2016,3.03
 Ethiopia,2016,3.6
 Gabon,2016,3.74
 Gambia,2016,2.91
@@ -494,7 +662,6 @@ Rwanda,2016,3.07
 Senegal,2016,6.21
 Sierra Leone,2016,4.55
 South Africa,2016,7.41
-Swaziland,2016,3.03
 Tanzania,2016,5.76
 Togo,2016,3.32
 Uganda,2016,5.26
@@ -538,9 +705,9 @@ Kazakhstan,2015,3.06
 Kyrgyz Republic,2015,5.33
 Latvia,2015,7.37
 Lithuania,2015,7.54
-Macedonia,2015,6.02
 Moldova,2015,6.35
 Montenegro,2015,6.01
+North Macedonia,2015,6.02
 Poland,2015,7.09
 Romania,2015,6.68
 Russia,2015,3.31
@@ -639,6 +806,7 @@ Democratic Republic of Congo,2015,2.11
 Djibouti,2015,2.9
 Equatorial Guinea,2015,1.77
 Eritrea,2015,2.37
+eSwatini,2015,3.09
 Ethiopia,2015,3.83
 Gabon,2015,3.76
 Gambia,2015,2.97
@@ -661,7 +829,6 @@ Rwanda,2015,3.07
 Senegal,2015,6.08
 Sierra Leone,2015,4.55
 South Africa,2015,7.56
-Swaziland,2015,3.09
 Tanzania,2015,5.58
 Togo,2015,3.41
 Uganda,2015,5.22
@@ -705,9 +872,9 @@ Kazakhstan,2014,3.17
 Kyrgyz Republic,2014,5.24
 Latvia,2014,7.48
 Lithuania,2014,7.54
-Macedonia,2014,6.25
 Moldova,2014,6.32
 Montenegro,2014,5.94
+North Macedonia,2014,6.25
 Poland,2014,7.47
 Romania,2014,6.68
 Russia,2014,3.39
@@ -806,6 +973,7 @@ Democratic Republic of Congo,2014,1.75
 Djibouti,2014,2.99
 Equatorial Guinea,2014,1.66
 Eritrea,2014,2.44
+eSwatini,2014,3.09
 Ethiopia,2014,3.72
 Gabon,2014,3.76
 Gambia,2014,3.05
@@ -828,7 +996,6 @@ Rwanda,2014,3.25
 Senegal,2014,6.15
 Sierra Leone,2014,4.56
 South Africa,2014,7.82
-Swaziland,2014,3.09
 Tanzania,2014,5.77
 Togo,2014,3.45
 Uganda,2014,5.22
@@ -872,9 +1039,9 @@ Kazakhstan,2013,3.06
 Kyrgyz Republic,2013,4.69
 Latvia,2013,7.05
 Lithuania,2013,7.54
-Macedonia,2013,6.16
 Moldova,2013,6.32
 Montenegro,2013,5.94
+North Macedonia,2013,6.16
 Poland,2013,7.12
 Romania,2013,6.54
 Russia,2013,3.59
@@ -973,6 +1140,7 @@ Democratic Republic of Congo,2013,1.83
 Djibouti,2013,2.96
 Equatorial Guinea,2013,1.77
 Eritrea,2013,2.4
+eSwatini,2013,3.2
 Ethiopia,2013,3.83
 Gabon,2013,3.76
 Gambia,2013,3.31
@@ -995,7 +1163,6 @@ Rwanda,2013,3.38
 Senegal,2013,6.15
 Sierra Leone,2013,4.64
 South Africa,2013,7.9
-Swaziland,2013,3.2
 Tanzania,2013,5.77
 Togo,2013,3.45
 Uganda,2013,5.22
@@ -1039,9 +1206,9 @@ Kazakhstan,2012,2.95
 Kyrgyz Republic,2012,4.69
 Latvia,2012,7.05
 Lithuania,2012,7.24
-Macedonia,2012,6.16
 Moldova,2012,6.32
 Montenegro,2012,6.05
+North Macedonia,2012,6.16
 Poland,2012,7.12
 Romania,2012,6.54
 Russia,2012,3.74
@@ -1140,6 +1307,7 @@ Democratic Republic of Congo,2012,1.92
 Djibouti,2012,2.74
 Equatorial Guinea,2012,1.83
 Eritrea,2012,2.4
+eSwatini,2012,3.2
 Ethiopia,2012,3.72
 Gabon,2012,3.56
 Gambia,2012,3.31
@@ -1162,7 +1330,6 @@ Rwanda,2012,3.36
 Senegal,2012,6.09
 Sierra Leone,2012,4.71
 South Africa,2012,7.79
-Swaziland,2012,3.2
 Tanzania,2012,5.88
 Togo,2012,3.45
 Uganda,2012,5.16
@@ -1206,9 +1373,9 @@ Kazakhstan,2011,3.24
 Kyrgyz Republic,2011,4.34
 Latvia,2011,7.05
 Lithuania,2011,7.24
-Macedonia,2011,6.16
 Moldova,2011,6.32
 Montenegro,2011,6.15
+North Macedonia,2011,6.16
 Poland,2011,7.12
 Romania,2011,6.54
 Russia,2011,3.92
@@ -1307,6 +1474,7 @@ Democratic Republic of Congo,2011,2.15
 Djibouti,2011,2.68
 Equatorial Guinea,2011,1.77
 Eritrea,2011,2.34
+eSwatini,2011,3.26
 Ethiopia,2011,3.79
 Gabon,2011,3.48
 Gambia,2011,3.38
@@ -1329,7 +1497,6 @@ Rwanda,2011,3.25
 Senegal,2011,5.51
 Sierra Leone,2011,4.51
 South Africa,2011,7.79
-Swaziland,2011,3.26
 Tanzania,2011,5.64
 Togo,2011,3.45
 Uganda,2011,5.13
@@ -1373,9 +1540,9 @@ Kazakhstan,2010,3.3
 Kyrgyz Republic,2010,4.31
 Latvia,2010,7.05
 Lithuania,2010,7.24
-Macedonia,2010,6.16
 Moldova,2010,6.33
 Montenegro,2010,6.27
+North Macedonia,2010,6.16
 Poland,2010,7.05
 Romania,2010,6.6
 Russia,2010,4.26
@@ -1474,6 +1641,7 @@ Democratic Republic of Congo,2010,2.15
 Djibouti,2010,2.2
 Equatorial Guinea,2010,1.84
 Eritrea,2010,2.31
+eSwatini,2010,2.9
 Ethiopia,2010,3.68
 Gabon,2010,3.29
 Gambia,2010,3.38
@@ -1496,7 +1664,6 @@ Rwanda,2010,3.25
 Senegal,2010,5.27
 Sierra Leone,2010,4.51
 South Africa,2010,7.79
-Swaziland,2010,2.9
 Tanzania,2010,5.64
 Togo,2010,3.45
 Uganda,2010,5.05
@@ -1540,9 +1707,9 @@ Kazakhstan,2008,3.45
 Kyrgyz Republic,2008,4.05
 Latvia,2008,7.23
 Lithuania,2008,7.36
-Macedonia,2008,6.21
 Moldova,2008,6.5
 Montenegro,2008,6.43
+North Macedonia,2008,6.21
 Poland,2008,7.3
 Romania,2008,7.06
 Russia,2008,4.48
@@ -1641,6 +1808,7 @@ Democratic Republic of Congo,2008,2.28
 Djibouti,2008,2.37
 Equatorial Guinea,2008,2.19
 Eritrea,2008,2.31
+eSwatini,2008,3.04
 Ethiopia,2008,4.52
 Gabon,2008,3
 Gambia,2008,4.19
@@ -1663,7 +1831,6 @@ Rwanda,2008,3.71
 Senegal,2008,5.37
 Sierra Leone,2008,4.11
 South Africa,2008,7.91
-Swaziland,2008,3.04
 Tanzania,2008,5.28
 Togo,2008,2.43
 Uganda,2008,5.03
@@ -1707,9 +1874,9 @@ Kazakhstan,2006,3.62
 Kyrgyz Republic,2006,4.08
 Latvia,2006,7.37
 Lithuania,2006,7.43
-Macedonia,2006,6.33
 Moldova,2006,6.5
 Montenegro,2006,6.57
+North Macedonia,2006,6.33
 Poland,2006,7.3
 Romania,2006,7.06
 Russia,2006,5.02
@@ -1808,6 +1975,7 @@ Democratic Republic of Congo,2006,2.76
 Djibouti,2006,2.37
 Equatorial Guinea,2006,2.09
 Eritrea,2006,2.31
+eSwatini,2006,2.93
 Ethiopia,2006,4.72
 Gabon,2006,2.72
 Gambia,2006,4.39
@@ -1830,7 +1998,6 @@ Rwanda,2006,3.82
 Senegal,2006,5.37
 Sierra Leone,2006,3.57
 South Africa,2006,7.91
-Swaziland,2006,2.93
 Tanzania,2006,5.18
 Togo,2006,1.75
 Uganda,2006,5.14

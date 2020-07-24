@@ -8,21 +8,29 @@
 
 <title>The Democracy/Autocracy Dataset by Jay Ulfelder — ulfelder • democracyData</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,15 +38,15 @@
 
 
 
-<meta property="og:title" content="The Democracy/Autocracy Dataset by Jay Ulfelder — ulfelder" />
 
+<meta property="og:title" content="The Democracy/Autocracy Dataset by Jay Ulfelder — ulfelder" />
 <meta property="og:description" content="This is the dataset documented in Jay Ulfelder. Democracy/Autocracy Data
 Set. 2012. http://hdl.handle.net/1902.1/18836. It comes in two
 versions: ulfelder, which only goes back to 1955, and ulfelder_extended,
 which extends the regime classifications back in time using the rgjdura and
 rgjdurd variables, adding 3861 country-years to the original data, mostly
 authoritarian regimes." />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -52,9 +60,10 @@ authoritarian regimes." />
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -68,7 +77,7 @@ authoritarian regimes." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4</span>
       </span>
     </div>
 
@@ -76,7 +85,7 @@ authoritarian regimes." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -87,11 +96,10 @@ authoritarian regimes." />
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/xmarquez/democracyData">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/xmarquez/democracyData/">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -102,6 +110,7 @@ authoritarian regimes." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -113,33 +122,33 @@ authoritarian regimes." />
     </div>
 
     <div class="ref-description">
-    
     <p>This is the dataset documented in Jay Ulfelder. <em>Democracy/Autocracy Data
 Set</em>. 2012. <a href='http://hdl.handle.net/1902.1/18836'>http://hdl.handle.net/1902.1/18836</a>. It comes in two
 versions: ulfelder, which only goes back to 1955, and ulfelder_extended,
 which extends the regime classifications back in time using the <code>rgjdura</code> and
 <code>rgjdurd</code> variables, adding 3861 country-years to the original data, mostly
 authoritarian regimes.</p>
-    
     </div>
 
     <pre class="usage"><span class='no'>ulfelder</span>
 
 <span class='no'>ulfelder_extended</span></pre>
-        
+
+
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 7721 rows and 62 columns.</p>
-    
+<p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 11582 rows and 62 columns.</p>
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>Jay Ulfelder. <em>Democracy/Autocracy Data Set</em>. 2012.
 <a href='http://hdl.handle.net/1902.1/18836'>http://hdl.handle.net/1902.1/18836</a></p>
-    
     <h2 class="hasAnchor" id="variables-with-values-for-all-years"><a class="anchor" href="#variables-with-values-for-all-years"></a>Variables with values for all years</h2>
 
     
-    <p>pitfcode: PITF Country Code. Three-character country code matching those
+
+
+<p>pitfcode: PITF Country Code. Three-character country code matching those
 used by the Political Instability Task Force. Some of these seem off - GER
 for Germany instead of GMY, UK instead of UKG. I've created
 <code>ulfelder_scode</code> on the basis of this by converting "GER","MNE","SRB","UK",
@@ -167,15 +176,17 @@ in which a transition to any of those conditions from democracy occurs.</p>
 democracy or birth of country, whichever is more recent. Coded as missing
 for democracies, with the exception of the year in which a transition from
 autocracy to democracy occurs.</p>
-    
     <h2 class="hasAnchor" id="variables-with-values-only-for-years-greater-than-"><a class="anchor" href="#variables-with-values-only-for-years-greater-than-"></a>Variables with values only for years greater than 1955</h2>
 
     
-    <p>The following variables are all <code>NA</code> for years before 1955 (by construction</p><ul>
+
+
+<p>The following variables are all <code>NA</code> for years before 1955 (by construction</p><ul>
 <li><p>I do not impute their values for these years in the ulfelder_extended
 dataset).</p></li>
 </ul>
-    <p>rgjdem: Undocumented.</p>
+
+<p>rgjdem: Undocumented.</p>
 <p>rgjtrans: Regime Change. Categorical variable indicating the occurrence (or
 not) of a regime change at some point during the indicated calendar year.</p>
 <p>= 1 Transition from non-democracy to democracy</p>
@@ -467,12 +478,13 @@ countries listed by Freedom House as electoral democracies.</p>
 <p>sftgreg2: Undocumented. Region?</p>
 <p>sfrgregc: Undocumented. Region?</p>
 <p>sftgreg: Undocumented. Region?</p>
-    
     <h2 class="hasAnchor" id="standard-descriptive-variables-generated-by-this-package-"><a class="anchor" href="#standard-descriptive-variables-generated-by-this-package-"></a>Standard descriptive variables (generated by this package)</h2>
 
     
-    <dl class='dl-horizontal'>
-    <dt>extended_country_name</dt><dd><p>The name of the country in the Gleditsch-Ward
+
+<dl'>
+
+<dt>extended_country_name</dt><dd><p>The name of the country in the Gleditsch-Ward
 system of states, or the official name of the
 entity (for non-sovereign entities and states not in the Gleditsch and Ward
 system of states) or else a common name for disputed cases that do not have
@@ -484,70 +496,86 @@ For details, see Gleditsch, Kristian S. &amp; Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
 International Interactions 25: 393-413. The list can be found at
 <a href='http://privatewww.essex.ac.uk/~ksg/statelist.html'>http://privatewww.essex.ac.uk/~ksg/statelist.html</a>.</p></dd>
-    <dt>GWn</dt><dd><p>Gleditsch and Ward's numeric country code, from the Gleditsch and
+
+<dt>GWn</dt><dd><p>Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.</p></dd>
-    <dt>cown</dt><dd><p>The Correlates of War numeric country code, 2016 version. This
+
+<dt>cown</dt><dd><p>The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
 <a href='http://www.correlatesofwar.org/data-sets/state-system-membership'>http://www.correlatesofwar.org/data-sets/state-system-membership</a> for
 the full list.</p></dd>
-    <dt>in_GW_system</dt><dd><p>Whether the state is "in system" (that is, is
+
+<dt>in_GW_system</dt><dd><p>Whether the state is "in system" (that is, is
 independent and sovereign), according to Gleditsch and Ward, for this
 particular date. Matches at the end of the year; so, for example South
 Vietnam 1975 is <code>FALSE</code> because, according to Gleditsch and Ward, the
 country ended on April 1975 (being absorbed by North Vietnam). It is also
 <code>TRUE</code> for dates beyond 2012 for countries that did not end by then, depsite
-the fact that the Gleditsch and Ward list has not been updated since.</p></dd> </dl>
-    
+the fact that the Gleditsch and Ward list has not been updated since.</p></dd> 
+</dl>
+
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other democracy: <code><a href='LIED.html'>LIED</a></code>, <code><a href='PIPE.html'>PIPE</a></code>,
-  <code><a href='anckar.html'>anckar</a></code>, <code><a href='arat_pmm.html'>arat_pmm</a></code>,
-  <code><a href='blm.html'>blm</a></code>, <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
-  <code><a href='bollen_pmm.html'>bollen_pmm</a></code>, <code><a href='doorenspleet.html'>doorenspleet</a></code>,
-  <code><a href='download_fh_electoral.html'>download_fh_electoral</a></code>,
-  <code><a href='download_fh.html'>download_fh</a></code>, <code><a href='download_reign.html'>download_reign</a></code>,
-  <code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a></code>,
-  <code><a href='eiu.html'>eiu</a></code>, <code><a href='fh_pmm.html'>fh_pmm</a></code>,
-  <code><a href='gwf_all.html'>gwf_all</a></code>, <code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
-  <code><a href='kailitz.html'>kailitz</a></code>, <code><a href='magaloni.html'>magaloni</a></code>,
-  <code><a href='mainwaring.html'>mainwaring</a></code>, <code><a href='munck_pmm.html'>munck_pmm</a></code>,
-  <code><a href='pacl.html'>pacl</a></code>, <code><a href='peps.html'>peps</a></code>,
-  <code><a href='pitf.html'>pitf</a></code>, <code><a href='polity_pmm.html'>polity_pmm</a></code>,
-  <code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
-  <code><a href='polyarchy.html'>polyarchy</a></code>, <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
-  <code><a href='svmdi.html'>svmdi</a></code>, <code><a href='svolik_regime.html'>svolik_regime</a></code>,
-  <code><a href='uds_2014.html'>uds_2014</a></code>, <code><a href='utip.html'>utip</a></code>,
-  <code><a href='vanhanen.html'>vanhanen</a></code>,
-  <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
-<p>Other events data: <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
-  <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code></p>
-<p>Other dichotomous democracy indexes: <code><a href='anckar.html'>anckar</a></code>,
-  <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
-  <code><a href='doorenspleet.html'>doorenspleet</a></code>, <code><a href='kailitz.html'>kailitz</a></code>,
-  <code><a href='pacl.html'>pacl</a></code>, <code><a href='svolik_regime.html'>svolik_regime</a></code>,
-  <code><a href='utip.html'>utip</a></code>, <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p></div>
-    
+    <div class='dont-index'><p>Other democracy: 
+<code><a href='LIED.html'>LIED</a></code>,
+<code><a href='PIPE.html'>PIPE</a></code>,
+<code><a href='anckar.html'>anckar</a></code>,
+<code><a href='arat_pmm.html'>arat_pmm</a></code>,
+<code><a href='blm.html'>blm</a></code>,
+<code><a href='bmr.html'>bmr</a></code>,
+<code><a href='bnr.html'>bnr</a></code>,
+<code><a href='bollen_pmm.html'>bollen_pmm</a></code>,
+<code><a href='doorenspleet.html'>doorenspleet</a></code>,
+<code><a href='download_fh_electoral.html'>download_fh_electoral</a>()</code>,
+<code><a href='download_fh_full.html'>download_fh_full</a>()</code>,
+<code><a href='download_fh.html'>download_fh</a>()</code>,
+<code><a href='download_reign.html'>download_reign</a>()</code>,
+<code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a>()</code>,
+<code><a href='eiu.html'>eiu</a></code>,
+<code><a href='fh_pmm.html'>fh_pmm</a></code>,
+<code><a href='gwf_all.html'>gwf_all</a></code>,
+<code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
+<code><a href='kailitz.html'>kailitz</a></code>,
+<code><a href='magaloni.html'>magaloni</a></code>,
+<code><a href='mainwaring.html'>mainwaring</a></code>,
+<code><a href='munck_pmm.html'>munck_pmm</a></code>,
+<code><a href='pacl.html'>pacl</a></code>,
+<code><a href='peps.html'>peps</a></code>,
+<code><a href='pitf.html'>pitf</a></code>,
+<code><a href='polityIV.html'>polityIV</a></code>,
+<code><a href='polity_pmm.html'>polity_pmm</a></code>,
+<code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
+<code><a href='polyarchy.html'>polyarchy</a></code>,
+<code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
+<code><a href='svmdi.html'>svmdi</a></code>,
+<code><a href='svolik_regime.html'>svolik_regime</a></code>,
+<code><a href='uds_2014.html'>uds_2014</a></code>,
+<code><a href='utip.html'>utip</a></code>,
+<code><a href='vanhanen.html'>vanhanen</a></code>,
+<code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
+<p>Other events data: 
+<code><a href='bmr.html'>bmr</a></code>,
+<code><a href='bnr.html'>bnr</a></code>,
+<code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code></p>
+<p>Other dichotomous democracy indexes: 
+<code><a href='anckar.html'>anckar</a></code>,
+<code><a href='bmr.html'>bmr</a></code>,
+<code><a href='bnr.html'>bnr</a></code>,
+<code><a href='doorenspleet.html'>doorenspleet</a></code>,
+<code><a href='kailitz.html'>kailitz</a></code>,
+<code><a href='pacl.html'>pacl</a></code>,
+<code><a href='svolik_regime.html'>svolik_regime</a></code>,
+<code><a href='utip.html'>utip</a></code>,
+<code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p></div>
 
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      
-      <li><a href="#format">Format</a></li>
-
-      <li><a href="#source">Source</a></li>
-
-      <li><a href="#variables-with-values-for-all-years">Variables with values for all years</a></li>
-
-      <li><a href="#variables-with-values-only-for-years-greater-than-">Variables with values only for years greater than 1955</a></li>
-
-      <li><a href="#standard-descriptive-variables-generated-by-this-package-">Standard descriptive variables (generated by this package)</a></li>
-
-      <li><a href="#see-also">See also</a></li>
-          </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -555,13 +583,16 @@ the fact that the Gleditsch and Ward list has not been updated since.</p></dd> <
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

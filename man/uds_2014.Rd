@@ -7,7 +7,13 @@
 \alias{uds_2011}
 \alias{uds_2010}
 \title{The Unified Democracy Scores}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 9850 rows and 12 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 9850 rows and 12 columns.
+
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 9137 rows and 12 columns.
+
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 7558 rows and 12 columns.
+}
 \source{
 Pemstein, Daniel, Stephen Meserve, and James Melton. 2010. Democratic
 Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.
@@ -92,27 +98,46 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 The package QuickUDS to extend these scores, at
 \url{http://github.com/xmarquez/QuickUDS}.
 
-Other democracy: \code{\link{LIED}}, \code{\link{PIPE}},
-  \code{\link{anckar}}, \code{\link{arat_pmm}},
-  \code{\link{blm}}, \code{\link{bmr}}, \code{\link{bnr}},
-  \code{\link{bollen_pmm}}, \code{\link{doorenspleet}},
-  \code{\link{download_fh_electoral}},
-  \code{\link{download_fh}}, \code{\link{download_reign}},
-  \code{\link{download_wgi_voice_and_accountability}},
-  \code{\link{eiu}}, \code{\link{fh_pmm}},
-  \code{\link{gwf_all}}, \code{\link{hadenius_pmm}},
-  \code{\link{kailitz}}, \code{\link{magaloni}},
-  \code{\link{mainwaring}}, \code{\link{munck_pmm}},
-  \code{\link{pacl}}, \code{\link{peps}},
-  \code{\link{pitf}}, \code{\link{polity_pmm}},
-  \code{\link{polyarchy_dimensions}},
-  \code{\link{polyarchy}}, \code{\link{prc_gasiorowski}},
-  \code{\link{svmdi}}, \code{\link{svolik_regime}},
-  \code{\link{ulfelder}}, \code{\link{utip}},
-  \code{\link{vanhanen}},
-  \code{\link{wahman_teorell_hadenius}}
+Other democracy: 
+\code{\link{LIED}},
+\code{\link{PIPE}},
+\code{\link{anckar}},
+\code{\link{arat_pmm}},
+\code{\link{blm}},
+\code{\link{bmr}},
+\code{\link{bnr}},
+\code{\link{bollen_pmm}},
+\code{\link{doorenspleet}},
+\code{\link{download_fh_electoral}()},
+\code{\link{download_fh_full}()},
+\code{\link{download_fh}()},
+\code{\link{download_reign}()},
+\code{\link{download_wgi_voice_and_accountability}()},
+\code{\link{eiu}},
+\code{\link{fh_pmm}},
+\code{\link{gwf_all}},
+\code{\link{hadenius_pmm}},
+\code{\link{kailitz}},
+\code{\link{magaloni}},
+\code{\link{mainwaring}},
+\code{\link{munck_pmm}},
+\code{\link{pacl}},
+\code{\link{peps}},
+\code{\link{pitf}},
+\code{\link{polityIV}},
+\code{\link{polity_pmm}},
+\code{\link{polyarchy_dimensions}},
+\code{\link{polyarchy}},
+\code{\link{prc_gasiorowski}},
+\code{\link{svmdi}},
+\code{\link{svolik_regime}},
+\code{\link{ulfelder}},
+\code{\link{utip}},
+\code{\link{vanhanen}},
+\code{\link{wahman_teorell_hadenius}}
 
-Other latent variable indexes of democracy: \code{\link{polyarchy_dimensions}}
+Other latent variable indexes of democracy: 
+\code{\link{polyarchy_dimensions}}
 }
 \concept{democracy}
 \concept{latent variable indexes of democracy}

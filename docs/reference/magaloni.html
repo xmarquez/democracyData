@@ -8,21 +8,29 @@
 
 <title>Autocracies of the World, 1950-2012 (Version 1.0). — magaloni • democracyData</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,15 +38,15 @@
 
 
 
-<meta property="og:title" content="Autocracies of the World, 1950-2012 (Version 1.0). — magaloni" />
 
+<meta property="og:title" content="Autocracies of the World, 1950-2012 (Version 1.0). — magaloni" />
 <meta property="og:description" content="The &quot;Autocracies of the World&quot; dataset by Beatriz Magaloni, Jonathan Chu, and
 Eric Min.  Please cite as Magaloni, Beatriz, Jonathan Chu, and Eric Min.
 2013. Autocracies of the World, 1950-2012 (Version 1.0). Dataset, Stanford
 University. Original data and codebook available at
 http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset/.
 The documentation here is directly derived from this codebook." />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -52,9 +60,10 @@ The documentation here is directly derived from this codebook." />
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -68,7 +77,7 @@ The documentation here is directly derived from this codebook." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4</span>
       </span>
     </div>
 
@@ -76,7 +85,7 @@ The documentation here is directly derived from this codebook." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -87,11 +96,10 @@ The documentation here is directly derived from this codebook." />
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/xmarquez/democracyData">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/xmarquez/democracyData/">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -102,6 +110,7 @@ The documentation here is directly derived from this codebook." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -113,28 +122,29 @@ The documentation here is directly derived from this codebook." />
     </div>
 
     <div class="ref-description">
-    
     <p>The "Autocracies of the World" dataset by Beatriz Magaloni, Jonathan Chu, and
 Eric Min.  Please cite as Magaloni, Beatriz, Jonathan Chu, and Eric Min.
 2013. Autocracies of the World, 1950-2012 (Version 1.0). Dataset, Stanford
 University. Original data and codebook available at
 <a href='http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset/'>http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset/</a>.
 The documentation here is directly derived from this codebook.</p>
-    
     </div>
 
     <pre class="usage"><span class='no'>magaloni</span>
 
 <span class='no'>magaloni_extended</span></pre>
-        
+
+
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 8629 rows and 28 columns.</p>
-    
+<p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 10291 rows and 10 columns.</p>
     <h2 class="hasAnchor" id="overview"><a class="anchor" href="#overview"></a>Overview</h2>
 
     
-    <p>This dataset classifies the world's political regimes, primarily focusing
+
+
+<p>This dataset classifies the world's political regimes, primarily focusing
 on distinctions among different types of autocracies, between 1950 and
 2012. Over the last decade, academic work on political institutions has
 placed more focus on differences within autocracies-a group of polities
@@ -189,11 +199,13 @@ which end in the mid-2000s, are extended into more recent years. We also
 hope to update this dataset periodically with more years and useful
 covariates.</p></li>
 </ul>
-    
+
     <h2 class="hasAnchor" id="summary-of-variables"><a class="anchor" href="#summary-of-variables"></a>Summary of Variables</h2>
 
     
-    <p>Several sets of variables come in pairs: <code>variable_r</code> and
+
+
+<p>Several sets of variables come in pairs: <code>variable_r</code> and
 <code>variable_nr</code>. These correspond with rounded and non-rounded values.
 The rationale and methodology behind these pairs of data is provided in the
 section entitled "Transition Years and Rounding." (See online codebook).</p>
@@ -203,42 +215,54 @@ the duration of the first regime (<code>regime_nr</code> and <code>demo_nr</code
 each country backwards in time before 1950 (using the variable
 <code>duration_nr</code>). The <code>magaloni_extended</code> dataset omits all the
 indicators of personalism or head of government.</p>
-<dl class='dl-horizontal'>
-    <dt>cyear</dt><dd><p>Numeric expression of country-year, made by concatenating
+<dl'>
+
+<dt>cyear</dt><dd><p>Numeric expression of country-year, made by concatenating
 ccode and year.</p></dd>
-    <dt>cntyr</dt><dd><p>Alphanumeric expression of country-year, made by concatenating
+
+<dt>cntyr</dt><dd><p>Alphanumeric expression of country-year, made by concatenating
 scode and year.</p></dd>
-    <dt>magaloni_ccode</dt><dd><p>Numeric country codes, based on the Correlates of War
+
+<dt>magaloni_ccode</dt><dd><p>Numeric country codes, based on the Correlates of War
 dataset, as in the original dataset. Use <code>cown</code> instead.</p></dd>
-    <dt>scode</dt><dd><p>Three-letter country codes, based on the Correlates of War
+
+<dt>scode</dt><dd><p>Three-letter country codes, based on the Correlates of War
 dataset.</p></dd>
-    <dt>magaloni_country</dt><dd><p>String version of country, as in original dataset.
+
+<dt>magaloni_country</dt><dd><p>String version of country, as in original dataset.
 Use <code>country_name</code> instead.</p></dd>
-    <dt>year</dt><dd><p>Four-digit calendar year. In the <code>magaloni_extended</code> the
+
+<dt>year</dt><dd><p>Four-digit calendar year. In the <code>magaloni_extended</code> the
 year is extended to back before 1950 using <code>duration_nr</code>, which adds
 1662 observations to <code>regime_nr</code> and <code>demo_nr</code>.</p></dd>
-    <dt>un_region</dt><dd><p>Region, based on classifications by the United Nations, as
+
+<dt>un_region</dt><dd><p>Region, based on classifications by the United Nations, as
 in the original dataset. Use <code>region</code> instead, which is based on the
 same classifications but is more comprehensive - no missing values.</p></dd>
-    <dt>un_continent</dt><dd><p>Continent, based on classifications by the United
+
+<dt>un_continent</dt><dd><p>Continent, based on classifications by the United
 Nations, as in the original dataset. Use <code>continent</code> instead, which is
 based on the same classifications but is more comprehensive - no missing
 values.</p></dd>
-    <dt>reg_id</dt><dd><p>A unique number identifying a specific regime in a specific
+
+<dt>reg_id</dt><dd><p>A unique number identifying a specific regime in a specific
 country. The number is created by combining the country code (ccode) with a
 basic regime count in the country in the following manner: 100*(ccode) +
 running total. For example, the first country-year in the data for Haiti
 (country code is 41) is 4101, and changes to 4102 the year that regime type
 changes in the country. Note that this ID is created using the non-rounded
 regime classifications.</p></dd>
-    <dt>demo_r</dt><dd><p>A dummy variable for whether a given country-year has a
+
+<dt>demo_r</dt><dd><p>A dummy variable for whether a given country-year has a
 democratic regime, using the rounding rule. (Note that these
 classifications do not necessarily align with a strict threshold based on
 Polity scores.)</p></dd>
-    <dt>demo_nr</dt><dd><p>A dummy variable for whether a given country-year has a
+
+<dt>demo_nr</dt><dd><p>A dummy variable for whether a given country-year has a
 democratic regime, without rounding. (Note that these classifications do
 not necessarily align with a strict threshold based on Polity scores.)</p></dd>
-    <dt>regime_r</dt><dd><p>The regime type of a given country-year, using the rounding
+
+<dt>regime_r</dt><dd><p>The regime type of a given country-year, using the rounding
 rule so that the regime type that constituted the majority (or plurality)
 of the year is used. The list of potential regimes includes:
 <ul>
@@ -247,36 +271,37 @@ of the year is used. The list of potential regimes includes:
 <li><p>Single party</p></li>
 <li><p>Military</p></li>
 <li><p>Monarchy</p></li>
-</ul>
-    Definitions of each are provided in the "Classifying Autocracies" section.
+</ul>Definitions of each are provided in the "Classifying Autocracies" section.
 Note that these classifications are mutually exclusive for any given
 country-year.</p></dd>
-    <dt>regime_nr</dt><dd><p>The regime type of a given country-year, in which the
+
+<dt>regime_nr</dt><dd><p>The regime type of a given country-year, in which the
 classification is based on the regime type that exists at the end of the
 year. This is the more "conventional" approach of other regime datasets.</p></dd>
-    <dt>duration_r</dt><dd><p>The age of a regime up to the given country-year, using
+
+<dt>duration_r</dt><dd><p>The age of a regime up to the given country-year, using
 the rounding rule. The count begins at 1.</p></dd>
-    <dt>duration_nr</dt><dd><p>The age of a regime up to the given country-year,
+
+<dt>duration_nr</dt><dd><p>The age of a regime up to the given country-year,
 without rounding. The first year in which a new regime takes hold is
 recorded as 1, regardless of when in the year this new regime appears.</p></dd>
-    <dt>personal1</dt><dd><p>A three-point measure of the country-year's regime's
+
+<dt>personal1</dt><dd><p>A three-point measure of the country-year's regime's
 degree of personalism. This is based on the seven-point <code>xconst</code>
 (executive constraints) scale of the Polity IV dataset. The following
-conversion was used:
-    xconst 1 Highly personal 2
-    xconst 2-4 Moderately personal 1
-    xconst 5-7 Weakly/not personal 0
-    In contrast to <code>personal2</code>, whenever Polity IV does not provide an
+conversion was used:xconst 1 Highly personal 2xconst 2-4 Moderately personal 1xconst 5-7 Weakly/not personal 0In contrast to <code>personal2</code>, whenever Polity IV does not provide an
 <code>xconst</code> measure (periods of transition, interregnum, or occupation),
 this measure is left blank.</p></dd>
-    <dt>personal2</dt><dd><p>Identical to <code>personal1</code>, except missing values are
+
+<dt>personal2</dt><dd><p>Identical to <code>personal1</code>, except missing values are
 filled in. Whenever possible, missing values are imputed using the xconst
 measures that do exist for a given regime. When a regime has the same
 recorded <code>xconst</code> throughout, this value is used for missing values.
 When xconst is not the same throughout a given regime, values are prorated
 to fill middle years and based on the closest xconst measure to fill years
 that are on either end of the regime's lifespan.</p></dd>
-    <dt>lindex</dt><dd><p>A newly constructed measure of personalism within each
+
+<dt>lindex</dt><dd><p>A newly constructed measure of personalism within each
 regime. (See the "Personalism" subsection for a substantive explanation of
 this metric.) The variable is essentially a Herfendahl index (sum of
 squared shares) using the column exname. For a given country-year in a
@@ -293,29 +318,38 @@ years of an individual regime, but we propose this is a useful way of
 considering personalism as an evolving attribute of a regime over time.
 More discussion on the relative merits of this measure can be found below.</p></li>
 </ol></p></dd>
-    <dt>exname</dt><dd><p>The name of the executive head of state in the country-year.
+
+<dt>exname</dt><dd><p>The name of the executive head of state in the country-year.
 Country years from 1950 to 2008 are based on Cheibub, Gandhi, and Vreeland
 (2010).</p></dd>
-    <dt>change</dt><dd><p>A dummy for whether a regime change occurred in this
+
+<dt>change</dt><dd><p>A dummy for whether a regime change occurred in this
 country-year. (Note that in cases such as coups and counter-coups, such
 changes can occur without the overarching regime type changing.)</p></dd>
-    <dt>tdate</dt><dd><p>The date a country underwent transition to a new regime type.
+
+<dt>tdate</dt><dd><p>The date a country underwent transition to a new regime type.
 The format is MM.DD.YYYY, and this date is used in the rounding rule (see
 the section entitled "Transitional Years and Rounding"). When a specific
 month or date cannot be identified, "00" is used.</p></dd>
-    <dt>trans</dt><dd><p>A dummy variable indicating whether the country was in the
+
+<dt>trans</dt><dd><p>A dummy variable indicating whether the country was in the
 midst of transition, as noted by the Polity IV dataset.</p></dd>
-    <dt>occup</dt><dd><p>A dummy variable indicating whether the country was occupied
+
+<dt>occup</dt><dd><p>A dummy variable indicating whether the country was occupied
 by a foreign power in the given year, as noted by the Polity IV dataset.</p></dd>
-    <dt>interreg</dt><dd><p>A dummy variable indicating whether the country was in the
+
+<dt>interreg</dt><dd><p>A dummy variable indicating whether the country was in the
 midst of interregnum in the given year, as noted by the Polity IV dataset.</p></dd>
+
 </dl>
-    
+
     <h2 class="hasAnchor" id="standard-descriptive-variables-generated-by-this-package-"><a class="anchor" href="#standard-descriptive-variables-generated-by-this-package-"></a>Standard descriptive variables (generated by this package)</h2>
 
     
-    <dl class='dl-horizontal'>
-    <dt>extended_country_name</dt><dd><p>The name of the country in the Gleditsch-Ward
+
+<dl'>
+
+<dt>extended_country_name</dt><dd><p>The name of the country in the Gleditsch-Ward
 system of states, or the official name of the
 entity (for non-sovereign entities and states not in the Gleditsch and Ward
 system of states) or else a common name for disputed cases that do not have
@@ -327,65 +361,79 @@ For details, see Gleditsch, Kristian S. &amp; Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
 International Interactions 25: 393-413. The list can be found at
 <a href='http://privatewww.essex.ac.uk/~ksg/statelist.html'>http://privatewww.essex.ac.uk/~ksg/statelist.html</a>.</p></dd>
-    <dt>GWn</dt><dd><p>Gleditsch and Ward's numeric country code, from the Gleditsch and
+
+<dt>GWn</dt><dd><p>Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.</p></dd>
-    <dt>cown</dt><dd><p>The Correlates of War numeric country code, 2016 version. This
+
+<dt>cown</dt><dd><p>The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
 <a href='http://www.correlatesofwar.org/data-sets/state-system-membership'>http://www.correlatesofwar.org/data-sets/state-system-membership</a> for
 the full list.</p></dd>
-    <dt>in_GW_system</dt><dd><p>Whether the state is "in system" (that is, is
+
+<dt>in_GW_system</dt><dd><p>Whether the state is "in system" (that is, is
 independent and sovereign), according to Gleditsch and Ward, for this
 particular date. Matches at the end of the year; so, for example South
 Vietnam 1975 is <code>FALSE</code> because, according to Gleditsch and Ward, the
 country ended on April 1975 (being absorbed by North Vietnam). It is also
 <code>TRUE</code> for dates beyond 2012 for countries that did not end by then, depsite
-the fact that the Gleditsch and Ward list has not been updated since.</p></dd> </dl>
-    
+the fact that the Gleditsch and Ward list has not been updated since.</p></dd> 
+</dl>
+
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other democracy: <code><a href='LIED.html'>LIED</a></code>, <code><a href='PIPE.html'>PIPE</a></code>,
-  <code><a href='anckar.html'>anckar</a></code>, <code><a href='arat_pmm.html'>arat_pmm</a></code>,
-  <code><a href='blm.html'>blm</a></code>, <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
-  <code><a href='bollen_pmm.html'>bollen_pmm</a></code>, <code><a href='doorenspleet.html'>doorenspleet</a></code>,
-  <code><a href='download_fh_electoral.html'>download_fh_electoral</a></code>,
-  <code><a href='download_fh.html'>download_fh</a></code>, <code><a href='download_reign.html'>download_reign</a></code>,
-  <code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a></code>,
-  <code><a href='eiu.html'>eiu</a></code>, <code><a href='fh_pmm.html'>fh_pmm</a></code>,
-  <code><a href='gwf_all.html'>gwf_all</a></code>, <code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
-  <code><a href='kailitz.html'>kailitz</a></code>, <code><a href='mainwaring.html'>mainwaring</a></code>,
-  <code><a href='munck_pmm.html'>munck_pmm</a></code>, <code><a href='pacl.html'>pacl</a></code>,
-  <code><a href='peps.html'>peps</a></code>, <code><a href='pitf.html'>pitf</a></code>,
-  <code><a href='polity_pmm.html'>polity_pmm</a></code>,
-  <code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
-  <code><a href='polyarchy.html'>polyarchy</a></code>, <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
-  <code><a href='svmdi.html'>svmdi</a></code>, <code><a href='svolik_regime.html'>svolik_regime</a></code>,
-  <code><a href='uds_2014.html'>uds_2014</a></code>, <code><a href='ulfelder.html'>ulfelder</a></code>,
-  <code><a href='utip.html'>utip</a></code>, <code><a href='vanhanen.html'>vanhanen</a></code>,
-  <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
-<p>Other authoritarianism: <code><a href='anckar.html'>anckar</a></code>,
-  <code><a href='download_reign.html'>download_reign</a></code>, <code><a href='gwf_all.html'>gwf_all</a></code>,
-  <code><a href='kailitz.html'>kailitz</a></code>, <code><a href='utip.html'>utip</a></code>,
-  <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p></div>
-    
+    <div class='dont-index'><p>Other democracy: 
+<code><a href='LIED.html'>LIED</a></code>,
+<code><a href='PIPE.html'>PIPE</a></code>,
+<code><a href='anckar.html'>anckar</a></code>,
+<code><a href='arat_pmm.html'>arat_pmm</a></code>,
+<code><a href='blm.html'>blm</a></code>,
+<code><a href='bmr.html'>bmr</a></code>,
+<code><a href='bnr.html'>bnr</a></code>,
+<code><a href='bollen_pmm.html'>bollen_pmm</a></code>,
+<code><a href='doorenspleet.html'>doorenspleet</a></code>,
+<code><a href='download_fh_electoral.html'>download_fh_electoral</a>()</code>,
+<code><a href='download_fh_full.html'>download_fh_full</a>()</code>,
+<code><a href='download_fh.html'>download_fh</a>()</code>,
+<code><a href='download_reign.html'>download_reign</a>()</code>,
+<code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a>()</code>,
+<code><a href='eiu.html'>eiu</a></code>,
+<code><a href='fh_pmm.html'>fh_pmm</a></code>,
+<code><a href='gwf_all.html'>gwf_all</a></code>,
+<code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
+<code><a href='kailitz.html'>kailitz</a></code>,
+<code><a href='mainwaring.html'>mainwaring</a></code>,
+<code><a href='munck_pmm.html'>munck_pmm</a></code>,
+<code><a href='pacl.html'>pacl</a></code>,
+<code><a href='peps.html'>peps</a></code>,
+<code><a href='pitf.html'>pitf</a></code>,
+<code><a href='polityIV.html'>polityIV</a></code>,
+<code><a href='polity_pmm.html'>polity_pmm</a></code>,
+<code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
+<code><a href='polyarchy.html'>polyarchy</a></code>,
+<code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
+<code><a href='svmdi.html'>svmdi</a></code>,
+<code><a href='svolik_regime.html'>svolik_regime</a></code>,
+<code><a href='uds_2014.html'>uds_2014</a></code>,
+<code><a href='ulfelder.html'>ulfelder</a></code>,
+<code><a href='utip.html'>utip</a></code>,
+<code><a href='vanhanen.html'>vanhanen</a></code>,
+<code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
+<p>Other authoritarianism: 
+<code><a href='anckar.html'>anckar</a></code>,
+<code><a href='download_reign.html'>download_reign</a>()</code>,
+<code><a href='gwf_all.html'>gwf_all</a></code>,
+<code><a href='kailitz.html'>kailitz</a></code>,
+<code><a href='utip.html'>utip</a></code>,
+<code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p></div>
 
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      
-      <li><a href="#format">Format</a></li>
-
-      <li><a href="#overview">Overview</a></li>
-
-      <li><a href="#summary-of-variables">Summary of Variables</a></li>
-
-      <li><a href="#standard-descriptive-variables-generated-by-this-package-">Standard descriptive variables (generated by this package)</a></li>
-
-      <li><a href="#see-also">See also</a></li>
-          </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -393,13 +441,16 @@ the fact that the Gleditsch and Ward list has not been updated since.</p></dd> <
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

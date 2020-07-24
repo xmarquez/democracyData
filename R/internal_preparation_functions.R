@@ -291,7 +291,7 @@ create_pitf_scores <- function(polity_annual, verbose = TRUE,
            pitf_binary = as.factor(pitf_binary))
 
   if(verbose) {
-    message(sprintf("Resulting data has %d rows, fewer than Polity IV dataset, because of exclusion of interruption codes", nrow(pitf)))
+    message(sprintf("Resulting data has %d rows, fewer than Polity dataset, because of exclusion of interruption codes", nrow(pitf)))
   }
 
   pitf

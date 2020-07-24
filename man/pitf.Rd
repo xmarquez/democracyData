@@ -3,10 +3,17 @@
 \docType{data}
 \name{pitf}
 \alias{pitf}
+\alias{pitf_p4}
 \title{PITF democracy indicator}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 16255 rows and 13 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 16574 rows and 13 columns.
+
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 16581 rows and 13 columns.
+}
 \usage{
 pitf
+
+pitf_p4
 }
 \description{
 The democracy indicator used by the political instability task force and
@@ -17,7 +24,7 @@ for Forecasting Political Instability. American Journal of Political Science
 and Ulfelder, Jay, A Measurement Error Model of Dichotomous Democracy Status
 (May 20, 2015). Available at SSRN: \url{http://ssrn.com/abstract=2726962} or
 \url{http://dx.doi.org/10.2139/ssrn.2726962}. This is derived from the Polity
-dataset.
+dataset (pitf uses version 5; pitf_p4 uses PolityIV updated to 2018).
 }
 \section{Variables}{
 
@@ -195,27 +202,46 @@ Democracy Status (May 20, 2015). Available at SSRN:
 \url{http://dx.doi.org/10.2139/ssrn.2726962}
 }
 \seealso{
-Other democracy: \code{\link{LIED}}, \code{\link{PIPE}},
-  \code{\link{anckar}}, \code{\link{arat_pmm}},
-  \code{\link{blm}}, \code{\link{bmr}}, \code{\link{bnr}},
-  \code{\link{bollen_pmm}}, \code{\link{doorenspleet}},
-  \code{\link{download_fh_electoral}},
-  \code{\link{download_fh}}, \code{\link{download_reign}},
-  \code{\link{download_wgi_voice_and_accountability}},
-  \code{\link{eiu}}, \code{\link{fh_pmm}},
-  \code{\link{gwf_all}}, \code{\link{hadenius_pmm}},
-  \code{\link{kailitz}}, \code{\link{magaloni}},
-  \code{\link{mainwaring}}, \code{\link{munck_pmm}},
-  \code{\link{pacl}}, \code{\link{peps}},
-  \code{\link{polity_pmm}},
-  \code{\link{polyarchy_dimensions}},
-  \code{\link{polyarchy}}, \code{\link{prc_gasiorowski}},
-  \code{\link{svmdi}}, \code{\link{svolik_regime}},
-  \code{\link{uds_2014}}, \code{\link{ulfelder}},
-  \code{\link{utip}}, \code{\link{vanhanen}},
-  \code{\link{wahman_teorell_hadenius}}
+Other democracy: 
+\code{\link{LIED}},
+\code{\link{PIPE}},
+\code{\link{anckar}},
+\code{\link{arat_pmm}},
+\code{\link{blm}},
+\code{\link{bmr}},
+\code{\link{bnr}},
+\code{\link{bollen_pmm}},
+\code{\link{doorenspleet}},
+\code{\link{download_fh_electoral}()},
+\code{\link{download_fh_full}()},
+\code{\link{download_fh}()},
+\code{\link{download_reign}()},
+\code{\link{download_wgi_voice_and_accountability}()},
+\code{\link{eiu}},
+\code{\link{fh_pmm}},
+\code{\link{gwf_all}},
+\code{\link{hadenius_pmm}},
+\code{\link{kailitz}},
+\code{\link{magaloni}},
+\code{\link{mainwaring}},
+\code{\link{munck_pmm}},
+\code{\link{pacl}},
+\code{\link{peps}},
+\code{\link{polityIV}},
+\code{\link{polity_pmm}},
+\code{\link{polyarchy_dimensions}},
+\code{\link{polyarchy}},
+\code{\link{prc_gasiorowski}},
+\code{\link{svmdi}},
+\code{\link{svolik_regime}},
+\code{\link{uds_2014}},
+\code{\link{ulfelder}},
+\code{\link{utip}},
+\code{\link{vanhanen}},
+\code{\link{wahman_teorell_hadenius}}
 
-Other polity: \code{\link{peps}}
+Other polity: 
+\code{\link{peps}}
 }
 \concept{democracy}
 \concept{polity}

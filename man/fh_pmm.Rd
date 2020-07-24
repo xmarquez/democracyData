@@ -6,7 +6,9 @@
 \alias{fh}
 \title{Freedom House "Freedom in the World" data from Pemstein, Meserve, and
 Melton's replication dataset}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 6438 rows and 7 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 6438 rows and 7 columns.
+}
 \source{
 Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
 "Replication data for: Democratic Compromise: A Latent Variable Analysis of
@@ -78,37 +80,66 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 \seealso{
 \link{download_fh} and \link{download_fh_electoral}
 
-Other democracy: \code{\link{LIED}}, \code{\link{PIPE}},
-  \code{\link{anckar}}, \code{\link{arat_pmm}},
-  \code{\link{blm}}, \code{\link{bmr}}, \code{\link{bnr}},
-  \code{\link{bollen_pmm}}, \code{\link{doorenspleet}},
-  \code{\link{download_fh_electoral}},
-  \code{\link{download_fh}}, \code{\link{download_reign}},
-  \code{\link{download_wgi_voice_and_accountability}},
-  \code{\link{eiu}}, \code{\link{gwf_all}},
-  \code{\link{hadenius_pmm}}, \code{\link{kailitz}},
-  \code{\link{magaloni}}, \code{\link{mainwaring}},
-  \code{\link{munck_pmm}}, \code{\link{pacl}},
-  \code{\link{peps}}, \code{\link{pitf}},
-  \code{\link{polity_pmm}},
-  \code{\link{polyarchy_dimensions}},
-  \code{\link{polyarchy}}, \code{\link{prc_gasiorowski}},
-  \code{\link{svmdi}}, \code{\link{svolik_regime}},
-  \code{\link{uds_2014}}, \code{\link{ulfelder}},
-  \code{\link{utip}}, \code{\link{vanhanen}},
-  \code{\link{wahman_teorell_hadenius}}
+Other democracy: 
+\code{\link{LIED}},
+\code{\link{PIPE}},
+\code{\link{anckar}},
+\code{\link{arat_pmm}},
+\code{\link{blm}},
+\code{\link{bmr}},
+\code{\link{bnr}},
+\code{\link{bollen_pmm}},
+\code{\link{doorenspleet}},
+\code{\link{download_fh_electoral}()},
+\code{\link{download_fh_full}()},
+\code{\link{download_fh}()},
+\code{\link{download_reign}()},
+\code{\link{download_wgi_voice_and_accountability}()},
+\code{\link{eiu}},
+\code{\link{gwf_all}},
+\code{\link{hadenius_pmm}},
+\code{\link{kailitz}},
+\code{\link{magaloni}},
+\code{\link{mainwaring}},
+\code{\link{munck_pmm}},
+\code{\link{pacl}},
+\code{\link{peps}},
+\code{\link{pitf}},
+\code{\link{polityIV}},
+\code{\link{polity_pmm}},
+\code{\link{polyarchy_dimensions}},
+\code{\link{polyarchy}},
+\code{\link{prc_gasiorowski}},
+\code{\link{svmdi}},
+\code{\link{svolik_regime}},
+\code{\link{uds_2014}},
+\code{\link{ulfelder}},
+\code{\link{utip}},
+\code{\link{vanhanen}},
+\code{\link{wahman_teorell_hadenius}}
 
-Other Freedom House: \code{\link{download_fh_electoral}},
-  \code{\link{download_fh}}
+Other Freedom House: 
+\code{\link{download_fh_electoral}()},
+\code{\link{download_fh_full}()},
+\code{\link{download_fh}()}
 
-Other PMM replication data: \code{\link{arat_pmm}},
-  \code{\link{blm}}, \code{\link{bollen_pmm}},
-  \code{\link{hadenius_pmm}}, \code{\link{mainwaring}},
-  \code{\link{munck_pmm}}, \code{\link{pacl}},
-  \code{\link{polity_pmm}}, \code{\link{prc_gasiorowski}}
+Other PMM replication data: 
+\code{\link{arat_pmm}},
+\code{\link{blm}},
+\code{\link{bollen_pmm}},
+\code{\link{hadenius_pmm}},
+\code{\link{mainwaring}},
+\code{\link{munck_pmm}},
+\code{\link{pacl}},
+\code{\link{polity_pmm}},
+\code{\link{prc_gasiorowski}}
 
-Other ordinal democracy indexes: \code{\link{download_fh_electoral}},
-  \code{\link{download_fh}}, \code{\link{polity_pmm}}
+Other ordinal democracy indexes: 
+\code{\link{download_fh_electoral}()},
+\code{\link{download_fh_full}()},
+\code{\link{download_fh}()},
+\code{\link{polityIV}},
+\code{\link{polity_pmm}}
 }
 \concept{Freedom House}
 \concept{PMM replication data}

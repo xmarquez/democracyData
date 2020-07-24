@@ -4,7 +4,9 @@
 \name{anckar}
 \alias{anckar}
 \title{The Anckar-Fredriksson dataset of political regimes}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18194 rows and 13 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18194 rows and 13 columns.
+}
 \source{
 C. Anckar and C. Fredriksson. 2018. "Classifying political regimes
 1800-2016: a typology and a new dataset". European Political Science. DOI:
@@ -103,36 +105,62 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 }
 
 \seealso{
-Other democracy: \code{\link{LIED}}, \code{\link{PIPE}},
-  \code{\link{arat_pmm}}, \code{\link{blm}},
-  \code{\link{bmr}}, \code{\link{bnr}},
-  \code{\link{bollen_pmm}}, \code{\link{doorenspleet}},
-  \code{\link{download_fh_electoral}},
-  \code{\link{download_fh}}, \code{\link{download_reign}},
-  \code{\link{download_wgi_voice_and_accountability}},
-  \code{\link{eiu}}, \code{\link{fh_pmm}},
-  \code{\link{gwf_all}}, \code{\link{hadenius_pmm}},
-  \code{\link{kailitz}}, \code{\link{magaloni}},
-  \code{\link{mainwaring}}, \code{\link{munck_pmm}},
-  \code{\link{pacl}}, \code{\link{peps}},
-  \code{\link{pitf}}, \code{\link{polity_pmm}},
-  \code{\link{polyarchy_dimensions}},
-  \code{\link{polyarchy}}, \code{\link{prc_gasiorowski}},
-  \code{\link{svmdi}}, \code{\link{svolik_regime}},
-  \code{\link{uds_2014}}, \code{\link{ulfelder}},
-  \code{\link{utip}}, \code{\link{vanhanen}},
-  \code{\link{wahman_teorell_hadenius}}
+Other democracy: 
+\code{\link{LIED}},
+\code{\link{PIPE}},
+\code{\link{arat_pmm}},
+\code{\link{blm}},
+\code{\link{bmr}},
+\code{\link{bnr}},
+\code{\link{bollen_pmm}},
+\code{\link{doorenspleet}},
+\code{\link{download_fh_electoral}()},
+\code{\link{download_fh_full}()},
+\code{\link{download_fh}()},
+\code{\link{download_reign}()},
+\code{\link{download_wgi_voice_and_accountability}()},
+\code{\link{eiu}},
+\code{\link{fh_pmm}},
+\code{\link{gwf_all}},
+\code{\link{hadenius_pmm}},
+\code{\link{kailitz}},
+\code{\link{magaloni}},
+\code{\link{mainwaring}},
+\code{\link{munck_pmm}},
+\code{\link{pacl}},
+\code{\link{peps}},
+\code{\link{pitf}},
+\code{\link{polityIV}},
+\code{\link{polity_pmm}},
+\code{\link{polyarchy_dimensions}},
+\code{\link{polyarchy}},
+\code{\link{prc_gasiorowski}},
+\code{\link{svmdi}},
+\code{\link{svolik_regime}},
+\code{\link{uds_2014}},
+\code{\link{ulfelder}},
+\code{\link{utip}},
+\code{\link{vanhanen}},
+\code{\link{wahman_teorell_hadenius}}
 
-Other authoritarianism: \code{\link{download_reign}},
-  \code{\link{gwf_all}}, \code{\link{kailitz}},
-  \code{\link{magaloni}}, \code{\link{utip}},
-  \code{\link{wahman_teorell_hadenius}}
+Other authoritarianism: 
+\code{\link{download_reign}()},
+\code{\link{gwf_all}},
+\code{\link{kailitz}},
+\code{\link{magaloni}},
+\code{\link{utip}},
+\code{\link{wahman_teorell_hadenius}}
 
-Other dichotomous democracy indexes: \code{\link{bmr}},
-  \code{\link{bnr}}, \code{\link{doorenspleet}},
-  \code{\link{kailitz}}, \code{\link{pacl}},
-  \code{\link{svolik_regime}}, \code{\link{ulfelder}},
-  \code{\link{utip}}, \code{\link{wahman_teorell_hadenius}}
+Other dichotomous democracy indexes: 
+\code{\link{bmr}},
+\code{\link{bnr}},
+\code{\link{doorenspleet}},
+\code{\link{kailitz}},
+\code{\link{pacl}},
+\code{\link{svolik_regime}},
+\code{\link{ulfelder}},
+\code{\link{utip}},
+\code{\link{wahman_teorell_hadenius}}
 }
 \concept{authoritarianism}
 \concept{democracy}

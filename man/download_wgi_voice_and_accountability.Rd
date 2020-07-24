@@ -3,15 +3,20 @@
 \name{download_wgi_voice_and_accountability}
 \alias{download_wgi_voice_and_accountability}
 \alias{wgi}
-\title{Download the latest version (data up to 2016) of the "Democracy, Voice, and
+\alias{wgi_democracy}
+\title{Download the latest version (data up to 2018) of the "Democracy, Voice, and
 Accountability" index from the World Governance Indicators and process it via
 \link{country_year_coder}}
 \source{
 Worldwide Governance Indicators (http://www.govindicators.org).
 }
 \usage{
-download_wgi_voice_and_accountability(url, verbose = TRUE,
-  return_raw = FALSE, ...)
+download_wgi_voice_and_accountability(
+  url,
+  verbose = TRUE,
+  return_raw = FALSE,
+  ...
+)
 }
 \arguments{
 \item{url}{The URL of the dataset. Defaults to \url{http://databank.worldbank.org/data/download/WGI_csv.zip}}
@@ -26,7 +31,7 @@ Default is \code{FALSE}.}
 }
 \value{
 A dataset containing the country-year version of the latest update
-(to 2017) of the World Governance Indicators "Democracy, Voice and
+(to 2018) of the World Governance Indicators "Democracy, Voice and
 Accountability" Index, compiled by Daniel Kaufmann and Aart Kraay. The
 original data are available at
 http://info.worldbank.org/governance/wgi/index.aspx#home, along with a full
@@ -62,14 +67,14 @@ for more details.}
 \item{Rank}{Percentile rank among all countries (ranges from 0 (lowest) to
 100 (highest) rank).}
 
-\item{Lower}{Lower bound of 90% confidence interval for governance, in
+\item{Lower}{Lower bound of 90\% confidence interval for governance, in
 percentile rank terms.}
 
-\item{Upper}{Upper bound of 90% confidence interval for governance, in
+\item{Upper}{Upper bound of 90\% confidence interval for governance, in
 percentile rank terms} }
 }
 \description{
-Download the latest version (data up to 2016) of the "Democracy, Voice, and
+Download the latest version (data up to 2018) of the "Democracy, Voice, and
 Accountability" index from the World Governance Indicators and process it via
 \link{country_year_coder}
 }
@@ -110,7 +115,7 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 \section{Note}{
 
 
-The datasets downloaded by the \code{download_*} family of functions are not
+The datasets downloaded by the \verb{download_*} family of functions are not
 directly available in this package. You will always need to directly
 download them in order to use them.
 }
@@ -120,29 +125,52 @@ download them in order to use them.
 download_wgi_voice_and_accountability()}
 }
 \seealso{
-Other democracy: \code{\link{LIED}}, \code{\link{PIPE}},
-  \code{\link{anckar}}, \code{\link{arat_pmm}},
-  \code{\link{blm}}, \code{\link{bmr}}, \code{\link{bnr}},
-  \code{\link{bollen_pmm}}, \code{\link{doorenspleet}},
-  \code{\link{download_fh_electoral}},
-  \code{\link{download_fh}}, \code{\link{download_reign}},
-  \code{\link{eiu}}, \code{\link{fh_pmm}},
-  \code{\link{gwf_all}}, \code{\link{hadenius_pmm}},
-  \code{\link{kailitz}}, \code{\link{magaloni}},
-  \code{\link{mainwaring}}, \code{\link{munck_pmm}},
-  \code{\link{pacl}}, \code{\link{peps}},
-  \code{\link{pitf}}, \code{\link{polity_pmm}},
-  \code{\link{polyarchy_dimensions}},
-  \code{\link{polyarchy}}, \code{\link{prc_gasiorowski}},
-  \code{\link{svmdi}}, \code{\link{svolik_regime}},
-  \code{\link{uds_2014}}, \code{\link{ulfelder}},
-  \code{\link{utip}}, \code{\link{vanhanen}},
-  \code{\link{wahman_teorell_hadenius}}
+Other democracy: 
+\code{\link{LIED}},
+\code{\link{PIPE}},
+\code{\link{anckar}},
+\code{\link{arat_pmm}},
+\code{\link{blm}},
+\code{\link{bmr}},
+\code{\link{bnr}},
+\code{\link{bollen_pmm}},
+\code{\link{doorenspleet}},
+\code{\link{download_fh_electoral}()},
+\code{\link{download_fh_full}()},
+\code{\link{download_fh}()},
+\code{\link{download_reign}()},
+\code{\link{eiu}},
+\code{\link{fh_pmm}},
+\code{\link{gwf_all}},
+\code{\link{hadenius_pmm}},
+\code{\link{kailitz}},
+\code{\link{magaloni}},
+\code{\link{mainwaring}},
+\code{\link{munck_pmm}},
+\code{\link{pacl}},
+\code{\link{peps}},
+\code{\link{pitf}},
+\code{\link{polityIV}},
+\code{\link{polity_pmm}},
+\code{\link{polyarchy_dimensions}},
+\code{\link{polyarchy}},
+\code{\link{prc_gasiorowski}},
+\code{\link{svmdi}},
+\code{\link{svolik_regime}},
+\code{\link{uds_2014}},
+\code{\link{ulfelder}},
+\code{\link{utip}},
+\code{\link{vanhanen}},
+\code{\link{wahman_teorell_hadenius}}
 
-Other continuous democracy indexes: \code{\link{arat_pmm}},
-  \code{\link{bollen_pmm}}, \code{\link{eiu}},
-  \code{\link{hadenius_pmm}}, \code{\link{munck_pmm}},
-  \code{\link{svmdi}}, \code{\link{vanhanen}}
+Other continuous democracy indexes: 
+\code{\link{arat_pmm}},
+\code{\link{bollen_pmm}},
+\code{\link{eiu}},
+\code{\link{hadenius_pmm}},
+\code{\link{munck_pmm}},
+\code{\link{svmdi}},
+\code{\link{vanhanen}}
 }
 \concept{continuous democracy indexes}
 \concept{democracy}

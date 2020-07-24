@@ -793,7 +793,7 @@ country_year_match <- function(data, dict, country_col,
 
   if(!missing(code_col)) {
     country_matches <- country_matches %>%
-      group_by(!!code_col, add = TRUE)
+      group_by(!!code_col, .add = TRUE)
   }
 
   country_matches <- country_matches %>%
@@ -840,7 +840,7 @@ is_before <- function(date_col, startdate) {
 is_between <- function(date_col, startdate, enddate) {
   today <- as_date(floor_date(now(),unit = "day"))
 
-  result <- dplyr::data_frame(date_col = ymd(paste0(date_col, "-12-31")),
+  result <- dplyr::tibble(date_col = ymd(paste0(date_col, "-12-31")),
                               startdate = startdate,
                               enddate = enddate) %>%
     group_by(date_col) %>%
@@ -914,62 +914,132 @@ prepare_dict <- function(to_system, match_final_year) {
 
 print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_table = TRUE) {
 
-  if(missing(country_col)) {
-    country_col <- enquo(code_col)
-  } else {
-    country_col <- enquo(country_col)
-  }
-
-  if(missing(code_col)) {
-    code_col <- enquo(country_col)
-  } else {
-    code_col <- enquo(code_col)
-  }
+  tbl <- tbl %>%
+    distinct()
 
   date_col <- enquo(date_col)
-
   matched_cols <- names(tbl)[ names(tbl) %in% names(data) ]
   matched_country_col <- parse_expr(matched_cols[ grepl("country", matched_cols) ][1])
 
 
-  tbl <- tbl %>%
-    distinct()
+  if(missing(country_col)) {
 
-  multiple_matches <- tbl %>%
-    group_by(!!country_col, !!code_col, !!date_col) %>%
-    filter(n() > 1) %>%
-    group_by(!!country_col, !!code_col) %>%
-    group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
-    summarise(min_date = min(!!date_col),
-              max_date  = max(!!date_col),
-              n = n())
+    code_col <- enquo(code_col)
 
-  multiple_matches_2 <- tbl %>%
-    group_by(!!date_col) %>%
-    group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
-    filter(n() > 1, !is.na(!!matched_country_col)) %>%
-    group_by(!!country_col, !!code_col) %>%
-    group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
-    summarise(min_date = min(!!date_col),
-              max_date  = max(!!date_col),
-              n = n())
+    multiple_matches <- tbl %>%
+      group_by(!!code_col, !!date_col) %>%
+      filter(n() > 1) %>%
+      group_by(!!code_col) %>%
+      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
+      summarise(min_date = min(!!date_col),
+                max_date  = max(!!date_col),
+                n = n())
 
-  not_matched <- tbl %>%
-    filter(is.na(!!matched_country_col)) %>%
-    group_by(!!country_col, !!code_col) %>%
-    group_by_at(vars(matched_cols), .add = TRUE)  %>%
-    summarise(min_date = min(!!date_col),
-              max_date  = max(!!date_col),
-              n = n())
+    multiple_matches_2 <- tbl %>%
+      group_by(!!date_col) %>%
+      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
+      filter(n() > 1, !is.na(!!matched_country_col)) %>%
+      group_by(!!code_col) %>%
+      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
+      summarise(min_date = min(!!date_col),
+                max_date  = max(!!date_col),
+                n = n())
 
-  country_name_changes <- tbl %>%
-    filter(stringr::str_to_lower(!!country_col) !=
-             stringr::str_to_lower(!!matched_country_col)) %>%
-    group_by(!!country_col, !!code_col) %>%
-    group_by_at(vars(matched_cols), .add = TRUE)  %>%
-    summarise(min_date = min(!!date_col),
-              max_date  = max(!!date_col),
-              n = n())
+    not_matched <- tbl %>%
+      filter(is.na(!!matched_country_col)) %>%
+      group_by(!!code_col) %>%
+      group_by_at(vars(matched_cols), .add = TRUE)  %>%
+      summarise(min_date = min(!!date_col),
+                max_date  = max(!!date_col),
+                n = n())
+
+  } else if(missing(code_col)) {
+
+    country_col <- enquo(country_col)
+
+    multiple_matches <- tbl %>%
+      group_by(!!country_col, !!date_col) %>%
+      filter(n() > 1) %>%
+      group_by(!!country_col) %>%
+      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
+      summarise(min_date = min(!!date_col),
+                max_date  = max(!!date_col),
+                n = n())
+
+    multiple_matches_2 <- tbl %>%
+      group_by(!!date_col) %>%
+      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
+      filter(n() > 1, !is.na(!!matched_country_col)) %>%
+      group_by(!!country_col) %>%
+      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
+      summarise(min_date = min(!!date_col),
+                max_date  = max(!!date_col),
+                n = n())
+
+    not_matched <- tbl %>%
+      filter(is.na(!!matched_country_col)) %>%
+      group_by(!!country_col)  %>%
+      group_by_at(vars(matched_cols), .add = TRUE)  %>%
+      summarise(min_date = min(!!date_col),
+                max_date  = max(!!date_col),
+                n = n())
+
+  } else {
+
+    country_col <- enquo(country_col)
+
+    code_col <- enquo(code_col)
+
+    multiple_matches <- tbl %>%
+      group_by(!!country_col, !!code_col, !!date_col) %>%
+      filter(n() > 1) %>%
+      group_by(!!country_col, !!code_col) %>%
+      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
+      summarise(min_date = min(!!date_col),
+                max_date  = max(!!date_col),
+                n = n())
+
+    multiple_matches_2 <- tbl %>%
+      group_by(!!date_col) %>%
+      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
+      filter(n() > 1, !is.na(!!matched_country_col)) %>%
+      group_by(!!country_col, !!code_col) %>%
+      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
+      summarise(min_date = min(!!date_col),
+                max_date  = max(!!date_col),
+                n = n())
+
+    not_matched <- tbl %>%
+      filter(is.na(!!matched_country_col)) %>%
+      group_by(!!country_col, !!code_col)  %>%
+      group_by_at(vars(matched_cols), .add = TRUE)  %>%
+      summarise(min_date = min(!!date_col),
+                max_date  = max(!!date_col),
+                n = n())
+  }
+
+
+  if(!missing(country_col) & !missing(code_col)) {
+    country_name_changes <- tbl %>%
+      filter(stringr::str_to_lower(!!country_col) !=
+               stringr::str_to_lower(!!matched_country_col)) %>%
+      group_by(!!country_col, !!code_col) %>%
+      group_by_at(vars(matched_cols), .add = TRUE)  %>%
+      summarise(min_date = min(!!date_col),
+                max_date  = max(!!date_col),
+                n = n())
+  } else if(!missing(country_col)) {
+    country_name_changes <- tbl %>%
+      filter(stringr::str_to_lower(!!country_col) !=
+               stringr::str_to_lower(!!matched_country_col)) %>%
+      group_by(!!country_col) %>%
+      group_by_at(vars(matched_cols), .add = TRUE)  %>%
+      summarise(min_date = min(!!date_col),
+                max_date  = max(!!date_col),
+                n = n())
+  } else {
+    country_name_changes <- tibble()
+  }
 
   if(nrow(multiple_matches) > 0) {
     if(print_as_table) {

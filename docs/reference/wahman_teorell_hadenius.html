@@ -9,21 +9,29 @@
 <title>Authoritarian Regimes Data Set, version 5.0, by Axel Hadenius, Jan Teorell, &amp;
 Michael Wahman — wahman_teorell_hadenius • democracyData</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -31,9 +39,9 @@ Michael Wahman — wahman_teorell_hadenius • democracyData</title>
 
 
 
+
 <meta property="og:title" content="Authoritarian Regimes Data Set, version 5.0, by Axel Hadenius, Jan Teorell, &amp;
 Michael Wahman — wahman_teorell_hadenius" />
-
 <meta property="og:description" content="The Authoritarian Regimes Data set by Axel Hadenius, Jan Teorell, &amp;amp; Michael
 Wahman, described in Hadenius, Axel &amp;amp; Jan Teorell. 2007. &quot;Pathways from
 Authoritarianism&quot;, Journal of Democracy 18(1): 143-156 and Wahman, Michael,
@@ -42,7 +50,7 @@ updated data in comparative perspective. Contemporary Politics 19 (1): 19-34.
 The dataset and codebook can be downloaded from
 https://sites.google.com/site/authoritarianregimedataset/data. I simply
 copy the codebook below." />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -56,9 +64,10 @@ copy the codebook below." />
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -72,7 +81,7 @@ copy the codebook below." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4</span>
       </span>
     </div>
 
@@ -80,7 +89,7 @@ copy the codebook below." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -91,11 +100,10 @@ copy the codebook below." />
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/xmarquez/democracyData">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/xmarquez/democracyData/">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -106,6 +114,7 @@ copy the codebook below." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -118,7 +127,6 @@ Michael Wahman</h1>
     </div>
 
     <div class="ref-description">
-    
     <p>The Authoritarian Regimes Data set by Axel Hadenius, Jan Teorell, &amp; Michael
 Wahman, described in Hadenius, Axel &amp; Jan Teorell. 2007. "Pathways from
 Authoritarianism", Journal of Democracy 18(1): 143-156 and Wahman, Michael,
@@ -127,15 +135,14 @@ updated data in comparative perspective. Contemporary Politics 19 (1): 19-34.
 The dataset and codebook can be downloaded from
 <a href='https://sites.google.com/site/authoritarianregimedataset/data'>https://sites.google.com/site/authoritarianregimedataset/data</a>. I simply
 copy the codebook below.</p>
-    
     </div>
 
     <pre class="usage"><span class='no'>wahman_teorell_hadenius</span></pre>
-        
+
+
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 8231 rows and 54 columns.</p>
-    
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>Hadenius, Axel and Jan Teorell. 2005. "Assessing Alternative Indices of
@@ -149,7 +156,6 @@ Jan Teorell, and Axel Hadenius. 2013. Authoritarian regime types revisited:
 updated data in comparative perspective. Contemporary Politics 19 (1): 19-34</p>
 <p>Hadenius, Axel and Jan Teorell. 2007. "Pathways from Authoritarianism",
 Journal of Democracy 18(1): 143-156.</p>
-    
     <h2 class="hasAnchor" id="note-on-version-"><a class="anchor" href="#note-on-version-"></a>NOTE ON VERSION 4</h2>
 
     <p>In this update between version 2.0 and 3.0
@@ -163,7 +169,6 @@ Philippines for that year. Between version 3.0 and 4.0 codings were
 adjusted for Fiji in the period 2007-2008.</p>
 <p>For each variable in the database n refers to the number of observed
 country years, N to the number of countries covered.</p>
-    
     <h2 class="hasAnchor" id="country-and-time-coverage"><a class="anchor" href="#country-and-time-coverage"></a>Country and time coverage</h2>
 
     <p>This data set covers the time period
@@ -183,19 +188,24 @@ Montenegro) Serbia is seen as the continuation of this state following the
 independence of Montenegro. Cyprus refers to the Greek part of Cyprus.
 Albania is treated as the same case after the independence of Kosovo.
 Kosovo is treated as a new case from 2009.</p>
-    
     <h2 class="hasAnchor" id="identification-variables"><a class="anchor" href="#identification-variables"></a>Identification variables</h2>
 
     
-    <dl class='dl-horizontal'>
-    <dt>wahman_teorell_hadenius_country</dt><dd><p>(n: 7991, N:
+
+
+<dl'>
+
+<dt>wahman_teorell_hadenius_country</dt><dd><p>(n: 7991, N:
 195) Country name. Lists the full country name.</p></dd>
-    <dt>siffra</dt><dd><p>(n: 7991, N:
+
+<dt>siffra</dt><dd><p>(n: 7991, N:
 195) Country code. Numeric country code.</p></dd>
-    <dt>wahman_teorell_hadenius_cow</dt><dd><p>(n:7150, N: 192)
+
+<dt>wahman_teorell_hadenius_cow</dt><dd><p>(n:7150, N: 192)
 Corralates of war country code. Source: Corralates of war 2 project
 <a href='http://www.correlatesofwar.org/.'>http://www.correlatesofwar.org/.</a></p></dd>
-    <dt>ccode</dt><dd><p>(n:5867, N: 168)
+
+<dt>ccode</dt><dd><p>(n:5867, N: 168)
 Polity country code (polity IV) Example: 85- Kenya 200- United Kingdom
 Changes made in the country codes when incorporating them into our
 database: Germany West (original code: 260) = Germany (ccode 255) Ethiopia
@@ -205,7 +215,8 @@ database: Germany West (original code: 260) = Germany (ccode 255) Ethiopia
 Integrated Network for societal Conflict research (INSCR) Program Center
 for International Development and Conflict Management (CIDCM) University of
 Maryland, Collage Park 20742, <a href='http://www.cidcm.umd.edu/inscr/polity.'>http://www.cidcm.umd.edu/inscr/polity.</a></p></dd>
-    <dt>ccode_qog</dt><dd><p>(n:7527, N:193) ISO country code. In the following cases
+
+<dt>ccode_qog</dt><dd><p>(n:7527, N:193) ISO country code. In the following cases
 the ISO country numbers has been changed to match the countrycoding
 principles of our database: Germany West before 1991 (original code: 280) =
 Germany (ccode 276) Ethiopia before 1993 (original code: 230) = Ethiopia
@@ -213,26 +224,31 @@ Germany (ccode 276) Ethiopia before 1993 (original code: 230) = Ethiopia
 704) Source:
 <a href='http://www.iso.org/en/prods-services/iso3166ma/02iso-3166-code-lists/index.html'>http://www.iso.org/en/prods-services/iso3166ma/02iso-3166-code-lists/index.html</a>,
 <a href='http://en.wikipedia.org/wiki/ISO3166-1'>http://en.wikipedia.org/wiki/ISO3166-1</a></p></dd> <dt>year</dt><dd><p>(n: 7991, N:
-195) Year of observation.</p></dd></dl>
-    
+195) Year of observation.</p></dd>
+</dl>
+
     <h2 class="hasAnchor" id="indices-of-democracy"><a class="anchor" href="#indices-of-democracy"></a>Indices of democracy</h2>
 
-    <p></p><dl class='dl-horizontal'>
-    <dt>fhadd</dt><dd><p>(n: 6712, N: 195)
+    <p></p><dl'>
+
+<dt>fhadd</dt><dd><p>(n: 6712, N: 195)
 Average Freedom House political rights and civil liberty scores scaled
 0-10, where 10 indicate the highest degree of political rights and civil
 liberties and 0 the lowest degree. Source: The Freedom House surveys
 (Freedom in the world). www.freedomhouse.org.</p></dd>
-    <dt>revpol2</dt><dd><p>(n: 5794,
+
+<dt>revpol2</dt><dd><p>(n: 5794,
 N:170) Revised combined polity score (polity2), scaled 0-10, where 10
 indicates strongly democratic and 0 strongly autocratic. Source: Marshall,
 Monty G &amp; Jaggers, Keith: Polity IV project, Integrated Network for
 societal Conflict research (INSCR) Program Center for International
 Development and Conflict Management (CIDCM) University of Maryland, Collage
 Park 20742, <a href='http://www.systemicpeace.org/polity/polity4.htm.'>http://www.systemicpeace.org/polity/polity4.htm.</a></p></dd>
-    <dt>fhpol</dt><dd><p>(n: 5789, N: 170) Average Polity (revpol2) &amp; Freedom House
+
+<dt>fhpol</dt><dd><p>(n: 5789, N: 170) Average Polity (revpol2) &amp; Freedom House
 (fhadd) scores, scaled 0-10.1 Source: See fhadd and revpol2.</p></dd>
-    <dt>ifhpol</dt><dd><p>(n: 6712, N: 195) Imputed average Polity (revpol2) &amp; Freedom
+
+<dt>ifhpol</dt><dd><p>(n: 6712, N: 195) Imputed average Polity (revpol2) &amp; Freedom
 House (fhadd) scores (scaled 0-10), where missing values have been imputed
 by regressing the fhpol index on the Freedom House scores (fhadd), which
 have better country coverage than Polity.2 Countries with an ifhpol score
@@ -243,13 +259,17 @@ Imputed scores larger than 10 are set equal to 10. This imputation in
 effect also affects the time-series information on ifhpol for countries
 with some Polity data (although with less coverage than FH). In rare
 instances, this means that ifhpol in these countries changes although the
-underlying FH scores do not change. Source: See fhadd and revpol2.</p></dd></dl>
-    
+underlying FH scores do not change. Source: See fhadd and revpol2.</p></dd>
+</dl>
+
     <h2 class="hasAnchor" id="regime-classification-variables"><a class="anchor" href="#regime-classification-variables"></a>Regime classification variables</h2>
 
     
-    <dl class='dl-horizontal'>
-    <dt>regime1ny</dt><dd><p>(n:
+
+
+<dl'>
+
+<dt>regime1ny</dt><dd><p>(n:
 6693, N:195) Collapsed regime type 1 Monarchy 2 Military 3 One party 4
 Multi-party 9 No-party 99 Other 100 Democracy Using the mean of the Freedom
 House and Polity scales (ifhpol), we draw the line between democracies and
@@ -335,9 +355,11 @@ Human Rights practices (Reports submitted to Congress by US Department of
 State), various years, later editions on
 <a href='http://www.state.gov/g/drl/hr/c1470.htm'>http://www.state.gov/g/drl/hr/c1470.htm</a>, Encycopledia Britannica
 online <a href='http://search.eb.com.'>http://search.eb.com.</a></p></dd>
-    <dt>regime1nyrobust</dt><dd><p>Same as
+
+<dt>regime1nyrobust</dt><dd><p>Same as
 regime1ny, but with 7.5 democracy threshold.</p></dd>
-    <dt>regimeny</dt><dd><p>(n: 6693,
+
+<dt>regimeny</dt><dd><p>(n: 6693,
 N:195) Regime type 1 Limited Multiparty 2 Partyless 3 No-Party 4 Military 5
 Military No-Party 6 Military Multiparty 7 Military One-party 8 One-Party 9
 Other 16 One-Party Monarchy 17 Monarchy 18 Rebel Regime 19 Civil War 20
@@ -354,41 +376,53 @@ transition, are classified as transitional regimes.7 There are furthermore
 countries in which the official government does not in reality control the
 territory. This may be due to civil war or occupation by foreign troops.
 Source: See regime1ny</p></dd>
-    <dt>regimenyrobust</dt><dd><p>Same as regimeny, but with 7.5
+
+<dt>regimenyrobust</dt><dd><p>Same as regimeny, but with 7.5
 democracy threshold.</p></dd>
-    <dt>mon</dt><dd><p>(n: 6693, N:195) Monarchy main type dummy
+
+<dt>mon</dt><dd><p>(n: 6693, N:195) Monarchy main type dummy
 0- Not a monarchy 1- Monarchy Coded as 1 for all monarchies, regardless of
 whether they are amalgams or sub-types (regimeny=16, 17, 23 or 24), 0
 otherwise. Source: See regime1ny.</p></dd>
-    <dt>monrobust</dt><dd><p>Same as mon, but with
+
+<dt>monrobust</dt><dd><p>Same as mon, but with
 7.5 democracy threshold.</p></dd>
-    <dt>mil</dt><dd><p>(n: 6693, N:195) Military main type
+
+<dt>mil</dt><dd><p>(n: 6693, N:195) Military main type
 dummy 0- civilian rule 1- military rule Coded as 1 for all military
 regimes, regardless of whether they are amalgams or sub-types (regimeny=4,
 5, 6, 7 or 18), 0 otherwise. Source: See regime1ny.</p></dd>
-    <dt>milrobust</dt><dd><p>Same
+
+<dt>milrobust</dt><dd><p>Same
 as mil, but with 7.5 democracy threshold.</p></dd>
-    <dt>mul</dt><dd><p>(n: 6693, N:195)
+
+<dt>mul</dt><dd><p>(n: 6693, N:195)
 multiparty main type dummy 0- Not multiparty 7 A transitional regime can
 only last in our schema for up to three years; after that, it is given a
 different and more fitting classification. 1- Limited Multiparty Coded as 1
 for all limited multiparty regimes, regardless of whether they are amalgams
 or sub-types (regimeny=1, 2, 6, 24 or 25), 0 otherwise. Source: See
 regime1ny.</p></dd>
-    <dt>mulrobust</dt><dd><p>Same as mul, but with 7.5 democracy
+
+<dt>mulrobust</dt><dd><p>Same as mul, but with 7.5 democracy
 threshold.</p></dd>
-    <dt>onep</dt><dd><p>(n: 6693, N:195) one-party main type dummy 0- Not a
+
+<dt>onep</dt><dd><p>(n: 6693, N:195) one-party main type dummy 0- Not a
 one party regime 1- One-party regime Coded as 1 for all one-party regimes,
 regardless of whether they are amalgams or sub-types (regimeny=7, 8 or 16),
 0 otherwise. Source: See regime1ny.</p></dd>
-    <dt>oneprobust</dt><dd><p>Same as onep, but
+
+<dt>oneprobust</dt><dd><p>Same as onep, but
 with 7.5 democracy threshold.</p></dd>
-    <dt>nop</dt><dd><p>(n: 6693, N:195) noparty main
+
+<dt>nop</dt><dd><p>(n: 6693, N:195) noparty main
 type dummy 0- Not a no-party system 1- No-party system Coded as 1 for all
 no-party regimes, regardless of whether they are amalgams or sub-types
 (regimeny=3, 5 or 23), 0 otherwise. Source: See regime1ny.</p></dd>
-    <dt>noprobust</dt><dd><p>Same as nop, but with 7.5 democracy threshold.</p></dd>
-    <dt>partsz</dt><dd><p>(n:6504, N:194) size of the largest party in legislature (in
+
+<dt>noprobust</dt><dd><p>Same as nop, but with 7.5 democracy threshold.</p></dd>
+
+<dt>partsz</dt><dd><p>(n:6504, N:194) size of the largest party in legislature (in
 fractions) Counts the largest parties' number of seats divided with the
 legislative assembles' total number of seats expressed in fractions. In
 countries with a two-chamber parliament the lower house is counted. Source:
@@ -404,16 +438,18 @@ Rulers <a href='http://www.rulers.org'>http://www.rulers.org</a>, Keesing's Reco
 <a href='http://keesings.gvpi.net/keesings/lpext.dll?f=templates&amp;fn=main-h.htm'>http://keesings.gvpi.net/keesings/lpext.dll?f=templates&amp;fn=main-h.htm</a>,
 The CIA World Fact book
 <a href='http://www.cia.gov/cia/publications/factbook'>http://www.cia.gov/cia/publications/factbook</a></p></dd>
-    <dt>partsz1</dt><dd><p>(n:6504,
+
+<dt>partsz1</dt><dd><p>(n:6504,
 N:193) size of largest party (in fraction), zero for one party regime Codes
 all one-party regimes as 0 instead of 1 as is done in partsz, otherwise
 this variable corresponds to the former variable partsz. When the degree of
 "dominance" of the largest party within multiparty regimes is to be
-controlled for, this variable should be used. Source: See partsz.</p></dd></dl>
-    
+controlled for, this variable should be used. Source: See partsz.</p></dd>
+</dl>
+
     <h2 class="hasAnchor" id="historical-variables-and-regime-duration-indicators"><a class="anchor" href="#historical-variables-and-regime-duration-indicators"></a>Historical variables and regime duration indicators</h2>
 
-    <p></p><dl class='dl-horizontal'>
+    <p></p><dl'>
 <dt>yrindep</dt><dd><p>(n:7605, N:195) Year of independence (1700=1700 or before)
 We have generally used the data when a state became independent or unified
 within the (more or less) current borders. This pertains for instance to
@@ -423,28 +459,33 @@ established any civilian rule has not been counted as cases of
 colonisation. All countries that became independent in 1700 or prior to
 this year is coded as yrindep=1700. Source: CIA World Fact Book and
 Encyclopedia Britannica Online.</p></dd>
-    <dt>yrterm</dt><dd><p>(n:7605, N:195) Year of
+
+<dt>yrterm</dt><dd><p>(n:7605, N:195) Year of
 termination of the country (2005= still existing at the end of our
 observation period) The following cases has a noted year of
 termination&lt;2005: East Germany (1990), Czechoslovakia (1993), USSR (1991),
 South Yemen (1990), North Yemen (1990), Yugoslavia FPR (1992), South
 Vietnam (1976). Source: CIA World Fact Book and Encyclopedia Britannica
 Online.</p></dd>
-    <dt>regstart</dt><dd><p>(n: 2673, N: 194) Starting year of regime
+
+<dt>regstart</dt><dd><p>(n: 2673, N: 194) Starting year of regime
 (backdated to 1960) Indicates the starting year of the current regime type,
 backdated until 1960 for the regime that was in place in 1972, that is, at
 the start of our observation period. The variable is only coded for the
 first regime period of each country.</p></dd>
-    <dt>lagregime1ny</dt><dd><p>(n: 6693, N:194)
+
+<dt>lagregime1ny</dt><dd><p>(n: 6693, N:194)
 Previous regime type (collapsed regime type) 1 Monarchy 2 Military 3 One
 party 4 Multi-party 9 No-party 99 Other 100 Democracy Indicates the current
 regimes' previous regime type according to the classification of regime1ny.
 At the first year of the time-series each country has its current regime
 type as lagregime1ny. For definitions of regime types, see regime1ny..
 Source: See regime1ny.</p></dd>
-    <dt>lagregime1nyrobust</dt><dd><p>Same as lagregime1ny, but
+
+<dt>lagregime1nyrobust</dt><dd><p>Same as lagregime1ny, but
 with 7.5 democracy threshold.</p></dd>
-    <dt>lagregimeny</dt><dd><p>(n: 6693, N:194) Previous
+
+<dt>lagregimeny</dt><dd><p>(n: 6693, N:194) Previous
 regime type 1 Limited Multiparty 2 Partyless 3 No-Party 4 Military 5
 Military No-Party 6 Military Multiparty 7 Military One-party 8 One-Party 9
 Other 16 One-Party Monarchy 17 Monarchy 18 Rebel Regime 19 Civil War 20
@@ -454,41 +495,54 @@ current regimes' previous regime type according to the classification of
 regimeny. At the first year of the time-series each country has its current
 regime type as lagregimeny. For definitions of regime types, see regimeny.
 Source: See regime1ny.</p></dd>
-    <dt>lagregimenyrobust</dt><dd><p>Same as lagregimeny, but
+
+<dt>lagregimenyrobust</dt><dd><p>Same as lagregimeny, but
 with 7.5 democracy threshold.</p></dd>
-    <dt>regnumb1ny</dt><dd><p>(n: 6693, N:195) Number of
+
+<dt>regnumb1ny</dt><dd><p>(n: 6693, N:195) Number of
 consecutive regime periods (collapsed regime type) Indicates the
 consecutive number of the current regime period for a country according to
 the classification of regime1ny. Source: See regime1ny</p></dd>
-    <dt>regnumb1nyrobust</dt><dd><p>Same as regnumb1ny, but with 7.5 democracy
+
+<dt>regnumb1nyrobust</dt><dd><p>Same as regnumb1ny, but with 7.5 democracy
 threshold.</p></dd>
-    <dt>regnumbny2</dt><dd><p>(n: 6693, N:195) Number of consecutive
+
+<dt>regnumbny2</dt><dd><p>(n: 6693, N:195) Number of consecutive
 regime periods Indicates the consecutive number of the current regime
 period for a country according to the classification of regimeny. Source:
 See regime1ny</p></dd>
-    <dt>regnumbny2robust</dt><dd><p>Same as regnumbny2, but with 7.5
+
+<dt>regnumbny2robust</dt><dd><p>Same as regnumbny2, but with 7.5
 democracy threshold.</p></dd>
-    <dt>totdur1ny</dt><dd><p>(n: 6693, N:195) Duration of current
+
+<dt>totdur1ny</dt><dd><p>(n: 6693, N:195) Duration of current
 regime period (collapsed regime type) Indicates the number of years that
 the current regime, according to the classification of regime1ny, has been
 in place in a country (up until 2003, the end of the observation period).
 Regime durations are backdated to 1960 according to regstart. Source: See
 regime1ny</p></dd>
-    <dt>totdur1nyrobust</dt><dd><p>Same as totdur1ny, but with 7.5 democracy
+
+<dt>totdur1nyrobust</dt><dd><p>Same as totdur1ny, but with 7.5 democracy
 threshold.</p></dd>
-    <dt>totdurny2</dt><dd><p>(n: 6693, N:195) Duration of current regime
+
+<dt>totdurny2</dt><dd><p>(n: 6693, N:195) Duration of current regime
 period (in years) Indicates the number of years that the current regime,
 according to the classification of regimeny, has been in place in a country
 (up until 2003, the end of the observation period). Regime durations are
 backdated to 1960 according to regstart. Source: See regime1ny</p></dd>
-    <dt>totdurny2robust</dt><dd><p>Same as regnumbny2, but with 7.5 democracy
-threshold.</p></dd></dl>
-    
+
+<dt>totdurny2robust</dt><dd><p>Same as regnumbny2, but with 7.5 democracy
+threshold.</p></dd>
+</dl>
+
     <h2 class="hasAnchor" id="indicators-of-personalism"><a class="anchor" href="#indicators-of-personalism"></a>Indicators of personalism</h2>
 
     
-    <dl class='dl-horizontal'>
-    <dt>persagg1ny</dt><dd><p>(n: 6693,
+
+
+<dl'>
+
+<dt>persagg1ny</dt><dd><p>(n: 6693,
 N:195) Mean executive turnover (collapsed regime type) Measures the total
 number of changes of the chief executive during the regime spell divided by
 the years of regime spell duration, according to the classification of
@@ -502,34 +556,45 @@ The Swedish Institute of International affairs: Country guides
 <a href='http://www.landguiden.se'>http://www.landguiden.se</a>, Country Reports on Human Rights practices
 (Reports submitted to Congress by US Department of State), Encyclopedia
 Britannica <a href='http://search.eb.com'>http://search.eb.com</a></p></dd>
-    <dt>persagg1nyrobust</dt><dd><p>Same as
+
+<dt>persagg1nyrobust</dt><dd><p>Same as
 persagg1ny, but with 7.5 democracy threshold.</p></dd>
-    <dt>persaggny2</dt><dd><p>(n: 6693, N:195) Mean executive turnover (within regime
+
+<dt>persaggny2</dt><dd><p>(n: 6693, N:195) Mean executive turnover (within regime
 spells) Same as persagg1ny, but according to the classification of
 regimeny.</p></dd>
-    <dt>persaggny2robust</dt><dd><p>Same as persaggny2, but with 7.5
+
+<dt>persaggny2robust</dt><dd><p>Same as persaggny2, but with 7.5
 democracy threshold. Source: See persagg1ny.</p></dd>
-    <dt>tenure1ny</dt><dd><p>(n: 6693,
+
+<dt>tenure1ny</dt><dd><p>(n: 6693,
 N:195) Mean years of executive tenure (collapsed regime type) Measures the
 years of regime spell duration divided by the total number of changes of
 the executive during the regime spell, according to the classification of
 regime1ny. In case no change of executive occurred during a regime spell,
 tenure1ny is set equal to the regime spell duration. Source: See
 persaggny2.</p></dd>
-    <dt>tenure1nyrobust</dt><dd><p>Same as tenure1ny, but with 7.5
+
+<dt>tenure1nyrobust</dt><dd><p>Same as tenure1ny, but with 7.5
 democracy threshold.</p></dd>
-    <dt>tenureny2</dt><dd><p>(n: 6693, N:195) Mean years of
+
+<dt>tenureny2</dt><dd><p>(n: 6693, N:195) Mean years of
 executive tenure (within regime spells) Same as tenure1ny, but according to
 the classification of regimeny. Source: See persagg1ny.</p></dd>
-    <dt>tenureny2robust</dt><dd><p>Same as tenureny2, but with 7.5 democracy
+
+<dt>tenureny2robust</dt><dd><p>Same as tenureny2, but with 7.5 democracy
 threshold.</p></dd>
-    </dl>
-    
+
+
+</dl>
+
     <h2 class="hasAnchor" id="standard-descriptive-variables-generated-by-this-package-"><a class="anchor" href="#standard-descriptive-variables-generated-by-this-package-"></a>Standard descriptive variables (generated by this package)</h2>
 
     
-    <dl class='dl-horizontal'>
-    <dt>extended_country_name</dt><dd><p>The name of the country in the Gleditsch-Ward
+
+<dl'>
+
+<dt>extended_country_name</dt><dd><p>The name of the country in the Gleditsch-Ward
 system of states, or the official name of the
 entity (for non-sovereign entities and states not in the Gleditsch and Ward
 system of states) or else a common name for disputed cases that do not have
@@ -541,81 +606,89 @@ For details, see Gleditsch, Kristian S. &amp; Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
 International Interactions 25: 393-413. The list can be found at
 <a href='http://privatewww.essex.ac.uk/~ksg/statelist.html'>http://privatewww.essex.ac.uk/~ksg/statelist.html</a>.</p></dd>
-    <dt>GWn</dt><dd><p>Gleditsch and Ward's numeric country code, from the Gleditsch and
+
+<dt>GWn</dt><dd><p>Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.</p></dd>
-    <dt>cown</dt><dd><p>The Correlates of War numeric country code, 2016 version. This
+
+<dt>cown</dt><dd><p>The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
 <a href='http://www.correlatesofwar.org/data-sets/state-system-membership'>http://www.correlatesofwar.org/data-sets/state-system-membership</a> for
 the full list.</p></dd>
-    <dt>in_GW_system</dt><dd><p>Whether the state is "in system" (that is, is
+
+<dt>in_GW_system</dt><dd><p>Whether the state is "in system" (that is, is
 independent and sovereign), according to Gleditsch and Ward, for this
 particular date. Matches at the end of the year; so, for example South
 Vietnam 1975 is <code>FALSE</code> because, according to Gleditsch and Ward, the
 country ended on April 1975 (being absorbed by North Vietnam). It is also
 <code>TRUE</code> for dates beyond 2012 for countries that did not end by then, depsite
-the fact that the Gleditsch and Ward list has not been updated since.</p></dd> </dl>
-    
+the fact that the Gleditsch and Ward list has not been updated since.</p></dd> 
+</dl>
+
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other democracy: <code><a href='LIED.html'>LIED</a></code>, <code><a href='PIPE.html'>PIPE</a></code>,
-  <code><a href='anckar.html'>anckar</a></code>, <code><a href='arat_pmm.html'>arat_pmm</a></code>,
-  <code><a href='blm.html'>blm</a></code>, <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
-  <code><a href='bollen_pmm.html'>bollen_pmm</a></code>, <code><a href='doorenspleet.html'>doorenspleet</a></code>,
-  <code><a href='download_fh_electoral.html'>download_fh_electoral</a></code>,
-  <code><a href='download_fh.html'>download_fh</a></code>, <code><a href='download_reign.html'>download_reign</a></code>,
-  <code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a></code>,
-  <code><a href='eiu.html'>eiu</a></code>, <code><a href='fh_pmm.html'>fh_pmm</a></code>,
-  <code><a href='gwf_all.html'>gwf_all</a></code>, <code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
-  <code><a href='kailitz.html'>kailitz</a></code>, <code><a href='magaloni.html'>magaloni</a></code>,
-  <code><a href='mainwaring.html'>mainwaring</a></code>, <code><a href='munck_pmm.html'>munck_pmm</a></code>,
-  <code><a href='pacl.html'>pacl</a></code>, <code><a href='peps.html'>peps</a></code>,
-  <code><a href='pitf.html'>pitf</a></code>, <code><a href='polity_pmm.html'>polity_pmm</a></code>,
-  <code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
-  <code><a href='polyarchy.html'>polyarchy</a></code>, <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
-  <code><a href='svmdi.html'>svmdi</a></code>, <code><a href='svolik_regime.html'>svolik_regime</a></code>,
-  <code><a href='uds_2014.html'>uds_2014</a></code>, <code><a href='ulfelder.html'>ulfelder</a></code>,
-  <code><a href='utip.html'>utip</a></code>, <code><a href='vanhanen.html'>vanhanen</a></code></p>
-<p>Other dichotomous democracy indexes: <code><a href='anckar.html'>anckar</a></code>,
-  <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
-  <code><a href='doorenspleet.html'>doorenspleet</a></code>, <code><a href='kailitz.html'>kailitz</a></code>,
-  <code><a href='pacl.html'>pacl</a></code>, <code><a href='svolik_regime.html'>svolik_regime</a></code>,
-  <code><a href='ulfelder.html'>ulfelder</a></code>, <code><a href='utip.html'>utip</a></code></p>
-<p>Other authoritarianism: <code><a href='anckar.html'>anckar</a></code>,
-  <code><a href='download_reign.html'>download_reign</a></code>, <code><a href='gwf_all.html'>gwf_all</a></code>,
-  <code><a href='kailitz.html'>kailitz</a></code>, <code><a href='magaloni.html'>magaloni</a></code>,
-  <code><a href='utip.html'>utip</a></code></p></div>
-    
+    <div class='dont-index'><p>Other democracy: 
+<code><a href='LIED.html'>LIED</a></code>,
+<code><a href='PIPE.html'>PIPE</a></code>,
+<code><a href='anckar.html'>anckar</a></code>,
+<code><a href='arat_pmm.html'>arat_pmm</a></code>,
+<code><a href='blm.html'>blm</a></code>,
+<code><a href='bmr.html'>bmr</a></code>,
+<code><a href='bnr.html'>bnr</a></code>,
+<code><a href='bollen_pmm.html'>bollen_pmm</a></code>,
+<code><a href='doorenspleet.html'>doorenspleet</a></code>,
+<code><a href='download_fh_electoral.html'>download_fh_electoral</a>()</code>,
+<code><a href='download_fh_full.html'>download_fh_full</a>()</code>,
+<code><a href='download_fh.html'>download_fh</a>()</code>,
+<code><a href='download_reign.html'>download_reign</a>()</code>,
+<code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a>()</code>,
+<code><a href='eiu.html'>eiu</a></code>,
+<code><a href='fh_pmm.html'>fh_pmm</a></code>,
+<code><a href='gwf_all.html'>gwf_all</a></code>,
+<code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
+<code><a href='kailitz.html'>kailitz</a></code>,
+<code><a href='magaloni.html'>magaloni</a></code>,
+<code><a href='mainwaring.html'>mainwaring</a></code>,
+<code><a href='munck_pmm.html'>munck_pmm</a></code>,
+<code><a href='pacl.html'>pacl</a></code>,
+<code><a href='peps.html'>peps</a></code>,
+<code><a href='pitf.html'>pitf</a></code>,
+<code><a href='polityIV.html'>polityIV</a></code>,
+<code><a href='polity_pmm.html'>polity_pmm</a></code>,
+<code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
+<code><a href='polyarchy.html'>polyarchy</a></code>,
+<code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
+<code><a href='svmdi.html'>svmdi</a></code>,
+<code><a href='svolik_regime.html'>svolik_regime</a></code>,
+<code><a href='uds_2014.html'>uds_2014</a></code>,
+<code><a href='ulfelder.html'>ulfelder</a></code>,
+<code><a href='utip.html'>utip</a></code>,
+<code><a href='vanhanen.html'>vanhanen</a></code></p>
+<p>Other dichotomous democracy indexes: 
+<code><a href='anckar.html'>anckar</a></code>,
+<code><a href='bmr.html'>bmr</a></code>,
+<code><a href='bnr.html'>bnr</a></code>,
+<code><a href='doorenspleet.html'>doorenspleet</a></code>,
+<code><a href='kailitz.html'>kailitz</a></code>,
+<code><a href='pacl.html'>pacl</a></code>,
+<code><a href='svolik_regime.html'>svolik_regime</a></code>,
+<code><a href='ulfelder.html'>ulfelder</a></code>,
+<code><a href='utip.html'>utip</a></code></p>
+<p>Other authoritarianism: 
+<code><a href='anckar.html'>anckar</a></code>,
+<code><a href='download_reign.html'>download_reign</a>()</code>,
+<code><a href='gwf_all.html'>gwf_all</a></code>,
+<code><a href='kailitz.html'>kailitz</a></code>,
+<code><a href='magaloni.html'>magaloni</a></code>,
+<code><a href='utip.html'>utip</a></code></p></div>
 
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      
-      <li><a href="#format">Format</a></li>
-
-      <li><a href="#source">Source</a></li>
-
-      <li><a href="#note-on-version-">NOTE ON VERSION 4</a></li>
-
-      <li><a href="#country-and-time-coverage">Country and time coverage</a></li>
-
-      <li><a href="#identification-variables">Identification variables</a></li>
-
-      <li><a href="#indices-of-democracy">Indices of democracy</a></li>
-
-      <li><a href="#regime-classification-variables">Regime classification variables</a></li>
-
-      <li><a href="#historical-variables-and-regime-duration-indicators">Historical variables and regime duration indicators</a></li>
-
-      <li><a href="#indicators-of-personalism">Indicators of personalism</a></li>
-
-      <li><a href="#standard-descriptive-variables-generated-by-this-package-">Standard descriptive variables (generated by this package)</a></li>
-
-      <li><a href="#see-also">See also</a></li>
-          </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -623,13 +696,16 @@ the fact that the Gleditsch and Ward list has not been updated since.</p></dd> <
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

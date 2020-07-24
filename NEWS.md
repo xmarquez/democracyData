@@ -1,3 +1,29 @@
+# democracyData 0.2.4
+
+* Fixed diagnostic printing issue when moving to dplyr 1.0.0.
+
+* Updated `download_fh` and `download_fh_electoral` to download the latest version (2020, with data up to 2019) of Freedom House.
+
+* Added a new function, `download_fh_full` to download the full Freedom House data (2012-2019) with all subcategory scores.
+
+* Archived the PolityIV dataset (annual version), since Polity is now moving to version 5 and revising all its scores.
+
+* Changed `download_polity_annual` to download version 5 of Polity (Polity5).
+
+* Fixed `download_wgi_voice_and_accountability` - now downloads correctly update to 2018.
+
+* `eiu` now updated to the latest release (2020, with data to 2019).
+
+* `LIED` now updated to the latest release (2020, version 5.2, with data to 2019).
+
+* Fixed `redownload_magaloni` download link, which had changed.
+
+* `pitf` now has two versions: `pitf_p4` based on Polity IV data, and `pitf`, calculated from Polity5. Both now include data to 2018.
+
+* Eliminated `redownload_uds` function since the [UDS website](http://www.unified-democracy-scores.org/) is no longer online.
+
+* Updated bibliography and documentation for many datasets.
+
 # democracyData 0.2.3
 
 * Fixed download link for the SVMDI dataset, minor typo fixes.

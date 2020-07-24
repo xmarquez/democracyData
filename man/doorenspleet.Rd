@@ -4,7 +4,9 @@
 \name{doorenspleet}
 \alias{doorenspleet}
 \title{Renske Doorenspleet's Democracy Dataset}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 13877 rows and 10 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 13877 rows and 10 columns.
+}
 \source{
 Doorenspleet, Renske. 2000. Reassessing the Three Waves of
 Democratization. World Politics 52 (03): 384-406. DOI:
@@ -65,31 +67,54 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 }
 
 \seealso{
-Other democracy: \code{\link{LIED}}, \code{\link{PIPE}},
-  \code{\link{anckar}}, \code{\link{arat_pmm}},
-  \code{\link{blm}}, \code{\link{bmr}}, \code{\link{bnr}},
-  \code{\link{bollen_pmm}},
-  \code{\link{download_fh_electoral}},
-  \code{\link{download_fh}}, \code{\link{download_reign}},
-  \code{\link{download_wgi_voice_and_accountability}},
-  \code{\link{eiu}}, \code{\link{fh_pmm}},
-  \code{\link{gwf_all}}, \code{\link{hadenius_pmm}},
-  \code{\link{kailitz}}, \code{\link{magaloni}},
-  \code{\link{mainwaring}}, \code{\link{munck_pmm}},
-  \code{\link{pacl}}, \code{\link{peps}},
-  \code{\link{pitf}}, \code{\link{polity_pmm}},
-  \code{\link{polyarchy_dimensions}},
-  \code{\link{polyarchy}}, \code{\link{prc_gasiorowski}},
-  \code{\link{svmdi}}, \code{\link{svolik_regime}},
-  \code{\link{uds_2014}}, \code{\link{ulfelder}},
-  \code{\link{utip}}, \code{\link{vanhanen}},
-  \code{\link{wahman_teorell_hadenius}}
+Other democracy: 
+\code{\link{LIED}},
+\code{\link{PIPE}},
+\code{\link{anckar}},
+\code{\link{arat_pmm}},
+\code{\link{blm}},
+\code{\link{bmr}},
+\code{\link{bnr}},
+\code{\link{bollen_pmm}},
+\code{\link{download_fh_electoral}()},
+\code{\link{download_fh_full}()},
+\code{\link{download_fh}()},
+\code{\link{download_reign}()},
+\code{\link{download_wgi_voice_and_accountability}()},
+\code{\link{eiu}},
+\code{\link{fh_pmm}},
+\code{\link{gwf_all}},
+\code{\link{hadenius_pmm}},
+\code{\link{kailitz}},
+\code{\link{magaloni}},
+\code{\link{mainwaring}},
+\code{\link{munck_pmm}},
+\code{\link{pacl}},
+\code{\link{peps}},
+\code{\link{pitf}},
+\code{\link{polityIV}},
+\code{\link{polity_pmm}},
+\code{\link{polyarchy_dimensions}},
+\code{\link{polyarchy}},
+\code{\link{prc_gasiorowski}},
+\code{\link{svmdi}},
+\code{\link{svolik_regime}},
+\code{\link{uds_2014}},
+\code{\link{ulfelder}},
+\code{\link{utip}},
+\code{\link{vanhanen}},
+\code{\link{wahman_teorell_hadenius}}
 
-Other dichotomous democracy indexes: \code{\link{anckar}},
-  \code{\link{bmr}}, \code{\link{bnr}},
-  \code{\link{kailitz}}, \code{\link{pacl}},
-  \code{\link{svolik_regime}}, \code{\link{ulfelder}},
-  \code{\link{utip}}, \code{\link{wahman_teorell_hadenius}}
+Other dichotomous democracy indexes: 
+\code{\link{anckar}},
+\code{\link{bmr}},
+\code{\link{bnr}},
+\code{\link{kailitz}},
+\code{\link{pacl}},
+\code{\link{svolik_regime}},
+\code{\link{ulfelder}},
+\code{\link{utip}},
+\code{\link{wahman_teorell_hadenius}}
 }
 \concept{democracy}
 \concept{dichotomous democracy indexes}

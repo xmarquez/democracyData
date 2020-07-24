@@ -5,7 +5,9 @@
 \alias{wahman_teorell_hadenius}
 \title{Authoritarian Regimes Data Set, version 5.0, by Axel Hadenius, Jan Teorell, &
 Michael Wahman}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8231 rows and 54 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8231 rows and 54 columns.
+}
 \source{
 Hadenius, Axel and Jan Teorell. 2005. "Assessing Alternative Indices of
 Democracy", C&M Working Papers 6, IPSA, August 2005.
@@ -497,35 +499,62 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 }
 
 \seealso{
-Other democracy: \code{\link{LIED}}, \code{\link{PIPE}},
-  \code{\link{anckar}}, \code{\link{arat_pmm}},
-  \code{\link{blm}}, \code{\link{bmr}}, \code{\link{bnr}},
-  \code{\link{bollen_pmm}}, \code{\link{doorenspleet}},
-  \code{\link{download_fh_electoral}},
-  \code{\link{download_fh}}, \code{\link{download_reign}},
-  \code{\link{download_wgi_voice_and_accountability}},
-  \code{\link{eiu}}, \code{\link{fh_pmm}},
-  \code{\link{gwf_all}}, \code{\link{hadenius_pmm}},
-  \code{\link{kailitz}}, \code{\link{magaloni}},
-  \code{\link{mainwaring}}, \code{\link{munck_pmm}},
-  \code{\link{pacl}}, \code{\link{peps}},
-  \code{\link{pitf}}, \code{\link{polity_pmm}},
-  \code{\link{polyarchy_dimensions}},
-  \code{\link{polyarchy}}, \code{\link{prc_gasiorowski}},
-  \code{\link{svmdi}}, \code{\link{svolik_regime}},
-  \code{\link{uds_2014}}, \code{\link{ulfelder}},
-  \code{\link{utip}}, \code{\link{vanhanen}}
+Other democracy: 
+\code{\link{LIED}},
+\code{\link{PIPE}},
+\code{\link{anckar}},
+\code{\link{arat_pmm}},
+\code{\link{blm}},
+\code{\link{bmr}},
+\code{\link{bnr}},
+\code{\link{bollen_pmm}},
+\code{\link{doorenspleet}},
+\code{\link{download_fh_electoral}()},
+\code{\link{download_fh_full}()},
+\code{\link{download_fh}()},
+\code{\link{download_reign}()},
+\code{\link{download_wgi_voice_and_accountability}()},
+\code{\link{eiu}},
+\code{\link{fh_pmm}},
+\code{\link{gwf_all}},
+\code{\link{hadenius_pmm}},
+\code{\link{kailitz}},
+\code{\link{magaloni}},
+\code{\link{mainwaring}},
+\code{\link{munck_pmm}},
+\code{\link{pacl}},
+\code{\link{peps}},
+\code{\link{pitf}},
+\code{\link{polityIV}},
+\code{\link{polity_pmm}},
+\code{\link{polyarchy_dimensions}},
+\code{\link{polyarchy}},
+\code{\link{prc_gasiorowski}},
+\code{\link{svmdi}},
+\code{\link{svolik_regime}},
+\code{\link{uds_2014}},
+\code{\link{ulfelder}},
+\code{\link{utip}},
+\code{\link{vanhanen}}
 
-Other dichotomous democracy indexes: \code{\link{anckar}},
-  \code{\link{bmr}}, \code{\link{bnr}},
-  \code{\link{doorenspleet}}, \code{\link{kailitz}},
-  \code{\link{pacl}}, \code{\link{svolik_regime}},
-  \code{\link{ulfelder}}, \code{\link{utip}}
+Other dichotomous democracy indexes: 
+\code{\link{anckar}},
+\code{\link{bmr}},
+\code{\link{bnr}},
+\code{\link{doorenspleet}},
+\code{\link{kailitz}},
+\code{\link{pacl}},
+\code{\link{svolik_regime}},
+\code{\link{ulfelder}},
+\code{\link{utip}}
 
-Other authoritarianism: \code{\link{anckar}},
-  \code{\link{download_reign}}, \code{\link{gwf_all}},
-  \code{\link{kailitz}}, \code{\link{magaloni}},
-  \code{\link{utip}}
+Other authoritarianism: 
+\code{\link{anckar}},
+\code{\link{download_reign}()},
+\code{\link{gwf_all}},
+\code{\link{kailitz}},
+\code{\link{magaloni}},
+\code{\link{utip}}
 }
 \concept{authoritarianism}
 \concept{democracy}

@@ -23,7 +23,7 @@ This package provides a number of functions to access most datasets measuring de
 The package is only available on Github for now. Install as follows:
 
 ```
-devtools::install_github("xmarquez/democracyData")
+remotes::install_github("xmarquez/democracyData")
 
 ```
 Feedback, pull requests, and contributors welcome.
@@ -43,9 +43,9 @@ fh
 
 ```
 
-This downloads the latest update of the "Freedom in the World" dataset (1972-2018), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables `fh_total` and `fh_total_reversed`, and adds state system information, including a standardized country name, the [Gleditsch-Ward](http://privatewww.essex.ac.uk/~ksg/statelist.html) country code and the [Correlates of War](http://www.correlatesofwar.org/data-sets/state-system-membership) country code. 
+This downloads the latest update of the "Freedom in the World" dataset (1972-2019), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables `fh_total` and `fh_total_reversed`, and adds state system information, including a standardized country name, the [Gleditsch-Ward](http://privatewww.essex.ac.uk/~ksg/statelist.html) country code and the [Correlates of War](http://www.correlatesofwar.org/data-sets/state-system-membership) country code. 
 
-You can also download the Freedom House "Electoral Democracies" list (`download_fh_electoral`, updated to 2018), the latest version of the Polity IV dataset (updated to 2016; check `?download_polity`), the latest version of the [World Governance Indicators' "Voice and Accountability" index](http://info.worldbank.org/governance/wgi/index.aspx#home) (`download_wgi_voice_and_accountability`), and the regime part of the [REIGN dataset](http://oefresearch.org/datasets/reign) by Curtis Bell and OEF research (a regularly-updated variation of the original [Geddes, Wright, and Frantz's autocratic regimes dataset](http://sites.psu.edu/dictators/)).
+You can also download the Freedom House "Electoral Democracies" list (`download_fh_electoral`, updated to 2019), the latest version of the Polity IV dataset (updated to 2019; check `?download_polity`), the latest version of the [World Governance Indicators' "Voice and Accountability" index](http://info.worldbank.org/governance/wgi/index.aspx#home) (`download_wgi_voice_and_accountability`), and the regime part of the [REIGN dataset](http://oefresearch.org/datasets/reign) by Curtis Bell and OEF research (a regularly-updated variation of the original [Geddes, Wright, and Frantz's autocratic regimes dataset](http://sites.psu.edu/dictators/)).
 
 Many other datasets containing democracy measures are not regularly updated, including the widely used [DD/ACLP/PACL/CGV dataset](https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited) and the [Geddes, Wright, and Frantz's autocratic regimes dataset](http://sites.psu.edu/dictators/). These are available directly from this package (no download required), but they can also be "re-downloaded" from the websites of their creators or maintainers. For example, one can either access PACL directly by typing
 
@@ -91,7 +91,7 @@ All datasets in this package are fully documented; type `?pacl` for example to s
 
 ## Democracy data not available through this package
 
-I have not included the [Varieties of Democracy](https://www.v-dem.net/en/data/data-version-9/) dataset in this package; you can access version 9 of this dataset via my [`vdem`](https://github.com/xmarquez/vdem) package (use `devtools::install_github("xmarquez/vdem")` to install).
+I have not included the [Varieties of Democracy](https://www.v-dem.net/en/data/data-version-10/) dataset in this package; you can access version 10 of this dataset via my [`vdem`](https://github.com/xmarquez/vdem) package (use `remotes::install_github("xmarquez/vdem")` to install).
 
 ## Combining all democracy datasets
 

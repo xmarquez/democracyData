@@ -8,21 +8,29 @@
 
 <title>Vanhanen measures of democracy, 1800-2012 — vanhanen • democracyData</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,15 +38,15 @@
 
 
 
-<meta property="og:title" content="Vanhanen measures of democracy, 1800-2012 — vanhanen" />
 
+<meta property="og:title" content="Vanhanen measures of democracy, 1800-2012 — vanhanen" />
 <meta property="og:description" content="A dataset containing Tatu Vanhanen's measures of democracy. To cite use
 Vanhanen, Tatu, Measures of Democracy 1810-2012 (computer file). FSD1289,
 version 6.0 (2014-01-31). Vanhanen, Tatu &amp;amp; Lundell, Krister (data
 collection). Tampere. Finnish Social Science Data Archive (distributor),
 2014. Data available at
 http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html." />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -52,9 +60,10 @@ http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html." />
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -68,7 +77,7 @@ http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4</span>
       </span>
     </div>
 
@@ -76,7 +85,7 @@ http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -87,11 +96,10 @@ http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html." />
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/xmarquez/democracyData">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/xmarquez/democracyData/">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -102,6 +110,7 @@ http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -113,24 +122,23 @@ http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html." />
     </div>
 
     <div class="ref-description">
-    
     <p>A dataset containing Tatu Vanhanen's measures of democracy. To cite use
 Vanhanen, Tatu, Measures of Democracy 1810-2012 (computer file). FSD1289,
 version 6.0 (2014-01-31). Vanhanen, Tatu &amp; Lundell, Krister (data
 collection). Tampere. Finnish Social Science Data Archive (distributor),
 2014. Data available at
 <a href='http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html'>http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html</a>.</p>
-    
     </div>
 
     <pre class="usage"><span class='no'>vanhanen</span>
 
 <span class='no'>vanhanen_pmm</span></pre>
-        
+
+
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 15735 rows and 9 columns.</p>
-    
+<p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 8965 rows and 7 columns.</p>
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>Vanhanen, Tatu. Measures of Democracy 1810-2012 (computer file). FSD1289,
@@ -138,14 +146,18 @@ version 6.0 (2014-01-31). Vanhanen, Tatu &amp; Lundell, Krister (data
 collection). Tampere. Finnish Social Science Data Archive (distributor),
 2014. Data available at
 <a href='http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html'>http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html</a></p>
-    
     <h2 class="hasAnchor" id="variables"><a class="anchor" href="#variables"></a>Variables</h2>
 
     
-    <dl class='dl-horizontal'>
-    <dt>vanhanen_country</dt><dd><p>The country name in the original dataset.</p></dd>
-    <dt>year</dt><dd><p>Year.</p></dd>
-    <dt>vanhanen_competition</dt><dd><p>From Vanhanen's introduction to the dataset:
+
+
+<dl'>
+
+<dt>vanhanen_country</dt><dd><p>The country name in the original dataset.</p></dd>
+
+<dt>year</dt><dd><p>Year.</p></dd>
+
+<dt>vanhanen_competition</dt><dd><p>From Vanhanen's introduction to the dataset:
 The smaller parties' share of the votes cast in parliamentary or
 presidential elections, or both, is used to indicate the degree of
 competition. It is calculated by subtracting the percentage of votes won by
@@ -156,7 +168,8 @@ variable is calculated on the basis of the distribution of seats in
 parliament. The distribution of seats is used also in cases in which it
 seems to indicate power relations more realistically than the distribution
 of votes.</p></dd>
-    <dt>vanhanen_participation</dt><dd><p>From Vanhanen's introduction to the dataset:
+
+<dt>vanhanen_participation</dt><dd><p>From Vanhanen's introduction to the dataset:
 The percentage of the population which actually voted in the same
 elections is used to measure the degree of participation (= Participation).
 This percentage is calculated from the total population, not from the adult
@@ -165,9 +178,7 @@ calculation because more statistical data are available on total
 populations than on age structures of electorates. In principle, these two
 empirical variables are very simple and easy to use. In practice, however,
 there are several points where more detailed rules of interpretation are
-needed.
-    Definition of a party
-    First, it is necessary to define what is meant by 'a party' and 'the
+needed.Definition of a partyFirst, it is necessary to define what is meant by 'a party' and 'the
 largest party' in these calculations. My basic assumption is that the
 relative strength of the largest political party provides the most
 realistic indicator of the distribution of political power in modern
@@ -194,13 +205,11 @@ behaviour in elections is used as the decisive criterion. If a party
 belongs to a larger alliance permanently, we are not justified in regarding
 it as a separate party. The alliance should then be treated as a separate
 'party,' because the purpose is to measure the relative strength of
-competing and independent groups.
-    In parliamentary elections 'the largest party' refers to the party which
+competing and independent groups.In parliamentary elections 'the largest party' refers to the party which
 received the largest single share of the votes or of the seats in
 parliament. Sometimes, depending on the type of electoral system, the
 proportion of seats may be considerably higher than the proportion of
-votes, whereas the reverse situation is hardly possible.
-    In presidential elections, the term 'largest party' refers to the votes
+votes, whereas the reverse situation is hardly possible.In presidential elections, the term 'largest party' refers to the votes
 received by the presidential candidate who won the election. A problem is,
 however, whether we should take into account the first or the second round
 votes, if there are two rounds of voting. The percentage of votes obtained
@@ -208,9 +217,7 @@ by the winning candidate may be significantly higher in the second
 round than in the first. The round of voting, if it is not the first round,
 is indicated in country tables. The purpose has been to take into account
 the round that reflects the strength of parties and political groups most
-reliably.
-    Indirect elections and elections without parties
-    Interpretation is needed in indirect elections, too. How should we
+reliably.Indirect elections and elections without partiesInterpretation is needed in indirect elections, too. How should we
 calculate the degree of participation in such elections? My basic rule has
 been that only votes cast in final election are counted. When president is
 elected by indirect elections, usually by parliament, only the number of
@@ -219,16 +226,14 @@ participation drops to zero. The same interpretation is applied to indirect
 parliamentary elections (in China, for example). However, if the real
 election takes place at the election of electors, as in the presidential
 elections of the United States, the number of votes and the distribution of
-votes in that election are taken into account.
-    Another problem of interpretation concerns countries where members of
+votes in that election are taken into account.Another problem of interpretation concerns countries where members of
 parliament are elected but political parties are not allowed to take part
 in elections, or to form party groups in parliament after elections. Such
 election results are usually interpreted to mean that one party has taken
 all the votes or the seats. This interpretation is based on the assumption
 that the ruling group does not allow political competition for power in
 elections. Parties are absent from elections because they are banned. In
-such cases the "largest party's" share is assumed to be 100 percent.
-    The situation is different in countries in which only independent
+such cases the "largest party's" share is assumed to be 100 percent.The situation is different in countries in which only independent
 candidates participate in elections, although parties are not banned and
 although it would be legally possible to establish parties (Micronesia, for
 example). In such cases it is plausible to assume that elections are
@@ -236,9 +241,7 @@ competitive and that elected members of parliament are not controlled by
 any particular political group or by the government. Independent members of
 parliament may form at least temporary political groups in the parliament
 freely. Therefore, it is assumed in such cases that the "largest party's"
-share is not higher than 30 percent.
-    Non-elected governmental institutions
-    A different question of interpretation arises in cases where the
+share is not higher than 30 percent.Non-elected governmental institutionsA different question of interpretation arises in cases where the
 composition of a governmental institution using the highest executive or
 legislative power is not based on popular election. How should the degree
 of competition and the degree of participation be measured in such cases?
@@ -250,9 +253,7 @@ governments, provisional governments, and to monarchies in which the ruler
 and the government responsible to the ruler dominate and exercise executive
 and usually also legislative power. There are many such historical as well
 as contemporary cases. In all these cases the "largest party's" share is
-assumed to be 100 percent and the degree of participation zero.
-    Dominant governmental institutions
-    The calculation of the values of competition and participation can be based
+assumed to be 100 percent and the degree of participation zero.Dominant governmental institutionsThe calculation of the values of competition and participation can be based
 on parliamentary or presidential/executive elections, or both. In each case
 it is necessary to decide which governmental institution and election
 should be taken into account. This depends on the assumed importance of the
@@ -272,8 +273,7 @@ case the values of competition and participation are calculated on the
 basis of parliamentary elections, in the second they are calculated on the
 basis of presidential or other executive elections (or the lack of
 elections), and in the third case both possible elections are taken into
-account.
-    If the support of competing parties is about the same in both elections (as
+account.If the support of competing parties is about the same in both elections (as
 in the United States, for example), it does not make much difference how
 the governmental system is classified in order to calculate the values of
 competition and participation, but if the electoral systems are
@@ -282,14 +282,12 @@ incorrect classification of the country's governmental system might distort
 the results of the measurement. The same is true if the powers of the two
 institutions differ crucially. I have attempted to classify each country's
 governmental institutions as realistically as possible. All classifications
-of governmental systems are indicated in country tables.
-    Interpretation in the classification of governmental systems has been
+of governmental systems are indicated in country tables.Interpretation in the classification of governmental systems has been
 needed especially in the cases in which the results of presidential
 elections are based on the second round of voting. Because in such cases
 the share of the elected president tends to be 50.0 percent or higher, it
 is useful to check the relative strength of parties by taking parliamentary
-elections into account, too.
-    When both elections are taken into account (concurrent powers), it is
+elections into account, too.When both elections are taken into account (concurrent powers), it is
 necessary to weight the relative importance of parliamentary and
 presidential elections. Usually it is reasonable to give equal weight (50
 percent) to both elections, but in some cases it may be more realistic to
@@ -303,7 +301,8 @@ the governmental systems and changes of the governmental systems are
 indicated in each country table. In the cases of "concurrent powers," the
 estimated relative importance of the two branches of government is also
 indicated (50-50 percent, 25-75 percent, or 75-25 percent).</p></dd>
-    <dt>vanhanen_democratization</dt><dd><p>From Vanhanen's introduction to the
+
+<dt>vanhanen_democratization</dt><dd><p>From Vanhanen's introduction to the
 dataset: The two basic indicators of democratization can be used
 separately to measure the level of democracy, but, because they are assumed
 to indicate two different dimensions of democratization, it is reasonable
@@ -325,8 +324,7 @@ I am not sure which of these two dimensions of democratization is more
 important and how much more important, I have weighted them equally in the
 Index of Democratization (ID). This is an arbitrary choice, but it is based
 on the assumption that both dimensions are equally important and necessary
-for democratization.
-    However, the decision to weight them equally does not solve the problem of
+for democratization.However, the decision to weight them equally does not solve the problem of
 how to combine them. One way would be to calculate their arithmetic mean.
 Another way is to multiply them. We could also use a mixture of adding and
 multiplying, for example, by first multiplying them and then adding 25
@@ -341,8 +339,7 @@ the conclusion that the latter assumption is theoretically better than the
 former one because it is plausible to assume that both dimensions are
 important for democracy. So the two indicators - Competition and
 Participation - are combined into an Index of Democratization (ID) by
-multiplying them and dividing the outcome by 100.
-    The decision to weight indicators equally and to multiply them means that a
+multiplying them and dividing the outcome by 100.The decision to weight indicators equally and to multiply them means that a
 low value for either of the two variables is enough to keep the index value
 low. A high level of participation cannot compensate for the lack of
 competition, or vice versa. The Index of Democratization gets high values
@@ -355,16 +352,14 @@ because elections are not free and competitive. Multiplication of the two
 percentages cancels the misleading information provided by Participation in
 such cases and produces a low ID value. The same correction takes place in
 opposite cases, when the level of competition is high but the degree of
-electoral participation low.
-    Referendums do not affect the value of Competition variable. They affect
+electoral participation low.Referendums do not affect the value of Competition variable. They affect
 only the Participation variable and through it the Index of
 Democratization, but the effect of referendums (Participation) on the Index
 of Democratization depends crucially on the degree of Competition. If
 Competition is in zero, the Index of Democratization cannot rise from zero,
 although the value of Participation variable were high. In other words, the
 higher the value of Competition, the more the same number of referendums
-increases the value of ID.
-    This index of democracy is simpler than any of the alternative measures of
+increases the value of ID.This index of democracy is simpler than any of the alternative measures of
 democracy (cf. Munck and Verkuilen 2002; Munck 2009). It differs from other
 measures in two important ways: (1) it uses only two indicators, and (2)
 both of them are based, in principle, on quantitative data. Most other
@@ -386,13 +381,16 @@ into account all important aspects of democracy, they are better adapted to
 indicate significant differences between political systems from the
 perspective of democracy than more detailed differences among democracies
 or nondemocracies (cf. Vanhanen 2000a, 2000b; 2003).</p></dd>
+
 </dl>
-    
+
     <h2 class="hasAnchor" id="standard-descriptive-variables-generated-by-this-package-"><a class="anchor" href="#standard-descriptive-variables-generated-by-this-package-"></a>Standard descriptive variables (generated by this package)</h2>
 
     
-    <dl class='dl-horizontal'>
-    <dt>extended_country_name</dt><dd><p>The name of the country in the Gleditsch-Ward
+
+<dl'>
+
+<dt>extended_country_name</dt><dd><p>The name of the country in the Gleditsch-Ward
 system of states, or the official name of the
 entity (for non-sovereign entities and states not in the Gleditsch and Ward
 system of states) or else a common name for disputed cases that do not have
@@ -404,24 +402,30 @@ For details, see Gleditsch, Kristian S. &amp; Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
 International Interactions 25: 393-413. The list can be found at
 <a href='http://privatewww.essex.ac.uk/~ksg/statelist.html'>http://privatewww.essex.ac.uk/~ksg/statelist.html</a>.</p></dd>
-    <dt>GWn</dt><dd><p>Gleditsch and Ward's numeric country code, from the Gleditsch and
+
+<dt>GWn</dt><dd><p>Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.</p></dd>
-    <dt>cown</dt><dd><p>The Correlates of War numeric country code, 2016 version. This
+
+<dt>cown</dt><dd><p>The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
 <a href='http://www.correlatesofwar.org/data-sets/state-system-membership'>http://www.correlatesofwar.org/data-sets/state-system-membership</a> for
 the full list.</p></dd>
-    <dt>in_GW_system</dt><dd><p>Whether the state is "in system" (that is, is
+
+<dt>in_GW_system</dt><dd><p>Whether the state is "in system" (that is, is
 independent and sovereign), according to Gleditsch and Ward, for this
 particular date. Matches at the end of the year; so, for example South
 Vietnam 1975 is <code>FALSE</code> because, according to Gleditsch and Ward, the
 country ended on April 1975 (being absorbed by North Vietnam). It is also
 <code>TRUE</code> for dates beyond 2012 for countries that did not end by then, depsite
-the fact that the Gleditsch and Ward list has not been updated since.</p></dd> </dl>
-    
+the fact that the Gleditsch and Ward list has not been updated since.</p></dd> 
+</dl>
+
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     
-    <p>The <code>vanhanen_pmm</code> version of this data is taken from from Pemstein,
+
+
+<p>The <code>vanhanen_pmm</code> version of this data is taken from from Pemstein,
 Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
 Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
 Type." In: Harvard Dataverse.
@@ -430,54 +434,62 @@ original dataset is found in <code>vanhanen</code>. The <code>vanhanen_pmm</code
 back to 1945. There are some missing values in PMM's data compared to the
 original Vanhanen dataset. For more detail on the differences, see the
 vignette. The vanhanen_pmm data is included here for completeness.</p>
-    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other democracy: <code><a href='LIED.html'>LIED</a></code>, <code><a href='PIPE.html'>PIPE</a></code>,
-  <code><a href='anckar.html'>anckar</a></code>, <code><a href='arat_pmm.html'>arat_pmm</a></code>,
-  <code><a href='blm.html'>blm</a></code>, <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
-  <code><a href='bollen_pmm.html'>bollen_pmm</a></code>, <code><a href='doorenspleet.html'>doorenspleet</a></code>,
-  <code><a href='download_fh_electoral.html'>download_fh_electoral</a></code>,
-  <code><a href='download_fh.html'>download_fh</a></code>, <code><a href='download_reign.html'>download_reign</a></code>,
-  <code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a></code>,
-  <code><a href='eiu.html'>eiu</a></code>, <code><a href='fh_pmm.html'>fh_pmm</a></code>,
-  <code><a href='gwf_all.html'>gwf_all</a></code>, <code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
-  <code><a href='kailitz.html'>kailitz</a></code>, <code><a href='magaloni.html'>magaloni</a></code>,
-  <code><a href='mainwaring.html'>mainwaring</a></code>, <code><a href='munck_pmm.html'>munck_pmm</a></code>,
-  <code><a href='pacl.html'>pacl</a></code>, <code><a href='peps.html'>peps</a></code>,
-  <code><a href='pitf.html'>pitf</a></code>, <code><a href='polity_pmm.html'>polity_pmm</a></code>,
-  <code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
-  <code><a href='polyarchy.html'>polyarchy</a></code>, <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
-  <code><a href='svmdi.html'>svmdi</a></code>, <code><a href='svolik_regime.html'>svolik_regime</a></code>,
-  <code><a href='uds_2014.html'>uds_2014</a></code>, <code><a href='ulfelder.html'>ulfelder</a></code>,
-  <code><a href='utip.html'>utip</a></code>, <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
-<p>Other continuous democracy indexes: <code><a href='arat_pmm.html'>arat_pmm</a></code>,
-  <code><a href='bollen_pmm.html'>bollen_pmm</a></code>,
-  <code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a></code>,
-  <code><a href='eiu.html'>eiu</a></code>, <code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
-  <code><a href='munck_pmm.html'>munck_pmm</a></code>, <code><a href='svmdi.html'>svmdi</a></code></p></div>
-    
+    <div class='dont-index'><p>Other democracy: 
+<code><a href='LIED.html'>LIED</a></code>,
+<code><a href='PIPE.html'>PIPE</a></code>,
+<code><a href='anckar.html'>anckar</a></code>,
+<code><a href='arat_pmm.html'>arat_pmm</a></code>,
+<code><a href='blm.html'>blm</a></code>,
+<code><a href='bmr.html'>bmr</a></code>,
+<code><a href='bnr.html'>bnr</a></code>,
+<code><a href='bollen_pmm.html'>bollen_pmm</a></code>,
+<code><a href='doorenspleet.html'>doorenspleet</a></code>,
+<code><a href='download_fh_electoral.html'>download_fh_electoral</a>()</code>,
+<code><a href='download_fh_full.html'>download_fh_full</a>()</code>,
+<code><a href='download_fh.html'>download_fh</a>()</code>,
+<code><a href='download_reign.html'>download_reign</a>()</code>,
+<code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a>()</code>,
+<code><a href='eiu.html'>eiu</a></code>,
+<code><a href='fh_pmm.html'>fh_pmm</a></code>,
+<code><a href='gwf_all.html'>gwf_all</a></code>,
+<code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
+<code><a href='kailitz.html'>kailitz</a></code>,
+<code><a href='magaloni.html'>magaloni</a></code>,
+<code><a href='mainwaring.html'>mainwaring</a></code>,
+<code><a href='munck_pmm.html'>munck_pmm</a></code>,
+<code><a href='pacl.html'>pacl</a></code>,
+<code><a href='peps.html'>peps</a></code>,
+<code><a href='pitf.html'>pitf</a></code>,
+<code><a href='polityIV.html'>polityIV</a></code>,
+<code><a href='polity_pmm.html'>polity_pmm</a></code>,
+<code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
+<code><a href='polyarchy.html'>polyarchy</a></code>,
+<code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
+<code><a href='svmdi.html'>svmdi</a></code>,
+<code><a href='svolik_regime.html'>svolik_regime</a></code>,
+<code><a href='uds_2014.html'>uds_2014</a></code>,
+<code><a href='ulfelder.html'>ulfelder</a></code>,
+<code><a href='utip.html'>utip</a></code>,
+<code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
+<p>Other continuous democracy indexes: 
+<code><a href='arat_pmm.html'>arat_pmm</a></code>,
+<code><a href='bollen_pmm.html'>bollen_pmm</a></code>,
+<code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a>()</code>,
+<code><a href='eiu.html'>eiu</a></code>,
+<code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
+<code><a href='munck_pmm.html'>munck_pmm</a></code>,
+<code><a href='svmdi.html'>svmdi</a></code></p></div>
 
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      
-      <li><a href="#format">Format</a></li>
-
-      <li><a href="#source">Source</a></li>
-
-      <li><a href="#variables">Variables</a></li>
-
-      <li><a href="#standard-descriptive-variables-generated-by-this-package-">Standard descriptive variables (generated by this package)</a></li>
-
-      <li><a href="#note">Note</a></li>
-
-      <li><a href="#see-also">See also</a></li>
-          </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -485,13 +497,16 @@ vignette. The vanhanen_pmm data is included here for completeness.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

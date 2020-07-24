@@ -1,7 +1,7 @@
 ---
 title: "Extracting EIU Tables"
 author: "Xavier Marquez"
-date: "12 March 2019"
+date: "`r lubridate::now()`"
 output: html_document
 ---
 
@@ -14,14 +14,26 @@ library(tabulizer)
 ## Tables
 
 ```{r}
-tables_eiu <- extract_tables("Democracy_Index_2018.pdf")
+# tables_eiu <- extract_tables("Democracy_Index_2018.pdf")
+
+# pdftools::pdf_split("Democracy Index 2019.pdf")
+
+tables_eiu_2019 <- extract_tables("Democracy Index 2019_0000000000000000000000000000000000000000000000000000000000000000000000020.pdf")
+tables_eiu_2019_2 <- extract_tables("Democracy Index 2019_0000000000000000000000000000000000000000000000000000000000000000000000021.pdf")
+tables_eiu_2019_3 <- extract_tables("Democracy Index 2019_0000000000000000000000000000000000000000000000000000000000000000000000022.pdf")
+tables_eiu_2019_4 <- extract_tables("Democracy Index 2019_0000000000000000000000000000000000000000000000000000000000000000000000023.pdf")
+tables_eiu_2019_5 <- extract_tables("Democracy Index 2019_0000000000000000000000000000000000000000000000000000000000000000000000024.pdf")
+
+tables_eiu <- list(tables_eiu_2019[[1]], tables_eiu_2019_2[[1]], tables_eiu_2019_3[[1]], tables_eiu_2019_4[[1]], tables_eiu_2019_5[[1]])
 
 convert <- function(table) {
   output <- table %>%
     as_tibble() %>%
     filter(!V1 %in% c("", "average", "World average")) 
   
-  names(output) <- c("country","2018","2017", "2016","2015","2014", "2013","2012","2011","2010","2008","2006")
+  names(output) <- c("country","2019", "2018","2017", 
+                     "2016","2015","2014", "2013",
+                     "2012","2011","2010","2008","2006")
   
   output <- output %>% 
     mutate(country = ifelse(grepl("Ivoire", country), "Cote d'Ivoire", country))
@@ -30,13 +42,13 @@ convert <- function(table) {
   
 }
 
-eiu <- tables_eiu[24:28] %>%
+eiu <- tables_eiu %>%
   map_df(convert)
 
 eiu <- eiu %>%
-  gather(year, eiu, `2018`:`2006`)
+  gather(year, eiu, `2019`:`2006`)
 
-eiu <- eiu %>% mutate_at(2:3, as.numeric)
+eiu <- eiu %>% mutate(across(c(2:3), as.numeric))
 
 write_csv(eiu, "EIU Democracy Index.csv")
 ```

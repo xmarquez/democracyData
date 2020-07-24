@@ -6,7 +6,6 @@
 \alias{redownload_bmr}
 \alias{redownload_bnr}
 \alias{redownload_gwf}
-\alias{redownload_lied}
 \alias{redownload_pacl}
 \alias{redownload_peps}
 \alias{redownload_utip}
@@ -15,7 +14,6 @@
 \alias{redownload_polyarchy_dimensions}
 \alias{redownload_magaloni}
 \alias{redownload_svmdi}
-\alias{redownload_uds}
 \alias{redownload_ulfelder}
 \alias{redownload_pipe}
 \title{Download and process various democracy datasets.}
@@ -45,12 +43,6 @@ Barbara Geddes, Joseph Wright, and Erica Frantz.
 2014. "Autocratic Breakdown and Regime Transitions: A New Data Set."
 Perspectives on Politics 12(2): 313-331. The full data and codebook can be
 downloaded here \url{http://sites.psu.edu/dictators/}.
-
-Skaaning, Svend-Erik; John
-Gerring; and Henrikas Bartusevicius (2015). "A Lexical Index of Electoral
-Democracy." Comparative Political Studies, Vol. 48, No. 12, pp. 1491-1525.
-Original data and variable descriptions available at
-\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106}
 
 Cheibub, Jose Antonio, Jennifer Gandhi, and James
 Raymond Vreeland. 2010. "Democracy and Dictatorship Revisited." Public
@@ -97,11 +89,6 @@ Working Paper. Original data available at
 \url{https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index\%20Upload.xlsx?dl=0}. Working paper available at
 \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}
 
-Pemstein, Daniel, Stephen Meserve, and James Melton. 2010. Democratic
-Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.
-Political Analysis 18 (4): 426-449. Original data and codebook available at
-\url{http://www.unified-democracy-scores.org/}.
-
 Jay Ulfelder. 2012. Democracy/Autocracy Data Set. \url{http://hdl.handle.net/1902.1/18836}.
 
 Adam Przeworski. 2013 \emph{Political Institutions and Political Events
@@ -115,13 +102,16 @@ redownload_anckar(url, verbose = TRUE, return_raw = FALSE, ...)
 
 redownload_bmr(url, verbose = TRUE, return_raw = FALSE, ...)
 
-redownload_bnr(url, verbose = TRUE, extend = FALSE,
-  return_raw = FALSE, ...)
+redownload_bnr(url, verbose = TRUE, extend = FALSE, return_raw = FALSE, ...)
 
-redownload_gwf(url, verbose = TRUE, extend = FALSE,
-  dataset = c("all", "autocratic only"), return_raw = FALSE, ...)
-
-redownload_lied(url, verbose = TRUE, return_raw = FALSE, ...)
+redownload_gwf(
+  url,
+  verbose = TRUE,
+  extend = FALSE,
+  dataset = c("all", "autocratic only"),
+  return_raw = FALSE,
+  ...
+)
 
 redownload_pacl(url, verbose = TRUE, return_raw = FALSE, ...)
 
@@ -129,26 +119,40 @@ redownload_peps(url, verbose = TRUE, return_raw = FALSE, ...)
 
 redownload_utip(url, verbose = TRUE, return_raw = FALSE, ...)
 
-redownload_wahman_teorell_hadenius(url, verbose = TRUE,
-  return_raw = FALSE, ...)
+redownload_wahman_teorell_hadenius(
+  url,
+  verbose = TRUE,
+  return_raw = FALSE,
+  ...
+)
 
-redownload_polyarchy_original(url, verbose = TRUE, return_raw = FALSE,
-  ...)
+redownload_polyarchy_original(url, verbose = TRUE, return_raw = FALSE, ...)
 
-redownload_polyarchy_dimensions(url, verbose = TRUE,
-  return_raw = FALSE, ...)
+redownload_polyarchy_dimensions(url, verbose = TRUE, return_raw = FALSE, ...)
 
-redownload_magaloni(url, verbose = TRUE, extend = FALSE,
-  return_raw = FALSE, ...)
+redownload_magaloni(
+  url,
+  verbose = TRUE,
+  extend = FALSE,
+  return_raw = FALSE,
+  ...
+)
 
-redownload_svmdi(url, release_year = 2018, verbose = TRUE,
-  return_raw = FALSE, ...)
+redownload_svmdi(
+  url,
+  release_year = 2020,
+  verbose = TRUE,
+  return_raw = FALSE,
+  ...
+)
 
-redownload_uds(release_year = 2014, verbose = TRUE,
-  return_raw = FALSE, ...)
-
-redownload_ulfelder(url, verbose = TRUE, return_raw = FALSE,
-  extend = FALSE, ...)
+redownload_ulfelder(
+  url,
+  verbose = TRUE,
+  return_raw = FALSE,
+  extend = FALSE,
+  ...
+)
 
 redownload_pipe(url, verbose = TRUE, return_raw = FALSE, ...)
 }
@@ -173,7 +177,7 @@ redownload_pipe(url, verbose = TRUE, return_raw = FALSE, ...)
 \url{http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip}
 
 \item For \link{LIED}:
-\url{https://dataverse.harvard.edu/api/access/datafile/2863101}
+\url{https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/29106/SXRLK1}
 
 \item For \link{pacl}:
 \url{https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta}
@@ -199,14 +203,7 @@ For the 2016 release, it defaults to
 \url{http://www3.nd.edu/~mcoppedg/crd/DahlDims.sav}
 
 \item For \link{magaloni}:
-\url{http://cddrl.fsi.stanford.edu/sites/default/files/res/Data_Set.xls}
-
-\item For UDS: for the 2014 release, it defaults to
-\url{http://www.unified-democracy-scores.org/files/20140312/z/uds_summary.csv.gz};
-for the the 2011 release, to
-\url{http://www.unified-democracy-scores.org/files/20110104/uds_summary.csv.gz};
-and for the 2010 release, to
-\url{http://www.unified-democracy-scores.org/files/20100726/uds_summary.csv.gz}
+\url{https://fsi-live.s3.us-west-1.amazonaws.com/s3fs-public/res/Data_Set.xls}
 
 \item For \link{ulfelder}:
 \url{https://dataverse.harvard.edu/api/access/datafile/2420018}
@@ -237,10 +234,9 @@ classified as a democracy from 1872. Default is \code{FALSE}.}
 two country-year files, one with autocratic regimes only ("autocratic only"), and one with both
 democratic and non-democratic regimes ("all"). Default is "all".}
 
-\item{release_year}{(Only in \link{redownload_uds} and
-\link{redownload_svmdi}). The year of the release to be downloaded. For the
-\link{uds}, it can be 2014, 2011, or 2010; default is 2014; for \link{svmdi}, it can
-be 2016 or 2018.}
+\item{release_year}{(Only in \link{redownload_svmdi}). The year of the release to be downloaded. For
+\link{svmdi}, it can
+be 2016 or 2020.}
 }
 \value{
 A \link{tibble} with the processed dataset, unless \code{return_raw}
@@ -252,7 +248,7 @@ Download and process various democracy datasets. Note that the datasets
 returned by the \code{redownload_*} family of functions (\link{blm},
 \link{bmr}, \link{bnr}, \link{gwf_autocratic}, \link{gwf_autocratic_extended},
 \link{gwf_all}, \link{gwf_all_extended}, \link{LIED}, \link{magaloni},
-\link{pacl}, \link{PIPE}, \link{peps}, \link{polyarchy},
+\link{pacl}, \link{PIPE}, \link{peps}, \link{polityIV}, \link{polyarchy},
 \link{polyarchy_dimensions}, \link{uds_2014}, \link{uds_2010},
 \link{uds_2011}, \link{ulfelder}, \link{utip}, \link{wahman_teorell_hadenius},
 \link{anckar}, \link{svmdi}) are all available directly from this package and
@@ -280,8 +276,6 @@ gwf <- redownload_gwf()
 gwf
 }
 \dontrun{
-redownload_lied()}
-\dontrun{
 redownload_pacl()}
 \dontrun{
 redownload_peps()}
@@ -297,10 +291,7 @@ redownload_polyarchy_dimensions()}
 redownload_magaloni()}
 \dontrun{
 redownload_svmdi(release_year = 2016)
-redownload_svmdi() # For release year 2018}
-\dontrun{
-redownload_uds()
-redownload_uds(2011)}
+redownload_svmdi() # For release year 2020}
 \dontrun{
 redownload_ulfelder()}
 \dontrun{

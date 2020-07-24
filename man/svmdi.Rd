@@ -5,7 +5,11 @@
 \alias{svmdi}
 \alias{svmdi_2016}
 \title{Suport Vector Machine Democracy Index by Grundler and Krieger}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18228 rows and 9 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 12588 rows and 9 columns.
+
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 5376 rows and 13 columns.
+}
 \source{
 K. Grundler and T. Krieger. 2018. Machine Learning Indices, Political
 Institutions, and Economic Development. Report. CESifo Group Munich, 2018.
@@ -41,18 +45,17 @@ a consistent name.}
 
 \item{year}{The calendar year.}
 
-\item{status}{Independence status. Undocumented, but appears to be I =
-independent, C = colony, O = Occupied, P = Part of empire - e.g.,
-Azerbaijan between 1960 and 1990. Use \code{in_GW-system} for a consistent
-indicator.}
-
 \item{region1}{Geographical region. (In the 2016 release only).}
 
 \item{region2}{Geographical region. (In the 2016 release only).}
 
 \item{csvmdi}{Continuous version of the support vector machine democracy
-index (In the 2018 release only). Ranges from 0 = least demcratic to 1 =
+index (In the 2020 release only). Ranges from 0 = least demcratic to 1 =
 most democratic. }
+
+\item{dsvmdi}{Discrete version of the support vector machine democracy
+index (In the 2020 release only). 0 = Not demcratic, 1 =
+democratic. }
 
 \item{svmdi}{Continuous version of the support vector machine democracy
 index (In the 2016 release only). Ranges from 0 = least demcratic to 1 =
@@ -105,31 +108,52 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 }
 
 \seealso{
-Other democracy: \code{\link{LIED}}, \code{\link{PIPE}},
-  \code{\link{anckar}}, \code{\link{arat_pmm}},
-  \code{\link{blm}}, \code{\link{bmr}}, \code{\link{bnr}},
-  \code{\link{bollen_pmm}}, \code{\link{doorenspleet}},
-  \code{\link{download_fh_electoral}},
-  \code{\link{download_fh}}, \code{\link{download_reign}},
-  \code{\link{download_wgi_voice_and_accountability}},
-  \code{\link{eiu}}, \code{\link{fh_pmm}},
-  \code{\link{gwf_all}}, \code{\link{hadenius_pmm}},
-  \code{\link{kailitz}}, \code{\link{magaloni}},
-  \code{\link{mainwaring}}, \code{\link{munck_pmm}},
-  \code{\link{pacl}}, \code{\link{peps}},
-  \code{\link{pitf}}, \code{\link{polity_pmm}},
-  \code{\link{polyarchy_dimensions}},
-  \code{\link{polyarchy}}, \code{\link{prc_gasiorowski}},
-  \code{\link{svolik_regime}}, \code{\link{uds_2014}},
-  \code{\link{ulfelder}}, \code{\link{utip}},
-  \code{\link{vanhanen}},
-  \code{\link{wahman_teorell_hadenius}}
+Other democracy: 
+\code{\link{LIED}},
+\code{\link{PIPE}},
+\code{\link{anckar}},
+\code{\link{arat_pmm}},
+\code{\link{blm}},
+\code{\link{bmr}},
+\code{\link{bnr}},
+\code{\link{bollen_pmm}},
+\code{\link{doorenspleet}},
+\code{\link{download_fh_electoral}()},
+\code{\link{download_fh_full}()},
+\code{\link{download_fh}()},
+\code{\link{download_reign}()},
+\code{\link{download_wgi_voice_and_accountability}()},
+\code{\link{eiu}},
+\code{\link{fh_pmm}},
+\code{\link{gwf_all}},
+\code{\link{hadenius_pmm}},
+\code{\link{kailitz}},
+\code{\link{magaloni}},
+\code{\link{mainwaring}},
+\code{\link{munck_pmm}},
+\code{\link{pacl}},
+\code{\link{peps}},
+\code{\link{pitf}},
+\code{\link{polityIV}},
+\code{\link{polity_pmm}},
+\code{\link{polyarchy_dimensions}},
+\code{\link{polyarchy}},
+\code{\link{prc_gasiorowski}},
+\code{\link{svolik_regime}},
+\code{\link{uds_2014}},
+\code{\link{ulfelder}},
+\code{\link{utip}},
+\code{\link{vanhanen}},
+\code{\link{wahman_teorell_hadenius}}
 
-Other continuous democracy indexes: \code{\link{arat_pmm}},
-  \code{\link{bollen_pmm}},
-  \code{\link{download_wgi_voice_and_accountability}},
-  \code{\link{eiu}}, \code{\link{hadenius_pmm}},
-  \code{\link{munck_pmm}}, \code{\link{vanhanen}}
+Other continuous democracy indexes: 
+\code{\link{arat_pmm}},
+\code{\link{bollen_pmm}},
+\code{\link{download_wgi_voice_and_accountability}()},
+\code{\link{eiu}},
+\code{\link{hadenius_pmm}},
+\code{\link{munck_pmm}},
+\code{\link{vanhanen}}
 }
 \concept{continuous democracy indexes}
 \concept{democracy}

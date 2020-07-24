@@ -4,7 +4,7 @@
 #'returned by the \code{redownload_*} family of functions (\link{blm},
 #'\link{bmr}, \link{bnr}, \link{gwf_autocratic}, \link{gwf_autocratic_extended},
 #'\link{gwf_all}, \link{gwf_all_extended}, \link{LIED}, \link{magaloni},
-#'\link{pacl}, \link{PIPE}, \link{peps}, \link{polyarchy},
+#'\link{pacl}, \link{PIPE}, \link{peps}, [polityIV], \link{polyarchy},
 #'\link{polyarchy_dimensions}, \link{uds_2014}, \link{uds_2010},
 #'\link{uds_2011}, \link{ulfelder}, \link{utip}, \link{wahman_teorell_hadenius},
 #'\link{anckar}, \link{svmdi}) are all available directly from this package and
@@ -36,7 +36,7 @@
 #'
 #'
 #'  \item For \link{LIED}:
-#'  \url{https://dataverse.harvard.edu/api/access/datafile/2863101}
+#'  \url{https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/29106/SXRLK1}
 #'
 #'  \item For \link{pacl}:
 #'  \url{https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta}
@@ -55,7 +55,6 @@
 #'  \item For \link{wahman_teorell_hadenius}:
 #'  \url{https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&d=1}
 #'
-#'
 #'  \item For \link{polyarchy}:
 #'  \url{https://www3.nd.edu/~mcoppedg/crd/poly8500.sav}
 #'
@@ -63,16 +62,7 @@
 #'  \url{http://www3.nd.edu/~mcoppedg/crd/DahlDims.sav}
 #'
 #'  \item For \link{magaloni}:
-#'  \url{http://cddrl.fsi.stanford.edu/sites/default/files/res/Data_Set.xls}
-#'
-#'  \item For UDS: for the 2014 release, it defaults to
-#'  \url{http://www.unified-democracy-scores.org/files/20140312/z/uds_summary.csv.gz};
-#'   for the the 2011 release, to
-#'  \url{http://www.unified-democracy-scores.org/files/20110104/uds_summary.csv.gz};
-#'   and for the 2010 release, to
-#'  \url{http://www.unified-democracy-scores.org/files/20100726/uds_summary.csv.gz}
-#'
-#'
+#'  \url{https://fsi-live.s3.us-west-1.amazonaws.com/s3fs-public/res/Data_Set.xls}
 #'
 #'  \item For \link{ulfelder}:
 #'  \url{https://dataverse.harvard.edu/api/access/datafile/2420018}
@@ -80,10 +70,9 @@
 #'  \item For \link{PIPE}:
 #'  \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data} }
 #'
-#'@param release_year (Only in \link{redownload_uds} and
-#'  \link{redownload_svmdi}). The year of the release to be downloaded. For the
-#'  [uds], it can be 2014, 2011, or 2010; default is 2014; for [svmdi], it can
-#'  be 2016 or 2018.
+#'@param release_year (Only in \link{redownload_svmdi}). The year of the release to be downloaded. For
+#'  [svmdi], it can
+#'  be 2016 or 2020.
 #'
 #'@param verbose Whether to print a running commentary of what the function is
 #'  doing while processing the data.
@@ -577,7 +566,12 @@ redownload_gwf <- function(url,
 
 }
 
-#' @rdname redownload_blm
+#' Downloads the 2020 update (v. 5.2) of the Lexical Index of Electoral Democracy (annual time series, data to
+#' 2019) and processes it using [country_year_coder].
+#'
+#' @param url The URL of the dataset. Defaults to
+#'   \url{https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/29106/SXRLK1}
+#' @inheritParams redownload_blm
 #'
 #' @source Skaaning, Svend-Erik; John
 #' Gerring; and Henrikas Bartusevicius (2015). "A Lexical Index of Electoral
@@ -595,10 +589,11 @@ redownload_lied <- function(url,
                             ...) {
 
   `executive elections` <- `legislative elections` <- `multi-party_legislative_elections` <- NULL
-  competitive_elections <- countryn <- year <- cow <- NULL
+  competitive_elections <- countryn <- year <- cow <- lexical_index <- L0 <- L1 <- L2 <- L3 <- L4 <- L5 <- L6 <- NULL
+  competition <- exselec <- female_suffrage <- legselec <- male_suffrage <- opposition <- NULL
 
   if(missing(url)) {
-    url <- "https://dataverse.harvard.edu/api/access/datafile/2863101"
+    url <- "https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/29106/SXRLK1"
   }
 
 
@@ -615,7 +610,7 @@ redownload_lied <- function(url,
   }
 
   if(verbose) {
-    message("Changing column names, adding state system information")
+    message("Changing column names, adding state system information, reconstructing index")
   }
 
   lied <- data %>%
@@ -629,6 +624,20 @@ redownload_lied <- function(url,
                        match_type = "country",
                        verbose = verbose,
                        ...)
+
+  lied <- lied %>%
+    mutate(L0 = (legselec == 0 & exselec == 0)*1,
+           L1 = (legselec | exselec)*2,
+           L2 = (legselec & opposition)*3,
+           L3 = (legselec & exselec & opposition)*4,
+           L4 = (legselec & exselec & opposition & competition)*5,
+           L5 = (legselec & exselec & opposition & competition & (male_suffrage | female_suffrage))*6,
+           L6 = (legselec & exselec & opposition & competition & male_suffrage & female_suffrage)*7) %>%
+    rowwise() %>%
+    mutate(lexical_index_original = lexical_index,
+           lexical_index = max(L0,L1,L2,L3,L4,L5,L6) - 1) %>%
+    select(-L0:-L6) %>%
+    ungroup()
 
   if(verbose) {
     message("Column `executive elections` has been renamed exselec")
@@ -982,7 +991,7 @@ redownload_polyarchy_original <- function(url,
     message(sprintf("Resulting dataset after processing has %d rows.",
                     nrow(polyarchy)))
     if(nrow(data) != nrow(polyarchy)) {
-      message("Note: the number of rows in the processed PEPS data is different from the number of rows in the original data.")
+      message("Note: the number of rows in the processed Polyarchy data is different from the number of rows in the original data.")
       message("This is due to putting the dataset in country-year format.")
     }
   }
@@ -1063,7 +1072,7 @@ redownload_magaloni <- function(url,
                               ...) {
 
   if(missing(url)) {
-    url <- "http://cddrl.fsi.stanford.edu/sites/default/files/res/Data_Set.xls"
+    url <- "https://fsi-live.s3.us-west-1.amazonaws.com/s3fs-public/res/Data_Set.xls"
   }
 
   country <- year <- ccode <- NULL
@@ -1145,30 +1154,33 @@ redownload_magaloni <- function(url,
 #' @examples
 #' \dontrun{
 #' redownload_svmdi(release_year = 2016)
-#' redownload_svmdi() # For release year 2018}
+#' redownload_svmdi() # For release year 2020}
 redownload_svmdi <- function(url,
-                             release_year = 2018,
+                             release_year = 2020,
                              verbose = TRUE,
                              return_raw = FALSE,
                              ...) {
   country <- year <- iso <- `ML Index` <- NULL
 
   if(!release_year %in% c(2018, 2016)) {
-    release_year <- 2018
-    message("release_year can only be 2018 or 2016. Defaulting to 2018.")
+    release_year <- 2020
+    message("release_year can only be 2020 or 2016. Defaulting to 2020.")
   }
 
-  if(release_year == 2018 & missing(url)) {
-    url <- "https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index%20Upload.xlsx?dl=1"
+  if(release_year == 2020 & missing(url)) {
+    url <- "https://ml-democracy-index.net/downloadfiles/ML%20indices.xlsx"
   } else if(release_year == 2016 & missing(url)) {
     url <- "http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta"
   }
 
-  if(release_year == 2018) {
+  if(release_year == 2020) {
     data <- read_data(url,
                       verbose = verbose,
                       name = "svmdi",
                       file_extension = "xlsx")
+
+    names(data) <- c("id", "country","iso","year", "csvmdi", "dsvmdi")
+
   } else if(release_year == 2016) {
     data <- read_data(url,
                       verbose = verbose,
@@ -1209,79 +1221,74 @@ redownload_svmdi <- function(url,
   svmdi <- svmdi %>%
     select(-starts_with("id"), -starts_with("cid"), -starts_with("instrument"))
 
-  if(release_year == 2018) {
-    svmdi <- svmdi %>%
-      rename(csvmdi = `ML Index`)
-  }
-
   standardize_columns(svmdi, country, iso, verbose = verbose)
 
 }
 
-#' @rdname redownload_blm
-#'
-#' @source Pemstein, Daniel, Stephen Meserve, and James Melton. 2010. Democratic
-#'   Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.
-#'   Political Analysis 18 (4): 426-449. Original data and codebook available at
-#'   \url{http://www.unified-democracy-scores.org/}.
-#'
-#' @export
-#'
-#' @examples
-#' \dontrun{
-#' redownload_uds()
-#' redownload_uds(2011)}
-redownload_uds <- function(release_year = 2014,
-                         verbose = TRUE,
-                         return_raw = FALSE,
-                         ...) {
-
-  if(!release_year %in% c(2014, 2011, 2010)) {
-    release_year <- 2014
-    message("release_year can only be 2014, 2011, or 2010. Defaulting to 2014.")
-  }
-
-  url <- ifelse(release_year == 2014,
-                "http://www.unified-democracy-scores.org/files/20140312/z/uds_summary.csv.gz",
-                ifelse(release_year == 2011,
-                       "http://www.unified-democracy-scores.org/files/20110104/uds_summary.csv.gz",
-                       "http://www.unified-democracy-scores.org/files/20100726/uds_summary.csv.gz"))
-
-
-  country <- year <- cowcode <- NULL
-
-  data <- read_data(url,
-                    verbose = verbose,
-                    name = "UDS",
-                    file_extension = "csv")
-
-  if(return_raw) {
-    if(verbose) {
-      message("Returning raw data, without processing.")
-    }
-    return(data)
-  }
-
-  uds <- data %>%
-    country_year_coder(country,
-                       year,
-                       # cowcode,
-                       # code_type = "cown",
-                       match_type = "country",
-                       verbose = verbose,
-                       ...)
-
-  if(verbose) {
-    message(sprintf("Resulting dataset after processing has %d rows.",
-                    nrow(uds)))
-    if(nrow(data) != nrow(uds)) {
-      message("Note: the number of rows in the processed UDS Dataset is different from the number of rows in the original data.")
-    }
-  }
-
-  standardize_columns(uds, country, cowcode, verbose = verbose)
-
-}
+# #' @rdname redownload_blm
+# #'
+# #' @source Pemstein, Daniel, Stephen Meserve, and James Melton. 2010. Democratic
+# #'   Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.
+# #'   Political Analysis 18 (4): 426-449. Original data and codebook available at
+# #'   \url{http://www.unified-democracy-scores.org/}.
+# #'
+# #' @export
+# #'
+# #' @examples
+# #' \dontrun{
+# #' redownload_uds()
+# #' redownload_uds(2011)}
+# redownload_uds <- function(release_year = 2014,
+#                          verbose = TRUE,
+#                          return_raw = FALSE,
+#                          ...) {
+#
+#   if(!release_year %in% c(2014, 2011, 2010)) {
+#     release_year <- 2014
+#     message("release_year can only be 2014, 2011, or 2010. Defaulting to 2014.")
+#   }
+#
+#   url <- ifelse(release_year == 2014,
+#                 "http://www.unified-democracy-scores.org/files/20140312/z/uds_summary.csv.gz",
+#                 ifelse(release_year == 2011,
+#                        "http://www.unified-democracy-scores.org/files/20110104/uds_summary.csv.gz",
+#                        "http://www.unified-democracy-scores.org/files/20100726/uds_summary.csv.gz"))
+#
+#
+#   country <- year <- cowcode <- NULL
+#
+#   data <- read_data(url,
+#                     verbose = verbose,
+#                     name = "UDS",
+#                     file_extension = "csv")
+#
+#   if(return_raw) {
+#     if(verbose) {
+#       message("Returning raw data, without processing.")
+#     }
+#     return(data)
+#   }
+#
+#   uds <- data %>%
+#     country_year_coder(country,
+#                        year,
+#                        # cowcode,
+#                        # code_type = "cown",
+#                        match_type = "country",
+#                        verbose = verbose,
+#                        ...)
+#
+#   if(verbose) {
+#     message(sprintf("Resulting dataset after processing has %d rows.",
+#                     nrow(uds)))
+#     if(nrow(data) != nrow(uds)) {
+#       message("Note: the number of rows in the processed UDS Dataset is different from the number of rows in the original data.")
+#     }
+#   }
+#
+#   standardize_columns(uds, country, cowcode, verbose = verbose)
+#
+# }
 
 #' @rdname redownload_blm
 #'
@@ -1526,5 +1533,98 @@ redownload_pipe <- function(url,
   }
 
   standardize_columns(PIPE, countryn, cowcodes, verbose = verbose)
+}
+
+#' Downloads the 2019 update of the Polity IV dataset (annual time series, to
+#' 2018) and processes it using [country_year_coder].
+#'
+#' The original data was available at
+#' [http://www.systemicpeace.org/inscrdata.html](http://www.systemicpeace.org/inscrdata.html).
+#' Polity is now in version 5, which incorporates substantial changes; this
+#' redownloads the archived version of PolityIV data. Use
+#' [download_polity_annual] to download version 5 of Polity.
+#'
+#' @param url The URL of the dataset. Defaults to
+#'   http://www.systemicpeace.org/inscr/p4v2018.xls
+#' @inheritParams redownload_blm
+#'
+#' @return The annual time series version of the polity IV dataset, as a
+#'   [tibble], with the additional columns produced by [country_year_coder].
+#'   Consult the Polity IV codebook for further description.
+#'
+#' @inheritSection polityIV Variables
+#'
+#' @template standard-variables
+#'
+#' @source Marshall, Monty G., Ted Robert Gurr, and Keith Jaggers. 2019. "Polity
+#'   IV Project: Political Regime Characteristics and Transitions, 1800-2018.
+#'   Dataset Users' Manual. Center for Systemic Peace. Available at
+#'   [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf)"
+#'
+#'
+#' @export
+#' @import dplyr
+#'
+#' @seealso [polity_pmm]
+#' @seealso [polityIV]
+#'
+#' @examples
+#' \dontrun{
+#' polityIV <- redownload_polityIV()
+#' polityIV
+#' }
+redownload_polityIV <- function(url,
+                                   verbose = TRUE,
+                                   return_raw = FALSE,
+                                   ...) {
+  ccode <- country <- year <- NULL
+
+  if(missing(url)) {
+    url <- "http://www.systemicpeace.org/inscr/p4v2018.xls"
+  }
+
+
+  data <- read_data(url,
+                    verbose = verbose,
+                    name = "polity")
+
+
+  if(return_raw) {
+    if(verbose) {
+      message("Returning raw data, without processing.")
+    }
+    return(data)
+  }
+
+  if(verbose) {
+    message(sprintf("Original dataset has %d rows.",
+                    nrow(data)))
+    message("Processing the Polity IV data - adding state system info...")
+  }
+
+
+  polityIV <- country_year_coder(data,
+                                      country_col = country,
+                                      date_col = year,
+                                      code_col = ccode,
+                                      code_type = "polity_ccode",
+                                      match_type = "country",
+                                      verbose = verbose,
+                                      ...)
+
+  if(verbose) {
+    message(sprintf("Resulting dataset after processing has %d rows.",
+                    nrow(polityIV)))
+    if(nrow(data) != nrow(polityIV)) {
+      message("Note: the number of rows in the processed Polity IV data is different from the number of rows in the original data.")
+      if(nrow(data) != nrow(polityIV)) {
+        warning(sprintf("There should be %d rows in the final processed data. Something went wrong.",
+                        nrow(data)))
+      }
+    }
+  }
+
+
+  standardize_columns(polityIV, country, ccode, verbose = verbose)
 }
 

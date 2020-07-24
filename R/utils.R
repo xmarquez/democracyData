@@ -66,8 +66,14 @@ download_and_read_xls <- function(url, fileext, ...) {
   tmpfile <- tempfile(fileext = fileext)
   utils::download.file(url, tmpfile, mode = "wb")
 
-  data  <- readxl::read_excel(tmpfile, na = c("-",""), ...) %>%
-    distinct()
+  if("na" %in% names(rlang::dots_list(...))) {
+    data  <- readxl::read_excel(tmpfile, ...) %>%
+      distinct()
+  } else {
+    data  <- readxl::read_excel(tmpfile, na = c("-", ""), ...) %>%
+      distinct()
+  }
+
 
   unlink(tmpfile)
 

@@ -2,7 +2,7 @@ library(dplyr)
 
 context("country_year_coder")
 
-test_data <- data_frame(country = c("Germany", "Germany", "Germany", "Germany", "Germany",
+test_data <- tibble(country = c("Germany", "Germany", "Germany", "Germany", "Germany",
                                     "Federal Republic of Germany",
                                     "Somaliland", "Somalia",
                                     "Palestine", "Russia",

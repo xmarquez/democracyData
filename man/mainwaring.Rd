@@ -5,7 +5,11 @@
 \alias{mainwaring}
 \alias{mainwaring_pmm}
 \title{Mainwaring, Brinks, and Perez Linan's democracy measure for Latin America}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 2156 rows and 14 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 2156 rows and 14 columns.
+
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 835 rows and 7 columns.
+}
 \source{
 Mainwaring, S., D. Brinks and A. Perez-Linan. 2001. "Classifying
 Political Regimes in Latin America." Studies in Comparative International
@@ -204,37 +208,63 @@ values. It is included here for completeness.
 }
 
 \seealso{
-Other democracy: \code{\link{LIED}}, \code{\link{PIPE}},
-  \code{\link{anckar}}, \code{\link{arat_pmm}},
-  \code{\link{blm}}, \code{\link{bmr}}, \code{\link{bnr}},
-  \code{\link{bollen_pmm}}, \code{\link{doorenspleet}},
-  \code{\link{download_fh_electoral}},
-  \code{\link{download_fh}}, \code{\link{download_reign}},
-  \code{\link{download_wgi_voice_and_accountability}},
-  \code{\link{eiu}}, \code{\link{fh_pmm}},
-  \code{\link{gwf_all}}, \code{\link{hadenius_pmm}},
-  \code{\link{kailitz}}, \code{\link{magaloni}},
-  \code{\link{munck_pmm}}, \code{\link{pacl}},
-  \code{\link{peps}}, \code{\link{pitf}},
-  \code{\link{polity_pmm}},
-  \code{\link{polyarchy_dimensions}},
-  \code{\link{polyarchy}}, \code{\link{prc_gasiorowski}},
-  \code{\link{svmdi}}, \code{\link{svolik_regime}},
-  \code{\link{uds_2014}}, \code{\link{ulfelder}},
-  \code{\link{utip}}, \code{\link{vanhanen}},
-  \code{\link{wahman_teorell_hadenius}}
+Other democracy: 
+\code{\link{LIED}},
+\code{\link{PIPE}},
+\code{\link{anckar}},
+\code{\link{arat_pmm}},
+\code{\link{blm}},
+\code{\link{bmr}},
+\code{\link{bnr}},
+\code{\link{bollen_pmm}},
+\code{\link{doorenspleet}},
+\code{\link{download_fh_electoral}()},
+\code{\link{download_fh_full}()},
+\code{\link{download_fh}()},
+\code{\link{download_reign}()},
+\code{\link{download_wgi_voice_and_accountability}()},
+\code{\link{eiu}},
+\code{\link{fh_pmm}},
+\code{\link{gwf_all}},
+\code{\link{hadenius_pmm}},
+\code{\link{kailitz}},
+\code{\link{magaloni}},
+\code{\link{munck_pmm}},
+\code{\link{pacl}},
+\code{\link{peps}},
+\code{\link{pitf}},
+\code{\link{polityIV}},
+\code{\link{polity_pmm}},
+\code{\link{polyarchy_dimensions}},
+\code{\link{polyarchy}},
+\code{\link{prc_gasiorowski}},
+\code{\link{svmdi}},
+\code{\link{svolik_regime}},
+\code{\link{uds_2014}},
+\code{\link{ulfelder}},
+\code{\link{utip}},
+\code{\link{vanhanen}},
+\code{\link{wahman_teorell_hadenius}}
 
-Other PMM replication data: \code{\link{arat_pmm}},
-  \code{\link{blm}}, \code{\link{bollen_pmm}},
-  \code{\link{fh_pmm}}, \code{\link{hadenius_pmm}},
-  \code{\link{munck_pmm}}, \code{\link{pacl}},
-  \code{\link{polity_pmm}}, \code{\link{prc_gasiorowski}}
+Other PMM replication data: 
+\code{\link{arat_pmm}},
+\code{\link{blm}},
+\code{\link{bollen_pmm}},
+\code{\link{fh_pmm}},
+\code{\link{hadenius_pmm}},
+\code{\link{munck_pmm}},
+\code{\link{pacl}},
+\code{\link{polity_pmm}},
+\code{\link{prc_gasiorowski}}
 
-Other regional democracy indexes: \code{\link{blm}}
+Other regional democracy indexes: 
+\code{\link{blm}}
 
-Other trichotomous democracy indexes: \code{\link{blm}},
-  \code{\link{kailitz}}, \code{\link{prc_gasiorowski}},
-  \code{\link{utip}}
+Other trichotomous democracy indexes: 
+\code{\link{blm}},
+\code{\link{kailitz}},
+\code{\link{prc_gasiorowski}},
+\code{\link{utip}}
 }
 \concept{PMM replication data}
 \concept{democracy}

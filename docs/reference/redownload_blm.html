@@ -8,21 +8,29 @@
 
 <title>Download and process various democracy datasets. — redownload_blm • democracyData</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,13 +38,13 @@
 
 
 
-<meta property="og:title" content="Download and process various democracy datasets. — redownload_blm" />
 
+<meta property="og:title" content="Download and process various democracy datasets. — redownload_blm" />
 <meta property="og:description" content="Download and process various democracy datasets. Note that the datasets
 returned by the redownload_* family of functions (blm,
 bmr, bnr, gwf_autocratic, gwf_autocratic_extended,
 gwf_all, gwf_all_extended, LIED, magaloni,
-pacl, PIPE, peps, polyarchy,
+pacl, PIPE, peps, polityIV, polyarchy,
 polyarchy_dimensions, uds_2014, uds_2010,
 uds_2011, ulfelder, utip, wahman_teorell_hadenius,
 anckar, svmdi) are all available directly from this package and
@@ -45,7 +53,7 @@ respective dataset by typing its name, and refer to their documentation for
 details. You will not normally need to redownload them, unless you want to
 process the raw data yourself (set return_raw = TRUE) or suspect they
 have changed since the package was installed." />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -59,9 +67,10 @@ have changed since the package was installed." />
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -75,7 +84,7 @@ have changed since the package was installed." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4</span>
       </span>
     </div>
 
@@ -83,7 +92,7 @@ have changed since the package was installed." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -94,11 +103,10 @@ have changed since the package was installed." />
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/xmarquez/democracyData">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/xmarquez/democracyData/">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -109,6 +117,7 @@ have changed since the package was installed." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -120,12 +129,11 @@ have changed since the package was installed." />
     </div>
 
     <div class="ref-description">
-    
     <p>Download and process various democracy datasets. Note that the datasets
 returned by the <code>redownload_*</code> family of functions (<a href='blm.html'>blm</a>,
 <a href='bmr.html'>bmr</a>, <a href='bnr.html'>bnr</a>, <a href='gwf_all.html'>gwf_autocratic</a>, <a href='gwf_all.html'>gwf_autocratic_extended</a>,
 <a href='gwf_all.html'>gwf_all</a>, <a href='gwf_all.html'>gwf_all_extended</a>, <a href='LIED.html'>LIED</a>, <a href='magaloni.html'>magaloni</a>,
-<a href='pacl.html'>pacl</a>, <a href='PIPE.html'>PIPE</a>, <a href='peps.html'>peps</a>, <a href='polyarchy.html'>polyarchy</a>,
+<a href='pacl.html'>pacl</a>, <a href='PIPE.html'>PIPE</a>, <a href='peps.html'>peps</a>, <a href='polityIV.html'>polityIV</a>, <a href='polyarchy.html'>polyarchy</a>,
 <a href='polyarchy_dimensions.html'>polyarchy_dimensions</a>, <a href='uds_2014.html'>uds_2014</a>, <a href='uds_2014.html'>uds_2010</a>,
 <a href='uds_2014.html'>uds_2011</a>, <a href='ulfelder.html'>ulfelder</a>, <a href='utip.html'>utip</a>, <a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a>,
 <a href='anckar.html'>anckar</a>, <a href='svmdi.html'>svmdi</a>) are all available directly from this package and
@@ -134,7 +142,6 @@ respective dataset by typing its name, and refer to their documentation for
 details. You will not normally need to redownload them, unless you want to
 process the raw data yourself (set <code>return_raw = TRUE</code>) or suspect they
 have changed since the package was installed.</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>redownload_blm</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
@@ -143,13 +150,16 @@ have changed since the package was installed.</p>
 
 <span class='fu'>redownload_bmr</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
 
-<span class='fu'>redownload_bnr</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>extend</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>redownload_bnr</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>extend</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
 
-<span class='fu'>redownload_gwf</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>extend</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>dataset</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"all"</span>, <span class='st'>"autocratic only"</span>), <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
-
-<span class='fu'>redownload_lied</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>redownload_gwf</span>(
+  <span class='no'>url</span>,
+  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>extend</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>dataset</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"all"</span>, <span class='st'>"autocratic only"</span>),
+  <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)
 
 <span class='fu'>redownload_pacl</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
 
@@ -157,29 +167,43 @@ have changed since the package was installed.</p>
 
 <span class='fu'>redownload_utip</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
 
-<span class='fu'>redownload_wahman_teorell_hadenius</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>redownload_wahman_teorell_hadenius</span>(
+  <span class='no'>url</span>,
+  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)
 
-<span class='fu'>redownload_polyarchy_original</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='no'>...</span>)
+<span class='fu'>redownload_polyarchy_original</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
 
-<span class='fu'>redownload_polyarchy_dimensions</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>redownload_polyarchy_dimensions</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
 
-<span class='fu'>redownload_magaloni</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>extend</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>redownload_magaloni</span>(
+  <span class='no'>url</span>,
+  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>extend</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)
 
-<span class='fu'>redownload_svmdi</span>(<span class='no'>url</span>, <span class='kw'>release_year</span> <span class='kw'>=</span> <span class='fl'>2018</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>redownload_svmdi</span>(
+  <span class='no'>url</span>,
+  <span class='kw'>release_year</span> <span class='kw'>=</span> <span class='fl'>2020</span>,
+  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)
 
-<span class='fu'>redownload_uds</span>(<span class='kw'>release_year</span> <span class='kw'>=</span> <span class='fl'>2014</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
-
-<span class='fu'>redownload_ulfelder</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>extend</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>redownload_ulfelder</span>(
+  <span class='no'>url</span>,
+  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>extend</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)
 
 <span class='fu'>redownload_pipe</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -198,7 +222,7 @@ have changed since the package was installed.</p>
 <li><p>For <a href='gwf_all.html'>gwf_all</a> and <a href='gwf_all.html'>gwf_autocratic</a>:
 <a href='http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip'>http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip</a></p></li>
 <li><p>For <a href='LIED.html'>LIED</a>:
-<a href='https://dataverse.harvard.edu/api/access/datafile/2863101'>https://dataverse.harvard.edu/api/access/datafile/2863101</a></p></li>
+<a href='https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/29106/SXRLK1'>https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/29106/SXRLK1</a></p></li>
 <li><p>For <a href='pacl.html'>pacl</a>:
 <a href='https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta'>https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta</a></p></li>
 <li><p>For <a href='peps.html'>peps</a>:
@@ -216,13 +240,7 @@ For the 2016 release, it defaults to
 <li><p>For <a href='polyarchy_dimensions.html'>polyarchy_dimensions</a>:
 <a href='http://www3.nd.edu/~mcoppedg/crd/DahlDims.sav'>http://www3.nd.edu/~mcoppedg/crd/DahlDims.sav</a></p></li>
 <li><p>For <a href='magaloni.html'>magaloni</a>:
-<a href='http://cddrl.fsi.stanford.edu/sites/default/files/res/Data_Set.xls'>http://cddrl.fsi.stanford.edu/sites/default/files/res/Data_Set.xls</a></p></li>
-<li><p>For UDS: for the 2014 release, it defaults to
-<a href='http://www.unified-democracy-scores.org/files/20140312/z/uds_summary.csv.gz'>http://www.unified-democracy-scores.org/files/20140312/z/uds_summary.csv.gz</a>;
-for the the 2011 release, to
-<a href='http://www.unified-democracy-scores.org/files/20110104/uds_summary.csv.gz'>http://www.unified-democracy-scores.org/files/20110104/uds_summary.csv.gz</a>;
-and for the 2010 release, to
-<a href='http://www.unified-democracy-scores.org/files/20100726/uds_summary.csv.gz'>http://www.unified-democracy-scores.org/files/20100726/uds_summary.csv.gz</a></p></li>
+<a href='https://fsi-live.s3.us-west-1.amazonaws.com/s3fs-public/res/Data_Set.xls'>https://fsi-live.s3.us-west-1.amazonaws.com/s3fs-public/res/Data_Set.xls</a></p></li>
 <li><p>For <a href='ulfelder.html'>ulfelder</a>:
 <a href='https://dataverse.harvard.edu/api/access/datafile/2420018'>https://dataverse.harvard.edu/api/access/datafile/2420018</a></p></li>
 <li><p>For <a href='PIPE.html'>PIPE</a>:
@@ -264,13 +282,12 @@ democratic and non-democratic regimes ("all"). Default is "all".</p></td>
     </tr>
     <tr>
       <th>release_year</th>
-      <td><p>(Only in redownload_uds and
-redownload_svmdi). The year of the release to be downloaded. For the
-<a href='uds_2014.html'>uds</a>, it can be 2014, 2011, or 2010; default is 2014; for <a href='svmdi.html'>svmdi</a>, it can
-be 2016 or 2018.</p></td>
+      <td><p>(Only in redownload_svmdi). The year of the release to be downloaded. For
+<a href='svmdi.html'>svmdi</a>, it can
+be 2016 or 2020.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>Bowman, Kirk, Fabrice Lehoucq, and James Mahoney. 2005. Measuring
@@ -294,11 +311,6 @@ description available at
 2014. "Autocratic Breakdown and Regime Transitions: A New Data Set."
 Perspectives on Politics 12(2): 313-331. The full data and codebook can be
 downloaded here <a href='http://sites.psu.edu/dictators/'>http://sites.psu.edu/dictators/</a>.</p>
-<p>Skaaning, Svend-Erik; John
-Gerring; and Henrikas Bartusevicius (2015). "A Lexical Index of Electoral
-Democracy." Comparative Political Studies, Vol. 48, No. 12, pp. 1491-1525.
-Original data and variable descriptions available at
-<a href='https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106'>https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106</a></p>
 <p>Cheibub, Jose Antonio, Jennifer Gandhi, and James
 Raymond Vreeland. 2010. "Democracy and Dictatorship Revisited." Public
 Choice, vol. 143, no. 2-1, pp. 67-101. DOI: 10.1007/s11127-009-9491-2. The
@@ -336,78 +348,26 @@ Indicators, Political Institutions, and Economic Development.” CESifo
 Working Paper. Original data available at
 <a href='https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index%20Upload.xlsx?dl=0'>https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index%20Upload.xlsx?dl=0</a>. Working paper available at
 <a href='https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf'>https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf</a></p>
-<p>Pemstein, Daniel, Stephen Meserve, and James Melton. 2010. Democratic
-Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.
-Political Analysis 18 (4): 426-449. Original data and codebook available at
-<a href='http://www.unified-democracy-scores.org/'>http://www.unified-democracy-scores.org/</a>.</p>
 <p>Jay Ulfelder. 2012. Democracy/Autocracy Data Set. <a href='http://hdl.handle.net/1902.1/18836'>http://hdl.handle.net/1902.1/18836</a>.</p>
 <p>Adam Przeworski. 2013 <em>Political Institutions and Political Events
 (PIPE) Data Set</em>. Data set.
 <a href='https://sites.google.com/a/nyu.edu/adam-przeworski/home/data'>https://sites.google.com/a/nyu.edu/adam-przeworski/home/data</a>.</p>
-    
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A tibble with the processed dataset, unless <code>return_raw</code>
 is <code>TRUE</code>, in which case the function returns the raw data without
 processing.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>redownload_blm</span>()
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='fu'>redownload_anckar</span>()
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='no'>bmr</span> <span class='kw'>&lt;-</span> <span class='fu'>redownload_bmr</span>()
-<span class='no'>bmr</span>
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='fu'>redownload_bnr</span>()
-<span class='fu'>redownload_bnr</span>(<span class='kw'>full_panel</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='no'>gwf</span> <span class='kw'>&lt;-</span> <span class='fu'>redownload_gwf</span>()
-<span class='no'>gwf</span>
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='fu'>redownload_lied</span>()
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='fu'>redownload_pacl</span>()
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='fu'>redownload_peps</span>()
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='fu'>redownload_utip</span>()
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='fu'>redownload_wahman_teorell_hadenius</span>()
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='fu'>redownload_polyarchy_original</span>()
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='fu'>redownload_polyarchy_dimensions</span>()
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='fu'>redownload_magaloni</span>()
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='fu'>redownload_svmdi</span>(<span class='kw'>release_year</span> <span class='kw'>=</span> <span class='fl'>2016</span>)
-<span class='fu'>redownload_svmdi</span>() <span class='co'># For release year 2018</span>
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='fu'>redownload_uds</span>()
-<span class='fu'>redownload_uds</span>(<span class='fl'>2011</span>)
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='fu'>redownload_ulfelder</span>()
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='fu'>redownload_pipe</span>()
-<span class='co'># }</span></pre>
+    <pre class="examples"></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#source">Source</a></li>
-
-      <li><a href="#value">Value</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -415,13 +375,16 @@ processing.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

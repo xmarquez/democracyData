@@ -5,11 +5,18 @@
 \title{Generate a data frame containing all the democracy measures accessible from
 this package}
 \usage{
-generate_democracy_scores_dataset(datasets, output_format = "long",
-  use_extended = TRUE, include_extra_pmm = FALSE, verbose = TRUE,
-  target_system = c("GWn", "cown"), force_redownload = FALSE,
-  scale_scores = FALSE, keep_only_last_in_year = TRUE,
-  exclude_downloadable = FALSE)
+generate_democracy_scores_dataset(
+  datasets,
+  output_format = "long",
+  use_extended = TRUE,
+  include_extra_pmm = FALSE,
+  verbose = TRUE,
+  target_system = c("GWn", "cown"),
+  force_redownload = FALSE,
+  scale_scores = FALSE,
+  keep_only_last_in_year = TRUE,
+  exclude_downloadable = FALSE
+)
 }
 \arguments{
 \item{datasets}{Character vector indicating which datasets to use in

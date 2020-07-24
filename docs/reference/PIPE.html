@@ -8,21 +8,29 @@
 
 <title>The Political Institutions and Political Events (PIPE) dataset — PIPE • democracyData</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,15 +38,15 @@
 
 
 
-<meta property="og:title" content="The Political Institutions and Political Events (PIPE) dataset — PIPE" />
 
+<meta property="og:title" content="The Political Institutions and Political Events (PIPE) dataset — PIPE" />
 <meta property="og:description" content="Przeworski, Adam et al. 2013. Political Institutions and Political Events
 (PIPE) Data Set. Department of Politics, New York University. The original
 data and codebook can be downloaded from
 https://sites.google.com/a/nyu.edu/adam-przeworski/home/data. The
 documentation below is directly derived from the codebook, with some
 modifications." />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -52,9 +60,10 @@ modifications." />
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -68,7 +77,7 @@ modifications." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4</span>
       </span>
     </div>
 
@@ -76,7 +85,7 @@ modifications." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -87,11 +96,10 @@ modifications." />
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/xmarquez/democracyData">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/xmarquez/democracyData/">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -102,6 +110,7 @@ modifications." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -113,28 +122,25 @@ modifications." />
     </div>
 
     <div class="ref-description">
-    
     <p>Przeworski, Adam et al. 2013. Political Institutions and Political Events
 (PIPE) Data Set. Department of Politics, New York University. The original
 data and codebook can be downloaded from
 <a href='https://sites.google.com/a/nyu.edu/adam-przeworski/home/data'>https://sites.google.com/a/nyu.edu/adam-przeworski/home/data</a>. The
 documentation below is directly derived from the codebook, with some
 modifications.</p>
-    
     </div>
 
     <pre class="usage"><span class='no'>PIPE</span></pre>
-        
+
+
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 18151 rows and 101 columns.</p>
-    
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>Adam Przeworski. 2013. <em>Political Institutions and Political Events
 (PIPE) Data Set</em>. Data set.
 <a href='https://sites.google.com/a/nyu.edu/adam-przeworski/home/data'>https://sites.google.com/a/nyu.edu/adam-przeworski/home/data</a></p>
-    
     <h2 class="hasAnchor" id="credits"><a class="anchor" href="#credits"></a>Credits</h2>
 
     <p>The data were originally collected by Tamar Asadurian,
@@ -148,11 +154,12 @@ additionally checked some countries. To catch discrepancies, some variables
 were checked against other data compilations. No other data source, however,
 was used in its original form. The discrepancies that remain are due either
 to deffinitional differences or to a different assessment of facts.</p>
-    
     <h2 class="hasAnchor" id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
 
     
-    <p>The data set is intended to cover all countries that were or would become
+
+
+<p>The data set is intended to cover all countries that were or would become
 independent at any time after 1917, each from the inception of the first
 representative institutions or from the date of independence, whichever
 comes first, through 2008. The rows of the data matrix contain information
@@ -167,11 +174,12 @@ invariant. The code -1 generically refers to situations in which a
 particular variable is not applicable. This coding is not always consistent:
 sometimes in such situations data are recorded as missing, for example,
 presidential elections in countries where there are no presidents.</p>
-    
     <h2 class="hasAnchor" id="shell"><a class="anchor" href="#shell"></a>Shell</h2>
 
     
-    <p>Note: Some countries had convoluted histories: (1) They became independent,
+
+
+<p>Note: Some countries had convoluted histories: (1) They became independent,
 lost independence by being annexed by another country or by joining a
 federation, and then became independent again. (2) They split and became
 unified again. (3) They emerged from collapse of empires or from splits from
@@ -189,53 +197,64 @@ territory that would become independent at any time after 1917 and as
 "parts" to those units that composed them. The supra-units need not be
 independent: British India is an example. Colonial empires are not
 considered as supra-units and they are coded as such separately.</p>
-<dl class='dl-horizontal'>
-    <dt>PIPE_countryn</dt><dd><p>The name of the country at the time. This has been
+<dl'>
+
+<dt>PIPE_countryn</dt><dd><p>The name of the country at the time. This has been
 partially reconstructed. The original data was missing many names, and did
 not use a consistent scheme for naming countries. Use <code>extended_country_name</code>
 instead.</p></dd>
-    <dt>country_number</dt><dd><p>The number of the country. Note: For historical
+
+<dt>country_number</dt><dd><p>The number of the country. Note: For historical
 reasons the numbering of countries is haphazard. Countries with numbers less
 than 142 are arranged alphabetically within regions but the remaining
 countries are not. This will be corrected in a future version.</p></dd>
-    <dt>PIPE_cowcodes</dt><dd><p>The number of the country in the Correlates of War (COW)
+
+<dt>PIPE_cowcodes</dt><dd><p>The number of the country in the Correlates of War (COW)
 data set. This has been reconstructed. The original data was missing several
 cowcodes.</p></dd>
-    <dt>year</dt><dd><p>The calendar year.</p></dd>
-    <dt>id</dt><dd><p>A unique observation identifier, concatenation of
+
+<dt>year</dt><dd><p>The calendar year.</p></dd>
+
+<dt>id</dt><dd><p>A unique observation identifier, concatenation of
 <code>country</code>+<code>year</code>. For example, Turkey is country 125 and in 1900
 its <code>id</code> is 1251900.</p></dd>
-    <dt>id2</dt><dd><p>Identifies a particular observation by the number of a supra-unit
+
+<dt>id2</dt><dd><p>Identifies a particular observation by the number of a supra-unit
 of which it is a part and year. For example, in 1900 Turkey was part of the
 Ottoman Empire, the <code>id</code> of which is 540, so that <code>id2</code> for Turkey
 in this year is 5401900. This <code>id</code> is shared among all constituent
 parts of the Ottoman Empire in 1900. If a territory is not part of a
 supra-unit, then <code>id2</code>=<code>id</code>.</p></dd>
-    <dt>id3</dt><dd><p>Identifies a particular observation by the number of the country
+
+<dt>id3</dt><dd><p>Identifies a particular observation by the number of the country
 of which the territory is a dependency. For example, in 1900 Kenya was a
 dependency of the United Kingdom, which is country 126, so ID3 for Kenya for
 the year 1900 is 1261900 If a territory is not a dependency, then
 ID3=<code>id2</code>.</p></dd>
-    <dt>supra</dt><dd><p>Identifies the supra-unit of which a particular unit is a part
+
+<dt>supra</dt><dd><p>Identifies the supra-unit of which a particular unit is a part
 during a particular year. Thus, <code>supra</code>=540 for all parts of the
 Ottoman Empire. <code>supra</code> is coded only if <code>id</code> != <code>id2</code>;
 otherwise, it is coded as missing. Note that this implies that <code>supra</code>
 is coded as missing for the supra-units themselves.</p></dd>
-    <dt>yrindep</dt><dd><p>is the year during which a country became independent. For
+
+<dt>yrindep</dt><dd><p>is the year during which a country became independent. For
 countries that were independent before year 1000 the date is set arbitrarily
 at 1000. In case of entities that became unified, coded is the year of
 unification. For countries that temporarily lost independence having been
 annexed to other countries, the most recent date of independence is given.
 For units that never became independent as such (West African Federation,
 Leeward Islands Federation), the code is -1.</p></dd>
-    <dt>polstatus</dt><dd><p>Current political status of the country. Coded as: -1 Does
+
+<dt>polstatus</dt><dd><p>Current political status of the country. Coded as: -1 Does
 not exist as a separate country 0 Dependency 1 Independent, not colonizer 2
 Colonizer Note: The code -1 is used to keep rows of countries that were
 independent, lost independence or split, and then reappeared, in fact some
 of the Soviet Republics and Germany. Only occupations of territories lasting
 longer than ten years are considered as constituting colonial rule. For
 example, the Italian occupation of Ethiopia is not considered as colonial.</p></dd>
-    <dt>occupied</dt><dd><p>Dummy for country years during which a territory was
+
+<dt>occupied</dt><dd><p>Dummy for country years during which a territory was
 occupied by a foreign power, as long as this power controlled central
 government (until the first election of the national government) or occupied
 the capital. The variable does not apply to metropolitan rule in
@@ -243,25 +262,27 @@ dependencies. Countries that are annexed to another country (for example,
 Baltic republics in 1940) are not occupied. Note: A country can be a colony
 and occupied only if the occupier is distinct from the colonial power, for
 example, Japan in the Dutch colony of Indonesia. Coded as of December 31, so
-that occupations that begin and end within the same year are ignored.</p></dd> </dl>
-    
+that occupations that begin and end within the same year are ignored.</p></dd> 
+</dl>
+
     <h2 class="hasAnchor" id="constitutional-framework"><a class="anchor" href="#constitutional-framework"></a>Constitutional Framework</h2>
 
     
-    <dl class='dl-horizontal'>
-    <dt>const_onpaper</dt><dd><p>The year in which the most recent constitution was
+
+
+<dl'>
+
+<dt>const_onpaper</dt><dd><p>The year in which the most recent constitution was
 promulgated, whether or not it was implemented. Even if a constitution is
 extensively modified by amendments, it remains the same unless a new
 constitution is formally adopted or the old constitution is formally
 abrogated without being replaced. This variable is coded as 0 if there is no
-constitution, it is coded as -1 if there is more than one constitution.
-    Note: Constitutions are defined nominally, that is, a document is a
+constitution, it is coded as -1 if there is more than one constitution.Note: Constitutions are defined nominally, that is, a document is a
 constitution if it is called that. Sometimes there are several acts that
 together constitute a constitution: if they have different dates, we use the
 one that regulates the selection of the chief executive. Documents called
 "Instructions of government" or the like are included if they regulate the
-selection of the chief executive.
-    The frequency with which constitutions change differs greatly across
+selection of the chief executive.The frequency with which constitutions change differs greatly across
 countries. For example, Dominican Republic had thirty-three constitutions
 between 1844 and 1995, in part because every time a constitution was in any
 way amended, the modified document was called a new constitution. In
@@ -276,7 +297,8 @@ description by De Lolme in 1771, it was recognized as a stable for of
 organization of government. We date it, somewhat arbitrarily, to 1688. We
 also attribute this date to pre-1964 Barbados. In the case of Israel, we use
 the year of first basic law, 1958.</p></dd>
-    <dt>const_inforce</dt><dd><p>The year in which the constitution in force by the end
+
+<dt>const_inforce</dt><dd><p>The year in which the constitution in force by the end
 of a year was promulgated. A constitution is in force whenever its
 provisions concerning the selection of the chief executive or of the
 legislature (if any) are implemented. This variable equals
@@ -284,8 +306,7 @@ legislature (if any) are implemented. This variable equals
 was never implemented (the French Constitution of 1793, the 1976
 Constitution of the Central African Republic), (2) If a constitution
 provides for an elected chief executive and/or the legislature and all such
-provisions are violated.
-    Note: The reason to use such de facto rules is that the legal status of the
+provisions are violated.Note: The reason to use such de facto rules is that the legal status of the
 constitution is sometimes difficult to determine. For example, the Junta
 headed by General Ongania in Argentina in 1966 deposed the president and the
 vicepresident, dissolved the Congress, and banished political parties, while
@@ -310,76 +331,63 @@ executive and a legislature and only one of them is elected. A more
 stringent coding can be constructed by recoding constitutions as not being
 in force if either the chief executive or the legislature is not elected.
 Note, however, that even if one of these actors is not currently elected, it
-may be elected during subsequent years still under the same constitutions.
-    Here is a list of constitutions that did not provide for an elected chief
-executive or legislature:
-    1975 Angola: the legislative organ (council of the revolution) performed
+may be elected during subsequent years still under the same constitutions.Here is a list of constitutions that did not provide for an elected chief
+executive or legislature:1975 Angola: the legislative organ (council of the revolution) performed
 both executive and legislative functions; hence, it was not counted as a
 legislature. The head of the MPLA was the chief executive; he was not
-elected.
-    1969 Congo (Brazaville): did not provide for a legislature.
-    1951 Nepal: chief executive is the monarch and there is no elected
-legislature.
-    1865 Mexico: sovereignty vested in emperor, no elected legislature.
-    1884 British Honduras: crown colony, no elected legislature.
-    1865 Jamaica: crown colony, no elected legislature.
-    1939 Albania: executive power vested in the King and exercised by the King's
+elected.1969 Congo (Brazaville): did not provide for a legislature.1951 Nepal: chief executive is the monarch and there is no elected
+legislature.1865 Mexico: sovereignty vested in emperor, no elected legislature.1884 British Honduras: crown colony, no elected legislature.1865 Jamaica: crown colony, no elected legislature.1939 Albania: executive power vested in the King and exercised by the King's
 viceroy. Legislative power was vested in the King, and a Superior Fascist
-Corporative Council appointed to assist the Crown.</p></dd> </dl>
-    
+Corporative Council appointed to assist the Crown.</p></dd> 
+</dl>
+
     <h2 class="hasAnchor" id="organization-of-government"><a class="anchor" href="#organization-of-government"></a>Organization of Government</h2>
 
     
-    <p>Note: Constitutional provisions are coded as provided for in the
+
+
+<p>Note: Constitutional provisions are coded as provided for in the
 constitutions, that is, according to <code>const_onpaper</code>, even if the
 constitution is not observed (<code>const_inforce</code>=0) or if it has fallen
 into disuse or was never used. For example, the last royal veto occurred in
 England in 1706 and the last unilateral dissolution in 1834 but because no
 legal acts were passed to curtail these royal prerogatives they are coded as
 present.</p>
-<dl class='dl-horizontal'>
-    <dt>title_ce</dt><dd><p>Title of the nominal head of government (chief executive,
+<dl'>
+
+<dt>title_ce</dt><dd><p>Title of the nominal head of government (chief executive,
 as distinct from the head of state), according to the constitution.
 Nominating and dismissing powers are not executive powers. Presiding over
 meetings of the council of ministers or promulgating laws are also not
 considered executive powers. These rules apply even if these powers are
-specified in a section of constitution that deals with executive powers.
-    -1 if there is no constitution or more than one
-    0 if monarch or governor general (if the constitution states that the
-monarch is the chief executive)
-    1 if prime minister (president of the government or equivalent)
-    2 if president who cannot be removed in good behavior during a fixed term,
-whether directly or indirectly elected,
-    3 if the constitution gives executive powers both to president, who cannot
+specified in a section of constitution that deals with executive powers.-1 if there is no constitution or more than one0 if monarch or governor general (if the constitution states that the
+monarch is the chief executive)1 if prime minister (president of the government or equivalent)2 if president who cannot be removed in good behavior during a fixed term,
+whether directly or indirectly elected,3 if the constitution gives executive powers both to president, who cannot
 be removed during a fixed term, and to a prime minister. Typically, such
 constitutions enumerate specific powers of the president and reserve the
-remaining powers for the government.
-    4 if collective,
-    5 if other.
-    Note: Coded mechanically as 0 for the British colonies. Chief executive is
+remaining powers for the government.4 if collective,5 if other.Note: Coded mechanically as 0 for the British colonies. Chief executive is
 coded as collective even if one person bears the title of the president of
 the collective body, say military junta, but not of the country.</p></dd>
-    <dt>dissolution_power</dt><dd><p>Dummy for the power of the head of state to
+
+<dt>dissolution_power</dt><dd><p>Dummy for the power of the head of state to
 dissolve the legislature (at least the lower house) unilaterally. 0 if never
 unilaterally. 1 if a unilateral (that is, not at the request of someone
-else) decision of the dissolver.
-    Note: Dissolution power is unilateral if the head of state can dissolve the
+else) decision of the dissolver.Note: Dissolution power is unilateral if the head of state can dissolve the
 parliament without the consent of the government or leaders of political
 parties in the legislature. It is still unilateral if dissolution requires
 the consultation or consent of non-elected bodies or if there are
 restrictions concerning the frequency or the period during which it can
 occur.</p></dd>
-    <dt>leg_composition</dt><dd><p>Captures legal provisions regulating the mode of
+
+<dt>leg_composition</dt><dd><p>Captures legal provisions regulating the mode of
 selection of the lower house of the legislature. Whenever there are no such
 provisions but a legislature exists, the actual mode of selection is coded.
 These provisions are coded whether or not the legislature in fact exists, as
-long as they have not been formally abrogated or suspended.
-    Rows distinguish elected vs. appointed legislatures. Ex-officio members are
+long as they have not been formally abrogated or suspended.Rows distinguish elected vs. appointed legislatures. Ex-officio members are
 considered as appointed. Columns specify whether or not there are distinct
 electorates (whether people living next to each other vote for the same
 seats) and/or whether the appointed seats are distributed among some
-categories.
-    The coding entails two levels. At the first level, as represented by
+categories.The coding entails two levels. At the first level, as represented by
 integers, we indicate whether the legislature was fully appointed, partially
 appointed and partially elected, or fully elected, and whether either those
 appointed or the voters were distinguished according to some criteria. In
@@ -404,21 +412,17 @@ legislature must be female, are not considered unless there are separate
 electorates for male and female seats. The codes for particular categories
 are represented by cell entries in the table (table cannot be reporduced
 properly here - consult online codebook at
-<a href='https://sites.google.com/a/nyu.edu/adam-przeworski/home/data'>https://sites.google.com/a/nyu.edu/adam-przeworski/home/data</a>):
-    None Income, Race Both Property, Ethnicity Profession Religion Estate Gender
+<a href='https://sites.google.com/a/nyu.edu/adam-przeworski/home/data'>https://sites.google.com/a/nyu.edu/adam-przeworski/home/data</a>):None Income, Race Both Property, Ethnicity Profession Religion Estate Gender
 None 0 0 0 0 Fully appointed&amp; 1 2 3 4 Partly appointed 5&amp; 6&amp; 7&amp; 8&amp; Fully
-elected 9 10 11 12
-    None means that there are no constitutional provisions for a legislature and
+elected 9 10 11 12None means that there are no constitutional provisions for a legislature and
 no legislature in fact.
 <ul>
 <li><p>Accompanied by a decimal as follows: 0.1 if distinctions apply to the
 electorate 0.2 if distinctions apply to the appointed positions 0.3 if
 distinctions apply both to the electorate and the appointed positions</p></li>
-</ul>
-    &amp; Accompanied by a centecimal as follows: 0.01 appointed from above 0.02
+</ul>&amp; Accompanied by a centecimal as follows: 0.01 appointed from above 0.02
 appointed from below 0.03 some are appointed from above and some are
-appointed from below
-    In addition to these codes, assemblies based on estate representation are
+appointed from belowIn addition to these codes, assemblies based on estate representation are
 coded as 13. Estate assemblies were bodies divided into three of more
 chambers, each of which contained representatives (or indeed all members
 appearing personally) of one, and only one, legally privileged status group
@@ -431,15 +435,18 @@ capacities and incapacities, which are publicly recognized and which can be
 defined and enforced by public authority and in many cases by courts of law.
 (Marshall 1965: 193). For a discussion of the Estate system, see Poggi
 (1978: Chapter 3).</p></dd>
-    <dt>bicam</dt><dd><p>Number of houses of the legislature: 0 if none, 1, 2, 3. A
+
+<dt>bicam</dt><dd><p>Number of houses of the legislature: 0 if none, 1, 2, 3. A
 legislature that is elected in one election and then divides itself into
 chambers that differ in some prerogatives and at least at times vote
 separately is coded as multicameral. An example is Norway as of 1814.</p></dd>
-    <dt>upper_house</dt><dd><p>Composition of the legislature. 0 if unicameral, 1 if
+
+<dt>upper_house</dt><dd><p>Composition of the legislature. 0 if unicameral, 1 if
 second (upper) house is fully elected (directly or not), 2 if second (upper)
 house is partially appointed, 3 if second (upper) house is fully appointed
 or hereditary.</p></dd>
-    <dt>upper_block</dt><dd><p>Indicates whether the second (upper) house can delay or
+
+<dt>upper_block</dt><dd><p>Indicates whether the second (upper) house can delay or
 veto the decisions of the first (lower) house. -1 if the legislature is
 unicameral, 0 if the second (upper) house cannot block or delay legislation
 passed by the lower (first) house, 1 if the second (upper) house can only
@@ -448,50 +455,43 @@ is any veto that can be overridden by someone), 2 if the second (upper)
 house must approve must legislation or can put a final veto. Note: Blocking
 applies to any issue area. Note that if <code>upper_house</code>= 1 AND
 <code>upper_block</code> =1, then non-elective legislative power can block.</p></dd>
-    <dt>outside_block</dt><dd><p>Indicates whether anyone outside the legislature, other
+
+<dt>outside_block</dt><dd><p>Indicates whether anyone outside the legislature, other
 than courts, can block legislation. 0 if no one cannot suspend or block
 legislation, 1 if someone can put a suspensive veto, that is, a veto subject
 to override, 2 if someone can put derogative veto.</p></dd>
-    <dt>blocker</dt><dd><p>Indicates whether the blocker is elected. -1 if no blocker 0
+
+<dt>blocker</dt><dd><p>Indicates whether the blocker is elected. -1 if no blocker 0
 if not elected (including partially elected blockers) 1 if elected
 (individuals or bodies appointed by an elected body are considered to be
-elected)</p></dd> </dl>
-    
+elected)</p></dd> 
+</dl>
+
     <h2 class="hasAnchor" id="organization-of-elections"><a class="anchor" href="#organization-of-elections"></a>Organization of elections</h2>
 
     
-    <dl class='dl-horizontal'>
+
+
+<dl'>
 <dt>f</dt><dd><p>Franchise. Qualifications for the right to vote in
 national elections. Preliminary notes: To account for exclusions not
 captured under <code>f</code>, we use the variable <code>oth_exclusions</code> (see
-below).
-    There are cases of coexisting qualifications. We handle them as follows:
-    (1) If the qualifications differ by ethnicity or religion (common in
-colonies), we code the least restrictive qualification for non-colonizers.
-    (2) If the qualifications are set at a sub-national level, we code the
+below).There are cases of coexisting qualifications. We handle them as follows:(1) If the qualifications differ by ethnicity or religion (common in
+colonies), we code the least restrictive qualification for non-colonizers.(2) If the qualifications are set at a sub-national level, we code the
 variable as missing. (Unified countries in which franchise is regulated by
 sub-units include the United States, Mexico, or South Africa before 1968,
 while cases of countries that were not yet politically unified include
 Argentina before 1853, South Africa before 1910, and Australia before 1901).
-Regulations concerning immigrants and foreign residents are not considered.
-    Coding of franchise:
-    missing before suffrage was instituted for the first time.
-    The codes 0 to 7 are for males only:
-    0 No legal provisions for suffrage. This code is applied (a) whenever
+Regulations concerning immigrants and foreign residents are not considered.Coding of franchise:missing before suffrage was instituted for the first time.The codes 0 to 7 are for males only:0 No legal provisions for suffrage. This code is applied (a) whenever
 constitutions or other legal acts providing for suffrage were either
 abrogated without being replaced or formally suspended, (b) if (a) is
 unclear, whenever the legislature was closed and neither legislative nor
-presidential elections were held.
-    1 Estate representation. Example: Sweden until 1866.
-    2 Property only.
-    3 (Property OR income OR taxes OR exercise of profession OR educational
-titles) AND literacy.
-    4 Property OR income OR taxes OR exercise of profession OR educational
+presidential elections were held.1 Estate representation. Example: Sweden until 1866.2 Property only.3 (Property OR income OR taxes OR exercise of profession OR educational
+titles) AND literacy.4 Property OR income OR taxes OR exercise of profession OR educational
 titles. This code applies whenever the law specifies a minimum threshold,
 even if this threshold is very low (for example, tax contribution of three
 days of local wages in France in 1789, as long as this requirement is
-observed. If it is not observed, as in post-1917 Mexico, the code is 6.
-    5 Literacy only OR (Literacy OR property OR income OR taxes OR exercise of
+observed. If it is not observed, as in post-1917 Mexico, the code is 6.5 Literacy only OR (Literacy OR property OR income OR taxes OR exercise of
 profession OR educational titles). 6 All the economically independent (not
 personal servants, not debtors, only residence requirement). Includes: (a)
 phrases that explicitly refer to economic independence. Example: "Tener una
@@ -514,37 +514,33 @@ owned a workshop OR owned some land. The last provision was intended to
 allow the indigenous population to vote. (f) cases in which franchise is
 declared to be universal but excludes those who have failed to pay taxes or
 those permanently receiving public assistance or those under legal
-bankruptcy.
-    7 All ("Manhood"). The only exclusions admitted in this category are: (1)
+bankruptcy.7 All ("Manhood"). The only exclusions admitted in this category are: (1)
 having been convicted of a crime (2) being legally incompetent (3) short,
 less than two-year local residence requirement. There are some cases,
 however, where the law contains restrictive phrases, such as the requirement
 of appearing on the tax rolls or having fulfilled military obligation, these
 restrictions were not enforced. In such cases franchise was coded as 7. An
 example is the Ottoman Constitution of 1876 (in force after 1908) or the
-Swedish law until 1975.
-    For females, we use the second digit, distinguishing only situations in
-which
-    0 if no women can vote
-    1 women are qualified on narrower basis than males Examples: (a) in England
+Swedish law until 1975.For females, we use the second digit, distinguishing only situations in
+which0 if no women can vote1 women are qualified on narrower basis than males Examples: (a) in England
 between 1918 and 1927 males were qualified at the age of 20, females at 25.
 (b) in Canada between 1917 and 1920 the vote was given only to relatives of
 military. (c) in some countries women voted only in some regions. Note that
 if females vote in municipal elections, we do not include it since the codes
-refer only to national elections.
-    2 women are qualified on the same basis as males.
-    Auxiliary codes: -1 More than one constitution, any other kind of political
+refer only to national elections.2 women are qualified on the same basis as males.Auxiliary codes: -1 More than one constitution, any other kind of political
 chaos that makes the electoral rules inoperative. For years of foreign
 occupation we either set as missing or extend the restriction in effect
 before the occupation. -2 Family representation (Bhutan).</p></dd>
-    <dt>first_digit</dt><dd><p>The first digit of <code>f</code>.</p></dd>
-    <dt>second_digit</dt><dd><p>The second digit of <code>f</code>.</p></dd>
-    <dt>ext_type</dt><dd><p>Type of franchise extension during a particular year. Coded
+
+<dt>first_digit</dt><dd><p>The first digit of <code>f</code>.</p></dd>
+
+<dt>second_digit</dt><dd><p>The second digit of <code>f</code>.</p></dd>
+
+<dt>ext_type</dt><dd><p>Type of franchise extension during a particular year. Coded
 as: -1 if contraction 0 if no extension 1 if suffrage was extended by class
 (that is, the first digit of <code>f</code> increased) 2 if suffrage was extended
 by gender (that is, the second digit of <code>f</code> increased) 3 if suffrage
-was extended both by class and gender (that is, both digits increased).
-    Notes: Cases in which franchise changed from f&gt;0 to f=0, whether because
+was extended both by class and gender (that is, both digits increased).Notes: Cases in which franchise changed from f&gt;0 to f=0, whether because
 there was no constitution or the new constitution did not provide for
 elections are not coded as contractions. There are cases in which new
 franchise provisions are adopted but do not enter in force in the subsequent
@@ -554,70 +550,71 @@ did not apply it in the election of 1920, only in 1921. In such cases
 applied. *** How is it coded if (1) The country/dependency existed but had
 no franchise, (2) The country is new but had franchise as a dependency or a
 part?</p></dd>
-    <dt>oth_exclusions</dt><dd><p>Captures exclusions not accounted for under <code>f</code>.
+
+<dt>oth_exclusions</dt><dd><p>Captures exclusions not accounted for under <code>f</code>.
 Coded as follows: 0 None other (all restrictions are accounted for under
-<code>f</code>).
-    1 By ethnicity (some ethnic groups are excluded).
-    2 By territory (people living in some regions cannot vote).
-    3 By religion (only adherents of a particular religion(s) can vote).
-    4 By politics (Individuals sympathizing with some political parties or
+<code>f</code>).1 By ethnicity (some ethnic groups are excluded).2 By territory (people living in some regions cannot vote).3 By religion (only adherents of a particular religion(s) can vote).4 By politics (Individuals sympathizing with some political parties or
 ideologies are excluded. This code refers only to persons, hence it does not
 cover cases when political parties are banned.). Includes the language in
-which suffrage is determined by moral character.
-    5 Slaves are excluded.
-    6 Military personnel or police is excluded.
-    7 Priests or nuns are excluded.
-    8 Propertied are excluded (as in Mongolia, USSR 1918).
-    Note: When more than one exclusion applies, all are listed as consecutive
+which suffrage is determined by moral character.5 Slaves are excluded.6 Military personnel or police is excluded.7 Priests or nuns are excluded.8 Propertied are excluded (as in Mongolia, USSR 1918).Note: When more than one exclusion applies, all are listed as consecutive
 digits. For example, if 5, 6, and 7 applies, we code exclusions as 567.</p></dd>
-    <dt>franchise_age</dt><dd><p>Age at which those otherwise qualified to vote can
+
+<dt>franchise_age</dt><dd><p>Age at which those otherwise qualified to vote can
 exercise this right. Whenever age thresholds are different for different
 groups, lowest age is coded, unless the group which can vote at an earlier
 age is very small, say holders of Legion d'Honneur in post-1946 France.</p></dd>
-    <dt>secret</dt><dd><p>Secrecy of the vote in legislative elections. 0 Open, public 1
+
+<dt>secret</dt><dd><p>Secrecy of the vote in legislative elections. 0 Open, public 1
 Secret 2 Secret optional 3 Public for some, secret for others. Note: There
 were few observation coded as 2 or 3 and they have been collapsed with 1 in
 the data file. The original data do exist.</p></dd>
-    <dt>compulsory</dt><dd><p>Refers to voting any national level elections. 0 Optional
+
+<dt>compulsory</dt><dd><p>Refers to voting any national level elections. 0 Optional
 1 Compulsory</p></dd>
-    <dt>presdirect</dt><dd><p>Mode of election of the president in popular elections. 0
+
+<dt>presdirect</dt><dd><p>Mode of election of the president in popular elections. 0
 Indirect. The president is chosen by electors, elected specifically for the
 purpose of selecting the president (not by the parliament). 1 Direct 2 Some
 voters vote directly, some indirectly, depending on individual
 characteristics 3 Some voters vote directly, some indirectly, depending on
-collective characteristics (i.e. territory)
-    Note: Cases in which the constitution provides that the president is elected
+collective characteristics (i.e. territory)Note: Cases in which the constitution provides that the president is elected
 by the legislature, including those in which the legislature elects only if
 none of the candidates obtains some minimum threshold of votes, are coded
 according to the provisions concerning popular elections, that is, such
 provisions do not make the mode of election indirect. There were few
 observation coded as 2 or 3 and they have been collapsed as 2 in the data
 file. The original data do exist.</p></dd>
-    <dt>legdirect</dt><dd><p>Mode of election of the legislature. Refers only to the
+
+<dt>legdirect</dt><dd><p>Mode of election of the legislature. Refers only to the
 lower house. 0 Indirect 1 Direct 2 Some voters vote directly, some
 indirectly, depending on individual characteristics 3 Some voters vote
 directly, some indirectly, depending on collective characteristics (i.e.
-territory)
-    Note: There were few observation coded as 2 or 3 and they have been
+territory)Note: There were few observation coded as 2 or 3 and they have been
 collapsed with 1 in the data file. The original data do exist.</p></dd>
-    <dt>presterm</dt><dd><p>Constitutionally prescribed duration of the chief
-executive's tenure (in years). -1 if no term is specified 0 if life term
-    Note: If the term of the president is extended while an incumbent is in
+
+<dt>presterm</dt><dd><p>Constitutionally prescribed duration of the chief
+executive's tenure (in years). -1 if no term is specified 0 if life termNote: If the term of the president is extended while an incumbent is in
 office, it changes in the year it was extended.</p></dd>
-    <dt>legterm</dt><dd><p>Constitutionally prescribed duration of the legislative term
+
+<dt>legterm</dt><dd><p>Constitutionally prescribed duration of the legislative term
 in the lower house (in years). -1 if no term is specified 0 if life term
 Note: If the term of the legislature is extended while incumbents are in
 office, it changes the year it was extended.</p></dd>
-    <dt>presterm_limit</dt><dd><p>Term limits for presidents. -1 if no term is specified
+
+<dt>presterm_limit</dt><dd><p>Term limits for presidents. -1 if no term is specified
 0 unlimited number of consecutive terms 1 out after 1 term, can never come
 back 2 out after 1 term, can come back 3 out after more than one term, can
-come back 4 out after more than one term, can never come back.</p></dd></dl>
-    
+come back 4 out after more than one term, can never come back.</p></dd>
+</dl>
+
     <h2 class="hasAnchor" id="regime"><a class="anchor" href="#regime"></a>Regime</h2>
 
     
-    <dl class='dl-horizontal'>
-    <dt>exselec</dt><dd><p>Dummy for the chief executive having been elected (whether
+
+
+<dl'>
+
+<dt>exselec</dt><dd><p>Dummy for the chief executive having been elected (whether
 directly or indirectly; indirectly means elected by people who have been
 elected; if indirectly elected, election by a partly elected body counts as
 being elected). In cases of death, constitutional successors of elected
@@ -627,22 +624,24 @@ legislature is open (<code>openl</code>=1). If there is a president and a prime
 minister, <code>exselec</code>=1 only if both have been elected. If a chief
 executive is elected, overthrown by force, and then reinstated, coded as of
 the year of reinstatement.</p></dd>
-    <dt>legselec</dt><dd><p>Dummy for the lower house of the legislature having been at
+
+<dt>legselec</dt><dd><p>Dummy for the lower house of the legislature having been at
 least partly elected. (Coded as 1 if <code>openl</code>=1 and
 <code>leg_composition</code>= 5)</p></dd>
-    <dt>openl</dt><dd><p>A dummy variable for the existence of a legislature. A
+
+<dt>openl</dt><dd><p>A dummy variable for the existence of a legislature. A
 legislature is a body that (1) issues at least some laws and (2) does not
 perform executive functions. Legislative Councils which advise the ruler but
 have no authority to proclaim laws are not considered legislatures. Military
 Juntas that issue legal acts but also perform executive functions are
 disqualified by the second criterion.</p></dd>
-    <dt>legparty</dt><dd><p>Number of parties in the legislature. By "party" we take
+
+<dt>legparty</dt><dd><p>Number of parties in the legislature. By "party" we take
 here any recognizable, named grouping, regardless whether and how they
 appeared in elections. This variable is coded regardless whether the
 legislature was elected or appointed. -1 if no legislature, 0 if none
 (including cases where parties are officially banned), 1 if one (including
-cases where other parties are officially banned), 2 if more.
-    Note: During the early period candidates typically competed in elections on
+cases where other parties are officially banned), 2 if more.Note: During the early period candidates typically competed in elections on
 an individual basis, without any kind of centralized party organizations or
 shared programs. Within legislatures, however, they often coalesced into
 groups, currents, factions, "sentiments," etc. Hence, subjective judgments
@@ -653,11 +652,11 @@ and "Conservatives." In other countries, notably France between 1815 and
 1848, however, the divisive issues, the parliamentary groups, and their
 labels changed frequently, and such cases are coded as "none." A legislature
 consisting of one party and independents is coded as one party.</p></dd>
-    <dt>opposition</dt><dd><p>This variable is intended to indicate whether the
+
+<dt>opposition</dt><dd><p>This variable is intended to indicate whether the
 institutional system allows at least some political pluralism. 1 if as of
 December 31 there is a legislature that was at least in part elected by
-voters facing more than one choice.
-    Note: Even if the legislature consisted of multiple parties but in the
+voters facing more than one choice.Note: Even if the legislature consisted of multiple parties but in the
 election all the candidates were presented to voters on the same, single
 list, we consider that voters had no choice. If there was only one party
 while some candidates ran as independents, we also regard it as a situation
@@ -667,24 +666,24 @@ however, parties were not banned and everyone ran without party labels, then
 we regard this situation as pluralistic. The idea is that situations in
 which elections are non-partisan, frequent during the early period, and
 situations in which more than one party competes in elections represent
-political pluralism, while monopoly of one party is a political monopoly.
-    In rare cases it is possible for opposition to exist even if the legislative
+political pluralism, while monopoly of one party is a political monopoly.In rare cases it is possible for opposition to exist even if the legislative
 election was not competitive. This occurs if a competitive presidential
 election occurred during the term of a non-competitively elected legislature
-(for example, El Salvador in 1977).
-    0 if the above is not true OR, only in presidential systems, if it is true
+(for example, El Salvador in 1977).0 if the above is not true OR, only in presidential systems, if it is true
 BUT either the chief executive is not elected OR was elected unopposed
-(unless there was consensus among all parties; as in Chile 1891, 1910).
-    -1 if the legislature was closed at some point during the year and the state
-as of December 31 is unclear.
-    Note: If all we know is that the elected president run unopposed, the code
-is 0.</p></dd> </dl>
-    
+(unless there was consensus among all parties; as in Chile 1891, 1910).-1 if the legislature was closed at some point during the year and the state
+as of December 31 is unclear.Note: If all we know is that the elected president run unopposed, the code
+is 0.</p></dd> 
+</dl>
+
     <h2 class="hasAnchor" id="elections"><a class="anchor" href="#elections"></a>Elections</h2>
 
     
-    <dl class='dl-horizontal'>
-    <dt>legelec</dt><dd><p>Number of legislative elections that took place during the
+
+
+<dl'>
+
+<dt>legelec</dt><dd><p>Number of legislative elections that took place during the
 year. It includes general elections, regular elections in which only a part
 of the legislature is renewed, and annulled elections, but not by-elections
 to replace representatives who did not continue in office. Elections to the
@@ -692,13 +691,13 @@ upper house only and elections to constitutional assemblies that do not have
 ordinary legislative powers are excluded. Only first rounds are counted.
 Note: In several cases constituent assemblies usurped ordinary legislative
 powers. In such cases elections are counted.</p></dd>
-    <dt>preselec</dt><dd><p>Number of presidential elections that took place during the
+
+<dt>preselec</dt><dd><p>Number of presidential elections that took place during the
 year. In pure presidential systems (in which there is no prime minister),
 counted are any kind of elections, direct and indirect, in the latter case
 regardless of the constitutional status of the electing assembly. Second
 rounds are not counted, while annulled elections are counted. Presidential
-plebiscites are included.
-    Note: The information about presidential elections in systems in which the
+plebiscites are included.Note: The information about presidential elections in systems in which the
 president is elected by the parliament is unsystematic and fragmentary.
 Elections in systems in which the president is the head of the government,
 not only of state, can be identified by setting <code>head_title</code>=2 (see
@@ -706,7 +705,8 @@ below for the definition of <code>head_title</code>). Presidential elections in
 systems in which the head of the government is the prime minister but
 presidents are elected by popular vote can be identified by setting
 <code>head_title</code>=1 and <code>presdirect</code>=1.</p></dd>
-    <dt>eligible_pr</dt><dd><p>(For details, see Appendix 2.) Ratio of the number of
+
+<dt>eligible_pr</dt><dd><p>(For details, see Appendix 2.) Ratio of the number of
 people eligible to vote to the total population. Coded only for years of
 legislative or presidential elections. For an explanation of how this
 variable was constructed and the sources, see Appendix 2. Note: In some
@@ -717,55 +717,62 @@ available, numbers of eligible voters are used. Finally, in several
 instances we do not know whether the numbers refer to registered or eligible
 voters. When elections were indirect, this is the proportion of last-stage
 electors to the population.</p></dd>
-    <dt>legpart_pr</dt><dd><p>(For details, see Appendix 2.) Ratio of voters in
+
+<dt>legpart_pr</dt><dd><p>(For details, see Appendix 2.) Ratio of voters in
 legislative elections to the total population. Coded only for years of
 legislative elections. If elections are indirect, only the number of primary
 voters is used.</p></dd>
-    <dt>prespart_pr</dt><dd><p>(For details, see Appendix 2.) Ratio of voters in
+
+<dt>prespart_pr</dt><dd><p>(For details, see Appendix 2.) Ratio of voters in
 presidential elections to the total population. Coded only for years of
 presidential elections. If elections are indirect, only the number of
 primary voters is used. From this information, one can also make turnout =
-*part/eligible.
-    Note: This seems to be a more consistent way of getting turnout that the
+*part/eligible.Note: This seems to be a more consistent way of getting turnout that the
 numbers offered in the sources.</p></dd>
-    <dt>turnout_leg</dt><dd><p>Turnout in legislative elections, according to formula
+
+<dt>turnout_leg</dt><dd><p>Turnout in legislative elections, according to formula
 above. Only available for years with legislative elections.</p></dd>
-    <dt>turnout_pres</dt><dd><p>Turnout in presidential elections, according to formula
+
+<dt>turnout_pres</dt><dd><p>Turnout in presidential elections, according to formula
 above. Only available for years with presidential elections. There are some
 obvious problems here - some turnouts exceed 100 of eligible voters.</p></dd>
-    <dt>participation_f</dt><dd><p>Eligible voters (by franchise) as percentage of the
+
+<dt>participation_f</dt><dd><p>Eligible voters (by franchise) as percentage of the
 population. (Undocumented in original codebook. There are some obvious
 problems here - the variable exceeds 100 for some cases).</p></dd>
-    <dt>elecparty_leg</dt><dd><p>Number of lists presented to voters in legislative
+
+<dt>elecparty_leg</dt><dd><p>Number of lists presented to voters in legislative
 elections. -1 if no legislature or estate parliament or fully appointed
-legislature 0 if none, 1 of one, 2 if more.
-    Note: Several parties offering a joint single list to the voters, "fronts,"
+legislature 0 if none, 1 of one, 2 if more.Note: Several parties offering a joint single list to the voters, "fronts,"
 are counted as 1. The coding is based on the number of lists in an election,
 not on the number of parties in the legislature. If there is more than one
 election during a year, the last one is coded. If all candidates run as
 independents coded as 0.</p></dd>
-    <dt>elecparty_pres</dt><dd><p>Number of candidates presented to voters in
+
+<dt>elecparty_pres</dt><dd><p>Number of candidates presented to voters in
 presidential elections. 0 if one, 1 if more. Note: Applies whether the
 president is directly or indirectly elected. If there are two rounds, the
 first one is coded. If there is more than one election during a year, the
 last one is coded.</p></dd>
-    <dt>leg_scheduled</dt><dd><p>The year in which a legislative election should occur
+
+<dt>leg_scheduled</dt><dd><p>The year in which a legislative election should occur
 if the legislature serves a complete term. Obtained by adding <code>legterm</code>
 to the year in the which the previous legislative election took place.
 Because we code the state at the end of a year, <code>leg_scheduled</code> for a
 year in which in election occurred specifies the date of the next scheduled
 election.</p></dd>
-    <dt>pres_scheduled</dt><dd><p>The year in which a presidential election should
+
+<dt>pres_scheduled</dt><dd><p>The year in which a presidential election should
 occur. Obtained by adding <code>presterm</code> to the year in the which the
 previous presidential election took place. Because we code the state at the
 end of a year, <code>pres_scheduled</code> for a year in which in election
 occurred specifies the date of the next scheduled election.</p></dd>
-    <dt>salt_elections</dt><dd><p>Number of elections in which the office of the chief
+
+<dt>salt_elections</dt><dd><p>Number of elections in which the office of the chief
 executive was at stake during a year. Counted here are legislative elections
 if the chief executive is a prime minister or presidential elections if the
 chief executive is the president. Coded according to <code>head_title</code> (see
-below).
-    Note: There are cases in which there is a prime minister (or equivalent) and
+below).Note: There are cases in which there is a prime minister (or equivalent) and
 legislative elections but the prime minister is appointed by a monarch
 independently of the result of the election, that is, the government can
 exist even if it is opposed by a majority of the parliament. One could think
@@ -777,70 +784,72 @@ respect the results. Hence, it is not possible to decide ex ante whether the
 office of the chief executive was or was not at stake in a particular
 election. Except for one flagrant case, that of ???, all legislative
 elections in monarchies are coded as <code>salt_elections</code>.</p></dd>
-    <dt>result</dt><dd><p>(For details, see Appendix 1.) An alphabetic string that
+
+<dt>result</dt><dd><p>(For details, see Appendix 1.) An alphabetic string that
 describes how the current incumbent assumed office, indicates whether the
 incumbent run for office, and whether the incumbent won or lost, where the
 incumbent can be a person, a party, or a hand-picked successor.</p></dd>
-    <dt>sequence</dt><dd><p>(For details, see Appendix 1.) An alphabetic string that
+
+<dt>sequence</dt><dd><p>(For details, see Appendix 1.) An alphabetic string that
 describes the sequence of events in the election and its aftermath. The
 first field is the <code>result</code>, followed by a code indicating the
 institutional status of each subsequent chief executive, until someone holds
 office for at least one year or until the next election, whichever comes
 first.</p></dd>
-    <dt>lost</dt><dd><p>Dummy indicating that the incumbent party or non-partisan
+
+<dt>lost</dt><dd><p>Dummy indicating that the incumbent party or non-partisan
 incumbent person ran and lost an election. Coded as -1 if
 <code>did_not_run</code>=1. (<code>did_not_run</code> is not available in this
 dataset.)</p></dd>
-    <dt>salterel</dt><dd><p>(Mnemonic for Strong ALTErnation resulting from an ELection)
+
+<dt>salterel</dt><dd><p>(Mnemonic for Strong ALTErnation resulting from an ELection)
 Indicates whether partisan control over the chief executive office changed
 as a consequence of an election. <code>salterel</code> is dated in the year in
 which the relevant election occurred, not the year new government assumed
 office. Hence, the first alternation in history, in the United States, is
 coded as of 1800, even though the inauguration occurred in 1801. It is left
-as missing in years without the relevant elections. Coded as follows:
-    1 If the party and the person of the chief executive changes as a result of
+as missing in years without the relevant elections. Coded as follows:1 If the party and the person of the chief executive changes as a result of
 an election or, where the chief executive is a monarch, the head of
 government changes along partisan lines as a result on an election or the
 entire cabinet changes when there is no prime minister. Also applies if
 there are no parties but a manifest government candidate, who loses and
 yields office. Coded as 1 only if the outgoing chief executive was elected.
 Hence, alternation can occur only if the current election did not follow a
-coup.
-    0 If (1) The party or the person of the chief executive wins the election.
+coup.0 If (1) The party or the person of the chief executive wins the election.
 (2) There are two elections during the same year, such that the incumbent
 party loses the first but wins the second (Iceland in 1959). (3) The
 incumbent or its successor (party or person), who is not a caretaker chief
 executive, does not run. (4) The incumbent and rival parties form a
 coalition. (5) The incumbent loses and remains in office. (6) Neither the
-winner nor the loser holds office after an election.
-    -1 If there are elections but no discernible parties or two successive
+winner nor the loser holds office after an election.-1 If there are elections but no discernible parties or two successive
 independents or the change is between a non-partisan (caretaker, technical,
 expert) government and a partisan one, unless the only role of a
 non-partisan government was to ensure impartial administration of an
-election,
-    -2 If an election resulted in the defeat of an incumbent (party or person,
+election,-2 If an election resulted in the defeat of an incumbent (party or person,
 previously elected or not) and the winner assumed office but only after
 someone other than the winner occupied it (except for a few cases in which
 the constitution provides that an interim non-partisan caretaker should
-occupy it between the election and the inauguration).
-    Note: Alternations that result from a previous agreement between parties
+occupy it between the election and the inauguration).Note: Alternations that result from a previous agreement between parties
 count as alternations. Information about the partisan composition of
 coalition governments is frequently not available. Hence, <code>salterel</code> is
 coded as 1 even if the new chief executive was a member of an outgoing
 coalition government, as long as he is a member of a different party. The
-result is a bias in favor of counting alternations.</p></dd> </dl>
-    
+result is a bias in favor of counting alternations.</p></dd> 
+</dl>
+
     <h2 class="hasAnchor" id="other-events"><a class="anchor" href="#other-events"></a>Other Events</h2>
 
     
-    <dl class='dl-horizontal'>
-    <dt>dissolution</dt><dd><p>Counts the number of times the lower house of the
+
+
+<dl'>
+
+<dt>dissolution</dt><dd><p>Counts the number of times the lower house of the
 legislature was dissolved in a particular year. Included as dissolutions are
 (1) unconstitutional closures of the legislature and (2) early
 constitutional closures. Dissolutions that occur as a formality at the end
 of the term of legislature are not coded but early dissolutions are. Coded
--1 if there was no legislature to dissolve.
-    Note: Dissolutions are early if they occur at least one full year before the
+-1 if there was no legislature to dissolve.Note: Dissolutions are early if they occur at least one full year before the
 next regularly scheduled election. If an election occurred in year t and the
 legislative term is k years, then a dissolution is counted if it occurred in
 $t &lt;= year &lt;= t+k_2$: For the 22 OECD countries during the post-1945 period,
@@ -849,8 +858,8 @@ the end of the legislative term (based on Maravall 2007). Note that this
 variable can assume a value of 1 even if <code>dissolution_power</code>=0, because
 dissolutions occur when they are not unilateral and sometimes simply
 illegal.</p></dd>
-    <dt>coups</dt><dd><p>Number of successful coups d'etat during a given year.
-    Note: A coup is any event resulting in an irregular removal or resignation
+
+<dt>coups</dt><dd><p>Number of successful coups d'etat during a given year.Note: A coup is any event resulting in an irregular removal or resignation
 of the chief executive that involves a violent action or an explicit threat
 of resorting to it, by an armed organization. Assassinations of the chief
 executive are not considered coups unless the group responsible for the
@@ -876,36 +885,34 @@ Powell and Thyne (2010), Marshall and Marshall (2009), and Svolik and
 Akcinaroglu (2010) for the period 1950-2008, with some difference in the
 interpretation of specific events. Information for the pre-1950 era is more
 scarce and therefore the coding may be less reliable.</p></dd>
-    <dt>autocoups</dt><dd><p>A dummy variable for any instance in which the ruler
+
+<dt>autocoups</dt><dd><p>A dummy variable for any instance in which the ruler
 illegally changes constitutional rules to reduce the chances of the
 opposition to oppose policies in the legislature or to win elections. Note:
 The definition comprises any event in which the incumbent illegally closes
 the legislature the OR closes the legislature legally AND changes electoral
 rules (including banning parties) or adopts laws that extend his tenure
-(Philippines in 1972).</p></dd> </dl>
-    
+(Philippines in 1972).</p></dd> 
+</dl>
+
     <h2 class="hasAnchor" id="leaders"><a class="anchor" href="#leaders"></a>Leaders</h2>
 
     
-    <dl class='dl-horizontal'>
-    <dt>head_title</dt><dd><p>Title of the chief executive. This variable identifies the
+
+
+<dl'>
+
+<dt>head_title</dt><dd><p>Title of the chief executive. This variable identifies the
 formal position the occupant of which is the head of the government. Note
 that this variable does not necessarily identify the effective rulers, who
 need not occupy government positions. Most general (first) secretaries of
 single ruling parties did not, while some rulers who assumed idiosyncratic
 titles ("Dictator" "Guardian of Faith," "The Leader") entrusted the
-operation of the government to their delegates. Coded as follows:
-    -1 if it is unclear who the chief executive is or if the country is occupied
-by a foreign power,
-    0 if the monarch assumes directly the direction of the government,
-    1 if the head of government can be removed by the parliament under "good
-behavior,"
-    2 if the head of government cannot be removed by the parliament or if the
+operation of the government to their delegates. Coded as follows:-1 if it is unclear who the chief executive is or if the country is occupied
+by a foreign power,0 if the monarch assumes directly the direction of the government,1 if the head of government can be removed by the parliament under "good
+behavior,"2 if the head of government cannot be removed by the parliament or if the
 president can remove a prime minister, who is the nominal head of
-government, independently of the parliament,
-    4 if collective executive,
-    5 if other.
-    This variable is generated from <code>title_ce</code> by introducing the following
+government, independently of the parliament,4 if collective executive,5 if other.This variable is generated from <code>title_ce</code> by introducing the following
 modifications: (1) If the constitutional status of the effective chief
 executive is unclear but there is someone who holds the title of prime
 minister or president, coded respectively as 1 or 2. (2) If the nominal
@@ -916,8 +923,7 @@ be removed by the legislature and cannot be unilaterally removed by the
 president, coded as 2 if either of these conditions is false. (4) In cases
 in which the executive is nominally plural but has a clear leader and in
 cases in which the nominal ruler bears an unconventional title coded as 1 if
-there is a prime minister and as 2 otherwise.
-    Note: There are cases in which the constitution provides that the head of
+there is a prime minister and as 2 otherwise.Note: There are cases in which the constitution provides that the head of
 the government is a prime minister but the constitution is not in force and
 the de facto chief executive is the president. There are also systems that
 appear to be parliamentary in that the head of government is a prime
@@ -928,37 +934,36 @@ which states that "The President of the Republic is the Chief of the
 Executive. The Prime Minister is the Chief of Government" (Article 21) and
 gives the President the power to remove the Prime Minister unilaterally
 (Article 40). Such cases are coded as <code>head_title</code>=2.</p></dd>
-    <dt>heads</dt><dd><p>Number of distinct spells of chief executives during a year.
+
+<dt>heads</dt><dd><p>Number of distinct spells of chief executives during a year.
 "Spell" refers to a continuous tenure of a person in an office. If the same
 person holds office more than once during a particular year, with someone
 else serving in between, each tenure of the same person is counted
 separately. Juntas and collective presidencies that govern collectively are
 counted as one, but rotating presidencies are counted separately. Bearers of
 provisional titles are included as well as acting occupants of existing
-offices.
-    Note: (1) If there are several governments in different regions and there is
+offices.Note: (1) If there are several governments in different regions and there is
 no national one, the whole period is coded as -1. (2) Juntas are counted as
 one head. (3) Acting heads are counted in cases of time overlap between the
 nominal head and the acting head; in such cases, the nominal head is not
 counted. Includes regents. (4) Governments in rebellion are not counted. (5)
 In some cases an office is not occupied during some part of a year. Such
 vacancies are not counted.</p></dd>
-    <dt>head_age</dt><dd><p>The number of complete years the current head has been in
+
+<dt>head_age</dt><dd><p>The number of complete years the current head has been in
 office.</p></dd>
-    <dt>term</dt><dd><p>This variable indicates whether the legislative or the
+
+<dt>term</dt><dd><p>This variable indicates whether the legislative or the
 presidential term was completed according to previously specified rules.
 Note that a particular term can be only completed or not: this variable
 codes the entire term, not the years of particular chief executives.
 Right-censored spells are coded as -1. Term is treated differently for
-different types of heads:
-    For presidents:
-    1 For each year of a term during which (i) the chief executive is elected or
+different types of heads:For presidents:1 For each year of a term during which (i) the chief executive is elected or
 appointed to a previously specified term AND completes the term OR (ii) the
 chief executive elected or appointed to a previously specified term dies of
 natural causes or resigns for reasons of health AND is succeeded by the
 constitutional successor who then completes the term OR (iii) an early
-election is held early or the term in office is reduced but completed.
-    0 For each year of a term during which at least one of the following
+election is held early or the term in office is reduced but completed.0 For each year of a term during which at least one of the following
 conditions holds: (i) the incumbent extends the current term in office
 (changes in term limits do not count as extensions of the current term) (ii)
 the incumbent is a provisional, acting, or interim chief executive (iii) the
@@ -968,12 +973,9 @@ resigns for reasons other than poor health (vi) the incumbent resigns or is
 briefly ousted and then comes back to finish the term (vii) the incumbent is
 elected or appointed for a new term before finishing the current term and
 the new term overlaps with the current one (viii) the term is specifically
-designed for a particular person (for example, Pinochet in Chile).
-    With regard to prime ministers the relevant term is the <code>legterm</code>:
-    1 For each year of a legislative term during which all heads of governments
+designed for a particular person (for example, Pinochet in Chile).With regard to prime ministers the relevant term is the <code>legterm</code>:1 For each year of a legislative term during which all heads of governments
 were replaced according to constitutional rules while the parliament
-remained open.
-    0 otherwise. This includes cases in which the prime minister was overthrown
+remained open.0 otherwise. This includes cases in which the prime minister was overthrown
 (including assassinated) or imposed by force while the parliament was open
 as well as cases in which the parliament was constitutionally dissolved and
 the prime minister was replaced while the parliament remained dissolved. It
@@ -982,7 +984,8 @@ those in which the parliament was dissolved unconstitutionally. Note: It is
 possible for term to be 0 and the last digit of "sequence" to be "E" if the
 incumbent extended the term of office while in office and lasted until the
 election for the longer term (example is Honduras in 1847).</p></dd>
-    <dt>first_term</dt><dd><p>Year during which the first executive completed a
+
+<dt>first_term</dt><dd><p>Year during which the first executive completed a
 previously specified constitutional term, whether before or after
 independence. If a new unit emerged from a breakdown or unification of
 previously existing units, first term is coded separately for this new unit.
@@ -996,32 +999,27 @@ reason. Suppose that someone assumed office in year t for a k term period.
 He completed the term by August 1 of the year t + k. Hence,
 <code>first_term</code> = t + k. But if the ruler who assumed on August 1, t + k,
 did not finish his term, then <code>term</code>=0 in t + k.</p></dd>
-    <dt>mentry</dt><dd><p>Mode of entry of the last head (chief executive as given by
+
+<dt>mentry</dt><dd><p>Mode of entry of the last head (chief executive as given by
 <code>head_title</code>) who entered during a particular year. Coded for years in
 which an entry occurred (<code>heads</code>&gt;1 or <code>heads</code>=1 and the particular
-position either did not exist or was not occupied previously).
-    0 if by force (includes any replacement of a military chief executive by
+position either did not exist or was not occupied previously).0 if by force (includes any replacement of a military chief executive by
 another military, unless the succession occurred according to
-pre-established rules),
-    1 if openly imposed by a foreign power (includes cases when someone is
+pre-established rules),1 if openly imposed by a foreign power (includes cases when someone is
 elected, overthrown by a coup, and reinstated by an intervention of a
 foreign power; does not include clandestine actions, foreign sponsored
-coups, foreign pressures, and the like),
-    2 if selected by any not popularly elected body (e.g., by a self-constituted
+coups, foreign pressures, and the like),2 if selected by any not popularly elected body (e.g., by a self-constituted
 junta, a single ruling party) or if self-appointed (even if followed by an
 election), unless self-appointment is to the position of prime minister and
-the legislature is open,
-    3 if elected (directly or indirectly but at entry) or if constitutional
+the legislature is open,3 if elected (directly or indirectly but at entry) or if constitutional
 successor (say vice-president assuming on the death of the president). Note
 that under parliamentarism elected refers to being approved by the
 parliament, even if the person was not elected by voters. Prime ministers
 appointed by monarchs are coded here as long as the legislature is open and
 there is no single party. Includes monarchs who enter by plebiscite or
-election by legislature
-    4 if selected by a constitutionally empowered body but not according to the
+election by legislature4 if selected by a constitutionally empowered body but not according to the
 rules of succession (say the first vice-president is skipped in favor of
-second vice-president).
-    Note: If there are more than two chief executives during a particular year,
+second vice-president).Note: If there are more than two chief executives during a particular year,
 the information about all but the one serving as of December 31 is lost.
 This also implies that the mode of entry can equal 3 even if there are coups
 during the particular year. What is coded here is entry of a person to/from
@@ -1031,46 +1029,43 @@ the new position will be recorded even if the person remains the same
 (<code>heads</code>=1). Note that it is possible that <code>heads</code>=1 but
 <code>mentry</code> is recorded: this occurs when an office is newly created or if
 it was not occupied during some period.</p></dd>
-    <dt>mexit</dt><dd><p>Mode of exit of the first head who exited during a particular
+
+<dt>mexit</dt><dd><p>Mode of exit of the first head who exited during a particular
 year. Coded only for years in which an exit occurred (<code>heads</code>&gt;1 or if
 <code>heads</code>=1 and the position was abolished or was not occupied as of the
-end of the year).
-    0 if by force (includes any replacement of a military chief executive by
+end of the year).0 if by force (includes any replacement of a military chief executive by
 another military, unless the succession occurred according to
 pre-established rules, as well as assassinations, regardless of their
-motives),
-    1 if deposed by a foreign power (indicated by the presence of foreign
+motives),1 if deposed by a foreign power (indicated by the presence of foreign
 military force on the territory; does not include clandestine actions,
-foreign sponsored coups, foreign pressures, and the like),
-    2 if removed by some not popularly elected body (e.g., single ruling party),
-    3 if lost an election or subject to term limits or lost confidence or
+foreign sponsored coups, foreign pressures, and the like),2 if removed by some not popularly elected body (e.g., single ruling party),3 if lost an election or subject to term limits or lost confidence or
 resigned for any reasons, followed by a constitutional successor, or other
 good reasons, including peaceful transitions to democracy and removal by a
-monarch as long as the legislature is open and there is no single party,
-    4 if removed by a constitutionally empowered body but not according to
-rules,
-    -1 if died in office (and it is not generally known that the incumbent was
-assassinated).
-    Note: If there are more than two chief executives during a particular year,
+monarch as long as the legislature is open and there is no single party,4 if removed by a constitutionally empowered body but not according to
+rules,-1 if died in office (and it is not generally known that the incumbent was
+assassinated).Note: If there are more than two chief executives during a particular year,
 the information about all but the one serving as of January 1 is lost. This
 also implies that the mode of exit can equal 3 even if there are coups
 during the particular year. Note that it is possible that <code>heads</code>=1 but
 <code>mexit</code> is recorded: this occurs when an office is abolished or becomes
-temporarily vacant.
-    Note about <code>mentry</code> and <code>mexit</code>: Direct information about entry
+temporarily vacant.Note about <code>mentry</code> and <code>mexit</code>: Direct information about entry
 and exit is often difficult to obtain for prime ministers. Because
 constitutional changes of prime ministers are routine events, they do not
 attract attention of historians. Non-constitutional changes, however,
 whether prime ministers being removed by coups or by dissolutions of the
 parliament by monarchs, are typically mentioned by historians. In the cases
 where such information is not provided by historical sources, we assume that
-the entry and the exit were constitutional.</p></dd> </dl>
-    
+the entry and the exit were constitutional.</p></dd> 
+</dl>
+
     <h2 class="hasAnchor" id="constructed-variables-in-the-original-dataset"><a class="anchor" href="#constructed-variables-in-the-original-dataset"></a>Constructed variables in the original dataset</h2>
 
     
-    <dl class='dl-horizontal'>
-    <dt>electoral_age</dt><dd><p>Number of years in a period during which elections were
+
+
+<dl'>
+
+<dt>electoral_age</dt><dd><p>Number of years in a period during which elections were
 held regularly without being interrupted by any of the following: (1) a coup
 or an autocoup, (2) an unconstitutional usurpation of the office of the
 chief executive (<code>const_inforce</code>=0), (3) an occupation by a foreign
@@ -1083,70 +1078,87 @@ election must take place, even if it is immediately followed by an
 interruption). <code>electoral_age</code> is coded as missing if these conditions
 are not satisfied, that is, during periods in which no electoral periods
 satisfy the above conditions.</p></dd>
-    <dt>republic_age</dt><dd><p>Number of years in a period during which elections were
+
+<dt>republic_age</dt><dd><p>Number of years in a period during which elections were
 held regularly without being interrupted with some modicum of the opposition
 (<code>opposition</code>=1). Coded as missing if <code>electoral_age</code> is missing
 or <code>electoral_age</code> is not missing but <code>opposition</code>=0. Counted from
 the election after which the person who won the first pluralistic election
 completed a full term and opposition was not suppressed during this term.</p></dd>
-    <dt>max_republic_age</dt><dd><p>Maximum years as a republic. (Constructed?)</p></dd>
-    <dt>salt_e_scheduled</dt><dd><p>Year in which an election is scheduled where the
+
+<dt>max_republic_age</dt><dd><p>Maximum years as a republic. (Constructed?)</p></dd>
+
+<dt>salt_e_scheduled</dt><dd><p>Year in which an election is scheduled where the
 office of chief executive is at stake. (Constructed? Not documented in
 codebook).</p></dd>
-    <dt>pre_coups</dt><dd><p>For a year where an election happens where the chief
+
+<dt>pre_coups</dt><dd><p>For a year where an election happens where the chief
 executive is at stake (<code>salt_elections</code> &gt; 0), the number of successful
 coups before the election in that year. (Constructed? Not documented in
 codebook).</p></dd>
-    <dt>post_coups</dt><dd><p>For a year where an election happens where the chief
+
+<dt>post_coups</dt><dd><p>For a year where an election happens where the chief
 executive is at stake (<code>salt_elections</code> &gt; 0), the number of successful
 coups after the election in that year. (Constructed? Not documented in
 codebook).</p></dd>
-    <dt>term_length</dt><dd><p>Duration in office of chief executive? Not documented in
+
+<dt>term_length</dt><dd><p>Duration in office of chief executive? Not documented in
 codebook.</p></dd>
-    <dt>first_election</dt><dd><p>Year of first election? Not documented in codebook.</p></dd> </dl>
-    
+
+<dt>first_election</dt><dd><p>Year of first election? Not documented in codebook.</p></dd> 
+</dl>
+
     <h2 class="hasAnchor" id="other-calculated-variables-added-by-this-package"><a class="anchor" href="#other-calculated-variables-added-by-this-package"></a>Other calculated variables added by this package</h2>
 
     
-    <p>Note - the instructions in the original codebook for calculating these
+
+
+<p>Note - the instructions in the original codebook for calculating these
 variables are not always clear. Errors may have resulted.</p>
-<dl class='dl-horizontal'>
-    <dt>republic</dt><dd><p>Whether the country is a republic during the year.
+<dl'>
+
+<dt>republic</dt><dd><p>Whether the country is a republic during the year.
 (<code>republic_age</code> is not missing). Calculated from <code>republic_age</code>.</p></dd>
-    <dt>republican_period</dt><dd><p>Identifier for periods of republican and
+
+<dt>republican_period</dt><dd><p>Identifier for periods of republican and
 non-republican rule in a given country. Increases with each change between
 republic and non-republic.</p></dd>
-    <dt>cum_salterel</dt><dd><p>Cumulative number of strong alternations in a republican
+
+<dt>cum_salterel</dt><dd><p>Cumulative number of strong alternations in a republican
 period. Calculated from <code>salterel</code>.</p></dd>
-    <dt>cum_term</dt><dd><p>Cumulative years in which a term is completed. Calculated
+
+<dt>cum_term</dt><dd><p>Cumulative years in which a term is completed. Calculated
 from the cumulative sum of <code>term</code> for each <code>republican_period</code> in
 a country.</p></dd>
-    <dt>democracy</dt><dd><p>Whether the country is a democracy according to the
+
+<dt>democracy</dt><dd><p>Whether the country is a democracy according to the
 formula: elections are held regularly without being interrupted, with some
 modicum of the opposition (<code>republic_age</code> is not missing), following an
 alternation in office (<code>salterel</code>=1) after which the winner completed a
 full term. Includes periods before independence.</p></dd>
-    <dt>democracy2</dt><dd><p>Whether the country is a democracy according to the
+
+<dt>democracy2</dt><dd><p>Whether the country is a democracy according to the
 formula: elections are held regularly without being interrupted, with some
 modicum of the opposition (<code>republic_age</code> is not missing), following an
 alternation in office (<code>salterel</code>=1) after which the winner completed a
 full term. Does not include periods before independence.</p></dd>
-    <dt>democracy_age</dt><dd><p>Number of years of democracy2.</p></dd>
-    <dt>democratic_period</dt><dd><p>Identifier for periods of full democracy
+
+<dt>democracy_age</dt><dd><p>Number of years of democracy2.</p></dd>
+
+<dt>democratic_period</dt><dd><p>Identifier for periods of full democracy
 (<code>democracy2 = TRUE</code>) and non-democracy in a given country. Increases
 by 1 with each change in <code>democracy2</code>.</p></dd>
-    <dt>regime</dt><dd><p>This variable is coded only for years following independence.
+
+<dt>regime</dt><dd><p>This variable is coded only for years following independence.
 It is missing before independence even if the variables on the bases of
-which it is created are not missing.
-    0 if <code>electoral_age</code> is missing. There are two distinct reasons why it
+which it is created are not missing.0 if <code>electoral_age</code> is missing. There are two distinct reasons why it
 may be missing: either elections are not held regularly or they are held but
 the winner does not complete a term in office or makes an autocoup.
 Elections are considered not to be held if (1) there is a constitution that
 specifies the length of term of the chief executive (or the legislature) and
 this period is exceeded by more than one year, except for war years, (2)
 there is no constitution or the constitution does not provide for elections
-and no elections are held during this period.
-    1 if <code>electoral_age</code> is not missing and <code>opposition</code>=0 (or
+and no elections are held during this period.1 if <code>electoral_age</code> is not missing and <code>opposition</code>=0 (or
 <code>republic_age</code> is missing). These are regimes in which elections are
 held regularly and the winners (or their constitutional successors) complete
 electoral terms but either elections are uncontested or there is one party
@@ -1157,18 +1169,21 @@ for the incumbent to lose if the regime had no opposition up to some time
 when a competitive election occurred but the winner did not complete a term,
 as in Honduras in 1852. Finally, incumbents can lose when <code>regime</code>=1 if
 the election was competitive but at the end of the year the opposition was
-suppressed, as in Panama in 1968.
-    2 if <code>republic_age</code> is not missing, that is if <code>electoral_age</code> is
-not missing and <code>opposition</code>=1.
-    3 if <code>democracy_age</code> is not missing.</p></dd>
-    <dt>regime_period</dt><dd><p>Identifier for regime periods in a given country.
+suppressed, as in Panama in 1968.2 if <code>republic_age</code> is not missing, that is if <code>electoral_age</code> is
+not missing and <code>opposition</code>=1.3 if <code>democracy_age</code> is not missing.</p></dd>
+
+<dt>regime_period</dt><dd><p>Identifier for regime periods in a given country.
 Increases by 1 with each change in <code>regime</code>.</p></dd>
-    </dl>
-    
+
+
+</dl>
+
     <h2 class="hasAnchor" id="appendix-coding-electoral-sequences"><a class="anchor" href="#appendix-coding-electoral-sequences"></a>Appendix 1. Coding Electoral Sequences</h2>
 
     
-    <p>The unit of observation is a sequence of events following an election in
+
+
+<p>The unit of observation is a sequence of events following an election in
 which the office of the chief executive is at stake. An event is an election
 and the subsequent occupancies of the chief executive office by different
 persons. These events are coded as answers to questions formulated below.
@@ -1181,10 +1196,10 @@ assumed office, and 4 that he stayed that many years.</p>
 <p>Note that only events following the elections are coded, with the exception
 of the manner in which the current incumbent arrived in office. The first
 three digits summarize information about the election. They are recorded
-under the variable called result.</p><dl class='dl-horizontal'>
-    <dt>result</dt><dd><p>The first digit answers the question How did the incumbent
-come into office?
-    Note: The variable coding who is the chief executive is <code>head_title</code>.
+under the variable called result.</p><dl'>
+
+<dt>result</dt><dd><p>The first digit answers the question How did the incumbent
+come into office?Note: The variable coding who is the chief executive is <code>head_title</code>.
 The incumbent is the ruler at the moment when the election occurs. It makes
 no difference how the current ruler assumed office: if there is an elected
 chief executive, he is overthrown, and the general who overthrows calls an
@@ -1197,37 +1212,24 @@ independence and the colony was run by a governor general (or equivalent)
 without local prime minister, there is no incumbent. The monarch, even if
 (s)he is the nominal chief executive is not considered the incumbent unless
 (s)he occupies the office of the prime minister. The incumbent is the head
-of the government.
-    Answers to the first question are coded as:
-    F By overthrowing someone else (If the incumbent originally came into power
+of the government.Answers to the first question are coded as:F By overthrowing someone else (If the incumbent originally came into power
 by force but then had himself elected, he is elected. Plebiscites, however,
-do not count as elections.)
-    A Appointed by a non-elected body (If the king appoints a PM in the absence
+do not count as elections.)A Appointed by a non-elected body (If the king appoints a PM in the absence
 of parliament or some junta takes over and appoints someone, not necessarily
-one of its members, the chief executive)
-    E Elected (An incumbent who is a constitutional successor of an elected
+one of its members, the chief executive)E Elected (An incumbent who is a constitutional successor of an elected
 incumbent, say vice-president who assumes office upon the death of the
-president, inherits his status.)
-    T A non-partisan or caretaker incumbent appointed by an elected body
-(parliament, sometimes party leaders)
-    0 (zero) There was no incumbent.
-    The second digit answers the question, Did the incumbent run in the
-election? Coded as follows:
-    P if the incumbent person run (distinguished systematically only under
-presidentialism)
-    S if a successor run
-    N if the incumbent person did not run and there was no successor or if there
+president, inherits his status.)T A non-partisan or caretaker incumbent appointed by an elected body
+(parliament, sometimes party leaders)0 (zero) There was no incumbent.The second digit answers the question, Did the incumbent run in the
+election? Coded as follows:P if the incumbent person run (distinguished systematically only under
+presidentialism)S if a successor runN if the incumbent person did not run and there was no successor or if there
 was no incumbent (Includes cases coded as T in the first digit). Note:
 Successor is coded differently under presidentialism and parliamentarism.
 Under presidentialism, S is a different member of the same party or a
 candidate designated by the incumbent government. Under parliamentarism, as
 long as the party of the incumbent is present in the election it is always
-coded as S.
-    The final (third) digit answers the question Did the incumbent/successor
-win? The answers to this question can be Y yes N no ? cannot be determined
-    Note: If the challenger cannot form a government and the incumbent remains
-in office, then the incumbent won.
-    Some examples: TN,: the incumbent was a non-partisan caretaker, who did not
+coded as S.The final (third) digit answers the question Did the incumbent/successor
+win? The answers to this question can be Y yes N no ? cannot be determinedNote: If the challenger cannot form a government and the incumbent remains
+in office, then the incumbent won.Some examples: TN,: the incumbent was a non-partisan caretaker, who did not
 run in the election. FPY: the incumbent came to office by force, ran in the
 election, and won. Note again that if someone who originally came into
 office by force had been elected once, he becomes an elected incumbent.
@@ -1239,7 +1241,8 @@ party of the prime minister ran in the election and it is not clear who won
 (no presidential candidate won a majority, which is required by the
 constitution, or no party won a majority of seats necessary to form the
 government).</p></dd>
-    <dt>sequence</dt><dd><p>The variable called sequence consists of the result,
+
+<dt>sequence</dt><dd><p>The variable called sequence consists of the result,
 followed by answers to the following pairs of questions, pairs separated by
 commas, with as many pairs as necessary, and a one-digit field indicating
 how long the last chief executive remained in office. The full syntax is
@@ -1248,30 +1251,20 @@ Who assumed office? Did he stay in power?, ... (as many times as necessary),
 How long? Who assumed office? In principle, everyone who assumed the office
 of the chief executive after an election, regardless for how long, is
 recorded, with the exception of constitutionally required caretakers. The
-answers to this question can be:
-    I incumbent (the person who was the incumbent at the moment of the election)
-    W a winner of the election (other than the incumbent person)
-    L a loser of the election who entered by force (or other non-constitutional
-means)
-    R a loser of the election who entered by constitutional means (this
+answers to this question can be:I incumbent (the person who was the incumbent at the moment of the election)W a winner of the election (other than the incumbent person)L a loser of the election who entered by force (or other non-constitutional
+means)R a loser of the election who entered by constitutional means (this
 typically occurred when the king appointed a member of the losing party and
-the parliament was in session and did not or could not vote non-confidence)
-    M military (If they take power directly. If the king appoints or a
-parliament elects a military officer, they are not military here.)
-    A if a non-elected power (king, military, one party) imposes someone who is
+the parliament was in session and did not or could not vote non-confidence)M military (If they take power directly. If the king appoints or a
+parliament elects a military officer, they are not military here.)A if a non-elected power (king, military, one party) imposes someone who is
 neither a winner or a loser (non-party, technical, caretaker. For example,
 King Boris of Bulgaria appointed a Russian general who was not a party
-member).
-    T if an elected power (parliament, party leaders, indirectly elected
+member).T if an elected power (parliament, party leaders, indirectly elected
 president) selects someone who is neither a winner or a loser (non-party,
 technical, caretaker. For example, the President of the Bolivian Senate was
 appointed by the Congress as caretaker when no one could muster majority
-required by the constitution.)
-    C if an institutional actor came in by force or by otherwise violating
+required by the constitution.)C if an institutional actor came in by force or by otherwise violating
 constitutional rules (For example, President Kasavubu removed PM Lumumba or
-the king assumed power by a coup).
-    ? cannot tell
-    Notes: The incumbent person remains I in the entire sequence that follows.
+the king assumed power by a coup).? cannot tellNotes: The incumbent person remains I in the entire sequence that follows.
 Other members of his party are W if the incumbent's party won, L or R if it
 lost. Suppose the incumbent party lost, the king appointed a member of the
 incumbent party, then appointed the original incumbent until the next
@@ -1279,9 +1272,7 @@ election. The sequence would be ESN,RN,IY,E Party splits are ignored. If
 there was an interim constitutional occupant between the election and
 inauguration, he is coded as T. For example, the sequence in which the
 incumbent did not run, an interim person took over, and then the winner
-assumed would be EN,TN,W. . .
-    The answer to the question Did he/she stay in power? can be: Y yes N no
-    Note: The answer entails a stopping rule. The sequence of events is
+assumed would be EN,TN,W. . .The answer to the question Did he/she stay in power? can be: Y yes N noNote: The answer entails a stopping rule. The sequence of events is
 considered to be completed if the current occupant survived in power at
 least one year and neither the incumbent, nor the winner, nor the loser
 returned to office before the next election or if the current occupant
@@ -1295,8 +1286,7 @@ by force, however, then the answer concerning him is N and the
 vice-president, even if he is a constitutionally designated, is treated as a
 new occupant of office. Hence, "not return" means here that neither the
 original incumbent nor anyone who occupied office in the aftermath of the
-election returned to office before the next election.
-    If the answer is Y the last digit answers the question How long?, with two
+election returned to office before the next election.If the answer is Y the last digit answers the question How long?, with two
 possible answers: Length of time, measured in full years if the current
 ruler did not last until the next election (but at least one full year) or
 if the next election did not take place within one year of the scheduled
@@ -1312,13 +1302,16 @@ both questions as long as necessary. If there is more than one election
 during the same year, each election is coded as above with the sign j
 separating the elections. For example, if an elected incumbent run, won,
 lasted until the new election the same year, run again, and lost, the
-sequence is coded as ESY,IY,EjESN,WY,E.</p></dd> </dl>
-    
+sequence is coded as ESY,IY,EjESN,WY,E.</p></dd> 
+</dl>
+
     <h2 class="hasAnchor" id="caveats"><a class="anchor" href="#caveats"></a>Caveats</h2>
 
     
-    <p>Caveats are many and some are consequential.</p>
-<dl class='dl-horizontal'>
+
+
+<p>Caveats are many and some are consequential.</p>
+<dl'>
 <dt>Missing data</dt><dd><p>In principle, the data should cover all
 elections that selected chief executives in all countries that existed at
 any time after 1917, including periods before independence. There are good
@@ -1326,7 +1319,8 @@ reasons to suspect that not all such elections are included: the historical
 record is simply absent for some countries during the early periods. The
 bias of inclusion is against early elections, particularly those in
 dependent territories.</p></dd>
-    <dt>Chief executives</dt><dd><p>The elections that are coded are intended to be
+
+<dt>Chief executives</dt><dd><p>The elections that are coded are intended to be
 those which potentially determine the selection of the chief executive.
 Chief executives are presidents, directly or indirectly elected, who are
 heads of governments and cannot be dismissed by the legislature while in
@@ -1352,50 +1346,61 @@ the outgoing incumbent, these sequences would be coded respectively as
 EPY,IN,WN,WY,3 under presidentialism and as ESY,IN,WY,E under
 parliamentarism (even if WY may stand here for several prime ministers from
 the same party).</p></dd>
-    <dt>General</dt><dd><p>Some elections constitute truly convoluted events and the
+
+<dt>General</dt><dd><p>Some elections constitute truly convoluted events and the
 exact sequence of events is often difficult to identify. Different
 historical sources frequently ignore different details, so that codes based
 on particular sources could be different. Moreover, the information is
 sometimes inconsistent, so that making sense of it is not always possible.
-One must suspect, therefore, that the coding contains errors.</p></dd> </dl>
-    
+One must suspect, therefore, that the coding contains errors.</p></dd> 
+</dl>
+
     <h2 class="hasAnchor" id="other-variables-undocumented-in-codebook-"><a class="anchor" href="#other-variables-undocumented-in-codebook-"></a>Other variables (undocumented in codebook)</h2>
 
     
-    <dl class='dl-horizontal'>
+
+
+<dl'>
 <dt>popg</dt><dd><p>Population growth?</p></dd>
-    <dt>unrest</dt><dd><p>Unrest variable from Banks?</p></dd>
-    <dt>europe</dt><dd><p>Dummy variable for Europe?</p></dd>
-    <dt>gdpcap</dt><dd><p>Per capita GDP, probably from Maddison?</p></dd>
-    <dt>gdp_M2010</dt><dd><p>GDP in 2010, in thousands of dollars? Probably from
+
+<dt>unrest</dt><dd><p>Unrest variable from Banks?</p></dd>
+
+<dt>europe</dt><dd><p>Dummy variable for Europe?</p></dd>
+
+<dt>gdpcap</dt><dd><p>Per capita GDP, probably from Maddison?</p></dd>
+
+<dt>gdp_M2010</dt><dd><p>GDP in 2010, in thousands of dollars? Probably from
 Maddison.</p></dd>
-    <dt>pop_M2010</dt><dd><p>Population in 2010, in thousands? A number of population
-variables are mentioned in the codebook but not found in the dataset:
-    POP_C Population, current borders, in thousands. These data incorporate
+
+<dt>pop_M2010</dt><dd><p>Population in 2010, in thousands? A number of population
+variables are mentioned in the codebook but not found in the dataset:POP_C Population, current borders, in thousands. These data incorporate
 variations in population due to changes in geographical boundaries. It was
-constructed from COW2, Maddison, and GFD.
-    POP_C_FILL Based on POP_C but linearily interpolated whenever data were
-missing, except for war years.
-    POP20 Population 20 or over (in thousands). Calculated from Mitchell (2003)
-    FPOP20 Female population 20 or over (in thousands). Calculated from Mitchell
+constructed from COW2, Maddison, and GFD.POP_C_FILL Based on POP_C but linearily interpolated whenever data were
+missing, except for war years.POP20 Population 20 or over (in thousands). Calculated from Mitchell (2003)FPOP20 Female population 20 or over (in thousands). Calculated from Mitchell
 (2003) MPOP20 Male population over 20 or over (in thousands). Calculated
-from Mitchell (2003)
-    PROPPOP20 Population 20 or over as a proportion of total population.
-    PROPFPOP20 Females 20 or over as a proportion of total population.
-    PROPMPOP20 Males 20 or over as a proportion of total population.</p></dd>
-    <dt>growth</dt><dd><p>Growth rate, from Maddison? Undocumented in codebook.</p></dd>
-    <dt>civil_war</dt><dd><p>Is the country embroiled in a civil war? (Undocumented,
+from Mitchell (2003)PROPPOP20 Population 20 or over as a proportion of total population.PROPFPOP20 Females 20 or over as a proportion of total population.PROPMPOP20 Males 20 or over as a proportion of total population.</p></dd>
+
+<dt>growth</dt><dd><p>Growth rate, from Maddison? Undocumented in codebook.</p></dd>
+
+<dt>civil_war</dt><dd><p>Is the country embroiled in a civil war? (Undocumented,
 perhaps from COW?)</p></dd>
-    <dt>sidea</dt><dd><p>Side A in war. Undocumented.</p></dd>
-    <dt>sideb</dt><dd><p>Side B in war. Undocumented.</p></dd>
-    <dt>warname</dt><dd><p>War name. Undocumented.</p></dd>
-    </dl>
-    
+
+<dt>sidea</dt><dd><p>Side A in war. Undocumented.</p></dd>
+
+<dt>sideb</dt><dd><p>Side B in war. Undocumented.</p></dd>
+
+<dt>warname</dt><dd><p>War name. Undocumented.</p></dd>
+
+
+</dl>
+
     <h2 class="hasAnchor" id="standard-descriptive-variables-generated-by-this-package-"><a class="anchor" href="#standard-descriptive-variables-generated-by-this-package-"></a>Standard descriptive variables (generated by this package)</h2>
 
     
-    <dl class='dl-horizontal'>
-    <dt>extended_country_name</dt><dd><p>The name of the country in the Gleditsch-Ward
+
+<dl'>
+
+<dt>extended_country_name</dt><dd><p>The name of the country in the Gleditsch-Ward
 system of states, or the official name of the
 entity (for non-sovereign entities and states not in the Gleditsch and Ward
 system of states) or else a common name for disputed cases that do not have
@@ -1407,20 +1412,24 @@ For details, see Gleditsch, Kristian S. &amp; Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
 International Interactions 25: 393-413. The list can be found at
 <a href='http://privatewww.essex.ac.uk/~ksg/statelist.html'>http://privatewww.essex.ac.uk/~ksg/statelist.html</a>.</p></dd>
-    <dt>GWn</dt><dd><p>Gleditsch and Ward's numeric country code, from the Gleditsch and
+
+<dt>GWn</dt><dd><p>Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.</p></dd>
-    <dt>cown</dt><dd><p>The Correlates of War numeric country code, 2016 version. This
+
+<dt>cown</dt><dd><p>The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
 <a href='http://www.correlatesofwar.org/data-sets/state-system-membership'>http://www.correlatesofwar.org/data-sets/state-system-membership</a> for
 the full list.</p></dd>
-    <dt>in_GW_system</dt><dd><p>Whether the state is "in system" (that is, is
+
+<dt>in_GW_system</dt><dd><p>Whether the state is "in system" (that is, is
 independent and sovereign), according to Gleditsch and Ward, for this
 particular date. Matches at the end of the year; so, for example South
 Vietnam 1975 is <code>FALSE</code> because, according to Gleditsch and Ward, the
 country ended on April 1975 (being absorbed by North Vietnam). It is also
 <code>TRUE</code> for dates beyond 2012 for countries that did not end by then, depsite
-the fact that the Gleditsch and Ward list has not been updated since.</p></dd> </dl>
-    
+the fact that the Gleditsch and Ward list has not been updated since.</p></dd> 
+</dl>
+
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Caramani, Daniele. 2000. Elections in Western Europe since 1815:
@@ -1457,79 +1466,56 @@ Washington, Dc: Us Department Of Commerce. Series Y 135-186.</p>
 <p>The Correlates of War Project</p>
 <p>Maddison, A. 2003. The World Economy: Historical Statistics, OECD
 Development Centre.</p>
-    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other democracy: <code><a href='LIED.html'>LIED</a></code>, <code><a href='anckar.html'>anckar</a></code>,
-  <code><a href='arat_pmm.html'>arat_pmm</a></code>, <code><a href='blm.html'>blm</a></code>,
-  <code><a href='bmr.html'>bmr</a></code>, <code><a href='bnr.html'>bnr</a></code>,
-  <code><a href='bollen_pmm.html'>bollen_pmm</a></code>, <code><a href='doorenspleet.html'>doorenspleet</a></code>,
-  <code><a href='download_fh_electoral.html'>download_fh_electoral</a></code>,
-  <code><a href='download_fh.html'>download_fh</a></code>, <code><a href='download_reign.html'>download_reign</a></code>,
-  <code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a></code>,
-  <code><a href='eiu.html'>eiu</a></code>, <code><a href='fh_pmm.html'>fh_pmm</a></code>,
-  <code><a href='gwf_all.html'>gwf_all</a></code>, <code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
-  <code><a href='kailitz.html'>kailitz</a></code>, <code><a href='magaloni.html'>magaloni</a></code>,
-  <code><a href='mainwaring.html'>mainwaring</a></code>, <code><a href='munck_pmm.html'>munck_pmm</a></code>,
-  <code><a href='pacl.html'>pacl</a></code>, <code><a href='peps.html'>peps</a></code>,
-  <code><a href='pitf.html'>pitf</a></code>, <code><a href='polity_pmm.html'>polity_pmm</a></code>,
-  <code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
-  <code><a href='polyarchy.html'>polyarchy</a></code>, <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
-  <code><a href='svmdi.html'>svmdi</a></code>, <code><a href='svolik_regime.html'>svolik_regime</a></code>,
-  <code><a href='uds_2014.html'>uds_2014</a></code>, <code><a href='ulfelder.html'>ulfelder</a></code>,
-  <code><a href='utip.html'>utip</a></code>, <code><a href='vanhanen.html'>vanhanen</a></code>,
-  <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
-<p>Other institutions: <code><a href='LIED.html'>LIED</a></code></p></div>
-    
+    <div class='dont-index'><p>Other democracy: 
+<code><a href='LIED.html'>LIED</a></code>,
+<code><a href='anckar.html'>anckar</a></code>,
+<code><a href='arat_pmm.html'>arat_pmm</a></code>,
+<code><a href='blm.html'>blm</a></code>,
+<code><a href='bmr.html'>bmr</a></code>,
+<code><a href='bnr.html'>bnr</a></code>,
+<code><a href='bollen_pmm.html'>bollen_pmm</a></code>,
+<code><a href='doorenspleet.html'>doorenspleet</a></code>,
+<code><a href='download_fh_electoral.html'>download_fh_electoral</a>()</code>,
+<code><a href='download_fh_full.html'>download_fh_full</a>()</code>,
+<code><a href='download_fh.html'>download_fh</a>()</code>,
+<code><a href='download_reign.html'>download_reign</a>()</code>,
+<code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a>()</code>,
+<code><a href='eiu.html'>eiu</a></code>,
+<code><a href='fh_pmm.html'>fh_pmm</a></code>,
+<code><a href='gwf_all.html'>gwf_all</a></code>,
+<code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
+<code><a href='kailitz.html'>kailitz</a></code>,
+<code><a href='magaloni.html'>magaloni</a></code>,
+<code><a href='mainwaring.html'>mainwaring</a></code>,
+<code><a href='munck_pmm.html'>munck_pmm</a></code>,
+<code><a href='pacl.html'>pacl</a></code>,
+<code><a href='peps.html'>peps</a></code>,
+<code><a href='pitf.html'>pitf</a></code>,
+<code><a href='polityIV.html'>polityIV</a></code>,
+<code><a href='polity_pmm.html'>polity_pmm</a></code>,
+<code><a href='polyarchy_dimensions.html'>polyarchy_dimensions</a></code>,
+<code><a href='polyarchy.html'>polyarchy</a></code>,
+<code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code>,
+<code><a href='svmdi.html'>svmdi</a></code>,
+<code><a href='svolik_regime.html'>svolik_regime</a></code>,
+<code><a href='uds_2014.html'>uds_2014</a></code>,
+<code><a href='ulfelder.html'>ulfelder</a></code>,
+<code><a href='utip.html'>utip</a></code>,
+<code><a href='vanhanen.html'>vanhanen</a></code>,
+<code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
+<p>Other institutions: 
+<code><a href='LIED.html'>LIED</a></code></p></div>
 
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      
-      <li><a href="#format">Format</a></li>
-
-      <li><a href="#source">Source</a></li>
-
-      <li><a href="#credits">Credits</a></li>
-
-      <li><a href="#introduction">Introduction</a></li>
-
-      <li><a href="#shell">Shell</a></li>
-
-      <li><a href="#constitutional-framework">Constitutional Framework</a></li>
-
-      <li><a href="#organization-of-government">Organization of Government</a></li>
-
-      <li><a href="#organization-of-elections">Organization of elections</a></li>
-
-      <li><a href="#regime">Regime</a></li>
-
-      <li><a href="#elections">Elections</a></li>
-
-      <li><a href="#other-events">Other Events</a></li>
-
-      <li><a href="#leaders">Leaders</a></li>
-
-      <li><a href="#constructed-variables-in-the-original-dataset">Constructed variables in the original dataset</a></li>
-
-      <li><a href="#other-calculated-variables-added-by-this-package">Other calculated variables added by this package</a></li>
-
-      <li><a href="#appendix-coding-electoral-sequences">Appendix 1. Coding Electoral Sequences</a></li>
-
-      <li><a href="#caveats">Caveats</a></li>
-
-      <li><a href="#other-variables-undocumented-in-codebook-">Other variables (undocumented in codebook)</a></li>
-
-      <li><a href="#standard-descriptive-variables-generated-by-this-package-">Standard descriptive variables (generated by this package)</a></li>
-
-      <li><a href="#references">References</a></li>
-
-      <li><a href="#see-also">See also</a></li>
-          </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -1537,13 +1523,16 @@ Development Centre.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

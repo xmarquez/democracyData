@@ -1,7 +1,7 @@
 ---
 title: "Adding all democracy datasets"
 author: "Xavier Marquez"
-date: "8 September 2017"
+date: "`r lubridate::now()`"
 output: 
   html_document: 
     toc: yes
@@ -21,6 +21,9 @@ verbose <- TRUE
 include_in_output <-  c("extended_country_name", "GWn", "cown", "in_GW_system")
 devtools::load_all()
 
+pmm_replication <-  prepare_pmm_replication_data(path = "../../../Pemstein Meserve and Melton Code/uds/data/democracy1946.2008.rda",
+                                                 verbose = verbose,
+                                                 include_in_output = include_in_output) 
 ```
 
 ## Anckar and Fredriksson
@@ -31,7 +34,7 @@ cite_dataset("anckar")
 anckar <- redownload_anckar(verbose = verbose,
                             include_in_output = include_in_output)
 
-devtools::use_data(anckar, overwrite = TRUE)
+usethis::use_data(anckar, overwrite = TRUE)
 
 ```
 ## Arat
@@ -39,14 +42,10 @@ devtools::use_data(anckar, overwrite = TRUE)
 ```{r arat, results = 'asis'}
 cite_dataset("arat")
 
-pmm_replication <-  prepare_pmm_replication_data(path = "../../../Pemstein Meserve and Melton Code/uds/data/democracy1946.2008.rda",
-                                                 verbose = verbose,
-                                                 include_in_output = include_in_output) 
-
 arat_pmm <- extract_pmm_var(pmm_replication, pmm_arat, 
                             include_in_output = include_in_output)
 
-devtools::use_data(arat_pmm, overwrite = TRUE)
+usethis::use_data(arat_pmm, overwrite = TRUE)
 
 ```
 
@@ -61,8 +60,8 @@ blm <- redownload_blm(verbose = verbose,
 blm_pmm <- extract_pmm_var(pmm_replication, pmm_blm,
                       include_in_output = include_in_output)
 
-devtools::use_data(blm, overwrite = TRUE)
-devtools::use_data(blm_pmm, overwrite = TRUE)
+usethis::use_data(blm, overwrite = TRUE)
+usethis::use_data(blm_pmm, overwrite = TRUE)
 
 
 ```
@@ -76,7 +75,7 @@ bmr <- redownload_bmr(verbose = verbose,
                       include_in_output = include_in_output)
 
 
-devtools::use_data(bmr, overwrite = TRUE)
+usethis::use_data(bmr, overwrite = TRUE)
 ```
 
 # BNR
@@ -99,8 +98,8 @@ anti_join(bnr_extended, bnr %>% select(-bnr_country)) %>%
 anti_join(bnr %>% select(-bnr_country), bnr_extended) %>%
   knitr::kable()
 
-devtools::use_data(bnr, overwrite = TRUE)
-devtools::use_data(bnr_extended, overwrite = TRUE)
+usethis::use_data(bnr, overwrite = TRUE)
+usethis::use_data(bnr_extended, overwrite = TRUE)
 
 ```
 
@@ -112,7 +111,7 @@ cite_dataset("bollen")
 bollen_pmm <- extract_pmm_var(pmm_replication, pmm_bollen,
                               include_in_output = include_in_output)
 
-devtools::use_data(bollen_pmm, overwrite = TRUE)
+usethis::use_data(bollen_pmm, overwrite = TRUE)
 ```
 
 # Doorenspleet
@@ -124,7 +123,7 @@ doorenspleet <- prepare_doorenspleet(path = "../../../Data/Doorenspleet data.csv
                                      verbose = verbose, 
                                      include_in_output = include_in_output)
 
-devtools::use_data(doorenspleet, overwrite = TRUE)
+usethis::use_data(doorenspleet, overwrite = TRUE)
 ```
 
 # WGI
@@ -144,7 +143,7 @@ cite_dataset("eiu")
 
 eiu <- prepare_eiu(verbose = verbose, include_in_output = include_in_output)
 
-devtools::use_data(eiu, overwrite = TRUE)
+usethis::use_data(eiu, overwrite = TRUE)
 ```
 
 # Freedom House
@@ -162,10 +161,13 @@ fh_with_territories <- download_fh(verbose = verbose,
 fh_electoral <- download_fh_electoral(verbose = verbose,
                                       include_in_output = include_in_output)
 
+fh_full <- download_fh_full(verbose = verbose,
+                                      include_in_output = include_in_output)
+
 fh_pmm <- extract_pmm_var(pmm_replication, pmm_freedomhouse,
                           include_in_output = include_in_output) 
 
-devtools::use_data(fh_pmm, overwrite = TRUE)
+usethis::use_data(fh_pmm, overwrite = TRUE)
 
 ```
 
@@ -192,7 +194,7 @@ gwf_all_extended <- redownload_gwf(verbose = verbose,
                                    include_in_output = include_in_output,
                                    extend = TRUE)
 
-devtools::use_data(gwf_autocratic,
+usethis::use_data(gwf_autocratic,
                    gwf_autocratic_extended,
                    gwf_all, 
                    gwf_all_extended, overwrite = TRUE)
@@ -207,7 +209,7 @@ cite_dataset("hadenius")
 hadenius_pmm <- extract_pmm_var(pmm_replication, pmm_hadenius,
                                 include_in_output = include_in_output)
 
-devtools::use_data(hadenius_pmm, overwrite = TRUE)
+usethis::use_data(hadenius_pmm, overwrite = TRUE)
 ```
 
 # Kailitz
@@ -231,7 +233,7 @@ kailitz <- kailitz %>%
 kailitz <- kailitz %>% 
   select(kailitz_country, kailitz_cown, year, combined_regime:transition, include_in_output)
 
-devtools::use_data(kailitz, overwrite = TRUE)
+usethis::use_data(kailitz, overwrite = TRUE)
 ```
 
 
@@ -243,7 +245,7 @@ cite_dataset("LIED")
 LIED <- redownload_lied(verbose = verbose, 
                       include_in_output = include_in_output)
 
-devtools::use_data(LIED, overwrite = TRUE)
+usethis::use_data(LIED, overwrite = TRUE)
 ```
 
 
@@ -268,7 +270,7 @@ anti_join(magaloni_extended, magaloni) %>%
   filter(grepl("Pakis",magaloni_country)) %>%
   knitr::kable()
 
-devtools::use_data(magaloni, magaloni_extended, overwrite = TRUE)
+usethis::use_data(magaloni, magaloni_extended, overwrite = TRUE)
 ```
 
 
@@ -284,8 +286,8 @@ mainwaring <- prepare_mainwaring(path = "../../../Data/Mainwaring Linan.txt",
 mainwaring_pmm <- extract_pmm_var(pmm_replication, pmm_mainwaring,
                                  include_in_output = include_in_output)
 
-devtools::use_data(mainwaring, overwrite = TRUE)
-devtools::use_data(mainwaring_pmm, overwrite = TRUE)
+usethis::use_data(mainwaring, overwrite = TRUE)
+usethis::use_data(mainwaring_pmm, overwrite = TRUE)
 
 ```
 
@@ -297,7 +299,7 @@ cite_dataset("munck")
 munck_pmm <- extract_pmm_var(pmm_replication, pmm_munck,
                                  include_in_output = include_in_output)
 
-devtools::use_data(munck_pmm, overwrite = TRUE)
+usethis::use_data(munck_pmm, overwrite = TRUE)
 ```
 
 # PACL
@@ -311,8 +313,8 @@ pacl_pmm <- extract_pmm_var(pmm_replication, pmm_pacl,
 pacl <- redownload_pacl(verbose = verbose,
                         include_in_output = include_in_output)
 
-devtools::use_data(pacl_pmm, overwrite = TRUE)
-devtools::use_data(pacl, overwrite = TRUE)
+usethis::use_data(pacl_pmm, overwrite = TRUE)
+usethis::use_data(pacl, overwrite = TRUE)
 
 ```
 
@@ -324,7 +326,7 @@ cite_dataset("peps")
 peps <- redownload_peps(verbose = verbose,
                         include_in_output = include_in_output)
 
-devtools::use_data(peps, overwrite = TRUE)
+usethis::use_data(peps, overwrite = TRUE)
 ```
 
 # Polity
@@ -335,25 +337,14 @@ cite_dataset("polity")
 polity_pmm <- extract_pmm_var(pmm_replication, pmm_polity,
                               include_in_output = include_in_output)
 
-polity <- download_polity_annual(verbose = verbose,
+polityIV <- redownload_polityIV(verbose = verbose,
                                  include_in_output = include_in_output)
 
-polity2 <- download_polity_annual(verbose = verbose,
-                                 include_in_output = c("extended_country_name",
-                                                       "GWn",
-                                                       "cown",
-                                                       "polity_ccode",
-                                                       "in_GW_system",
-                                                       "in_cow_system",
-                                                       "in_polity_system",
-                                                       "cow_startdate",
-                                                       "cow_enddate",
-                                                       "GW_startdate",
-                                                       "GW_enddate",
-                                                       "polity_startdate",
-                                                       "polity_enddate"))
+polity5 <- download_polity_annual(verbose = verbose,
+                                 include_in_output = include_in_output)
 
-devtools::use_data(polity_pmm, overwrite = TRUE)
+usethis::use_data(polity_pmm, overwrite = TRUE)
+usethis::use_data(polityIV, overwrite = TRUE)
 ```
 
 # PITF
@@ -361,9 +352,12 @@ devtools::use_data(polity_pmm, overwrite = TRUE)
 ```{r pitf, results = 'asis'}
 cite_dataset("pitf")
 
+pitf_p4 <- create_pitf_scores(polityIV, verbose = verbose, include_in_output = include_in_output)
+
 pitf <- create_pitf_scores(verbose = verbose, include_in_output = include_in_output)
 
-devtools::use_data(pitf, overwrite = TRUE)
+usethis::use_data(pitf_p4, overwrite = TRUE)
+usethis::use_data(pitf, overwrite = TRUE)
 ```
 
 # Polyarchy
@@ -377,12 +371,12 @@ polyarchy_pmm <- extract_pmm_var(pmm_replication, pmm_polyarchy,
 polyarchy <- redownload_polyarchy_original(verbose = verbose,
                                          include_in_output = include_in_output)
 
-polyarchy_dimensions <- redownload_polyarchy_dimensions(verbose = verbose,
-                                                include_in_output = include_in_output)
+# polyarchy_dimensions <- redownload_polyarchy_dimensions(verbose = verbose,
+                                                # include_in_output = include_in_output)
 
-devtools::use_data(polyarchy, 
+usethis::use_data(polyarchy, 
                    polyarchy_pmm,
-                   polyarchy_dimensions,
+                   # polyarchy_dimensions,
                    overwrite = TRUE)
 ```
 
@@ -398,7 +392,7 @@ prc_gasiorowski <- prepare_prc(path = "../../../Data/Gasiorowski.csv",
 prc_pmm <- extract_pmm_var(pmm_replication, pmm_prc,
                            include_in_output = include_in_output)
 
-devtools::use_data(prc_gasiorowski, 
+usethis::use_data(prc_gasiorowski, 
                    prc_pmm, overwrite = TRUE)
 ```
 
@@ -410,7 +404,7 @@ cite_dataset("PIPE")
 PIPE <- redownload_pipe(verbose = verbose,
                         include_in_output = include_in_output)
 
-devtools::use_data(PIPE, overwrite = TRUE)
+usethis::use_data(PIPE, overwrite = TRUE)
 ```
 
 # REIGN
@@ -428,13 +422,13 @@ reign <- download_reign(verbose = verbose,
 cite_dataset("svmdi")
 
 svmdi <- redownload_svmdi(verbose = verbose,
-                          include_in_output = include_in_output) 
+                          include_in_output = include_in_output)
 
 svmdi_2016 <- redownload_svmdi(release_year = 2016, verbose = verbose,
                                include_in_output = include_in_output)
 
-devtools::use_data(svmdi, overwrite = TRUE)
-devtools::use_data(svmdi_2016, overwrite = TRUE)
+usethis::use_data(svmdi, overwrite = TRUE)
+usethis::use_data(svmdi_2016, overwrite = TRUE)
 
 ```
 # Svolik
@@ -446,7 +440,7 @@ svolik_regime <- prepare_svolik_regime(path = "../../../Data/Svolik data/regime 
                                        verbose = verbose,
                                        include_in_output = include_in_output)
 
-devtools::use_data(svolik_regime, overwrite = TRUE)
+usethis::use_data(svolik_regime, overwrite = TRUE)
 ```
 
 # UDS
@@ -454,18 +448,20 @@ devtools::use_data(svolik_regime, overwrite = TRUE)
 ```{r uds, results = 'asis'}
 cite_dataset("uds")
 
-uds_2014 <- redownload_uds(verbose = verbose,
-                           include_in_output = include_in_output)
+# The website is no longer online.
 
-uds_2011 <- redownload_uds(2011,
-                           verbose = verbose,
-                           include_in_output = include_in_output)
+# uds_2014 <- redownload_uds(verbose = verbose,
+#                            include_in_output = include_in_output)
+# 
+# uds_2011 <- redownload_uds(2011,
+#                            verbose = verbose,
+#                            include_in_output = include_in_output)
+# 
+# uds_2010 <- redownload_uds(2010,
+#                            verbose = verbose,
+#                            include_in_output = include_in_output)
 
-uds_2010 <- redownload_uds(2010,
-                           verbose = verbose,
-                           include_in_output = include_in_output)
-
-devtools::use_data(uds_2014, uds_2011, uds_2010, overwrite = TRUE)
+# usethis::use_data(uds_2014, uds_2011, uds_2010, overwrite = TRUE)
 ```
 
 # Ulfelder
@@ -480,7 +476,7 @@ ulfelder_extended <- redownload_ulfelder(verbose = verbose,
                                 include_in_output = include_in_output,
                                 extend = TRUE)
 
-devtools::use_data(ulfelder, ulfelder_extended, overwrite = TRUE)
+usethis::use_data(ulfelder, ulfelder_extended, overwrite = TRUE)
 ```
 
 # UTIP
@@ -491,7 +487,7 @@ cite_dataset("utip")
 utip <- redownload_utip(verbose = verbose,
                         include_in_output = include_in_output)
 
-devtools::use_data(utip, overwrite = TRUE)
+usethis::use_data(utip, overwrite = TRUE)
 ```
 
 # Vanhanen
@@ -506,7 +502,7 @@ vanhanen <- prepare_vanhanen(path = "../../../Data/Vanhanen data/Study/data/daF1
 vanhanen_pmm <- extract_pmm_var(pmm_replication, pmm_vanhanen,
                              include_in_output = include_in_output)
 
-devtools::use_data(vanhanen, vanhanen_pmm, overwrite = TRUE)
+usethis::use_data(vanhanen, vanhanen_pmm, overwrite = TRUE)
 ```
 
 # Wahman Teorell and Hadenius
@@ -517,7 +513,7 @@ cite_dataset("wahman_teorell")
 wahman_teorell_hadenius <- redownload_wahman_teorell_hadenius(verbose = verbose,
                                                               include_in_output = include_in_output)
 
-devtools::use_data(wahman_teorell_hadenius, overwrite = TRUE)
+usethis::use_data(wahman_teorell_hadenius, overwrite = TRUE)
 ```
 
 
