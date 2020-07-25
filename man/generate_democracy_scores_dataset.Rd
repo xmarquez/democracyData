@@ -22,7 +22,7 @@ generate_democracy_scores_dataset(
 \item{datasets}{Character vector indicating which datasets to use in
 producing the combined data frame. Can be any or all of (an unambiguous
 abbreviation of) "\link{anckar}", "\link{LIED}", "\link{PIPE}", "\link{arat_pmm}", "\link{blm}",
-"\link{blm_pmm}", "\link{bmr}", "\link{bnr}", "\link{bnr_extended}", "\link{bollen_pmm}",
+"\link{blm_pmm}", "\link{bmr}", "\link{bnr}", "\link{bti}", "\link{bnr_extended}", "\link{bollen_pmm}",
 "\link{doorenspleet}", "\link{eiu}", "\link{fh_pmm}", "\link{gwf_all}", "\link{gwf_all_extended}",
 "\link{hadenius_pmm}", "\link{kailitz}", "\link{magaloni}", "\link{magaloni_extended}",
 "\link{mainwaring}", "\link{mainwaring_pmm}", "\link{munck_pmm}", "\link{pacl}", "\link{pacl_pmm}",
@@ -167,9 +167,9 @@ measures are converted to z-scores):
 democracy reflect the country's situation as of 31 December of the year as
 much as possible.}
 
-\item{anckar_democracy}{The \link{anckar} measure of democracy, as a numeric value. Up to
-2010 this should be identical to \code{bmr_democracy_omitteddata}. 0 =
-non-democracy, 1 = democracy.}
+\item{anckar_democracy}{The \link{anckar} measure of democracy, as a numeric
+value. Up to 2010 this should be identical to \code{bmr_democracy_omitteddata}.
+0 = non-democracy, 1 = democracy.}
 
 \item{blm}{The \link{blm} measure of democracy, as a numeric value. Can be 0
 (authoritarian), 0.5 (hybrid), or 1 (democracy). }
@@ -185,8 +185,8 @@ variable instead fills in these years as continuations of the same regime
 type."}
 
 \item{bmr_democracy_femalesuffrage}{According to the \link{bmr} codebook, this
-is the same measure as \code{bmr}, except that it also requires that at least half
-of adult women have the right to vote. 30 countries change values.}
+is the same measure as \code{bmr}, except that it also requires that at least
+half of adult women have the right to vote. 30 countries change values.}
 
 \item{bnr}{The \link{bnr} event measure of democracy, reversed, so that 0
 indicates non-democracy and 1 indicates democracy. Since the \code{event}
@@ -198,6 +198,9 @@ mostly equal to 1.}
 non-democracy and 1 indicating democracy. See the documentation for
 \link{bnr_extended} for details of how this variable extends \link{bnr}, filling in
 years of non-democracy back to 1913.}
+
+\item{bti}{The \link{bti} - Berteslmann Transformation Democracy Status index.
+Ranges from 1 to 10. }
 
 \item{doorenspleet}{The \link{doorenspleet} measure of democracy, with 1
 indicating non-democracy and 2 indicating democracy.}
@@ -302,12 +305,19 @@ documentation of \link{prc_pmm} for caveats.}
 \item{pmm_vanhanen}{The measure of democracy in \link{vanhanen_pmm}. Check the
 documentation of \link{vanhanen_pmm} for caveats.}
 
-\item{polity}{The polity measure of democracy in \link{polity} (with NAs for
--88, -77, -66).}
+\item{polity}{The polity measure of democracy in \link{polity} (version 5, with
+NAs for -88, -77, -66).}
 
-\item{polity2}{The polity2 measure of democracy in \link{polity} (interpolated
-for periods of interregnum, occupation, and the like - see documentation in
-the polity manual).}
+\item{polity2}{The polity2 measure of democracy in \link{polity} (version 5,
+interpolated for periods of interregnum, occupation, and the like - see
+documentation in the polity manual).}
+
+\item{polityIV}{The polity measure of democracy in \link{polity} (version IV,
+with NAs for -88, -77, -66).}
+
+\item{polity2IV}{The polity2 measure of democracy in \link{polity} (version IV,
+interpolated for periods of interregnum, occupation, and the like - see
+documentation in the polity manual).}
 
 \item{polyarchy_contestation_dimension}{The contestation dimension
 (\code{CONTEST}) in \link{polyarchy_dimensions}.}
@@ -331,11 +341,14 @@ original scale) are coded NA.}
 coding all presidential and parliamentary democracies as 1, all other
 regimes as 0.}
 
-\item{csvmdi}{The continuous Support Vector Machine democracy index from \link{svmdi}, 2018 version.}
+\item{csvmdi}{The continuous Support Vector Machine democracy index from
+\link{svmdi}, 2020 version.}
 
-\item{svmdi_2016}{The continuous Support Vector Machine democracy index from \link{svmdi}, 2016 version.}
+\item{svmdi_2016}{The continuous Support Vector Machine democracy index
+from \link{svmdi}, 2016 version.}
 
-\item{dsvmdi}{The dichotomous Support Vector Machine democracy index from \link{svmdi}, 2018 version.}
+\item{dsvmdi}{The dichotomous Support Vector Machine democracy index from
+\link{svmdi}, 2020 version.}
 
 \item{svolik_democracy}{A measure of democracy from \link{svolik_regime}. 0 =
 non-democracy, 1 = democracy. }

@@ -10,7 +10,7 @@
 #' @param datasets Character vector indicating which datasets to use in
 #'   producing the combined data frame. Can be any or all of (an unambiguous
 #'   abbreviation of) "[anckar]", "[LIED]", "[PIPE]", "[arat_pmm]", "[blm]",
-#'   "[blm_pmm]", "[bmr]", "[bnr]", "[bnr_extended]", "[bollen_pmm]",
+#'   "[blm_pmm]", "[bmr]", "[bnr]", "[bti]", "[bnr_extended]", "[bollen_pmm]",
 #'   "[doorenspleet]", "[eiu]", "[fh_pmm]", "[gwf_all]", "[gwf_all_extended]",
 #'   "[hadenius_pmm]", "[kailitz]", "[magaloni]", "[magaloni_extended]",
 #'   "[mainwaring]", "[mainwaring_pmm]", "[munck_pmm]", "[pacl]", "[pacl_pmm]",
@@ -103,9 +103,9 @@
 #'   democracy reflect the country's situation as of 31 December of the year as
 #'   much as possible.}
 #'
-#'   \item{anckar_democracy}{The [anckar] measure of democracy, as a numeric value. Up to
-#'   2010 this should be identical to `bmr_democracy_omitteddata`. 0 =
-#'   non-democracy, 1 = democracy.}
+#'   \item{anckar_democracy}{The [anckar] measure of democracy, as a numeric
+#'   value. Up to 2010 this should be identical to `bmr_democracy_omitteddata`.
+#'   0 = non-democracy, 1 = democracy.}
 #'
 #'   \item{blm}{The [blm] measure of democracy, as a numeric value. Can be 0
 #'   (authoritarian), 0.5 (hybrid), or 1 (democracy). }
@@ -121,8 +121,8 @@
 #'   type."}
 #'
 #'   \item{bmr_democracy_femalesuffrage}{According to the [bmr] codebook, this
-#'   is the same measure as `bmr`, except that it also requires that at least half
-#'   of adult women have the right to vote. 30 countries change values.}
+#'   is the same measure as `bmr`, except that it also requires that at least
+#'   half of adult women have the right to vote. 30 countries change values.}
 #'
 #'   \item{bnr}{The [bnr] event measure of democracy, reversed, so that 0
 #'   indicates non-democracy and 1 indicates democracy. Since the \code{event}
@@ -134,6 +134,9 @@
 #'   non-democracy and 1 indicating democracy. See the documentation for
 #'   [bnr_extended] for details of how this variable extends [bnr], filling in
 #'   years of non-democracy back to 1913.}
+#'
+#'   \item{bti}{The [bti] - Berteslmann Transformation Democracy Status index.
+#'   Ranges from 1 to 10. }
 #'
 #'   \item{doorenspleet}{The [doorenspleet] measure of democracy, with 1
 #'   indicating non-democracy and 2 indicating democracy.}
@@ -238,12 +241,19 @@
 #'   \item{pmm_vanhanen}{The measure of democracy in [vanhanen_pmm]. Check the
 #'   documentation of [vanhanen_pmm] for caveats.}
 #'
-#'   \item{polity}{The polity measure of democracy in [polity] (with NAs for
-#'   -88, -77, -66).}
+#'   \item{polity}{The polity measure of democracy in [polity] (version 5, with
+#'   NAs for -88, -77, -66).}
 #'
-#'   \item{polity2}{The polity2 measure of democracy in [polity] (interpolated
-#'   for periods of interregnum, occupation, and the like - see documentation in
-#'   the polity manual).}
+#'   \item{polity2}{The polity2 measure of democracy in [polity] (version 5,
+#'   interpolated for periods of interregnum, occupation, and the like - see
+#'   documentation in the polity manual).}
+#'
+#'   \item{polityIV}{The polity measure of democracy in [polity] (version IV,
+#'   with NAs for -88, -77, -66).}
+#'
+#'   \item{polity2IV}{The polity2 measure of democracy in [polity] (version IV,
+#'   interpolated for periods of interregnum, occupation, and the like - see
+#'   documentation in the polity manual).}
 #'
 #'   \item{polyarchy_contestation_dimension}{The contestation dimension
 #'   (\code{CONTEST}) in [polyarchy_dimensions].}
@@ -267,11 +277,14 @@
 #'   coding all presidential and parliamentary democracies as 1, all other
 #'   regimes as 0.}
 #'
-#'   \item{csvmdi}{The continuous Support Vector Machine democracy index from [svmdi], 2018 version.}
+#'   \item{csvmdi}{The continuous Support Vector Machine democracy index from
+#'   [svmdi], 2020 version.}
 #'
-#'   \item{svmdi_2016}{The continuous Support Vector Machine democracy index from [svmdi], 2016 version.}
+#'   \item{svmdi_2016}{The continuous Support Vector Machine democracy index
+#'   from [svmdi], 2016 version.}
 #'
-#'   \item{dsvmdi}{The dichotomous Support Vector Machine democracy index from [svmdi], 2018 version.}
+#'   \item{dsvmdi}{The dichotomous Support Vector Machine democracy index from
+#'   [svmdi], 2020 version.}
 #'
 #'   \item{svolik_democracy}{A measure of democracy from [svolik_regime]. 0 =
 #'   non-democracy, 1 = democracy. }
@@ -379,12 +392,12 @@ generate_democracy_scores_dataset <- function(datasets,
   output_format <- match.arg(output_format, c("long", "wide"))
 
   available_datasets <- c("anckar", "LIED", "PIPE", "arat_pmm", "blm", "blm_pmm",
-                          "bmr", "bnr", "bnr_extended", "bollen_pmm",
+                          "bmr", "bnr", "bnr_extended", "bti", "bollen_pmm",
                           "doorenspleet", "eiu", "fh_pmm", "gwf_all", "gwf_all_extended",
                           "hadenius_pmm", "kailitz", "magaloni",
                           "magaloni_extended", "mainwaring", "mainwaring_pmm",
                           "munck_pmm", "pacl", "pacl_pmm",
-                          "peps", "pitf", "polity_pmm", "polyarchy",
+                          "peps", "pitf", "polityIV", "polity_pmm", "polyarchy",
                           "polyarchy_dimensions", "polyarchy_pmm",
                           "prc_gasiorowski", "prc_pmm", "svolik_regime",
                           "uds_2010", "uds_2011", "uds_2014",
@@ -440,7 +453,7 @@ generate_democracy_scores_dataset <- function(datasets,
 
     if("polity_annual" %in% datasets) {
       if(verbose) {
-        message("Adding Polity IV data")
+        message("Adding Polity5 data")
       }
       democracy_data <- suppressWarnings(download_polity_annual(verbose = verbose,
                                                include_in_output = include_in_output) %>%
@@ -448,6 +461,19 @@ generate_democracy_scores_dataset <- function(datasets,
         tidyr::gather("measure", "value", "polity", "polity2") %>%
         standardize_selection())
     }
+
+    if("polityIV" %in% datasets) {
+      if(verbose) {
+        message("Adding old polityIV data")
+      }
+      democracy_data <- suppressWarnings(democracyData::polityIV %>%
+                                           mutate_at("polity", ~ifelse(. < -10, NA, .)) %>%
+                                           rename_at(vars(c("polity", "polity2")),
+                                                     quos(c("polityIV","polity2IV"))) %>%
+                         tidyr::gather("measure", "value", "polityIV","polity2IV") %>%
+                         standardize_selection())
+    }
+
 
     if("polity_pmm" %in% datasets | ("polity_annual" %in% datasets & include_extra_pmm)) {
       if(verbose) {
@@ -629,6 +655,26 @@ generate_democracy_scores_dataset <- function(datasets,
   }
 
 
+  # BTI ---------------------------------------------------------------------
+
+
+  if("bti" %in% datasets) {
+    if(verbose) {
+      message("Adding BTI data")
+    }
+    if(force_redownload) {
+      bti <- redownload_bti(verbose = verbose,
+                            include_in_output = include_in_output)
+    } else {
+      bti <- democracyData::bti
+    }
+
+    democracy_data <- suppressWarnings(bti %>%
+                                         rename_at(vars(c("SI_Democracy_Status")),
+                                                   quos(c("bti_democracy"))) %>%
+                                         tidyr::gather("measure", "value", "bti_democracy") %>%
+                                         standardize_selection())
+  }
   # Bollen ------------------------------------------------------------------
 
 

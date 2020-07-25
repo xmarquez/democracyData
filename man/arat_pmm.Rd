@@ -84,6 +84,7 @@ Other democracy:
 \code{\link{bmr}},
 \code{\link{bnr}},
 \code{\link{bollen_pmm}},
+\code{\link{bti}},
 \code{\link{doorenspleet}},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
@@ -127,6 +128,7 @@ Other PMM replication data:
 
 Other continuous democracy indexes: 
 \code{\link{bollen_pmm}},
+\code{\link{bti}},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{hadenius_pmm}},

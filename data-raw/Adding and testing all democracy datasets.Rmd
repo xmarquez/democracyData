@@ -102,6 +102,16 @@ usethis::use_data(bnr, overwrite = TRUE)
 usethis::use_data(bnr_extended, overwrite = TRUE)
 
 ```
+# BTI
+
+```{r bti, results = 'asis'}
+cite_dataset("bti")
+
+bti <- redownload_bti(verbose = verbose, 
+                      include_in_output = include_in_output)
+
+usethis::use_data(bti, overwrite = TRUE)
+```
 
 # Bollen
 

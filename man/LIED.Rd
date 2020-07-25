@@ -116,7 +116,38 @@ L6: LEGSELEC=1 & OPPOSITION=1 & EXSELEC=1 & COMPETITION=1 & MALE SUFFRAGE=1
 & FEMALE SUFFRAGE=1.
 
 In a small number of cases, the resulting index appears to have been
-incorrectly constructed: \verb{\{r, echo = FALSE\} LIED \%>\% filter(lexical_index != lexical_index_original) \%>\% select(lied_country, year, lexical_index, lexical_index_original) }
+incorrectly constructed:\tabular{lrrr}{
+   lied_country \tab year \tab lexical_index \tab lexical_index_original \cr
+   Netherlands \tab 1917 \tab 5 \tab 4 \cr
+   San Marino \tab 1921 \tab 3 \tab 1 \cr
+   San Marino \tab 1922 \tab 3 \tab 1 \cr
+   Australia \tab 1876 \tab 2 \tab 4 \cr
+   Australia \tab 1877 \tab 2 \tab 4 \cr
+   Australia \tab 1878 \tab 2 \tab 4 \cr
+   Australia \tab 1879 \tab 2 \tab 4 \cr
+   Australia \tab 1880 \tab 2 \tab 4 \cr
+   Australia \tab 1881 \tab 2 \tab 4 \cr
+   Australia \tab 1882 \tab 2 \tab 4 \cr
+   Australia \tab 1883 \tab 2 \tab 4 \cr
+   Australia \tab 1884 \tab 2 \tab 4 \cr
+   Australia \tab 1885 \tab 2 \tab 4 \cr
+   Australia \tab 1886 \tab 2 \tab 4 \cr
+   Australia \tab 1887 \tab 2 \tab 4 \cr
+   Australia \tab 1888 \tab 2 \tab 4 \cr
+   Australia \tab 1889 \tab 2 \tab 4 \cr
+   Australia \tab 1890 \tab 2 \tab 4 \cr
+   Australia \tab 1891 \tab 2 \tab 4 \cr
+   Australia \tab 1892 \tab 2 \tab 4 \cr
+   Australia \tab 1893 \tab 2 \tab 4 \cr
+   Australia \tab 1894 \tab 2 \tab 4 \cr
+   Australia \tab 1895 \tab 2 \tab 4 \cr
+   Australia \tab 1896 \tab 2 \tab 5 \cr
+   Australia \tab 1897 \tab 2 \tab 5 \cr
+   Australia \tab 1898 \tab 2 \tab 5 \cr
+   Australia \tab 1899 \tab 2 \tab 5 \cr
+   Australia \tab 1900 \tab 2 \tab 5 \cr
+}
+
 
 I've recalculated the index for these cases and put the original value in
 the \code{lexical_index_original} variable.} }
@@ -219,6 +250,7 @@ Other democracy:
 \code{\link{bmr}},
 \code{\link{bnr}},
 \code{\link{bollen_pmm}},
+\code{\link{bti}},
 \code{\link{doorenspleet}},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},

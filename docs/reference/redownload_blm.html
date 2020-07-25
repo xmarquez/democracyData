@@ -42,17 +42,17 @@
 <meta property="og:title" content="Download and process various democracy datasets. — redownload_blm" />
 <meta property="og:description" content="Download and process various democracy datasets. Note that the datasets
 returned by the redownload_* family of functions (blm,
-bmr, bnr, gwf_autocratic, gwf_autocratic_extended,
-gwf_all, gwf_all_extended, LIED, magaloni,
-pacl, PIPE, peps, polityIV, polyarchy,
-polyarchy_dimensions, uds_2014, uds_2010,
-uds_2011, ulfelder, utip, wahman_teorell_hadenius,
-anckar, svmdi) are all available directly from this package and
-are unlikely to have changed since the package was installed. Access the
-respective dataset by typing its name, and refer to their documentation for
-details. You will not normally need to redownload them, unless you want to
-process the raw data yourself (set return_raw = TRUE) or suspect they
-have changed since the package was installed." />
+bmr, bnr, bti, gwf_autocratic,
+gwf_autocratic_extended, gwf_all, gwf_all_extended,
+LIED, magaloni, pacl, PIPE, peps,
+polityIV, polyarchy, polyarchy_dimensions, uds_2014,
+uds_2010, uds_2011, ulfelder, utip,
+wahman_teorell_hadenius, anckar, svmdi) are all available
+directly from this package and are unlikely to have changed since the package
+was installed. Access the respective dataset by typing its name, and refer to
+their documentation for details. You will not normally need to redownload
+them, unless you want to process the raw data yourself (set return_raw =
+TRUE) or suspect they have changed since the package was installed." />
 
 
 
@@ -84,7 +84,7 @@ have changed since the package was installed." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.5</span>
       </span>
     </div>
 
@@ -131,17 +131,17 @@ have changed since the package was installed." />
     <div class="ref-description">
     <p>Download and process various democracy datasets. Note that the datasets
 returned by the <code>redownload_*</code> family of functions (<a href='blm.html'>blm</a>,
-<a href='bmr.html'>bmr</a>, <a href='bnr.html'>bnr</a>, <a href='gwf_all.html'>gwf_autocratic</a>, <a href='gwf_all.html'>gwf_autocratic_extended</a>,
-<a href='gwf_all.html'>gwf_all</a>, <a href='gwf_all.html'>gwf_all_extended</a>, <a href='LIED.html'>LIED</a>, <a href='magaloni.html'>magaloni</a>,
-<a href='pacl.html'>pacl</a>, <a href='PIPE.html'>PIPE</a>, <a href='peps.html'>peps</a>, <a href='polityIV.html'>polityIV</a>, <a href='polyarchy.html'>polyarchy</a>,
-<a href='polyarchy_dimensions.html'>polyarchy_dimensions</a>, <a href='uds_2014.html'>uds_2014</a>, <a href='uds_2014.html'>uds_2010</a>,
-<a href='uds_2014.html'>uds_2011</a>, <a href='ulfelder.html'>ulfelder</a>, <a href='utip.html'>utip</a>, <a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a>,
-<a href='anckar.html'>anckar</a>, <a href='svmdi.html'>svmdi</a>) are all available directly from this package and
-are unlikely to have changed since the package was installed. Access the
-respective dataset by typing its name, and refer to their documentation for
-details. You will not normally need to redownload them, unless you want to
-process the raw data yourself (set <code>return_raw = TRUE</code>) or suspect they
-have changed since the package was installed.</p>
+<a href='bmr.html'>bmr</a>, <a href='bnr.html'>bnr</a>, <a href='bti.html'>bti</a>, <a href='gwf_all.html'>gwf_autocratic</a>,
+<a href='gwf_all.html'>gwf_autocratic_extended</a>, <a href='gwf_all.html'>gwf_all</a>, <a href='gwf_all.html'>gwf_all_extended</a>,
+<a href='LIED.html'>LIED</a>, <a href='magaloni.html'>magaloni</a>, <a href='pacl.html'>pacl</a>, <a href='PIPE.html'>PIPE</a>, <a href='peps.html'>peps</a>,
+<a href='polityIV.html'>polityIV</a>, <a href='polyarchy.html'>polyarchy</a>, <a href='polyarchy_dimensions.html'>polyarchy_dimensions</a>, <a href='uds_2014.html'>uds_2014</a>,
+<a href='uds_2014.html'>uds_2010</a>, <a href='uds_2014.html'>uds_2011</a>, <a href='ulfelder.html'>ulfelder</a>, <a href='utip.html'>utip</a>,
+<a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a>, <a href='anckar.html'>anckar</a>, <a href='svmdi.html'>svmdi</a>) are all available
+directly from this package and are unlikely to have changed since the package
+was installed. Access the respective dataset by typing its name, and refer to
+their documentation for details. You will not normally need to redownload
+them, unless you want to process the raw data yourself (set <code>return_raw =
+TRUE</code>) or suspect they have changed since the package was installed.</p>
     </div>
 
     <pre class="usage"><span class='fu'>redownload_blm</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
@@ -202,7 +202,9 @@ have changed since the package was installed.</p>
   <span class='no'>...</span>
 )
 
-<span class='fu'>redownload_pipe</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>redownload_pipe</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+
+<span class='fu'>redownload_bti</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -213,12 +215,14 @@ have changed since the package was installed.</p>
 <ul>
 <li><p>For <a href='anckar.html'>anckar</a>:
 <a href='https://static-content.springer.com/esm/art%3A10.1057%2Fs41304-018-0149-8/MediaObjects/41304_2018_149_MOESM2_ESM.xlsx'>https://static-content.springer.com/esm/art%3A10.1057%2Fs41304-018-0149-8/MediaObjects/41304_2018_149_MOESM2_ESM.xlsx</a></p></li>
-<li><p>For <a href='blm.html'>blm</a>: <code>http://www.blmdemocracy.gatech.edu/blm final
- data.xls</code></p></li>
+<li><p>For <a href='blm.html'>blm</a>:
+<a href='http://www.blmdemocracy.gatech.edu/blm%20final%20data.xls'>http://www.blmdemocracy.gatech.edu/blm%20final%20data.xls</a></p></li>
 <li><p>For <a href='bmr.html'>bmr</a>:
 <a href='https://dataverse.harvard.edu/api/access/datafile/3130643'>https://dataverse.harvard.edu/api/access/datafile/3130643</a></p></li>
 <li><p>For <a href='bnr.html'>bnr</a>:
 <a href='http://users.clas.ufl.edu/bernhard/content/data/meister1305.dta'>http://users.clas.ufl.edu/bernhard/content/data/meister1305.dta</a></p></li>
+<li><p>For <a href='bti.html'>bti</a>:
+<a href='https://www.bti-project.org/content/en/downloads/data/BTI%202006-2020%20Scores.xlsx'>https://www.bti-project.org/content/en/downloads/data/BTI%202006-2020%20Scores.xlsx</a></p></li>
 <li><p>For <a href='gwf_all.html'>gwf_all</a> and <a href='gwf_all.html'>gwf_autocratic</a>:
 <a href='http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip'>http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip</a></p></li>
 <li><p>For <a href='LIED.html'>LIED</a>:
@@ -228,11 +232,11 @@ have changed since the package was installed.</p>
 <li><p>For <a href='peps.html'>peps</a>:
 <a href='http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta'>http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta</a></p></li>
 <li><p>For <a href='svmdi.html'>svmdi</a>:
-<a href='https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index%20Upload.xlsx?dl=1'>https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index%20Upload.xlsx?dl=1</a>.
-For the 2016 release, it defaults to
+<a href='https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index%20Upload.xlsx?dl=1'>https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index%20Upload.xlsx?dl=1</a>.</p>
+<p>For the 2016 release, it defaults to
 <a href='http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta'>http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta</a></p></li>
-<li><p>For <a href='utip.html'>utip</a>: <code>http://utip.lbj.utexas.edu/data/political
- regime data set RV.xls</code></p></li>
+<li><p>For <a href='utip.html'>utip</a>:
+<a href='http://utip.lbj.utexas.edu/data/political%20regime%20data%20set%20RV.xls'>http://utip.lbj.utexas.edu/data/political%20regime%20data%20set%20RV.xls</a></p></li>
 <li><p>For <a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a>:
 <a href='https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&amp;d=1'>https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&amp;d=1</a></p></li>
 <li><p>For <a href='polyarchy.html'>polyarchy</a>:
@@ -282,9 +286,8 @@ democratic and non-democratic regimes ("all"). Default is "all".</p></td>
     </tr>
     <tr>
       <th>release_year</th>
-      <td><p>(Only in redownload_svmdi). The year of the release to be downloaded. For
-<a href='svmdi.html'>svmdi</a>, it can
-be 2016 or 2020.</p></td>
+      <td><p>(Only in redownload_svmdi). The year of the release
+to be downloaded. For <a href='svmdi.html'>svmdi</a>, it can be 2016 or 2020.</p></td>
     </tr>
     </table>
 
@@ -343,8 +346,8 @@ Inclusiveness," Journal of Politics 70:3 (July 2008): 632-647.</p>
 2013. Autocracies of the World, 1950-2012 (Version 1.0). Dataset, Stanford
 University. Original data and codebook available at
 <a href='http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset/'>http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset/</a>.</p>
-<p>Gründler, Klaus, and Tommy Krieger. 2018. “Machine Learning
-Indicators, Political Institutions, and Economic Development.” CESifo
+<p>Grundler, Klaus, and Tommy Krieger. 2018. "Machine Learning
+Indicators, Political Institutions, and Economic Development." CESifo
 Working Paper. Original data available at
 <a href='https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index%20Upload.xlsx?dl=0'>https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index%20Upload.xlsx?dl=0</a>. Working paper available at
 <a href='https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf'>https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf</a></p>
@@ -352,6 +355,9 @@ Working Paper. Original data available at
 <p>Adam Przeworski. 2013 <em>Political Institutions and Political Events
 (PIPE) Data Set</em>. Data set.
 <a href='https://sites.google.com/a/nyu.edu/adam-przeworski/home/data'>https://sites.google.com/a/nyu.edu/adam-przeworski/home/data</a>.</p>
+<p>Transformation Index of the Bertelsmann Stiftung 2020. Bertelsmann
+Stiftung. Available at
+<a href='https://www.bti-project.org/en/index/political-transformation.html'>https://www.bti-project.org/en/index/political-transformation.html</a></p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A tibble with the processed dataset, unless <code>return_raw</code>

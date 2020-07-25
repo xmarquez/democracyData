@@ -29,7 +29,24 @@ update of Polity IV.
 \item{cyear}{Unique country code-year identifier.}
 
 \item{polityIV_ccode}{Numeric Country Code. Derived from the Correlates of
-War country codes, but with some small differences. These are: \verb{\{r, echo = FALSE\} polityIV \%>\% filter(polityIV_ccode != cown) \%>\% group_by(polityIV_country, polityIV_ccode, cown) \%>\% summarise(min_year = min(year), max_year = max(year)) } }
+War country codes, but with some small differences. These are:\tabular{lrrrr}{
+   polityIV_country \tab polityIV_ccode \tab cown \tab min_year \tab max_year \cr
+   Ethiopia \tab 529 \tab 530 \tab 1993 \tab 2018 \cr
+   Kosovo \tab 341 \tab 347 \tab 2008 \tab 2018 \cr
+   Montenegro \tab 348 \tab 341 \tab 2006 \tab 2018 \cr
+   Pakistan \tab 769 \tab 770 \tab 1947 \tab 1971 \cr
+   Sardinia \tab 324 \tab 325 \tab 1815 \tab 1861 \cr
+   Serbia \tab 342 \tab 345 \tab 1830 \tab 2018 \cr
+   Serbia and Montenegro \tab 347 \tab 345 \tab 2003 \tab 2006 \cr
+   South Sudan \tab 525 \tab 626 \tab 2011 \tab 2018 \cr
+   Sudan-North \tab 626 \tab 625 \tab 2011 \tab 2018 \cr
+   USSR \tab 364 \tab 365 \tab 1922 \tab 1991 \cr
+   Vietnam \tab 818 \tab 816 \tab 1976 \tab 2018 \cr
+   Yugoslavia \tab 347 \tab 345 \tab 1991 \tab 2002 \cr
+}
+
+
+}
 
 \item{scode}{Alphabetical Country Code. Derived from the Correlates of War
 country codes, but with some small differences. (See above table).}
@@ -312,6 +329,7 @@ Other democracy:
 \code{\link{bmr}},
 \code{\link{bnr}},
 \code{\link{bollen_pmm}},
+\code{\link{bti}},
 \code{\link{doorenspleet}},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},

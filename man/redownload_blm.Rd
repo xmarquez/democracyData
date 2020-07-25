@@ -16,6 +16,7 @@
 \alias{redownload_svmdi}
 \alias{redownload_ulfelder}
 \alias{redownload_pipe}
+\alias{redownload_bti}
 \title{Download and process various democracy datasets.}
 \source{
 Bowman, Kirk, Fabrice Lehoucq, and James Mahoney. 2005. Measuring
@@ -83,8 +84,8 @@ Magaloni, Beatriz, Jonathan Chu, and Eric Min.
 University. Original data and codebook available at
 \url{http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset/}.
 
-Gründler, Klaus, and Tommy Krieger. 2018. “Machine Learning
-Indicators, Political Institutions, and Economic Development.” CESifo
+Grundler, Klaus, and Tommy Krieger. 2018. "Machine Learning
+Indicators, Political Institutions, and Economic Development." CESifo
 Working Paper. Original data available at
 \url{https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index\%20Upload.xlsx?dl=0}. Working paper available at
 \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}
@@ -94,6 +95,10 @@ Jay Ulfelder. 2012. Democracy/Autocracy Data Set. \url{http://hdl.handle.net/190
 Adam Przeworski. 2013 \emph{Political Institutions and Political Events
 (PIPE) Data Set}. Data set.
 \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}.
+
+Transformation Index of the Bertelsmann Stiftung 2020. Bertelsmann
+Stiftung. Available at
+\url{https://www.bti-project.org/en/index/political-transformation.html}
 }
 \usage{
 redownload_blm(url, verbose = TRUE, return_raw = FALSE, ...)
@@ -155,6 +160,8 @@ redownload_ulfelder(
 )
 
 redownload_pipe(url, verbose = TRUE, return_raw = FALSE, ...)
+
+redownload_bti(url, verbose = TRUE, return_raw = FALSE, ...)
 }
 \arguments{
 \item{url}{The URL of the dataset. This defaults to:
@@ -164,14 +171,17 @@ redownload_pipe(url, verbose = TRUE, return_raw = FALSE, ...)
 \item For \link{anckar}:
 \url{https://static-content.springer.com/esm/art\%3A10.1057\%2Fs41304-018-0149-8/MediaObjects/41304_2018_149_MOESM2_ESM.xlsx}
 
-\item For \link{blm}: \code{http://www.blmdemocracy.gatech.edu/blm final
- data.xls}
+\item For \link{blm}:
+\url{http://www.blmdemocracy.gatech.edu/blm\%20final\%20data.xls}
 
 \item For \link{bmr}:
 \url{https://dataverse.harvard.edu/api/access/datafile/3130643}
 
 \item For \link{bnr}:
 \url{http://users.clas.ufl.edu/bernhard/content/data/meister1305.dta}
+
+\item For \link{bti}:
+\url{https://www.bti-project.org/content/en/downloads/data/BTI\%202006-2020\%20Scores.xlsx}
 
 \item For \link{gwf_all} and \link{gwf_autocratic}:
 \url{http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip}
@@ -187,11 +197,12 @@ redownload_pipe(url, verbose = TRUE, return_raw = FALSE, ...)
 
 \item For \link{svmdi}:
 \url{https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index\%20Upload.xlsx?dl=1}.
+
 For the 2016 release, it defaults to
 \url{http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta}
 
-\item For \link{utip}: \code{http://utip.lbj.utexas.edu/data/political
- regime data set RV.xls}
+\item For \link{utip}:
+\url{http://utip.lbj.utexas.edu/data/political\%20regime\%20data\%20set\%20RV.xls}
 
 \item For \link{wahman_teorell_hadenius}:
 \url{https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&d=1}
@@ -209,7 +220,9 @@ For the 2016 release, it defaults to
 \url{https://dataverse.harvard.edu/api/access/datafile/2420018}
 
 \item For \link{PIPE}:
-\url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data} }}
+\url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}
+
+}}
 
 \item{verbose}{Whether to print a running commentary of what the function is
 doing while processing the data.}
@@ -234,9 +247,8 @@ classified as a democracy from 1872. Default is \code{FALSE}.}
 two country-year files, one with autocratic regimes only ("autocratic only"), and one with both
 democratic and non-democratic regimes ("all"). Default is "all".}
 
-\item{release_year}{(Only in \link{redownload_svmdi}). The year of the release to be downloaded. For
-\link{svmdi}, it can
-be 2016 or 2020.}
+\item{release_year}{(Only in \link{redownload_svmdi}). The year of the release
+to be downloaded. For \link{svmdi}, it can be 2016 or 2020.}
 }
 \value{
 A \link{tibble} with the processed dataset, unless \code{return_raw}
@@ -246,17 +258,17 @@ processing.
 \description{
 Download and process various democracy datasets. Note that the datasets
 returned by the \code{redownload_*} family of functions (\link{blm},
-\link{bmr}, \link{bnr}, \link{gwf_autocratic}, \link{gwf_autocratic_extended},
-\link{gwf_all}, \link{gwf_all_extended}, \link{LIED}, \link{magaloni},
-\link{pacl}, \link{PIPE}, \link{peps}, \link{polityIV}, \link{polyarchy},
-\link{polyarchy_dimensions}, \link{uds_2014}, \link{uds_2010},
-\link{uds_2011}, \link{ulfelder}, \link{utip}, \link{wahman_teorell_hadenius},
-\link{anckar}, \link{svmdi}) are all available directly from this package and
-are unlikely to have changed since the package was installed. Access the
-respective dataset by typing its name, and refer to their documentation for
-details. You will not normally need to redownload them, unless you want to
-process the raw data yourself (set \code{return_raw = TRUE}) or suspect they
-have changed since the package was installed.
+\link{bmr}, \link{bnr}, \link{bti}, \link{gwf_autocratic},
+\link{gwf_autocratic_extended}, \link{gwf_all}, \link{gwf_all_extended},
+\link{LIED}, \link{magaloni}, \link{pacl}, \link{PIPE}, \link{peps},
+\link{polityIV}, \link{polyarchy}, \link{polyarchy_dimensions}, \link{uds_2014},
+\link{uds_2010}, \link{uds_2011}, \link{ulfelder}, \link{utip},
+\link{wahman_teorell_hadenius}, \link{anckar}, \link{svmdi}) are all available
+directly from this package and are unlikely to have changed since the package
+was installed. Access the respective dataset by typing its name, and refer to
+their documentation for details. You will not normally need to redownload
+them, unless you want to process the raw data yourself (set \code{return_raw =
+TRUE}) or suspect they have changed since the package was installed.
 }
 \examples{
 \dontrun{
@@ -296,4 +308,8 @@ redownload_svmdi() # For release year 2020}
 redownload_ulfelder()}
 \dontrun{
 redownload_pipe()}
+\dontrun{
+bti <- redownload_bti()
+bti
+}
 }

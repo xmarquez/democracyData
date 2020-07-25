@@ -2,17 +2,17 @@
 #'
 #'Download and process various democracy datasets. Note that the datasets
 #'returned by the \code{redownload_*} family of functions (\link{blm},
-#'\link{bmr}, \link{bnr}, \link{gwf_autocratic}, \link{gwf_autocratic_extended},
-#'\link{gwf_all}, \link{gwf_all_extended}, \link{LIED}, \link{magaloni},
-#'\link{pacl}, \link{PIPE}, \link{peps}, [polityIV], \link{polyarchy},
-#'\link{polyarchy_dimensions}, \link{uds_2014}, \link{uds_2010},
-#'\link{uds_2011}, \link{ulfelder}, \link{utip}, \link{wahman_teorell_hadenius},
-#'\link{anckar}, \link{svmdi}) are all available directly from this package and
-#'are unlikely to have changed since the package was installed. Access the
-#'respective dataset by typing its name, and refer to their documentation for
-#'details. You will not normally need to redownload them, unless you want to
-#'process the raw data yourself (set \code{return_raw = TRUE}) or suspect they
-#'have changed since the package was installed.
+#'\link{bmr}, \link{bnr}, \link{bti}, \link{gwf_autocratic},
+#'\link{gwf_autocratic_extended}, \link{gwf_all}, \link{gwf_all_extended},
+#'\link{LIED}, \link{magaloni}, \link{pacl}, \link{PIPE}, \link{peps},
+#'[polityIV], \link{polyarchy}, \link{polyarchy_dimensions}, \link{uds_2014},
+#'\link{uds_2010}, \link{uds_2011}, \link{ulfelder}, \link{utip},
+#'\link{wahman_teorell_hadenius}, \link{anckar}, \link{svmdi}) are all available
+#'directly from this package and are unlikely to have changed since the package
+#'was installed. Access the respective dataset by typing its name, and refer to
+#'their documentation for details. You will not normally need to redownload
+#'them, unless you want to process the raw data yourself (set \code{return_raw =
+#'TRUE}) or suspect they have changed since the package was installed.
 #'
 #'@param url The URL of the dataset. This defaults to:
 #'
@@ -21,9 +21,8 @@
 #'  \item For \link{anckar}:
 #'  \url{https://static-content.springer.com/esm/art\%3A10.1057\%2Fs41304-018-0149-8/MediaObjects/41304_2018_149_MOESM2_ESM.xlsx}
 #'
-#'
-#'  \item For \link{blm}: \code{http://www.blmdemocracy.gatech.edu/blm final
-#'  data.xls}
+#'  \item For \link{blm}:
+#'  \url{http://www.blmdemocracy.gatech.edu/blm\%20final\%20data.xls}
 #'
 #'  \item For \link{bmr}:
 #'  \url{https://dataverse.harvard.edu/api/access/datafile/3130643}
@@ -31,12 +30,21 @@
 #'  \item For \link{bnr}:
 #'  \url{http://users.clas.ufl.edu/bernhard/content/data/meister1305.dta}
 #'
+#'  \item For \link{bti}:
+#'  \url{https://www.bti-project.org/content/en/downloads/data/BTI\%202006-2020\%20Scores.xlsx}
+#'
+#'
+#'
 #'  \item For \link{gwf_all} and \link{gwf_autocratic}:
 #'  \url{http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip}
 #'
 #'
+#'
+#'
 #'  \item For \link{LIED}:
 #'  \url{https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/29106/SXRLK1}
+#'
+#'
 #'
 #'  \item For \link{pacl}:
 #'  \url{https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta}
@@ -46,14 +54,19 @@
 #'
 #'  \item For \link{svmdi}:
 #'  \url{https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index\%20Upload.xlsx?dl=1}.
+#'
 #'  For the 2016 release, it defaults to
 #'  \url{http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta}
 #'
-#'  \item For \link{utip}: \code{http://utip.lbj.utexas.edu/data/political
-#'  regime data set RV.xls}
+#'  \item For \link{utip}:
+#'  \url{http://utip.lbj.utexas.edu/data/political\%20regime\%20data\%20set\%20RV.xls}
+#'
+#'
 #'
 #'  \item For \link{wahman_teorell_hadenius}:
 #'  \url{https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&d=1}
+#'
+#'
 #'
 #'  \item For \link{polyarchy}:
 #'  \url{https://www3.nd.edu/~mcoppedg/crd/poly8500.sav}
@@ -64,15 +77,18 @@
 #'  \item For \link{magaloni}:
 #'  \url{https://fsi-live.s3.us-west-1.amazonaws.com/s3fs-public/res/Data_Set.xls}
 #'
+#'
+#'
 #'  \item For \link{ulfelder}:
 #'  \url{https://dataverse.harvard.edu/api/access/datafile/2420018}
 #'
 #'  \item For \link{PIPE}:
-#'  \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data} }
+#'  \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}
 #'
-#'@param release_year (Only in \link{redownload_svmdi}). The year of the release to be downloaded. For
-#'  [svmdi], it can
-#'  be 2016 or 2020.
+#'  }
+#'
+#'@param release_year (Only in \link{redownload_svmdi}). The year of the release
+#'  to be downloaded. For [svmdi], it can be 2016 or 2020.
 #'
 #'@param verbose Whether to print a running commentary of what the function is
 #'  doing while processing the data.
@@ -1143,8 +1159,8 @@ redownload_magaloni <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source Gründler, Klaus, and Tommy Krieger. 2018. “Machine Learning
-#'   Indicators, Political Institutions, and Economic Development.” CESifo
+#' @source Grundler, Klaus, and Tommy Krieger. 2018. "Machine Learning
+#'   Indicators, Political Institutions, and Economic Development." CESifo
 #'   Working Paper. Original data available at
 #'   \url{https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index\%20Upload.xlsx?dl=0}. Working paper available at
 #'   \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}
@@ -1626,5 +1642,101 @@ redownload_polityIV <- function(url,
 
 
   standardize_columns(polityIV, country, ccode, verbose = verbose)
+}
+
+#' @rdname redownload_blm
+#' @source Transformation Index of the Bertelsmann Stiftung 2020. Bertelsmann
+#'   Stiftung. Available at
+#'   \url{https://www.bti-project.org/en/index/political-transformation.html}
+#' @export
+#' @examples
+#' \dontrun{
+#' bti <- redownload_bti()
+#' bti
+#' }
+redownload_bti <- function(url,
+                           verbose = TRUE,
+                           return_raw = FALSE,
+                           ...) {
+  country <- year <- NULL
+  bti_region <- NULL
+
+  if(missing(url)) {
+    url <-  "https://www.bti-project.org/content/en/downloads/data/BTI%202006-2020%20Scores.xlsx"
+  }
+
+  tmpfile <- tempfile(fileext = "xlsx")
+  utils::download.file(url, tmpfile, mode = "wb")
+
+
+  bti_data <- tibble()
+  year <- seq(from = 2018, to = 2004, by = -2)
+
+  for(i in 1:8) {
+    current_sheet <- read_data(tmpfile,
+                               verbose = verbose,
+                               name = "BTI",
+                               file_extension = "xlsx",
+                               sheet = i)
+
+    current_sheet <- current_sheet %>%
+      select(1:80) %>%
+      mutate(across(c(2:80), as.numeric),
+             year = year[i])
+
+    names(current_sheet)[1:2] <- c("country", "bti_region")
+    names(current_sheet) <- str_replace_all(names(current_sheet), "[ |]", "_") %>%
+      str_replace_all("___","_")
+
+    bti_data <- bind_rows(bti_data,
+                          current_sheet)
+
+  }
+  unlink(tmpfile)
+
+  if(return_raw) {
+    if(verbose) {
+      message("Returning raw data, without processing.")
+    }
+    return(bti_data)
+  }
+
+  if(verbose) {
+    message(sprintf("Original dataset has %d rows.",
+                    nrow(bti_data)))
+    message("Processing the BTI data - adding state system info, regions...")
+  }
+
+  bti_data <- bti_data %>%
+    relocate(year, .after = country) %>%
+    mutate(bti_region = as.character(bti_region),
+           bti_region = case_when(bti_region == "1" ~ "East-Central and Southeast Europe",
+                                  bti_region == "2" ~ "Latin America and the Caribbean",
+                                  bti_region == "3" ~ "West and Central Africa",
+                                  bti_region == "4" ~ "Middle East and North Africa",
+                                  bti_region == "5" ~ "Southern and Eastern Africa",
+                                  bti_region == "6" ~ "Post-Soviet Eurasia",
+                                  bti_region == "7" ~ "Asia and Oceania",
+                                  TRUE ~ bti_region))
+
+  bti <- country_year_coder(bti_data,
+                            country,
+                            year,
+                            verbose = verbose,
+                            ...)
+
+  if(verbose) {
+    message(sprintf("Resulting dataset after processing has %d rows.",
+                    nrow(bti)))
+    if(nrow(bti_data) != nrow(bti)) {
+      message("Note: the number of rows in the processed BTI data is different from the number of rows in the original data.")
+      if(nrow(bti_data) != nrow(bti)) {
+        warning(sprintf("There should be %d rows in the final processed data. Something went wrong.",
+                        nrow(bti_data)))
+      }
+    }
+  }
+
+  standardize_columns(bti, country, verbose = verbose)
 }
 

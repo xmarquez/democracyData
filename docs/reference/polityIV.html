@@ -74,7 +74,7 @@ update of Polity IV." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.5</span>
       </span>
     </div>
 
@@ -146,7 +146,21 @@ Dataset Users' Manual. Center for Systemic Peace. Available at
 <dt>cyear</dt><dd><p>Unique country code-year identifier.</p></dd>
 
 <dt>polityIV_ccode</dt><dd><p>Numeric Country Code. Derived from the Correlates of
-War country codes, but with some small differences. These are: <code>{r, echo = FALSE} polityIV %&gt;% filter(polityIV_ccode != cown) %&gt;% group_by(polityIV_country, polityIV_ccode, cown) %&gt;% summarise(min_year = min(year), max_year = max(year)) </code></p></dd>
+War country codes, but with some small differences. These are:<table class='table'>
+<tr><td>polityIV_country</td><td>polityIV_ccode</td><td>cown</td><td>min_year</td><td>max_year</td></tr>
+<tr><td>Ethiopia</td><td>529</td><td>530</td><td>1993</td><td>2018</td></tr>
+<tr><td>Kosovo</td><td>341</td><td>347</td><td>2008</td><td>2018</td></tr>
+<tr><td>Montenegro</td><td>348</td><td>341</td><td>2006</td><td>2018</td></tr>
+<tr><td>Pakistan</td><td>769</td><td>770</td><td>1947</td><td>1971</td></tr>
+<tr><td>Sardinia</td><td>324</td><td>325</td><td>1815</td><td>1861</td></tr>
+<tr><td>Serbia</td><td>342</td><td>345</td><td>1830</td><td>2018</td></tr>
+<tr><td>Serbia and Montenegro</td><td>347</td><td>345</td><td>2003</td><td>2006</td></tr>
+<tr><td>South Sudan</td><td>525</td><td>626</td><td>2011</td><td>2018</td></tr>
+<tr><td>Sudan-North</td><td>626</td><td>625</td><td>2011</td><td>2018</td></tr>
+<tr><td>USSR</td><td>364</td><td>365</td><td>1922</td><td>1991</td></tr>
+<tr><td>Vietnam</td><td>818</td><td>816</td><td>1976</td><td>2018</td></tr>
+<tr><td>Yugoslavia</td><td>347</td><td>345</td><td>1991</td><td>2002</td></tr>
+</table></p></dd>
 
 <dt>scode</dt><dd><p>Alphabetical Country Code. Derived from the Correlates of War
 country codes, but with some small differences. (See above table).</p></dd>
@@ -417,6 +431,7 @@ the fact that the Gleditsch and Ward list has not been updated since.</p></dd>
 <code><a href='bmr.html'>bmr</a></code>,
 <code><a href='bnr.html'>bnr</a></code>,
 <code><a href='bollen_pmm.html'>bollen_pmm</a></code>,
+<code><a href='bti.html'>bti</a></code>,
 <code><a href='doorenspleet.html'>doorenspleet</a></code>,
 <code><a href='download_fh_electoral.html'>download_fh_electoral</a>()</code>,
 <code><a href='download_fh_full.html'>download_fh_full</a>()</code>,

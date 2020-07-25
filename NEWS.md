@@ -1,3 +1,9 @@
+# democracyData 0.2.5
+
+* Added the Bertelsmann transformation Index of democracy (`bti`) and made improvements to `generate_democracy_scores_dataset`.
+
+* Minor fixes to documentation.
+
 # democracyData 0.2.4
 
 * Fixed diagnostic printing issue when moving to dplyr 1.0.0.

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Munck Index of Democracy — munck_pmm • democracyData</title>
+<title>The Bertelsmann Transformation Index — bti • democracyData</title>
 
 
 <!-- jquery -->
@@ -39,14 +39,10 @@
 
 
 
-<meta property="og:title" content="Munck Index of Democracy — munck_pmm" />
-<meta property="og:description" content="0-1 index of democracy from Munck, Gerardo L. 2009. Measuring Democracy: A
-Bridge Between Scholarship and Politics. Baltimore: Johns Hopkins University
-Press. Taken from Pemstein, Daniel, Stephen A. Meserve, and James Melton.
-2013. Taken from Pemstein, Daniel, Stephen A. Meserve, and James Melton.
-2013. &quot;Replication data for: Democratic Compromise: A Latent Variable
-Analysis of Ten Measures of Regime Type.&quot; In: Harvard Dataverse.
-http://hdl.handle.net/1902.1/PMM. Higher values are more democratic." />
+<meta property="og:title" content="The Bertelsmann Transformation Index — bti" />
+<meta property="og:description" content="The Bertelsmann Transformation Index of the Bertelsmann Stiftung. Data and
+coding description available at
+https://www.bti-project.org/en/index/political-transformation.html" />
 
 
 
@@ -117,53 +113,195 @@ http://hdl.handle.net/1902.1/PMM. Higher values are more democratic." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Munck Index of Democracy</h1>
+    <h1>The Bertelsmann Transformation Index</h1>
     <small class="dont-index">Source: <a href='https://github.com/xmarquez/democracyData/blob/master/R/data_documentation.R'><code>R/data_documentation.R</code></a></small>
-    <div class="hidden name"><code>munck_pmm.Rd</code></div>
+    <div class="hidden name"><code>bti.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>0-1 index of democracy from Munck, Gerardo L. 2009. Measuring Democracy: A
-Bridge Between Scholarship and Politics. Baltimore: Johns Hopkins University
-Press. Taken from Pemstein, Daniel, Stephen A. Meserve, and James Melton.
-2013. Taken from Pemstein, Daniel, Stephen A. Meserve, and James Melton.
-2013. "Replication data for: Democratic Compromise: A Latent Variable
-Analysis of Ten Measures of Regime Type." In: Harvard Dataverse.
-http://hdl.handle.net/1902.1/PMM. Higher values are more democratic.</p>
+    <p>The Bertelsmann Transformation Index of the Bertelsmann Stiftung. Data and
+coding description available at
+<a href='https://www.bti-project.org/en/index/political-transformation.html'>https://www.bti-project.org/en/index/political-transformation.html</a></p>
     </div>
 
-    <pre class="usage"><span class='no'>munck_pmm</span></pre>
+    <pre class="usage"><span class='no'>bti</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 342 rows and 7 columns.</p>
+    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 1096 rows and 88 columns.</p>
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
-"Replication data for: Democratic Compromise: A Latent Variable Analysis of
-Ten Measures of Regime Type." In: Harvard Dataverse.
-http://hdl.handle.net/1902.1/PMM.</p>
-<p>Munck, Gerardo L. 2009. Measuring Democracy: A
-Bridge Between Scholarship and Politics. Baltimore: Johns Hopkins University
-Press.</p>
-    <h2 class="hasAnchor" id="variables"><a class="anchor" href="#variables"></a>Variables</h2>
+    <p>Transformation Index of the Bertelsmann Stiftung 2020. Bertelsmann
+Stiftung. Available at
+<a href='https://www.bti-project.org/en/index/political-transformation.html'>https://www.bti-project.org/en/index/political-transformation.html</a></p>
+    <h2 class="hasAnchor" id="description"><a class="anchor" href="#description"></a>Description</h2>
 
     
 
 
+<p>The BTI is calculated at Biennial Intervals for approximately 133 countries
+since 2006.</p>
 <dl'>
 
-<dt>pmm_country</dt><dd><p>The original country name in the PMM replication data.</p></dd>
+<dt>bti_country</dt><dd><p>The original country name in the dataset.</p></dd>
 
-<dt>year</dt><dd><p>The calendar year. This is approximate. The surveys cover
-specific periods in the original data that do not always overlap with a
-single year. In particular, the year 1981 is "skipped" -- a single survey
-covers Jan.1981 - Aug. 1982 and its value is assigned to 1982 here.</p></dd>
+<dt>year</dt><dd><p>Calendar year. This is two years earlier than the report date.
+For example, the codebook indicates that the BTI report for 2020 assesses
+the situation as of January 2019, so I've assigned it a calendar year of
+2018.</p></dd>
 
-<dt>munck_pmm</dt><dd><p>0-1 index of democracy from Munck, Gerardo L. 2009. Measuring Democracy: A
-Bridge Between Scholarship and Politics. Baltimore: Johns Hopkins University
-Press. Only available for 18 Latin American countries for 19 years.</p></dd> 
+<dt>bti_region</dt><dd><p>Region.</p></dd>
+
+<dt>Ranking_Status_Index</dt><dd><p>Country rank in the status index, which "ranks
+the countries according to the state of their democracy and market
+economy".</p></dd>
+
+<dt>S_Status_Index</dt><dd><p>Status index, which combines the democracy and
+economy index.</p></dd>
+
+<dt>Ranking_Democracy_Status</dt><dd><p>Ranking in democracy status index.</p></dd>
+
+<dt>SI_Democracy_Status</dt><dd><p>Democracy status index.</p></dd>
+
+<dt>Q1_Stateness (Q1.1-1.4)</dt><dd><p>Scores on questions on stateness (1-10),
+from monopoly on the use of force to basic administration. The BTI codebook
+says that this concept measures whether "there is clarity about the
+nation's existence as a state with adequately established and
+differentiated power structures." See codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+<dt>Q2_Political_Participation (Q2.1-2.4)</dt><dd><p>Scores on questions on
+political participation (1-10), from free and fair elections to freedom of
+expression. The BTI codebook says this concept indicates whether "The
+populace decides who rules, and it has other political freedoms". See
+codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+<dt>Q3_Rule_of_Law (Q3.1-3.4)</dt><dd><p>Scores on questions on rule of law (1-10),
+from checks and balances to civil rights. The BTI codebook says that this
+concept measures whether "state powers check and balance one another and
+ensure civil rights." See codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+<dt>Q4_Stability_of_Democratic_Institutions (Q4.1-4.2)</dt><dd><p>Scores on
+questions on stability of democratic institutions (1-10), from performance
+of democratic institutions to commitment to democratic institutions. The
+BTI codebook says that this concept measures whether "democratic
+institutions are capable of performing, and they are adequately accepted."
+See codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+<dt>Q5_Political_and_Social_Integration (Q5.1-5.4)</dt><dd><p>Scores on questions
+on political and social integration (1-10), from rootedness of party system
+to social capital. The BTI codebook says that this concept measures whether
+"Stable patterns of representation exist for mediating between society and
+the state; there is also a consolidated civic culture." See codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+<dt>Ranking_Economy_Status</dt><dd><p>Ranking in economy status index.</p></dd>
+
+<dt>SII_Economy_Status</dt><dd><p>Economy status index.</p></dd>
+
+<dt>Q6_Level_of_Socioeconomic_Development (Q6.1)</dt><dd><p>Score on question on
+the level of socioeconomic development (1-10). The BTI codebook says that
+this concept measures whether "In principle, the country’s level of
+development permits adequate freedom of choice for all citizens." See
+codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+<dt>Q7_Organization_of_the_Market_and_Competition (Q7.1-7.4)</dt><dd><p>Scores on
+questions on market organization and competition (1-10), from market
+organization to banking system. The BTI codebook says that this concept
+measures whether "There are clear rules for stable, market-based
+competition." See codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+<dt>Q8_Monetary_and_Fiscal_Stability (Q8.1-8.2)</dt><dd><p>Scores on questions on
+monetary and fiscal stability (1-10). The BTI codebook says that this
+concept measures whether "There are institutional and political precautions
+to achieve monetary and fiscal stability." See codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+<dt>Q9_Private_Property (Q9.1-9.2)</dt><dd><p>Scores on questions on private
+property and property rights (1-10). The BTI codebook says that this
+concept measures whether "There are adequate conditions to support a
+functional private sector." See codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+<dt>Q10_Welfare_Regime (Q10.1-10.2)</dt><dd><p>Scores on questions on welfare
+policy and safety nets (1-10). The BTI codebook says that this concept
+measures whether "There are viable arrangements to compensate for social
+risks." See codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+<dt>Q11_Economic_Performance (Q11.1)</dt><dd><p>Score on question on economic
+performance (1-10). The BTI codebook says that this concept measures
+whether "The economy’s performance points to solid development." See
+codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+<dt>Q12_Sustainability (Q12.1-12.2)</dt><dd><p>Scores on questions on
+sustainability, from environmental policy to R&amp;D policy (1-10). The BTI
+codebook says that this concept measures whether "Economic growth is
+balanced, environmentally sustainable and future-oriented." See codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+<dt>Ranking_Governance_Index</dt><dd><p>Ranking in governance status index.</p></dd>
+
+<dt>G_Governance_Index</dt><dd><p>Governance status index.</p></dd>
+
+<dt>Q13_Level_of_Difficulty (Q13.1-13.5)</dt><dd><p>Scores on questions on level of
+difficulty in governance (1-10), plus some rescaled measures of objective
+difficulty (education, stateness, GNI per capita). See codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+<dt>Q14_Steering_Capability (Q14.1-14.3)</dt><dd><p>Scores on questions on the
+government's steering capability, from prioritization to policy learning
+(1-10). The BTI codebook says that this concept measures whether "The
+government manages reforms effectively and can achieve its policy
+priorities." See codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+<dt>Q15_Resource_Efficiency (Q15.1-15.3)</dt><dd><p>Scores on questions on the
+government's efficiency, from efficient use of assets to anti-corruption
+capability (1-10). The BTI codebook says that this concept measures whether
+"The government makes optimum use of available resources." See codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+<dt>Q16_Consensus-Building (Q16.1-16.6)</dt><dd><p>Scores on questions on the
+government's ability to build consensus, from consensus on goals to civil
+society participation to reconciliation (1-10). The BTI codebook says that
+this concept measures whether "The political leadership establishes a broad
+consensus on reform with other actors in society without sacrificing its
+reform goals." See codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+<dt>Q17_Consensus-Building (Q17.1-17.3)</dt><dd><p>Scores on questions on the
+government's international cooperation, from effective use of support to
+credibility to regional cooperation (1-10). The BTI codebook says that this
+concept measures whether "The political leadership is willing and able to
+cooperate with external supporters and organizations." See codebook at
+https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+for details.</p></dd>
+
+
 </dl>
 
     <h2 class="hasAnchor" id="standard-descriptive-variables-generated-by-this-package-"><a class="anchor" href="#standard-descriptive-variables-generated-by-this-package-"></a>Standard descriptive variables (generated by this package)</h2>
@@ -213,7 +351,6 @@ the fact that the Gleditsch and Ward list has not been updated since.</p></dd>
 <code><a href='bmr.html'>bmr</a></code>,
 <code><a href='bnr.html'>bnr</a></code>,
 <code><a href='bollen_pmm.html'>bollen_pmm</a></code>,
-<code><a href='bti.html'>bti</a></code>,
 <code><a href='doorenspleet.html'>doorenspleet</a></code>,
 <code><a href='download_fh_electoral.html'>download_fh_electoral</a>()</code>,
 <code><a href='download_fh_full.html'>download_fh_full</a>()</code>,
@@ -227,6 +364,7 @@ the fact that the Gleditsch and Ward list has not been updated since.</p></dd>
 <code><a href='kailitz.html'>kailitz</a></code>,
 <code><a href='magaloni.html'>magaloni</a></code>,
 <code><a href='mainwaring.html'>mainwaring</a></code>,
+<code><a href='munck_pmm.html'>munck_pmm</a></code>,
 <code><a href='pacl.html'>pacl</a></code>,
 <code><a href='peps.html'>peps</a></code>,
 <code><a href='pitf.html'>pitf</a></code>,
@@ -242,23 +380,13 @@ the fact that the Gleditsch and Ward list has not been updated since.</p></dd>
 <code><a href='utip.html'>utip</a></code>,
 <code><a href='vanhanen.html'>vanhanen</a></code>,
 <code><a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a></code></p>
-<p>Other PMM replication data: 
-<code><a href='arat_pmm.html'>arat_pmm</a></code>,
-<code><a href='blm.html'>blm</a></code>,
-<code><a href='bollen_pmm.html'>bollen_pmm</a></code>,
-<code><a href='fh_pmm.html'>fh_pmm</a></code>,
-<code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
-<code><a href='mainwaring.html'>mainwaring</a></code>,
-<code><a href='pacl.html'>pacl</a></code>,
-<code><a href='polity_pmm.html'>polity_pmm</a></code>,
-<code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code></p>
 <p>Other continuous democracy indexes: 
 <code><a href='arat_pmm.html'>arat_pmm</a></code>,
 <code><a href='bollen_pmm.html'>bollen_pmm</a></code>,
-<code><a href='bti.html'>bti</a></code>,
 <code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a>()</code>,
 <code><a href='eiu.html'>eiu</a></code>,
 <code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
+<code><a href='munck_pmm.html'>munck_pmm</a></code>,
 <code><a href='svmdi.html'>svmdi</a></code>,
 <code><a href='vanhanen.html'>vanhanen</a></code></p></div>
 
