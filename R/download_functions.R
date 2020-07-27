@@ -1,7 +1,7 @@
 # Functions for downloading and processing other datasets -----------------
 
 #'Downloads the 2020 update of the Polity 5 dataset (annual time series) and
-#'processes it using [country_year_coder].
+#'processes it using [country_year_coder]
 #'
 #'The original data is available at
 #'[http://www.systemicpeace.org/inscrdata.html](http://www.systemicpeace.org/inscrdata.html)
@@ -275,7 +275,7 @@
 #'@export
 #'@import dplyr
 #'
-#'@aliases polity
+#'@aliases polity polity5
 #'
 #'@seealso [polity_pmm]
 #'@seealso [polityIV]
@@ -341,8 +341,8 @@ download_polity_annual <- function(url,
   standardize_columns(polity_annual, country, ccode, verbose = verbose)
 }
 
-#' Download the latest version (data up to 2018) of the "Democracy, Voice, and
-#' Accountability" index from the World Governance Indicators and process it via
+#' Download the latest version (data up to 2018) of the Democracy, Voice, and
+#' Accountability index from the World Governance Indicators and process it via
 #' [country_year_coder]
 #'
 #'
@@ -482,8 +482,8 @@ download_wgi_voice_and_accountability <- function(url,
 
 
 
-#' Downloads the 2020 update of the Freedom House "Freedom in the World" data
-#' and processes it using [country_year_coder].
+#' Downloads the 2020 update of the Freedom House Freedom in the World data
+#' and processes it using [country_year_coder]
 #'
 #' The original data is available at
 #' [https://freedomhouse.org/report-types/freedom-world](https://freedomhouse.org/report/freedom-world)
@@ -874,7 +874,7 @@ download_fh_electoral <- function(url,
    standardize_columns(fh_electoral, country, verbose = verbose)
 }
 
-#' Downloads the 2020 update of the Freedom House "Freedom in the World" All
+#' Downloads the 2020 update of the Freedom House Freedom in the World All
 #' Data 2013-2020 file and processes it using [country_year_coder].
 #'
 #' The original data is available at

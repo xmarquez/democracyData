@@ -79,22 +79,23 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 \item{cyear}{Unique country code-year identifier.}
 
 \item{polityIV_ccode}{Numeric Country Code. Derived from the Correlates of
-War country codes, but with some small differences. These are:\tabular{lrrrr}{
-   polityIV_country \tab polityIV_ccode \tab cown \tab min_year \tab max_year \cr
-   Ethiopia \tab 529 \tab 530 \tab 1993 \tab 2018 \cr
-   Kosovo \tab 341 \tab 347 \tab 2008 \tab 2018 \cr
-   Montenegro \tab 348 \tab 341 \tab 2006 \tab 2018 \cr
-   Pakistan \tab 769 \tab 770 \tab 1947 \tab 1971 \cr
-   Sardinia \tab 324 \tab 325 \tab 1815 \tab 1861 \cr
-   Serbia \tab 342 \tab 345 \tab 1830 \tab 2018 \cr
-   Serbia and Montenegro \tab 347 \tab 345 \tab 2003 \tab 2006 \cr
-   South Sudan \tab 525 \tab 626 \tab 2011 \tab 2018 \cr
-   Sudan-North \tab 626 \tab 625 \tab 2011 \tab 2018 \cr
-   USSR \tab 364 \tab 365 \tab 1922 \tab 1991 \cr
-   Vietnam \tab 818 \tab 816 \tab 1976 \tab 2018 \cr
-   Yugoslavia \tab 347 \tab 345 \tab 1991 \tab 2002 \cr
+War country codes, but with some small differences. These are:\preformatted{## # A tibble: 12 x 5
+## # Groups:   polityIV_country, polityIV_ccode [12]
+##    polityIV_country      polityIV_ccode  cown min_year max_year
+##    <chr>                          <dbl> <int>    <dbl>    <dbl>
+##  1 Ethiopia                         529   530     1993     2018
+##  2 Kosovo                           341   347     2008     2018
+##  3 Montenegro                       348   341     2006     2018
+##  4 Pakistan                         769   770     1947     1971
+##  5 Sardinia                         324   325     1815     1861
+##  6 Serbia                           342   345     1830     2018
+##  7 Serbia and Montenegro            347   345     2003     2006
+##  8 South Sudan                      525   626     2011     2018
+##  9 Sudan-North                      626   625     2011     2018
+## 10 USSR                             364   365     1922     1991
+## 11 Vietnam                          818   816     1976     2018
+## 12 Yugoslavia                       347   345     1991     2002
 }
-
 
 }
 

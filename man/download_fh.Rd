@@ -2,8 +2,8 @@
 % Please edit documentation in R/download_functions.R
 \name{download_fh}
 \alias{download_fh}
-\title{Downloads the 2020 update of the Freedom House "Freedom in the World" data
-and processes it using \link{country_year_coder}.}
+\title{Downloads the 2020 update of the Freedom House Freedom in the World data
+and processes it using \link{country_year_coder}}
 \source{
 The "Freedom in the World" dataset from Freedom House, updated to
 2019 (Freedom in the World 2020 Report). Original data and methodology is

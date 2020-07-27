@@ -146,21 +146,23 @@ Dataset Users' Manual. Center for Systemic Peace. Available at
 <dt>cyear</dt><dd><p>Unique country code-year identifier.</p></dd>
 
 <dt>polityIV_ccode</dt><dd><p>Numeric Country Code. Derived from the Correlates of
-War country codes, but with some small differences. These are:<table class='table'>
-<tr><td>polityIV_country</td><td>polityIV_ccode</td><td>cown</td><td>min_year</td><td>max_year</td></tr>
-<tr><td>Ethiopia</td><td>529</td><td>530</td><td>1993</td><td>2018</td></tr>
-<tr><td>Kosovo</td><td>341</td><td>347</td><td>2008</td><td>2018</td></tr>
-<tr><td>Montenegro</td><td>348</td><td>341</td><td>2006</td><td>2018</td></tr>
-<tr><td>Pakistan</td><td>769</td><td>770</td><td>1947</td><td>1971</td></tr>
-<tr><td>Sardinia</td><td>324</td><td>325</td><td>1815</td><td>1861</td></tr>
-<tr><td>Serbia</td><td>342</td><td>345</td><td>1830</td><td>2018</td></tr>
-<tr><td>Serbia and Montenegro</td><td>347</td><td>345</td><td>2003</td><td>2006</td></tr>
-<tr><td>South Sudan</td><td>525</td><td>626</td><td>2011</td><td>2018</td></tr>
-<tr><td>Sudan-North</td><td>626</td><td>625</td><td>2011</td><td>2018</td></tr>
-<tr><td>USSR</td><td>364</td><td>365</td><td>1922</td><td>1991</td></tr>
-<tr><td>Vietnam</td><td>818</td><td>816</td><td>1976</td><td>2018</td></tr>
-<tr><td>Yugoslavia</td><td>347</td><td>345</td><td>1991</td><td>2002</td></tr>
-</table></p></dd>
+War country codes, but with some small differences. These are:<pre>## # A tibble: 12 x 5
+## # Groups:   polityIV_country, polityIV_ccode [12]
+##    polityIV_country      polityIV_ccode  cown min_year max_year
+##    &amp;lt;chr&amp;gt;                          &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt;    &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+##  1 Ethiopia                         529   530     1993     2018
+##  2 Kosovo                           341   347     2008     2018
+##  3 Montenegro                       348   341     2006     2018
+##  4 Pakistan                         769   770     1947     1971
+##  5 Sardinia                         324   325     1815     1861
+##  6 Serbia                           342   345     1830     2018
+##  7 Serbia and Montenegro            347   345     2003     2006
+##  8 South Sudan                      525   626     2011     2018
+##  9 Sudan-North                      626   625     2011     2018
+## 10 USSR                             364   365     1922     1991
+## 11 Vietnam                          818   816     1976     2018
+## 12 Yugoslavia                       347   345     1991     2002
+</pre></p></dd>
 
 <dt>scode</dt><dd><p>Alphabetical Country Code. Derived from the Correlates of War
 country codes, but with some small differences. (See above table).</p></dd>

@@ -3,7 +3,7 @@
 \name{download_fh_full}
 \alias{download_fh_full}
 \alias{fh_full}
-\title{Downloads the 2020 update of the Freedom House "Freedom in the World" All
+\title{Downloads the 2020 update of the Freedom House Freedom in the World All
 Data 2013-2020 file and processes it using \link{country_year_coder}.}
 \source{
 The "Freedom in the World" dataset from Freedom House, updated to

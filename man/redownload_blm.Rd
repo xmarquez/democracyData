@@ -272,7 +272,8 @@ TRUE}) or suspect they have changed since the package was installed.
 }
 \examples{
 \dontrun{
-redownload_blm()
+blm <- redownload_blm()
+blm
 }
 \dontrun{
 redownload_anckar()}

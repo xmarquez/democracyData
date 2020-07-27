@@ -3,8 +3,9 @@
 \name{download_polity_annual}
 \alias{download_polity_annual}
 \alias{polity}
+\alias{polity5}
 \title{Downloads the 2020 update of the Polity 5 dataset (annual time series) and
-processes it using \link{country_year_coder}.}
+processes it using \link{country_year_coder}}
 \source{
 Marshall, Monty G., Ted Robert Gurr. 2020.
 "Polity5: Political Regime Characteristics and Transitions, 1800-2018.

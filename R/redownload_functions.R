@@ -122,7 +122,8 @@
 #'
 #' @examples
 #' \dontrun{
-#' redownload_blm()
+#' blm <- redownload_blm()
+#' blm
 #' }
 redownload_blm <- function(url,
                            verbose = TRUE,

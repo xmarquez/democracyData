@@ -85,8 +85,7 @@
 <div id="downloading-democracy-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#downloading-democracy-data" class="anchor"></a>Downloading democracy data</h2>
-<p>The package offers two mechanisms for downloading democracy data: the <code>download_*</code> family of functions (for large, institutional, or frequently updated democracy datasets, like <a href="http://www.systemicpeace.org/inscrdata.html">Polity5</a> and <a href="https://freedomhouse.org/">Freedom House</a>), and the <code>redownload_*</code> family of functions for publicly hosted datasets that are not likely to be regularly updated (like <a href="http://sites.psu.edu/dictators/">Geddes, Wright, and Frantz’ autocratic regimes dataset</a>, the [Lexical Index of Electoral Democracy,</p>
-<p>v. 5.2](<a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106" class="uri">https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106</a>), and the <a href="https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited">DD/ACLP/PACL/CGV dataset</a>).</p>
+<p>The package offers two mechanisms for downloading democracy data: the <code>download_*</code> family of functions (for large, institutional, or frequently updated democracy datasets, like <a href="http://www.systemicpeace.org/inscrdata.html">Polity5</a> and <a href="https://freedomhouse.org/">Freedom House</a>), and the <code>redownload_*</code> family of functions for publicly hosted datasets that are not likely to be regularly updated (like <a href="http://sites.psu.edu/dictators/">Geddes, Wright, and Frantz’ autocratic regimes dataset</a>, the <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106">Lexical Index of Electoral Democracy</a>, version 5.2, and the <a href="https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited">DD/ACLP/PACL/CGV dataset</a>).</p>
 <p>For example, we can download and process the Freedom House “Freedom in the World” dataset as follows:</p>
 <div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">democracyData</span>)
 
@@ -193,7 +192,6 @@
 <a href="#other-democracy-datasets" class="anchor"></a>Other democracy datasets</h2>
 <p>A number of democracy datasets are not available online, usually because they were only ever described in the tables of scholarly articles now found only on JSTOR or in out of print books. These include Zehra Arat’s old democracy measure, the Political Regime Change dataset by Gasiorowski (updated by Reich in 2002), the Vanhanen index of democratization, and many others. I have archived most these in this package; for a list of all the datasets available, type <code>democracy_info</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
-<span class="co">#&gt; Warning: package 'dplyr' was built under R version 3.6.3</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Attaching package: 'dplyr'</span>
 <span class="co">#&gt; The following objects are masked from 'package:stats':</span>
@@ -921,22 +919,22 @@
 <span class="co">#&gt; # A tibble: 16 x 3</span>
 <span class="co">#&gt;    country                      year my_measure</span>
 <span class="co">#&gt;    &lt;chr&gt;                       &lt;dbl&gt;      &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Germany                      2015     0.111 </span>
-<span class="co">#&gt;  2 Germany                      1930     0.404 </span>
-<span class="co">#&gt;  3 Germany                      1970    -0.932 </span>
-<span class="co">#&gt;  4 Germany                      1945    -0.957 </span>
-<span class="co">#&gt;  5 East Germany                 1949     0.0624</span>
-<span class="co">#&gt;  6 Federal Republic of Germany  1992    -0.0248</span>
-<span class="co">#&gt;  7 Somaliland                   1990    -1.17  </span>
-<span class="co">#&gt;  8 Somalia                      1990     0.334 </span>
-<span class="co">#&gt;  9 Palestine                    1940    -0.594 </span>
-<span class="co">#&gt; 10 Russia                       1917     0.435 </span>
-<span class="co">#&gt; 11 Russia                       1912    -1.78  </span>
-<span class="co">#&gt; 12 USSR                         1922    -0.375 </span>
-<span class="co">#&gt; 13 Republic of Vietnam          1975     1.08  </span>
-<span class="co">#&gt; 14 Yugoslavia                   1990    -1.14  </span>
-<span class="co">#&gt; 15 Yugoslavia                   1991    -1.45  </span>
-<span class="co">#&gt; 16 Vietnam, South               1954    -0.499</span></pre></div>
+<span class="co">#&gt;  1 Germany                      2015      0.747</span>
+<span class="co">#&gt;  2 Germany                      1930      0.934</span>
+<span class="co">#&gt;  3 Germany                      1970     -1.70 </span>
+<span class="co">#&gt;  4 Germany                      1945     -1.16 </span>
+<span class="co">#&gt;  5 East Germany                 1949     -1.18 </span>
+<span class="co">#&gt;  6 Federal Republic of Germany  1992     -1.72 </span>
+<span class="co">#&gt;  7 Somaliland                   1990      1.96 </span>
+<span class="co">#&gt;  8 Somalia                      1990      0.465</span>
+<span class="co">#&gt;  9 Palestine                    1940     -1.66 </span>
+<span class="co">#&gt; 10 Russia                       1917     -1.52 </span>
+<span class="co">#&gt; 11 Russia                       1912      0.356</span>
+<span class="co">#&gt; 12 USSR                         1922     -0.844</span>
+<span class="co">#&gt; 13 Republic of Vietnam          1975     -0.761</span>
+<span class="co">#&gt; 14 Yugoslavia                   1990      0.123</span>
+<span class="co">#&gt; 15 Yugoslavia                   1991     -1.18 </span>
+<span class="co">#&gt; 16 Vietnam, South               1954      1.33</span></pre></div>
 <p>and you then want to add state system information. <code>country_year_coder</code> does that for you!</p>
 <div class="sourceCode" id="cb9"><pre class="r">
 <span class="no">my_weird_democracy_data</span> <span class="kw">&lt;-</span> <span class="no">my_weird_democracy_data</span> <span class="kw">%&gt;%</span>
@@ -988,7 +986,7 @@
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="right">2015</td>
-<td align="right">0.1105459</td>
+<td align="right">0.7467835</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -1002,7 +1000,7 @@
 <tr class="even">
 <td align="left">Germany</td>
 <td align="right">1930</td>
-<td align="right">0.4042214</td>
+<td align="right">0.9341082</td>
 <td align="left">Germany (Prussia)</td>
 <td align="right">255</td>
 <td align="right">255</td>
@@ -1016,7 +1014,7 @@
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="right">1970</td>
-<td align="right">-0.9321799</td>
+<td align="right">-1.7044370</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -1030,7 +1028,7 @@
 <tr class="even">
 <td align="left">Germany</td>
 <td align="right">1945</td>
-<td align="right">-0.9565699</td>
+<td align="right">-1.1603197</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -1044,7 +1042,7 @@
 <tr class="odd">
 <td align="left">East Germany</td>
 <td align="right">1949</td>
-<td align="right">0.0624081</td>
+<td align="right">-1.1783675</td>
 <td align="left">German Democratic Republic</td>
 <td align="right">265</td>
 <td align="right">265</td>
@@ -1058,7 +1056,7 @@
 <tr class="even">
 <td align="left">Federal Republic of Germany</td>
 <td align="right">1992</td>
-<td align="right">-0.0248277</td>
+<td align="right">-1.7235036</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -1072,7 +1070,7 @@
 <tr class="odd">
 <td align="left">Somaliland</td>
 <td align="right">1990</td>
-<td align="right">-1.1676354</td>
+<td align="right">1.9570614</td>
 <td align="left">Somaliland</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -1086,7 +1084,7 @@
 <tr class="even">
 <td align="left">Somalia</td>
 <td align="right">1990</td>
-<td align="right">0.3342925</td>
+<td align="right">0.4652381</td>
 <td align="left">Somalia</td>
 <td align="right">520</td>
 <td align="right">520</td>
@@ -1100,7 +1098,7 @@
 <tr class="odd">
 <td align="left">Palestine</td>
 <td align="right">1940</td>
-<td align="right">-0.5935458</td>
+<td align="right">-1.6594087</td>
 <td align="left">British Mandate of Palestine</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -1114,7 +1112,7 @@
 <tr class="even">
 <td align="left">Russia</td>
 <td align="right">1917</td>
-<td align="right">0.4348915</td>
+<td align="right">-1.5187424</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1128,7 +1126,7 @@
 <tr class="odd">
 <td align="left">Russia</td>
 <td align="right">1912</td>
-<td align="right">-1.7778018</td>
+<td align="right">0.3558980</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1142,7 +1140,7 @@
 <tr class="even">
 <td align="left">USSR</td>
 <td align="right">1922</td>
-<td align="right">-0.3749091</td>
+<td align="right">-0.8436812</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1156,7 +1154,7 @@
 <tr class="odd">
 <td align="left">Republic of Vietnam</td>
 <td align="right">1975</td>
-<td align="right">1.0781704</td>
+<td align="right">-0.7611326</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
@@ -1170,7 +1168,7 @@
 <tr class="even">
 <td align="left">Yugoslavia</td>
 <td align="right">1990</td>
-<td align="right">-1.1361777</td>
+<td align="right">0.1233937</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1184,7 +1182,7 @@
 <tr class="odd">
 <td align="left">Yugoslavia</td>
 <td align="right">1991</td>
-<td align="right">-1.4476344</td>
+<td align="right">-1.1802806</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1198,7 +1196,7 @@
 <tr class="even">
 <td align="left">Vietnam, South</td>
 <td align="right">1954</td>
-<td align="right">-0.4990910</td>
+<td align="right">1.3281066</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
