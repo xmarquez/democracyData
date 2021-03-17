@@ -4,7 +4,10 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![Travis-CI Build Status](https://travis-ci.org/xmarquez/democracyData.svg?branch=master)](https://travis-ci.org/xmarquez/democracyData)
+  <!-- badges: start -->
+  [![R-CMD-check](https://github.com/xmarquez/democracyData/workflows/R-CMD-check/badge.svg)](https://github.com/xmarquez/democracyData/actions)
+  [![Travis-CI Build Status](https://travis-ci.org/xmarquez/democracyData.svg?branch=master)](https://travis-ci.org/xmarquez/democracyData)
+  <!-- badges: end -->
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
@@ -43,7 +46,7 @@ fh
 
 ```
 
-This downloads the latest update of the "Freedom in the World" dataset (1972-2019), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables `fh_total` and `fh_total_reversed`, and adds state system information, including a standardized country name, the [Gleditsch-Ward](http://privatewww.essex.ac.uk/~ksg/statelist.html) country code and the [Correlates of War](http://www.correlatesofwar.org/data-sets/state-system-membership) country code. 
+This downloads the latest update of the "Freedom in the World" dataset (1972-2020), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables `fh_total` and `fh_total_reversed`, and adds state system information, including a standardized country name, the [Gleditsch-Ward](http://privatewww.essex.ac.uk/~ksg/statelist.html) country code and the [Correlates of War](http://www.correlatesofwar.org/data-sets/state-system-membership) country code. 
 
 You can also download the Freedom House "Electoral Democracies" list (`download_fh_electoral`, updated to 2019), the latest version of the Polity dataset ([Polity5](http://www.systemicpeace.org/inscrdata.html), updated with data to 2018; check `?download_polity`), the latest version of the [World Governance Indicators' "Voice and Accountability" index](http://info.worldbank.org/governance/wgi/index.aspx#home) (`download_wgi_voice_and_accountability`), and the regime part of the [REIGN dataset](http://oefresearch.org/datasets/reign) by Curtis Bell and OEF research (a regularly-updated variation of the original [Geddes, Wright, and Frantz's autocratic regimes dataset](http://sites.psu.edu/dictators/)).
 
@@ -91,7 +94,7 @@ All datasets in this package are fully documented; type `?pacl` for example to s
 
 ## Democracy data not available through this package
 
-I have not included the [Varieties of Democracy](https://www.v-dem.net/en/data/data-version-10/) dataset in this package; you can access version 10 of this dataset via my [`vdem`](https://github.com/xmarquez/vdem) package (use `remotes::install_github("xmarquez/vdem")` to install).
+I have not included the [Varieties of Democracy](https://www.v-dem.net/en/data/data-version-11/) dataset in this package; you can access version 11 of this dataset via my [`vdem`](https://github.com/xmarquez/vdem) package (use `remotes::install_github("xmarquez/vdem")` to install).
 
 ## Combining all democracy datasets
 
@@ -105,7 +108,7 @@ democracy_data <- generate_democracy_scores_dataset(output_format = "wide",
 democracy_data
 ```
 
-This can take some time, since it downloads all downloadable datasets (Freedom House, Polity IV, Reign, and the WGI Voice and Accountability index), processes them (adds state system information, puts them in coutnry-year format, fixes wrong codes, etc.), and matches them to all the other datasets. In any case, you can select exactly which datasets to include in your big data frame. See `?generate_democracy_scores_dataset` for further options to customize the output. 
+This can take some time, since it downloads all downloadable datasets (Freedom House, Polity IV, Reign, and the WGI Voice and Accountability index), processes them (adds state system information, puts them in country-year format, fixes wrong codes, etc.), and matches them to all the other datasets. In any case, you can select exactly which datasets to include in your big data frame. See `?generate_democracy_scores_dataset` for further options to customize the output. 
 
 ## State system functions
 
@@ -182,7 +185,7 @@ cite_dataset("gwf")
 
 # Feedback and Caveats
 
-Feedback welcome! I am trying to get this package ready for submission to CRAN. 
+Feedback welcome! 
 
 Note that some functions in this package can be quite slow: generating a full democracy dataset (including downloading Freedom House, Polity, WGI, and Reign) or applying `country_year_coder` to a large data frame both can take some time. Suggestions to accelerate the code are welcome. 
 
