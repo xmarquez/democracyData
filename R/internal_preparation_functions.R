@@ -123,7 +123,7 @@ prepare_mainwaring <- function(path = "../../Data/Mainwaring Linan.txt",
 
 }
 
-prepare_eiu <- function(path = "EIU Democracy Index.csv",
+prepare_eiu <- function(path = "EIU Democracy Index 2020.csv",
                         verbose = TRUE,
                         ...) {
 
