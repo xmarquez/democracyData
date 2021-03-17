@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.6</span>
       </span>
     </div>
 
@@ -80,7 +80,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -94,7 +94,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/xmarquez/democracyData/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -120,7 +120,7 @@
     <p>Create a panel of countries belonging in the state system.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>create_panel</span>(<span class='kw'>system</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"cow"</span>, <span class='st'>"GW"</span>, <span class='st'>"polity"</span>), <span class='kw'>max_year</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>create_panel</span><span class='op'>(</span>system <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"cow"</span>, <span class='st'>"GW"</span>, <span class='st'>"polity"</span><span class='op'>)</span>, max_year <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -143,13 +143,14 @@ available at <a href='http://privatewww.essex.ac.uk/~ksg/statelist.html'>http://
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble with the country code in the relevant system of states,
+    <p>A <a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a> with the country code in the relevant system of states,
 the official country name and years when the country belongs to the system,
 and the relevant start and end dates for entry and exit into the system.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>create_panel</span>(<span class='st'>"cow"</span>) <span class='co'># The correlates of War system is the default</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required when using unnest().</span>
-#&gt; <span class='warning'>Please use `cols = c(year)`</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 16,646 x 5</span><span>
+    <pre class="examples"><div class='input'><span class='fu'>create_panel</span><span class='op'>(</span><span class='st'>"cow"</span><span class='op'>)</span> <span class='co'># The correlates of War system is the default</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required when using unnest().</span>
+#&gt; <span class='warning'>Please use `cols = c(year)`</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 16,841 x 5</span><span>
 #&gt;     cown cow_country_name         cow_startdate cow_enddate  year
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                    </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
 #&gt; </span><span style='color: #555555;'> 1</span><span>     2 United States of America 1816-01-01    </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='text-decoration: underline;'>1</span><span>816
@@ -162,8 +163,9 @@ and the relevant start and end dates for entry and exit into the system.</p>
 #&gt; </span><span style='color: #555555;'> 8</span><span>     2 United States of America 1816-01-01    </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='text-decoration: underline;'>1</span><span>823
 #&gt; </span><span style='color: #555555;'> 9</span><span>     2 United States of America 1816-01-01    </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='text-decoration: underline;'>1</span><span>824
 #&gt; </span><span style='color: #555555;'>10</span><span>     2 United States of America 1816-01-01    </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='text-decoration: underline;'>1</span><span>825
-#&gt; </span><span style='color: #555555;'># ... with 16,636 more rows</span><span></div><div class='input'><span class='fu'>create_panel</span>(<span class='st'>"GW"</span>) <span class='co'># Use this for the Gleditsch and Ward system</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required when using unnest().</span>
-#&gt; <span class='warning'>Please use `cols = c(year)`</span></div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 19,544 x 5</span><span>
+#&gt; </span><span style='color: #555555;'># ... with 16,831 more rows</span><span></div><div class='input'><span class='fu'>create_panel</span><span class='op'>(</span><span class='st'>"GW"</span><span class='op'>)</span> <span class='co'># Use this for the Gleditsch and Ward system</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required when using unnest().</span>
+#&gt; <span class='warning'>Please use `cols = c(year)`</span></div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 19,741 x 5</span><span>
 #&gt;      GWn GW_country_name          GW_startdate GW_enddate  year
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                    </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
 #&gt; </span><span style='color: #555555;'> 1</span><span>     2 United States of America 1816-01-01   </span><span style='color: #BB0000;'>NA</span><span>          </span><span style='text-decoration: underline;'>1</span><span>816
@@ -176,7 +178,8 @@ and the relevant start and end dates for entry and exit into the system.</p>
 #&gt; </span><span style='color: #555555;'> 8</span><span>     2 United States of America 1816-01-01   </span><span style='color: #BB0000;'>NA</span><span>          </span><span style='text-decoration: underline;'>1</span><span>823
 #&gt; </span><span style='color: #555555;'> 9</span><span>     2 United States of America 1816-01-01   </span><span style='color: #BB0000;'>NA</span><span>          </span><span style='text-decoration: underline;'>1</span><span>824
 #&gt; </span><span style='color: #555555;'>10</span><span>     2 United States of America 1816-01-01   </span><span style='color: #BB0000;'>NA</span><span>          </span><span style='text-decoration: underline;'>1</span><span>825
-#&gt; </span><span style='color: #555555;'># ... with 19,534 more rows</span><span></div><div class='input'><span class='fu'>create_panel</span>(<span class='st'>"polity"</span>, <span class='kw'>max_year</span> <span class='kw'>=</span> <span class='fl'>1997</span>) <span class='co'># You can specify a maximum year</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required when using unnest().</span>
+#&gt; </span><span style='color: #555555;'># ... with 19,731 more rows</span><span></div><div class='input'><span class='fu'>create_panel</span><span class='op'>(</span><span class='st'>"polity"</span>, max_year <span class='op'>=</span> <span class='fl'>1997</span><span class='op'>)</span> <span class='co'># You can specify a maximum year</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required when using unnest().</span>
 #&gt; <span class='warning'>Please use `cols = c(year)`</span></div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 13,964 x 5</span><span>
 #&gt;    polity_ccode polity_country_name polity_startdate polity_enddate  year
 #&gt;           </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>               </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>           </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>         </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
@@ -206,7 +209,7 @@ and the relevant start and end dates for entry and exit into the system.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

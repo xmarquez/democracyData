@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Downloads the 2020 update of the Polity 5 dataset (annual time series) and
-processes it using <a href='country_year_coder.html'>country_year_coder</a> — download_polity_annual • democracyData</title>
+processes it using country_year_coder — download_polity_annual • democracyData</title>
 
 
 <!-- jquery -->
@@ -41,7 +41,7 @@ processes it using <a href='country_year_coder.html'>country_year_coder</a> — 
 
 
 <meta property="og:title" content="Downloads the 2020 update of the Polity 5 dataset (annual time series) and
-processes it using <a href='country_year_coder.html'>country_year_coder</a> — download_polity_annual" />
+processes it using country_year_coder — download_polity_annual" />
 <meta property="og:description" content="The original data is available at
 http://www.systemicpeace.org/inscrdata.html" />
 
@@ -75,7 +75,7 @@ http://www.systemicpeace.org/inscrdata.html" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.6</span>
       </span>
     </div>
 
@@ -83,7 +83,7 @@ http://www.systemicpeace.org/inscrdata.html" />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -97,7 +97,7 @@ http://www.systemicpeace.org/inscrdata.html" />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/xmarquez/democracyData/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -125,7 +125,7 @@ processes it using <a href='country_year_coder.html'>country_year_coder</a></h1>
 <a href='http://www.systemicpeace.org/inscrdata.html'>http://www.systemicpeace.org/inscrdata.html</a></p>
     </div>
 
-    <pre class="usage"><span class='fu'>download_polity_annual</span>(<span class='no'>url</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>return_raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>download_polity_annual</span><span class='op'>(</span><span class='va'>url</span>, verbose <span class='op'>=</span> <span class='cn'>TRUE</span>, return_raw <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -159,7 +159,7 @@ Dataset Users' Manual. Center for Systemic Peace. Available at
 <a href='http://www.systemicpeace.org/inscr/p5manualv2018.pdf'>http://www.systemicpeace.org/inscr/p5manualv2018.pdf</a>"</p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The annual time series version of the Polity 5 dataset, as a tibble,
+    <p>The annual time series version of the Polity 5 dataset, as a <a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a>,
 with the additional columns produced by <a href='country_year_coder.html'>country_year_coder</a>. Consult the
 <a href='http://www.systemicpeace.org/inscr/p5manualv2018.pdf'>Polity 5 codebook</a>
 for further description.</p>
@@ -168,7 +168,7 @@ for further description.</p>
     
 
 
-<dl'>
+<dl>
 
 <dt>p5</dt><dd><p>Polity5 revision indicator. p5 = 1 if the country-year has
 undergone systematic review in version 5. Country-years coded 0 report
@@ -402,7 +402,7 @@ transformation, 98 = state demise, 99 = state creation.</p></dd>
 
     
 
-<dl'>
+<dl>
 
 <dt>extended_country_name</dt><dd><p>The name of the country in the Gleditsch-Ward
 system of states, or the official name of the
@@ -448,10 +448,11 @@ download them in order to use them.</p>
 <p><a href='polityIV.html'>polityIV</a></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='no'>polity_annual</span> <span class='kw'>&lt;-</span> <span class='fu'>download_polity_annual</span>()
-<span class='no'>polity_annual</span>
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>polity_annual</span> <span class='op'>&lt;-</span> <span class='fu'>download_polity_annual</span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>polity_annual</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -467,7 +468,7 @@ download them in order to use them.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -76,7 +76,7 @@ https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106."
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.6</span>
       </span>
     </div>
 
@@ -84,7 +84,7 @@ https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106."
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -98,7 +98,7 @@ https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106."
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/xmarquez/democracyData/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -128,7 +128,7 @@ Original data and variable descriptions available at
 <a href='https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106'>https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106</a>.</p>
     </div>
 
-    <pre class="usage"><span class='no'>LIED</span></pre>
+    <pre class="usage"><span class='va'>LIED</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
@@ -152,7 +152,7 @@ et al. 2013): LEGSELEC, EXSELEC, OPPOSITION, MALE SUFFRAGE, and FEMALE
 SUFFRAGE. Since <code>PIPE</code> does not attempt to measure the quality of
 elections, we generate a sixth variable: COMPETITION. All variables are
 binary, coded 1 if the following circumstances obtain, and 0 otherwise.</p>
-<dl'>
+<dl>
 
 <dt>lied_country</dt><dd><p>The country name used in the original dataset. 2
 country-years were repeated in the original data and have been dropped.</p></dd>
@@ -218,37 +218,21 @@ variables, a country-year is assigned the highest score (L0-6) for which it
 fulfills all requisite criteria, as follows:L0: LEGSELEC=0 &amp; EXSELEC=0.L1: LEGSELEC=1 or EXSELEC=1.L2: LEGSELEC=1 &amp; OPPOSITION=1.L3: LEGSELEC=1 &amp; OPPOSITION=1 &amp; EXSELEC=1.L4: LEGSELEC=1 &amp; OPPOSITION=1 &amp; EXSELEC=1 &amp; COMPETITION=1.L5: LEGSELEC=1 &amp; OPPOSITION=1 &amp; EXSELEC=1 &amp; COMPETITION=1 &amp; (MALE
 SUFFRAGE=1 or FEMALE SUFFRAGE=1).L6: LEGSELEC=1 &amp; OPPOSITION=1 &amp; EXSELEC=1 &amp; COMPETITION=1 &amp; MALE SUFFRAGE=1
 &amp; FEMALE SUFFRAGE=1.In a small number of cases, the resulting index appears to have been
-incorrectly constructed:<table class='table'>
-<tr><td>lied_country</td><td>year</td><td>lexical_index</td><td>lexical_index_original</td></tr>
-<tr><td>Netherlands</td><td>1917</td><td>5</td><td>4</td></tr>
-<tr><td>San Marino</td><td>1921</td><td>3</td><td>1</td></tr>
-<tr><td>San Marino</td><td>1922</td><td>3</td><td>1</td></tr>
-<tr><td>Australia</td><td>1876</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1877</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1878</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1879</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1880</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1881</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1882</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1883</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1884</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1885</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1886</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1887</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1888</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1889</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1890</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1891</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1892</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1893</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1894</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1895</td><td>2</td><td>4</td></tr>
-<tr><td>Australia</td><td>1896</td><td>2</td><td>5</td></tr>
-<tr><td>Australia</td><td>1897</td><td>2</td><td>5</td></tr>
-<tr><td>Australia</td><td>1898</td><td>2</td><td>5</td></tr>
-<tr><td>Australia</td><td>1899</td><td>2</td><td>5</td></tr>
-<tr><td>Australia</td><td>1900</td><td>2</td><td>5</td></tr>
-</table>I've recalculated the index for these cases and put the original value in
+incorrectly constructed:<pre><span class='co'>## # A tibble: 28 x 4</span>
+<span class='co'>##    lied_country  year lexical_index lexical_index_original</span>
+<span class='co'>##    &lt;chr&gt;        &lt;dbl&gt;         &lt;dbl&gt;                  &lt;dbl&gt;</span>
+<span class='co'>##  1 Netherlands   1917             5                      4</span>
+<span class='co'>##  2 San Marino    1921             3                      1</span>
+<span class='co'>##  3 San Marino    1922             3                      1</span>
+<span class='co'>##  4 Australia     1876             2                      4</span>
+<span class='co'>##  5 Australia     1877             2                      4</span>
+<span class='co'>##  6 Australia     1878             2                      4</span>
+<span class='co'>##  7 Australia     1879             2                      4</span>
+<span class='co'>##  8 Australia     1880             2                      4</span>
+<span class='co'>##  9 Australia     1881             2                      4</span>
+<span class='co'>## 10 Australia     1882             2                      4</span>
+<span class='co'>## # ... with 18 more rows</span>
+</pre>I've recalculated the index for these cases and put the original value in
 the <code>lexical_index_original</code> variable.</p></dd> 
 </dl>
 
@@ -256,7 +240,7 @@ the <code>lexical_index_original</code> variable.</p></dd>
 
     
 
-<dl'>
+<dl>
 
 <dt>extended_country_name</dt><dd><p>The name of the country in the Gleditsch-Ward
 system of states, or the official name of the
@@ -397,7 +381,7 @@ indicator across the previous 364 days.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

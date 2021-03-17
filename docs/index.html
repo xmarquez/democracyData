@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.6</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -53,7 +53,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/xmarquez/democracyData/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -79,7 +79,7 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>The package is only available on Github for now. Install as follows:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"xmarquez/democracyData"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"xmarquez/democracyData"</span>)</span></code></pre></div>
 <p>Feedback, pull requests, and contributors welcome.</p>
 </div>
 <div id="downloading-democracy-data" class="section level2">
@@ -87,15 +87,16 @@
 <a href="#downloading-democracy-data" class="anchor"></a>Downloading democracy data</h2>
 <p>The package offers two mechanisms for downloading democracy data: the <code>download_*</code> family of functions (for large, institutional, or frequently updated democracy datasets, like <a href="http://www.systemicpeace.org/inscrdata.html">Polity5</a> and <a href="https://freedomhouse.org/">Freedom House</a>), and the <code>redownload_*</code> family of functions for publicly hosted datasets that are not likely to be regularly updated (like <a href="http://sites.psu.edu/dictators/">Geddes, Wright, and Frantz’ autocratic regimes dataset</a>, the <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106">Lexical Index of Electoral Democracy</a>, version 5.2, and the <a href="https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited">DD/ACLP/PACL/CGV dataset</a>).</p>
 <p>For example, we can download and process the Freedom House “Freedom in the World” dataset as follows:</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">democracyData</span>)
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/xmarquez/democracyData">democracyData</a></span><span class="op">)</span>
 
-<span class="no">fh</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/download_fh.html">download_fh</a></span>(<span class="kw">verbose</span> <span class="kw">=</span> <span class="fl">FALSE</span>)
+<span class="va">fh</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/download_fh.html">download_fh</a></span><span class="op">(</span>verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="co">#&gt; Warning in download_fh(verbose = FALSE): NAs introduced by coercion</span>
 
 <span class="co">#&gt; Warning in download_fh(verbose = FALSE): NAs introduced by coercion</span>
 
-<span class="no">fh</span>
-<span class="co">#&gt; # A tibble: 8,460 x 11</span>
+<span class="va">fh</span> 
+<span class="co">#&gt; # A tibble: 8,655 x 11</span>
 <span class="co">#&gt;    fh_country  year    pr    cl status fh_total fh_total_revers~</span>
 <span class="co">#&gt;    &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;     &lt;dbl&gt;            &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 Afghanist~  1972     4     5 PF            9                5</span>
@@ -108,12 +109,13 @@
 <span class="co">#&gt;  8 Afghanist~  1979     7     7 NF           14                0</span>
 <span class="co">#&gt;  9 Afghanist~  1980     7     7 NF           14                0</span>
 <span class="co">#&gt; 10 Afghanist~  1982     7     7 NF           14                0</span>
-<span class="co">#&gt; # ... with 8,450 more rows, and 4 more variables: extended_country_name &lt;chr&gt;,</span>
-<span class="co">#&gt; #   GWn &lt;dbl&gt;, cown &lt;int&gt;, in_GW_system &lt;lgl&gt;</span></pre></div>
-<p>This downloads the latest update of the “Freedom in the World” dataset (1972-2019), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables <code>fh_total</code> and <code>fh_total_reversed</code>, and adds state system information, including a standardized country name, the <a href="http://privatewww.essex.ac.uk/~ksg/statelist.html">Gleditsch-Ward</a> country code and the <a href="http://www.correlatesofwar.org/data-sets/state-system-membership">Correlates of War</a> country code.</p>
+<span class="co">#&gt; # ... with 8,645 more rows, and 4 more variables: extended_country_name &lt;chr&gt;,</span>
+<span class="co">#&gt; #   GWn &lt;dbl&gt;, cown &lt;int&gt;, in_GW_system &lt;lgl&gt;</span></code></pre></div>
+<p>This downloads the latest update of the “Freedom in the World” dataset (1972-2020), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables <code>fh_total</code> and <code>fh_total_reversed</code>, and adds state system information, including a standardized country name, the <a href="http://privatewww.essex.ac.uk/~ksg/statelist.html">Gleditsch-Ward</a> country code and the <a href="http://www.correlatesofwar.org/data-sets/state-system-membership">Correlates of War</a> country code.</p>
 <p>You can also download the Freedom House “Electoral Democracies” list (<code>download_fh_electoral</code>, updated to 2019), the latest version of the Polity dataset (<a href="http://www.systemicpeace.org/inscrdata.html">Polity5</a>, updated with data to 2018; check <code>?download_polity</code>), the latest version of the <a href="http://info.worldbank.org/governance/wgi/index.aspx#home">World Governance Indicators’ “Voice and Accountability” index</a> (<code>download_wgi_voice_and_accountability</code>), and the regime part of the <a href="http://oefresearch.org/datasets/reign">REIGN dataset</a> by Curtis Bell and OEF research (a regularly-updated variation of the original <a href="http://sites.psu.edu/dictators/">Geddes, Wright, and Frantz’s autocratic regimes dataset</a>).</p>
 <p>Many other datasets containing democracy measures are not regularly updated, including the widely used <a href="https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited">DD/ACLP/PACL/CGV dataset</a>, the <a href="http://sites.psu.edu/dictators/">Geddes, Wright, and Frantz’s autocratic regimes dataset</a>, and the Polity IV dataset (which has been superceded by <a href="http://www.systemicpeace.org/inscrdata.html">Polity5</a>). These are available directly from this package (no download required), but they can also be “re-downloaded” from the websites of their creators or maintainers. For example, one can either access PACL directly by typing</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="no">pacl</span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">pacl</span>
 <span class="co">#&gt; # A tibble: 9,159 x 82</span>
 <span class="co">#&gt;    order pacl_country  year aclpcode pacl_cowcode cowcode2 ccdcodelet ccdcodenum</span>
 <span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;</span>
@@ -144,12 +146,12 @@
 <span class="co">#&gt; #   assconfid &lt;dbl&gt;, poppreselec &lt;dbl&gt;, regime &lt;dbl&gt;, tt &lt;dbl&gt;, ttd &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   tta &lt;dbl&gt;, flagc &lt;dbl&gt;, flagdem &lt;dbl&gt;, flagreg &lt;dbl&gt;, agedem &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   agereg &lt;dbl&gt;, stra &lt;dbl&gt;, extended_country_name &lt;chr&gt;, GWn &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   cown &lt;int&gt;, in_GW_system &lt;lgl&gt;</span></pre></div>
+<span class="co">#&gt; #   cown &lt;int&gt;, in_GW_system &lt;lgl&gt;</span></code></pre></div>
 <p>Or re-download the dataset from Jose Antonio Cheibub’s website as follows:</p>
-<div class="sourceCode" id="cb4"><pre class="r">
-<span class="no">pacl_redownloaded</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/redownload_blm.html">redownload_pacl</a></span>(<span class="kw">verbose</span> <span class="kw">=</span> <span class="fl">FALSE</span>)
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">pacl_redownloaded</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/redownload_blm.html">redownload_pacl</a></span><span class="op">(</span>verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
-<span class="no">pacl_redownloaded</span>
+<span class="va">pacl_redownloaded</span>
 <span class="co">#&gt; # A tibble: 9,159 x 82</span>
 <span class="co">#&gt;    order pacl_country  year aclpcode pacl_cowcode cowcode2 ccdcodelet ccdcodenum</span>
 <span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;</span>
@@ -180,18 +182,19 @@
 <span class="co">#&gt; #   assconfid &lt;dbl&gt;, poppreselec &lt;dbl&gt;, regime &lt;dbl&gt;, tt &lt;dbl&gt;, ttd &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   tta &lt;dbl&gt;, flagc &lt;dbl&gt;, flagdem &lt;dbl&gt;, flagreg &lt;dbl&gt;, agedem &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   agereg &lt;dbl&gt;, stra &lt;dbl&gt;, extended_country_name &lt;chr&gt;, GWn &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   cown &lt;int&gt;, in_GW_system &lt;lgl&gt;</span></pre></div>
+<span class="co">#&gt; #   cown &lt;int&gt;, in_GW_system &lt;lgl&gt;</span></code></pre></div>
 <p>These two data frames should be identical:</p>
-<div class="sourceCode" id="cb5"><pre class="r">
-<span class="fu"><a href="https://rdrr.io/r/base/identical.html">identical</a></span>(<span class="no">pacl</span>, <span class="no">pacl_redownloaded</span>)
-<span class="co">#&gt; [1] TRUE</span></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/identical.html">identical</a></span><span class="op">(</span><span class="va">pacl</span>, <span class="va">pacl_redownloaded</span><span class="op">)</span>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
 <p>You should thus normally use the “archived” versions of these datasets, unless you want to manipulate the raw data yourself (using the <code>redownload_*</code> functions with the option <code>return_raw = TRUE</code>), or think they might have been updated since you installed this package.</p>
 </div>
 <div id="other-democracy-datasets" class="section level2">
 <h2 class="hasAnchor">
 <a href="#other-democracy-datasets" class="anchor"></a>Other democracy datasets</h2>
 <p>A number of democracy datasets are not available online, usually because they were only ever described in the tables of scholarly articles now found only on JSTOR or in out of print books. These include Zehra Arat’s old democracy measure, the Political Regime Change dataset by Gasiorowski (updated by Reich in 2002), the Vanhanen index of democratization, and many others. I have archived most these in this package; for a list of all the datasets available, type <code>democracy_info</code>:</p>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Attaching package: 'dplyr'</span>
 <span class="co">#&gt; The following objects are masked from 'package:stats':</span>
@@ -201,22 +204,22 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt;     intersect, setdiff, setequal, union</span>
 
-<span class="no">democracy_info</span> <span class="kw">%&gt;%</span>
-  <span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>()</pre></div>
+<span class="va">democracy_info</span> <span class="op">%&gt;%</span>
+  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <colgroup>
 <col width="3%">
 <col width="15%">
 <col width="12%">
-<col width="1%">
 <col width="2%">
 <col width="2%">
+<col width="3%">
 <col width="3%">
 <col width="2%">
 <col width="1%">
 <col width="3%">
 <col width="3%">
-<col width="47%">
+<col width="45%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">dataset</th>
@@ -767,7 +770,7 @@
 </tr>
 <tr class="odd">
 <td align="left">vdem</td>
-<td align="left">The Varieties of Democracy Dataset, version 9</td>
+<td align="left">The Varieties of Democracy Dataset, version 11</td>
 <td align="left">v2x_polyarchy,v2x_api,v2x_mpi,v2x_libdem,v2x_partipdem,v2x_delibdem,v2x_egaldem</td>
 <td align="left">continuous</td>
 <td align="left">NA</td>
@@ -777,7 +780,7 @@
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="right">2015</td>
-<td align="left">Can be accessed using the package vdem. (Use “devtools::install_github(”xmarquez/vdem“)”; the package is not on CRAN)</td>
+<td align="left">Can be accessed using the package vdem. (Use “remotes::install_github(”xmarquez/vdem“)”; the package is not on CRAN)</td>
 </tr>
 <tr class="even">
 <td align="left">wahman_teorell_hadenius</td>
@@ -815,15 +818,15 @@
 <div id="democracy-data-not-available-through-this-package" class="section level2">
 <h2 class="hasAnchor">
 <a href="#democracy-data-not-available-through-this-package" class="anchor"></a>Democracy data not available through this package</h2>
-<p>I have not included the <a href="https://www.v-dem.net/en/data/data-version-10/">Varieties of Democracy</a> dataset in this package; you can access version 10 of this dataset via my <a href="https://github.com/xmarquez/vdem"><code>vdem</code></a> package (use <code><a href="https://remotes.r-lib.org/reference/install_github.html">remotes::install_github("xmarquez/vdem")</a></code> to install).</p>
+<p>I have not included the <a href="https://www.v-dem.net/en/data/data-version-11/">Varieties of Democracy</a> dataset in this package; you can access version 11 of this dataset via my <a href="https://github.com/xmarquez/vdem"><code>vdem</code></a> package (use <code><a href="https://remotes.r-lib.org/reference/install_github.html">remotes::install_github("xmarquez/vdem")</a></code> to install).</p>
 </div>
 <div id="combining-all-democracy-datasets" class="section level2">
 <h2 class="hasAnchor">
 <a href="#combining-all-democracy-datasets" class="anchor"></a>Combining all democracy datasets</h2>
 <p>You can create one huge data frame including all democracy measures with one call:</p>
-<div class="sourceCode" id="cb7"><pre class="r">
-<span class="no">democracy_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/generate_democracy_scores_dataset.html">generate_democracy_scores_dataset</a></span>(<span class="kw">output_format</span> <span class="kw">=</span> <span class="st">"wide"</span>,
-                                                    <span class="kw">verbose</span> <span class="kw">=</span> <span class="fl">FALSE</span>)
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">democracy_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/generate_democracy_scores_dataset.html">generate_democracy_scores_dataset</a></span><span class="op">(</span>output_format <span class="op">=</span> <span class="st">"wide"</span>,
+                                                    verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="co">#&gt; Warning in download_fh(verbose = verbose, include_territories = TRUE): NAs</span>
 <span class="co">#&gt; introduced by coercion</span>
 
@@ -833,8 +836,6 @@
 <span class="co">#&gt; Please use a one-sided formula, a function, or a function name.</span>
 <span class="co">#&gt; This warning is displayed once every 8 hours.</span>
 <span class="co">#&gt; Call `lifecycle::last_warnings()` to see where this warning was generated.</span>
-<span class="co">#&gt; Warning: `cols` is now required when using unnest().</span>
-<span class="co">#&gt; Please use `cols = c(year)`</span>
 <span class="co">#&gt; Warning: `funs()` is deprecated as of dplyr 0.8.0.</span>
 <span class="co">#&gt; Please use a list of either functions or lambdas: </span>
 <span class="co">#&gt; </span>
@@ -849,8 +850,8 @@
 <span class="co">#&gt; This warning is displayed once every 8 hours.</span>
 <span class="co">#&gt; Call `lifecycle::last_warnings()` to see where this warning was generated.</span>
 
-<span class="no">democracy_data</span>
-<span class="co">#&gt; # A tibble: 25,930 x 79</span>
+<span class="va">democracy_data</span>
+<span class="co">#&gt; # A tibble: 26,157 x 79</span>
 <span class="co">#&gt;    extended_countr~   GWn  cown in_GW_system  year anckar_democracy   blm</span>
 <span class="co">#&gt;    &lt;chr&gt;            &lt;dbl&gt; &lt;int&gt; &lt;lgl&gt;        &lt;dbl&gt;            &lt;dbl&gt; &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 Abkhazia           396    NA FALSE         1997               NA    NA</span>
@@ -863,7 +864,7 @@
 <span class="co">#&gt;  8 Abkhazia           396    NA FALSE         2004               NA    NA</span>
 <span class="co">#&gt;  9 Abkhazia           396    NA FALSE         2005               NA    NA</span>
 <span class="co">#&gt; 10 Abkhazia           396    NA FALSE         2006               NA    NA</span>
-<span class="co">#&gt; # ... with 25,920 more rows, and 72 more variables: bmr_democracy &lt;dbl&gt;,</span>
+<span class="co">#&gt; # ... with 26,147 more rows, and 72 more variables: bmr_democracy &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   bmr_democracy_femalesuffrage &lt;dbl&gt;, bmr_democracy_omitteddata &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   bnr &lt;dbl&gt;, bnr_extended &lt;dbl&gt;, bti_democracy &lt;dbl&gt;, csvmdi &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   doorenspleet &lt;dbl&gt;, eiu &lt;dbl&gt;, fh_electoral &lt;dbl&gt;, fh_total_reversed &lt;dbl&gt;,</span>
@@ -887,85 +888,86 @@
 <span class="co">#&gt; #   ulfelder_democracy_extended &lt;dbl&gt;, utip_dichotomous &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   utip_dichotomous_strict &lt;dbl&gt;, utip_trichotomous &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   vanhanen_competition &lt;dbl&gt;, vanhanen_democratization &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   vanhanen_participation &lt;dbl&gt;, wgi_democracy &lt;dbl&gt;, wth_democrobust &lt;dbl&gt;</span></pre></div>
-<p>This can take some time, since it downloads all downloadable datasets (Freedom House, Polity IV, Reign, and the WGI Voice and Accountability index), processes them (adds state system information, puts them in coutnry-year format, fixes wrong codes, etc.), and matches them to all the other datasets. In any case, you can select exactly which datasets to include in your big data frame. See <code><a href="reference/generate_democracy_scores_dataset.html">?generate_democracy_scores_dataset</a></code> for further options to customize the output.</p>
+<span class="co">#&gt; #   vanhanen_participation &lt;dbl&gt;, wgi_democracy &lt;dbl&gt;, wth_democrobust &lt;dbl&gt;</span></code></pre></div>
+<p>This can take some time, since it downloads all downloadable datasets (Freedom House, Polity 5, Reign, and the WGI Voice and Accountability index), processes them (adds state system information, puts them in country-year format, fixes wrong codes, etc.), and matches them to all the other datasets. In any case, you can select exactly which datasets to include in your big data frame. See <code><a href="reference/generate_democracy_scores_dataset.html">?generate_democracy_scores_dataset</a></code> for further options to customize the output.</p>
 </div>
 <div id="state-system-functions" class="section level2">
 <h2 class="hasAnchor">
 <a href="#state-system-functions" class="anchor"></a>State system functions</h2>
 <p>The package also includes a couple of other convenience functions to work with historical democracy data and determine state system membership. The first is <code>country_year_coder</code>, which works like the <a href="https://cran.r-project.org/web/packages/countrycode/index.html"><code>countrycode</code></a> package, except that it is able to determine state system information for country-year pairs. Suppose you have this dataset:</p>
-<div class="sourceCode" id="cb8"><pre class="r"><span class="no">my_weird_democracy_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/reexports.html">data_frame</a></span>(<span class="kw">country</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Germany"</span>, <span class="st">"Germany"</span>, <span class="st">"Germany"</span>, <span class="st">"Germany"</span>, <span class="st">"East Germany"</span>,
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_weird_democracy_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/deprecated.html">data_frame</a></span><span class="op">(</span>country <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Germany"</span>, <span class="st">"Germany"</span>, <span class="st">"Germany"</span>, <span class="st">"Germany"</span>, <span class="st">"East Germany"</span>,
                                     <span class="st">"Federal Republic of Germany"</span>,
                                     <span class="st">"Somaliland"</span>, <span class="st">"Somalia"</span>,
                                     <span class="st">"Palestine"</span>, <span class="st">"Russia"</span>,
                                     <span class="st">"Russia"</span>, <span class="st">"USSR"</span>,
                                     <span class="st">"Republic of Vietnam"</span>,
                                     <span class="st">"Yugoslavia"</span>, <span class="st">'Yugoslavia'</span>,
-                                    <span class="st">"Vietnam, South"</span>),
-                        <span class="kw">year</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>( <span class="fl">2015</span>, <span class="fl">1930</span>, <span class="fl">1970</span>, <span class="fl">1945</span>, <span class="fl">1949</span>,
+                                    <span class="st">"Vietnam, South"</span><span class="op">)</span>,
+                        year <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span> <span class="fl">2015</span>, <span class="fl">1930</span>, <span class="fl">1970</span>, <span class="fl">1945</span>, <span class="fl">1949</span>,
                                  <span class="fl">1992</span>, <span class="fl">1990</span>,
                                  <span class="fl">1990</span>, <span class="fl">1940</span>,
                                  <span class="fl">1917</span>, <span class="fl">1912</span>,
                                  <span class="fl">1922</span>, <span class="fl">1975</span>,
-                                 <span class="fl">1990</span>, <span class="fl">1991</span>, <span class="fl">1954</span>),
-                        <span class="kw">my_measure</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span>(<span class="fl">16</span>))
+                                 <span class="fl">1990</span>, <span class="fl">1991</span>, <span class="fl">1954</span><span class="op">)</span>,
+                        my_measure <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">16</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; Warning: `data_frame()` is deprecated as of tibble 1.1.0.</span>
 <span class="co">#&gt; Please use `tibble()` instead.</span>
 <span class="co">#&gt; This warning is displayed once every 8 hours.</span>
 <span class="co">#&gt; Call `lifecycle::last_warnings()` to see where this warning was generated.</span>
 
 
-<span class="no">my_weird_democracy_data</span>
+<span class="va">my_weird_democracy_data</span>
 <span class="co">#&gt; # A tibble: 16 x 3</span>
 <span class="co">#&gt;    country                      year my_measure</span>
 <span class="co">#&gt;    &lt;chr&gt;                       &lt;dbl&gt;      &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Germany                      2015      0.747</span>
-<span class="co">#&gt;  2 Germany                      1930      0.934</span>
-<span class="co">#&gt;  3 Germany                      1970     -1.70 </span>
-<span class="co">#&gt;  4 Germany                      1945     -1.16 </span>
-<span class="co">#&gt;  5 East Germany                 1949     -1.18 </span>
-<span class="co">#&gt;  6 Federal Republic of Germany  1992     -1.72 </span>
-<span class="co">#&gt;  7 Somaliland                   1990      1.96 </span>
-<span class="co">#&gt;  8 Somalia                      1990      0.465</span>
-<span class="co">#&gt;  9 Palestine                    1940     -1.66 </span>
-<span class="co">#&gt; 10 Russia                       1917     -1.52 </span>
-<span class="co">#&gt; 11 Russia                       1912      0.356</span>
-<span class="co">#&gt; 12 USSR                         1922     -0.844</span>
-<span class="co">#&gt; 13 Republic of Vietnam          1975     -0.761</span>
-<span class="co">#&gt; 14 Yugoslavia                   1990      0.123</span>
-<span class="co">#&gt; 15 Yugoslavia                   1991     -1.18 </span>
-<span class="co">#&gt; 16 Vietnam, South               1954      1.33</span></pre></div>
+<span class="co">#&gt;  1 Germany                      2015    -0.236 </span>
+<span class="co">#&gt;  2 Germany                      1930     0.283 </span>
+<span class="co">#&gt;  3 Germany                      1970     0.488 </span>
+<span class="co">#&gt;  4 Germany                      1945    -1.13  </span>
+<span class="co">#&gt;  5 East Germany                 1949     0.0982</span>
+<span class="co">#&gt;  6 Federal Republic of Germany  1992    -1.31  </span>
+<span class="co">#&gt;  7 Somaliland                   1990    -1.03  </span>
+<span class="co">#&gt;  8 Somalia                      1990    -0.749 </span>
+<span class="co">#&gt;  9 Palestine                    1940     1.27  </span>
+<span class="co">#&gt; 10 Russia                       1917     0.478 </span>
+<span class="co">#&gt; 11 Russia                       1912    -0.901 </span>
+<span class="co">#&gt; 12 USSR                         1922    -0.416 </span>
+<span class="co">#&gt; 13 Republic of Vietnam          1975     1.42  </span>
+<span class="co">#&gt; 14 Yugoslavia                   1990    -2.58  </span>
+<span class="co">#&gt; 15 Yugoslavia                   1991    -0.309 </span>
+<span class="co">#&gt; 16 Vietnam, South               1954     0.752</span></code></pre></div>
 <p>and you then want to add state system information. <code>country_year_coder</code> does that for you!</p>
-<div class="sourceCode" id="cb9"><pre class="r">
-<span class="no">my_weird_democracy_data</span> <span class="kw">&lt;-</span> <span class="no">my_weird_democracy_data</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="reference/country_year_coder.html">country_year_coder</a></span>(<span class="no">country</span>,
-                     <span class="no">year</span>,
-                     <span class="kw">match_type</span> <span class="kw">=</span> <span class="st">"country"</span>,
-                     <span class="kw">verbose</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
-                     <span class="kw">include_in_output</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"extended_country_name"</span>,
-                                           <span class="st">"GWn"</span>, <span class="st">"cown"</span>,
-                                           <span class="st">"polity_ccode"</span>,
-                                           <span class="st">"in_GW_system"</span>,
-                                           <span class="st">"in_cow_system"</span>,
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_weird_democracy_data</span> <span class="op">&lt;-</span> <span class="va">my_weird_democracy_data</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="reference/country_year_coder.html">country_year_coder</a></span><span class="op">(</span><span class="va">country</span>,
+                     <span class="va">year</span>,
+                     match_type <span class="op">=</span> <span class="st">"country"</span>,
+                     verbose <span class="op">=</span> <span class="cn">FALSE</span>,
+                     include_in_output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"extended_country_name"</span>, 
+                                           <span class="st">"GWn"</span>, <span class="st">"cown"</span>, 
+                                           <span class="st">"polity_ccode"</span>, 
+                                           <span class="st">"in_GW_system"</span>, 
+                                           <span class="st">"in_cow_system"</span>, 
                                            <span class="st">"in_polity_system"</span>,
                                            <span class="st">"polity_startdate"</span>,
-                                           <span class="st">"polity_enddate"</span>))
+                                           <span class="st">"polity_enddate"</span><span class="op">)</span><span class="op">)</span>
 
-<span class="no">my_weird_democracy_data</span> <span class="kw">%&gt;%</span>
-  <span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>()</pre></div>
+<span class="va">my_weird_democracy_data</span> <span class="op">%&gt;%</span>
+  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <colgroup>
 <col width="15%">
-<col width="2%">
+<col width="3%">
 <col width="6%">
-<col width="16%">
-<col width="1%">
+<col width="15%">
 <col width="2%">
+<col width="3%">
 <col width="7%">
 <col width="8%">
 <col width="8%">
 <col width="10%">
-<col width="10%">
+<col width="9%">
 <col width="8%">
 </colgroup>
 <thead><tr class="header">
@@ -986,7 +988,7 @@
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="right">2015</td>
-<td align="right">0.7467835</td>
+<td align="right">-0.2364760</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -1000,7 +1002,7 @@
 <tr class="even">
 <td align="left">Germany</td>
 <td align="right">1930</td>
-<td align="right">0.9341082</td>
+<td align="right">0.2831576</td>
 <td align="left">Germany (Prussia)</td>
 <td align="right">255</td>
 <td align="right">255</td>
@@ -1014,7 +1016,7 @@
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="right">1970</td>
-<td align="right">-1.7044370</td>
+<td align="right">0.4877467</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -1028,7 +1030,7 @@
 <tr class="even">
 <td align="left">Germany</td>
 <td align="right">1945</td>
-<td align="right">-1.1603197</td>
+<td align="right">-1.1299845</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -1042,7 +1044,7 @@
 <tr class="odd">
 <td align="left">East Germany</td>
 <td align="right">1949</td>
-<td align="right">-1.1783675</td>
+<td align="right">0.0982063</td>
 <td align="left">German Democratic Republic</td>
 <td align="right">265</td>
 <td align="right">265</td>
@@ -1056,7 +1058,7 @@
 <tr class="even">
 <td align="left">Federal Republic of Germany</td>
 <td align="right">1992</td>
-<td align="right">-1.7235036</td>
+<td align="right">-1.3084826</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -1070,7 +1072,7 @@
 <tr class="odd">
 <td align="left">Somaliland</td>
 <td align="right">1990</td>
-<td align="right">1.9570614</td>
+<td align="right">-1.0290268</td>
 <td align="left">Somaliland</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -1084,7 +1086,7 @@
 <tr class="even">
 <td align="left">Somalia</td>
 <td align="right">1990</td>
-<td align="right">0.4652381</td>
+<td align="right">-0.7491917</td>
 <td align="left">Somalia</td>
 <td align="right">520</td>
 <td align="right">520</td>
@@ -1098,7 +1100,7 @@
 <tr class="odd">
 <td align="left">Palestine</td>
 <td align="right">1940</td>
-<td align="right">-1.6594087</td>
+<td align="right">1.2716215</td>
 <td align="left">British Mandate of Palestine</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -1112,7 +1114,7 @@
 <tr class="even">
 <td align="left">Russia</td>
 <td align="right">1917</td>
-<td align="right">-1.5187424</td>
+<td align="right">0.4779094</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1126,7 +1128,7 @@
 <tr class="odd">
 <td align="left">Russia</td>
 <td align="right">1912</td>
-<td align="right">0.3558980</td>
+<td align="right">-0.9006936</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1140,7 +1142,7 @@
 <tr class="even">
 <td align="left">USSR</td>
 <td align="right">1922</td>
-<td align="right">-0.8436812</td>
+<td align="right">-0.4157550</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1154,7 +1156,7 @@
 <tr class="odd">
 <td align="left">Republic of Vietnam</td>
 <td align="right">1975</td>
-<td align="right">-0.7611326</td>
+<td align="right">1.4247245</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
@@ -1168,7 +1170,7 @@
 <tr class="even">
 <td align="left">Yugoslavia</td>
 <td align="right">1990</td>
-<td align="right">0.1233937</td>
+<td align="right">-2.5816893</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1182,7 +1184,7 @@
 <tr class="odd">
 <td align="left">Yugoslavia</td>
 <td align="right">1991</td>
-<td align="right">-1.1802806</td>
+<td align="right">-0.3085774</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1196,7 +1198,7 @@
 <tr class="even">
 <td align="left">Vietnam, South</td>
 <td align="right">1954</td>
-<td align="right">1.3281066</td>
+<td align="right">0.7519954</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
@@ -1212,10 +1214,11 @@
 <p><code>country_year_coder</code> tries to match not just the country name or the country code (as <code>countrycode</code> does), but also to figure out the appropriate state system code <em>given</em> the year. (Above, for example, the function figures out that Germany 1970 should get a COW code of 260, but Germany 1992 should get 255 - though it should retain the 260 code in the Gleditsch and Ward system of states. This is, incidentally, how <code>download_fh</code> adds the correct COW and GW country codes to Freedom House’s Excel data). It also tries to figure out whether a given country-year is in the specific state system list. (In the example above, Germany in 1945 is not listed as a member of the state system in either COW or Gleditsch and Ward, since it was occupied by the Allies as of 31 December 1945, but is listed as a member of the state system in Polity IV as the Federal Republic, though with a polity score of -66, “interregnum”).</p>
 <p>One nice thing about <code>country_year_coder</code> (in my humble opinion!) is that it can sometimes correct country coding errors; I’ve run across more than one dataset with the supposed COW code 255 for the Federal Republic of Germany for the period 1955-1990, which would prevent a clean join to a dataset with the correct COW code, but would be caught by <code>country_year_coder</code>.</p>
 <p>There is also a function that allows you to create a blank state system panel for any of the three main state systems:</p>
-<div class="sourceCode" id="cb10"><pre class="r"><span class="fu"><a href="reference/create_panel.html">create_panel</a></span>(<span class="kw">system</span> <span class="kw">=</span> <span class="st">"cow"</span>)
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/create_panel.html">create_panel</a></span><span class="op">(</span>system <span class="op">=</span> <span class="st">"cow"</span><span class="op">)</span>
 <span class="co">#&gt; Warning: `cols` is now required when using unnest().</span>
 <span class="co">#&gt; Please use `cols = c(year)`</span>
-<span class="co">#&gt; # A tibble: 16,646 x 5</span>
+<span class="co">#&gt; # A tibble: 16,841 x 5</span>
 <span class="co">#&gt;     cown cow_country_name         cow_startdate cow_enddate  year</span>
 <span class="co">#&gt;    &lt;int&gt; &lt;chr&gt;                    &lt;date&gt;        &lt;date&gt;      &lt;dbl&gt;</span>
 <span class="co">#&gt;  1     2 United States of America 1816-01-01    NA           1816</span>
@@ -1228,12 +1231,12 @@
 <span class="co">#&gt;  8     2 United States of America 1816-01-01    NA           1823</span>
 <span class="co">#&gt;  9     2 United States of America 1816-01-01    NA           1824</span>
 <span class="co">#&gt; 10     2 United States of America 1816-01-01    NA           1825</span>
-<span class="co">#&gt; # ... with 16,636 more rows</span>
+<span class="co">#&gt; # ... with 16,831 more rows</span>
 
-<span class="fu"><a href="reference/create_panel.html">create_panel</a></span>(<span class="kw">system</span> <span class="kw">=</span> <span class="st">"GW"</span>)
+<span class="fu"><a href="reference/create_panel.html">create_panel</a></span><span class="op">(</span>system <span class="op">=</span> <span class="st">"GW"</span><span class="op">)</span>
 <span class="co">#&gt; Warning: `cols` is now required when using unnest().</span>
 <span class="co">#&gt; Please use `cols = c(year)`</span>
-<span class="co">#&gt; # A tibble: 19,544 x 5</span>
+<span class="co">#&gt; # A tibble: 19,741 x 5</span>
 <span class="co">#&gt;      GWn GW_country_name          GW_startdate GW_enddate  year</span>
 <span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;                    &lt;date&gt;       &lt;date&gt;     &lt;dbl&gt;</span>
 <span class="co">#&gt;  1     2 United States of America 1816-01-01   NA          1816</span>
@@ -1246,13 +1249,14 @@
 <span class="co">#&gt;  8     2 United States of America 1816-01-01   NA          1823</span>
 <span class="co">#&gt;  9     2 United States of America 1816-01-01   NA          1824</span>
 <span class="co">#&gt; 10     2 United States of America 1816-01-01   NA          1825</span>
-<span class="co">#&gt; # ... with 19,534 more rows</span></pre></div>
+<span class="co">#&gt; # ... with 19,731 more rows</span></code></pre></div>
 </div>
 <div id="citation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#citation" class="anchor"></a>Citation</h2>
 <p>The standard <code>citation</code> function from base <code>R</code> will produce a list of citations for all the datasets included in this package:</p>
-<div class="sourceCode" id="cb11"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="kw">package</span> <span class="kw">=</span> <span class="st">"democracyData"</span>)</pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">"democracyData"</span><span class="op">)</span></code></pre></div>
 <p>To cite any of the datasets included in this package use:</p>
 <p>Anckar C, Fredriksson C (2018). “Classifying political regimes 1800-2016: a typology and a new dataset.” <em>European Political Science</em>. doi: 10.1057/s41304-018-0149-8 (URL: <a href="https://doi.org/10.1057/s41304-018-0149-8" class="uri">https://doi.org/10.1057/s41304-018-0149-8</a>), &lt;URL: <a href="https://doi.org/10.1057/s41304-018-0149-8" class="uri">https://doi.org/10.1057/s41304-018-0149-8</a>&gt;.</p>
 <p>Arat ZF (1991). <em>Democracy and human rights in developing countries</em>. Lynne Rienner Publishers, Boulder.</p>
@@ -1266,10 +1270,10 @@
 <p>Cheibub J, Gandhi J, Vreeland J (2010). “Democracy and dictatorship revisited.” <em>Public Choice</em>, <em>143</em>(1), 67-101. doi: 10.1007/s11127-009-9491-2 (URL: <a href="https://doi.org/10.1007/s11127-009-9491-2" class="uri">https://doi.org/10.1007/s11127-009-9491-2</a>).</p>
 <p>Coppedge M, Alvarez A, Maldonado C (2008). “Two Persistent Dimensions of Democracy: Contestation and Inclusiveness.” <em>The journal of politics</em>, <em>70</em>(03), 632-647. doi: 10.1017/S0022381608080663 (URL: <a href="https://doi.org/10.1017/S0022381608080663" class="uri">https://doi.org/10.1017/S0022381608080663</a>).</p>
 <p>Coppedge M, Gerring J, Lindberg SI, Skaaning S, Jan Teorell wDA, Bernhard M, Fish MS, Glynn A, Hicken A, Knutsen CH, Kelly McMann, Paxton P, Pemstein D, Staton J, Zimmerman B, Andersson F, Valeriya Mechkova, Miri F (2016). “V-Dem Codebook v6.”</p>
-<p>Coppedge M, Gerring J, Lindberg SI, Skaaning S, Teorell J, Altman D, Bernhard M, Fish MS, Glynn A, Hicken A, Knutsen CH, Marquardt K, McMann K, Miri F, Paxton P, Pemstein D, Staton J, Tzelgov E, Wang Y, Zimmerman B (2016). “V-Dem <br><span class="math display"><em>C</em><em>o</em><em>u</em><em>n</em><em>t</em><em>r</em><em>y</em> − <em>Y</em><em>e</em><em>a</em><em>r</em>/<em>C</em><em>o</em><em>u</em><em>n</em><em>t</em><em>r</em><em>y</em> − <em>D</em><em>a</em><em>t</em><em>e</em></span><br> Dataset, version 6.1.” &lt;URL: <a href="https://www.v-dem.net/en/data/data-version-6-1/" class="uri">https://www.v-dem.net/en/data/data-version-6-1/</a>&gt;.</p>
+<p>Coppedge M, Gerring J, Lindberg SI, Skaaning S, Teorell J, Altman D, Bernhard M, Fish MS, Glynn A, Hicken A, Knutsen CH, Marquardt K, McMann K, Miri F, Paxton P, Pemstein D, Staton J, Tzelgov E, Wang Y, Zimmerman B (2016). “V-Dem <span class="math display"><em>C</em><em>o</em><em>u</em><em>n</em><em>t</em><em>r</em><em>y</em> − <em>Y</em><em>e</em><em>a</em><em>r</em>/<em>C</em><em>o</em><em>u</em><em>n</em><em>t</em><em>r</em><em>y</em> − <em>D</em><em>a</em><em>t</em><em>e</em></span> Dataset, version 6.1.” &lt;URL: <a href="https://www.v-dem.net/en/data/data-version-6-1/" class="uri">https://www.v-dem.net/en/data/data-version-6-1/</a>&gt;.</p>
 <p>Coppedge M, Reinicke WH (1990). “Measuring Polyarchy.” <em>Studies in Comparative International Development</em>, <em>25</em>(1), 51-72. doi: 10.1007/Bf02716905 (URL: <a href="https://doi.org/10.1007/Bf02716905" class="uri">https://doi.org/10.1007/Bf02716905</a>).</p>
 <p>Doorenspleet R (2000). “Reassessing the Three Waves of Democratization.” <em>World Politics</em>, <em>52</em>(03), 384-406. doi: 10.1017/S0043887100016580 (URL: <a href="https://doi.org/10.1017/S0043887100016580" class="uri">https://doi.org/10.1017/S0043887100016580</a>).</p>
-<p>Freedom House (2020). “Freedom in the World 2020: A Leaderless Struggle For Democracy.” Freedom House. &lt;URL: <a href="https://freedomhouse.org/report/freedom-world/2020/leaderless-struggle-democracy" class="uri">https://freedomhouse.org/report/freedom-world/2020/leaderless-struggle-democracy</a>&gt;.</p>
+<p>Freedom House (2021). “Freedom in the World 2021: Democracy under Siege.” Freedom House. &lt;URL: <a href="https://freedomhouse.org/report/freedom-world/2021/democracy-under-siege" class="uri">https://freedomhouse.org/report/freedom-world/2021/democracy-under-siege</a>&gt;.</p>
 <p>Gasiorowski M (1996). “An Overview of the Political Regime Change Dataset.” <em>Comparative Political Studies</em>, <em>29</em>(4), 469-483. doi: 10.1177/0010414096029004004 (URL: <a href="https://doi.org/10.1177/0010414096029004004" class="uri">https://doi.org/10.1177/0010414096029004004</a>).</p>
 <p>Geddes B, Wright J, Frantz E (2014). “Autocratic Breakdown and Regime Transitions: A New Data Set.” <em>Perspectives on Politics</em>, <em>12</em>(1), 313-331. doi: 10.1017/S1537592714000851 (URL: <a href="https://doi.org/10.1017/S1537592714000851" class="uri">https://doi.org/10.1017/S1537592714000851</a>).</p>
 <p>Gleditsch K, Ward MD (1999). “Interstate system membership: A revised list of independent states since the congress of Vienna.” <em>International Interactions</em>, <em>25</em>(4), 393-413. doi: 10.1080/03050629908434958 (URL: <a href="https://doi.org/10.1080/03050629908434958" class="uri">https://doi.org/10.1080/03050629908434958</a>).</p>
@@ -1280,7 +1284,7 @@
 <p>Hadenius A, Teorell J (2007). “Pathways from Authoritarianism.” <em>Journal of Democracy</em>, <em>18</em>(1), 143-157.</p>
 <p>Hsu S (2008). “The Effect of Political Regimes on Inequality, 1963-2002.” <em>UTIP Working Paper</em>.</p>
 <p>Kailitz S (2013). “Classifying political regimes revisited: legitimation and durability.” <em>Democratization</em>, <em>20</em>(1), 39-60. doi: 10.1080/13510347.2013.738861 (URL: <a href="https://doi.org/10.1080/13510347.2013.738861" class="uri">https://doi.org/10.1080/13510347.2013.738861</a>).</p>
-<p>Kaufmann D, Kraay A (2019). “Worldwide Governance Indicators.” &lt;URL: <a href="http://www.govindicators.org" class="uri">http://www.govindicators.org</a>&gt;.</p>
+<p>Kaufmann D, Kraay A (2020). “Worldwide Governance Indicators.” &lt;URL: <a href="http://www.govindicators.org" class="uri">http://www.govindicators.org</a>&gt;.</p>
 <p>Magaloni B, Chu J, Min E (2013). “Autocracies of the World, 1950-2012 (Version 1.0).” &lt;URL: <a href="http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset" class="uri">http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset</a>&gt;.</p>
 <p>Mainwaring S, Brinks D, Pérez-Liñán A (2001). “Classifying Political Regimes in Latin America.” <em>Studies in Comparative International Development</em>, <em>36</em>(1), 37-65. doi: 10.1007/bf02687584 (URL: <a href="https://doi.org/10.1007/bf02687584" class="uri">https://doi.org/10.1007/bf02687584</a>).</p>
 <p>Mainwaring S, Pérez-Liñán A, Brinks D (2014). “Political Regimes in Latin America, 1900-2007 (with Daniel Brinks).” In <em>Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall</em>, chapter Political Regimes in Latin America, 1900-2007 (with Daniel Brinks). Cambridge University Press, New York.</p>
@@ -1296,21 +1300,22 @@
 <p>Skaaning S, Gerring J, Bartusevicius H (2015). “A Lexical Index of Electoral Democracy.” <em>Comparative Political Studies</em>, <em>48</em>(12), 1491-1525. doi: 10.1177/0010414015581050 (URL: <a href="https://doi.org/10.1177/0010414015581050" class="uri">https://doi.org/10.1177/0010414015581050</a>).</p>
 <p>Svolik M (2012). <em>The Politics of Authoritarian Rule</em>. Cambridge University Press, Cambridge.</p>
 <p>Taylor SJ, Ulfelder J (2015). “A Measurement Error Model of Dichotomous Democracy Status.” <em>Available at SSRN</em>. doi: 10.2139/ssrn.2726962 (URL: <a href="https://doi.org/10.2139/ssrn.2726962" class="uri">https://doi.org/10.2139/ssrn.2726962</a>).</p>
-<p>The Economist Intelligence Unit (2020). “Democracy Index 2019: A year of democratic setbacks and popular protest.” The Economist Intelligence Unit.</p>
+<p>The Economist Intelligence Unit (2021). “Democracy Index 2020: In sickness and in health?” The Economist Intelligence Unit.</p>
 <p>Ulfelder J (2012). “Democracy/Autocracy Data Set.” &lt;URL: <a href="http://hdl.handle.net/1902.1/18836" class="uri">http://hdl.handle.net/1902.1/18836</a>&gt;.</p>
 <p>Ulfelder J, Lustik M (2007). “Modelling Transitions To and From Democracy.” <em>Democratization</em>, <em>14</em>(3), 351-387. doi: 10.1080/13510340701303196 (URL: <a href="https://doi.org/10.1080/13510340701303196" class="uri">https://doi.org/10.1080/13510340701303196</a>).</p>
 <p>Vanhanen T (2014). “Measures of Democracy 1810-2012.” &lt;URL: <a href="http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html" class="uri">http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html</a>&gt;.</p>
 <p>Wahman M, Teorell J, Hadenius A (2013). “Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective.” <em>Contemporary Politics</em>, <em>19</em>(1), 19-34. &lt;URL: <a href="https://sites.google.com/site/authoritarianregimedataset/data" class="uri">https://sites.google.com/site/authoritarianregimedataset/data</a>&gt;.</p>
 <p>To see these entries in BibTeX format, use ‘print(<citation>, bibtex=TRUE)’, ‘toBibtex(.)’, or set ‘options(citation.bibtex.max=999)’.</citation></p>
 <p>You can also find the citation for a specific dataset using the wrapper <code>cite_dataset</code> with the name of the dataset in this package:</p>
-<div class="sourceCode" id="cb12"><pre class="r"><span class="fu"><a href="reference/cite_dataset.html">cite_dataset</a></span>(<span class="st">"gwf"</span>)</pre></div>
-<p><br><span class="math display">1</span><br> B. Geddes, J. Wright, and E. Frantz. “Autocratic Breakdown and Regime Transitions: A New Data Set”. In: <em>Perspectives on Politics</em> 12.1 (2014), pp. 313-331. DOI: 10.1017/S1537592714000851.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/cite_dataset.html">cite_dataset</a></span><span class="op">(</span><span class="st">"gwf"</span><span class="op">)</span></code></pre></div>
+<p><span class="math display">1</span> B. Geddes, J. Wright, and E. Frantz. “Autocratic Breakdown and Regime Transitions: A New Data Set”. In: <em>Perspectives on Politics</em> 12.1 (2014), pp. 313-331. DOI: 10.1017/S1537592714000851.</p>
 </div>
 </div>
 <div id="feedback-and-caveats" class="section level1">
 <h1 class="hasAnchor">
 <a href="#feedback-and-caveats" class="anchor"></a>Feedback and Caveats</h1>
-<p>Feedback welcome! I am trying to get this package ready for submission to CRAN.</p>
+<p>Feedback welcome!</p>
 <p>Note that some functions in this package can be quite slow: generating a full democracy dataset (including downloading Freedom House, Polity, WGI, and Reign) or applying <code>country_year_coder</code> to a large data frame both can take some time. Suggestions to accelerate the code are welcome.</p>
 <p><code>country_year_coder</code> fails to give correct answers in some weird edge cases mostly involving Yugoslavia, Germany, or Vietnam. If you run across any of these cases, let me know.</p>
 </div>
@@ -1349,6 +1354,7 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
+<li><a href="https://github.com/xmarquez/democracyData/actions"><img src="https://github.com/xmarquez/democracyData/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://travis-ci.org/xmarquez/democracyData"><img src="https://travis-ci.org/xmarquez/democracyData.svg?branch=master" alt="Travis-CI Build Status"></a></li>
 </ul>
 </div>
@@ -1361,7 +1367,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

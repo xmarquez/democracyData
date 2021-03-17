@@ -77,7 +77,7 @@ modifications." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.6</span>
       </span>
     </div>
 
@@ -85,7 +85,7 @@ modifications." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -99,7 +99,7 @@ modifications." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/xmarquez/democracyData/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -130,7 +130,7 @@ documentation below is directly derived from the codebook, with some
 modifications.</p>
     </div>
 
-    <pre class="usage"><span class='no'>PIPE</span></pre>
+    <pre class="usage"><span class='va'>PIPE</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
@@ -197,7 +197,7 @@ territory that would become independent at any time after 1917 and as
 "parts" to those units that composed them. The supra-units need not be
 independent: British India is an example. Colonial empires are not
 considered as supra-units and they are coded as such separately.</p>
-<dl'>
+<dl>
 
 <dt>PIPE_countryn</dt><dd><p>The name of the country at the time. This has been
 partially reconstructed. The original data was missing many names, and did
@@ -270,7 +270,7 @@ that occupations that begin and end within the same year are ignored.</p></dd>
     
 
 
-<dl'>
+<dl>
 
 <dt>const_onpaper</dt><dd><p>The year in which the most recent constitution was
 promulgated, whether or not it was implemented. Even if a constitution is
@@ -353,7 +353,7 @@ into disuse or was never used. For example, the last royal veto occurred in
 England in 1706 and the last unilateral dissolution in 1834 but because no
 legal acts were passed to curtail these royal prerogatives they are coded as
 present.</p>
-<dl'>
+<dl>
 
 <dt>title_ce</dt><dd><p>Title of the nominal head of government (chief executive,
 as distinct from the head of state), according to the constitution.
@@ -472,7 +472,7 @@ elected)</p></dd>
     
 
 
-<dl'>
+<dl>
 <dt>f</dt><dd><p>Franchise. Qualifications for the right to vote in
 national elections. Preliminary notes: To account for exclusions not
 captured under <code>f</code>, we use the variable <code>oth_exclusions</code> (see
@@ -612,7 +612,7 @@ come back 4 out after more than one term, can never come back.</p></dd>
     
 
 
-<dl'>
+<dl>
 
 <dt>exselec</dt><dd><p>Dummy for the chief executive having been elected (whether
 directly or indirectly; indirectly means elected by people who have been
@@ -681,7 +681,7 @@ is 0.</p></dd>
     
 
 
-<dl'>
+<dl>
 
 <dt>legelec</dt><dd><p>Number of legislative elections that took place during the
 year. It includes general elections, regular elections in which only a part
@@ -842,7 +842,7 @@ result is a bias in favor of counting alternations.</p></dd>
     
 
 
-<dl'>
+<dl>
 
 <dt>dissolution</dt><dd><p>Counts the number of times the lower house of the
 legislature was dissolved in a particular year. Included as dissolutions are
@@ -900,7 +900,7 @@ rules (including banning parties) or adopts laws that extend his tenure
     
 
 
-<dl'>
+<dl>
 
 <dt>head_title</dt><dd><p>Title of the chief executive. This variable identifies the
 formal position the occupant of which is the head of the government. Note
@@ -1063,7 +1063,7 @@ the entry and the exit were constitutional.</p></dd>
     
 
 
-<dl'>
+<dl>
 
 <dt>electoral_age</dt><dd><p>Number of years in a period during which elections were
 held regularly without being interrupted by any of the following: (1) a coup
@@ -1115,7 +1115,7 @@ codebook.</p></dd>
 
 <p>Note - the instructions in the original codebook for calculating these
 variables are not always clear. Errors may have resulted.</p>
-<dl'>
+<dl>
 
 <dt>republic</dt><dd><p>Whether the country is a republic during the year.
 (<code>republic_age</code> is not missing). Calculated from <code>republic_age</code>.</p></dd>
@@ -1196,7 +1196,7 @@ assumed office, and 4 that he stayed that many years.</p>
 <p>Note that only events following the elections are coded, with the exception
 of the manner in which the current incumbent arrived in office. The first
 three digits summarize information about the election. They are recorded
-under the variable called result.</p><dl'>
+under the variable called result.</p><dl>
 
 <dt>result</dt><dd><p>The first digit answers the question How did the incumbent
 come into office?Note: The variable coding who is the chief executive is <code>head_title</code>.
@@ -1311,7 +1311,7 @@ sequence is coded as ESY,IY,EjESN,WY,E.</p></dd>
 
 
 <p>Caveats are many and some are consequential.</p>
-<dl'>
+<dl>
 <dt>Missing data</dt><dd><p>In principle, the data should cover all
 elections that selected chief executives in all countries that existed at
 any time after 1917, including periods before independence. There are good
@@ -1360,7 +1360,7 @@ One must suspect, therefore, that the coding contains errors.</p></dd>
     
 
 
-<dl'>
+<dl>
 <dt>popg</dt><dd><p>Population growth?</p></dd>
 
 <dt>unrest</dt><dd><p>Unrest variable from Banks?</p></dd>
@@ -1398,7 +1398,7 @@ perhaps from COW?)</p></dd>
 
     
 
-<dl'>
+<dl>
 
 <dt>extended_country_name</dt><dd><p>The name of the country in the Gleditsch-Ward
 system of states, or the official name of the
@@ -1524,7 +1524,7 @@ Development Centre.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
