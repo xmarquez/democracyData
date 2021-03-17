@@ -341,7 +341,7 @@ download_polity_annual <- function(url,
   standardize_columns(polity_annual, country, ccode, verbose = verbose)
 }
 
-#' Download the latest version (data up to 2018) of the Democracy, Voice, and
+#' Download the latest version (data up to 2019) of the Democracy, Voice, and
 #' Accountability index from the World Governance Indicators and process it via
 #' [country_year_coder]
 #'
@@ -353,7 +353,7 @@ download_polity_annual <- function(url,
 #' @export
 #'
 #' @return A dataset containing the country-year version of the latest update
-#'   (to 2018) of the World Governance Indicators "Democracy, Voice and
+#'   (to 2019) of the World Governance Indicators "Democracy, Voice and
 #'   Accountability" Index, compiled by Daniel Kaufmann and Aart Kraay. The
 #'   original data are available at
 #'   http://info.worldbank.org/governance/wgi/index.aspx#home, along with a full
@@ -414,7 +414,7 @@ download_wgi_voice_and_accountability <- function(url,
   }
 
   X25 <- `Indicator Name` <- `Country Name` <- `Indicator Code` <- NULL
-  `Country Code` <- indicator <- `1996` <- `2018` <- Estimate <- NULL
+  `Country Code` <- indicator <- Estimate <- NULL
   variable <- value <-  NULL
   wb_country <- year <-  wb_code <- NULL
 
@@ -460,7 +460,7 @@ download_wgi_voice_and_accountability <- function(url,
                                               "Upper",
                                               "StdErr"),
                                        warn_missing = FALSE)) %>%
-    tidyr::gather(year, value, `1996`:`2018`) %>%
+    tidyr::gather(year, value, dplyr::matches("[1-2][0-9]{3}")) %>%
     tidyr::spread(indicator, value) %>%
     mutate(year = as.numeric(year)) %>%
     select(wb_country, wb_code, year,
@@ -482,14 +482,14 @@ download_wgi_voice_and_accountability <- function(url,
 
 
 
-#' Downloads the 2020 update of the Freedom House Freedom in the World data
+#' Downloads the 2021 update of the Freedom House Freedom in the World data
 #' and processes it using [country_year_coder]
 #'
 #' The original data is available at
 #' [https://freedomhouse.org/report-types/freedom-world](https://freedomhouse.org/report/freedom-world)
 #'
 #' @param url The URL of the dataset. Defaults to
-#'   \url{https://freedomhouse.org/sites/default/files/2020-02/2020_Country_and_Territory_Ratings_and_Statuses_FIW1973-2020.xlsx}
+#'   \url{https://freedomhouse.org/sites/default/files/2021-02/Country_and_Territory_Ratings_and_Statuses_FIW1973-2021.xlsx}
 #'
 #'
 #' @inheritParams redownload_blm
@@ -590,7 +590,7 @@ download_wgi_voice_and_accountability <- function(url,
 #' @family Freedom House
 #' @family ordinal democracy indexes
 #' @source The "Freedom in the World" dataset from Freedom House, updated to
-#'   2019 (Freedom in the World 2020 Report). Original data and methodology is
+#'   2020 (Freedom in the World 2021 Report). Original data and methodology is
 #'   available at \url{https://freedomhouse.org/report/freedom-world}
 #'
 #' @seealso [fh]
@@ -609,10 +609,10 @@ download_fh <- function(url,
                         ...) {
 
   status <- year <- pr <- cl <- fh_total <- NULL
-  indicator <- value <- pr_1972 <- country <- status_2019 <- NULL
+  indicator <- value <- country <- NULL
 
   if(missing(url)) {
-    url <- "https://freedomhouse.org/sites/default/files/2020-02/2020_Country_and_Territory_Ratings_and_Statuses_FIW1973-2020.xlsx"
+    url <- "https://freedomhouse.org/sites/default/files/2021-02/Country_and_Territory_Ratings_and_Statuses_FIW1973-2021.xlsx"
   }
 
 
@@ -645,7 +645,7 @@ download_fh <- function(url,
   if(verbose) {
     message(sprintf("Original dataset has %d rows, but is not in country-year format",
                     nrow(data)))
-    message("Processing the FH 2020 data - putting it in country-year format, adding state system info...")
+    message("Processing the FH 2021 data - putting it in country-year format, adding state system info...")
   }
 
   nYears <- (ncol(data) - 1)/3
@@ -658,7 +658,7 @@ download_fh <- function(url,
   # melt the data, split the variable_year column and voila!
 
   data <- data %>%
-    tidyr::pivot_longer(names_to = "indicator", values_to = "value", pr_1972:status_2019,
+    tidyr::pivot_longer(names_to = "indicator", values_to = "value", dplyr::matches("[12][0-9]{3}"),
                         values_transform = list(value = as.character)) %>%
     tidyr::separate(indicator, into = c("status", "year"), sep ="_")  %>%
     filter(!is.na(value)) %>%
@@ -756,7 +756,7 @@ download_fh_electoral <- function(url,
     url_2020 = "https://freedomhouse.org/sites/default/files/2020-02/2020_List_of_Electoral_Democracies_FIW_2020.xlsx"
   }
 
-  indicator <- value <- electoral_1989 <- electoral_2016 <- electoral_dem <- year <- NULL
+  indicator <- value <- electoral_dem <- year <- NULL
   electoral <- country <- Country <- NULL
   `Electoral Democracy Status in FIW 2018` <- NULL
   `Electoral Democracy Status in FIW 2019` <- NULL
@@ -785,7 +785,7 @@ download_fh_electoral <- function(url,
   if(verbose) {
     message(sprintf("Original dataset has %d rows, but is not in country-year format",
                     nrow(data) + nrow(data_2018) + nrow(data_2019) + nrow(data_2020)))
-    message("Processing the FH Electoral Democracies 2017-2020 data - putting it in country-year format, adding state system info...")
+    message("Processing the FH Electoral Democracies 1989-2020 data - putting it in country-year format, adding state system info...")
   }
 
   names(data) <- c('country', paste("electoral", 1989:2016, sep = "_"))
@@ -793,7 +793,7 @@ download_fh_electoral <- function(url,
   # melt the data, split the variable_year column and voila!
 
   data <- suppressWarnings(data %>%
-    tidyr::gather(indicator, value, electoral_1989:electoral_2016) %>%
+    tidyr::gather(indicator, value, dplyr::matches("electoral_[0-9]{4}")) %>%
     tidyr::separate(indicator, into = c("electoral_dem", "year"), sep ="_")  %>%
     filter(!is.na(value)) %>%
     tidyr::spread(electoral_dem, value) %>%
@@ -874,20 +874,20 @@ download_fh_electoral <- function(url,
    standardize_columns(fh_electoral, country, verbose = verbose)
 }
 
-#' Downloads the 2020 update of the Freedom House Freedom in the World All
-#' Data 2013-2020 file and processes it using [country_year_coder].
+#' Downloads the 2021 update of the Freedom House Freedom in the World All
+#' Data 2013-2021 file and processes it using [country_year_coder].
 #'
 #' The original data is available at
 #' [https://freedomhouse.org/report-types/freedom-world](https://freedomhouse.org/report/freedom-world)
 #'
 #' @param url The URL of the dataset. Defaults to
-#'   \url{https://freedomhouse.org/sites/default/files/2020-02/2020_All_Data_FIW_2013-2020.xlsx}
+#'   \url{https://freedomhouse.org/sites/default/files/2021-02/All_data_FIW_2013-2021.xlsx}
 #'
 #'
 #'
 #' @inheritParams redownload_blm
 #'
-#' @return A time-series tidy version of the FH "all data 2013-2020" dataset,
+#' @return A time-series tidy version of the FH "all data 2013-2021" dataset,
 #'   with the following variables:
 #'
 #'   * country: The original country name.
@@ -1037,7 +1037,7 @@ download_fh_electoral <- function(url,
 #' @family Freedom House
 #' @family ordinal democracy indexes
 #' @source The "Freedom in the World" dataset from Freedom House, updated to
-#'   2019 (Freedom in the World 2020 Report). Original data and methodology is
+#'   2020 (Freedom in the World 2021 Report). Original data and methodology is
 #'   available at \url{https://freedomhouse.org/report/freedom-world}
 #'
 #' @seealso [fh]
@@ -1055,7 +1055,7 @@ download_fh_full <- function(url,
   status <- year <- country <- edition <- NULL
 
   if(missing(url)) {
-    url <- "https://freedomhouse.org/sites/default/files/2020-02/2020_All_Data_FIW_2013-2020.xlsx"
+    url <- "https://freedomhouse.org/sites/default/files/2021-02/All_data_FIW_2013-2021.xlsx"
   }
 
 
@@ -1075,7 +1075,7 @@ download_fh_full <- function(url,
   if(verbose) {
     message(sprintf("Original dataset has %d rows",
                     nrow(data)))
-    message("Processing the FH full 2013-2020 data - adding state system info, fixing column names...")
+    message("Processing the FH full 2013-2021 data - adding state system info, fixing column names...")
   }
 
   names(data) <- c("country", "region", "country_or_territory",
@@ -1164,8 +1164,9 @@ download_fh_full <- function(url,
 #'
 #' @param url The URL of the googlesheet where the REIGN dataset lives. Defaults
 #'   to
-#'   \url{https://docs.google.com/spreadsheets/d/1mrtORyhXw9TJMBYLAGPrikA4VDpla_Eq7L-NsEQ5VXg/edit#gid=1765819258}.
+#'   \url{https://github.com/OEFDataScience/REIGN.github.io/blob/gh-pages/data_sets/regime_list.csv?raw=true}.
 #'    This is fragile - if someone "unpublishes" the sheet,it may cease to work.
+#'
 #' @inheritParams redownload_blm
 #'
 #' @return A [tibble] with the REIGN dataset, plus additional state system
@@ -1331,7 +1332,7 @@ download_reign <- function(url,
                                    TRUE ~ gwf_country)) %>%
     group_by_all() %>%
     mutate(year = list(lubridate::year(Start):lubridate::year(End))) %>%
-    tidyr::unnest() %>%
+    tidyr::unnest(cols = c(year)) %>%
     ungroup() %>%
     # filter(year < lubridate::year(lubridate::now())) %>% # If excluding the 2017 countries
     country_year_coder(gwf_country,
