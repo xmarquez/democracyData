@@ -4,7 +4,7 @@
 \alias{download_wgi_voice_and_accountability}
 \alias{wgi}
 \alias{wgi_democracy}
-\title{Download the latest version (data up to 2018) of the Democracy, Voice, and
+\title{Download the latest version (data up to 2019) of the Democracy, Voice, and
 Accountability index from the World Governance Indicators and process it via
 \link{country_year_coder}}
 \source{
@@ -31,7 +31,7 @@ Default is \code{FALSE}.}
 }
 \value{
 A dataset containing the country-year version of the latest update
-(to 2018) of the World Governance Indicators "Democracy, Voice and
+(to 2019) of the World Governance Indicators "Democracy, Voice and
 Accountability" Index, compiled by Daniel Kaufmann and Aart Kraay. The
 original data are available at
 http://info.worldbank.org/governance/wgi/index.aspx#home, along with a full
@@ -74,7 +74,7 @@ percentile rank terms.}
 percentile rank terms} }
 }
 \description{
-Download the latest version (data up to 2018) of the Democracy, Voice, and
+Download the latest version (data up to 2019) of the Democracy, Voice, and
 Accountability index from the World Governance Indicators and process it via
 \link{country_year_coder}
 }

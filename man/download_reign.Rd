@@ -15,7 +15,7 @@ download_reign(url, verbose = TRUE, return_raw = FALSE, ...)
 \arguments{
 \item{url}{The URL of the googlesheet where the REIGN dataset lives. Defaults
 to
-\url{https://docs.google.com/spreadsheets/d/1mrtORyhXw9TJMBYLAGPrikA4VDpla_Eq7L-NsEQ5VXg/edit#gid=1765819258}.
+\url{https://github.com/OEFDataScience/REIGN.github.io/blob/gh-pages/data_sets/regime_list.csv?raw=true}.
 This is fragile - if someone "unpublishes" the sheet,it may cease to work.}
 
 \item{verbose}{Whether to print a running commentary of what the function is
