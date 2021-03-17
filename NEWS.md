@@ -1,3 +1,23 @@
+# democracyData 0.2.6
+
+* Updated the Freedom House data (2021 with data up to 2020), updating `download_fh` and `download_fh_full`, and updated the documentation of these functions and the citation info for the FH data. (The List of Electoral Democracies downloaded via `download_fh_electoral` does not appear to have been updated by Freedom House yet).
+
+* Updated `download_wgi_voice_and_accountability` to download data up to the latest year (2019), and fixed the documentation of the function.
+
+* Updated the REIGN dataset documentation.
+
+* Updated `eiu`, the EIU democracy index (2021 edition, data up to 2020), and updated its citation info.
+
+* Minor code improvements.
+
+* Fixed README references.
+
+* Added tests of redownload_* family of functions.
+
+* Added Github Actions badge.
+
+* Minor changes to `generate_democracy_scores_dataset` to avoid deprecated `dplyr::rename_at`.
+
 # democracyData 0.2.5
 
 * Added the Bertelsmann transformation Index of democracy (`bti`) and made improvements to `generate_democracy_scores_dataset`.
