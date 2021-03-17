@@ -10,3 +10,4 @@
 ^\.git$
 ^.git$
 ^cache$
+^\.github$
