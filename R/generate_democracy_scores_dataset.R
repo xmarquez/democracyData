@@ -431,7 +431,7 @@ generate_democracy_scores_dataset <- function(datasets,
         message("Adding fh_pmm data")
       }
       democracy_data <- democracyData::fh_pmm %>%
-        rename_at("pmm_freedomhouse", quo(c("pmm_fh"))) %>%
+        rename_with(~"pmm_fh","pmm_freedomhouse") %>%
         tidyr::gather("measure", "value", "pmm_fh") %>%
         standardize_selection()
     }
@@ -444,7 +444,7 @@ generate_democracy_scores_dataset <- function(datasets,
         message("Adding Freedom House electoral democracies data")
       }
       democracy_data <- download_fh_electoral(verbose = verbose) %>%
-        rename_at("electoral", quo(c("fh_electoral"))) %>%
+        rename_with(~"fh_electoral", "electoral") %>%
         tidyr::gather("measure", "value", "fh_electoral") %>%
         standardize_selection()
     }
@@ -468,8 +468,8 @@ generate_democracy_scores_dataset <- function(datasets,
       }
       democracy_data <- suppressWarnings(democracyData::polityIV %>%
                                            mutate_at("polity", ~ifelse(. < -10, NA, .)) %>%
-                                           rename_at(vars(c("polity", "polity2")),
-                                                     quos(c("polityIV","polity2IV"))) %>%
+                                           rename_with(~"polityIV", "polity") %>%
+                                           rename_with(~"polity2IV", "polity2") %>%
                          tidyr::gather("measure", "value", "polityIV","polity2IV") %>%
                          standardize_selection())
     }
@@ -502,7 +502,7 @@ generate_democracy_scores_dataset <- function(datasets,
 
       democracy_data <- reign %>%
         mutate_at("gwf_regimetype",
-                  funs("reign_democracy" = (. %in% c("presidential",
+                  list("reign_democracy" = ~(. %in% c("presidential",
                                                      "parliamentary")))) %>%
         tidyr::gather("measure", "value",
                       "reign_democracy") %>%
@@ -517,7 +517,7 @@ generate_democracy_scores_dataset <- function(datasets,
         message("Adding WGI data")
       }
       democracy_data <- download_wgi_voice_and_accountability(verbose = verbose) %>%
-        rename_at("Estimate", quo(c("wgi_democracy"))) %>%
+        rename_with(~"wgi_democracy", "Estimate") %>%
         tidyr::gather("measure", "value",
                       "wgi_democracy") %>%
         standardize_selection()
@@ -540,8 +540,7 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- anckar %>%
-      rename_at(vars(c("democracy")),
-                quos(c("anckar_democracy"))) %>%
+      rename_with(~"anckar_democracy", "democracy") %>%
       tidyr::gather("measure", "value", "anckar_democracy") %>%
       standardize_selection()
   }
@@ -604,9 +603,9 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- suppressWarnings(bmr %>%
-      rename_at(vars(c("democracy", "democracy_omitteddata", "democracy_femalesuffrage")),
-                quos(c("bmr_democracy",
-                       "bmr_democracy_omitteddata", "bmr_democracy_femalesuffrage"))) %>%
+                                         rename_with(~"bmr_democracy", "democracy") %>%
+                                         rename_with(~"bmr_democracy_omitteddata", "democracy_omitteddata") %>%
+                                         rename_with(~"bmr_democracy_femalesuffrage", "democracy_femalesuffrage") %>%
       tidyr::gather("measure", "value", "bmr_democracy",
                     "bmr_democracy_omitteddata", "bmr_democracy_femalesuffrage") %>%
       standardize_selection())
@@ -629,7 +628,7 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- bnr_extended %>%
-      rename_at("bnr", quo(c("bnr_extended"))) %>%
+      rename_with(~"bnr_extended", "bnr") %>%
       tidyr::gather("measure", "value", "bnr_extended") %>%
       standardize_selection()
   }
@@ -648,7 +647,7 @@ generate_democracy_scores_dataset <- function(datasets,
 
     democracy_data <- bnr %>%
       mutate(across("event", list("bnr" = ~(1 - .)))) %>%
-      rename_at("event_bnr", quo(c("bnr"))) %>%
+      rename_with(~"bnr", "event_bnr") %>%
       tidyr::gather("measure", "value", "bnr") %>%
       standardize_selection()
 
@@ -670,8 +669,7 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- suppressWarnings(bti %>%
-                                         rename_at(vars(c("SI_Democracy_Status")),
-                                                   quos(c("bti_democracy"))) %>%
+                                         rename_with(~"bti_democracy", "SI_Democracy_Status") %>%
                                          tidyr::gather("measure", "value", "bti_democracy") %>%
                                          standardize_selection())
   }
@@ -729,9 +727,9 @@ generate_democracy_scores_dataset <- function(datasets,
 
     democracy_data <- gwf_all_extended %>%
       mutate_at("gwf_nonautocracy",
-                funs("gwf_democracy_extended" = ifelse(. == "democracy" & !is.na(.), 1, 0))) %>%
+                list("gwf_democracy_extended" = ~ifelse(. == "democracy" & !is.na(.), 1, 0))) %>%
       mutate_at("gwf_nonautocracy",
-                funs("gwf_democracy_extended_strict" = ifelse(is.na(.), 0,
+                list("gwf_democracy_extended_strict" = ~ifelse(is.na(.), 0,
                                                               ifelse(. == "democracy", 1, NA)))) %>%
       tidyr::gather("measure", "value",
                     "gwf_democracy_extended",
@@ -754,9 +752,9 @@ generate_democracy_scores_dataset <- function(datasets,
 
     democracy_data <- gwf_all %>%
       mutate_at(c("gwf_nonautocracy"),
-                funs("gwf_democracy" = ifelse(. == "democracy"  & !is.na(.), 1, 0)))  %>%
+                list("gwf_democracy" = ~ifelse(. == "democracy"  & !is.na(.), 1, 0)))  %>%
       mutate_at("gwf_nonautocracy",
-                funs("gwf_democracy_strict" = ifelse(is.na(.), 0,
+                list("gwf_democracy_strict" = ~ifelse(is.na(.), 0,
                                                      ifelse(. == "democracy", 1, NA)))) %>%
       tidyr::gather("measure", "value",
                     "gwf_democracy",
@@ -828,7 +826,7 @@ generate_democracy_scores_dataset <- function(datasets,
 
     democracy_data <- magaloni_extended %>%
       mutate_at(c("regime_nr"),
-                funs("magaloni_democracy_extended" = (. == "Democracy"))) %>%
+                list("magaloni_democracy_extended" = ~(. == "Democracy"))) %>%
       tidyr::gather("measure", "value", "magaloni_democracy_extended") %>%
       standardize_selection()
 
@@ -848,7 +846,7 @@ generate_democracy_scores_dataset <- function(datasets,
 
     democracy_data <- magaloni %>%
       mutate_at(c("regime_nr"),
-                funs("magaloni_democracy" = (. == "Democracy"))) %>%
+                list("magaloni_democracy" = ~(. == "Democracy"))) %>%
       tidyr::gather("measure", "value", "magaloni_democracy") %>%
       standardize_selection()
 
@@ -902,7 +900,7 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- pacl %>%
-      rename_at("democracy", quo(c("pacl"))) %>%
+      rename_with(~"pacl", "democracy") %>%
       tidyr::gather("measure", "value", "pacl") %>%
       standardize_selection()
   }
@@ -969,8 +967,8 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- polyarchy %>%
-      rename_at("cont", quo(c("polyarchy_original_contestation"))) %>%
-      mutate_at("poly", funs("polyarchy_original_polyarchy" = (10 - .))) %>%
+      rename_with(~"polyarchy_original_contestation", "cont") %>%
+      mutate_at("poly", list("polyarchy_original_polyarchy" = ~(10 - .))) %>%
       tidyr::gather("measure", "value",
                     "polyarchy_original_contestation",
                     "polyarchy_original_polyarchy") %>%
@@ -1000,9 +998,8 @@ generate_democracy_scores_dataset <- function(datasets,
       polyarchy_dimensions  <- democracyData::polyarchy_dimensions
     }
     democracy_data <- suppressWarnings(polyarchy_dimensions %>%
-      rename_at(c("CONTEST", "INCLUS"),
-                quos(c("polyarchy_contestation_dimension",
-                       "polyarchy_inclusion_dimension"))) %>%
+      rename_with(~"polyarchy_contestation_dimension", "CONTEST") %>%
+      rename_with(~"polyarchy_inclusion_dimension", "INCLUS") %>%
       tidyr::gather("measure", "value",
                     "polyarchy_contestation_dimension",
                     "polyarchy_inclusion_dimension") %>%
@@ -1030,7 +1027,7 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- prc_gasiorowski %>%
-      mutate_at("regime", funs("prc" = plyr::mapvalues(.,
+      mutate_at("regime", list("prc" = ~plyr::mapvalues(.,
                                    from = c("A", "D", "S", "T"),
                                    to = c(1, 4, 3, NA)))) %>%
       tidyr::gather("measure", "value",
@@ -1063,8 +1060,8 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- PIPE %>%
-      rename_at(c("democracy2", "regime"),
-                quos(c("PIPE_democracy","PIPE_regime"))) %>%
+      rename_with(~"PIPE_democracy", "democracy2") %>%
+      rename_with(~"PIPE_regime", "regime") %>%
       tidyr::gather("measure", "value",
                     "PIPE_democracy",
                     "PIPE_regime") %>%
@@ -1093,7 +1090,7 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding SVMDI 2016 data")
     }
     democracy_data <- democracyData::svmdi_2016 %>%
-      rename_at("svmdi", quo(c("svmdi_2016"))) %>%
+      rename_with(~"svmdi_2016", "svmdi") %>%
       tidyr::gather("measure", "value",
                     "svmdi_2016") %>%
       standardize_selection()
@@ -1107,7 +1104,7 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding Svolik data")
     }
     democracy_data <- democracyData::svolik_regime %>%
-      rename_at("regime_numeric", quo(c("svolik_democracy"))) %>%
+      rename_with(~"svolik_democracy", "regime_numeric") %>%
       tidyr::gather("measure", "value",
                     "svolik_democracy") %>%
       standardize_selection()
@@ -1125,8 +1122,8 @@ generate_democracy_scores_dataset <- function(datasets,
     uds_2014 <- democracyData::uds_2014
 
     democracy_data <- uds_2014 %>%
-      rename_at(c("mean", "median"),
-                quos(c("uds_2014_mean", "uds_2014_median"))) %>%
+      rename_with(~"uds_2014_mean", "mean") %>%
+      rename_with(~"uds_2014_median", "median") %>%
       tidyr::gather("measure", "value",
                     "uds_2014_mean", "uds_2014_median") %>%
       standardize_selection()
@@ -1139,8 +1136,8 @@ generate_democracy_scores_dataset <- function(datasets,
     uds_2011 <- democracyData::uds_2011
 
     democracy_data <- uds_2011  %>%
-      rename_at(c("mean", "median"),
-                quos(c("uds_2011_mean", "uds_2011_median"))) %>%
+      rename_with(~"uds_2011_mean", "mean") %>%
+      rename_with(~"uds_2011_median", "median") %>%
       tidyr::gather("measure", "value",
                     "uds_2011_mean", "uds_2011_median") %>%
       standardize_selection()
@@ -1153,8 +1150,8 @@ generate_democracy_scores_dataset <- function(datasets,
     uds_2010 <- democracyData::uds_2010
 
     democracy_data <- uds_2010  %>%
-      rename_at(c("mean", "median"),
-                quos(c("uds_2010_mean", "uds_2010_median"))) %>%
+      rename_with(~"uds_2010_mean", "mean") %>%
+      rename_with(~"uds_2010_median", "median") %>%
       tidyr::gather("measure", "value",
                     "uds_2010_mean", "uds_2010_median") %>%
       standardize_selection()
@@ -1177,7 +1174,7 @@ generate_democracy_scores_dataset <- function(datasets,
 
     democracy_data <- ulfelder_extended %>%
       mutate_at("rgjtype",
-                funs("ulfelder_democracy_extended" = plyr::mapvalues(.,
+                list("ulfelder_democracy_extended" = ~plyr::mapvalues(.,
                                                                      from = c("-99", "A", "D", "NS"),
                                                                      to = c(NA, 0, 1, NA)))) %>%
       tidyr::gather("measure", "value",
@@ -1200,7 +1197,7 @@ generate_democracy_scores_dataset <- function(datasets,
 
     democracy_data <- ulfelder %>%
       mutate_at("rgjtype",
-                funs("ulfelder_democracy" = plyr::mapvalues(.,
+                list("ulfelder_democracy" = ~plyr::mapvalues(.,
                                                             from = c("-99", "A", "D", "NS"),
                                                             to = c(NA, 0, 1, NA)))) %>%
       tidyr::gather("measure", "value",
@@ -1267,8 +1264,8 @@ generate_democracy_scores_dataset <- function(datasets,
     democracy_data <- wahman_teorell_hadenius %>%
       mutate(across("regime1ny", list("wth_democ1" = ~(haven::zap_label(.) == 100)))) %>%
       mutate(across("regimenyrobust", list("wth_democrobust" = ~(haven::zap_label(.) == 100)))) %>%
-      rename_at(c("regime1ny_wth_democ1", "regimenyrobust_wth_democrobust"),
-                quos(c("uds_2010_mean", "wth_democrobust"))) %>%
+      rename_with(~"wth_democ1", "regime1ny_wth_democ1") %>%
+      rename_with(~"wth_democrobust", "regimenyrobust_wth_democrobust") %>%
       tidyr::gather("measure", "value",
                     starts_with("wth_")) %>%
       standardize_selection()
