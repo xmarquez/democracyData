@@ -5,11 +5,11 @@
 \alias{eiu}
 \title{The Economist Intelligence Unit's Democracy Index}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 2004 rows and 7 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 2171 rows and 7 columns.
 }
 \source{
-The economist Intelligence Unit. 2020. Democracy Index 2019: A year
-of democratic setbacks and popular protest.
+The economist Intelligence Unit. 2020. Democracy
+Index 2020: In sickness and in health?
 \url{https://www.eiu.com/topic/democracy-index}.
 }
 \usage{
@@ -17,8 +17,8 @@ eiu
 }
 \description{
 A dataset containing the country-year version of the democracy index compiled
-by the Economist Intelligence Unit, 2006-2019. From the report "Democracy
-Index 2019: A year of democratic setbacks and popular protest", available at
+by the Economist Intelligence Unit, 2006-2020. From the report "Democracy
+Index 2020: In sickness and in health?", available at
 \url{https://www.eiu.com/topic/democracy-index}.
 }
 \details{
