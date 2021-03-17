@@ -1,0 +1,2172 @@
+country,eiu,year
+Canada,9.24,2020
+Canada,9.22,2019
+Canada,9.15,2018
+Canada,9.15,2017
+Canada,9.15,2016
+Canada,9.08,2015
+Canada,9.08,2014
+Canada,9.08,2013
+Canada,9.08,2012
+Canada,9.08,2011
+Canada,9.08,2010
+Canada,9.07,2008
+Canada,9.07,2006
+US,7.92,2020
+US,7.96,2019
+US,7.96,2018
+US,7.98,2017
+US,7.98,2016
+US,8.05,2015
+US,8.11,2014
+US,8.11,2013
+US,8.11,2012
+US,8.11,2011
+US,8.18,2010
+US,8.22,2008
+US,8.22,2006
+Austria,8.16,2020
+Austria,8.29,2019
+Austria,8.29,2018
+Austria,8.42,2017
+Austria,8.41,2016
+Austria,8.54,2015
+Austria,8.54,2014
+Austria,8.48,2013
+Austria,8.62,2012
+Austria,8.49,2011
+Austria,8.49,2010
+Austria,8.49,2008
+Austria,8.69,2006
+Belgium,7.51,2020
+Belgium,7.64,2019
+Belgium,7.78,2018
+Belgium,7.78,2017
+Belgium,7.77,2016
+Belgium,7.93,2015
+Belgium,7.93,2014
+Belgium,8.05,2013
+Belgium,8.05,2012
+Belgium,8.05,2011
+Belgium,8.05,2010
+Belgium,8.16,2008
+Belgium,8.15,2006
+Cyprus,7.56,2020
+Cyprus,7.59,2019
+Cyprus,7.59,2018
+Cyprus,7.59,2017
+Cyprus,7.65,2016
+Cyprus,7.53,2015
+Cyprus,7.4,2014
+Cyprus,7.29,2013
+Cyprus,7.29,2012
+Cyprus,7.29,2011
+Cyprus,7.29,2010
+Cyprus,7.7,2008
+Cyprus,7.6,2006
+Denmark,9.15,2020
+Denmark,9.22,2019
+Denmark,9.22,2018
+Denmark,9.22,2017
+Denmark,9.2,2016
+Denmark,9.11,2015
+Denmark,9.11,2014
+Denmark,9.38,2013
+Denmark,9.52,2012
+Denmark,9.52,2011
+Denmark,9.52,2010
+Denmark,9.52,2008
+Denmark,9.52,2006
+Finland,9.2,2020
+Finland,9.25,2019
+Finland,9.14,2018
+Finland,9.03,2017
+Finland,9.03,2016
+Finland,9.03,2015
+Finland,9.03,2014
+Finland,9.03,2013
+Finland,9.06,2012
+Finland,9.06,2011
+Finland,9.19,2010
+Finland,9.25,2008
+Finland,9.25,2006
+France,7.99,2020
+France,8.12,2019
+France,7.8,2018
+France,7.8,2017
+France,7.92,2016
+France,7.92,2015
+France,8.04,2014
+France,7.92,2013
+France,7.88,2012
+France,7.77,2011
+France,7.77,2010
+France,8.07,2008
+France,8.07,2006
+Germany,8.67,2020
+Germany,8.68,2019
+Germany,8.68,2018
+Germany,8.61,2017
+Germany,8.63,2016
+Germany,8.64,2015
+Germany,8.64,2014
+Germany,8.31,2013
+Germany,8.34,2012
+Germany,8.34,2011
+Germany,8.38,2010
+Germany,8.82,2008
+Germany,8.82,2006
+Greece,7.39,2020
+Greece,7.43,2019
+Greece,7.29,2018
+Greece,7.29,2017
+Greece,7.23,2016
+Greece,7.45,2015
+Greece,7.45,2014
+Greece,7.65,2013
+Greece,7.65,2012
+Greece,7.65,2011
+Greece,7.92,2010
+Greece,8.13,2008
+Greece,8.13,2006
+Iceland,9.37,2020
+Iceland,9.58,2019
+Iceland,9.58,2018
+Iceland,9.58,2017
+Iceland,9.5,2016
+Iceland,9.58,2015
+Iceland,9.58,2014
+Iceland,9.65,2013
+Iceland,9.65,2012
+Iceland,9.65,2011
+Iceland,9.65,2010
+Iceland,9.65,2008
+Iceland,9.71,2006
+Ireland,9.05,2020
+Ireland,9.24,2019
+Ireland,9.15,2018
+Ireland,9.15,2017
+Ireland,9.15,2016
+Ireland,8.85,2015
+Ireland,8.72,2014
+Ireland,8.68,2013
+Ireland,8.56,2012
+Ireland,8.56,2011
+Ireland,8.79,2010
+Ireland,9.01,2008
+Ireland,9.01,2006
+Italy,7.74,2020
+Italy,7.52,2019
+Italy,7.71,2018
+Italy,7.98,2017
+Italy,7.98,2016
+Italy,7.98,2015
+Italy,7.85,2014
+Italy,7.85,2013
+Italy,7.74,2012
+Italy,7.74,2011
+Italy,7.83,2010
+Italy,7.98,2008
+Italy,7.73,2006
+Luxembourg,8.68,2020
+Luxembourg,8.81,2019
+Luxembourg,8.81,2018
+Luxembourg,8.81,2017
+Luxembourg,8.81,2016
+Luxembourg,8.88,2015
+Luxembourg,8.88,2014
+Luxembourg,8.88,2013
+Luxembourg,8.88,2012
+Luxembourg,8.88,2011
+Luxembourg,8.88,2010
+Luxembourg,9.1,2008
+Luxembourg,9.1,2006
+Malta,7.68,2020
+Malta,7.95,2019
+Malta,8.21,2018
+Malta,8.15,2017
+Malta,8.39,2016
+Malta,8.39,2015
+Malta,8.39,2014
+Malta,8.28,2013
+Malta,8.28,2012
+Malta,8.28,2011
+Malta,8.28,2010
+Malta,8.39,2008
+Malta,8.39,2006
+Netherlands,8.96,2020
+Netherlands,9.01,2019
+Netherlands,8.89,2018
+Netherlands,8.89,2017
+Netherlands,8.8,2016
+Netherlands,8.92,2015
+Netherlands,8.92,2014
+Netherlands,8.84,2013
+Netherlands,8.99,2012
+Netherlands,8.99,2011
+Netherlands,8.99,2010
+Netherlands,9.53,2008
+Netherlands,9.66,2006
+Norway,9.81,2020
+Norway,9.87,2019
+Norway,9.87,2018
+Norway,9.87,2017
+Norway,9.93,2016
+Norway,9.93,2015
+Norway,9.93,2014
+Norway,9.93,2013
+Norway,9.93,2012
+Norway,9.8,2011
+Norway,9.8,2010
+Norway,9.68,2008
+Norway,9.55,2006
+Portugal,7.9,2020
+Portugal,8.03,2019
+Portugal,7.84,2018
+Portugal,7.84,2017
+Portugal,7.86,2016
+Portugal,7.79,2015
+Portugal,7.79,2014
+Portugal,7.65,2013
+Portugal,7.92,2012
+Portugal,7.81,2011
+Portugal,8.02,2010
+Portugal,8.05,2008
+Portugal,8.16,2006
+Spain,8.12,2020
+Spain,8.18,2019
+Spain,8.08,2018
+Spain,8.08,2017
+Spain,8.3,2016
+Spain,8.3,2015
+Spain,8.05,2014
+Spain,8.02,2013
+Spain,8.02,2012
+Spain,8.02,2011
+Spain,8.16,2010
+Spain,8.45,2008
+Spain,8.34,2006
+Sweden,9.26,2020
+Sweden,9.39,2019
+Sweden,9.39,2018
+Sweden,9.39,2017
+Sweden,9.39,2016
+Sweden,9.45,2015
+Sweden,9.73,2014
+Sweden,9.73,2013
+Sweden,9.73,2012
+Sweden,9.5,2011
+Sweden,9.5,2010
+Sweden,9.88,2008
+Sweden,9.88,2006
+Switzerland,8.83,2020
+Switzerland,9.03,2019
+Switzerland,9.03,2018
+Switzerland,9.03,2017
+Switzerland,9.09,2016
+Switzerland,9.09,2015
+Switzerland,9.09,2014
+Switzerland,9.09,2013
+Switzerland,9.09,2012
+Switzerland,9.09,2011
+Switzerland,9.09,2010
+Switzerland,9.15,2008
+Switzerland,9.02,2006
+Turkey,4.48,2020
+Turkey,4.09,2019
+Turkey,4.37,2018
+Turkey,4.88,2017
+Turkey,5.04,2016
+Turkey,5.12,2015
+Turkey,5.12,2014
+Turkey,5.63,2013
+Turkey,5.76,2012
+Turkey,5.73,2011
+Turkey,5.73,2010
+Turkey,5.69,2008
+Turkey,5.7,2006
+UK,8.54,2020
+UK,8.52,2019
+UK,8.53,2018
+UK,8.53,2017
+UK,8.36,2016
+UK,8.31,2015
+UK,8.31,2014
+UK,8.31,2013
+UK,8.21,2012
+UK,8.16,2011
+UK,8.16,2010
+UK,8.15,2008
+UK,8.08,2006
+Albania,6.08,2020
+Albania,5.89,2019
+Albania,5.98,2018
+Albania,5.98,2017
+Albania,5.91,2016
+Albania,5.91,2015
+Albania,5.67,2014
+Albania,5.67,2013
+Albania,5.67,2012
+Albania,5.81,2011
+Albania,5.86,2010
+Albania,5.91,2008
+Albania,5.91,2006
+Armenia,5.35,2020
+Armenia,5.54,2019
+Armenia,4.79,2018
+Armenia,4.11,2017
+Armenia,3.88,2016
+Armenia,4,2015
+Armenia,4.13,2014
+Armenia,4.02,2013
+Armenia,4.09,2012
+Armenia,4.09,2011
+Armenia,4.09,2010
+Armenia,4.09,2008
+Armenia,4.15,2006
+Azerbaijan,2.68,2020
+Azerbaijan,2.75,2019
+Azerbaijan,2.65,2018
+Azerbaijan,2.65,2017
+Azerbaijan,2.65,2016
+Azerbaijan,2.71,2015
+Azerbaijan,2.83,2014
+Azerbaijan,3.06,2013
+Azerbaijan,3.15,2012
+Azerbaijan,3.15,2011
+Azerbaijan,3.15,2010
+Azerbaijan,3.19,2008
+Azerbaijan,3.31,2006
+Belarus,2.59,2020
+Belarus,2.48,2019
+Belarus,3.13,2018
+Belarus,3.13,2017
+Belarus,3.54,2016
+Belarus,3.62,2015
+Belarus,3.69,2014
+Belarus,3.04,2013
+Belarus,3.04,2012
+Belarus,3.16,2011
+Belarus,3.34,2010
+Belarus,3.34,2008
+Belarus,3.34,2006
+Bosnia and Hercegovina,4.84,2020
+Bosnia and Hercegovina,4.86,2019
+Bosnia and Hercegovina,4.98,2018
+Bosnia and Hercegovina,4.87,2017
+Bosnia and Hercegovina,4.87,2016
+Bosnia and Hercegovina,4.83,2015
+Bosnia and Hercegovina,4.78,2014
+Bosnia and Hercegovina,5.02,2013
+Bosnia and Hercegovina,5.11,2012
+Bosnia and Hercegovina,5.24,2011
+Bosnia and Hercegovina,5.32,2010
+Bosnia and Hercegovina,5.7,2008
+Bosnia and Hercegovina,5.78,2006
+Bulgaria,6.71,2020
+Bulgaria,7.03,2019
+Bulgaria,7.03,2018
+Bulgaria,7.03,2017
+Bulgaria,7.01,2016
+Bulgaria,7.14,2015
+Bulgaria,6.73,2014
+Bulgaria,6.83,2013
+Bulgaria,6.72,2012
+Bulgaria,6.78,2011
+Bulgaria,6.84,2010
+Bulgaria,7.02,2008
+Bulgaria,7.1,2006
+Croatia,6.5,2020
+Croatia,6.57,2019
+Croatia,6.57,2018
+Croatia,6.63,2017
+Croatia,6.75,2016
+Croatia,6.93,2015
+Croatia,6.93,2014
+Croatia,6.93,2013
+Croatia,6.93,2012
+Croatia,6.73,2011
+Croatia,6.81,2010
+Croatia,7.04,2008
+Croatia,7.04,2006
+Czech Republic,7.67,2020
+Czech Republic,7.69,2019
+Czech Republic,7.69,2018
+Czech Republic,7.62,2017
+Czech Republic,7.82,2016
+Czech Republic,7.94,2015
+Czech Republic,7.94,2014
+Czech Republic,8.06,2013
+Czech Republic,8.19,2012
+Czech Republic,8.19,2011
+Czech Republic,8.19,2010
+Czech Republic,8.19,2008
+Czech Republic,8.17,2006
+Estonia,7.84,2020
+Estonia,7.9,2019
+Estonia,7.97,2018
+Estonia,7.79,2017
+Estonia,7.85,2016
+Estonia,7.85,2015
+Estonia,7.74,2014
+Estonia,7.61,2013
+Estonia,7.61,2012
+Estonia,7.61,2011
+Estonia,7.68,2010
+Estonia,7.68,2008
+Estonia,7.74,2006
+Georgia,5.31,2020
+Georgia,5.42,2019
+Georgia,5.5,2018
+Georgia,5.93,2017
+Georgia,5.93,2016
+Georgia,5.88,2015
+Georgia,5.82,2014
+Georgia,5.95,2013
+Georgia,5.53,2012
+Georgia,4.74,2011
+Georgia,4.59,2010
+Georgia,4.62,2008
+Georgia,4.9,2006
+Hungary,6.56,2020
+Hungary,6.63,2019
+Hungary,6.63,2018
+Hungary,6.64,2017
+Hungary,6.72,2016
+Hungary,6.84,2015
+Hungary,6.9,2014
+Hungary,6.96,2013
+Hungary,6.96,2012
+Hungary,7.04,2011
+Hungary,7.21,2010
+Hungary,7.44,2008
+Hungary,7.53,2006
+Kazakhstan,3.14,2020
+Kazakhstan,2.94,2019
+Kazakhstan,2.94,2018
+Kazakhstan,3.06,2017
+Kazakhstan,3.06,2016
+Kazakhstan,3.06,2015
+Kazakhstan,3.17,2014
+Kazakhstan,3.06,2013
+Kazakhstan,2.95,2012
+Kazakhstan,3.24,2011
+Kazakhstan,3.3,2010
+Kazakhstan,3.45,2008
+Kazakhstan,3.62,2006
+Kyrgyz Republic,4.21,2020
+Kyrgyz Republic,4.89,2019
+Kyrgyz Republic,5.11,2018
+Kyrgyz Republic,5.11,2017
+Kyrgyz Republic,4.93,2016
+Kyrgyz Republic,5.33,2015
+Kyrgyz Republic,5.24,2014
+Kyrgyz Republic,4.69,2013
+Kyrgyz Republic,4.69,2012
+Kyrgyz Republic,4.34,2011
+Kyrgyz Republic,4.31,2010
+Kyrgyz Republic,4.05,2008
+Kyrgyz Republic,4.08,2006
+Latvia,7.24,2020
+Latvia,7.49,2019
+Latvia,7.38,2018
+Latvia,7.25,2017
+Latvia,7.31,2016
+Latvia,7.37,2015
+Latvia,7.48,2014
+Latvia,7.05,2013
+Latvia,7.05,2012
+Latvia,7.05,2011
+Latvia,7.05,2010
+Latvia,7.23,2008
+Latvia,7.37,2006
+Lithuania,7.13,2020
+Lithuania,7.5,2019
+Lithuania,7.5,2018
+Lithuania,7.41,2017
+Lithuania,7.47,2016
+Lithuania,7.54,2015
+Lithuania,7.54,2014
+Lithuania,7.54,2013
+Lithuania,7.24,2012
+Lithuania,7.24,2011
+Lithuania,7.24,2010
+Lithuania,7.36,2008
+Lithuania,7.43,2006
+Moldova,5.78,2020
+Moldova,5.75,2019
+Moldova,5.85,2018
+Moldova,5.94,2017
+Moldova,6.01,2016
+Moldova,6.35,2015
+Moldova,6.32,2014
+Moldova,6.32,2013
+Moldova,6.32,2012
+Moldova,6.32,2011
+Moldova,6.33,2010
+Moldova,6.5,2008
+Moldova,6.5,2006
+Montenegro,5.77,2020
+Montenegro,5.65,2019
+Montenegro,5.74,2018
+Montenegro,5.69,2017
+Montenegro,5.72,2016
+Montenegro,6.01,2015
+Montenegro,5.94,2014
+Montenegro,5.94,2013
+Montenegro,6.05,2012
+Montenegro,6.15,2011
+Montenegro,6.27,2010
+Montenegro,6.43,2008
+Montenegro,6.57,2006
+North Macedonia,5.89,2020
+North Macedonia,5.97,2019
+North Macedonia,5.87,2018
+North Macedonia,5.57,2017
+North Macedonia,5.23,2016
+North Macedonia,6.02,2015
+North Macedonia,6.25,2014
+North Macedonia,6.16,2013
+North Macedonia,6.16,2012
+North Macedonia,6.16,2011
+North Macedonia,6.16,2010
+North Macedonia,6.21,2008
+North Macedonia,6.33,2006
+Poland,6.85,2020
+Poland,6.62,2019
+Poland,6.67,2018
+Poland,6.67,2017
+Poland,6.83,2016
+Poland,7.09,2015
+Poland,7.47,2014
+Poland,7.12,2013
+Poland,7.12,2012
+Poland,7.12,2011
+Poland,7.05,2010
+Poland,7.3,2008
+Poland,7.3,2006
+Romania,6.4,2020
+Romania,6.49,2019
+Romania,6.38,2018
+Romania,6.44,2017
+Romania,6.62,2016
+Romania,6.68,2015
+Romania,6.68,2014
+Romania,6.54,2013
+Romania,6.54,2012
+Romania,6.54,2011
+Romania,6.6,2010
+Romania,7.06,2008
+Romania,7.06,2006
+Russia,3.31,2020
+Russia,3.11,2019
+Russia,2.94,2018
+Russia,3.17,2017
+Russia,3.24,2016
+Russia,3.31,2015
+Russia,3.39,2014
+Russia,3.59,2013
+Russia,3.74,2012
+Russia,3.92,2011
+Russia,4.26,2010
+Russia,4.48,2008
+Russia,5.02,2006
+Serbia,6.22,2020
+Serbia,6.41,2019
+Serbia,6.41,2018
+Serbia,6.41,2017
+Serbia,6.57,2016
+Serbia,6.71,2015
+Serbia,6.71,2014
+Serbia,6.67,2013
+Serbia,6.33,2012
+Serbia,6.33,2011
+Serbia,6.33,2010
+Serbia,6.49,2008
+Serbia,6.62,2006
+Slovakia,6.97,2020
+Slovakia,7.17,2019
+Slovakia,7.1,2018
+Slovakia,7.16,2017
+Slovakia,7.29,2016
+Slovakia,7.29,2015
+Slovakia,7.35,2014
+Slovakia,7.35,2013
+Slovakia,7.35,2012
+Slovakia,7.35,2011
+Slovakia,7.35,2010
+Slovakia,7.33,2008
+Slovakia,7.4,2006
+Slovenia,7.54,2020
+Slovenia,7.5,2019
+Slovenia,7.5,2018
+Slovenia,7.5,2017
+Slovenia,7.51,2016
+Slovenia,7.57,2015
+Slovenia,7.57,2014
+Slovenia,7.88,2013
+Slovenia,7.88,2012
+Slovenia,7.76,2011
+Slovenia,7.69,2010
+Slovenia,7.96,2008
+Slovenia,7.96,2006
+Tajikistan,1.94,2020
+Tajikistan,1.93,2019
+Tajikistan,1.93,2018
+Tajikistan,1.93,2017
+Tajikistan,1.89,2016
+Tajikistan,1.95,2015
+Tajikistan,2.37,2014
+Tajikistan,2.51,2013
+Tajikistan,2.51,2012
+Tajikistan,2.51,2011
+Tajikistan,2.51,2010
+Tajikistan,2.45,2008
+Tajikistan,2.45,2006
+Turkmenistan,1.72,2020
+Turkmenistan,1.72,2019
+Turkmenistan,1.72,2018
+Turkmenistan,1.72,2017
+Turkmenistan,1.83,2016
+Turkmenistan,1.83,2015
+Turkmenistan,1.83,2014
+Turkmenistan,1.72,2013
+Turkmenistan,1.72,2012
+Turkmenistan,1.72,2011
+Turkmenistan,1.72,2010
+Turkmenistan,1.72,2008
+Turkmenistan,1.83,2006
+Ukraine,5.81,2020
+Ukraine,5.9,2019
+Ukraine,5.69,2018
+Ukraine,5.69,2017
+Ukraine,5.7,2016
+Ukraine,5.7,2015
+Ukraine,5.42,2014
+Ukraine,5.84,2013
+Ukraine,5.91,2012
+Ukraine,5.94,2011
+Ukraine,6.3,2010
+Ukraine,6.94,2008
+Ukraine,6.94,2006
+Uzbekistan,2.12,2020
+Uzbekistan,2.01,2019
+Uzbekistan,2.01,2018
+Uzbekistan,1.95,2017
+Uzbekistan,1.95,2016
+Uzbekistan,1.95,2015
+Uzbekistan,2.45,2014
+Uzbekistan,1.72,2013
+Uzbekistan,1.72,2012
+Uzbekistan,1.74,2011
+Uzbekistan,1.74,2010
+Uzbekistan,1.74,2008
+Uzbekistan,1.85,2006
+Argentina,6.95,2020
+Argentina,7.02,2019
+Argentina,7.02,2018
+Argentina,6.96,2017
+Argentina,6.96,2016
+Argentina,7.02,2015
+Argentina,6.84,2014
+Argentina,6.84,2013
+Argentina,6.84,2012
+Argentina,6.84,2011
+Argentina,6.84,2010
+Argentina,6.63,2008
+Argentina,6.63,2006
+Bolivia,5.08,2020
+Bolivia,4.84,2019
+Bolivia,5.7,2018
+Bolivia,5.49,2017
+Bolivia,5.63,2016
+Bolivia,5.75,2015
+Bolivia,5.79,2014
+Bolivia,5.79,2013
+Bolivia,5.84,2012
+Bolivia,5.84,2011
+Bolivia,5.92,2010
+Bolivia,6.15,2008
+Bolivia,5.98,2006
+Brazil,6.92,2020
+Brazil,6.86,2019
+Brazil,6.97,2018
+Brazil,6.86,2017
+Brazil,6.9,2016
+Brazil,6.96,2015
+Brazil,7.38,2014
+Brazil,7.12,2013
+Brazil,7.12,2012
+Brazil,7.12,2011
+Brazil,7.12,2010
+Brazil,7.38,2008
+Brazil,7.38,2006
+Chile,8.28,2020
+Chile,8.08,2019
+Chile,7.97,2018
+Chile,7.84,2017
+Chile,7.78,2016
+Chile,7.84,2015
+Chile,7.8,2014
+Chile,7.8,2013
+Chile,7.54,2012
+Chile,7.54,2011
+Chile,7.67,2010
+Chile,7.89,2008
+Chile,7.89,2006
+Colombia,7.04,2020
+Colombia,7.13,2019
+Colombia,6.96,2018
+Colombia,6.67,2017
+Colombia,6.67,2016
+Colombia,6.62,2015
+Colombia,6.55,2014
+Colombia,6.55,2013
+Colombia,6.63,2012
+Colombia,6.63,2011
+Colombia,6.55,2010
+Colombia,6.54,2008
+Colombia,6.4,2006
+Costa Rica,8.16,2020
+Costa Rica,8.13,2019
+Costa Rica,8.07,2018
+Costa Rica,7.88,2017
+Costa Rica,7.88,2016
+Costa Rica,7.96,2015
+Costa Rica,8.03,2014
+Costa Rica,8.03,2013
+Costa Rica,8.1,2012
+Costa Rica,8.1,2011
+Costa Rica,8.04,2010
+Costa Rica,8.04,2008
+Costa Rica,8.04,2006
+Cuba,2.84,2020
+Cuba,2.84,2019
+Cuba,3,2018
+Cuba,3.31,2017
+Cuba,3.46,2016
+Cuba,3.52,2015
+Cuba,3.52,2014
+Cuba,3.52,2013
+Cuba,3.52,2012
+Cuba,3.52,2011
+Cuba,3.52,2010
+Cuba,3.52,2008
+Cuba,3.52,2006
+Dominican Republic,6.32,2020
+Dominican Republic,6.54,2019
+Dominican Republic,6.54,2018
+Dominican Republic,6.66,2017
+Dominican Republic,6.67,2016
+Dominican Republic,6.67,2015
+Dominican Republic,6.67,2014
+Dominican Republic,6.74,2013
+Dominican Republic,6.49,2012
+Dominican Republic,6.2,2011
+Dominican Republic,6.2,2010
+Dominican Republic,6.2,2008
+Dominican Republic,6.13,2006
+Ecuador,6.13,2020
+Ecuador,6.33,2019
+Ecuador,6.27,2018
+Ecuador,6.02,2017
+Ecuador,5.81,2016
+Ecuador,5.87,2015
+Ecuador,5.87,2014
+Ecuador,5.87,2013
+Ecuador,5.78,2012
+Ecuador,5.72,2011
+Ecuador,5.77,2010
+Ecuador,5.64,2008
+Ecuador,5.64,2006
+El Salvador,5.9,2020
+El Salvador,6.15,2019
+El Salvador,5.96,2018
+El Salvador,6.43,2017
+El Salvador,6.64,2016
+El Salvador,6.64,2015
+El Salvador,6.53,2014
+El Salvador,6.53,2013
+El Salvador,6.47,2012
+El Salvador,6.47,2011
+El Salvador,6.47,2010
+El Salvador,6.4,2008
+El Salvador,6.22,2006
+Guatemala,4.97,2020
+Guatemala,5.26,2019
+Guatemala,5.6,2018
+Guatemala,5.86,2017
+Guatemala,5.92,2016
+Guatemala,5.92,2015
+Guatemala,5.81,2014
+Guatemala,5.81,2013
+Guatemala,5.88,2012
+Guatemala,5.88,2011
+Guatemala,6.05,2010
+Guatemala,6.07,2008
+Guatemala,6.07,2006
+Guyana,6.01,2020
+Guyana,6.15,2019
+Guyana,6.67,2018
+Guyana,6.46,2017
+Guyana,6.25,2016
+Guyana,6.05,2015
+Guyana,5.91,2014
+Guyana,6.05,2013
+Guyana,6.05,2012
+Guyana,6.05,2011
+Guyana,6.05,2010
+Guyana,6.12,2008
+Guyana,6.15,2006
+Haiti,4.22,2020
+Haiti,4.57,2019
+Haiti,4.91,2018
+Haiti,4.03,2017
+Haiti,4.02,2016
+Haiti,3.94,2015
+Haiti,3.82,2014
+Haiti,3.94,2013
+Haiti,3.96,2012
+Haiti,4,2011
+Haiti,4,2010
+Haiti,4.19,2008
+Haiti,4.19,2006
+Honduras,5.36,2020
+Honduras,5.42,2019
+Honduras,5.63,2018
+Honduras,5.72,2017
+Honduras,5.92,2016
+Honduras,5.84,2015
+Honduras,5.84,2014
+Honduras,5.84,2013
+Honduras,5.84,2012
+Honduras,5.84,2011
+Honduras,5.76,2010
+Honduras,6.18,2008
+Honduras,6.25,2006
+Jamaica,7.13,2020
+Jamaica,6.96,2019
+Jamaica,7.02,2018
+Jamaica,7.29,2017
+Jamaica,7.39,2016
+Jamaica,7.39,2015
+Jamaica,7.39,2014
+Jamaica,7.39,2013
+Jamaica,7.39,2012
+Jamaica,7.13,2011
+Jamaica,7.21,2010
+Jamaica,7.21,2008
+Jamaica,7.34,2006
+Mexico,6.07,2020
+Mexico,6.09,2019
+Mexico,6.19,2018
+Mexico,6.41,2017
+Mexico,6.47,2016
+Mexico,6.55,2015
+Mexico,6.68,2014
+Mexico,6.91,2013
+Mexico,6.9,2012
+Mexico,6.93,2011
+Mexico,6.93,2010
+Mexico,6.78,2008
+Mexico,6.67,2006
+Nicaragua,3.6,2020
+Nicaragua,3.55,2019
+Nicaragua,3.63,2018
+Nicaragua,4.66,2017
+Nicaragua,4.81,2016
+Nicaragua,5.26,2015
+Nicaragua,5.32,2014
+Nicaragua,5.46,2013
+Nicaragua,5.56,2012
+Nicaragua,5.56,2011
+Nicaragua,5.73,2010
+Nicaragua,6.07,2008
+Nicaragua,5.68,2006
+Panama,7.18,2020
+Panama,7.05,2019
+Panama,7.05,2018
+Panama,7.08,2017
+Panama,7.13,2016
+Panama,7.19,2015
+Panama,7.08,2014
+Panama,7.08,2013
+Panama,7.08,2012
+Panama,7.08,2011
+Panama,7.15,2010
+Panama,7.35,2008
+Panama,7.35,2006
+Paraguay,6.18,2020
+Paraguay,6.24,2019
+Paraguay,6.24,2018
+Paraguay,6.31,2017
+Paraguay,6.27,2016
+Paraguay,6.33,2015
+Paraguay,6.26,2014
+Paraguay,6.26,2013
+Paraguay,6.26,2012
+Paraguay,6.4,2011
+Paraguay,6.4,2010
+Paraguay,6.4,2008
+Paraguay,6.16,2006
+Peru,6.53,2020
+Peru,6.6,2019
+Peru,6.6,2018
+Peru,6.49,2017
+Peru,6.65,2016
+Peru,6.58,2015
+Peru,6.54,2014
+Peru,6.54,2013
+Peru,6.47,2012
+Peru,6.59,2011
+Peru,6.4,2010
+Peru,6.31,2008
+Peru,6.11,2006
+Suriname,6.82,2020
+Suriname,6.98,2019
+Suriname,6.98,2018
+Suriname,6.76,2017
+Suriname,6.77,2016
+Suriname,6.77,2015
+Suriname,6.77,2014
+Suriname,6.77,2013
+Suriname,6.65,2012
+Suriname,6.65,2011
+Suriname,6.65,2010
+Suriname,6.58,2008
+Suriname,6.52,2006
+Trinidad and Tobago,7.16,2020
+Trinidad and Tobago,7.16,2019
+Trinidad and Tobago,7.16,2018
+Trinidad and Tobago,7.04,2017
+Trinidad and Tobago,7.1,2016
+Trinidad and Tobago,7.1,2015
+Trinidad and Tobago,6.99,2014
+Trinidad and Tobago,6.99,2013
+Trinidad and Tobago,6.99,2012
+Trinidad and Tobago,7.16,2011
+Trinidad and Tobago,7.16,2010
+Trinidad and Tobago,7.21,2008
+Trinidad and Tobago,7.18,2006
+Uruguay,8.61,2020
+Uruguay,8.38,2019
+Uruguay,8.38,2018
+Uruguay,8.12,2017
+Uruguay,8.17,2016
+Uruguay,8.17,2015
+Uruguay,8.17,2014
+Uruguay,8.17,2013
+Uruguay,8.17,2012
+Uruguay,8.17,2011
+Uruguay,8.1,2010
+Uruguay,8.08,2008
+Uruguay,7.96,2006
+Venezuela,2.76,2020
+Venezuela,2.88,2019
+Venezuela,3.16,2018
+Venezuela,3.87,2017
+Venezuela,4.68,2016
+Venezuela,5,2015
+Venezuela,5.07,2014
+Venezuela,5.07,2013
+Venezuela,5.15,2012
+Venezuela,5.08,2011
+Venezuela,5.18,2010
+Venezuela,5.34,2008
+Venezuela,5.42,2006
+Afghanistan,2.85,2020
+Afghanistan,2.85,2019
+Afghanistan,2.97,2018
+Afghanistan,2.55,2017
+Afghanistan,2.55,2016
+Afghanistan,2.77,2015
+Afghanistan,2.77,2014
+Afghanistan,2.48,2013
+Afghanistan,2.48,2012
+Afghanistan,2.48,2011
+Afghanistan,2.48,2010
+Afghanistan,3.02,2008
+Afghanistan,3.06,2006
+Australia,8.96,2020
+Australia,9.09,2019
+Australia,9.09,2018
+Australia,9.09,2017
+Australia,9.01,2016
+Australia,9.01,2015
+Australia,9.01,2014
+Australia,9.13,2013
+Australia,9.22,2012
+Australia,9.22,2011
+Australia,9.22,2010
+Australia,9.09,2008
+Australia,9.09,2006
+Bangladesh,5.99,2020
+Bangladesh,5.88,2019
+Bangladesh,5.57,2018
+Bangladesh,5.43,2017
+Bangladesh,5.73,2016
+Bangladesh,5.73,2015
+Bangladesh,5.78,2014
+Bangladesh,5.86,2013
+Bangladesh,5.86,2012
+Bangladesh,5.86,2011
+Bangladesh,5.87,2010
+Bangladesh,5.52,2008
+Bangladesh,6.11,2006
+Bhutan,5.71,2020
+Bhutan,5.3,2019
+Bhutan,5.3,2018
+Bhutan,5.08,2017
+Bhutan,4.93,2016
+Bhutan,4.93,2015
+Bhutan,4.87,2014
+Bhutan,4.82,2013
+Bhutan,4.65,2012
+Bhutan,4.57,2011
+Bhutan,4.68,2010
+Bhutan,4.3,2008
+Bhutan,2.62,2006
+Cambodia,3.1,2020
+Cambodia,3.53,2019
+Cambodia,3.59,2018
+Cambodia,3.63,2017
+Cambodia,4.27,2016
+Cambodia,4.27,2015
+Cambodia,4.78,2014
+Cambodia,4.6,2013
+Cambodia,4.96,2012
+Cambodia,4.87,2011
+Cambodia,4.87,2010
+Cambodia,4.87,2008
+Cambodia,4.77,2006
+China,2.27,2020
+China,2.26,2019
+China,3.32,2018
+China,3.1,2017
+China,3.14,2016
+China,3.14,2015
+China,3,2014
+China,3,2013
+China,3,2012
+China,3.14,2011
+China,3.14,2010
+China,3.04,2008
+China,2.97,2006
+Fiji,5.72,2020
+Fiji,5.85,2019
+Fiji,5.85,2018
+Fiji,5.85,2017
+Fiji,5.64,2016
+Fiji,5.69,2015
+Fiji,5.61,2014
+Fiji,3.61,2013
+Fiji,3.67,2012
+Fiji,3.67,2011
+Fiji,3.62,2010
+Fiji,5.11,2008
+Fiji,5.66,2006
+Hong Kong,5.57,2020
+Hong Kong,6.02,2019
+Hong Kong,6.15,2018
+Hong Kong,6.31,2017
+Hong Kong,6.42,2016
+Hong Kong,6.5,2015
+Hong Kong,6.46,2014
+Hong Kong,6.42,2013
+Hong Kong,6.42,2012
+Hong Kong,5.92,2011
+Hong Kong,5.92,2010
+Hong Kong,5.85,2008
+Hong Kong,6.03,2006
+India,6.61,2020
+India,6.9,2019
+India,7.23,2018
+India,7.23,2017
+India,7.81,2016
+India,7.74,2015
+India,7.92,2014
+India,7.69,2013
+India,7.52,2012
+India,7.3,2011
+India,7.28,2010
+India,7.8,2008
+India,7.68,2006
+Indonesia,6.3,2020
+Indonesia,6.48,2019
+Indonesia,6.39,2018
+Indonesia,6.39,2017
+Indonesia,6.97,2016
+Indonesia,7.03,2015
+Indonesia,6.95,2014
+Indonesia,6.82,2013
+Indonesia,6.76,2012
+Indonesia,6.53,2011
+Indonesia,6.53,2010
+Indonesia,6.34,2008
+Indonesia,6.41,2006
+Japan,8.13,2020
+Japan,7.99,2019
+Japan,7.99,2018
+Japan,7.88,2017
+Japan,7.99,2016
+Japan,7.96,2015
+Japan,8.08,2014
+Japan,8.08,2013
+Japan,8.08,2012
+Japan,8.08,2011
+Japan,8.08,2010
+Japan,8.25,2008
+Japan,8.15,2006
+Laos,1.77,2020
+Laos,2.14,2019
+Laos,2.37,2018
+Laos,2.37,2017
+Laos,2.37,2016
+Laos,2.21,2015
+Laos,2.21,2014
+Laos,2.21,2013
+Laos,2.32,2012
+Laos,2.1,2011
+Laos,2.1,2010
+Laos,2.1,2008
+Laos,2.1,2006
+Malaysia,7.19,2020
+Malaysia,7.16,2019
+Malaysia,6.88,2018
+Malaysia,6.54,2017
+Malaysia,6.54,2016
+Malaysia,6.43,2015
+Malaysia,6.49,2014
+Malaysia,6.49,2013
+Malaysia,6.41,2012
+Malaysia,6.19,2011
+Malaysia,6.19,2010
+Malaysia,6.36,2008
+Malaysia,5.98,2006
+Mongolia,6.48,2020
+Mongolia,6.5,2019
+Mongolia,6.5,2018
+Mongolia,6.5,2017
+Mongolia,6.62,2016
+Mongolia,6.62,2015
+Mongolia,6.62,2014
+Mongolia,6.51,2013
+Mongolia,6.35,2012
+Mongolia,6.23,2011
+Mongolia,6.36,2010
+Mongolia,6.6,2008
+Mongolia,6.6,2006
+Myanmar,3.04,2020
+Myanmar,3.55,2019
+Myanmar,3.83,2018
+Myanmar,3.83,2017
+Myanmar,4.2,2016
+Myanmar,4.14,2015
+Myanmar,3.05,2014
+Myanmar,2.76,2013
+Myanmar,2.35,2012
+Myanmar,1.77,2011
+Myanmar,1.77,2010
+Myanmar,1.77,2008
+Myanmar,1.77,2006
+Nepal,5.22,2020
+Nepal,5.28,2019
+Nepal,5.18,2018
+Nepal,5.18,2017
+Nepal,4.86,2016
+Nepal,4.77,2015
+Nepal,4.77,2014
+Nepal,4.77,2013
+Nepal,4.16,2012
+Nepal,4.24,2011
+Nepal,4.24,2010
+Nepal,4.05,2008
+Nepal,3.42,2006
+New Zealand,9.25,2020
+New Zealand,9.26,2019
+New Zealand,9.26,2018
+New Zealand,9.26,2017
+New Zealand,9.26,2016
+New Zealand,9.26,2015
+New Zealand,9.26,2014
+New Zealand,9.26,2013
+New Zealand,9.26,2012
+New Zealand,9.26,2011
+New Zealand,9.26,2010
+New Zealand,9.19,2008
+New Zealand,9.01,2006
+North Korea,1.08,2020
+North Korea,1.08,2019
+North Korea,1.08,2018
+North Korea,1.08,2017
+North Korea,1.08,2016
+North Korea,1.08,2015
+North Korea,1.08,2014
+North Korea,1.08,2013
+North Korea,1.08,2012
+North Korea,1.08,2011
+North Korea,1.08,2010
+North Korea,0.86,2008
+North Korea,1.03,2006
+Pakistan,4.31,2020
+Pakistan,4.25,2019
+Pakistan,4.17,2018
+Pakistan,4.26,2017
+Pakistan,4.33,2016
+Pakistan,4.4,2015
+Pakistan,4.64,2014
+Pakistan,4.64,2013
+Pakistan,4.57,2012
+Pakistan,4.55,2011
+Pakistan,4.55,2010
+Pakistan,4.46,2008
+Pakistan,3.92,2006
+Papua New Guinea,6.1,2020
+Papua New Guinea,6.03,2019
+Papua New Guinea,6.03,2018
+Papua New Guinea,6.03,2017
+Papua New Guinea,6.03,2016
+Papua New Guinea,6.03,2015
+Papua New Guinea,6.03,2014
+Papua New Guinea,6.36,2013
+Papua New Guinea,6.32,2012
+Papua New Guinea,6.32,2011
+Papua New Guinea,6.54,2010
+Papua New Guinea,6.54,2008
+Papua New Guinea,6.54,2006
+Philippines,6.56,2020
+Philippines,6.64,2019
+Philippines,6.71,2018
+Philippines,6.71,2017
+Philippines,6.94,2016
+Philippines,6.84,2015
+Philippines,6.77,2014
+Philippines,6.41,2013
+Philippines,6.3,2012
+Philippines,6.12,2011
+Philippines,6.12,2010
+Philippines,6.12,2008
+Philippines,6.48,2006
+Singapore,6.03,2020
+Singapore,6.02,2019
+Singapore,6.38,2018
+Singapore,6.32,2017
+Singapore,6.38,2016
+Singapore,6.14,2015
+Singapore,6.03,2014
+Singapore,5.92,2013
+Singapore,5.88,2012
+Singapore,5.89,2011
+Singapore,5.89,2010
+Singapore,5.89,2008
+Singapore,5.89,2006
+South Korea,8.01,2020
+South Korea,8,2019
+South Korea,8,2018
+South Korea,8,2017
+South Korea,7.92,2016
+South Korea,7.97,2015
+South Korea,8.06,2014
+South Korea,8.06,2013
+South Korea,8.13,2012
+South Korea,8.06,2011
+South Korea,8.11,2010
+South Korea,8.01,2008
+South Korea,7.88,2006
+Sri Lanka,6.14,2020
+Sri Lanka,6.27,2019
+Sri Lanka,6.19,2018
+Sri Lanka,6.48,2017
+Sri Lanka,6.48,2016
+Sri Lanka,6.42,2015
+Sri Lanka,5.69,2014
+Sri Lanka,5.69,2013
+Sri Lanka,5.75,2012
+Sri Lanka,6.58,2011
+Sri Lanka,6.64,2010
+Sri Lanka,6.61,2008
+Sri Lanka,6.58,2006
+Taiwan,8.94,2020
+Taiwan,7.73,2019
+Taiwan,7.73,2018
+Taiwan,7.73,2017
+Taiwan,7.79,2016
+Taiwan,7.83,2015
+Taiwan,7.65,2014
+Taiwan,7.57,2013
+Taiwan,7.57,2012
+Taiwan,7.46,2011
+Taiwan,7.52,2010
+Taiwan,7.82,2008
+Taiwan,7.82,2006
+Thailand,6.04,2020
+Thailand,6.32,2019
+Thailand,4.63,2018
+Thailand,4.63,2017
+Thailand,4.92,2016
+Thailand,5.09,2015
+Thailand,5.39,2014
+Thailand,6.25,2013
+Thailand,6.55,2012
+Thailand,6.55,2011
+Thailand,6.55,2010
+Thailand,6.81,2008
+Thailand,5.67,2006
+Timor Leste,7.06,2020
+Timor Leste,7.19,2019
+Timor Leste,7.19,2018
+Timor Leste,7.19,2017
+Timor Leste,7.24,2016
+Timor Leste,7.24,2015
+Timor Leste,7.24,2014
+Timor Leste,7.24,2013
+Timor Leste,7.16,2012
+Timor Leste,7.22,2011
+Timor Leste,7.22,2010
+Timor Leste,7.22,2008
+Timor Leste,6.41,2006
+Vietnam,2.94,2020
+Vietnam,3.08,2019
+Vietnam,3.08,2018
+Vietnam,3.08,2017
+Vietnam,3.38,2016
+Vietnam,3.53,2015
+Vietnam,3.41,2014
+Vietnam,3.29,2013
+Vietnam,2.89,2012
+Vietnam,2.96,2011
+Vietnam,2.94,2010
+Vietnam,2.53,2008
+Vietnam,2.75,2006
+Algeria,3.77,2020
+Algeria,4.01,2019
+Algeria,3.5,2018
+Algeria,3.56,2017
+Algeria,3.56,2016
+Algeria,3.95,2015
+Algeria,3.83,2014
+Algeria,3.83,2013
+Algeria,3.83,2012
+Algeria,3.44,2011
+Algeria,3.44,2010
+Algeria,3.32,2008
+Algeria,3.17,2006
+Bahrain,2.49,2020
+Bahrain,2.55,2019
+Bahrain,2.71,2018
+Bahrain,2.71,2017
+Bahrain,2.79,2016
+Bahrain,2.79,2015
+Bahrain,2.87,2014
+Bahrain,2.87,2013
+Bahrain,2.53,2012
+Bahrain,2.92,2011
+Bahrain,3.49,2010
+Bahrain,3.38,2008
+Bahrain,3.53,2006
+Egypt,2.93,2020
+Egypt,3.06,2019
+Egypt,3.36,2018
+Egypt,3.36,2017
+Egypt,3.31,2016
+Egypt,3.18,2015
+Egypt,3.16,2014
+Egypt,3.27,2013
+Egypt,4.56,2012
+Egypt,3.95,2011
+Egypt,3.07,2010
+Egypt,3.89,2008
+Egypt,3.9,2006
+Iran,2.2,2020
+Iran,2.38,2019
+Iran,2.45,2018
+Iran,2.45,2017
+Iran,2.34,2016
+Iran,2.16,2015
+Iran,1.98,2014
+Iran,1.98,2013
+Iran,1.98,2012
+Iran,1.98,2011
+Iran,1.94,2010
+Iran,2.83,2008
+Iran,2.93,2006
+Iraq,3.62,2020
+Iraq,3.74,2019
+Iraq,4.06,2018
+Iraq,4.09,2017
+Iraq,4.08,2016
+Iraq,4.08,2015
+Iraq,4.23,2014
+Iraq,4.1,2013
+Iraq,4.1,2012
+Iraq,4.03,2011
+Iraq,4,2010
+Iraq,4,2008
+Iraq,4.01,2006
+Israel,7.84,2020
+Israel,7.86,2019
+Israel,7.79,2018
+Israel,7.79,2017
+Israel,7.85,2016
+Israel,7.77,2015
+Israel,7.63,2014
+Israel,7.53,2013
+Israel,7.53,2012
+Israel,7.53,2011
+Israel,7.48,2010
+Israel,7.48,2008
+Israel,7.28,2006
+Jordan,3.62,2020
+Jordan,3.93,2019
+Jordan,3.93,2018
+Jordan,3.87,2017
+Jordan,3.96,2016
+Jordan,3.86,2015
+Jordan,3.76,2014
+Jordan,3.76,2013
+Jordan,3.76,2012
+Jordan,3.89,2011
+Jordan,3.74,2010
+Jordan,3.93,2008
+Jordan,3.92,2006
+Kuwait,3.8,2020
+Kuwait,3.93,2019
+Kuwait,3.85,2018
+Kuwait,3.85,2017
+Kuwait,3.85,2016
+Kuwait,3.85,2015
+Kuwait,3.78,2014
+Kuwait,3.78,2013
+Kuwait,3.78,2012
+Kuwait,3.74,2011
+Kuwait,3.88,2010
+Kuwait,3.39,2008
+Kuwait,3.09,2006
+Lebanon,4.16,2020
+Lebanon,4.36,2019
+Lebanon,4.63,2018
+Lebanon,4.72,2017
+Lebanon,4.86,2016
+Lebanon,4.86,2015
+Lebanon,5.12,2014
+Lebanon,5.05,2013
+Lebanon,5.05,2012
+Lebanon,5.32,2011
+Lebanon,5.82,2010
+Lebanon,5.62,2008
+Lebanon,5.82,2006
+Libya,1.95,2020
+Libya,2.02,2019
+Libya,2.19,2018
+Libya,2.32,2017
+Libya,2.25,2016
+Libya,2.25,2015
+Libya,3.8,2014
+Libya,4.82,2013
+Libya,5.15,2012
+Libya,3.55,2011
+Libya,1.94,2010
+Libya,2,2008
+Libya,1.84,2006
+Morocco,5.04,2020
+Morocco,5.1,2019
+Morocco,4.99,2018
+Morocco,4.87,2017
+Morocco,4.77,2016
+Morocco,4.66,2015
+Morocco,4,2014
+Morocco,4.07,2013
+Morocco,4.07,2012
+Morocco,3.83,2011
+Morocco,3.79,2010
+Morocco,3.88,2008
+Morocco,3.9,2006
+Oman,3,2020
+Oman,3.06,2019
+Oman,3.04,2018
+Oman,3.04,2017
+Oman,3.04,2016
+Oman,3.04,2015
+Oman,3.15,2014
+Oman,3.26,2013
+Oman,3.26,2012
+Oman,3.26,2011
+Oman,2.86,2010
+Oman,2.98,2008
+Oman,2.77,2006
+Palestine,3.83,2020
+Palestine,3.89,2019
+Palestine,4.39,2018
+Palestine,4.46,2017
+Palestine,4.49,2016
+Palestine,4.57,2015
+Palestine,4.72,2014
+Palestine,4.8,2013
+Palestine,4.8,2012
+Palestine,4.97,2011
+Palestine,5.44,2010
+Palestine,5.83,2008
+Palestine,6.01,2006
+Qatar,3.24,2020
+Qatar,3.19,2019
+Qatar,3.19,2018
+Qatar,3.19,2017
+Qatar,3.18,2016
+Qatar,3.18,2015
+Qatar,3.18,2014
+Qatar,3.18,2013
+Qatar,3.18,2012
+Qatar,3.18,2011
+Qatar,3.09,2010
+Qatar,2.92,2008
+Qatar,2.78,2006
+Saudi Arabia,2.08,2020
+Saudi Arabia,1.93,2019
+Saudi Arabia,1.93,2018
+Saudi Arabia,1.93,2017
+Saudi Arabia,1.93,2016
+Saudi Arabia,1.93,2015
+Saudi Arabia,1.82,2014
+Saudi Arabia,1.82,2013
+Saudi Arabia,1.71,2012
+Saudi Arabia,1.77,2011
+Saudi Arabia,1.84,2010
+Saudi Arabia,1.9,2008
+Saudi Arabia,1.92,2006
+Sudan,2.54,2020
+Sudan,2.7,2019
+Sudan,2.15,2018
+Sudan,2.15,2017
+Sudan,2.37,2016
+Sudan,2.37,2015
+Sudan,2.54,2014
+Sudan,2.54,2013
+Sudan,2.38,2012
+Sudan,2.38,2011
+Sudan,2.42,2010
+Sudan,2.81,2008
+Sudan,2.9,2006
+Syria,1.43,2020
+Syria,1.43,2019
+Syria,1.43,2018
+Syria,1.43,2017
+Syria,1.43,2016
+Syria,1.43,2015
+Syria,1.74,2014
+Syria,1.86,2013
+Syria,1.63,2012
+Syria,1.99,2011
+Syria,2.31,2010
+Syria,2.18,2008
+Syria,2.36,2006
+Tunisia,6.59,2020
+Tunisia,6.72,2019
+Tunisia,6.41,2018
+Tunisia,6.32,2017
+Tunisia,6.4,2016
+Tunisia,6.72,2015
+Tunisia,6.31,2014
+Tunisia,5.76,2013
+Tunisia,5.67,2012
+Tunisia,5.53,2011
+Tunisia,2.79,2010
+Tunisia,2.96,2008
+Tunisia,3.06,2006
+UAE,2.7,2020
+UAE,2.76,2019
+UAE,2.76,2018
+UAE,2.69,2017
+UAE,2.75,2016
+UAE,2.75,2015
+UAE,2.64,2014
+UAE,2.52,2013
+UAE,2.58,2012
+UAE,2.58,2011
+UAE,2.52,2010
+UAE,2.6,2008
+UAE,2.42,2006
+Yemen,1.95,2020
+Yemen,1.95,2019
+Yemen,1.95,2018
+Yemen,2.07,2017
+Yemen,2.07,2016
+Yemen,2.24,2015
+Yemen,2.79,2014
+Yemen,2.79,2013
+Yemen,3.12,2012
+Yemen,2.57,2011
+Yemen,2.64,2010
+Yemen,2.95,2008
+Yemen,2.98,2006
+Angola,3.66,2020
+Angola,3.72,2019
+Angola,3.62,2018
+Angola,3.62,2017
+Angola,3.4,2016
+Angola,3.35,2015
+Angola,3.35,2014
+Angola,3.35,2013
+Angola,3.35,2012
+Angola,3.32,2011
+Angola,3.32,2010
+Angola,3.35,2008
+Angola,2.41,2006
+Benin,4.58,2020
+Benin,5.09,2019
+Benin,5.74,2018
+Benin,5.61,2017
+Benin,5.67,2016
+Benin,5.72,2015
+Benin,5.65,2014
+Benin,5.87,2013
+Benin,6,2012
+Benin,6.06,2011
+Benin,6.17,2010
+Benin,6.06,2008
+Benin,6.16,2006
+Botswana,7.62,2020
+Botswana,7.81,2019
+Botswana,7.81,2018
+Botswana,7.81,2017
+Botswana,7.87,2016
+Botswana,7.87,2015
+Botswana,7.87,2014
+Botswana,7.98,2013
+Botswana,7.85,2012
+Botswana,7.63,2011
+Botswana,7.63,2010
+Botswana,7.47,2008
+Botswana,7.6,2006
+Burkina Faso,3.73,2020
+Burkina Faso,4.04,2019
+Burkina Faso,4.75,2018
+Burkina Faso,4.75,2017
+Burkina Faso,4.7,2016
+Burkina Faso,4.7,2015
+Burkina Faso,4.09,2014
+Burkina Faso,4.15,2013
+Burkina Faso,3.52,2012
+Burkina Faso,3.59,2011
+Burkina Faso,3.59,2010
+Burkina Faso,3.6,2008
+Burkina Faso,3.72,2006
+Burundi,2.14,2020
+Burundi,2.15,2019
+Burundi,2.33,2018
+Burundi,2.33,2017
+Burundi,2.4,2016
+Burundi,2.49,2015
+Burundi,3.33,2014
+Burundi,3.41,2013
+Burundi,3.6,2012
+Burundi,4.01,2011
+Burundi,4.01,2010
+Burundi,4.51,2008
+Burundi,4.51,2006
+Cabo Verde,7.65,2020
+Cabo Verde,7.78,2019
+Cabo Verde,7.88,2018
+Cabo Verde,7.88,2017
+Cabo Verde,7.94,2016
+Cabo Verde,7.81,2015
+Cabo Verde,7.81,2014
+Cabo Verde,7.92,2013
+Cabo Verde,7.92,2012
+Cabo Verde,7.92,2011
+Cabo Verde,7.94,2010
+Cabo Verde,7.81,2008
+Cabo Verde,7.43,2006
+Cameroon,2.77,2020
+Cameroon,2.85,2019
+Cameroon,3.28,2018
+Cameroon,3.61,2017
+Cameroon,3.46,2016
+Cameroon,3.66,2015
+Cameroon,3.41,2014
+Cameroon,3.41,2013
+Cameroon,3.44,2012
+Cameroon,3.41,2011
+Cameroon,3.41,2010
+Cameroon,3.46,2008
+Cameroon,3.27,2006
+Central African Republic,1.32,2020
+Central African Republic,1.32,2019
+Central African Republic,1.52,2018
+Central African Republic,1.52,2017
+Central African Republic,1.61,2016
+Central African Republic,1.57,2015
+Central African Republic,1.49,2014
+Central African Republic,1.49,2013
+Central African Republic,1.99,2012
+Central African Republic,1.82,2011
+Central African Republic,1.82,2010
+Central African Republic,1.86,2008
+Central African Republic,1.61,2006
+Chad,1.55,2020
+Chad,1.61,2019
+Chad,1.61,2018
+Chad,1.5,2017
+Chad,1.5,2016
+Chad,1.5,2015
+Chad,1.5,2014
+Chad,1.5,2013
+Chad,1.62,2012
+Chad,1.62,2011
+Chad,1.52,2010
+Chad,1.52,2008
+Chad,1.65,2006
+Comoros,3.09,2020
+Comoros,3.15,2019
+Comoros,3.71,2018
+Comoros,3.71,2017
+Comoros,3.71,2016
+Comoros,3.71,2015
+Comoros,3.52,2014
+Comoros,3.52,2013
+Comoros,3.52,2012
+Comoros,3.52,2011
+Comoros,3.41,2010
+Comoros,3.58,2008
+Comoros,3.9,2006
+Congo (Brazzaville),3.11,2020
+Congo (Brazzaville),3.11,2019
+Congo (Brazzaville),3.31,2018
+Congo (Brazzaville),3.25,2017
+Congo (Brazzaville),2.91,2016
+Congo (Brazzaville),2.91,2015
+Congo (Brazzaville),2.89,2014
+Congo (Brazzaville),2.89,2013
+Congo (Brazzaville),2.89,2012
+Congo (Brazzaville),2.89,2011
+Congo (Brazzaville),2.89,2010
+Congo (Brazzaville),2.94,2008
+Congo (Brazzaville),3.19,2006
+Côte d’Ivoire,4.11,2020
+Côte d’Ivoire,4.05,2019
+Côte d’Ivoire,4.15,2018
+Côte d’Ivoire,3.93,2017
+Côte d’Ivoire,3.81,2016
+Côte d’Ivoire,3.31,2015
+Côte d’Ivoire,3.53,2014
+Côte d’Ivoire,3.25,2013
+Côte d’Ivoire,3.25,2012
+Côte d’Ivoire,3.08,2011
+Côte d’Ivoire,3.02,2010
+Côte d’Ivoire,3.27,2008
+Côte d’Ivoire,3.38,2006
+Democratic Republic of Congo,1.13,2020
+Democratic Republic of Congo,1.13,2019
+Democratic Republic of Congo,1.49,2018
+Democratic Republic of Congo,1.61,2017
+Democratic Republic of Congo,1.93,2016
+Democratic Republic of Congo,2.11,2015
+Democratic Republic of Congo,1.75,2014
+Democratic Republic of Congo,1.83,2013
+Democratic Republic of Congo,1.92,2012
+Democratic Republic of Congo,2.15,2011
+Democratic Republic of Congo,2.15,2010
+Democratic Republic of Congo,2.28,2008
+Democratic Republic of Congo,2.76,2006
+Djibouti,2.71,2020
+Djibouti,2.77,2019
+Djibouti,2.87,2018
+Djibouti,2.76,2017
+Djibouti,2.83,2016
+Djibouti,2.9,2015
+Djibouti,2.99,2014
+Djibouti,2.96,2013
+Djibouti,2.74,2012
+Djibouti,2.68,2011
+Djibouti,2.2,2010
+Djibouti,2.37,2008
+Djibouti,2.37,2006
+Equatorial Guinea,1.92,2020
+Equatorial Guinea,1.92,2019
+Equatorial Guinea,1.92,2018
+Equatorial Guinea,1.81,2017
+Equatorial Guinea,1.7,2016
+Equatorial Guinea,1.77,2015
+Equatorial Guinea,1.66,2014
+Equatorial Guinea,1.77,2013
+Equatorial Guinea,1.83,2012
+Equatorial Guinea,1.77,2011
+Equatorial Guinea,1.84,2010
+Equatorial Guinea,2.19,2008
+Equatorial Guinea,2.09,2006
+Eritrea,2.15,2020
+Eritrea,2.37,2019
+Eritrea,2.37,2018
+Eritrea,2.37,2017
+Eritrea,2.37,2016
+Eritrea,2.37,2015
+Eritrea,2.44,2014
+Eritrea,2.4,2013
+Eritrea,2.4,2012
+Eritrea,2.34,2011
+Eritrea,2.31,2010
+Eritrea,2.31,2008
+Eritrea,2.31,2006
+eSwatini,3.08,2020
+eSwatini,3.14,2019
+eSwatini,3.03,2018
+eSwatini,3.03,2017
+eSwatini,3.03,2016
+eSwatini,3.09,2015
+eSwatini,3.09,2014
+eSwatini,3.2,2013
+eSwatini,3.2,2012
+eSwatini,3.26,2011
+eSwatini,2.9,2010
+eSwatini,3.04,2008
+eSwatini,2.93,2006
+Ethiopia,3.38,2020
+Ethiopia,3.44,2019
+Ethiopia,3.35,2018
+Ethiopia,3.42,2017
+Ethiopia,3.6,2016
+Ethiopia,3.83,2015
+Ethiopia,3.72,2014
+Ethiopia,3.83,2013
+Ethiopia,3.72,2012
+Ethiopia,3.79,2011
+Ethiopia,3.68,2010
+Ethiopia,4.52,2008
+Ethiopia,4.72,2006
+Gabon,3.54,2020
+Gabon,3.61,2019
+Gabon,3.61,2018
+Gabon,3.61,2017
+Gabon,3.74,2016
+Gabon,3.76,2015
+Gabon,3.76,2014
+Gabon,3.76,2013
+Gabon,3.56,2012
+Gabon,3.48,2011
+Gabon,3.29,2010
+Gabon,3,2008
+Gabon,2.72,2006
+Gambia,4.49,2020
+Gambia,4.33,2019
+Gambia,4.31,2018
+Gambia,4.06,2017
+Gambia,2.91,2016
+Gambia,2.97,2015
+Gambia,3.05,2014
+Gambia,3.31,2013
+Gambia,3.31,2012
+Gambia,3.38,2011
+Gambia,3.38,2010
+Gambia,4.19,2008
+Gambia,4.39,2006
+Ghana,6.5,2020
+Ghana,6.63,2019
+Ghana,6.63,2018
+Ghana,6.69,2017
+Ghana,6.75,2016
+Ghana,6.86,2015
+Ghana,6.33,2014
+Ghana,6.33,2013
+Ghana,6.02,2012
+Ghana,6.02,2011
+Ghana,6.02,2010
+Ghana,5.35,2008
+Ghana,5.35,2006
+Guinea,3.08,2020
+Guinea,3.14,2019
+Guinea,3.14,2018
+Guinea,3.14,2017
+Guinea,3.14,2016
+Guinea,3.14,2015
+Guinea,3.01,2014
+Guinea,2.84,2013
+Guinea,2.79,2012
+Guinea,2.79,2011
+Guinea,2.79,2010
+Guinea,2.09,2008
+Guinea,2.02,2006
+Guinea-Bissau,2.63,2020
+Guinea-Bissau,2.63,2019
+Guinea-Bissau,1.98,2018
+Guinea-Bissau,1.98,2017
+Guinea-Bissau,1.98,2016
+Guinea-Bissau,1.93,2015
+Guinea-Bissau,1.93,2014
+Guinea-Bissau,1.26,2013
+Guinea-Bissau,1.43,2012
+Guinea-Bissau,1.99,2011
+Guinea-Bissau,1.99,2010
+Guinea-Bissau,1.99,2008
+Guinea-Bissau,2,2006
+Kenya,5.05,2020
+Kenya,5.18,2019
+Kenya,5.11,2018
+Kenya,5.11,2017
+Kenya,5.33,2016
+Kenya,5.33,2015
+Kenya,5.13,2014
+Kenya,5.13,2013
+Kenya,4.71,2012
+Kenya,4.71,2011
+Kenya,4.71,2010
+Kenya,4.79,2008
+Kenya,5.08,2006
+Lesotho,6.3,2020
+Lesotho,6.54,2019
+Lesotho,6.64,2018
+Lesotho,6.64,2017
+Lesotho,6.59,2016
+Lesotho,6.59,2015
+Lesotho,6.66,2014
+Lesotho,6.66,2013
+Lesotho,6.66,2012
+Lesotho,6.33,2011
+Lesotho,6.02,2010
+Lesotho,6.29,2008
+Lesotho,6.48,2006
+Liberia,5.32,2020
+Liberia,5.45,2019
+Liberia,5.35,2018
+Liberia,5.23,2017
+Liberia,5.31,2016
+Liberia,4.95,2015
+Liberia,4.95,2014
+Liberia,4.95,2013
+Liberia,4.95,2012
+Liberia,5.07,2011
+Liberia,5.07,2010
+Liberia,5.25,2008
+Liberia,5.22,2006
+Madagascar,5.7,2020
+Madagascar,5.64,2019
+Madagascar,5.22,2018
+Madagascar,5.11,2017
+Madagascar,5.07,2016
+Madagascar,4.85,2015
+Madagascar,4.42,2014
+Madagascar,4.32,2013
+Madagascar,3.93,2012
+Madagascar,3.93,2011
+Madagascar,3.94,2010
+Madagascar,5.57,2008
+Madagascar,5.82,2006
+Malawi,5.74,2020
+Malawi,5.5,2019
+Malawi,5.49,2018
+Malawi,5.49,2017
+Malawi,5.55,2016
+Malawi,5.55,2015
+Malawi,5.66,2014
+Malawi,6,2013
+Malawi,6.08,2012
+Malawi,5.84,2011
+Malawi,5.84,2010
+Malawi,5.13,2008
+Malawi,4.97,2006
+Mali,3.93,2020
+Mali,4.92,2019
+Mali,5.41,2018
+Mali,5.64,2017
+Mali,5.7,2016
+Mali,5.7,2015
+Mali,5.79,2014
+Mali,5.9,2013
+Mali,5.12,2012
+Mali,6.36,2011
+Mali,6.01,2010
+Mali,5.87,2008
+Mali,5.99,2006
+Mauritania,3.92,2020
+Mauritania,3.92,2019
+Mauritania,3.82,2018
+Mauritania,3.82,2017
+Mauritania,3.96,2016
+Mauritania,3.96,2015
+Mauritania,4.17,2014
+Mauritania,4.17,2013
+Mauritania,4.17,2012
+Mauritania,4.17,2011
+Mauritania,3.86,2010
+Mauritania,3.91,2008
+Mauritania,3.12,2006
+Mauritius,8.14,2020
+Mauritius,8.22,2019
+Mauritius,8.22,2018
+Mauritius,8.22,2017
+Mauritius,8.28,2016
+Mauritius,8.28,2015
+Mauritius,8.17,2014
+Mauritius,8.17,2013
+Mauritius,8.17,2012
+Mauritius,8.04,2011
+Mauritius,8.04,2010
+Mauritius,8.04,2008
+Mauritius,8.04,2006
+Mozambique,3.51,2020
+Mozambique,3.65,2019
+Mozambique,3.85,2018
+Mozambique,4.02,2017
+Mozambique,4.02,2016
+Mozambique,4.6,2015
+Mozambique,4.66,2014
+Mozambique,4.77,2013
+Mozambique,4.88,2012
+Mozambique,4.9,2011
+Mozambique,4.9,2010
+Mozambique,5.49,2008
+Mozambique,5.28,2006
+Namibia,6.52,2020
+Namibia,6.43,2019
+Namibia,6.25,2018
+Namibia,6.31,2017
+Namibia,6.31,2016
+Namibia,6.31,2015
+Namibia,6.24,2014
+Namibia,6.24,2013
+Namibia,6.24,2012
+Namibia,6.24,2011
+Namibia,6.23,2010
+Namibia,6.48,2008
+Namibia,6.54,2006
+Niger,3.29,2020
+Niger,3.29,2019
+Niger,3.76,2018
+Niger,3.76,2017
+Niger,3.96,2016
+Niger,3.85,2015
+Niger,4.02,2014
+Niger,4.08,2013
+Niger,4.16,2012
+Niger,4.16,2011
+Niger,3.38,2010
+Niger,3.41,2008
+Niger,3.54,2006
+Nigeria,4.1,2020
+Nigeria,4.12,2019
+Nigeria,4.44,2018
+Nigeria,4.44,2017
+Nigeria,4.5,2016
+Nigeria,4.62,2015
+Nigeria,3.76,2014
+Nigeria,3.77,2013
+Nigeria,3.77,2012
+Nigeria,3.83,2011
+Nigeria,3.47,2010
+Nigeria,3.53,2008
+Nigeria,3.52,2006
+Rwanda,3.1,2020
+Rwanda,3.16,2019
+Rwanda,3.35,2018
+Rwanda,3.19,2017
+Rwanda,3.07,2016
+Rwanda,3.07,2015
+Rwanda,3.25,2014
+Rwanda,3.38,2013
+Rwanda,3.36,2012
+Rwanda,3.25,2011
+Rwanda,3.25,2010
+Rwanda,3.71,2008
+Rwanda,3.82,2006
+Senegal,5.67,2020
+Senegal,5.81,2019
+Senegal,6.15,2018
+Senegal,6.15,2017
+Senegal,6.21,2016
+Senegal,6.08,2015
+Senegal,6.15,2014
+Senegal,6.15,2013
+Senegal,6.09,2012
+Senegal,5.51,2011
+Senegal,5.27,2010
+Senegal,5.37,2008
+Senegal,5.37,2006
+Sierra Leone,4.86,2020
+Sierra Leone,4.86,2019
+Sierra Leone,4.66,2018
+Sierra Leone,4.66,2017
+Sierra Leone,4.55,2016
+Sierra Leone,4.55,2015
+Sierra Leone,4.56,2014
+Sierra Leone,4.64,2013
+Sierra Leone,4.71,2012
+Sierra Leone,4.51,2011
+Sierra Leone,4.51,2010
+Sierra Leone,4.11,2008
+Sierra Leone,3.57,2006
+South Africa,7.05,2020
+South Africa,7.24,2019
+South Africa,7.24,2018
+South Africa,7.24,2017
+South Africa,7.41,2016
+South Africa,7.56,2015
+South Africa,7.82,2014
+South Africa,7.9,2013
+South Africa,7.79,2012
+South Africa,7.79,2011
+South Africa,7.79,2010
+South Africa,7.91,2008
+South Africa,7.91,2006
+Tanzania,5.1,2020
+Tanzania,5.16,2019
+Tanzania,5.41,2018
+Tanzania,5.47,2017
+Tanzania,5.76,2016
+Tanzania,5.58,2015
+Tanzania,5.77,2014
+Tanzania,5.77,2013
+Tanzania,5.88,2012
+Tanzania,5.64,2011
+Tanzania,5.64,2010
+Tanzania,5.28,2008
+Tanzania,5.18,2006
+Togo,2.8,2020
+Togo,3.3,2019
+Togo,3.1,2018
+Togo,3.05,2017
+Togo,3.32,2016
+Togo,3.41,2015
+Togo,3.45,2014
+Togo,3.45,2013
+Togo,3.45,2012
+Togo,3.45,2011
+Togo,3.45,2010
+Togo,2.43,2008
+Togo,1.75,2006
+Uganda,4.94,2020
+Uganda,5.02,2019
+Uganda,5.2,2018
+Uganda,5.09,2017
+Uganda,5.26,2016
+Uganda,5.22,2015
+Uganda,5.22,2014
+Uganda,5.22,2013
+Uganda,5.16,2012
+Uganda,5.13,2011
+Uganda,5.05,2010
+Uganda,5.03,2008
+Uganda,5.14,2006
+Zambia,4.86,2020
+Zambia,5.09,2019
+Zambia,5.61,2018
+Zambia,5.68,2017
+Zambia,5.99,2016
+Zambia,6.28,2015
+Zambia,6.39,2014
+Zambia,6.26,2013
+Zambia,6.26,2012
+Zambia,6.19,2011
+Zambia,5.68,2010
+Zambia,5.25,2008
+Zambia,5.25,2006
+Zimbabwe,3.16,2020
+Zimbabwe,3.16,2019
+Zimbabwe,3.16,2018
+Zimbabwe,3.16,2017
+Zimbabwe,3.05,2016
+Zimbabwe,3.05,2015
+Zimbabwe,2.78,2014
+Zimbabwe,2.67,2013
+Zimbabwe,2.67,2012
+Zimbabwe,2.68,2011
+Zimbabwe,2.64,2010
+Zimbabwe,2.53,2008
+Zimbabwe,2.62,2006

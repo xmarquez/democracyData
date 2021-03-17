@@ -527,8 +527,8 @@
 #' The Economist Intelligence Unit's Democracy Index
 #'
 #' A dataset containing the country-year version of the democracy index compiled
-#' by the Economist Intelligence Unit, 2006-2019. From the report "Democracy
-#' Index 2019: A year of democratic setbacks and popular protest", available at
+#' by the Economist Intelligence Unit, 2006-2020. From the report "Democracy
+#' Index 2020: In sickness and in health?", available at
 #' \url{https://www.eiu.com/topic/democracy-index}.
 #'
 #' \describe{ \item{eiu_country}{Country name as in the original tables.}
@@ -540,8 +540,8 @@
 #' @template standard-variables
 #' @family democracy
 #' @family continuous democracy indexes
-#' @source The economist Intelligence Unit. 2020. Democracy Index 2019: A year
-#'   of democratic setbacks and popular protest.
+#' @source The economist Intelligence Unit. 2020. Democracy
+#' Index 2020: In sickness and in health?
 #'   \url{https://www.eiu.com/topic/democracy-index}.
 "eiu"
 
