@@ -6,7 +6,7 @@
 \alias{pitf_p4}
 \title{PITF democracy indicator}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 16574 rows and 13 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 16582 rows and 13 columns.
 
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 16581 rows and 13 columns.
 }
