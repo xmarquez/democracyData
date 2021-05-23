@@ -1,3 +1,5 @@
+# democracyData 0.3.0
+
 # democracyData 0.2.6
 
 * Updated the Freedom House data (2021 with data up to 2020), updating `download_fh` and `download_fh_full`, and updated the documentation of these functions and the citation info for the FH data. (The List of Electoral Democracies downloaded via `download_fh_electoral` does not appear to have been updated by Freedom House yet).
