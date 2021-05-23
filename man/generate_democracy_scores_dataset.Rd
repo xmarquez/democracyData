@@ -26,7 +26,7 @@ abbreviation of) "\link{anckar}", "\link{LIED}", "\link{PIPE}", "\link{arat_pmm}
 "\link{doorenspleet}", "\link{eiu}", "\link{fh_pmm}", "\link{gwf_all}", "\link{gwf_all_extended}",
 "\link{hadenius_pmm}", "\link{kailitz}", "\link{magaloni}", "\link{magaloni_extended}",
 "\link{mainwaring}", "\link{mainwaring_pmm}", "\link{munck_pmm}", "\link{pacl}", "\link{pacl_pmm}",
-"\link{peps}", "\link{pitf}", "\link{polity_pmm}", "\link{polyarchy}",
+"\link{pacl_update}", "\link{peps}", "\link{pitf}", "\link{polity_pmm}", "\link{polyarchy}",
 "\link{polyarchy_dimensions}", "\link{polyarchy_pmm}", "\link{prc_gasiorowski}",
 "\link{prc_pmm}", "\link{svmdi}", "\link{svolik_regime}", "\link{uds_2010}", "\link{uds_2011}",
 "\link{uds_2014}", "\link{ulfelder}", "\link{ulfelder_extended}", "\link{utip}", "\link{vanhanen}",
@@ -85,7 +85,7 @@ information, in two versions: "long" and "wide". These contain the
 following variables:
 }
 \description{
-This function automates the process of joinning together all the archived and
+This function automates the process of joining together all the archived and
 downloadable datasets in this package, producing a comprehensive data frame
 with every democracy measure. It automatically converts each democracy
 measure to a numeric value, ensures that larger values are associated with
@@ -265,6 +265,9 @@ non-democracy, 0.5 represents hybrid regimes, and 1 is democracy.}
 
 \item{pacl}{The measure of democracy from \link{pacl}, where 0 is non-democracy,
 and 1 is democracy.}
+
+\item{pacl_update}{The measure of democracy from \link{pacl_update}, where 0 is
+non-democracy, and 1 is democracy.}
 
 \item{PEPS1i, PEPS1q, PEPS1v, PEPS2i, PEPS2q, PEPS2v}{The measures of
 democracy from \link{peps}. Higher values indicate more democracy.}

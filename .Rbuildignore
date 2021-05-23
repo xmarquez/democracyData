@@ -11,3 +11,4 @@
 ^.git$
 ^cache$
 ^\.github$
+^vignettes/articles$

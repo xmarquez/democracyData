@@ -327,6 +327,17 @@ usethis::use_data(pacl_pmm, overwrite = TRUE)
 usethis::use_data(pacl, overwrite = TRUE)
 
 ```
+# PACL Update
+
+```{r paclUpdate, results = 'asis'}
+cite_dataset("pacl_update")
+
+pacl_update <- redownload_pacl_update(verbose = verbose,
+                                      include_in_output = include_in_output)
+
+usethis::use_data(pacl_update, overwrite = TRUE)
+
+```
 
 # PEPS 
 

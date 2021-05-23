@@ -44,7 +44,7 @@
 returned by the redownload_* family of functions (blm,
 bmr, bnr, bti, gwf_autocratic,
 gwf_autocratic_extended, gwf_all, gwf_all_extended,
-LIED, magaloni, pacl, PIPE, peps,
+LIED, magaloni, pacl, pacl_update, PIPE, peps,
 polityIV, polyarchy, polyarchy_dimensions, uds_2014,
 uds_2010, uds_2011, ulfelder, utip,
 wahman_teorell_hadenius, anckar, svmdi) are all available
@@ -133,7 +133,7 @@ TRUE) or suspect they have changed since the package was installed." />
 returned by the <code>redownload_*</code> family of functions (<a href='blm.html'>blm</a>,
 <a href='bmr.html'>bmr</a>, <a href='bnr.html'>bnr</a>, <a href='bti.html'>bti</a>, <a href='gwf_all.html'>gwf_autocratic</a>,
 <a href='gwf_all.html'>gwf_autocratic_extended</a>, <a href='gwf_all.html'>gwf_all</a>, <a href='gwf_all.html'>gwf_all_extended</a>,
-<a href='LIED.html'>LIED</a>, <a href='magaloni.html'>magaloni</a>, <a href='pacl.html'>pacl</a>, <a href='PIPE.html'>PIPE</a>, <a href='peps.html'>peps</a>,
+<a href='LIED.html'>LIED</a>, <a href='magaloni.html'>magaloni</a>, <a href='pacl.html'>pacl</a>, <a href='pacl_update.html'>pacl_update</a>, <a href='PIPE.html'>PIPE</a>, <a href='peps.html'>peps</a>,
 <a href='polityIV.html'>polityIV</a>, <a href='polyarchy.html'>polyarchy</a>, <a href='polyarchy_dimensions.html'>polyarchy_dimensions</a>, <a href='uds_2014.html'>uds_2014</a>,
 <a href='uds_2014.html'>uds_2010</a>, <a href='uds_2014.html'>uds_2011</a>, <a href='ulfelder.html'>ulfelder</a>, <a href='utip.html'>utip</a>,
 <a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a>, <a href='anckar.html'>anckar</a>, <a href='svmdi.html'>svmdi</a>) are all available
@@ -204,7 +204,9 @@ TRUE</code>) or suspect they have changed since the package was installed.</p>
 
 <span class='fu'>redownload_pipe</span><span class='op'>(</span><span class='va'>url</span>, verbose <span class='op'>=</span> <span class='cn'>TRUE</span>, return_raw <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>redownload_bti</span><span class='op'>(</span><span class='va'>url</span>, verbose <span class='op'>=</span> <span class='cn'>TRUE</span>, return_raw <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+<span class='fu'>redownload_bti</span><span class='op'>(</span><span class='va'>url</span>, verbose <span class='op'>=</span> <span class='cn'>TRUE</span>, return_raw <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span>
+
+<span class='fu'>redownload_pacl_update</span><span class='op'>(</span><span class='va'>url</span>, verbose <span class='op'>=</span> <span class='cn'>TRUE</span>, return_raw <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -229,6 +231,8 @@ TRUE</code>) or suspect they have changed since the package was installed.</p>
 <a href='https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/29106/SXRLK1'>https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/29106/SXRLK1</a></p></li>
 <li><p>For <a href='pacl.html'>pacl</a>:
 <a href='https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta'>https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta</a></p></li>
+<li><p>For <a href='pacl_update.html'>pacl_update</a>
+<a href='http://www.christianbjoernskov.com/wp-content/uploads/2020/09/Bj%C3%B8rnskov-Rode-integrated-dataset-v3.2.xlsx'>http://www.christianbjoernskov.com/wp-content/uploads/2020/09/Bj%C3%B8rnskov-Rode-integrated-dataset-v3.2.xlsx</a></p></li>
 <li><p>For <a href='peps.html'>peps</a>:
 <a href='http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta'>http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta</a></p></li>
 <li><p>For <a href='svmdi.html'>svmdi</a>:
@@ -358,6 +362,10 @@ Working Paper. Original data available at
 <p>Transformation Index of the Bertelsmann Stiftung 2020. Bertelsmann
 Stiftung. Available at
 <a href='https://www.bti-project.org/en/index/political-transformation.html'>https://www.bti-project.org/en/index/political-transformation.html</a></p>
+<p>Bjørnskov, C. and M. Rode (2020). "Regime types and regime change: A
+new dataset on democracy, coups, and political institutions." The Review of
+International Organizations 15(2): 531-551. Available at
+<a href='http://www.christianbjoernskov.com/bjoernskovrodedata/'>http://www.christianbjoernskov.com/bjoernskovrodedata/</a></p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A <a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a> with the processed dataset, unless <code>return_raw</code>

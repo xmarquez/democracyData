@@ -4,7 +4,7 @@
 #'returned by the \code{redownload_*} family of functions (\link{blm},
 #'\link{bmr}, \link{bnr}, \link{bti}, \link{gwf_autocratic},
 #'\link{gwf_autocratic_extended}, \link{gwf_all}, \link{gwf_all_extended},
-#'\link{LIED}, \link{magaloni}, \link{pacl}, \link{PIPE}, \link{peps},
+#'\link{LIED}, \link{magaloni}, \link{pacl}, \link{pacl_update}, \link{PIPE}, \link{peps},
 #'[polityIV], \link{polyarchy}, \link{polyarchy_dimensions}, \link{uds_2014},
 #'\link{uds_2010}, \link{uds_2011}, \link{ulfelder}, \link{utip},
 #'\link{wahman_teorell_hadenius}, \link{anckar}, \link{svmdi}) are all available
@@ -48,6 +48,9 @@
 #'
 #'  \item For \link{pacl}:
 #'  \url{https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta}
+#'
+#'  \item For \link{pacl_update}
+#'  \url{http://www.christianbjoernskov.com/wp-content/uploads/2020/09/Bj\%C3\%B8rnskov-Rode-integrated-dataset-v3.2.xlsx}
 #'
 #'  \item For \link{peps}:
 #'  \url{http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta}
@@ -1741,3 +1744,70 @@ redownload_bti <- function(url,
   standardize_columns(bti, country, verbose = verbose)
 }
 
+#' @rdname redownload_blm
+#'
+#' @source Bjørnskov, C. and M. Rode (2020). "Regime types and regime change: A
+#'   new dataset on democracy, coups, and political institutions." The Review of
+#'   International Organizations 15(2): 531-551. Available at
+#'   \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}
+#'
+#' @export
+#' @examples
+#' \dontrun{
+#' redownload_pacl_update()}
+redownload_pacl_update <- function(url,
+                                   verbose = TRUE,
+                                   return_raw = FALSE,
+                                   ...) {
+
+  ctryname <- year <- cowcode <- NULL
+
+  if(missing(url)) {
+    url <- "http://www.christianbjoernskov.com/wp-content/uploads/2020/09/Bj%C3%B8rnskov-Rode-integrated-dataset-v3.2.xlsx"
+  }
+
+
+  data <- read_data(url,
+                    verbose = verbose,
+                    name = "Regime characteristics")
+
+
+  if(return_raw) {
+    if(verbose) {
+      message("Returning raw data, without processing.")
+    }
+    return(data)
+  }
+
+  if(verbose) {
+    message(sprintf("Original dataset has %d rows",
+                    nrow(data)))
+    message("Processing the Bjørnskov and Rode PACL update data - adding state system info...")
+  }
+
+  pacl_update <- data %>%
+    country_year_coder(country,
+                       year,
+                       match_type = "country",
+                       verbose = verbose,
+                       ...)
+
+  if(verbose) {
+    message(sprintf("Resulting dataset after processing has %d rows.",
+                    nrow(pacl_update)))
+    if(nrow(data) != nrow(pacl_update)) {
+      message("Note: the number of rows in the processed Bjørnskov and Rode PACL update is different from the number of rows in the original data.")
+    }
+  }
+
+  pacl_update <- pacl_update %>%
+    select(-starts_with("..."))
+
+  names(pacl_update) <- str_remove_all(names(pacl_update), "\\(.+\\)")
+  names(pacl_update) <- str_trim(names(pacl_update))
+  names(pacl_update) <- str_remove_all(names(pacl_update), "[\\.,]")
+  names(pacl_update) <- str_replace_all(names(pacl_update), " ", "_")
+
+  standardize_columns(pacl_update, country, country_isocode, verbose = verbose)
+
+}

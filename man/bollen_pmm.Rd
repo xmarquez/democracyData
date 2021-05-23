@@ -102,6 +102,7 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
+\code{\link{pacl_update}},
 \code{\link{pacl}},
 \code{\link{peps}},
 \code{\link{pitf}},

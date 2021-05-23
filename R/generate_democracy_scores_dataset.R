@@ -1,7 +1,7 @@
 #' Generate a data frame containing all the democracy measures accessible from
 #' this package
 #'
-#' This function automates the process of joinning together all the archived and
+#' This function automates the process of joining together all the archived and
 #' downloadable datasets in this package, producing a comprehensive data frame
 #' with every democracy measure. It automatically converts each democracy
 #' measure to a numeric value, ensures that larger values are associated with
@@ -14,7 +14,7 @@
 #'   "[doorenspleet]", "[eiu]", "[fh_pmm]", "[gwf_all]", "[gwf_all_extended]",
 #'   "[hadenius_pmm]", "[kailitz]", "[magaloni]", "[magaloni_extended]",
 #'   "[mainwaring]", "[mainwaring_pmm]", "[munck_pmm]", "[pacl]", "[pacl_pmm]",
-#'   "[peps]", "[pitf]", "[polity_pmm]", "[polyarchy]",
+#'   "[pacl_update]", "[peps]", "[pitf]", "[polity_pmm]", "[polyarchy]",
 #'   "[polyarchy_dimensions]", "[polyarchy_pmm]", "[prc_gasiorowski]",
 #'   "[prc_pmm]", "[svmdi]", "[svolik_regime]", "[uds_2010]", "[uds_2011]",
 #'   "[uds_2014]", "[ulfelder]", "[ulfelder_extended]", "[utip]", "[vanhanen]",
@@ -201,6 +201,9 @@
 #'
 #'   \item{pacl}{The measure of democracy from [pacl], where 0 is non-democracy,
 #'   and 1 is democracy.}
+#'
+#'   \item{pacl_update}{The measure of democracy from [pacl_update], where 0 is
+#'   non-democracy, and 1 is democracy.}
 #'
 #'   \item{PEPS1i, PEPS1q, PEPS1v, PEPS2i, PEPS2q, PEPS2v}{The measures of
 #'   democracy from [peps]. Higher values indicate more democracy.}
@@ -396,7 +399,7 @@ generate_democracy_scores_dataset <- function(datasets,
                           "doorenspleet", "eiu", "fh_pmm", "gwf_all", "gwf_all_extended",
                           "hadenius_pmm", "kailitz", "magaloni",
                           "magaloni_extended", "mainwaring", "mainwaring_pmm",
-                          "munck_pmm", "pacl", "pacl_pmm",
+                          "munck_pmm", "pacl", "pacl_pmm", "pacl_update",
                           "peps", "pitf", "polityIV", "polity_pmm", "polyarchy",
                           "polyarchy_dimensions", "polyarchy_pmm",
                           "prc_gasiorowski", "prc_pmm", "svolik_regime",
@@ -914,6 +917,23 @@ generate_democracy_scores_dataset <- function(datasets,
       standardize_selection()
   }
 
+
+  if("pacl_update" %in% datasets) {
+    if(verbose) {
+      message("Adding Update of PACL data by Bjørnskov and Rode")
+    }
+    if(force_redownload) {
+      pacl_update <- redownload_pacl_update(verbose = verbose,
+                              include_in_output = include_in_output)
+    } else {
+      pacl_update  <- democracyData::pacl_update
+    }
+
+    democracy_data <- pacl_update %>%
+      rename_with(~"pacl_update", "Democracy") %>%
+      tidyr::gather("measure", "value", "pacl_update") %>%
+      standardize_selection()
+  }
 
   # PEPS --------------------------------------------------------------------
 

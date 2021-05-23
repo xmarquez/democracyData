@@ -231,6 +231,7 @@ Other democracy:
 \code{\link{kailitz}},
 \code{\link{magaloni}},
 \code{\link{munck_pmm}},
+\code{\link{pacl_update}},
 \code{\link{pacl}},
 \code{\link{peps}},
 \code{\link{pitf}},

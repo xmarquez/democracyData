@@ -17,6 +17,7 @@
 \alias{redownload_ulfelder}
 \alias{redownload_pipe}
 \alias{redownload_bti}
+\alias{redownload_pacl_update}
 \title{Download and process various democracy datasets.}
 \source{
 Bowman, Kirk, Fabrice Lehoucq, and James Mahoney. 2005. Measuring
@@ -99,6 +100,11 @@ Adam Przeworski. 2013 \emph{Political Institutions and Political Events
 Transformation Index of the Bertelsmann Stiftung 2020. Bertelsmann
 Stiftung. Available at
 \url{https://www.bti-project.org/en/index/political-transformation.html}
+
+Bjørnskov, C. and M. Rode (2020). "Regime types and regime change: A
+new dataset on democracy, coups, and political institutions." The Review of
+International Organizations 15(2): 531-551. Available at
+\url{http://www.christianbjoernskov.com/bjoernskovrodedata/}
 }
 \usage{
 redownload_blm(url, verbose = TRUE, return_raw = FALSE, ...)
@@ -162,6 +168,8 @@ redownload_ulfelder(
 redownload_pipe(url, verbose = TRUE, return_raw = FALSE, ...)
 
 redownload_bti(url, verbose = TRUE, return_raw = FALSE, ...)
+
+redownload_pacl_update(url, verbose = TRUE, return_raw = FALSE, ...)
 }
 \arguments{
 \item{url}{The URL of the dataset. This defaults to:
@@ -191,6 +199,9 @@ redownload_bti(url, verbose = TRUE, return_raw = FALSE, ...)
 
 \item For \link{pacl}:
 \url{https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta}
+
+\item For \link{pacl_update}
+\url{http://www.christianbjoernskov.com/wp-content/uploads/2020/09/Bj\%C3\%B8rnskov-Rode-integrated-dataset-v3.2.xlsx}
 
 \item For \link{peps}:
 \url{http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta}
@@ -260,7 +271,7 @@ Download and process various democracy datasets. Note that the datasets
 returned by the \code{redownload_*} family of functions (\link{blm},
 \link{bmr}, \link{bnr}, \link{bti}, \link{gwf_autocratic},
 \link{gwf_autocratic_extended}, \link{gwf_all}, \link{gwf_all_extended},
-\link{LIED}, \link{magaloni}, \link{pacl}, \link{PIPE}, \link{peps},
+\link{LIED}, \link{magaloni}, \link{pacl}, \link{pacl_update}, \link{PIPE}, \link{peps},
 \link{polityIV}, \link{polyarchy}, \link{polyarchy_dimensions}, \link{uds_2014},
 \link{uds_2010}, \link{uds_2011}, \link{ulfelder}, \link{utip},
 \link{wahman_teorell_hadenius}, \link{anckar}, \link{svmdi}) are all available
@@ -313,4 +324,6 @@ redownload_pipe()}
 bti <- redownload_bti()
 bti
 }
+\dontrun{
+redownload_pacl_update()}
 }

@@ -86,6 +86,14 @@ test_that("PACL redownloads correctly", {
   expect_identical(pacl, pacl_redownloaded)
 })
 
+test_that("PACL update redownloads correctly", {
+  skip_on_cran()
+  skip_on_travis()
+  skip_if_offline()
+  pacl_update_redownloaded <- redownload_pacl_update(verbose = FALSE)
+  expect_identical(pacl_update, pacl_update_redownloaded)
+})
+
 test_that("peps redownloads correctly", {
   skip_on_cran()
   skip_on_travis()

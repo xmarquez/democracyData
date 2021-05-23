@@ -1888,6 +1888,196 @@
 #'   country-years when compared with \code{pacl}.
 "pacl_pmm"
 
+#'Update of the Democracy and Dictatorship Dataset by Bjørnskov and Rode
+#'
+#'This dataset updates [pacl] with more countries and coverage from 1950 to
+#'2020, as described in C. Bjørnskov and M. Rode. "Regime types and regime
+#'change: A new dataset on democracy, coups, and political institutions". In:
+#'_The Review of International Organizations_ 15.2 (2020), pp. 531-551. DOI:
+#'10.1007/s11558-019-09345-1. The full data and codebook can be downloaded here
+#'\url{http://www.christianbjoernskov.com/bjoernskovrodedata/}. The
+#'documentation below is directly copied from the codebook.
+#'
+#'\describe{
+#'
+#'\item{pacl_update_country}{Country name in the original dataset.}
+#'
+#'\item{pacl_update_country_isocode}{Three letter ISO country code.}
+#'
+#'\item{year}{Year.}
+#'
+#'\item{DD_regime}{Numeric regime category, following Cheibub, Ghandi and
+#'Vreeland (2010) (Parliamentary democracies = 0, Mixed democracies (with weak
+#'presidents) = 1, Presidential democracies = 2, Civilian autocracies = 3,
+#'Military dictatorships = 4, and Royal dictatorships = 5)}
+#'
+#'\item{DD_category}{Regime category label, following Cheibub, Ghandi and
+#'Vreeland (2010) (Parliamentary democracies = 0, Mixed democracies (with weak
+#'presidents) = 1, Presidential democracies = 2, Civilian autocracies = 3,
+#'Military dictatorships = 4, and Royal dictatorships = 5)}
+#'
+#'\item{Monarchy}{Is the country a hereditary monarchy? (Monarchy = 1, Republic
+#'= 0)}
+#'
+#'\item{Commonwealth}{Is the country a member of the British Commonwealth?
+#'(Commonwealth = 1, Other = 0)}
+#'
+#'\item{Monarch_name}{Name of the monarch.}
+#'
+#'\item{Monarch_accession}{Year of accession of the monarch.}
+#'
+#'\item{Monarch_birthyear}{Year of birth of the monarch.}
+#'
+#'\item{Female_monarch}{Is the monarch female? (No=0, Yes=1)}
+#'
+#'\item{Democracy}{Is the country democratic or not? following Cheibub, Ghandi
+#'and Vreeland (2010) (Democracy = 1, Autocracy = 0) Dichotomous indicator of
+#'democracy based on a minimalist definition. A country is defined as
+#'democratic, if elections were conducted, these were free and fair, and if
+#'there was a peaceful turnover of legislative and executive offices following
+#'those elections.}
+#'
+#'\item{Presidential}{Is the political system presidential? (No=0, Yes=1)}
+#'
+#'\item{President_name}{Name of the president.}
+#'
+#'\item{President_accesion}{Accession year of the president.}
+#'
+#'\item{President_birthyear}{Year of birth of the president.}
+#'
+#'\item{Interim_phase}{Is the president interim / preliminary? (more than 2
+#'Presidents/year=1, Otherwise=0)}
+#'
+#'\item{Female_president}{Is the president female? (No=0, Yes=1)}
+#'
+#'\item{Colony}{Is the country a colony? (No=0, Yes=1)}
+#'
+#'\item{Colony_of}{If colony, which country is the colonial power? Country name
+#'of the colonial power.}
+#'
+#'\item{Colony_administrated_by}{If colony, which country is the colonial
+#'administrator?}
+#'
+#'\item{Communist}{Is the country’s regime communist / socialist? (No=0, Yes=1)}
+#'
+#'\item{Regime_change_lag}{Regime Change lag (No=0, Yes=1) If a coded event,
+#'such as a change in the Presidency, took place after 01.07 it is assigned to
+#'the following calendar year in the data. In this case, the lag variable will
+#'be equal to one. For all change events before that date, the lag dummy is
+#'equal to zero.}
+#'
+#'\item{spatial_democracy}{Average of geographical neighbors’ Democracy score}
+#'
+#'\item{countrycode}{Numeric country ID. Undocumented in original codebook.}
+#'
+#'\item{No_of_chambers_in_parliament}{Total number of chambers in parliament.}
+#'
+#'\item{proportional_voting}{Is the electoral system characterized by including
+#'proportional representation? (No=0, Yes=1)}
+#'
+#'\item{Election_system}{Electoral system. Can be FPTP, List PR (large
+#'multi-member), List PR, Parallel SMD/PR, List PR (small multi-member), PR,
+#'Mixed member SMD/PR, FPTP and appointed, List PR(small multi-member), Some
+#'form of FPTP, SNTV, National list, STV, Single-member constituency, Party list
+#'PR, Bloc voting, Multiple vote, FPTP and bloc voting, FPTP and Hare quota,
+#'Hagenbasch-Bischoff, Appointed, List PR(large multi-member), IRV, Multi-seat
+#'PR, Plurality-at-large / d'Hondt, d'Hondt and Saint algue, List PR (small
+#'multi-party), Mix, Some form of PR, Proportional representation, Multi-member
+#'constituencies, Block Vote, Mix of appointment and local election, d'Hondt,
+#'FPTP / PR, Borda count, Single-member plurality, FPTP and reserved, PR /
+#'Sainte-Laguë, Mixed member majoritarian, Two-round FPTP, Endorsement, Most
+#'multi-seat constituencies by simple majority vote, PR and nomination, Two
+#'round  single-member constituencies, Ethnic FPTP, FPTP / Bloc voting, FPTP /
+#'Party list, Half single constituency, half PR, Indirectly elected by the
+#'provincial people's congresses, Multi- and single-seat constituency,
+#'Closed-list proportional representation, Lists, FPTP, party list  multi member
+#'constituency, Two round absolute majority, All appointed, Closed list PR,
+#'Single list, Appointed by Basic Peoples Congresses, Mix PR and functional
+#'constituencies, MMP / FPTP, FPTP in two colleges, PR and appointed, Multiple
+#'non-transferable vote system, Single-member constituencies majority, One
+#'constituency, d'Hondt, Partially-open list proportional representation,
+#'majority bonus, Party list and FPTP, PR and Droop quota, PR Hare quota, FPTP
+#'and proportional, Simple majority constituency, Closed list proportional
+#'representation, List PR and appointment, Simple majority, one constituency,
+#'Sainte-Laguë, Single constituency, Party-list proportional representation,
+#'Party list, Two-round, Elected and single-member constituency, FPTP /
+#'appointed, Mixed Member SDM/PR, Party list majority, PR / FPTP, Single-seat
+#'constituencies, FPTP and reserved seats, Indirect through eight regional
+#'colleges, Largest remainder, Party list proportional representation, Two round
+#'single seat constituency, Appointed by clans, Open party-list proportional
+#'representation, Plurality party-list system, Elected by people's  district
+#'assemblies, FPTP and nomination, Mixed, Most appointed, FPTP and party list,
+#'Most in open list multi member constituencies, Multi-seat constituency
+#'majority, Mainly appointed, Nominated by parties, FPTP after some appointed,
+#'Mixed PR / FPTP, Single seat constituency, Elected by provincial assemblies,
+#'FPTP and d'Hondt, Mixed appointment and unknown, FPTP and appointment,
+#'Single-seat constituency, Som form of FPTP, Elected by colleges, Half elected
+#'by local councils and half by corporations, Majority party list, Panchayat
+#'system, PR and FPTP, Seven-stage process, FPTP and PR, FPTP within two
+#'colleges, Appointed by governor, FPTP, multi member constituency, Multi-seat
+#'constituency, Party nominees, Mix nominated and unknown, Mixed member SMD/PR
+#'with large bonus, Single list of candidates, Parallel SMP/PR, Party Block
+#'vote, Single constituency majority, Unknown, FPTP and nominated, Limited Vote,
+#'Mixed-member SMD/PR, Multi-member constituencies. Single Transferable Vote, PR
+#'in 15 of 26 constituencies; Bloc voting, Two-round single-member constituency,
+#'346 elected by municipal citizens, 181 chosen by 'social sectors', Election in
+#'two colleges, Party-list proportional representation., Single electoral
+#'college, SNTV and appointed, ?, Coopted, List P (large multi-member), Selected
+#'by committee, Single district.}
+#'
+#'\item{No_of_members_in_lower_house}{If bicameral parliament, total number of
+#'members in lower house.}
+#'
+#'\item{No_of_members_in_upper_house}{If bicameral parliament, total number of
+#'members in upper house.}
+#'
+#'\item{No_of_members_in_third_house}{If tricameral parliament, total number of
+#'members in third house.}
+#'
+#'\item{New_constitution}{Whether a new constitution was implemented (No=0,
+#'Yes=1)}
+#'
+#'\item{fullsuffrage}{Whether electoral system attributes full suffrage. (No=0,
+#'Yes=1)}
+#'
+#'\item{Suffrage_restriction}{If no full suffrage, kind of suffrage restriction}
+#'
+#'\item{electoral}{Alternative democracy indicator capturing degree of
+#'multi-party competition (No elections=0, Single-party elections=1,
+#'non-democratic multi-party elections=2, democratic elections= 3)}
+#'
+#'\item{spatial_electoral}{Average of geographical neighbors' electoral.}
+#'
+#'\item{alternation}{Whether there's an alternation in power after election.
+#'Undocumented in original codebook.}
+#'
+#'\item{multiparty}{Whether the elections are multiparty. Undocumented in
+#'original codebook.}
+#'
+#'\item{free_and_fair_election}{Whether the elections are free and fair.
+#'Undocumented in original codebook.}
+#'
+#'\item{parliamentary_election_year}{Year of parliamentary election.
+#'Undocumented in original codebook.}
+#'
+#'\item{election_month_year}{Month and year of parliamentary election.
+#'Undocumented in original codebook.}
+#'
+#'\item{postponed_election}{Whether the election was postponed. Undocumented in
+#'original codebook.} }
+#'
+#'@template standard-variables
+#'
+#'@family democracy
+#'@family dichotomous democracy indexes
+#'
+#'@source C. Bjørnskov and M. Rode. "Regime types and regime change: A new
+#'  dataset on democracy, coups, and political institutions". In: _The Review of
+#'  International Organizations_ 15.2 (2020), pp. 531-551. DOI:
+#'  10.1007/s11558-019-09345-1. The full data and codebook can be downloaded
+#'  here \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}
+"pacl_update"
+
 
 # PEPS --------------------------------------------------------------------
 
