@@ -22,10 +22,10 @@ ulfelder_extended
 \description{
 This is the dataset documented in Jay Ulfelder. \emph{Democracy/Autocracy Data
 Set}. 2012. \url{http://hdl.handle.net/1902.1/18836}. It comes in two
-versions: \link{ulfelder}, which only goes back to 1955, and \link{ulfelder_extended},
-which extends the regime classifications back in time using the \code{rgjdura} and
-\code{rgjdurd} variables, adding 3861 country-years to the original data, mostly
-authoritarian regimes.
+versions: \link{ulfelder}, which only goes back to 1955, and
+\link{ulfelder_extended}, which extends the regime classifications back in
+time using the \code{rgjdura} and \code{rgjdurd} variables, adding 3861
+country-years to the original data, mostly authoritarian regimes.
 }
 \section{Variables with values for all years}{
 
@@ -33,8 +33,9 @@ authoritarian regimes.
 pitfcode: PITF Country Code. Three-character country code matching those
 used by the Political Instability Task Force. Some of these seem off - GER
 for Germany instead of GMY, UK instead of UKG. I've created
-\code{ulfelder_scode} on the basis of this by converting "GER","MNE","SRB","UK",
-and "USS" to"GMY","MNT","SER","UKG", and "USR" respectively.
+\code{ulfelder_scode} on the basis of this by converting
+"GER","MNE","SRB","UK", and "USS" to"GMY","MNT","SER","UKG", and "USR"
+respectively.
 
 ulfelder_scode: Modified version of \code{pitfcode}, matching the Polity IV
 character codes that appear to be the basis of the PITF codes.
@@ -58,6 +59,37 @@ NS = Not sovereign. A foreign government or international organization
 either sets national policy or wields formal veto power
 
 -99 = Country termination (censoring event)
+
+The codebook indicates that democracy is defined as follows (I quote from
+p. 4):
+
+For purposes of this data set, democracy is understood to be a form of
+government in which a free citizenry fairly chooses and routinely holds
+accountable its rulers. In practice, this occurs when four general
+conditions hold:
+\itemize{
+\item Elected officials rule. Representatives chosen by citizens actually make
+policy, and unelected individuals, bodies, and organizations cannot veto
+those representatives' decisions.
+\item Elections are fair and competitive. The process by which citizens elect
+their rulers provides voters with meaningful choice and is free from
+deliberate fraud or abuse.
+\item Politics is inclusive. Adult citizens have equal rights to vote and
+participate in government and fair opportunity to exercise those rights.
+\item Civil liberties are protected. Freedoms of speech, association, and
+assembly give citizens the chance to deliberate on their interests, to
+organize in pursuit of those interests, and to monitor the performance of
+their elected representatives and the bureaucracies on which those
+officials depend.
+}
+
+To identify whether these conditions obtain in a particular country at a
+particular time, I reviewed a variety of secondary sources to try to
+determine whether or not all of the criteria listed below were satisfied.
+According to my definition, only a country that meets all of these criteria
+is considered a democracy. In other words, I see each one of them as a
+necessary condition for democratic government. The moment a country fails
+to satisfy one of the criteria, it is considered a non-democracy.
 
 rgjdurd: Consecutive Years of Democracy. Count in years since beginning of
 an episode of democracy. Coded as missing for countries currently coded as
@@ -123,7 +155,7 @@ elections, or substantially diminish civil liberties
 = 3 Rebellion: opposition forces seize power by means other than largely
 free, fair, and competitive elections
 
-= 4 Other: some other domestic actor—nearly always a monarch—usurps power
+= 4 Other: some other domestic actor--nearly always a monarch--usurps power
 from an elected government
 
 = -6 Foreign intervention: a foreign government or international
@@ -146,7 +178,7 @@ as missing for country-years that ended with any non-democracy.
 
 = 0 At least one change in chief executive
 
-rgjaltlt: Alternation in Leadership “Clock” (Democracy Only). Numeric
+rgjaltlt: Alternation in Leadership "Clock" (Democracy Only). Numeric
 variable counting time until the first change in the head of government.
 
 rgjaltp: Alternation in Party in Power (Democracy Only). Dummy variable
@@ -163,7 +195,7 @@ with any non-democracy.
 
 = 0 At least one change in the party in power
 
-rgjaltpt: Alternation in Party in Power “Clock” (Democracy Only). Numeric
+rgjaltpt: Alternation in Party in Power "Clock" (Democracy Only). Numeric
 variable counting time until the first change in party holding the office
 of chief executive.
 
@@ -283,7 +315,7 @@ December of the listed year. NATO was established in 1949.
 = 0 Neither a member nor formally invited to join
 
 rgjnatop: Participant in NATO Partnership for Peace. Binary variable
-indicating participation in NATO’s Partnership for Peace program, as of 31
+indicating participation in NATO's Partnership for Peace program, as of 31
 December of the listed year.
 
 = 1 Participant
@@ -469,7 +501,7 @@ was adopted in 1969 and entered into force in 1978.
 
 = 0 No status
 
-rgjachpr: Signatory to the African Charter on Human and People’s Rights.
+rgjachpr: Signatory to the African Charter on Human and People's Rights.
 Categorical variable indicating status as signatory to this treaty, as of
 31 December of the listed year. The treaty was adopted in 1981 and entered
 into force in 1986.
@@ -555,6 +587,7 @@ Other democracy:
 \code{\link{LIED}},
 \code{\link{PIPE}},
 \code{\link{anckar}},
+\code{\link{anrr}},
 \code{\link{arat_pmm}},
 \code{\link{blm}},
 \code{\link{bmr}},
@@ -568,6 +601,7 @@ Other democracy:
 \code{\link{download_reign}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
+\code{\link{extended_uds}},
 \code{\link{fh_pmm}},
 \code{\link{gwf_all}},
 \code{\link{hadenius_pmm}},
@@ -598,6 +632,7 @@ Other events data:
 
 Other dichotomous democracy indexes: 
 \code{\link{anckar}},
+\code{\link{anrr}},
 \code{\link{bmr}},
 \code{\link{bnr}},
 \code{\link{doorenspleet}},

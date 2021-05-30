@@ -94,7 +94,7 @@ for details.}
 
 \item{Q6_Level_of_Socioeconomic_Development (Q6.1)}{Score on question on
 the level of socioeconomic development (1-10). The BTI codebook says that
-this concept measures whether "In principle, the country’s level of
+this concept measures whether "In principle, the country's level of
 development permits adequate freedom of choice for all citizens." See
 codebook at
 https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
@@ -131,7 +131,7 @@ for details.}
 
 \item{Q11_Economic_Performance (Q11.1)}{Score on question on economic
 performance (1-10). The BTI codebook says that this concept measures
-whether "The economy’s performance points to solid development." See
+whether "The economy's performance points to solid development." See
 codebook at
 https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
 for details.}
@@ -227,6 +227,7 @@ Other democracy:
 \code{\link{LIED}},
 \code{\link{PIPE}},
 \code{\link{anckar}},
+\code{\link{anrr}},
 \code{\link{arat_pmm}},
 \code{\link{blm}},
 \code{\link{bmr}},
@@ -239,6 +240,7 @@ Other democracy:
 \code{\link{download_reign}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
+\code{\link{extended_uds}},
 \code{\link{fh_pmm}},
 \code{\link{gwf_all}},
 \code{\link{hadenius_pmm}},

@@ -7,6 +7,7 @@ this package}
 \usage{
 generate_democracy_scores_dataset(
   datasets,
+  selection,
   output_format = "long",
   use_extended = TRUE,
   include_extra_pmm = FALSE,
@@ -21,16 +22,18 @@ generate_democracy_scores_dataset(
 \arguments{
 \item{datasets}{Character vector indicating which datasets to use in
 producing the combined data frame. Can be any or all of (an unambiguous
-abbreviation of) "\link{anckar}", "\link{LIED}", "\link{PIPE}", "\link{arat_pmm}", "\link{blm}",
-"\link{blm_pmm}", "\link{bmr}", "\link{bnr}", "\link{bti}", "\link{bnr_extended}", "\link{bollen_pmm}",
-"\link{doorenspleet}", "\link{eiu}", "\link{fh_pmm}", "\link{gwf_all}", "\link{gwf_all_extended}",
-"\link{hadenius_pmm}", "\link{kailitz}", "\link{magaloni}", "\link{magaloni_extended}",
-"\link{mainwaring}", "\link{mainwaring_pmm}", "\link{munck_pmm}", "\link{pacl}", "\link{pacl_pmm}",
-"\link{pacl_update}", "\link{peps}", "\link{pitf}", "\link{polity_pmm}", "\link{polyarchy}",
-"\link{polyarchy_dimensions}", "\link{polyarchy_pmm}", "\link{prc_gasiorowski}",
-"\link{prc_pmm}", "\link{svmdi}", "\link{svolik_regime}", "\link{uds_2010}", "\link{uds_2011}",
-"\link{uds_2014}", "\link{ulfelder}", "\link{ulfelder_extended}", "\link{utip}", "\link{vanhanen}",
-"\link{wahman_teorell_hadenius}", "\link{reign}", "\link{polity}", "\link{fh}",
+abbreviation of) "\link{anckar}", "\link{anrr}", "\link{LIED}", "\link{PIPE}", "\link{arat_pmm}",
+"\link{blm}", "\link{blm_pmm}", "\link{bmr}", "\link{bnr}", "\link{bnr_extended}", "\link{bti}",
+"\link{bollen_pmm}", "\link{doorenspleet}", "\link{eiu}", "\link{fh_pmm}", "\link{gwf_all}",
+"\link{gwf_all_extended}", "\link{hadenius_pmm}", "\link{kailitz}", "\link{magaloni}",
+"\link{magaloni_extended}", "\link{mainwaring}", "\link{mainwaring_pmm}", "\link{munck_pmm}",
+"\link{pacl}", "\link{pacl_pmm}", "\link{pacl_update}", "\link{peps}", "\link{pitf}",
+"\link{polity_pmm}", "\link{polyarchy}", "\link{polyarchy_dimensions}", "\link{polyarchy_pmm}",
+"\link{prc_gasiorowski}", "\link{prc_pmm}", "\link{svmdi}", "\link{svolik_regime}",
+"\link{uds_2010}", "\link{uds_2011}", "\link{uds_2014}", "\link{ulfelder}",
+"\link{ulfelder_extended}", "\link{utip}", "\link{vanhanen}", "\link{wahman_teorell_hadenius}",
+"\link{reign}", "\link{polityIV}", "\link{polity}" (or
+"\href{download_polity_annual.html}{polity_annual}"), "\href{download_fh.html}{fh}",
 "\link{fh_electoral}", "\link{wgi}". Default is all of them.}
 
 \item{output_format}{Character. Whether to output a "wide" (each measure of
@@ -143,14 +146,17 @@ country's situation as of 31 December of the year. If
 country year may nevertheless contain more than one measurement for some
 measures (e.g., \link{prc}).}
 
-\item{measure}{The dataset whence the measure is taken. (e.g., "blm",
-"fh_total_reversed"). }
+\item{measure}{The name of the measure. (e.g., "blm", "fh_total_reversed").
+}
 
 \item{variable}{The numerical value of the measure, in the original scale
 (if \code{scale_scores = FALSE}) or as a z-score (if \code{scale_scores =
   TRUE}).}
 
-}
+\item{index_type}{The index type (dichotomous, trichotomous,
+ordinal/graded, continuous).}
+
+\item{dataset}{The name of the dataset.} }
 }
 
 \section{Wide version}{
@@ -171,18 +177,22 @@ much as possible.}
 value. Up to 2010 this should be identical to \code{bmr_democracy_omitteddata}.
 0 = non-democracy, 1 = democracy.}
 
+\item{anrr}{The \link{anrr} measure of democracy, as a numeric value. 0 =
+non-democracy, 1 = democracy.}
+
 \item{blm}{The \link{blm} measure of democracy, as a numeric value. Can be 0
 (authoritarian), 0.5 (hybrid), or 1 (democracy). }
 
-\item{bmr}{The \link{bmr} measure of democracy, as a numeric value. Can be 0
-(non-democracy) or 1 (democracy). }
+\item{bmr_democracy}{The \link{bmr} measure of democracy, as a numeric value.
+Can be 0 (non-democracy) or 1 (democracy). }
 
 \item{bmr_democracy_omitteddata}{According to the \link{bmr} codebook, "this is
 the same measure as bmr, except it records an NA for countries occupied
 during an international war (e.g., the Netherlands 1940-44) or experiencing
 state collapse during a civil war (e.g., Lebanon 1976-89). The democracy
 variable instead fills in these years as continuations of the same regime
-type."}
+type." There are some -1 values that I've converted to \code{NA} (the measure is
+supposed to be between 0 and 1).}
 
 \item{bmr_democracy_femalesuffrage}{According to the \link{bmr} codebook, this
 is the same measure as \code{bmr}, except that it also requires that at least

@@ -470,6 +470,7 @@ Other democracy:
 \code{\link{LIED}},
 \code{\link{PIPE}},
 \code{\link{anckar}},
+\code{\link{anrr}},
 \code{\link{arat_pmm}},
 \code{\link{blm}},
 \code{\link{bmr}},
@@ -483,6 +484,7 @@ Other democracy:
 \code{\link{download_reign}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
+\code{\link{extended_uds}},
 \code{\link{fh_pmm}},
 \code{\link{gwf_all}},
 \code{\link{hadenius_pmm}},
@@ -519,6 +521,7 @@ Other PMM replication data:
 
 Other dichotomous democracy indexes: 
 \code{\link{anckar}},
+\code{\link{anrr}},
 \code{\link{bmr}},
 \code{\link{bnr}},
 \code{\link{doorenspleet}},

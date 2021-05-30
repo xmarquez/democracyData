@@ -66,7 +66,7 @@ time t. In the "extended" datasets this always starts at 1.}
 \item{gwf_fail}{Binary indicator for regime failure}
 
 \item{gwf_disagree}{Binary indicator for country-year observations where GWF
-coding of democracy differs from CGV (here \link{pacl}) coding of democracy}
+coding of democracy differs from \href{pacl.html}{CGV} (here \link{pacl}) coding of democracy}
 
 \item{gwf_startdate}{Day-Month-Year for the calendar date of the autocratic
 regime start event. Only in \code{gwf_autocratic} datasets.}
@@ -155,6 +155,7 @@ Other democracy:
 \code{\link{LIED}},
 \code{\link{PIPE}},
 \code{\link{anckar}},
+\code{\link{anrr}},
 \code{\link{arat_pmm}},
 \code{\link{blm}},
 \code{\link{bmr}},
@@ -168,6 +169,7 @@ Other democracy:
 \code{\link{download_reign}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
+\code{\link{extended_uds}},
 \code{\link{fh_pmm}},
 \code{\link{hadenius_pmm}},
 \code{\link{kailitz}},

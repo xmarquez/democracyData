@@ -101,7 +101,7 @@ Transformation Index of the Bertelsmann Stiftung 2020. Bertelsmann
 Stiftung. Available at
 \url{https://www.bti-project.org/en/index/political-transformation.html}
 
-Bjørnskov, C. and M. Rode (2020). "Regime types and regime change: A
+Bjornskov, C. and M. Rode (2020). "Regime types and regime change: A
 new dataset on democracy, coups, and political institutions." The Review of
 International Organizations 15(2): 531-551. Available at
 \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}

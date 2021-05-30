@@ -18,7 +18,7 @@ polyarchy_pmm
 \description{
 Michael Coppedge and Wolfgang Reinicke, "Measuring Polyarchy," Studies in
 Comparative International Development 25:1 (Spring 1990): 51-72. Data
-available at \url{http://www3.nd.edu/~mcoppedg/crd/datacrd.htm}The codebook
+available at \url{http://www3.nd.edu/~mcoppedg/crd/datacrd.htm}. The codebook
 below is copied from that website.
 }
 \section{About the Coding and the Scales}{
@@ -283,6 +283,7 @@ Other democracy:
 \code{\link{LIED}},
 \code{\link{PIPE}},
 \code{\link{anckar}},
+\code{\link{anrr}},
 \code{\link{arat_pmm}},
 \code{\link{blm}},
 \code{\link{bmr}},
@@ -296,6 +297,7 @@ Other democracy:
 \code{\link{download_reign}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
+\code{\link{extended_uds}},
 \code{\link{fh_pmm}},
 \code{\link{gwf_all}},
 \code{\link{hadenius_pmm}},

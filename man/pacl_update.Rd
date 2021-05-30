@@ -87,7 +87,7 @@ of the colonial power.}
 \item{Colony_administrated_by}{If colony, which country is the colonial
 administrator?}
 
-\item{Communist}{Is the country’s regime communist / socialist? (No=0, Yes=1)}
+\item{Communist}{Is the country's regime communist / socialist? (No=0, Yes=1)}
 
 \item{Regime_change_lag}{Regime Change lag (No=0, Yes=1) If a coded event,
 such as a change in the Presidency, took place after 01.07 it is assigned to
@@ -95,7 +95,7 @@ the following calendar year in the data. In this case, the lag variable will
 be equal to one. For all change events before that date, the lag dummy is
 equal to zero.}
 
-\item{spatial_democracy}{Average of geographical neighbors’ Democracy score}
+\item{spatial_democracy}{Average of geographical neighbors' Democracy score}
 
 \item{countrycode}{Numeric country ID. Undocumented in original codebook.}
 
@@ -234,6 +234,7 @@ Other democracy:
 \code{\link{LIED}},
 \code{\link{PIPE}},
 \code{\link{anckar}},
+\code{\link{anrr}},
 \code{\link{arat_pmm}},
 \code{\link{blm}},
 \code{\link{bmr}},
@@ -247,6 +248,7 @@ Other democracy:
 \code{\link{download_reign}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
+\code{\link{extended_uds}},
 \code{\link{fh_pmm}},
 \code{\link{gwf_all}},
 \code{\link{hadenius_pmm}},
@@ -272,6 +274,7 @@ Other democracy:
 
 Other dichotomous democracy indexes: 
 \code{\link{anckar}},
+\code{\link{anrr}},
 \code{\link{bmr}},
 \code{\link{bnr}},
 \code{\link{doorenspleet}},
