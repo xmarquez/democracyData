@@ -179,7 +179,7 @@ check that the results make sense.
 \examples{
 democracy <- generate_democracy_scores_dataset(selection = "pmm", output_format = "wide")
 summary(democracy)
-summary(prepare_data(democracy))
+summary(prepare_democracy_data(democracy))
 
 }
 \references{

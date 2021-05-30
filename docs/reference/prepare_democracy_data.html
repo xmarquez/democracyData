@@ -428,8 +428,47 @@ https://sites.google.com/site/authoritarianregimedataset/data&gt;.</p>
 #&gt;  Mean   :4.15  
 #&gt;  3rd Qu.:6.00  
 #&gt;  Max.   :7.00  
-#&gt;  NA's   :2699  </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='fu'>prepare_data</span><span class='op'>(</span><span class='va'>democracy</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in h(simpleError(msg, call)): error in evaluating the argument 'object' in selecting a method for function 'summary': could not find function "prepare_data"</span></div><div class='input'>
+#&gt;  NA's   :2699  </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='fu'>prepare_democracy_data</span><span class='op'>(</span><span class='va'>democracy</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;  extended_country_name      GWn             cown       in_GW_system   
+#&gt;  Length:9137           Min.   :  2.0   Min.   :  2.0   Mode :logical  
+#&gt;  Class :character      1st Qu.:225.0   1st Qu.:225.0   FALSE:12       
+#&gt;  Mode  :character      Median :450.0   Median :450.0   TRUE :9125     
+#&gt;                        Mean   :458.8   Mean   :458.5                  
+#&gt;                        3rd Qu.:678.0   3rd Qu.:678.0                  
+#&gt;                        Max.   :990.0   Max.   :990.0                  
+#&gt;                                                                       
+#&gt;       year       pmm_vanhanen      pmm_prc      pmm_polyarchy   
+#&gt;  Min.   :1946   Min.   :1.000   Min.   :1.000   Min.   : 1.000  
+#&gt;  1st Qu.:1969   1st Qu.:1.000   1st Qu.:1.000   1st Qu.: 4.000  
+#&gt;  Median :1984   Median :2.000   Median :1.000   Median : 8.000  
+#&gt;  Mean   :1982   Mean   :2.939   Mean   :2.147   Mean   : 7.329  
+#&gt;  3rd Qu.:1997   3rd Qu.:5.000   3rd Qu.:4.000   3rd Qu.:11.000  
+#&gt;  Max.   :2008   Max.   :8.000   Max.   :4.000   Max.   :11.000  
+#&gt;                 NA's   :172     NA's   :3135    NA's   :8784    
+#&gt;     pmm_pacl       pmm_munck     pmm_mainwaring   pmm_hadenius   
+#&gt;  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   : 0.000  
+#&gt;  1st Qu.:1.000   1st Qu.:3.000   1st Qu.:1.000   1st Qu.: 1.500  
+#&gt;  Median :1.000   Median :4.000   Median :2.000   Median : 3.100  
+#&gt;  Mean   :1.436   Mean   :3.333   Mean   :2.122   Mean   : 4.509  
+#&gt;  3rd Qu.:2.000   3rd Qu.:4.000   3rd Qu.:3.000   3rd Qu.: 8.300  
+#&gt;  Max.   :2.000   Max.   :4.000   Max.   :3.000   Max.   :10.000  
+#&gt;  NA's   :70      NA's   :8795    NA's   :8302    NA's   :9008    
+#&gt;    pmm_bollen        pmm_blm        pmm_arat       pmm_polity   
+#&gt;  Min.   : 1.000   Min.   :1.00   Min.   :1.000   Min.   : 1.00  
+#&gt;  1st Qu.: 3.000   1st Qu.:1.00   1st Qu.:2.000   1st Qu.: 4.00  
+#&gt;  Median : 6.000   Median :1.00   Median :3.000   Median :10.00  
+#&gt;  Mean   : 6.006   Mean   :1.72   Mean   :3.878   Mean   :11.13  
+#&gt;  3rd Qu.:10.000   3rd Qu.:2.00   3rd Qu.:6.000   3rd Qu.:19.00  
+#&gt;  Max.   :10.000   Max.   :3.00   Max.   :7.000   Max.   :21.00  
+#&gt;  NA's   :8627     NA's   :8862   NA's   :5264    NA's   :1087   
+#&gt;      pmm_fh      
+#&gt;  Min.   : 1.000  
+#&gt;  1st Qu.: 4.000  
+#&gt;  Median : 7.000  
+#&gt;  Mean   : 7.301  
+#&gt;  3rd Qu.:11.000  
+#&gt;  Max.   :13.000  
+#&gt;  NA's   :2699    </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
