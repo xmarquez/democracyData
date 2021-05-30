@@ -56,7 +56,7 @@ reference:
 - contents:
   - matches("prepare_democracy")
   - matches("prob_")
-  - matches("democracy_scores")
+  - starts_with("democracy_scores")
   - matches("cutpoints|raterinfo")
 - title: "Information functions"
   desc: "Functions and datasets with citation and other info about the datasets in this package."
