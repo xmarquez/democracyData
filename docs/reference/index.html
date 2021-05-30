@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -85,6 +85,24 @@
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/articles/Relationships_between_democracy_measures.html">Relationships between democracy measures</a>
+    </li>
+    <li>
+      <a href="../articles/articles/Replicating_and_extending_the_UD_scores.html">Replicating and Extending the UD scores of Pemstein, Meserve, and Melton</a>
+    </li>
+    <li>
+      <a href="../articles/articles/Understanding_the_coverage_of_existing_democracy_indexes.html">Understanding the geographic and temporal coverage of existing democracy indexes</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -124,8 +142,8 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
+          <h2 id="section-democracy-datasets" class="hasAnchor"><a href="#section-democracy-datasets" class="anchor"></a>Democracy Datasets</h2>
+          <p class="section-desc"><p>Datasets with measures of democracy.</p></p>
         </th>
       </tr>
       
@@ -142,15 +160,15 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="arat_pmm.html">arat_pmm</a></code> </p>
+          <p><code><a href="anrr.html">anrr</a></code> </p>
         </td>
-        <td><p>The Arat measure of democracy</p></td>
+        <td><p>The Acemoglu, Naidu, Restrepo and Robinson deocracy dataset</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="bibliography.html">bibliography</a></code> </p>
+          <p><code><a href="arat_pmm.html">arat_pmm</a></code> </p>
         </td>
-        <td><p>References to all the datasets included in this package.</p></td>
+        <td><p>The Arat measure of democracy</p></td>
       </tr><tr>
         
         <td>
@@ -185,76 +203,9 @@ Breakdowns</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="cite_dataset.html">cite_dataset()</a></code> </p>
-        </td>
-        <td><p>Retrieve the citation for a specific dataset included in this package</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="country_year_coder.html">country_year_coder()</a></code> </p>
-        </td>
-        <td><p>Given a set of country-years, find appropriate country codes, standardized
-country names, and determine state system membership</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="create_panel.html">create_panel()</a></code> </p>
-        </td>
-        <td><p>Create a panel of countries belonging in the state system.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="democracy_info.html">democracy_info</a></code> </p>
-        </td>
-        <td><p>Basic information about existing democracy measures</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="doorenspleet.html">doorenspleet</a></code> </p>
         </td>
         <td><p>Renske Doorenspleet's Democracy Dataset</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="download_fh.html">download_fh()</a></code> </p>
-        </td>
-        <td><p>Downloads the 2021 update of the Freedom House Freedom in the World data
-and processes it using country_year_coder</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="download_fh_electoral.html">download_fh_electoral()</a></code> </p>
-        </td>
-        <td><p>Downloads the 2020 update of the Freedom House Electoral Democracies list and
-processes it using country_year_coder.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="download_fh_full.html">download_fh_full()</a></code> </p>
-        </td>
-        <td><p>Downloads the 2021 update of the Freedom House Freedom in the World All
-Data 2013-2021 file and processes it using country_year_coder.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="download_polity_annual.html">download_polity_annual()</a></code> </p>
-        </td>
-        <td><p>Downloads the 2020 update of the Polity 5 dataset (annual time series) and
-processes it using country_year_coder</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="download_reign.html">download_reign()</a></code> </p>
-        </td>
-        <td><p>The Rulers, Elections, and Irregular Governance Dataset (Regime data)</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="download_wgi_voice_and_accountability.html">download_wgi_voice_and_accountability()</a></code> </p>
-        </td>
-        <td><p>Download the latest version (data up to 2019) of the Democracy, Voice, and
-Accountability index from the World Governance Indicators and process it via
-country_year_coder</p></td>
       </tr><tr>
         
         <td>
@@ -264,17 +215,16 @@ country_year_coder</p></td>
       </tr><tr>
         
         <td>
+          <p><code><a href="extended_uds.html">extended_uds</a></code> </p>
+        </td>
+        <td><p>Extended UDS</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="fh_pmm.html">fh_pmm</a></code> </p>
         </td>
         <td><p>Freedom House "Freedom in the World" data from Pemstein, Meserve, and
 Melton's replication dataset</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="generate_democracy_scores_dataset.html">generate_democracy_scores_dataset()</a></code> </p>
-        </td>
-        <td><p>Generate a data frame containing all the democracy measures accessible from
-this package</p></td>
       </tr><tr>
         
         <td>
@@ -381,26 +331,6 @@ Alvarez, and Claudia Maldonado</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="redownload_blm.html">redownload_blm()</a></code> <code><a href="redownload_blm.html">redownload_anckar()</a></code> <code><a href="redownload_blm.html">redownload_bmr()</a></code> <code><a href="redownload_blm.html">redownload_bnr()</a></code> <code><a href="redownload_blm.html">redownload_gwf()</a></code> <code><a href="redownload_blm.html">redownload_pacl()</a></code> <code><a href="redownload_blm.html">redownload_peps()</a></code> <code><a href="redownload_blm.html">redownload_utip()</a></code> <code><a href="redownload_blm.html">redownload_wahman_teorell_hadenius()</a></code> <code><a href="redownload_blm.html">redownload_polyarchy_original()</a></code> <code><a href="redownload_blm.html">redownload_polyarchy_dimensions()</a></code> <code><a href="redownload_blm.html">redownload_magaloni()</a></code> <code><a href="redownload_blm.html">redownload_svmdi()</a></code> <code><a href="redownload_blm.html">redownload_ulfelder()</a></code> <code><a href="redownload_blm.html">redownload_pipe()</a></code> <code><a href="redownload_blm.html">redownload_bti()</a></code> <code><a href="redownload_blm.html">redownload_pacl_update()</a></code> </p>
-        </td>
-        <td><p>Download and process various democracy datasets.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="redownload_lied.html">redownload_lied()</a></code> </p>
-        </td>
-        <td><p>Downloads the 2020 update (v. 5.2) of the Lexical Index of Electoral Democracy (annual time series, data to
-2019) and processes it using country_year_coder.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="redownload_polityIV.html">redownload_polityIV()</a></code> </p>
-        </td>
-        <td><p>Downloads the 2019 update of the Polity IV dataset (annual time series, to
-2018) and processes it using country_year_coder.</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="svmdi.html">svmdi</a></code> <code><a href="svmdi.html">svmdi_2016</a></code> </p>
         </td>
         <td><p>Suport Vector Machine Democracy Index by Grundler and Krieger</p></td>
@@ -442,6 +372,247 @@ Regimes</p></td>
         </td>
         <td><p>Authoritarian Regimes Data Set, version 5.0, by Axel Hadenius, Jan Teorell, &amp;
 Michael Wahman</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-download-functions" class="hasAnchor"><a href="#section-download-functions" class="anchor"></a>Download_ functions</h2>
+          <p class="section-desc"><p>Functions for downloading annually-updated datasets.</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="download_fh.html">download_fh()</a></code> </p>
+        </td>
+        <td><p>Downloads the 2021 update of the Freedom House Freedom in the World data
+and processes it using country_year_coder</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="download_fh_electoral.html">download_fh_electoral()</a></code> </p>
+        </td>
+        <td><p>Downloads the 2020 update of the Freedom House Electoral Democracies list and
+processes it using country_year_coder.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="download_fh_full.html">download_fh_full()</a></code> </p>
+        </td>
+        <td><p>Downloads the 2021 update of the Freedom House Freedom in the World All
+Data 2013-2021 file and processes it using country_year_coder.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="download_polity_annual.html">download_polity_annual()</a></code> </p>
+        </td>
+        <td><p>Downloads the 2020 update of the Polity 5 dataset (annual time series) and
+processes it using country_year_coder</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="download_reign.html">download_reign()</a></code> </p>
+        </td>
+        <td><p>The Rulers, Elections, and Irregular Governance Dataset (Regime data)</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="download_wgi_voice_and_accountability.html">download_wgi_voice_and_accountability()</a></code> </p>
+        </td>
+        <td><p>Download the latest version (data up to 2019) of the Democracy, Voice, and
+Accountability index from the World Governance Indicators and process it via
+country_year_coder</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-redownload-functions" class="hasAnchor"><a href="#section-redownload-functions" class="anchor"></a>Redownload_ functions</h2>
+          <p class="section-desc"><p>Functions for re-downloading other datasets.</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="redownload_blm.html">redownload_blm()</a></code> <code><a href="redownload_blm.html">redownload_anckar()</a></code> <code><a href="redownload_blm.html">redownload_bmr()</a></code> <code><a href="redownload_blm.html">redownload_bnr()</a></code> <code><a href="redownload_blm.html">redownload_gwf()</a></code> <code><a href="redownload_blm.html">redownload_pacl()</a></code> <code><a href="redownload_blm.html">redownload_peps()</a></code> <code><a href="redownload_blm.html">redownload_utip()</a></code> <code><a href="redownload_blm.html">redownload_wahman_teorell_hadenius()</a></code> <code><a href="redownload_blm.html">redownload_polyarchy_original()</a></code> <code><a href="redownload_blm.html">redownload_polyarchy_dimensions()</a></code> <code><a href="redownload_blm.html">redownload_magaloni()</a></code> <code><a href="redownload_blm.html">redownload_svmdi()</a></code> <code><a href="redownload_blm.html">redownload_ulfelder()</a></code> <code><a href="redownload_blm.html">redownload_pipe()</a></code> <code><a href="redownload_blm.html">redownload_bti()</a></code> <code><a href="redownload_blm.html">redownload_pacl_update()</a></code> </p>
+        </td>
+        <td><p>Download and process various democracy datasets.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="redownload_lied.html">redownload_lied()</a></code> </p>
+        </td>
+        <td><p>Downloads the 2020 update (v. 5.2) of the Lexical Index of Electoral Democracy (annual time series, data to
+2019) and processes it using country_year_coder.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="redownload_polityIV.html">redownload_polityIV()</a></code> </p>
+        </td>
+        <td><p>Downloads the 2019 update of the Polity IV dataset (annual time series, to
+2018) and processes it using country_year_coder.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-generate-functions" class="hasAnchor"><a href="#section-generate-functions" class="anchor"></a>Generate_ functions</h2>
+          <p class="section-desc"><p>Functions for generating other democracy datasets.</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="generate_democracy_scores_dataset.html">generate_democracy_scores_dataset()</a></code> </p>
+        </td>
+        <td><p>Generate a data frame containing all the democracy measures accessible from
+this package</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="generate_extended_uds.html">generate_extended_uds()</a></code> </p>
+        </td>
+        <td><p>Generates the extended UDS scores from the latest democracy data in this
+package</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-latent-variable-models-functions" class="hasAnchor"><a href="#section-latent-variable-models-functions" class="anchor"></a>Latent Variable Models functions</h2>
+          <p class="section-desc"><p>Functions for producing latent variable models of democracy.</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="prepare_democracy_data.html">prepare_democracy_data()</a></code> </p>
+        </td>
+        <td><p>Prepare democracy data before replicating the UDS model</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="prob_more.html">prob_more()</a></code> </p>
+        </td>
+        <td><p>Probability that a country-year is more democratic than another</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="democracy_scores.html">democracy_scores()</a></code> </p>
+        </td>
+        <td><p>Extract UD scores from a UD model</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="generate_democracy_scores_dataset.html">generate_democracy_scores_dataset()</a></code> </p>
+        </td>
+        <td><p>Generate a data frame containing all the democracy measures accessible from
+this package</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="cutpoints.html">cutpoints()</a></code> </p>
+        </td>
+        <td><p>Extract cutpoints from a UD model in a tidy format.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="raterinfo.html">raterinfo()</a></code> </p>
+        </td>
+        <td><p>Extract rater info from a UD model in a tidy format.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-information-functions" class="hasAnchor"><a href="#section-information-functions" class="anchor"></a>Information functions</h2>
+          <p class="section-desc"><p>Functions and datasets with citation and other info about the datasets in this package.</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="bibliography.html">bibliography</a></code> </p>
+        </td>
+        <td><p>References to all the datasets included in this package.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="cite_dataset.html">cite_dataset()</a></code> </p>
+        </td>
+        <td><p>Retrieve the citation for a specific dataset included in this package</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="democracy_info.html">democracy_info</a></code> </p>
+        </td>
+        <td><p>Basic information about existing democracy measures</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-state-system-functions" class="hasAnchor"><a href="#section-state-system-functions" class="anchor"></a>State system functions</h2>
+          <p class="section-desc"><p>Functions for manipulating and fixing country-year panels with state system information.</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="country_year_coder.html">country_year_coder()</a></code> </p>
+        </td>
+        <td><p>Given a set of country-years, find appropriate country codes, standardized
+country names, and determine state system membership</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="create_panel.html">create_panel()</a></code> </p>
+        </td>
+        <td><p>Create a panel of countries belonging in the state system.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-utility-functions" class="hasAnchor"><a href="#section-utility-functions" class="anchor"></a>Utility functions</h2>
+          <p class="section-desc"><p>Utility functions for working with country-year democracy data.</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="remove_empty_rows.html">remove_empty_rows()</a></code> </p>
+        </td>
+        <td><p>Removes empty rows (rows with all NAs) from a data frame</p></td>
       </tr>
     </tbody>
     </table>

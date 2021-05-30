@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -85,6 +85,24 @@
 </li>
 <li>
   <a href="reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="articles/articles/Relationships_between_democracy_measures.html">Relationships between democracy measures</a>
+    </li>
+    <li>
+      <a href="articles/articles/Replicating_and_extending_the_UD_scores.html">Replicating and Extending the UD scores of Pemstein, Meserve, and Melton</a>
+    </li>
+    <li>
+      <a href="articles/articles/Understanding_the_coverage_of_existing_democracy_indexes.html">Understanding the geographic and temporal coverage of existing democracy indexes</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="news/index.html">Changelog</a>
@@ -114,6 +132,17 @@
       <small class="dont-index">Source: <a href='https://github.com/xmarquez/democracyData/blob/master/inst/CITATION'><code>inst/CITATION</code></a></small>
     </div>
 
+    <p></p>
+    <pre>@Article{anrr2019,
+  author = {Daron Acemoglu and Suresh Naidu and Pascual Restrepo and James A. Robinson},
+  title = {Democracy Does Cause Growth},
+  journal = {Journal of Political Economy},
+  volume = {127},
+  number = {1},
+  pages = {47-100},
+  doi = {10.1086/700936},
+  year = {2019},
+}</pre>
     <p></p>
     <pre>@Article{AnckarFredriksson2018,
   author = {Carsten Anckar and Cecilia Fredriksson},
@@ -233,23 +262,20 @@
   doi = {10.1017/S0022381608080663},
 }</pre>
     <p></p>
-    <pre>@Misc{vdem2016,
-  author = {Michael Coppedge and John Gerring and Staffan I. Lindberg and Svend-Erik Skaaning and with David Altman {Jan Teorell} and Michael Bernhard and M. Steven Fish and Adam Glynn and Allen Hicken and Carl Henrik Knutsen and {Kelly
-McMann} and Pamela Paxton and Daniel Pemstein and Jeffrey Staton and Brigitte Zimmerman and Frida Andersson and {Valeriya
-Mechkova} and Farhad Miri},
-  title = {V-Dem Codebook v6},
-  year = {2016},
-  publisher = {Varieties of Democracy (V-Dem) Project},
+    <pre>@Misc{vdem11dataset,
+  title = {{V-Dem Country-Year/Country-Date Dataset v11}},
+  author = {Michael Coppedge and John Gerring and Carl Henrik Knutsen and Staffan I. Lindberg and Jan Teorell and Nazifa Alizada and David Altman and Michael Bernhard and Agnes Cornell and M. Steven Fish and Lisa Gastaldi and Haakon GjerlÃ¸w and Adam Glynn and Allen Hicken and Garry Hindle and Nina Ilchenko and Joshua Krusell and Anna L\: uhrmann and Seraphine F. Maerz and Kyle L. Marquardt and Kelly McMann and Valeriya Mechkova and Juraj Medzihorsky and Pamela Paxton and Daniel Pemstein and Jose<U+FB01>ne Pernes and Johannes {von RÃ¶mer} and Brigitte Seim and Rachel Sigman and Svend-Erik Skaaning and Jeffrey Staton and Aksel SundstrÃ¶m and Ei-tan Tzelgov and Yi-ting Wang and Tore Wig and Steven Wilson and Daniel Ziblatt.},
+  institution = {Varieties of Democracy (V-Dem) Project},
+  year = {2021},
+  url = {https://www.v-dem.net/en/data/data-version-11/},
 }</pre>
     <p></p>
-    <pre>@Misc{vdem2016dataset,
-  author = {Michael Coppedge and John Gerring and Staffan I. Lindberg and Svend-Erik Skaaning and Jan Teorell and David Altman and Michael Bernhard and M. Steven Fish and Adam Glynn and Allen Hicken and Carl Henrik Knutsen and Kyle Marquardt and Kelly McMann and Farhad Miri and Pamela Paxton and Daniel Pemstein and Jeffrey Staton and Eitan Tzelgov and Yi-ting Wang and Brigitte Zimmerman},
-  year = {2016},
-  title = {V-Dem [Country-Year/Country-Date] Dataset, version 6.1},
-  version = {6.1},
-  type = {Dataset},
-  publisher = {Varieties of Democracy (V-Dem) Project},
-  url = {https://www.v-dem.net/en/data/data-version-6-1/},
+    <pre>@Misc{vdem11codebook,
+  title = {{V-Dem Codebook v11}},
+  author = {Michael Coppedge and John Gerring and Carl Henrik Knutsen and Staffan I. Lindberg and Jan Teorell and David Altman and Michael Bernhard and Agnes Cornell and M. Steven Fish and Lisa Gastaldi and Haakon GjerlÃ¸w and Adam Glynn and Allen Hicken and Anna LÃ¼hrmann and Seraphine F. Maerz and Kyle L. Marquardt and Kelly McMann and Valeriya Mechkova and Pamela Paxton and Daniel Pemstein and Johannes {von RÃ¶mer} and Brigitte Seim and Rachel Sigman and Svend-Erik Skaaning and Jeffrey Staton and Aksel SundtrÃ¶m and Eitan Tzelgov and Luca Uberti and Yi-ting Wang and Tore Wig and Daniel Ziblatt},
+  institution = {Varieties of Democracy (V-Dem) Project},
+  year = {2021},
+  url = {https://www.v-dem.net/en/data/data-version-11/},
 }</pre>
     <p></p>
     <pre>@Article{polyarchy1990,
@@ -345,6 +371,15 @@ Mechkova} and Farhad Miri},
   year = {2018},
   type = {Report},
   url = {https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf},
+}</pre>
+    <p></p>
+    <pre>@Article{svmdi2021,
+  author = {Klaus Gründler and Tommy Krieger},
+  title = {Using Machine Learning for measuring democracy: A practitioners guide and a new updated dataset for 186 countries from 1919 to 2019},
+  journal = {European Journal of Political Economy},
+  pages = {102-47},
+  doi = {https://doi.org/10.1016/j.ejpoleco.2021.102047},
+  year = {2021},
 }</pre>
     <p></p>
     <pre>@Book{hadenius1992,

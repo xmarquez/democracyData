@@ -1,6 +1,9 @@
 pandoc: 2.11.2
 pkgdown: 1.6.1
 pkgdown_sha: ~
-articles: {}
-last_built: 2021-05-23T00:25Z
+articles:
+  articles/Relationships_between_democracy_measures: Relationships_between_democracy_measures.html
+  articles/Replicating_and_extending_the_UD_scores: Replicating_and_extending_the_UD_scores.html
+  articles/Understanding_the_coverage_of_existing_democracy_indexes: Understanding_the_coverage_of_existing_democracy_indexes.html
+last_built: 2021-05-30T06:14Z
 

@@ -78,7 +78,7 @@ more democracy, and that all country-years are appropriately matched." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -92,6 +92,24 @@ more democracy, and that all country-years are appropriately matched." />
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/articles/Relationships_between_democracy_measures.html">Relationships between democracy measures</a>
+    </li>
+    <li>
+      <a href="../articles/articles/Replicating_and_extending_the_UD_scores.html">Replicating and Extending the UD scores of Pemstein, Meserve, and Melton</a>
+    </li>
+    <li>
+      <a href="../articles/articles/Understanding_the_coverage_of_existing_democracy_indexes.html">Understanding the geographic and temporal coverage of existing democracy indexes</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -133,6 +151,7 @@ more democracy, and that all country-years are appropriately matched.</p>
 
     <pre class="usage"><span class='fu'>generate_democracy_scores_dataset</span><span class='op'>(</span>
   <span class='va'>datasets</span>,
+  <span class='va'>selection</span>,
   output_format <span class='op'>=</span> <span class='st'>"long"</span>,
   use_extended <span class='op'>=</span> <span class='cn'>TRUE</span>,
   include_extra_pmm <span class='op'>=</span> <span class='cn'>FALSE</span>,
@@ -151,16 +170,18 @@ more democracy, and that all country-years are appropriately matched.</p>
       <th>datasets</th>
       <td><p>Character vector indicating which datasets to use in
 producing the combined data frame. Can be any or all of (an unambiguous
-abbreviation of) "<a href='anckar.html'>anckar</a>", "<a href='LIED.html'>LIED</a>", "<a href='PIPE.html'>PIPE</a>", "<a href='arat_pmm.html'>arat_pmm</a>", "<a href='blm.html'>blm</a>",
-"<a href='blm.html'>blm_pmm</a>", "<a href='bmr.html'>bmr</a>", "<a href='bnr.html'>bnr</a>", "<a href='bti.html'>bti</a>", "<a href='bnr.html'>bnr_extended</a>", "<a href='bollen_pmm.html'>bollen_pmm</a>",
-"<a href='doorenspleet.html'>doorenspleet</a>", "<a href='eiu.html'>eiu</a>", "<a href='fh_pmm.html'>fh_pmm</a>", "<a href='gwf_all.html'>gwf_all</a>", "<a href='gwf_all.html'>gwf_all_extended</a>",
-"<a href='hadenius_pmm.html'>hadenius_pmm</a>", "<a href='kailitz.html'>kailitz</a>", "<a href='magaloni.html'>magaloni</a>", "<a href='magaloni.html'>magaloni_extended</a>",
-"<a href='mainwaring.html'>mainwaring</a>", "<a href='mainwaring.html'>mainwaring_pmm</a>", "<a href='munck_pmm.html'>munck_pmm</a>", "<a href='pacl.html'>pacl</a>", "<a href='pacl.html'>pacl_pmm</a>",
-"<a href='pacl_update.html'>pacl_update</a>", "<a href='peps.html'>peps</a>", "<a href='pitf.html'>pitf</a>", "<a href='polity_pmm.html'>polity_pmm</a>", "<a href='polyarchy.html'>polyarchy</a>",
-"<a href='polyarchy_dimensions.html'>polyarchy_dimensions</a>", "<a href='polyarchy.html'>polyarchy_pmm</a>", "<a href='prc_gasiorowski.html'>prc_gasiorowski</a>",
-"<a href='prc_gasiorowski.html'>prc_pmm</a>", "<a href='svmdi.html'>svmdi</a>", "<a href='svolik_regime.html'>svolik_regime</a>", "<a href='uds_2014.html'>uds_2010</a>", "<a href='uds_2014.html'>uds_2011</a>",
-"<a href='uds_2014.html'>uds_2014</a>", "<a href='ulfelder.html'>ulfelder</a>", "<a href='ulfelder.html'>ulfelder_extended</a>", "<a href='utip.html'>utip</a>", "<a href='vanhanen.html'>vanhanen</a>",
-"<a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a>", "<a href='download_reign.html'>reign</a>", "<a href='download_polity_annual.html'>polity</a>", "<a href='fh_pmm.html'>fh</a>",
+abbreviation of) "<a href='anckar.html'>anckar</a>", "<a href='anrr.html'>anrr</a>", "<a href='LIED.html'>LIED</a>", "<a href='PIPE.html'>PIPE</a>", "<a href='arat_pmm.html'>arat_pmm</a>",
+"<a href='blm.html'>blm</a>", "<a href='blm.html'>blm_pmm</a>", "<a href='bmr.html'>bmr</a>", "<a href='bnr.html'>bnr</a>", "<a href='bnr.html'>bnr_extended</a>", "<a href='bti.html'>bti</a>",
+"<a href='bollen_pmm.html'>bollen_pmm</a>", "<a href='doorenspleet.html'>doorenspleet</a>", "<a href='eiu.html'>eiu</a>", "<a href='fh_pmm.html'>fh_pmm</a>", "<a href='gwf_all.html'>gwf_all</a>",
+"<a href='gwf_all.html'>gwf_all_extended</a>", "<a href='hadenius_pmm.html'>hadenius_pmm</a>", "<a href='kailitz.html'>kailitz</a>", "<a href='magaloni.html'>magaloni</a>",
+"<a href='magaloni.html'>magaloni_extended</a>", "<a href='mainwaring.html'>mainwaring</a>", "<a href='mainwaring.html'>mainwaring_pmm</a>", "<a href='munck_pmm.html'>munck_pmm</a>",
+"<a href='pacl.html'>pacl</a>", "<a href='pacl.html'>pacl_pmm</a>", "<a href='pacl_update.html'>pacl_update</a>", "<a href='peps.html'>peps</a>", "<a href='pitf.html'>pitf</a>",
+"<a href='polity_pmm.html'>polity_pmm</a>", "<a href='polyarchy.html'>polyarchy</a>", "<a href='polyarchy_dimensions.html'>polyarchy_dimensions</a>", "<a href='polyarchy.html'>polyarchy_pmm</a>",
+"<a href='prc_gasiorowski.html'>prc_gasiorowski</a>", "<a href='prc_gasiorowski.html'>prc_pmm</a>", "<a href='svmdi.html'>svmdi</a>", "<a href='svolik_regime.html'>svolik_regime</a>",
+"<a href='uds_2014.html'>uds_2010</a>", "<a href='uds_2014.html'>uds_2011</a>", "<a href='uds_2014.html'>uds_2014</a>", "<a href='ulfelder.html'>ulfelder</a>",
+"<a href='ulfelder.html'>ulfelder_extended</a>", "<a href='utip.html'>utip</a>", "<a href='vanhanen.html'>vanhanen</a>", "<a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a>",
+"<a href='download_reign.html'>reign</a>", "<a href='polityIV.html'>polityIV</a>", "<a href='download_polity_annual.html'>polity</a>" (or
+"<a href='download_polity_annual.html'>polity_annual</a>"), "<a href='download_fh.html'>fh</a>",
 "<a href='download_fh_electoral.html'>fh_electoral</a>", "<a href='download_wgi_voice_and_accountability.html'>wgi</a>". Default is all of them.</p></td>
     </tr>
     <tr>
@@ -290,14 +311,16 @@ country's situation as of 31 December of the year. If
 country year may nevertheless contain more than one measurement for some
 measures (e.g., <a href='prc_gasiorowski.html'>prc</a>).</p></dd>
 
-<dt>measure</dt><dd><p>The dataset whence the measure is taken. (e.g., "blm",
-"fh_total_reversed").</p></dd>
+<dt>measure</dt><dd><p>The name of the measure. (e.g., "blm", "fh_total_reversed").</p></dd>
 
 <dt>variable</dt><dd><p>The numerical value of the measure, in the original scale
 (if <code>scale_scores = FALSE</code>) or as a z-score (if <code>scale_scores =
   TRUE</code>).</p></dd>
 
+<dt>index_type</dt><dd><p>The index type (dichotomous, trichotomous,
+ordinal/graded, continuous).</p></dd>
 
+<dt>dataset</dt><dd><p>The name of the dataset.</p></dd> 
 </dl>
 
     <h2 class="hasAnchor" id="wide-version"><a class="anchor" href="#wide-version"></a>Wide version</h2>
@@ -319,18 +342,22 @@ much as possible.</p></dd>
 value. Up to 2010 this should be identical to <code>bmr_democracy_omitteddata</code>.
 0 = non-democracy, 1 = democracy.</p></dd>
 
+<dt>anrr</dt><dd><p>The <a href='anrr.html'>anrr</a> measure of democracy, as a numeric value. 0 =
+non-democracy, 1 = democracy.</p></dd>
+
 <dt>blm</dt><dd><p>The <a href='blm.html'>blm</a> measure of democracy, as a numeric value. Can be 0
 (authoritarian), 0.5 (hybrid), or 1 (democracy).</p></dd>
 
-<dt>bmr</dt><dd><p>The <a href='bmr.html'>bmr</a> measure of democracy, as a numeric value. Can be 0
-(non-democracy) or 1 (democracy).</p></dd>
+<dt>bmr_democracy</dt><dd><p>The <a href='bmr.html'>bmr</a> measure of democracy, as a numeric value.
+Can be 0 (non-democracy) or 1 (democracy).</p></dd>
 
 <dt>bmr_democracy_omitteddata</dt><dd><p>According to the <a href='bmr.html'>bmr</a> codebook, "this is
 the same measure as bmr, except it records an NA for countries occupied
 during an international war (e.g., the Netherlands 1940-44) or experiencing
 state collapse during a civil war (e.g., Lebanon 1976-89). The democracy
 variable instead fills in these years as continuations of the same regime
-type."</p></dd>
+type." There are some -1 values that I've converted to <code>NA</code> (the measure is
+supposed to be between 0 and 1).</p></dd>
 
 <dt>bmr_democracy_femalesuffrage</dt><dd><p>According to the <a href='bmr.html'>bmr</a> codebook, this
 is the same measure as <code>bmr</code>, except that it also requires that at least
@@ -559,7 +586,7 @@ of Regime Type." In: Harvard Dataverse.
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='va'>democracy_data_long_no_download</span> <span class='op'>&lt;-</span> <span class='fu'>generate_democracy_scores_dataset</span><span class='op'>(</span>exclude_downloadable <span class='op'>=</span> <span class='cn'>TRUE</span>,
          keep_only_last_in_year <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>Adding Anckar-Fredriksson data</span></div><div class='output co'>#&gt; <span class='message'>Adding Arat data</span></div><div class='output co'>#&gt; <span class='message'>Adding BLM data</span></div><div class='output co'>#&gt; <span class='message'>Adding blm_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding BMR data</span></div><div class='output co'>#&gt; <span class='message'>Adding BNR data</span></div><div class='output co'>#&gt; <span class='message'>Adding BNR data</span></div><div class='output co'>#&gt; <span class='message'>Adding BTI data</span></div><div class='output co'>#&gt; <span class='message'>Adding Bollen data</span></div><div class='output co'>#&gt; <span class='message'>Adding Doorenspleet data</span></div><div class='output co'>#&gt; <span class='message'>Adding EIU data</span></div><div class='output co'>#&gt; <span class='message'>Adding GWF data</span></div><div class='output co'>#&gt; <span class='message'>Adding GWF data</span></div><div class='output co'>#&gt; <span class='message'>Adding Hadenius data</span></div><div class='output co'>#&gt; <span class='message'>Adding Kailitz data</span></div><div class='output co'>#&gt; <span class='message'>Adding LIED data</span></div><div class='output co'>#&gt; <span class='message'>Adding Magaloni data</span></div><div class='output co'>#&gt; <span class='message'>Adding Magaloni data</span></div><div class='output co'>#&gt; <span class='message'>Adding Mainwaring data</span></div><div class='output co'>#&gt; <span class='message'>Adding mainwaring_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding Munck data</span></div><div class='output co'>#&gt; <span class='message'>Adding PACL data</span></div><div class='output co'>#&gt; <span class='message'>Adding pacl_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding Update of PACL data by Bjørnskov and Rode</span></div><div class='output co'>#&gt; <span class='message'>Adding PEPS data</span></div><div class='output co'>#&gt; <span class='message'>Adding PITF data</span></div><div class='output co'>#&gt; <span class='message'>Adding Polyarchy original data</span></div><div class='output co'>#&gt; <span class='message'>Adding polyarchy_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding Polyarchy Dimensions data</span></div><div class='output co'>#&gt; <span class='message'>Adding PRC/Gasiorowski data</span></div><div class='output co'>#&gt; <span class='message'>Adding prc_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding PIPE data</span></div><div class='output co'>#&gt; <span class='message'>Adding SVMDI data</span></div><div class='output co'>#&gt; <span class='message'>Adding SVMDI 2016 data</span></div><div class='output co'>#&gt; <span class='message'>Adding Svolik data</span></div><div class='output co'>#&gt; <span class='message'>Adding UDS 2014 data</span></div><div class='output co'>#&gt; <span class='message'>Adding UDS 2011 data</span></div><div class='output co'>#&gt; <span class='message'>Adding UDS 2010 data</span></div><div class='output co'>#&gt; <span class='message'>Adding Ulfelder data</span></div><div class='output co'>#&gt; <span class='message'>Adding Ulfelder data</span></div><div class='output co'>#&gt; <span class='message'>Adding UTIP data</span></div><div class='output co'>#&gt; <span class='message'>Adding Vanhanen data</span></div><div class='output co'>#&gt; <span class='message'>Adding Vanhanen_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding Wahman, Teorell, and Hadenius data</span></div><div class='output co'>#&gt; <span class='message'>Finalizing</span></div><div class='input'>
+</div><div class='output co'>#&gt; <span class='message'>Adding fh_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding old polityIV data</span></div><div class='output co'>#&gt; <span class='message'>Adding polity_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding Anckar-Fredriksson data</span></div><div class='output co'>#&gt; <span class='message'>Adding ANRR data</span></div><div class='output co'>#&gt; <span class='message'>Adding Arat data</span></div><div class='output co'>#&gt; <span class='message'>Adding BLM data</span></div><div class='output co'>#&gt; <span class='message'>Adding blm_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding BMR data</span></div><div class='output co'>#&gt; <span class='message'>Adding BNR extended data</span></div><div class='output co'>#&gt; <span class='message'>Adding BNR data</span></div><div class='output co'>#&gt; <span class='message'>Adding BTI data</span></div><div class='output co'>#&gt; <span class='message'>Adding Bollen data</span></div><div class='output co'>#&gt; <span class='message'>Adding Doorenspleet data</span></div><div class='output co'>#&gt; <span class='message'>Adding EIU data</span></div><div class='output co'>#&gt; <span class='message'>Adding GWF data</span></div><div class='output co'>#&gt; <span class='message'>Adding GWF data</span></div><div class='output co'>#&gt; <span class='message'>Adding Hadenius data</span></div><div class='output co'>#&gt; <span class='message'>Adding Kailitz data</span></div><div class='output co'>#&gt; <span class='message'>Adding LIED data</span></div><div class='output co'>#&gt; <span class='message'>Adding Magaloni extended data</span></div><div class='output co'>#&gt; <span class='message'>Adding Magaloni data</span></div><div class='output co'>#&gt; <span class='message'>Adding Mainwaring data</span></div><div class='output co'>#&gt; <span class='message'>Adding mainwaring_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding Munck data</span></div><div class='output co'>#&gt; <span class='message'>Adding PACL data</span></div><div class='output co'>#&gt; <span class='message'>Adding pacl_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding Update of PACL data by Bjornskov and Rode</span></div><div class='output co'>#&gt; <span class='message'>Adding PEPS data</span></div><div class='output co'>#&gt; <span class='message'>Adding PITF data</span></div><div class='output co'>#&gt; <span class='message'>Adding Polyarchy original data</span></div><div class='output co'>#&gt; <span class='message'>Adding polyarchy_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding Polyarchy Dimensions data</span></div><div class='output co'>#&gt; <span class='message'>Adding PRC/Gasiorowski data</span></div><div class='output co'>#&gt; <span class='message'>Adding prc_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding PIPE data</span></div><div class='output co'>#&gt; <span class='message'>Adding SVMDI data</span></div><div class='output co'>#&gt; <span class='message'>Adding SVMDI 2016 data</span></div><div class='output co'>#&gt; <span class='message'>Adding Svolik data</span></div><div class='output co'>#&gt; <span class='message'>Adding UDS 2014 data</span></div><div class='output co'>#&gt; <span class='message'>Adding UDS 2011 data</span></div><div class='output co'>#&gt; <span class='message'>Adding UDS 2010 data</span></div><div class='output co'>#&gt; <span class='message'>Adding extended Ulfelder data</span></div><div class='output co'>#&gt; <span class='message'>Adding Ulfelder data</span></div><div class='output co'>#&gt; <span class='message'>Adding UTIP data</span></div><div class='output co'>#&gt; <span class='message'>Adding Vanhanen data</span></div><div class='output co'>#&gt; <span class='message'>Adding Vanhanen_pmm data</span></div><div class='output co'>#&gt; <span class='message'>Adding Wahman, Teorell, and Hadenius data</span></div><div class='output co'>#&gt; <span class='message'>Finalizing</span></div><div class='input'>
 <span class='co'># You can select only some datasets</span>
 
 <span class='va'>democracy_data_gwf</span> <span class='op'>&lt;-</span> <span class='fu'>generate_democracy_scores_dataset</span><span class='op'>(</span>datasets <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"gwf_all"</span><span class='op'>)</span>,

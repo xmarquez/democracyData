@@ -42,10 +42,10 @@
 <meta property="og:title" content="The Democracy/Autocracy Dataset by Jay Ulfelder — ulfelder" />
 <meta property="og:description" content="This is the dataset documented in Jay Ulfelder. Democracy/Autocracy Data
 Set. 2012. http://hdl.handle.net/1902.1/18836. It comes in two
-versions: ulfelder, which only goes back to 1955, and ulfelder_extended,
-which extends the regime classifications back in time using the rgjdura and
-rgjdurd variables, adding 3861 country-years to the original data, mostly
-authoritarian regimes." />
+versions: ulfelder, which only goes back to 1955, and
+ulfelder_extended, which extends the regime classifications back in
+time using the rgjdura and rgjdurd variables, adding 3861
+country-years to the original data, mostly authoritarian regimes." />
 
 
 
@@ -77,7 +77,7 @@ authoritarian regimes." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -91,6 +91,24 @@ authoritarian regimes." />
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/articles/Relationships_between_democracy_measures.html">Relationships between democracy measures</a>
+    </li>
+    <li>
+      <a href="../articles/articles/Replicating_and_extending_the_UD_scores.html">Replicating and Extending the UD scores of Pemstein, Meserve, and Melton</a>
+    </li>
+    <li>
+      <a href="../articles/articles/Understanding_the_coverage_of_existing_democracy_indexes.html">Understanding the geographic and temporal coverage of existing democracy indexes</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -124,10 +142,10 @@ authoritarian regimes." />
     <div class="ref-description">
     <p>This is the dataset documented in Jay Ulfelder. <em>Democracy/Autocracy Data
 Set</em>. 2012. <a href='http://hdl.handle.net/1902.1/18836'>http://hdl.handle.net/1902.1/18836</a>. It comes in two
-versions: ulfelder, which only goes back to 1955, and ulfelder_extended,
-which extends the regime classifications back in time using the <code>rgjdura</code> and
-<code>rgjdurd</code> variables, adding 3861 country-years to the original data, mostly
-authoritarian regimes.</p>
+versions: ulfelder, which only goes back to 1955, and
+ulfelder_extended, which extends the regime classifications back in
+time using the <code>rgjdura</code> and <code>rgjdurd</code> variables, adding 3861
+country-years to the original data, mostly authoritarian regimes.</p>
     </div>
 
     <pre class="usage"><span class='va'>ulfelder</span>
@@ -151,8 +169,9 @@ authoritarian regimes.</p>
 <p>pitfcode: PITF Country Code. Three-character country code matching those
 used by the Political Instability Task Force. Some of these seem off - GER
 for Germany instead of GMY, UK instead of UKG. I've created
-<code>ulfelder_scode</code> on the basis of this by converting "GER","MNE","SRB","UK",
-and "USS" to"GMY","MNT","SER","UKG", and "USR" respectively.</p>
+<code>ulfelder_scode</code> on the basis of this by converting
+"GER","MNE","SRB","UK", and "USS" to"GMY","MNT","SER","UKG", and "USR"
+respectively.</p>
 <p>ulfelder_scode: Modified version of <code>pitfcode</code>, matching the Polity IV
 character codes that appear to be the basis of the PITF codes.</p>
 <p>cowcode: Correlates of War (COW) Country Code. Numeric country code
@@ -168,6 +187,34 @@ the calendar year.</p>
 <p>NS = Not sovereign. A foreign government or international organization
 either sets national policy or wields formal veto power</p>
 <p>-99 = Country termination (censoring event)</p>
+<p>The codebook indicates that democracy is defined as follows (I quote from
+p. 4):</p>
+<p>For purposes of this data set, democracy is understood to be a form of
+government in which a free citizenry fairly chooses and routinely holds
+accountable its rulers. In practice, this occurs when four general
+conditions hold:</p><ul>
+<li><p>Elected officials rule. Representatives chosen by citizens actually make
+policy, and unelected individuals, bodies, and organizations cannot veto
+those representatives' decisions.</p></li>
+<li><p>Elections are fair and competitive. The process by which citizens elect
+their rulers provides voters with meaningful choice and is free from
+deliberate fraud or abuse.</p></li>
+<li><p>Politics is inclusive. Adult citizens have equal rights to vote and
+participate in government and fair opportunity to exercise those rights.</p></li>
+<li><p>Civil liberties are protected. Freedoms of speech, association, and
+assembly give citizens the chance to deliberate on their interests, to
+organize in pursuit of those interests, and to monitor the performance of
+their elected representatives and the bureaucracies on which those
+officials depend.</p></li>
+</ul>
+
+<p>To identify whether these conditions obtain in a particular country at a
+particular time, I reviewed a variety of secondary sources to try to
+determine whether or not all of the criteria listed below were satisfied.
+According to my definition, only a country that meets all of these criteria
+is considered a democracy. In other words, I see each one of them as a
+necessary condition for democratic government. The moment a country fails
+to satisfy one of the criteria, it is considered a non-democracy.</p>
 <p>rgjdurd: Consecutive Years of Democracy. Count in years since beginning of
 an episode of democracy. Coded as missing for countries currently coded as
 autocracies, interruptions, or interregna, with the exception of the year
@@ -214,7 +261,7 @@ year.</p>
 elections, or substantially diminish civil liberties</p>
 <p>= 3 Rebellion: opposition forces seize power by means other than largely
 free, fair, and competitive elections</p>
-<p>= 4 Other: some other domestic actor—nearly always a monarch—usurps power
+<p>= 4 Other: some other domestic actor--nearly always a monarch--usurps power
 from an elected government</p>
 <p>= -6 Foreign intervention: a foreign government or international
 organization becomes the ruling authority or a formal veto player</p>
@@ -229,7 +276,7 @@ episode of democracy, as of the end of the indicated calendar year. Coded
 as missing for country-years that ended with any non-democracy.</p>
 <p>= 1 No change in chief executive so far</p>
 <p>= 0 At least one change in chief executive</p>
-<p>rgjaltlt: Alternation in Leadership “Clock” (Democracy Only). Numeric
+<p>rgjaltlt: Alternation in Leadership "Clock" (Democracy Only). Numeric
 variable counting time until the first change in the head of government.</p>
 <p>rgjaltp: Alternation in Party in Power (Democracy Only). Dummy variable
 indicating whether or not there has been a change in the party holding the
@@ -242,7 +289,7 @@ change in the party in power. Coded as missing for country-years that ended
 with any non-democracy.</p>
 <p>= 1 No change in party in power so far</p>
 <p>= 0 At least one change in the party in power</p>
-<p>rgjaltpt: Alternation in Party in Power “Clock” (Democracy Only). Numeric
+<p>rgjaltpt: Alternation in Party in Power "Clock" (Democracy Only). Numeric
 variable counting time until the first change in party holding the office
 of chief executive.</p>
 <p>rgjtdem: Transition from Autocracy to Democracy. Dummy variable indicating
@@ -328,7 +375,7 @@ December of the listed year. NATO was established in 1949.</p>
 <p>= 1 Formally invited to join but not a member</p>
 <p>= 0 Neither a member nor formally invited to join</p>
 <p>rgjnatop: Participant in NATO Partnership for Peace. Binary variable
-indicating participation in NATO’s Partnership for Peace program, as of 31
+indicating participation in NATO's Partnership for Peace program, as of 31
 December of the listed year.</p>
 <p>= 1 Participant</p>
 <p>= 0 Non-participant</p>
@@ -449,7 +496,7 @@ was adopted in 1969 and entered into force in 1978.</p>
 <p>= 2 Ratified, acceded, or succeeded</p>
 <p>= 1 Signed only</p>
 <p>= 0 No status</p>
-<p>rgjachpr: Signatory to the African Charter on Human and People’s Rights.
+<p>rgjachpr: Signatory to the African Charter on Human and People's Rights.
 Categorical variable indicating status as signatory to this treaty, as of
 31 December of the listed year. The treaty was adopted in 1981 and entered
 into force in 1986.</p>
@@ -520,6 +567,7 @@ the fact that the Gleditsch and Ward list has not been updated since.</p></dd>
 <code><a href='LIED.html'>LIED</a></code>,
 <code><a href='PIPE.html'>PIPE</a></code>,
 <code><a href='anckar.html'>anckar</a></code>,
+<code><a href='anrr.html'>anrr</a></code>,
 <code><a href='arat_pmm.html'>arat_pmm</a></code>,
 <code><a href='blm.html'>blm</a></code>,
 <code><a href='bmr.html'>bmr</a></code>,
@@ -533,6 +581,7 @@ the fact that the Gleditsch and Ward list has not been updated since.</p></dd>
 <code><a href='download_reign.html'>download_reign</a>()</code>,
 <code><a href='download_wgi_voice_and_accountability.html'>download_wgi_voice_and_accountability</a>()</code>,
 <code><a href='eiu.html'>eiu</a></code>,
+<code><a href='extended_uds.html'>extended_uds</a></code>,
 <code><a href='fh_pmm.html'>fh_pmm</a></code>,
 <code><a href='gwf_all.html'>gwf_all</a></code>,
 <code><a href='hadenius_pmm.html'>hadenius_pmm</a></code>,
@@ -561,6 +610,7 @@ the fact that the Gleditsch and Ward list has not been updated since.</p></dd>
 <code><a href='prc_gasiorowski.html'>prc_gasiorowski</a></code></p>
 <p>Other dichotomous democracy indexes: 
 <code><a href='anckar.html'>anckar</a></code>,
+<code><a href='anrr.html'>anrr</a></code>,
 <code><a href='bmr.html'>bmr</a></code>,
 <code><a href='bnr.html'>bnr</a></code>,
 <code><a href='doorenspleet.html'>doorenspleet</a></code>,
