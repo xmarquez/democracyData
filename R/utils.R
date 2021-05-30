@@ -80,9 +80,30 @@ download_and_read_xls <- function(url, fileext, ...) {
   data
 }
 
+#' Count sequence breaks
+#'
+#' This is a utility function that is useful when plotting countries that have
+#' interrupted periods.
+#'
+#' @param seq A numeric sequence
+#' @param seq_step The expected difference between steps in sequence
+#'
+#' @return A numeric vector with the sequence groups
+#' @export
+#'
+#' @examples
+#' library(dplyr)
+#' count_sequence_breaks(c(1900:1910, 1920:1930))
+#'
+#' # This is how I typically use it
+#'
+#' polityIV %>%
+#' group_by(polityIV_country, polityIV_ccode) %>%
+#' mutate(groups = count_sequence_breaks(year)) %>%
+#' filter(any(groups > 1))
 count_sequence_breaks <- function(seq, seq_step = 1) {
   first_diff <- c(seq_step, diff(seq)) - seq_step
-  periods <- cumsum(abs(first_diff))
+  periods <- as.numeric(as.factor(cumsum(abs(first_diff))))
   periods
 }
 
