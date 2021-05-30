@@ -9,9 +9,8 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 }
 \source{
 Doorenspleet, Renske. 2000. Reassessing the Three Waves of
-Democratization. World Politics 52 (03): 384-406. DOI:
-10.1017/S0043887100016580.
-\url{http://dx.doi.org/10.1017/S0043887100016580}.
+Democratization. World Politics 52 (03): 384-406.
+\doi{10.1017/S0043887100016580}.
 }
 \usage{
 doorenspleet
@@ -20,7 +19,7 @@ doorenspleet
 A dataset containing the country-year version of the democracy classification
 described in Doorenspleet, Renske. 2000. Reassessing the Three Waves of
 Democratization. World Politics 52 (03): 384-406. DOI:
-10.1017/S0043887100016580. \url{http://dx.doi.org/10.1017/S0043887100016580}.
+10.1017/S0043887100016580. \doi{10.1017/S0043887100016580}.
 }
 \details{
 \describe{ \item{doorenspleet_country}{Country name as in Doorenspleet.}

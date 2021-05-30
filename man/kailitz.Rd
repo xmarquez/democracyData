@@ -10,7 +10,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 \source{
 Kailitz, Steffen. 2013. Classifying political regimes revisited:
 legitimation and durability. Democratization 20 (1): 39-60. Original data
-available at \url{http://dx.doi.org/10.1080/13510347.2013.738861}.
+available at \doi{10.1080/13510347.2013.738861}.
 }
 \usage{
 kailitz
@@ -19,7 +19,7 @@ kailitz
 Contains the authoritarian regime types dataset from Kailitz, Steffen. 2013.
 Classifying political regimes revisited: legitimation and durability.
 Democratization 20 (1): 39-60. Original data available at
-\url{http://dx.doi.org/10.1080/13510347.2013.738861}.
+\doi{10.1080/13510347.2013.738861}.
 }
 \section{Variables}{
 

@@ -10,7 +10,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 \source{
 D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy Does Cause
 Growth". In: \emph{Journal of Political Economy} 127.1 (2019), pp. 47-100.
-\url{https://doi.org/10.1086/700936}.
+\doi{10.1086/700936}.
 }
 \usage{
 anrr
@@ -18,7 +18,7 @@ anrr
 \description{
 Dataset described in D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy
 Does Cause Growth". In: \emph{Journal of Political Economy} 127.1 (2019), pp.
-47-100. \url{https://doi.org/10.1086/700936}. Data at the link.
+47-100. \doi{10.1086/700936}. Data at the link.
 }
 \section{Variables}{
 

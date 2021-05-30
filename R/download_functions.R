@@ -1160,7 +1160,7 @@ download_fh_full <- function(url,
 #'   leader, including Lanzana in Burkina Faso, Rawlings in Ghana, etc.
 #'
 #'   Further discussion of the differences between REIGN and GWF ([gwf_autocratic]) is
-#'   available here: \url{http://oefresearch.org/sites/default/files/REIGN Data 2016.10.05.pdf}
+#'   available here: \url{http://oefresearch.org/sites/default/files/REIGN%20Data%202016.10.05.pdf}
 #'
 #' @param url The URL of the googlesheet where the REIGN dataset lives. Defaults
 #'   to

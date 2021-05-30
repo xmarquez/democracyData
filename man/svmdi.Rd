@@ -27,8 +27,8 @@ CESifo Group Munich, 2018.
 \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}. An earlier
 version of this index (used in K. Grundler and T. Krieger. 2016. "Democracy
 and growth: Evidence from a machine learning indicator". European Journal of
-Political Economy 45, pp. 85-107. DOI:
-\url{https://doi.org/10.1016/j.ejpoleco.2016.05.005}) is available as
+Political Economy 45, pp. 85-107.
+\doi{10.1016/j.ejpoleco.2016.05.005}) is available as
 \link{svmdi_2016}; there are some important differences between the values of the
 earlier and later versions of the index.
 }

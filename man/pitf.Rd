@@ -23,7 +23,7 @@ for Forecasting Political Instability. American Journal of Political Science
 54 (1): 190-208. DOI:10.1111/j.1540-5907.2009.00426.x and in Taylor, Sean J.
 and Ulfelder, Jay, A Measurement Error Model of Dichotomous Democracy Status
 (May 20, 2015). Available at SSRN: \url{http://ssrn.com/abstract=2726962} or
-\url{http://dx.doi.org/10.2139/ssrn.2726962}. This is derived from the Polity
+\doi{10.2139/ssrn.2726962}. This is derived from the Polity
 dataset (pitf uses version 5; pitf_p4 uses PolityIV updated to 2018).
 }
 \section{Variables}{
@@ -150,7 +150,7 @@ full details.}
 described in Taylor, Sean J. and Ulfelder, Jay, A Measurement Error Model
 of Dichotomous Democracy Status (May 20, 2015). Available at SSRN:
 \url{http://ssrn.com/abstract=2726962} or
-\url{http://dx.doi.org/10.2139/ssrn.2726962}. A country is a democracy (1)
+\doi{10.2139/ssrn.2726962}. A country is a democracy (1)
 "if its chief executive is chosen in competitive elections (EXREC equal to
 7 or 8) and political competition is not suppressed (PARCOMP equal to 0 or
 PARCOMP greater than 2)" Otherwise it is a non-democracy (0).} }
@@ -199,7 +199,7 @@ Forecasting Political Instability. American Journal of Political Science 54
 Taylor, Sean J. and Ulfelder, Jay, A Measurement Error Model of Dichotomous
 Democracy Status (May 20, 2015). Available at SSRN:
 \url{http://ssrn.com/abstract=2726962} or
-\url{http://dx.doi.org/10.2139/ssrn.2726962}
+\doi{10.2139/ssrn.2726962}
 }
 \seealso{
 Other democracy: 

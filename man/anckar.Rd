@@ -9,8 +9,8 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 }
 \source{
 C. Anckar and C. Fredriksson. 2018. "Classifying political regimes
-1800-2016: a typology and a new dataset". European Political Science. DOI:
-10.1057/s41304-018-0149-8. \url{https://doi.org/10.1057/s41304-018-0149-8}.
+1800-2016: a typology and a new dataset". European Political Science.
+\doi{10.1057/s41304-018-0149-8}.
 }
 \usage{
 anckar
@@ -19,8 +19,7 @@ anckar
 Dataset described in C. Anckar and C. Fredriksson. 2018. "Classifying
 political regimes 1800-2016: a typology and a new dataset". European
 Political Science. DOI: 10.1057/s41304-018-0149-8.
-\url{https://doi.org/10.1057/s41304-018-0149-8}. Data and codebook at the
-link.
+\doi{10.1057/s41304-018-0149-8}. Data and codebook at the link.
 }
 \section{Variables}{
 

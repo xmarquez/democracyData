@@ -191,7 +191,7 @@ redownload_blm <- function(url,
 #' @source Anckar, Carsten and Cecilia Fredriksson (2018). "Classifying
 #'   political regimes 1800-2016: a typology and a new dataset." European
 #'   Political Science, doi: 10.1057/s41304-018-0149-8. Data, article, and
-#'   codebook available at: \url{https://doi.org/10.1057/s41304-018-0149-8}
+#'   codebook available at: \doi{10.1057/s41304-018-0149-8}
 #'
 #'
 #' @export

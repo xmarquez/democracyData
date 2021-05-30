@@ -6,8 +6,7 @@
 #' Dataset described in C. Anckar and C. Fredriksson. 2018. "Classifying
 #' political regimes 1800-2016: a typology and a new dataset". European
 #' Political Science. DOI: 10.1057/s41304-018-0149-8.
-#' \url{https://doi.org/10.1057/s41304-018-0149-8}. Data and codebook at the
-#' link.
+#' \doi{10.1057/s41304-018-0149-8}. Data and codebook at the link.
 #'
 #' @section Variables:
 #'
@@ -60,8 +59,8 @@
 #' @family authoritarianism
 #' @family dichotomous democracy indexes
 #' @source C. Anckar and C. Fredriksson. 2018. "Classifying political regimes
-#'   1800-2016: a typology and a new dataset". European Political Science. DOI:
-#'   10.1057/s41304-018-0149-8. \url{https://doi.org/10.1057/s41304-018-0149-8}.
+#'   1800-2016: a typology and a new dataset". European Political Science.
+#'   \doi{10.1057/s41304-018-0149-8}.
 "anckar"
 
 # ANRR ------------------------------------------------------------------
@@ -70,7 +69,7 @@
 #'
 #' Dataset described in D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy
 #' Does Cause Growth". In: _Journal of Political Economy_ 127.1 (2019), pp.
-#' 47-100. \url{https://doi.org/10.1086/700936}. Data at the link.
+#' 47-100. \doi{10.1086/700936}. Data at the link.
 #'
 #' @section Variables:
 #'
@@ -211,7 +210,7 @@
 #' @family dichotomous democracy indexes
 #' @source D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy Does Cause
 #'   Growth". In: _Journal of Political Economy_ 127.1 (2019), pp. 47-100.
-#'   \url{https://doi.org/10.1086/700936}.
+#'   \doi{10.1086/700936}.
 "anrr"
 
 # Arat --------------------------------------------------------------------
@@ -703,7 +702,7 @@
 #' A dataset containing the country-year version of the democracy classification
 #' described in Doorenspleet, Renske. 2000. Reassessing the Three Waves of
 #' Democratization. World Politics 52 (03): 384-406. DOI:
-#' 10.1017/S0043887100016580. \url{http://dx.doi.org/10.1017/S0043887100016580}.
+#' 10.1017/S0043887100016580. \doi{10.1017/S0043887100016580}.
 #'
 #' \describe{ \item{doorenspleet_country}{Country name as in Doorenspleet.}
 #'
@@ -778,9 +777,8 @@
 #' @family democracy
 #' @family dichotomous democracy indexes
 #' @source Doorenspleet, Renske. 2000. Reassessing the Three Waves of
-#'   Democratization. World Politics 52 (03): 384-406. DOI:
-#'   10.1017/S0043887100016580.
-#'   \url{http://dx.doi.org/10.1017/S0043887100016580}.
+#'   Democratization. World Politics 52 (03): 384-406.
+#'   \doi{10.1017/S0043887100016580}.
 "doorenspleet"
 
 
@@ -1602,7 +1600,7 @@
 #' Contains the authoritarian regime types dataset from Kailitz, Steffen. 2013.
 #' Classifying political regimes revisited: legitimation and durability.
 #' Democratization 20 (1): 39-60. Original data available at
-#' \url{http://dx.doi.org/10.1080/13510347.2013.738861}.
+#' \doi{10.1080/13510347.2013.738861}.
 #'
 #' @section Variables:
 #'
@@ -1664,7 +1662,7 @@
 #' @template standard-variables
 #' @source Kailitz, Steffen. 2013. Classifying political regimes revisited:
 #'   legitimation and durability. Democratization 20 (1): 39-60. Original data
-#'   available at \url{http://dx.doi.org/10.1080/13510347.2013.738861}.
+#'   available at \doi{10.1080/13510347.2013.738861}.
 #' @family democracy
 #' @family authoritarianism
 #' @family dichotomous democracy indexes
@@ -2783,8 +2781,8 @@
 #' \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}. An earlier
 #' version of this index (used in K. Grundler and T. Krieger. 2016. "Democracy
 #' and growth: Evidence from a machine learning indicator". European Journal of
-#' Political Economy 45, pp. 85-107. DOI:
-#' \url{https://doi.org/10.1016/j.ejpoleco.2016.05.005}) is available as
+#' Political Economy 45, pp. 85-107.
+#' \doi{10.1016/j.ejpoleco.2016.05.005}) is available as
 #' [svmdi_2016]; there are some important differences between the values of the
 #' earlier and later versions of the index.
 #'
@@ -3028,7 +3026,7 @@
 #' 54 (1): 190-208. DOI:10.1111/j.1540-5907.2009.00426.x and in Taylor, Sean J.
 #' and Ulfelder, Jay, A Measurement Error Model of Dichotomous Democracy Status
 #' (May 20, 2015). Available at SSRN: \url{http://ssrn.com/abstract=2726962} or
-#' \url{http://dx.doi.org/10.2139/ssrn.2726962}. This is derived from the Polity
+#' \doi{10.2139/ssrn.2726962}. This is derived from the Polity
 #' dataset (pitf uses version 5; pitf_p4 uses PolityIV updated to 2018).
 #'
 #' @section Variables:
@@ -3154,7 +3152,7 @@
 #'   described in Taylor, Sean J. and Ulfelder, Jay, A Measurement Error Model
 #'   of Dichotomous Democracy Status (May 20, 2015). Available at SSRN:
 #'   \url{http://ssrn.com/abstract=2726962} or
-#'   \url{http://dx.doi.org/10.2139/ssrn.2726962}. A country is a democracy (1)
+#'   \doi{10.2139/ssrn.2726962}. A country is a democracy (1)
 #'   "if its chief executive is chosen in competitive elections (EXREC equal to
 #'   7 or 8) and political competition is not suppressed (PARCOMP equal to 0 or
 #'   PARCOMP greater than 2)" Otherwise it is a non-democracy (0).} }
@@ -3170,7 +3168,7 @@
 #' Taylor, Sean J. and Ulfelder, Jay, A Measurement Error Model of Dichotomous
 #' Democracy Status (May 20, 2015). Available at SSRN:
 #' \url{http://ssrn.com/abstract=2726962} or
-#' \url{http://dx.doi.org/10.2139/ssrn.2726962}
+#' \doi{10.2139/ssrn.2726962}
 #' @family democracy
 #' @family polity
 "pitf"
