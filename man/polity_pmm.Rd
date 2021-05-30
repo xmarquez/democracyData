@@ -11,7 +11,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
 "Replication data for: Democratic Compromise: A Latent Variable Analysis of
 Ten Measures of Regime Type." In: Harvard Dataverse.
-http://hdl.handle.net/1902.1/PMM.
+\url{http://hdl.handle.net/1902.1/PMM}.
 
 Marshall, Monty G., Ted Robert Gurr, and Keith Jaggers. 2012. "Polity
 IV: Political Regime Characteristics and Transitions, 1800-2012."
@@ -23,7 +23,7 @@ polity_pmm
 Polity 2 Index from Polity IV. 2013. Taken from Pemstein, Daniel, Stephen A.
 Meserve, and James Melton. 2013. "Replication data for: Democratic
 Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." In:
-Harvard Dataverse. http://hdl.handle.net/1902.1/PMM. Higher values are more
+Harvard Dataverse. \url{http://hdl.handle.net/1902.1/PMM}. Higher values are more
 democratic. Use \link{download_polity_annual} to download the latest version of the
 Polity IV data.
 }
@@ -41,7 +41,7 @@ interruption, interregnum, and transition periods. Higher values are more
 democratic. Taken from Pemstein, Daniel, Stephen A. Meserve, and James
 Melton. 2013. "Replication data for: Democratic Compromise: A Latent
 Variable Analysis of Ten Measures of Regime Type." In: Harvard Dataverse.
-http://hdl.handle.net/1902.1/PMM. In this version the indicator only goes
+\url{http://hdl.handle.net/1902.1/PMM}. In this version the indicator only goes
 to 1945, and it differs from polity2 in a few cases. See the vignette in
 this package for more details.}
 

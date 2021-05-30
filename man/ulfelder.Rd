@@ -105,11 +105,9 @@ autocracy to democracy occurs.
 \section{Variables with values only for years greater than 1955}{
 
 
-The following variables are all \code{NA} for years before 1955 (by construction
-\itemize{
-\item I do not impute their values for these years in the \link{ulfelder_extended}
+The following variables are all \code{NA} for years before 1955 (by construction;
+I do not impute their values for these years in the \link{ulfelder_extended}
 dataset).
-}
 
 rgjdem: Undocumented.
 

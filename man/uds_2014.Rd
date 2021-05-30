@@ -95,8 +95,7 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 }
 
 \seealso{
-The package QuickUDS to extend these scores, at
-\url{http://github.com/xmarquez/QuickUDS}.
+The \link{generate_extended_uds} function to extend these scores, as well as vignette("Replicating_and_extending_the_UD_scores").
 
 Other democracy: 
 \code{\link{LIED}},

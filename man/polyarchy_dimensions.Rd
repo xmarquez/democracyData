@@ -17,7 +17,7 @@ Inclusiveness," Journal of Politics 70:3 (July 2008): 632-647.
 polyarchy_dimensions
 }
 \description{
-From the codebook at https://www3.nd.edu/~mcoppedg/crd/datacrd.htm: This
+From the codebook at \url{https://www3.nd.edu/~mcoppedg/crd/datacrd.htm}: This
 dataset contains several versions of two indicators that measure Robert
 Dahl's two dimensions of polyarchy: contestation and inclusiveness. For
 complete documentation of the analysis that identifies these two dimensions,

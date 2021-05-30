@@ -15,7 +15,7 @@ Democracy", C&M Working Papers 6, IPSA, August 2005.
 Hadenius, Axel and Jan Teorell. 2006. "Authoritarian Regimes: Stability,
 Change, and Pathways to Democracy, 1972-2003", University of Notre Dame,
 Kellogg Institute Working Paper Series 331, November 2006
-(http://kellogg.nd.edu/publications/workingpapers/WPS/331.pdf).
+(\link{http://kellogg.nd.edu/publications/workingpapers/WPS/331.pdf}).
 
 Wahman, Michael,
 Jan Teorell, and Axel Hadenius. 2013. Authoritarian regime types revisited:
@@ -124,7 +124,7 @@ indicates strongly democratic and 0 strongly autocratic. Source: Marshall,
 Monty G & Jaggers, Keith: Polity IV project, Integrated Network for
 societal Conflict research (INSCR) Program Center for International
 Development and Conflict Management (CIDCM) University of Maryland, Collage
-Park 20742, \url{http://www.systemicpeace.org/polity/polity4.htm.}}
+Park 20742, \url{http://www.systemicpeace.org/polity/polity4.htm}.}
 
 \item{fhpol}{(n: 5789, N: 170) Average Polity (revpol2) & Freedom House
 (fhadd) scores, scaled 0-10.1 Source: See fhadd and revpol2.}

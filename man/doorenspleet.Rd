@@ -24,6 +24,7 @@ Democratization. World Politics 52 (03): 384-406. DOI:
 }
 \details{
 \describe{ \item{doorenspleet_country}{Country name as in Doorenspleet.}
+
 \item{doorenspleet_regime}{Regime type: A = Authoritarian, D = Democracy, I =
 interruption.
 
@@ -61,12 +62,12 @@ enjoy the right to vote and to be elected to public office. The fact that
 certain prerequisites are demanded, such as a minimum age, a sound mind, or
 the absence of criminal record, does not negate this principle. Only
 countries that at some stage meet the first requirement of competition from
-1800 to 1994 are considered when measuring the inclusiveness of the system.24
+1800 to 1994 are considered when measuring the inclusiveness of the system.
 Levels of inclusiveness of the political system may be broken down into one
 of the following four categories: (1) no popular suffrage; (2) suffrage
 denied to large segments of the population (more than 20 percent is
 excluded); (3) suffrage with partial restrictions (less than 20 percent of
-the population is excluded);(4) universal suffrage or minor restrictions.25
+the population is excluded);(4) universal suffrage or minor restrictions.
 For the purposes of this analysis, countries are considered "sufficiently"
 inclusive to meet the criterion of a minimal democracy if they fall into the
 third or fourth category. Should they fall within either of the first two
@@ -80,7 +81,7 @@ systems can be considered as both competitive and inclusive and hence are
 classified in this study as "minimal democracies."
 
 (This description suggests one could replicate Doorenspleet's measure using
-data from \link{PIPE} or \link{LIED} as well as \link{polity})}
+data from \link{PIPE} or \link{LIED} as well as the newest version of \link{polity}; Doorenspleet uses Polity III data)}
 
 \item{doorenspleet}{Regime type: 1 = Authoritarian, 2 = Democracy,
 interruption codes as NA.}

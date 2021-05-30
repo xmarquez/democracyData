@@ -18,7 +18,7 @@ Development 36(1): 37-65.
 Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
 "Replication data for: Democratic Compromise: A Latent Variable Analysis of
 Ten Measures of Regime Type." In: Harvard Dataverse.
-http://hdl.handle.net/1902.1/PMM.
+\url{http://hdl.handle.net/1902.1/PMM}.
 }
 \usage{
 mainwaring
@@ -43,13 +43,13 @@ Original data available from
 \item{mainwaring}{Trichotomous democracy indicator from Mainwaring, Scott,
 Daniel Brinks, and Anibal Perez Linan. 2008. "Political Regimes in Latin
 America, 1900-2007." Original data available from
-http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf. 0 =
+\link{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}. 0 =
 non-democracy, 0.5 = hybrid, 1 = democracy.}
 
 \item{Regime}{Trichotomous democracy indicator from Mainwaring, Scott,
 Daniel Brinks, and Anibal Perez Linan. 2008. "Political Regimes in Latin
 America, 1900-2007." Original data available from
-http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf. A =
+\link{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}. A =
 Authoritarian, D = Democracy, SD = Semidemocracy. From the published
 article:
 
@@ -197,7 +197,7 @@ Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
 Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
 Type." In: Harvard Dataverse.
 \url{http://hdl.handle.net/1902.1/PMM}. It
-only contains a numeric version of the mainwaring Regime indicator, ranging
+only contains a numeric version of the <ainwaring Regime indicator, ranging
 from -1 (Authoritarian) to 0 (Semidemocracy) to 1 (Democracy). The original
 dataset is found in \link{mainwaring}. PMM's replication data is actually
 missing a fair number of the data points in the original data by Mainwaring

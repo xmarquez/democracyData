@@ -13,7 +13,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
 "Replication data for: Democratic Compromise: A Latent Variable Analysis of
 Ten Measures of Regime Type." In: Harvard Dataverse.
-http://hdl.handle.net/1902.1/PMM.
+\url{http://hdl.handle.net/1902.1/PMM}.
 }
 \usage{
 fh_pmm

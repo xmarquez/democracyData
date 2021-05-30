@@ -12,7 +12,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
 "Replication data for: Democratic Compromise: A Latent Variable Analysis of
 Ten Measures of Regime Type." In: Harvard Dataverse.
-http://hdl.handle.net/1902.1/PMM.
+\url{http://hdl.handle.net/1902.1/PMM}.
 
 Munck, Gerardo L. 2009. Measuring Democracy: A
 Bridge Between Scholarship and Politics. Baltimore: Johns Hopkins University
@@ -28,7 +28,7 @@ Press. Taken from Pemstein, Daniel, Stephen A. Meserve, and James Melton.
 2013. Taken from Pemstein, Daniel, Stephen A. Meserve, and James Melton.
 2013. "Replication data for: Democratic Compromise: A Latent Variable
 Analysis of Ten Measures of Regime Type." In: Harvard Dataverse.
-http://hdl.handle.net/1902.1/PMM. Higher values are more democratic.
+\url{http://hdl.handle.net/1902.1/PMM}. Higher values are more democratic.
 }
 \section{Variables}{
 

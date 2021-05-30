@@ -460,7 +460,7 @@ The \code{pacl_pmm} version of this data is taken from from Pemstein, Daniel,
 Stephen A. Meserve, and James Melton. 2013. It only contains the numberic
 version of the variable \code{democracy} in the original dataset. "Replication
 data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures
-of Regime Type." In: Harvard Dataverse. http://hdl.handle.net/1902.1/PMM.
+of Regime Type." In: Harvard Dataverse. \url{http://hdl.handle.net/1902.1/PMM}.
 The original dataset is found in \code{pacl}. \code{pacl_pmm} is missing a few
 country-years when compared with \code{pacl}.
 }
