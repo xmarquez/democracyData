@@ -10,12 +10,12 @@ prepare_democracy_data(data, .funs)
 \arguments{
 \item{data}{A dataset of democracy scores. For the function to do anything,
 the column names must contain at least one of the following strings:
-\verb{[anckar]}, \verb{[anrr]}, \verb{[arat]}, \verb{[blm]}, \verb{[bmr]}, \verb{[bti]}, \verb{[bollen]},
-\verb{[doorenspleet]}, \verb{[wgi]}, \verb{[gwf]}, \verb{[hadenius]}, \verb{[kailitz]}, \verb{[lied]},
-\verb{[munck]}, \verb{[pacl]}, \verb{[peps]}, \verb{[polyarchy]}, \verb{[polity]}, \verb{[prc]}, \verb{[PIPE]},
-\verb{[svmdi]}, \verb{[svolik]}, \verb{[ulfelder]}, \verb{[utip]}, \code{v2x},
-\verb{[vanhanen_democratization](vanhanen.html)}, \verb{[vanhanen_pmm]}, or
-\verb{[wth](wahman_teorell_hadenius.html)}. For details of these variables, see
+\link{anckar}, \link{anrr}, \link{arat}, \link{blm}, \link{bmr}, \link{bti}, \link{bollen},
+\link{doorenspleet}, \link{wgi}, \link{gwf}, \link{hadenius}, \link{kailitz}, \link{lied},
+\link{munck}, \link{pacl}, \link{peps}, \link{polyarchy}, \link{polity}, \link{prc}, \link{PIPE},
+\link{svmdi}, \link{svolik}, \link{ulfelder}, \link{utip}, \code{v2x},
+\href{vanhanen.html}{vanhanen_democratization}, \link{vanhanen_pmm}, or
+\href{wahman_teorell_hadenius.html}{wth}. For details of these variables, see
 the documentation for \link{generate_democracy_scores_dataset} or the
 documentation for the individual datasets.}
 

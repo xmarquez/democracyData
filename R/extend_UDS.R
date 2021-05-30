@@ -110,12 +110,12 @@
 #'
 #'@param data A dataset of democracy scores. For the function to do anything,
 #'  the column names must contain at least one of the following strings:
-#'  `[anckar]`, `[anrr]`, `[arat]`, `[blm]`, `[bmr]`, `[bti]`, `[bollen]`,
-#'  `[doorenspleet]`, `[wgi]`, `[gwf]`, `[hadenius]`, `[kailitz]`, `[lied]`,
-#'  `[munck]`, `[pacl]`, `[peps]`, `[polyarchy]`, `[polity]`, `[prc]`, `[PIPE]`,
-#'  `[svmdi]`, `[svolik]`, `[ulfelder]`, `[utip]`, `v2x`,
-#'  `[vanhanen_democratization](vanhanen.html)`, `[vanhanen_pmm]`, or
-#'  `[wth](wahman_teorell_hadenius.html)`. For details of these variables, see
+#'  [anckar], [anrr], [arat], [blm], [bmr], [bti], [bollen],
+#'  [doorenspleet], [wgi], [gwf], [hadenius], [kailitz], [lied],
+#'  [munck], [pacl], [peps], [polyarchy], [polity], [prc], [PIPE],
+#'  [svmdi], [svolik], [ulfelder], [utip], `v2x`,
+#'  [vanhanen_democratization](vanhanen.html), [vanhanen_pmm], or
+#'  [wth](wahman_teorell_hadenius.html). For details of these variables, see
 #'  the documentation for [generate_democracy_scores_dataset] or the
 #'  documentation for the individual datasets.
 #'
