@@ -410,5 +410,52 @@ prepare_vanhanen <- function(
 
 }
 
+prepare_anrr <- function(path = "DDCGdata_final.dta",
+                         verbose = TRUE,
+                         ...) {
 
+  country_name <- wbcode <- year <- dem <- NULL
 
+  anrr <- haven::read_dta(path)
+
+  anrr <- anrr %>%
+    dplyr::select(country_name, wbcode, year, dem) %>%
+    dplyr::filter(!is.na(dem)) %>%
+    dplyr::mutate(country_name = ifelse(str_detect(country_name, "ncipe"),
+                                 "Sao Tome and Principe", country_name)) %>%
+    country_year_coder(country_name,
+                       year,
+                       verbose = verbose,
+                       ...)
+
+  standardize_columns(anrr, country_name, wbcode, verbose = verbose)
+
+}
+
+# create_anrr_scores <- function(verbose = TRUE) {
+#   anrr_data <- generate_democracy_scores_dataset(datasets = c("pacl", "bmr",
+#                                                               "pacl_update",
+#                                                               "fh",
+#                                                               "polity_annual"),
+#                                                  output_format = "wide",
+#                                                  verbose = verbose)
+#
+#   fh <- download_fh(verbose = verbose, include_territories = TRUE)
+#
+#   anrr_data <- anrr_data %>%
+#     left_join(fh %>% select(extended_country_name:in_GW_system, year,
+#                             fh_total_reversed, fh_total, status))
+#
+#   anrr_data <- anrr_data %>%
+#     mutate(anrr_dem = case_when(fh_total <= 10 & polity2 > 0 ~ 1,
+#                                 fh_total <= 10 & is.na(polity2) & (pacl_update == 1 | bmr_democracy == 1) ~ 1,
+#                                 is.na(fh_total) & polity2 > 0 & (pacl_update == 1 | bmr_democracy == 1) ~ 1,
+#                                 (is.na(fh_total) & is.na(polity2)) & (pacl_update == 1 | bmr_democracy == 1) ~ 1,
+#                                 (is.na(fh_total) & is.na(polity2) & is.na(pacl_update) & is.na(bmr_democracy)) ~ NA_real_,
+#                                 TRUE ~ 0))
+#
+#   anrr_data <- anrr_data %>%
+#     filter(year >= 1960) %>%
+#     left_join(anrr)
+#
+# }
