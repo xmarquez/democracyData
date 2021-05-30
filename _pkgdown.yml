@@ -69,4 +69,6 @@ reference:
 - title: "Utility functions"
   desc: "Utility functions for working with country-year democracy data."
 - contents:
-  - matches("remove_empty_rows")
+  - remove_empty_rows
+  - count_sequence_breaks
+url: https://xmarquez.github.io/democracyData/
