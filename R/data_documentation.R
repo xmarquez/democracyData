@@ -26,7 +26,7 @@
 #'   \item{year}{The calendar year.}
 #'
 #'   \item{democracy}{This should be identical to version 2 of Boix, Miller and
-#'   Rosato’s Dichotomous democracy measure (\code{democracy_omitteddata}; see
+#'   Rosato's Dichotomous democracy measure (\code{democracy_omitteddata}; see
 #'   [bmr]). (Carles Boix, Michael K. Miller, and Sebastian Rosato. 2013. "A
 #'   Complete Data Set of Political Regimes, 1800-2007." Comparative Political
 #'   Studies 46(12): 1523-54). Supplemented for all countries for the period
@@ -63,6 +63,156 @@
 #'   1800-2016: a typology and a new dataset". European Political Science. DOI:
 #'   10.1057/s41304-018-0149-8. \url{https://doi.org/10.1057/s41304-018-0149-8}.
 "anckar"
+
+# ANRR ------------------------------------------------------------------
+
+#' The Acemoglu, Naidu, Restrepo and Robinson deocracy dataset
+#'
+#' Dataset described in D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy
+#' Does Cause Growth". In: _Journal of Political Economy_ 127.1 (2019), pp.
+#' 47-100. \url{https://doi.org/10.1086/700936}. Data at the link.
+#'
+#' @section Variables:
+#'
+#'   \describe{
+#'
+#'   \item{anrr_country}{The country name, as in the original dataset, with
+#'   minimal modification (Sao Tome and Principe). Use
+#'   \code{extended_country_name} instead if you want a consistent name.}
+#'
+#'   \item{anrr_wbcode}{The World Bank Code as in the original dataset.}
+#'
+#'   \item{dem}{The democracy variable (1 = democratic, 0 = non-democratic). The
+#'   supplementary material describes the construction of the variable as
+#'   follows (I copy, paste, and lightly edit from pp. A1-A2):
+#'
+#'   We construct our consolidated measure of democracy using [Freedom
+#'   House](download_fh.html) and [Polity IV](polityIV.html) as our main
+#'   sources. We also use secondary sources to resolve ambiguous cases (those in
+#'   which Polity and Freedom house report contrary assessments) or those
+#'   without data coverage in Freedom House or Polity IV. For instance, Freedom
+#'   House only covers the period since 1972, so we use secondary sources and
+#'   the Polity IV index to code our measure of democracy prior to this period.
+#'   Likewise, Polity IV does not cover some small countries that are in the
+#'   Freedom House sample and in other secondary sources. The secondary sources
+#'   are the dichotomous measures introduced by Cheibub, Gandhi, and Vreeland
+#'   (2010) - henceforth [CGV](pacl.html) - and Boix, Miller, and Rosato (2012)
+#'   - henceforth [BMR](bmr.html). Both measures extend and refine Przeworski et
+#'   al.'s (2000) measure of democracy. Finally, we use Papaioannou and
+#'   Siourounis's (2008) data--henceforth PS--which contains the exact year of a
+#'   permanent transition to democracy for many of the countries in our sample,
+#'   but that does not include temporary transitions in and out of democracy.
+#'
+#'   1. We code a country c as democratic in year t if Freedom House regards it
+#'   as "Free" or "Partially Free" and Polity IV gives it a positive democracy
+#'   score (The Polity IV index is between -10 and 10). This procedure generates
+#'   the bulk of the variation in our democracy measure.
+#'
+#'   2. For small countries that only appear in the [Freedom
+#'   House](download_fh.html) sample, we code them as democratic if their
+#'   Freedom House status is "Free" or "Partially Free," and either
+#'   [CGV](pacl.html) or [BMR](bmr.html) consider them to be democratic. There
+#'   is overwhelming agreement between Freedom House, [CGV](pacl.html) and
+#'   [BMR](bmr.html) in all such cases, making the coding straightforward. The
+#'   only ambiguous case is Samoa, which is coded as "Free" since 1989 by
+#'   [Freedom House](download_fh.html), while [CGV](pacl.html) and
+#'   [BMR](bmr.html) both code it as nondemocratic. We follow the latter coding
+#'   since rulers in Samoa have a long tenure and are appointed to office for
+#'   life. Besides this particular case, there are some countries for which only
+#'   Freedom House provides information for the years 2009 and 2010 (the
+#'   [CGV](pacl.html) and [BMR](bmr.html) sample ends in 2008 and 2009
+#'   respectively). These include Afghanistan, Bahamas, Barbados, Belize, Bosnia
+#'   & Herzegovina, Brunei Darussalam, Dominica, Grenada, Iceland, Iraq,
+#'   Kiribati, Luxembourg, Maldives, Malta, Nauru, Palau, Samoa, Seychelles, St.
+#'   Kitts and Nevis, St. Lucia, St. Vincent & Grens., Suriname, Sao Tome and
+#'   Prıncipe, Tonga and Vanuatu. In all of these cases the Freedom House
+#'   indicator remains the same since 2008, so we assume these countries remain
+#'   in the same political regime that was in place in 2008.
+#'
+#'   3. Freedom House does not provide any data before 1972. For these early
+#'   years, we code a country as democractic if it has a positive Polity score
+#'   and either [CGV](pacl.html) or [BMR](bmr.html) code it as democratic. There
+#'   are a few cases coded as nondemocracies by [CGV](pacl.html) and
+#'   [BMR](bmr.html) with a positive [Polity](polity) score. In these cases, the
+#'   [Polity](polityIV.html) score is always near zero and we code the
+#'   observation as a nondemocracy.
+#'
+#'   4. Ex-Soviet and Ex-Yugoslav countries are coded as nondemocracies before
+#'   1990, based on the USSR and Yugoslavia scores before their dissolution.
+#'
+#'   5. When both Freedom House and Polity are missing (174 observations for 16
+#'   countries), we rely on our secondary sources and code our measure of
+#'   democracy manually. The first country is Antigua and Barbuda, which is
+#'   coded as democratic following its independence in 1981. Barbados is set as
+#'   democratic from its independence in 1966 until it enters the Freedom House
+#'   sample in 1972, after which Freedom House codes it as democratic. Germany,
+#'   Iceland, and Luxembourg are coded as always democratic. This matches the
+#'   Freedom House coding once they enter into its sample. Kuwait is set to
+#'   nondemocratic in 1961 and 1962, until it enters the Polity sample in 1963
+#'   and is also coded as nondemocratic. The Maldives are set as nondemocratic
+#'   from its independence in 1965, until they enter the Freedom House sample in
+#'   1972 and is also coded as nondemocratic. Malta is set as democratic from
+#'   its independence in 1964, until it enters the Freedom House sample in 1972
+#'   and is also coded as democratic. Nauru is set as democratic from its
+#'   independence in 1968 until it enters the Freedom House sample in 1972,
+#'   remaining democratic. Syria is coded as nondemocratic in 1960 when it was
+#'   not in the Polity sample. It remains nondemocratic in the Polity sample.
+#'   Tonga is coded as nondemocratic since its independence. This matches the
+#'   Freedom House coding when it enters the sample. Vietnam and Yemen are coded
+#'   as always nondemocratic, but they are not in Polity and Freedom House prior
+#'   to their unification. However, they were nondemocratic according to all
+#'   secondary sources. Samoa is nondemocratic since its independence based on
+#'   [CGV](pacl.html) and [BMR](bmr.html) for years in which Polity and Freedom
+#'   House are missing. Finally, Zimbabwe is also nondemocratic in 1965-1969,
+#'   according to our secondary sources.
+#'
+#'   6. We remove spurious transitions created when countries enter or leave the
+#'   Freedom House, Polity, or our secondary sources' samples. For instance,
+#'   these spurious transitions arise when a country appears in (or leaves) the
+#'   sample for one of our sources that gives it a more (or less) favorable
+#'   assessment than the others. This is the case for Cyprus, Malaysia, Gambia,
+#'   and Guyana, which we handled manually. The particular coding of these
+#'   countries does not affect our results. We follow most sources and code
+#'   Cyprus as democratic after 1974. Malaysia is coded as nondemocratic
+#'   throughout. Guyana is coded as nondemocratic between 1966 and 1990 and
+#'   democratic in all other years. Finally, Gambia is coded as democratic
+#'   between 1965 and 1993 only.
+#'
+#'   7. Finally, we perform an additional refinements of our measure and adjust
+#'   it to match the dates for permanent democratizations that PS coded. These
+#'   dates are available for 68 transitions in our sample (recall PS only code
+#'   permanent transitions), and are based on historical sources. Some special
+#'   cases, for which PS transition dates and our coding are not close in time,
+#'   include Guatemala, El Salvador, Iran, Tanzania, and South Africa. For
+#'   Guatemala, our coding described above dates a democratization in 1986,
+#'   while PS code a permanent transition at the end of the civil war in 1996.
+#'   For El Salvador, we code the democratization episode in 1982 based on
+#'   Freedom House and Polity, while PS code it in 1994. We do not detect any
+#'   transition to democracy for Iran and Tanzania. In all of these cases we
+#'   keep our original coding. Our coding produces a transition to democracy in
+#'   South Africa during the early 80s based solely on Freedom House and Polity.
+#'   However, PS and all secondary sources agree that the official
+#'   democratization was in 1994, so we use this date.
+#'
+#'   Our dichotomous measure of democracy is available for 183 countries and
+#'   covers their postindependence period since 1960 and until 2010. Out of the
+#'   8,733 country/year observations, we code 3,777 instances of democracy and
+#'   4,956 instances of nondemocracy. Out of the 183 countries, 45 are always
+#'   democratic, 45 are always nondemocratic, and the rest transition in and out
+#'   of democracy. A total of 122 democratizations and 71 reversals suggest
+#'   significant within-country variation in our democracy measure.
+#'
+#'   }
+#'
+#'   }
+#'
+#' @template standard-variables
+#' @family democracy
+#' @family dichotomous democracy indexes
+#' @source D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy Does Cause
+#'   Growth". In: _Journal of Political Economy_ 127.1 (2019), pp. 47-100.
+#'   \url{https://doi.org/10.1086/700936}.
+"anrr"
 
 # Arat --------------------------------------------------------------------
 
@@ -382,7 +532,7 @@
 #'
 #'   \item{Q6_Level_of_Socioeconomic_Development (Q6.1)}{Score on question on
 #'   the level of socioeconomic development (1-10). The BTI codebook says that
-#'   this concept measures whether "In principle, the country’s level of
+#'   this concept measures whether "In principle, the country's level of
 #'   development permits adequate freedom of choice for all citizens." See
 #'   codebook at
 #'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
@@ -419,7 +569,7 @@
 #'
 #'   \item{Q11_Economic_Performance (Q11.1)}{Score on question on economic
 #'   performance (1-10). The BTI codebook says that this concept measures
-#'   whether "The economy’s performance points to solid development." See
+#'   whether "The economy's performance points to solid development." See
 #'   codebook at
 #'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
 #'    for details.}
@@ -555,14 +705,74 @@
 #' Democratization. World Politics 52 (03): 384-406. DOI:
 #' 10.1017/S0043887100016580. \url{http://dx.doi.org/10.1017/S0043887100016580}.
 #'
-#' \describe{
-#'   \item{doorenspleet_country}{Country name as in Doorenspleet.}
-#'   \item{doorenspleet_regime}{Regime type: A = Authoritarian, D = Democracy, I = interruption.}
-#'   \item{doorenspleet}{Regime type: 1 = Authoritarian, 2 = Democracy, interruption codes as NA.}
-#'   \item{year}{Year. Regimes are coded as of the 31 Dec of the year.}
-#'   \item{start_year}{First year of the regime.}
-#'   \item{end_year}{Last year of the regime.}
-#' }
+#' \describe{ \item{doorenspleet_country}{Country name as in Doorenspleet.}
+#' \item{doorenspleet_regime}{Regime type: A = Authoritarian, D = Democracy, I =
+#' interruption.
+#'
+#' Doorenspleet notes that the classification of democracy depends on two things
+#' (pp. 391-392 of the article):
+#'
+#' The first requirement of minimal democracies, the presence of competition,
+#' can be seen to be met if there exist institutions and procedures through
+#' which citizens can express effective preferences about alternative policies
+#' at the national level and if there are institutionalized constraints on the
+#' exercise of power by the executive. Indicators of these phenomena have
+#' already been collated in Gurr's well-known Polity III data set, which covers
+#' most independent countries on an annual basis from 1800 to 1994; it is
+#' therefore an ideal source to measure the presence of competition.21 Moreover,
+#' these data are also easily adapted to the definition of competition employed
+#' in this analysis. In operational terms, I will consider a national political
+#' system to be competitive if there is at least one executive chosen by
+#' competitive popular elections (if Gurr's indicator "competitiveness of
+#' executive recruitment" is coded 3 or 4); if all the politically active
+#' population has an opportunity, in principle, to attain an executive position
+#' through a regularized process (if Gurr's indicator "openness of executive
+#' recruitment" is coded 3 or 4); if alternative preferences for policy and
+#' leadership can be pursued in the political arena, such that oppositional
+#' activity is not restricted or suppressed (if Gurr's indicator
+#' "competitiveness of participation" is coded 0, 3, 4, 5); and if there are at
+#' least substantial limitations on the exercise of executive power (if Gurr's
+#' indicator "constraints on the power of the chief executive" is coded 4, 5, 6,
+#' or 7).
+#'
+#' The second requirement of minimal democracies is that there be inclusive,
+#' universal suffrage at the national level. The norm of universality requires
+#' that all citizens of the state--without regard to sex, race, language,
+#' descent, income, land holdings, education, or religious beliefs--formally
+#' enjoy the right to vote and to be elected to public office. The fact that
+#' certain prerequisites are demanded, such as a minimum age, a sound mind, or
+#' the absence of criminal record, does not negate this principle. Only
+#' countries that at some stage meet the first requirement of competition from
+#' 1800 to 1994 are considered when measuring the inclusiveness of the system.24
+#' Levels of inclusiveness of the political system may be broken down into one
+#' of the following four categories: (1) no popular suffrage; (2) suffrage
+#' denied to large segments of the population (more than 20 percent is
+#' excluded); (3) suffrage with partial restrictions (less than 20 percent of
+#' the population is excluded);(4) universal suffrage or minor restrictions.25
+#' For the purposes of this analysis, countries are considered "sufficiently"
+#' inclusive to meet the criterion of a minimal democracy if they fall into the
+#' third or fourth category. Should they fall within either of the first two
+#' categories or should they not meet the competition criterion, they are
+#' classified as authoritarian regimes. Reliable data on inclusiveness are of
+#' course difficult to obtain and to standardize, and I have had to rely on
+#' historical sources and various monographs for each country, as well as on
+#' Keesing's *Record of World Events* and many of the standard handbooks and
+#' almanacs. The appendix gives an overview of the years in which political
+#' systems can be considered as both competitive and inclusive and hence are
+#' classified in this study as "minimal democracies."
+#'
+#' (This description suggests one could replicate Doorenspleet's measure using
+#' data from [PIPE] or [LIED] as well as [polity])}
+#'
+#' \item{doorenspleet}{Regime type: 1 = Authoritarian, 2 = Democracy,
+#' interruption codes as NA.}
+#'
+#' \item{year}{Year. Regimes are coded as of the 31
+#' Dec of the year.}
+#'
+#' \item{start_year}{First year of the regime.}
+#'
+#' \item{end_year}{Last year of the regime.} }
 #' @template standard-variables
 #' @family democracy
 #' @family dichotomous democracy indexes
@@ -668,9 +878,9 @@
 #' @section Description of the Construction of LIED:
 #'
 #'   To code the lexical index we make use of five variables developed initially
-#'   in the Political Institutions and Events (\code{PIPE}) dataset (Przeworski
+#'   in the Political Institutions and Events ([PIPE]) dataset (Przeworski
 #'   et al. 2013): LEGSELEC, EXSELEC, OPPOSITION, MALE SUFFRAGE, and FEMALE
-#'   SUFFRAGE. Since \code{PIPE} does not attempt to measure the quality of
+#'   SUFFRAGE. Since [PIPE] does not attempt to measure the quality of
 #'   elections, we generate a sixth variable: COMPETITION. All variables are
 #'   binary, coded 1 if the following circumstances obtain, and 0 otherwise.
 #'
@@ -768,23 +978,23 @@
 #'   the `lexical_index_original` variable.} }
 #' @template standard-variables
 #'
-#' @section Deviations from \code{PIPE}:
+#' @section Deviations from [PIPE]:
 #'
 #'   The LIED compilers state that:
 #'
-#'   Although we employ \code{PIPE} as an initial source for coding LEGSELEC,
+#'   Although we employ [PIPE] as an initial source for coding LEGSELEC,
 #'   EXSELEC, OPPOSITION, MALE SUFFRAGE, and FEMALE SUFFRAGE, we deviate from
-#'   PIPE—based on our reading of countryspecific sources—in several ways.
-#'   First, with respect to executive elections, in the \code{PIPE} dataset
+#'   PIPE--based on our reading of country specific sources--in several ways.
+#'   First, with respect to executive elections, in the [PIPE] dataset
 #'   "Prime ministers are always coded as elected if the legislature is open."
 #'   However, for our purposes we need an indicator that also takes into account
 #'   whether the government is responsible to an elected parliament if the
-#'   executive is not directly elected—a situation generated by a number of
+#'   executive is not directly elected--a situation generated by a number of
 #'   European monarchies prior to World War I, by episodes of international
 #'   supervision such as Bosnia-Herzegovina in the first years following the
 #'   civil war, and by some monarchies in the Middle East and elsewhere (e.g.,
 #'   Liechtenstein, Monaco, and Tonga) in the contemporary era. To illustrate,
-#'   \code{PIPE} codes Denmark as having executive elections from 1849 to 1900
+#'   [PIPE] codes Denmark as having executive elections from 1849 to 1900
 #'   although the parliamentary principle was not established until 1901. Before
 #'   then, the government was accountable to the king. Among the current cases
 #'   with elected multiparty legislatures not fulfilling this condition, we find
@@ -840,7 +1050,7 @@
 #' Trichotomous democracy indicator from Mainwaring, Scott, Daniel Brinks, and
 #' Anibal Perez Linan. 2008. "Political Regimes in Latin America, 1900-2007."
 #' Original data available from
-#' http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf.
+#' \url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}.
 #'
 #' @section Variables:
 #'
@@ -1315,7 +1525,7 @@
 #' \item{gwf_fail}{Binary indicator for regime failure}
 #'
 #' \item{gwf_disagree}{Binary indicator for country-year observations where GWF
-#' coding of democracy differs from CGV (here \link{pacl}) coding of democracy}
+#' coding of democracy differs from [CGV](pacl.html) (here \link{pacl}) coding of democracy}
 #'
 #' \item{gwf_startdate}{Day-Month-Year for the calendar date of the autocratic
 #' regime start event. Only in \code{gwf_autocratic} datasets.}
@@ -1397,7 +1607,7 @@
 #'   \describe{
 #'
 #'   \item{year}{The calendar year. Note that more than one regime type may
-#'   obtain in a single year fo a given country.}
+#'   obtain in a single year for a given country.}
 #'
 #'   \item{kailitz_country}{The country name.}
 #'
@@ -1958,7 +2168,7 @@
 #'\item{Colony_administrated_by}{If colony, which country is the colonial
 #'administrator?}
 #'
-#'\item{Communist}{Is the country’s regime communist / socialist? (No=0, Yes=1)}
+#'\item{Communist}{Is the country's regime communist / socialist? (No=0, Yes=1)}
 #'
 #'\item{Regime_change_lag}{Regime Change lag (No=0, Yes=1) If a coded event,
 #'such as a change in the Presidency, took place after 01.07 it is assigned to
@@ -1966,7 +2176,7 @@
 #'be equal to one. For all change events before that date, the lag dummy is
 #'equal to zero.}
 #'
-#'\item{spatial_democracy}{Average of geographical neighbors’ Democracy score}
+#'\item{spatial_democracy}{Average of geographical neighbors' Democracy score}
 #'
 #'\item{countrycode}{Numeric country ID. Undocumented in original codebook.}
 #'
@@ -2141,7 +2351,7 @@
 #'
 #' \item{PEPS1v}{PEPS1, using toV. n = 14090, missing = 2313.}
 #'
-#' \item{PEPS2v}{PEPS1, using toV. n = 13241, missing = 3162.}
+#' \item{PEPS2v}{PEPS2, using toV. n = 13241, missing = 3162.}
 #'
 #' \item{pop}{Population in thousands, Penn World Tables.}
 #'
@@ -2327,7 +2537,7 @@
 #'  spectrum, even though elements of this perspective may be implied in the
 #'  original theory. The POLITY variable provides a convenient avenue for
 #'  examining general regime effects in analyses but researchers should note
-#'  that the middle of the implied POLITY “spectrum” is somewhat muddled in
+#'  that the middle of the implied POLITY "spectrum" is somewhat muddled in
 #'  terms of the original theory, masking various combinations of DEMOC and
 #'  AUTOC scores with the same POLITY score. Investigations involving hypotheses
 #'  of varying effects of democracy and/or autocracy should employ the original
@@ -2973,7 +3183,7 @@
 #'
 #' Michael Coppedge and Wolfgang Reinicke, "Measuring Polyarchy," Studies in
 #' Comparative International Development 25:1 (Spring 1990): 51-72. Data
-#' available at \url{http://www3.nd.edu/~mcoppedg/crd/datacrd.htm}The codebook
+#' available at \url{http://www3.nd.edu/~mcoppedg/crd/datacrd.htm}. The codebook
 #' below is copied from that website.
 #'
 #' @section About the Coding and the Scales:
@@ -3445,18 +3655,19 @@
 #'
 #' This is the dataset documented in Jay Ulfelder. _Democracy/Autocracy Data
 #' Set_. 2012. \url{http://hdl.handle.net/1902.1/18836}. It comes in two
-#' versions: \link{ulfelder}, which only goes back to 1955, and \link{ulfelder_extended},
-#' which extends the regime classifications back in time using the \code{rgjdura} and
-#' \code{rgjdurd} variables, adding 3861 country-years to the original data, mostly
-#' authoritarian regimes.
+#' versions: \link{ulfelder}, which only goes back to 1955, and
+#' \link{ulfelder_extended}, which extends the regime classifications back in
+#' time using the \code{rgjdura} and \code{rgjdurd} variables, adding 3861
+#' country-years to the original data, mostly authoritarian regimes.
 #'
 #' @section Variables with values for all years:
 #'
 #'   pitfcode: PITF Country Code. Three-character country code matching those
 #'   used by the Political Instability Task Force. Some of these seem off - GER
 #'   for Germany instead of GMY, UK instead of UKG. I've created
-#'   \code{ulfelder_scode} on the basis of this by converting "GER","MNE","SRB","UK",
-#'   and "USS" to"GMY","MNT","SER","UKG", and "USR" respectively.
+#'   \code{ulfelder_scode} on the basis of this by converting
+#'   "GER","MNE","SRB","UK", and "USS" to"GMY","MNT","SER","UKG", and "USR"
+#'   respectively.
 #'
 #'   ulfelder_scode: Modified version of \code{pitfcode}, matching the Polity IV
 #'   character codes that appear to be the basis of the PITF codes.
@@ -3480,6 +3691,39 @@
 #'   either sets national policy or wields formal veto power
 #'
 #'   -99 = Country termination (censoring event)
+#'
+#'   The codebook indicates that democracy is defined as follows (I quote from
+#'   p. 4):
+#'
+#'   For purposes of this data set, democracy is understood to be a form of
+#'   government in which a free citizenry fairly chooses and routinely holds
+#'   accountable its rulers. In practice, this occurs when four general
+#'   conditions hold:
+#'
+#'   * Elected officials rule. Representatives chosen by citizens actually make
+#'   policy, and unelected individuals, bodies, and organizations cannot veto
+#'   those representatives' decisions.
+#'
+#'   * Elections are fair and competitive. The process by which citizens elect
+#'   their rulers provides voters with meaningful choice and is free from
+#'   deliberate fraud or abuse.
+#'
+#'   * Politics is inclusive. Adult citizens have equal rights to vote and
+#'   participate in government and fair opportunity to exercise those rights.
+#'
+#'   * Civil liberties are protected. Freedoms of speech, association, and
+#'   assembly give citizens the chance to deliberate on their interests, to
+#'   organize in pursuit of those interests, and to monitor the performance of
+#'   their elected representatives and the bureaucracies on which those
+#'   officials depend.
+#'
+#'   To identify whether these conditions obtain in a particular country at a
+#'   particular time, I reviewed a variety of secondary sources to try to
+#'   determine whether or not all of the criteria listed below were satisfied.
+#'   According to my definition, only a country that meets all of these criteria
+#'   is considered a democracy. In other words, I see each one of them as a
+#'   necessary condition for democratic government. The moment a country fails
+#'   to satisfy one of the criteria, it is considered a non-democracy.
 #'
 #'   rgjdurd: Consecutive Years of Democracy. Count in years since beginning of
 #'   an episode of democracy. Coded as missing for countries currently coded as
@@ -3541,7 +3785,7 @@
 #'   = 3 Rebellion: opposition forces seize power by means other than largely
 #'   free, fair, and competitive elections
 #'
-#'   = 4 Other: some other domestic actor—nearly always a monarch—usurps power
+#'   = 4 Other: some other domestic actor--nearly always a monarch--usurps power
 #'   from an elected government
 #'
 #'   = -6 Foreign intervention: a foreign government or international
@@ -3564,7 +3808,7 @@
 #'
 #'   = 0 At least one change in chief executive
 #'
-#'   rgjaltlt: Alternation in Leadership “Clock” (Democracy Only). Numeric
+#'   rgjaltlt: Alternation in Leadership "Clock" (Democracy Only). Numeric
 #'   variable counting time until the first change in the head of government.
 #'
 #'   rgjaltp: Alternation in Party in Power (Democracy Only). Dummy variable
@@ -3581,7 +3825,7 @@
 #'
 #'   = 0 At least one change in the party in power
 #'
-#'   rgjaltpt: Alternation in Party in Power “Clock” (Democracy Only). Numeric
+#'   rgjaltpt: Alternation in Party in Power "Clock" (Democracy Only). Numeric
 #'   variable counting time until the first change in party holding the office
 #'   of chief executive.
 #'
@@ -3701,7 +3945,7 @@
 #'   = 0 Neither a member nor formally invited to join
 #'
 #'   rgjnatop: Participant in NATO Partnership for Peace. Binary variable
-#'   indicating participation in NATO’s Partnership for Peace program, as of 31
+#'   indicating participation in NATO's Partnership for Peace program, as of 31
 #'   December of the listed year.
 #'
 #'   = 1 Participant
@@ -3887,7 +4131,7 @@
 #'
 #'   = 0 No status
 #'
-#'   rgjachpr: Signatory to the African Charter on Human and People’s Rights.
+#'   rgjachpr: Signatory to the African Charter on Human and People's Rights.
 #'   Categorical variable indicating status as signatory to this treaty, as of
 #'   31 December of the listed year. The treaty was adopted in 1981 and entered
 #'   into force in 1986.
