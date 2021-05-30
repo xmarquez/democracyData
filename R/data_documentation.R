@@ -1064,13 +1064,13 @@
 #'   \item{mainwaring}{Trichotomous democracy indicator from Mainwaring, Scott,
 #'   Daniel Brinks, and Anibal Perez Linan. 2008. "Political Regimes in Latin
 #'   America, 1900-2007." Original data available from
-#'   [http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf]. 0 =
+#'   [http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf](http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf). 0 =
 #'   non-democracy, 0.5 = hybrid, 1 = democracy.}
 #'
 #'   \item{Regime}{Trichotomous democracy indicator from Mainwaring, Scott,
 #'   Daniel Brinks, and Anibal Perez Linan. 2008. "Political Regimes in Latin
 #'   America, 1900-2007." Original data available from
-#'   [http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf]. A =
+#'   [http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf](http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf). A =
 #'   Authoritarian, D = Democracy, SD = Semidemocracy. From the published
 #'   article:
 #'
@@ -4935,7 +4935,7 @@
 #' @source Hadenius, Axel and Jan Teorell. 2006. "Authoritarian Regimes: Stability,
 #' Change, and Pathways to Democracy, 1972-2003", University of Notre Dame,
 #' Kellogg Institute Working Paper Series 331, November 2006
-#' ([http://kellogg.nd.edu/publications/workingpapers/WPS/331.pdf]).
+#' ([http://kellogg.nd.edu/publications/workingpapers/WPS/331.pdf](http://kellogg.nd.edu/publications/workingpapers/WPS/331.pdf)).
 #'
 #' @source Wahman, Michael,
 #' Jan Teorell, and Axel Hadenius. 2013. Authoritarian regime types revisited:

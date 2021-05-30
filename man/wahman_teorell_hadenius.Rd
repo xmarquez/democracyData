@@ -15,7 +15,7 @@ Democracy", C&M Working Papers 6, IPSA, August 2005.
 Hadenius, Axel and Jan Teorell. 2006. "Authoritarian Regimes: Stability,
 Change, and Pathways to Democracy, 1972-2003", University of Notre Dame,
 Kellogg Institute Working Paper Series 331, November 2006
-(\link{http://kellogg.nd.edu/publications/workingpapers/WPS/331.pdf}).
+(\url{http://kellogg.nd.edu/publications/workingpapers/WPS/331.pdf}).
 
 Wahman, Michael,
 Jan Teorell, and Axel Hadenius. 2013. Authoritarian regime types revisited:

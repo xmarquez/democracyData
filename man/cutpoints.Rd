@@ -7,7 +7,7 @@
 cutpoints(model, type = "score")
 }
 \arguments{
-\item{model}{A \link{mirt} `\link{SingleGroupClass-class`} model
+\item{model}{A \link[mirt:SingleGroupClass-class]{mirt::SingleGroupClass} model
 of the democracy scores.}
 
 \item{type}{A string specifying the cutpoint type. Can be (an abbreviation

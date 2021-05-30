@@ -174,7 +174,7 @@
 #'
 #'@references
 #'
-#'`r utils::capture.output(print(democracyData::bibliography))`
+#'`r stringr::str_remove(utils::capture.output(print(democracyData::bibliography)), "^\\[.+?\\] ")`
 #'
 prepare_democracy_data <- function(data,
                          .funs) {
@@ -326,7 +326,7 @@ prob_more <- function(data, country1, country2, years, mean_col = "z1",
 #' discrimination parameters, score cutpoints, and standard errors for all the
 #' variables involved, putting these into a tidy data frame.
 #'
-#' @param model A [mirt] `\link{SingleGroupClass-class`} model
+#' @param model A [mirt::SingleGroupClass-class] model
 #'   of the democracy scores.
 #' @param type A string specifying the cutpoint type. Can be (an abbreviation
 #'   of) "score" (for score cutpoints) or "discrimination" (for discrimination

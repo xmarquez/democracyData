@@ -43,13 +43,13 @@ Original data available from
 \item{mainwaring}{Trichotomous democracy indicator from Mainwaring, Scott,
 Daniel Brinks, and Anibal Perez Linan. 2008. "Political Regimes in Latin
 America, 1900-2007." Original data available from
-\link{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}. 0 =
+\url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}. 0 =
 non-democracy, 0.5 = hybrid, 1 = democracy.}
 
 \item{Regime}{Trichotomous democracy indicator from Mainwaring, Scott,
 Daniel Brinks, and Anibal Perez Linan. 2008. "Political Regimes in Latin
 America, 1900-2007." Original data available from
-\link{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}. A =
+\url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}. A =
 Authoritarian, D = Democracy, SD = Semidemocracy. From the published
 article:
 
