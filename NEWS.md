@@ -1,5 +1,13 @@
 # democracyData 0.3.0
 
+* Added two new datasets, Bjørnskov and Rode (2021), which updates PACL/DD to 2020, and ANRR (Acemoglu, Naidu, Restrepo, and Robinson 2019), used in their article "Democracy does Cause Growth".
+
+* Migrated some of the functions from [QuickUDS](https://xmarquez.github.io/QuickUDS/) to this package to facilitate the construction of latent variable indexes of democracy
+
+* Created three new articles: one on understanding the temporal and spatial coverage of the datasets included in the passage; one on understanding the correlations between different democracy measures; and one on creating latent variable indexes of democracy from the data in this package (including extending the Unified Democracy Scores, [uds]) 
+
+* Lots of minor improvements to the documentation and the website, including a better organized index of functions and articles.
+
 # democracyData 0.2.6
 
 * Updated the Freedom House data (2021 with data up to 2020), updating `download_fh` and `download_fh_full`, and updated the documentation of these functions and the citation info for the FH data. (The List of Electoral Democracies downloaded via `download_fh_electoral` does not appear to have been updated by Freedom House yet).
