@@ -1,5 +1,6 @@
 dataset,long_name,main_democracy_measure_col,measure_type,based_on,in_pmm_replication,categorical_regime_types,user_extendable,downloadable,included_in_package,first_published_use,notes
 anckar,The Anckar-Fredriksson dataset of political regimes,democracy,dichotomous,bmr,FALSE,TRUE,FALSE,TRUE,TRUE,2018,The democracy measure should be equivalent to democracy_omitteddata from bmr up to 2010; it may have some divergences for the 2011-2016 period.
+anrr,"The Acemoglu, Naidu, Restrepo, and Robinson dataset",dem,dichotomous,"FH,Polity",FALSE,FALSE,TRUE,FALSE,TRUE,2019,"The measure can be extended by using the latest FH, Polity, and PACL Data, but the rules are not entirely transparent, and some cases in the original dataset have been hand-coded."
 arat_pmm,The Arat measure of democracy,pmm_arat,continuous,NA,TRUE,FALSE,FALSE,FALSE,TRUE,1991,"Only available via the Pemstein, Meserve, and Melton (2013) replication data. I have not been able to access the original data."
 blm,"The Bowman, Lehoucq, and Mahoney index of democracy for Central America",blm,trichotomous,NA,TRUE,FALSE,FALSE,TRUE,TRUE,2005,NA
 bmr,"The Boix-Miller-Rosato dichotomous coding of democracy, 1800-2015, version 3.0","democracy,democracy_omitteddata,democracy_femalesuffrage",dichotomous,PACL,FALSE,FALSE,FALSE,TRUE,TRUE,2010,NA
