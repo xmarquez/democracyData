@@ -112,7 +112,7 @@ This can take some time, since it downloads all downloadable datasets (Freedom H
 
 ## State system functions
 
-The package also includes a couple of other convenience functions to work with historical democracy data and determine state system membership. The first is `country_year_coder`, which works like the [`countrycode`](https://cran.r-project.org/web/packages/countrycode/index.html) package, except that it is able to determine state system information for country-year pairs. Suppose you have this dataset:
+The package also includes a couple of other convenience functions to work with historical democracy data and determine state system membership. The first is `country_year_coder`, which works like the [`countrycode`](https://CRAN.R-project.org/package=countrycode) package, except that it is able to determine state system information for country-year pairs. Suppose you have this dataset:
 
 ```{r}
 my_weird_democracy_data <- tibble(country = c("Germany", "Germany", "Germany", "Germany", "East Germany",

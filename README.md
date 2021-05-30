@@ -347,9 +347,9 @@ the output.
 The package also includes a couple of other convenience functions to
 work with historical democracy data and determine state system
 membership. The first is `country_year_coder`, which works like the
-[`countrycode`](https://cran.r-project.org/web/packages/countrycode/index.html)
-package, except that it is able to determine state system information
-for country-year pairs. Suppose you have this dataset:
+[`countrycode`](https://CRAN.R-project.org/package=countrycode) package,
+except that it is able to determine state system information for
+country-year pairs. Suppose you have this dataset:
 
 ``` r
 my_weird_democracy_data <- tibble(country = c("Germany", "Germany", "Germany", "Germany", "East Germany",
@@ -373,22 +373,22 @@ my_weird_democracy_data
 #> # A tibble: 16 x 3
 #>    country                      year my_measure
 #>    <chr>                       <dbl>      <dbl>
-#>  1 Germany                      2015     -0.582
-#>  2 Germany                      1930      0.404
-#>  3 Germany                      1970      0.466
-#>  4 Germany                      1945      1.05 
-#>  5 East Germany                 1949     -1.55 
-#>  6 Federal Republic of Germany  1992      0.506
-#>  7 Somaliland                   1990     -0.705
-#>  8 Somalia                      1990      0.814
-#>  9 Palestine                    1940     -0.875
-#> 10 Russia                       1917      0.607
-#> 11 Russia                       1912      1.13 
-#> 12 USSR                         1922      0.734
-#> 13 Republic of Vietnam          1975      1.04 
-#> 14 Yugoslavia                   1990      1.22 
-#> 15 Yugoslavia                   1991     -0.726
-#> 16 Vietnam, South               1954      2.02
+#>  1 Germany                      2015     1.64  
+#>  2 Germany                      1930    -0.869 
+#>  3 Germany                      1970    -0.273 
+#>  4 Germany                      1945     1.61  
+#>  5 East Germany                 1949     0.141 
+#>  6 Federal Republic of Germany  1992    -1.12  
+#>  7 Somaliland                   1990    -0.929 
+#>  8 Somalia                      1990     1.38  
+#>  9 Palestine                    1940     1.38  
+#> 10 Russia                       1917     0.462 
+#> 11 Russia                       1912    -1.20  
+#> 12 USSR                         1922    -1.06  
+#> 13 Republic of Vietnam          1975     1.51  
+#> 14 Yugoslavia                   1990    -1.49  
+#> 15 Yugoslavia                   1991    -1.53  
+#> 16 Vietnam, South               1954     0.0118
 ```
 
 and you then want to add state system information. `country_year_coder`
@@ -415,22 +415,22 @@ my_weird_democracy_data %>%
 
 | country                     | year | my\_measure | extended\_country\_name      | GWn | cown | polity\_ccode | in\_GW\_system | in\_cow\_system | in\_polity\_system | polity\_startdate | polity\_enddate |
 |:----------------------------|-----:|------------:|:-----------------------------|----:|-----:|--------------:|:---------------|:----------------|:-------------------|:------------------|:----------------|
-| Germany                     | 2015 |  -0.5821669 | German Federal Republic      | 260 |  255 |           255 | TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
-| Germany                     | 1930 |   0.4036808 | Germany (Prussia)            | 255 |  255 |           255 | TRUE           | TRUE            | TRUE               | 1871-01-19        | 1945-05-07      |
-| Germany                     | 1970 |   0.4664147 | German Federal Republic      | 260 |  260 |           260 | TRUE           | TRUE            | TRUE               | 1945-05-08        | 1990-10-02      |
-| Germany                     | 1945 |   1.0471859 | German Federal Republic      | 260 |  260 |           260 | FALSE          | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
-| East Germany                | 1949 |  -1.5537575 | German Democratic Republic   | 265 |  265 |           265 | TRUE           | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
-| Federal Republic of Germany | 1992 |   0.5062060 | German Federal Republic      | 260 |  255 |           255 | TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
-| Somaliland                  | 1990 |  -0.7047967 | Somaliland                   |  NA |   NA |            NA | FALSE          | FALSE           | FALSE              | NA                | NA              |
-| Somalia                     | 1990 |   0.8135574 | Somalia                      | 520 |  520 |           520 | TRUE           | TRUE            | TRUE               | 1960-07-01        | NA              |
-| Palestine                   | 1940 |  -0.8750957 | British Mandate of Palestine |  NA |   NA |            NA | FALSE          | FALSE           | FALSE              | NA                | NA              |
-| Russia                      | 1917 |   0.6073784 | Russia (Soviet Union)        | 365 |  365 |           365 | TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
-| Russia                      | 1912 |   1.1297152 | Russia (Soviet Union)        | 365 |  365 |           365 | TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
-| USSR                        | 1922 |   0.7344972 | Russia (Soviet Union)        | 365 |  365 |           364 | TRUE           | TRUE            | TRUE               | 1922-12-30        | 1991-12-31      |
-| Republic of Vietnam         | 1975 |   1.0443878 | Vietnam, Republic of         | 817 |  817 |           817 | FALSE          | FALSE           | TRUE               | 1955-10-26        | 1975-12-31      |
-| Yugoslavia                  | 1990 |   1.2163298 | Yugoslavia                   | 345 |  345 |           345 | TRUE           | TRUE            | TRUE               | 1921-01-01        | 1991-07-01      |
-| Yugoslavia                  | 1991 |  -0.7260127 | Yugoslavia                   | 345 |  345 |           347 | TRUE           | TRUE            | TRUE               | 1991-07-01        | 2003-03-11      |
-| Vietnam, South              | 1954 |   2.0240111 | Vietnam, Republic of         | 817 |  817 |           817 | TRUE           | TRUE            | FALSE              | 1955-10-26        | 1975-12-31      |
+| Germany                     | 2015 |   1.6397393 | German Federal Republic      | 260 |  255 |           255 | TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
+| Germany                     | 1930 |  -0.8689863 | Germany (Prussia)            | 255 |  255 |           255 | TRUE           | TRUE            | TRUE               | 1871-01-19        | 1945-05-07      |
+| Germany                     | 1970 |  -0.2725227 | German Federal Republic      | 260 |  260 |           260 | TRUE           | TRUE            | TRUE               | 1945-05-08        | 1990-10-02      |
+| Germany                     | 1945 |   1.6125745 | German Federal Republic      | 260 |  260 |           260 | FALSE          | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
+| East Germany                | 1949 |   0.1413358 | German Democratic Republic   | 265 |  265 |           265 | TRUE           | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
+| Federal Republic of Germany | 1992 |  -1.1222234 | German Federal Republic      | 260 |  255 |           255 | TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
+| Somaliland                  | 1990 |  -0.9294183 | Somaliland                   |  NA |   NA |            NA | FALSE          | FALSE           | FALSE              | NA                | NA              |
+| Somalia                     | 1990 |   1.3801849 | Somalia                      | 520 |  520 |           520 | TRUE           | TRUE            | TRUE               | 1960-07-01        | NA              |
+| Palestine                   | 1940 |   1.3766246 | British Mandate of Palestine |  NA |   NA |            NA | FALSE          | FALSE           | FALSE              | NA                | NA              |
+| Russia                      | 1917 |   0.4619202 | Russia (Soviet Union)        | 365 |  365 |           365 | TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
+| Russia                      | 1912 |  -1.2001675 | Russia (Soviet Union)        | 365 |  365 |           365 | TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
+| USSR                        | 1922 |  -1.0636189 | Russia (Soviet Union)        | 365 |  365 |           364 | TRUE           | TRUE            | TRUE               | 1922-12-30        | 1991-12-31      |
+| Republic of Vietnam         | 1975 |   1.5085475 | Vietnam, Republic of         | 817 |  817 |           817 | FALSE          | FALSE           | TRUE               | 1955-10-26        | 1975-12-31      |
+| Yugoslavia                  | 1990 |  -1.4883592 | Yugoslavia                   | 345 |  345 |           345 | TRUE           | TRUE            | TRUE               | 1921-01-01        | 1991-07-01      |
+| Yugoslavia                  | 1991 |  -1.5274119 | Yugoslavia                   | 345 |  345 |           347 | TRUE           | TRUE            | TRUE               | 1991-07-01        | 2003-03-11      |
+| Vietnam, South              | 1954 |   0.0117830 | Vietnam, Republic of         | 817 |  817 |           817 | TRUE           | TRUE            | FALSE              | 1955-10-26        | 1975-12-31      |
 
 `country_year_coder` tries to match not just the country name or the
 country code (as `countrycode` does), but also to figure out the
@@ -560,16 +560,22 @@ Democracy: Contestation and Inclusiveness.” *The journal of politics*,
 *70*(03), 632-647. doi: 10.1017/S0022381608080663 (URL:
 <https://doi.org/10.1017/S0022381608080663>).
 
-Coppedge M, Gerring J, Lindberg SI, Skaaning S, Jan Teorell wDA,
-Bernhard M, Fish MS, Glynn A, Hicken A, Knutsen CH, Kelly McMann, Paxton
-P, Pemstein D, Staton J, Zimmerman B, Andersson F, Valeriya Mechkova,
-Miri F (2016). “V-Dem Codebook v6.”
+Coppedge M, Gerring J, Knutsen CH, Lindberg SI, Teorell J, Alizada N,
+Altman D, Bernhard M, Cornell A, Fish MS, Gastaldi L, Gjerlow H, Glynn
+A, Hicken A, Hindle G, Ilchenko N, Krusell J, uhrmann AL, Maerz SF,
+Marquardt KL, McMann K, Mechkova V, Medzihorsky J, Paxton P, Pemstein D,
+Pernes J, von RÃ¶mer J, Seim B, Sigman R, Skaaning S, Staton J,
+SundstrÃ¶m A, Tzelgov E, Wang Y, Wig T, Wilson S, Ziblatt. D (2021).
+“V-Dem Country-Year/Country-Date Dataset v11.” &lt;URL:
+<https://www.v-dem.net/en/data/data-version-11/>&gt;.
 
-Coppedge M, Gerring J, Lindberg SI, Skaaning S, Teorell J, Altman D,
-Bernhard M, Fish MS, Glynn A, Hicken A, Knutsen CH, Marquardt K, McMann
-K, Miri F, Paxton P, Pemstein D, Staton J, Tzelgov E, Wang Y, Zimmerman
-B (2016). “V-Dem \[Country-Year/Country-Date\] Dataset, version 6.1.”
-&lt;URL: <https://www.v-dem.net/en/data/data-version-6-1/>&gt;.
+Coppedge M, Gerring J, Knutsen CH, Lindberg SI, Teorell J, Altman D,
+Bernhard M, Cornell A, Fish MS, Gastaldi L, Gjerlow H, Glynn A, Hicken
+A, LÃ¼hrmann A, Maerz SF, Marquardt KL, McMann K, Mechkova V, Paxton P,
+Pemstein D, von RÃ¶mer J, Seim B, Sigman R, Skaaning S, Staton J,
+SundtrÃ¶m A, Tzelgov E, Uberti L, Wang Y, Wig T, Ziblatt D (2021).
+“V-Dem Codebook v11.” &lt;URL:
+<https://www.v-dem.net/en/data/data-version-11/>&gt;.
 
 Coppedge M, Reinicke WH (1990). “Measuring Polyarchy.” *Studies in
 Comparative International Development*, *25*(1), 51-72. doi:
@@ -614,6 +620,12 @@ Gründler K, Krieger T (2018). “Machine Learning Indices, Political
 Institutions, and Economic Development.” CESifo Group Munich. &lt;URL:
 <https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf>&gt;.
 
+Gründler K, Krieger T (2021). “Using Machine Learning for measuring
+democracy: A practitioners guide and a new updated dataset for 186
+countries from 1919 to 2019.” *European Journal of Political Economy*,
+102-47. doi: 10.1016/j.ejpoleco.2021.102047 (URL:
+<https://doi.org/10.1016/j.ejpoleco.2021.102047>).
+
 Hadenius A (1992). *Democracy and development*. Cambridge University
 Press, New York.
 
@@ -645,6 +657,10 @@ Latin America, 1900-2007 (with Daniel Brinks).” In *Democracies and
 Dictatorships in Latin America: Emergence, Survival, and Fall*, chapter
 Political Regimes in Latin America, 1900-2007 (with Daniel Brinks).
 Cambridge University Press, New York.
+
+Marquez X (2016). “A Quick Method for Extending the Unified Democracy
+Scores.” *Available at SSRN 2753830*. &lt;URL:
+<https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830>&gt;.
 
 Márquez X (2020). “democracyData: A package for accessing and
 manipulating existing measures of democracy.” &lt;URL:
