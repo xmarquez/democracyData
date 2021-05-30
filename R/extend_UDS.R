@@ -114,8 +114,8 @@
 #'  [doorenspleet], [wgi], [gwf], [hadenius], [kailitz], [lied],
 #'  [munck], [pacl], [peps], [polyarchy], [polity], [prc], [PIPE],
 #'  [svmdi], [svolik], [ulfelder], [utip], `v2x`,
-#'  [vanhanen_democratization](vanhanen.html), [vanhanen_pmm], or
-#'  [wth](wahman_teorell_hadenius.html). For details of these variables, see
+#'  `vanhanen_democratization` (from [vanhanen]), [vanhanen_pmm], or
+#'  [wth]. For details of these variables, see
 #'  the documentation for [generate_democracy_scores_dataset] or the
 #'  documentation for the individual datasets.
 #'
@@ -349,11 +349,13 @@ prob_more <- function(data, country1, country2, years, mean_col = "z1",
 #' # Replicate the official UDS 2011 release and calculate its cutpoints
 #' library(dplyr)
 #' library(mirt)
-#' democracy_data <- generate_democracy_scores_dataset(selection = "_pmm", output_format = "wide")
+#' democracy_data <- generate_democracy_scores_dataset(selection = "_pmm",
+#' output_format = "wide")
 #'
 #' democracy_data <- prepare_democracy_data(democracy_data)
 #'
-#' replication_2011_model <- mirt(democracy_data %>% select(matches("pmm")), model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
+#' replication_2011_model <- mirt(democracy_data %>% select(matches("pmm")),
+#' model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
 #'
 #' cutpoints(replication_2011_model)}
 cutpoints <- function(model, type = "score") {
@@ -438,7 +440,10 @@ cutpoints <- function(model, type = "score") {
 #'
 #' democracy_data <- prepare_democracy_data(democracy_data)
 #'
-#' replication_2011_model <- mirt(democracy_data %>% select(matches("pmm")), model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
+#' replication_2011_model <- mirt(democracy_data %>% select(matches("pmm")),
+#' model = 1,
+#' itemtype = "graded",
+#' SE = TRUE, verbose = FALSE)
 #'
 #' raterinfo(replication_2011_model)}
 raterinfo <- function(model) {
@@ -492,7 +497,8 @@ raterinfo <- function(model) {
 #'
 #' democracy_data <- prepare_democracy_data(democracy_data)
 #'
-#' replication_2011_model <- mirt(democracy_data %>% select(matches("pmm")), model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
+#' replication_2011_model <- mirt(democracy_data %>% select(matches("pmm")),
+#' model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
 #'
 #' replication_2011_scores <- democracy_scores(model = replication_2011_model)
 #'
@@ -555,8 +561,9 @@ democracy_scores <- function(model,
 #' @export
 #'
 #' @examples
+#'
 #' df <- data.frame(a = c(1,2,3,NA, 5), b = c(NA,1,2,NA, 3), c = 1:5)
-#' df %>% remove_empty_rows(a:b)
+#' remove_empty_rows(df, a:b)
 #'
 #' # Different from
 #' na.omit(df)
@@ -597,6 +604,9 @@ remove_empty_rows <- function(df, vars) {
 #' extended_uds <- generate_extended_uds()
 #' }
 generate_extended_uds <- function(verbose = FALSE) {
+
+  extended_country_name <- vdem_country_name <- name <- NULL
+
   identifiers <- c("extended_country_name", "GWn", "cown", "in_GW_system", "year")
 
   vars <- c("anckar_democracy", "anrr_democracy", "blm", "bmr_democracy_femalesuffrage",
@@ -611,7 +621,7 @@ generate_extended_uds <- function(verbose = FALSE) {
             "utip_trichotomous", "v2x_polyarchy", "vanhanen_democratization",
             "wgi_democracy", "wth_democrobust")
 
-  if(!require(vdem)) {
+  if(!requireNamespace("vdem")) {
     stop("You must install the vdem package to use this function. Install using remotes::install_github()")
   }
 

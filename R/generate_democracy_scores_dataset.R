@@ -22,6 +22,9 @@
 #'   "[reign]", "[polityIV]", "[polity]" (or
 #'   "[polity_annual](download_polity_annual.html)"), "[fh](download_fh.html)",
 #'   "[fh_electoral]", "[wgi]". Default is all of them.
+#'
+#' @param selection A regular expression for selecting among the datasets. Optional.
+#'
 #' @param output_format Character. Whether to output a "wide" (each measure of
 #'   democracy in a separate column) or a "long" (a column with measure names, a
 #'   column with values) version of the data frame. Default is "long".
@@ -390,7 +393,7 @@ generate_democracy_scores_dataset <- function(datasets,
 
   democracy_data <- NULL
 
-  extended_country_name <- NULL
+  extended_country_name <- fh_country <- lied_country <- PIPE_country <- NULL
 
   value <- . <-  NULL
 

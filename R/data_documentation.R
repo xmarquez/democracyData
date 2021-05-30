@@ -1032,6 +1032,7 @@
 #'   indicator across the previous 364 days.
 #' @family democracy
 #' @family institutions
+#' @aliases lied
 #' @source Skaaning, Svend-Erik; John Gerring; and Henrikas Bartusevicius
 #'   (2015). "A Lexical Index of Electoral Democracy." Comparative Political
 #'   Studies, Vol. 48, No. 12, pp. 1491-1525. Original data and variable
@@ -4943,6 +4944,7 @@
 #'
 #' @source Hadenius, Axel and Jan Teorell. 2007. "Pathways from Authoritarianism",
 #' Journal of Democracy 18(1): 143-156.
+#' @aliases wth
 #'
 #' @family democracy
 #' @family dichotomous democracy indexes
@@ -4956,6 +4958,8 @@
 #'
 #' This is a \link{BibEntry} object that can be manipulated using the \link{RefManageR}
 #' package functions or the standard citation functions in R.
+#'
+#' @encoding UTF-8
 "bibliography"
 
 

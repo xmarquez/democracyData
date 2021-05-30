@@ -36,6 +36,8 @@ abbreviation of) "\link{anckar}", "\link{anrr}", "\link{LIED}", "\link{PIPE}", "
 "\href{download_polity_annual.html}{polity_annual}"), "\href{download_fh.html}{fh}",
 "\link{fh_electoral}", "\link{wgi}". Default is all of them.}
 
+\item{selection}{A regular expression for selecting among the datasets. Optional.}
+
 \item{output_format}{Character. Whether to output a "wide" (each measure of
 democracy in a separate column) or a "long" (a column with measure names, a
 column with values) version of the data frame. Default is "long".}

@@ -3,6 +3,7 @@
 \docType{data}
 \name{wahman_teorell_hadenius}
 \alias{wahman_teorell_hadenius}
+\alias{wth}
 \title{Authoritarian Regimes Data Set, version 5.0, by Axel Hadenius, Jan Teorell, &
 Michael Wahman}
 \format{

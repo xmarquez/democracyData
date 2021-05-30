@@ -19,8 +19,9 @@ selected removed
 Removes empty rows (rows with all NAs) from a data frame
 }
 \examples{
+
 df <- data.frame(a = c(1,2,3,NA, 5), b = c(NA,1,2,NA, 3), c = 1:5)
-df \%>\% remove_empty_rows(a:b)
+remove_empty_rows(df, a:b)
 
 # Different from
 na.omit(df)

@@ -26,7 +26,10 @@ democracy_data <- generate_democracy_scores_dataset(selection = "_pmm", output_f
 
 democracy_data <- prepare_democracy_data(democracy_data)
 
-replication_2011_model <- mirt(democracy_data \%>\% select(matches("pmm")), model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
+replication_2011_model <- mirt(democracy_data \%>\% select(matches("pmm")),
+model = 1,
+itemtype = "graded",
+SE = TRUE, verbose = FALSE)
 
 raterinfo(replication_2011_model)}
 }

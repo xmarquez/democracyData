@@ -14,8 +14,8 @@ the column names must contain at least one of the following strings:
 \link{doorenspleet}, \link{wgi}, \link{gwf}, \link{hadenius}, \link{kailitz}, \link{lied},
 \link{munck}, \link{pacl}, \link{peps}, \link{polyarchy}, \link{polity}, \link{prc}, \link{PIPE},
 \link{svmdi}, \link{svolik}, \link{ulfelder}, \link{utip}, \code{v2x},
-\href{vanhanen.html}{vanhanen_democratization}, \link{vanhanen_pmm}, or
-\href{wahman_teorell_hadenius.html}{wth}. For details of these variables, see
+\code{vanhanen_democratization} (from \link{vanhanen}), \link{vanhanen_pmm}, or
+\link{wth}. For details of these variables, see
 the documentation for \link{generate_democracy_scores_dataset} or the
 documentation for the individual datasets.}
 
