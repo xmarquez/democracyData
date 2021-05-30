@@ -53,7 +53,7 @@ create_panel <- function(system = c("cow", "GW", "polity"),
     mutate(year = list(lubridate::year(UQ(startdate)):ifelse(is.na(lubridate::year(UQ(enddate))),
                                                              max_year,
                                                              lubridate::year(UQ(enddate))))) %>%
-    tidyr::unnest() %>%
+    tidyr::unnest(cols = c(year)) %>%
     ungroup() %>%
     mutate(year = as.numeric(year))
 
