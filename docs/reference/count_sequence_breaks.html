@@ -167,17 +167,36 @@ interrupted periods.</p>
 #&gt; <span class='message'>    filter, lag</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from 'package:base':</span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>    intersect, setdiff, setequal, union</span></div><div class='input'><span class='fu'>count_sequence_breaks</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1900</span><span class='op'>:</span><span class='fl'>1910</span>, <span class='fl'>1920</span><span class='op'>:</span><span class='fl'>1930</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in count_sequence_breaks(c(1900:1910, 1920:1930)): could not find function "count_sequence_breaks"</span></div><div class='input'>
+</div><div class='output co'>#&gt;  [1] 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2</div><div class='input'>
 <span class='co'># This is how I typically use it</span>
 
 <span class='va'>polityIV</span> <span class='op'>%&gt;%</span>
 <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>polityIV_country</span>, <span class='va'>polityIV_ccode</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
 <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>groups <span class='op'>=</span> <span class='fu'>count_sequence_breaks</span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
 <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/any.html'>any</a></span><span class='op'>(</span><span class='va'>groups</span> <span class='op'>&gt;</span> <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error: Problem with `mutate()` input `groups`.</span>
-#&gt; <span class='error'><span style='color: #BB0000;'>x</span><span> could not find function "count_sequence_breaks"</span>
-#&gt; <span class='error'></span><span style='color: #0000BB;'>i</span><span> Input `groups` is `count_sequence_breaks(year)`.</span>
-#&gt; <span class='error'></span><span style='color: #0000BB;'>i</span><span> The error occurred in group 1: polityIV_country = "Afghanistan", polityIV_ccode = 700.</span></div></span></pre>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 689 x 41</span><span>
+#&gt; </span><span style='color: #949494;'># Groups:   polityIV_country, polityIV_ccode [7]</span><span>
+#&gt;     cyear polityIV_ccode scode polityIV_country  year  flag fragment democ autoc
+#&gt;     </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>          </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 2.55</span><span style='color: #949494;'>e</span><span>6            255 GMY   Germany           </span><span style='text-decoration: underline;'>1</span><span>868     0       </span><span style='color: #BB0000;'>NA</span><span>   -</span><span style='color: #BB0000;'>88</span><span>   -</span><span style='color: #BB0000;'>88</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 2.55</span><span style='color: #949494;'>e</span><span>6            255 GMY   Germany           </span><span style='text-decoration: underline;'>1</span><span>869     0       </span><span style='color: #BB0000;'>NA</span><span>   -</span><span style='color: #BB0000;'>88</span><span>   -</span><span style='color: #BB0000;'>88</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 2.55</span><span style='color: #949494;'>e</span><span>6            255 GMY   Germany           </span><span style='text-decoration: underline;'>1</span><span>870     0       </span><span style='color: #BB0000;'>NA</span><span>   -</span><span style='color: #BB0000;'>88</span><span>   -</span><span style='color: #BB0000;'>88</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 2.55</span><span style='color: #949494;'>e</span><span>6            255 GMY   Germany           </span><span style='text-decoration: underline;'>1</span><span>871     0       </span><span style='color: #BB0000;'>NA</span><span>     0     4
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 2.55</span><span style='color: #949494;'>e</span><span>6            255 GMY   Germany           </span><span style='text-decoration: underline;'>1</span><span>872     0       </span><span style='color: #BB0000;'>NA</span><span>     0     4
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 2.55</span><span style='color: #949494;'>e</span><span>6            255 GMY   Germany           </span><span style='text-decoration: underline;'>1</span><span>873     0       </span><span style='color: #BB0000;'>NA</span><span>     0     4
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 2.55</span><span style='color: #949494;'>e</span><span>6            255 GMY   Germany           </span><span style='text-decoration: underline;'>1</span><span>874     0       </span><span style='color: #BB0000;'>NA</span><span>     0     4
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 2.55</span><span style='color: #949494;'>e</span><span>6            255 GMY   Germany           </span><span style='text-decoration: underline;'>1</span><span>875     0       </span><span style='color: #BB0000;'>NA</span><span>     0     4
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 2.55</span><span style='color: #949494;'>e</span><span>6            255 GMY   Germany           </span><span style='text-decoration: underline;'>1</span><span>876     0       </span><span style='color: #BB0000;'>NA</span><span>     0     4
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 2.55</span><span style='color: #949494;'>e</span><span>6            255 GMY   Germany           </span><span style='text-decoration: underline;'>1</span><span>877     0       </span><span style='color: #BB0000;'>NA</span><span>     0     4
+#&gt; </span><span style='color: #949494;'># ... with 679 more rows, and 32 more variables: polity &lt;dbl&gt;, polity2 &lt;dbl&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   durable &lt;dbl&gt;, xrreg &lt;dbl&gt;, xrcomp &lt;dbl&gt;, xropen &lt;dbl&gt;, xconst &lt;dbl&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   parreg &lt;dbl&gt;, parcomp &lt;dbl&gt;, exrec &lt;dbl&gt;, exconst &lt;dbl&gt;, polcomp &lt;dbl&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   prior &lt;dbl&gt;, emonth &lt;dbl&gt;, eday &lt;dbl&gt;, eyear &lt;dbl&gt;, eprec &lt;dbl&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   interim &lt;dbl&gt;, bmonth &lt;dbl&gt;, bday &lt;dbl&gt;, byear &lt;dbl&gt;, bprec &lt;dbl&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   post &lt;dbl&gt;, change &lt;dbl&gt;, d4 &lt;dbl&gt;, sf &lt;dbl&gt;, regtrans &lt;dbl&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   extended_country_name &lt;chr&gt;, GWn &lt;dbl&gt;, cown &lt;int&gt;, in_GW_system &lt;lgl&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   groups &lt;dbl&gt;</span><span></div><div class='input'>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

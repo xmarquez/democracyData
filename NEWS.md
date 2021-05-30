@@ -4,7 +4,7 @@
 
 * Migrated some of the functions from [QuickUDS](https://xmarquez.github.io/QuickUDS/) to this package to facilitate the construction of latent variable indexes of democracy
 
-* Created three new articles: one on understanding the temporal and spatial coverage of the datasets included in the passage; one on understanding the correlations between different democracy measures; and one on creating latent variable indexes of democracy from the data in this package (including extending the Unified Democracy Scores, [uds]) 
+* Created three new articles: one on understanding the temporal and spatial coverage of the datasets included in the passage; one on understanding the correlations between different democracy measures; and one on creating latent variable indexes of democracy from the data in this package (including extending the Unified Democracy Scores) 
 
 * Lots of minor improvements to the documentation and the website, including a better organized index of functions and articles.
 
