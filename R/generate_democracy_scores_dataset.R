@@ -9,16 +9,18 @@
 #'
 #' @param datasets Character vector indicating which datasets to use in
 #'   producing the combined data frame. Can be any or all of (an unambiguous
-#'   abbreviation of) "[anckar]", "[LIED]", "[PIPE]", "[arat_pmm]", "[blm]",
-#'   "[blm_pmm]", "[bmr]", "[bnr]", "[bti]", "[bnr_extended]", "[bollen_pmm]",
-#'   "[doorenspleet]", "[eiu]", "[fh_pmm]", "[gwf_all]", "[gwf_all_extended]",
-#'   "[hadenius_pmm]", "[kailitz]", "[magaloni]", "[magaloni_extended]",
-#'   "[mainwaring]", "[mainwaring_pmm]", "[munck_pmm]", "[pacl]", "[pacl_pmm]",
-#'   "[pacl_update]", "[peps]", "[pitf]", "[polity_pmm]", "[polyarchy]",
-#'   "[polyarchy_dimensions]", "[polyarchy_pmm]", "[prc_gasiorowski]",
-#'   "[prc_pmm]", "[svmdi]", "[svolik_regime]", "[uds_2010]", "[uds_2011]",
-#'   "[uds_2014]", "[ulfelder]", "[ulfelder_extended]", "[utip]", "[vanhanen]",
-#'   "[wahman_teorell_hadenius]", "[reign]", "[polity]", "[fh]",
+#'   abbreviation of) "[anckar]", "[anrr]", "[LIED]", "[PIPE]", "[arat_pmm]",
+#'   "[blm]", "[blm_pmm]", "[bmr]", "[bnr]", "[bnr_extended]", "[bti]",
+#'   "[bollen_pmm]", "[doorenspleet]", "[eiu]", "[fh_pmm]", "[gwf_all]",
+#'   "[gwf_all_extended]", "[hadenius_pmm]", "[kailitz]", "[magaloni]",
+#'   "[magaloni_extended]", "[mainwaring]", "[mainwaring_pmm]", "[munck_pmm]",
+#'   "[pacl]", "[pacl_pmm]", "[pacl_update]", "[peps]", "[pitf]",
+#'   "[polity_pmm]", "[polyarchy]", "[polyarchy_dimensions]", "[polyarchy_pmm]",
+#'   "[prc_gasiorowski]", "[prc_pmm]", "[svmdi]", "[svolik_regime]",
+#'   "[uds_2010]", "[uds_2011]", "[uds_2014]", "[ulfelder]",
+#'   "[ulfelder_extended]", "[utip]", "[vanhanen]", "[wahman_teorell_hadenius]",
+#'   "[reign]", "[polityIV]", "[polity]" (or
+#'   "[polity_annual](download_polity_annual.html)"), "[fh](download_fh.html)",
 #'   "[fh_electoral]", "[wgi]". Default is all of them.
 #' @param output_format Character. Whether to output a "wide" (each measure of
 #'   democracy in a separate column) or a "long" (a column with measure names, a
@@ -81,14 +83,17 @@
 #'   country year may nevertheless contain more than one measurement for some
 #'   measures (e.g., [prc]).}
 #'
-#'   \item{measure}{The dataset whence the measure is taken. (e.g., "blm",
-#'   "fh_total_reversed"). }
+#'   \item{measure}{The name of the measure. (e.g., "blm", "fh_total_reversed").
+#'   }
 #'
 #'   \item{variable}{The numerical value of the measure, in the original scale
 #'   (if \code{scale_scores = FALSE}) or as a z-score (if \code{scale_scores =
 #'   TRUE}).}
 #'
-#'   }
+#'   \item{index_type}{The index type (dichotomous, trichotomous,
+#'   ordinal/graded, continuous).}
+#'
+#'   \item{dataset}{The name of the dataset.} }
 #'
 #' @section Wide version:
 #'
@@ -107,18 +112,22 @@
 #'   value. Up to 2010 this should be identical to `bmr_democracy_omitteddata`.
 #'   0 = non-democracy, 1 = democracy.}
 #'
+#'   \item{anrr}{The [anrr] measure of democracy, as a numeric value. 0 =
+#'   non-democracy, 1 = democracy.}
+#'
 #'   \item{blm}{The [blm] measure of democracy, as a numeric value. Can be 0
 #'   (authoritarian), 0.5 (hybrid), or 1 (democracy). }
 #'
-#'   \item{bmr}{The [bmr] measure of democracy, as a numeric value. Can be 0
-#'   (non-democracy) or 1 (democracy). }
+#'   \item{bmr_democracy}{The [bmr] measure of democracy, as a numeric value.
+#'   Can be 0 (non-democracy) or 1 (democracy). }
 #'
 #'   \item{bmr_democracy_omitteddata}{According to the [bmr] codebook, "this is
 #'   the same measure as bmr, except it records an NA for countries occupied
 #'   during an international war (e.g., the Netherlands 1940-44) or experiencing
 #'   state collapse during a civil war (e.g., Lebanon 1976-89). The democracy
 #'   variable instead fills in these years as continuations of the same regime
-#'   type."}
+#'   type." There are some -1 values that I've converted to `NA` (the measure is
+#'   supposed to be between 0 and 1).}
 #'
 #'   \item{bmr_democracy_femalesuffrage}{According to the [bmr] codebook, this
 #'   is the same measure as `bmr`, except that it also requires that at least
@@ -365,6 +374,7 @@
 #' democracy_data_wide <- generate_democracy_scores_dataset(output_format = "wide")
 #' }
 generate_democracy_scores_dataset <- function(datasets,
+                                              selection,
                                               output_format = "long",
                                               use_extended = TRUE,
                                               include_extra_pmm = FALSE,
@@ -377,6 +387,7 @@ generate_democracy_scores_dataset <- function(datasets,
 
   democracy_data <- NULL
 
+  extended_country_name <- NULL
 
   value <- . <-  NULL
 
@@ -388,13 +399,13 @@ generate_democracy_scores_dataset <- function(datasets,
     x %>%
       filter(!is.na(value)) %>%
       select(include_in_output, "year", "measure", "value") %>%
-      mutate(value = as.numeric(value)) %>%
+      dplyr::mutate(value = as.numeric(value)) %>%
       bind_rows(democracy_data)
   }
 
   output_format <- match.arg(output_format, c("long", "wide"))
 
-  available_datasets <- c("anckar", "LIED", "PIPE", "arat_pmm", "blm", "blm_pmm",
+  available_datasets <- c("anckar", "anrr", "LIED", "PIPE", "arat_pmm", "blm", "blm_pmm",
                           "bmr", "bnr", "bnr_extended", "bti", "bollen_pmm",
                           "doorenspleet", "eiu", "fh_pmm", "gwf_all", "gwf_all_extended",
                           "hadenius_pmm", "kailitz", "magaloni",
@@ -407,7 +418,7 @@ generate_democracy_scores_dataset <- function(datasets,
                           "ulfelder", "ulfelder_extended", "svmdi", "svmdi_2016",
                           "utip", "vanhanen", "vanhanen_pmm",
                           "wahman_teorell_hadenius",
-                          "reign", "polity_annual",
+                          "reign", "polity_annual", "polity",
                           "fh", "fh_electoral", "wgi_democracy")
 
   if(missing(datasets)) {
@@ -416,16 +427,22 @@ generate_democracy_scores_dataset <- function(datasets,
     datasets <- match.arg(datasets, available_datasets, several.ok = TRUE)
   }
 
-  if(!exclude_downloadable) {
+  if(!base::missing(selection)) {
+    datasets <- datasets[str_detect(datasets, selection)]
+  }
+
     # Freedom House -----------------------------------------------------------
 
-    if("fh" %in% datasets) {
+    if(!exclude_downloadable & "fh" %in% datasets) {
       if(verbose) {
         message("Adding Freedom House data")
       }
       democracy_data <- download_fh(verbose = verbose,
                                     include_territories = TRUE) %>%
-        tidyr::gather("measure", "value", "fh_total_reversed")  %>%
+        tidyr::pivot_longer(all_of("fh_total_reversed"),
+                            names_to = "measure", values_to = "value")  %>%
+        dplyr::mutate(extended_country_name = ifelse(is.na(extended_country_name),
+                                                     fh_country, extended_country_name)) %>%
         standardize_selection()
     }
 
@@ -434,35 +451,42 @@ generate_democracy_scores_dataset <- function(datasets,
         message("Adding fh_pmm data")
       }
       democracy_data <- democracyData::fh_pmm %>%
-        rename_with(~"pmm_fh","pmm_freedomhouse") %>%
-        tidyr::gather("measure", "value", "pmm_fh") %>%
+        dplyr::rename_with(~"pmm_fh","pmm_freedomhouse") %>%
+        tidyr::pivot_longer(all_of("pmm_fh"),
+                            names_to = "measure", values_to = "value") %>%
+        dplyr::mutate(extended_country_name = ifelse(is.na(extended_country_name),
+                                                     fh_country, extended_country_name)) %>%
         standardize_selection()
     }
 
 
     # Freedom House Electoral -------------------------------------------------
 
-    if("fh_electoral" %in% datasets) {
+    if(!exclude_downloadable & "fh_electoral" %in% datasets) {
       if(verbose) {
         message("Adding Freedom House electoral democracies data")
       }
       democracy_data <- download_fh_electoral(verbose = verbose) %>%
-        rename_with(~"fh_electoral", "electoral") %>%
-        tidyr::gather("measure", "value", "fh_electoral") %>%
+        dplyr::rename_with(~"fh_electoral", "electoral") %>%
+        tidyr::pivot_longer(all_of("fh_electoral"),
+                            names_to = "measure", values_to = "value") %>%
+        dplyr::mutate(extended_country_name = ifelse(is.na(extended_country_name),
+                                                     fh_country, extended_country_name)) %>%
         standardize_selection()
     }
 
     # Polity ------------------------------------------------------------------
 
-    if("polity_annual" %in% datasets) {
+    if(!exclude_downloadable & ("polity_annual" %in% datasets || "polity" %in% datasets)) {
       if(verbose) {
         message("Adding Polity5 data")
       }
       democracy_data <- suppressWarnings(download_polity_annual(verbose = verbose,
                                                include_in_output = include_in_output) %>%
-        mutate_at("polity", ~ifelse(. < -10, NA, .)) %>%
-        tidyr::gather("measure", "value", "polity", "polity2") %>%
-        standardize_selection())
+                                           dplyr::mutate(across(c("polity", "polity2"), ~ifelse(. < -10, NA, .))) %>%
+                                           tidyr::pivot_longer(all_of(c("polity", "polity2")),
+                                                               names_to = "measure", values_to = "value") %>%
+                                           standardize_selection())
     }
 
     if("polityIV" %in% datasets) {
@@ -470,11 +494,12 @@ generate_democracy_scores_dataset <- function(datasets,
         message("Adding old polityIV data")
       }
       democracy_data <- suppressWarnings(democracyData::polityIV %>%
-                                           mutate_at("polity", ~ifelse(. < -10, NA, .)) %>%
-                                           rename_with(~"polityIV", "polity") %>%
-                                           rename_with(~"polity2IV", "polity2") %>%
-                         tidyr::gather("measure", "value", "polityIV","polity2IV") %>%
-                         standardize_selection())
+                                           dplyr::mutate(across(c("polity", "polity2"), ~ifelse(. < -10, NA, .))) %>%
+                                           dplyr::rename_with(~"polityIV", "polity") %>%
+                                           dplyr::rename_with(~"polity2IV", "polity2") %>%
+                                           tidyr::pivot_longer(all_of(c("polityIV", "polity2IV")),
+                                                               names_to = "measure", values_to = "value") %>%
+                                           standardize_selection())
     }
 
 
@@ -483,13 +508,14 @@ generate_democracy_scores_dataset <- function(datasets,
         message("Adding polity_pmm data")
       }
       democracy_data <- democracyData::polity_pmm %>%
-        tidyr::gather("measure", "value", "pmm_polity") %>%
+        tidyr::pivot_longer(all_of(c("pmm_polity")),
+                            names_to = "measure", values_to = "value") %>%
         standardize_selection()
     }
 
     # REIGN -------------------------------------------------------------------
 
-    if("reign" %in% datasets) {
+    if(!exclude_downloadable & "reign" %in% datasets) {
       if(verbose) {
         message("Adding REIGN data")
       }
@@ -498,35 +524,36 @@ generate_democracy_scores_dataset <- function(datasets,
 
       if(keep_only_last_in_year) {
         reign <- reign %>%
-          group_by_at(vars(c(include_in_output, "year"))) %>%
-          filter_at("End", any_vars(. == max(.))) %>%
-          ungroup()
+          dplyr::group_by(across(c(include_in_output, "year"))) %>%
+          dplyr::filter_at("End", any_vars(. == max(.))) %>%
+          dplyr::ungroup()
       }
 
       democracy_data <- reign %>%
-        mutate_at("gwf_regimetype",
+        dplyr::mutate(across(all_of("gwf_regimetype"),
                   list("reign_democracy" = ~(. %in% c("presidential",
-                                                     "parliamentary")))) %>%
-        tidyr::gather("measure", "value",
-                      "reign_democracy") %>%
+                                                     "parliamentary"))))) %>%
+        dplyr::rename("reign_democracy" = "gwf_regimetype_reign_democracy") %>%
+        tidyr::pivot_longer(all_of(c("reign_democracy")),
+                            names_to = "measure", values_to = "value") %>%
         standardize_selection()
     }
 
     # WGI ---------------------------------------------------------------------
 
 
-    if("wgi_democracy" %in% datasets) {
+    if(!exclude_downloadable & "wgi_democracy" %in% datasets) {
       if(verbose) {
         message("Adding WGI data")
       }
       democracy_data <- download_wgi_voice_and_accountability(verbose = verbose) %>%
-        rename_with(~"wgi_democracy", "Estimate") %>%
-        tidyr::gather("measure", "value",
-                      "wgi_democracy") %>%
+        dplyr::rename_with(~"wgi_democracy", "Estimate") %>%
+        tidyr::pivot_longer(all_of(c("wgi_democracy")),
+                            names_to = "measure", values_to = "value") %>%
         standardize_selection()
     }
 
-  }
+
 
   # anckar ---------------------------------------------------------------------
 
@@ -543,12 +570,29 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- anckar %>%
-      rename_with(~"anckar_democracy", "democracy") %>%
-      tidyr::gather("measure", "value", "anckar_democracy") %>%
+      dplyr::rename_with(~"anckar_democracy", "democracy") %>%
+      tidyr::pivot_longer(all_of(c("anckar_democracy")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
-  # Arat --------------------------------------------------------------------
+  # anrr ---------------------------------------------------------------------
+
+
+  if("anrr" %in% datasets) {
+    if(verbose) {
+      message("Adding ANRR data")
+    }
+    anrr <- democracyData::anrr
+
+    democracy_data <- anrr %>%
+      dplyr::rename_with(~"anrr_democracy", "dem") %>%
+      tidyr::pivot_longer(all_of(c("anrr_democracy")),
+                          names_to = "measure", values_to = "value") %>%
+      standardize_selection()
+  }
+
+    # Arat --------------------------------------------------------------------
 
 
   if("arat_pmm" %in% datasets) {
@@ -556,7 +600,8 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding Arat data")
     }
     democracy_data <- democracyData::arat_pmm %>%
-      tidyr::gather("measure", "value", ends_with("pmm_arat")) %>%
+      tidyr::pivot_longer(all_of(c("pmm_arat")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -576,7 +621,8 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- blm %>%
-      tidyr::gather("measure", "value", "blm") %>%
+      tidyr::pivot_longer(all_of(c("blm")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -585,7 +631,8 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding blm_pmm data")
     }
     democracy_data <- democracyData::blm_pmm %>%
-      tidyr::gather("measure", "value", ends_with("pmm_blm")) %>%
+      tidyr::pivot_longer(all_of(c("pmm_blm")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -606,12 +653,14 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- suppressWarnings(bmr %>%
-                                         rename_with(~"bmr_democracy", "democracy") %>%
-                                         rename_with(~"bmr_democracy_omitteddata", "democracy_omitteddata") %>%
-                                         rename_with(~"bmr_democracy_femalesuffrage", "democracy_femalesuffrage") %>%
-      tidyr::gather("measure", "value", "bmr_democracy",
-                    "bmr_democracy_omitteddata", "bmr_democracy_femalesuffrage") %>%
-      standardize_selection())
+                                         dplyr::rename_with(~"bmr_democracy", "democracy") %>%
+                                         dplyr::rename_with(~"bmr_democracy_omitteddata", "democracy_omitteddata") %>%
+                                         dplyr::rename_with(~"bmr_democracy_femalesuffrage", "democracy_femalesuffrage") %>%
+                                         dplyr::mutate(across(all_of("bmr_democracy_omitteddata"), ~ifelse(. < 0, NA, .))) %>%
+                                         tidyr::pivot_longer(all_of(c("bmr_democracy", "bmr_democracy_omitteddata",
+                                                                      "bmr_democracy_femalesuffrage")),
+                                                             names_to = "measure", values_to = "value") %>%
+                                         standardize_selection())
   }
 
 
@@ -620,7 +669,7 @@ generate_democracy_scores_dataset <- function(datasets,
   if("bnr" %in% datasets & use_extended |
      "bnr_extended" %in% datasets) {
     if(verbose) {
-      message("Adding BNR data")
+      message("Adding BNR extended data")
     }
     if(force_redownload) {
       bnr_extended <- redownload_bnr(verbose = verbose,
@@ -631,8 +680,9 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- bnr_extended %>%
-      rename_with(~"bnr_extended", "bnr") %>%
-      tidyr::gather("measure", "value", "bnr_extended") %>%
+      dplyr::rename_with(~"bnr_extended", "bnr") %>%
+      tidyr::pivot_longer(all_of(c("bnr_extended")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -649,9 +699,10 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- bnr %>%
-      mutate(across("event", list("bnr" = ~(1 - .)))) %>%
-      rename_with(~"bnr", "event_bnr") %>%
-      tidyr::gather("measure", "value", "bnr") %>%
+      dplyr::mutate(across("event", list("bnr" = ~(1 - .)))) %>%
+      dplyr::rename_with(~"bnr", "event_bnr") %>%
+      tidyr::pivot_longer(all_of(c("bnr")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
 
   }
@@ -672,8 +723,9 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- suppressWarnings(bti %>%
-                                         rename_with(~"bti_democracy", "SI_Democracy_Status") %>%
-                                         tidyr::gather("measure", "value", "bti_democracy") %>%
+                                         dplyr::rename_with(~"bti_democracy", "SI_Democracy_Status") %>%
+                                         tidyr::pivot_longer(all_of(c("bti_democracy")),
+                                                             names_to = "measure", values_to = "value") %>%
                                          standardize_selection())
   }
   # Bollen ------------------------------------------------------------------
@@ -684,7 +736,8 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding Bollen data")
     }
     democracy_data <- democracyData::bollen_pmm %>%
-      tidyr::gather("measure", "value", "pmm_bollen") %>%
+      tidyr::pivot_longer(all_of(c("pmm_bollen")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -697,7 +750,8 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding Doorenspleet data")
     }
     democracy_data <- democracyData::doorenspleet %>%
-      tidyr::gather("measure", "value", "doorenspleet") %>%
+      tidyr::pivot_longer(all_of(c("doorenspleet")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -709,7 +763,8 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding EIU data")
     }
     democracy_data <- democracyData::eiu %>%
-      tidyr::gather("measure", "value", "eiu") %>%
+      tidyr::pivot_longer(all_of(c("eiu")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -729,14 +784,15 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- gwf_all_extended %>%
-      mutate_at("gwf_nonautocracy",
-                list("gwf_democracy_extended" = ~ifelse(. == "democracy" & !is.na(.), 1, 0))) %>%
-      mutate_at("gwf_nonautocracy",
+      dplyr::mutate(across("gwf_nonautocracy",
+                list("gwf_democracy_extended" = ~ifelse(. == "democracy" & !is.na(.), 1, 0)),
+                .names = "{.fn}")) %>%
+      dplyr::mutate(across("gwf_nonautocracy",
                 list("gwf_democracy_extended_strict" = ~ifelse(is.na(.), 0,
-                                                              ifelse(. == "democracy", 1, NA)))) %>%
-      tidyr::gather("measure", "value",
-                    "gwf_democracy_extended",
-                    "gwf_democracy_extended_strict") %>%
+                                                              ifelse(. == "democracy", 1, NA))),
+                .names = "{.fn}")) %>%
+      tidyr::pivot_longer(all_of(c("gwf_democracy_extended", "gwf_democracy_extended_strict")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
 
   }
@@ -754,14 +810,15 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- gwf_all %>%
-      mutate_at(c("gwf_nonautocracy"),
-                list("gwf_democracy" = ~ifelse(. == "democracy"  & !is.na(.), 1, 0)))  %>%
-      mutate_at("gwf_nonautocracy",
-                list("gwf_democracy_strict" = ~ifelse(is.na(.), 0,
-                                                     ifelse(. == "democracy", 1, NA)))) %>%
-      tidyr::gather("measure", "value",
-                    "gwf_democracy",
-                    "gwf_democracy_strict") %>%
+      dplyr::mutate(across("gwf_nonautocracy",
+                           list("gwf_democracy_extended" = ~ifelse(. == "democracy" & !is.na(.), 1, 0)),
+                           .names = "{.fn}")) %>%
+      dplyr::mutate(across("gwf_nonautocracy",
+                           list("gwf_democracy_extended_strict" = ~ifelse(is.na(.), 0,
+                                                                          ifelse(. == "democracy", 1, NA))),
+                           .names = "{.fn}")) %>%
+      tidyr::pivot_longer(all_of(c("gwf_democracy_extended", "gwf_democracy_extended_strict")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
 
   }
@@ -775,7 +832,8 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding Hadenius data")
     }
     democracy_data <- democracyData::hadenius_pmm %>%
-      tidyr::gather("measure", "value", "pmm_hadenius") %>%
+      tidyr::pivot_longer(all_of(c("pmm_hadenius")),
+                          names_to = "measure", values_to = "value")  %>%
       standardize_selection()
   }
 
@@ -788,7 +846,8 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding Kailitz data")
     }
     democracy_data <- democracyData::kailitz %>%
-      tidyr::gather("measure", "value", "kailitz_binary", "kailitz_tri") %>%
+      tidyr::pivot_longer(all_of(c("kailitz_binary", "kailitz_tri")),
+                          names_to = "measure", values_to = "value")  %>%
       standardize_selection()
   }
 
@@ -807,7 +866,10 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- LIED %>%
-      tidyr::gather("measure", "value", "lexical_index") %>%
+      tidyr::pivot_longer(all_of(c("lexical_index")),
+                          names_to = "measure", values_to = "value")  %>%
+      dplyr::mutate(extended_country_name = ifelse(is.na(extended_country_name),
+                                                   lied_country, extended_country_name)) %>%
       standardize_selection()
   }
 
@@ -817,7 +879,7 @@ generate_democracy_scores_dataset <- function(datasets,
   if("magaloni" %in% datasets & use_extended |
      "magaloni_extended" %in% datasets) {
     if(verbose) {
-      message("Adding Magaloni data")
+      message("Adding Magaloni extended data")
     }
     if(force_redownload) {
       magaloni_extended <- redownload_magaloni(verbose = verbose,
@@ -828,9 +890,11 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- magaloni_extended %>%
-      mutate_at(c("regime_nr"),
-                list("magaloni_democracy_extended" = ~(. == "Democracy"))) %>%
-      tidyr::gather("measure", "value", "magaloni_democracy_extended") %>%
+      dplyr::mutate(across(c("regime_nr"),
+                list("magaloni_democracy_extended" = ~(. == "Democracy")),
+                .names = "{.fn}")) %>%
+      tidyr::pivot_longer(all_of(c("magaloni_democracy_extended")),
+                          names_to = "measure", values_to = "value")  %>%
       standardize_selection()
 
   }
@@ -848,9 +912,11 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- magaloni %>%
-      mutate_at(c("regime_nr"),
-                list("magaloni_democracy" = ~(. == "Democracy"))) %>%
-      tidyr::gather("measure", "value", "magaloni_democracy") %>%
+      dplyr::mutate(across(c("regime_nr"),
+                           list("magaloni_democracy" = ~(. == "Democracy")),
+                           .names = "{.fn}")) %>%
+      tidyr::pivot_longer(all_of(c("magaloni_democracy")),
+                          names_to = "measure", values_to = "value")  %>%
       standardize_selection()
 
   }
@@ -862,7 +928,8 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding Mainwaring data")
     }
     democracy_data <- democracyData::mainwaring %>%
-      tidyr::gather("measure", "value", "mainwaring") %>%
+      tidyr::pivot_longer(all_of(c("mainwaring")),
+                          names_to = "measure", values_to = "value")  %>%
       standardize_selection()
   }
 
@@ -871,7 +938,8 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding mainwaring_pmm data")
     }
     democracy_data <- democracyData::mainwaring_pmm %>%
-      tidyr::gather("measure", "value", "pmm_mainwaring") %>%
+      tidyr::pivot_longer(all_of(c("pmm_mainwaring")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -885,7 +953,8 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding Munck data")
     }
     democracy_data <- democracyData::munck_pmm %>%
-      tidyr::gather("measure", "value", "pmm_munck") %>%
+      tidyr::pivot_longer(all_of(c("pmm_munck")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -903,8 +972,9 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- pacl %>%
-      rename_with(~"pacl", "democracy") %>%
-      tidyr::gather("measure", "value", "pacl") %>%
+      dplyr::rename_with(~"pacl", "democracy") %>%
+      tidyr::pivot_longer(all_of(c("pacl")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -913,14 +983,15 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding pacl_pmm data")
     }
     democracy_data <- democracyData::pacl_pmm %>%
-      tidyr::gather("measure", "value", "pmm_pacl") %>%
+      tidyr::pivot_longer(all_of(c("pmm_pacl")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
 
   if("pacl_update" %in% datasets) {
     if(verbose) {
-      message("Adding Update of PACL data by Bjørnskov and Rode")
+      message("Adding Update of PACL data by Bjornskov and Rode")
     }
     if(force_redownload) {
       pacl_update <- redownload_pacl_update(verbose = verbose,
@@ -930,8 +1001,9 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- pacl_update %>%
-      rename_with(~"pacl_update", "Democracy") %>%
-      tidyr::gather("measure", "value", "pacl_update") %>%
+      dplyr::rename_with(~"pacl_update", "Democracy") %>%
+      tidyr::pivot_longer(all_of(c("pacl_update")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -949,8 +1021,9 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- suppressWarnings(peps %>%
-      tidyr::gather("measure", "value", dplyr::matches("PEPS[0-9]")) %>%
-      standardize_selection())
+                                         tidyr::pivot_longer(matches("PEPS[0-9]"),
+                                                             names_to = "measure", values_to = "value") %>%
+                                         standardize_selection())
   }
 
 
@@ -967,9 +1040,10 @@ generate_democracy_scores_dataset <- function(datasets,
       pitf  <- democracyData::pitf
     }
     democracy_data <- pitf %>%
-      mutate_at(c("pitf", "pitf_binary"),
-                ~stringr::str_extract(., "[0-9]") %>% as.numeric) %>%
-      tidyr::gather("measure", "value", "pitf", "pitf_binary") %>%
+      dplyr::mutate(across(c("pitf", "pitf_binary"),
+                ~stringr::str_extract(., "[0-9]") %>% as.numeric)) %>%
+      tidyr::pivot_longer(all_of(c("pitf", "pitf_binary")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -987,11 +1061,12 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- polyarchy %>%
-      rename_with(~"polyarchy_original_contestation", "cont") %>%
-      mutate_at("poly", list("polyarchy_original_polyarchy" = ~(10 - .))) %>%
-      tidyr::gather("measure", "value",
-                    "polyarchy_original_contestation",
-                    "polyarchy_original_polyarchy") %>%
+      dplyr::rename_with(~"polyarchy_original_contestation", "cont") %>%
+      dplyr::mutate(across("poly", list("polyarchy_original_polyarchy" = ~(10 - .)),
+                           .names = "{.fn}")) %>%
+      tidyr::pivot_longer(all_of(c("polyarchy_original_contestation",
+                                   "polyarchy_original_polyarchy")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -1000,7 +1075,8 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding polyarchy_pmm data")
     }
     democracy_data <- democracyData::polyarchy_pmm %>%
-      tidyr::gather("measure", "value", "pmm_polyarchy")  %>%
+      tidyr::pivot_longer(all_of(c("pmm_polyarchy")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -1018,12 +1094,12 @@ generate_democracy_scores_dataset <- function(datasets,
       polyarchy_dimensions  <- democracyData::polyarchy_dimensions
     }
     democracy_data <- suppressWarnings(polyarchy_dimensions %>%
-      rename_with(~"polyarchy_contestation_dimension", "CONTEST") %>%
-      rename_with(~"polyarchy_inclusion_dimension", "INCLUS") %>%
-      tidyr::gather("measure", "value",
-                    "polyarchy_contestation_dimension",
-                    "polyarchy_inclusion_dimension") %>%
-      standardize_selection())
+      dplyr::rename_with(~"polyarchy_contestation_dimension", "CONTEST") %>%
+      dplyr::rename_with(~"polyarchy_inclusion_dimension", "INCLUS") %>%
+        tidyr::pivot_longer(all_of(c("polyarchy_contestation_dimension",
+                                     "polyarchy_inclusion_dimension")),
+                            names_to = "measure", values_to = "value") %>%
+        standardize_selection())
   }
 
 
@@ -1039,7 +1115,7 @@ generate_democracy_scores_dataset <- function(datasets,
 
     if(keep_only_last_in_year) {
       prc_gasiorowski <- prc_gasiorowski %>%
-        group_by_at(c(include_in_output, "year")) %>%
+        group_by(across(all_of(c(include_in_output, "year")))) %>%
         filter_at("end", any_vars(. == max(.)))  %>%
         filter_at("prc_at_end_year", any_vars(. == last(.))) %>%
         ungroup() %>%
@@ -1047,11 +1123,11 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- prc_gasiorowski %>%
-      mutate_at("regime", list("prc" = ~plyr::mapvalues(.,
+      dplyr::mutate_at("regime", list("prc" = ~plyr::mapvalues(.,
                                    from = c("A", "D", "S", "T"),
                                    to = c(1, 4, 3, NA)))) %>%
-      tidyr::gather("measure", "value",
-                    "prc") %>%
+      tidyr::pivot_longer(all_of(c("prc")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -1060,7 +1136,8 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding prc_pmm data")
     }
     democracy_data <- democracyData::prc_pmm %>%
-      tidyr::gather("measure", "value", "pmm_prc") %>%
+      tidyr::pivot_longer(all_of(c("pmm_prc")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -1080,11 +1157,13 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- PIPE %>%
-      rename_with(~"PIPE_democracy", "democracy2") %>%
-      rename_with(~"PIPE_regime", "regime") %>%
-      tidyr::gather("measure", "value",
-                    "PIPE_democracy",
-                    "PIPE_regime") %>%
+      dplyr::rename_with(~"PIPE_democracy", "democracy2") %>%
+      dplyr::rename_with(~"PIPE_regime", "regime") %>%
+      tidyr::pivot_longer(all_of(c("PIPE_democracy",
+                                   "PIPE_regime")),
+                          names_to = "measure", values_to = "value") %>%
+      dplyr::mutate(extended_country_name = ifelse(is.na(extended_country_name),
+                                                   PIPE_country, extended_country_name)) %>%
       standardize_selection()
   }
 
@@ -1096,8 +1175,8 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding SVMDI data")
     }
     democracy_data <- democracyData::svmdi %>%
-      tidyr::gather("measure", "value",
-                    "csvmdi") %>%
+      tidyr::pivot_longer(all_of(c("csvmdi", "dsvmdi")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -1110,9 +1189,9 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding SVMDI 2016 data")
     }
     democracy_data <- democracyData::svmdi_2016 %>%
-      rename_with(~"svmdi_2016", "svmdi") %>%
-      tidyr::gather("measure", "value",
-                    "svmdi_2016") %>%
+      dplyr::rename_with(~"svmdi_2016", "svmdi") %>%
+      tidyr::pivot_longer(all_of(c("svmdi_2016")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -1124,9 +1203,9 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding Svolik data")
     }
     democracy_data <- democracyData::svolik_regime %>%
-      rename_with(~"svolik_democracy", "regime_numeric") %>%
-      tidyr::gather("measure", "value",
-                    "svolik_democracy") %>%
+      dplyr::rename_with(~"svolik_democracy", "regime_numeric") %>%
+      tidyr::pivot_longer(all_of(c("svolik_democracy")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -1142,10 +1221,11 @@ generate_democracy_scores_dataset <- function(datasets,
     uds_2014 <- democracyData::uds_2014
 
     democracy_data <- uds_2014 %>%
-      rename_with(~"uds_2014_mean", "mean") %>%
-      rename_with(~"uds_2014_median", "median") %>%
-      tidyr::gather("measure", "value",
-                    "uds_2014_mean", "uds_2014_median") %>%
+      dplyr::rename_with(~"uds_2014_mean", "mean") %>%
+      dplyr::rename_with(~"uds_2014_median", "median") %>%
+      tidyr::pivot_longer(all_of(c("uds_2014_mean",
+                                   "uds_2014_median")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -1156,10 +1236,11 @@ generate_democracy_scores_dataset <- function(datasets,
     uds_2011 <- democracyData::uds_2011
 
     democracy_data <- uds_2011  %>%
-      rename_with(~"uds_2011_mean", "mean") %>%
-      rename_with(~"uds_2011_median", "median") %>%
-      tidyr::gather("measure", "value",
-                    "uds_2011_mean", "uds_2011_median") %>%
+      dplyr::rename_with(~"uds_2011_mean", "mean") %>%
+      dplyr::rename_with(~"uds_2011_median", "median") %>%
+      tidyr::pivot_longer(all_of(c("uds_2011_mean",
+                                   "uds_2011_median")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -1170,10 +1251,11 @@ generate_democracy_scores_dataset <- function(datasets,
     uds_2010 <- democracyData::uds_2010
 
     democracy_data <- uds_2010  %>%
-      rename_with(~"uds_2010_mean", "mean") %>%
-      rename_with(~"uds_2010_median", "median") %>%
-      tidyr::gather("measure", "value",
-                    "uds_2010_mean", "uds_2010_median") %>%
+      dplyr::rename_with(~"uds_2010_mean", "mean") %>%
+      dplyr::rename_with(~"uds_2010_median", "median") %>%
+      tidyr::pivot_longer(all_of(c("uds_2010_mean",
+                                   "uds_2010_median")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -1182,7 +1264,7 @@ generate_democracy_scores_dataset <- function(datasets,
   if("ulfelder" %in% datasets & use_extended |
      "ulfelder_extended" %in% datasets) {
     if(verbose) {
-      message("Adding Ulfelder data")
+      message("Adding extended Ulfelder data")
     }
     if(force_redownload) {
       ulfelder_extended <- redownload_ulfelder(verbose = verbose,
@@ -1193,12 +1275,13 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- ulfelder_extended %>%
-      mutate_at("rgjtype",
+      dplyr::mutate(across("rgjtype",
                 list("ulfelder_democracy_extended" = ~plyr::mapvalues(.,
                                                                      from = c("-99", "A", "D", "NS"),
-                                                                     to = c(NA, 0, 1, NA)))) %>%
-      tidyr::gather("measure", "value",
-                    "ulfelder_democracy_extended") %>%
+                                                                     to = c(NA, 0, 1, NA))),
+                .names = "{.fn}")) %>%
+      tidyr::pivot_longer(all_of(c("ulfelder_democracy_extended")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
 
   }
@@ -1216,12 +1299,13 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- ulfelder %>%
-      mutate_at("rgjtype",
-                list("ulfelder_democracy" = ~plyr::mapvalues(.,
-                                                            from = c("-99", "A", "D", "NS"),
-                                                            to = c(NA, 0, 1, NA)))) %>%
-      tidyr::gather("measure", "value",
-                    "ulfelder_democracy") %>%
+      dplyr::mutate(across("rgjtype",
+                           list("ulfelder_democracy" = ~plyr::mapvalues(.,
+                                                                                 from = c("-99", "A", "D", "NS"),
+                                                                                 to = c(NA, 0, 1, NA))),
+                           .names = "{.fn}")) %>%
+      tidyr::pivot_longer(all_of(c("ulfelder_democracy")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
 
   }
@@ -1241,8 +1325,8 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- utip %>%
-      tidyr::gather("measure", "value",
-                    dplyr::matches("utip_(dich|tric)")) %>%
+      tidyr::pivot_longer(dplyr::matches("utip_[dt]"),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -1254,8 +1338,8 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding Vanhanen data")
     }
     democracy_data <- democracyData::vanhanen %>%
-      tidyr::gather("measure", "value",
-                    dplyr::matches("vanhanen_(democ|comp|partic)")) %>%
+      tidyr::pivot_longer(matches("vanhanen_comp|vanhanen_[dp]"),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
   if("vanhanen_pmm" %in% datasets | ("vanhanen" %in% datasets & include_extra_pmm)) {
@@ -1263,7 +1347,8 @@ generate_democracy_scores_dataset <- function(datasets,
       message("Adding Vanhanen_pmm data")
     }
     democracy_data <- democracyData::vanhanen_pmm %>%
-      tidyr::gather("measure", "value", "pmm_vanhanen") %>%
+      tidyr::pivot_longer(all_of(c("pmm_vanhanen")),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
   }
 
@@ -1282,12 +1367,12 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- wahman_teorell_hadenius %>%
-      mutate(across("regime1ny", list("wth_democ1" = ~(haven::zap_label(.) == 100)))) %>%
-      mutate(across("regimenyrobust", list("wth_democrobust" = ~(haven::zap_label(.) == 100)))) %>%
-      rename_with(~"wth_democ1", "regime1ny_wth_democ1") %>%
-      rename_with(~"wth_democrobust", "regimenyrobust_wth_democrobust") %>%
-      tidyr::gather("measure", "value",
-                    starts_with("wth_")) %>%
+      dplyr::mutate(across("regime1ny", list("wth_democ1" = ~(haven::zap_label(.) == 100)))) %>%
+      dplyr::mutate(across("regimenyrobust", list("wth_democrobust" = ~(haven::zap_label(.) == 100)))) %>%
+      dplyr::rename_with(~"wth_democ1", "regime1ny_wth_democ1") %>%
+      dplyr::rename_with(~"wth_democrobust", "regimenyrobust_wth_democrobust") %>%
+      tidyr::pivot_longer(dplyr::starts_with("wth_"),
+                          names_to = "measure", values_to = "value") %>%
       standardize_selection()
 
   }
@@ -1300,14 +1385,14 @@ generate_democracy_scores_dataset <- function(datasets,
 
   if(scale_scores) {
     democracy_data <- democracy_data %>%
-      group_by_at("measure") %>%
-      mutate_at("value", scale) %>%
-      ungroup()
+      dplyr::group_by(all_of("measure")) %>%
+      dplyr::mutate(across(all_of("value"), scale)) %>%
+      dplyr::ungroup()
   }
 
   if(keep_only_last_in_year | output_format == "wide") {
     democracy_data <- democracy_data %>%
-      group_by_at(c(include_in_output, "year", "measure"))%>%
+      group_by(across(all_of(c(include_in_output, "year", "measure"))))%>%
       filter_at("value", any_vars(. == last(.))) %>%
       ungroup() %>%
       distinct()
@@ -1315,11 +1400,32 @@ generate_democracy_scores_dataset <- function(datasets,
 
   if(output_format == "wide") {
     democracy_data <- democracy_data %>%
-      tidyr::spread("measure", "value")
+      tidyr::pivot_wider(names_from = all_of("measure"),
+                         values_from = all_of("value"),
+                         id_cols = all_of(c(include_in_output, "year")))
+  }
+
+  if(output_format == "long") {
+    measure <- NULL
+    democracy_data <- democracy_data %>%
+      group_by(across(all_of("measure"))) %>%
+      mutate(index_type = case_when(length(unique(value)) == 2 ~ "dichotomous",
+                                    length(unique(value)) == 3 ~ "trichotomous",
+                                    length(unique(value)) < 25 ~ "ordinal",
+                                    TRUE ~ "continuous"),
+             dataset = str_remove(measure,"_.+")) %>%
+      ungroup() %>%
+      mutate(dataset = case_when(str_detect(dataset, "PEPS") ~ "PEPS",
+                                 str_detect(dataset, "svmdi") ~ "svdmi",
+                                 str_detect(dataset, "lexical") ~ "LIED",
+                                 str_detect(dataset, "polity$|polity2$") ~ "Polity 5",
+                                 str_detect(dataset, "polityIV$|polity2IV$") ~ "Polity IV",
+                                 TRUE ~ dataset))
+
   }
 
   democracy_data %>%
-    arrange_at(vars(c("extended_country_name", "GWn", "cown", "year")))
+    arrange(across(all_of(c("extended_country_name", "GWn", "cown", "year"))))
 
 
 }
