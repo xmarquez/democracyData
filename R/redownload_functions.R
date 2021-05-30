@@ -1579,7 +1579,7 @@ redownload_pipe <- function(url,
 #' @source Marshall, Monty G., Ted Robert Gurr, and Keith Jaggers. 2019. "Polity
 #'   IV Project: Political Regime Characteristics and Transitions, 1800-2018.
 #'   Dataset Users' Manual. Center for Systemic Peace. Available at
-#'   [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf)"
+#'   [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf)
 #'
 #'
 #' @export

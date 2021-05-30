@@ -641,10 +641,10 @@
 #' Indicators of Liberal Democracy, 1950-1990." 2nd ICPSR version. Chapel Hill,
 #' NC: University of North Carolina, 1998. Ann Arbor, MI: Inter-university
 #' Consortium for Political and Social Research, 2001. Original data available
-#' at http://webapp.icpsr.umich.edu/cocoon/ICPSR-STUDY/02532.xml. Taken from
+#' at [http://webapp.icpsr.umich.edu/cocoon/ICPSR-STUDY/02532.xml](http://webapp.icpsr.umich.edu/cocoon/ICPSR-STUDY/02532.xml). Taken from
 #' Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication
 #' data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures
-#' of Regime Type." In: Harvard Dataverse. http://hdl.handle.net/1902.1/PMM.
+#' of Regime Type." In: Harvard Dataverse. [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM).
 #'
 #' @section Variables:
 #'
@@ -706,6 +706,7 @@
 #' 10.1017/S0043887100016580. \url{http://dx.doi.org/10.1017/S0043887100016580}.
 #'
 #' \describe{ \item{doorenspleet_country}{Country name as in Doorenspleet.}
+#'
 #' \item{doorenspleet_regime}{Regime type: A = Authoritarian, D = Democracy, I =
 #' interruption.
 #'
@@ -743,12 +744,12 @@
 #' certain prerequisites are demanded, such as a minimum age, a sound mind, or
 #' the absence of criminal record, does not negate this principle. Only
 #' countries that at some stage meet the first requirement of competition from
-#' 1800 to 1994 are considered when measuring the inclusiveness of the system.24
+#' 1800 to 1994 are considered when measuring the inclusiveness of the system.
 #' Levels of inclusiveness of the political system may be broken down into one
 #' of the following four categories: (1) no popular suffrage; (2) suffrage
 #' denied to large segments of the population (more than 20 percent is
 #' excluded); (3) suffrage with partial restrictions (less than 20 percent of
-#' the population is excluded);(4) universal suffrage or minor restrictions.25
+#' the population is excluded);(4) universal suffrage or minor restrictions.
 #' For the purposes of this analysis, countries are considered "sufficiently"
 #' inclusive to meet the criterion of a minimal democracy if they fall into the
 #' third or fourth category. Should they fall within either of the first two
@@ -761,8 +762,8 @@
 #' systems can be considered as both competitive and inclusive and hence are
 #' classified in this study as "minimal democracies."
 #'
-#' (This description suggests one could replicate Doorenspleet's measure using
-#' data from [PIPE] or [LIED] as well as [polity])}
+#'  (This description suggests one could replicate Doorenspleet's measure using
+#' data from [PIPE] or [LIED] as well as the newest version of [polity]; Doorenspleet uses Polity III data)}
 #'
 #' \item{doorenspleet}{Regime type: 1 = Authoritarian, 2 = Democracy,
 #' interruption codes as NA.}
@@ -816,7 +817,7 @@
 #' @source Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
 #'   "Replication data for: Democratic Compromise: A Latent Variable Analysis of
 #'   Ten Measures of Regime Type." In: Harvard Dataverse.
-#'   http://hdl.handle.net/1902.1/PMM.
+#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM).
 #' @family democracy
 #' @family Freedom House
 #' @family PMM replication data
@@ -834,7 +835,7 @@
 #' Cambridge: Cambridge University Press. Taken from Pemstein, Daniel, Stephen
 #' A. Meserve, and James Melton. 2013. "Replication data for: Democratic
 #' Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." In:
-#' Harvard Dataverse. http://hdl.handle.net/1902.1/PMM. Higher values are more
+#' Harvard Dataverse. [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). Higher values are more
 #' democratic.
 #'
 #' @section Variables:
@@ -857,7 +858,7 @@
 #' @source Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
 #'   "Replication data for: Democratic Compromise: A Latent Variable Analysis of
 #'   Ten Measures of Regime Type." In: Harvard Dataverse.
-#'   http://hdl.handle.net/1902.1/PMM.
+#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM).
 #' @family democracy
 #' @family PMM replication data
 #' @family continuous democracy indexes
@@ -1063,13 +1064,13 @@
 #'   \item{mainwaring}{Trichotomous democracy indicator from Mainwaring, Scott,
 #'   Daniel Brinks, and Anibal Perez Linan. 2008. "Political Regimes in Latin
 #'   America, 1900-2007." Original data available from
-#'   http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf. 0 =
+#'   [http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf]. 0 =
 #'   non-democracy, 0.5 = hybrid, 1 = democracy.}
 #'
 #'   \item{Regime}{Trichotomous democracy indicator from Mainwaring, Scott,
 #'   Daniel Brinks, and Anibal Perez Linan. 2008. "Political Regimes in Latin
 #'   America, 1900-2007." Original data available from
-#'   http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf. A =
+#'   [http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf]. A =
 #'   Authoritarian, D = Democracy, SD = Semidemocracy. From the published
 #'   article:
 #'
@@ -1184,7 +1185,7 @@
 #' @source Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
 #'   "Replication data for: Democratic Compromise: A Latent Variable Analysis of
 #'   Ten Measures of Regime Type." In: Harvard Dataverse.
-#'   http://hdl.handle.net/1902.1/PMM.
+#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM).
 #' @family democracy
 #' @family PMM replication data
 #' @family regional democracy indexes
@@ -1200,7 +1201,7 @@
 #'   Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
 #'   Type." In: Harvard Dataverse.
 #'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). It
-#'   only contains a numeric version of the mainwaring Regime indicator, ranging
+#'   only contains a numeric version of the <ainwaring Regime indicator, ranging
 #'   from -1 (Authoritarian) to 0 (Semidemocracy) to 1 (Democracy). The original
 #'   dataset is found in \link{mainwaring}. PMM's replication data is actually
 #'   missing a fair number of the data points in the original data by Mainwaring
@@ -1455,7 +1456,7 @@
 #' 2013. Taken from Pemstein, Daniel, Stephen A. Meserve, and James Melton.
 #' 2013. "Replication data for: Democratic Compromise: A Latent Variable
 #' Analysis of Ten Measures of Regime Type." In: Harvard Dataverse.
-#' http://hdl.handle.net/1902.1/PMM. Higher values are more democratic.
+#' [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). Higher values are more democratic.
 #'
 #' @section Variables:
 #'
@@ -1477,7 +1478,7 @@
 #' @source Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
 #'   "Replication data for: Democratic Compromise: A Latent Variable Analysis of
 #'   Ten Measures of Regime Type." In: Harvard Dataverse.
-#'   http://hdl.handle.net/1902.1/PMM.
+#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM).
 #'
 #' @source Munck, Gerardo L. 2009. Measuring Democracy: A
 #' Bridge Between Scholarship and Politics. Baltimore: Johns Hopkins University
@@ -2093,7 +2094,7 @@
 #'   Stephen A. Meserve, and James Melton. 2013. It only contains the numberic
 #'   version of the variable \code{democracy} in the original dataset. "Replication
 #'   data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures
-#'   of Regime Type." In: Harvard Dataverse. http://hdl.handle.net/1902.1/PMM.
+#'   of Regime Type." In: Harvard Dataverse. [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM).
 #'   The original dataset is found in \code{pacl}. \code{pacl_pmm} is missing a few
 #'   country-years when compared with \code{pacl}.
 "pacl_pmm"
@@ -2386,7 +2387,7 @@
 #' Polity 2 Index from Polity IV. 2013. Taken from Pemstein, Daniel, Stephen A.
 #' Meserve, and James Melton. 2013. "Replication data for: Democratic
 #' Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." In:
-#' Harvard Dataverse. http://hdl.handle.net/1902.1/PMM. Higher values are more
+#' Harvard Dataverse. [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). Higher values are more
 #' democratic. Use \link{download_polity_annual} to download the latest version of the
 #' Polity IV data.
 #'
@@ -2404,7 +2405,7 @@
 #'   democratic. Taken from Pemstein, Daniel, Stephen A. Meserve, and James
 #'   Melton. 2013. "Replication data for: Democratic Compromise: A Latent
 #'   Variable Analysis of Ten Measures of Regime Type." In: Harvard Dataverse.
-#'   http://hdl.handle.net/1902.1/PMM. In this version the indicator only goes
+#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). In this version the indicator only goes
 #'   to 1945, and it differs from polity2 in a few cases. See the vignette in
 #'   this package for more details.}
 #'
@@ -2415,7 +2416,7 @@
 #' @source Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
 #'   "Replication data for: Democratic Compromise: A Latent Variable Analysis of
 #'   Ten Measures of Regime Type." In: Harvard Dataverse.
-#'   http://hdl.handle.net/1902.1/PMM.
+#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM).
 #'
 #' @source Marshall, Monty G., Ted Robert Gurr, and Keith Jaggers. 2012. "Polity
 #'   IV: Political Regime Characteristics and Transitions, 1800-2012."
@@ -2513,10 +2514,10 @@
 #'  and actively separated from the central authority of the regime.}
 #'
 #'  \item{democ}{Institutionalized democracy indicator, 0-10 scale. See PolityIV
-#'  users' manual at http://www.systemicpeace.org/inscr/p4manualv2018.pdf}
+#'  users' manual at [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf)}
 #'
 #'  \item{autoc}{Institutionalized autocracy indicator, 0-10 scale. See PolityIV
-#'  users' manual at http://www.systemicpeace.org/inscr/p4manualv2018.pdf}
+#'  users' manual at [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf)}
 #'
 #'  \item{polity}{Annual polity index (`autoc` - `democ`), including values for
 #'  interruption (-66), interregnum (-77), and transition periods (-88). Higher
@@ -2549,43 +2550,43 @@
 #'  democratic.}
 #'
 #'  \item{durable}{Regime durability. See PolityIV users' manual at
-#'  http://www.systemicpeace.org/inscr/p4manualv2018.pdf for details.}
+#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.}
 #'
 #'  \item{xrreg}{Regulation of Chief Executive Recruitment. 1 = unregulated, 2 =
 #'  designational/transitional, 3 = regulated. See PolityIV users' manual at
-#'  http://www.systemicpeace.org/inscr/p4manualv2018.pdf for details.}
+#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.}
 #'
 #'  \item{xrcomp}{Competitiveness of Chief Executive Recruitment. 1 = selection,
 #'  2 = dual/transitional, 3 = election. See PolityIV users' manual at
-#'  http://www.systemicpeace.org/inscr/p4manualv2018.pdf for details.}
+#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.}
 #'
 #'  \item{xropen}{Openness of Chief Executive Recruitment. 1 = unlimited, 2 =
 #'  dual/transitional, 3 = election. See PolityIV users' manual at
-#'  http://www.systemicpeace.org/inscr/p4manualv2018.pdf for details.}
+#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.}
 #'
 #'  \item{xconst}{Executive constraints. 1 = closed, 2 = intermediate, 3 =
 #'  slight to moderate limitation, 4 = intermediate, 5 = substantial
 #'  limitations, 6 = intermediate, 7 = executive parity or subordination. See
 #'  PolityIV users' manual at
-#'  http://www.systemicpeace.org/inscr/p4manualv2018.pdf for details.}
+#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.}
 #'
 #'  \item{parcomp}{Regulation of participation. 0 = Not applicable, 1 =
 #'  repressed, 2 = suppressed, 3 = factional, 4 = transitional, 5 = competitive.
 #'  See PolityIV users' manual at
-#'  http://www.systemicpeace.org/inscr/p4manualv2018.pdf for details.}
+#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.}
 #'
 #'  \item{exrec}{Executive recruitment (concept). 1 = ascription, 2 = dual
 #'  (ascription + designation), 3 = designation, 4 = Self selection, 5 = gradual
 #'  transition from self selection, 6 = dual (ascription + election), 7 =
 #'  transitional or restricted election, 8 = competitive election. See PolityIV
-#'  users' manual at http://www.systemicpeace.org/inscr/p4manualv2018.pdf for
+#'  users' manual at [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for
 #'  details.}
 #'
 #'  \item{exconst}{Executive constraints (concept). Identical to `xconst`. 1 =
 #'  closed, 2 = intermediate, 3 = slight to moderate limitation, 4 =
 #'  intermediate, 5 = substantial limitations, 6 = intermediate, 7 = executive
 #'  parity or subordination. See PolityIV users' manual at
-#'  http://www.systemicpeace.org/inscr/p4manualv2018.pdf for details.}
+#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.}
 #'
 #'  \item{polcomp}{Political competition (concept). 1 = suppressed, 2 =
 #'  restricted 3 = Imposed transition, 4 = Uninstitutionalized, 5 = gradual
@@ -2593,7 +2594,7 @@
 #'  factional, 8 = electoral transition: persistent conflict/coercion, 9 =
 #'  electoral transition: limited conflict/coercion, 10 = institutionalized
 #'  electoral. See PolityIV users' manual at
-#'  http://www.systemicpeace.org/inscr/p4manualv2018.pdf for details.}
+#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.}
 #'
 #'  \item{prior}{Regime Polity code immediately prior to regime end date. The
 #'  polity users' manual (p. 31) says "The PRIOR code may be a number from -10
@@ -2655,7 +2656,7 @@
 #'  \item{post}{Regime `polity` code immediately after the current regime.}
 #'
 #'  \item{change}{Net difference between `prior` and `post`. See PolityIV users'
-#'  manual at http://www.systemicpeace.org/inscr/p4manualv2018.pdf for details.
+#'  manual at [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.
 #'  Note the code 88 denotes a "pre-existing polity" (for polities that existed
 #'  before 1800), 96 indicates state disintegration, 0 a state in transition, 97
 #'  state transformation, 98 state demise, and 99 state creation.}
@@ -2686,7 +2687,7 @@
 #'@source Marshall, Monty G., Ted Robert Gurr, and Keith Jaggers. 2019. "Polity
 #'  IV Project: Political Regime Characteristics and Transitions, 1800-2018.
 #'  Dataset Users' Manual. Center for Systemic Peace. Available at
-#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf)"
+#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf)
 #'
 #'
 #'
@@ -3413,7 +3414,7 @@
 #' Indicators of Contestation and Inclusiveness by Michael Coppedge, Angel
 #' Alvarez, and Claudia Maldonado
 #'
-#' From the codebook at https://www3.nd.edu/~mcoppedg/crd/datacrd.htm: This
+#' From the codebook at [https://www3.nd.edu/~mcoppedg/crd/datacrd.htm](https://www3.nd.edu/~mcoppedg/crd/datacrd.htm): This
 #' dataset contains several versions of two indicators that measure Robert
 #' Dahl's two dimensions of polyarchy: contestation and inclusiveness. For
 #' complete documentation of the analysis that identifies these two dimensions,
@@ -3638,8 +3639,7 @@
 #' @family democracy
 #' @family latent variable indexes of democracy
 #' @aliases uds
-#' @seealso The package QuickUDS to extend these scores, at
-#'   \url{http://github.com/xmarquez/QuickUDS}.
+#' @seealso The [generate_extended_uds] function to extend these scores, as well as vignette("Replicating_and_extending_the_UD_scores").
 "uds_2014"
 
 #' @rdname uds_2014
@@ -3737,8 +3737,8 @@
 #'
 #' @section Variables with values only for years greater than 1955:
 #'
-#'   The following variables are all \code{NA} for years before 1955 (by construction
-#'   - I do not impute their values for these years in the \link{ulfelder_extended}
+#'   The following variables are all \code{NA} for years before 1955 (by construction;
+#'    I do not impute their values for these years in the \link{ulfelder_extended}
 #'   dataset).
 #'
 #'   rgjdem: Undocumented.
@@ -4591,7 +4591,7 @@
 #'   Monty G & Jaggers, Keith: Polity IV project, Integrated Network for
 #'   societal Conflict research (INSCR) Program Center for International
 #'   Development and Conflict Management (CIDCM) University of Maryland, Collage
-#'   Park 20742, \url{http://www.systemicpeace.org/polity/polity4.htm.}}
+#'   Park 20742, \url{http://www.systemicpeace.org/polity/polity4.htm}.}
 #'
 #'
 #'   \item{fhpol}{(n: 5789, N: 170) Average Polity (revpol2) & Freedom House
@@ -4935,7 +4935,7 @@
 #' @source Hadenius, Axel and Jan Teorell. 2006. "Authoritarian Regimes: Stability,
 #' Change, and Pathways to Democracy, 1972-2003", University of Notre Dame,
 #' Kellogg Institute Working Paper Series 331, November 2006
-#' (http://kellogg.nd.edu/publications/workingpapers/WPS/331.pdf).
+#' ([http://kellogg.nd.edu/publications/workingpapers/WPS/331.pdf]).
 #'
 #' @source Wahman, Michael,
 #' Jan Teorell, and Axel Hadenius. 2013. Authoritarian regime types revisited:

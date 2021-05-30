@@ -101,6 +101,7 @@ download_and_read_xls <- function(url, fileext, ...) {
 #' group_by(polityIV_country, polityIV_ccode) %>%
 #' mutate(groups = count_sequence_breaks(year)) %>%
 #' filter(any(groups > 1))
+#'
 count_sequence_breaks <- function(seq, seq_step = 1) {
   first_diff <- c(seq_step, diff(seq)) - seq_step
   periods <- as.numeric(as.factor(cumsum(abs(first_diff))))
