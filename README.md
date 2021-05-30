@@ -222,6 +222,7 @@ democracy_info %>%
 | dataset                   | long\_name                                                                                                    | main\_democracy\_measure\_col                                                          | measure\_type | based\_on       | in\_pmm\_replication | categorical\_regime\_types | user\_extendable | downloadable | included\_in\_package | first\_published\_use | notes                                                                                                                                                                                                                                                                                                                                      |
 |:--------------------------|:--------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------|:--------------|:----------------|:---------------------|:---------------------------|:-----------------|:-------------|:----------------------|----------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | anckar                    | The Anckar-Fredriksson dataset of political regimes                                                           | democracy                                                                              | dichotomous   | bmr             | FALSE                | TRUE                       | FALSE            | TRUE         | TRUE                  |                  2018 | The democracy measure should be equivalent to democracy\_omitteddata from bmr up to 2010; it may have some divergences for the 2011-2016 period.                                                                                                                                                                                           |
+| anrr                      | The Acemoglu, Naidu, Restrepo, and Robinson dataset                                                           | dem                                                                                    | dichotomous   | FH,Polity       | FALSE                | FALSE                      | TRUE             | FALSE        | TRUE                  |                  2019 | The measure can be extended by using the latest FH, Polity, and PACL Data, but the rules are not entirely transparent, and some cases in the original dataset have been hand-coded.                                                                                                                                                        |
 | arat\_pmm                 | The Arat measure of democracy                                                                                 | pmm\_arat                                                                              | continuous    | NA              | TRUE                 | FALSE                      | FALSE            | FALSE        | TRUE                  |                  1991 | Only available via the Pemstein, Meserve, and Melton (2013) replication data. I have not been able to access the original data.                                                                                                                                                                                                            |
 | blm                       | The Bowman, Lehoucq, and Mahoney index of democracy for Central America                                       | blm                                                                                    | trichotomous  | NA              | TRUE                 | FALSE                      | FALSE            | TRUE         | TRUE                  |                  2005 | NA                                                                                                                                                                                                                                                                                                                                         |
 | bmr                       | The Boix-Miller-Rosato dichotomous coding of democracy, 1800-2015, version 3.0                                | democracy,democracy\_omitteddata,democracy\_femalesuffrage                             | dichotomous   | PACL            | FALSE                | FALSE                      | FALSE            | TRUE         | TRUE                  |                  2010 | NA                                                                                                                                                                                                                                                                                                                                         |
@@ -291,45 +292,45 @@ democracy_data <- generate_democracy_scores_dataset(output_format = "wide",
 #> introduced by coercion
 
 democracy_data
-#> # A tibble: 28,059 x 81
-#>    extended_country_name   GWn  cown in_GW_system  year anckar_democracy   blm
-#>    <chr>                 <dbl> <int> <lgl>        <dbl>            <dbl> <dbl>
-#>  1 Abkhazia                396    NA FALSE         1997               NA    NA
-#>  2 Abkhazia                396    NA FALSE         1998               NA    NA
-#>  3 Abkhazia                396    NA FALSE         1999               NA    NA
-#>  4 Abkhazia                396    NA FALSE         2000               NA    NA
-#>  5 Abkhazia                396    NA FALSE         2001               NA    NA
-#>  6 Abkhazia                396    NA FALSE         2002               NA    NA
-#>  7 Abkhazia                396    NA FALSE         2003               NA    NA
-#>  8 Abkhazia                396    NA FALSE         2004               NA    NA
-#>  9 Abkhazia                396    NA FALSE         2005               NA    NA
-#> 10 Abkhazia                396    NA FALSE         2006               NA    NA
-#> # ... with 28,049 more rows, and 74 more variables: bmr_democracy <dbl>,
-#> #   bmr_democracy_femalesuffrage <dbl>, bmr_democracy_omitteddata <dbl>,
-#> #   bnr <dbl>, bnr_extended <dbl>, bti_democracy <dbl>, csvmdi <dbl>,
-#> #   doorenspleet <dbl>, eiu <dbl>, fh_electoral <dbl>, fh_total_reversed <dbl>,
-#> #   gwf_democracy <dbl>, gwf_democracy_extended <dbl>,
-#> #   gwf_democracy_extended_strict <dbl>, gwf_democracy_strict <dbl>,
-#> #   kailitz_binary <dbl>, kailitz_tri <dbl>, lexical_index <dbl>,
-#> #   magaloni_democracy <dbl>, magaloni_democracy_extended <dbl>,
-#> #   mainwaring <dbl>, pacl <dbl>, pacl_update <dbl>, PEPS1i <dbl>,
-#> #   PEPS1q <dbl>, PEPS1v <dbl>, PEPS2i <dbl>, PEPS2q <dbl>, PEPS2v <dbl>,
-#> #   PIPE_democracy <dbl>, PIPE_regime <dbl>, pitf <dbl>, pitf_binary <dbl>,
-#> #   pmm_arat <dbl>, pmm_blm <dbl>, pmm_bollen <dbl>, pmm_fh <dbl>,
-#> #   pmm_hadenius <dbl>, pmm_mainwaring <dbl>, pmm_munck <dbl>, pmm_pacl <dbl>,
-#> #   pmm_polity <dbl>, pmm_polyarchy <dbl>, pmm_prc <dbl>, pmm_vanhanen <dbl>,
-#> #   polity <dbl>, polity2 <dbl>, polity2IV <dbl>, polityIV <dbl>,
-#> #   polyarchy_contestation_dimension <dbl>,
-#> #   polyarchy_inclusion_dimension <dbl>, polyarchy_original_contestation <dbl>,
-#> #   polyarchy_original_polyarchy <dbl>, prc <dbl>, reign_democracy <dbl>,
-#> #   svmdi_2016 <dbl>, svolik_democracy <dbl>, uds_2010_mean <dbl>,
-#> #   uds_2010_median <dbl>, uds_2011_mean <dbl>, uds_2011_median <dbl>,
-#> #   uds_2014_mean <dbl>, uds_2014_median <dbl>, ulfelder_democracy <dbl>,
-#> #   ulfelder_democracy_extended <dbl>, utip_dichotomous <dbl>,
-#> #   utip_dichotomous_strict <dbl>, utip_trichotomous <dbl>,
+#> # A tibble: 28,487 x 81
+#>    extended_country_n~   GWn  cown in_GW_system  year wth_democ1 wth_democrobust
+#>    <chr>               <dbl> <int> <lgl>        <dbl>      <dbl>           <dbl>
+#>  1 Abkhazia              396    NA FALSE         1997         NA              NA
+#>  2 Abkhazia              396    NA FALSE         1998         NA              NA
+#>  3 Abkhazia              396    NA FALSE         1999         NA              NA
+#>  4 Abkhazia              396    NA FALSE         2000         NA              NA
+#>  5 Abkhazia              396    NA FALSE         2001         NA              NA
+#>  6 Abkhazia              396    NA FALSE         2002         NA              NA
+#>  7 Abkhazia              396    NA FALSE         2003         NA              NA
+#>  8 Abkhazia              396    NA FALSE         2004         NA              NA
+#>  9 Abkhazia              396    NA FALSE         2005         NA              NA
+#> 10 Abkhazia              396    NA FALSE         2006         NA              NA
+#> # ... with 28,477 more rows, and 74 more variables: pmm_vanhanen <dbl>,
 #> #   vanhanen_competition <dbl>, vanhanen_democratization <dbl>,
-#> #   vanhanen_participation <dbl>, wgi_democracy <dbl>, wth_democ1 <dbl>,
-#> #   wth_democrobust <dbl>
+#> #   vanhanen_participation <dbl>, utip_dichotomous <dbl>,
+#> #   utip_dichotomous_strict <dbl>, utip_trichotomous <dbl>,
+#> #   ulfelder_democracy <dbl>, ulfelder_democracy_extended <dbl>,
+#> #   uds_2010_mean <dbl>, uds_2010_median <dbl>, uds_2011_mean <dbl>,
+#> #   uds_2011_median <dbl>, uds_2014_mean <dbl>, uds_2014_median <dbl>,
+#> #   svolik_democracy <dbl>, svmdi_2016 <dbl>, csvmdi <dbl>, dsvmdi <dbl>,
+#> #   PIPE_democracy <dbl>, PIPE_regime <dbl>, pmm_prc <dbl>, prc <dbl>,
+#> #   polyarchy_contestation_dimension <dbl>,
+#> #   polyarchy_inclusion_dimension <dbl>, pmm_polyarchy <dbl>,
+#> #   polyarchy_original_contestation <dbl>, polyarchy_original_polyarchy <dbl>,
+#> #   pitf <dbl>, pitf_binary <dbl>, PEPS1v <dbl>, PEPS2v <dbl>, PEPS1i <dbl>,
+#> #   PEPS2i <dbl>, PEPS1q <dbl>, PEPS2q <dbl>, pacl_update <dbl>,
+#> #   pmm_pacl <dbl>, pacl <dbl>, pmm_munck <dbl>, pmm_mainwaring <dbl>,
+#> #   mainwaring <dbl>, magaloni_democracy <dbl>,
+#> #   magaloni_democracy_extended <dbl>, lexical_index <dbl>,
+#> #   kailitz_binary <dbl>, kailitz_tri <dbl>, pmm_hadenius <dbl>,
+#> #   gwf_democracy_extended <dbl>, gwf_democracy_extended_strict <dbl>,
+#> #   eiu <dbl>, doorenspleet <dbl>, pmm_bollen <dbl>, bti_democracy <dbl>,
+#> #   bnr <dbl>, bnr_extended <dbl>, bmr_democracy <dbl>,
+#> #   bmr_democracy_omitteddata <dbl>, bmr_democracy_femalesuffrage <dbl>,
+#> #   pmm_blm <dbl>, blm <dbl>, pmm_arat <dbl>, anrr_democracy <dbl>,
+#> #   anckar_democracy <dbl>, wgi_democracy <dbl>, reign_democracy <dbl>,
+#> #   pmm_polity <dbl>, polityIV <dbl>, polity2IV <dbl>, polity <dbl>,
+#> #   polity2 <dbl>, fh_electoral <dbl>, pmm_fh <dbl>, fh_total_reversed <dbl>
 ```
 
 This can take some time, since it downloads all downloadable datasets
@@ -351,7 +352,7 @@ package, except that it is able to determine state system information
 for country-year pairs. Suppose you have this dataset:
 
 ``` r
-my_weird_democracy_data <- data_frame(country = c("Germany", "Germany", "Germany", "Germany", "East Germany",
+my_weird_democracy_data <- tibble(country = c("Germany", "Germany", "Germany", "Germany", "East Germany",
                                     "Federal Republic of Germany",
                                     "Somaliland", "Somalia",
                                     "Palestine", "Russia",
@@ -366,30 +367,28 @@ my_weird_democracy_data <- data_frame(country = c("Germany", "Germany", "Germany
                                  1922, 1975,
                                  1990, 1991, 1954),
                         my_measure = rnorm(16))
-#> Warning: `data_frame()` was deprecated in tibble 1.1.0.
-#> Please use `tibble()` instead.
 
 
 my_weird_democracy_data
 #> # A tibble: 16 x 3
 #>    country                      year my_measure
 #>    <chr>                       <dbl>      <dbl>
-#>  1 Germany                      2015     0.0150
-#>  2 Germany                      1930     0.295 
-#>  3 Germany                      1970     0.460 
-#>  4 Germany                      1945     0.329 
-#>  5 East Germany                 1949    -0.0594
-#>  6 Federal Republic of Germany  1992    -1.50  
-#>  7 Somaliland                   1990     0.592 
-#>  8 Somalia                      1990    -0.280 
-#>  9 Palestine                    1940     0.229 
-#> 10 Russia                       1917    -0.108 
-#> 11 Russia                       1912    -0.566 
-#> 12 USSR                         1922    -0.709 
-#> 13 Republic of Vietnam          1975     0.568 
-#> 14 Yugoslavia                   1990     1.52  
-#> 15 Yugoslavia                   1991     0.0888
-#> 16 Vietnam, South               1954     0.738
+#>  1 Germany                      2015     -0.582
+#>  2 Germany                      1930      0.404
+#>  3 Germany                      1970      0.466
+#>  4 Germany                      1945      1.05 
+#>  5 East Germany                 1949     -1.55 
+#>  6 Federal Republic of Germany  1992      0.506
+#>  7 Somaliland                   1990     -0.705
+#>  8 Somalia                      1990      0.814
+#>  9 Palestine                    1940     -0.875
+#> 10 Russia                       1917      0.607
+#> 11 Russia                       1912      1.13 
+#> 12 USSR                         1922      0.734
+#> 13 Republic of Vietnam          1975      1.04 
+#> 14 Yugoslavia                   1990      1.22 
+#> 15 Yugoslavia                   1991     -0.726
+#> 16 Vietnam, South               1954      2.02
 ```
 
 and you then want to add state system information. `country_year_coder`
@@ -416,22 +415,22 @@ my_weird_democracy_data %>%
 
 | country                     | year | my\_measure | extended\_country\_name      | GWn | cown | polity\_ccode | in\_GW\_system | in\_cow\_system | in\_polity\_system | polity\_startdate | polity\_enddate |
 |:----------------------------|-----:|------------:|:-----------------------------|----:|-----:|--------------:|:---------------|:----------------|:-------------------|:------------------|:----------------|
-| Germany                     | 2015 |   0.0150280 | German Federal Republic      | 260 |  255 |           255 | TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
-| Germany                     | 1930 |   0.2947832 | Germany (Prussia)            | 255 |  255 |           255 | TRUE           | TRUE            | TRUE               | 1871-01-19        | 1945-05-07      |
-| Germany                     | 1970 |   0.4595028 | German Federal Republic      | 260 |  260 |           260 | TRUE           | TRUE            | TRUE               | 1945-05-08        | 1990-10-02      |
-| Germany                     | 1945 |   0.3292030 | German Federal Republic      | 260 |  260 |           260 | FALSE          | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
-| East Germany                | 1949 |  -0.0594096 | German Democratic Republic   | 265 |  265 |           265 | TRUE           | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
-| Federal Republic of Germany | 1992 |  -1.4960165 | German Federal Republic      | 260 |  255 |           255 | TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
-| Somaliland                  | 1990 |   0.5920675 | Somaliland                   |  NA |   NA |            NA | FALSE          | FALSE           | FALSE              | NA                | NA              |
-| Somalia                     | 1990 |  -0.2795320 | Somalia                      | 520 |  520 |           520 | TRUE           | TRUE            | TRUE               | 1960-07-01        | NA              |
-| Palestine                   | 1940 |   0.2293830 | British Mandate of Palestine |  NA |   NA |            NA | FALSE          | FALSE           | FALSE              | NA                | NA              |
-| Russia                      | 1917 |  -0.1084617 | Russia (Soviet Union)        | 365 |  365 |           365 | TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
-| Russia                      | 1912 |  -0.5657148 | Russia (Soviet Union)        | 365 |  365 |           365 | TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
-| USSR                        | 1922 |  -0.7091885 | Russia (Soviet Union)        | 365 |  365 |           364 | TRUE           | TRUE            | TRUE               | 1922-12-30        | 1991-12-31      |
-| Republic of Vietnam         | 1975 |   0.5677653 | Vietnam, Republic of         | 817 |  817 |           817 | FALSE          | FALSE           | TRUE               | 1955-10-26        | 1975-12-31      |
-| Yugoslavia                  | 1990 |   1.5243563 | Yugoslavia                   | 345 |  345 |           345 | TRUE           | TRUE            | TRUE               | 1921-01-01        | 1991-07-01      |
-| Yugoslavia                  | 1991 |   0.0888489 | Yugoslavia                   | 345 |  345 |           347 | TRUE           | TRUE            | TRUE               | 1991-07-01        | 2003-03-11      |
-| Vietnam, South              | 1954 |   0.7383997 | Vietnam, Republic of         | 817 |  817 |           817 | TRUE           | TRUE            | FALSE              | 1955-10-26        | 1975-12-31      |
+| Germany                     | 2015 |  -0.5821669 | German Federal Republic      | 260 |  255 |           255 | TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
+| Germany                     | 1930 |   0.4036808 | Germany (Prussia)            | 255 |  255 |           255 | TRUE           | TRUE            | TRUE               | 1871-01-19        | 1945-05-07      |
+| Germany                     | 1970 |   0.4664147 | German Federal Republic      | 260 |  260 |           260 | TRUE           | TRUE            | TRUE               | 1945-05-08        | 1990-10-02      |
+| Germany                     | 1945 |   1.0471859 | German Federal Republic      | 260 |  260 |           260 | FALSE          | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
+| East Germany                | 1949 |  -1.5537575 | German Democratic Republic   | 265 |  265 |           265 | TRUE           | FALSE           | TRUE               | 1945-05-08        | 1990-10-02      |
+| Federal Republic of Germany | 1992 |   0.5062060 | German Federal Republic      | 260 |  255 |           255 | TRUE           | TRUE            | TRUE               | 1990-10-02        | NA              |
+| Somaliland                  | 1990 |  -0.7047967 | Somaliland                   |  NA |   NA |            NA | FALSE          | FALSE           | FALSE              | NA                | NA              |
+| Somalia                     | 1990 |   0.8135574 | Somalia                      | 520 |  520 |           520 | TRUE           | TRUE            | TRUE               | 1960-07-01        | NA              |
+| Palestine                   | 1940 |  -0.8750957 | British Mandate of Palestine |  NA |   NA |            NA | FALSE          | FALSE           | FALSE              | NA                | NA              |
+| Russia                      | 1917 |   0.6073784 | Russia (Soviet Union)        | 365 |  365 |           365 | TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
+| Russia                      | 1912 |   1.1297152 | Russia (Soviet Union)        | 365 |  365 |           365 | TRUE           | TRUE            | TRUE               | 1800-01-01        | 1922-12-29      |
+| USSR                        | 1922 |   0.7344972 | Russia (Soviet Union)        | 365 |  365 |           364 | TRUE           | TRUE            | TRUE               | 1922-12-30        | 1991-12-31      |
+| Republic of Vietnam         | 1975 |   1.0443878 | Vietnam, Republic of         | 817 |  817 |           817 | FALSE          | FALSE           | TRUE               | 1955-10-26        | 1975-12-31      |
+| Yugoslavia                  | 1990 |   1.2163298 | Yugoslavia                   | 345 |  345 |           345 | TRUE           | TRUE            | TRUE               | 1921-01-01        | 1991-07-01      |
+| Yugoslavia                  | 1991 |  -0.7260127 | Yugoslavia                   | 345 |  345 |           347 | TRUE           | TRUE            | TRUE               | 1991-07-01        | 2003-03-11      |
+| Vietnam, South              | 1954 |   2.0240111 | Vietnam, Republic of         | 817 |  817 |           817 | TRUE           | TRUE            | FALSE              | 1955-10-26        | 1975-12-31      |
 
 `country_year_coder` tries to match not just the country name or the
 country code (as `countrycode` does), but also to figure out the
@@ -460,8 +459,6 @@ panel for any of the three main state systems:
 
 ``` r
 create_panel(system = "cow")
-#> Warning: `cols` is now required when using unnest().
-#> Please use `cols = c(year)`
 #> # A tibble: 16,841 x 5
 #>     cown cow_country_name         cow_startdate cow_enddate  year
 #>    <int> <chr>                    <date>        <date>      <dbl>
@@ -478,8 +475,6 @@ create_panel(system = "cow")
 #> # ... with 16,831 more rows
 
 create_panel(system = "GW")
-#> Warning: `cols` is now required when using unnest().
-#> Please use `cols = c(year)`
 #> # A tibble: 19,741 x 5
 #>      GWn GW_country_name          GW_startdate GW_enddate  year
 #>    <dbl> <chr>                    <date>       <date>     <dbl>
@@ -506,6 +501,10 @@ citation(package = "democracyData")
 ```
 
 To cite any of the datasets included in this package use:
+
+Acemoglu D, Naidu S, Restrepo P, Robinson JA (2019). “Democracy Does
+Cause Growth.” *Journal of Political Economy*, *127*(1), 47-100. doi:
+10.1086/700936 (URL: <https://doi.org/10.1086/700936>).
 
 Anckar C, Fredriksson C (2018). “Classifying political regimes
 1800-2016: a typology and a new dataset.” *European Political Science*.
