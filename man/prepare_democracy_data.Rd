@@ -146,8 +146,7 @@ Mahoney 2005, \link{blm}), \code{bmr} (from Boix, Miller, and Rosato 2012, \link
 "ordinal" indexes from the V-dem project, Coppedge et al 2021), \code{freedomhouse}
 or \code{fh} (from Freedom House, \link{fh} - freedom scale must be reversed so that
 "more freedom" is higher), \code{gwf} (from Geddes, Wright, and Frantz 2014, \link{gwf}
-\itemize{
-\item the dichotomous democracy indicator only), \code{kailitz} (from Kailitz 2013 -
+, the dichotomous democracy indicator only), \code{kailitz} (from Kailitz 2013 -
 democracy/non-democracy indicator, \link{kailitz}), \code{lied} or \code{lexical_index} (from
 Skaaning, Gerring, and Bartusevicius 2015, \link{LIED}), \code{mainwaring} (from
 Mainwaring and Perez Linan 2008, \link{mainwaring}), \code{magaloni} (from Magaloni,
@@ -164,7 +163,6 @@ and \code{wth} or \code{wahman_teorell_hadenius} (from Wahman, Teorell, and Hade
 transforms the values of these scores by running
 \code{as.numeric(unclass(factor(x)))}, which transforms them into ordinal variables
 from 1 to the number of categories.
-}
 
 For details of these scores, see the documentation for
 \link{generate_democracy_scores_dataset} or the documentation for the individual

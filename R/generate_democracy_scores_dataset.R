@@ -362,6 +362,9 @@
 #' democracy_data_gwf <- generate_democracy_scores_dataset(datasets = c("gwf_all"),
 #'          output_format = "wide")
 #'
+#' # all PMM datasets
+#' democracy_data_pmm <- generate_democracy_scores_dataset(selection = "pmm")
+#'
 #' \dontrun{
 #' # This produces scaled scores
 #' generate_democracy_scores_dataset(exclude_downloadable = TRUE,

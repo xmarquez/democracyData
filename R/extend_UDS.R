@@ -80,7 +80,7 @@
 #'"ordinal" indexes from the V-dem project, Coppedge et al 2021), `freedomhouse`
 #'or `fh` (from Freedom House, [fh] - freedom scale must be reversed so that
 #'"more freedom" is higher), `gwf` (from Geddes, Wright, and Frantz 2014, [gwf]
-#'- the dichotomous democracy indicator only), `kailitz` (from Kailitz 2013 -
+#', the dichotomous democracy indicator only), `kailitz` (from Kailitz 2013 -
 #'democracy/non-democracy indicator, [kailitz]), `lied` or `lexical_index` (from
 #'Skaaning, Gerring, and Bartusevicius 2015, [LIED]), `mainwaring` (from
 #'Mainwaring and Perez Linan 2008, [mainwaring]), `magaloni` (from Magaloni,
@@ -347,7 +347,14 @@ prob_more <- function(data, country1, country2, years, mean_col = "z1",
 #' @examples
 #' \donttest{
 #' # Replicate the official UDS 2011 release and calculate its cutpoints
-#' replication_2011_model <- democracy_model(dplyr::matches("pmm"), verbose = FALSE)
+#' library(dplyr)
+#' library(mirt)
+#' democracy_data <- generate_democracy_scores_dataset(selection = "_pmm", output_format = "wide")
+#'
+#' democracy_data <- prepare_democracy_data(democracy_data)
+#'
+#' replication_2011_model <- mirt(democracy_data %>% select(matches("pmm")), model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
+#'
 #' cutpoints(replication_2011_model)}
 cutpoints <- function(model, type = "score") {
   stopifnot(class(model) == "SingleGroupClass")
