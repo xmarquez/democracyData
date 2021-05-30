@@ -26,7 +26,8 @@ Imports:
     readxl,
     readr,
     RefManageR,
-    knitr
+    knitr,
+    mirt
 RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
