@@ -139,7 +139,7 @@ names, which variables contain democracy scores." />
 
     <div class="ref-description">
     <p>This function is designed to take the democracy data included in this package
-and put it in a form suitable for use with the <a href='https://rdrr.io/pkg/mirt/man/mirt.html'>mirt</a> package to replicate the
+and put it in a form suitable for use with the mirt package to replicate the
 UDS model. It takes a data frame and tries to determine, from the column
 names, which variables contain democracy scores.</p>
     </div>
@@ -153,12 +153,12 @@ names, which variables contain democracy scores.</p>
       <th>data</th>
       <td><p>A dataset of democracy scores. For the function to do anything,
 the column names must contain at least one of the following strings:
-<code>[anckar]</code>, <code>[anrr]</code>, <code>[arat]</code>, <code>[blm]</code>, <code>[bmr]</code>, <code>[bti]</code>, <code>[bollen]</code>,
-<code>[doorenspleet]</code>, <code>[wgi]</code>, <code>[gwf]</code>, <code>[hadenius]</code>, <code>[kailitz]</code>, <code>[lied]</code>,
-<code>[munck]</code>, <code>[pacl]</code>, <code>[peps]</code>, <code>[polyarchy]</code>, <code>[polity]</code>, <code>[prc]</code>, <code>[PIPE]</code>,
-<code>[svmdi]</code>, <code>[svolik]</code>, <code>[ulfelder]</code>, <code>[utip]</code>, <code>v2x</code>,
-<code>[vanhanen_democratization](vanhanen.html)</code>, <code>[vanhanen_pmm]</code>, or
-<code>[wth](wahman_teorell_hadenius.html)</code>. For details of these variables, see
+<a href='anckar.html'>anckar</a>, <a href='anrr.html'>anrr</a>, <a href='arat_pmm.html'>arat</a>, <a href='blm.html'>blm</a>, <a href='bmr.html'>bmr</a>, <a href='bti.html'>bti</a>, <a href='bollen_pmm.html'>bollen</a>,
+<a href='doorenspleet.html'>doorenspleet</a>, <a href='download_wgi_voice_and_accountability.html'>wgi</a>, <a href='gwf_all.html'>gwf</a>, <a href='hadenius_pmm.html'>hadenius</a>, <a href='kailitz.html'>kailitz</a>, lied,
+<a href='munck_pmm.html'>munck</a>, <a href='pacl.html'>pacl</a>, <a href='peps.html'>peps</a>, <a href='polyarchy.html'>polyarchy</a>, <a href='download_polity_annual.html'>polity</a>, <a href='prc_gasiorowski.html'>prc</a>, <a href='PIPE.html'>PIPE</a>,
+<a href='svmdi.html'>svmdi</a>, <a href='svolik_regime.html'>svolik</a>, <a href='ulfelder.html'>ulfelder</a>, <a href='utip.html'>utip</a>, <code>v2x</code>,
+<a href='vanhanen.html'>vanhanen_democratization</a>, <a href='vanhanen.html'>vanhanen_pmm</a>, or
+<a href='wahman_teorell_hadenius.html'>wth</a>. For details of these variables, see
 the documentation for <a href='generate_democracy_scores_dataset.html'>generate_democracy_scores_dataset</a> or the
 documentation for the individual datasets.</p></td>
     </tr>
@@ -247,8 +247,8 @@ Mahoney 2005, <a href='blm.html'>blm</a>), <code>bmr</code> (from Boix, Miller, 
 <code>doorenspleet</code> (from Doorenspleet 2000, <a href='doorenspleet.html'>doorenspleet</a>), <code>e_v2x</code> (the
 "ordinal" indexes from the V-dem project, Coppedge et al 2021), <code>freedomhouse</code>
 or <code>fh</code> (from Freedom House, <a href='fh_pmm.html'>fh</a> - freedom scale must be reversed so that
-"more freedom" is higher), <code>gwf</code> (from Geddes, Wright, and Frantz 2014, <a href='gwf_all.html'>gwf</a></p><ul>
-<li><p>the dichotomous democracy indicator only), <code>kailitz</code> (from Kailitz 2013 -
+"more freedom" is higher), <code>gwf</code> (from Geddes, Wright, and Frantz 2014, <a href='gwf_all.html'>gwf</a>
+, the dichotomous democracy indicator only), <code>kailitz</code> (from Kailitz 2013 -
 democracy/non-democracy indicator, <a href='kailitz.html'>kailitz</a>), <code>lied</code> or <code>lexical_index</code> (from
 Skaaning, Gerring, and Bartusevicius 2015, <a href='LIED.html'>LIED</a>), <code>mainwaring</code> (from
 Mainwaring and Perez Linan 2008, <a href='mainwaring.html'>mainwaring</a>), <code>magaloni</code> (from Magaloni,
@@ -264,9 +264,7 @@ and <code>wth</code> or <code>wahman_teorell_hadenius</code> (from Wahman, Teore
 2013, <a href='wahman_teorell_hadenius.html'>wahman_teorell_hadenius</a>). In each of these cases the function
 transforms the values of these scores by running
 <code><a href='https://rdrr.io/r/base/numeric.html'>as.numeric(unclass(factor(x)))</a></code>, which transforms them into ordinal variables
-from 1 to the number of categories.</p></li>
-</ul>
-
+from 1 to the number of categories.</p>
 <p>For details of these scores, see the documentation for
 <a href='generate_democracy_scores_dataset.html'>generate_democracy_scores_dataset</a> or the documentation for the individual
 datasets.</p>
@@ -431,7 +429,7 @@ https://sites.google.com/site/authoritarianregimedataset/data&gt;.</p>
 #&gt;  3rd Qu.:6.00  
 #&gt;  Max.   :7.00  
 #&gt;  NA's   :2699  </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='fu'>prepare_data</span><span class='op'>(</span><span class='va'>democracy</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in h(simpleError(msg, call)): error in evaluating the argument 'object' in selecting a method for function 'summary': could not find function "prepare_data"</span></div><div class='input'>
+</div><div class='output co'>#&gt; <span class='error'>Error in prepare_data(democracy): could not find function "prepare_data"</span></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
