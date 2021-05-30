@@ -1,0 +1,72 @@
+reference:
+- title: "Democracy Datasets"
+  desc: "Datasets with measures of democracy."
+- contents:
+  - anckar
+  - anrr
+  - arat_pmm
+  - blm
+  - bmr
+  - bnr
+  - bollen_pmm
+  - bti
+  - doorenspleet
+  - eiu
+  - extended_uds
+  - fh_pmm
+  - gwf_all
+  - hadenius_pmm
+  - kailitz
+  - LIED
+  - magaloni
+  - mainwaring
+  - munck_pmm
+  - pacl
+  - pacl_update
+  - peps
+  - PIPE
+  - pitf
+  - polityIV
+  - polity_pmm
+  - polyarchy
+  - polyarchy_dimensions
+  - prc_gasiorowski
+  - svmdi
+  - svolik_regime
+  - uds_2014
+  - ulfelder
+  - utip
+  - vanhanen
+  - wahman_teorell_hadenius
+- title: "Download_ functions"
+  desc: >
+    Functions for downloading annually-updated datasets.
+- contents:
+  - starts_with("download_")
+- title: "Redownload_ functions"
+  desc: "Functions for re-downloading other datasets."
+- contents:
+  - starts_with("redownload_")
+- title: "Generate_ functions"
+  desc: "Functions for generating other democracy datasets."
+- contents:
+  - starts_with("generate_")
+- title: "Latent Variable Models functions"
+  desc: "Functions for producing latent variable models of democracy."
+- contents:
+  - matches("prepare_democracy")
+  - matches("prob_")
+  - matches("democracy_scores")
+  - matches("cutpoints|raterinfo")
+- title: "Information functions"
+  desc: "Functions and datasets with citation and other info about the datasets in this package."
+- contents:
+  - matches("cite|bibliography|_info")
+- title: "State system functions"
+  desc: "Functions for manipulating and fixing country-year panels with state system information."
+- contents:
+  - matches("create_panel|country_year")
+- title: "Utility functions"
+  desc: "Utility functions for working with country-year democracy data."
+- contents:
+  - matches("remove_empty_rows")

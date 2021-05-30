@@ -12,3 +12,5 @@
 ^cache$
 ^\.github$
 ^vignettes/articles$
+^_pkgdown\.yml$
+^pkgdown$
