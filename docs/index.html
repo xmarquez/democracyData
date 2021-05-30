@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Access and manipulate most available democracy datasets  • democracyData</title>
+<title>Access and Manipulate Most Available Democracy Datasets  • democracyData</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Access and manipulate most available democracy datasets ">
+<script src="pkgdown.js"></script><meta property="og:title" content="Access and Manipulate Most Available Democracy Datasets ">
 <meta property="og:description" content="Contains a number of functions to access and manipulate a large number of democracy datasets, many of historical interest. It also contains a number of functions to determine membership of a country in standard membership lists of the state system (according to Gleditsch and Ward, Correlates of War, or Polity).">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -911,7 +911,7 @@
 <div id="state-system-functions" class="section level2">
 <h2 class="hasAnchor">
 <a href="#state-system-functions" class="anchor"></a>State system functions</h2>
-<p>The package also includes a couple of other convenience functions to work with historical democracy data and determine state system membership. The first is <code>country_year_coder</code>, which works like the <a href="https://cran.r-project.org/web/packages/countrycode/index.html"><code>countrycode</code></a> package, except that it is able to determine state system information for country-year pairs. Suppose you have this dataset:</p>
+<p>The package also includes a couple of other convenience functions to work with historical democracy data and determine state system membership. The first is <code>country_year_coder</code>, which works like the <a href="https://CRAN.R-project.org/package=countrycode"><code>countrycode</code></a> package, except that it is able to determine state system information for country-year pairs. Suppose you have this dataset:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_weird_democracy_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>country <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Germany"</span>, <span class="st">"Germany"</span>, <span class="st">"Germany"</span>, <span class="st">"Germany"</span>, <span class="st">"East Germany"</span>,
                                     <span class="st">"Federal Republic of Germany"</span>,
@@ -934,22 +934,22 @@
 <span class="co">#&gt; # A tibble: 16 x 3</span>
 <span class="co">#&gt;    country                      year my_measure</span>
 <span class="co">#&gt;    &lt;chr&gt;                       &lt;dbl&gt;      &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Germany                      2015     -0.582</span>
-<span class="co">#&gt;  2 Germany                      1930      0.404</span>
-<span class="co">#&gt;  3 Germany                      1970      0.466</span>
-<span class="co">#&gt;  4 Germany                      1945      1.05 </span>
-<span class="co">#&gt;  5 East Germany                 1949     -1.55 </span>
-<span class="co">#&gt;  6 Federal Republic of Germany  1992      0.506</span>
-<span class="co">#&gt;  7 Somaliland                   1990     -0.705</span>
-<span class="co">#&gt;  8 Somalia                      1990      0.814</span>
-<span class="co">#&gt;  9 Palestine                    1940     -0.875</span>
-<span class="co">#&gt; 10 Russia                       1917      0.607</span>
-<span class="co">#&gt; 11 Russia                       1912      1.13 </span>
-<span class="co">#&gt; 12 USSR                         1922      0.734</span>
-<span class="co">#&gt; 13 Republic of Vietnam          1975      1.04 </span>
-<span class="co">#&gt; 14 Yugoslavia                   1990      1.22 </span>
-<span class="co">#&gt; 15 Yugoslavia                   1991     -0.726</span>
-<span class="co">#&gt; 16 Vietnam, South               1954      2.02</span></code></pre></div>
+<span class="co">#&gt;  1 Germany                      2015     1.64  </span>
+<span class="co">#&gt;  2 Germany                      1930    -0.869 </span>
+<span class="co">#&gt;  3 Germany                      1970    -0.273 </span>
+<span class="co">#&gt;  4 Germany                      1945     1.61  </span>
+<span class="co">#&gt;  5 East Germany                 1949     0.141 </span>
+<span class="co">#&gt;  6 Federal Republic of Germany  1992    -1.12  </span>
+<span class="co">#&gt;  7 Somaliland                   1990    -0.929 </span>
+<span class="co">#&gt;  8 Somalia                      1990     1.38  </span>
+<span class="co">#&gt;  9 Palestine                    1940     1.38  </span>
+<span class="co">#&gt; 10 Russia                       1917     0.462 </span>
+<span class="co">#&gt; 11 Russia                       1912    -1.20  </span>
+<span class="co">#&gt; 12 USSR                         1922    -1.06  </span>
+<span class="co">#&gt; 13 Republic of Vietnam          1975     1.51  </span>
+<span class="co">#&gt; 14 Yugoslavia                   1990    -1.49  </span>
+<span class="co">#&gt; 15 Yugoslavia                   1991    -1.53  </span>
+<span class="co">#&gt; 16 Vietnam, South               1954     0.0118</span></code></pre></div>
 <p>and you then want to add state system information. <code>country_year_coder</code> does that for you!</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_weird_democracy_data</span> <span class="op">&lt;-</span> <span class="va">my_weird_democracy_data</span> <span class="op">%&gt;%</span>
@@ -1001,7 +1001,7 @@
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="right">2015</td>
-<td align="right">-0.5821669</td>
+<td align="right">1.6397393</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -1015,7 +1015,7 @@
 <tr class="even">
 <td align="left">Germany</td>
 <td align="right">1930</td>
-<td align="right">0.4036808</td>
+<td align="right">-0.8689863</td>
 <td align="left">Germany (Prussia)</td>
 <td align="right">255</td>
 <td align="right">255</td>
@@ -1029,7 +1029,7 @@
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="right">1970</td>
-<td align="right">0.4664147</td>
+<td align="right">-0.2725227</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -1043,7 +1043,7 @@
 <tr class="even">
 <td align="left">Germany</td>
 <td align="right">1945</td>
-<td align="right">1.0471859</td>
+<td align="right">1.6125745</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -1057,7 +1057,7 @@
 <tr class="odd">
 <td align="left">East Germany</td>
 <td align="right">1949</td>
-<td align="right">-1.5537575</td>
+<td align="right">0.1413358</td>
 <td align="left">German Democratic Republic</td>
 <td align="right">265</td>
 <td align="right">265</td>
@@ -1071,7 +1071,7 @@
 <tr class="even">
 <td align="left">Federal Republic of Germany</td>
 <td align="right">1992</td>
-<td align="right">0.5062060</td>
+<td align="right">-1.1222234</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -1085,7 +1085,7 @@
 <tr class="odd">
 <td align="left">Somaliland</td>
 <td align="right">1990</td>
-<td align="right">-0.7047967</td>
+<td align="right">-0.9294183</td>
 <td align="left">Somaliland</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -1099,7 +1099,7 @@
 <tr class="even">
 <td align="left">Somalia</td>
 <td align="right">1990</td>
-<td align="right">0.8135574</td>
+<td align="right">1.3801849</td>
 <td align="left">Somalia</td>
 <td align="right">520</td>
 <td align="right">520</td>
@@ -1113,7 +1113,7 @@
 <tr class="odd">
 <td align="left">Palestine</td>
 <td align="right">1940</td>
-<td align="right">-0.8750957</td>
+<td align="right">1.3766246</td>
 <td align="left">British Mandate of Palestine</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -1127,7 +1127,7 @@
 <tr class="even">
 <td align="left">Russia</td>
 <td align="right">1917</td>
-<td align="right">0.6073784</td>
+<td align="right">0.4619202</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1141,7 +1141,7 @@
 <tr class="odd">
 <td align="left">Russia</td>
 <td align="right">1912</td>
-<td align="right">1.1297152</td>
+<td align="right">-1.2001675</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1155,7 +1155,7 @@
 <tr class="even">
 <td align="left">USSR</td>
 <td align="right">1922</td>
-<td align="right">0.7344972</td>
+<td align="right">-1.0636189</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1169,7 +1169,7 @@
 <tr class="odd">
 <td align="left">Republic of Vietnam</td>
 <td align="right">1975</td>
-<td align="right">1.0443878</td>
+<td align="right">1.5085475</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
@@ -1183,7 +1183,7 @@
 <tr class="even">
 <td align="left">Yugoslavia</td>
 <td align="right">1990</td>
-<td align="right">1.2163298</td>
+<td align="right">-1.4883592</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1197,7 +1197,7 @@
 <tr class="odd">
 <td align="left">Yugoslavia</td>
 <td align="right">1991</td>
-<td align="right">-0.7260127</td>
+<td align="right">-1.5274119</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1211,7 +1211,7 @@
 <tr class="even">
 <td align="left">Vietnam, South</td>
 <td align="right">1954</td>
-<td align="right">2.0240111</td>
+<td align="right">0.0117830</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
@@ -1280,8 +1280,8 @@
 <p>Bowman K, Lehoucq F, Mahoney J (2005). “Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America.” <em>Comparative Political Studies</em>, <em>38</em>(8), 939-970. doi: 10.1177/0010414005277083 (URL: <a href="https://doi.org/10.1177/0010414005277083" class="uri">https://doi.org/10.1177/0010414005277083</a>).</p>
 <p>Cheibub J, Gandhi J, Vreeland J (2010). “Democracy and dictatorship revisited.” <em>Public Choice</em>, <em>143</em>(1), 67-101. doi: 10.1007/s11127-009-9491-2 (URL: <a href="https://doi.org/10.1007/s11127-009-9491-2" class="uri">https://doi.org/10.1007/s11127-009-9491-2</a>).</p>
 <p>Coppedge M, Alvarez A, Maldonado C (2008). “Two Persistent Dimensions of Democracy: Contestation and Inclusiveness.” <em>The journal of politics</em>, <em>70</em>(03), 632-647. doi: 10.1017/S0022381608080663 (URL: <a href="https://doi.org/10.1017/S0022381608080663" class="uri">https://doi.org/10.1017/S0022381608080663</a>).</p>
-<p>Coppedge M, Gerring J, Lindberg SI, Skaaning S, Jan Teorell wDA, Bernhard M, Fish MS, Glynn A, Hicken A, Knutsen CH, Kelly McMann, Paxton P, Pemstein D, Staton J, Zimmerman B, Andersson F, Valeriya Mechkova, Miri F (2016). “V-Dem Codebook v6.”</p>
-<p>Coppedge M, Gerring J, Lindberg SI, Skaaning S, Teorell J, Altman D, Bernhard M, Fish MS, Glynn A, Hicken A, Knutsen CH, Marquardt K, McMann K, Miri F, Paxton P, Pemstein D, Staton J, Tzelgov E, Wang Y, Zimmerman B (2016). “V-Dem <span class="math display"><em>C</em><em>o</em><em>u</em><em>n</em><em>t</em><em>r</em><em>y</em> − <em>Y</em><em>e</em><em>a</em><em>r</em>/<em>C</em><em>o</em><em>u</em><em>n</em><em>t</em><em>r</em><em>y</em> − <em>D</em><em>a</em><em>t</em><em>e</em></span> Dataset, version 6.1.” &lt;URL: <a href="https://www.v-dem.net/en/data/data-version-6-1/" class="uri">https://www.v-dem.net/en/data/data-version-6-1/</a>&gt;.</p>
+<p>Coppedge M, Gerring J, Knutsen CH, Lindberg SI, Teorell J, Alizada N, Altman D, Bernhard M, Cornell A, Fish MS, Gastaldi L, Gjerlow H, Glynn A, Hicken A, Hindle G, Ilchenko N, Krusell J, uhrmann AL, Maerz SF, Marquardt KL, McMann K, Mechkova V, Medzihorsky J, Paxton P, Pemstein D, Pernes J, von RÃ¶mer J, Seim B, Sigman R, Skaaning S, Staton J, SundstrÃ¶m A, Tzelgov E, Wang Y, Wig T, Wilson S, Ziblatt. D (2021). “V-Dem Country-Year/Country-Date Dataset v11.” &lt;URL: <a href="https://www.v-dem.net/en/data/data-version-11/" class="uri">https://www.v-dem.net/en/data/data-version-11/</a>&gt;.</p>
+<p>Coppedge M, Gerring J, Knutsen CH, Lindberg SI, Teorell J, Altman D, Bernhard M, Cornell A, Fish MS, Gastaldi L, Gjerlow H, Glynn A, Hicken A, LÃ¼hrmann A, Maerz SF, Marquardt KL, McMann K, Mechkova V, Paxton P, Pemstein D, von RÃ¶mer J, Seim B, Sigman R, Skaaning S, Staton J, SundtrÃ¶m A, Tzelgov E, Uberti L, Wang Y, Wig T, Ziblatt D (2021). “V-Dem Codebook v11.” &lt;URL: <a href="https://www.v-dem.net/en/data/data-version-11/" class="uri">https://www.v-dem.net/en/data/data-version-11/</a>&gt;.</p>
 <p>Coppedge M, Reinicke WH (1990). “Measuring Polyarchy.” <em>Studies in Comparative International Development</em>, <em>25</em>(1), 51-72. doi: 10.1007/Bf02716905 (URL: <a href="https://doi.org/10.1007/Bf02716905" class="uri">https://doi.org/10.1007/Bf02716905</a>).</p>
 <p>Doorenspleet R (2000). “Reassessing the Three Waves of Democratization.” <em>World Politics</em>, <em>52</em>(03), 384-406. doi: 10.1017/S0043887100016580 (URL: <a href="https://doi.org/10.1017/S0043887100016580" class="uri">https://doi.org/10.1017/S0043887100016580</a>).</p>
 <p>Freedom House (2021). “Freedom in the World 2021: Democracy under Siege.” Freedom House. &lt;URL: <a href="https://freedomhouse.org/report/freedom-world/2021/democracy-under-siege" class="uri">https://freedomhouse.org/report/freedom-world/2021/democracy-under-siege</a>&gt;.</p>
@@ -1291,6 +1291,7 @@
 <p>Goldstone J, Bates R, Epstein D, Gurr T, Lustik M, Marshall M, Ulfelder J, Woodward M (2010). “A Global Model for Forecasting Political Instability.” <em>American Journal of Political Science</em>, <em>54</em>(1), 190-208. doi: 10.1111/j.1540-5907.2009.00426.x (URL: <a href="https://doi.org/10.1111/j.1540-5907.2009.00426.x" class="uri">https://doi.org/10.1111/j.1540-5907.2009.00426.x</a>).</p>
 <p>Gründler K, Krieger T (2016). “Democracy and growth: Evidence from a machine learning indicator.” <em>European Journal of Political Economy</em>, <em>45</em>, 85-107. doi: 10.1016/j.ejpoleco.2016.05.005 (URL: <a href="https://doi.org/10.1016/j.ejpoleco.2016.05.005" class="uri">https://doi.org/10.1016/j.ejpoleco.2016.05.005</a>), &lt;URL: <a href="http://www.sciencedirect.com/science/article/pii/S0176268016300222" class="uri">http://www.sciencedirect.com/science/article/pii/S0176268016300222</a>&gt;.</p>
 <p>Gründler K, Krieger T (2018). “Machine Learning Indices, Political Institutions, and Economic Development.” CESifo Group Munich. &lt;URL: <a href="https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf" class="uri">https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf</a>&gt;.</p>
+<p>Gründler K, Krieger T (2021). “Using Machine Learning for measuring democracy: A practitioners guide and a new updated dataset for 186 countries from 1919 to 2019.” <em>European Journal of Political Economy</em>, 102-47. doi: 10.1016/j.ejpoleco.2021.102047 (URL: <a href="https://doi.org/10.1016/j.ejpoleco.2021.102047" class="uri">https://doi.org/10.1016/j.ejpoleco.2021.102047</a>).</p>
 <p>Hadenius A (1992). <em>Democracy and development</em>. Cambridge University Press, New York.</p>
 <p>Hadenius A, Teorell J (2007). “Pathways from Authoritarianism.” <em>Journal of Democracy</em>, <em>18</em>(1), 143-157.</p>
 <p>Hsu S (2008). “The Effect of Political Regimes on Inequality, 1963-2002.” <em>UTIP Working Paper</em>.</p>
@@ -1299,6 +1300,7 @@
 <p>Magaloni B, Chu J, Min E (2013). “Autocracies of the World, 1950-2012 (Version 1.0).” &lt;URL: <a href="http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset" class="uri">http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset</a>&gt;.</p>
 <p>Mainwaring S, Brinks D, Pérez-Liñán A (2001). “Classifying Political Regimes in Latin America.” <em>Studies in Comparative International Development</em>, <em>36</em>(1), 37-65. doi: 10.1007/bf02687584 (URL: <a href="https://doi.org/10.1007/bf02687584" class="uri">https://doi.org/10.1007/bf02687584</a>).</p>
 <p>Mainwaring S, Pérez-Liñán A, Brinks D (2014). “Political Regimes in Latin America, 1900-2007 (with Daniel Brinks).” In <em>Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall</em>, chapter Political Regimes in Latin America, 1900-2007 (with Daniel Brinks). Cambridge University Press, New York.</p>
+<p>Marquez X (2016). “A Quick Method for Extending the Unified Democracy Scores.” <em>Available at SSRN 2753830</em>. &lt;URL: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830" class="uri">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830</a>&gt;.</p>
 <p>Márquez X (2020). “democracyData: A package for accessing and manipulating existing measures of democracy.” &lt;URL: <a href="http://github.com/xmarquez/democracyData" class="uri">http://github.com/xmarquez/democracyData</a>&gt;.</p>
 <p>Marshall MG, Gurr TR (2020). <em>Polity 5: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users’ Manual.</em>.</p>
 <p>Marshall MG, Gurr TR, Jaggers K (2019). <em>Polity IV Project: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users’ Manual.</em>.</p>
