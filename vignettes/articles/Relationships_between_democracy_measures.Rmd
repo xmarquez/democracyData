@@ -281,7 +281,7 @@ long_data %>%
   theme(legend.position = "bottom")
 ```
 
-Moreover, the average correlation between democracy measures varies substantially year by year, due in part to the particular states that are measured on any given year, the availability of historical information, and the prevalence of hybrid or ambiguous regime forms. It is thus high in the late 18th and early 19th century, as most countries were non-democratic and relatively easy to classify (and there were fewer independent states); it becomes lower in the 19th century, with more countries in difficult-to-classify hybrid forms, and more difficulties for researchers in finding appropriate historical information; and it increases in the mid- twentieth century, where most of the classificatory effort has been focused. It is worth noting that correlations also dip after the Cold War, as more countries take on hybrid forms.
+Moreover, the average correlation between democracy measures varies substantially year by year, due in part to the particular states that are measured on any given year, the availability of historical information, and the prevalence of hybrid or ambiguous regime forms. It is thus high in the late 18th and early 19th century, as most countries were clearly non-democratic and relatively easy to classify (and there were fewer independent states); it becomes lower in the 19th century, with more countries in difficult-to-classify hybrid forms, and more difficulties for researchers in finding appropriate historical information; and it increases in the mid-twentieth century, where most of the classificatory effort has been focused. It is worth noting that correlations also dip after the Cold War, as more countries take on difficult to classify hybrid forms.
 
 ```{r}
 
@@ -359,6 +359,6 @@ long_data %>%
   labs(y = "Rescaled measure (0-1)")
 ```
 
-There is clearly a great deal of uncertainty in these measures for many country-years, though the overall patterns are usually clear. Two ways of aggregating these measures to deal with uncertainty are explored in two other articles in this website: [Latent Variable Indexes](Replicating_and_extending_the_UD_scores.html) (see `article("Replicating_and_extending_the_UD_scores")`) and Machine-Learning predictions.
+There is clearly a great deal of uncertainty in these measures for many country-years, though the overall patterns are usually clear. Two ways of aggregating these measures to deal with uncertainty are explored in other articles in this website: [Latent Variable Indexes](Replicating_and_extending_the_UD_scores.html) -- see vignette("Replicating_and_extending_the_UD_scores") -- and Machine-Learning predictions (article still to come).
 
 ## References
