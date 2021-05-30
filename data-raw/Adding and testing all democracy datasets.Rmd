@@ -37,6 +37,20 @@ anckar <- redownload_anckar(verbose = verbose,
 usethis::use_data(anckar, overwrite = TRUE)
 
 ```
+
+## ANRR
+
+```{r anrr, results = 'asis'}
+
+cite_dataset("anrr")
+
+anrr <- prepare_anrr(verbose = verbose,
+                     include_in_output = include_in_output)
+
+usethis::use_data(anrr, overwrite = TRUE)
+
+```
+
 ## Arat
 
 ```{r arat, results = 'asis'}
@@ -483,6 +497,12 @@ cite_dataset("uds")
 #                            include_in_output = include_in_output)
 
 # usethis::use_data(uds_2014, uds_2011, uds_2010, overwrite = TRUE)
+
+cite_dataset("extended_uds")
+
+extended_uds <- generate_extended_uds(verbose = verbose)
+
+usethis::use_data(extended_uds, overwrite = TRUE)
 ```
 
 # Ulfelder
