@@ -1746,7 +1746,7 @@ redownload_bti <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source Bjørnskov, C. and M. Rode (2020). "Regime types and regime change: A
+#' @source Bjornskov, C. and M. Rode (2020). "Regime types and regime change: A
 #'   new dataset on democracy, coups, and political institutions." The Review of
 #'   International Organizations 15(2): 531-551. Available at
 #'   \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}
@@ -1760,7 +1760,7 @@ redownload_pacl_update <- function(url,
                                    return_raw = FALSE,
                                    ...) {
 
-  ctryname <- year <- cowcode <- NULL
+  ctryname <- year <- cowcode <- country_isocode <- country <- NULL
 
   if(missing(url)) {
     url <- "http://www.christianbjoernskov.com/wp-content/uploads/2020/09/Bj%C3%B8rnskov-Rode-integrated-dataset-v3.2.xlsx"
@@ -1782,7 +1782,7 @@ redownload_pacl_update <- function(url,
   if(verbose) {
     message(sprintf("Original dataset has %d rows",
                     nrow(data)))
-    message("Processing the Bjørnskov and Rode PACL update data - adding state system info...")
+    message("Processing the Bjornskov and Rode PACL update data - adding state system info...")
   }
 
   pacl_update <- data %>%
@@ -1796,7 +1796,7 @@ redownload_pacl_update <- function(url,
     message(sprintf("Resulting dataset after processing has %d rows.",
                     nrow(pacl_update)))
     if(nrow(data) != nrow(pacl_update)) {
-      message("Note: the number of rows in the processed Bjørnskov and Rode PACL update is different from the number of rows in the original data.")
+      message("Note: the number of rows in the processed Bjornskov and Rode PACL update is different from the number of rows in the original data.")
     }
   }
 
