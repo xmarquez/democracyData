@@ -3,6 +3,7 @@
 \docType{data}
 \name{LIED}
 \alias{LIED}
+\alias{lied}
 \title{The Lexical Index of Democracy, v. 5.2}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 21365 rows and 19 columns.
