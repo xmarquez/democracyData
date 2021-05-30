@@ -1,0 +1,364 @@
+---
+title: "Relationships between democracy measures"
+bibliography: bibfile.bib
+biblio-style: american-political-science-review.csl
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  cache = TRUE,
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+```
+
+```{r setup, cache=FALSE}
+library(democracyData)
+library(tidyverse)
+library(vdem)
+library(corrr)
+library(factoextra)
+library(ggridges)
+theme_set(theme_bw())
+```
+
+```{r}
+
+long_data <- generate_democracy_scores_dataset(verbose = FALSE)
+
+vdem_main <- extract_vdem(section_number = 2) %>%
+  mutate(extended_country_name = ifelse(is.na(extended_country_name),
+                                        vdem_country_name, extended_country_name))
+
+vdem_main <- vdem_main %>%
+  select(extended_country_name, GWn, year, v2x_polyarchy, 
+         v2x_libdem, v2x_partipdem, v2x_delibdem, v2x_egaldem,
+         v2x_api, v2x_mpi) %>%
+  pivot_longer(starts_with("v2x"), names_to = "measure", values_to = "value") %>%
+  filter(!is.na(value)) %>%
+  mutate(value_rescaled = value) %>%
+  group_by(measure, extended_country_name) %>%
+  mutate(coverage = n(),
+         dataset = "vdem",
+         index_type = "continuous") %>%
+  ungroup()
+
+long_data <- long_data %>%
+  group_by(measure) %>%
+  mutate(value_rescaled = scales::rescale(value, to = c(0,1))) %>%
+  group_by(measure, extended_country_name) %>%
+  mutate(coverage = n()) %>%
+  ungroup() 
+
+long_data <- long_data %>%
+  select(-cown, -in_GW_system) %>%
+  bind_rows(vdem_main)
+
+wars <- tibble(xmin = c(1775, 1789, 1914, 1939, 1989), 
+                      xmax = c(1787, 1810, 1918, 1945, 1991),
+                      ymin = -Inf, ymax = Inf)
+
+state_system <- long_data %>% 
+  select(extended_country_name, year, GWn) %>% 
+  distinct() %>%
+  rename(country = extended_country_name,
+         GWn_old = GWn) %>%
+  country_year_coder(country, year, GWn_old, code_type = "GWn", 
+                     include_in_output = c("extended_country_name", "GWn", "in_GW_system",
+                                           "extended_region", "extended_continent"),
+                     verbose = FALSE) %>%
+  select(country, year, in_GW_system, extended_region, extended_continent) %>%
+  distinct() %>%
+  rename(extended_country_name = country)
+
+long_data <- left_join(long_data, state_system)
+
+long_data <- distinct(long_data)
+
+duplicated <- long_data %>% 
+  group_by(extended_country_name, GWn, year, measure) %>% 
+  filter(n() > 1)
+
+duplicated <- duplicated %>%
+  slice_tail(n = 1)
+
+long_data <- anti_join(long_data, duplicated)
+```
+
+Most measures of democracy are highly correlated. But these correlations can nevertheless vary quite a bit across measures, years, and countries.
+
+## Dichotomous Measures of Democracy
+
+Consider first dichotomous measures of democracy, which classify countries into two categories: democracies and non-democracies. These are very highly correlated (median pairwise correlation coefficient = 0.84).
+
+```{r, fig.height=10}
+
+dichotomous <- long_data %>%
+  filter(index_type == "dichotomous") %>%
+  pivot_wider(id_cols = extended_country_name:year, names_from = measure, values_from = value_rescaled) %>%
+  select(ulfelder_democracy_extended:bnr) %>%
+  corrr::correlate()
+
+dichotomous %>% 
+  rearrange(method = "HC") %>% 
+  shave() %>%
+  rplot(print_cor = TRUE) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  coord_fixed() +
+  scale_color_gradient2(midpoint = median(dichotomous %>% select(-term) %>% as.matrix(), na.rm = TRUE)) +
+  labs(title = "Pairwise correlations among all dichotomous measures of democracy",
+       subtitle = str_glue("Median r is {median(dichotomous %>% select(-term) %>% as.matrix(), na.rm = TRUE) %>% round(2)}. Higher than median correlations in blue."))
+```
+
+```{r}
+dichotomous %>%
+  stretch(na.rm = TRUE) %>%
+  mutate(median = median(r)) %>%
+  ggplot(aes(x = r)) +
+  geom_density() +
+  geom_rug() +
+  geom_vline(aes(xintercept = unique(median)), color = "red") +
+  labs(title = "Distribution of pairwise correlation coefficients among all dichotomous measures")  +
+  scale_color_gradient2(midpoint = median(dichotomous %>% select(-term) %>% as.matrix(), na.rm = TRUE)) +
+  labs(title = "Pairwise correlations among all dichotomous measures of democracy",
+       subtitle = str_glue("Median r is {median(dichotomous %>% select(-term) %>% as.matrix(), na.rm = TRUE) %>% round(2)}."))
+```
+
+Nevertheless, a few of these measures are poorly correlated with the rest, in particular, the [PIPE](../../reference/PIPE.html) [@PIPE2013] and [bnr](../../reference/bnr.html) [@bnr2001] measures. The [PIPE](../../reference/PIPE.html) measure of democracy is likely not properly constructed; there are no clear instructions for replicating it in the original documentation, and I can't be sure I succeeded in replicating it. 
+
+The [bnr](../../reference/bnr.html) measure is different from most other dichotomous measures of democracy because it was constructed with survival analysis in mind, and hence only includes democracies; when extended to non-democracies (in [bnr_extended](../../reference/bnr.html)) it is well-correlated with the rest. [utip](../../reference/utip.html) [@utip2008] and [doorenspleet](../../reference/doorenspleet.html) [@doorenspleet2000] also have below average correlations with the other measures; these are somewhat idiosyncratic measures that are not widely used, and doorenspleet in particular is based on [Polity](../../reference/polityIV.html) but adds an "inclusion" criterion, whereas most of the other dichotomous measures are based on [pacl](../../reference/pacl.html) [@pacl2010].
+
+## Trichotomous Measures of Democracy
+
+There are a number of measures of democracy that distinguish between democracy, non-democracy, and some hybrid or intermediate category. These trichotomous measures are also highly correlated.
+
+```{r}
+
+trichotomous <- long_data %>%
+  filter(index_type == "trichotomous") %>%
+  pivot_wider(id_cols = extended_country_name:year, names_from = measure, values_from = value_rescaled) %>%
+  select(-extended_country_name:-year) %>%
+  corrr::correlate()
+
+trichotomous %>%
+  rearrange(method = "HC") %>%
+  shave() %>%
+  rplot(print_cor = TRUE) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  coord_fixed() +
+  scale_color_gradient2(midpoint = median(trichotomous %>% select(-term) %>% as.matrix(), na.rm = TRUE)) +
+  labs(title = "Pairwise correlations among all trichotomous measures of democracy",
+       subtitle = str_glue("Median r is {median(trichotomous %>% select(-term) %>% as.matrix(), na.rm = TRUE) %>% round(2)}. Higher than median correlations in blue."))
+
+```
+
+All of these are specialist measures that are no longer maintained, but remain of historical interest. The lowest correlation levels are with the [Kailitz](../../reference/kailitz.html) trichotomous index calculated by taking "electoral autocracy" as the middle category.
+
+## Ordinal/Graded Measures of Democracy
+
+There are also measures that distinguish among different "grades" of democracy, though the intervals between grades may not have a consistent meaning. For example, [Freedom House](../../reference/download_fh.html) [@fh2020] distinguishes 14 different "grades" between the most unfree and the most free category, but it is not clear that the difference between one grade and another means the same across all grades. In any case, these measures are highly correlated among themselves.
+
+```{r, fig.height=8}
+ordinal <- long_data %>%
+  filter(index_type == "ordinal") %>%
+  pivot_wider(id_cols = extended_country_name:year, names_from = measure, values_from = value_rescaled) %>%
+  select(-extended_country_name:-year) %>%
+  corrr::correlate()
+
+ordinal %>% 
+  rearrange(method = "HC") %>%
+  shave() %>%
+  rplot(print_cor = TRUE) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  coord_fixed()  +
+  scale_color_gradient2(midpoint = median(ordinal %>% select(-term) %>% as.matrix(), na.rm = TRUE)) +
+  labs(title = "Pairwise correlations among all ordinal/graded measures of democracy",
+       subtitle = str_glue("Median r is {median(ordinal %>% select(-term) %>% as.matrix(), na.rm = TRUE) %>% round(2)}. Higher than median correlations in blue."))
+
+
+```
+
+## Continous Measures of Democracy
+
+Finally, there are a number of continuous measures of democracy (usually in the 0-1 range), which like other measures, are very highly correlated.
+
+```{r, fig.height=10}
+
+continuous <- long_data %>%
+  filter(index_type == "continuous") %>%
+  pivot_wider(id_cols = extended_country_name:year, names_from = measure, values_from = value_rescaled) %>%
+  select(-extended_country_name:-year) %>%
+  corrr::correlate()
+
+
+continuous %>% 
+  rearrange(method = "HC") %>%
+  shave() %>%
+  rplot(print_cor = TRUE) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  coord_fixed() +
+  scale_color_gradient2(midpoint = median(continuous %>% select(-term) %>% as.matrix(), na.rm = TRUE)) +
+  labs(title = "Pairwise correlations among all continuous measures of democracy",
+       subtitle = str_glue("Median r is {median(continuous %>% select(-term) %>% as.matrix(), na.rm = TRUE) %>% round(2)}. Higher than median correlations in blue."))
+
+```
+
+## All Correlations
+
+The median correlation coefficient between any two measures (of any type) is 0.84.
+
+```{r}
+all_data <- long_data %>%
+  pivot_wider(id_cols = extended_country_name:year, names_from = measure, values_from = value_rescaled) %>%
+  select(-extended_country_name, -GWn, -year) %>%
+  correlate()
+```
+
+```{r}
+all_data %>%
+  stretch(na.rm = TRUE) %>%
+  mutate(median = median(r)) %>%
+  ggplot(aes(x = r)) +
+  geom_density() +
+  geom_rug() +
+  geom_vline(aes(xintercept = unique(median)), color = "red") +
+  labs(title = "Distribution of pairwise correlation coefficients among all measures (rescaled to 0-1)",
+       subtitle = str_glue("Median r is {median(all_data %>% select(-term) %>% as.matrix(), na.rm = TRUE) %>% round(2)}."))
+
+```
+
+
+A simple hierarchical cluster analysis can help us to better visualize the relationships among these measures. 
+
+At the top of the figure below, we find the main outlier, the measure of democracy from [PIPE](../../reference/PIPE.html) [@PIPE2013]. The next cluster includes a set of continous measures, mostly from V-Dem [@vdem11dataset], but also the [vanhanen](../../reference/vanhanen.html) measure [@vanhanen2014] that includes information about participation. These are "thicker" measures of democracy. The bottom two clusters, by contrast, contain measures derived from [pacl](../../reference/pacl.html) [@pacl2010], including [bmr](../../reference/bmr.html) [@bmr2007], [gwf](../../reference/gwf_all.html) [@gwf2014] and a recent update of [pacl](../../reference/pacl.html), [pacl_update](../../reference/pacl_update.html) [@pacl_update_2020], as well as measures derived from [polity](../../reference/polityIV.html) [@polity2019], including [peps](../../reference/peps.html) [@peps2006], latent variable indexes like [uds](../../reference/uds_2014.html), which are heavily influenced by the inclusion of [polity](../../reference/polityIV.html) scores [@pmm2010uds2010], and [pitf](../../reference/pitf.html) scores [@pitf2015], which are built from [polity](../../reference/polityIV.html).
+
+```{r, fig.height=14}
+
+dist_matrix <- long_data %>%
+  filter(index_type %in% c("ordinal", "dichotomous", "trichotomous") | str_detect(measure, "v2x|PEPS|svmdi|vanhanen|uds|polyarchy")) %>%
+  pivot_wider(id_cols = extended_country_name:year, names_from = measure, values_from = value_rescaled) %>%
+  select(-extended_country_name:-year) %>%
+  as.matrix() %>%
+  t() %>%
+  dist()
+
+clusters <- hclust(dist_matrix)
+
+h <- clusters$height
+
+clusters <- dendextend::ladderize(as.dendrogram(clusters))
+
+fviz_dend(clusters, k = 16, k_colors = viridis::viridis(16), horiz = TRUE, rect = TRUE, labels_track_height = 10) +
+  # coord_cartesian(ylim = c(-50,120)) +
+  labs(title = "Hierarchical cluster analysis of most democracy measures")
+
+```
+
+## Variation in per-country and per-year correlations
+
+As noted in the [article on the temporal and geographic coverage of democracy measures](Understanding_the_geographic_and_temporal_coverage_of_existing_democracy_indexes.html), such measures, though highly correlated in general, can disagree substantially in particular cases. Consider the USA. Despite general agreement in these datasets that the USA is basically democratic, different measurements do not agree on when the country first became democratic, or how democratic it actually was at any given point in time.
+
+```{r, fig.height=20}
+long_data %>%
+  filter(extended_country_name == "United States of America") %>%
+  # mutate(measure_country = paste(extended_country_name, measure)) %>%
+  ggplot() +
+  geom_tile(aes(x = year, fill = value_rescaled, y = fct_reorder(measure, coverage))) +
+  labs(fill = "Measure value\n(Rescaled to 0-1)",
+       y = "",
+       title = "Measurements of democracy for the USA")  +
+  geom_rect(data = wars, aes(xmin = xmin, 
+                      xmax = xmax,
+                      ymin = -Inf, ymax = Inf), fill = "red", alpha = 0.3) +
+  scale_fill_viridis_c(direction = -1)  +
+  theme(legend.position = "bottom")
+```
+
+Moreover, the average correlation between democracy measures varies substantially year by year, due in part to the particular states that are measured on any given year, the availability of historical information, and the prevalence of hybrid or ambiguous regime forms. It is thus high in the late 18th and early 19th century, as most countries were non-democratic and relatively easy to classify (and there were fewer independent states); it becomes lower in the 19th century, with more countries in difficult-to-classify hybrid forms, and more difficulties for researchers in finding appropriate historical information; and it increases in the mid- twentieth century, where most of the classificatory effort has been focused. It is worth noting that correlations also dip after the Cold War, as more countries take on hybrid forms.
+
+```{r}
+
+wide_data <- long_data %>%
+  pivot_wider(id_cols = extended_country_name:year, names_from = measure, values_from = value_rescaled) 
+  
+correlations <- wide_data %>%
+  select(-extended_country_name:-year) %>%
+  split(wide_data$year) %>%
+  map_df(~correlate(.) %>% stretch(na.rm = TRUE, remove.dups = TRUE), .id = "year")
+
+correlations %>%
+  mutate(year = as.numeric(year)) %>%
+  ggplot() +
+  stat_summary(fun.data = mean_cl_normal, aes(x = year, y = r)) +
+  labs(title = "Average correlation among democracy measures per year") +
+  geom_rect(data = wars, aes(xmin = xmin, 
+                      xmax = xmax,
+                      ymin = -Inf, ymax = Inf), fill = "red", alpha = 0.3) 
+```
+
+Correlations among measures can also vary substantially within a given country. 
+
+```{r}
+
+correlations_countries <- wide_data %>%
+  select(-extended_country_name:-year) %>%
+  split(wide_data$extended_country_name) %>%
+  map_df(~correlate(.) %>% stretch(na.rm = TRUE, remove.dups = TRUE), .id = "extended_country_name")
+
+correlations_countries %>%
+  filter(str_detect(extended_country_name, "Russia|Venezuela|United States of America|Samoa|Monaco|India|Turkey|^Hungary|Germany"))  %>%
+  ggplot(aes(y = fct_reorder(extended_country_name, r, mean), x = r)) +
+  stat_density_ridges(calc_ecdf = TRUE, quantile_lines = TRUE, quantiles = 2) +
+  geom_rug(aes(color = extended_country_name), show.legend = FALSE) +
+  geom_vline(xintercept = median(correlations_countries$r), color = "red") +
+  labs(y = "", title = "Distribution of pairwise correlation coefficients \namong democracy measures per country",
+       subtitle = str_glue("Selected countries. Median r is {round(median(correlations_countries$r), 2)}"), color = "Country") +
+  theme_ridges() +
+  theme(legend.position = "bottom")
+
+  
+
+```
+
+Here we see that for a country like the USA, the pairwise correlation coefficient between any two measures of democracy ranges from nearly 1 to nearly -1, with a median below 0.5. Small semi-monarchical countries like Monaco are especially susceptible to scholarly disagreements on their level of democracy, though some countries have very decent levels of agreement (e.g., Hungary, Venezuela).
+
+```{r}
+sds <- long_data %>%
+  group_by(extended_country_name, GWn, year) %>%
+  summarise(sd = sd(value_rescaled, na.rm = TRUE),
+            n = n()) %>%
+  filter(!is.na(sd))
+```
+
+We can find the "hardest" countries to classify by looking at the standard deviation of the rescaled measures per year. Here are the top 12 most difficult to classify countries by this measure:
+
+```{r}
+top_countries <- sds %>% 
+  group_by(extended_country_name, GWn) %>% 
+  summarise(sd = mean(sd) * mean(n)) %>% 
+  arrange(desc(sd)) %>%
+  ungroup() %>%
+  slice_head(n = 12) %>%
+  pull(extended_country_name)
+
+long_data %>%
+  filter(extended_country_name %in% top_countries) %>%
+  group_by(extended_country_name, measure) %>%
+  mutate(group = democracyData:::count_sequence_breaks(year)) %>%
+  ggplot(aes(x = year, y = value_rescaled, group = paste(group, measure))) +
+  geom_line(alpha = 0.3) +
+  # geom_smooth(aes(group = extended_country_name)) +
+  facet_wrap(~extended_country_name) +
+  labs(y = "Rescaled measure (0-1)")
+```
+
+There is clearly a great deal of uncertainty in these measures for many country-years, though the overall patterns are usually clear. Two ways of aggregating these measures to deal with uncertainty are explored in two other articles in this website: [Latent Variable Indexes](Replicating_and_extending_the_UD_scores.html) (see `article("Replicating_and_extending_the_UD_scores")`) and Machine-Learning predictions.
+
+## References
