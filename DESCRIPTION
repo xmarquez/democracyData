@@ -1,6 +1,6 @@
 Package: democracyData
 Type: Package
-Title: Access and manipulate most available democracy datasets 
+Title: Access and Manipulate Most Available Democracy Datasets 
 Version: 0.3.0
 Description: Contains a number of functions to access and manipulate a large number of democracy datasets, many of historical interest. It also contains a number of functions to determine membership of a country in standard membership lists of the state system (according to Gleditsch and Ward, Correlates of War, or Polity).
 Authors@R: 
@@ -32,6 +32,7 @@ RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
 LazyData: true
+LazyDataCompression: bzip2 
 Suggests: 
     testthat,
     rmarkdown,
