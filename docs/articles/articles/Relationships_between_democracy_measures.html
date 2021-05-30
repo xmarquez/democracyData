@@ -102,18 +102,18 @@
 <div id="dichotomous-measures-of-democracy" class="section level2">
 <h2 class="hasAnchor">
 <a href="#dichotomous-measures-of-democracy" class="anchor"></a>Dichotomous Measures of Democracy</h2>
-<p>Consider first dichotomous measures of democracy, which classify countries into two categories: democracies and non-democracies.</p>
+<p>Consider first dichotomous measures of democracy, which classify countries into two categories: democracies and non-democracies. These are very highly correlated (median pairwise correlation coefficient = 0.84).</p>
 <p><img src="Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
 <p><img src="Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 <p>Nevertheless, a few of these measures are poorly correlated with the rest, in particular, the <a href="../../reference/PIPE.html">PIPE</a> <span class="citation">(Przeworski 2013)</span> and <a href="../../reference/bnr.html">bnr</a> <span class="citation">(Bernhard, Nordstrom, and Reenock 2001)</span> measures. The <a href="../../reference/PIPE.html">PIPE</a> measure of democracy is likely not properly constructed; there are no clear instructions for replicating it in the original documentation, and I can’t be sure I succeeded in replicating it.</p>
-<p>The <a href="../../reference/bnr.html">bnr</a> measure is different from most other dichotomous measures of democracy because it was constructed with survival analysis in mind, and hence only includes democracies; when extended to non-democracies (in <a href="../../reference/bnr.html">bnr_extended</a>) it is well-correlated with the rest. <a href="../../reference/utip.html">utip</a> <span class="citation">(Hsu 2008)</span> and <a href="../../reference/doorenspleet.html">doorenspleet</a> <span class="citation">(Doorenspleet 2000)</span> also have below average correlations with the other measures; these are somewhat idiosyncratic measures that are not widely used, and doorenspleet in particular is based on <a href="../../reference/polityIV.html">Polity</a> but adds an “inclusion” criterion, whereas most of the other dichotomous measures are based on <a href="../../reference/pacl.html">pacl</a> <span class="citation">(Cheibub, Gandhi, and Vreeland 2010)</span>.</p>
+<p>The <a href="../../reference/bnr.html">bnr</a> measure is different from most other dichotomous measures of democracy because it was constructed with survival analysis in mind, and hence only includes democracies; when extended to non-democracies (in <a href="../../reference/bnr.html">bnr_extended</a>) it is well-correlated with the rest. <a href="../../reference/utip.html">utip</a> <span class="citation">(Hsu 2008)</span> and <a href="../../reference/doorenspleet.html">doorenspleet</a> <span class="citation">(Doorenspleet 2000)</span> also have below average correlations with the other measures; these are somewhat idiosyncratic measures that are not widely used, and doorenspleet in particular is based on an earlier version of <a href="../../reference/polityIV.html">Polity</a> (Polity III) and also adds an “inclusion” criterion, whereas most of the other dichotomous measures are based on <a href="../../reference/pacl.html">pacl</a> <span class="citation">(Cheibub, Gandhi, and Vreeland 2010)</span>.</p>
 </div>
 <div id="trichotomous-measures-of-democracy" class="section level2">
 <h2 class="hasAnchor">
 <a href="#trichotomous-measures-of-democracy" class="anchor"></a>Trichotomous Measures of Democracy</h2>
-<p>There are a number of measures of democracy that distinguish between democracy, non-democracy, and some hybrid or intermediate category. Again, these are highly correlated.</p>
+<p>There are a number of measures of democracy that distinguish between democracy, non-democracy, and some hybrid or intermediate category. These trichotomous measures are also highly correlated.</p>
 <p><img src="Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
-<p>All of these are specialist measures that are no longer maintained, but remain of historical interest.</p>
+<p>All of these are specialist measures that are no longer maintained, but remain of historical interest. The lowest correlation levels are with the <a href="../../reference/kailitz.html">Kailitz</a> trichotomous index calculated by taking “electoral autocracy” as the middle category.</p>
 </div>
 <div id="ordinalgraded-measures-of-democracy" class="section level2">
 <h2 class="hasAnchor">
@@ -130,50 +130,38 @@
 <div id="all-correlations" class="section level2">
 <h2 class="hasAnchor">
 <a href="#all-correlations" class="anchor"></a>All Correlations</h2>
-<p>When rescaled to the range 0-1, all of these measures of democracy are highly correlated among themselves (across all types of measure: dichotomous, trichotomous, graded, and continuous), with some small exceptions. The median correlation coefficient between any two measures is 0.84.</p>
+<p>The median correlation coefficient between any two measures (of any type) is 0.84.</p>
 <p><img src="Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-9-1.png" width="700"></p>
-<p>We can visualize these correlations as a network to identify the outliers:</p>
-<p><img src="Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-10-1.png" width="960"></p>
-<p>Here we see that the <a href="../../reference/bnr.html">bnr</a> event-history measure (which only includes democratic countries in its original version), some of the older specialist measures, such as <a href="../../reference/arat_pmm.html">arat_pmm</a>, <a href="../../reference/bollen_pmm.html">bollen_pmm</a>, and <a href="../../reference/mainwaring.html">mainwaring</a> <span class="citation">(Arat 1991; Bollen 2001; Mainwaring, Pérez-Liñán, and Brinks 2014)</span>, and some of the newer “thick” measures of democracy like the <a href="../../reference/eiu.html">eiu</a> <span class="citation">(The Economist Intelligence Unit 2021)</span> or <a href="../../reference/bti.html">bti</a> <span class="citation">(Bertelsmann Stiftung 2020)</span> indexes are less well correlated to the rest. These are measures that typically are constructed from “thick” concepts of democracy, including participation and rule of law components, and hence are less likely to be fully correlated with dichotomous indexes that ignore that information.</p>
-<p>A simple hierarchical cluster analysis can also help us to visualize the relationships among these measures.</p>
-<p>At the top, we find the main outlier, the measure of democracy from <a href="../../reference/PIPE.html">PIPE</a> <span class="citation">(Przeworski 2013)</span>. The next cluster includes a set of continous measures, mostly from V-Dem <span class="citation">(Coppedge et al. 2021)</span>, but also the <a href="../../reference/vanhanen.html">vanhanen</a> measure <span class="citation">(Vanhanen 2014)</span> that includes information about participation. These are “thicker” measures of democracy. The bottom two clusters, by contrast, contain measures derived from <a href="../../reference/pacl.html">pacl</a> <span class="citation">(Cheibub, Gandhi, and Vreeland 2010)</span>, including <a href="../../reference/bmr.html">bmr</a> <span class="citation">(Boix, Miller, and Rosato 2012)</span>, <a href="../../reference/gwf_all.html">gwf</a> <span class="citation">(Geddes, Wright, and Frantz 2014)</span> and a recent update of <a href="../../reference/pacl.html">pacl</a>, <a href="../../reference/pacl_update.html">pacl_update</a> <span class="citation">(Bjørnskov and Rode 2020)</span>, as well as measures derived from <a href="../../reference/polityIV.html">polity</a> <span class="citation">(Marshall, Gurr, and Jaggers 2019)</span>, including <a href="../../reference/peps.html">peps</a> <span class="citation">(Moon et al. 2006)</span>, latent variable indexes like <a href="../../reference/uds_2014.html">uds</a>, which are heavily influenced by the inclusion of <a href="../../reference/polityIV.html">polity</a> scores <span class="citation">(Pemstein, Meserve, and Melton 2010)</span>, and <a href="../../reference/pitf.html">pitf</a> scores <span class="citation">(Taylor and Ulfelder 2015)</span>, which are built from <a href="../../reference/polityIV.html">polity</a>.</p>
-<p><img src="Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-11-1.png" width="700"></p>
+<p>A simple hierarchical cluster analysis can help us to better visualize the relationships among these measures.</p>
+<p>At the top of the figure below, we find the main outlier, the measure of democracy from <a href="../../reference/PIPE.html">PIPE</a> <span class="citation">(Przeworski 2013)</span>. The next cluster includes a set of continous measures, mostly from V-Dem <span class="citation">(Coppedge et al. 2021)</span>, but also the <a href="../../reference/vanhanen.html">vanhanen</a> measure <span class="citation">(Vanhanen 2014)</span> that includes information about participation. These are “thicker” measures of democracy. The bottom two clusters, by contrast, contain measures derived from <a href="../../reference/pacl.html">pacl</a> <span class="citation">(Cheibub, Gandhi, and Vreeland 2010)</span>, including <a href="../../reference/bmr.html">bmr</a> <span class="citation">(Boix, Miller, and Rosato 2012)</span>, <a href="../../reference/gwf_all.html">gwf</a> <span class="citation">(Geddes, Wright, and Frantz 2014)</span> and a recent update of <a href="../../reference/pacl.html">pacl</a>, <a href="../../reference/pacl_update.html">pacl_update</a> <span class="citation">(Bjørnskov and Rode 2020)</span>, as well as measures derived from <a href="../../reference/polityIV.html">polity</a> <span class="citation">(Marshall, Gurr, and Jaggers 2019)</span>, including <a href="../../reference/peps.html">peps</a> <span class="citation">(Moon et al. 2006)</span>, latent variable indexes like <a href="../../reference/uds_2014.html">uds</a>, which are heavily influenced by the inclusion of <a href="../../reference/polityIV.html">polity</a> scores <span class="citation">(Pemstein, Meserve, and Melton 2010)</span>, and <a href="../../reference/pitf.html">pitf</a> scores <span class="citation">(Taylor and Ulfelder 2015)</span>, which are built from <a href="../../reference/polityIV.html">polity</a>.</p>
+<p><img src="Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-10-1.png" width="700"></p>
 </div>
 <div id="variation-in-per-country-and-per-year-correlations" class="section level2">
 <h2 class="hasAnchor">
 <a href="#variation-in-per-country-and-per-year-correlations" class="anchor"></a>Variation in per-country and per-year correlations</h2>
 <p>As noted in the <a href="Understanding_the_geographic_and_temporal_coverage_of_existing_democracy_indexes.html">article on the temporal and geographic coverage of democracy measures</a>, such measures, though highly correlated in general, can disagree substantially in particular cases. Consider the USA. Despite general agreement in these datasets that the USA is basically democratic, different measurements do not agree on when the country first became democratic, or how democratic it actually was at any given point in time.</p>
+<p><img src="Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-11-1.png" width="700"></p>
+<p>Moreover, the average correlation between democracy measures varies substantially year by year, due in part to the particular states that are measured on any given year, the availability of historical information, and the prevalence of hybrid or ambiguous regime forms. It is thus high in the late 18th and early 19th century, as most countries were clearly non-democratic and relatively easy to classify (and there were fewer independent states); it becomes lower in the 19th century, with more countries in difficult-to-classify hybrid forms, and more difficulties for researchers in finding appropriate historical information; and it increases in the mid-twentieth century, where most of the classificatory effort has been focused. It is worth noting that correlations also dip after the Cold War, as more countries take on difficult to classify hybrid forms.</p>
 <p><img src="Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-12-1.png" width="700"></p>
-<p>Moreover, the average correlation between democracy measures varies substantially year by year, due in part to the particular states that are measured on any given year, the availability of historical information, and the prevalence of hybrid or ambiguous regime forms. It is thus high in the late 18th and early 19th century, as most countries were non-democratic and relatively easy to classify (and there were fewer independent states); it becomes lower in the 19th century, with more countries in difficult-to-classify hybrid forms, and more difficulties for researchers in finding appropriate historical information; and it increases in the mid- twentieth century, where most of the classificatory effort has been focused. It is worth noting that correlations also dip after the Cold War, as more countries take on hybrid forms.</p>
-<p><img src="Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-13-1.png" width="700"></p>
 <p>Correlations among measures can also vary substantially within a given country.</p>
-<p><img src="Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-14-1.png" width="700"></p>
+<p><img src="Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-13-1.png" width="700"></p>
 <p>Here we see that for a country like the USA, the pairwise correlation coefficient between any two measures of democracy ranges from nearly 1 to nearly -1, with a median below 0.5. Small semi-monarchical countries like Monaco are especially susceptible to scholarly disagreements on their level of democracy, though some countries have very decent levels of agreement (e.g., Hungary, Venezuela).</p>
 <p>We can find the “hardest” countries to classify by looking at the standard deviation of the rescaled measures per year. Here are the top 12 most difficult to classify countries by this measure:</p>
-<p><img src="Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-16-1.png" width="700"></p>
-<p>There is clearly a great deal of uncertainty in these measures for many country-years, though the overall patterns are usually clear. Two ways of aggregating these measures to deal with uncertainty are explored in two other articles in this website: <a href="Replicating_and_extending_the_UD_scores.html">Latent Variable Indexes</a> (see <code>article("Replicating_and_extending_the_UD_scores")</code>) and Machine-Learning predictions.</p>
+<p><img src="Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-15-1.png" width="700"></p>
+<p>There is clearly a great deal of uncertainty in these measures for many country-years, though the overall patterns are usually clear. Two ways of aggregating these measures to deal with uncertainty are explored in other articles in this website: <a href="Replicating_and_extending_the_UD_scores.html">Latent Variable Indexes</a> – see vignette(“Replicating_and_extending_the_UD_scores”) – and Machine-Learning predictions (article still to come).</p>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-Arat1991" class="csl-entry">
-Arat, Zehra F. 1991. <em>Democracy and Human Rights in Developing Countries</em>. Boulder: Lynne Rienner Publishers.
-</div>
 <div id="ref-bnr2001" class="csl-entry">
 Bernhard, Michael, Timothy Nordstrom, and Christopher Reenock. 2001. <span>“Economic Performance, Institutional Intermediation, and Democratic Survival.”</span> <em>Journal of Politics</em> 63 (3): 775–803. <a href="https://doi.org/10.1111/0022-3816.00087">https://doi.org/10.1111/0022-3816.00087</a>.
-</div>
-<div id="ref-bti2020" class="csl-entry">
-Bertelsmann Stiftung. 2020. <span>“Transformation Index of the Bertelsmann Stiftung 2020.”</span> <span>Bertelsmann Stiftung</span>.
 </div>
 <div id="ref-pacl_update_2020" class="csl-entry">
 Bjørnskov, Christian, and Martin Rode. 2020. <span>“Regime Types and Regime Change: A New Dataset on Democracy, Coups, and Political Institutions.”</span> <em>The Review of International Organizations</em> 15 (2): 531–51. <a href="https://doi.org/10.1007/s11558-019-09345-1">https://doi.org/10.1007/s11558-019-09345-1</a>.
 </div>
 <div id="ref-bmr2007" class="csl-entry">
 Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. <span>“A Complete Dataset of Political Regimes, 1800-2007.”</span> <em>Comparative Political Studies</em> 46 (12): 1523–54. <a href="https://doi.org/10.1177/0010414012463905">https://doi.org/10.1177/0010414012463905</a>.
-</div>
-<div id="ref-Bollen2001" class="csl-entry">
-Bollen, Kenneth A. 2001. <span>“Cross-National Indicators of Liberal Democracy, 1950-1990.”</span> Data set. Inter-university Consortium for Political; Social Research (ICPSR) [distributor].
 </div>
 <div id="ref-pacl2010" class="csl-entry">
 Cheibub, José, Jennifer Gandhi, and James Vreeland. 2010. <span>“Democracy and Dictatorship Revisited.”</span> <em>Public Choice</em> 143 (1): 67–101. <a href="https://doi.org/10.1007/s11127-009-9491-2">https://doi.org/10.1007/s11127-009-9491-2</a>.
@@ -193,9 +181,6 @@ Geddes, Barbara, Joseph Wright, and Erica Frantz. 2014. <span>“Autocratic Brea
 <div id="ref-utip2008" class="csl-entry">
 Hsu, Sara. 2008. <span>“The Effect of Political Regimes on Inequality, 1963-2002.”</span> <em>UTIP Working Paper</em>, no. 53.
 </div>
-<div id="ref-mainwaring2014" class="csl-entry">
-Mainwaring, Scott, Aníbal Pérez-Liñán, and Daniel Brinks. 2014. <span>“Political Regimes in Latin America, 1900-2007 (with Daniel Brinks).”</span> In <em>Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall</em>. New York: Cambridge University Press.
-</div>
 <div id="ref-polity2019" class="csl-entry">
 Marshall, Monty G., Ted Robert Gurr, and Keith Jaggers. 2019. <em>Polity IV Project: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users’ Manual.</em> Center for Systemic Peace.
 </div>
@@ -210,9 +195,6 @@ Przeworski, Adam. 2013. <span>“<span class="nocase">Political Institutions and
 </div>
 <div id="ref-pitf2015" class="csl-entry">
 Taylor, Sean J, and Jay Ulfelder. 2015. <span>“A Measurement Error Model of Dichotomous Democracy Status.”</span> <em>Available at SSRN</em>. <a href="https://doi.org/10.2139/ssrn.2726962">https://doi.org/10.2139/ssrn.2726962</a>.
-</div>
-<div id="ref-eiu2021" class="csl-entry">
-The Economist Intelligence Unit. 2021. <span>“Democracy Index 2020: In Sickness and in Health?”</span> <span>The Economist Intelligence Unit</span>.
 </div>
 <div id="ref-vanhanen2014" class="csl-entry">
 Vanhanen, Tatu. 2014. <span>“Measures of Democracy 1810-2012.”</span> Tampere: Finnish Social Science Data Archive [distributor]. <a href="http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html">http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html</a>.
