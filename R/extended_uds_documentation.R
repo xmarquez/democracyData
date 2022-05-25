@@ -2,7 +2,7 @@
 #'
 #' A dataset extending the Unified Democracy Scores of Pemstein, Meserve, and
 #' Melton (2010) to the 19th century (and sometimes before), updating it with
-#' 2013-2020 data, and calculating scores for countries not in the official UD
+#' 2013-2022 data, and calculating scores for countries not in the official UD
 #' release. Cite both Pemstein, Meserve, and Melton 2010 as well as Marquez
 #' 2016.
 #'
@@ -42,7 +42,7 @@
 #'   indicator), [pitf] (non-binary indicator), [polity] (polity 2 indicator),
 #'   [polyarchy] (both contestation and participation dimensions),
 #'   [polyarchy_dimensions] (both contestation and participation dimensions),
-#'   [prc], [reign], [svolik], [ulfelder_extended], [utip] (trichotomous
+#'   [prc], [REIGN], [svolik], [ulfelder_extended], [utip] (trichotomous
 #'   indicator, with one-party democracy as the middle category), the
 #'   `v2x_polyarchy` indicator from [vdem::VDem_plus], [vanhanen] (the
 #'   vanhanen_democratization indicator only), [wgi], and
