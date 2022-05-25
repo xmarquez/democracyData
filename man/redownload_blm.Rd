@@ -4,7 +4,6 @@
 \alias{redownload_blm}
 \alias{redownload_anckar}
 \alias{redownload_bmr}
-\alias{redownload_bnr}
 \alias{redownload_gwf}
 \alias{redownload_pacl}
 \alias{redownload_peps}
@@ -18,6 +17,7 @@
 \alias{redownload_pipe}
 \alias{redownload_bti}
 \alias{redownload_pacl_update}
+\alias{redownload_reign}
 \title{Download and process various democracy datasets.}
 \source{
 Bowman, Kirk, Fabrice Lehoucq, and James Mahoney. 2005. Measuring
@@ -31,15 +31,9 @@ political regimes 1800-2016: a typology and a new dataset." European
 Political Science, doi: 10.1057/s41304-018-0149-8. Data, article, and
 codebook available at: \doi{10.1057/s41304-018-0149-8}
 
-Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A Complete
+Boix, Carles, Michael Miller, and Sebastian Rosato. 2018. A Complete
 Data Set of Political Regimes, 1800-2007. Comparative Political Studies 46
-(12): 1523-1554. Available at \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT}
-
-Michael Bernhard, Timothy Nordstrom, and Christopher Reenock,
-"Economic Performance, Institutional Intermediation and Democratic
-Breakdown," Journal of Politics 63:3 (2001), pp. 775-803. Data and coding
-description available at
-\url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}
+(12): 1523-1554. Available at \url{https://sites.google.com/site/mkmtwo/data}
 
 Barbara Geddes, Joseph Wright, and Erica Frantz.
 2014. "Autocratic Breakdown and Regime Transitions: A New Data Set."
@@ -97,14 +91,18 @@ Adam Przeworski. 2013 \emph{Political Institutions and Political Events
 (PIPE) Data Set}. Data set.
 \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}.
 
-Transformation Index of the Bertelsmann Stiftung 2020. Bertelsmann
+Transformation Index of the Bertelsmann Stiftung 2022. Bertelsmann
 Stiftung. Available at
-\url{https://www.bti-project.org/en/index/political-transformation.html}
+\url{https://bti-project.org/en/index/political-transformation}
 
 Bjornskov, C. and M. Rode (2020). "Regime types and regime change: A
 new dataset on democracy, coups, and political institutions." The Review of
 International Organizations 15(2): 531-551. Available at
 \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}
+
+Bell, Curtis. 2016. The Rulers, Elections, and Irregular Governance
+Dataset (REIGN). Broomfield, CO: OEF Research. Available at
+\url{http://oefresearch.org/datasets/reign}
 }
 \usage{
 redownload_blm(url, verbose = TRUE, return_raw = FALSE, ...)
@@ -112,8 +110,6 @@ redownload_blm(url, verbose = TRUE, return_raw = FALSE, ...)
 redownload_anckar(url, verbose = TRUE, return_raw = FALSE, ...)
 
 redownload_bmr(url, verbose = TRUE, return_raw = FALSE, ...)
-
-redownload_bnr(url, verbose = TRUE, extend = FALSE, return_raw = FALSE, ...)
 
 redownload_gwf(
   url,
@@ -170,6 +166,8 @@ redownload_pipe(url, verbose = TRUE, return_raw = FALSE, ...)
 redownload_bti(url, verbose = TRUE, return_raw = FALSE, ...)
 
 redownload_pacl_update(url, verbose = TRUE, return_raw = FALSE, ...)
+
+redownload_reign(url, verbose = TRUE, return_raw = FALSE, ...)
 }
 \arguments{
 \item{url}{The URL of the dataset. This defaults to:
@@ -189,7 +187,7 @@ redownload_pacl_update(url, verbose = TRUE, return_raw = FALSE, ...)
 \url{http://users.clas.ufl.edu/bernhard/content/data/meister1305.dta}
 
 \item For \link{bti}:
-\url{https://www.bti-project.org/content/en/downloads/data/BTI\%202006-2020\%20Scores.xlsx}
+\url{https://bti-project.org/fileadmin/api/content/en/downloads/data/BTI_2006-2022_Scores.xlsx}
 
 \item For \link{gwf_all} and \link{gwf_autocratic}:
 \url{http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip}
@@ -211,6 +209,9 @@ redownload_pacl_update(url, verbose = TRUE, return_raw = FALSE, ...)
 
 For the 2016 release, it defaults to
 \url{http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta}
+
+\item For \link{REIGN}:
+\url{https://github.com/OEFDataScience/REIGN.github.io/blob/gh-pages/data_sets/regime_list.csv?raw=true}
 
 \item For \link{utip}:
 \url{http://utip.lbj.utexas.edu/data/political\%20regime\%20data\%20set\%20RV.xls}
@@ -243,10 +244,9 @@ Default is \code{FALSE}.}
 
 \item{...}{Other parameters passed to \link{country_year_coder}.}
 
-\item{extend}{(Only for \link{redownload_bnr}, \link{redownload_gwf},
+\item{extend}{(Only for \link{redownload_gwf},
 \link{redownload_magaloni}, and \link{redownload_ulfelder}). Whether to
-extend the dataset back in time using a full panel of independent countries
-(for the \link{redownload_bnr} case) or the appropriate duration variable
+extend the dataset back in time using the appropriate duration variable
 (\code{gwf_duration}, \code{duration_nr}, or \code{rgjdura} and
 \code{rgjdurd}, respectively, for \link{redownload_gwf},
 \link{redownload_magaloni}, and \link{redownload_ulfelder}). For example,
@@ -272,7 +272,7 @@ returned by the \code{redownload_*} family of functions (\link{blm},
 \link{bmr}, \link{bnr}, \link{bti}, \link{gwf_autocratic},
 \link{gwf_autocratic_extended}, \link{gwf_all}, \link{gwf_all_extended},
 \link{LIED}, \link{magaloni}, \link{pacl}, \link{pacl_update}, \link{PIPE}, \link{peps},
-\link{polityIV}, \link{polyarchy}, \link{polyarchy_dimensions}, \link{uds_2014},
+\link{polityIV}, \link{polyarchy}, \link{polyarchy_dimensions}, \link{REIGN}, \link{uds_2014},
 \link{uds_2010}, \link{uds_2011}, \link{ulfelder}, \link{utip},
 \link{wahman_teorell_hadenius}, \link{anckar}, \link{svmdi}) are all available
 directly from this package and are unlikely to have changed since the package
@@ -292,9 +292,6 @@ redownload_anckar()}
 bmr <- redownload_bmr()
 bmr
 }
-\dontrun{
-redownload_bnr()
-redownload_bnr(full_panel = FALSE)}
 \dontrun{
 gwf <- redownload_gwf()
 gwf
@@ -326,4 +323,6 @@ bti
 }
 \dontrun{
 redownload_pacl_update()}
+\dontrun{
+reign <- redownload_reign()}
 }

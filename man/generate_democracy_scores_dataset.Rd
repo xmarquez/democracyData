@@ -31,12 +31,14 @@ abbreviation of) "\link{anckar}", "\link{anrr}", "\link{LIED}", "\link{PIPE}", "
 "\link{polity_pmm}", "\link{polyarchy}", "\link{polyarchy_dimensions}", "\link{polyarchy_pmm}",
 "\link{prc_gasiorowski}", "\link{prc_pmm}", "\link{svmdi}", "\link{svolik_regime}",
 "\link{uds_2010}", "\link{uds_2011}", "\link{uds_2014}", "\link{ulfelder}",
-"\link{ulfelder_extended}", "\link{utip}", "\link{vanhanen}", "\link{wahman_teorell_hadenius}",
-"\link{reign}", "\link{polityIV}", "\link{polity}" (or
-"\href{download_polity_annual.html}{polity_annual}"), "\href{download_fh.html}{fh}",
-"\link{fh_electoral}", "\link{wgi}". Default is all of them.}
+"\link{ulfelder_extended}", "\link{utip}", "\link{vanhanen}", "\link{vdem}",
+"\link{wahman_teorell_hadenius}", "\link{reign}" or "\link[=reign]{REIGN}", "\link{polityIV}",
+"\link{polity}" (or "\href{download_polity_annual.html}{polity_annual}"),
+"\href{download_fh.html}{fh}", "\link{fh_electoral}", "\link{wgi}". Default is all of
+them.}
 
-\item{selection}{A regular expression for selecting among the datasets. Optional.}
+\item{selection}{A regular expression for selecting among the datasets.
+Optional.}
 
 \item{output_format}{Character. Whether to output a "wide" (each measure of
 democracy in a separate column) or a "long" (a column with measure names, a
@@ -50,8 +52,8 @@ before 1945 for some regimes) versions of some datasets (\link{gwf}, \link{ulfel
 in Pemstein, Meserve, and Melton's replication dataset for their 2010 piece
 introducing the Unified Democracy Scores (Pemstein, Meserve, and Melton
 2010, 2013). See \link{blm_pmm}, \link{prc_pmm}, \link{fh_pmm}, \link{pacl_pmm},
-\link{vanhanen_pmm}, and \link{polity_pmm} for details. This is included mostly for
-use by the \href{https://github.com/xmarquez/QuickUDS}{QuickUDS} package.}
+\link{vanhanen_pmm}, and \link{polity_pmm} for details. This is included mostly to
+extend or replicate the \link{uds} scores.}
 
 \item{verbose}{Provides a running commentary on what the function is is
 doing. Default is \code{TRUE}.}
@@ -80,9 +82,9 @@ since it is ignored when \code{output_format = "wide"}, which automatically
 discards all regime measurements except the last in the year.}
 
 \item{exclude_downloadable}{Whether to exclude all datasets that must be
-explicitly downloaded (\link{polity}, \link{fh}, \link{reign}, \link{wgi}), using only archived
+explicitly downloaded (\link{polity}, \link{fh}, \link{wgi}), using only archived
 datasets. This speeds up the process considerably, but you lose some of the
-better democracy measures out there. Default is \code{FALSE}.}
+more important democracy measures out there. Default is \code{FALSE}.}
 }
 \value{
 A \link{tibble} with the selected democracy measures and state system
@@ -135,10 +137,6 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 
 In the "long" version of the dataset (\code{format = "long"}), the output
 data frame also contains the following variables:
-}
-
-\section{Variables}{
-
 
 \describe{
 
@@ -262,6 +260,9 @@ as 1, and all other regimes as 0.}
 
 \item{lexical_index}{The \link{LIED} measure of electoral democracy, ranging
 from 0 to 6.}
+
+\item{lexical_index_plus}{The \link{LIED} measure of polyarchy, ranging from 0
+to 7 (including political liberties).}
 
 \item{magaloni_democracy}{A measure of democracy from \link{magaloni}, obtained
 by coding all democracies as 1 and all non-democracies as 0.}
@@ -396,6 +397,21 @@ if it is a one-party democracy, 0 otherwise.}
 \item{vanhanen_democratization}{The democratization index from \link{vanhanen}.}
 
 \item{vanhanen_participation}{The participation index from \link{vanhanen}.}
+
+\item{v2x_api}{The additive polyarchy index from \link{vdem}.}
+
+\item{v2x_delibdem}{The deliberative democracy index from \link{vdem}.}
+
+\item{v2x_egaldem}{The egalitarian democracy index from \link{vdem}.}
+
+\item{v2x_libdem}{The liberal democracy index from \link{vdem}.}
+
+\item{v2x_mpi}{The multiplicative polyarchy index from \link{vdem}.}
+
+\item{v2x_partipdem}{The participative democracy index from \link{vdem}.}
+
+\item{v2x_polyarchy}{The polyarchy (electoral democracy) index from
+\link{vdem}.}
 
 \item{wgi_democracy}{The voice and accountability index from \link{wgi}.}
 

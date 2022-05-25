@@ -2,21 +2,21 @@
 % Please edit documentation in R/redownload_functions.R
 \name{redownload_lied}
 \alias{redownload_lied}
-\title{Downloads the 2020 update (v. 5.2) of the Lexical Index of Electoral Democracy (annual time series, data to
-2019) and processes it using \link{country_year_coder}.}
+\title{Downloads the 2022 update (v. 6.4) of the Lexical Index of Electoral Democracy (annual time series, data to
+2021) and processes it using \link{country_year_coder}.}
 \source{
 Skaaning, Svend-Erik; John
 Gerring; and Henrikas Bartusevicius (2015). "A Lexical Index of Electoral
 Democracy." Comparative Political Studies, Vol. 48, No. 12, pp. 1491-1525.
 Original data and variable descriptions available at
-\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106}
+\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}
 }
 \usage{
 redownload_lied(url, verbose = TRUE, return_raw = FALSE, ...)
 }
 \arguments{
 \item{url}{The URL of the dataset. Defaults to
-\url{https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/29106/SXRLK1}}
+\url{https://dataverse.harvard.edu/api/access/datafile/6290760}}
 
 \item{verbose}{Whether to print a running commentary of what the function is
 doing while processing the data.}
@@ -27,8 +27,8 @@ Default is \code{FALSE}.}
 \item{...}{Other parameters passed to \link{country_year_coder}.}
 }
 \description{
-Downloads the 2020 update (v. 5.2) of the Lexical Index of Electoral Democracy (annual time series, data to
-2019) and processes it using \link{country_year_coder}.
+Downloads the 2022 update (v. 6.4) of the Lexical Index of Electoral Democracy (annual time series, data to
+2021) and processes it using \link{country_year_coder}.
 }
 \examples{
 \dontrun{

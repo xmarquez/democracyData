@@ -23,9 +23,10 @@ polity_pmm
 Polity 2 Index from Polity IV. 2013. Taken from Pemstein, Daniel, Stephen A.
 Meserve, and James Melton. 2013. "Replication data for: Democratic
 Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." In:
-Harvard Dataverse. \url{http://hdl.handle.net/1902.1/PMM}. Higher values are more
-democratic. Use \link{download_polity_annual} to download the latest version of the
-Polity IV data.
+Harvard Dataverse.
+\url{http://hdl.handle.net/1902.1/PMM}. Higher
+values are more democratic. Use \link{download_polity_annual} to download the
+latest version of the Polity IV data.
 }
 \section{Variables}{
 
@@ -41,9 +42,33 @@ interruption, interregnum, and transition periods. Higher values are more
 democratic. Taken from Pemstein, Daniel, Stephen A. Meserve, and James
 Melton. 2013. "Replication data for: Democratic Compromise: A Latent
 Variable Analysis of Ten Measures of Regime Type." In: Harvard Dataverse.
-\url{http://hdl.handle.net/1902.1/PMM}. In this version the indicator only goes
-to 1945, and it differs from polity2 in a few cases. See the vignette in
-this package for more details.}
+\url{http://hdl.handle.net/1902.1/PMM}. In
+this version the indicator only goes to 1945, and it differs from polity2
+in a few cases:\preformatted{## Joining, by = c("year", "extended_country_name", "GWn", "cown", "in_GW_system")
+}\preformatted{## # A tibble: 17 x 6
+## # Groups:   pmm_country, pmm_polity [17]
+##    pmm_country         pmm_polity polity2 min_year max_year n_years
+##    <chr>                    <int>   <dbl>    <dbl>    <dbl>   <int>
+##  1 Bhutan                      -6      -5     2005     2007       3
+##  2 Czech Republic               8       9     2006     2008       3
+##  3 Czechoslovakia              -1       2     1947     1947       1
+##  4 Equatorial Guinea           -5      -6     1996     2008      13
+##  5 Ethiopia                     0       1     1993     1993       1
+##  6 Ethiopia                     1      -3     2005     2008       4
+##  7 Israel                       9       6     1981     1998      18
+##  8 Israel                      10       6     1999     2008      10
+##  9 Korea North                 -9     -10     1994     2008      15
+## 10 Lebanon                      7       6     2005     2008       4
+## 11 Moldova                      8       9     2005     2008       4
+## 12 Montenegro                   8       9     2008     2008       1
+## 13 Mozambique                   6       5     1994     2008      15
+## 14 Myanmar (Burma)             -8      -6     2008     2008       1
+## 15 Senegal                      8       7     2007     2008       2
+## 16 United States               10       8     1967     1973       7
+## 17 Yugoslavia (Serbia)          6       8     2006     2006       1
+}
+
+}
 
 }
 }
@@ -92,6 +117,7 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 Other democracy: 
 \code{\link{LIED}},
 \code{\link{PIPE}},
+\code{\link{REIGN}},
 \code{\link{anckar}},
 \code{\link{anrr}},
 \code{\link{arat_pmm}},
@@ -104,7 +130,6 @@ Other democracy:
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
 \code{\link{download_fh}()},
-\code{\link{download_reign}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -129,6 +154,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
 Other PMM replication data: 

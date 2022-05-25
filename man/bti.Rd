@@ -5,10 +5,10 @@
 \alias{bti}
 \title{The Bertelsmann Transformation Index}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1096 rows and 88 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1233 rows and 88 columns.
 }
 \source{
-Transformation Index of the Bertelsmann Stiftung 2020. Bertelsmann
+Transformation Index of the Bertelsmann Stiftung 2022. Bertelsmann
 Stiftung. Available at
 \url{https://www.bti-project.org/en/index/political-transformation.html}
 }
@@ -16,14 +16,14 @@ Stiftung. Available at
 bti
 }
 \description{
-The Bertelsmann Transformation Index of the Bertelsmann Stiftung. Data and
-coding description available at
+The Bertelsmann Transformation Index of the Bertelsmann Stiftung (2022
+edition). Data and coding description available at
 \url{https://www.bti-project.org/en/index/political-transformation.html}
 }
 \section{Description}{
 
 
-The BTI is calculated at Biennial Intervals for approximately 133 countries
+The BTI is calculated at Biennial Intervals for approximately 137 countries
 since 2006.
 
 \describe{
@@ -226,6 +226,7 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 Other democracy: 
 \code{\link{LIED}},
 \code{\link{PIPE}},
+\code{\link{REIGN}},
 \code{\link{anckar}},
 \code{\link{anrr}},
 \code{\link{arat_pmm}},
@@ -237,7 +238,6 @@ Other democracy:
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
 \code{\link{download_fh}()},
-\code{\link{download_reign}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -263,6 +263,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
 Other continuous democracy indexes: 
@@ -273,7 +274,8 @@ Other continuous democracy indexes:
 \code{\link{hadenius_pmm}},
 \code{\link{munck_pmm}},
 \code{\link{svmdi}},
-\code{\link{vanhanen}}
+\code{\link{vanhanen}},
+\code{\link{vdem_simple}}
 }
 \concept{continuous democracy indexes}
 \concept{democracy}

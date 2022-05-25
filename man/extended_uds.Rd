@@ -13,7 +13,7 @@ extended_uds
 \description{
 A dataset extending the Unified Democracy Scores of Pemstein, Meserve, and
 Melton (2010) to the 19th century (and sometimes before), updating it with
-2013-2020 data, and calculating scores for countries not in the official UD
+2013-2022 data, and calculating scores for countries not in the official UD
 release. Cite both Pemstein, Meserve, and Melton 2010 as well as Marquez
 2016.
 }
@@ -54,7 +54,7 @@ electoral autocracy as the middle category), \link{LIED}, \link{magaloni_extende
 indicator), \link{pitf} (non-binary indicator), \link{polity} (polity 2 indicator),
 \link{polyarchy} (both contestation and participation dimensions),
 \link{polyarchy_dimensions} (both contestation and participation dimensions),
-\link{prc}, \link{reign}, \link{svolik}, \link{ulfelder_extended}, \link{utip} (trichotomous
+\link{prc}, \link{REIGN}, \link{svolik}, \link{ulfelder_extended}, \link{utip} (trichotomous
 indicator, with one-party democracy as the middle category), the
 \code{v2x_polyarchy} indicator from \link[vdem:VDem_plus]{vdem::VDem_plus}, \link{vanhanen} (the
 vanhanen_democratization indicator only), \link{wgi}, and
@@ -144,6 +144,7 @@ Political Analysis 18 (4): 426-449. DOI:10.1093/pan/mpq020
 Other democracy: 
 \code{\link{LIED}},
 \code{\link{PIPE}},
+\code{\link{REIGN}},
 \code{\link{anckar}},
 \code{\link{anrr}},
 \code{\link{arat_pmm}},
@@ -156,7 +157,6 @@ Other democracy:
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
 \code{\link{download_fh}()},
-\code{\link{download_reign}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{fh_pmm}},
@@ -181,6 +181,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
 Other latent variable indexes of democracy: 

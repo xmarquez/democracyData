@@ -199,8 +199,8 @@ http://oefresearch.org/datasets/reign>.
 M. Bernhard, T. Nordstrom, and C. Reenock. “Economic Performance, Institutional Intermediation, and
 Democratic Survival”. In: \emph{Journal of Politics} 63.3 (2001), pp. 775-803. DOI: 10.1111/0022-3816.00087.
 
-Bertelsmann Stiftung. \emph{Transformation Index of the Bertelsmann Stiftung 2020}. Tech. rep. Bertelsmann
-Stiftung, 2020.
+Bertelsmann Stiftung. \emph{Transformation Index of the Bertelsmann Stiftung 2022}. Tech. rep. Bertelsmann
+Stiftung, 2022.
 
 C. Bjørnskov and M. Rode. “Regime types and regime change: A new dataset on democracy, coups, and
 political institutions”. In: \emph{The Review of International Organizations} 15.2 (2020), pp. 531-551. DOI:
@@ -236,8 +236,9 @@ Development} 25.1 (1990), pp. 51-72. DOI: 10.1007/Bf02716905.
 R. Doorenspleet. “Reassessing the Three Waves of Democratization”. In: \emph{World Politics} 52.03 (2000),
 pp. 384-406. DOI: 10.1017/S0043887100016580.
 
-Freedom House. \emph{Freedom in the World 2021: Democracy under Siege}. Tech. rep. Freedom House, 2021.
-<URL: https://freedomhouse.org/report/freedom-world/2021/democracy-under-siege>.
+Freedom House. \emph{Freedom in the World 2022: The Global Expansion of Authoritarian Rule}. Tech. rep.
+Freedom House, 2022. <URL:
+https://freedomhouse.org/report/freedom-world/2022/global-expansion-authoritarian-rule>.
 
 M. Gasiorowski. “An Overview of the Political Regime Change Dataset”. In: \emph{Comparative Political
 Studies} 29.4 (1996), pp. 469-483. DOI: 10.1177/0010414096029004004.
@@ -328,16 +329,16 @@ M. Svolik. \emph{The Politics of Authoritarian Rule}. Cambridge: Cambridge Unive
 S. J. Taylor and J. Ulfelder. “A Measurement Error Model of Dichotomous Democracy Status”. In:
 \emph{Available at SSRN} (2015). DOI: 10.2139/ssrn.2726962.
 
-The Economist Intelligence Unit. \emph{Democracy Index 2020: In sickness and in health?} Tech. rep. The
-Economist Intelligence Unit, 2021.
+The Economist Intelligence Unit. \emph{Democracy Index 2021: The China Challenge}. Tech. rep. The Economist
+Intelligence Unit, 2022.
 
 J. Ulfelder. \emph{Democracy/Autocracy Data Set}. 2012. <URL: http://hdl.handle.net/1902.1/18836>.
 
 J. Ulfelder and M. Lustik. “Modelling Transitions To and From Democracy”. In: \emph{Democratization} 14.3
 (2007), pp. 351-387. DOI: 10.1080/13510340701303196.
 
-T. Vanhanen. \emph{Measures of Democracy 1810-2012}. Tampere, 2014. <URL:
-http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html>.
+T. Vanhanen. \emph{Measures of Democracy 1810-2018 \link{dataset}. Version 8.0 (2019-06-17).} Tampere, 2019.
+<URL: http://urn.fi/urn:nbn:fi:fsd:T-FSD1289>.
 
 M. Wahman, J. Teorell, and A. Hadenius. “Authoritarian Regime Types Revisited: Updated Data in
 Comparative Perspective”. In: \emph{Contemporary Politics} 19.1 (2013), pp. 19-34. <URL:

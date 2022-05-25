@@ -23,10 +23,10 @@ pacl
 pacl_pmm
 }
 \description{
-This dataset  (aka PACL, ACLP or CGV) is described in Cheibub, Jose Antonio, Jennifer Gandhi, and James
-Raymond Vreeland. 2010. "Democracy and Dictatorship Revisited." Public
-Choice, vol. 143, no. 2-1, pp. 67-101. DOI: 10.1007/s11127-009-9491-2. The
-full data and codebook can be downloaded here
+This dataset (aka PACL, ACLP or CGV) is described in Cheibub, Jose Antonio,
+Jennifer Gandhi, and James Raymond Vreeland. 2010. "Democracy and
+Dictatorship Revisited." Public Choice, vol. 143, no. 2-1, pp. 67-101. DOI:
+10.1007/s11127-009-9491-2. The full data and codebook can be downloaded here
 \url{https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited}.
 The documentation below is directly copied from the codebook.
 }
@@ -49,12 +49,11 @@ Alvarez, Cheibub and Limongi 2000, andCheibub 2007.}
 \item{cowcode2}{Modified correlates of war (numeric) country identifier. See
 explanation under "Organizing the World."}
 
-\item{ccdcodelet}{Three letter
-country code used by the Cline Center for Democracy, University of Illinois
-at Urbana-Champaign.}
+\item{ccdcodelet}{Three letter country code used by the Cline Center for
+Democracy, University of Illinois at Urbana-Champaign.}
 
-\item{ccdcodenum}{Numeric country code used by the
-Cline Center for Democracy, University of Illinois at Urbana-Champaign.}
+\item{ccdcodenum}{Numeric country code used by the Cline Center for
+Democracy, University of Illinois at Urbana-Champaign.}
 
 \item{aclpyear}{Concatenation of aclpcode and year.}
 
@@ -62,110 +61,96 @@ Cline Center for Democracy, University of Illinois at Urbana-Champaign.}
 
 \item{cowcodeyear}{Concatenation of cowcode and year.}
 
-\item{chgterr}{Dummy
-variable coded 1 for all the years of a country that experienced significant
-gains or losses of territory, 0 otherwise.}
+\item{chgterr}{Dummy variable coded 1 for all the years of a country that
+experienced significant gains or losses of territory, 0 otherwise.}
 
-\item{ychgterr}{Dummy variable
-coded 1 for the year in which a country gained or lost significant parts of
-its territory, 0 otherwise.}
+\item{ychgterr}{Dummy variable coded 1 for the year in which a country gained
+or lost significant parts of its territory, 0 otherwise.}
 
-\item{flagc_cowcode2}{Dummy variable coded 1 for
-the first year a country (defined by cowcode2) is observed in the dataset, 0
-otherwise.}
+\item{flagc_cowcode2}{Dummy variable coded 1 for the first year a country
+(defined by cowcode2) is observed in the dataset, 0 otherwise.}
 
-\item{flage_cowcode2}{Dummy variable coded 1 for the last year a
-country (defined by cowcode2) is observed in the dataset, 0 otherwise.}
+\item{flage_cowcode2}{Dummy variable coded 1 for the last year a country
+(defined by cowcode2) is observed in the dataset, 0 otherwise.}
 
 \item{entry}{Year the country is first observed in the dataset (repeated for
 all years a country is in the dataset).}
 
-\item{exity}{Year the country is
-last observed in the dataset (repeated for all years a country is in the
-dataset).}
+\item{exity}{Year the country is last observed in the dataset (repeated for
+all years a country is in the dataset).}
 
-\item{cid}{From the introduction to the codebook: We do not assign
-new country codes to countries that experienced changes in their territories
-but which remained in existence after the change. These include, for
-instance, Pakistan (with the creation of Bangladesh in 1971), Cyprus (with
-the "creation" of Turkish Cyprus in 1983, a country not recognized as
-independent - and hence not in this dataset - but over which the "remaining"
-Cyprus does not govern), or Ethiopia (with the creation of Eritrea in 1993).
-The variable cid provides a country coding that treats these cases as
-separate countries.}
+\item{cid}{From the introduction to the codebook: We do not assign new
+country codes to countries that experienced changes in their territories but
+which remained in existence after the change. These include, for instance,
+Pakistan (with the creation of Bangladesh in 1971), Cyprus (with the
+"creation" of Turkish Cyprus in 1983, a country not recognized as independent
+\itemize{
+\item and hence not in this dataset - but over which the "remaining" Cyprus does
+not govern), or Ethiopia (with the creation of Eritrea in 1993). The variable
+cid provides a country coding that treats these cases as separate countries.}
+}
 
-\item{wdicode}{World Development Indicators (string)
-country identifier.}
+\item{wdicode}{World Development Indicators (string) country identifier.}
 
-\item{imf_code}{International Monetary Fund (numeric)
-country identifier.}
+\item{imf_code}{International Monetary Fund (numeric) country identifier.}
 
-\item{politycode}{POLITY IV (numeric) country
-identifier.}
+\item{politycode}{POLITY IV (numeric) country identifier.}
 
 \item{bankscode}{Banks (numeric) country identifier.}
 
 \item{dpicode}{DPI (string) country identifier.}
 
-\item{uncode}{United Nations
-(numeric) country identifier.}
+\item{uncode}{United Nations (numeric) country identifier.}
 
-\item{un_region}{United Nations (numeric)
-geographic region identifier.}
+\item{un_region}{United Nations (numeric) geographic region identifier.}
 
-\item{un_region_name}{United Nations (string)
-geographic region identifier.}
+\item{un_region_name}{United Nations (string) geographic region identifier.}
 
-\item{un_continent}{United Nations (string)
-continent identifier.}
+\item{un_continent}{United Nations (string) continent identifier.}
 
-\item{un_continent_name}{United Nations (numeric)
-continent identifier.}
+\item{un_continent_name}{United Nations (numeric) continent identifier.}
 
-\item{aclp_region}{Alvarez, Cheibub, Limongi and
-Przeworski (1996, 2000) (numeric) region identifier.}
+\item{aclp_region}{Alvarez, Cheibub, Limongi and Przeworski (1996, 2000)
+(numeric) region identifier.}
 
-\item{bornyear}{Year
-the country is first identified as such.}
+\item{bornyear}{Year the country is first identified as such.}
 
 \item{endyear}{Year the country stops being identified as such}
 
-\item{exselec}{Mode of effective executive selection (from
-Banks to 2002, painted yellow in the excel file when modified; own coding
-from 2003 on): 1. Direct election (election of the effective executive by
-popular vote or the election of committed delegates for the purpose of
-executive selection) 2. Indirect election (selection of the effective
-executive by an elected assembly or by an elected but uncommitted electoral
-college) 3. Nonelective (any means of executive selection not involving a
-direct or indirect mandate from an electorate)}
+\item{exselec}{Mode of effective executive selection (from Banks to 2002,
+painted yellow in the excel file when modified; own coding from 2003 on): 1.
+Direct election (election of the effective executive by popular vote or the
+election of committed delegates for the purpose of executive selection) 2.
+Indirect election (selection of the effective executive by an elected
+assembly or by an elected but uncommitted electoral college) 3. Nonelective
+(any means of executive selection not involving a direct or indirect mandate
+from an electorate)}
 
-\item{legselec}{Mode of
-legislative selection (from Banks to 2002, painted yellow in the excel file
-when modified; own coding from 2003 on): 0. No legislature exists (includes
-cases in which there is a constituent assembly without ordinary legislative
-powers). 1. Non-elective legislature (examples include the selection of
-legislators by the effective executive, or on the basis of heredity or
-ascription) 2. Elective (legislators, or members of the lower house in a
-bicameral system, are selected by means of either direct or indirect popular
-election)}
+\item{legselec}{Mode of legislative selection (from Banks to 2002, painted
+yellow in the excel file when modified; own coding from 2003 on): 0. No
+legislature exists (includes cases in which there is a constituent assembly
+without ordinary legislative powers). 1. Non-elective legislature (examples
+include the selection of legislators by the effective executive, or on the
+basis of heredity or ascription) 2. Elective (legislators, or members of the
+lower house in a bicameral system, are selected by means of either direct or
+indirect popular election)}
 
-\item{closed}{Status of legislature. 0. Legislature is closed. 1.
-Legislature is appointed. 2. Legislature is elected}
+\item{closed}{Status of legislature. 0. Legislature is closed. 1. Legislature
+is appointed. 2. Legislature is elected}
 
-\item{dejure}{Legal
-status of parties0. All parties legally banned1. Legally single party state2.
-Multiple parties legally allowed}
+\item{dejure}{Legal status of parties0. All parties legally banned1. Legally
+single party state2. Multiple parties legally allowed}
 
-\item{defacto}{Existence of parties. 0 = No
-parties. 1 = One party. 2 = Multiple parties. N.B. We collected separate
-variables for dejure and defacto status of parties because legal status alone
-is not always a good reflection of empirical reality. Both dejure and defacto
-refer to existence of parties in general, not whether they have seats in the
-legislature. For this information see lparty.}
+\item{defacto}{Existence of parties. 0 = No parties. 1 = One party. 2 =
+Multiple parties. N.B. We collected separate variables for dejure and defacto
+status of parties because legal status alone is not always a good reflection
+of empirical reality. Both dejure and defacto refer to existence of parties
+in general, not whether they have seats in the legislature. For this
+information see lparty.}
 
-\item{defacto2}{Existence of
-parties outside of regime front. 0. No parties1. One party or multiple
-parties, but they belong to regime front. 2. Multiple parties}
+\item{defacto2}{Existence of parties outside of regime front. 0. No parties1.
+One party or multiple parties, but they belong to regime front. 2. Multiple
+parties}
 
 \item{lparty}{Parties within the legislature. 0. Either no legislature or all
 members of the legislature are nonpartisan 1. Legislature with only members
@@ -182,44 +167,43 @@ which the incumbent was first elected in multiparty elections but, for
 whatever reasons, the incumbent's term was extended and subsequent elections
 were postponed (e.g., Angola as of December 31, 2008).}
 
-\item{type2}{Dummy
-variable coded 1 for the cases excluded from the set of democracies uniquely
-because they violate the "alternation" rule; 0 otherwise. These are the cases
-that would be classified as democratic if the only criteria for democracy
-were multiparty (direct orindirect) executive and legislative elections.
-This, however, as discussed in Przeworski etal (2000:23-29) and in Cheibub,
-Vreeland and Gandhi (2009), is not sufficient to identify democracies. In the
-set of regimes that hold multiparty elections, some do it only because they
-know the opposition cannot win and others because the opposition would not be
-allowed to assume office if it won. The difficulty is that in many cases
-there is no historical evidence to allow the observer to distinguish these
-cases. Thus, it is possible that we might identify as a democracy a case that
-is a real dictatorship, or as a dictatorship a case that is a real democracy.
-The alternation rule, as well as the present variable, identifies the cases
-for which we do not have sufficient information to decide,according to our
-rules, whether the country is a democracy or not. Note on the type2 name: A
-type I error is a false positive and a type II error is a false negative. In
-the original project for which this variable was created,dictatorships were
-coded 1 (positive) and democracies 0 (negative). The variable was named to
-indicate that we had made a decision to avoid type II errors by coding as
-dictatorships cases that might have been a democracy (thus committing type I
-errors). In the current context, we think of democracy as the positive
-outcome and dictatorship as the negative outcome. We should, therefore,
-rename the variable type1 error since we decided to coded possible
-democracies (real 1s) as dictatorships (real 0s). In the end, it does not
-matter. What is important is that this variable can be used to easily
-reclassify regimes by either considering all cases coded as 1 in type2 as
-democracies or attempting to discriminate which ones are democracies and
-which ones are dictatorships.}
+\item{type2}{Dummy variable coded 1 for the cases excluded from the set of
+democracies uniquely because they violate the "alternation" rule; 0
+otherwise. These are the cases that would be classified as democratic if the
+only criteria for democracy were multiparty (direct orindirect) executive and
+legislative elections. This, however, as discussed in Przeworski etal
+(2000:23-29) and in Cheibub, Vreeland and Gandhi (2009), is not sufficient to
+identify democracies. In the set of regimes that hold multiparty elections,
+some do it only because they know the opposition cannot win and others
+because the opposition would not be allowed to assume office if it won. The
+difficulty is that in many cases there is no historical evidence to allow the
+observer to distinguish these cases. Thus, it is possible that we might
+identify as a democracy a case that is a real dictatorship, or as a
+dictatorship a case that is a real democracy. The alternation rule, as well
+as the present variable, identifies the cases for which we do not have
+sufficient information to decide,according to our rules, whether the country
+is a democracy or not. Note on the type2 name: A type I error is a false
+positive and a type II error is a false negative. In the original project for
+which this variable was created,dictatorships were coded 1 (positive) and
+democracies 0 (negative). The variable was named to indicate that we had made
+a decision to avoid type II errors by coding as dictatorships cases that
+might have been a democracy (thus committing type I errors). In the current
+context, we think of democracy as the positive outcome and dictatorship as
+the negative outcome. We should, therefore, rename the variable type1 error
+since we decided to coded possible democracies (real 1s) as dictatorships
+(real 0s). In the end, it does not matter. What is important is that this
+variable can be used to easily reclassify regimes by either considering all
+cases coded as 1 in type2 as democracies or attempting to discriminate which
+ones are democracies and which ones are dictatorships.}
 
-\item{collect}{Dummy variable coded 1 when the
-effective head is characterized by collective leadership, 0 otherwise.}
+\item{collect}{Dummy variable coded 1 when the effective head is
+characterized by collective leadership, 0 otherwise.}
 
 \item{nheads}{Number of changes in the nominal head of government in each
 year.}
 
-\item{nmil}{Dummy variable coded 1 if the nominal head is or ever was
-a member of the military by profession, 0 if civilian. Note that we code
+\item{nmil}{Dummy variable coded 1 if the nominal head is or ever was a
+member of the military by profession, 0 if civilian. Note that we code
 retired members of the military as NMIL=1since the shedding of a uniform is
 not necessarily enough to indicate the civilian character of a leader. Also
 note that we do not consider rulers who come to power as head of guerilla
@@ -227,33 +211,32 @@ movements as military. Source: Compiled from Beinen and Van deWalle (1991),
 Beck et al. (2000), Banks (various years), Zarate (2001), Lentz (1994), and
 various internet sources as marked.}
 
-\item{nhead}{Name of the nominal head of
-government. Source: Compiled from Banks (various years), Beinen and Van de
-Walle (1991), Rulers website, Zarate (2001), and Lentz (1994).}
+\item{nhead}{Name of the nominal head of government. Source: Compiled from
+Banks (various years), Beinen and Van de Walle (1991), Rulers website, Zarate
+(2001), and Lentz (1994).}
 
 \item{npost}{Political title of the nominal head of government. Source:
 Compiled from Banks (various years), Beinen and Van de Walle (1991), Rulers
 website, Zarate (2001), and Lentz (1994).}
 
-\item{ndate}{Date of entrance into
-power of nominal head of government. Source: Compiled fromBanks (various
-years), Beinen and Van de Walle (1991), Rulers website, Zarate (2001),and
-Lentz (1994).}
+\item{ndate}{Date of entrance into power of nominal head of government.
+Source: Compiled fromBanks (various years), Beinen and Van de Walle (1991),
+Rulers website, Zarate (2001),and Lentz (1994).}
 
-\item{eheads}{Number of changes in the effective head of
-government in each year}
+\item{eheads}{Number of changes in the effective head of government in each
+year}
 
-\item{ageeh}{Age of the effective head's spell in
-office. There is no left censoring.}
+\item{ageeh}{Age of the effective head's spell in office. There is no left
+censoring.}
 
-\item{emil}{Dummy variable coded 1 if
-the effective head is or ever was a member of the military by profession, 0
-if civilian. Note that we code retired members of the military as EMIL=1since
-the shedding of a uniform is not necessarily enough to indicate the civilian
-character of a leader. Also note that we do not consider rulers who come to
-power as head of guerilla movements as military. Source: Compiled from Beinen
-and Van deWalle (1991), Beck et al. (2000), Banks (various years), Zarate
-(2001), Lentz (1994), and various internet sources as marked.}
+\item{emil}{Dummy variable coded 1 if the effective head is or ever was a
+member of the military by profession, 0 if civilian. Note that we code
+retired members of the military as EMIL=1since the shedding of a uniform is
+not necessarily enough to indicate the civilian character of a leader. Also
+note that we do not consider rulers who come to power as head of guerilla
+movements as military. Source: Compiled from Beinen and Van deWalle (1991),
+Beck et al. (2000), Banks (various years), Zarate (2001), Lentz (1994), and
+various internet sources as marked.}
 
 \item{royal}{Dummy variable coded 1 if the effective head is of hereditary
 royalty, 0 otherwise. To qualify as royal, the effective head must meet 2
@@ -288,36 +271,34 @@ and Van de Walle (1991),Rulers website, Zarate (2001), and Lentz (1994).}
 Banks (various years), Beinen and Van de Walle (1991), da Graca(1985), Rulers
 website, Zarate (2001), and Lentz (1994).}
 
-\item{edate}{Date of entrance into
-power of effective head of government.Source: Compiled from Banks (various
-years), Beinen and Van de Walle (1991), da Graca(1985), Rulers website,
-Zarate (2001), and Lentz (1994).}
-
-\item{tenure08}{Total number of years (up
-to and including the year 2002) the effective head of government is in power.
-Tenure is invariant during the spell of each head.}
-
-\item{comm}{Dummy
-variable coded 1 if the ruler is the Communist Party leader, 0
-otherwise.Source: Banks (various years), Lentz (1994).}
-
-\item{ecens08}{Dummy
-variable coded 0 for the last year of an effective head's tenure due to death
-or for the last year of effective heads that lasted beyond the time of the
-last observation,usually 1996, and 1 otherwise. ecens08 = 0 for rulers who
-entered as dictators and then legitimately won an election and became
-democrats. Source: Compiled from Banks (various years), Beinen and Van de
-Walle (1991), da Graca (1985), Rulers website, Zarate(2001), and Lentz
+\item{edate}{Date of entrance into power of effective head of
+government.Source: Compiled from Banks (various years), Beinen and Van de
+Walle (1991), da Graca(1985), Rulers website, Zarate (2001), and Lentz
 (1994).}
 
-\item{edeath}{Dummy variable coded 0 for the last year of the
-effective head's spell due to the head's death and 1 otherwise. We do not
-distinguish between natural death, assassination,suicide, and accidents.
-Source: Banks' Political Handbook, Bienen and Van de Walle(1991), Rulers
-website, and Zarate (2001).}
+\item{tenure08}{Total number of years (up to and including the year 2002) the
+effective head of government is in power. Tenure is invariant during the
+spell of each head.}
 
-\item{flagh}{Dummy variable coded 1 for the
-first year an effective head of government is first observed, 0 otherwise.}
+\item{comm}{Dummy variable coded 1 if the ruler is the Communist Party
+leader, 0 otherwise.Source: Banks (various years), Lentz (1994).}
+
+\item{ecens08}{Dummy variable coded 0 for the last year of an effective
+head's tenure due to death or for the last year of effective heads that
+lasted beyond the time of the last observation,usually 1996, and 1 otherwise.
+ecens08 = 0 for rulers who entered as dictators and then legitimately won an
+election and became democrats. Source: Compiled from Banks (various years),
+Beinen and Van de Walle (1991), da Graca (1985), Rulers website,
+Zarate(2001), and Lentz (1994).}
+
+\item{edeath}{Dummy variable coded 0 for the last year of the effective
+head's spell due to the head's death and 1 otherwise. We do not distinguish
+between natural death, assassination,suicide, and accidents. Source: Banks'
+Political Handbook, Bienen and Van de Walle(1991), Rulers website, and Zarate
+(2001).}
+
+\item{flagh}{Dummy variable coded 1 for the first year an effective head of
+government is first observed, 0 otherwise.}
 
 \item{democracy}{Dummy variable coded 1 if the regime qualifies as
 democratic. The conditions for this variable are the following: democracy=1
@@ -334,46 +315,42 @@ constitution (i.e., England) are included when we observed at least one
 instance of successful government removal via a parliamentary vote of no
 confidence since 1946.}
 
-\item{poppreselec}{Dummy variable coded 1 if the
-regime is a democracy and the head of state is chosen via popular election.
-Note that it is possible that a country will have no direct presidential
-elections, poppreselec=0, and still be presidential. These are the cases in
-which presidents are indirectly elected (exselec=2)}
+\item{poppreselec}{Dummy variable coded 1 if the regime is a democracy and
+the head of state is chosen via popular election. Note that it is possible
+that a country will have no direct presidential elections, poppreselec=0, and
+still be presidential. These are the cases in which presidents are indirectly
+elected (exselec=2)}
 
-\item{regime}{Six-fold
-regime classification. 0. Parliamentary democracy 1. Mixed
-(semi-presidential) democracy 2. Presidential democracy 3. Civilian
+\item{regime}{Six-fold regime classification. 0. Parliamentary democracy 1.
+Mixed (semi-presidential) democracy 2. Presidential democracy 3. Civilian
 dictatorship 4. Military dictatorship 5. Royal dictatorship}
 
-\item{tt}{Dummy
-variable coded 1 when there is a transition to or from democracy, 0
-otherwise.}
-
-\item{ttd}{Dummy variable coded 1 when there is a transition to
+\item{tt}{Dummy variable coded 1 when there is a transition to or from
 democracy, 0 otherwise.}
 
-\item{tta}{Dummy variable coded 1 when there is a
-transition to dictatorship, 0 otherwise.}
+\item{ttd}{Dummy variable coded 1 when there is a transition to democracy, 0
+otherwise.}
 
-\item{flagdem}{Dummy variable coded
-1 for the first year a country is observed or a new regime (as defined by
-democracy) emerges, 0 otherwise.}
+\item{tta}{Dummy variable coded 1 when there is a transition to dictatorship,
+0 otherwise.}
 
-\item{flagreg}{Dummy variable coded 1 for
-the first year a country is observed or a new regime (as defined by regime)
-emerges, 0 otherwise.}
+\item{flagdem}{Dummy variable coded 1 for the first year a country is
+observed or a new regime (as defined by democracy) emerges, 0 otherwise.}
 
-\item{agedem}{Age in years of the current regime as
-classified by democracy. The year in which the regime comes into existence is
-coded as 1. When applicable, ages were extended back as far as 1870.}
+\item{flagreg}{Dummy variable coded 1 for the first year a country is
+observed or a new regime (as defined by regime) emerges, 0 otherwise.}
+
+\item{agedem}{Age in years of the current regime as classified by democracy.
+The year in which the regime comes into existence is coded as 1. When
+applicable, ages were extended back as far as 1870.}
 
 \item{agereg}{Age in years of the current regime as classified by regime. The
 year in which the regime comes into existence is coded as 1. When applicable,
 ages were extended back as far as 1870.}
 
-\item{stra}{Sum of past transitions
-to authoritarianism in a country. If a country experienced more than one
-transition to authoritarianism before 1946, STRA is coded 1 in 1946.} }
+\item{stra}{Sum of past transitions to authoritarianism in a country. If a
+country experienced more than one transition to authoritarianism before 1946,
+STRA is coded 1 in 1946.} }
 }
 \section{Organizing the world}{
 
@@ -469,6 +446,7 @@ country-years when compared with \code{pacl}.
 Other democracy: 
 \code{\link{LIED}},
 \code{\link{PIPE}},
+\code{\link{REIGN}},
 \code{\link{anckar}},
 \code{\link{anrr}},
 \code{\link{arat_pmm}},
@@ -481,7 +459,6 @@ Other democracy:
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
 \code{\link{download_fh}()},
-\code{\link{download_reign}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -506,6 +483,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
 Other PMM replication data: 

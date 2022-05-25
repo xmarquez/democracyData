@@ -22,7 +22,9 @@ Democratization. World Politics 52 (03): 384-406. DOI:
 10.1017/S0043887100016580. \doi{10.1017/S0043887100016580}.
 }
 \details{
-\describe{ \item{doorenspleet_country}{Country name as in Doorenspleet.}
+\describe{
+
+\item{doorenspleet_country}{Country name as in Doorenspleet.}
 
 \item{doorenspleet_regime}{Regime type: A = Authoritarian, D = Democracy, I =
 interruption.
@@ -66,8 +68,8 @@ Levels of inclusiveness of the political system may be broken down into one
 of the following four categories: (1) no popular suffrage; (2) suffrage
 denied to large segments of the population (more than 20 percent is
 excluded); (3) suffrage with partial restrictions (less than 20 percent of
-the population is excluded);(4) universal suffrage or minor restrictions.
-For the purposes of this analysis, countries are considered "sufficiently"
+the population is excluded);(4) universal suffrage or minor restrictions. For
+the purposes of this analysis, countries are considered "sufficiently"
 inclusive to meet the criterion of a minimal democracy if they fall into the
 third or fourth category. Should they fall within either of the first two
 categories or should they not meet the competition criterion, they are
@@ -80,13 +82,13 @@ systems can be considered as both competitive and inclusive and hence are
 classified in this study as "minimal democracies."
 
 (This description suggests one could replicate Doorenspleet's measure using
-data from \link{PIPE} or \link{LIED} as well as the newest version of \link{polity}; Doorenspleet uses Polity III data)}
+data from \link{PIPE} or \link{LIED} as well as the newest version of \link{polity};
+Doorenspleet uses Polity III data)}
 
 \item{doorenspleet}{Regime type: 1 = Authoritarian, 2 = Democracy,
 interruption codes as NA.}
 
-\item{year}{Year. Regimes are coded as of the 31
-Dec of the year.}
+\item{year}{Year. Regimes are coded as of the 31 Dec of the year.}
 
 \item{start_year}{First year of the regime.}
 
@@ -130,6 +132,7 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 Other democracy: 
 \code{\link{LIED}},
 \code{\link{PIPE}},
+\code{\link{REIGN}},
 \code{\link{anckar}},
 \code{\link{anrr}},
 \code{\link{arat_pmm}},
@@ -141,7 +144,6 @@ Other democracy:
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
 \code{\link{download_fh}()},
-\code{\link{download_reign}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -167,6 +169,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
 Other dichotomous democracy indexes: 

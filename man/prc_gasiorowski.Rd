@@ -105,22 +105,24 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 \section{Note}{
 
 
-The \code{prc_pmm} version of this data is taken from from Pemstein, Daniel,
-Stephen A. Meserve, and James Melton. 2013. "Replication data for:
+The \code{prc_pmm} version of this data is taken from from Pemstein,
+Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
 Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
 Type." In: Harvard Dataverse.
 \url{http://hdl.handle.net/1902.1/PMM}. The
-original dataset is found in \code{prc_gasiorowski}. The \code{prc_pmm} data only goes
-back to 1945. It also differs from the original data in a few cases,
-because it only includes one year per country - whereas \code{prc_gasiorowski}
-can include more than one regime classificaiton for a given year. For more
-detail on the differences, see the vignette. It is included here for completeness.
+original dataset is found in \code{prc_gasiorowski}. The \code{prc_pmm}
+data only goes back to 1945. It also differs from the original data in 245
+country-years, because it only includes one year per country - whereas
+\code{prc_gasiorowski} can include more than one regime classification for
+a given year. It is included here for completeness (and to enable one to
+replicate the \link{uds}).
 }
 
 \seealso{
 Other democracy: 
 \code{\link{LIED}},
 \code{\link{PIPE}},
+\code{\link{REIGN}},
 \code{\link{anckar}},
 \code{\link{anrr}},
 \code{\link{arat_pmm}},
@@ -133,7 +135,6 @@ Other democracy:
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
 \code{\link{download_fh}()},
-\code{\link{download_reign}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -158,6 +159,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
 Other trichotomous democracy indexes: 

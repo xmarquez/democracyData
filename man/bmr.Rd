@@ -3,27 +3,28 @@
 \docType{data}
 \name{bmr}
 \alias{bmr}
-\title{Boix-Miller-Rosato dichotomous coding of democracy, 1800-2015, version 3.0}
+\title{Boix-Miller-Rosato dichotomous coding of democracy, 1800-2020, version 4.0}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18800 rows and 15 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 19775 rows and 16 columns.
 }
 \source{
 Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A Complete
 Data Set of Political Regimes, 1800-2007. Comparative Political Studies 46
 (12): 1523-1554. Available at
 \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT}
+(versions 1-3) and \url{https://sites.google.com/site/mkmtwo/data} (version
+4.0)
 }
 \usage{
 bmr
 }
 \description{
 A dataset containing the Boix-Miller-Rosato (BMR) dichotomous coding of
-democracy, used in the paper Boix, Carles, Michael Miller, and Sebastian
-Rosato. 2012. A Complete Data Set of Political Regimes, 1800-2007.
+democracy, first used in the paper Boix, Carles, Michael Miller, and
+Sebastian Rosato. 2012. A Complete Data Set of Political Regimes, 1800-2007.
 Comparative Political Studies 46 (12): 1523-1554. The complete dataset can be
-downloaded here:
-\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT}.
-The complete codebook is available there as well.
+downloaded here: \url{https://sites.google.com/site/mkmtwo/data}. The
+complete codebook is available there as well.
 }
 \details{
 \describe{ \item{bmr_country}{The country name in BMR.}
@@ -31,6 +32,8 @@ The complete codebook is available there as well.
 \item{bmr_ccode}{Numeric polity code code in BMR. }
 
 \item{abbreviation}{World Bank 3-letter code.}
+
+\item{abbreviation_undp}{UNDP 3-letter code.}
 
 \item{year}{Year}
 
@@ -94,6 +97,7 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 Other democracy: 
 \code{\link{LIED}},
 \code{\link{PIPE}},
+\code{\link{REIGN}},
 \code{\link{anckar}},
 \code{\link{anrr}},
 \code{\link{arat_pmm}},
@@ -105,7 +109,6 @@ Other democracy:
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
 \code{\link{download_fh}()},
-\code{\link{download_reign}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -131,6 +134,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
 Other events data: 

@@ -6,13 +6,13 @@
 \alias{vanhanen_pmm}
 \title{Vanhanen measures of democracy, 1800-2012}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 15735 rows and 9 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 16849 rows and 9 columns.
 
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8965 rows and 7 columns.
 }
 \source{
-Vanhanen, Tatu. Measures of Democracy 1810-2012 (computer file). FSD1289,
-version 6.0 (2014-01-31). Vanhanen, Tatu & Lundell, Krister (data
+Vanhanen, Tatu. Measures of Democracy 1810-2012 (computer file).
+FSD1289, version 6.0 (2014-01-31). Vanhanen, Tatu & Lundell, Krister (data
 collection). Tampere. Finnish Social Science Data Archive (distributor),
 2014. Data available at
 \url{http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html}
@@ -24,11 +24,10 @@ vanhanen_pmm
 }
 \description{
 A dataset containing Tatu Vanhanen's measures of democracy. To cite use
-Vanhanen, Tatu, Measures of Democracy 1810-2012 (computer file). FSD1289,
-version 6.0 (2014-01-31). Vanhanen, Tatu & Lundell, Krister (data
-collection). Tampere. Finnish Social Science Data Archive (distributor),
-2014. Data available at
-\url{http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html}.
+Vanhanen, Tatu. 2019. Measures of Democracy 1810-2018 (dataset). Version 8.0
+(2019-06-17). Tampere. <URL: http://urn.fi/urn:nbn:fi:fsd:T-FSD1289>. Data
+available at
+\url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}.
 }
 \section{Variables}{
 
@@ -52,10 +51,10 @@ seems to indicate power relations more realistically than the distribution
 of votes.}
 
 \item{vanhanen_participation}{From Vanhanen's introduction to the dataset:
-The percentage of the population which actually voted in the same
-elections is used to measure the degree of participation (= Participation).
-This percentage is calculated from the total population, not from the adult
-or enfranchized population. I use the total population as the basis of
+The percentage of the population which actually voted in the same elections
+is used to measure the degree of participation (= Participation). This
+percentage is calculated from the total population, not from the adult or
+enfranchized population. I use the total population as the basis of
 calculation because more statistical data are available on total
 populations than on age structures of electorates. In principle, these two
 empirical variables are very simple and easy to use. In practice, however,
@@ -103,10 +102,10 @@ In presidential elections, the term 'largest party' refers to the votes
 received by the presidential candidate who won the election. A problem is,
 however, whether we should take into account the first or the second round
 votes, if there are two rounds of voting. The percentage of votes obtained
-by the winning candidate may be significantly higher in the second
-round than in the first. The round of voting, if it is not the first round,
-is indicated in country tables. The purpose has been to take into account
-the round that reflects the strength of parties and political groups most
+by the winning candidate may be significantly higher in the second round
+than in the first. The round of voting, if it is not the first round, is
+indicated in country tables. The purpose has been to take into account the
+round that reflects the strength of parties and political groups most
 reliably.
 
 Indirect elections and elections without parties
@@ -215,10 +214,10 @@ estimated relative importance of the two branches of government is also
 indicated (50-50 percent, 25-75 percent, or 75-25 percent).}
 
 \item{vanhanen_democratization}{From Vanhanen's introduction to the
-dataset: The two basic indicators of democratization can be used
-separately to measure the level of democracy, but, because they are assumed
-to indicate two different dimensions of democratization, it is reasonable
-to argue that a combination of them would be a more realistic indicator of
+dataset: The two basic indicators of democratization can be used separately
+to measure the level of democracy, but, because they are assumed to
+indicate two different dimensions of democratization, it is reasonable to
+argue that a combination of them would be a more realistic indicator of
 democracy than either of them alone. They can be combined in many ways,
 depending on how we weight the importance of Competition and Participation.
 Some researchers (see, for example, Bollen 1979, 1980; Coppedge and
@@ -300,8 +299,7 @@ would like to emphasize that because the two basic variables do not take
 into account all important aspects of democracy, they are better adapted to
 indicate significant differences between political systems from the
 perspective of democracy than more detailed differences among democracies
-or nondemocracies (cf. Vanhanen 2000a, 2000b; 2003).}
-}
+or nondemocracies (cf. Vanhanen 2000a, 2000b; 2003).} }
 }
 
 \section{Standard descriptive variables (generated by this package)}{
@@ -356,6 +354,7 @@ vignette. The vanhanen_pmm data is included here for completeness.
 Other democracy: 
 \code{\link{LIED}},
 \code{\link{PIPE}},
+\code{\link{REIGN}},
 \code{\link{anckar}},
 \code{\link{anrr}},
 \code{\link{arat_pmm}},
@@ -368,7 +367,6 @@ Other democracy:
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
 \code{\link{download_fh}()},
-\code{\link{download_reign}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -393,6 +391,7 @@ Other democracy:
 \code{\link{uds_2014}},
 \code{\link{ulfelder}},
 \code{\link{utip}},
+\code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
 Other continuous democracy indexes: 
@@ -403,7 +402,8 @@ Other continuous democracy indexes:
 \code{\link{eiu}},
 \code{\link{hadenius_pmm}},
 \code{\link{munck_pmm}},
-\code{\link{svmdi}}
+\code{\link{svmdi}},
+\code{\link{vdem_simple}}
 }
 \concept{continuous democracy indexes}
 \concept{democracy}

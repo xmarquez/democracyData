@@ -15,8 +15,8 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 Michael Bernhard, Timothy Nordstrom, and Christopher
 Reenock, "Economic Performance, Institutional Intermediation and Democratic
 Breakdown," Journal of Politics 63:3 (2001), pp. 775-803. Data and coding
-description available at
-\url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}
+description used to be available at
+\url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}, but no longer.
 }
 \usage{
 bnr
@@ -28,8 +28,8 @@ The Bernhard, Nordstrom & Reenock Event History Coding of Democratic
 Breakdowns. From Michael Bernhard, Timothy Nordstrom, and Christopher
 Reenock, "Economic Performance, Institutional Intermediation and Democratic
 Breakdown," Journal of Politics 63:3 (2001), pp. 775-803. Data and coding
-description available at
-\url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}
+description used to be available at
+\url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}, but no longer.
 }
 \section{Description}{
 
@@ -139,6 +139,7 @@ number of additional country-years with information about democracy.
 Other democracy: 
 \code{\link{LIED}},
 \code{\link{PIPE}},
+\code{\link{REIGN}},
 \code{\link{anckar}},
 \code{\link{anrr}},
 \code{\link{arat_pmm}},
@@ -150,7 +151,6 @@ Other democracy:
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
 \code{\link{download_fh}()},
-\code{\link{download_reign}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -176,6 +176,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
 Other events data: 

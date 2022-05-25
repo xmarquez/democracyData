@@ -28,8 +28,9 @@ mainwaring_pmm
 \description{
 Trichotomous democracy indicator from Mainwaring, Scott, Daniel Brinks, and
 Anibal Perez Linan. 2008. "Political Regimes in Latin America, 1900-2007."
-Original data available from
-\url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}.
+Original data used to be available from
+\url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}, though no
+longer.
 }
 \section{Variables}{
 
@@ -42,15 +43,15 @@ Original data available from
 
 \item{mainwaring}{Trichotomous democracy indicator from Mainwaring, Scott,
 Daniel Brinks, and Anibal Perez Linan. 2008. "Political Regimes in Latin
-America, 1900-2007." Original data available from
-\url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}. 0 =
-non-democracy, 0.5 = hybrid, 1 = democracy.}
+America, 1900-2007." Original data used to be available from
+\url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}.
+0 = non-democracy, 0.5 = hybrid, 1 = democracy.}
 
 \item{Regime}{Trichotomous democracy indicator from Mainwaring, Scott,
 Daniel Brinks, and Anibal Perez Linan. 2008. "Political Regimes in Latin
-America, 1900-2007." Original data available from
-\url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}. A =
-Authoritarian, D = Democracy, SD = Semidemocracy. From the published
+America, 1900-2007." Original data used to be available from
+\url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}.
+A = Authoritarian, D = Democracy, SD = Semidemocracy. From the published
 article:
 
 When governments commit no violation of any of the four criteria
@@ -197,7 +198,7 @@ Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
 Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
 Type." In: Harvard Dataverse.
 \url{http://hdl.handle.net/1902.1/PMM}. It
-only contains a numeric version of the <ainwaring Regime indicator, ranging
+only contains a numeric version of the Mainwaring Regime indicator, ranging
 from -1 (Authoritarian) to 0 (Semidemocracy) to 1 (Democracy). The original
 dataset is found in \link{mainwaring}. PMM's replication data is actually
 missing a fair number of the data points in the original data by Mainwaring
@@ -211,6 +212,7 @@ values. It is included here for completeness.
 Other democracy: 
 \code{\link{LIED}},
 \code{\link{PIPE}},
+\code{\link{REIGN}},
 \code{\link{anckar}},
 \code{\link{anrr}},
 \code{\link{arat_pmm}},
@@ -223,7 +225,6 @@ Other democracy:
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
 \code{\link{download_fh}()},
-\code{\link{download_reign}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -248,6 +249,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
 Other PMM replication data: 
