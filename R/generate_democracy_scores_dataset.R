@@ -18,12 +18,14 @@
 #'   "[polity_pmm]", "[polyarchy]", "[polyarchy_dimensions]", "[polyarchy_pmm]",
 #'   "[prc_gasiorowski]", "[prc_pmm]", "[svmdi]", "[svolik_regime]",
 #'   "[uds_2010]", "[uds_2011]", "[uds_2014]", "[ulfelder]",
-#'   "[ulfelder_extended]", "[utip]", "[vanhanen]", "[wahman_teorell_hadenius]",
-#'   "[reign]", "[polityIV]", "[polity]" (or
-#'   "[polity_annual](download_polity_annual.html)"), "[fh](download_fh.html)",
-#'   "[fh_electoral]", "[wgi]". Default is all of them.
+#'   "[ulfelder_extended]", "[utip]", "[vanhanen]", "[vdem]",
+#'   "[wahman_teorell_hadenius]", "[reign]" or "[REIGN]", "[polityIV]",
+#'   "[polity]" (or "[polity_annual](download_polity_annual.html)"),
+#'   "[fh](download_fh.html)", "[fh_electoral]", "[wgi]". Default is all of
+#'   them.
 #'
-#' @param selection A regular expression for selecting among the datasets. Optional.
+#' @param selection A regular expression for selecting among the datasets.
+#'   Optional.
 #'
 #' @param output_format Character. Whether to output a "wide" (each measure of
 #'   democracy in a separate column) or a "long" (a column with measure names, a
@@ -35,8 +37,8 @@
 #'   in Pemstein, Meserve, and Melton's replication dataset for their 2010 piece
 #'   introducing the Unified Democracy Scores (Pemstein, Meserve, and Melton
 #'   2010, 2013). See [blm_pmm], [prc_pmm], [fh_pmm], [pacl_pmm],
-#'   [vanhanen_pmm], and [polity_pmm] for details. This is included mostly for
-#'   use by the [QuickUDS](https://github.com/xmarquez/QuickUDS) package.
+#'   [vanhanen_pmm], and [polity_pmm] for details. This is included mostly to
+#'   extend or replicate the [uds] scores.
 #' @param verbose Provides a running commentary on what the function is is
 #'   doing. Default is \code{TRUE}.
 #' @param target_system Character vector describing which state system to use
@@ -59,9 +61,9 @@
 #'   since it is ignored when \code{output_format = "wide"}, which automatically
 #'   discards all regime measurements except the last in the year.
 #' @param exclude_downloadable Whether to exclude all datasets that must be
-#'   explicitly downloaded ([polity], [fh], [reign], [wgi]), using only archived
+#'   explicitly downloaded ([polity], [fh], [wgi]), using only archived
 #'   datasets. This speeds up the process considerably, but you lose some of the
-#'   better democracy measures out there. Default is \code{FALSE}.
+#'   more important democracy measures out there. Default is \code{FALSE}.
 #'
 #' @import dplyr
 #'
@@ -75,8 +77,6 @@
 #'
 #'   In the "long" version of the dataset (\code{format = "long"}), the output
 #'   data frame also contains the following variables:
-#'
-#' @section Variables:
 #'
 #'   \describe{
 #'
@@ -198,6 +198,9 @@
 #'
 #'   \item{lexical_index}{The [LIED] measure of electoral democracy, ranging
 #'   from 0 to 6.}
+#'
+#'   \item{lexical_index_plus}{The [LIED] measure of polyarchy, ranging from 0
+#'   to 7 (including political liberties).}
 #'
 #'   \item{magaloni_democracy}{A measure of democracy from [magaloni], obtained
 #'   by coding all democracies as 1 and all non-democracies as 0.}
@@ -333,6 +336,21 @@
 #'
 #'   \item{vanhanen_participation}{The participation index from [vanhanen].}
 #'
+#'   \item{v2x_api}{The additive polyarchy index from [vdem].}
+#'
+#'   \item{v2x_delibdem}{The deliberative democracy index from [vdem].}
+#'
+#'   \item{v2x_egaldem}{The egalitarian democracy index from [vdem].}
+#'
+#'   \item{v2x_libdem}{The liberal democracy index from [vdem].}
+#'
+#'   \item{v2x_mpi}{The multiplicative polyarchy index from [vdem].}
+#'
+#'   \item{v2x_partipdem}{The participative democracy index from [vdem].}
+#'
+#'   \item{v2x_polyarchy}{The polyarchy (electoral democracy) index from
+#'   [vdem].}
+#'
 #'   \item{wgi_democracy}{The voice and accountability index from [wgi].}
 #'
 #'   \item{wth_democ1}{A dichotomous measure of democracy from
@@ -422,9 +440,9 @@ generate_democracy_scores_dataset <- function(datasets,
                           "prc_gasiorowski", "prc_pmm", "svolik_regime",
                           "uds_2010", "uds_2011", "uds_2014",
                           "ulfelder", "ulfelder_extended", "svmdi", "svmdi_2016",
-                          "utip", "vanhanen", "vanhanen_pmm",
+                          "utip", "vdem", "vanhanen", "vanhanen_pmm",
                           "wahman_teorell_hadenius",
-                          "reign", "polity_annual", "polity",
+                          "reign", "REIGN", "polity_annual", "polity",
                           "fh", "fh_electoral", "wgi_democracy")
 
   if(missing(datasets)) {
@@ -515,32 +533,6 @@ generate_democracy_scores_dataset <- function(datasets,
       }
       democracy_data <- democracyData::polity_pmm %>%
         tidyr::pivot_longer(all_of(c("pmm_polity")),
-                            names_to = "measure", values_to = "value") %>%
-        standardize_selection()
-    }
-
-    # REIGN -------------------------------------------------------------------
-
-    if(!exclude_downloadable & "reign" %in% datasets) {
-      if(verbose) {
-        message("Adding REIGN data")
-      }
-      reign <- download_reign(verbose = verbose,
-                              include_in_output = include_in_output)
-
-      if(keep_only_last_in_year) {
-        reign <- reign %>%
-          dplyr::group_by(across(c(include_in_output, "year"))) %>%
-          dplyr::filter_at("End", any_vars(. == max(.))) %>%
-          dplyr::ungroup()
-      }
-
-      democracy_data <- reign %>%
-        dplyr::mutate(across(all_of("gwf_regimetype"),
-                  list("reign_democracy" = ~(. %in% c("presidential",
-                                                     "parliamentary"))))) %>%
-        dplyr::rename("reign_democracy" = "gwf_regimetype_reign_democracy") %>%
-        tidyr::pivot_longer(all_of(c("reign_democracy")),
                             names_to = "measure", values_to = "value") %>%
         standardize_selection()
     }
@@ -872,7 +864,7 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- LIED %>%
-      tidyr::pivot_longer(all_of(c("lexical_index")),
+      tidyr::pivot_longer(all_of(c("lexical_index", "lexical_index_plus")),
                           names_to = "measure", values_to = "value")  %>%
       dplyr::mutate(extended_country_name = ifelse(is.na(extended_country_name),
                                                    lied_country, extended_country_name)) %>%
@@ -1173,6 +1165,36 @@ generate_democracy_scores_dataset <- function(datasets,
       standardize_selection()
   }
 
+  # REIGN -------------------------------------------------------------------
+
+  if("reign" %in% datasets || "REIGN" %in% datasets) {
+    if(verbose) {
+      message("Adding REIGN data")
+    }
+    if(force_redownload) {
+      reign <- redownload_reign(verbose = verbose,
+                                include_in_output = include_in_output)
+    } else {
+      reign <- democracyData::REIGN
+    }
+
+    if(keep_only_last_in_year) {
+      reign <- reign %>%
+        dplyr::group_by(across(c(include_in_output, "year"))) %>%
+        dplyr::filter_at("End", any_vars(. == max(.))) %>%
+        dplyr::ungroup()
+    }
+
+    democracy_data <- reign %>%
+      dplyr::mutate(across(all_of("gwf_regimetype"),
+                           list("reign_democracy" = ~(. %in% c("presidential",
+                                                               "parliamentary"))))) %>%
+      dplyr::rename("reign_democracy" = "gwf_regimetype_reign_democracy") %>%
+      tidyr::pivot_longer(all_of(c("reign_democracy")),
+                          names_to = "measure", values_to = "value") %>%
+      standardize_selection()
+  }
+
   # SVMDI ------------------------------------------------------------------
 
 
@@ -1359,6 +1381,19 @@ generate_democracy_scores_dataset <- function(datasets,
   }
 
 
+  # vdem --------------------------------------------------------------------
+
+  if("vdem" %in% datasets) {
+    if(verbose) {
+      message("Adding vdem data")
+    }
+    democracy_data <- democracyData::vdem_simple %>%
+      tidyr::pivot_longer(matches("v2x_[a-z]+$"),
+                          names_to = "measure", values_to = "value") %>%
+      standardize_selection()
+  }
+
+
   # Wahman, Teorell, and Hadenius -------------------------------------------
 
   if("wahman_teorell_hadenius" %in% datasets) {
@@ -1406,6 +1441,7 @@ generate_democracy_scores_dataset <- function(datasets,
 
   if(output_format == "wide") {
     democracy_data <- democracy_data %>%
+      arrange(measure) %>%
       tidyr::pivot_wider(names_from = all_of("measure"),
                          values_from = all_of("value"),
                          id_cols = all_of(c(include_in_output, "year")))
@@ -1424,6 +1460,7 @@ generate_democracy_scores_dataset <- function(datasets,
       mutate(dataset = case_when(str_detect(dataset, "PEPS") ~ "PEPS",
                                  str_detect(dataset, "svmdi") ~ "svdmi",
                                  str_detect(dataset, "lexical") ~ "LIED",
+                                 str_detect(dataset, "v2x") ~ "vdem",
                                  str_detect(dataset, "polity$|polity2$") ~ "Polity 5",
                                  str_detect(dataset, "polityIV$|polity2IV$") ~ "Polity IV",
                                  TRUE ~ dataset))
