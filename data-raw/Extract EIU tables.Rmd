@@ -8,7 +8,6 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
-library(tabulizer)
 ```
 
 ## Tables
@@ -26,11 +25,11 @@ library(tabulizer)
 # tables_eiu_2019_5 <- extract_tables("Democracy Index 2019_0000000000000000000000000000000000000000000000000000000000000000000000024.pdf")
 # fs::file_delete(new_names[28:50])
 
-tables_eiu <- pdftools::pdf_data("democracy-index-2020.pdf")
+tables_eiu <- pdftools::pdf_data("eiu-democracy-index-2021.pdf")
 
-years <- c(2020:2010, 2008, 2006)
+years <- c(2021:2010, 2008, 2006)
 
-suppressWarnings(table_3 <- 23:27 %>% 
+suppressWarnings(table_3 <- 34:38 %>% 
   map(~tables_eiu[[.]]) %>% 
   map_df(~{filter(., y > 155, y < 735) %>% 
       group_by(y) %>% 
