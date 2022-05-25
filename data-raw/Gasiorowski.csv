@@ -1,0 +1,504 @@
+country,regime,start,end
+Austria,D,1920,1934
+Austria,A,1934,1938
+Austria,D,1945,1998
+Belgium,S,1830,1919
+Belgium,D,1919,1998
+Denmark,S,1849,1915
+Denmark,D,1915,1998
+Finland,T,1917,1919
+Finland,D,1919,1998
+France,D,1849,1851
+France,S,1851,1871
+France,D,1871,1940
+France,A,1940,1944
+France,D,1944,1998
+Germany,A,1871,1919
+Germany,D,1919,1933
+Germany,A,1933,1945
+Germany,T,1945,1949
+Germany,D,1949,1998
+Greece,A,1844,1926
+Greece,S,1926,1936
+Greece,A,1936,1950
+Greece,S,1950,1967
+Greece,A,1967,1974
+Greece,T,1974,1974
+Greece,D,1974,1998
+Ireland,D,1922,1998
+Italy,A,1870,1887
+Italy,S,1887,1923
+Italy,T,1923,1925
+Italy,A,1925,1945
+Italy,T,1945,1946
+Italy,D,1946,1998
+Netherlands,S,1848,1917
+Netherlands,D,1917,1998
+Norway,S,1814,1898
+Norway,D,1898,1998
+Portugal,A,1822,1911
+Portugal,S,1911,1917
+Portugal,A,1917,1918
+Portugal,S,1918,1926
+Portugal,A,1926,1974
+Portugal,T,1974,1976
+Portugal,D,1976,1998
+Spain,A,1869,1873
+Spain,S,1873,1874
+Spain,A,1874,1890
+Spain,S,1890,1923
+Spain,A,1923,1931
+Spain,T,1931,1934
+Spain,D,1934,1939
+Spain,A,1939,1976
+Spain,T,1976,1977
+Spain,D,1977,1998
+Sweden,A,1809,1866
+Sweden,S,1866,1917
+Sweden,D,1917,1998
+Switzerland,D,1848,1998
+United Kingdom,S,1832,1885
+United Kingdom,D,1885,1998
+Albania,A,1945,1990
+Albania,T,1990,1991
+Albania,S,1991,1998
+Bosnia and Herzegovina,A,1992,1995
+Bosnia and Herzegovina,T,1996,1998
+Bosnia and Herzegovina,S,1998,1998
+Bulgaria,A,1945,1990
+Bulgaria,T,1990,1990
+Bulgaria,D,1990,1998
+Croatia,T,1990,1990
+Croatia,S,1990,1998
+Czechoslovakia,D,1918,1938
+Czechoslovakia,A,1938,1945
+Czechoslovakia,D,1945,1947
+Czechoslovakia,T,1947,1948
+Czechoslovakia,A,1948,1989 
+Czechoslovakia,T,1989,1990
+Czechoslovakia,D,1990,1992
+Czech Republic,D,1993,1998
+German Democratic Republic,A,1945,1990
+Hungary,A,1919,1922
+Hungary,S,1922,1932
+Hungary,A,1932,1989
+Hungary,T,1989,1989
+Hungary,D,1989,1998
+Macedonia,D,1991,1998
+Poland,T,1918,1921
+Poland,D,1921,1926
+Poland,T,1926,1927
+Poland,A,1927,1989
+Poland,T,1989,1990
+Poland,D,1990,1998
+Romania,A,1878,1917
+Romania,S,1917,1937
+Romania,A,1937,1989
+Romania,T,1989,1990
+Romania,S,1990,1992
+Romania,D,1992,1998
+Slovak Republic,S,1993,1998
+Slovak Republic,D,1998,1998
+Slovenia,T,1989,1990
+Slovenia,D,1990,1998
+Yugoslavia,A,1918,1990
+Yugoslavia,S,1990,1998
+Armenia,S,1991,1998
+Azerbaijan,A,1991,1998
+Belarus,A,1991,1998
+Estonia,T,1991,1992
+Estonia,D,1992,1998
+Georgia,A,1991,1992
+Georgia,T,1992,1992
+Georgia,S,1992,1998
+Kazakhstan,A,1991,1998
+Kyrgyzstan,T,1991,1993
+Kyrgyzstan,S,1993,1998
+Latvia,T,1990,1991
+Latvia,D,1991,1998
+Lithuania,T,1990,1992
+Lithuania,D,1992,1998
+Moldova,T,1991,1994
+Moldova,S,1994,1998
+Russia (Soviet Union),A,1905,1991
+Russia (Soviet Union),T,1991,1994
+Russia (Soviet Union),S,1994,1998
+Tajikistan,A,1991,1998
+Turkmenistan,A,1991,1998
+Ukraine,T,1991,1991
+Ukraine,S,1991,1998
+Uzbekistan,A,1991,1998
+Australia,S,1867,1901
+Australia,D,1901,1998
+Canada,D,1920,1998
+New Zealand,D,1907,1998
+United States,S,1789,1870
+United States,D,1870,1998
+Argentina,A,1816,1862
+Argentina,S,1862,1930
+Argentina,A,1930,1932
+Argentina,S,1932,1943
+Argentina,A,1943,1946
+Argentina,S,1946,1955
+Argentina,A,1955,1958
+Argentina,S,1958,1966
+Argentina,A,1966,1973
+Argentina,S,1973,1976
+Argentina,A,1976,1982
+Argentina,T,1982,1983
+Argentina,D,1983,1998
+Bolivia,A,1825,1952
+Bolivia,S,1952,1964
+Bolivia,A,1964,1981
+Bolivia,T,1981,1982
+Bolivia,D,1982,1998
+Brazil,A,1822,1945
+Brazil,T,1945,1946
+Brazil,D,1946,1964
+Brazil,A,1964,1974
+Brazil,T,1974,1985
+Brazil,D,1985,1998
+Chile,A,1818,1840
+Chile,S,1840,1952
+Chile,D,1952,1973
+Chile,A,1973,1988
+Chile,T,1988,1990
+Chile,D,1990,1998
+Colombia,A,1819,1910
+Colombia,S,1910,1949
+Colombia,A,1949,1957
+Colombia,T,1957,1958
+Colombia,D,1958,1998
+Costa Rica,A,1838,1909
+Costa Rica,S,1909,1917
+Costa Rica,A,1917,1918
+Costa Rica,S,1918,1948
+Costa Rica,T,1948,1949
+Costa Rica,D,1949,1998
+Cuba,A,1902,1940
+Cuba,D,1940,1952
+Cuba,A,1952,1998
+Dominican Republic,A,1844,1962
+Dominican Republic,T,1962,1963
+Dominican Republic,D,1963,1963
+Dominican Republic,A,1963,1978
+Dominican Republic,D,1978,1998
+Ecuador,A,1830,1948
+Ecuador,S,1948,1963
+Ecuador,A,1963,1966
+Ecuador,T,1966,1968
+Ecuador,S,1968,1970
+Ecuador,A,1970,1975
+Ecuador,T,1975,1979
+Ecuador,S,1979,1984
+Ecuador,D,1984,1998
+El Salvador,A,1841,1927
+El Salvador,T,1927,1931
+El Salvador,S,1931,1931
+El Salvador,A,1931,1992
+El Salvador,S,1992,1994
+El Salvador,D,1994,1998
+Guatemala,A,1839,1944
+Guatemala,T,1944,1945
+Guatemala,D,1945,1954
+Guatemala,A,1954,1983
+Guatemala,T,1983,1986
+Guatemala,S,1986,1996
+Guatemala,D,1996,1998
+Haiti,A,1815,1990
+Haiti,T,1990,1991
+Haiti,S,1991,1991
+Haiti,A,1991,1994
+Haiti,S,1994,1998
+Honduras,A,1838,1949
+Honduras,S,1949,1954
+Honduras,A,1954,1957
+Honduras,S,1957,1963
+Honduras,A,1963,1982
+Honduras,S,1982,1996 
+Honduras,D,1996,1998
+Jamaica,D,1962,1998
+Mexico,A,1821,1988
+Mexico,S,1988,1997
+Mexico,D,1997,1998
+Nicaragua,A,1838,1989
+Nicaragua,T,1989,1990
+Nicaragua,D,1990,1998
+Panama,A,1903,1989
+Panama,S,1989,1994
+Panama,D,1994,1998
+Paraguay,A,1815,1989
+Paraguay,T,1989,1989
+Paraguay,S,1989,1993
+Paraguay,D,1993,1998
+Peru,A,1824,1945
+Peru,S,1945,1948
+Peru,A,1948,1956
+Peru,S,1956,1962
+Peru,A,1962,1963
+Peru,S,1963,1968
+Peru,A,1968,1977
+Peru,T,1977,1980
+Peru,D,1980,1992
+Peru,A,1992,1995
+Peru,S,1995,1998
+Trinidad and Tobago,D,1962,1998
+Uruguay,A,1828,1904
+Uruguay,S,1904,1918
+Uruguay,D,1918,1933
+Uruguay,A,1933,1934
+Uruguay,D,1934,1973
+Uruguay,T,1973,1973
+Uruguay,A,1973,1981
+Uruguay,T,1981,1985
+Uruguay,D,1985,1998
+Venezuela,A,1830,1945
+Venezuela,T,1945,1947
+Venezuela,D,1947,1948
+Venezuela,A,1948,1958
+Venezuela,T,1958,1959
+Venezuela,D,1959,1998
+Algeria,A,1962,1988
+Algeria,T,1988,1990
+Algeria,S,1990,1992
+Algeria,A,1992,1998
+Egypt,A,1922,1998
+Iran,A,1906,1998
+Iraq,A,1932,1998
+Israel,T,1948,1949
+Israel,D,1949,1998
+Jordan,A,1946,1998
+Kuwait,A,1961,1998
+Lebanon,S,1943,1975
+Lebanon,A,1975,1989
+Lebanon,T,1989,1992
+Lebanon,S,1992,1998
+Libya,A,1951,1998
+Morocco,A,1956,1998
+Morocco,S,1998,1998
+Saudi Arabia,A,1932,1998
+Sudan,S,1955,1958
+Sudan,A,1958,1964
+Sudan,T,1964,1965
+Sudan,S,1965,1969
+Sudan,A,1969,1985
+Sudan,T,1985,1986
+Sudan,S,1986,1989
+Sudan,A,1989,1998
+Syria,A,1946,1998
+Tunisia,A,1956,1998
+Turkey,S,1921,1925
+Turkey,A,1925,1945
+Turkey,T,1945,1950
+Turkey,D,1950,1957
+Turkey,S,1957,1960
+Turkey,A,1960,1961
+Turkey,D,1961,1971
+Turkey,A,1971,1974
+Turkey,D,1974,1980
+Turkey,A,1980,1982
+Turkey,T,1982,1983
+Turkey,S,1983,1998
+United Arab Emirates,A,1971,1998
+Yemen Arab Republic,A,1918,1998
+Yemen People's Democratic Republic of,A,1967,1990
+Afghanistan,A,1747,1998
+Bangladesh,A,1971,1972
+Bangladesh,T,1972,1973
+Bangladesh,S,1973,1974
+Bangladesh,A,1974,1978
+Bangladesh,T,1978,1979
+Bangladesh,S,1979,1982
+Bangladesh,A,1982,1990
+Bangladesh,T,1990,1991
+Bangladesh,S,1991,1998
+Bhutan,A,1907,1998
+India,A,1947,1952
+India,D,1952,1975
+India,A,1975,1977
+India,T,1977,1977
+India,D,1977,1998
+Nepal,A,1767,1990
+Nepal,T,1990,1991
+Nepal,D,1991,1998
+Pakistan,S,1947,1958
+Pakistan,A,1958,1969
+Pakistan,T,1969,1972
+Pakistan,S,1972,1977
+Pakistan,A,1977,1988
+Pakistan,D,1988,1990
+Pakistan,S,1990,1998
+Sri Lanka,D,1948,1983
+Sri Lanka,S,1983,1998
+Cambodia,A,1953,1955
+Cambodia,S,1955,1957
+Cambodia,A,1957,1993
+Cambodia,S,1993,1998
+China,A,1911,1998
+Indonesia,D,1949,1957
+Indonesia,A,1957,1998
+North Korea,A,1948,1998
+South Korea,D,1948,1948
+South Korea,A,1948,1960
+South Korea,T,1960,1960
+South Korea,D,1960,1961
+South Korea,A,1961,1987
+South Korea,T,1987,1988
+South Korea,D,1988,1998
+Laos,A,1954,1956
+Laos,S,1956,1957
+Laos,D,1957,1959
+Laos,A,1959,1998
+Malaysia,D,1957,1969
+Malaysia,A,1969,1971
+Malaysia,S,1971,1998
+Mongolia,A,1921,1988
+Mongolia,T,1988,1990
+Mongolia,D,1990,1998
+Myanmar,D,1948,1962
+Myanmar,A,1962,1998
+Papua New Guinea,D,1975,1998
+Philippines,S,1946,1953
+Philippines,D,1953,1972
+Philippines,A,1972,1986
+Philippines,D,1986,1998
+Singapore,S,1965,1998
+Taiwan,A,1949,1988
+Taiwan,T,1988,1991
+Taiwan,S,1991,1996
+Taiwan,D,1996,1998
+Thailand,A,1932,1946
+Thailand,S,1946,1947
+Thailand,A,1947,1973
+Thailand,T,1973,1975
+Thailand,D,1975,1976
+Thailand,A,1976,1986
+Thailand,S,1986,1991
+Thailand,A,1991,1992
+Thailand,D,1992,1998
+Vietnam South,A,1954,1975
+Vietnam North,A,1954,1998
+Angola,A,1975,1998
+Benin,D,1960,1963
+Benin,A,1963,1990
+Benin,T,1990,1991
+Benin,D,1991,1998
+Burkina Faso,A,1960,1969
+Burkina Faso,T,1969,1971
+Burkina Faso,S,1971,1974
+Burkina Faso,A,1974,1977
+Burkina Faso,T,1977,1978
+Burkina Faso,D,1978,1980
+Burkina Faso,A,1980,1992
+Burkina Faso,S,1992,1998
+Burundi,A,1962,1992
+Burundi,T,1992,1993
+Burundi,S,1993,1996
+Burundi,A,1996,1998
+Cameroon,A,1960,1998
+Central Africa Republic,A,1960,1991
+Central Africa Republic,T,1991,1993
+Central Africa Republic,S,1993,1998
+Chad,D,1960,1962
+Chad,A,1962, 1996
+Chad,S,1996,1998
+Congo,D,1960,1963
+Congo,A,1963,1991
+Congo,T,1991,1992
+Congo,D,1992,1993
+Congo,S,1993,1997
+Congo,A,1997,1998
+Eritrea,A,1993,1998
+Ethiopia,A,1871,1991
+Ethiopia,T,1991,1995
+Ethiopia,S,1995,1998
+Gabon,A,1960,1964
+Gabon,S,1964,1968
+Gabon,A,1968,1994
+Gabon,T,1994,1995
+Gabon,S,1995,1998
+Ghana,D,1957,1960
+Ghana,A,1960,1969
+Ghana,T,1969,1969
+Ghana,D,1969,1972
+Ghana,A,1972,1978
+Ghana,T,1978,1979
+Ghana,D,1979,1982
+Ghana,A,1982,1992
+Ghana,T,1992,1992
+Ghana,S,1992,1998
+Guinea,A,1958,1998
+Ivory Coast,A,1960,1995
+Ivory Coast,S,1995,1998
+Kenya,D,1963,1966
+Kenya,A,1966,1979
+Kenya,S,1979,1982
+Kenya,A,1982,1991
+Kenya,T,1991,1992
+Kenya,S,1992,1998
+Lesotho,S,1966,1970
+Lesotho,A,1970,1993
+Lesotho,S,1993,1998
+Liberia,A,1847,1998
+Madagascar,D,1960,1971
+Madagascar,A,1971,1991
+Madagascar,T,1991,1993
+Madagascar,S,1993,1998
+Malawi,A,1964,1993
+Malawi,T,1993,1994
+Malawi,D,1994,1998
+Mali,A,1960,1991
+Mali,T,1991,1992
+Mali,D,1992,1998
+Mauritania,A,1960,1998
+Mozambique,A,1975,1995
+Mozambique,S,1995,1998
+Namibia,D,1990,1998
+Namibia,S,1998,1998
+Niger,A,1960,1990
+Niger,T,1990,1993
+Niger,D,1993,1996
+Niger,A,1996,1998
+Nigeria,S,1960,1966
+Nigeria,A,1966,1975
+Nigeria,T,1975,1979
+Nigeria,S,1979,1983
+Nigeria,A,1983,1998
+Rwanda,D,1962,1963
+Rwanda,A,1963,1998
+Senegal,S,1960,1962
+Senegal,A,1962,1974
+Senegal,T,1974,1978
+Senegal,S,1978,1998
+Senegal,D,1998,1998
+Sierra Leone,D,1961,1967
+Sierra Leone,A,1967,1968
+Sierra Leone,D,1968,1968
+Sierra Leone,S,1968,1973
+Sierra Leone,A,1973,1998
+Somalia,D,1960,1969
+Somalia,A,1969,1998
+South Africa,A,1910,1993
+South Africa,T,1993,1994
+South Africa,D,1994,1998
+Tanzania,D,1961,1962
+Tanzania,S,1962,1965
+Tanzania,A,1965,1992
+Tanzania,T,1992,1995
+Tanzania,S,1995,1998
+Togo,D,1960,1961
+Togo,A,1961,1963
+Togo,D,1963,1967
+Togo,A,1967,1994
+Togo,S,1994,1998
+Togo,A,1998,1998
+Uganda,S,1962,1966
+Uganda,A,1966,1998
+Zaire (Democratic Republic of Congo),S,1960,1960
+Zaire (Democratic Republic of Congo),A,1960,1998
+Zambia,S,1964,1971
+Zambia,A,1971,1990
+Zambia,T,1990,1991
+Zambia,D,1991,1993
+Zambia,S,1993,1998
+Zimbabwe,S,1980,1998
