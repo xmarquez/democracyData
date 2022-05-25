@@ -305,21 +305,22 @@
 # BMR ---------------------------------------------------------------------
 
 
-#' Boix-Miller-Rosato dichotomous coding of democracy, 1800-2015, version 3.0
+#' Boix-Miller-Rosato dichotomous coding of democracy, 1800-2020, version 4.0
 #'
 #' A dataset containing the Boix-Miller-Rosato (BMR) dichotomous coding of
-#' democracy, used in the paper Boix, Carles, Michael Miller, and Sebastian
-#' Rosato. 2012. A Complete Data Set of Political Regimes, 1800-2007.
+#' democracy, first used in the paper Boix, Carles, Michael Miller, and
+#' Sebastian Rosato. 2012. A Complete Data Set of Political Regimes, 1800-2007.
 #' Comparative Political Studies 46 (12): 1523-1554. The complete dataset can be
-#' downloaded here:
-#' \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT}.
-#' The complete codebook is available there as well.
+#' downloaded here: \url{https://sites.google.com/site/mkmtwo/data}. The
+#' complete codebook is available there as well.
 #'
 #' \describe{ \item{bmr_country}{The country name in BMR.}
 #'
 #' \item{bmr_ccode}{Numeric polity code code in BMR. }
 #'
 #' \item{abbreviation}{World Bank 3-letter code.}
+#'
+#' \item{abbreviation_undp}{UNDP 3-letter code.}
 #'
 #' \item{year}{Year}
 #'
@@ -349,6 +350,8 @@
 #'   Data Set of Political Regimes, 1800-2007. Comparative Political Studies 46
 #'   (12): 1523-1554. Available at
 #'   \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT}
+#'   (versions 1-3) and \url{https://sites.google.com/site/mkmtwo/data} (version
+#'   4.0)
 #' @family democracy
 #' @family events data
 #' @family dichotomous democracy indexes
@@ -365,8 +368,8 @@
 #' Breakdowns. From Michael Bernhard, Timothy Nordstrom, and Christopher
 #' Reenock, "Economic Performance, Institutional Intermediation and Democratic
 #' Breakdown," Journal of Politics 63:3 (2001), pp. 775-803. Data and coding
-#' description available at
-#' \url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}
+#' description used to be available at
+#' \url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}, but no longer.
 #'
 #' @section Description:
 #'
@@ -425,8 +428,8 @@
 #' @source Michael Bernhard, Timothy Nordstrom, and Christopher
 #' Reenock, "Economic Performance, Institutional Intermediation and Democratic
 #' Breakdown," Journal of Politics 63:3 (2001), pp. 775-803. Data and coding
-#' description available at
-#' \url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}
+#' description used to be available at
+#' \url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}, but no longer.
 #' @family democracy
 #' @family events data
 #' @family dichotomous democracy indexes
@@ -449,18 +452,16 @@
 
 # BTI ---------------------------------------------------------------------
 
-# BNR ---------------------------------------------------------------------
-
 
 #' The Bertelsmann Transformation Index
 #'
-#' The Bertelsmann Transformation Index of the Bertelsmann Stiftung. Data and
-#' coding description available at
+#' The Bertelsmann Transformation Index of the Bertelsmann Stiftung (2022
+#' edition). Data and coding description available at
 #' \url{https://www.bti-project.org/en/index/political-transformation.html}
 #'
 #' @section Description:
 #'
-#'   The BTI is calculated at Biennial Intervals for approximately 133 countries
+#'   The BTI is calculated at Biennial Intervals for approximately 137 countries
 #'   since 2006.
 #'
 #'   \describe{
@@ -624,7 +625,7 @@
 #'
 #'   }
 #' @template standard-variables
-#' @source Transformation Index of the Bertelsmann Stiftung 2020. Bertelsmann
+#' @source Transformation Index of the Bertelsmann Stiftung 2022. Bertelsmann
 #'   Stiftung. Available at
 #'   \url{https://www.bti-project.org/en/index/political-transformation.html}
 #' @family democracy
@@ -676,21 +677,26 @@
 #' The Economist Intelligence Unit's Democracy Index
 #'
 #' A dataset containing the country-year version of the democracy index compiled
-#' by the Economist Intelligence Unit, 2006-2020. From the report "Democracy
-#' Index 2020: In sickness and in health?", available at
+#' by the Economist Intelligence Unit, 2006-2021. From the report "Democracy
+#' Index 2021: The China challenge", available at
 #' \url{https://www.eiu.com/topic/democracy-index}.
 #'
-#' \describe{ \item{eiu_country}{Country name as in the original tables.}
+#' \describe{
+#'
+#' \item{eiu_country}{Country name as in the original tables.}
+#'
 #' \item{eiu}{Democracy index, ranging from 0 (least democratic) to to 10 (most
 #' democratic). The report says that the index "is based on five categories:
 #' electoral process and pluralism; civil liberties; the functioning of
 #' government; political participation; and political culture" which form "one
-#' interrelated whole".} }
+#' interrelated whole".}
+#'
+#' }
 #' @template standard-variables
 #' @family democracy
 #' @family continuous democracy indexes
-#' @source The economist Intelligence Unit. 2020. Democracy
-#' Index 2020: In sickness and in health?
+#' @source The economist Intelligence Unit. 2021. Democracy
+#' Index 2020: The Rise of China.
 #'   \url{https://www.eiu.com/topic/democracy-index}.
 "eiu"
 
@@ -704,7 +710,9 @@
 #' Democratization. World Politics 52 (03): 384-406. DOI:
 #' 10.1017/S0043887100016580. \doi{10.1017/S0043887100016580}.
 #'
-#' \describe{ \item{doorenspleet_country}{Country name as in Doorenspleet.}
+#' \describe{
+#'
+#' \item{doorenspleet_country}{Country name as in Doorenspleet.}
 #'
 #' \item{doorenspleet_regime}{Regime type: A = Authoritarian, D = Democracy, I =
 #' interruption.
@@ -748,8 +756,8 @@
 #' of the following four categories: (1) no popular suffrage; (2) suffrage
 #' denied to large segments of the population (more than 20 percent is
 #' excluded); (3) suffrage with partial restrictions (less than 20 percent of
-#' the population is excluded);(4) universal suffrage or minor restrictions.
-#' For the purposes of this analysis, countries are considered "sufficiently"
+#' the population is excluded);(4) universal suffrage or minor restrictions. For
+#' the purposes of this analysis, countries are considered "sufficiently"
 #' inclusive to meet the criterion of a minimal democracy if they fall into the
 #' third or fourth category. Should they fall within either of the first two
 #' categories or should they not meet the competition criterion, they are
@@ -761,14 +769,14 @@
 #' systems can be considered as both competitive and inclusive and hence are
 #' classified in this study as "minimal democracies."
 #'
-#'  (This description suggests one could replicate Doorenspleet's measure using
-#' data from [PIPE] or [LIED] as well as the newest version of [polity]; Doorenspleet uses Polity III data)}
+#' (This description suggests one could replicate Doorenspleet's measure using
+#' data from [PIPE] or [LIED] as well as the newest version of [polity];
+#' Doorenspleet uses Polity III data)}
 #'
 #' \item{doorenspleet}{Regime type: 1 = Authoritarian, 2 = Democracy,
 #' interruption codes as NA.}
 #'
-#' \item{year}{Year. Regimes are coded as of the 31
-#' Dec of the year.}
+#' \item{year}{Year. Regimes are coded as of the 31 Dec of the year.}
 #'
 #' \item{start_year}{First year of the regime.}
 #'
@@ -866,19 +874,22 @@
 # LIED --------------------------------------------------------------------
 
 
-#' The Lexical Index of Democracy, v. 5.2
+#' The Lexical Index of Democracy, v. 6.4
 #'
-#' The Lexical Index of Democracy described in Skaaning, Svend-Erik; John
-#' Gerring; and Henrikas Bartusevicius (2015). "A Lexical Index of Electoral
+#' The Lexical Index of Democracy first described in Skaaning, Svend-Erik; John
+#' Gerring; and Henrikas Bartusevičius (2015). "A Lexical Index of Electoral
 #' Democracy." Comparative Political Studies, Vol. 48, No. 12, pp. 1491-1525.
 #' Original data and variable descriptions available at
-#' \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106}.
+#' \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}.
+#' The dataset is now on version 6.4, and contains new variables. The
+#' documentation below is copied from their codebook, with some small additions
+#' for clarification purposes.
 #'
 #' @section Description of the Construction of LIED:
 #'
 #'   To code the lexical index we make use of five variables developed initially
-#'   in the Political Institutions and Events ([PIPE]) dataset (Przeworski
-#'   et al. 2013): LEGSELEC, EXSELEC, OPPOSITION, MALE SUFFRAGE, and FEMALE
+#'   in the Political Institutions and Events ([PIPE]) dataset (Przeworski et
+#'   al. 2013): LEGSELEC, EXSELEC, OPPOSITION, MALE SUFFRAGE, and FEMALE
 #'   SUFFRAGE. Since [PIPE] does not attempt to measure the quality of
 #'   elections, we generate a sixth variable: COMPETITION. All variables are
 #'   binary, coded 1 if the following circumstances obtain, and 0 otherwise.
@@ -967,14 +978,96 @@
 #'   In a small number of cases, the resulting index appears to have been
 #'   incorrectly constructed:
 #'
-#'   ```{r echo = FALSE}
-#'   LIED %>% filter(lexical_index
-#'   != lexical_index_original) %>% select(lied_country, year, lexical_index,
+#'   ```{r, echo = FALSE}
+#'
+#'   LIED %>% filter(lexical_index !=
+#'   lexical_index_original) %>% select(lied_country, year, lexical_index,
 #'   lexical_index_original)
+#'
 #'   ```
 #'
 #'   I've recalculated the index for these cases and put the original value in
-#'   the `lexical_index_original` variable.} }
+#'   the `lexical_index_original` variable.}
+#'
+#'   \item{political_liberties}{Freedom of expression, freedom of assembly, and
+#'   freedom of association are respected. All groups, which are not openly
+#'   anti-democratic, are allowed to organize freely and to assemble peacefully,
+#'   and free speech, including critique of government and state-authorities, is
+#'   tolerated and practiced freely by individuals and groups, including private
+#'   as well as public media outlets. 1=present, 0=absent.}
+#'
+#'   \item{lexical_index_plus}{This index, LIED+, adds an extra layer to the
+#'   upper-end of LIED in the form of political liberties. This is done to
+#'   distinguish between electoral democracies and polyarchies. The meaning of
+#'   the scores from 0 to 5 are identical to LIED, whereas 6 and 7 refer to the
+#'   following configurations of indicator values:
+#'
+#'   L6: legislative_elections=1 & multi-party_legislative_elections=1 &
+#'   executive_elections=1 & competitive_elections=1 & male_suffrage=1 &
+#'   female_suffrage=1 & political_liberties=0 (regime type: electoral
+#'   democracies)
+#'
+#'   L7: legislative_elections=1 & multi-party_legislative_elections=1 &
+#'   executive_elections=1 &  competitive_elections=1 & male_suffrage=1 &
+#'   female_suffrage=1 & political_liberties=1 (regime type: polyarchies)}
+#'
+#'   \item{democratic_transition}{Indicates whether a democratic transition took
+#'   place in a given year as signified by a change in the competitive_elections
+#'   indicator from 0 in the previous year to 1 in the current year. 1=present,
+#'   0=absent.}
+#'
+#'   \item{transition_type}{For all country-years with democratic transitions,
+#'   we have coded the mode of transition based on a distinction between:
+#'   1=conversion (incumbent-led), 2=cooperative (pact between incumbents and
+#'   opposition/balanced influence), 3=collapse (opposition-led), 4=foreign
+#'   supervision (imposition by foreign power based on intervention or highly
+#'   asymmetrical – partial or full – decolonization), 5=foreign liberalization
+#'   (democracy reemerges after occupational power has lost war to foreign
+#'   powers). Country-years without democratic transitions are scored 0.}
+#'
+#'   \item{democratic_breakdown}{Indicates whether a democratic breakdown took
+#'   place in a given year as signified by a change in competitive_elections
+#'   indicator from 1 in the previous year to 0 in the current year. 1=present,
+#'   0=absent.}
+#'
+#'   \item{breakdown_type}{For all country-years with democratic transitions, we
+#'   have coded the mode of transition based on a distinction between:
+#'   1=implicit regression induced by incumbents, 2=military coup, 3=foreign
+#'   occupation, 4=self-coup (incumbents close down parliament unduly and take
+#'   full political control), 5=coup or civil conflict headed by opposition
+#'   party/movement, 6=coup headed by monarch. Country-years without democratic
+#'   breakdowns are scored 0.}
+#'
+#'   \item{turnover_period}{Indicates whether a particular country-year is part
+#'   of a period between an initial electoral government alternation (as
+#'   indicated by a turnover event, see below) in a multi-party electoral regime
+#'   and an interruption of the same multi-party electoral regime (as indicated
+#'   by a score of 0 on executive elections or
+#'   multi-party_legislative_elections, see above). If another turnover event
+#'   happens later in the same polity, a new turnover period begins. 1=present,
+#'   0=absent.}
+#'
+#'   \item{turnover_event}{Indicates whether partisan control over government
+#'   power alternated from an elected chief executive to another
+#'   party/coalition/candidate representing the opposition as a consequence of a
+#'   multi-party election in a particular country-year. Multi-party legislative
+#'   and (direct or indirect) executive elections are considered necessary
+#'   conditions for a genuine turnover. 1=present, 0=absent.}
+#'
+#'   \item{two_turnover_period}{Indicates whether a particular country-year is
+#'   part of a period between a second electoral government alternation (as
+#'   indicated by a turnover event, see below) in a multi-party electoral regime
+#'   and an interruption of the same multi-party electoral regime (as indicated
+#'   by a score of 0 on executive elections or
+#'   multi-party_legislative_elections, see above). If two turnover events
+#'   happens later in the same polity under a new multi_party electoral regime,
+#'   a new two-turnover period begins. 1=present, 0=absent.}
+#'
+#'   \item{sovereign}{Indicates whether a polity/country is a separate unit in
+#'   the international system of states (1) or subjected to foreign colonization
+#'   or occupation with formal loss of autonomy (0).}
+#'
+#'   }
 #' @template standard-variables
 #'
 #' @section Deviations from [PIPE]:
@@ -984,19 +1077,19 @@
 #'   Although we employ [PIPE] as an initial source for coding LEGSELEC,
 #'   EXSELEC, OPPOSITION, MALE SUFFRAGE, and FEMALE SUFFRAGE, we deviate from
 #'   PIPE--based on our reading of country specific sources--in several ways.
-#'   First, with respect to executive elections, in the [PIPE] dataset
-#'   "Prime ministers are always coded as elected if the legislature is open."
-#'   However, for our purposes we need an indicator that also takes into account
-#'   whether the government is responsible to an elected parliament if the
-#'   executive is not directly elected--a situation generated by a number of
-#'   European monarchies prior to World War I, by episodes of international
-#'   supervision such as Bosnia-Herzegovina in the first years following the
-#'   civil war, and by some monarchies in the Middle East and elsewhere (e.g.,
-#'   Liechtenstein, Monaco, and Tonga) in the contemporary era. To illustrate,
-#'   [PIPE] codes Denmark as having executive elections from 1849 to 1900
-#'   although the parliamentary principle was not established until 1901. Before
-#'   then, the government was accountable to the king. Among the current cases
-#'   with elected multiparty legislatures not fulfilling this condition, we find
+#'   First, with respect to executive elections, in the [PIPE] dataset "Prime
+#'   ministers are always coded as elected if the legislature is open." However,
+#'   for our purposes we need an indicator that also takes into account whether
+#'   the government is responsible to an elected parliament if the executive is
+#'   not directly elected--a situation generated by a number of European
+#'   monarchies prior to World War I, by episodes of international supervision
+#'   such as Bosnia-Herzegovina in the first years following the civil war, and
+#'   by some monarchies in the Middle East and elsewhere (e.g., Liechtenstein,
+#'   Monaco, and Tonga) in the contemporary era. To illustrate, [PIPE] codes
+#'   Denmark as having executive elections from 1849 to 1900 although the
+#'   parliamentary principle was not established until 1901. Before then, the
+#'   government was accountable to the king. Among the current cases with
+#'   elected multiparty legislatures not fulfilling this condition, we find
 #'   Jordan and Morocco. In order to achieve a higher level of concept-measure
 #'   consistency, we have thus recoded all country-years (based on
 #'   country-specific accounts) for this variable where our sources suggested
@@ -1031,13 +1124,12 @@
 #' @family democracy
 #' @family institutions
 #' @aliases lied
-#' @source Skaaning, Svend-Erik; John Gerring; and Henrikas Bartusevicius
+#' @encoding UTF-8
+#' @source Skaaning, Svend-Erik; John Gerring; and Henrikas Bartusevičius
 #'   (2015). "A Lexical Index of Electoral Democracy." Comparative Political
 #'   Studies, Vol. 48, No. 12, pp. 1491-1525. Original data and variable
 #'   descriptions available at
-#'   \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106}
-#'
-#'
+#'   \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}
 #'
 #'
 "LIED"
@@ -1049,8 +1141,9 @@
 #'
 #' Trichotomous democracy indicator from Mainwaring, Scott, Daniel Brinks, and
 #' Anibal Perez Linan. 2008. "Political Regimes in Latin America, 1900-2007."
-#' Original data available from
-#' \url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}.
+#' Original data used to be available from
+#' \url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}, though no
+#' longer.
 #'
 #' @section Variables:
 #'
@@ -1062,15 +1155,15 @@
 #'
 #'   \item{mainwaring}{Trichotomous democracy indicator from Mainwaring, Scott,
 #'   Daniel Brinks, and Anibal Perez Linan. 2008. "Political Regimes in Latin
-#'   America, 1900-2007." Original data available from
-#'   [http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf](http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf). 0 =
-#'   non-democracy, 0.5 = hybrid, 1 = democracy.}
+#'   America, 1900-2007." Original data used to be available from
+#'   [http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf](http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf).
+#'   0 = non-democracy, 0.5 = hybrid, 1 = democracy.}
 #'
 #'   \item{Regime}{Trichotomous democracy indicator from Mainwaring, Scott,
 #'   Daniel Brinks, and Anibal Perez Linan. 2008. "Political Regimes in Latin
-#'   America, 1900-2007." Original data available from
-#'   [http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf](http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf). A =
-#'   Authoritarian, D = Democracy, SD = Semidemocracy. From the published
+#'   America, 1900-2007." Original data used to be available from
+#'   [http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf](http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf).
+#'   A = Authoritarian, D = Democracy, SD = Semidemocracy. From the published
 #'   article:
 #'
 #'   When governments commit no violation of any of the four criteria
@@ -1167,7 +1260,6 @@
 #'   A partial violation occurs if military leaders or the military as an
 #'   institution are able to veto important policies in a few areas not related
 #'   to the armed forces (e.g., Ecuador 1961-62).
-
 #' }
 #'
 #' \item{From}{First year of the regime.}
@@ -1200,7 +1292,7 @@
 #'   Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
 #'   Type." In: Harvard Dataverse.
 #'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). It
-#'   only contains a numeric version of the <ainwaring Regime indicator, ranging
+#'   only contains a numeric version of the Mainwaring Regime indicator, ranging
 #'   from -1 (Authoritarian) to 0 (Semidemocracy) to 1 (Democracy). The original
 #'   dataset is found in \link{mainwaring}. PMM's replication data is actually
 #'   missing a fair number of the data points in the original data by Mainwaring
@@ -1674,10 +1766,10 @@
 
 #' The Democracy and Dictatorship Dataset (DD/PACL/ACLP/CGV)
 #'
-#' This dataset  (aka PACL, ACLP or CGV) is described in Cheibub, Jose Antonio, Jennifer Gandhi, and James
-#' Raymond Vreeland. 2010. "Democracy and Dictatorship Revisited." Public
-#' Choice, vol. 143, no. 2-1, pp. 67-101. DOI: 10.1007/s11127-009-9491-2. The
-#' full data and codebook can be downloaded here
+#' This dataset (aka PACL, ACLP or CGV) is described in Cheibub, Jose Antonio,
+#' Jennifer Gandhi, and James Raymond Vreeland. 2010. "Democracy and
+#' Dictatorship Revisited." Public Choice, vol. 143, no. 2-1, pp. 67-101. DOI:
+#' 10.1007/s11127-009-9491-2. The full data and codebook can be downloaded here
 #' \url{https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited}.
 #' The documentation below is directly copied from the codebook.
 #'
@@ -1699,12 +1791,11 @@
 #' \item{cowcode2}{Modified correlates of war (numeric) country identifier. See
 #' explanation under "Organizing the World."}
 #'
-#' \item{ccdcodelet}{Three letter
-#' country code used by the Cline Center for Democracy, University of Illinois
-#' at Urbana-Champaign.}
+#' \item{ccdcodelet}{Three letter country code used by the Cline Center for
+#' Democracy, University of Illinois at Urbana-Champaign.}
 #'
-#' \item{ccdcodenum}{Numeric country code used by the
-#' Cline Center for Democracy, University of Illinois at Urbana-Champaign.}
+#' \item{ccdcodenum}{Numeric country code used by the Cline Center for
+#' Democracy, University of Illinois at Urbana-Champaign.}
 #'
 #' \item{aclpyear}{Concatenation of aclpcode and year.}
 #'
@@ -1712,110 +1803,94 @@
 #'
 #' \item{cowcodeyear}{Concatenation of cowcode and year.}
 #'
-#' \item{chgterr}{Dummy
-#' variable coded 1 for all the years of a country that experienced significant
-#' gains or losses of territory, 0 otherwise.}
+#' \item{chgterr}{Dummy variable coded 1 for all the years of a country that
+#' experienced significant gains or losses of territory, 0 otherwise.}
 #'
-#' \item{ychgterr}{Dummy variable
-#' coded 1 for the year in which a country gained or lost significant parts of
-#' its territory, 0 otherwise.}
+#' \item{ychgterr}{Dummy variable coded 1 for the year in which a country gained
+#' or lost significant parts of its territory, 0 otherwise.}
 #'
-#' \item{flagc_cowcode2}{Dummy variable coded 1 for
-#' the first year a country (defined by cowcode2) is observed in the dataset, 0
-#' otherwise.}
+#' \item{flagc_cowcode2}{Dummy variable coded 1 for the first year a country
+#' (defined by cowcode2) is observed in the dataset, 0 otherwise.}
 #'
-#' \item{flage_cowcode2}{Dummy variable coded 1 for the last year a
-#' country (defined by cowcode2) is observed in the dataset, 0 otherwise.}
+#' \item{flage_cowcode2}{Dummy variable coded 1 for the last year a country
+#' (defined by cowcode2) is observed in the dataset, 0 otherwise.}
 #'
 #' \item{entry}{Year the country is first observed in the dataset (repeated for
 #' all years a country is in the dataset).}
 #'
-#' \item{exity}{Year the country is
-#' last observed in the dataset (repeated for all years a country is in the
-#' dataset).}
+#' \item{exity}{Year the country is last observed in the dataset (repeated for
+#' all years a country is in the dataset).}
 #'
-#' \item{cid}{From the introduction to the codebook: We do not assign
-#' new country codes to countries that experienced changes in their territories
-#' but which remained in existence after the change. These include, for
-#' instance, Pakistan (with the creation of Bangladesh in 1971), Cyprus (with
-#' the "creation" of Turkish Cyprus in 1983, a country not recognized as
-#' independent - and hence not in this dataset - but over which the "remaining"
-#' Cyprus does not govern), or Ethiopia (with the creation of Eritrea in 1993).
-#' The variable cid provides a country coding that treats these cases as
-#' separate countries.}
+#' \item{cid}{From the introduction to the codebook: We do not assign new
+#' country codes to countries that experienced changes in their territories but
+#' which remained in existence after the change. These include, for instance,
+#' Pakistan (with the creation of Bangladesh in 1971), Cyprus (with the
+#' "creation" of Turkish Cyprus in 1983, a country not recognized as independent
+#' - and hence not in this dataset - but over which the "remaining" Cyprus does
+#' not govern), or Ethiopia (with the creation of Eritrea in 1993). The variable
+#' cid provides a country coding that treats these cases as separate countries.}
 #'
-#' \item{wdicode}{World Development Indicators (string)
-#' country identifier.}
+#' \item{wdicode}{World Development Indicators (string) country identifier.}
 #'
-#' \item{imf_code}{International Monetary Fund (numeric)
-#' country identifier.}
+#' \item{imf_code}{International Monetary Fund (numeric) country identifier.}
 #'
-#' \item{politycode}{POLITY IV (numeric) country
-#' identifier.}
+#' \item{politycode}{POLITY IV (numeric) country identifier.}
 #'
 #' \item{bankscode}{Banks (numeric) country identifier.}
 #'
 #' \item{dpicode}{DPI (string) country identifier.}
 #'
-#' \item{uncode}{United Nations
-#' (numeric) country identifier.}
+#' \item{uncode}{United Nations (numeric) country identifier.}
 #'
-#' \item{un_region}{United Nations (numeric)
-#' geographic region identifier.}
+#' \item{un_region}{United Nations (numeric) geographic region identifier.}
 #'
-#' \item{un_region_name}{United Nations (string)
-#' geographic region identifier.}
+#' \item{un_region_name}{United Nations (string) geographic region identifier.}
 #'
-#' \item{un_continent}{United Nations (string)
-#' continent identifier.}
+#' \item{un_continent}{United Nations (string) continent identifier.}
 #'
-#' \item{un_continent_name}{United Nations (numeric)
-#' continent identifier.}
+#' \item{un_continent_name}{United Nations (numeric) continent identifier.}
 #'
-#' \item{aclp_region}{Alvarez, Cheibub, Limongi and
-#' Przeworski (1996, 2000) (numeric) region identifier.}
+#' \item{aclp_region}{Alvarez, Cheibub, Limongi and Przeworski (1996, 2000)
+#' (numeric) region identifier.}
 #'
-#' \item{bornyear}{Year
-#' the country is first identified as such.}
+#' \item{bornyear}{Year the country is first identified as such.}
 #'
 #' \item{endyear}{Year the country stops being identified as such}
 #'
-#' \item{exselec}{Mode of effective executive selection (from
-#' Banks to 2002, painted yellow in the excel file when modified; own coding
-#' from 2003 on): 1. Direct election (election of the effective executive by
-#' popular vote or the election of committed delegates for the purpose of
-#' executive selection) 2. Indirect election (selection of the effective
-#' executive by an elected assembly or by an elected but uncommitted electoral
-#' college) 3. Nonelective (any means of executive selection not involving a
-#' direct or indirect mandate from an electorate)}
+#' \item{exselec}{Mode of effective executive selection (from Banks to 2002,
+#' painted yellow in the excel file when modified; own coding from 2003 on): 1.
+#' Direct election (election of the effective executive by popular vote or the
+#' election of committed delegates for the purpose of executive selection) 2.
+#' Indirect election (selection of the effective executive by an elected
+#' assembly or by an elected but uncommitted electoral college) 3. Nonelective
+#' (any means of executive selection not involving a direct or indirect mandate
+#' from an electorate)}
 #'
-#' \item{legselec}{Mode of
-#' legislative selection (from Banks to 2002, painted yellow in the excel file
-#' when modified; own coding from 2003 on): 0. No legislature exists (includes
-#' cases in which there is a constituent assembly without ordinary legislative
-#' powers). 1. Non-elective legislature (examples include the selection of
-#' legislators by the effective executive, or on the basis of heredity or
-#' ascription) 2. Elective (legislators, or members of the lower house in a
-#' bicameral system, are selected by means of either direct or indirect popular
-#' election)}
+#' \item{legselec}{Mode of legislative selection (from Banks to 2002, painted
+#' yellow in the excel file when modified; own coding from 2003 on): 0. No
+#' legislature exists (includes cases in which there is a constituent assembly
+#' without ordinary legislative powers). 1. Non-elective legislature (examples
+#' include the selection of legislators by the effective executive, or on the
+#' basis of heredity or ascription) 2. Elective (legislators, or members of the
+#' lower house in a bicameral system, are selected by means of either direct or
+#' indirect popular election)}
 #'
-#' \item{closed}{Status of legislature. 0. Legislature is closed. 1.
-#' Legislature is appointed. 2. Legislature is elected}
+#' \item{closed}{Status of legislature. 0. Legislature is closed. 1. Legislature
+#' is appointed. 2. Legislature is elected}
 #'
-#' \item{dejure}{Legal
-#' status of parties0. All parties legally banned1. Legally single party state2.
-#' Multiple parties legally allowed}
+#' \item{dejure}{Legal status of parties0. All parties legally banned1. Legally
+#' single party state2. Multiple parties legally allowed}
 #'
-#' \item{defacto}{Existence of parties. 0 = No
-#' parties. 1 = One party. 2 = Multiple parties. N.B. We collected separate
-#' variables for dejure and defacto status of parties because legal status alone
-#' is not always a good reflection of empirical reality. Both dejure and defacto
-#' refer to existence of parties in general, not whether they have seats in the
-#' legislature. For this information see lparty.}
+#' \item{defacto}{Existence of parties. 0 = No parties. 1 = One party. 2 =
+#' Multiple parties. N.B. We collected separate variables for dejure and defacto
+#' status of parties because legal status alone is not always a good reflection
+#' of empirical reality. Both dejure and defacto refer to existence of parties
+#' in general, not whether they have seats in the legislature. For this
+#' information see lparty.}
 #'
-#' \item{defacto2}{Existence of
-#' parties outside of regime front. 0. No parties1. One party or multiple
-#' parties, but they belong to regime front. 2. Multiple parties}
+#' \item{defacto2}{Existence of parties outside of regime front. 0. No parties1.
+#' One party or multiple parties, but they belong to regime front. 2. Multiple
+#' parties}
 #'
 #' \item{lparty}{Parties within the legislature. 0. Either no legislature or all
 #' members of the legislature are nonpartisan 1. Legislature with only members
@@ -1832,45 +1907,44 @@
 #' whatever reasons, the incumbent's term was extended and subsequent elections
 #' were postponed (e.g., Angola as of December 31, 2008).}
 #'
-#' \item{type2}{Dummy
-#' variable coded 1 for the cases excluded from the set of democracies uniquely
-#' because they violate the "alternation" rule; 0 otherwise. These are the cases
-#' that would be classified as democratic if the only criteria for democracy
-#' were multiparty (direct orindirect) executive and legislative elections.
-#' This, however, as discussed in Przeworski etal (2000:23-29) and in Cheibub,
-#' Vreeland and Gandhi (2009), is not sufficient to identify democracies. In the
-#' set of regimes that hold multiparty elections, some do it only because they
-#' know the opposition cannot win and others because the opposition would not be
-#' allowed to assume office if it won. The difficulty is that in many cases
-#' there is no historical evidence to allow the observer to distinguish these
-#' cases. Thus, it is possible that we might identify as a democracy a case that
-#' is a real dictatorship, or as a dictatorship a case that is a real democracy.
-#' The alternation rule, as well as the present variable, identifies the cases
-#' for which we do not have sufficient information to decide,according to our
-#' rules, whether the country is a democracy or not. Note on the type2 name: A
-#' type I error is a false positive and a type II error is a false negative. In
-#' the original project for which this variable was created,dictatorships were
-#' coded 1 (positive) and democracies 0 (negative). The variable was named to
-#' indicate that we had made a decision to avoid type II errors by coding as
-#' dictatorships cases that might have been a democracy (thus committing type I
-#' errors). In the current context, we think of democracy as the positive
-#' outcome and dictatorship as the negative outcome. We should, therefore,
-#' rename the variable type1 error since we decided to coded possible
-#' democracies (real 1s) as dictatorships (real 0s). In the end, it does not
-#' matter. What is important is that this variable can be used to easily
-#' reclassify regimes by either considering all cases coded as 1 in type2 as
-#' democracies or attempting to discriminate which ones are democracies and
-#' which ones are dictatorships.}
+#' \item{type2}{Dummy variable coded 1 for the cases excluded from the set of
+#' democracies uniquely because they violate the "alternation" rule; 0
+#' otherwise. These are the cases that would be classified as democratic if the
+#' only criteria for democracy were multiparty (direct orindirect) executive and
+#' legislative elections. This, however, as discussed in Przeworski etal
+#' (2000:23-29) and in Cheibub, Vreeland and Gandhi (2009), is not sufficient to
+#' identify democracies. In the set of regimes that hold multiparty elections,
+#' some do it only because they know the opposition cannot win and others
+#' because the opposition would not be allowed to assume office if it won. The
+#' difficulty is that in many cases there is no historical evidence to allow the
+#' observer to distinguish these cases. Thus, it is possible that we might
+#' identify as a democracy a case that is a real dictatorship, or as a
+#' dictatorship a case that is a real democracy. The alternation rule, as well
+#' as the present variable, identifies the cases for which we do not have
+#' sufficient information to decide,according to our rules, whether the country
+#' is a democracy or not. Note on the type2 name: A type I error is a false
+#' positive and a type II error is a false negative. In the original project for
+#' which this variable was created,dictatorships were coded 1 (positive) and
+#' democracies 0 (negative). The variable was named to indicate that we had made
+#' a decision to avoid type II errors by coding as dictatorships cases that
+#' might have been a democracy (thus committing type I errors). In the current
+#' context, we think of democracy as the positive outcome and dictatorship as
+#' the negative outcome. We should, therefore, rename the variable type1 error
+#' since we decided to coded possible democracies (real 1s) as dictatorships
+#' (real 0s). In the end, it does not matter. What is important is that this
+#' variable can be used to easily reclassify regimes by either considering all
+#' cases coded as 1 in type2 as democracies or attempting to discriminate which
+#' ones are democracies and which ones are dictatorships.}
 #'
-#'  \item{collect}{Dummy variable coded 1 when the
-#' effective head is characterized by collective leadership, 0 otherwise.}
+#' \item{collect}{Dummy variable coded 1 when the effective head is
+#' characterized by collective leadership, 0 otherwise.}
 #'
 #'
 #' \item{nheads}{Number of changes in the nominal head of government in each
 #' year.}
 #'
-#' \item{nmil}{Dummy variable coded 1 if the nominal head is or ever was
-#' a member of the military by profession, 0 if civilian. Note that we code
+#' \item{nmil}{Dummy variable coded 1 if the nominal head is or ever was a
+#' member of the military by profession, 0 if civilian. Note that we code
 #' retired members of the military as NMIL=1since the shedding of a uniform is
 #' not necessarily enough to indicate the civilian character of a leader. Also
 #' note that we do not consider rulers who come to power as head of guerilla
@@ -1878,33 +1952,32 @@
 #' Beck et al. (2000), Banks (various years), Zarate (2001), Lentz (1994), and
 #' various internet sources as marked.}
 #'
-#' \item{nhead}{Name of the nominal head of
-#' government. Source: Compiled from Banks (various years), Beinen and Van de
-#' Walle (1991), Rulers website, Zarate (2001), and Lentz (1994).}
+#' \item{nhead}{Name of the nominal head of government. Source: Compiled from
+#' Banks (various years), Beinen and Van de Walle (1991), Rulers website, Zarate
+#' (2001), and Lentz (1994).}
 #'
 #' \item{npost}{Political title of the nominal head of government. Source:
 #' Compiled from Banks (various years), Beinen and Van de Walle (1991), Rulers
 #' website, Zarate (2001), and Lentz (1994).}
 #'
-#' \item{ndate}{Date of entrance into
-#' power of nominal head of government. Source: Compiled fromBanks (various
-#' years), Beinen and Van de Walle (1991), Rulers website, Zarate (2001),and
-#' Lentz (1994).}
+#' \item{ndate}{Date of entrance into power of nominal head of government.
+#' Source: Compiled fromBanks (various years), Beinen and Van de Walle (1991),
+#' Rulers website, Zarate (2001),and Lentz (1994).}
 #'
-#' \item{eheads}{Number of changes in the effective head of
-#' government in each year}
+#' \item{eheads}{Number of changes in the effective head of government in each
+#' year}
 #'
-#' \item{ageeh}{Age of the effective head's spell in
-#' office. There is no left censoring.}
+#' \item{ageeh}{Age of the effective head's spell in office. There is no left
+#' censoring.}
 #'
-#' \item{emil}{Dummy variable coded 1 if
-#' the effective head is or ever was a member of the military by profession, 0
-#' if civilian. Note that we code retired members of the military as EMIL=1since
-#' the shedding of a uniform is not necessarily enough to indicate the civilian
-#' character of a leader. Also note that we do not consider rulers who come to
-#' power as head of guerilla movements as military. Source: Compiled from Beinen
-#' and Van deWalle (1991), Beck et al. (2000), Banks (various years), Zarate
-#' (2001), Lentz (1994), and various internet sources as marked.}
+#' \item{emil}{Dummy variable coded 1 if the effective head is or ever was a
+#' member of the military by profession, 0 if civilian. Note that we code
+#' retired members of the military as EMIL=1since the shedding of a uniform is
+#' not necessarily enough to indicate the civilian character of a leader. Also
+#' note that we do not consider rulers who come to power as head of guerilla
+#' movements as military. Source: Compiled from Beinen and Van deWalle (1991),
+#' Beck et al. (2000), Banks (various years), Zarate (2001), Lentz (1994), and
+#' various internet sources as marked.}
 #'
 #' \item{royal}{Dummy variable coded 1 if the effective head is of hereditary
 #' royalty, 0 otherwise. To qualify as royal, the effective head must meet 2
@@ -1919,7 +1992,7 @@
 #' \item{headdiff}{Dummy variable coded 1 if the effective and nominal heads are
 #' different people, 0 otherwise. Source: Created from NHEAD and EHEAD.}
 #'
-#'  \item{ehead}{Name of the effective head of government.Effective heads are: 1)
+#' \item{ehead}{Name of the effective head of government.Effective heads are: 1)
 #' presidents in presidential democracies; 2) prime ministers in parliamentary
 #' and mixed democracies, except in the cases of Djohar in Comoros andPreval in
 #' Haiti; 3) general-secretaries of the communist party in communist
@@ -1940,36 +2013,34 @@
 #' Banks (various years), Beinen and Van de Walle (1991), da Graca(1985), Rulers
 #' website, Zarate (2001), and Lentz (1994).}
 #'
-#' \item{edate}{Date of entrance into
-#' power of effective head of government.Source: Compiled from Banks (various
-#' years), Beinen and Van de Walle (1991), da Graca(1985), Rulers website,
-#' Zarate (2001), and Lentz (1994).}
-#'
-#' \item{tenure08}{Total number of years (up
-#' to and including the year 2002) the effective head of government is in power.
-#' Tenure is invariant during the spell of each head.}
-#'
-#' \item{comm}{Dummy
-#' variable coded 1 if the ruler is the Communist Party leader, 0
-#' otherwise.Source: Banks (various years), Lentz (1994).}
-#'
-#' \item{ecens08}{Dummy
-#' variable coded 0 for the last year of an effective head's tenure due to death
-#' or for the last year of effective heads that lasted beyond the time of the
-#' last observation,usually 1996, and 1 otherwise. ecens08 = 0 for rulers who
-#' entered as dictators and then legitimately won an election and became
-#' democrats. Source: Compiled from Banks (various years), Beinen and Van de
-#' Walle (1991), da Graca (1985), Rulers website, Zarate(2001), and Lentz
+#' \item{edate}{Date of entrance into power of effective head of
+#' government.Source: Compiled from Banks (various years), Beinen and Van de
+#' Walle (1991), da Graca(1985), Rulers website, Zarate (2001), and Lentz
 #' (1994).}
 #'
-#' \item{edeath}{Dummy variable coded 0 for the last year of the
-#' effective head's spell due to the head's death and 1 otherwise. We do not
-#' distinguish between natural death, assassination,suicide, and accidents.
-#' Source: Banks' Political Handbook, Bienen and Van de Walle(1991), Rulers
-#' website, and Zarate (2001).}
+#' \item{tenure08}{Total number of years (up to and including the year 2002) the
+#' effective head of government is in power. Tenure is invariant during the
+#' spell of each head.}
 #'
-#' \item{flagh}{Dummy variable coded 1 for the
-#' first year an effective head of government is first observed, 0 otherwise.}
+#' \item{comm}{Dummy variable coded 1 if the ruler is the Communist Party
+#' leader, 0 otherwise.Source: Banks (various years), Lentz (1994).}
+#'
+#' \item{ecens08}{Dummy variable coded 0 for the last year of an effective
+#' head's tenure due to death or for the last year of effective heads that
+#' lasted beyond the time of the last observation,usually 1996, and 1 otherwise.
+#' ecens08 = 0 for rulers who entered as dictators and then legitimately won an
+#' election and became democrats. Source: Compiled from Banks (various years),
+#' Beinen and Van de Walle (1991), da Graca (1985), Rulers website,
+#' Zarate(2001), and Lentz (1994).}
+#'
+#' \item{edeath}{Dummy variable coded 0 for the last year of the effective
+#' head's spell due to the head's death and 1 otherwise. We do not distinguish
+#' between natural death, assassination,suicide, and accidents. Source: Banks'
+#' Political Handbook, Bienen and Van de Walle(1991), Rulers website, and Zarate
+#' (2001).}
+#'
+#' \item{flagh}{Dummy variable coded 1 for the first year an effective head of
+#' government is first observed, 0 otherwise.}
 #'
 #' \item{democracy}{Dummy variable coded 1 if the regime qualifies as
 #' democratic. The conditions for this variable are the following: democracy=1
@@ -1987,46 +2058,42 @@
 #' instance of successful government removal via a parliamentary vote of no
 #' confidence since 1946.}
 #'
-#' \item{poppreselec}{Dummy variable coded 1 if the
-#' regime is a democracy and the head of state is chosen via popular election.
-#' Note that it is possible that a country will have no direct presidential
-#' elections, poppreselec=0, and still be presidential. These are the cases in
-#' which presidents are indirectly elected (exselec=2)}
+#' \item{poppreselec}{Dummy variable coded 1 if the regime is a democracy and
+#' the head of state is chosen via popular election. Note that it is possible
+#' that a country will have no direct presidential elections, poppreselec=0, and
+#' still be presidential. These are the cases in which presidents are indirectly
+#' elected (exselec=2)}
 #'
-#' \item{regime}{Six-fold
-#' regime classification. 0. Parliamentary democracy 1. Mixed
-#' (semi-presidential) democracy 2. Presidential democracy 3. Civilian
+#' \item{regime}{Six-fold regime classification. 0. Parliamentary democracy 1.
+#' Mixed (semi-presidential) democracy 2. Presidential democracy 3. Civilian
 #' dictatorship 4. Military dictatorship 5. Royal dictatorship}
 #'
-#' \item{tt}{Dummy
-#' variable coded 1 when there is a transition to or from democracy, 0
-#' otherwise.}
-#'
-#' \item{ttd}{Dummy variable coded 1 when there is a transition to
+#' \item{tt}{Dummy variable coded 1 when there is a transition to or from
 #' democracy, 0 otherwise.}
 #'
-#' \item{tta}{Dummy variable coded 1 when there is a
-#' transition to dictatorship, 0 otherwise.}
+#' \item{ttd}{Dummy variable coded 1 when there is a transition to democracy, 0
+#' otherwise.}
 #'
-#' \item{flagdem}{Dummy variable coded
-#' 1 for the first year a country is observed or a new regime (as defined by
-#' democracy) emerges, 0 otherwise.}
+#' \item{tta}{Dummy variable coded 1 when there is a transition to dictatorship,
+#' 0 otherwise.}
 #'
-#' \item{flagreg}{Dummy variable coded 1 for
-#' the first year a country is observed or a new regime (as defined by regime)
-#' emerges, 0 otherwise.}
+#' \item{flagdem}{Dummy variable coded 1 for the first year a country is
+#' observed or a new regime (as defined by democracy) emerges, 0 otherwise.}
 #'
-#' \item{agedem}{Age in years of the current regime as
-#' classified by democracy. The year in which the regime comes into existence is
-#' coded as 1. When applicable, ages were extended back as far as 1870.}
+#' \item{flagreg}{Dummy variable coded 1 for the first year a country is
+#' observed or a new regime (as defined by regime) emerges, 0 otherwise.}
+#'
+#' \item{agedem}{Age in years of the current regime as classified by democracy.
+#' The year in which the regime comes into existence is coded as 1. When
+#' applicable, ages were extended back as far as 1870.}
 #'
 #' \item{agereg}{Age in years of the current regime as classified by regime. The
 #' year in which the regime comes into existence is coded as 1. When applicable,
 #' ages were extended back as far as 1870.}
 #'
-#' \item{stra}{Sum of past transitions
-#' to authoritarianism in a country. If a country experienced more than one
-#' transition to authoritarianism before 1946, STRA is coded 1 in 1946.} }
+#' \item{stra}{Sum of past transitions to authoritarianism in a country. If a
+#' country experienced more than one transition to authoritarianism before 1946,
+#' STRA is coded 1 in 1946.} }
 #'
 #' @section Organizing the world:
 #'
@@ -2083,7 +2150,6 @@
 #'   2-1, pp. 67-101. DOI: 10.1007/s11127-009-9491-2. The full data and codebook
 #'   can be downloaded here
 #'   \url{https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited}
-#'
 "pacl"
 
 #' @rdname pacl
@@ -2386,9 +2452,10 @@
 #' Polity 2 Index from Polity IV. 2013. Taken from Pemstein, Daniel, Stephen A.
 #' Meserve, and James Melton. 2013. "Replication data for: Democratic
 #' Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." In:
-#' Harvard Dataverse. [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). Higher values are more
-#' democratic. Use \link{download_polity_annual} to download the latest version of the
-#' Polity IV data.
+#' Harvard Dataverse.
+#' [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). Higher
+#' values are more democratic. Use \link{download_polity_annual} to download the
+#' latest version of the Polity IV data.
 #'
 #'
 #' @section Variables:
@@ -2404,9 +2471,19 @@
 #'   democratic. Taken from Pemstein, Daniel, Stephen A. Meserve, and James
 #'   Melton. 2013. "Replication data for: Democratic Compromise: A Latent
 #'   Variable Analysis of Ten Measures of Regime Type." In: Harvard Dataverse.
-#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). In this version the indicator only goes
-#'   to 1945, and it differs from polity2 in a few cases. See the vignette in
-#'   this package for more details.}
+#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). In
+#'   this version the indicator only goes to 1945, and it differs from polity2
+#'   in a few cases:
+#'
+#'   ```{r, echo = FALSE}
+#'   polity_pmm %>%
+#'   dplyr::left_join(polityIV) %>%
+#'   dplyr::filter(pmm_polity != polity2) %>%
+#'   dplyr::select(pmm_country, year, pmm_polity, polity2) %>%
+#'   dplyr::group_by(pmm_country, pmm_polity, polity2) %>%
+#'   dplyr::summarise(min_year = min(year), max_year = max(year), n_years = dplyr::n())
+#'   ```
+#'   }
 #'
 #'   }
 #'
@@ -2758,16 +2835,17 @@
 #' @rdname prc_gasiorowski
 #' @section Note:
 #'
-#'   The \code{prc_pmm} version of this data is taken from from Pemstein, Daniel,
-#'   Stephen A. Meserve, and James Melton. 2013. "Replication data for:
+#'   The \code{prc_pmm} version of this data is taken from from Pemstein,
+#'   Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
 #'   Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
 #'   Type." In: Harvard Dataverse.
 #'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). The
-#'   original dataset is found in \code{prc_gasiorowski}. The \code{prc_pmm} data only goes
-#'   back to 1945. It also differs from the original data in a few cases,
-#'   because it only includes one year per country - whereas \code{prc_gasiorowski}
-#'   can include more than one regime classificaiton for a given year. For more
-#'   detail on the differences, see the vignette. It is included here for completeness.
+#'   original dataset is found in \code{prc_gasiorowski}. The \code{prc_pmm}
+#'   data only goes back to 1945. It also differs from the original data in 245
+#'   country-years, because it only includes one year per country - whereas
+#'   \code{prc_gasiorowski} can include more than one regime classification for
+#'   a given year. It is included here for completeness (and to enable one to
+#'   replicate the [uds]).
 "prc_pmm"
 
 
@@ -3595,6 +3673,180 @@
 "polyarchy_dimensions"
 
 
+# REIGN -------------------------------------------------------------------
+
+#' The Rulers, Elections, and Irregular Governance Dataset (Regime data)
+#'
+#' Bell, Curtis. 2016. The Rulers, Elections, and Irregular Governance Dataset
+#' (REIGN). Broomfield, CO: OEF Research. The dataset, variable descriptions,
+#' and technical notes, are available at
+#' \url{http://oefresearch.org/datasets/reign}. The variable descriptions below
+#' are taken from
+#' \url{http://oefresearch.org/sites/default/files/REIGN_descriptions.pdf}.
+#' Collection stopped in 2021; this dataset is now archived in this package.
+#'
+#' @section Overview:
+#'
+#'   The REIGN regime characteristics dataset is based on the regime
+#'   classifications of Geddes, Wright, and Frantz ([gwf_autocratic]), but it is
+#'   updated monthly, and it has some differences with [gwf_autocratic]. These
+#'   are described as follows in the online technical notes:
+#'
+#'   REIGN data is updated to the present month (up to August 2021). We also
+#'   added the following countries to the  dataset: The Bahamas, Jamaica,
+#'   Trinidad and Tobago, Barbados, Dominica, Grenada, St. Lucia, St. Vincent
+#'   and the Grenadines, Antigua and Barbuda, St. Kitts and Nevis, Belize,
+#'   Guyana, Surinam, Andorra, San Marino, Malta, Cyprus, Cape Verde, Sao Tome
+#'   and Principe, Equatorial Guinea, Djibouti, Comoros, Mauritius, Seychelles,
+#'   South Sudan, Bhutan, Maldives, South Vietnam, Brunei, East Timor, Papua New
+#'   Guinea, Vanuatu, Solomon Islands, Kiribati, Tuvalu, Fiji, Tonga, Nauru,
+#'   Marshall Islands, Palau, Micronesia, and Samoa.
+#'
+#'   We also added political systems that lasted for less than a year and
+#'   specified start and end months. This allows for a more granular look at
+#'   transitional periods and interim governments. These new short-lived regimes
+#'   appear in countries including Haiti, the Dominican Republic, Guatemala,
+#'   Peru, Benin, Niger, Ghana, and Nigeria.
+#'
+#'   Finally, GWF generally does not allow for yearly changes in institutions
+#'   over the course of a regime. If a government begins as personalist, it
+#'   stays personalist until that leader leaves power. In several cases we code
+#'   a change in regime type following reforms during the tenure of a single
+#'   leader, including Lanzana in Burkina Faso, Rawlings in Ghana, etc.
+#'
+#'   Further discussion of the differences between REIGN and GWF
+#'   ([gwf_autocratic]) is available here:
+#'   \url{http://oefresearch.org/sites/default/files/REIGN%20Data%202016.10.05.pdf}
+#'
+#' @section Variables:
+#'
+#'  \describe{
+#'   \item{reign_cowcode}{The COW code of the country in REIGN.}
+#'
+#'   \item{reign_country}{The country name in REIGN.}
+#'
+#'   \item{gwf_casename}{The case name in the [gwf] dataset.}
+#'
+#'   \item{gwf_startdate}{The startdate of the case in the [gwf] dataset.}
+#'
+#'   \item{gwf_enddate}{The enddate of the case in the [gwf] dataset.}
+#'
+#'   \item{Start}{The start date of the regime.}
+#'
+#'   \item{End}{The end date of the regime, or 31 December of the current year.}
+#'
+#'   \item{gwf_regimetype}{The regime type. This is what the codebook says about the
+#'   regime types:
+#'
+#'   DEMOCRACIES
+#'
+#'   We use a procedural definition of democracy, meaning we are interested in
+#'   the institutional rules that dictate how leaders gain power and not in
+#'   other correlates of democracy, including strong traditions of freedom of
+#'   speech and assembly. Non-competitive single-party systems are classified as
+#'   such, even if some are somewhat more liberal than others (see Botswana and
+#'   Namibia). Democracies have reasonably free-and-fair competitions for
+#'   political power.
+#'
+#'   1. Presidential Democracy: Democracy in which the executive is distinct
+#'   from the legislative branch and considerable decision-making authority is
+#'   granted to the executive. Presidential systems have presidents who serve as
+#'   chief executives rather than figureheads.
+#'
+#'   2. Parliamentary Democracy: Democracy in which legislatures are more
+#'   powerful and executives are less autonomous. Generally speaking, countries
+#'   with powerful prime ministers and general elections are parliamentary
+#'   democracies. Hybrid semi-presidential systems are classified case-by-case,
+#'   but are usually grouped with parliamentary democracies.
+#'
+#'   NON-DEMOCRACIES
+#'
+#'   The Autocratic Regimes dataset by Professors Barbara Geddes, Joseph Wright,
+#'   and Erica Frantz classifies all non-democratic governments into one of ten
+#'   categories. Though our data differs from this dataset in important ways, it
+#'   uses the same typology. We document major differences in the extended
+#'   technical notes.
+#'
+#'   1.  Personalist Systems: Power is highly concentrated in the hands of a
+#'   non-monarch dictator who is relatively unconstrained by a military or
+#'   political party. Contemporary examples include Russia, Sudan, and Chad.
+#'
+#'   2.  Monarchies: Power is highly concentrated in the hands of a monarch who
+#'   is much more than just a figurehead. Contemporary examples include
+#'   Swaziland, Kuwait, and Morocco.
+#'
+#'   3. Single-Party Systems: Power is held by the head of a party. Executive
+#'   power is effectively checked by the party or ruling committee. Contemporary
+#'   examples include China, Angola, and Ethiopia.
+#'
+#'   4. Oligarchies: Power is held by the head of party, but unlike other
+#'   single-party systems this party explicitly represents the interests of one
+#'   elite segment of society. Past examples include apartheid-era South Africa
+#'   and Rhodesia under Ian Smith.
+#'
+#'   5. Party-Personalist Hybrids: An intermediate hybrid where a party
+#'   apparatus supports a dictator, yet the party's identity is concentrated
+#'   around the person in power and it has few meaningful checks on executive
+#'   power. Examples include Eritrea, and North Korea.
+#'
+#'   6. Military Juntas: A military committee runs the country. One officer
+#'   typically serves as head, but this head serves the interests of the
+#'   committee and his power is checked by other members of the military. Recent
+#'   examples include Thailand and Algeria.
+#'
+#'   7. Indirect Military Juntas: The military has de facto power, but rules
+#'   behind a civilian puppet. See pre-Mobutu Zaire and Suriname under Bouterse
+#'   (1980-1988).
+#'
+#'   8. Personalist-Military Hybrids: A hybrid of military and personalist
+#'   institutions in which a dictator holds most power and is relatively
+#'   unchecked, yet the dictator's authority is rooted in military support.
+#'   These systems often evolve from juntas when power is consolidated around a
+#'   single individual. Examples include Chile under Pinochet, Pakistan under
+#'   Zia and Musharraf, and Fiji under Bainimarama.
+#'
+#'   9. Party-Military Hybrids: Militarized single-party states in which most or
+#'   all members of the ruling party are military elites. Examples include
+#'   Algeria from 1962-1992, El Salvador before 1982, and Congo-Brazzaville
+#'   between the 1968 coup and 1991.
+#'
+#'   10. Party-Personalist-Military Hybrids: A dictator rules with the support
+#'   of a militarized single-party state, but is relatively unchecked by these
+#'   institutions. Examples include Egypt after 1952, Indonesia under Suharto,
+#'   and Syria under the Assads.
+#'
+#'   INTERIM PERIODS
+#'
+#'   Finally, we include four forms of government that are explicitly
+#'   provisional or transitional:
+#'
+#'   1. Warlordism: occurs only in countries that are torn apart by conflict to
+#'   the extent that they do not have a functional government. As of 2016, only
+#'   Libya and Yemen meet this definition. War-torn countries like Syria are not
+#'   included because a strong government continues to hold power in the capital
+#'   and a significant part of the country.
+#'
+#'   2. Foreign-Occupied governments occur where foreign politicians or
+#'   militaries hold de facto power over a government.
+#'
+#'   3. Civilian Provisional and Military Provisional governments are explicitly
+#'   temporary arrangementsthat usually proceed completed transitions to
+#'   democracy or follow coups and constitutional crises. Interim regimes are
+#'   only called "military provisional" if the military is holding power until
+#'   an election or some other formalized legitimizing event can occur.}
+#'
+#'   }
+#'
+#' @template standard-variables
+#' @aliases reign
+#'
+#' @source Bell, Curtis. 2016. The Rulers, Elections, and Irregular Governance
+#'   Dataset (REIGN). Broomfield, CO: OEF Research. Available at
+#'   \url{http://oefresearch.org/datasets/reign}
+#' @family democracy
+#' @family authoritarianism
+"REIGN"
+
 # UDS ---------------------------------------------------------------------
 
 #' The Unified Democracy Scores
@@ -4194,15 +4446,14 @@
 #' Vanhanen measures of democracy, 1800-2012
 #'
 #' A dataset containing Tatu Vanhanen's measures of democracy. To cite use
-#' Vanhanen, Tatu, Measures of Democracy 1810-2012 (computer file). FSD1289,
-#' version 6.0 (2014-01-31). Vanhanen, Tatu & Lundell, Krister (data
-#' collection). Tampere. Finnish Social Science Data Archive (distributor),
-#' 2014. Data available at
-#' \url{http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html}.
+#' Vanhanen, Tatu. 2019. Measures of Democracy 1810-2018 (dataset). Version 8.0
+#' (2019-06-17). Tampere. <URL: http://urn.fi/urn:nbn:fi:fsd:T-FSD1289>. Data
+#' available at
+#' \url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}.
 #'
 #' @section Variables:
 #'
-#' \describe{
+#'   \describe{
 #'
 #'   \item{vanhanen_country}{The country name in the original dataset.}
 #'
@@ -4221,10 +4472,10 @@
 #'   of votes.}
 #'
 #'   \item{vanhanen_participation}{From Vanhanen's introduction to the dataset:
-#'   The percentage of the population which actually voted in the same
-#'   elections is used to measure the degree of participation (= Participation).
-#'   This percentage is calculated from the total population, not from the adult
-#'   or enfranchized population. I use the total population as the basis of
+#'   The percentage of the population which actually voted in the same elections
+#'   is used to measure the degree of participation (= Participation). This
+#'   percentage is calculated from the total population, not from the adult or
+#'   enfranchized population. I use the total population as the basis of
 #'   calculation because more statistical data are available on total
 #'   populations than on age structures of electorates. In principle, these two
 #'   empirical variables are very simple and easy to use. In practice, however,
@@ -4272,10 +4523,10 @@
 #'   received by the presidential candidate who won the election. A problem is,
 #'   however, whether we should take into account the first or the second round
 #'   votes, if there are two rounds of voting. The percentage of votes obtained
-#'   by the winning candidate may be significantly higher in the second
-#'   round than in the first. The round of voting, if it is not the first round,
-#'   is indicated in country tables. The purpose has been to take into account
-#'   the round that reflects the strength of parties and political groups most
+#'   by the winning candidate may be significantly higher in the second round
+#'   than in the first. The round of voting, if it is not the first round, is
+#'   indicated in country tables. The purpose has been to take into account the
+#'   round that reflects the strength of parties and political groups most
 #'   reliably.
 #'
 #'   Indirect elections and elections without parties
@@ -4384,10 +4635,10 @@
 #'   indicated (50-50 percent, 25-75 percent, or 75-25 percent).}
 #'
 #'   \item{vanhanen_democratization}{From Vanhanen's introduction to the
-#'   dataset: The two basic indicators of democratization can be used
-#'   separately to measure the level of democracy, but, because they are assumed
-#'   to indicate two different dimensions of democratization, it is reasonable
-#'   to argue that a combination of them would be a more realistic indicator of
+#'   dataset: The two basic indicators of democratization can be used separately
+#'   to measure the level of democracy, but, because they are assumed to
+#'   indicate two different dimensions of democratization, it is reasonable to
+#'   argue that a combination of them would be a more realistic indicator of
 #'   democracy than either of them alone. They can be combined in many ways,
 #'   depending on how we weight the importance of Competition and Participation.
 #'   Some researchers (see, for example, Bollen 1979, 1980; Coppedge and
@@ -4469,14 +4720,13 @@
 #'   into account all important aspects of democracy, they are better adapted to
 #'   indicate significant differences between political systems from the
 #'   perspective of democracy than more detailed differences among democracies
-#'   or nondemocracies (cf. Vanhanen 2000a, 2000b; 2003).}
-#' }
+#'   or nondemocracies (cf. Vanhanen 2000a, 2000b; 2003).} }
 #' @template standard-variables
-#' @source Vanhanen, Tatu. Measures of Democracy 1810-2012 (computer file). FSD1289,
-#' version 6.0 (2014-01-31). Vanhanen, Tatu & Lundell, Krister (data
-#' collection). Tampere. Finnish Social Science Data Archive (distributor),
-#' 2014. Data available at
-#' \url{http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html}
+#' @source Vanhanen, Tatu. Measures of Democracy 1810-2012 (computer file).
+#'   FSD1289, version 6.0 (2014-01-31). Vanhanen, Tatu & Lundell, Krister (data
+#'   collection). Tampere. Finnish Social Science Data Archive (distributor),
+#'   2014. Data available at
+#'   \url{http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html}
 #' @family democracy
 #' @family continuous democracy indexes
 "vanhanen"
@@ -4494,6 +4744,238 @@
 #'   original Vanhanen dataset. For more detail on the differences, see the
 #'   vignette. The vanhanen_pmm data is included here for completeness.
 "vanhanen_pmm"
+
+# vdem_simple --------------------------------------------------------------
+
+#' Simplified version of the V-Dem version 12 dataset
+#'
+#' This data frame contains a very reduced version of version 12 of the V-Dem
+#' dataset, including only the 7 main indexes that measure democracy directly
+#' (v2x_polyarchy, v2x_libdem, v2x_partipdem, v2x_delibdem, v2x_egaldem,
+#' v2x_api, and v2x_mpi) and their associated uncertainty measures. The full
+#' VDem dataset is available via the
+#' [vdemdata](https://github.com/vdeminstitute/vdemdata) package. To cite VDem,
+#' use Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I.
+#' Lindberg, Jan Teorell, Nazifa Alizada, David Altman, Michael Bernhard, Agnes
+#' Cornell, M. Steven Fish, Lisa Gastaldi, Haakon Gjerløw, Adam Glynn, Sandra
+#' Grahn, Allen Hicken, Garry Hindle, Nina Ilchenko, Katrin Kinzelbach, Joshua
+#' Krusell, Kyle L. Marquardt, Kelly McMann, Valeriya Mechkova, Juraj
+#' Medzihorsky, Pamela Paxton, Daniel Pemstein, Josefine Pernes, Oskar Rydén,
+#' Johannes von Römer, Brigitte Seim, Rachel Sigman, Svend-Erik Skaaning,
+#' Jeffrey Staton, Aksel Sundström, Eitan Tzelgov, Yi-ting Wang, Tore Wig,
+#' Steven Wilson and Daniel Ziblatt. 2022. "V- Dem \[Country–Year/Country–Date\]
+#' Dataset v12" Varieties of Democracy (V-Dem) Project.
+#' https://doi.org/10.23696/vdemds22.
+#'
+#' Variable descriptions taken from the V-Dem codebook directly.
+#'
+#' @section V-Dem Identifiers:
+#'
+#'   \describe{
+#'
+#'   \item{vdem_country_name}{Country name. Name of coded country. A V-Dem
+#'   country is a political unit enjoying at least some degree of functional
+#'   and/or formal sovereignty.}
+#'
+#'   \item{country_text_id}{Country name abbreviation. Abbreviated country
+#'   names.}
+#'
+#'   \item{country_id}{V-Dem country ID. Unique country ID designated for each
+#'   country.}
+#'
+#'   \item{year}{Year. Four-digit designation of the year for which an
+#'   observation is given that ranges from the start to the end of the coding
+#'   period.}
+#'
+#'   \item{historical_date}{Historical Date. Variable designating the date for
+#'   which observation is given. The date is coded in YYYY-MM-DD format.
+#'   December 31 observation always refers to the situation at the end of the
+#'   year. There can be observations on other dates signifying other events,
+#'   i.e. elections or executive appointments.}
+#'
+#'   \item{project}{V-Dem Project. Indication what project team has coded
+#'   country in respective year.}
+#'
+#'   \item{historical}{Historical V-Dem Coding. Binary indication whether the
+#'   country in question has been coded by the team of Historical V-Dem
+#'   project.}
+#'
+#'   \item{histname}{Time-specific name of coded country. Many countries go by
+#'   different names in different time-periods, for example due to name changes,
+#'   changes in territory, colonization, occupation, or independence. This
+#'   variable contains a brief description of the identity of each polity that
+#'   comprises a country's history. This variable is based on the V-Dem Country
+#'   Coding Units document.}
+#'
+#'   \item{codingstart}{Start of coding period. Year in which coding of the
+#'   country in question starts. V-Dem country coding starts in 1789, or from
+#'   when a country first enjoyed at least some degree of functional and/or
+#'   formal sovereignty.}
+#'
+#'   \item{codingend}{End of coding period. Either a maximum year of country
+#'   coding period or the year when the country ceased to exist because it lost
+#'   functional or formal sovereignty.}
+#'
+#'   \item{codingstart_contemporary}{Contemporary start of coding period. Year
+#'   in which the coding of Contemporary V-Dem project starts. Variables from
+#'   "Contemporary" project can have different question formulation, variable
+#'   type, or number of coders as opposed to the "Historical" one.}
+#'
+#'   \item{codingend_contemp}{Historical End of Coding Period. Year in which the
+#'   coding of Contemporary V-Dem project ends. Variables from the
+#'   "Contemporary" project can have different question formulation, variable
+#'   type, or number of coders as opposed to the "Historical" one.}
+#'
+#'   \item{codingstart_hist}{Historical start of coding period. Year in which
+#'   the coding of Historical V-Dem project starts. Variables from
+#'   ``Historical'' project can have different question formulation, variable
+#'   type, or number of coders as opposed to the "Contemporary" one.}
+#'
+#'   \item{codingend_hist}{Historical End of Coding Period. Year in which the
+#'   coding of Historical V-Dem project ends. Variables from "Historical"
+#'   project can have different question formulation, variable type, or number
+#'   of coders as opposed to the "Contemporary" one.}
+#'
+#'   \item{gapstart1, gapstart2, gapstart3}{Time periods when a country does not
+#'   fulfill V-Dem's coding period criteria are not coded. The date that
+#'   indicates the gap start is the last date coded before the gap. For more
+#'   details about V-Dem country coding periods, please see the V-Dem Country
+#'   Coding Units document.}
+#'
+#'   \item{gapend1, gapend2, gapend3}{The periods of when a country does not
+#'   fulfill V-Dem's coding period criteria are not coded. The date that
+#'   indicates the gap end is the first date coded after the gap. For more
+#'   details about V-Demcountry coding periods, please see the V-Dem Country
+#'   Coding Units document.}
+#'
+#'   \item{gap_index}{An index for each country and continuous non-gap, i.e. it
+#'   is reasonable for interpolation to interpolate only within the same gap
+#'   index. For more details about V-Dem country coding periods, please see the
+#'   V-Dem Country Coding Units document.}
+#'
+#'   \item{vdem_cowcode}{COW Country Code. Correlates of War (COW) project country
+#'   codes.}
+#'
+#'   }
+#'
+#' @section V-Dem Main Indexes:
+#'
+#'   Each of the indexes described below comes with associated uncertainty
+#'   measures: `_codehigh` and `_codelow` (the interval where the V-Dem Bayesian
+#'   measurement model places 68% of the probability mass, or approximately one
+#'   standard deviation upper and lower bounds, possibly asymmetric) and `_sd`
+#'   (frequentist standard deviation).
+#'
+#'   \describe{
+#'
+#'   \item{v2x_polyarchy}{Electoral democracy index. To what extent is the ideal
+#'   of electoral democracy in its fullest sense achieved? The electoral
+#'   principle of democracy seeks to embody the core value of making rulers
+#'   responsive to citizens, achieved through electoral competition for the
+#'   electorate's approval under circumstances when suffrage is extensive;
+#'   political and civil society organizations can operate freely; elections are
+#'   clean and not marred by fraud or systematic irregularities; and elections
+#'   affect the composition of the chief executive of the country. In between
+#'   elections, there is freedom of expression and an independent media capable
+#'   of presenting alternative views on matters of political relevance. In the
+#'   V-Dem conceptual scheme, electoral democracy is understood as an essential
+#'   element of any other conception of representative democracy --- liberal,
+#'   participatory, deliberative, egalitarian, or some other.}
+#'
+#'   \item{v2x_libdem}{Liberal democracy index. To what extent is the ideal of
+#'   liberal democracy achieved?
+#'
+#'   The liberal principle of democracy emphasizes the importance of protecting
+#'   individual and minority rights against the tyranny of the state and the
+#'   tyranny of the majority. The liberal model takes a ~negative~ view of
+#'   political power insofar as it judges the quality of democracy by the limits
+#'   placed on government. This is achieved by constitutionally protected civil
+#'   liberties, strong rule of law, an independent judiciary, and effective
+#'   checks and balances that, together, limit the exercise of executive power.
+#'   To make this a measure of liberal democracy, the index also takes the level
+#'   of electoral democracy into account.}
+#'
+#'   \item{v2x_delibdem}{Deliberative democracy index. To what extent is the
+#'   ideal of deliberative democracy achieved?
+#'
+#'   The deliberative principle of democracy focuses on the process by which
+#'   decisions are reached in a polity. A deliberative process is one in which
+#'   public reasoning focused on the common good motivates political
+#'   decisions—as contrasted with emotional appeals, solidary attachments,
+#'   parochial interests, or coercion. According to this principle, democracy
+#'   requires more than an aggregation of existing preferences. There should
+#'   also be respectful dialogue at all levels—from preference formation to
+#'   final decision—among informed and competent participants who are open to
+#'   persuasion. To make it a measure of not only the deliberative principle but
+#'   also of democracy, the index also takes the level of electoral democracy
+#'   into account.}
+#'
+#'   \item{v2x_partipdem}{Participatory democracy index. To what extent is the
+#'   ideal of participatory democracy achieved?
+#'
+#'   The participatory principle of democracy emphasizes active participation by
+#'   citizens in all political processes, electoral and non-electoral. It is
+#'   motivated by uneasiness about a bedrock practice of electoral democracy:
+#'   delegating authority to representatives. Thus, direct rule by citizens is
+#'   preferred, wherever practicable. This model of democracy thus takes
+#'   suffrage for granted, emphasizing engagement in civil society
+#'   organizations, direct democracy, and subnational elected bodies. To make it
+#'   a measure of participatory democracy, the index also takes the level of
+#'   electoral democracy into account.}
+#'
+#'   \item{v2x_mpi}{Multiplicative polyarchy index. To what extent is the
+#'   electoral principle of democracy achieved?
+#'
+#'   The electoral principle of democracy seeks to achieve responsiveness and
+#'   accountability between leaders and citizens through the mechanism of
+#'   competitive elections. This is presumed to be achieved when suffrage is
+#'   extensive; political and civil society organizations can operate freely;
+#'   elections are clean and not marred by fraud or systematic irregularities;
+#'   and the chief executive of a country is selected directly or indirectly
+#'   through elections.}
+#'
+#'   \item{v2x_egaldem}{Egalitarian democracy index. To what extent is the ideal
+#'   of egalitarian democracy achieved?
+#'
+#'   The egalitarian principle of democracy holds that material and immaterial
+#'   inequalities inhibit the exercise of formal rights and liberties, and
+#'   diminish the ability of citizens from all social groups to participate.
+#'   Egalitarian democracy is achieved when 1) rights and freedoms of
+#'   individuals are protected equally across all social groups; and 2)
+#'   resources are distributed equally across all social groups; 3) groups and
+#'   individuals enjoy equal access to power. To make it a measure of
+#'   egalitarian democracy, the index also takes the level of electoral
+#'   democracy into account.}
+#'
+#'   \item{v2x_api}{Additive polyarchy index. To what extent is the electoral
+#'   principle of democracy achieved?
+#'
+#'   electoral principle of democracy seeks to achieve responsiveness and
+#'   accountability between leaders and citizens through the mechanism of
+#'   competitive elections. This is presumed to be achieved when suffrage is
+#'   extensive; political and civil society organizations can operate freely;
+#'   elections are clean and not marred by fraud or systematic irregularities;
+#'   and the chief executive of a country is selected directly or indirectly
+#'   through elections.}
+#'
+#'   }
+#' @template standard-variables
+#' @aliases vdem
+#' @family democracy
+#' @family continuous democracy indexes
+#' @encoding UTF-8
+#' @references Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I.
+#'   Lindberg, Jan Teorell, Nazifa Alizada, David Altman, Michael Bernhard,
+#'   Agnes Cornell, M. Steven Fish, Lisa Gastaldi, Haakon Gjerløw, Adam Glynn,
+#'   Sandra Grahn, Allen Hicken, Garry Hindle, Nina Ilchenko, Katrin Kinzelbach,
+#'   Joshua Krusell, Kyle L. Marquardt, Kelly McMann, Valeriya Mechkova, Juraj
+#'   Medzihorsky, Pamela Paxton, Daniel Pemstein, Josefine Pernes, Oskar Rydén,
+#'   Johannes von Römer, Brigitte Seim, Rachel Sigman, Svend-Erik Skaaning,
+#'   Jeffrey Staton, Aksel Sundström, Eitan Tzelgov, Yi-ting Wang, Tore Wig,
+#'   Steven Wilson and Daniel Ziblatt. 2022. "V- Dem
+#'   \[Country–Year/Country–Date\] Dataset v12" Varieties of Democracy (V-Dem)
+#'   Project. https://doi.org/10.23696/vdemds22.
+"vdem_simple"
 
 # Wahman Teorell and Hadenius ---------------------------------------------
 
@@ -6532,9 +7014,7 @@
 #'   of the dataset included in this package, except for datasets with more than
 #'   one version (e.g., \code{gwf} matches \link{gwf_all},
 #'   \link{gwf_all_extended}, \link{gwf_autocratic}, and
-#'   \link{gwf_autocratic_extended}). It also includes datasets not included in
-#'   this package (e.g., vdem, accessible via the vdem package on Github
-#'   (\url{http://github.com/xmarquez/vdem}).}
+#'   \link{gwf_autocratic_extended}).}
 #'
 #'   \item{long_name}{Longer name of the dataset, or official name, if any.}
 #'
@@ -6590,9 +7070,7 @@
 #'
 #'   \item{included_in_package}{Whether the dataset is included in this package.
 #'   Some are not, either due to use restrictions, or because they are updated
-#'   with some frequency (e.g., \link{fh}), or because they are too big (e.g.,
-#'   vdem, which is accessible via the vdem package on Github
-#'   (\url{http://github.com/xmarquez/vdem}).}
+#'   with some frequency (e.g., \link{fh}).}
 #'
 #'   \item{first_published_use}{Year of first published use (as far as I know).
 #'   In some cases the data used in the first published use is very different
@@ -6611,3 +7089,5 @@
 #'   of Regime Type." In: Harvard Dataverse.
 #'   \url{http://hdl.handle.net/1902.1/PMM}
 "democracy_info"
+
+
