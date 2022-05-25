@@ -358,45 +358,34 @@ prepare_svolik_institutions <- function(
 }
 
 prepare_vanhanen <- function(
-  path = "../../Data/Vanhanen data/Study/data/daF1289e.xls",
+  path,
   verbose = TRUE,
   ...) {
 
-  variable <- value <- Country <- year <- NULL
+  bv1 <- value <- index <- index_1 <- name <- index_2 <- index_3 <- year <- NULL
 
-  vanhanen_raw <- purrr::map(1:3,
-                  ~read_data(sheet = .x,
-                             path = path,
-                             verbose = verbose,
-                             skip = 1,
-                             name = paste("Vanhanen sheet", .x)))
+  fi_loc <- readr::locale(decimal_mark = ",")
 
-
-  modify_vanhanen <- function(data) {
-    cols <- 2:ncol(data)
-
-    data %>%
-      tidyr::gather(variable, value, !!cols) %>%
-      mutate(year = str_extract(variable,"[0-9]+") %>%
-               as.numeric(),
-             variable = str_replace(variable,"\\([0-9]+\\)","") %>%
-               str_trim() %>%
-               plyr::mapvalues(from = c("Competition",
-                                        "Index of Democratization",
-                                        "Participation"),
-                               to = c("vanhanen_competition",
-                                      "vanhanen_democratization",
-                                      "vanhanen_participation"))) %>%
-      filter(!is.na(value)) %>%
-      tidyr::spread(variable, value)
-  }
-
-  data <- vanhanen_raw %>%
-    purrr::map_df(modify_vanhanen) %>%
-    distinct()
+  data <- readr::read_delim(path, delim = ";") %>%
+    tidyr::pivot_longer(dplyr::matches("q[0-9]")) %>%
+    tidyr::separate(name, into = c("year", "index"), sep = "_") %>%
+    dplyr::mutate(value = readr::parse_double(value, locale = fi_loc)) %>%
+    dplyr::select(bv1:value) %>%
+    dplyr::mutate(index = paste("index", index, sep = "_"),
+                  year = stringr::str_remove(year, "q") %>%
+                    as.numeric(),
+           year = year + 1809) %>%
+    tidyr::pivot_wider(id_cols = bv1:year, names_from = index, values_from = value) %>%
+    dplyr::rename(vanhanen_competition = index_1,
+           vanhanen_participation = index_2,
+           vanhanen_democratization = index_3,
+           Country = bv1) %>%
+    dplyr::filter(!(is.na(vanhanen_competition) &
+                      is.na(vanhanen_participation) &
+                      is.na(vanhanen_democratization)))
 
   if(verbose) {
-    message(sprintf("Converted to country-yer format, the dataset has %d rows", nrow(data)))
+    message(sprintf("Converted to country-year format, the dataset has %d rows", nrow(data)))
   }
 
   vanhanen <- data %>%
