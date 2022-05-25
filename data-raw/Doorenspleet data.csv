@@ -1,0 +1,668 @@
+country,start_year,regime,end_year
+Afghanistan,1800,A,NA
+Afghanistan,1992,I,NA
+Albania,1914,A,NA
+Albania,1915,I,NA
+Albania,1925,A,NA
+Albania,1939,I,NA
+Albania,1945,I,NA
+Albania,1946,A,NA
+Albania,1992,D,NA
+Algeria,1963,A,NA
+Angola,1975,A,NA
+Argentina,1825,A,NA
+Argentina,1830,I,NA
+Argentina,1835,A,NA
+Argentina,1852,I,NA
+Argentina,1853,A,NA
+Argentina,1946,I,NA
+Argentina,1948,A,NA
+Argentina,1955,I,NA
+Argentina,1957,A,NA
+Argentina,1973,D,NA
+Argentina,1976,A,NA
+Argentina,1983,D,NA
+Armenia,1991,D,NA
+Australia,1901,A,NA
+Australia,1902,D,NA
+Austria,1800,A,NA
+Austria,1805,I,NA
+Austria,1806,A,NA
+Austria,1809,I,NA
+Austria,1810,A,NA
+Austria,1818,I,NA
+Austria,1920,D,NA
+Austria,1933,I,NA
+Austria,1934,A,NA
+Austria,1938,I,NA
+Austria,1945,I,NA
+Austria,1946,D,NA
+Azerbaijan,1991,A,NA
+Baden,1818,A,1871
+Bahrain,1971,A,NA
+Bangladesh,1972,D,NA
+Bangladesh,1974,A,NA
+Bangladesh,1991,D,NA
+Bavaria,1800,A,1871
+Belarus,1991,D,NA
+Belgium,1831,A,NA
+Belgium,1914,I,NA
+Belgium,1915,A,NA
+Belgium,1940,I,NA
+Belgium,1945,A,NA
+Belgium,1949,D,NA
+Benin,1960,A,NA
+Benin,1963,I,NA
+Benin,1965,A,NA
+Benin,1990,I,NA
+Benin,1991,D,NA
+Bhutan,1907,A,NA
+Bolivia,1826,A,NA
+Bolivia,1841,I,NA
+Bolivia,1842,A,NA
+Bolivia,1871,I,NA
+Bolivia,1873,A,NA
+Bolivia,1952,I,NA
+Bolivia,1956,A,NA
+Bolivia,1982,D,NA
+Bosnia,1992,I,NA
+Botswana,1966,A,NA
+Botswana,1969,D,NA
+Brazil,1824,A,NA
+Brazil,1930,I,NA
+Brazil,1934,A,NA
+Brazil,1945,I,NA
+Brazil,1946,A,NA
+Brazil,1964,I,NA
+Brazil,1965,A,NA
+Brazil,1985,D,NA
+Bulgaria,1879,A,NA
+Bulgaria,1913,I,NA
+Bulgaria,1915,A,NA
+Bulgaria,1942,I,NA
+Bulgaria,1944,I,NA
+Bulgaria,1947,A,NA
+Bulgaria,1990,D,NA
+Burkina Faso,1960,A,NA
+Burkina Faso,1977,I,NA
+Burkina Faso,1978,D,NA
+Burkina Faso,1980,A,NA
+Burundi,1961,A,NA
+Burundi,1965,I,NA
+Burundi,1966,A,NA
+Cambodia,1950,A,NA
+Cambodia,1953,I,NA
+Cambodia,1955,A,NA
+Cambodia,1970,I,NA
+Cambodia,1972,A,NA
+Cambodia,1975,I,NA
+Cambodia,1976,A,NA
+Cambodia,1991,I,NA
+Cambodia,1993,D,NA
+Cameroon,1961,A,NA
+Canada,1867,A,NA
+Canada,1921,D,NA
+Central African Republic,1962,A,NA
+Central African Republic,1993,D,NA
+Chad,1962,A,NA
+Chad,1978,I,NA
+Chad,1979,I,NA
+Chad,1985,A,NA
+Chile,1818,A,NA
+Chile,1924,I,NA
+Chile,1925,A,NA
+Chile,1955,D,NA
+Chile,1973,A,NA
+Chile,1990,D,NA
+China,1800,A,NA
+China,1860,I,NA
+China,1862,A,NA
+China,1911,I,NA
+China,1912,A,NA
+China,1913,I,NA
+China,1914,A,NA
+China,1939,I,NA
+China,1946,A,NA
+Colombia,1832,A,NA
+Colombia,1860,I,NA
+Colombia,1861,A,NA
+Colombia,1958,D,NA
+Comoros,1975,A,NA
+Comoros,1990,D,NA
+Comoros,1994,A,NA
+Congo,1961,D,NA
+Congo,1963,A,NA
+Congo,1991,I,NA
+Congo,1992,D,NA
+Costa Rica,1838,A,NA
+Costa Rica,1919,I,NA
+Costa Rica,1920,A,NA
+Costa Rica,1949,D,NA
+Croatia,1830,A,NA
+Croatia,1860,I,NA
+Croatia,1861,A,NA
+Croatia,1868,I,NA
+Croatia,1869,A,1915
+Croatia,1991,A,1994
+Cuba,1902,A,NA
+Cuba,1916,I,NA
+Cuba,1918,A,NA
+Cuba,1952,I,NA
+Cuba,1955,A,NA
+Cuba,1959,I,NA
+Cuba,1961,A,NA
+Czechoslovakia,1918,A,NA
+Czechoslovakia,1920,D,NA
+Czechoslovakia,1939,I,NA
+Czechoslovakia,1945,D,NA
+Czechoslovakia,1947,I,NA
+Czechoslovakia,1948,A,NA
+Czechoslovakia,1968,I,NA
+Czechoslovakia,1969,A,NA
+Czechoslovakia,1990,D,NA
+Democratic People’s Republic of Korea,1948,A,NA
+Democratic Republic of Vietnam,1954,A,NA
+Denmark,1800,A,NA
+Denmark,1901,I,NA
+Denmark,1915,A,NA
+Denmark,1920,D,NA
+Denmark,1940,I,NA
+Denmark,1945,D,NA
+Dominican Republic,1844,A,NA
+Dominican Republic,1861,I,NA
+Dominican Republic,1865,A,NA
+Dominican Republic,1914,I,NA
+Dominican Republic,1925,A,NA
+Dominican Republic,1930,I,NA
+Dominican Republic,1932,A,NA
+Dominican Republic,1961,I,NA
+Dominican Republic,1962,A,NA
+Dominican Republic,1963,I,NA
+Dominican Republic,1964,A,NA
+Dominican Republic,1978,D,NA
+Ecuador,1830,A,NA
+Ecuador,1980,D,NA
+Egypt,1811,A,NA
+Egypt,1882,I,NA
+Egypt,1923,A,NA
+Egypt,1928,I,NA
+Egypt,1930,A,NA
+Egypt,1935,I,NA
+Egypt,1936,A,NA
+Egypt,1952,I,NA
+Egypt,1953,A,NA
+El Salvador,1841,A,NA
+El Salvador,1855,I,NA
+El Salvador,1858,A,NA
+El Salvador,1948,I,NA
+El Salvador,1950,A,NA
+El Salvador,1979,I,NA
+El Salvador,1984,D,NA
+Estonia,1917,A,NA
+Estonia,1919,I,NA
+Estonia,1920,D,NA
+Estonia,1933,I,NA
+Estonia,1936,A,NA
+Estonia,1941,I,NA
+Estonia,1988,I,NA
+Estonia,1991,A,NA
+Ethiopia,1855,A,NA
+Ethiopia,1936,I,NA
+Ethiopia,1942,A,NA
+Ethiopia,1991,I,NA
+Ethiopia,1994,A,NA
+Fiji,1970,D,NA
+Fiji,1987,A,NA
+Finland,1916,A,NA
+Finland,1917,D,NA
+Finland,1930,I,NA
+Finland,1931,A,NA
+Finland,1944,D,NA
+France,1800,A,NA
+France,1851,I,NA
+France,1852,A,NA
+France,1860,I,NA
+France,1863,A,NA
+France,1870,I,NA
+France,1877,A,NA
+France,1944,I,NA
+France,1946,D,NA
+France,1958,A,NA
+France,1969,D,NA
+Gabon,1961,A,NA
+Gabon,1990,I,NA
+Gabon,1991,A,NA
+Gambia,1965,A,NA
+Gambia,1966,D,NA
+Gambia,1994,A,NA
+Georgia,1991,A,NA
+German Democratic Republic,1949,A,1989
+Germany,1800,A,NA
+Germany,1807,I,NA
+Germany,1813,A,NA
+Germany,1868,I,NA
+Germany,1871,A,NA
+Germany,1918,I,NA
+Germany,1919,D,NA
+Germany,1933,A,NA
+Germany,1946,I,NA
+Germany,1949,D,NA
+Ghana,1960,A,NA
+Ghana,1969,I,NA
+Ghana,1970,A,NA
+Ghana,1978,I,NA
+Ghana,1979,D,NA
+Ghana,1981,A,NA
+Ghana,1991,I,NA
+Ghana,1992,A,NA
+Gran Colombia,1821,A,1830
+Greece,1827,A,NA
+Greece,1862,I,NA
+Greece,1864,A,NA
+Greece,1917,I,NA
+Greece,1920,A,NA
+Greece,1922,I,NA
+Greece,1924,A,NA
+Greece,1941,I,NA
+Greece,1944,A,NA
+Greece,1974,I,NA
+Greece,1975,D,NA
+Guatemala,1839,A,NA
+Guatemala,1871,I,NA
+Guatemala,1873,A,NA
+Guatemala,1879,I,NA
+Guatemala,1880,A,NA
+Guatemala,1985,I,NA
+Guatemala,1986,D,NA
+Guinea,1958,A,NA
+Guinea-Bissau,1974,A,NA
+Guinea-Bissau,1994,D,NA
+Guyana,1966,A,NA
+Guyana,1992,D,NA
+Haiti,1820,A,NA
+Haiti,1915,I,NA
+Haiti,1918,A,NA
+Haiti,1946,I,NA
+Haiti,1950,A,NA
+Haiti,1986,I,NA
+Haiti,1988,A,NA
+Haiti,1990,D,NA
+Haiti,1992,A,NA
+Haiti,1994,D,NA
+Honduras,1839,A,NA
+Honduras,1853,I,NA
+Honduras,1854,A,NA
+Honduras,1907,I,NA
+Honduras,1908,A,NA
+Honduras,1912,I,NA
+Honduras,1913,A,NA
+Honduras,1919,I,NA
+Honduras,1920,A,NA
+Honduras,1924,I,NA
+Honduras,1925,A,NA
+Honduras,1981,I,NA
+Honduras,1982,D,NA
+Hungary,1867,A,NA
+Hungary,1918,I,NA
+Hungary,1919,A,NA
+Hungary,1944,I,NA
+Hungary,1948,A,NA
+Hungary,1956,I,NA
+Hungary,1957,A,NA
+Hungary,1990,D,NA
+Iceland,1918,A,NA
+Iceland,1934,D,NA
+India,1950,A,NA
+India,1952,D,NA
+Indonesia,1945,A,NA
+Iran,1800,A,NA
+Iran,1906,I,NA
+Iran,1921,I,NA
+Iran,1925,A,NA
+Iran,1953,I,NA
+Iran,1955,A,NA
+Iraq,1924,A,NA
+Ireland,1922,A,NA
+Ireland,1923,D,NA
+Israel,1949,D,NA
+Italy,1861,A,NA
+Italy,1922,I,NA
+Italy,1928,A,NA
+Italy,1943,I,NA
+Italy,1945,I,NA
+Italy,1948,D,NA
+Ivory Coast,1960,A,NA
+Jamaica,1959,D,NA
+Japan,1800,A,NA
+Japan,1858,I,NA
+Japan,1868,A,NA
+Japan,1945,I,NA
+Japan,1952,D,NA
+Jordan,1946,A,NA
+Kazakhstan,1991,A,NA
+Kenya,1965,A,NA
+Korea,1800,A,1910
+Kuwait,1963,A,NA
+Kuwait,1990,I,NA
+Kuwait,1991,A,NA
+Kyrgyzstan,1991,D,NA
+Laos,1954,I,NA
+Laos,1958,A,NA
+Laos,1971,I,NA
+Laos,1975,A,NA
+Latvia,1920,D,NA
+Latvia,1934,A,NA
+Latvia,1941,I,NA
+Latvia,1991,A,NA
+Lebanon,1944,A,NA
+Lebanon,1971,D,NA
+Lebanon,1976,I,NA
+Lebanon,1990,A,NA
+Lesotho,1966,D,NA
+Lesotho,1970,A,NA
+Lesotho,1993,D,NA
+Liberia,1847,A,NA
+Liberia,1990,I,NA
+Libya,1951,A,NA
+Lithuania,1918,A,NA
+Lithuania,1926,I,NA
+Lithuania,1928,A,NA
+Lithuania,1941,I,NA
+Lithuania,1991,D,NA
+Luxembourg,1867,A,NA
+Luxembourg,1919,D,NA
+Luxembourg,1940,I,NA
+Luxembourg,1945,D,NA
+Macedonia,1991,D,NA
+Madagascar,1961,A,NA
+Madagascar,1992,I,NA
+Madagascar,1993,D,NA
+Malawi,1965,A,NA
+Malawi,1994,D,NA
+Malaysia,1957,D,NA
+Malaysia,1969,A,NA
+Malaysia,1971,D,NA
+Mali,1960,A,NA
+Mali,1991,I,NA
+Mali,1992,D,NA
+Mauritania,1961,A,NA
+Mauritius,1969,D,NA
+Mexico,1822,A,NA
+Mexico,1834,I,NA
+Mexico,1835,A,NA
+Mexico,1846,I,NA
+Mexico,1848,A,NA
+Mexico,1863,I,NA
+Mexico,1864,A,NA
+Mexico,1876,I,NA
+Mexico,1880,A,NA
+Mexico,1911,I,NA
+Mexico,1917,A,NA
+Modena,1815,A,1860
+Moldova,1991,A,NA
+Mongolia,1924,A,NA
+Mongolia,1993,D,NA
+Morocco,1800,A,NA
+Morocco,1912,I,NA
+Morocco,1956,A,NA
+Mozambique,1976,A,NA
+Mozambique,1994,D,NA
+Myanmar (Burma),1948,D,NA
+Myanmar (Burma),1962,A,NA
+Namibia,1990,D,NA
+Nepal,1800,A,NA
+Nepal,1958,I,NA
+Nepal,1959,A,NA
+Nepal,1991,D,NA
+Netherlands,1815,A,NA
+Netherlands,1922,D,NA
+Netherlands,1940,I,NA
+Netherlands,1945,D,NA
+New Zealand,1857,A,NA
+New Zealand,1893,D,NA
+Nicaragua,1838,A,NA
+Nicaragua,1926,I,NA
+Nicaragua,1927,A,NA
+Nicaragua,1979,I,NA
+Nicaragua,1981,A,NA
+Nicaragua,1990,D,NA
+Niger,1959,A,NA
+Niger,1991,I,NA
+Niger,1993,D,NA
+Nigeria,1960,A,NA
+Nigeria,1978,I,NA
+Nigeria,1979,D,NA
+Nigeria,1984,A,NA
+Norway,1814,A,NA
+Norway,1921,D,NA
+Norway,1940,I,NA
+Norway,1945,D,NA
+Oman,1800,A,NA
+Oman,1957,I,NA
+Oman,1959,A,NA
+Orange Free State,1854,A,1902
+Pakistan,1947,A,NA
+Pakistan,1950,D,NA
+Pakistan,1958,A,NA
+Pakistan,1993,D,NA
+Panama,1903,A,NA
+Panama,1990,D,NA
+Papal States,1815,A,1870
+Papua New Guinea,1976,A,NA
+Papua New Guinea,1977,D,NA
+Paraguay,1816,A,NA
+Paraguay,1868,I,NA
+Paraguay,1870,A,NA
+Paraguay,1989,D,NA
+Parma,1815,A,1860
+Peru,1821,A,NA
+Peru,1825,I,NA
+Peru,1828,A,NA
+Peru,1881,I,NA
+Peru,1882,A,NA
+Peru,1919,I,NA
+Peru,1920,A,NA
+Peru,1930,I,NA
+Peru,1933,A,NA
+Peru,1978,I,NA
+Peru,1980,D,NA
+Peru,1992,A,NA
+Philippines,1935,A,NA
+Philippines,1941,I,NA
+Philippines,1945,A,NA
+Philippines,1950,D,NA
+Philippines,1969,A,NA
+Philippines,1986,I,NA
+Philippines,1987,D,NA
+Poland,1918,A,NA
+Poland,1922,D,NA
+Poland,1926,A,NA
+Poland,1939,I,NA
+Poland,1948,A,NA
+Poland,1991,D,NA
+Portugal,1800,A,NA
+Portugal,1801,I,NA
+Portugal,1802,A,NA
+Portugal,1807,I,NA
+Portugal,1820,I,NA
+Portugal,1823,A,NA
+Portugal,1833,I,NA
+Portugal,1834,A,NA
+Portugal,1910,I,NA
+Portugal,1911,A,NA
+Portugal,1926,I,NA
+Portugal,1930,A,NA
+Portugal,1974,I,NA
+Portugal,1976,D,NA
+Republic of Korea,1948,A,NA
+Republic of Korea,1960,D,NA
+Republic of Korea,1961,A,NA
+Republic of Korea,1988,D,NA
+Republic of Vietnam,1955,A,1975
+Romania,1859,A,NA
+Romania,1916,I,NA
+Romania,1917,A,NA
+Romania,1940,I,NA
+Romania,1941,A,NA
+Romania,1944,I,NA
+Romania,1948,A,NA
+Romania,1989,I,NA
+Romania,1990,D,NA
+Russia,1800,A,NA
+Russia,1812,I,NA
+Russia,1813,A,NA
+Russia,1905,I,NA
+Russia,1906,A,NA
+Russia,1991,D,NA
+Rwanda,1960,A,NA
+Rwanda,1994,I,NA
+Sardinia,1815,A,1860
+Saudi Arabia,1926,A,NA
+Saxony,1806,A,NA
+Saxony,1813,I,NA
+Saxony,1814,A,NA
+Saxony,1848,I,NA
+Saxony,1849,A,1871
+Senegal,1960,A,NA
+Senegal,1962,I,NA
+Senegal,1964,A,NA
+Sierra Leone,1961,D,NA
+Sierra Leone,1967,A,NA
+Singapore,1959,D,NA
+Singapore,1963,I,NA
+Singapore,1965,A,NA
+Slovakia,1993,D,NA
+Slovenia,1991,D,NA
+Somalia,1960,A,NA
+Somalia,1964,D,NA
+Somalia,1969,A,NA
+Somalia,1991,I,NA
+South Africa,1856,A,NA
+South Africa,1902,I,NA
+South Africa,1908,I,NA
+South Africa,1910,A,NA
+South Africa,1993,I,NA
+South Africa,1994,D,NA
+Spain,1801,A,NA
+Spain,1808,I,NA
+Spain,1814,A,NA
+Spain,1836,I,NA
+Spain,1837,A,NA
+Spain,1869,I,NA
+Spain,1871,A,NA
+Spain,1874,I,NA
+Spain,1876,A,NA
+Spain,1930,I,NA
+Spain,1931,D,NA
+Spain,1939,A,NA
+Spain,1975,I,NA
+Spain,1978,D,NA
+Sri Lanka,1948,D,NA
+Sri Lanka,1977,I,NA
+Sri Lanka,1978,D,NA
+Sri Lanka,1982,A,NA
+Sri Lanka,1994,D,NA
+Sudan,1954,A,NA
+Sudan,1964,I,NA
+Sudan,1965,D,NA
+Sudan,1969,I,NA
+Sudan,1971,A,NA
+Sudan,1985,I,NA
+Sudan,1986,D,NA
+Sudan,1989,A,NA
+Swaziland,1968,A,NA
+Sweden,1800,A,NA
+Sweden,1809,I,NA
+Sweden,1812,A,NA
+Sweden,1907,I,NA
+Sweden,1917,A,NA
+Sweden,1921,D,NA
+Switzerland,1848,A,NA
+Switzerland,1971,D,NA
+Syria,1944,D,NA
+Syria,1949,A,NA
+Syria,1954,D,NA
+Syria,1958,I,NA
+Syria,1961,A,NA
+Taiwan,1949,A,NA
+Taiwan,1991,D,NA
+Tajikistan,1991,A,NA
+Tanzania,1963,A,NA
+Thailand,1800,A,NA
+Thailand,1932,I,NA
+Thailand,1935,A,NA
+Thailand,1941,I,NA
+Thailand,1942,A,NA
+Thailand,1968,I,NA
+Thailand,1969,A,NA
+Thailand,1973,I,NA
+Thailand,1975,D,NA
+Thailand,1977,I,NA
+Thailand,1978,A,NA
+Thailand,1988,D,NA
+Togo,1961,A,NA
+Togo,1991,I,NA
+Togo,1993,A,NA
+Trinidad,1962,D,NA
+Tunisia,1959,A,NA
+Turkey,1800,A,NA
+Turkey,1919,I,NA
+Turkey,1922,I,NA
+Turkey,1923,A,NA
+Turkey,1946,D,NA
+Turkey,1953,A,NA
+Turkey,1960,I,NA
+Turkey,1961,D,NA
+Turkey,1971,A,NA
+Turkey,1973,D,NA
+Turkey,1980,A,NA
+Turkey,1984,D,NA
+Turkmenistan,1991,A,NA
+Tuscany,1815,A,1860
+Two Sicilies,1816,A,1860
+Uganda,1962,D,NA
+Uganda,1966,I,NA
+Uganda,1967,A,NA
+Uganda,1979,I,NA
+Uganda,1981,D,NA
+Uganda,1985,I,NA
+Uganda,1986,A,NA
+Ukraine,1991,D,NA
+United Arabic Emirates,1971,A,NA
+United Kingdom,1800,A,NA
+United Kingdom,1928,D,NA
+United Provinces of Central America,1824,A,1838
+United States of America,1800,A,NA
+United States of America,1920,D,NA
+Uruguay,1830,A,NA
+Uruguay,1952,D,NA
+Uruguay,1972,I,NA
+Uruguay,1973,A,NA
+Uruguay,1985,D,NA
+Uzbekistan,1991,A,NA
+Venezuela,1830,A,NA
+Venezuela,1963,D,NA
+Wurttemburg,1800,A,1871
+Yemen,1990,I,NA
+Yemen,1994,A,NA
+Yemen Arab Republic,1918,A,NA
+Yemen Arab Republic,1946,I,NA
+Yemen Arab Republic,1948,A,1989
+Yemen People’s Republic,1967,A,1989
+Yugoslavia,1921,A,NA
+Yugoslavia,1937,I,NA
+Yugoslavia,1939,A,NA
+Yugoslavia,1941,I,NA
+Yugoslavia,1944,I,NA
+Yugoslavia,1946,A,NA
+Yugoslavia,1951,I,NA
+Yugoslavia,1953,A,NA
+Zaire,1960,I,NA
+Zaire,1965,A,NA
+Zaire,1993,I,NA
+Zambia,1964,A,NA
+Zambia,1991,D,NA
+Zimbabwe,1923,A,NA
+Zimbabwe,1979,I,NA
+Zimbabwe,1980,D,NA
+Zimbabwe,1983,A,NA
