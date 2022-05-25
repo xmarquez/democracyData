@@ -621,30 +621,8 @@ generate_extended_uds <- function(verbose = FALSE) {
             "utip_trichotomous", "v2x_polyarchy", "vanhanen_democratization",
             "wgi_democracy", "wth_democrobust")
 
-  if(!requireNamespace("vdem")) {
-    stop("You must install the vdem package to use this function. Install using remotes::install_github()")
-  }
-
-
-  all_dem <- generate_democracy_scores_dataset(output_format = "wide",
-                                               verbose = verbose)
-
-  if(verbose) {
-    message("Now loading V-Dem data and joining it to other democracy data...")
-  }
-
-  vdem_index <- vdem::extract_vdem(name_pattern = "v2x_polyarchy",
-                                   include_uncertainty = FALSE)
-
-  vdem_index <- vdem_index %>%
-    dplyr::mutate(extended_country_name = ifelse(is.na(extended_country_name),
-                                          vdem_country_name,
-                                          extended_country_name)) %>%
-    dplyr::select(dplyr::any_of(c(identifiers, "v2x_polyarchy"))) %>%
-    dplyr::distinct()
-
-  extended_data <- all_dem %>%
-    dplyr::full_join(vdem_index)
+  extended_data <- generate_democracy_scores_dataset(output_format = "wide",
+                                                     verbose = verbose)
 
   extended_data <- extended_data %>%
     dplyr::select(dplyr::any_of(c(identifiers, vars)))
