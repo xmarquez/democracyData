@@ -1,0 +1,58 @@
+T‰m‰ ZIP-paketti sis‰lt‰‰ aineiston
+
+FSD1289 Demokratisoitumisen mittarit 1810-2018
+
+Lataamalla aineiston olet sitoutunut noudattamaan k‰yttˆehtoja. Aineiston
+k‰yttˆehdot ovat:
+
+Aineisto on (A) vapaasti k‰ytett‰viss‰ ilman rekisterˆitymist‰ (CC BY 4.0).
+Lataamalla aineiston sitoudut noudattamaan lisenssiehtoja: https://creativecommons.org/licenses/by/4.0/deed.fi
+
+Aineistoon ja sen tekijˆihin on viitattava asianmukaisesti kaikissa
+julkaisuissa ja esityksiss‰, joissa aineistoa k‰ytet‰‰n. Tietoarkiston antaman
+malliviittaustiedon voi merkit‰ l‰hdeluetteloon sellaisenaan tai sit‰ voi
+muokata julkaisun k‰yt‰ntˆjen mukaisesti.
+
+Malliviittaustiedot:
+
+Vanhanen, Tatu (Tampereen yliopisto): Demokratisoitumisen mittarit 1810-2018 [s‰hkˆinen tietoaineisto]. Versio 8.0 (2019-06-17). Yhteiskuntatieteellinen tietoarkisto [jakaja]. http://urn.fi/urn:nbn:fi:fsd:T-FSD1289
+
+
+Jos sinulla on kysytt‰v‰‰ n‰ist‰ tai muista aineistoistamme, voit ottaa yhteytt‰ asiakaspalveluumme:
+asiakaspalvelu.fsd@tuni.fi tai +358 29 452 0411
+
+
+Yst‰v‰llisin terveisin
+Tietoarkiston asiakaspalvelu
+
+--
+Vastuuvapauslauseke:
+Aineiston alkuper‰iset tekij‰t ja tietoarkisto eiv‰t ole vastuussa aineiston jatkok‰ytˆss‰ tuotetuista tuloksista ja tulkinnoista.
+
+--
+ZIP-paketin avaaminen:
+Tallenna liitetiedosto ensin oman koneesi kiintolevylle. Esimerkiksi Windowsissa resurssienhallinta (Oma tietokone) osaa n‰ytt‰‰ ja purkaa tiedostot. Vaihtoehtoisesti purkamiseen voi k‰ytt‰‰ erillist‰ ohjelmaa (esim. WinZip, 7-zip).
+
+--
+SPSS portable -tiedoston avaaminen:
+Valitse SPSS:n pudotusvalikosta File -> Open -> Data ja kohdasta 'Files of type' tiedostomuoto SPSS portable (*.por). HUOM! Jos ‰‰kkˆset eiv‰t n‰y oikein (ongelma on ilmennyt erityisesti SPSS:n version 21 kanssa): Valitse ensin pudotusvalikosta Edit -> Options -> General -> Character encoding for data and syntax -> Local. Avaa tiedosto edell‰ mainitulla tavalla.
+
+--
+Kvalitatiivisen aineiston html-hakemisto:
+S‰ilyt‰ kaikki html-tiedostot samassa hakemistossa. Aloita aineiston selaaminen tiedostosta daFnnnn_index.html, joka sis‰lt‰‰ linkit varsinaisiin datatiedostoihin.
+
+--
+ZIP-paketti sis‰lt‰‰ tiedostot:
+  Data (suomenkielinen): Study/data/daF1289.csv
+  Data (suomenkielinen): Study/data/daF1289.por
+  Data (englanninkielinen): Study/data/daF1289e.csv
+  Data (englanninkielinen): Study/data/daF1289e.por
+  Koodikirja (suomenkielinen): Study/cbF1289.pdf
+  Koodikirja (englanninkielinen): Study/cbF1289e.pdf
+  Muuttujien ja arvojen selitteet (suomenkielinen): Study/data/labF1289.html
+  Muuttujien ja arvojen selitteet (englanninkielinen): Study/data/labF1289e.html
+  Saatekirje (suomenkielinen): LUEMINUT.TXT
+  Saatekirje (englanninkielinen): README.TXT
+
+--
+Lis‰tiedot: https://www.fsd.tuni.fi/
