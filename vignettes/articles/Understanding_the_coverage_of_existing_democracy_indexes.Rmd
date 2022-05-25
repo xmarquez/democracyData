@@ -20,7 +20,6 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(democracyData)
 library(tidyverse)
-library(vdem)
 
 ```
 
@@ -31,32 +30,12 @@ The geographical and temporal coverage of different democracy indexes varies gre
 theme_set(theme_bw())
 long_data <- generate_democracy_scores_dataset(verbose = FALSE)
 
-vdem_main <- extract_vdem(section_number = 2) %>%
-  mutate(extended_country_name = ifelse(is.na(extended_country_name),
-                                        vdem_country_name, extended_country_name))
-
-vdem_main <- vdem_main %>%
-  select(extended_country_name, GWn, year, v2x_polyarchy, 
-         v2x_libdem, v2x_partipdem, v2x_delibdem, v2x_egaldem,
-         v2x_api, v2x_mpi) %>%
-  pivot_longer(starts_with("v2x"), names_to = "measure", values_to = "value") %>%
-  filter(!is.na(value)) %>%
-  mutate(value_rescaled = value) %>%
-  group_by(measure, extended_country_name) %>%
-  mutate(coverage = n(),
-         dataset = "vdem",
-         index_type = "continuous") %>%
-  ungroup()
-
 long_data <- long_data %>%
   group_by(measure) %>%
   mutate(value_rescaled = scales::rescale(value, to = c(0,1))) %>%
   group_by(measure, extended_country_name) %>%
   mutate(coverage = n()) %>%
   ungroup() 
-
-long_data <- long_data %>%
-  bind_rows(vdem_main)
 
 wars <- tibble(xmin = c(1775, 1789, 1914, 1939, 1989), 
                       xmax = c(1787, 1810, 1918, 1945, 1991),
@@ -81,7 +60,7 @@ long_data <- long_data %>%
   mutate(in_GW_system = ifelse(is.na(in_GW_system), FALSE, in_GW_system))
 ```
 
-VDem and [LIED](../../reference/LIED.html) code the largest total number of country-years, while specialist indexes like [BLM](../../reference/blm.html) (which covers only 5 countries in Latin America) code the smallest number. Given the increase in the number of states in the state system, it's no surprise that coverage increases greatly after WWII, with many datasets covering a large number of countries. 
+[VDem](../../reference/vdem_simple.html) and [LIED](../../reference/LIED.html) code the largest total number of country-years, while specialist indexes like [BLM](../../reference/blm.html) (which covers only 5 countries in Latin America) code the smallest number. Given the increase in the number of states in the state system, it's no surprise that coverage increases greatly after WWII, with many datasets covering a large number of countries. 
 
 ```{r, fig.height = 12, warning=FALSE, message = FALSE}
 

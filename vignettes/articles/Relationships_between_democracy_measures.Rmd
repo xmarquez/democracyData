@@ -18,7 +18,6 @@ knitr::opts_chunk$set(
 ```{r setup, cache=FALSE}
 library(democracyData)
 library(tidyverse)
-library(vdem)
 library(corrr)
 library(factoextra)
 library(ggridges)
@@ -29,23 +28,6 @@ theme_set(theme_bw())
 
 long_data <- generate_democracy_scores_dataset(verbose = FALSE)
 
-vdem_main <- extract_vdem(section_number = 2) %>%
-  mutate(extended_country_name = ifelse(is.na(extended_country_name),
-                                        vdem_country_name, extended_country_name))
-
-vdem_main <- vdem_main %>%
-  select(extended_country_name, GWn, year, v2x_polyarchy, 
-         v2x_libdem, v2x_partipdem, v2x_delibdem, v2x_egaldem,
-         v2x_api, v2x_mpi) %>%
-  pivot_longer(starts_with("v2x"), names_to = "measure", values_to = "value") %>%
-  filter(!is.na(value)) %>%
-  mutate(value_rescaled = value) %>%
-  group_by(measure, extended_country_name) %>%
-  mutate(coverage = n(),
-         dataset = "vdem",
-         index_type = "continuous") %>%
-  ungroup()
-
 long_data <- long_data %>%
   group_by(measure) %>%
   mutate(value_rescaled = scales::rescale(value, to = c(0,1))) %>%
@@ -53,9 +35,6 @@ long_data <- long_data %>%
   mutate(coverage = n()) %>%
   ungroup() 
 
-long_data <- long_data %>%
-  select(-cown, -in_GW_system) %>%
-  bind_rows(vdem_main)
 
 wars <- tibble(xmin = c(1775, 1789, 1914, 1939, 1989), 
                       xmax = c(1787, 1810, 1918, 1945, 1991),
@@ -281,7 +260,29 @@ long_data %>%
   theme(legend.position = "bottom")
 ```
 
-Moreover, the average correlation between democracy measures varies substantially year by year, due in part to the particular states that are measured on any given year, the availability of historical information, and the prevalence of hybrid or ambiguous regime forms. It is thus high in the late 18th and early 19th century, as most countries were clearly non-democratic and relatively easy to classify (and there were fewer independent states); it becomes lower in the 19th century, with more countries in difficult-to-classify hybrid forms, and more difficulties for researchers in finding appropriate historical information; and it increases in the mid-twentieth century, where most of the classificatory effort has been focused. It is worth noting that correlations also dip after the Cold War, as more countries take on difficult to classify hybrid forms.
+A latent variable analysis of most of these measures (using the [extended_uds] measure - see the vignette on replicating and extended the UD scores in this package) makes the evolution of democracy in the USA look like this:
+
+```{r}
+extended_uds %>%
+  filter(str_detect(extended_country_name, "United States")) %>%
+  ggplot() +
+  geom_line(aes(x = year, y = z1_adj_as_prob, 
+             ymin = z1_pct025_adj_as_prob, 
+             ymax = z1_pct975_adj_as_prob)) +
+  geom_ribbon(aes(x = year, y = z1_adj_as_prob, 
+             ymin = z1_pct025_adj_as_prob, 
+             ymax = z1_pct975_adj_as_prob),
+             alpha = 0.3) +
+  geom_hline(yintercept = 0.5, color = "red")+
+  annotate(geom = "text", x = c(1789, 1863, 1920, 1968), y = 0.5, 
+           label = c("US Constitution ratified",
+                     "Emancipation proclamation",
+                     "Women's suffrage", 
+                     "Civil Rights Act"), angle = 90) 
+```
+
+
+The average correlation between democracy measures varies substantially year by year, due in part to the particular states that are measured on any given year, the availability of historical information, and the prevalence of hybrid or ambiguous regime forms. It is thus high in the late 18th and early 19th century, as most countries were clearly non-democratic and relatively easy to classify (and there were fewer independent states); it becomes lower in the 19th century, with more countries in difficult-to-classify hybrid forms, and more difficulties for researchers in finding appropriate historical information; and it increases in the mid-twentieth century, where most of the classificatory effort has been focused. It is worth noting that correlations also dip after the Cold War, as more countries take on difficult to classify hybrid forms.
 
 ```{r}
 
