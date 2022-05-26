@@ -1,3 +1,25 @@
+# democracyData 0.4.0
+
+* Updated BMR to version 4.0.
+
+* Updated BTI to 2022 release.
+
+* Updated EIU to 2022 release (2022 EIU report).
+
+* Updated LIED dataset to version 6.4.
+
+* Updated Freedom House download functions to use the latest data (2022 Freedom in the World Report).
+
+* Updated Vanhanen dataset to version 8.0
+
+* Added simplified basic version of V-Dem dataset (with just the 7 main democracy indexes) to the package.
+
+* Archived REIGN dataset (since it is no longer being maintained)
+
+* Re-wrote README for clarity
+
+* Minor big fixes and documentation updates
+
 # democracyData 0.3.0
 
 * Added two new datasets, Bjørnskov and Rode (2021), which updates PACL/DD to 2020, and ANRR (Acemoglu, Naidu, Restrepo, and Robinson 2019), used in their article "Democracy does Cause Growth".
