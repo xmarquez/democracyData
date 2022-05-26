@@ -295,7 +295,7 @@ redownload_bmr <- function(url,
                            verbose = TRUE,
                            return_raw = FALSE,
                            ...) {
-  ccode <- country <- year <- NULL
+  ccode <- country <- year <- democracy <- NULL
 
   if(missing(url)) {
     url <-  "https://drive.google.com/u/0/uc?id=1P9fBqJejGktGLlRMSDgTkjyKMnVFcXac&export=download"
@@ -495,7 +495,7 @@ redownload_lied <- function(url,
                             return_raw = FALSE,
                             ...) {
 
-  `executive elections` <- `legislative elections` <- `multi-party_legislative_elections` <- NULL
+  executive_elections <- legislative_elections <- `multi-party_legislative_elections` <- NULL
   competitive_elections <- countryn <- year <- cow <- lexical_index <- L0 <- L1 <- L2 <- L3 <- L4 <- L5 <- L6 <- NULL
   competition <- exselec <- female_suffrage <- legselec <- male_suffrage <- opposition <- NULL
 
