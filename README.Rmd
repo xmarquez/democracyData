@@ -1,12 +1,12 @@
 ---
 output: github_document
+encoding: 'UTF-8'
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
   <!-- badges: start -->
   [![R-CMD-check](https://github.com/xmarquez/democracyData/workflows/R-CMD-check/badge.svg)](https://github.com/xmarquez/democracyData/actions)
-  [![Travis-CI Build Status](https://travis-ci.org/xmarquez/democracyData.svg?branch=master)](https://travis-ci.org/xmarquez/democracyData)
   <!-- badges: end -->
 
 ```{r, echo = FALSE}
@@ -19,38 +19,56 @@ knitr::opts_chunk$set(
 
 # democracyData
 
-This package provides a number of functions to access most datasets measuring democracy in use in the scholarly literature. At its core is a set of functions to download and standardize some widely used datasets, including [Polity5](http://www.systemicpeace.org/inscrdata.html), [Freedom House](https://freedomhouse.org/), [Geddes, Wright, and Frantz' autocratic regimes dataset](http://sites.psu.edu/dictators/), the [Lexical Index of Electoral Democracy](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106), the [DD/ACLP/PACL/CGV dataset](https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited), and many others.
+This package archives a large number of datasets measuring democracy in use in the scholarly literature, and it provides functions to access many others. You can use it to access some widely used datasets, including [Polity5](http://www.systemicpeace.org/inscrdata.html), [Freedom House](https://freedomhouse.org/), [Geddes, Wright, and Frantz' autocratic regimes dataset](http://sites.psu.edu/dictators/), the [Lexical Index of Electoral Democracy](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106), the [DD/ACLP/PACL/CGV dataset](https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited), the main indexes of the [V-Dem dataset](https://www.v-dem.net/vdemds.html), and many others.
 
 ## Installation
 
-The package is only available on Github for now. Install as follows:
+The package is only available on Github. Install as follows:
 
 ```
 remotes::install_github("xmarquez/democracyData")
 
 ```
-Feedback, pull requests, and contributors welcome.
+
+## Basic usage
+
+For the vast majority of use cases, you can just type the name of the dataset you require. For example, here's the [DD/ACLP/PACL/CGV](https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited) dataset:
+
+```{r}
+library(democracyData)
+pacl
+```
+
+Here's [Polity IV](http://www.systemicpeace.org/inscrdata.html):
+
+```{r}
+polityIV
+```
+
+And here's a basic version of the V-Dem dataset, including only the 7 main indexes of democracy:
+
+```{r}
+vdem_simple
+```
+
+All datasets in this package are fully documented; type `?pacl` for example to see the documentation for the PACL dataset.
 
 ## Downloading democracy data
 
-The package offers two mechanisms for downloading democracy data: the `download_*` family of functions (for large, institutional, or frequently updated democracy datasets, like [Polity5](http://www.systemicpeace.org/inscrdata.html) and [Freedom House](https://freedomhouse.org/)), and the `redownload_*` family of functions for publicly hosted datasets that are not likely to be regularly updated (like [Geddes, Wright, and Frantz' autocratic regimes dataset](http://sites.psu.edu/dictators/), the [Lexical Index of Electoral Democracy](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106), version 5.2, and the [DD/ACLP/PACL/CGV dataset](https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited)). 
+Three democracy datasets are not currently archived in this package: the family of datasets released by [Freedom House](https://freedomhouse.org/); the [Polity5](http://www.systemicpeace.org/inscrdata.html) dataset (which superceded [Polity IV](http://www.systemicpeace.org/inscrdata.html)); and the Voice and Accountability indexes of the [World Governance Indicators](http://info.worldbank.org/governance/wgi/). (The full V-Dem dataset is also not archived here; you can access it via the [vdemdata](https://github.com/vdeminstitute/vdemdata) package). To download these datasets, use the the `download_*` family of functions.
 
 For example, we can download and process the Freedom House "Freedom in the World" dataset as follows:
 
 ```{r, message = FALSE}
-library(democracyData)
-
 fh <- download_fh(verbose = FALSE)
 
 fh 
 
 ```
 
-This downloads the latest update of the "Freedom in the World" dataset (1972-2020), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables `fh_total` and `fh_total_reversed`, and adds state system information, including a standardized country name, the [Gleditsch-Ward](http://privatewww.essex.ac.uk/~ksg/statelist.html) country code and the [Correlates of War](http://www.correlatesofwar.org/data-sets/state-system-membership) country code. 
+This downloads the latest update of the "Freedom in the World" dataset (1972-2021, corresponding to the 2022 report), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables `fh_total` and `fh_total_reversed`, and adds state system information, including a standardized country name, the [Gleditsch-Ward](http://privatewww.essex.ac.uk/~ksg/statelist.html) country code and the [Correlates of War](http://www.correlatesofwar.org/data-sets/state-system-membership) country code. 
 
-You can also download the Freedom House "Electoral Democracies" list (`download_fh_electoral`, updated to 2019), the latest version of the Polity dataset ([Polity5](http://www.systemicpeace.org/inscrdata.html), updated with data to 2018; check `?download_polity`), the latest version of the [World Governance Indicators' "Voice and Accountability" index](http://info.worldbank.org/governance/wgi/index.aspx#home) (`download_wgi_voice_and_accountability`), and the regime part of the [REIGN dataset](http://oefresearch.org/datasets/reign) by Curtis Bell and OEF research (a regularly-updated variation of the original [Geddes, Wright, and Frantz's autocratic regimes dataset](http://sites.psu.edu/dictators/)).
-
-Many other datasets containing democracy measures are not regularly updated, including the widely used [DD/ACLP/PACL/CGV dataset](https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited), the [Geddes, Wright, and Frantz's autocratic regimes dataset](http://sites.psu.edu/dictators/), and the Polity IV dataset (which has been superceded by [Polity5](http://www.systemicpeace.org/inscrdata.html)). These are available directly from this package (no download required), but they can also be "re-downloaded" from the websites of their creators or maintainers. For example, one can either access PACL directly by typing
+Other democracy datasets included in this package do not need to be downloaded, but they can often also be "re-downloaded" from the websites of their creators or maintainers if required. For example, one can either access PACL directly by typing
 
 ```{r}
 pacl
@@ -74,11 +92,11 @@ identical(pacl, pacl_redownloaded)
 
 ```
 
-You should thus normally use the "archived" versions of these datasets, unless you want to manipulate the raw data yourself (using the `redownload_*` functions with the option `return_raw = TRUE`), or think they might have been updated since you installed this package.
+You should thus normally use the "archived" versions of these datasets, unless you want to manipulate the raw data yourself (using the `redownload_*` functions with the option `return_raw = TRUE`), or think they might have been updated since you installed this package. 
 
-## Other democracy datasets
+## Included democracy datasets
 
-A number of democracy datasets are not available online, usually because they were only ever described in the tables of scholarly articles now found only on JSTOR or in out of print books.  These include Zehra Arat's old democracy measure, the Political Regime Change dataset by Gasiorowski (updated by Reich in 2002), the Vanhanen index of democratization, and many others. I have archived most these in this package; for a list of all the datasets available, type `democracy_info`:
+For a list of all the democracy datasets available through this package, type `democracy_info`:
 
 ```{r}
 library(dplyr)
@@ -87,14 +105,6 @@ democracy_info %>%
   knitr::kable()
 
 ```
-
-For example, typing `vanhanen` gives you access to the Vanhanen dataset.
-
-All datasets in this package are fully documented; type `?pacl` for example to see the documentation for the PACL dataset.
-
-## Democracy data not available through this package
-
-I have not included the [Varieties of Democracy](https://www.v-dem.net/en/data/data-version-11/) dataset in this package; you can access version 11 of this dataset via my [`vdem`](https://github.com/xmarquez/vdem) package (use `remotes::install_github("xmarquez/vdem")` to install).
 
 ## Combining all democracy datasets
 
@@ -108,7 +118,17 @@ democracy_data <- generate_democracy_scores_dataset(output_format = "wide",
 democracy_data
 ```
 
-This can take some time, since it downloads all downloadable datasets (Freedom House, Polity 5, Reign, and the WGI Voice and Accountability index), processes them (adds state system information, puts them in country-year format, fixes wrong codes, etc.), and matches them to all the other datasets. In any case, you can select exactly which datasets to include in your big data frame. See `?generate_democracy_scores_dataset` for further options to customize the output. 
+This can take some time, since it downloads all downloadable datasets (Freedom House, Polity 5, and the WGI Voice and Accountability index), processes them (adds state system information, puts them in country-year format, fixes wrong codes, etc.), and matches them to all the other datasets. In any case, you can select exactly which datasets to include in your big data frame. See `?generate_democracy_scores_dataset` for further options to customize the output.
+
+
+## Latent Variable Indexes of Democracy
+
+The package also offers a series of convenience functions to calculate latent variable indexes of democracy (following Pemstein, Meserve, and Melton's [2010 article](https://www.jstor.org/stable/25792023?seq=1) "Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type"); see the vignette on [Replicating and Extending the UD scores of Pemstein, Meserve, and Melton](/articles/articles/Replicating_and_extending_the_UD_scores.html). It also contains a pre-calculated extended version of these scores, available as `extended_uds`:
+
+```{r}
+extended_uds
+```
+
 
 ## State system functions
 
@@ -187,6 +207,6 @@ cite_dataset("gwf")
 
 Feedback welcome! 
 
-Note that some functions in this package can be quite slow: generating a full democracy dataset (including downloading Freedom House, Polity, WGI, and Reign) or applying `country_year_coder` to a large data frame both can take some time. Suggestions to accelerate the code are welcome. 
+Note that some functions in this package can be quite slow: generating a full democracy dataset (including downloading Freedom House, Polity, and WGI) or applying `country_year_coder` to a large data frame both can take some time. Suggestions to accelerate the code are welcome. 
 
 `country_year_coder` fails to give correct answers in some weird edge cases mostly involving Yugoslavia, Germany, or Vietnam. If you run across any of these cases, let me know.
