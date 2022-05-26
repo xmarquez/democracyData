@@ -31,7 +31,7 @@ political regimes 1800-2016: a typology and a new dataset." European
 Political Science, doi: 10.1057/s41304-018-0149-8. Data, article, and
 codebook available at: \doi{10.1057/s41304-018-0149-8}
 
-Boix, Carles, Michael Miller, and Sebastian Rosato. 2018. A Complete
+Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A Complete
 Data Set of Political Regimes, 1800-2007. Comparative Political Studies 46
 (12): 1523-1554. Available at \url{https://sites.google.com/site/mkmtwo/data}
 

@@ -11,6 +11,7 @@ test_that("Anckar redownloads correctly", {
 })
 
 test_that("BLM redownloads correctly", {
+  skip("Certificate expired for website (though data still there) so skipping...")
   skip_on_cran()
   skip_on_travis()
   skip_if_offline()
@@ -24,16 +25,6 @@ test_that("BMR redownloads correctly", {
   skip_if_offline()
   bmr_redownloaded <- redownload_bmr(verbose = FALSE)
   expect_identical(bmr, bmr_redownloaded)
-})
-
-test_that("BNR redownloads correctly", {
-  skip_on_cran()
-  skip_on_travis()
-  skip_if_offline()
-  bnr_redownloaded <- redownload_bnr(verbose = FALSE, extend = FALSE)
-  expect_identical(bnr, bnr_redownloaded)
-  bnr_redownloaded_extended <- redownload_bnr(verbose = FALSE, extend = TRUE)
-  expect_identical(bnr_extended, bnr_redownloaded_extended)
 })
 
 test_that("BTI redownloads correctly", {
@@ -134,6 +125,14 @@ test_that("PIPE redownloads correctly", {
   skip_if_offline()
   PIPE_redownloaded <- redownload_pipe(verbose = FALSE)
   expect_identical(PIPE, PIPE_redownloaded)
+})
+
+test_that("REIGN redownloads correctly", {
+  skip_on_cran()
+  skip_on_travis()
+  skip_if_offline()
+  REIGN_redownloaded <- redownload_reign(verbose = FALSE)
+  expect_identical(REIGN, REIGN_redownloaded)
 })
 
 test_that("svmdi redownloads correctly", {

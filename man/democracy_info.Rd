@@ -23,9 +23,7 @@ know about.
 of the dataset included in this package, except for datasets with more than
 one version (e.g., \code{gwf} matches \link{gwf_all},
 \link{gwf_all_extended}, \link{gwf_autocratic}, and
-\link{gwf_autocratic_extended}). It also includes datasets not included in
-this package (e.g., vdem, accessible via the vdem package on Github
-(\url{http://github.com/xmarquez/vdem}).}
+\link{gwf_autocratic_extended}).}
 
 \item{long_name}{Longer name of the dataset, or official name, if any.}
 
@@ -81,9 +79,7 @@ the dataset directly from the original source.}
 
 \item{included_in_package}{Whether the dataset is included in this package.
 Some are not, either due to use restrictions, or because they are updated
-with some frequency (e.g., \link{fh}), or because they are too big (e.g.,
-vdem, which is accessible via the vdem package on Github
-(\url{http://github.com/xmarquez/vdem}).}
+with some frequency (e.g., \link{fh}).}
 
 \item{first_published_use}{Year of first published use (as far as I know).
 In some cases the data used in the first published use is very different
