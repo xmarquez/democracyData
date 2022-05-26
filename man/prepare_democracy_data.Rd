@@ -224,11 +224,11 @@ J. Cheibub, J. Gandhi, and J. Vreeland. “Democracy and dictatorship revisited�
 M. Coppedge, A. Alvarez, and C. Maldonado. “Two Persistent Dimensions of Democracy: Contestation and
 Inclusiveness”. In: \emph{The journal of politics} 70.03 (2008), pp. 632-647. DOI: 10.1017/S0022381608080663.
 
-M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem Country-Year/Country-Date Dataset v11}. 2021.
-<URL: https://www.v-dem.net/en/data/data-version-11/>.
+M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem Country-Year/Country-Date Dataset v12}. 2022.
+<URL: https://doi.org/10.23696/vdemds22>.
 
-M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem Codebook v11}. 2021. <URL:
-https://www.v-dem.net/en/data/data-version-11/>.
+M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem Codebook v12}. 2022. <URL:
+https://www.v-dem.net/static/website/img/refs/codebookv12.pdf>.
 
 M. Coppedge and W. H. Reinicke. “Measuring Polyarchy”. In: \emph{Studies in Comparative International
 Development} 25.1 (1990), pp. 51-72. DOI: 10.1007/Bf02716905.
@@ -337,7 +337,7 @@ J. Ulfelder. \emph{Democracy/Autocracy Data Set}. 2012. <URL: http://hdl.handle.
 J. Ulfelder and M. Lustik. “Modelling Transitions To and From Democracy”. In: \emph{Democratization} 14.3
 (2007), pp. 351-387. DOI: 10.1080/13510340701303196.
 
-T. Vanhanen. \emph{Measures of Democracy 1810-2018 \link{dataset}. Version 8.0 (2019-06-17).} Tampere, 2019.
+T. Vanhanen. \emph{Measures of Democracy 1810-2018 (dataset). Version 8.0 (2019-06-17).} Tampere, 2019.
 <URL: http://urn.fi/urn:nbn:fi:fsd:T-FSD1289>.
 
 M. Wahman, J. Teorell, and A. Hadenius. “Authoritarian Regime Types Revisited: Updated Data in
