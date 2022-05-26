@@ -14,3 +14,6 @@
 ^vignettes/articles$
 ^_pkgdown\.yml$
 ^pkgdown$
+^.Rd2pdf6593$
+^.Rd2pdf6605$
+^.Rd2pdf6629$
