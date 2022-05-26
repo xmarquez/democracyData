@@ -21,7 +21,7 @@ verbose <- TRUE
 include_in_output <-  c("extended_country_name", "GWn", "cown", "in_GW_system")
 devtools::load_all()
 
-pmm_replication <-  prepare_pmm_replication_data(path = "../../../Pemstein Meserve and Melton Code/uds/data/democracy1946.2008.rda",
+pmm_replication <-  prepare_pmm_replication_data(path = here::here("data-raw/democracy1946.2008.rda"),
                                                  verbose = verbose,
                                                  include_in_output = include_in_output) 
 ```
@@ -68,13 +68,14 @@ usethis::use_data(arat_pmm, overwrite = TRUE)
 ```{r blm, results = 'asis'}
 cite_dataset("blm")
 
-blm <- redownload_blm(verbose = verbose,
-                      include_in_output = include_in_output)
+# Expired certificate
+# blm <- redownload_blm(verbose = verbose,
+#                       include_in_output = include_in_output)
 
 blm_pmm <- extract_pmm_var(pmm_replication, pmm_blm,
                       include_in_output = include_in_output)
 
-usethis::use_data(blm, overwrite = TRUE)
+# usethis::use_data(blm, overwrite = TRUE)
 usethis::use_data(blm_pmm, overwrite = TRUE)
 
 
@@ -94,26 +95,28 @@ usethis::use_data(bmr, overwrite = TRUE)
 
 # BNR
 
+Redownload not fixable - 
+
 ```{r bnr, results = 'asis'}
 cite_dataset("bnr")
 
-bnr <- redownload_bnr(include_in_output = include_in_output, extend = FALSE)
-
-bnr_extended <- redownload_bnr(include_in_output = include_in_output, extend = TRUE)
-
-anti_join(bnr_extended, bnr %>% select(-bnr_country)) %>%
-        group_by(bnr_country) %>%
-        arrange(bnr_country, cown, year) %>%
-        mutate(period = count_sequence_breaks(year)) %>%
-        group_by(bnr_country, bnr, period) %>%
-        summarise(min= min(year), max = max(year)) %>%
-  knitr::kable()
-
-anti_join(bnr %>% select(-bnr_country), bnr_extended) %>%
-  knitr::kable()
-
-usethis::use_data(bnr, overwrite = TRUE)
-usethis::use_data(bnr_extended, overwrite = TRUE)
+# bnr <- redownload_bnr(include_in_output = include_in_output, extend = FALSE)
+# 
+# bnr_extended <- redownload_bnr(include_in_output = include_in_output, extend = TRUE)
+# 
+# anti_join(bnr_extended, bnr %>% select(-bnr_country)) %>%
+#         group_by(bnr_country) %>%
+#         arrange(bnr_country, cown, year) %>%
+#         mutate(period = count_sequence_breaks(year)) %>%
+#         group_by(bnr_country, bnr, period) %>%
+#         summarise(min= min(year), max = max(year)) %>%
+#   knitr::kable()
+# 
+# anti_join(bnr %>% select(-bnr_country), bnr_extended) %>%
+#   knitr::kable()
+# 
+# usethis::use_data(bnr, overwrite = TRUE)
+# usethis::use_data(bnr_extended, overwrite = TRUE)
 
 ```
 # BTI
@@ -143,7 +146,7 @@ usethis::use_data(bollen_pmm, overwrite = TRUE)
 ```{r doorenspleet, results = 'asis'}
 cite_dataset("doorenspleet")
 
-doorenspleet <- prepare_doorenspleet(path = "../../../Data/Doorenspleet data.csv",
+doorenspleet <- prepare_doorenspleet(path = here::here("data-raw/Doorenspleet data.csv"),
                                      verbose = verbose, 
                                      include_in_output = include_in_output)
 
@@ -241,7 +244,7 @@ usethis::use_data(hadenius_pmm, overwrite = TRUE)
 ```{r kailitz, results = 'asis'}
 cite_dataset("kailitz")
 
-kailitz <- PoliticalDatasets::kailitz.yearly %>%
+kailitz <- read_rds("kailitz.yearly.rds") %>%
   select(kailitz_country, year, cown, combined_regime:transition) %>%
   rename(kailitz_cown = cown) %>%
   mutate(year = as.double(year))
@@ -303,7 +306,7 @@ usethis::use_data(magaloni, magaloni_extended, overwrite = TRUE)
 ```{r mainwaring, results = 'asis'}
 cite_dataset("mainwaring")
 
-mainwaring <- prepare_mainwaring(path = "../../../Data/Mainwaring Linan.txt", 
+mainwaring <- prepare_mainwaring(path = here::here("data-raw/Mainwaring Linan.txt"), 
                                  verbose = verbose,
                                  include_in_output = include_in_output)
 
@@ -420,7 +423,7 @@ usethis::use_data(polyarchy,
 ```{r prc_gasiorowski, results = 'asis'}
 cite_dataset("prc_gasiorowski")
 
-prc_gasiorowski <- prepare_prc(path = "../../../Data/Gasiorowski.csv",
+prc_gasiorowski <- prepare_prc(path = here::here("data-raw/Gasiorowski.csv"),
                                verbose = verbose,
                                include_in_output = include_in_output)
 
@@ -447,8 +450,10 @@ usethis::use_data(PIPE, overwrite = TRUE)
 ```{r reign, results = 'asis'}
 cite_dataset("reign")
 
-reign <- download_reign(verbose = verbose,
+REIGN <- redownload_reign(verbose = verbose,
                         include_in_output = include_in_output)
+
+usethis::use_data(REIGN, overwrite = TRUE)
 ```
 
 # SVMDI
@@ -471,7 +476,7 @@ usethis::use_data(svmdi_2016, overwrite = TRUE)
 ```{r svolik, results = 'asis'}
 cite_dataset("svolik")
 
-svolik_regime <- prepare_svolik_regime(path = "../../../Data/Svolik data/regime and no authority spells, country-year, 1946-2008.dta",
+svolik_regime <- prepare_svolik_regime(path = here::here("data-raw/regime and no authority spells, country-year, 1946-2008.dta"),
                                        verbose = verbose,
                                        include_in_output = include_in_output)
 
@@ -536,15 +541,47 @@ usethis::use_data(utip, overwrite = TRUE)
 ```{r vanhanen, results = 'asis'}
 cite_dataset("vanhanen")
 
-vanhanen <- prepare_vanhanen(path = "../../../Data/Vanhanen data/Study/data/daF1289e.xls",
-                             verbose = verbose,
-                             include_in_output = include_in_output)
+# vanhanen <- prepare_vanhanen(path = here::here("data-raw/daF1289e.xls"),
+#                              verbose = verbose,
+#                              include_in_output = include_in_output)
 
 vanhanen_pmm <- extract_pmm_var(pmm_replication, pmm_vanhanen,
                              include_in_output = include_in_output)
 
+vanhanen <- prepare_vanhanen(here::here("data-raw/FSD1289/FSD1289/Study/data/daF1289e.csv"),
+                                  include_in_output = include_in_output)
+
 usethis::use_data(vanhanen, vanhanen_pmm, overwrite = TRUE)
 ```
+# VDem
+
+```{r, results='markup'}
+library(vdemdata)
+
+vdem_simple <- vdemdata::vdem %>%
+  select(country_name:v2x_mpi_sd) %>%
+  as_tibble() %>%
+  country_year_coder(country_name, year, COWcode,
+                     include_in_output = include_in_output) 
+
+vdem_exclude <- vdemdata::vdem %>%
+  select(country_name:v2x_mpi_sd) %>%
+  as_tibble() %>%
+  country_year_coder(country_name, year,
+                     include_in_output = include_in_output) %>%
+  filter(extended_country_name == "Yugoslavia", year %in% c(1804:1829))
+
+vdem_simple <- vdem_simple %>% 
+  anti_join(vdem_exclude)
+
+vdem_simple <- vdem_simple %>%
+  rename(vdem_country_name = country_name,
+         vdem_cowcode = COWcode)
+
+usethis::use_data(vdem_simple, overwrite = TRUE)
+ 
+```
+
 
 # Wahman Teorell and Hadenius
 
