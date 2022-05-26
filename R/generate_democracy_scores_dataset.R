@@ -669,13 +669,7 @@ generate_democracy_scores_dataset <- function(datasets,
     if(verbose) {
       message("Adding BNR extended data")
     }
-    if(force_redownload) {
-      bnr_extended <- redownload_bnr(verbose = verbose,
-                                     include_in_output = include_in_output,
-                                     extend = TRUE)
-    } else {
-      bnr_extended <- democracyData::bnr_extended
-    }
+    bnr_extended <- democracyData::bnr_extended
 
     democracy_data <- bnr_extended %>%
       dplyr::rename_with(~"bnr_extended", "bnr") %>%
@@ -688,13 +682,7 @@ generate_democracy_scores_dataset <- function(datasets,
     if(verbose) {
       message("Adding BNR data")
     }
-    if(force_redownload) {
-      bnr <- redownload_bnr(verbose = verbose,
-                            include_in_output = include_in_output,
-                            extend = FALSE)
-    } else {
-      bnr <- democracyData::bnr
-    }
+    bnr <- democracyData::bnr
 
     democracy_data <- bnr %>%
       dplyr::mutate(across("event", list("bnr" = ~(1 - .)))) %>%
