@@ -1,4 +1,5 @@
 country,eiu,year
+Canada,8.87,2021
 Canada,9.24,2020
 Canada,9.22,2019
 Canada,9.15,2018
@@ -12,6 +13,7 @@ Canada,9.08,2011
 Canada,9.08,2010
 Canada,9.07,2008
 Canada,9.07,2006
+US,7.85,2021
 US,7.92,2020
 US,7.96,2019
 US,7.96,2018
@@ -25,6 +27,7 @@ US,8.11,2011
 US,8.18,2010
 US,8.22,2008
 US,8.22,2006
+Austria,8.07,2021
 Austria,8.16,2020
 Austria,8.29,2019
 Austria,8.29,2018
@@ -38,6 +41,7 @@ Austria,8.49,2011
 Austria,8.49,2010
 Austria,8.49,2008
 Austria,8.69,2006
+Belgium,7.51,2021
 Belgium,7.51,2020
 Belgium,7.64,2019
 Belgium,7.78,2018
@@ -51,6 +55,7 @@ Belgium,8.05,2011
 Belgium,8.05,2010
 Belgium,8.16,2008
 Belgium,8.15,2006
+Cyprus,7.43,2021
 Cyprus,7.56,2020
 Cyprus,7.59,2019
 Cyprus,7.59,2018
@@ -64,6 +69,7 @@ Cyprus,7.29,2011
 Cyprus,7.29,2010
 Cyprus,7.7,2008
 Cyprus,7.6,2006
+Denmark,9.09,2021
 Denmark,9.15,2020
 Denmark,9.22,2019
 Denmark,9.22,2018
@@ -77,6 +83,7 @@ Denmark,9.52,2011
 Denmark,9.52,2010
 Denmark,9.52,2008
 Denmark,9.52,2006
+Finland,9.27,2021
 Finland,9.2,2020
 Finland,9.25,2019
 Finland,9.14,2018
@@ -90,6 +97,7 @@ Finland,9.06,2011
 Finland,9.19,2010
 Finland,9.25,2008
 Finland,9.25,2006
+France,7.99,2021
 France,7.99,2020
 France,8.12,2019
 France,7.8,2018
@@ -103,6 +111,7 @@ France,7.77,2011
 France,7.77,2010
 France,8.07,2008
 France,8.07,2006
+Germany,8.67,2021
 Germany,8.67,2020
 Germany,8.68,2019
 Germany,8.68,2018
@@ -116,6 +125,7 @@ Germany,8.34,2011
 Germany,8.38,2010
 Germany,8.82,2008
 Germany,8.82,2006
+Greece,7.56,2021
 Greece,7.39,2020
 Greece,7.43,2019
 Greece,7.29,2018
@@ -129,6 +139,7 @@ Greece,7.65,2011
 Greece,7.92,2010
 Greece,8.13,2008
 Greece,8.13,2006
+Iceland,9.18,2021
 Iceland,9.37,2020
 Iceland,9.58,2019
 Iceland,9.58,2018
@@ -142,6 +153,7 @@ Iceland,9.65,2011
 Iceland,9.65,2010
 Iceland,9.65,2008
 Iceland,9.71,2006
+Ireland,9,2021
 Ireland,9.05,2020
 Ireland,9.24,2019
 Ireland,9.15,2018
@@ -155,6 +167,7 @@ Ireland,8.56,2011
 Ireland,8.79,2010
 Ireland,9.01,2008
 Ireland,9.01,2006
+Italy,7.68,2021
 Italy,7.74,2020
 Italy,7.52,2019
 Italy,7.71,2018
@@ -168,6 +181,7 @@ Italy,7.74,2011
 Italy,7.83,2010
 Italy,7.98,2008
 Italy,7.73,2006
+Luxembourg,8.68,2021
 Luxembourg,8.68,2020
 Luxembourg,8.81,2019
 Luxembourg,8.81,2018
@@ -181,6 +195,7 @@ Luxembourg,8.88,2011
 Luxembourg,8.88,2010
 Luxembourg,9.1,2008
 Luxembourg,9.1,2006
+Malta,7.57,2021
 Malta,7.68,2020
 Malta,7.95,2019
 Malta,8.21,2018
@@ -194,6 +209,7 @@ Malta,8.28,2011
 Malta,8.28,2010
 Malta,8.39,2008
 Malta,8.39,2006
+Netherlands,8.88,2021
 Netherlands,8.96,2020
 Netherlands,9.01,2019
 Netherlands,8.89,2018
@@ -207,6 +223,7 @@ Netherlands,8.99,2011
 Netherlands,8.99,2010
 Netherlands,9.53,2008
 Netherlands,9.66,2006
+Norway,9.75,2021
 Norway,9.81,2020
 Norway,9.87,2019
 Norway,9.87,2018
@@ -220,6 +237,7 @@ Norway,9.8,2011
 Norway,9.8,2010
 Norway,9.68,2008
 Norway,9.55,2006
+Portugal,7.82,2021
 Portugal,7.9,2020
 Portugal,8.03,2019
 Portugal,7.84,2018
@@ -233,6 +251,7 @@ Portugal,7.81,2011
 Portugal,8.02,2010
 Portugal,8.05,2008
 Portugal,8.16,2006
+Spain,7.94,2021
 Spain,8.12,2020
 Spain,8.18,2019
 Spain,8.08,2018
@@ -246,6 +265,7 @@ Spain,8.02,2011
 Spain,8.16,2010
 Spain,8.45,2008
 Spain,8.34,2006
+Sweden,9.26,2021
 Sweden,9.26,2020
 Sweden,9.39,2019
 Sweden,9.39,2018
@@ -259,6 +279,7 @@ Sweden,9.5,2011
 Sweden,9.5,2010
 Sweden,9.88,2008
 Sweden,9.88,2006
+Switzerland,8.9,2021
 Switzerland,8.83,2020
 Switzerland,9.03,2019
 Switzerland,9.03,2018
@@ -272,6 +293,7 @@ Switzerland,9.09,2011
 Switzerland,9.09,2010
 Switzerland,9.15,2008
 Switzerland,9.02,2006
+Turkey,4.35,2021
 Turkey,4.48,2020
 Turkey,4.09,2019
 Turkey,4.37,2018
@@ -285,6 +307,7 @@ Turkey,5.73,2011
 Turkey,5.73,2010
 Turkey,5.69,2008
 Turkey,5.7,2006
+UK,8.1,2021
 UK,8.54,2020
 UK,8.52,2019
 UK,8.53,2018
@@ -298,6 +321,7 @@ UK,8.16,2011
 UK,8.16,2010
 UK,8.15,2008
 UK,8.08,2006
+Albania,6.11,2021
 Albania,6.08,2020
 Albania,5.89,2019
 Albania,5.98,2018
@@ -311,6 +335,7 @@ Albania,5.81,2011
 Albania,5.86,2010
 Albania,5.91,2008
 Albania,5.91,2006
+Armenia,5.49,2021
 Armenia,5.35,2020
 Armenia,5.54,2019
 Armenia,4.79,2018
@@ -324,6 +349,7 @@ Armenia,4.09,2011
 Armenia,4.09,2010
 Armenia,4.09,2008
 Armenia,4.15,2006
+Azerbaijan,2.68,2021
 Azerbaijan,2.68,2020
 Azerbaijan,2.75,2019
 Azerbaijan,2.65,2018
@@ -337,6 +363,7 @@ Azerbaijan,3.15,2011
 Azerbaijan,3.15,2010
 Azerbaijan,3.19,2008
 Azerbaijan,3.31,2006
+Belarus,2.41,2021
 Belarus,2.59,2020
 Belarus,2.48,2019
 Belarus,3.13,2018
@@ -350,6 +377,7 @@ Belarus,3.16,2011
 Belarus,3.34,2010
 Belarus,3.34,2008
 Belarus,3.34,2006
+Bosnia and Hercegovina,5.04,2021
 Bosnia and Hercegovina,4.84,2020
 Bosnia and Hercegovina,4.86,2019
 Bosnia and Hercegovina,4.98,2018
@@ -363,6 +391,7 @@ Bosnia and Hercegovina,5.24,2011
 Bosnia and Hercegovina,5.32,2010
 Bosnia and Hercegovina,5.7,2008
 Bosnia and Hercegovina,5.78,2006
+Bulgaria,6.64,2021
 Bulgaria,6.71,2020
 Bulgaria,7.03,2019
 Bulgaria,7.03,2018
@@ -376,6 +405,7 @@ Bulgaria,6.78,2011
 Bulgaria,6.84,2010
 Bulgaria,7.02,2008
 Bulgaria,7.1,2006
+Croatia,6.5,2021
 Croatia,6.5,2020
 Croatia,6.57,2019
 Croatia,6.57,2018
@@ -389,6 +419,7 @@ Croatia,6.73,2011
 Croatia,6.81,2010
 Croatia,7.04,2008
 Croatia,7.04,2006
+Czech Republic,7.74,2021
 Czech Republic,7.67,2020
 Czech Republic,7.69,2019
 Czech Republic,7.69,2018
@@ -402,6 +433,7 @@ Czech Republic,8.19,2011
 Czech Republic,8.19,2010
 Czech Republic,8.19,2008
 Czech Republic,8.17,2006
+Estonia,7.84,2021
 Estonia,7.84,2020
 Estonia,7.9,2019
 Estonia,7.97,2018
@@ -415,6 +447,7 @@ Estonia,7.61,2011
 Estonia,7.68,2010
 Estonia,7.68,2008
 Estonia,7.74,2006
+Georgia,5.12,2021
 Georgia,5.31,2020
 Georgia,5.42,2019
 Georgia,5.5,2018
@@ -428,6 +461,7 @@ Georgia,4.74,2011
 Georgia,4.59,2010
 Georgia,4.62,2008
 Georgia,4.9,2006
+Hungary,6.5,2021
 Hungary,6.56,2020
 Hungary,6.63,2019
 Hungary,6.63,2018
@@ -441,6 +475,7 @@ Hungary,7.04,2011
 Hungary,7.21,2010
 Hungary,7.44,2008
 Hungary,7.53,2006
+Kazakhstan,3.08,2021
 Kazakhstan,3.14,2020
 Kazakhstan,2.94,2019
 Kazakhstan,2.94,2018
@@ -454,6 +489,7 @@ Kazakhstan,3.24,2011
 Kazakhstan,3.3,2010
 Kazakhstan,3.45,2008
 Kazakhstan,3.62,2006
+Kyrgyz Republic,3.62,2021
 Kyrgyz Republic,4.21,2020
 Kyrgyz Republic,4.89,2019
 Kyrgyz Republic,5.11,2018
@@ -467,6 +503,7 @@ Kyrgyz Republic,4.34,2011
 Kyrgyz Republic,4.31,2010
 Kyrgyz Republic,4.05,2008
 Kyrgyz Republic,4.08,2006
+Latvia,7.31,2021
 Latvia,7.24,2020
 Latvia,7.49,2019
 Latvia,7.38,2018
@@ -480,6 +517,7 @@ Latvia,7.05,2011
 Latvia,7.05,2010
 Latvia,7.23,2008
 Latvia,7.37,2006
+Lithuania,7.18,2021
 Lithuania,7.13,2020
 Lithuania,7.5,2019
 Lithuania,7.5,2018
@@ -493,6 +531,7 @@ Lithuania,7.24,2011
 Lithuania,7.24,2010
 Lithuania,7.36,2008
 Lithuania,7.43,2006
+Moldova,6.1,2021
 Moldova,5.78,2020
 Moldova,5.75,2019
 Moldova,5.85,2018
@@ -506,6 +545,7 @@ Moldova,6.32,2011
 Moldova,6.33,2010
 Moldova,6.5,2008
 Moldova,6.5,2006
+Montenegro,6.02,2021
 Montenegro,5.77,2020
 Montenegro,5.65,2019
 Montenegro,5.74,2018
@@ -519,6 +559,7 @@ Montenegro,6.15,2011
 Montenegro,6.27,2010
 Montenegro,6.43,2008
 Montenegro,6.57,2006
+North Macedonia,6.03,2021
 North Macedonia,5.89,2020
 North Macedonia,5.97,2019
 North Macedonia,5.87,2018
@@ -532,6 +573,7 @@ North Macedonia,6.16,2011
 North Macedonia,6.16,2010
 North Macedonia,6.21,2008
 North Macedonia,6.33,2006
+Poland,6.8,2021
 Poland,6.85,2020
 Poland,6.62,2019
 Poland,6.67,2018
@@ -545,6 +587,7 @@ Poland,7.12,2011
 Poland,7.05,2010
 Poland,7.3,2008
 Poland,7.3,2006
+Romania,6.43,2021
 Romania,6.4,2020
 Romania,6.49,2019
 Romania,6.38,2018
@@ -558,6 +601,7 @@ Romania,6.54,2011
 Romania,6.6,2010
 Romania,7.06,2008
 Romania,7.06,2006
+Russia,3.24,2021
 Russia,3.31,2020
 Russia,3.11,2019
 Russia,2.94,2018
@@ -571,6 +615,7 @@ Russia,3.92,2011
 Russia,4.26,2010
 Russia,4.48,2008
 Russia,5.02,2006
+Serbia,6.36,2021
 Serbia,6.22,2020
 Serbia,6.41,2019
 Serbia,6.41,2018
@@ -584,6 +629,7 @@ Serbia,6.33,2011
 Serbia,6.33,2010
 Serbia,6.49,2008
 Serbia,6.62,2006
+Slovakia,7.03,2021
 Slovakia,6.97,2020
 Slovakia,7.17,2019
 Slovakia,7.1,2018
@@ -597,6 +643,7 @@ Slovakia,7.35,2011
 Slovakia,7.35,2010
 Slovakia,7.33,2008
 Slovakia,7.4,2006
+Slovenia,7.54,2021
 Slovenia,7.54,2020
 Slovenia,7.5,2019
 Slovenia,7.5,2018
@@ -610,6 +657,7 @@ Slovenia,7.76,2011
 Slovenia,7.69,2010
 Slovenia,7.96,2008
 Slovenia,7.96,2006
+Tajikistan,1.94,2021
 Tajikistan,1.94,2020
 Tajikistan,1.93,2019
 Tajikistan,1.93,2018
@@ -623,6 +671,7 @@ Tajikistan,2.51,2011
 Tajikistan,2.51,2010
 Tajikistan,2.45,2008
 Tajikistan,2.45,2006
+Turkmenistan,1.66,2021
 Turkmenistan,1.72,2020
 Turkmenistan,1.72,2019
 Turkmenistan,1.72,2018
@@ -636,6 +685,7 @@ Turkmenistan,1.72,2011
 Turkmenistan,1.72,2010
 Turkmenistan,1.72,2008
 Turkmenistan,1.83,2006
+Ukraine,5.57,2021
 Ukraine,5.81,2020
 Ukraine,5.9,2019
 Ukraine,5.69,2018
@@ -649,6 +699,7 @@ Ukraine,5.94,2011
 Ukraine,6.3,2010
 Ukraine,6.94,2008
 Ukraine,6.94,2006
+Uzbekistan,2.12,2021
 Uzbekistan,2.12,2020
 Uzbekistan,2.01,2019
 Uzbekistan,2.01,2018
@@ -662,6 +713,7 @@ Uzbekistan,1.74,2011
 Uzbekistan,1.74,2010
 Uzbekistan,1.74,2008
 Uzbekistan,1.85,2006
+Argentina,6.81,2021
 Argentina,6.95,2020
 Argentina,7.02,2019
 Argentina,7.02,2018
@@ -675,6 +727,7 @@ Argentina,6.84,2011
 Argentina,6.84,2010
 Argentina,6.63,2008
 Argentina,6.63,2006
+Bolivia,4.65,2021
 Bolivia,5.08,2020
 Bolivia,4.84,2019
 Bolivia,5.7,2018
@@ -688,6 +741,7 @@ Bolivia,5.84,2011
 Bolivia,5.92,2010
 Bolivia,6.15,2008
 Bolivia,5.98,2006
+Brazil,6.86,2021
 Brazil,6.92,2020
 Brazil,6.86,2019
 Brazil,6.97,2018
@@ -701,6 +755,7 @@ Brazil,7.12,2011
 Brazil,7.12,2010
 Brazil,7.38,2008
 Brazil,7.38,2006
+Chile,7.92,2021
 Chile,8.28,2020
 Chile,8.08,2019
 Chile,7.97,2018
@@ -714,6 +769,7 @@ Chile,7.54,2011
 Chile,7.67,2010
 Chile,7.89,2008
 Chile,7.89,2006
+Colombia,6.48,2021
 Colombia,7.04,2020
 Colombia,7.13,2019
 Colombia,6.96,2018
@@ -727,6 +783,7 @@ Colombia,6.63,2011
 Colombia,6.55,2010
 Colombia,6.54,2008
 Colombia,6.4,2006
+Costa Rica,8.07,2021
 Costa Rica,8.16,2020
 Costa Rica,8.13,2019
 Costa Rica,8.07,2018
@@ -740,6 +797,7 @@ Costa Rica,8.1,2011
 Costa Rica,8.04,2010
 Costa Rica,8.04,2008
 Costa Rica,8.04,2006
+Cuba,2.59,2021
 Cuba,2.84,2020
 Cuba,2.84,2019
 Cuba,3,2018
@@ -753,6 +811,7 @@ Cuba,3.52,2011
 Cuba,3.52,2010
 Cuba,3.52,2008
 Cuba,3.52,2006
+Dominican Republic,6.45,2021
 Dominican Republic,6.32,2020
 Dominican Republic,6.54,2019
 Dominican Republic,6.54,2018
@@ -766,6 +825,7 @@ Dominican Republic,6.2,2011
 Dominican Republic,6.2,2010
 Dominican Republic,6.2,2008
 Dominican Republic,6.13,2006
+Ecuador,5.71,2021
 Ecuador,6.13,2020
 Ecuador,6.33,2019
 Ecuador,6.27,2018
@@ -779,6 +839,7 @@ Ecuador,5.72,2011
 Ecuador,5.77,2010
 Ecuador,5.64,2008
 Ecuador,5.64,2006
+El Salvador,5.72,2021
 El Salvador,5.9,2020
 El Salvador,6.15,2019
 El Salvador,5.96,2018
@@ -792,6 +853,7 @@ El Salvador,6.47,2011
 El Salvador,6.47,2010
 El Salvador,6.4,2008
 El Salvador,6.22,2006
+Guatemala,4.62,2021
 Guatemala,4.97,2020
 Guatemala,5.26,2019
 Guatemala,5.6,2018
@@ -805,6 +867,7 @@ Guatemala,5.88,2011
 Guatemala,6.05,2010
 Guatemala,6.07,2008
 Guatemala,6.07,2006
+Guyana,6.25,2021
 Guyana,6.01,2020
 Guyana,6.15,2019
 Guyana,6.67,2018
@@ -818,6 +881,7 @@ Guyana,6.05,2011
 Guyana,6.05,2010
 Guyana,6.12,2008
 Guyana,6.15,2006
+Haiti,3.48,2021
 Haiti,4.22,2020
 Haiti,4.57,2019
 Haiti,4.91,2018
@@ -831,6 +895,7 @@ Haiti,4,2011
 Haiti,4,2010
 Haiti,4.19,2008
 Haiti,4.19,2006
+Honduras,5.1,2021
 Honduras,5.36,2020
 Honduras,5.42,2019
 Honduras,5.63,2018
@@ -844,6 +909,7 @@ Honduras,5.84,2011
 Honduras,5.76,2010
 Honduras,6.18,2008
 Honduras,6.25,2006
+Jamaica,7.13,2021
 Jamaica,7.13,2020
 Jamaica,6.96,2019
 Jamaica,7.02,2018
@@ -857,6 +923,7 @@ Jamaica,7.13,2011
 Jamaica,7.21,2010
 Jamaica,7.21,2008
 Jamaica,7.34,2006
+Mexico,5.57,2021
 Mexico,6.07,2020
 Mexico,6.09,2019
 Mexico,6.19,2018
@@ -870,6 +937,7 @@ Mexico,6.93,2011
 Mexico,6.93,2010
 Mexico,6.78,2008
 Mexico,6.67,2006
+Nicaragua,2.69,2021
 Nicaragua,3.6,2020
 Nicaragua,3.55,2019
 Nicaragua,3.63,2018
@@ -883,6 +951,7 @@ Nicaragua,5.56,2011
 Nicaragua,5.73,2010
 Nicaragua,6.07,2008
 Nicaragua,5.68,2006
+Panama,6.85,2021
 Panama,7.18,2020
 Panama,7.05,2019
 Panama,7.05,2018
@@ -896,6 +965,7 @@ Panama,7.08,2011
 Panama,7.15,2010
 Panama,7.35,2008
 Panama,7.35,2006
+Paraguay,5.86,2021
 Paraguay,6.18,2020
 Paraguay,6.24,2019
 Paraguay,6.24,2018
@@ -909,6 +979,7 @@ Paraguay,6.4,2011
 Paraguay,6.4,2010
 Paraguay,6.4,2008
 Paraguay,6.16,2006
+Peru,6.09,2021
 Peru,6.53,2020
 Peru,6.6,2019
 Peru,6.6,2018
@@ -922,6 +993,7 @@ Peru,6.59,2011
 Peru,6.4,2010
 Peru,6.31,2008
 Peru,6.11,2006
+Suriname,6.82,2021
 Suriname,6.82,2020
 Suriname,6.98,2019
 Suriname,6.98,2018
@@ -935,6 +1007,7 @@ Suriname,6.65,2011
 Suriname,6.65,2010
 Suriname,6.58,2008
 Suriname,6.52,2006
+Trinidad and Tobago,7.16,2021
 Trinidad and Tobago,7.16,2020
 Trinidad and Tobago,7.16,2019
 Trinidad and Tobago,7.16,2018
@@ -948,6 +1021,7 @@ Trinidad and Tobago,7.16,2011
 Trinidad and Tobago,7.16,2010
 Trinidad and Tobago,7.21,2008
 Trinidad and Tobago,7.18,2006
+Uruguay,8.85,2021
 Uruguay,8.61,2020
 Uruguay,8.38,2019
 Uruguay,8.38,2018
@@ -961,6 +1035,7 @@ Uruguay,8.17,2011
 Uruguay,8.1,2010
 Uruguay,8.08,2008
 Uruguay,7.96,2006
+Venezuela,2.11,2021
 Venezuela,2.76,2020
 Venezuela,2.88,2019
 Venezuela,3.16,2018
@@ -974,6 +1049,7 @@ Venezuela,5.08,2011
 Venezuela,5.18,2010
 Venezuela,5.34,2008
 Venezuela,5.42,2006
+Afghanistan,0.32,2021
 Afghanistan,2.85,2020
 Afghanistan,2.85,2019
 Afghanistan,2.97,2018
@@ -987,6 +1063,7 @@ Afghanistan,2.48,2011
 Afghanistan,2.48,2010
 Afghanistan,3.02,2008
 Afghanistan,3.06,2006
+Australia,8.9,2021
 Australia,8.96,2020
 Australia,9.09,2019
 Australia,9.09,2018
@@ -1000,6 +1077,7 @@ Australia,9.22,2011
 Australia,9.22,2010
 Australia,9.09,2008
 Australia,9.09,2006
+Bangladesh,5.99,2021
 Bangladesh,5.99,2020
 Bangladesh,5.88,2019
 Bangladesh,5.57,2018
@@ -1013,6 +1091,7 @@ Bangladesh,5.86,2011
 Bangladesh,5.87,2010
 Bangladesh,5.52,2008
 Bangladesh,6.11,2006
+Bhutan,5.71,2021
 Bhutan,5.71,2020
 Bhutan,5.3,2019
 Bhutan,5.3,2018
@@ -1026,6 +1105,7 @@ Bhutan,4.57,2011
 Bhutan,4.68,2010
 Bhutan,4.3,2008
 Bhutan,2.62,2006
+Cambodia,2.9,2021
 Cambodia,3.1,2020
 Cambodia,3.53,2019
 Cambodia,3.59,2018
@@ -1039,6 +1119,7 @@ Cambodia,4.87,2011
 Cambodia,4.87,2010
 Cambodia,4.87,2008
 Cambodia,4.77,2006
+China,2.21,2021
 China,2.27,2020
 China,2.26,2019
 China,3.32,2018
@@ -1052,6 +1133,7 @@ China,3.14,2011
 China,3.14,2010
 China,3.04,2008
 China,2.97,2006
+Fiji,5.61,2021
 Fiji,5.72,2020
 Fiji,5.85,2019
 Fiji,5.85,2018
@@ -1065,6 +1147,7 @@ Fiji,3.67,2011
 Fiji,3.62,2010
 Fiji,5.11,2008
 Fiji,5.66,2006
+Hong Kong,5.6,2021
 Hong Kong,5.57,2020
 Hong Kong,6.02,2019
 Hong Kong,6.15,2018
@@ -1078,6 +1161,7 @@ Hong Kong,5.92,2011
 Hong Kong,5.92,2010
 Hong Kong,5.85,2008
 Hong Kong,6.03,2006
+India,6.91,2021
 India,6.61,2020
 India,6.9,2019
 India,7.23,2018
@@ -1091,6 +1175,7 @@ India,7.3,2011
 India,7.28,2010
 India,7.8,2008
 India,7.68,2006
+Indonesia,6.71,2021
 Indonesia,6.3,2020
 Indonesia,6.48,2019
 Indonesia,6.39,2018
@@ -1104,6 +1189,7 @@ Indonesia,6.53,2011
 Indonesia,6.53,2010
 Indonesia,6.34,2008
 Indonesia,6.41,2006
+Japan,8.15,2021
 Japan,8.13,2020
 Japan,7.99,2019
 Japan,7.99,2018
@@ -1117,6 +1203,7 @@ Japan,8.08,2011
 Japan,8.08,2010
 Japan,8.25,2008
 Japan,8.15,2006
+Laos,1.77,2021
 Laos,1.77,2020
 Laos,2.14,2019
 Laos,2.37,2018
@@ -1130,6 +1217,7 @@ Laos,2.1,2011
 Laos,2.1,2010
 Laos,2.1,2008
 Laos,2.1,2006
+Malaysia,7.24,2021
 Malaysia,7.19,2020
 Malaysia,7.16,2019
 Malaysia,6.88,2018
@@ -1143,6 +1231,7 @@ Malaysia,6.19,2011
 Malaysia,6.19,2010
 Malaysia,6.36,2008
 Malaysia,5.98,2006
+Mongolia,6.42,2021
 Mongolia,6.48,2020
 Mongolia,6.5,2019
 Mongolia,6.5,2018
@@ -1156,6 +1245,7 @@ Mongolia,6.23,2011
 Mongolia,6.36,2010
 Mongolia,6.6,2008
 Mongolia,6.6,2006
+Myanmar,1.02,2021
 Myanmar,3.04,2020
 Myanmar,3.55,2019
 Myanmar,3.83,2018
@@ -1169,6 +1259,7 @@ Myanmar,1.77,2011
 Myanmar,1.77,2010
 Myanmar,1.77,2008
 Myanmar,1.77,2006
+Nepal,4.41,2021
 Nepal,5.22,2020
 Nepal,5.28,2019
 Nepal,5.18,2018
@@ -1182,6 +1273,7 @@ Nepal,4.24,2011
 Nepal,4.24,2010
 Nepal,4.05,2008
 Nepal,3.42,2006
+New Zealand,9.37,2021
 New Zealand,9.25,2020
 New Zealand,9.26,2019
 New Zealand,9.26,2018
@@ -1195,6 +1287,7 @@ New Zealand,9.26,2011
 New Zealand,9.26,2010
 New Zealand,9.19,2008
 New Zealand,9.01,2006
+North Korea,1.08,2021
 North Korea,1.08,2020
 North Korea,1.08,2019
 North Korea,1.08,2018
@@ -1208,6 +1301,7 @@ North Korea,1.08,2011
 North Korea,1.08,2010
 North Korea,0.86,2008
 North Korea,1.03,2006
+Pakistan,4.31,2021
 Pakistan,4.31,2020
 Pakistan,4.25,2019
 Pakistan,4.17,2018
@@ -1221,6 +1315,7 @@ Pakistan,4.55,2011
 Pakistan,4.55,2010
 Pakistan,4.46,2008
 Pakistan,3.92,2006
+Papua New Guinea,6.1,2021
 Papua New Guinea,6.1,2020
 Papua New Guinea,6.03,2019
 Papua New Guinea,6.03,2018
@@ -1234,6 +1329,7 @@ Papua New Guinea,6.32,2011
 Papua New Guinea,6.54,2010
 Papua New Guinea,6.54,2008
 Papua New Guinea,6.54,2006
+Philippines,6.62,2021
 Philippines,6.56,2020
 Philippines,6.64,2019
 Philippines,6.71,2018
@@ -1247,6 +1343,7 @@ Philippines,6.12,2011
 Philippines,6.12,2010
 Philippines,6.12,2008
 Philippines,6.48,2006
+Singapore,6.23,2021
 Singapore,6.03,2020
 Singapore,6.02,2019
 Singapore,6.38,2018
@@ -1260,6 +1357,7 @@ Singapore,5.89,2011
 Singapore,5.89,2010
 Singapore,5.89,2008
 Singapore,5.89,2006
+South Korea,8.16,2021
 South Korea,8.01,2020
 South Korea,8,2019
 South Korea,8,2018
@@ -1273,6 +1371,7 @@ South Korea,8.06,2011
 South Korea,8.11,2010
 South Korea,8.01,2008
 South Korea,7.88,2006
+Sri Lanka,6.14,2021
 Sri Lanka,6.14,2020
 Sri Lanka,6.27,2019
 Sri Lanka,6.19,2018
@@ -1286,6 +1385,7 @@ Sri Lanka,6.58,2011
 Sri Lanka,6.64,2010
 Sri Lanka,6.61,2008
 Sri Lanka,6.58,2006
+Taiwan,8.99,2021
 Taiwan,8.94,2020
 Taiwan,7.73,2019
 Taiwan,7.73,2018
@@ -1299,6 +1399,7 @@ Taiwan,7.46,2011
 Taiwan,7.52,2010
 Taiwan,7.82,2008
 Taiwan,7.82,2006
+Thailand,6.04,2021
 Thailand,6.04,2020
 Thailand,6.32,2019
 Thailand,4.63,2018
@@ -1312,6 +1413,7 @@ Thailand,6.55,2011
 Thailand,6.55,2010
 Thailand,6.81,2008
 Thailand,5.67,2006
+Timor Leste,7.06,2021
 Timor Leste,7.06,2020
 Timor Leste,7.19,2019
 Timor Leste,7.19,2018
@@ -1325,6 +1427,7 @@ Timor Leste,7.22,2011
 Timor Leste,7.22,2010
 Timor Leste,7.22,2008
 Timor Leste,6.41,2006
+Vietnam,2.94,2021
 Vietnam,2.94,2020
 Vietnam,3.08,2019
 Vietnam,3.08,2018
@@ -1338,6 +1441,7 @@ Vietnam,2.96,2011
 Vietnam,2.94,2010
 Vietnam,2.53,2008
 Vietnam,2.75,2006
+Algeria,3.77,2021
 Algeria,3.77,2020
 Algeria,4.01,2019
 Algeria,3.5,2018
@@ -1351,6 +1455,7 @@ Algeria,3.44,2011
 Algeria,3.44,2010
 Algeria,3.32,2008
 Algeria,3.17,2006
+Bahrain,2.52,2021
 Bahrain,2.49,2020
 Bahrain,2.55,2019
 Bahrain,2.71,2018
@@ -1364,6 +1469,7 @@ Bahrain,2.92,2011
 Bahrain,3.49,2010
 Bahrain,3.38,2008
 Bahrain,3.53,2006
+Egypt,2.93,2021
 Egypt,2.93,2020
 Egypt,3.06,2019
 Egypt,3.36,2018
@@ -1377,6 +1483,7 @@ Egypt,3.95,2011
 Egypt,3.07,2010
 Egypt,3.89,2008
 Egypt,3.9,2006
+Iran,1.95,2021
 Iran,2.2,2020
 Iran,2.38,2019
 Iran,2.45,2018
@@ -1390,6 +1497,7 @@ Iran,1.98,2011
 Iran,1.94,2010
 Iran,2.83,2008
 Iran,2.93,2006
+Iraq,3.51,2021
 Iraq,3.62,2020
 Iraq,3.74,2019
 Iraq,4.06,2018
@@ -1403,6 +1511,7 @@ Iraq,4.03,2011
 Iraq,4,2010
 Iraq,4,2008
 Iraq,4.01,2006
+Israel,7.97,2021
 Israel,7.84,2020
 Israel,7.86,2019
 Israel,7.79,2018
@@ -1416,6 +1525,7 @@ Israel,7.53,2011
 Israel,7.48,2010
 Israel,7.48,2008
 Israel,7.28,2006
+Jordan,3.49,2021
 Jordan,3.62,2020
 Jordan,3.93,2019
 Jordan,3.93,2018
@@ -1429,6 +1539,7 @@ Jordan,3.89,2011
 Jordan,3.74,2010
 Jordan,3.93,2008
 Jordan,3.92,2006
+Kuwait,3.91,2021
 Kuwait,3.8,2020
 Kuwait,3.93,2019
 Kuwait,3.85,2018
@@ -1442,6 +1553,7 @@ Kuwait,3.74,2011
 Kuwait,3.88,2010
 Kuwait,3.39,2008
 Kuwait,3.09,2006
+Lebanon,3.84,2021
 Lebanon,4.16,2020
 Lebanon,4.36,2019
 Lebanon,4.63,2018
@@ -1455,6 +1567,7 @@ Lebanon,5.32,2011
 Lebanon,5.82,2010
 Lebanon,5.62,2008
 Lebanon,5.82,2006
+Libya,1.95,2021
 Libya,1.95,2020
 Libya,2.02,2019
 Libya,2.19,2018
@@ -1468,6 +1581,7 @@ Libya,3.55,2011
 Libya,1.94,2010
 Libya,2,2008
 Libya,1.84,2006
+Morocco,5.04,2021
 Morocco,5.04,2020
 Morocco,5.1,2019
 Morocco,4.99,2018
@@ -1481,6 +1595,7 @@ Morocco,3.83,2011
 Morocco,3.79,2010
 Morocco,3.88,2008
 Morocco,3.9,2006
+Oman,3,2021
 Oman,3,2020
 Oman,3.06,2019
 Oman,3.04,2018
@@ -1494,6 +1609,7 @@ Oman,3.26,2011
 Oman,2.86,2010
 Oman,2.98,2008
 Oman,2.77,2006
+Palestine,3.94,2021
 Palestine,3.83,2020
 Palestine,3.89,2019
 Palestine,4.39,2018
@@ -1507,6 +1623,7 @@ Palestine,4.97,2011
 Palestine,5.44,2010
 Palestine,5.83,2008
 Palestine,6.01,2006
+Qatar,3.65,2021
 Qatar,3.24,2020
 Qatar,3.19,2019
 Qatar,3.19,2018
@@ -1520,6 +1637,7 @@ Qatar,3.18,2011
 Qatar,3.09,2010
 Qatar,2.92,2008
 Qatar,2.78,2006
+Saudi Arabia,2.08,2021
 Saudi Arabia,2.08,2020
 Saudi Arabia,1.93,2019
 Saudi Arabia,1.93,2018
@@ -1533,6 +1651,7 @@ Saudi Arabia,1.77,2011
 Saudi Arabia,1.84,2010
 Saudi Arabia,1.9,2008
 Saudi Arabia,1.92,2006
+Sudan,2.47,2021
 Sudan,2.54,2020
 Sudan,2.7,2019
 Sudan,2.15,2018
@@ -1546,6 +1665,7 @@ Sudan,2.38,2011
 Sudan,2.42,2010
 Sudan,2.81,2008
 Sudan,2.9,2006
+Syria,1.43,2021
 Syria,1.43,2020
 Syria,1.43,2019
 Syria,1.43,2018
@@ -1559,6 +1679,7 @@ Syria,1.99,2011
 Syria,2.31,2010
 Syria,2.18,2008
 Syria,2.36,2006
+Tunisia,5.99,2021
 Tunisia,6.59,2020
 Tunisia,6.72,2019
 Tunisia,6.41,2018
@@ -1572,6 +1693,7 @@ Tunisia,5.53,2011
 Tunisia,2.79,2010
 Tunisia,2.96,2008
 Tunisia,3.06,2006
+UAE,2.9,2021
 UAE,2.7,2020
 UAE,2.76,2019
 UAE,2.76,2018
@@ -1585,6 +1707,7 @@ UAE,2.58,2011
 UAE,2.52,2010
 UAE,2.6,2008
 UAE,2.42,2006
+Yemen,1.95,2021
 Yemen,1.95,2020
 Yemen,1.95,2019
 Yemen,1.95,2018
@@ -1598,6 +1721,7 @@ Yemen,2.57,2011
 Yemen,2.64,2010
 Yemen,2.95,2008
 Yemen,2.98,2006
+Angola,3.37,2021
 Angola,3.66,2020
 Angola,3.72,2019
 Angola,3.62,2018
@@ -1611,6 +1735,7 @@ Angola,3.32,2011
 Angola,3.32,2010
 Angola,3.35,2008
 Angola,2.41,2006
+Benin,4.19,2021
 Benin,4.58,2020
 Benin,5.09,2019
 Benin,5.74,2018
@@ -1624,6 +1749,7 @@ Benin,6.06,2011
 Benin,6.17,2010
 Benin,6.06,2008
 Benin,6.16,2006
+Botswana,7.73,2021
 Botswana,7.62,2020
 Botswana,7.81,2019
 Botswana,7.81,2018
@@ -1637,6 +1763,7 @@ Botswana,7.63,2011
 Botswana,7.63,2010
 Botswana,7.47,2008
 Botswana,7.6,2006
+Burkina Faso,3.84,2021
 Burkina Faso,3.73,2020
 Burkina Faso,4.04,2019
 Burkina Faso,4.75,2018
@@ -1650,6 +1777,7 @@ Burkina Faso,3.59,2011
 Burkina Faso,3.59,2010
 Burkina Faso,3.6,2008
 Burkina Faso,3.72,2006
+Burundi,2.13,2021
 Burundi,2.14,2020
 Burundi,2.15,2019
 Burundi,2.33,2018
@@ -1663,6 +1791,7 @@ Burundi,4.01,2011
 Burundi,4.01,2010
 Burundi,4.51,2008
 Burundi,4.51,2006
+Cabo Verde,7.65,2021
 Cabo Verde,7.65,2020
 Cabo Verde,7.78,2019
 Cabo Verde,7.88,2018
@@ -1676,6 +1805,7 @@ Cabo Verde,7.92,2011
 Cabo Verde,7.94,2010
 Cabo Verde,7.81,2008
 Cabo Verde,7.43,2006
+Cameroon,2.56,2021
 Cameroon,2.77,2020
 Cameroon,2.85,2019
 Cameroon,3.28,2018
@@ -1689,6 +1819,7 @@ Cameroon,3.41,2011
 Cameroon,3.41,2010
 Cameroon,3.46,2008
 Cameroon,3.27,2006
+Central African Republic,1.43,2021
 Central African Republic,1.32,2020
 Central African Republic,1.32,2019
 Central African Republic,1.52,2018
@@ -1702,6 +1833,7 @@ Central African Republic,1.82,2011
 Central African Republic,1.82,2010
 Central African Republic,1.86,2008
 Central African Republic,1.61,2006
+Chad,1.67,2021
 Chad,1.55,2020
 Chad,1.61,2019
 Chad,1.61,2018
@@ -1715,6 +1847,7 @@ Chad,1.62,2011
 Chad,1.52,2010
 Chad,1.52,2008
 Chad,1.65,2006
+Comoros,3.2,2021
 Comoros,3.09,2020
 Comoros,3.15,2019
 Comoros,3.71,2018
@@ -1728,6 +1861,7 @@ Comoros,3.52,2011
 Comoros,3.41,2010
 Comoros,3.58,2008
 Comoros,3.9,2006
+Congo (Brazzaville),2.79,2021
 Congo (Brazzaville),3.11,2020
 Congo (Brazzaville),3.11,2019
 Congo (Brazzaville),3.31,2018
@@ -1741,6 +1875,7 @@ Congo (Brazzaville),2.89,2011
 Congo (Brazzaville),2.89,2010
 Congo (Brazzaville),2.94,2008
 Congo (Brazzaville),3.19,2006
+Côte d’Ivoire,4.22,2021
 Côte d’Ivoire,4.11,2020
 Côte d’Ivoire,4.05,2019
 Côte d’Ivoire,4.15,2018
@@ -1754,6 +1889,7 @@ Côte d’Ivoire,3.08,2011
 Côte d’Ivoire,3.02,2010
 Côte d’Ivoire,3.27,2008
 Côte d’Ivoire,3.38,2006
+Democratic Republic of Congo,1.4,2021
 Democratic Republic of Congo,1.13,2020
 Democratic Republic of Congo,1.13,2019
 Democratic Republic of Congo,1.49,2018
@@ -1767,6 +1903,7 @@ Democratic Republic of Congo,2.15,2011
 Democratic Republic of Congo,2.15,2010
 Democratic Republic of Congo,2.28,2008
 Democratic Republic of Congo,2.76,2006
+Djibouti,2.74,2021
 Djibouti,2.71,2020
 Djibouti,2.77,2019
 Djibouti,2.87,2018
@@ -1780,6 +1917,7 @@ Djibouti,2.68,2011
 Djibouti,2.2,2010
 Djibouti,2.37,2008
 Djibouti,2.37,2006
+Equatorial Guinea,1.92,2021
 Equatorial Guinea,1.92,2020
 Equatorial Guinea,1.92,2019
 Equatorial Guinea,1.92,2018
@@ -1793,6 +1931,7 @@ Equatorial Guinea,1.77,2011
 Equatorial Guinea,1.84,2010
 Equatorial Guinea,2.19,2008
 Equatorial Guinea,2.09,2006
+Eritrea,2.03,2021
 Eritrea,2.15,2020
 Eritrea,2.37,2019
 Eritrea,2.37,2018
@@ -1806,6 +1945,7 @@ Eritrea,2.34,2011
 Eritrea,2.31,2010
 Eritrea,2.31,2008
 Eritrea,2.31,2006
+eSwatini,3.08,2021
 eSwatini,3.08,2020
 eSwatini,3.14,2019
 eSwatini,3.03,2018
@@ -1819,6 +1959,7 @@ eSwatini,3.26,2011
 eSwatini,2.9,2010
 eSwatini,3.04,2008
 eSwatini,2.93,2006
+Ethiopia,3.3,2021
 Ethiopia,3.38,2020
 Ethiopia,3.44,2019
 Ethiopia,3.35,2018
@@ -1832,6 +1973,7 @@ Ethiopia,3.79,2011
 Ethiopia,3.68,2010
 Ethiopia,4.52,2008
 Ethiopia,4.72,2006
+Gabon,3.4,2021
 Gabon,3.54,2020
 Gabon,3.61,2019
 Gabon,3.61,2018
@@ -1845,6 +1987,7 @@ Gabon,3.48,2011
 Gabon,3.29,2010
 Gabon,3,2008
 Gabon,2.72,2006
+Gambia,4.41,2021
 Gambia,4.49,2020
 Gambia,4.33,2019
 Gambia,4.31,2018
@@ -1858,6 +2001,7 @@ Gambia,3.38,2011
 Gambia,3.38,2010
 Gambia,4.19,2008
 Gambia,4.39,2006
+Ghana,6.5,2021
 Ghana,6.5,2020
 Ghana,6.63,2019
 Ghana,6.63,2018
@@ -1871,6 +2015,7 @@ Ghana,6.02,2011
 Ghana,6.02,2010
 Ghana,5.35,2008
 Ghana,5.35,2006
+Guinea,2.28,2021
 Guinea,3.08,2020
 Guinea,3.14,2019
 Guinea,3.14,2018
@@ -1884,6 +2029,7 @@ Guinea,2.79,2011
 Guinea,2.79,2010
 Guinea,2.09,2008
 Guinea,2.02,2006
+Guinea-Bissau,2.75,2021
 Guinea-Bissau,2.63,2020
 Guinea-Bissau,2.63,2019
 Guinea-Bissau,1.98,2018
@@ -1897,6 +2043,7 @@ Guinea-Bissau,1.99,2011
 Guinea-Bissau,1.99,2010
 Guinea-Bissau,1.99,2008
 Guinea-Bissau,2,2006
+Kenya,5.05,2021
 Kenya,5.05,2020
 Kenya,5.18,2019
 Kenya,5.11,2018
@@ -1910,6 +2057,7 @@ Kenya,4.71,2011
 Kenya,4.71,2010
 Kenya,4.79,2008
 Kenya,5.08,2006
+Lesotho,6.3,2021
 Lesotho,6.3,2020
 Lesotho,6.54,2019
 Lesotho,6.64,2018
@@ -1923,6 +2071,7 @@ Lesotho,6.33,2011
 Lesotho,6.02,2010
 Lesotho,6.29,2008
 Lesotho,6.48,2006
+Liberia,5.43,2021
 Liberia,5.32,2020
 Liberia,5.45,2019
 Liberia,5.35,2018
@@ -1936,6 +2085,7 @@ Liberia,5.07,2011
 Liberia,5.07,2010
 Liberia,5.25,2008
 Liberia,5.22,2006
+Madagascar,5.7,2021
 Madagascar,5.7,2020
 Madagascar,5.64,2019
 Madagascar,5.22,2018
@@ -1949,6 +2099,7 @@ Madagascar,3.93,2011
 Madagascar,3.94,2010
 Madagascar,5.57,2008
 Madagascar,5.82,2006
+Malawi,5.74,2021
 Malawi,5.74,2020
 Malawi,5.5,2019
 Malawi,5.49,2018
@@ -1962,6 +2113,7 @@ Malawi,5.84,2011
 Malawi,5.84,2010
 Malawi,5.13,2008
 Malawi,4.97,2006
+Mali,3.48,2021
 Mali,3.93,2020
 Mali,4.92,2019
 Mali,5.41,2018
@@ -1975,6 +2127,7 @@ Mali,6.36,2011
 Mali,6.01,2010
 Mali,5.87,2008
 Mali,5.99,2006
+Mauritania,4.03,2021
 Mauritania,3.92,2020
 Mauritania,3.92,2019
 Mauritania,3.82,2018
@@ -1988,6 +2141,7 @@ Mauritania,4.17,2011
 Mauritania,3.86,2010
 Mauritania,3.91,2008
 Mauritania,3.12,2006
+Mauritius,8.08,2021
 Mauritius,8.14,2020
 Mauritius,8.22,2019
 Mauritius,8.22,2018
@@ -2001,6 +2155,7 @@ Mauritius,8.04,2011
 Mauritius,8.04,2010
 Mauritius,8.04,2008
 Mauritius,8.04,2006
+Mozambique,3.51,2021
 Mozambique,3.51,2020
 Mozambique,3.65,2019
 Mozambique,3.85,2018
@@ -2014,6 +2169,7 @@ Mozambique,4.9,2011
 Mozambique,4.9,2010
 Mozambique,5.49,2008
 Mozambique,5.28,2006
+Namibia,6.52,2021
 Namibia,6.52,2020
 Namibia,6.43,2019
 Namibia,6.25,2018
@@ -2027,6 +2183,7 @@ Namibia,6.24,2011
 Namibia,6.23,2010
 Namibia,6.48,2008
 Namibia,6.54,2006
+Niger,3.22,2021
 Niger,3.29,2020
 Niger,3.29,2019
 Niger,3.76,2018
@@ -2040,6 +2197,7 @@ Niger,4.16,2011
 Niger,3.38,2010
 Niger,3.41,2008
 Niger,3.54,2006
+Nigeria,4.11,2021
 Nigeria,4.1,2020
 Nigeria,4.12,2019
 Nigeria,4.44,2018
@@ -2053,6 +2211,7 @@ Nigeria,3.83,2011
 Nigeria,3.47,2010
 Nigeria,3.53,2008
 Nigeria,3.52,2006
+Rwanda,3.1,2021
 Rwanda,3.1,2020
 Rwanda,3.16,2019
 Rwanda,3.35,2018
@@ -2066,6 +2225,7 @@ Rwanda,3.25,2011
 Rwanda,3.25,2010
 Rwanda,3.71,2008
 Rwanda,3.82,2006
+Senegal,5.53,2021
 Senegal,5.67,2020
 Senegal,5.81,2019
 Senegal,6.15,2018
@@ -2079,6 +2239,7 @@ Senegal,5.51,2011
 Senegal,5.27,2010
 Senegal,5.37,2008
 Senegal,5.37,2006
+Sierra Leone,4.97,2021
 Sierra Leone,4.86,2020
 Sierra Leone,4.86,2019
 Sierra Leone,4.66,2018
@@ -2092,6 +2253,7 @@ Sierra Leone,4.51,2011
 Sierra Leone,4.51,2010
 Sierra Leone,4.11,2008
 Sierra Leone,3.57,2006
+South Africa,7.05,2021
 South Africa,7.05,2020
 South Africa,7.24,2019
 South Africa,7.24,2018
@@ -2105,6 +2267,7 @@ South Africa,7.79,2011
 South Africa,7.79,2010
 South Africa,7.91,2008
 South Africa,7.91,2006
+Tanzania,5.1,2021
 Tanzania,5.1,2020
 Tanzania,5.16,2019
 Tanzania,5.41,2018
@@ -2118,6 +2281,7 @@ Tanzania,5.64,2011
 Tanzania,5.64,2010
 Tanzania,5.28,2008
 Tanzania,5.18,2006
+Togo,2.8,2021
 Togo,2.8,2020
 Togo,3.3,2019
 Togo,3.1,2018
@@ -2131,6 +2295,7 @@ Togo,3.45,2011
 Togo,3.45,2010
 Togo,2.43,2008
 Togo,1.75,2006
+Uganda,4.48,2021
 Uganda,4.94,2020
 Uganda,5.02,2019
 Uganda,5.2,2018
@@ -2144,6 +2309,7 @@ Uganda,5.13,2011
 Uganda,5.05,2010
 Uganda,5.03,2008
 Uganda,5.14,2006
+Zambia,5.72,2021
 Zambia,4.86,2020
 Zambia,5.09,2019
 Zambia,5.61,2018
@@ -2157,6 +2323,7 @@ Zambia,6.19,2011
 Zambia,5.68,2010
 Zambia,5.25,2008
 Zambia,5.25,2006
+Zimbabwe,2.92,2021
 Zimbabwe,3.16,2020
 Zimbabwe,3.16,2019
 Zimbabwe,3.16,2018
