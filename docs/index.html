@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,18 +33,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3.0</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -54,13 +50,13 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/articles/Relationships_between_democracy_measures.html">Relationships between democracy measures</a>
+      <a href="articles/Relationships_between_democracy_measures.html">Relationships between democracy measures</a>
     </li>
     <li>
-      <a href="articles/articles/Replicating_and_extending_the_UD_scores.html">Replicating and Extending the UD scores of Pemstein, Meserve, and Melton</a>
+      <a href="articles/Replicating_and_extending_the_UD_scores.html">Replicating and Extending the UD scores of Pemstein, Meserve, and Melton</a>
     </li>
     <li>
-      <a href="articles/articles/Understanding_the_coverage_of_existing_democracy_indexes.html">Understanding the geographic and temporal coverage of existing democracy indexes</a>
+      <a href="articles/Understanding_the_coverage_of_existing_democracy_indexes.html">Understanding the geographic and temporal coverage of existing democracy indexes</a>
     </li>
   </ul>
 </li>
@@ -70,7 +66,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/xmarquez/democracyData/">
+  <a href="https://github.com/xmarquez/democracyData/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -89,24 +85,24 @@
   <div class="contents col-md-9">
 
 
-<div id="democracydata" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#democracydata" class="anchor"></a>democracyData</h1></div>
-<p>This package provides a number of functions to access most datasets measuring democracy in use in the scholarly literature. At its core is a set of functions to download and standardize some widely used datasets, including <a href="http://www.systemicpeace.org/inscrdata.html">Polity5</a>, <a href="https://freedomhouse.org/">Freedom House</a>, <a href="http://sites.psu.edu/dictators/">Geddes, Wright, and Frantz’ autocratic regimes dataset</a>, the <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106">Lexical Index of Electoral Democracy</a>, the <a href="https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited">DD/ACLP/PACL/CGV dataset</a>, and many others.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level1">
+<div class="page-header"><h1 id="democracydata">democracyData<a class="anchor" aria-label="anchor" href="#democracydata"></a>
+</h1></div>
+<p>This package provides a number of functions to access most datasets measuring democracy in use in the scholarly literature. At its core is a set of functions to download and standardize some widely used datasets, including <a href="http://www.systemicpeace.org/inscrdata.html" class="external-link">Polity5</a>, <a href="https://freedomhouse.org/" class="external-link">Freedom House</a>, <a href="http://sites.psu.edu/dictators/" class="external-link">Geddes, Wright, and Frantz’ autocratic regimes dataset</a>, the <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106" class="external-link">Lexical Index of Electoral Democracy</a>, the <a href="https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited" class="external-link">DD/ACLP/PACL/CGV dataset</a>, and many others.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>The package is only available on Github for now. Install as follows:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"xmarquez/democracyData"</span>)</span></code></pre></div>
 <p>Feedback, pull requests, and contributors welcome.</p>
 </div>
-<div id="downloading-democracy-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#downloading-democracy-data" class="anchor"></a>Downloading democracy data</h2>
-<p>The package offers two mechanisms for downloading democracy data: the <code>download_*</code> family of functions (for large, institutional, or frequently updated democracy datasets, like <a href="http://www.systemicpeace.org/inscrdata.html">Polity5</a> and <a href="https://freedomhouse.org/">Freedom House</a>), and the <code>redownload_*</code> family of functions for publicly hosted datasets that are not likely to be regularly updated (like <a href="http://sites.psu.edu/dictators/">Geddes, Wright, and Frantz’ autocratic regimes dataset</a>, the <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106">Lexical Index of Electoral Democracy</a>, version 5.2, and the <a href="https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited">DD/ACLP/PACL/CGV dataset</a>).</p>
+<div class="section level2">
+<h2 id="downloading-democracy-data">Downloading democracy data<a class="anchor" aria-label="anchor" href="#downloading-democracy-data"></a>
+</h2>
+<p>The package offers two mechanisms for downloading democracy data: the <code>download_*</code> family of functions (for large, institutional, or frequently updated democracy datasets, like <a href="http://www.systemicpeace.org/inscrdata.html" class="external-link">Polity5</a> and <a href="https://freedomhouse.org/" class="external-link">Freedom House</a>), and the <code>redownload_*</code> family of functions for publicly hosted datasets that are not likely to be regularly updated (like <a href="http://sites.psu.edu/dictators/" class="external-link">Geddes, Wright, and Frantz’ autocratic regimes dataset</a>, the <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106" class="external-link">Lexical Index of Electoral Democracy</a>, version 5.2, and the <a href="https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited" class="external-link">DD/ACLP/PACL/CGV dataset</a>).</p>
 <p>For example, we can download and process the Freedom House “Freedom in the World” dataset as follows:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://xmarquez.github.io/democracyData/">democracyData</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://xmarquez.github.io/democracyData/">democracyData</a></span><span class="op">)</span>
 
 <span class="va">fh</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/download_fh.html">download_fh</a></span><span class="op">(</span>verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="co">#&gt; Warning in download_fh(verbose = FALSE): NAs introduced by coercion</span>
@@ -129,9 +125,9 @@
 <span class="co">#&gt; 10 Afghanistan  1982     7     7 NF           14                 0</span>
 <span class="co">#&gt; # ... with 8,645 more rows, and 4 more variables: extended_country_name &lt;chr&gt;,</span>
 <span class="co">#&gt; #   GWn &lt;dbl&gt;, cown &lt;int&gt;, in_GW_system &lt;lgl&gt;</span></code></pre></div>
-<p>This downloads the latest update of the “Freedom in the World” dataset (1972-2020), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables <code>fh_total</code> and <code>fh_total_reversed</code>, and adds state system information, including a standardized country name, the <a href="http://privatewww.essex.ac.uk/~ksg/statelist.html">Gleditsch-Ward</a> country code and the <a href="http://www.correlatesofwar.org/data-sets/state-system-membership">Correlates of War</a> country code.</p>
-<p>You can also download the Freedom House “Electoral Democracies” list (<code>download_fh_electoral</code>, updated to 2019), the latest version of the Polity dataset (<a href="http://www.systemicpeace.org/inscrdata.html">Polity5</a>, updated with data to 2018; check <code>?download_polity</code>), the latest version of the <a href="http://info.worldbank.org/governance/wgi/index.aspx#home">World Governance Indicators’ “Voice and Accountability” index</a> (<code>download_wgi_voice_and_accountability</code>), and the regime part of the <a href="http://oefresearch.org/datasets/reign">REIGN dataset</a> by Curtis Bell and OEF research (a regularly-updated variation of the original <a href="http://sites.psu.edu/dictators/">Geddes, Wright, and Frantz’s autocratic regimes dataset</a>).</p>
-<p>Many other datasets containing democracy measures are not regularly updated, including the widely used <a href="https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited">DD/ACLP/PACL/CGV dataset</a>, the <a href="http://sites.psu.edu/dictators/">Geddes, Wright, and Frantz’s autocratic regimes dataset</a>, and the Polity IV dataset (which has been superceded by <a href="http://www.systemicpeace.org/inscrdata.html">Polity5</a>). These are available directly from this package (no download required), but they can also be “re-downloaded” from the websites of their creators or maintainers. For example, one can either access PACL directly by typing</p>
+<p>This downloads the latest update of the “Freedom in the World” dataset (1972-2020), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables <code>fh_total</code> and <code>fh_total_reversed</code>, and adds state system information, including a standardized country name, the <a href="http://privatewww.essex.ac.uk/~ksg/statelist.html" class="external-link">Gleditsch-Ward</a> country code and the <a href="http://www.correlatesofwar.org/data-sets/state-system-membership" class="external-link">Correlates of War</a> country code.</p>
+<p>You can also download the Freedom House “Electoral Democracies” list (<code>download_fh_electoral</code>, updated to 2019), the latest version of the Polity dataset (<a href="http://www.systemicpeace.org/inscrdata.html" class="external-link">Polity5</a>, updated with data to 2018; check <code>?download_polity</code>), the latest version of the <a href="http://info.worldbank.org/governance/wgi/index.aspx#home" class="external-link">World Governance Indicators’ “Voice and Accountability” index</a> (<code>download_wgi_voice_and_accountability</code>), and the regime part of the <a href="http://oefresearch.org/datasets/reign" class="external-link">REIGN dataset</a> by Curtis Bell and OEF research (a regularly-updated variation of the original <a href="http://sites.psu.edu/dictators/" class="external-link">Geddes, Wright, and Frantz’s autocratic regimes dataset</a>).</p>
+<p>Many other datasets containing democracy measures are not regularly updated, including the widely used <a href="https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited" class="external-link">DD/ACLP/PACL/CGV dataset</a>, the <a href="http://sites.psu.edu/dictators/" class="external-link">Geddes, Wright, and Frantz’s autocratic regimes dataset</a>, and the Polity IV dataset (which has been superceded by <a href="http://www.systemicpeace.org/inscrdata.html" class="external-link">Polity5</a>). These are available directly from this package (no download required), but they can also be “re-downloaded” from the websites of their creators or maintainers. For example, one can either access PACL directly by typing</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pacl</span>
 <span class="co">#&gt; # A tibble: 9,159 x 82</span>
@@ -203,16 +199,16 @@
 <span class="co">#&gt; #   cown &lt;int&gt;, in_GW_system &lt;lgl&gt;</span></code></pre></div>
 <p>These two data frames should be identical:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/identical.html">identical</a></span><span class="op">(</span><span class="va">pacl</span>, <span class="va">pacl_redownloaded</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/identical.html" class="external-link">identical</a></span><span class="op">(</span><span class="va">pacl</span>, <span class="va">pacl_redownloaded</span><span class="op">)</span>
 <span class="co">#&gt; [1] TRUE</span></code></pre></div>
 <p>You should thus normally use the “archived” versions of these datasets, unless you want to manipulate the raw data yourself (using the <code>redownload_*</code> functions with the option <code>return_raw = TRUE</code>), or think they might have been updated since you installed this package.</p>
 </div>
-<div id="other-democracy-datasets" class="section level2">
-<h2 class="hasAnchor">
-<a href="#other-democracy-datasets" class="anchor"></a>Other democracy datasets</h2>
+<div class="section level2">
+<h2 id="other-democracy-datasets">Other democracy datasets<a class="anchor" aria-label="anchor" href="#other-democracy-datasets"></a>
+</h2>
 <p>A number of democracy datasets are not available online, usually because they were only ever described in the tables of scholarly articles now found only on JSTOR or in out of print books. These include Zehra Arat’s old democracy measure, the Political Regime Change dataset by Gasiorowski (updated by Reich in 2002), the Vanhanen index of democratization, and many others. I have archived most these in this package; for a list of all the datasets available, type <code>democracy_info</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Attaching package: 'dplyr'</span>
 <span class="co">#&gt; The following objects are masked from 'package:stats':</span>
@@ -222,9 +218,9 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt;     intersect, setdiff, setequal, union</span>
 
-<span class="va">democracy_info</span> <span class="op">%&gt;%</span>
-  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<span class="va">democracy_info</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<table style="width:100%;" class="table">
 <colgroup>
 <col width="3%">
 <col width="15%">
@@ -848,14 +844,14 @@
 <p>For example, typing <code>vanhanen</code> gives you access to the Vanhanen dataset.</p>
 <p>All datasets in this package are fully documented; type <code><a href="reference/pacl.html">?pacl</a></code> for example to see the documentation for the PACL dataset.</p>
 </div>
-<div id="democracy-data-not-available-through-this-package" class="section level2">
-<h2 class="hasAnchor">
-<a href="#democracy-data-not-available-through-this-package" class="anchor"></a>Democracy data not available through this package</h2>
-<p>I have not included the <a href="https://www.v-dem.net/en/data/data-version-11/">Varieties of Democracy</a> dataset in this package; you can access version 11 of this dataset via my <a href="https://github.com/xmarquez/vdem"><code>vdem</code></a> package (use <code><a href="https://remotes.r-lib.org/reference/install_github.html">remotes::install_github("xmarquez/vdem")</a></code> to install).</p>
+<div class="section level2">
+<h2 id="democracy-data-not-available-through-this-package">Democracy data not available through this package<a class="anchor" aria-label="anchor" href="#democracy-data-not-available-through-this-package"></a>
+</h2>
+<p>I have not included the <a href="https://www.v-dem.net/en/data/data-version-11/" class="external-link">Varieties of Democracy</a> dataset in this package; you can access version 11 of this dataset via my <a href="https://github.com/xmarquez/vdem" class="external-link"><code>vdem</code></a> package (use <code>remotes::install_github("xmarquez/vdem")</code> to install).</p>
 </div>
-<div id="combining-all-democracy-datasets" class="section level2">
-<h2 class="hasAnchor">
-<a href="#combining-all-democracy-datasets" class="anchor"></a>Combining all democracy datasets</h2>
+<div class="section level2">
+<h2 id="combining-all-democracy-datasets">Combining all democracy datasets<a class="anchor" aria-label="anchor" href="#combining-all-democracy-datasets"></a>
+</h2>
 <p>You can create one huge data frame including all democracy measures with one call:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">democracy_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/generate_democracy_scores_dataset.html">generate_democracy_scores_dataset</a></span><span class="op">(</span>output_format <span class="op">=</span> <span class="st">"wide"</span>,
@@ -908,12 +904,12 @@
 <span class="co">#&gt; #   polity2 &lt;dbl&gt;, fh_electoral &lt;dbl&gt;, pmm_fh &lt;dbl&gt;, fh_total_reversed &lt;dbl&gt;</span></code></pre></div>
 <p>This can take some time, since it downloads all downloadable datasets (Freedom House, Polity 5, Reign, and the WGI Voice and Accountability index), processes them (adds state system information, puts them in country-year format, fixes wrong codes, etc.), and matches them to all the other datasets. In any case, you can select exactly which datasets to include in your big data frame. See <code><a href="reference/generate_democracy_scores_dataset.html">?generate_democracy_scores_dataset</a></code> for further options to customize the output.</p>
 </div>
-<div id="state-system-functions" class="section level2">
-<h2 class="hasAnchor">
-<a href="#state-system-functions" class="anchor"></a>State system functions</h2>
-<p>The package also includes a couple of other convenience functions to work with historical democracy data and determine state system membership. The first is <code>country_year_coder</code>, which works like the <a href="https://CRAN.R-project.org/package=countrycode"><code>countrycode</code></a> package, except that it is able to determine state system information for country-year pairs. Suppose you have this dataset:</p>
+<div class="section level2">
+<h2 id="state-system-functions">State system functions<a class="anchor" aria-label="anchor" href="#state-system-functions"></a>
+</h2>
+<p>The package also includes a couple of other convenience functions to work with historical democracy data and determine state system membership. The first is <code>country_year_coder</code>, which works like the <a href="https://CRAN.R-project.org/package=countrycode" class="external-link"><code>countrycode</code></a> package, except that it is able to determine state system information for country-year pairs. Suppose you have this dataset:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">my_weird_democracy_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>country <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Germany"</span>, <span class="st">"Germany"</span>, <span class="st">"Germany"</span>, <span class="st">"Germany"</span>, <span class="st">"East Germany"</span>,
+<code class="sourceCode R"><span class="va">my_weird_democracy_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span>country <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Germany"</span>, <span class="st">"Germany"</span>, <span class="st">"Germany"</span>, <span class="st">"Germany"</span>, <span class="st">"East Germany"</span>,
                                     <span class="st">"Federal Republic of Germany"</span>,
                                     <span class="st">"Somaliland"</span>, <span class="st">"Somalia"</span>,
                                     <span class="st">"Palestine"</span>, <span class="st">"Russia"</span>,
@@ -921,13 +917,13 @@
                                     <span class="st">"Republic of Vietnam"</span>,
                                     <span class="st">"Yugoslavia"</span>, <span class="st">'Yugoslavia'</span>,
                                     <span class="st">"Vietnam, South"</span><span class="op">)</span>,
-                        year <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span> <span class="fl">2015</span>, <span class="fl">1930</span>, <span class="fl">1970</span>, <span class="fl">1945</span>, <span class="fl">1949</span>,
+                        year <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span> <span class="fl">2015</span>, <span class="fl">1930</span>, <span class="fl">1970</span>, <span class="fl">1945</span>, <span class="fl">1949</span>,
                                  <span class="fl">1992</span>, <span class="fl">1990</span>,
                                  <span class="fl">1990</span>, <span class="fl">1940</span>,
                                  <span class="fl">1917</span>, <span class="fl">1912</span>,
                                  <span class="fl">1922</span>, <span class="fl">1975</span>,
                                  <span class="fl">1990</span>, <span class="fl">1991</span>, <span class="fl">1954</span><span class="op">)</span>,
-                        my_measure <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">16</span><span class="op">)</span><span class="op">)</span>
+                        my_measure <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">16</span><span class="op">)</span><span class="op">)</span>
 
 
 <span class="va">my_weird_democracy_data</span>
@@ -952,12 +948,12 @@
 <span class="co">#&gt; 16 Vietnam, South               1954     0.0118</span></code></pre></div>
 <p>and you then want to add state system information. <code>country_year_coder</code> does that for you!</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">my_weird_democracy_data</span> <span class="op">&lt;-</span> <span class="va">my_weird_democracy_data</span> <span class="op">%&gt;%</span>
+<code class="sourceCode R"><span class="va">my_weird_democracy_data</span> <span class="op">&lt;-</span> <span class="va">my_weird_democracy_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
   <span class="fu"><a href="reference/country_year_coder.html">country_year_coder</a></span><span class="op">(</span><span class="va">country</span>,
                      <span class="va">year</span>,
                      match_type <span class="op">=</span> <span class="st">"country"</span>,
                      verbose <span class="op">=</span> <span class="cn">FALSE</span>,
-                     include_in_output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"extended_country_name"</span>, 
+                     include_in_output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"extended_country_name"</span>, 
                                            <span class="st">"GWn"</span>, <span class="st">"cown"</span>, 
                                            <span class="st">"polity_ccode"</span>, 
                                            <span class="st">"in_GW_system"</span>, 
@@ -966,9 +962,9 @@
                                            <span class="st">"polity_startdate"</span>,
                                            <span class="st">"polity_enddate"</span><span class="op">)</span><span class="op">)</span>
 
-<span class="va">my_weird_democracy_data</span> <span class="op">%&gt;%</span>
-  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<span class="va">my_weird_democracy_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<table style="width:100%;" class="table">
 <colgroup>
 <col width="15%">
 <col width="3%">
@@ -1260,74 +1256,74 @@
 <span class="co">#&gt; 10     2 United States of America 1816-01-01   NA          1825</span>
 <span class="co">#&gt; # ... with 19,731 more rows</span></code></pre></div>
 </div>
-<div id="citation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#citation" class="anchor"></a>Citation</h2>
+<div class="section level2">
+<h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
+</h2>
 <p>The standard <code>citation</code> function from base <code>R</code> will produce a list of citations for all the datasets included in this package:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">"democracyData"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">"democracyData"</span><span class="op">)</span></code></pre></div>
 <p>To cite any of the datasets included in this package use:</p>
-<p>Acemoglu D, Naidu S, Restrepo P, Robinson JA (2019). “Democracy Does Cause Growth.” <em>Journal of Political Economy</em>, <em>127</em>(1), 47-100. doi: 10.1086/700936 (URL: <a href="https://doi.org/10.1086/700936" class="uri">https://doi.org/10.1086/700936</a>).</p>
-<p>Anckar C, Fredriksson C (2018). “Classifying political regimes 1800-2016: a typology and a new dataset.” <em>European Political Science</em>. doi: 10.1057/s41304-018-0149-8 (URL: <a href="https://doi.org/10.1057/s41304-018-0149-8" class="uri">https://doi.org/10.1057/s41304-018-0149-8</a>), &lt;URL: <a href="https://doi.org/10.1057/s41304-018-0149-8" class="uri">https://doi.org/10.1057/s41304-018-0149-8</a>&gt;.</p>
+<p>Acemoglu D, Naidu S, Restrepo P, Robinson JA (2019). “Democracy Does Cause Growth.” <em>Journal of Political Economy</em>, <em>127</em>(1), 47-100. doi: 10.1086/700936 (URL: <a href="https://doi.org/10.1086/700936" class="external-link uri">https://doi.org/10.1086/700936</a>).</p>
+<p>Anckar C, Fredriksson C (2018). “Classifying political regimes 1800-2016: a typology and a new dataset.” <em>European Political Science</em>. doi: 10.1057/s41304-018-0149-8 (URL: <a href="https://doi.org/10.1057/s41304-018-0149-8" class="external-link uri">https://doi.org/10.1057/s41304-018-0149-8</a>), &lt;URL: <a href="https://doi.org/10.1057/s41304-018-0149-8" class="external-link uri">https://doi.org/10.1057/s41304-018-0149-8</a>&gt;.</p>
 <p>Arat ZF (1991). <em>Democracy and human rights in developing countries</em>. Lynne Rienner Publishers, Boulder.</p>
-<p>Bell C (2016). “The Rulers, Elections, and Irregular Governance Dataset (REIGN).” &lt;URL: <a href="http://oefresearch.org/datasets/reign" class="uri">http://oefresearch.org/datasets/reign</a>&gt;.</p>
-<p>Bernhard M, Nordstrom T, Reenock C (2001). “Economic Performance, Institutional Intermediation, and Democratic Survival.” <em>Journal of Politics</em>, <em>63</em>(3), 775-803. doi: 10.1111/0022-3816.00087 (URL: <a href="https://doi.org/10.1111/0022-3816.00087" class="uri">https://doi.org/10.1111/0022-3816.00087</a>).</p>
+<p>Bell C (2016). “The Rulers, Elections, and Irregular Governance Dataset (REIGN).” &lt;URL: <a href="http://oefresearch.org/datasets/reign" class="external-link uri">http://oefresearch.org/datasets/reign</a>&gt;.</p>
+<p>Bernhard M, Nordstrom T, Reenock C (2001). “Economic Performance, Institutional Intermediation, and Democratic Survival.” <em>Journal of Politics</em>, <em>63</em>(3), 775-803. doi: 10.1111/0022-3816.00087 (URL: <a href="https://doi.org/10.1111/0022-3816.00087" class="external-link uri">https://doi.org/10.1111/0022-3816.00087</a>).</p>
 <p>Bertelsmann Stiftung (2020). “Transformation Index of the Bertelsmann Stiftung 2020.” Bertelsmann Stiftung.</p>
-<p>Bjørnskov C, Rode M (2020). “Regime types and regime change: A new dataset on democracy, coups, and political institutions.” <em>The Review of International Organizations</em>, <em>15</em>(2), 531-551. doi: 10.1007/s11558-019-09345-1 (URL: <a href="https://doi.org/10.1007/s11558-019-09345-1" class="uri">https://doi.org/10.1007/s11558-019-09345-1</a>).</p>
-<p>Boix C, Miller M, Rosato S (2012). “A Complete Dataset of Political Regimes, 1800-2007.” <em>Comparative Political Studies</em>, <em>46</em>(12), 1523-1554. doi: 10.1177/0010414012463905 (URL: <a href="https://doi.org/10.1177/0010414012463905" class="uri">https://doi.org/10.1177/0010414012463905</a>).</p>
+<p>Bjørnskov C, Rode M (2020). “Regime types and regime change: A new dataset on democracy, coups, and political institutions.” <em>The Review of International Organizations</em>, <em>15</em>(2), 531-551. doi: 10.1007/s11558-019-09345-1 (URL: <a href="https://doi.org/10.1007/s11558-019-09345-1" class="external-link uri">https://doi.org/10.1007/s11558-019-09345-1</a>).</p>
+<p>Boix C, Miller M, Rosato S (2012). “A Complete Dataset of Political Regimes, 1800-2007.” <em>Comparative Political Studies</em>, <em>46</em>(12), 1523-1554. doi: 10.1177/0010414012463905 (URL: <a href="https://doi.org/10.1177/0010414012463905" class="external-link uri">https://doi.org/10.1177/0010414012463905</a>).</p>
 <p>Bollen KA (2001). “Cross-National Indicators of Liberal Democracy, 1950-1990.”</p>
-<p>Bollen K, Paxton P (2000). “Subjective Measures of Liberal Democracy.” <em>Comparative Political Studies</em>, <em>33</em>(1), 58-86. doi: 10.1177/0010414000033001003 (URL: <a href="https://doi.org/10.1177/0010414000033001003" class="uri">https://doi.org/10.1177/0010414000033001003</a>).</p>
-<p>Bowman K, Lehoucq F, Mahoney J (2005). “Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America.” <em>Comparative Political Studies</em>, <em>38</em>(8), 939-970. doi: 10.1177/0010414005277083 (URL: <a href="https://doi.org/10.1177/0010414005277083" class="uri">https://doi.org/10.1177/0010414005277083</a>).</p>
-<p>Cheibub J, Gandhi J, Vreeland J (2010). “Democracy and dictatorship revisited.” <em>Public Choice</em>, <em>143</em>(1), 67-101. doi: 10.1007/s11127-009-9491-2 (URL: <a href="https://doi.org/10.1007/s11127-009-9491-2" class="uri">https://doi.org/10.1007/s11127-009-9491-2</a>).</p>
-<p>Coppedge M, Alvarez A, Maldonado C (2008). “Two Persistent Dimensions of Democracy: Contestation and Inclusiveness.” <em>The journal of politics</em>, <em>70</em>(03), 632-647. doi: 10.1017/S0022381608080663 (URL: <a href="https://doi.org/10.1017/S0022381608080663" class="uri">https://doi.org/10.1017/S0022381608080663</a>).</p>
-<p>Coppedge M, Gerring J, Knutsen CH, Lindberg SI, Teorell J, Alizada N, Altman D, Bernhard M, Cornell A, Fish MS, Gastaldi L, Gjerlow H, Glynn A, Hicken A, Hindle G, Ilchenko N, Krusell J, uhrmann AL, Maerz SF, Marquardt KL, McMann K, Mechkova V, Medzihorsky J, Paxton P, Pemstein D, Pernes J, von RÃ¶mer J, Seim B, Sigman R, Skaaning S, Staton J, SundstrÃ¶m A, Tzelgov E, Wang Y, Wig T, Wilson S, Ziblatt. D (2021). “V-Dem Country-Year/Country-Date Dataset v11.” &lt;URL: <a href="https://www.v-dem.net/en/data/data-version-11/" class="uri">https://www.v-dem.net/en/data/data-version-11/</a>&gt;.</p>
-<p>Coppedge M, Gerring J, Knutsen CH, Lindberg SI, Teorell J, Altman D, Bernhard M, Cornell A, Fish MS, Gastaldi L, Gjerlow H, Glynn A, Hicken A, LÃ¼hrmann A, Maerz SF, Marquardt KL, McMann K, Mechkova V, Paxton P, Pemstein D, von RÃ¶mer J, Seim B, Sigman R, Skaaning S, Staton J, SundtrÃ¶m A, Tzelgov E, Uberti L, Wang Y, Wig T, Ziblatt D (2021). “V-Dem Codebook v11.” &lt;URL: <a href="https://www.v-dem.net/en/data/data-version-11/" class="uri">https://www.v-dem.net/en/data/data-version-11/</a>&gt;.</p>
-<p>Coppedge M, Reinicke WH (1990). “Measuring Polyarchy.” <em>Studies in Comparative International Development</em>, <em>25</em>(1), 51-72. doi: 10.1007/Bf02716905 (URL: <a href="https://doi.org/10.1007/Bf02716905" class="uri">https://doi.org/10.1007/Bf02716905</a>).</p>
-<p>Doorenspleet R (2000). “Reassessing the Three Waves of Democratization.” <em>World Politics</em>, <em>52</em>(03), 384-406. doi: 10.1017/S0043887100016580 (URL: <a href="https://doi.org/10.1017/S0043887100016580" class="uri">https://doi.org/10.1017/S0043887100016580</a>).</p>
-<p>Freedom House (2021). “Freedom in the World 2021: Democracy under Siege.” Freedom House. &lt;URL: <a href="https://freedomhouse.org/report/freedom-world/2021/democracy-under-siege" class="uri">https://freedomhouse.org/report/freedom-world/2021/democracy-under-siege</a>&gt;.</p>
-<p>Gasiorowski M (1996). “An Overview of the Political Regime Change Dataset.” <em>Comparative Political Studies</em>, <em>29</em>(4), 469-483. doi: 10.1177/0010414096029004004 (URL: <a href="https://doi.org/10.1177/0010414096029004004" class="uri">https://doi.org/10.1177/0010414096029004004</a>).</p>
-<p>Geddes B, Wright J, Frantz E (2014). “Autocratic Breakdown and Regime Transitions: A New Data Set.” <em>Perspectives on Politics</em>, <em>12</em>(1), 313-331. doi: 10.1017/S1537592714000851 (URL: <a href="https://doi.org/10.1017/S1537592714000851" class="uri">https://doi.org/10.1017/S1537592714000851</a>).</p>
-<p>Gleditsch K, Ward MD (1999). “Interstate system membership: A revised list of independent states since the congress of Vienna.” <em>International Interactions</em>, <em>25</em>(4), 393-413. doi: 10.1080/03050629908434958 (URL: <a href="https://doi.org/10.1080/03050629908434958" class="uri">https://doi.org/10.1080/03050629908434958</a>).</p>
-<p>Goldstone J, Bates R, Epstein D, Gurr T, Lustik M, Marshall M, Ulfelder J, Woodward M (2010). “A Global Model for Forecasting Political Instability.” <em>American Journal of Political Science</em>, <em>54</em>(1), 190-208. doi: 10.1111/j.1540-5907.2009.00426.x (URL: <a href="https://doi.org/10.1111/j.1540-5907.2009.00426.x" class="uri">https://doi.org/10.1111/j.1540-5907.2009.00426.x</a>).</p>
-<p>Gründler K, Krieger T (2016). “Democracy and growth: Evidence from a machine learning indicator.” <em>European Journal of Political Economy</em>, <em>45</em>, 85-107. doi: 10.1016/j.ejpoleco.2016.05.005 (URL: <a href="https://doi.org/10.1016/j.ejpoleco.2016.05.005" class="uri">https://doi.org/10.1016/j.ejpoleco.2016.05.005</a>), &lt;URL: <a href="http://www.sciencedirect.com/science/article/pii/S0176268016300222" class="uri">http://www.sciencedirect.com/science/article/pii/S0176268016300222</a>&gt;.</p>
-<p>Gründler K, Krieger T (2018). “Machine Learning Indices, Political Institutions, and Economic Development.” CESifo Group Munich. &lt;URL: <a href="https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf" class="uri">https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf</a>&gt;.</p>
-<p>Gründler K, Krieger T (2021). “Using Machine Learning for measuring democracy: A practitioners guide and a new updated dataset for 186 countries from 1919 to 2019.” <em>European Journal of Political Economy</em>, 102-47. doi: 10.1016/j.ejpoleco.2021.102047 (URL: <a href="https://doi.org/10.1016/j.ejpoleco.2021.102047" class="uri">https://doi.org/10.1016/j.ejpoleco.2021.102047</a>).</p>
+<p>Bollen K, Paxton P (2000). “Subjective Measures of Liberal Democracy.” <em>Comparative Political Studies</em>, <em>33</em>(1), 58-86. doi: 10.1177/0010414000033001003 (URL: <a href="https://doi.org/10.1177/0010414000033001003" class="external-link uri">https://doi.org/10.1177/0010414000033001003</a>).</p>
+<p>Bowman K, Lehoucq F, Mahoney J (2005). “Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America.” <em>Comparative Political Studies</em>, <em>38</em>(8), 939-970. doi: 10.1177/0010414005277083 (URL: <a href="https://doi.org/10.1177/0010414005277083" class="external-link uri">https://doi.org/10.1177/0010414005277083</a>).</p>
+<p>Cheibub J, Gandhi J, Vreeland J (2010). “Democracy and dictatorship revisited.” <em>Public Choice</em>, <em>143</em>(1), 67-101. doi: 10.1007/s11127-009-9491-2 (URL: <a href="https://doi.org/10.1007/s11127-009-9491-2" class="external-link uri">https://doi.org/10.1007/s11127-009-9491-2</a>).</p>
+<p>Coppedge M, Alvarez A, Maldonado C (2008). “Two Persistent Dimensions of Democracy: Contestation and Inclusiveness.” <em>The journal of politics</em>, <em>70</em>(03), 632-647. doi: 10.1017/S0022381608080663 (URL: <a href="https://doi.org/10.1017/S0022381608080663" class="external-link uri">https://doi.org/10.1017/S0022381608080663</a>).</p>
+<p>Coppedge M, Gerring J, Knutsen CH, Lindberg SI, Teorell J, Alizada N, Altman D, Bernhard M, Cornell A, Fish MS, Gastaldi L, Gjerlow H, Glynn A, Hicken A, Hindle G, Ilchenko N, Krusell J, uhrmann AL, Maerz SF, Marquardt KL, McMann K, Mechkova V, Medzihorsky J, Paxton P, Pemstein D, Pernes J, von RÃ¶mer J, Seim B, Sigman R, Skaaning S, Staton J, SundstrÃ¶m A, Tzelgov E, Wang Y, Wig T, Wilson S, Ziblatt. D (2021). “V-Dem Country-Year/Country-Date Dataset v11.” &lt;URL: <a href="https://www.v-dem.net/en/data/data-version-11/" class="external-link uri">https://www.v-dem.net/en/data/data-version-11/</a>&gt;.</p>
+<p>Coppedge M, Gerring J, Knutsen CH, Lindberg SI, Teorell J, Altman D, Bernhard M, Cornell A, Fish MS, Gastaldi L, Gjerlow H, Glynn A, Hicken A, LÃ¼hrmann A, Maerz SF, Marquardt KL, McMann K, Mechkova V, Paxton P, Pemstein D, von RÃ¶mer J, Seim B, Sigman R, Skaaning S, Staton J, SundtrÃ¶m A, Tzelgov E, Uberti L, Wang Y, Wig T, Ziblatt D (2021). “V-Dem Codebook v11.” &lt;URL: <a href="https://www.v-dem.net/en/data/data-version-11/" class="external-link uri">https://www.v-dem.net/en/data/data-version-11/</a>&gt;.</p>
+<p>Coppedge M, Reinicke WH (1990). “Measuring Polyarchy.” <em>Studies in Comparative International Development</em>, <em>25</em>(1), 51-72. doi: 10.1007/Bf02716905 (URL: <a href="https://doi.org/10.1007/Bf02716905" class="external-link uri">https://doi.org/10.1007/Bf02716905</a>).</p>
+<p>Doorenspleet R (2000). “Reassessing the Three Waves of Democratization.” <em>World Politics</em>, <em>52</em>(03), 384-406. doi: 10.1017/S0043887100016580 (URL: <a href="https://doi.org/10.1017/S0043887100016580" class="external-link uri">https://doi.org/10.1017/S0043887100016580</a>).</p>
+<p>Freedom House (2021). “Freedom in the World 2021: Democracy under Siege.” Freedom House. &lt;URL: <a href="https://freedomhouse.org/report/freedom-world/2021/democracy-under-siege" class="external-link uri">https://freedomhouse.org/report/freedom-world/2021/democracy-under-siege</a>&gt;.</p>
+<p>Gasiorowski M (1996). “An Overview of the Political Regime Change Dataset.” <em>Comparative Political Studies</em>, <em>29</em>(4), 469-483. doi: 10.1177/0010414096029004004 (URL: <a href="https://doi.org/10.1177/0010414096029004004" class="external-link uri">https://doi.org/10.1177/0010414096029004004</a>).</p>
+<p>Geddes B, Wright J, Frantz E (2014). “Autocratic Breakdown and Regime Transitions: A New Data Set.” <em>Perspectives on Politics</em>, <em>12</em>(1), 313-331. doi: 10.1017/S1537592714000851 (URL: <a href="https://doi.org/10.1017/S1537592714000851" class="external-link uri">https://doi.org/10.1017/S1537592714000851</a>).</p>
+<p>Gleditsch K, Ward MD (1999). “Interstate system membership: A revised list of independent states since the congress of Vienna.” <em>International Interactions</em>, <em>25</em>(4), 393-413. doi: 10.1080/03050629908434958 (URL: <a href="https://doi.org/10.1080/03050629908434958" class="external-link uri">https://doi.org/10.1080/03050629908434958</a>).</p>
+<p>Goldstone J, Bates R, Epstein D, Gurr T, Lustik M, Marshall M, Ulfelder J, Woodward M (2010). “A Global Model for Forecasting Political Instability.” <em>American Journal of Political Science</em>, <em>54</em>(1), 190-208. doi: 10.1111/j.1540-5907.2009.00426.x (URL: <a href="https://doi.org/10.1111/j.1540-5907.2009.00426.x" class="external-link uri">https://doi.org/10.1111/j.1540-5907.2009.00426.x</a>).</p>
+<p>Gründler K, Krieger T (2016). “Democracy and growth: Evidence from a machine learning indicator.” <em>European Journal of Political Economy</em>, <em>45</em>, 85-107. doi: 10.1016/j.ejpoleco.2016.05.005 (URL: <a href="https://doi.org/10.1016/j.ejpoleco.2016.05.005" class="external-link uri">https://doi.org/10.1016/j.ejpoleco.2016.05.005</a>), &lt;URL: <a href="http://www.sciencedirect.com/science/article/pii/S0176268016300222" class="external-link uri">http://www.sciencedirect.com/science/article/pii/S0176268016300222</a>&gt;.</p>
+<p>Gründler K, Krieger T (2018). “Machine Learning Indices, Political Institutions, and Economic Development.” CESifo Group Munich. &lt;URL: <a href="https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf" class="external-link uri">https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf</a>&gt;.</p>
+<p>Gründler K, Krieger T (2021). “Using Machine Learning for measuring democracy: A practitioners guide and a new updated dataset for 186 countries from 1919 to 2019.” <em>European Journal of Political Economy</em>, 102-47. doi: 10.1016/j.ejpoleco.2021.102047 (URL: <a href="https://doi.org/10.1016/j.ejpoleco.2021.102047" class="external-link uri">https://doi.org/10.1016/j.ejpoleco.2021.102047</a>).</p>
 <p>Hadenius A (1992). <em>Democracy and development</em>. Cambridge University Press, New York.</p>
 <p>Hadenius A, Teorell J (2007). “Pathways from Authoritarianism.” <em>Journal of Democracy</em>, <em>18</em>(1), 143-157.</p>
 <p>Hsu S (2008). “The Effect of Political Regimes on Inequality, 1963-2002.” <em>UTIP Working Paper</em>.</p>
-<p>Kailitz S (2013). “Classifying political regimes revisited: legitimation and durability.” <em>Democratization</em>, <em>20</em>(1), 39-60. doi: 10.1080/13510347.2013.738861 (URL: <a href="https://doi.org/10.1080/13510347.2013.738861" class="uri">https://doi.org/10.1080/13510347.2013.738861</a>).</p>
-<p>Kaufmann D, Kraay A (2020). “Worldwide Governance Indicators.” &lt;URL: <a href="http://www.govindicators.org" class="uri">http://www.govindicators.org</a>&gt;.</p>
-<p>Magaloni B, Chu J, Min E (2013). “Autocracies of the World, 1950-2012 (Version 1.0).” &lt;URL: <a href="http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset" class="uri">http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset</a>&gt;.</p>
-<p>Mainwaring S, Brinks D, Pérez-Liñán A (2001). “Classifying Political Regimes in Latin America.” <em>Studies in Comparative International Development</em>, <em>36</em>(1), 37-65. doi: 10.1007/bf02687584 (URL: <a href="https://doi.org/10.1007/bf02687584" class="uri">https://doi.org/10.1007/bf02687584</a>).</p>
+<p>Kailitz S (2013). “Classifying political regimes revisited: legitimation and durability.” <em>Democratization</em>, <em>20</em>(1), 39-60. doi: 10.1080/13510347.2013.738861 (URL: <a href="https://doi.org/10.1080/13510347.2013.738861" class="external-link uri">https://doi.org/10.1080/13510347.2013.738861</a>).</p>
+<p>Kaufmann D, Kraay A (2020). “Worldwide Governance Indicators.” &lt;URL: <a href="http://www.govindicators.org" class="external-link uri">http://www.govindicators.org</a>&gt;.</p>
+<p>Magaloni B, Chu J, Min E (2013). “Autocracies of the World, 1950-2012 (Version 1.0).” &lt;URL: <a href="http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset" class="external-link uri">http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset</a>&gt;.</p>
+<p>Mainwaring S, Brinks D, Pérez-Liñán A (2001). “Classifying Political Regimes in Latin America.” <em>Studies in Comparative International Development</em>, <em>36</em>(1), 37-65. doi: 10.1007/bf02687584 (URL: <a href="https://doi.org/10.1007/bf02687584" class="external-link uri">https://doi.org/10.1007/bf02687584</a>).</p>
 <p>Mainwaring S, Pérez-Liñán A, Brinks D (2014). “Political Regimes in Latin America, 1900-2007 (with Daniel Brinks).” In <em>Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall</em>, chapter Political Regimes in Latin America, 1900-2007 (with Daniel Brinks). Cambridge University Press, New York.</p>
-<p>Marquez X (2016). “A Quick Method for Extending the Unified Democracy Scores.” <em>Available at SSRN 2753830</em>. &lt;URL: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830" class="uri">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830</a>&gt;.</p>
-<p>Márquez X (2020). “democracyData: A package for accessing and manipulating existing measures of democracy.” &lt;URL: <a href="http://github.com/xmarquez/democracyData" class="uri">http://github.com/xmarquez/democracyData</a>&gt;.</p>
+<p>Marquez X (2016). “A Quick Method for Extending the Unified Democracy Scores.” <em>Available at SSRN 2753830</em>. &lt;URL: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830" class="external-link uri">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830</a>&gt;.</p>
+<p>Márquez X (2020). “democracyData: A package for accessing and manipulating existing measures of democracy.” &lt;URL: <a href="http://github.com/xmarquez/democracyData" class="external-link uri">http://github.com/xmarquez/democracyData</a>&gt;.</p>
 <p>Marshall MG, Gurr TR (2020). <em>Polity 5: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users’ Manual.</em>.</p>
 <p>Marshall MG, Gurr TR, Jaggers K (2019). <em>Polity IV Project: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users’ Manual.</em>.</p>
-<p>Moon BE, Birdsall JH, Ciesluk S, Garlett LM, Hermias JJ, Mendenhall E, Schmid PD, Wong WH (2006). “Voting Counts: Participation in the Measurement of Democracy.” <em>Studies in Comparative International Development</em>, <em>41</em>(2), 3-32. doi: 10.1007/BF02686309 (URL: <a href="https://doi.org/10.1007/BF02686309" class="uri">https://doi.org/10.1007/BF02686309</a>).</p>
+<p>Moon BE, Birdsall JH, Ciesluk S, Garlett LM, Hermias JJ, Mendenhall E, Schmid PD, Wong WH (2006). “Voting Counts: Participation in the Measurement of Democracy.” <em>Studies in Comparative International Development</em>, <em>41</em>(2), 3-32. doi: 10.1007/BF02686309 (URL: <a href="https://doi.org/10.1007/BF02686309" class="external-link uri">https://doi.org/10.1007/BF02686309</a>).</p>
 <p>Munck G (2009). <em>Measuring Democracy: A Bridge between Scholarship and Politics</em>. The Johns Hopkins University Press, Baltimore.</p>
-<p>Pemstein D, Meserve SA, Melton J (2013). “Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.” &lt;URL: <a href="http://hdl.handle.net/1902.1/PMM" class="uri">http://hdl.handle.net/1902.1/PMM</a>&gt;.</p>
-<p>Pemstein D, Meserve S, Melton J (2010). “Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.” <em>Political Analysis</em>, <em>18</em>(4), 426-449. doi: 10.1093/pan/mpq020 (URL: <a href="https://doi.org/10.1093/pan/mpq020" class="uri">https://doi.org/10.1093/pan/mpq020</a>).</p>
-<p>Przeworski A (2013). “Political Institutions and Political Events (PIPE) Data Set.” &lt;URL: <a href="https://sites.google.com/a/nyu.edu/adam-przeworski/home/data" class="uri">https://sites.google.com/a/nyu.edu/adam-przeworski/home/data</a>&gt;.</p>
-<p>Reich G (2002). “Categorizing Political Regimes: New Data for Old Problems.” <em>Democratization</em>, <em>9</em>(4), 1-24. doi: 10.1080/714000289 (URL: <a href="https://doi.org/10.1080/714000289" class="uri">https://doi.org/10.1080/714000289</a>).</p>
-<p>Skaaning S, Gerring J, Bartusevicius H (2015). “A Lexical Index of Electoral Democracy.” <em>Comparative Political Studies</em>, <em>48</em>(12), 1491-1525. doi: 10.1177/0010414015581050 (URL: <a href="https://doi.org/10.1177/0010414015581050" class="uri">https://doi.org/10.1177/0010414015581050</a>).</p>
+<p>Pemstein D, Meserve SA, Melton J (2013). “Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.” &lt;URL: <a href="http://hdl.handle.net/1902.1/PMM" class="external-link uri">http://hdl.handle.net/1902.1/PMM</a>&gt;.</p>
+<p>Pemstein D, Meserve S, Melton J (2010). “Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.” <em>Political Analysis</em>, <em>18</em>(4), 426-449. doi: 10.1093/pan/mpq020 (URL: <a href="https://doi.org/10.1093/pan/mpq020" class="external-link uri">https://doi.org/10.1093/pan/mpq020</a>).</p>
+<p>Przeworski A (2013). “Political Institutions and Political Events (PIPE) Data Set.” &lt;URL: <a href="https://sites.google.com/a/nyu.edu/adam-przeworski/home/data" class="external-link uri">https://sites.google.com/a/nyu.edu/adam-przeworski/home/data</a>&gt;.</p>
+<p>Reich G (2002). “Categorizing Political Regimes: New Data for Old Problems.” <em>Democratization</em>, <em>9</em>(4), 1-24. doi: 10.1080/714000289 (URL: <a href="https://doi.org/10.1080/714000289" class="external-link uri">https://doi.org/10.1080/714000289</a>).</p>
+<p>Skaaning S, Gerring J, Bartusevicius H (2015). “A Lexical Index of Electoral Democracy.” <em>Comparative Political Studies</em>, <em>48</em>(12), 1491-1525. doi: 10.1177/0010414015581050 (URL: <a href="https://doi.org/10.1177/0010414015581050" class="external-link uri">https://doi.org/10.1177/0010414015581050</a>).</p>
 <p>Svolik M (2012). <em>The Politics of Authoritarian Rule</em>. Cambridge University Press, Cambridge.</p>
-<p>Taylor SJ, Ulfelder J (2015). “A Measurement Error Model of Dichotomous Democracy Status.” <em>Available at SSRN</em>. doi: 10.2139/ssrn.2726962 (URL: <a href="https://doi.org/10.2139/ssrn.2726962" class="uri">https://doi.org/10.2139/ssrn.2726962</a>).</p>
+<p>Taylor SJ, Ulfelder J (2015). “A Measurement Error Model of Dichotomous Democracy Status.” <em>Available at SSRN</em>. doi: 10.2139/ssrn.2726962 (URL: <a href="https://doi.org/10.2139/ssrn.2726962" class="external-link uri">https://doi.org/10.2139/ssrn.2726962</a>).</p>
 <p>The Economist Intelligence Unit (2021). “Democracy Index 2020: In sickness and in health?” The Economist Intelligence Unit.</p>
-<p>Ulfelder J (2012). “Democracy/Autocracy Data Set.” &lt;URL: <a href="http://hdl.handle.net/1902.1/18836" class="uri">http://hdl.handle.net/1902.1/18836</a>&gt;.</p>
-<p>Ulfelder J, Lustik M (2007). “Modelling Transitions To and From Democracy.” <em>Democratization</em>, <em>14</em>(3), 351-387. doi: 10.1080/13510340701303196 (URL: <a href="https://doi.org/10.1080/13510340701303196" class="uri">https://doi.org/10.1080/13510340701303196</a>).</p>
-<p>Vanhanen T (2014). “Measures of Democracy 1810-2012.” &lt;URL: <a href="http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html" class="uri">http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html</a>&gt;.</p>
-<p>Wahman M, Teorell J, Hadenius A (2013). “Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective.” <em>Contemporary Politics</em>, <em>19</em>(1), 19-34. &lt;URL: <a href="https://sites.google.com/site/authoritarianregimedataset/data" class="uri">https://sites.google.com/site/authoritarianregimedataset/data</a>&gt;.</p>
+<p>Ulfelder J (2012). “Democracy/Autocracy Data Set.” &lt;URL: <a href="http://hdl.handle.net/1902.1/18836" class="external-link uri">http://hdl.handle.net/1902.1/18836</a>&gt;.</p>
+<p>Ulfelder J, Lustik M (2007). “Modelling Transitions To and From Democracy.” <em>Democratization</em>, <em>14</em>(3), 351-387. doi: 10.1080/13510340701303196 (URL: <a href="https://doi.org/10.1080/13510340701303196" class="external-link uri">https://doi.org/10.1080/13510340701303196</a>).</p>
+<p>Vanhanen T (2014). “Measures of Democracy 1810-2012.” &lt;URL: <a href="http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html" class="external-link uri">http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html</a>&gt;.</p>
+<p>Wahman M, Teorell J, Hadenius A (2013). “Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective.” <em>Contemporary Politics</em>, <em>19</em>(1), 19-34. &lt;URL: <a href="https://sites.google.com/site/authoritarianregimedataset/data" class="external-link uri">https://sites.google.com/site/authoritarianregimedataset/data</a>&gt;.</p>
 <p>To see these entries in BibTeX format, use ‘print(<citation>, bibtex=TRUE)’, ‘toBibtex(.)’, or set ‘options(citation.bibtex.max=999)’.</citation></p>
 <p>You can also find the citation for a specific dataset using the wrapper <code>cite_dataset</code> with the name of the dataset in this package:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/cite_dataset.html">cite_dataset</a></span><span class="op">(</span><span class="st">"gwf"</span><span class="op">)</span></code></pre></div>
-<p><span class="math display">1</span> B. Geddes, J. Wright, and E. Frantz. “Autocratic Breakdown and Regime Transitions: A New Data Set”. In: <em>Perspectives on Politics</em> 12.1 (2014), pp. 313-331. DOI: 10.1017/S1537592714000851.</p>
+<p>[1] B. Geddes, J. Wright, and E. Frantz. “Autocratic Breakdown and Regime Transitions: A New Data Set”. In: <em>Perspectives on Politics</em> 12.1 (2014), pp. 313-331. DOI: 10.1017/S1537592714000851.</p>
 </div>
 </div>
-<div id="feedback-and-caveats" class="section level1">
-<h1 class="hasAnchor">
-<a href="#feedback-and-caveats" class="anchor"></a>Feedback and Caveats</h1>
+<div class="section level1">
+<h1 id="feedback-and-caveats">Feedback and Caveats<a class="anchor" aria-label="anchor" href="#feedback-and-caveats"></a>
+</h1>
 <p>Feedback welcome!</p>
 <p>Note that some functions in this package can be quite slow: generating a full democracy dataset (including downloading Freedom House, Polity, WGI, and Reign) or applying <code>country_year_coder</code> to a large data frame both can take some time. Suggestions to accelerate the code are welcome.</p>
 <p><code>country_year_coder</code> fails to give correct answers in some weird edge cases mostly involving Yugoslavia, Germany, or Vietnam. If you run across any of these cases, let me know.</p>
@@ -1337,50 +1333,55 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/xmarquez/democracyData/">https://​github.com/​xmarquez/​democracyData/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/xmarquez/democracyData/issues">https://​github.com/​xmarquez/​democracyData/​issues</a>
-</li>
-</ul>
-</div>
-<div class="license">
-<h2>License</h2>
-<ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></li>
-</ul>
-</div>
-<div class="citation">
-<h2>Citation</h2>
-<ul class="list-unstyled">
-<li><a href="authors.html">Citing democracyData</a></li>
-</ul>
-</div>
-<div class="developers">
-<h2>Developers</h2>
-<ul class="list-unstyled">
-<li>Xavier Marquez <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-7653-9334" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="https://github.com/xmarquez/democracyData/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/xmarquez/democracyData/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="license">
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/xmarquez/democracyData/actions"><img src="https://github.com/xmarquez/democracyData/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://travis-ci.org/xmarquez/democracyData"><img src="https://travis-ci.org/xmarquez/democracyData.svg?branch=master" alt="Travis-CI Build Status"></a></li>
+<li><a href="https://www.r-project.org/Licenses/GPL-3" class="external-link">GPL-3</a></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing democracyData</a></li>
+</ul>
 </div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Xavier Marquez <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-7653-9334" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/xmarquez/democracyData/actions" class="external-link"><img src="https://github.com/xmarquez/democracyData/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://travis-ci.org/xmarquez/democracyData" class="external-link"><img src="https://travis-ci.org/xmarquez/democracyData.svg?branch=master" alt="Travis-CI Build Status"></a></li>
+</ul>
+</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Xavier Marquez.</p>
+  <p></p>
+<p>Developed by Xavier Marquez.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer>
@@ -1388,6 +1389,8 @@
 
   
 
+
+  
 
   </body>
 </html>
