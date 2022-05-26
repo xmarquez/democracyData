@@ -482,20 +482,20 @@ download_wgi_voice_and_accountability <- function(url,
 
 
 
-#' Downloads the 2021 update of the Freedom House Freedom in the World data
+#' Downloads the 2022 update of the Freedom House Freedom in the World data
 #' and processes it using [country_year_coder]
 #'
 #' The original data is available at
-#' [https://freedomhouse.org/report-types/freedom-world](https://freedomhouse.org/report/freedom-world)
+#' \url{https://freedomhouse.org/report-types/freedom-world}
 #'
 #' @param url The URL of the dataset. Defaults to
-#'   \url{https://freedomhouse.org/sites/default/files/2021-02/Country_and_Territory_Ratings_and_Statuses_FIW1973-2021.xlsx}
+#'   https://freedomhouse.org/sites/default/files/2022-03/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2022%20.xlsx
 #'
-#'
-#' @inheritParams redownload_blm
 #' @param include_territories Whether to include scores from non-independent
 #'   territories (e.g., Indian Kashmir, Northern Ireland) compiled by FH.
 #'   Default is \code{FALSE}.
+#'
+#' @inheritParams redownload_blm
 #'
 #' @return A time-series tidy version of the FH dataset, with the following
 #'   variables:
@@ -504,9 +504,9 @@ download_wgi_voice_and_accountability <- function(url,
 #'
 #'   * year: The calendar year. This is approximate. The surveys cover specific
 #'   periods in the original data that do not always overlap with a single year.
-#'   In particular, the year 1981 is "skipped" - a single survey covers Jan.
+#'   In particular, the year 1981 is "skipped" -- a single survey covers Jan.
 #'   1981 - Aug. 1982 and its value is assigned to 1982 here. Surveys from 1981
-#'   to 1988 covered the periods Jan.1981-Aug. 1982, Aug. 1982-Nov. 1983, Nov.
+#'   to 1988 covered the periods Jan. 1981-Aug. 1982, Aug. 1982-Nov. 1983, Nov.
 #'   1983-Nov. 1984, Nov. 1984-Nov. 1985, Nov. 1985-Nov. 1986, Nov. 1986-Nov.
 #'   1987, Nov. 1987-Nov. 1988, and Nov.1988-Dec.1989, and results are assigned
 #'   to years 1982, 1983, 1984, 1985, 1986, 1987, 1988, and 1989.
@@ -590,7 +590,7 @@ download_wgi_voice_and_accountability <- function(url,
 #' @family Freedom House
 #' @family ordinal democracy indexes
 #' @source The "Freedom in the World" dataset from Freedom House, updated to
-#'   2020 (Freedom in the World 2021 Report). Original data and methodology is
+#'   2021 (Freedom in the World 2022 Report). Original data and methodology is
 #'   available at \url{https://freedomhouse.org/report/freedom-world}
 #'
 #' @seealso [fh]
@@ -612,7 +612,7 @@ download_fh <- function(url,
   indicator <- value <- country <- NULL
 
   if(missing(url)) {
-    url <- "https://freedomhouse.org/sites/default/files/2021-02/Country_and_Territory_Ratings_and_Statuses_FIW1973-2021.xlsx"
+    url <- "https://freedomhouse.org/sites/default/files/2022-03/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2022%20.xlsx"
   }
 
 
@@ -645,7 +645,7 @@ download_fh <- function(url,
   if(verbose) {
     message(sprintf("Original dataset has %d rows, but is not in country-year format",
                     nrow(data)))
-    message("Processing the FH 2021 data - putting it in country-year format, adding state system info...")
+    message("Processing the FH 2022 data - putting it in country-year format, adding state system info...")
   }
 
   nYears <- (ncol(data) - 1)/3
@@ -699,14 +699,15 @@ download_fh <- function(url,
   standardize_columns(fh, country, verbose = verbose)
 }
 
-#' Downloads the 2020 update of the Freedom House Electoral Democracies list and
+#' Downloads the 2022 update of the Freedom House Electoral Democracies list and
 #' processes it using [country_year_coder].
 #'
 #' The original data is available at
-#' [https://freedomhouse.org/report/freedom-world](https://freedomhouse.org/report/freedom-world)
+#' [https://freedomhouse.org/report/freedom-world](https://freedomhouse.org/report/freedom-world).
 #'
-#' @param url The URL of the dataset. Defaults to
-#'   \url{https://freedomhouse.org/sites/default/files/2020-02/2020_List_of_Electoral_Democracies_FIW_2020.xlsx}
+#' @param url The URL of the dataset. Should be left empty, as the full list is
+#'   spread over a number of different URLs. This parameter may disappear in the
+#'   future.
 #'
 #' @inheritParams redownload_blm
 #'
@@ -717,8 +718,14 @@ download_fh <- function(url,
 #'
 #'   * year: The calendar year. This is approximate. The surveys cover specific
 #'   periods in the original data that do not always overlap with a single year.
-#'   In particular, the year 1981 is "skipped" – a single survey covers Jan.
-#'   1981 - Aug. 1982 and its value is assigned to 1982 here.
+#'   In particular, the year 1981 is "skipped" -- a single survey covers Jan.
+#'   1981 - Aug. 1982 and its value is assigned to 1982 here. Freedom House did
+#'   not appear to issue a list of electoral democracies in its 2021 Freedom in
+#'   the World report, so the year 2020 is not available; but there is a list of
+#'   electoral democracies for the 2022 report, so the year 2021 is available.
+#'   2020 is thus "skipped". (It is in principle possible to reconstruct the
+#'   list of electoral democracies using the full FH data, but the methodology
+#'   is a little opaque).
 #'
 #'   * electoral: Electoral democracy indicator. \code{TRUE} = yes, \code{FALSE}
 #'   = no.
@@ -737,7 +744,8 @@ download_fh <- function(url,
 #' @family Freedom House
 #' @family ordinal democracy indexes
 #' @source The "Freedom in the World" dataset from Freedom House, updated to
-#'   2019 (Freedom in the World report 2020 edition). Original data and methodology is available at
+#'   2021 (Freedom in the World report 2022 edition). Original data and
+#'   methodology is available at
 #'   \url{https://freedomhouse.org/report/freedom-world}
 #' @examples
 #' \dontrun{
@@ -754,6 +762,9 @@ download_fh_electoral <- function(url,
     url_2018 = "https://freedomhouse.org/sites/default/files/List%20of%20Electoral%20Democracies%20FIW%202018.xlsx"
     url_2019 = "https://freedomhouse.org/sites/default/files/List_of_Electoral_Democracies_FIW19.xls"
     url_2020 = "https://freedomhouse.org/sites/default/files/2020-02/2020_List_of_Electoral_Democracies_FIW_2020.xlsx"
+    url_2022 = "https://freedomhouse.org/sites/default/files/2022-03/List_of_Electoral_Democracies_FIW22.xlsx"
+  } else {
+    stop("The URL field is deprecated - the full list is spread over many different files.")
   }
 
   indicator <- value <- electoral_dem <- year <- NULL
@@ -761,6 +772,7 @@ download_fh_electoral <- function(url,
   `Electoral Democracy Status in FIW 2018` <- NULL
   `Electoral Democracy Status in FIW 2019` <- NULL
   `Electoral Democracy Designation in FIW 2020` <- NULL
+  `Electoral Democracy Designation in FIW 2022` <- NULL
 
 
   data <- read_data(url,
@@ -774,6 +786,7 @@ download_fh_electoral <- function(url,
   data_2018 <- read_data(url_2018, skip = 1)
   data_2019 <- read_data(url_2019, skip = 1)
   data_2020 <- read_data(url_2020, skip = 1)
+  data_2022 <- read_data(url_2022, skip = 1)
 
   if(return_raw) {
     if(verbose) {
@@ -784,16 +797,17 @@ download_fh_electoral <- function(url,
 
   if(verbose) {
     message(sprintf("Original dataset has %d rows, but is not in country-year format",
-                    nrow(data) + nrow(data_2018) + nrow(data_2019) + nrow(data_2020)))
-    message("Processing the FH Electoral Democracies 1989-2020 data - putting it in country-year format, adding state system info...")
+                    nrow(data) + nrow(data_2018) + nrow(data_2019) + nrow(data_2020) +
+                      nrow(data_2022)))
+    message("Processing the FH Electoral Democracies 1989-2022 data - putting it in country-year format, adding state system info...")
   }
 
   names(data) <- c('country', paste("electoral", 1989:2016, sep = "_"))
 
   # melt the data, split the variable_year column and voila!
 
-  data <- suppressWarnings(data %>%
-    tidyr::gather(indicator, value, dplyr::matches("electoral_[0-9]{4}")) %>%
+  data <- data %>%
+    tidyr::pivot_longer(names_to = "indicator", values_to = "value", dplyr::matches("electoral_[0-9]{4}")) %>%
     tidyr::separate(indicator, into = c("electoral_dem", "year"), sep ="_")  %>%
     filter(!is.na(value)) %>%
     tidyr::spread(electoral_dem, value) %>%
@@ -806,7 +820,7 @@ download_fh_electoral <- function(url,
                                      to = c("South Yemen",
                                             "South Vietnam",
                                             "East Germany"),
-                                     warn_missing = FALSE)))
+                                     warn_missing = FALSE))
 
   data_2018 <- suppressWarnings(data_2018 %>%
                                   rename(electoral = `Electoral Democracy Status in FIW 2018`) %>%
@@ -851,10 +865,25 @@ download_fh_electoral <- function(url,
                                                                    warn_missing = FALSE)) %>%
                                   select(-Country))
 
+  data_2022 <- suppressWarnings(data_2022 %>%
+                                  rename(electoral = `Electoral Democracy Designation in FIW 2022`) %>%
+                                  mutate(year = 2021,
+                                         electoral = ifelse(electoral == "Yes", TRUE, FALSE),
+                                         country = plyr::mapvalues(Country,
+                                                                   from= c("Yemen, S.",
+                                                                           "Vietnam, S.",
+                                                                           "Germany, E."),
+                                                                   to = c("South Yemen",
+                                                                          "South Vietnam",
+                                                                          "East Germany"),
+                                                                   warn_missing = FALSE)) %>%
+                                  select(-Country))
+
   data <- bind_rows(data,
                     data_2018,
                     data_2019,
-                    data_2020)
+                    data_2020,
+                    data_2022)
 
   fh_electoral <- data %>%
     country_year_coder(country,
@@ -874,20 +903,20 @@ download_fh_electoral <- function(url,
    standardize_columns(fh_electoral, country, verbose = verbose)
 }
 
-#' Downloads the 2021 update of the Freedom House Freedom in the World All
-#' Data 2013-2021 file and processes it using [country_year_coder].
+#' Downloads the 2022 update of the Freedom House Freedom in the World All
+#' Data 2013-2022 file and processes it using [country_year_coder].
 #'
 #' The original data is available at
 #' [https://freedomhouse.org/report-types/freedom-world](https://freedomhouse.org/report/freedom-world)
 #'
 #' @param url The URL of the dataset. Defaults to
-#'   \url{https://freedomhouse.org/sites/default/files/2021-02/All_data_FIW_2013-2021.xlsx}
+#'   \url{https://freedomhouse.org/sites/default/files/2022-02/All_data_FIW_2013-2022.xlsx}
 #'
 #'
 #'
 #' @inheritParams redownload_blm
 #'
-#' @return A time-series tidy version of the FH "all data 2013-2021" dataset,
+#' @return A time-series tidy version of the FH "all data 2013-2022" dataset,
 #'   with the following variables:
 #'
 #'   * country: The original country name.
@@ -1037,7 +1066,7 @@ download_fh_electoral <- function(url,
 #' @family Freedom House
 #' @family ordinal democracy indexes
 #' @source The "Freedom in the World" dataset from Freedom House, updated to
-#'   2020 (Freedom in the World 2021 Report). Original data and methodology is
+#'   2021 (Freedom in the World 2022 Report). Original data and methodology is
 #'   available at \url{https://freedomhouse.org/report/freedom-world}
 #'
 #' @seealso [fh]
@@ -1055,7 +1084,7 @@ download_fh_full <- function(url,
   status <- year <- country <- edition <- NULL
 
   if(missing(url)) {
-    url <- "https://freedomhouse.org/sites/default/files/2021-02/All_data_FIW_2013-2021.xlsx"
+    url <- "https://freedomhouse.org/sites/default/files/2022-02/All_data_FIW_2013-2022.xlsx"
   }
 
 
@@ -1075,7 +1104,7 @@ download_fh_full <- function(url,
   if(verbose) {
     message(sprintf("Original dataset has %d rows",
                     nrow(data)))
-    message("Processing the FH full 2013-2021 data - adding state system info, fixing column names...")
+    message("Processing the FH full 2013-2022 data - adding state system info, fixing column names...")
   }
 
   names(data) <- c("country", "region", "country_or_territory",
@@ -1121,230 +1150,6 @@ download_fh_full <- function(url,
 }
 
 
-#' The Rulers, Elections, and Irregular Governance Dataset (Regime data)
-#'
-#' Bell, Curtis. 2016. The Rulers, Elections, and Irregular Governance Dataset
-#' (REIGN). Broomfield, CO: OEF Research. The dataset, variable decriptions, and
-#' technical notes, are available at
-#' \url{http://oefresearch.org/datasets/reign}. The variable descriptions below
-#' are taken from
-#' \url{http://oefresearch.org/sites/default/files/REIGN_descriptions.pdf}
-#'
-#' @section Overview:
-#'
-#'   The REIGN regime characteristics dataset is based on the regime
-#'   classifications of Geddes, Wright, and Frantz ([gwf_autocratic]), but it is
-#'   updated monthly, and it has some differences with [gwf_autocratic]. These
-#'   are described as follows in the online technical notes:
-#'
-#'   REIGN data is updated to the present month. We also added the following
-#'   countries to the  dataset: The Bahamas, Jamaica, Trinidad and Tobago,
-#'   Barbados, Dominica, Grenada, St. Lucia, St. Vincent and the Grenadines,
-#'   Antigua and Barbuda, St. Kitts and Nevis, Belize, Guyana, Surinam, Andorra,
-#'   San Marino, Malta, Cyprus, Cape Verde, Sao Tome and Principe, Equatorial
-#'   Guinea, Djibouti, Comoros, Mauritius, Seychelles, South Sudan, Bhutan,
-#'   Maldives, South Vietnam, Brunei, East Timor, Papua New Guinea, Vanuatu,
-#'   Solomon Islands, Kiribati, Tuvalu, Fiji, Tonga, Nauru, Marshall Islands,
-#'   Palau, Micronesia, and Samoa.
-#'
-#'   We also added political systems that lasted for less than a year and
-#'   specified start and end months. This allows for a more granular look at
-#'   transitional periods and interim governments. These new short-lived regimes
-#'   appear in countries including Haiti, the Dominican Republic, Guatemala,
-#'   Peru, Benin, Niger, Ghana, and Nigeria.
-#'
-#'   Finally, GWF generally does not allow for yearly changes in institutions
-#'   over the course of a regime. If a government begins as personalist, it
-#'   stays personalist until that leader leaves power. In several cases we code
-#'   a change in regime type following reforms during the tenure of a single
-#'   leader, including Lanzana in Burkina Faso, Rawlings in Ghana, etc.
-#'
-#'   Further discussion of the differences between REIGN and GWF ([gwf_autocratic]) is
-#'   available here: \url{http://oefresearch.org/sites/default/files/REIGN%20Data%202016.10.05.pdf}
-#'
-#' @param url The URL of the googlesheet where the REIGN dataset lives. Defaults
-#'   to
-#'   \url{https://github.com/OEFDataScience/REIGN.github.io/blob/gh-pages/data_sets/regime_list.csv?raw=true}.
-#'    This is fragile - if someone "unpublishes" the sheet,it may cease to work.
-#'
-#' @inheritParams redownload_blm
-#'
-#' @return A [tibble] with the REIGN dataset, plus additional state system
-#'   information generated by [country_year_coder]. The dataset has the
-#'   following variables:
-#'
-#'   reign_cowcode: The COW code of the country in REIGN.
-#'
-#'   reign_country: The country name in REIGN.
-#'
-#'   gwf_casename: The case name in the [gwf] dataset.
-#'
-#'   gwf_startdate: The startdate of the case in the [gwf] dataset.
-#'
-#'   gwf_enddate: The enddate of the case in the [gwf] dataset.
-#'
-#'   Start: The start date of the regime.
-#'
-#'   End: The end date of the regime, or 31 December of the current year.
-#'
-#'   gwf_regimetype: The regime type. This is what the codebook says about the regime
-#'   types:
-#'
-#'   DEMOCRACIES
-#'
-#'   We use a procedural definition of democracy, meaning we are interested in
-#'   the institutional rules that dictate how leaders gain power and not in
-#'   other correlates of democracy, including strong traditions of freedom of
-#'   speech and assembly. Non-competitive single-party systems are classified as
-#'   such, even if some are somewhat more liberal than others (see Botswana and
-#'   Namibia). Democracies have reasonably free-and-fair competitions for
-#'   political power.
-#'
-#'   1. Presidential Democracy: Democracy in which the executive is distinct
-#'   from the legislative branch and considerable decision-making authority is
-#'   granted to the executive. Presidential systems have presidents who serve as
-#'   chief executives rather than figureheads.
-#'
-#'   2. Parliamentary Democracy: Democracy in which legislatures are more
-#'   powerful and executives are less autonomous. Generally speaking, countries
-#'   with powerful prime ministers and general elections are parliamentary
-#'   democracies. Hybrid semi-presidential systems are classified case-by-case,
-#'   but are usually grouped with parliamentary democracies.
-#'
-#'   NON-DEMOCRACIES
-#'
-#'   The Autocratic Regimes dataset by Professors Barbara Geddes, Joseph Wright,
-#'   and Erica Frantz classifies all non-democratic governments into one of ten
-#'   categories. Though our data differs from this dataset in important ways, it
-#'   uses the same typology. We document major differences in the extended
-#'   technical notes.
-#'
-#'   1.  Personalist Systems: Power is highly concentrated in the hands of a
-#'   non-monarch dictator who is relatively unconstrained by a military or
-#'   political party. Contemporary examples include Russia, Sudan, and Chad.
-#'
-#'   2.  Monarchies: Power is highly concentrated in the hands of a monarch who
-#'   is much more than just a figurehead. Contemporary examples include
-#'   Swaziland, Kuwait, and Morocco.
-#'
-#'   3. Single-Party Systems: Power is held by the head of a party. Executive
-#'   power is effectively checked by the party or ruling committee. Contemporary
-#'   examples include China, Angola, and Ethiopia.
-#'
-#'   4. Oligarchies: Power is held by the head of party, but unlike other
-#'   single-party systems this party explicitly represents the interests of one
-#'   elite segment of society. Past examples include apartheid-era South Africa
-#'   and Rhodesia under Ian Smith.
-#'
-#'   5. Party-Personalist Hybrids: An intermediate hybrid where a party
-#'   apparatus supports a dictator, yet the party's identity is concentrated
-#'   around the person in power and it has few meaningful checks on executive
-#'   power. Examples include Eritrea, and North Korea.
-#'
-#'   6. Military Juntas: A military committee runs the country. One officer
-#'   typically serves as head, but this head serves the interests of the
-#'   committee and his power is checked by other members of the military. Recent
-#'   examples include Thailand and Algeria.
-#'
-#'   7. Indirect Military Juntas: The military has de facto power, but rules
-#'   behind a civilian puppet. See pre-Mobutu Zaire and Suriname under Bouterse
-#'   (1980-1988).
-#'
-#'   8. Personalist-Military Hybrids: A hybrid of military and personalist
-#'   institutions in which a dictator holds most power and is relatively
-#'   unchecked, yet the dictator's authority is rooted in military support.
-#'   These systems often evolve from juntas when power is consolidated around a
-#'   single individual. Examples include Chile under Pinochet, Pakistan under
-#'   Zia and Musharraf, and Fiji under Bainimarama.
-#'
-#'   9. Party-Military Hybrids: Militarized single-party states in which most or
-#'   all members of the ruling party are military elites. Examples include
-#'   Algeria from 1962-1992, El Salvador before 1982, and Congo-Brazzaville
-#'   between the 1968 coup and 1991.
-#'
-#'   10. Party-Personalist-Military Hybrids: A dictator rules with the support
-#'   of a militarized single-party state, but is relatively unchecked by these
-#'   institutions. Examples include Egypt after 1952, Indonesia under Suharto,
-#'   and Syria under the Assads.
-#'
-#'   INTERIM PERIODS
-#'
-#'   Finally, we include four forms of government that are explicitly
-#'   provisional or transitional:
-#'
-#'   1. Warlordism: occurs only in countries that are torn apart by conflict to
-#'   the extent that they do not have a functional government. As of 2016, only
-#'   Libya and Yemen meet this definition. War-torn countries like Syria are not
-#'   included because a strong government continues to hold power in the capital
-#'   and a significant part of the country.
-#'
-#'   2. Foreign-Occupied governments occur where foreign politicians or
-#'   militaries hold de facto power over a government.
-#'
-#'   3. Civilian Provisional and Military Provisional governments are explicitly
-#'   temporary arrangementsthat usually proceed completed transitions to
-#'   democracy or follow coups and constitutional crises. Interim regimes are
-#'   only called "military provisional" if the military is holding power until
-#'   an election or some other formalized legitimizing event can occur.
-#'
-#' @template standard-variables
-#' @inheritSection download_polity_annual Note
-#' @export
-#' @aliases reign
-#'
-#' @source Bell, Curtis. 2016. The Rulers, Elections, and Irregular Governance
-#'   Dataset (REIGN). Broomfield, CO: OEF Research. Available at
-#'   \url{http://oefresearch.org/datasets/reign}
-#' @family democracy
-#' @family authoritarianism
-#'
-#' @examples
-#' \dontrun{
-#' reign <- download_reign()}
-download_reign <- function(url,
-                           verbose = TRUE,
-                           return_raw = FALSE,
-                           ...) {
-  if(missing(url)) {
-    url <- "https://github.com/OEFDataScience/REIGN.github.io/blob/gh-pages/data_sets/regime_list.csv?raw=true"
-
-  }
-
-  cowcode <- gwf_country <- gwf_casename <- gwf_startdate <- gwf_enddate <- gwf_regimetype <- NULL
-  Start <- End <- year <- NULL
-
-  data <- read_data(url,
-                    verbose = verbose, file_extension = "csv")
-
-  if(return_raw) {
-    if(verbose) {
-      message("Returning raw data, without processing.")
-    }
-    return(data)
-  }
-
-  reign <- data %>%
-    mutate(Start = lubridate::mdy(gwf_startdate),
-           End = lubridate::mdy(gwf_enddate),
-           cow = as.double(cowcode),
-           gwf_country = case_when(gwf_country == "Cananda" ~ "Canada",
-                                   gwf_country == "UKG" ~ "United Kingdom",
-                                   TRUE ~ gwf_country)) %>%
-    group_by_all() %>%
-    mutate(year = list(lubridate::year(Start):lubridate::year(End))) %>%
-    tidyr::unnest(cols = c(year)) %>%
-    ungroup() %>%
-    # filter(year < lubridate::year(lubridate::now())) %>% # If excluding the 2017 countries
-    country_year_coder(gwf_country,
-                       year,
-                       cowcode,
-                       code_type = "cown",
-                       match_type = "country",
-                       verbose = verbose,
-                       ...)
-
-  standardize_columns(reign, gwf_country, cowcode, verbose = verbose)
-}
 
 
 
