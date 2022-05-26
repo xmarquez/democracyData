@@ -196,17 +196,8 @@ This package makes the process extremely simple:
 
 ```{r}
 
-vdem_index <- vdem::extract_vdem(name_pattern = "v2x_polyarchy", include_uncertainty = FALSE)
-
-vdem_index <- vdem_index %>%
-  mutate(extended_country_name = ifelse(is.na(extended_country_name), 
-                                        vdem_country_name,
-                                        extended_country_name)) %>%
-  select(any_of(c(identifiers, "v2x_polyarchy"))) %>%
-  distinct()
-
-all_dem <- generate_democracy_scores_dataset(output_format = "wide", 
-                                               verbose = FALSE)
+all_dem <- generate_democracy_scores_dataset(output_format = "wide",
+                                             verbose = FALSE)
 
 
 other_dem <- all_dem %>%
@@ -214,8 +205,7 @@ other_dem <- all_dem %>%
          pmm_bollen, doorenspleet, wgi_democracy, fh_total_reversed, 
          gwf_democracy_extended_strict, pmm_hadenius, kailitz_tri, svolik_democracy, 
          lexical_index, ulfelder_democracy_extended, prc, mainwaring, 
-         vanhanen_democratization) %>%
-  full_join(vdem_index)
+         vanhanen_democratization, v2x_polyarchy)
 
 other_dem <- prepare_democracy_data(other_dem)
 
@@ -400,7 +390,6 @@ As @svmdi2021 note, latent variable indexes suffer from arbitrary changes in lev
 
 ```{r}
 full_panel <- all_dem %>%
-  left_join(vdem_index) %>%
   select(any_of(identifiers), reign_democracy, polity2, 
          bmr_democracy_femalesuffrage, v2x_polyarchy,
          ulfelder_democracy_extended, bnr_extended, 
@@ -447,14 +436,14 @@ Or suppose we're interested in a particular coverage period, including only meas
 
 ```{r}
 full_panel <- all_dem %>%
-  left_join(vdem_index) %>%
   pivot_longer(-any_of(identifiers), values_drop_na = TRUE) %>%
   filter(name %in% name[year == 2018]) %>%
   filter(year <= 2018) %>%
   pivot_wider(id_cols = any_of(identifiers), names_from = "name", values_from = "value") %>%
   unnest(fh_total_reversed:eiu) %>%
   select(-pitf_binary, -dsvmdi, -polityIV, -polity2IV, 
-         -polity, -bti_democracy) %>%
+         -polity, -bti_democracy, -vanhanen_competition, 
+         -vanhanen_participation) %>%
   rowwise() %>%
   mutate(num_nas = sum(is.na(c_across(-any_of(identifiers))))) %>%
   filter(num_nas == 0) %>%
