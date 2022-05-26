@@ -5,7 +5,7 @@
 #'\link{bmr}, \link{bnr}, \link{bti}, \link{gwf_autocratic},
 #'\link{gwf_autocratic_extended}, \link{gwf_all}, \link{gwf_all_extended},
 #'\link{LIED}, \link{magaloni}, \link{pacl}, \link{pacl_update}, \link{PIPE}, \link{peps},
-#'[polityIV], \link{polyarchy}, \link{polyarchy_dimensions}, \link{uds_2014},
+#'[polityIV], \link{polyarchy}, \link{polyarchy_dimensions}, \link{REIGN}, \link{uds_2014},
 #'\link{uds_2010}, \link{uds_2011}, \link{ulfelder}, \link{utip},
 #'\link{wahman_teorell_hadenius}, \link{anckar}, \link{svmdi}) are all available
 #'directly from this package and are unlikely to have changed since the package
@@ -31,20 +31,13 @@
 #'  \url{http://users.clas.ufl.edu/bernhard/content/data/meister1305.dta}
 #'
 #'  \item For \link{bti}:
-#'  \url{https://www.bti-project.org/content/en/downloads/data/BTI\%202006-2020\%20Scores.xlsx}
-#'
-#'
+#'  \url{https://bti-project.org/fileadmin/api/content/en/downloads/data/BTI_2006-2022_Scores.xlsx}
 #'
 #'  \item For \link{gwf_all} and \link{gwf_autocratic}:
 #'  \url{http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip}
 #'
-#'
-#'
-#'
 #'  \item For \link{LIED}:
 #'  \url{https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/29106/SXRLK1}
-#'
-#'
 #'
 #'  \item For \link{pacl}:
 #'  \url{https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta}
@@ -61,10 +54,11 @@
 #'  For the 2016 release, it defaults to
 #'  \url{http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta}
 #'
+#'  \item For \link{REIGN}:
+#'  \url{https://github.com/OEFDataScience/REIGN.github.io/blob/gh-pages/data_sets/regime_list.csv?raw=true}
+#'
 #'  \item For \link{utip}:
 #'  \url{http://utip.lbj.utexas.edu/data/political\%20regime\%20data\%20set\%20RV.xls}
-#'
-#'
 #'
 #'  \item For \link{wahman_teorell_hadenius}:
 #'  \url{https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&d=1}
@@ -97,10 +91,9 @@
 #'  doing while processing the data.
 #'@param return_raw Whether to return the raw data, without any processing.
 #'  Default is \code{FALSE}.
-#'@param extend (Only for \link{redownload_bnr}, \link{redownload_gwf},
+#'@param extend (Only for \link{redownload_gwf},
 #'  \link{redownload_magaloni}, and \link{redownload_ulfelder}). Whether to
-#'  extend the dataset back in time using a full panel of independent countries
-#'  (for the \link{redownload_bnr} case) or the appropriate duration variable
+#'  extend the dataset back in time using the appropriate duration variable
 #'  (\code{gwf_duration}, \code{duration_nr}, or \code{rgjdura} and
 #'  \code{rgjdurd}, respectively, for \link{redownload_gwf},
 #'  \link{redownload_magaloni}, and \link{redownload_ulfelder}). For example,
@@ -291,7 +284,7 @@ redownload_anckar <- function(url,
 #' @rdname redownload_blm
 #' @source Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A Complete
 #'   Data Set of Political Regimes, 1800-2007. Comparative Political Studies 46
-#'   (12): 1523-1554. Available at \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT}
+#'   (12): 1523-1554. Available at \url{https://sites.google.com/site/mkmtwo/data}
 #' @export
 #' @examples
 #' \dontrun{
@@ -305,14 +298,14 @@ redownload_bmr <- function(url,
   ccode <- country <- year <- NULL
 
   if(missing(url)) {
-    url <-  "https://dataverse.harvard.edu/api/access/datafile/3130643"
+    url <-  "https://drive.google.com/u/0/uc?id=1P9fBqJejGktGLlRMSDgTkjyKMnVFcXac&export=download"
   }
 
 
   data <- read_data(url,
                     verbose = verbose,
                     name = "BMR",
-                    file_extension = "tsv")
+                    file_extension = "csv")
 
   if(return_raw) {
     if(verbose) {
@@ -328,7 +321,8 @@ redownload_bmr <- function(url,
   }
 
   data <- data %>%
-    mutate(ccode = ifelse(ccode == 626, 525, ccode))
+    mutate(ccode = ifelse(ccode == 626, 525, ccode),
+           sovereign = ifelse(is.na(democracy), 0, 1))
 
   bmr <- country_year_coder(data, country, year,
                             code_col = ccode,
@@ -352,113 +346,6 @@ redownload_bmr <- function(url,
   standardize_columns(bmr, country, ccode, verbose = verbose)
 }
 
-
-#' @rdname redownload_blm
-#' @export
-#' @source Michael Bernhard, Timothy Nordstrom, and Christopher Reenock,
-#'   "Economic Performance, Institutional Intermediation and Democratic
-#'   Breakdown," Journal of Politics 63:3 (2001), pp. 775-803. Data and coding
-#'   description available at
-#'   \url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}
-#'
-#' @examples
-#' \dontrun{
-#' redownload_bnr()
-#' redownload_bnr(full_panel = FALSE)}
-redownload_bnr <- function(url,
-                           verbose = TRUE,
-                           extend = FALSE,
-                           return_raw = FALSE,
-                           ...) {
-
-  country <- year <- cowcode <- country.name.en <- cown <- event <- cow_country_name <- NULL
-
-  if(missing(url)) {
-    url <- "http://users.clas.ufl.edu/bernhard/content/data/meister1305.dta"
-  }
-
-
-
-  data <- read_data(url,
-                    verbose = verbose,
-                    name = "BNR")
-
-  if(return_raw) {
-    if(verbose) {
-      message("Returning raw data, without processing.")
-    }
-    return(data)
-  }
-
-  if(verbose) {
-    message(sprintf("Original dataset has %d rows.",
-                    nrow(data)))
-    message("Processing the BNR data - fixing cowcode for Germany, adding state system info...")
-  }
-
-  data <- data %>%
-    mutate(cowcode = ifelse(cowcode == 255 & year > 1945 & year < 1990, 260, cowcode))
-
-  bnr <- data %>%
-    mutate(country = plyr::mapvalues(country,
-                                     from = c("netherland","phillipines"),
-                                     to = c("Netherlands","Philippines"))) %>%
-    country_year_coder(country,
-                       year,
-                       cowcode,
-                       code_type = "cown",
-                       verbose = verbose,
-                       match_type = "country",
-                       ...)
-
-  if(verbose) {
-    message("netherland and phillipines changed to Netherlands and Philippines in country column...")
-    message(sprintf("Resulting dataset after processing has %d rows.",
-                    nrow(bnr)))
-    if(nrow(data) != nrow(bnr)) {
-      message("Note: the number of rows in the processed BLM data is different from the number of rows in the original data.")
-      if(nrow(data) != nrow(bnr)) {
-        warning(sprintf("There should be %d rows in the final processed data. Something went wrong.",
-                        nrow(data)))
-      }
-    }
-  }
-
-  if(extend) {
-    if(verbose) {
-      message("Creating full panel...")
-      message("Creating bnr column from event column...")
-    }
-    COW_system <- create_panel() %>%
-      filter(year >= 1913, year <= 2005) %>%
-      select(cow_country_name, cown, year) %>%
-      rename(country = cow_country_name,
-             cowcode = cown) %>%
-      mutate(cowcode = as.numeric(cowcode))
-
-    bnr <- left_join(COW_system,
-                     bnr %>%
-                       select(cowcode, year, event)) %>%
-      mutate(bnr = plyr::mapvalues(event,
-                                   from = c(0,1,NA),
-                                   to = c(1,0,0))) %>%
-      arrange(cowcode, year) %>%
-      country_year_coder(country_col = country,
-                         date_col = year,
-                         code_col = cowcode,
-                         code_type = "cown",
-                         match_type = "country",
-                         verbose = verbose,
-                         ...)
-
-    message(sprintf("The resulting extended dataset has %d rows.", nrow(bnr)))
-
-
-  }
-
-  standardize_columns(bnr, country, cowcode, verbose = verbose)
-
-}
 
 #' @rdname redownload_blm
 #' @param dataset (Only for \link{redownload_gwf}). The dataset to output. Geddes, Wright, and Frantz provide
@@ -529,7 +416,7 @@ redownload_gwf <- function(url,
       select(-year, -gwf_duration) %>%
       group_by_all() %>%
       summarise(year = list(as.numeric(min(min_year):max(max_year)))) %>%
-      tidyr::unnest() %>%
+      tidyr::unnest(cols = c(year)) %>%
       distinct() %>%
       ungroup() %>%
       select(-min_year, -max_year)
@@ -586,18 +473,18 @@ redownload_gwf <- function(url,
 
 }
 
-#' Downloads the 2020 update (v. 5.2) of the Lexical Index of Electoral Democracy (annual time series, data to
-#' 2019) and processes it using [country_year_coder].
+#' Downloads the 2022 update (v. 6.4) of the Lexical Index of Electoral Democracy (annual time series, data to
+#' 2021) and processes it using [country_year_coder].
 #'
 #' @param url The URL of the dataset. Defaults to
-#'   \url{https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/29106/SXRLK1}
+#'   \url{https://dataverse.harvard.edu/api/access/datafile/6290760}
 #' @inheritParams redownload_blm
 #'
 #' @source Skaaning, Svend-Erik; John
 #' Gerring; and Henrikas Bartusevicius (2015). "A Lexical Index of Electoral
 #' Democracy." Comparative Political Studies, Vol. 48, No. 12, pp. 1491-1525.
 #' Original data and variable descriptions available at
-#' \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106}
+#' \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}
 #'
 #' @export
 #' @examples
@@ -613,14 +500,14 @@ redownload_lied <- function(url,
   competition <- exselec <- female_suffrage <- legselec <- male_suffrage <- opposition <- NULL
 
   if(missing(url)) {
-    url <- "https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/29106/SXRLK1"
+    url <- "https://dataverse.harvard.edu/api/access/datafile/6290760"
   }
 
 
   data <- read_data(url,
                     verbose = verbose,
                     name = "LIED",
-                    file_extension = "xls")
+                    file_extension = "xlsx")
 
   if(return_raw) {
     if(verbose) {
@@ -634,8 +521,8 @@ redownload_lied <- function(url,
   }
 
   lied <- data %>%
-    rename(exselec = `executive elections`,
-           legselec = `legislative elections`,
+    rename(exselec = `executive_elections`,
+           legselec = `legislative_elections`,
            opposition = `multi-party_legislative_elections`,
            competition = competitive_elections) %>%
     country_year_coder(countryn,
@@ -1105,8 +992,7 @@ redownload_magaloni <- function(url,
                     name = "Magaloni, Chu, and Min",
                     verbose = verbose,
                     na = c("","NA", ".")) %>%
-    mutate_at(vars(demo_r, duration_r:lindex), as.numeric) %>%
-    mutate(tdate = lubridate::mdy(tdate))
+    mutate_at(vars(demo_r, duration_r:lindex), as.numeric)
 
   if(return_raw) {
     if(verbose) {
@@ -1129,7 +1015,7 @@ redownload_magaloni <- function(url,
       select(-year, -duration_nr) %>%
       group_by_all() %>%
       summarise(year = list(as.numeric(min(min_year):max(max_year)))) %>%
-      tidyr::unnest() %>%
+      tidyr::unnest(cols = c(year)) %>%
       distinct() %>%
       ungroup() %>%
       arrange(country, year) %>%
@@ -1370,7 +1256,7 @@ redownload_ulfelder <- function(url,
                                   ifelse(is.na(rgjdura), "D",
                                          ifelse(rgjdura > rgjdurd, "A", "D"))),
              year = list(year:(year-duration + 1))) %>%
-      unnest() %>%
+      unnest(cols = c(year)) %>%
       filter(year != max(year)) %>%
       arrange(ulfelder_scode, year) %>%
       mutate(rgjtype = prev_regime,
@@ -1649,9 +1535,9 @@ redownload_polityIV <- function(url,
 }
 
 #' @rdname redownload_blm
-#' @source Transformation Index of the Bertelsmann Stiftung 2020. Bertelsmann
+#' @source Transformation Index of the Bertelsmann Stiftung 2022. Bertelsmann
 #'   Stiftung. Available at
-#'   \url{https://www.bti-project.org/en/index/political-transformation.html}
+#'   \url{https://bti-project.org/en/index/political-transformation}
 #' @export
 #' @examples
 #' \dontrun{
@@ -1666,7 +1552,7 @@ redownload_bti <- function(url,
   bti_region <- NULL
 
   if(missing(url)) {
-    url <-  "https://www.bti-project.org/content/en/downloads/data/BTI%202006-2020%20Scores.xlsx"
+    url <-  "https://bti-project.org/fileadmin/api/content/en/downloads/data/BTI_2006-2022_Scores.xlsx"
   }
 
   tmpfile <- tempfile(fileext = "xlsx")
@@ -1674,9 +1560,9 @@ redownload_bti <- function(url,
 
 
   bti_data <- tibble()
-  year <- seq(from = 2018, to = 2004, by = -2)
+  year <- seq(from = 2020, to = 2004, by = -2)
 
-  for(i in 1:8) {
+  for(i in 1:9) {
     current_sheet <- read_data(tmpfile,
                                verbose = verbose,
                                name = "BTI",
@@ -1685,7 +1571,7 @@ redownload_bti <- function(url,
 
     current_sheet <- current_sheet %>%
       select(1:80) %>%
-      mutate(across(c(2:80), as.numeric),
+      mutate(across(c(2:80), ~suppressWarnings(as.numeric(.))),
              year = year[i])
 
     names(current_sheet)[1:2] <- c("country", "bti_region")
@@ -1811,3 +1697,60 @@ redownload_pacl_update <- function(url,
   standardize_columns(pacl_update, country, country_isocode, verbose = verbose)
 
 }
+
+
+#' @rdname redownload_blm
+#' @export
+#'
+#' @source Bell, Curtis. 2016. The Rulers, Elections, and Irregular Governance
+#'   Dataset (REIGN). Broomfield, CO: OEF Research. Available at
+#'   \url{http://oefresearch.org/datasets/reign}
+#'
+#' @examples
+#' \dontrun{
+#' reign <- redownload_reign()}
+redownload_reign <- function(url,
+                           verbose = TRUE,
+                           return_raw = FALSE,
+                           ...) {
+  if(missing(url)) {
+    url <- "https://github.com/OEFDataScience/REIGN.github.io/blob/gh-pages/data_sets/regime_list.csv?raw=true"
+
+  }
+
+  cowcode <- gwf_country <- gwf_casename <- gwf_startdate <- gwf_enddate <- gwf_regimetype <- NULL
+  Start <- End <- year <- NULL
+
+  data <- read_data(url,
+                    verbose = verbose, file_extension = "csv")
+
+  if(return_raw) {
+    if(verbose) {
+      message("Returning raw data, without processing.")
+    }
+    return(data)
+  }
+
+  reign <- data %>%
+    mutate(Start = lubridate::mdy(gwf_startdate),
+           End = lubridate::mdy(gwf_enddate),
+           cow = as.double(cowcode),
+           gwf_country = case_when(gwf_country == "Cananda" ~ "Canada",
+                                   gwf_country == "UKG" ~ "United Kingdom",
+                                   TRUE ~ gwf_country)) %>%
+    group_by_all() %>%
+    mutate(year = list(lubridate::year(Start):lubridate::year(End))) %>%
+    tidyr::unnest(cols = c(year)) %>%
+    ungroup() %>%
+    # filter(year < lubridate::year(lubridate::now())) %>% # If excluding the 2017 countries
+    country_year_coder(gwf_country,
+                       year,
+                       cowcode,
+                       code_type = "cown",
+                       match_type = "country",
+                       verbose = verbose,
+                       ...)
+
+  standardize_columns(reign, gwf_country, cowcode, verbose = verbose)
+}
+
