@@ -363,6 +363,8 @@ prepare_vanhanen <- function(
   ...) {
 
   bv1 <- value <- index <- index_1 <- name <- index_2 <- index_3 <- year <- NULL
+  vanhanen_competition <- vanhanen_participation <- vanhanen_democratization <- NULL
+  Country <- NULL
 
   fi_loc <- readr::locale(decimal_mark = ",")
 
