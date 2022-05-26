@@ -225,9 +225,9 @@ prepare_democracy_data <- function(data,
                            "bti",
                            "hadenius_pmm",
                            "bollen",
-                           "vanhanen",
                            "munck",
                            "polity",
+                           "vanhanen",
                            "v2x",
                            "svmdi",
                            "wgi",
@@ -239,7 +239,7 @@ prepare_democracy_data <- function(data,
     mutate(across(matches("hadenius_pmm"), .funs[['hadenius']])) %>%
     mutate(across(matches("bollen"), .funs[['bollen']])) %>%
     mutate(across(matches("bti"), .funs[['bti']])) %>%
-    mutate(across(matches("pmm_vanhanen|vanhanen_democratization"),
+    mutate(across(matches("pmm_vanhanen|vanhanen_"),
               .funs[['vanhanen']])) %>%
     mutate(across(matches("munck"), .funs[['munck']])) %>%
     mutate(across(matches("polyarchy_(inclusion|contestation)_dimension"),
