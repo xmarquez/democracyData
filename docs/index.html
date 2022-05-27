@@ -931,7 +931,7 @@
 <div class="section level2">
 <h2 id="latent-variable-indexes-of-democracy">Latent Variable Indexes of Democracy<a class="anchor" aria-label="anchor" href="#latent-variable-indexes-of-democracy"></a>
 </h2>
-<p>The package also offers a series of convenience functions to calculate latent variable indexes of democracy (following Pemstein, Meserve, and Melton’s <a href="https://www.jstor.org/stable/25792023?seq=1" class="external-link">2010 article</a> “Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type”); see the vignette on <a href="/articles/articles/Replicating_and_extending_the_UD_scores.html">Replicating and Extending the UD scores of Pemstein, Meserve, and Melton</a>. It also contains a pre-calculated extended version of these scores, available as <code>extended_uds</code>:</p>
+<p>The package also offers a series of convenience functions to calculate latent variable indexes of democracy (following Pemstein, Meserve, and Melton’s <a href="https://www.jstor.org/stable/25792023?seq=1" class="external-link">2010 article</a> “Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type”); see the vignette on <a href="https://xmarquez.github.io/democracyData/articles/Replicating_and_extending_the_UD_scores.html">Replicating and Extending the UD scores of Pemstein, Meserve, and Melton</a>. It also contains a pre-calculated extended version of these scores, available as <code>extended_uds</code>:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">extended_uds</span>
 <span class="co">#&gt; # A tibble: 36,544 x 20</span>
@@ -979,22 +979,22 @@
 <span class="co">#&gt; # A tibble: 16 x 3</span>
 <span class="co">#&gt;    country                      year my_measure</span>
 <span class="co">#&gt;    &lt;chr&gt;                       &lt;dbl&gt;      &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Germany                      2015     -0.750</span>
-<span class="co">#&gt;  2 Germany                      1930     -0.799</span>
-<span class="co">#&gt;  3 Germany                      1970      1.35 </span>
-<span class="co">#&gt;  4 Germany                      1945     -0.416</span>
-<span class="co">#&gt;  5 East Germany                 1949      0.808</span>
-<span class="co">#&gt;  6 Federal Republic of Germany  1992     -0.467</span>
-<span class="co">#&gt;  7 Somaliland                   1990     -0.666</span>
-<span class="co">#&gt;  8 Somalia                      1990      0.455</span>
-<span class="co">#&gt;  9 Palestine                    1940     -0.296</span>
-<span class="co">#&gt; 10 Russia                       1917     -0.701</span>
-<span class="co">#&gt; 11 Russia                       1912     -0.435</span>
-<span class="co">#&gt; 12 USSR                         1922      0.262</span>
-<span class="co">#&gt; 13 Republic of Vietnam          1975      0.151</span>
-<span class="co">#&gt; 14 Yugoslavia                   1990      1.05 </span>
-<span class="co">#&gt; 15 Yugoslavia                   1991      0.433</span>
-<span class="co">#&gt; 16 Vietnam, South               1954     -0.588</span></code></pre></div>
+<span class="co">#&gt;  1 Germany                      2015     0.994 </span>
+<span class="co">#&gt;  2 Germany                      1930     0.762 </span>
+<span class="co">#&gt;  3 Germany                      1970     0.0524</span>
+<span class="co">#&gt;  4 Germany                      1945     0.390 </span>
+<span class="co">#&gt;  5 East Germany                 1949     1.03  </span>
+<span class="co">#&gt;  6 Federal Republic of Germany  1992     0.709 </span>
+<span class="co">#&gt;  7 Somaliland                   1990     1.18  </span>
+<span class="co">#&gt;  8 Somalia                      1990     1.68  </span>
+<span class="co">#&gt;  9 Palestine                    1940     0.611 </span>
+<span class="co">#&gt; 10 Russia                       1917     1.26  </span>
+<span class="co">#&gt; 11 Russia                       1912     0.835 </span>
+<span class="co">#&gt; 12 USSR                         1922     0.222 </span>
+<span class="co">#&gt; 13 Republic of Vietnam          1975     0.822 </span>
+<span class="co">#&gt; 14 Yugoslavia                   1990     0.183 </span>
+<span class="co">#&gt; 15 Yugoslavia                   1991     1.80  </span>
+<span class="co">#&gt; 16 Vietnam, South               1954     1.55</span></code></pre></div>
 <p>and you then want to add state system information. <code>country_year_coder</code> does that for you!</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_weird_democracy_data</span> <span class="op">&lt;-</span> <span class="va">my_weird_democracy_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
@@ -1046,7 +1046,7 @@
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="right">2015</td>
-<td align="right">-0.7497209</td>
+<td align="right">0.9937903</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -1060,7 +1060,7 @@
 <tr class="even">
 <td align="left">Germany</td>
 <td align="right">1930</td>
-<td align="right">-0.7993911</td>
+<td align="right">0.7624462</td>
 <td align="left">Germany (Prussia)</td>
 <td align="right">255</td>
 <td align="right">255</td>
@@ -1074,7 +1074,7 @@
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="right">1970</td>
-<td align="right">1.3525895</td>
+<td align="right">0.0524417</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -1088,7 +1088,7 @@
 <tr class="even">
 <td align="left">Germany</td>
 <td align="right">1945</td>
-<td align="right">-0.4160493</td>
+<td align="right">0.3895279</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -1102,7 +1102,7 @@
 <tr class="odd">
 <td align="left">East Germany</td>
 <td align="right">1949</td>
-<td align="right">0.8083571</td>
+<td align="right">1.0257242</td>
 <td align="left">German Democratic Republic</td>
 <td align="right">265</td>
 <td align="right">265</td>
@@ -1116,7 +1116,7 @@
 <tr class="even">
 <td align="left">Federal Republic of Germany</td>
 <td align="right">1992</td>
-<td align="right">-0.4667874</td>
+<td align="right">0.7092587</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -1130,7 +1130,7 @@
 <tr class="odd">
 <td align="left">Somaliland</td>
 <td align="right">1990</td>
-<td align="right">-0.6657607</td>
+<td align="right">1.1829996</td>
 <td align="left">Somaliland</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -1144,7 +1144,7 @@
 <tr class="even">
 <td align="left">Somalia</td>
 <td align="right">1990</td>
-<td align="right">0.4545968</td>
+<td align="right">1.6786743</td>
 <td align="left">Somalia</td>
 <td align="right">520</td>
 <td align="right">520</td>
@@ -1158,7 +1158,7 @@
 <tr class="odd">
 <td align="left">Palestine</td>
 <td align="right">1940</td>
-<td align="right">-0.2955224</td>
+<td align="right">0.6105567</td>
 <td align="left">British Mandate of Palestine</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -1172,7 +1172,7 @@
 <tr class="even">
 <td align="left">Russia</td>
 <td align="right">1917</td>
-<td align="right">-0.7007693</td>
+<td align="right">1.2586704</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1186,7 +1186,7 @@
 <tr class="odd">
 <td align="left">Russia</td>
 <td align="right">1912</td>
-<td align="right">-0.4350950</td>
+<td align="right">0.8348958</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1200,7 +1200,7 @@
 <tr class="even">
 <td align="left">USSR</td>
 <td align="right">1922</td>
-<td align="right">0.2616003</td>
+<td align="right">0.2221328</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1214,7 +1214,7 @@
 <tr class="odd">
 <td align="left">Republic of Vietnam</td>
 <td align="right">1975</td>
-<td align="right">0.1510076</td>
+<td align="right">0.8222729</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
@@ -1228,7 +1228,7 @@
 <tr class="even">
 <td align="left">Yugoslavia</td>
 <td align="right">1990</td>
-<td align="right">1.0474404</td>
+<td align="right">0.1826718</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1242,7 +1242,7 @@
 <tr class="odd">
 <td align="left">Yugoslavia</td>
 <td align="right">1991</td>
-<td align="right">0.4325583</td>
+<td align="right">1.8048561</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1256,7 +1256,7 @@
 <tr class="even">
 <td align="left">Vietnam, South</td>
 <td align="right">1954</td>
-<td align="right">-0.5879309</td>
+<td align="right">1.5481672</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
@@ -1325,8 +1325,8 @@
 <p>Bowman K, Lehoucq F, Mahoney J (2005). “Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America.” <em>Comparative Political Studies</em>, <em>38</em>(8), 939-970. doi: 10.1177/0010414005277083 (URL: <a href="https://doi.org/10.1177/0010414005277083" class="external-link uri">https://doi.org/10.1177/0010414005277083</a>).</p>
 <p>Cheibub J, Gandhi J, Vreeland J (2010). “Democracy and dictatorship revisited.” <em>Public Choice</em>, <em>143</em>(1), 67-101. doi: 10.1007/s11127-009-9491-2 (URL: <a href="https://doi.org/10.1007/s11127-009-9491-2" class="external-link uri">https://doi.org/10.1007/s11127-009-9491-2</a>).</p>
 <p>Coppedge M, Alvarez A, Maldonado C (2008). “Two Persistent Dimensions of Democracy: Contestation and Inclusiveness.” <em>The journal of politics</em>, <em>70</em>(03), 632-647. doi: 10.1017/S0022381608080663 (URL: <a href="https://doi.org/10.1017/S0022381608080663" class="external-link uri">https://doi.org/10.1017/S0022381608080663</a>).</p>
-<p>Coppedge M, Gerring J, Knutsen CH, Lindberg SI, Teorell J, Alizada N, Altman D, Bernhard M, Cornell A, Fish MS, Gastaldi L, Gjerlow H, Glynn A, Hicken A, Hindle G, Ilchenko N, Krusell J, uhrmann AL, Maerz SF, Marquardt KL, McMann K, Mechkova V, Medzihorsky J, Paxton P, Pemstein D, Pernes J, von RÃ¶mer J, Seim B, Sigman R, Skaaning S, Staton J, SundstrÃ¶m A, Tzelgov E, Wang Y, Wig T, Wilson S, Ziblatt. D (2021). “V-Dem Country-Year/Country-Date Dataset v11.” &lt;URL: <a href="https://www.v-dem.net/en/data/data-version-11/" class="external-link uri">https://www.v-dem.net/en/data/data-version-11/</a>&gt;.</p>
-<p>Coppedge M, Gerring J, Knutsen CH, Lindberg SI, Teorell J, Altman D, Bernhard M, Cornell A, Fish MS, Gastaldi L, Gjerlow H, Glynn A, Hicken A, LÃ¼hrmann A, Maerz SF, Marquardt KL, McMann K, Mechkova V, Paxton P, Pemstein D, von RÃ¶mer J, Seim B, Sigman R, Skaaning S, Staton J, SundtrÃ¶m A, Tzelgov E, Uberti L, Wang Y, Wig T, Ziblatt D (2021). “V-Dem Codebook v11.” &lt;URL: <a href="https://www.v-dem.net/en/data/data-version-11/" class="external-link uri">https://www.v-dem.net/en/data/data-version-11/</a>&gt;.</p>
+<p>Coppedge M, Gerring J, Knutsen CH, Lindberg SI, Teorell J, Alizada N, Altman D, Bernhard M, Cornell A, Fish MS, Gastaldi L, GjerlÃ¸w H, Glynn A, Grahn S, Hicken A, Hindle G, Ilchenko N, Kinzelbach K, Krusell J, Marquardt KL, McMann K, Mechkova V, Medzihorsky J, Paxton P, Pemstein D, Pernes J, RydÃ©n O, von RÃ¶mer J, Seim B, Sigman R, Skaaning S, Staton J, SundstrÃ¶m A, Tzelgov E, Wang Y, Wig T, Wilson S, Ziblatt D (2022). “V-Dem Country-Year/Country-Date Dataset v12.” &lt;URL: <a href="https://doi.org/10.23696/vdemds22" class="external-link uri">https://doi.org/10.23696/vdemds22</a>&gt;.</p>
+<p>Coppedge M, Gerring J, Knutsen CH, Lindberg SI, Teorell J, Altman D, and Michael Bernhard, Cornell A, Fish MS, Gastaldi L, GjerlÃ¸w H, Glynn A, Grahn S, Hicken A, Kinzelbach K, Marquardt KL, McMann K, Mechkova V, Paxton P, Pemstein D, Pernes J, von RÃ¶mer J, Seim B, Sigman R, Skaaning S, Staton J, Tzelgov E, Uberti L, Wang Y, Wig T, Wilson S, Ziblatt D (2022). “V-Dem Codebook v12.” &lt;URL: <a href="https://www.v-dem.net/static/website/img/refs/codebookv12.pdf" class="external-link uri">https://www.v-dem.net/static/website/img/refs/codebookv12.pdf</a>&gt;.</p>
 <p>Coppedge M, Reinicke WH (1990). “Measuring Polyarchy.” <em>Studies in Comparative International Development</em>, <em>25</em>(1), 51-72. doi: 10.1007/Bf02716905 (URL: <a href="https://doi.org/10.1007/Bf02716905" class="external-link uri">https://doi.org/10.1007/Bf02716905</a>).</p>
 <p>Doorenspleet R (2000). “Reassessing the Three Waves of Democratization.” <em>World Politics</em>, <em>52</em>(03), 384-406. doi: 10.1017/S0043887100016580 (URL: <a href="https://doi.org/10.1017/S0043887100016580" class="external-link uri">https://doi.org/10.1017/S0043887100016580</a>).</p>
 <p>Freedom House (2022). “Freedom in the World 2022: The Global Expansion of Authoritarian Rule.” Freedom House. &lt;URL: <a href="https://freedomhouse.org/report/freedom-world/2022/global-expansion-authoritarian-rule" class="external-link uri">https://freedomhouse.org/report/freedom-world/2022/global-expansion-authoritarian-rule</a>&gt;.</p>
@@ -1361,7 +1361,7 @@
 <p>The Economist Intelligence Unit (2022). “Democracy Index 2021: The China Challenge.” The Economist Intelligence Unit.</p>
 <p>Ulfelder J (2012). “Democracy/Autocracy Data Set.” &lt;URL: <a href="http://hdl.handle.net/1902.1/18836" class="external-link uri">http://hdl.handle.net/1902.1/18836</a>&gt;.</p>
 <p>Ulfelder J, Lustik M (2007). “Modelling Transitions To and From Democracy.” <em>Democratization</em>, <em>14</em>(3), 351-387. doi: 10.1080/13510340701303196 (URL: <a href="https://doi.org/10.1080/13510340701303196" class="external-link uri">https://doi.org/10.1080/13510340701303196</a>).</p>
-<p>Vanhanen T (2019). “Measures of Democracy 1810-2018 [dataset]. Version 8.0 (2019-06-17).” &lt;URL: <a href="http://urn.fi/urn:nbn:fi:fsd:T-FSD1289" class="external-link uri">http://urn.fi/urn:nbn:fi:fsd:T-FSD1289</a>&gt;.</p>
+<p>Vanhanen T (2019). “Measures of Democracy 1810-2018 (dataset). Version 8.0 (2019-06-17).” &lt;URL: <a href="http://urn.fi/urn:nbn:fi:fsd:T-FSD1289" class="external-link uri">http://urn.fi/urn:nbn:fi:fsd:T-FSD1289</a>&gt;.</p>
 <p>Wahman M, Teorell J, Hadenius A (2013). “Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective.” <em>Contemporary Politics</em>, <em>19</em>(1), 19-34. &lt;URL: <a href="https://sites.google.com/site/authoritarianregimedataset/data" class="external-link uri">https://sites.google.com/site/authoritarianregimedataset/data</a>&gt;.</p>
 <p>To see these entries in BibTeX format, use ‘print(<citation>, bibtex=TRUE)’, ‘toBibtex(.)’, or set ‘options(citation.bibtex.max=999)’.</citation></p>
 <p>You can also find the citation for a specific dataset using the wrapper <code>cite_dataset</code> with the name of the dataset in this package:</p>

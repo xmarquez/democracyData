@@ -123,7 +123,7 @@ This can take some time, since it downloads all downloadable datasets (Freedom H
 
 ## Latent Variable Indexes of Democracy
 
-The package also offers a series of convenience functions to calculate latent variable indexes of democracy (following Pemstein, Meserve, and Melton's [2010 article](https://www.jstor.org/stable/25792023?seq=1) "Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type"); see the vignette on [Replicating and Extending the UD scores of Pemstein, Meserve, and Melton](/articles/articles/Replicating_and_extending_the_UD_scores.html). It also contains a pre-calculated extended version of these scores, available as `extended_uds`:
+The package also offers a series of convenience functions to calculate latent variable indexes of democracy (following Pemstein, Meserve, and Melton's [2010 article](https://www.jstor.org/stable/25792023?seq=1) "Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type"); see the vignette on [Replicating and Extending the UD scores of Pemstein, Meserve, and Melton](https://xmarquez.github.io/democracyData/articles/Replicating_and_extending_the_UD_scores.html). It also contains a pre-calculated extended version of these scores, available as `extended_uds`:
 
 ```{r}
 extended_uds
