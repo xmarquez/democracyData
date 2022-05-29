@@ -22,7 +22,6 @@ Imports:
     plyr,
     fuzzyjoin,
     countrycode,
-    purrr,
     readxl,
     readr,
     RefManageR,
