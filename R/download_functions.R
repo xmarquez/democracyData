@@ -408,21 +408,26 @@ download_wgi_voice_and_accountability <- function(url,
                                                   verbose = TRUE,
                                                   return_raw = FALSE,
                                                   ...) {
-
   if(missing(url)) {
-    url <- "http://databank.worldbank.org/data/download/WGI_csv.zip"
+    url <- "http://info.worldbank.org/governance/wgi/Home/downLoadFile?fileName=wgidataset.xlsx"
   }
 
-  X25 <- `Indicator Name` <- `Country Name` <- `Indicator Code` <- NULL
-  `Country Code` <- indicator <- Estimate <- NULL
-  variable <- value <-  NULL
+  Estimate <-  NULL
   wb_country <- year <-  wb_code <- NULL
 
 
 
-  data <- suppressWarnings(read_data(url,
-                    verbose = verbose,
-                    name = "WGIData.csv"))
+  tmp <- tempfile(fileext = ".xlsx")
+  utils::download.file(url, tmp, mode = "wb")
+
+  data <- readxl::read_excel(tmp, sheet = 2, skip = 14)
+
+  names(data) <- c("wb_country", "wb_code",
+                   paste(rep(c("Estimate", "StdErr", "NumSrc",
+                               "Rank", "Lower", "Upper"),
+                             (ncol(data) - 2)/6),
+                         rep(c(1996, 1998, 2000, 2002:2021), each = 6),
+                         sep = "_"))
 
   if(return_raw) {
     if(verbose) {
@@ -431,10 +436,6 @@ download_wgi_voice_and_accountability <- function(url,
     return(data)
   }
 
-  data <- data %>%
-    select(-X25) %>%
-    filter(grepl("^VA", `Indicator Code`))
-
   if(verbose) {
     message(sprintf("Original dataset has %d rows, but is not in country-year format",
                     nrow(data)))
@@ -442,39 +443,24 @@ download_wgi_voice_and_accountability <- function(url,
   }
 
   wgi <- suppressWarnings(data %>%
-    select(-`Indicator Name`) %>%
-    rename(wb_country = `Country Name`,
-           wb_code = `Country Code`,
-           indicator = `Indicator Code`) %>%
-    mutate(indicator = plyr::mapvalues(indicator,
-                                       from =  c("VA.EST",
-                                                 "VA.NO.SRC",
-                                                 "VA.PER.RNK",
-                                                 "VA.PER.RNK.LOWER",
-                                                 "VA.PER.RNK.UPPER",
-                                                 "VA.STD.ERR"),
-                                       to = c("Estimate",
-                                              "NumSrc",
-                                              "Rank",
-                                              "Lower",
-                                              "Upper",
-                                              "StdErr"),
-                                       warn_missing = FALSE)) %>%
-    tidyr::gather(year, value, dplyr::matches("[1-2][0-9]{3}")) %>%
-    tidyr::spread(indicator, value) %>%
-    mutate(year = as.numeric(year)) %>%
-    select(wb_country, wb_code, year,
-           c("Estimate", "StdErr",
-             "NumSrc", "Rank", "Lower", "Upper"),
-           everything()) %>%
-    filter(!is.na(Estimate)) %>%
-    country_year_coder(wb_country,
-                       year,
-                       wb_code,
-                       code_type = "wb",
-                       match_type = "country",
-                       verbose = verbose,
-                       ...))
+                            mutate(across(everything(), as.character)) %>%
+                            tidyr::pivot_longer(!starts_with("wb_")) %>%
+                            tidyr::separate(name, into = c("measure", "year"), sep = "_") %>%
+                            tidyr::pivot_wider(names_from = "measure") %>%
+                            mutate(across(all_of(c("year", "Estimate", "StdErr",
+                                                   "NumSrc", "Rank", "Lower",
+                                                   "Upper")),
+                                          as.numeric)) %>%
+                            filter(!is.na(Estimate)) %>%
+                            country_year_coder(wb_country,
+                                               year,
+                                               wb_code,
+                                               code_type = "wb",
+                                               match_type = "country",
+                                               verbose = verbose,
+                                               ...))
+
+  unlink(tmp)
 
   wgi
 
@@ -482,14 +468,14 @@ download_wgi_voice_and_accountability <- function(url,
 
 
 
-#' Downloads the 2022 update of the Freedom House Freedom in the World data
+#' Downloads the 2023 update of the Freedom House Freedom in the World data
 #' and processes it using [country_year_coder]
 #'
 #' The original data is available at
 #' \url{https://freedomhouse.org/report-types/freedom-world}
 #'
 #' @param url The URL of the dataset. Defaults to
-#'   https://freedomhouse.org/sites/default/files/2022-03/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2022%20.xlsx
+#'   https://freedomhouse.org/sites/default/files/2023-02/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2023%20.xlsx
 #'
 #' @param include_territories Whether to include scores from non-independent
 #'   territories (e.g., Indian Kashmir, Northern Ireland) compiled by FH.
