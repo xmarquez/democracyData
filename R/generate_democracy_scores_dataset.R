@@ -1109,9 +1109,13 @@ generate_democracy_scores_dataset <- function(datasets,
     }
 
     democracy_data <- prc_gasiorowski %>%
-      dplyr::mutate_at("regime", list("prc" = ~plyr::mapvalues(.,
-                                   from = c("A", "D", "S", "T"),
-                                   to = c(1, 4, 3, NA)))) %>%
+      dplyr::mutate_at("regime", list("prc" = ~case_when(
+        . == "A" ~ 1,
+        . == "D" ~ 4,
+        . == "S" ~ 3,
+        . == "T" ~ NA_real_,
+        TRUE ~ as.numeric(.)
+      ))) %>%
       tidyr::pivot_longer(all_of(c("prc")),
                           names_to = "measure", values_to = "value") %>%
       standardize_selection()
@@ -1292,9 +1296,12 @@ generate_democracy_scores_dataset <- function(datasets,
 
     democracy_data <- ulfelder_extended %>%
       dplyr::mutate(across("rgjtype",
-                list("ulfelder_democracy_extended" = ~plyr::mapvalues(.,
-                                                                     from = c("-99", "A", "D", "NS"),
-                                                                     to = c(NA, 0, 1, NA))),
+                list("ulfelder_democracy_extended" = ~dplyr::case_when(
+                  . == "-99" | . == "NS" ~ NA_real_,
+                  . == "A" ~ 0,
+                  . == "D" ~ 1,
+                  TRUE ~ NA_real_
+                )),
                 .names = "{.fn}")) %>%
       tidyr::pivot_longer(all_of(c("ulfelder_democracy_extended")),
                           names_to = "measure", values_to = "value") %>%
@@ -1316,9 +1323,12 @@ generate_democracy_scores_dataset <- function(datasets,
 
     democracy_data <- ulfelder %>%
       dplyr::mutate(across("rgjtype",
-                           list("ulfelder_democracy" = ~plyr::mapvalues(.,
-                                                                                 from = c("-99", "A", "D", "NS"),
-                                                                                 to = c(NA, 0, 1, NA))),
+                           list("ulfelder_democracy" = ~dplyr::case_when(
+                             . == "-99" | . == "NS" ~ NA_real_,
+                             . == "A" ~ 0,
+                             . == "D" ~ 1,
+                             TRUE ~ NA_real_
+                             )),
                            .names = "{.fn}")) %>%
       tidyr::pivot_longer(all_of(c("ulfelder_democracy")),
                           names_to = "measure", values_to = "value") %>%
