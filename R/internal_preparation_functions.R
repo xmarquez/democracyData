@@ -424,6 +424,46 @@ prepare_anrr <- function(path = "DDCGdata_final.dta",
 
 }
 
+prepare_vdem_simple <- function(verbose = TRUE, version = "13.0", ...) {
+  rlang::check_installed("vdemdata", version = version)
+
+  country_name <- v2x_mpi_sd <- COWcode <- NULL
+
+  vdem <- vdemdata::vdem
+
+  Encoding(vdem$country_name) <- "latin1"
+  vdem$country_name <- iconv(vdem$country_name,
+                             "latin1",
+                             "UTF-8")
+
+  Encoding(vdem$histname) <- "latin1"
+  vdem$histname <- iconv(vdem$histname,
+                         "latin1",
+                         "UTF-8")
+
+  vdem_simple <- vdem %>%
+    dplyr::select(country_name:v2x_mpi_sd) %>%
+    dplyr::as_tibble() %>%
+    country_year_coder(country_name, year, COWcode,
+                       ...)
+
+  vdem_exclude <- vdem %>%
+    dplyr::select(country_name:v2x_mpi_sd) %>%
+    dplyr::as_tibble() %>%
+    country_year_coder(country_name, year,
+                       ...) %>%
+    dplyr::filter(extended_country_name == "Yugoslavia", year %in% c(1804:1829))
+
+  vdem_simple <- vdem_simple %>%
+    dplyr::anti_join(vdem_exclude)
+
+  vdem_simple <- vdem_simple %>%
+    dplyr::rename(vdem_country_name = country_name,
+           vdem_cowcode = COWcode)
+
+  vdem_simple
+}
+
 # create_anrr_scores <- function(verbose = TRUE) {
 #   anrr_data <- generate_democracy_scores_dataset(datasets = c("pacl", "bmr",
 #                                                               "pacl_update",
