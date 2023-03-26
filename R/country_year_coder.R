@@ -408,6 +408,11 @@ cow_startdate <- cow_enddate <- NULL
     country_col <- enquo(country_col)
   }
 
+  if(missing(date_col)) {
+    stop("Missing date_col argument. If you don't care about date matching",
+         " use `countrycode` package")
+  }
+
   date_col <- enquo(date_col)
 
   match_type <- match.arg(match_type)
