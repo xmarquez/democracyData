@@ -341,12 +341,16 @@ download_polity_annual <- function(url,
   standardize_columns(polity_annual, country, ccode, verbose = verbose)
 }
 
+#' Democracy, Voice, and Accountability Index from the World Governance
+#' Indicators
+#'
 #' Download the latest version (data up to 2021) of the Democracy, Voice, and
 #' Accountability index from the World Governance Indicators and process it via
 #' [country_year_coder]
 #'
 #'
-#' @param url The URL of the dataset. Defaults to \url{http://info.worldbank.org/governance/wgi/Home/downLoadFile?fileName=wgidataset.xlsx}
+#' @param url The URL of the dataset. Defaults to
+#'   \url{http://info.worldbank.org/governance/wgi/Home/downLoadFile?fileName=wgidataset.xlsx}
 #' @inheritParams redownload_blm
 #'
 #' @import dplyr
