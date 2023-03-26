@@ -33,6 +33,9 @@ LazyData: true
 LazyDataCompression: bzip2 
 Suggests: 
     testthat,
-    rmarkdown
+    rmarkdown,
+    vdemdata (>= 13.0)
 URL: https://xmarquez.github.io/democracyData/, https://github.com/xmarquez/democracyData
 BugReports: https://github.com/xmarquez/democracyData/issues
+Remotes:  
+    vdeminstitute/vdemdata
