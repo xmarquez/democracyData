@@ -119,8 +119,10 @@
 #'
 #' @examples
 #' \dontrun{
-#' blm <- redownload_blm()
-#' blm
+#' # The download URL for BLM doesn't seem to work anymore; it may work again
+#' # in the future
+#' # blm <- redownload_blm()
+#' # blm
 #' }
 redownload_blm <- function(url,
                            verbose = TRUE,
