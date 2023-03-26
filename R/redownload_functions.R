@@ -81,7 +81,7 @@
 #'  \url{https://dataverse.harvard.edu/api/access/datafile/2420018}
 #'
 #'  \item For \link{PIPE}:
-#'  \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}
+#'  \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data} (no longer publicly available, it seems)
 #'
 #'  }
 #'
@@ -92,15 +92,15 @@
 #'  doing while processing the data.
 #'@param return_raw Whether to return the raw data, without any processing.
 #'  Default is \code{FALSE}.
-#'@param extend (Only for \link{redownload_gwf},
-#'  \link{redownload_magaloni}, and \link{redownload_ulfelder}). Whether to
-#'  extend the dataset back in time using the appropriate duration variable
-#'  (\code{gwf_duration}, \code{duration_nr}, or \code{rgjdura} and
-#'  \code{rgjdurd}, respectively, for \link{redownload_gwf},
-#'  \link{redownload_magaloni}, and \link{redownload_ulfelder}). For example,
-#'  the United States enters the GWF dataset in 1946, where \code{gwf_duration}
-#'  is already 75; one can extend the dataset to indicate that the country was
-#'  classified as a democracy from 1872. Default is \code{FALSE}.
+#'@param extend (Only for \link{redownload_gwf}, \link{redownload_magaloni}, and
+#'  \link{redownload_ulfelder}). Whether to extend the dataset back in time
+#'  using the appropriate duration variable (\code{gwf_duration},
+#'  \code{duration_nr}, or \code{rgjdura} and \code{rgjdurd}, respectively, for
+#'  \link{redownload_gwf}, \link{redownload_magaloni}, and
+#'  \link{redownload_ulfelder}). For example, the United States enters the GWF
+#'  dataset in 1946, where \code{gwf_duration} is already 75; one can extend the
+#'  dataset to indicate that the country was classified as a democracy from
+#'  1872. Default is \code{FALSE}.
 #'@param ... Other parameters passed to \link{country_year_coder}.
 #'
 #'@import dplyr
