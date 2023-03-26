@@ -598,7 +598,7 @@ download_fh <- function(url,
   indicator <- value <- country <- NULL
 
   if(missing(url)) {
-    url <- "https://freedomhouse.org/sites/default/files/2022-03/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2022%20.xlsx"
+    url <- "https://freedomhouse.org/sites/default/files/2023-02/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2023%20.xlsx"
   }
 
 
@@ -631,7 +631,8 @@ download_fh <- function(url,
   if(verbose) {
     message(sprintf("Original dataset has %d rows, but is not in country-year format",
                     nrow(data)))
-    message("Processing the FH 2022 data - putting it in country-year format, adding state system info...")
+    message("Processing the FH 2022 data - ",
+            "putting it in country-year format, adding state system info...")
   }
 
   nYears <- (ncol(data) - 1)/3
@@ -644,7 +645,7 @@ download_fh <- function(url,
   # melt the data, split the variable_year column and voila!
 
   data <- data %>%
-    tidyr::pivot_longer(names_to = "indicator", values_to = "value", dplyr::matches("[12][0-9]{3}"),
+    tidyr::pivot_longer(names_to = "indicator", values_to = "value", matches("[12][0-9]{3}"),
                         values_transform = list(value = as.character)) %>%
     tidyr::separate(indicator, into = c("status", "year"), sep ="_")  %>%
     filter(!is.na(value)) %>%
@@ -657,14 +658,10 @@ download_fh <- function(url,
            status = as.factor(status),
            fh_total = pr + cl,
            fh_total_reversed = 14 - fh_total,
-           country = plyr::mapvalues(country,
-                                     from= c("Yemen, S.",
-                                             "Vietnam, S.",
-                                             "Germany, E."),
-                                     to = c("South Yemen",
-                                            "South Vietnam",
-                                            "East Germany"),
-                                     warn_missing = FALSE))
+           country = case_when(country == "Yemen, S." ~ "South Yemen",
+                                      country == "Vietnam, S." ~ "South Vietnam",
+                                      country == "Germany, E." ~ "East Germany",
+                                      TRUE ~ as.character(country)))
 
   fh <- data %>%
     country_year_coder(country,
@@ -677,7 +674,8 @@ download_fh <- function(url,
     message(sprintf("Resulting dataset after processing has %d rows.",
                     nrow(fh)))
     if(nrow(data) != nrow(fh)) {
-      message("Note: the number of rows in the processed Freedom House data is different from the number of rows in the original data.")
+      message("Note: the number of rows in the processed Freedom House data ",
+              "is different from the number of rows in the original data.")
     }
   }
 
@@ -685,15 +683,12 @@ download_fh <- function(url,
   standardize_columns(fh, country, verbose = verbose)
 }
 
-#' Downloads the 2022 update of the Freedom House Electoral Democracies list and
+#' Downloads the 2023 update of the Freedom House Electoral Democracies list and
 #' processes it using [country_year_coder].
 #'
 #' The original data is available at
-#' [https://freedomhouse.org/report/freedom-world](https://freedomhouse.org/report/freedom-world).
-#'
-#' @param url The URL of the dataset. Should be left empty, as the full list is
-#'   spread over a number of different URLs. This parameter may disappear in the
-#'   future.
+#' [https://freedomhouse.org/report/freedom-world](https://freedomhouse.org/report/freedom-world),
+#' spread over a number of different urls.
 #'
 #' @inheritParams redownload_blm
 #'
@@ -730,7 +725,7 @@ download_fh <- function(url,
 #' @family Freedom House
 #' @family ordinal democracy indexes
 #' @source The "Freedom in the World" dataset from Freedom House, updated to
-#'   2021 (Freedom in the World report 2022 edition). Original data and
+#'   2022 (Freedom in the World report 2023 edition). Original data and
 #'   methodology is available at
 #'   \url{https://freedomhouse.org/report/freedom-world}
 #' @examples
@@ -738,28 +733,19 @@ download_fh <- function(url,
 #' fh <- download_fh_electoral()
 #' fh
 #' }
-download_fh_electoral <- function(url,
-                                  verbose = TRUE,
+download_fh_electoral <- function(verbose = TRUE,
                                   return_raw = FALSE,
                                   ...) {
 
-  if(missing(url)) {
-    url <- "https://freedomhouse.org/sites/default/files/FIW2017_Data.zip"
-    url_2018 = "https://freedomhouse.org/sites/default/files/List%20of%20Electoral%20Democracies%20FIW%202018.xlsx"
-    url_2019 = "https://freedomhouse.org/sites/default/files/List_of_Electoral_Democracies_FIW19.xls"
-    url_2020 = "https://freedomhouse.org/sites/default/files/2020-02/2020_List_of_Electoral_Democracies_FIW_2020.xlsx"
-    url_2022 = "https://freedomhouse.org/sites/default/files/2022-03/List_of_Electoral_Democracies_FIW22.xlsx"
-  } else {
-    stop("The URL field is deprecated - the full list is spread over many different files.")
-  }
+  url <- "https://freedomhouse.org/sites/default/files/FIW2017_Data.zip"
+  later_urls = c("https://freedomhouse.org/sites/default/files/List%20of%20Electoral%20Democracies%20FIW%202018.xlsx",
+                 "https://freedomhouse.org/sites/default/files/List_of_Electoral_Democracies_FIW19.xls",
+                 "https://freedomhouse.org/sites/default/files/2020-02/2020_List_of_Electoral_Democracies_FIW_2020.xlsx",
+                 "https://freedomhouse.org/sites/default/files/2022-03/List_of_Electoral_Democracies_FIW22.xlsx",
+                 "https://freedomhouse.org/sites/default/files/2023-02/List_of_Electoral_Democracies_FIW23.xlsx")
 
   indicator <- value <- electoral_dem <- year <- NULL
   electoral <- country <- Country <- NULL
-  `Electoral Democracy Status in FIW 2018` <- NULL
-  `Electoral Democracy Status in FIW 2019` <- NULL
-  `Electoral Democracy Designation in FIW 2020` <- NULL
-  `Electoral Democracy Designation in FIW 2022` <- NULL
-
 
   data <- read_data(url,
                     verbose = verbose,
@@ -769,10 +755,9 @@ download_fh_electoral <- function(url,
                     col_names = FALSE,
                     na = c("","-"))
 
-  data_2018 <- read_data(url_2018, skip = 1)
-  data_2019 <- read_data(url_2019, skip = 1)
-  data_2020 <- read_data(url_2020, skip = 1)
-  data_2022 <- read_data(url_2022, skip = 1)
+  later_urls <- lapply(later_urls, read_data, skip = 1) %>%
+    lapply(function(x) rename_with(x, ~"electoral",
+                                          starts_with("Electoral Democracy")))
 
   if(return_raw) {
     if(verbose) {
@@ -783,9 +768,9 @@ download_fh_electoral <- function(url,
 
   if(verbose) {
     message(sprintf("Original dataset has %d rows, but is not in country-year format",
-                    nrow(data) + nrow(data_2018) + nrow(data_2019) + nrow(data_2020) +
-                      nrow(data_2022)))
-    message("Processing the FH Electoral Democracies 1989-2022 data - putting it in country-year format, adding state system info...")
+                    nrow(data) + sum(unlist(lapply(later_urls, nrow)))))
+    message("Processing the FH Electoral Democracies 1989-2022 data",
+            " - putting it in country-year format, adding state system info...")
   }
 
   names(data) <- c('country', paste("electoral", 1989:2016, sep = "_"))
@@ -793,83 +778,31 @@ download_fh_electoral <- function(url,
   # melt the data, split the variable_year column and voila!
 
   data <- data %>%
-    tidyr::pivot_longer(names_to = "indicator", values_to = "value", dplyr::matches("electoral_[0-9]{4}")) %>%
+    tidyr::pivot_longer(names_to = "indicator", values_to = "value", matches("electoral_[0-9]{4}")) %>%
     tidyr::separate(indicator, into = c("electoral_dem", "year"), sep ="_")  %>%
     filter(!is.na(value)) %>%
     tidyr::spread(electoral_dem, value) %>%
     mutate(year = as.numeric(year),
            electoral = ifelse(electoral == "Yes", TRUE, FALSE),
-           country = plyr::mapvalues(country,
-                                     from= c("Yemen, S.",
-                                             "Vietnam, S.",
-                                             "Germany, E."),
-                                     to = c("South Yemen",
-                                            "South Vietnam",
-                                            "East Germany"),
-                                     warn_missing = FALSE))
+           country = case_when(country == "Yemen, S." ~ "South Yemen",
+                                      country == "Vietnam, S." ~ "South Vietnam",
+                                      country == "Germany, E." ~ "East Germany",
+                                      TRUE ~ as.character(country)))
 
-  data_2018 <- suppressWarnings(data_2018 %>%
-                                  rename(electoral = `Electoral Democracy Status in FIW 2018`) %>%
-                                  mutate(year = 2017,
-                                         electoral = ifelse(electoral == "yes", TRUE, FALSE),
-                                         country = plyr::mapvalues(Country,
-                                                              from= c("Yemen, S.",
-                                                                      "Vietnam, S.",
-                                                                      "Germany, E."),
-                                                              to = c("South Yemen",
-                                                                     "South Vietnam",
-                                                                     "East Germany"),
-                                                              warn_missing = FALSE)) %>%
-                                  select(-Country))
+  for(i in 1:length(later_urls)) {
+    later_urls[[i]] <- later_urls[[i]] %>%
+      mutate(year = 2017+i,
+             electoral = ifelse(electoral == "yes", TRUE, FALSE),
+             country = case_when(Country == "Yemen, S." ~ "South Yemen",
+                                        Country == "Vietnam, S." ~ "South Vietnam",
+                                        Country == "Germany, E." ~ "East Germany",
+                                        TRUE ~ as.character(Country))) %>%
+      select(-Country)
+  }
 
+  later_urls <- bind_rows(later_urls)
 
-  data_2019 <- suppressWarnings(data_2019 %>%
-                                  rename(electoral = `Electoral Democracy Status in FIW 2019`) %>%
-                                  mutate(year = 2018,
-                                         electoral = ifelse(electoral == "Yes", TRUE, FALSE),
-                                         country = plyr::mapvalues(Country,
-                                                                   from= c("Yemen, S.",
-                                                                           "Vietnam, S.",
-                                                                           "Germany, E."),
-                                                                   to = c("South Yemen",
-                                                                          "South Vietnam",
-                                                                          "East Germany"),
-                                                                   warn_missing = FALSE)) %>%
-                                  select(-Country))
-
-  data_2020 <- suppressWarnings(data_2020 %>%
-                                  rename(electoral = `Electoral Democracy Designation in FIW 2020`) %>%
-                                  mutate(year = 2019,
-                                         electoral = ifelse(electoral == "Yes", TRUE, FALSE),
-                                         country = plyr::mapvalues(Country,
-                                                                   from= c("Yemen, S.",
-                                                                           "Vietnam, S.",
-                                                                           "Germany, E."),
-                                                                   to = c("South Yemen",
-                                                                          "South Vietnam",
-                                                                          "East Germany"),
-                                                                   warn_missing = FALSE)) %>%
-                                  select(-Country))
-
-  data_2022 <- suppressWarnings(data_2022 %>%
-                                  rename(electoral = `Electoral Democracy Designation in FIW 2022`) %>%
-                                  mutate(year = 2021,
-                                         electoral = ifelse(electoral == "Yes", TRUE, FALSE),
-                                         country = plyr::mapvalues(Country,
-                                                                   from= c("Yemen, S.",
-                                                                           "Vietnam, S.",
-                                                                           "Germany, E."),
-                                                                   to = c("South Yemen",
-                                                                          "South Vietnam",
-                                                                          "East Germany"),
-                                                                   warn_missing = FALSE)) %>%
-                                  select(-Country))
-
-  data <- bind_rows(data,
-                    data_2018,
-                    data_2019,
-                    data_2020,
-                    data_2022)
+  data <- bind_rows(data, later_urls)
 
   fh_electoral <- data %>%
     country_year_coder(country,
@@ -889,20 +822,20 @@ download_fh_electoral <- function(url,
    standardize_columns(fh_electoral, country, verbose = verbose)
 }
 
-#' Downloads the 2022 update of the Freedom House Freedom in the World All
-#' Data 2013-2022 file and processes it using [country_year_coder].
+#' Downloads the 2023 update of the Freedom House Freedom in the World All
+#' Data 2013-2023 file and processes it using [country_year_coder].
 #'
 #' The original data is available at
 #' [https://freedomhouse.org/report-types/freedom-world](https://freedomhouse.org/report/freedom-world)
 #'
 #' @param url The URL of the dataset. Defaults to
-#'   \url{https://freedomhouse.org/sites/default/files/2022-02/All_data_FIW_2013-2022.xlsx}
+#'   \url{https://freedomhouse.org/sites/default/files/2023-02/All_data_FIW_2013-2023.xlsx}
 #'
 #'
 #'
 #' @inheritParams redownload_blm
 #'
-#' @return A time-series tidy version of the FH "all data 2013-2022" dataset,
+#' @return A time-series tidy version of the FH "all data 2013-2023" dataset,
 #'   with the following variables:
 #'
 #'   * country: The original country name.
@@ -1070,7 +1003,7 @@ download_fh_full <- function(url,
   status <- year <- country <- edition <- NULL
 
   if(missing(url)) {
-    url <- "https://freedomhouse.org/sites/default/files/2022-02/All_data_FIW_2013-2022.xlsx"
+    url <- "https://freedomhouse.org/sites/default/files/2023-02/All_data_FIW_2013-2023.xlsx"
   }
 
 
@@ -1090,7 +1023,8 @@ download_fh_full <- function(url,
   if(verbose) {
     message(sprintf("Original dataset has %d rows",
                     nrow(data)))
-    message("Processing the FH full 2013-2022 data - adding state system info, fixing column names...")
+    message("Processing the FH full 2013-2022 data - ",
+            "adding state system info, fixing column names...")
   }
 
   names(data) <- c("country", "region", "country_or_territory",
@@ -1104,14 +1038,10 @@ download_fh_full <- function(url,
   data <- data %>%
     mutate(status = as.factor(status),
            year = edition - 1,
-           country = plyr::mapvalues(country,
-                                     from= c("Yemen, S.",
-                                             "Vietnam, S.",
-                                             "Germany, E."),
-                                     to = c("South Yemen",
-                                            "South Vietnam",
-                                            "East Germany"),
-                                     warn_missing = FALSE))
+           country = case_when(country == "Yemen, S." ~ "South Yemen",
+                               country == "Vietnam, S." ~ "South Vietnam",
+                               country == "Germany, E." ~ "East Germany",
+                               TRUE ~ as.character(country)))
 
   fh_full <- data %>%
     country_year_coder(country,
