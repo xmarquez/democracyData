@@ -29,23 +29,25 @@ update of Polity IV.
 \item{cyear}{Unique country code-year identifier.}
 
 \item{polityIV_ccode}{Numeric Country Code. Derived from the Correlates of
-War country codes, but with some small differences. These are:\preformatted{## # A tibble: 12 x 5
-## # Groups:   polityIV_country, polityIV_ccode [12]
-##    polityIV_country      polityIV_ccode  cown min_year max_year
-##    <chr>                          <dbl> <int>    <dbl>    <dbl>
-##  1 Ethiopia                         529   530     1993     2018
-##  2 Kosovo                           341   347     2008     2018
-##  3 Montenegro                       348   341     2006     2018
-##  4 Pakistan                         769   770     1947     1971
-##  5 Sardinia                         324   325     1815     1861
-##  6 Serbia                           342   345     1830     2018
-##  7 Serbia and Montenegro            347   345     2003     2006
-##  8 South Sudan                      525   626     2011     2018
-##  9 Sudan-North                      626   625     2011     2018
-## 10 USSR                             364   365     1922     1991
-## 11 Vietnam                          818   816     1976     2018
-## 12 Yugoslavia                       347   345     1991     2002
-}
+War country codes, but with some small differences. These are:
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{#> # A tibble: 12 x 5
+#> # Groups:   polityIV_country, polityIV_ccode [12]
+#>    polityIV_country      polityIV_ccode  cown min_year max_year
+#>    <chr>                          <dbl> <int>    <dbl>    <dbl>
+#>  1 Ethiopia                         529   530     1993     2018
+#>  2 Kosovo                           341   347     2008     2018
+#>  3 Montenegro                       348   341     2006     2018
+#>  4 Pakistan                         769   770     1947     1971
+#>  5 Sardinia                         324   325     1815     1861
+#>  6 Serbia                           342   345     1830     2018
+#>  7 Serbia and Montenegro            347   345     2003     2006
+#>  8 South Sudan                      525   626     2011     2018
+#>  9 Sudan-North                      626   625     2011     2018
+#> 10 USSR                             364   365     1922     1991
+#> 11 Vietnam                          818   816     1976     2018
+#> 12 Yugoslavia                       347   345     1991     2002
+}\if{html}{\out{</div>}}
 
 }
 
@@ -135,7 +137,7 @@ autocracy and democracy are alternatives or opposites in a unified authority
 spectrum, even though elements of this perspective may be implied in the
 original theory. The POLITY variable provides a convenient avenue for
 examining general regime effects in analyses but researchers should note
-that the middle of the implied POLITY "spectrum" is somewhat muddled in
+that the middle of the implied Polity "spectrum" is somewhat muddled in
 terms of the original theory, masking various combinations of DEMOC and
 AUTOC scores with the same POLITY score. Investigations involving hypotheses
 of varying effects of democracy and/or autocracy should employ the original
