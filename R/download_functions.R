@@ -412,10 +412,7 @@ download_wgi_voice_and_accountability <- function(url,
     url <- "http://info.worldbank.org/governance/wgi/Home/downLoadFile?fileName=wgidataset.xlsx"
   }
 
-  Estimate <-  NULL
-  wb_country <- year <-  wb_code <- NULL
-
-
+  Estimate <- wb_country <- year <-  wb_code <- name <- NULL
 
   tmp <- tempfile(fileext = ".xlsx")
   utils::download.file(url, tmp, mode = "wb")
