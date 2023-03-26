@@ -5,12 +5,13 @@
 \alias{anckar}
 \title{The Anckar-Fredriksson dataset of political regimes}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18194 rows and 13 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18777 rows and 13 columns.
 }
 \source{
 C. Anckar and C. Fredriksson. 2018. "Classifying political regimes
 1800-2016: a typology and a new dataset". European Political Science.
-\doi{10.1057/s41304-018-0149-8}.
+\doi{10.1057/s41304-018-0149-8}. Version 2 available at
+\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/7SSSAH&version=2.0}.
 }
 \usage{
 anckar
@@ -19,7 +20,9 @@ anckar
 Dataset described in C. Anckar and C. Fredriksson. 2018. "Classifying
 political regimes 1800-2016: a typology and a new dataset". European
 Political Science. DOI: 10.1057/s41304-018-0149-8.
-\doi{10.1057/s41304-018-0149-8}. Data and codebook at the link.
+\doi{10.1057/s41304-018-0149-8}. Data and codebook at the link. This is
+version 2 of the data, available at
+\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/7SSSAH&version=2.0}.
 }
 \section{Variables}{
 
