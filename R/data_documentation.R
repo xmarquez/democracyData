@@ -2617,7 +2617,7 @@
 #'  spectrum, even though elements of this perspective may be implied in the
 #'  original theory. The POLITY variable provides a convenient avenue for
 #'  examining general regime effects in analyses but researchers should note
-#'  that the middle of the implied POLITY "spectrum" is somewhat muddled in
+#'  that the middle of the implied Polity "spectrum" is somewhat muddled in
 #'  terms of the original theory, masking various combinations of DEMOC and
 #'  AUTOC scores with the same POLITY score. Investigations involving hypotheses
 #'  of varying effects of democracy and/or autocracy should employ the original
