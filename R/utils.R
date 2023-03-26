@@ -67,10 +67,10 @@ download_and_read_xls <- function(url, fileext, ...) {
   utils::download.file(url, tmpfile, mode = "wb")
 
   if("na" %in% names(rlang::dots_list(...))) {
-    data  <- readxl::read_excel(tmpfile, ...) %>%
+    data  <- readxl::read_excel(tmpfile, .name_repair = "unique_quiet", ...) %>%
       distinct()
   } else {
-    data  <- readxl::read_excel(tmpfile, na = c("-", ""), ...) %>%
+    data  <- readxl::read_excel(tmpfile, na = c("-", ""), .name_repair = "unique_quiet", ...) %>%
       distinct()
   }
 
@@ -193,23 +193,23 @@ guess_file_extension <- function(filename) {
 
 read_by_file_extension <- function(filename, file_extension, ...) {
   if(file_extension == "sav") {
-    data <- haven::read_sav(filename, ...)
+    data <- haven::read_sav(filename, .name_repair = "unique_quiet", ...)
   }
 
   if(file_extension %in% c("xls", "xlsx")) {
-    data <- readxl::read_excel(filename, ...)
+    data <- readxl::read_excel(filename, .name_repair = "unique_quiet", ...)
   }
 
   if(file_extension == "dta") {
-    data <- haven::read_stata(filename, ...)
+    data <- haven::read_stata(filename, .name_repair = "unique_quiet", ...)
   }
 
   if(file_extension == "csv") {
-    data <- readr::read_csv(filename, ...)
+    data <- readr::read_csv(filename, name_repair = "unique_quiet", ...)
   }
 
   if(file_extension %in% c("tsv", "txt")) {
-    data <- readr::read_tsv(filename, ...)
+    data <- readr::read_tsv(filename, .name_repair = "unique_quiet", ...)
   }
 
   data
