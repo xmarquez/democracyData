@@ -5,7 +5,7 @@
 \alias{eiu}
 \title{The Economist Intelligence Unit's Democracy Index}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 2338 rows and 7 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 2505 rows and 7 columns.
 }
 \source{
 The economist Intelligence Unit. 2021. Democracy
