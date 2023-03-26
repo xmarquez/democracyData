@@ -567,13 +567,13 @@ cow_startdate <- cow_enddate <- NULL
 
   if(!missing(code_col) & !missing(country_col)) {
     result_df <- result_df %>%
-      select(!!country_col, !!code_col, !!date_col, include_in_output, starts_with("matches_"))
+      select(!!country_col, !!code_col, !!date_col, all_of(include_in_output), starts_with("matches_"))
   } else if(!missing(code_col) & missing(country_col)) {
     result_df <- result_df %>%
-      select(!!code_col, !!date_col, include_in_output, starts_with("matches_"))
+      select(!!code_col, !!date_col, all_of(include_in_output), starts_with("matches_"))
   } else {
     result_df <- result_df %>%
-      select(!!country_col, !!date_col, include_in_output, starts_with("matches_"))
+      select(!!country_col, !!date_col, all_of(include_in_output), starts_with("matches_"))
   }
 
   if(!debug) {
