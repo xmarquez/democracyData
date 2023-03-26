@@ -119,7 +119,7 @@ test_that("polyarchy dimensions redownloads correctly", {
 })
 
 test_that("PIPE redownloads correctly", {
-  skip("This test fails inexplicably when run through R-CMD check, though it passes normally, so skipping...")
+  skip("Data is no longer publicly available, so skipping")
   skip_on_cran()
   skip_on_travis()
   skip_if_offline()
