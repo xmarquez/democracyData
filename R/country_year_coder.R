@@ -810,69 +810,73 @@ year_match_fun <- function(date_col, startdate, enddate) {
 
   today <- as_date(floor_date(now(),unit = "day"))
 
-  result <- ymd(paste0(date_col, "-12-31")) %within% interval(startdate,
-                                                      plyr::mapvalues(enddate,
-                                                                      NA,
-                                                                      today,
-                                                                      warn_missing = FALSE))
+  result <- ymd(paste0(date_col, "-12-31")) %within%
+    interval(startdate, case_when(is.na(enddate) ~ today,
+                                  TRUE ~ enddate))
 
-  plyr::mapvalues(result,
-                  NA,
-                  FALSE,
-                  warn_missing = FALSE)
+  # Replace any NA values in result with FALSE
+  case_when(is.na(result) ~ FALSE,
+            TRUE ~ result)
+
 }
 
+# Define a function that checks if a date is before a start date
 is_before <- function(date_col, startdate) {
-  today <- as_date(floor_date(now(),unit = "day"))
 
-  result <- ymd(paste0(date_col, "-12-31")) < plyr::mapvalues(startdate,
-                                                    NA,
-                                                    today,
-                                                    warn_missing = FALSE)
+  # Get today's date
+  today <- as_date(floor_date(now(), unit = "day"))
 
-  plyr::mapvalues(result,
-                  NA,
-                  FALSE,
-                  warn_missing = FALSE)
+  # Create a logical vector indicating whether the date in date_col is before the startdate
+  result <- ymd(paste0(date_col, "-12-31")) < case_when(is.na(startdate) ~ today,
+                                                        TRUE ~ startdate)
+
+  # Replace any NA values in result with FALSE
+  case_when(is.na(result) ~ FALSE,
+            TRUE ~ result)
 
 }
 
+# Define a function that checks whether a date is between a start date and an end date
 is_between <- function(date_col, startdate, enddate) {
-  today <- as_date(floor_date(now(),unit = "day"))
 
-  result <- dplyr::tibble(date_col = ymd(paste0(date_col, "-12-31")),
-                              startdate = startdate,
-                              enddate = enddate) %>%
+  # Get today's date
+  today <- as_date(floor_date(now(), unit = "day"))
+
+  # Create a tibble with the date_col, startdate, and enddate columns
+  result <- tibble(date_col = ymd(paste0(date_col, "-12-31")),
+                   startdate = startdate,
+                   enddate = enddate) %>%
+    # Group by the date_col
     group_by(date_col) %>%
+    # Add a column indicating whether the date is between the start and end dates
     mutate(between = (date_col > min(startdate) &
                         date_col < max(startdate) &
                         date_col > min(enddate))) %>%
+    # Extract the between column
     pull(between)
 
-  plyr::mapvalues(result,
-                  NA,
-                  FALSE,
-                  warn_missing = FALSE)
+  # Replace any NA values in result with FALSE
+  case_when(is.na(result) ~ FALSE,
+            TRUE ~ result)
+
 }
 
 distance_after <- function(date_col, enddate) {
-  today <- as_date(floor_date(now(),unit = "day"))
 
-  result <- ymd(paste0(date_col, "-12-31")) - plyr::mapvalues(enddate,
-                                                              NA,
-                                                              today,
-                                                              warn_missing = FALSE)
+  # Get today's date
+  today <- as_date(floor_date(now(), unit = "day"))
 
+  # Calculate the difference in days between the date in date_col and the enddate
+  result <- ymd(paste0(date_col, "-12-31")) - case_when(is.na(enddate) ~ today,
+                                                        TRUE ~ enddate)
+
+  # Replace negative values with 0
   result[ result < 0 ] <- 0
 
-
-  plyr::mapvalues(-result,
-                  NA,
-                  0,
-                  warn_missing = FALSE)
+  # Change the sign of non-missing values
+  -result
 
 }
-
 
 # Helper functions --------------------------------------------------------
 
@@ -1107,12 +1111,24 @@ test_condition <- function(date_col,
     return(TRUE)
   }
 
-  GW_startdate <- plyr::mapvalues(GW_startdate, NA, lubridate::now(), warn_missing = FALSE)
-  GW_enddate <- plyr::mapvalues(GW_enddate, NA, lubridate::now(), warn_missing = FALSE)
-  cow_startdate <- plyr::mapvalues(cow_startdate, NA, lubridate::now(), warn_missing = FALSE)
-  cow_enddate <- plyr::mapvalues(cow_enddate, NA, lubridate::now(), warn_missing = FALSE)
-  polity_startdate <- plyr::mapvalues(polity_startdate, NA, lubridate::now(), warn_missing = FALSE)
-  polity_enddate <- plyr::mapvalues(polity_enddate, NA, lubridate::now(), warn_missing = FALSE)
+  GW_startdate <- case_when(is.na(GW_startdate) ~ as.Date(lubridate::now()),
+                            TRUE ~ GW_startdate)
+
+  GW_enddate <- case_when(is.na(GW_enddate) ~ as.Date(lubridate::now()),
+                          TRUE ~ GW_enddate)
+
+  cow_startdate <- case_when(is.na(cow_startdate) ~ as.Date(lubridate::now()),
+                             TRUE ~ cow_startdate)
+
+  cow_enddate <- case_when(is.na(cow_enddate) ~ as.Date(lubridate::now()),
+                           TRUE ~ cow_enddate)
+
+  polity_startdate <- case_when(is.na(polity_startdate) ~ as.Date(lubridate::now()),
+                                TRUE ~ polity_startdate)
+
+  polity_enddate <- case_when(is.na(polity_enddate) ~ as.Date(lubridate::now()),
+                              TRUE ~ polity_enddate)
+
 
   before_GW <- unique(ymd(paste0(date_col,"-12-31"))) < min(GW_startdate, na.rm = TRUE)
   before_cow <- unique(ymd(paste0(date_col,"-12-31"))) < min(cow_startdate, na.rm = TRUE)
@@ -1150,8 +1166,11 @@ test_condition <- function(date_col,
              (polity_enddate == max(polity_enddate, na.rm = TRUE)))
   }
 
-  startdate <- plyr::mapvalues(startdate, NA, lubridate::now(), warn_missing = FALSE)
-  enddate <- plyr::mapvalues(enddate, NA, lubridate::now(), warn_missing = FALSE)
+  startdate <- case_when(is.na(startdate) ~ as.Date(lubridate::now()),
+                         TRUE ~ startdate)
+
+  enddate <- case_when(is.na(enddate) ~ as.Date(lubridate::now()),
+                       TRUE ~ enddate)
 
   if(unique(ymd(paste0(date_col,"-12-31"))) > min(startdate, na.rm = TRUE) &
      unique(ymd(paste0(date_col,"-12-31"))) < max(startdate, na.rm = TRUE) &
