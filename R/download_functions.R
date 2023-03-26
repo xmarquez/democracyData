@@ -576,7 +576,7 @@ download_wgi_voice_and_accountability <- function(url,
 #' @family Freedom House
 #' @family ordinal democracy indexes
 #' @source The "Freedom in the World" dataset from Freedom House, updated to
-#'   2021 (Freedom in the World 2022 Report). Original data and methodology is
+#'   2022 (Freedom in the World 2023 Report). Original data and methodology is
 #'   available at \url{https://freedomhouse.org/report/freedom-world}
 #'
 #' @seealso [fh]
