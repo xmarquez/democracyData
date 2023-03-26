@@ -4,13 +4,14 @@
 #'returned by the \code{redownload_*} family of functions (\link{blm},
 #'\link{bmr}, \link{bnr}, \link{bti}, \link{gwf_autocratic},
 #'\link{gwf_autocratic_extended}, \link{gwf_all}, \link{gwf_all_extended},
-#'\link{LIED}, \link{magaloni}, \link{pacl}, \link{pacl_update}, \link{PIPE}, \link{peps},
-#'[polityIV], \link{polyarchy}, \link{polyarchy_dimensions}, \link{REIGN}, \link{uds_2014},
-#'\link{uds_2010}, \link{uds_2011}, \link{ulfelder}, \link{utip},
-#'\link{wahman_teorell_hadenius}, \link{anckar}, \link{svmdi}) are all available
-#'directly from this package and are unlikely to have changed since the package
-#'was installed. Access the respective dataset by typing its name, and refer to
-#'their documentation for details. You will not normally need to redownload
+#'\link{LIED}, \link{magaloni}, \link{pacl}, \link{pacl_update}, \link{PIPE},
+#'\link{peps}, [polityIV], \link{polyarchy}, \link{polyarchy_dimensions},
+#'\link{REIGN}, \link{uds_2014}, \link{uds_2010}, \link{uds_2011},
+#'\link{ulfelder}, \link{utip}, \link{wahman_teorell_hadenius}, \link{anckar},
+#'\link{svmdi}) are all available directly from this package and are unlikely to
+#'have changed since the package was installed. Access the respective dataset by
+#'typing its name, and refer to their documentation for details. You will not
+#'normally need to redownload
 #'them, unless you want to process the raw data yourself (set \code{return_raw =
 #'TRUE}) or suspect they have changed since the package was installed.
 #'
@@ -19,7 +20,7 @@
 #'  \itemize{
 #'
 #'  \item For \link{anckar}:
-#'  \url{https://static-content.springer.com/esm/art\%3A10.1057\%2Fs41304-018-0149-8/MediaObjects/41304_2018_149_MOESM2_ESM.xlsx}
+#'  \url{https://dataverse.harvard.edu/api/access/datafile/3868064?format=original&gbrecs=true}
 #'
 #'  \item For \link{blm}:
 #'  \url{http://www.blmdemocracy.gatech.edu/blm\%20final\%20data.xls}
