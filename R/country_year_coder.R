@@ -1133,7 +1133,6 @@ test_condition <- function(date_col,
   polity_enddate <- case_when(is.na(polity_enddate) ~ as.Date(lubridate::now()),
                               TRUE ~ polity_enddate)
 
-
   before_GW <- unique(ymd(paste0(date_col,"-12-31"))) < min(GW_startdate, na.rm = TRUE)
   before_cow <- unique(ymd(paste0(date_col,"-12-31"))) < min(cow_startdate, na.rm = TRUE)
   before_polity <- unique(ymd(paste0(date_col,"-12-31"))) < min(polity_startdate, na.rm = TRUE)
