@@ -168,7 +168,8 @@ redownload_blm <- function(url,
     message(sprintf("Resulting dataset after processing has %d rows.",
                     nrow(blm)))
     if(nrow(data) != nrow(blm)) {
-      message("Note: the number of rows in the processed BLM data is different from the number of rows in the original data.")
+      message("Note: the number of rows in the processed BLM data is different",
+              " from the number of rows in the original data.")
       if(5*nrow(data) != nrow(blm)) {
         warning(sprintf("There should be %d rows in the final processed data. Something went wrong.",
                         5*nrow(data)))
@@ -187,7 +188,9 @@ redownload_blm <- function(url,
 #' @source Anckar, Carsten and Cecilia Fredriksson (2018). "Classifying
 #'   political regimes 1800-2016: a typology and a new dataset." European
 #'   Political Science, doi: 10.1057/s41304-018-0149-8. Data, article, and
-#'   codebook available at: \doi{10.1057/s41304-018-0149-8}
+#'   codebook available at: \doi{10.1057/s41304-018-0149-8}. Updated data (V2)
+#'   available at
+#'   https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/7SSSAH/DIZXSI&version=2.0.
 #'
 #'
 #' @export
@@ -203,7 +206,7 @@ redownload_anckar <- function(url,
   regimebroadcat <- regimenarrowcat <- abbreviation <- NULL
 
   if(missing(url)) {
-    url <- "https://static-content.springer.com/esm/art%3A10.1057%2Fs41304-018-0149-8/MediaObjects/41304_2018_149_MOESM2_ESM.xlsx"
+    url <- "https://dataverse.harvard.edu/api/access/datafile/3868064?format=original&gbrecs=true"
   }
 
 
@@ -274,7 +277,8 @@ redownload_anckar <- function(url,
     message(sprintf("Resulting dataset after processing has %d rows.",
                     nrow(anckar)))
     if(nrow(data) != nrow(anckar)) {
-      message("Note: the number of rows in the processed Anckar and Fredriksson data is different from the number of rows in the original data.")
+      message("Note: the number of rows in the processed Anckar and Fredriksson ",
+              "data is different from the number of rows in the original data.")
     }
   }
 
