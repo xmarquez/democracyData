@@ -2,11 +2,11 @@
 % Please edit documentation in R/download_functions.R
 \name{download_fh}
 \alias{download_fh}
-\title{Downloads the 2022 update of the Freedom House Freedom in the World data
+\title{Downloads the 2023 update of the Freedom House Freedom in the World data
 and processes it using \link{country_year_coder}}
 \source{
 The "Freedom in the World" dataset from Freedom House, updated to
-2021 (Freedom in the World 2022 Report). Original data and methodology is
+2022 (Freedom in the World 2023 Report). Original data and methodology is
 available at \url{https://freedomhouse.org/report/freedom-world}
 }
 \usage{
@@ -20,7 +20,7 @@ download_fh(
 }
 \arguments{
 \item{url}{The URL of the dataset. Defaults to
-https://freedomhouse.org/sites/default/files/2022-03/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2022\%20.xlsx}
+https://freedomhouse.org/sites/default/files/2023-02/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2023\%20.xlsx}
 
 \item{include_territories}{Whether to include scores from non-independent
 territories (e.g., Indian Kashmir, Northern Ireland) compiled by FH.
