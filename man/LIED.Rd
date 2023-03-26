@@ -121,24 +121,26 @@ L6: LEGSELEC=1 & OPPOSITION=1 & EXSELEC=1 & COMPETITION=1 & MALE SUFFRAGE=1
 & FEMALE SUFFRAGE=1.
 
 In a small number of cases, the resulting index appears to have been
-incorrectly constructed:\preformatted{## # A tibble: 14 x 4
-##    lied_country  year lexical_index lexical_index_original
-##    <chr>        <dbl>         <dbl>                  <dbl>
-##  1 Newfoundland  1925             6                      4
-##  2 Newfoundland  1926             6                      4
-##  3 Newfoundland  1927             6                      4
-##  4 Newfoundland  1928             6                      4
-##  5 Newfoundland  1929             6                      4
-##  6 Newfoundland  1930             6                      4
-##  7 Newfoundland  1931             6                      4
-##  8 Newfoundland  1932             6                      4
-##  9 Somalia       1960             6                      5
-## 10 Somalia       1961             6                      5
-## 11 Somalia       1962             6                      5
-## 12 Somalia       1963             6                      5
-## 13 Sudan         1964             1                      0
-## 14 Cambodia      1946             2                      0
-}
+incorrectly constructed:
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{#> # A tibble: 14 x 4
+#>    lied_country  year lexical_index lexical_index_original
+#>    <chr>        <dbl>         <dbl>                  <dbl>
+#>  1 Newfoundland  1925             6                      4
+#>  2 Newfoundland  1926             6                      4
+#>  3 Newfoundland  1927             6                      4
+#>  4 Newfoundland  1928             6                      4
+#>  5 Newfoundland  1929             6                      4
+#>  6 Newfoundland  1930             6                      4
+#>  7 Newfoundland  1931             6                      4
+#>  8 Newfoundland  1932             6                      4
+#>  9 Somalia       1960             6                      5
+#> 10 Somalia       1961             6                      5
+#> 11 Somalia       1962             6                      5
+#> 12 Somalia       1963             6                      5
+#> 13 Sudan         1964             1                      0
+#> 14 Cambodia      1946             2                      0
+}\if{html}{\out{</div>}}
 
 I've recalculated the index for these cases and put the original value in
 the \code{lexical_index_original} variable.}
