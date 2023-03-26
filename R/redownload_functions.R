@@ -156,7 +156,7 @@ redownload_blm <- function(url,
 
   blm <- data %>%
     tidyr::gather(country, blm, `costa rica`:Nicaragua)  %>%
-    mutate(country = plyr::mapvalues(country, "costa rica", "Costa Rica")) %>%
+    mutate(country = ifelse(country == "costa rica", "Costa Rica", country)) %>%
     country_year_coder(country,
                        year,
                        match_type = "country",
