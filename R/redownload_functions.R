@@ -1327,7 +1327,9 @@ redownload_ulfelder <- function(url,
 #'
 #' @examples
 #' \dontrun{
-#' redownload_pipe()}
+#' # The download URL for PIPE doesn't seem to work anymore; it may work again
+#' # in the future.
+#' # redownload_pipe()}
 redownload_pipe <- function(url,
                           verbose = TRUE,
                           return_raw = FALSE,
