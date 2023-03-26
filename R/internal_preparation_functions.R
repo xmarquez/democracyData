@@ -93,7 +93,7 @@ prepare_mainwaring <- function(path = "../../Data/Mainwaring Linan.txt",
   mainwaring <- data %>%
     group_by(Country, From, To) %>%
     mutate(year = list(From:To)) %>%
-    unnest() %>%
+    unnest(cols = c(year)) %>%
     ungroup() %>%
     country_year_coder(Country,
                        year,
@@ -105,14 +105,16 @@ prepare_mainwaring <- function(path = "../../Data/Mainwaring Linan.txt",
     message(sprintf("Resulting dataset after processing has %d rows.",
                     nrow(mainwaring)))
     if(nrow(mainwaring) != nrow(data)) {
-      message("Note: the number of rows in the processed data is different from the number of rows in the original data.")
+      message("Note: the number of rows in the processed data is",
+              " different from the number of rows in the original data.")
     }
   }
 
   mainwaring <- mainwaring %>%
-    mutate(mainwaring = plyr::mapvalues(Regime,
-                                        from = c("A", "SD", "D"),
-                                        to = c(0, 0.5, 1)),
+    mutate(mainwaring = case_when(Regime == "A" ~ "0",
+                                  Regime == "SD" ~ "0.5",
+                                  Regime == "D" ~ "1",
+                                  TRUE ~ Regime),
            mainwaring = as.numeric(mainwaring))  %>%
     select(Country, year, mainwaring, Regime:Civilian.Power, everything())
 
@@ -123,7 +125,7 @@ prepare_mainwaring <- function(path = "../../Data/Mainwaring Linan.txt",
 
 }
 
-prepare_eiu <- function(path = "EIU Democracy Index 2020.csv",
+prepare_eiu <- function(path = "EIU Democracy Index 2022.csv",
                         verbose = TRUE,
                         ...) {
 
@@ -143,11 +145,11 @@ prepare_eiu <- function(path = "EIU Democracy Index 2020.csv",
   year <- country <- extended_country_name <- NULL
 
   eiu <- data %>%
-    mutate(country = plyr::mapvalues(country, from = "Saudi", to = "Saudi Arabia")) %>%
+    mutate(country = ifelse(country == "Saudi", "Saudi Arabia", country)) %>%
     country_year_coder(country_col = country, date_col = year,
                        verbose = verbose,
                        ...) %>%
-    mutate(country = plyr::mapvalues(country, from = "Saudi Arabia", to = "Saudi")) %>%
+    mutate(country = ifelse(country == "Saudi Arabia", "Saudi", country)) %>%
     arrange(extended_country_name, year)
 
   if(verbose) {
@@ -179,14 +181,13 @@ prepare_doorenspleet <- function(path = "../../Data/Doorenspleet data.csv",
   if(verbose) {
     message(sprintf("Original dataset has %d rows but is not in country-year format",
                     nrow(data)))
-    message("Processing the Doorenspleet data - turning to country-year format, adding state system info...")
+    message("Processing the Doorenspleet data - turning to country-year format, ",
+            "adding state system info...")
   }
 
 
   doorenspleet <- data %>%
-    mutate(country = plyr::mapvalues(country,
-                                     "Republic of Vietnam",
-                                     "South Vietnam")) %>%
+    mutate(country = ifelse(country == "Republic of Vietnam", "South Vietnam", country)) %>%
     group_by(country) %>%
     mutate(end_year_2 = lead(start_year) - 1,
            end_year_2 = ifelse(is.na(end_year), end_year_2,as.numeric(end_year)),
@@ -201,15 +202,17 @@ prepare_doorenspleet <- function(path = "../../Data/Doorenspleet data.csv",
                        match_type = "country",
                        verbose = verbose,
                        ...) %>%
-    mutate(doorenspleet = plyr::mapvalues(regime, from=c("A","I","D"), to = c(1,NA,2)) %>%
-             as.numeric()) %>%
+    mutate(doorenspleet = case_when(regime == "A" ~ 1,
+                                    regime == "I" ~ NA_real_,
+                                    regime == "D" ~ 2)) %>%
     select(country, year, regime, doorenspleet, everything())
 
   if(verbose) {
     message(sprintf("Resulting dataset after processing has %d rows.",
                     nrow(doorenspleet)))
     if(nrow(doorenspleet) != nrow(data)) {
-      message("Note: the number of rows in the processed data is different from the number of rows in the original data.")
+      message("Note: the number of rows in the processed data is",
+              " different from the number of rows in the original data.")
     }
   }
 
@@ -234,16 +237,16 @@ prepare_prc <- function(path = "../../Data/Gasiorowski.csv", verbose = TRUE, ...
   prc_gasiorowski <- data %>%
     group_by(country, regime, start, end)%>%
     mutate(year = list(start:end)) %>%
-    unnest()  %>%
+    unnest(cols = c(year))  %>%
     ungroup() %>%
     country_year_coder(country,
                        year,
                        match_type = "country",
                        verbose = verbose, ...) %>%
-    mutate(prc = plyr::mapvalues(regime,
-                                 from = c("A","T","S","D"),
-                                 to = 1:4),
-           prc = as.numeric(as.character(prc))) %>%
+    mutate(prc = case_when(regime == "A" ~ 1,
+                           regime == "T" ~ 2,
+                           regime == "S" ~ 3,
+                           regime == "D" ~ 4)) %>%
     arrange(country, year, start, end) %>%
     group_by(country, year) %>%
     mutate(prc_at_end_year = last(prc),
@@ -255,7 +258,8 @@ prepare_prc <- function(path = "../../Data/Gasiorowski.csv", verbose = TRUE, ...
     message(sprintf("Resulting dataset after processing has %d rows.",
                     nrow(prc_gasiorowski)))
     if(nrow(data) != nrow(prc_gasiorowski)) {
-      message("Note: the number of rows in the processed Gasiorowski data is different from the number of rows in the original data.")
+      message("Note: the number of rows in the processed Gasiorowski data is ",
+              "different from the number of rows in the original data.")
     }
   }
 
@@ -318,13 +322,10 @@ prepare_svolik_regime <- function(
                        code_type = "cown",
                        verbose = verbose,
                        ...) %>%
-    mutate(regime_numeric = plyr::mapvalues(regime,
-                                            from = c("democracy",
-                                                     "dictatorship",
-                                                     "independence",
-                                                     "no authority"),
-                                            to = c(1, 0, NA, NA)),
-           regime_numeric = as.numeric(regime_numeric)) %>%
+    mutate(regime_numeric = case_when(regime == "democracy" ~ 1,
+                                      regime == "dictatorship" ~ 0,
+                                      regime == "independence" ~ NA_real_,
+                                      regime == "no authority" ~ NA_real_)) %>%
     select(cname, ccode, year, regime, regime_numeric, everything())
 
   standardize_columns(svolik_regime, cname, ccode, verbose = verbose)
