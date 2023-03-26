@@ -4446,12 +4446,13 @@
 
 # Vanhanen ----------------------------------------------------------------
 
-#' Vanhanen measures of democracy, 1800-2012
+#' Vanhanen measures of democracy, 1800-2018
 #'
-#' A dataset containing Tatu Vanhanen's measures of democracy. To cite use
-#' Vanhanen, Tatu. 2019. Measures of Democracy 1810-2018 (dataset). Version 8.0
-#' (2019-06-17). Tampere. <URL: http://urn.fi/urn:nbn:fi:fsd:T-FSD1289>. Data
-#' available at
+#' A dataset containing Tatu Vanhanen's measures of democracy.
+#'
+#' To cite use Vanhanen, Tatu. 2019. Measures of Democracy 1810-2018 (dataset).
+#' Version 8.0 (2019-06-17). Tampere. <URL:
+#' http://urn.fi/urn:nbn:fi:fsd:T-FSD1289>. Data available at
 #' \url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}.
 #'
 #' @section Variables:
@@ -4725,11 +4726,10 @@
 #'   perspective of democracy than more detailed differences among democracies
 #'   or nondemocracies (cf. Vanhanen 2000a, 2000b; 2003).} }
 #' @template standard-variables
-#' @source Vanhanen, Tatu. Measures of Democracy 1810-2012 (computer file).
-#'   FSD1289, version 6.0 (2014-01-31). Vanhanen, Tatu & Lundell, Krister (data
-#'   collection). Tampere. Finnish Social Science Data Archive (distributor),
-#'   2014. Data available at
-#'   \url{http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html}
+#' @source Vanhanen, Tatu. 2019. Measures of Democracy 1810-2018 (dataset).
+#'   Version 8.0 (2019-06-17). Tampere. <URL:
+#'   http://urn.fi/urn:nbn:fi:fsd:T-FSD1289>. Data available at
+#'   \url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}
 #' @family democracy
 #' @family continuous democracy indexes
 "vanhanen"
