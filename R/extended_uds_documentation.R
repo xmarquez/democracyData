@@ -44,7 +44,7 @@
 #'   [polyarchy_dimensions] (both contestation and participation dimensions),
 #'   [prc], [REIGN], [svolik], [ulfelder_extended], [utip] (trichotomous
 #'   indicator, with one-party democracy as the middle category), the
-#'   `v2x_polyarchy` indicator from [vdem::VDem_plus], [vanhanen] (the
+#'   `v2x_polyarchy` indicator from [vdem_simple], [vanhanen] (the
 #'   vanhanen_democratization indicator only), [wgi], and
 #'   [wahman_teorell_hadenius] (the from the `regimenyrobust` variable). Please
 #'   refer to the documentation of [generate_democracy_scores_dataset] for more
