@@ -4,9 +4,8 @@
 \alias{download_wgi_voice_and_accountability}
 \alias{wgi}
 \alias{wgi_democracy}
-\title{Download the latest version (data up to 2021) of the Democracy, Voice, and
-Accountability index from the World Governance Indicators and process it via
-\link{country_year_coder}}
+\title{Democracy, Voice, and Accountability Index from the World Governance
+Indicators}
 \source{
 Worldwide Governance Indicators (http://www.govindicators.org).
 }
@@ -19,7 +18,8 @@ download_wgi_voice_and_accountability(
 )
 }
 \arguments{
-\item{url}{The URL of the dataset. Defaults to \url{http://info.worldbank.org/governance/wgi/Home/downLoadFile?fileName=wgidataset.xlsx}}
+\item{url}{The URL of the dataset. Defaults to
+\url{http://info.worldbank.org/governance/wgi/Home/downLoadFile?fileName=wgidataset.xlsx}}
 
 \item{verbose}{Whether to print a running commentary of what the function is
 doing while processing the data.}
