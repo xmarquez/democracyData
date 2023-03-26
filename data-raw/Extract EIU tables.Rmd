@@ -25,11 +25,11 @@ library(tidyverse)
 # tables_eiu_2019_5 <- extract_tables("Democracy Index 2019_0000000000000000000000000000000000000000000000000000000000000000000000024.pdf")
 # fs::file_delete(new_names[28:50])
 
-tables_eiu <- pdftools::pdf_data("eiu-democracy-index-2021.pdf")
+tables_eiu <- pdftools::pdf_data("DI-final-version-report-2022.pdf")
 
-years <- c(2021:2010, 2008, 2006)
+years <- c(2022:2010, 2008, 2006)
 
-suppressWarnings(table_3 <- 34:38 %>% 
+suppressWarnings(table_3 <- 16:20 %>% 
   map(~tables_eiu[[.]]) %>% 
   map_df(~{filter(., y > 155, y < 735) %>% 
       group_by(y) %>% 
@@ -70,6 +70,6 @@ eiu <- table_3 %>%
 # 
 # eiu <- eiu %>% mutate(across(c(2:3), as.numeric))
 
-write_csv(eiu, "EIU Democracy Index 2020.csv")
+write_csv(eiu, "EIU Democracy Index 2022.csv")
 ```
 
