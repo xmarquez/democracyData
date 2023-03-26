@@ -3,8 +3,8 @@
 \name{download_fh_full}
 \alias{download_fh_full}
 \alias{fh_full}
-\title{Downloads the 2022 update of the Freedom House Freedom in the World All
-Data 2013-2022 file and processes it using \link{country_year_coder}.}
+\title{Downloads the 2023 update of the Freedom House Freedom in the World All
+Data 2013-2023 file and processes it using \link{country_year_coder}.}
 \source{
 The "Freedom in the World" dataset from Freedom House, updated to
 2021 (Freedom in the World 2022 Report). Original data and methodology is
@@ -15,7 +15,7 @@ download_fh_full(url, verbose = TRUE, return_raw = FALSE, ...)
 }
 \arguments{
 \item{url}{The URL of the dataset. Defaults to
-\url{https://freedomhouse.org/sites/default/files/2022-02/All_data_FIW_2013-2022.xlsx}}
+\url{https://freedomhouse.org/sites/default/files/2023-02/All_data_FIW_2013-2023.xlsx}}
 
 \item{verbose}{Whether to print a running commentary of what the function is
 doing while processing the data.}
@@ -26,7 +26,7 @@ Default is \code{FALSE}.}
 \item{...}{Other parameters passed to \link{country_year_coder}.}
 }
 \value{
-A time-series tidy version of the FH "all data 2013-2022" dataset,
+A time-series tidy version of the FH "all data 2013-2023" dataset,
 with the following variables:
 \itemize{
 \item country: The original country name.
