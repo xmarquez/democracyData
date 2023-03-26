@@ -681,8 +681,11 @@ redownload_peps <- function(url,
   peps <- data %>%
     mutate(country = ifelse(Pname == "", Iname, Pname),
            country = ifelse(country == "", FHname, country),
-           country = plyr::mapvalues(country, c("Cameron", "N. Korea"),
-                                     c("Cameroon", "North Korea"))) %>%
+           country = case_when(
+             country == "Cameron" ~ "Cameroon",
+             country == "N. Korea" ~ "North Korea",
+             TRUE ~ country
+           )) %>%
     filter(Pname != "") %>%
     country_year_coder(country,
                        year,
@@ -887,12 +890,20 @@ redownload_polyarchy_original <- function(url,
   polyarchy <- data %>%
     tidyr::gather(variable, value, suff85:cont2000) %>%
     mutate(year = stringr::str_extract(variable, "[0-9]+"),
-           year = plyr::mapvalues(year,
-                                  from = c("85", "00"),
-                                  to = c("1985", "2000")) %>%
-             as.numeric(),
+           year = case_when(
+             year == "85" ~ 1985,
+             year == "00" ~ 2000,
+             TRUE ~ as.numeric(year)
+           ),
            variable = stringr::str_replace_all(variable, "[0-9]+", ""),
-           Country = plyr::mapvalues(Country, "DomRep", "Dominican Republic")) %>%
+           Country = case_when(
+             Country == "DomRep" ~ "Dominican Republic",
+             Country == "Korea, N" ~ "North Korea",
+             Country == "Korea, S" ~ "South Korea",
+             Country == "Yemen, N" ~ "North Yemen",
+             Country == "Yemen, S" ~ "South Yemen",
+             TRUE ~ Country
+           )) %>%
     filter(!is.na(value)) %>%
     tidyr::spread(variable, value) %>%
     country_year_coder(Country,
@@ -1238,13 +1249,20 @@ redownload_ulfelder <- function(url,
 
   data <- data %>%
     mutate(ulfelder_scode =
-             plyr::mapvalues(pitfcode,
-                             from = c("GER","MNE","SRB","UK","USS"),
-                             to = c("GMY","MNT","SER","UKG","USR"))) %>%
+             case_when(
+               pitfcode == "GER" ~ "GMY",
+               pitfcode == "MNE" ~ "MNT",
+               pitfcode == "SRB" ~ "SER",
+               pitfcode == "UK" ~ "UKG",
+               pitfcode == "USS" ~ "USR",
+               TRUE ~ pitfcode
+             )) %>%
     filter(!is.na(rgjtype))
 
   if(verbose) {
-    message("Column ulfelder_scodes has been created by changing pitfcodes GER, MNE, SRB, UK, USS to polity character codes GMY, MNT, SER, UKG, USR")
+    message("Column ulfelder_scodes has been created by changing pitfcodes ",
+            "GER, MNE, SRB, UK, USS to polity character codes ",
+            "GMY, MNT, SER, UKG, USR")
     message("Excluding all rows where rgjtype is NA")
   }
 
@@ -1398,17 +1416,17 @@ redownload_pipe <- function(url,
                        match_type = "country",
                        verbose = verbose,
                        ...) %>%
-    mutate(countryn = plyr::mapvalues(countryn,
-                                      from=c("West Indies F",
-                                             "Leeward Island F",
-                                             "Leeward Islands"),
-                                      to=c("West Indies Federation",
-                                           "Leeward Islands Federation",
-                                           "Leeward Islands Federation")))
+    mutate(countryn = case_when(
+      countryn == "West Indies F" ~ "West Indies Federation",
+      countryn == "Leeward Island F" ~ "Leeward Islands Federation",
+      countryn == "Leeward Islands" ~ "Leeward Islands Federation",
+      TRUE ~ countryn
+    ))
 
   if(verbose) {
     message("Adding calculated variables")
-    message("(republic, republican_period, cum_salterel, cum_term, democracy, democracy2, democracy_age, regime, regime_period)...")
+    message("(republic, republican_period, cum_salterel, cum_term, democracy,",
+            " democracy2, democracy_age, regime, regime_period)...")
   }
 
   PIPE <- PIPE %>%
@@ -1417,8 +1435,7 @@ redownload_pipe <- function(url,
     mutate(republic = ifelse(is.na(republic_age), 0, 1),
            republican_period = count_sequence_breaks(republic, seq_step=0)) %>%
     group_by(country_number, republican_period) %>%
-    mutate(cum_salterel = plyr::mapvalues(salterel, from=c(NA),to=c(0),
-                                          warn_missing = FALSE),
+    mutate(cum_salterel = ifelse(is.na(salterel), 0, salterel),
            cum_salterel = cumsum(cum_salterel),
            cum_term = cumsum(term),
            democracy = (!is.na(republic_age) & cum_salterel > 0 & cum_term > 0),
@@ -1435,7 +1452,7 @@ redownload_pipe <- function(url,
                                   ifelse(!is.na(democracy_age),3,ifelse(!is.na(republic_age),2,NA))))) %>%
     group_by(country_number) %>%
     arrange(country_number, year) %>%
-    mutate(regime_period = plyr::mapvalues(regime, from=NA, to=-1, warn_missing = FALSE),
+    mutate(regime_period = ifelse(is.na(regime), -1, regime),
            regime_period = count_sequence_breaks(regime_period, seq_step=0)) %>%
     ungroup() %>%
     arrange(countryn, year)
