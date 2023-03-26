@@ -7,7 +7,7 @@
 \alias{vdem}
 \title{Simplified version of the V-Dem version 12 dataset}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 27380 rows and 54 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 27555 rows and 54 columns.
 }
 \usage{
 vdem_simple
