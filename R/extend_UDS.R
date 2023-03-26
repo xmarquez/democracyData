@@ -551,38 +551,6 @@ democracy_scores <- function(model,
   scores %>% dplyr::ungroup()
 }
 
-#' Removes empty rows (rows with all NAs) from a data frame
-#'
-#' @param df A data frame
-#' @param vars The variables to select
-#'
-#' @return The original data frame, with the empty rows for the variables
-#'   selected removed
-#' @export
-#'
-#' @examples
-#'
-#' df <- data.frame(a = c(1,2,3,NA, 5), b = c(NA,1,2,NA, 3), c = 1:5)
-#' remove_empty_rows(df, a:b)
-#'
-#' # Different from
-#' na.omit(df)
-remove_empty_rows <- function(df, vars) {
-  empty_rows <- df %>%
-    dplyr::select({{vars}})
-
-  num_cols <- ncol(empty_rows)
-
-  empty_rows <- empty_rows %>%
-    is.na() %>%
-    rowSums()
-
-  empty_rows <- empty_rows == num_cols
-
-  df %>%
-    dplyr::filter(!empty_rows)
-}
-
 
 #' Generates the extended UDS scores from the latest democracy data in this
 #' package
@@ -677,5 +645,38 @@ generate_extended_uds <- function(verbose = FALSE) {
 
   extended_uds
 
+}
+
+#' Removes empty rows (rows with all NAs) from a data frame
+#'
+#' @param df A data frame
+#' @param vars The variables to select
+#'
+#' @return The original data frame, with the empty rows for the variables
+#'   selected removed
+#' @export
+#'
+#' @examples
+#'
+#' df <- data.frame(a = c(1,2,3,NA, 5), b = c(NA,1,2,NA, 3), c = 1:5)
+#' remove_empty_rows(df, a:b)
+#'
+#' # Different from
+#' na.omit(df)
+remove_empty_rows <- function(df, vars) {
+
+  empty_rows <- df %>%
+    dplyr::select({{vars}})
+
+  num_cols <- ncol(empty_rows)
+
+  empty_rows <- empty_rows %>%
+    is.na() %>%
+    rowSums()
+
+  empty_rows <- empty_rows == num_cols
+
+  df %>%
+    dplyr::filter(!empty_rows)
 }
 
