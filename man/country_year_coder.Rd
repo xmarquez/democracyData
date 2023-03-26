@@ -384,10 +384,9 @@ Given a set of country-years, find appropriate country codes, standardized
 country names, and determine state system membership
 }
 \examples{
-\dontrun{
+\donttest{
 library(dplyr)
-library(haven)
-bmr <- read_stata("https://sites.google.com/site/mkmtwo/democracy-v2.0.dta?attredirects=0") \%>\%
-  as_factor()
-country_year_coder(bmr, code_col = ccode, code_type = "polity")}
+bmr <- redownload_bmr(return_raw = TRUE)
+country_year_coder(bmr, country_col = country, date_col = year,
+                   code_col = ccode, code_type = "polity_ccode")}
 }
