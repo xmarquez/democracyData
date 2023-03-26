@@ -4,18 +4,17 @@
 \name{vanhanen}
 \alias{vanhanen}
 \alias{vanhanen_pmm}
-\title{Vanhanen measures of democracy, 1800-2012}
+\title{Vanhanen measures of democracy, 1800-2018}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 16849 rows and 9 columns.
 
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8965 rows and 7 columns.
 }
 \source{
-Vanhanen, Tatu. Measures of Democracy 1810-2012 (computer file).
-FSD1289, version 6.0 (2014-01-31). Vanhanen, Tatu & Lundell, Krister (data
-collection). Tampere. Finnish Social Science Data Archive (distributor),
-2014. Data available at
-\url{http://www.fsd.uta.fi/english/data/catalogue/FSD1289/meF1289e.html}
+Vanhanen, Tatu. 2019. Measures of Democracy 1810-2018 (dataset).
+Version 8.0 (2019-06-17). Tampere. <URL:
+http://urn.fi/urn:nbn:fi:fsd:T-FSD1289>. Data available at
+\url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}
 }
 \usage{
 vanhanen
@@ -23,10 +22,12 @@ vanhanen
 vanhanen_pmm
 }
 \description{
-A dataset containing Tatu Vanhanen's measures of democracy. To cite use
-Vanhanen, Tatu. 2019. Measures of Democracy 1810-2018 (dataset). Version 8.0
-(2019-06-17). Tampere. <URL: http://urn.fi/urn:nbn:fi:fsd:T-FSD1289>. Data
-available at
+A dataset containing Tatu Vanhanen's measures of democracy.
+}
+\details{
+To cite use Vanhanen, Tatu. 2019. Measures of Democracy 1810-2018 (dataset).
+Version 8.0 (2019-06-17). Tampere. <URL:
+http://urn.fi/urn:nbn:fi:fsd:T-FSD1289>. Data available at
 \url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}.
 }
 \section{Variables}{
