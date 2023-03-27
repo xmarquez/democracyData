@@ -34,8 +34,10 @@ LazyDataCompression: bzip2
 Suggests: 
     testthat,
     rmarkdown,
-    vdemdata (>= 13.0)
+    vdemdata (>= 13.0),
+    pdftools,
+    purrr
 URL: https://xmarquez.github.io/democracyData/, https://github.com/xmarquez/democracyData
 BugReports: https://github.com/xmarquez/democracyData/issues
-Remotes:  
+Remotes: 
     vdeminstitute/vdemdata
