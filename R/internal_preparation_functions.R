@@ -62,7 +62,7 @@ extract_pmm_var <- function(pmm_replication_data, pmm_var,
     filter(!is.na(!!pmm_var)) %>%
     tidyr::gather(variable, value, !!pmm_var) %>%
     mutate(!!var_name := value) %>%
-    select(pmm_country, year, !!var_name, include_in_output)
+    select(pmm_country, year, !!var_name, all_of(include_in_output))
 
   pmm_var_extracted
 
