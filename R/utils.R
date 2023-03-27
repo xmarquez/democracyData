@@ -274,10 +274,10 @@ standardize_columns <- function(data,
 #' cite_dataset("pmm")
 #' cite_dataset("uds") # Same output as the previous one
 cite_dataset <- function(dataset_name, to_bibtex = FALSE) {
-  BibOptions(use.regex = TRUE)
+  RefManageR::BibOptions(use.regex = TRUE)
 
   if(to_bibtex) {
-    toBiblatex(democracyData::bibliography[key = dataset_name])
+    RefManageR::toBiblatex(democracyData::bibliography[key = dataset_name])
   } else {
     democracyData::bibliography[key = dataset_name]
   }
