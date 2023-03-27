@@ -137,6 +137,8 @@ prepare_eiu <- function(path = "DI-final-version-report-2022.pdf",
   rlang::check_installed("pdftools")
   rlang::check_installed("purrr")
 
+  y <- values <- NULL
+
   tables_eiu <- pdftools::pdf_data(path)
 
   years <- c(2022:2010, 2008, 2006)
@@ -449,7 +451,7 @@ prepare_anrr <- function(path = "DDCGdata_final.dta",
 prepare_vdem_simple <- function(verbose = TRUE, version = "13.0", ...) {
   rlang::check_installed("vdemdata", version = version)
 
-  country_name <- v2x_mpi_sd <- COWcode <- NULL
+  country_name <- v2x_mpi_sd <- COWcode <- year <- extended_country_name <- NULL
 
   vdem <- vdemdata::vdem
 
@@ -488,9 +490,9 @@ prepare_vdem_simple <- function(verbose = TRUE, version = "13.0", ...) {
 
 prepare_kailitz <- function(path, verbose = TRUE, include_in_output) {
 
-  kailitz_country <- year <- cown <- combined_regime <- transition <- NULL
+  kailitz_country <- kailitz_cown <- year <- cown <- combined_regime <- transition <- NULL
 
-  kailitz <- read_rds(path) %>%
+  kailitz <- readr::read_rds(path) %>%
     select(kailitz_country, year, cown, combined_regime:transition) %>%
     rename(kailitz_cown = cown) %>%
     mutate(year = as.double(year))
