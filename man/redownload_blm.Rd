@@ -29,7 +29,9 @@ Comparative Political Studies 38 (8): 939-970.
 Anckar, Carsten and Cecilia Fredriksson (2018). "Classifying
 political regimes 1800-2016: a typology and a new dataset." European
 Political Science, doi: 10.1057/s41304-018-0149-8. Data, article, and
-codebook available at: \doi{10.1057/s41304-018-0149-8}
+codebook available at: \doi{10.1057/s41304-018-0149-8}. Updated data (V2)
+available at
+https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/7SSSAH/DIZXSI&version=2.0.
 
 Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A Complete
 Data Set of Political Regimes, 1800-2007. Comparative Political Studies 46
@@ -175,7 +177,7 @@ redownload_reign(url, verbose = TRUE, return_raw = FALSE, ...)
 \itemize{
 
 \item For \link{anckar}:
-\url{https://static-content.springer.com/esm/art\%3A10.1057\%2Fs41304-018-0149-8/MediaObjects/41304_2018_149_MOESM2_ESM.xlsx}
+\url{https://dataverse.harvard.edu/api/access/datafile/3868064?format=original&gbrecs=true}
 
 \item For \link{blm}:
 \url{http://www.blmdemocracy.gatech.edu/blm\%20final\%20data.xls}
@@ -232,7 +234,7 @@ For the 2016 release, it defaults to
 \url{https://dataverse.harvard.edu/api/access/datafile/2420018}
 
 \item For \link{PIPE}:
-\url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}
+\url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data} (no longer publicly available, it seems)
 
 }}
 
@@ -244,15 +246,15 @@ Default is \code{FALSE}.}
 
 \item{...}{Other parameters passed to \link{country_year_coder}.}
 
-\item{extend}{(Only for \link{redownload_gwf},
-\link{redownload_magaloni}, and \link{redownload_ulfelder}). Whether to
-extend the dataset back in time using the appropriate duration variable
-(\code{gwf_duration}, \code{duration_nr}, or \code{rgjdura} and
-\code{rgjdurd}, respectively, for \link{redownload_gwf},
-\link{redownload_magaloni}, and \link{redownload_ulfelder}). For example,
-the United States enters the GWF dataset in 1946, where \code{gwf_duration}
-is already 75; one can extend the dataset to indicate that the country was
-classified as a democracy from 1872. Default is \code{FALSE}.}
+\item{extend}{(Only for \link{redownload_gwf}, \link{redownload_magaloni}, and
+\link{redownload_ulfelder}). Whether to extend the dataset back in time
+using the appropriate duration variable (\code{gwf_duration},
+\code{duration_nr}, or \code{rgjdura} and \code{rgjdurd}, respectively, for
+\link{redownload_gwf}, \link{redownload_magaloni}, and
+\link{redownload_ulfelder}). For example, the United States enters the GWF
+dataset in 1946, where \code{gwf_duration} is already 75; one can extend the
+dataset to indicate that the country was classified as a democracy from
+1872. Default is \code{FALSE}.}
 
 \item{dataset}{(Only for \link{redownload_gwf}). The dataset to output. Geddes, Wright, and Frantz provide
 two country-year files, one with autocratic regimes only ("autocratic only"), and one with both
@@ -271,20 +273,23 @@ Download and process various democracy datasets. Note that the datasets
 returned by the \code{redownload_*} family of functions (\link{blm},
 \link{bmr}, \link{bnr}, \link{bti}, \link{gwf_autocratic},
 \link{gwf_autocratic_extended}, \link{gwf_all}, \link{gwf_all_extended},
-\link{LIED}, \link{magaloni}, \link{pacl}, \link{pacl_update}, \link{PIPE}, \link{peps},
-\link{polityIV}, \link{polyarchy}, \link{polyarchy_dimensions}, \link{REIGN}, \link{uds_2014},
-\link{uds_2010}, \link{uds_2011}, \link{ulfelder}, \link{utip},
-\link{wahman_teorell_hadenius}, \link{anckar}, \link{svmdi}) are all available
-directly from this package and are unlikely to have changed since the package
-was installed. Access the respective dataset by typing its name, and refer to
-their documentation for details. You will not normally need to redownload
+\link{LIED}, \link{magaloni}, \link{pacl}, \link{pacl_update}, \link{PIPE},
+\link{peps}, \link{polityIV}, \link{polyarchy}, \link{polyarchy_dimensions},
+\link{REIGN}, \link{uds_2014}, \link{uds_2010}, \link{uds_2011},
+\link{ulfelder}, \link{utip}, \link{wahman_teorell_hadenius}, \link{anckar},
+\link{svmdi}) are all available directly from this package and are unlikely to
+have changed since the package was installed. Access the respective dataset by
+typing its name, and refer to their documentation for details. You will not
+normally need to redownload
 them, unless you want to process the raw data yourself (set \code{return_raw =
 TRUE}) or suspect they have changed since the package was installed.
 }
 \examples{
 \dontrun{
-blm <- redownload_blm()
-blm
+# The download URL for BLM doesn't seem to work anymore; it may work again
+# in the future
+# blm <- redownload_blm()
+# blm
 }
 \dontrun{
 redownload_anckar()}
@@ -316,7 +321,9 @@ redownload_svmdi() # For release year 2020}
 \dontrun{
 redownload_ulfelder()}
 \dontrun{
-redownload_pipe()}
+# The download URL for PIPE doesn't seem to work anymore; it may work again
+# in the future.
+# redownload_pipe()}
 \dontrun{
 bti <- redownload_bti()
 bti
