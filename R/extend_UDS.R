@@ -369,7 +369,7 @@ cutpoints <- function(model, type = "score") {
 
   estimate <- pct025 <- pct975 <- coef_type <- coef <- NULL
 
-  coefs <- as.data.frame(coef(model, as.data.frame = TRUE))
+  coefs <- as.data.frame(mirt::coef(model, as.data.frame = TRUE))
 
   coefs <- coefs %>%
     mutate(variable = rownames(coefs),
