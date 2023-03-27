@@ -125,7 +125,7 @@ prepare_mainwaring <- function(path = "../../Data/Mainwaring Linan.txt",
 
 }
 
-prepare_eiu <- function(path = "EIU Democracy Index 2022.csv",
+prepare_eiu <- function(path = "DI-final-version-report-2022.pdf",
                         verbose = TRUE,
                         ...) {
 
@@ -134,7 +134,30 @@ prepare_eiu <- function(path = "EIU Democracy Index 2022.csv",
     message(sprintf("Trying %s ...", path))
   }
 
-  data <- readr::read_csv(path)
+  rlang::check_installed("pdftools")
+  rlang::check_installed("purrr")
+
+  tables_eiu <- pdftools::pdf_data(path)
+
+  years <- c(2022:2010, 2008, 2006)
+
+
+  year <- country <- extended_country_name <- text <- NULL
+
+  suppressWarnings(table_3 <- 16:20 %>%
+                     purrr::map(~tables_eiu[[.]]) %>%
+                     purrr::map_df(~{filter(., y > 155, y < 735) %>%
+                         group_by(y) %>%
+                         summarise(country = paste(text[is.na(as.numeric(text))], collapse = " "),
+                                   values = list(as.numeric(text[!is.na(as.numeric(text))]))) %>%
+                         unnest(cols = c(values)) %>%
+                         group_by(country) %>%
+                         mutate(year = years[1:n()])}) %>%
+                     select(-y))
+
+  data <- table_3 %>%
+    filter(!country %in% c("", "average", "World average")) %>%
+    rename(eiu = values)
 
   if(verbose) {
     message(sprintf("Original dataset has %d rows and is in country-year format",
@@ -142,15 +165,14 @@ prepare_eiu <- function(path = "EIU Democracy Index 2022.csv",
     message("Processing the EIU data - adding state system info...")
   }
 
-  year <- country <- extended_country_name <- NULL
-
   eiu <- data %>%
     mutate(country = ifelse(country == "Saudi", "Saudi Arabia", country)) %>%
     country_year_coder(country_col = country, date_col = year,
                        verbose = verbose,
                        ...) %>%
     mutate(country = ifelse(country == "Saudi Arabia", "Saudi", country)) %>%
-    arrange(extended_country_name, year)
+    arrange(extended_country_name, year) %>%
+    ungroup()
 
   if(verbose) {
     message(sprintf("Resulting dataset after processing has %d rows.",
@@ -462,6 +484,30 @@ prepare_vdem_simple <- function(verbose = TRUE, version = "13.0", ...) {
            vdem_cowcode = COWcode)
 
   vdem_simple
+}
+
+prepare_kailitz <- function(path, verbose = TRUE, include_in_output) {
+
+  kailitz_country <- year <- cown <- combined_regime <- transition <- NULL
+
+  kailitz <- read_rds(path) %>%
+    select(kailitz_country, year, cown, combined_regime:transition) %>%
+    rename(kailitz_cown = cown) %>%
+    mutate(year = as.double(year))
+
+  kailitz <- kailitz %>%
+    country_year_coder(kailitz_country,
+                       year,
+                       code_col = kailitz_cown,
+                       verbose = verbose,
+                       include_in_output = include_in_output,
+                       code_type = "cown")
+
+  kailitz <- kailitz %>%
+    select(kailitz_country, kailitz_cown, year, combined_regime:transition, include_in_output)
+
+  standardize_columns(kailitz, kailitz_country, kailitz_cown, verbose = verbose)
+
 }
 
 # create_anrr_scores <- function(verbose = TRUE) {
