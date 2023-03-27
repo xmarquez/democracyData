@@ -421,7 +421,8 @@ download_wgi_voice_and_accountability <- function(url,
   tmp <- tempfile(fileext = ".xlsx")
   utils::download.file(url, tmp, mode = "wb")
 
-  data <- readxl::read_excel(tmp, sheet = 2, skip = 14)
+  data <- readxl::read_excel(tmp, sheet = 2, skip = 14,
+                             .name_repair = "unique_quiet")
 
   names(data) <- c("wb_country", "wb_code",
                    paste(rep(c("Estimate", "StdErr", "NumSrc",
