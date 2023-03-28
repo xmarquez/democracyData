@@ -11,8 +11,9 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 11582 rows and 62 columns.
 }
 \source{
-Jay Ulfelder. \emph{Democracy/Autocracy Data Set}. 2012.
-\url{http://hdl.handle.net/1902.1/18836}
+J. Ulfelder. \emph{Democracy/Autocracy Data Set}. 2012. \url{http://hdl.handle.net/1902.1/18836}.
+
+J. Ulfelder and M. Lustik. "Modelling Transitions To and From Democracy". In: \emph{Democratization} 14.3 (2007), pp. 351-387. DOI: 10.1080/13510340701303196.
 }
 \usage{
 ulfelder
@@ -20,8 +21,7 @@ ulfelder
 ulfelder_extended
 }
 \description{
-This is the dataset documented in Jay Ulfelder. \emph{Democracy/Autocracy Data
-Set}. 2012. \url{http://hdl.handle.net/1902.1/18836}. It comes in two
+This is the dataset documented in J. Ulfelder. \emph{Democracy/Autocracy Data Set}. 2012. \url{http://hdl.handle.net/1902.1/18836}. It comes in two
 versions: \link{ulfelder}, which only goes back to 1955, and
 \link{ulfelder_extended}, which extends the regime classifications back in
 time using the \code{rgjdura} and \code{rgjdurd} variables, adding 3861

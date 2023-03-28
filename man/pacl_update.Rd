@@ -8,10 +8,7 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 14768 rows and 46 columns.
 }
 \source{
-C. Bjørnskov and M. Rode. "Regime types and regime change: A new
-dataset on democracy, coups, and political institutions". In: \emph{The Review of
-International Organizations} 15.2 (2020), pp. 531-551. DOI:
-10.1007/s11558-019-09345-1. The full data and codebook can be downloaded
+C. Bjørnskov and M. Rode. "Regime types and regime change: A new dataset on democracy, coups, and political institutions". In: \emph{The Review of International Organizations} 15.2 (2020), pp. 531-551. DOI: 10.1007/s11558-019-09345-1. The full data and codebook can be downloaded
 here \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}
 }
 \usage{
@@ -19,11 +16,8 @@ pacl_update
 }
 \description{
 This dataset updates \link{pacl} with more countries and coverage from 1950 to
-2020, as described in C. Bjørnskov and M. Rode. "Regime types and regime
-change: A new dataset on democracy, coups, and political institutions". In:
-\emph{The Review of International Organizations} 15.2 (2020), pp. 531-551. DOI:
-10.1007/s11558-019-09345-1. The full data and codebook can be downloaded here
-\url{http://www.christianbjoernskov.com/bjoernskovrodedata/}. The
+2020, as described in C. Bjørnskov and M. Rode. "Regime types and regime change: A new dataset on democracy, coups, and political institutions". In: \emph{The Review of International Organizations} 15.2 (2020), pp. 531-551. DOI: 10.1007/s11558-019-09345-1. The full data and codebook
+can be downloaded here: \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}. The
 documentation below is directly copied from the codebook.
 }
 \details{

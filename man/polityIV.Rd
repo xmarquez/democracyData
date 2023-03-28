@@ -8,9 +8,7 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 17562 rows and 40 columns.
 }
 \source{
-Marshall, Monty G., Ted Robert Gurr, and Keith Jaggers. 2019. "Polity
-IV Project: Political Regime Characteristics and Transitions, 1800-2018.
-Dataset Users' Manual. Center for Systemic Peace. Available at
+M. G. Marshall, T. R. Gurr, and K. Jaggers. \emph{Polity IV Project: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual.} Center for Systemic Peace, 2019. Available at
 \url{http://www.systemicpeace.org/inscr/p4manualv2018.pdf}
 }
 \usage{

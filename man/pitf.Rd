@@ -17,14 +17,9 @@ pitf_p4
 }
 \description{
 The democracy indicator used by the political instability task force and
-described in Goldstone, Jack, Robert Bates, David Epstein, Ted Gurr, Michael
-Lustik, Monty Marshall, Jay Ulfelder, and Mark Woodward. 2010. A Global Model
-for Forecasting Political Instability. American Journal of Political Science
-54 (1): 190-208. DOI:10.1111/j.1540-5907.2009.00426.x and in Taylor, Sean J.
-and Ulfelder, Jay, A Measurement Error Model of Dichotomous Democracy Status
-(May 20, 2015). Available at SSRN: \url{http://ssrn.com/abstract=2726962} or
-\doi{10.2139/ssrn.2726962}. This is derived from the Polity
-dataset (pitf uses version 5; pitf_p4 uses PolityIV updated to 2018).
+described in J. Goldstone, R. Bates, D. Epstein, et al. "A Global Model for Forecasting Political Instability". In: \emph{American Journal of Political Science} 54.1 (2010), pp. 190-208. DOI: 10.1111/j.1540-5907.2009.00426.x. and in S. J. Taylor and J. Ulfelder. "A Measurement Error Model of Dichotomous Democracy Status". In: \emph{Available at SSRN} (2015). DOI: 10.2139/ssrn.2726962.
+This is derived from the Polity dataset (pitf uses version 5; pitf_p4 uses
+PolityIV updated to 2018).
 }
 \section{Variables}{
 
@@ -146,11 +141,8 @@ but exrec != 8)
 4-Full democracy (exrec = 8, parcomp = 5). See Goldstone et al. 2010 for
 full details.}
 
-\item{pitf_binary}{A simplification of the pitf indicator of democracy
-described in Taylor, Sean J. and Ulfelder, Jay, A Measurement Error Model
-of Dichotomous Democracy Status (May 20, 2015). Available at SSRN:
-\url{http://ssrn.com/abstract=2726962} or
-\doi{10.2139/ssrn.2726962}. A country is a democracy (1)
+\item{pitf_binary}{A simplification of the pitf indicator of democracy.
+A country is a democracy (1)
 "if its chief executive is chosen in competitive elections (EXREC equal to
 7 or 8) and political competition is not suppressed (PARCOMP equal to 0 or
 PARCOMP greater than 2)" Otherwise it is a non-democracy (0).} }
@@ -191,15 +183,9 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 }
 
 \references{
-Goldstone, Jack, Robert Bates, David Epstein, Ted Gurr, Michael Lustik, Monty
-Marshall, Jay Ulfelder, and Mark Woodward. 2010. A Global Model for
-Forecasting Political Instability. American Journal of Political Science 54
-(1): 190-208. DOI:10.1111/j.1540-5907.2009.00426.x
+J. Goldstone, R. Bates, D. Epstein, et al. "A Global Model for Forecasting Political Instability". In: \emph{American Journal of Political Science} 54.1 (2010), pp. 190-208. DOI: 10.1111/j.1540-5907.2009.00426.x.
 
-Taylor, Sean J. and Ulfelder, Jay, A Measurement Error Model of Dichotomous
-Democracy Status (May 20, 2015). Available at SSRN:
-\url{http://ssrn.com/abstract=2726962} or
-\doi{10.2139/ssrn.2726962}
+S. J. Taylor and J. Ulfelder. "A Measurement Error Model of Dichotomous Democracy Status". In: \emph{Available at SSRN} (2015). DOI: 10.2139/ssrn.2726962.
 }
 \seealso{
 Other democracy: 

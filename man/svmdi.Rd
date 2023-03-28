@@ -11,9 +11,9 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 5376 rows and 13 columns.
 }
 \source{
-K. Grundler and T. Krieger. 2018. Machine Learning Indices, Political
-Institutions, and Economic Development. Report. CESifo Group Munich, 2018.
-\url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}.
+K. Gründler and T. Krieger. "Democracy and growth: Evidence from a machine learning indicator". In: \emph{European Journal of Political Economy} 45 (2016), pp. 85-107. DOI: https://doi.org/10.1016/j.ejpoleco.2016.05.005. \url{http://www.sciencedirect.com/science/article/pii/S0176268016300222}.
+
+K. Gründler and T. Krieger. "Democracy and growth: Evidence from a machine learning indicator". In: \emph{European Journal of Political Economy} 45 (2016), pp. 85-107. DOI: https://doi.org/10.1016/j.ejpoleco.2016.05.005. \url{http://www.sciencedirect.com/science/article/pii/S0176268016300222}.
 }
 \usage{
 svmdi
@@ -21,14 +21,8 @@ svmdi
 svmdi_2016
 }
 \description{
-This is the index described in K. Grundler and T. Krieger. 2018. Machine
-Learning Indices, Political Institutions, and Economic Development. Report.
-CESifo Group Munich, 2018.
-\url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}. An earlier
-version of this index (used in K. Grundler and T. Krieger. 2016. "Democracy
-and growth: Evidence from a machine learning indicator". European Journal of
-Political Economy 45, pp. 85-107.
-\doi{10.1016/j.ejpoleco.2016.05.005}) is available as
+This is the index described in K. Gründler and T. Krieger. \emph{Machine Learning Indices, Political Institutions, and Economic Development}. Report. CESifo Group Munich, 2018. \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}. An earlier
+version of this index (used in K. Gründler and T. Krieger. "Democracy and growth: Evidence from a machine learning indicator". In: \emph{European Journal of Political Economy} 45 (2016), pp. 85-107. DOI: https://doi.org/10.1016/j.ejpoleco.2016.05.005. \url{http://www.sciencedirect.com/science/article/pii/S0176268016300222}.) is available as
 \link{svmdi_2016}; there are some important differences between the values of the
 earlier and later versions of the index.
 }

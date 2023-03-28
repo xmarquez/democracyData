@@ -8,9 +8,7 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 19775 rows and 16 columns.
 }
 \source{
-Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A Complete
-Data Set of Political Regimes, 1800-2007. Comparative Political Studies 46
-(12): 1523-1554. Available at
+C. Boix, M. Miller, and S. Rosato. "A Complete Dataset of Political Regimes, 1800-2007". In: \emph{Comparative Political Studies} 46.12 (2012), pp. 1523-1554. DOI: 10.1177/0010414012463905. Available at
 \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT}
 (versions 1-3) and \url{https://sites.google.com/site/mkmtwo/data} (version
 4.0)
@@ -20,9 +18,7 @@ bmr
 }
 \description{
 A dataset containing the Boix-Miller-Rosato (BMR) dichotomous coding of
-democracy, first used in the paper Boix, Carles, Michael Miller, and
-Sebastian Rosato. 2012. A Complete Data Set of Political Regimes, 1800-2007.
-Comparative Political Studies 46 (12): 1523-1554. The complete dataset can be
+democracy, first used in the paper C. Boix, M. Miller, and S. Rosato. "A Complete Dataset of Political Regimes, 1800-2007". In: \emph{Comparative Political Studies} 46.12 (2012), pp. 1523-1554. DOI: 10.1177/0010414012463905. The complete dataset can be
 downloaded here: \url{https://sites.google.com/site/mkmtwo/data}. The
 complete codebook is available there as well.
 }

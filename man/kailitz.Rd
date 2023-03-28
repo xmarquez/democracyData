@@ -8,18 +8,13 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 9606 rows and 18 columns.
 }
 \source{
-Kailitz, Steffen. 2013. Classifying political regimes revisited:
-legitimation and durability. Democratization 20 (1): 39-60. Original data
-available at \doi{10.1080/13510347.2013.738861}.
+S. Kailitz. "Classifying political regimes revisited: legitimation and durability". In: \emph{Democratization} 20.1 (2013), pp. 39-60. DOI: 10.1080/13510347.2013.738861.
 }
 \usage{
 kailitz
 }
 \description{
-Contains the authoritarian regime types dataset from Kailitz, Steffen. 2013.
-Classifying political regimes revisited: legitimation and durability.
-Democratization 20 (1): 39-60. Original data available at
-\doi{10.1080/13510347.2013.738861}.
+Contains the authoritarian regime types dataset from S. Kailitz. "Classifying political regimes revisited: legitimation and durability". In: \emph{Democratization} 20.1 (2013), pp. 39-60. DOI: 10.1080/13510347.2013.738861.
 }
 \section{Variables}{
 

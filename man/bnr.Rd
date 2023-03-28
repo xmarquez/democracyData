@@ -12,9 +12,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 10320 rows and 9 columns.
 }
 \source{
-Michael Bernhard, Timothy Nordstrom, and Christopher
-Reenock, "Economic Performance, Institutional Intermediation and Democratic
-Breakdown," Journal of Politics 63:3 (2001), pp. 775-803. Data and coding
+M. Bernhard, T. Nordstrom, and C. Reenock. "Economic Performance, Institutional Intermediation, and Democratic Survival". In: \emph{Journal of Politics} 63.3 (2001), pp. 775-803. DOI: 10.1111/0022-3816.00087. Data and coding
 description used to be available at
 \url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}, but no longer.
 }
@@ -25,9 +23,7 @@ bnr_extended
 }
 \description{
 The Bernhard, Nordstrom & Reenock Event History Coding of Democratic
-Breakdowns. From Michael Bernhard, Timothy Nordstrom, and Christopher
-Reenock, "Economic Performance, Institutional Intermediation and Democratic
-Breakdown," Journal of Politics 63:3 (2001), pp. 775-803. Data and coding
+Breakdowns. From M. Bernhard, T. Nordstrom, and C. Reenock. "Economic Performance, Institutional Intermediation, and Democratic Survival". In: \emph{Journal of Politics} 63.3 (2001), pp. 775-803. DOI: 10.1111/0022-3816.00087. Data and coding
 description used to be available at
 \url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}, but no longer.
 }

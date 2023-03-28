@@ -8,18 +8,14 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 13877 rows and 10 columns.
 }
 \source{
-Doorenspleet, Renske. 2000. Reassessing the Three Waves of
-Democratization. World Politics 52 (03): 384-406.
-\doi{10.1017/S0043887100016580}.
+R. Doorenspleet. "Reassessing the Three Waves of Democratization". In: \emph{World Politics} 52.03 (2000), pp. 384-406. DOI: 10.1017/S0043887100016580.
 }
 \usage{
 doorenspleet
 }
 \description{
 A dataset containing the country-year version of the democracy classification
-described in Doorenspleet, Renske. 2000. Reassessing the Three Waves of
-Democratization. World Politics 52 (03): 384-406. DOI:
-10.1017/S0043887100016580. \doi{10.1017/S0043887100016580}.
+described in R. Doorenspleet. "Reassessing the Three Waves of Democratization". In: \emph{World Politics} 52.03 (2000), pp. 384-406. DOI: 10.1017/S0043887100016580.
 }
 \details{
 \describe{

@@ -13,11 +13,9 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 6002 rows and 7 columns.
 }
 \source{
-Gasiorowski, Mark J. 1996. "An Overview of the Political Regime
-Change Dataset." Comparative Political Studies 29(4):469-483.
+M. Gasiorowski. "An Overview of the Political Regime Change Dataset". In: \emph{Comparative Political Studies} 29.4 (1996), pp. 469-483. DOI: 10.1177/0010414096029004004.
 
-Reich, G. 2002. Categorizing Political Regimes: New Data for Old
-Problems. Democratization 9 (4): 1-24.
+G. Reich. "Categorizing Political Regimes: New Data for Old Problems". In: \emph{Democratization} 9.4 (2002), pp. 1-24. DOI: 10.1080/714000289.
 \url{http://www.tandfonline.com/doi/pdf/10.1080/714000289}.
 }
 \usage{
@@ -26,11 +24,9 @@ prc_gasiorowski
 prc_pmm
 }
 \description{
-The Political Regime Change dataset. First described in Gasiorowski, Mark J.
-1996. "An Overview of the Political Regime Change Dataset." Comparative
-Political Studies 29(4):469-483. Available in updated form in Reich, G. 2002.
-Categorizing Political Regimes: New Data for Old Problems. Democratization 9
-(4): 1-24. \url{http://www.tandfonline.com/doi/pdf/10.1080/714000289}.
+The Political Regime Change dataset. First described in M. Gasiorowski. "An Overview of the Political Regime Change Dataset". In: \emph{Comparative Political Studies} 29.4 (1996), pp. 469-483. DOI: 10.1177/0010414096029004004.
+Available in updated form in G. Reich. "Categorizing Political Regimes: New Data for Old Problems". In: \emph{Democratization} 9.4 (2002), pp. 1-24. DOI: 10.1080/714000289.
+\url{http://www.tandfonline.com/doi/pdf/10.1080/714000289}.
 }
 \details{
 \describe{
@@ -105,17 +101,13 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 \section{Note}{
 
 
-The \code{prc_pmm} version of this data is taken from from Pemstein,
-Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
-Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-Type." In: Harvard Dataverse.
-\url{http://hdl.handle.net/1902.1/PMM}. The
-original dataset is found in \code{prc_gasiorowski}. The \code{prc_pmm}
-data only goes back to 1945. It also differs from the original data in 245
-country-years, because it only includes one year per country - whereas
-\code{prc_gasiorowski} can include more than one regime classification for
-a given year. It is included here for completeness (and to enable one to
-replicate the \link{uds}).
+The \code{prc_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
+The original dataset is found in
+\link{prc_gasiorowski}. The \link{prc_pmm} data only goes back to 1945. It
+also differs from the original data in 245 country-years, because it only
+includes one year per country - whereas \link{prc_gasiorowski} can include
+more than one regime classification for a given year. It is included here
+for completeness (and to enable one to replicate the \link{uds} index).
 }
 
 \seealso{

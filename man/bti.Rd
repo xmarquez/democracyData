@@ -8,8 +8,7 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1233 rows and 88 columns.
 }
 \source{
-Transformation Index of the Bertelsmann Stiftung 2022. Bertelsmann
-Stiftung. Available at
+Bertelsmann Stiftung. \emph{Transformation Index of the Bertelsmann Stiftung 2022}. Tech. rep. Bertelsmann Stiftung, 2022. Available at
 \url{https://www.bti-project.org/en/index/political-transformation.html}
 }
 \usage{

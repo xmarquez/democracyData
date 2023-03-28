@@ -10,17 +10,17 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 10291 rows and 10 columns.
 }
+\source{
+B. Magaloni, J. Chu, and E. Min. \emph{Autocracies of the World, 1950-2012 (Version 1.0)}. Dataset. 2013. \url{http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset}.
+}
 \usage{
 magaloni
 
 magaloni_extended
 }
 \description{
-The "Autocracies of the World" dataset by Beatriz Magaloni, Jonathan Chu, and
-Eric Min.  Please cite as Magaloni, Beatriz, Jonathan Chu, and Eric Min.
-2013. Autocracies of the World, 1950-2012 (Version 1.0). Dataset, Stanford
-University. Original data and codebook available at
-\url{http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset/}.
+The "Autocracies of the World" dataset by B. Magaloni, J. Chu, and E. Min. \emph{Autocracies of the World, 1950-2012 (Version 1.0)}. Dataset. 2013. \url{http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset}.
+Original data and codebook used to be available at the link.
 The documentation here is directly derived from this codebook.
 }
 \section{Overview}{
@@ -39,9 +39,9 @@ have given rise to a wealth of insightful research.
 Attempts to study autocracies in a larger-scale, quantitative manner have
 resulted in the creation of datasets that classify countries over time
 using varying taxonomies. The field of extant datasets is relatively new
-and still developing. (For examples, see Wahman et al. 2013; Geddes et
-al. 2011; and Cheibub et al. 2010.) We seek to contribute to this
-research agenda with this first edition of a new dataset.
+and still developing. (For examples, see Wahman et al. 2013; Geddes et al.
+2011; and Cheibub et al. 2010.) We seek to contribute to this research
+agenda with this first edition of a new dataset.
 
 Our dataset includes several features that we believe are quite useful.
 These include:
@@ -58,11 +58,11 @@ observations are relevant to their analysis. (The only exception is Somalia
 from 1991 to 2006, where the polity seems truly "stateless.") Similarly, we
 sought to eliminate hybrid regime classifications. There are high quality
 datasets available for scholars who are interested analyzing hybrid
-authoritarian regimes (such as Geddes et al. 2011). We have found,
-however, that hybrid classifications often (1) hinder useful quantitative
-analysis or (2) are actually essentially one type of regime, but only
-appear hybrid due to certain window-dressing institutional features.
-Finding the "essential" regime type seems to be a valuable contribution.
+authoritarian regimes (such as Geddes et al. 2011). We have found, however,
+that hybrid classifications often (1) hinder useful quantitative analysis
+or (2) are actually essentially one type of regime, but only appear hybrid
+due to certain window-dressing institutional features. Finding the
+"essential" regime type seems to be a valuable contribution.
 \item Providing two novel and objective measures of personalism. Currently
 available datasets recognize that certain autocratic regimes are highly
 "personalistic" and have created a personalist regime type. We agree that

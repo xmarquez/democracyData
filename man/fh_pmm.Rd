@@ -10,19 +10,13 @@ Melton's replication dataset}
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 6438 rows and 7 columns.
 }
 \source{
-Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
-"Replication data for: Democratic Compromise: A Latent Variable Analysis of
-Ten Measures of Regime Type." In: Harvard Dataverse.
-\url{http://hdl.handle.net/1902.1/PMM}.
+D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
 }
 \usage{
 fh_pmm
 }
 \description{
-This is the Freedom House data included in Pemstein, Daniel, Stephen A.
-Meserve, and James Melton. 2013. "Replication data for: Democratic
-Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." In:
-Harvard Dataverse. \url{http://hdl.handle.net/1902.1/PMM}. It differs for
+This is the Freedom House data included in D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}. It differs for
 some country-years from the current version of the Freedom House data, which
 can be accessed using \link{download_fh}; hence its inclusion here.
 }
@@ -39,7 +33,7 @@ single year. In particular, the year 1981 is "skipped" -- a single survey
 covers Jan.1981 - Aug. 1982 and its value is assigned to 1982 here.}
 
 \item{fh_pmm}{A reversed measure of political rights and civil liberties,
-from 1 to 7, with higher values being more democratic (the oppositie of the
+from 1 to 7, with higher values being more democratic (the opposite of the
 actual FH data).} }
 }
 

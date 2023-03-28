@@ -3,8 +3,7 @@
 \name{download_fh_electoral}
 \alias{download_fh_electoral}
 \alias{fh_electoral}
-\title{Downloads the 2023 update of the Freedom House Electoral Democracies list and
-processes it using \link{country_year_coder}.}
+\title{Freedom House Electoral Democracies List}
 \source{
 The "Freedom in the World" dataset from Freedom House, updated to
 2022 (Freedom in the World report 2023 edition). Original data and
@@ -43,7 +42,8 @@ is a little opaque).
 }
 }
 \description{
-The original data is available at
+Downloads the 2023 update of the Freedom House Electoral Democracies list and
+processes it using \link{country_year_coder}. The original data is available at
 \url{https://freedomhouse.org/report/freedom-world},
 spread over a number of different urls.
 }

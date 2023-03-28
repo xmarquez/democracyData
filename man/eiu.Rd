@@ -8,17 +8,15 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 2505 rows and 7 columns.
 }
 \source{
-The economist Intelligence Unit. 2021. Democracy
-Index 2020: The Rise of China.
-\url{https://www.eiu.com/topic/democracy-index}.
+The Economist Intelligence Unit. \emph{Democracy Index 2022: Frontline democracy and the battle for Ukraine}. Tech. rep. The Economist Intelligence Unit, 2023. \url{https://www.eiu.com/topic/democracy-index}.
 }
 \usage{
 eiu
 }
 \description{
 A dataset containing the country-year version of the democracy index compiled
-by the Economist Intelligence Unit, 2006-2021. From the report "Democracy
-Index 2021: The China challenge", available at
+by the Economist Intelligence Unit, 2006-2022. From the report "Democracy
+Index 2022: Frontline democracy and the battle for Ukraine", available at
 \url{https://www.eiu.com/topic/democracy-index}.
 }
 \details{

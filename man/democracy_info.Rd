@@ -87,17 +87,18 @@ from the current data; for example, as far as I know the Polity I data was
 first used in a 1975 study (though its compilation started in the late
 1960s), but the current Polity 5 data is very different.}
 
+\item{source_link}{A link to where the data is (or was) originally hosted.
+Some of these links no longer work.}
+
+\item{licensing_info}{Licensing info, if available. I assume CC0 unless
+otherwise stated; some datasets have CC-BY-4.0 licenses.}
+
 \item{notes}{Other notes. Evolving.} }
 }
 
 \references{
-Pemstein, Daniel, Stephen Meserve, and James Melton. 2010.
-Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-Type. Political Analysis 18 (4): 426-449.
+D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.  D. Pemstein, S. Meserve, and J. Melton. "Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type". In: \emph{Political Analysis} 18.4 (2010), pp. 426-449. DOI: 10.1093/pan/mpq020.
 
-Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication
-data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures
-of Regime Type." In: Harvard Dataverse.
 \url{http://hdl.handle.net/1902.1/PMM}
 }
 \keyword{datasets}

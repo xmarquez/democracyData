@@ -11,10 +11,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 275 rows and 7 columns.
 }
 \source{
-Bowman, Kirk, Fabrice Lehoucq, and James Mahoney. 2005. Measuring
-Political Democracy: Case Expertise, Data Adequacy, and Central America.
-Comparative Political Studies 38 (8): 939-970.
-\url{http://cps.sagepub.com/content/38/8/939}. Data available at
+K. Bowman, F. Lehoucq, and J. Mahoney. "Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America". In: \emph{Comparative Political Studies} 38.8 (2005), pp. 939-970. DOI: 10.1177/0010414005277083. Data used to be available at
 \url{http://www.blmdemocracy.gatech.edu/}.
 }
 \usage{
@@ -23,11 +20,9 @@ blm
 blm_pmm
 }
 \description{
-Contains the trichotomous measure of regime type from Bowman, Kirk, Fabrice
-Lehoucq, and James Mahoney. 2005. Measuring Political Democracy: Case
-Expertise, Data Adequacy, and Central America. Comparative Political Studies
-38 (8): 939-970. \url{http://cps.sagepub.com/content/38/8/939}. Data
-available at \url{http://www.blmdemocracy.gatech.edu/}.
+Contains the trichotomous measure of regime type from K. Bowman, F. Lehoucq, and J. Mahoney. "Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America". In: \emph{Comparative Political Studies} 38.8 (2005), pp. 939-970. DOI: 10.1177/0010414005277083.
+\url{http://cps.sagepub.com/content/38/8/939}. Data used to be available at
+\url{http://www.blmdemocracy.gatech.edu/}.
 }
 \section{Variables}{
 
@@ -84,13 +79,9 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 \section{Note}{
 
 
-The \code{blm_pmm} version of this data is taken from from Pemstein, Daniel,
-Stephen A. Meserve, and James Melton. 2013. "Replication data for:
-Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-Type." In: Harvard Dataverse.
-\url{http://hdl.handle.net/1902.1/PMM}. The
-original dataset is found in \code{blm}. The \code{blm_pmm} data only goes back to
-1946, but is otherwise identical to the \code{blm} data. It is included here for
+The \code{blm_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}. The
+original dataset is found in \link{blm}. The \code{blm_pmm} data only goes back to
+1946, but is otherwise identical to the \link{blm} data. It is included here for
 completeness.
 }
 

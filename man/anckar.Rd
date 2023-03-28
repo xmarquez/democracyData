@@ -8,20 +8,15 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18777 rows and 13 columns.
 }
 \source{
-C. Anckar and C. Fredriksson. 2018. "Classifying political regimes
-1800-2016: a typology and a new dataset". European Political Science.
-\doi{10.1057/s41304-018-0149-8}. Version 2 available at
+C. Anckar and C. Fredriksson. "Classifying political regimes 1800-2016: a typology and a new dataset". In: \emph{European Political Science} (2018). DOI: 10.1057/s41304-018-0149-8. \url{https://doi.org/10.1057/s41304-018-0149-8}. Version 2 available at
 \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/7SSSAH&version=2.0}.
 }
 \usage{
 anckar
 }
 \description{
-Dataset described in C. Anckar and C. Fredriksson. 2018. "Classifying
-political regimes 1800-2016: a typology and a new dataset". European
-Political Science. DOI: 10.1057/s41304-018-0149-8.
-\doi{10.1057/s41304-018-0149-8}. Data and codebook at the link. This is
-version 2 of the data, available at
+Dataset described in C. Anckar and C. Fredriksson. "Classifying political regimes 1800-2016: a typology and a new dataset". In: \emph{European Political Science} (2018). DOI: 10.1057/s41304-018-0149-8. \url{https://doi.org/10.1057/s41304-018-0149-8}. Data and codebook at the
+link. This is version 2 of the data, available at
 \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/7SSSAH&version=2.0}.
 }
 \section{Variables}{
@@ -43,9 +38,7 @@ modified version of the Polity code (with the USSR = 364, for example). Use
 
 \item{democracy}{This should be identical to version 2 of Boix, Miller and
 Rosato's Dichotomous democracy measure (\code{democracy_omitteddata}; see
-\link{bmr}). (Carles Boix, Michael K. Miller, and Sebastian Rosato. 2013. "A
-Complete Data Set of Political Regimes, 1800-2007." Comparative Political
-Studies 46(12): 1523-54). Supplemented for all countries for the period
+\link{bmr}). Supplemented for all countries for the period
 2011-2016, as well as for Liechtenstein 1866-1990, Monaco 1862-2016, and
 San Marino 1800-1992, by Anckar and Fredriksson. 1 = democracy, 0 =
 non-democracy.}

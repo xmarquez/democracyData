@@ -11,14 +11,9 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 835 rows and 7 columns.
 }
 \source{
-Mainwaring, S., D. Brinks and A. Perez-Linan. 2001. "Classifying
-Political Regimes in Latin America." Studies in Comparative International
-Development 36(1): 37-65.
+S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political Regimes in Latin America, 1900-2007 (with Daniel Brinks)". In: \emph{Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall}. New York: Cambridge University Press, 2014.
 
-Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
-"Replication data for: Democratic Compromise: A Latent Variable Analysis of
-Ten Measures of Regime Type." In: Harvard Dataverse.
-\url{http://hdl.handle.net/1902.1/PMM}.
+D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
 }
 \usage{
 mainwaring
@@ -26,9 +21,9 @@ mainwaring
 mainwaring_pmm
 }
 \description{
-Trichotomous democracy indicator from Mainwaring, Scott, Daniel Brinks, and
-Anibal Perez Linan. 2008. "Political Regimes in Latin America, 1900-2007."
-Original data used to be available from
+Trichotomous democracy indicator from S. Mainwaring, D. Brinks, and A. Pérez-Liñán. "Classifying Political Regimes in Latin America". In: \emph{Studies in Comparative International Development} 36.1 (2001), pp. 37-65. DOI: 10.1007/bf02687584.
+Extended in S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political Regimes in Latin America, 1900-2007 (with Daniel Brinks)". In: \emph{Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall}. New York: Cambridge University Press, 2014. Original data used to be available
+from
 \url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}, though no
 longer.
 }
@@ -41,17 +36,10 @@ longer.
 
 \item{year}{The calendar year. }
 
-\item{mainwaring}{Trichotomous democracy indicator from Mainwaring, Scott,
-Daniel Brinks, and Anibal Perez Linan. 2008. "Political Regimes in Latin
-America, 1900-2007." Original data used to be available from
-\url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}.
+\item{mainwaring}{Trichotomous numerical democracy indicator from S. Mainwaring, D. Brinks, and A. Pérez-Liñán. "Classifying Political Regimes in Latin America". In: \emph{Studies in Comparative International Development} 36.1 (2001), pp. 37-65. DOI: 10.1007/bf02687584.  S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political Regimes in Latin America, 1900-2007 (with Daniel Brinks)". In: \emph{Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall}. New York: Cambridge University Press, 2014.
 0 = non-democracy, 0.5 = hybrid, 1 = democracy.}
 
-\item{Regime}{Trichotomous democracy indicator from Mainwaring, Scott,
-Daniel Brinks, and Anibal Perez Linan. 2008. "Political Regimes in Latin
-America, 1900-2007." Original data used to be available from
-\url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}.
-A = Authoritarian, D = Democracy, SD = Semidemocracy. From the published
+\item{Regime}{Trichotomous democracy indicator. From the published
 article:
 
 When governments commit no violation of any of the four criteria
@@ -193,19 +181,15 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 \section{Note}{
 
 
-The \link{mainwaring_pmm} version of this data is taken from from Pemstein,
-Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
-Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-Type." In: Harvard Dataverse.
-\url{http://hdl.handle.net/1902.1/PMM}. It
-only contains a numeric version of the Mainwaring Regime indicator, ranging
-from -1 (Authoritarian) to 0 (Semidemocracy) to 1 (Democracy). The original
-dataset is found in \link{mainwaring}. PMM's replication data is actually
-missing a fair number of the data points in the original data by Mainwaring
-et al (Mainwaring, Brinks, and Perez Linan 2008), but the original data is
-not missing any of their data points, and there are no differences between
-the data points wherever both the original and the replication data have
-values. It is included here for completeness.
+The \link{mainwaring_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
+It only contains a numeric version of the
+Mainwaring Regime indicator, ranging from -1 (Authoritarian) to 0
+(Semidemocracy) to 1 (Democracy). The original dataset is found in
+\link{mainwaring}. PMM's replication data is actually missing a fair number
+of the data points in the original dataset, but the original dataset is not
+missing any of their data points, and there are no differences between the
+data points wherever both the original and the replication data have values.
+It is included here for completeness.
 }
 
 \seealso{

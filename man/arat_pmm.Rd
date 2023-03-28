@@ -9,24 +9,13 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 3873 rows and 7 columns.
 }
 \source{
-Arat, Zehra F. 1991. Democracy and human rights in
-developing countries. Boulder: Lynne Rienner Publishers. Taken from Pemstein,
-Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
-Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-Type." In: Harvard Dataverse.
-\url{http://hdl.handle.net/1902.1/PMM}
+Z. F. Arat. \emph{Democracy and human rights in developing countries}. Boulder: Lynne Rienner Publishers, 1991. Taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
 }
 \usage{
 arat_pmm
 }
 \description{
-Democracy score from Arat, Zehra F. 1991. Democracy and human rights in
-developing countries. Boulder: Lynne Rienner Publishers. Taken from Pemstein,
-Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
-Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-Type." In: Harvard Dataverse.
-\url{http://hdl.handle.net/1902.1/PMM}. Min =
-29, max = 109, n = 3873.
+Democracy score from Z. F. Arat. \emph{Democracy and human rights in developing countries}. Boulder: Lynne Rienner Publishers, 1991. Taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
 }
 \section{Variables}{
 

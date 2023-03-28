@@ -9,14 +9,11 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 510 rows and 7 columns.
 }
 \source{
-Bollen, Kenneth A. 2001. "Cross-National
-Indicators of Liberal Democracy, 1950-1990." 2nd ICPSR version. Chapel Hill,
-NC: University of North Carolina, 1998. Ann Arbor, MI: Inter-university
-Consortium for Political and Social Research, 2001. Original data available
+K. Bollen and P. Paxton. "Subjective Measures of Liberal Democracy". In: \emph{Comparative Political Studies} 33.1 (2000), pp. 58-86. DOI: 10.1177/0010414000033001003.
+
+K. A. Bollen. \emph{Cross-National Indicators of Liberal Democracy, 1950-1990}. Data set. 2001. Original data available
 at \url{http://webapp.icpsr.umich.edu/cocoon/ICPSR-STUDY/02532.xml}. Taken from
-Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication
-data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures
-of Regime Type." In: Harvard Dataverse. \url{http://hdl.handle.net/1902.1/PMM}.
+D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
 }
 \usage{
 bollen_pmm
@@ -26,10 +23,8 @@ bollen_pmm
 Indicators of Liberal Democracy, 1950-1990." 2nd ICPSR version. Chapel Hill,
 NC: University of North Carolina, 1998. Ann Arbor, MI: Inter-university
 Consortium for Political and Social Research, 2001. Original data available
-at \url{http://webapp.icpsr.umich.edu/cocoon/ICPSR-STUDY/02532.xml}. Taken from
-Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication
-data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures
-of Regime Type." In: Harvard Dataverse. \url{http://hdl.handle.net/1902.1/PMM}.
+at \url{https://www.icpsr.umich.edu/web/ICPSR/studies/2532/publications}.
+Taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
 }
 \section{Variables}{
 

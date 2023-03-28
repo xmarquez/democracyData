@@ -11,9 +11,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 9067 rows and 7 columns.
 }
 \source{
-Cheibub, Jose Antonio, Jennifer Gandhi, and James Raymond Vreeland.
-2010. "Democracy and Dictatorship Revisited." Public Choice, vol. 143, no.
-2-1, pp. 67-101. DOI: 10.1007/s11127-009-9491-2. The full data and codebook
+J. Cheibub, J. Gandhi, and J. Vreeland. "Democracy and dictatorship revisited". In: \emph{Public Choice} 143.1 (2010), pp. 67-101. DOI: 10.1007/s11127-009-9491-2. The full data and codebook
 can be downloaded here
 \url{https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited}
 }
@@ -23,10 +21,8 @@ pacl
 pacl_pmm
 }
 \description{
-This dataset (aka PACL, ACLP or CGV) is described in Cheibub, Jose Antonio,
-Jennifer Gandhi, and James Raymond Vreeland. 2010. "Democracy and
-Dictatorship Revisited." Public Choice, vol. 143, no. 2-1, pp. 67-101. DOI:
-10.1007/s11127-009-9491-2. The full data and codebook can be downloaded here
+This dataset (aka PACL, ACLP or CGV) is described in J. Cheibub, J. Gandhi, and J. Vreeland. "Democracy and dictatorship revisited". In: \emph{Public Choice} 143.1 (2010), pp. 67-101. DOI: 10.1007/s11127-009-9491-2.
+The full data and codebook can be downloaded here
 \url{https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited}.
 The documentation below is directly copied from the codebook.
 }
@@ -433,12 +429,10 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 \section{Note}{
 
 
-The \code{pacl_pmm} version of this data is taken from from Pemstein, Daniel,
-Stephen A. Meserve, and James Melton. 2013. It only contains the numberic
-version of the variable \code{democracy} in the original dataset. "Replication
-data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures
-of Regime Type." In: Harvard Dataverse. \url{http://hdl.handle.net/1902.1/PMM}.
-The original dataset is found in \code{pacl}. \code{pacl_pmm} is missing a few
+The \code{pacl_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
+It only contains the numeric version of the
+variable \code{democracy} in the original dataset. The
+original dataset is found in \code{pacl}. \code{pacl_pmm} is missing a few
 country-years when compared with \code{pacl}.
 }
 

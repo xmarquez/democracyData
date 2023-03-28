@@ -2,8 +2,7 @@
 % Please edit documentation in R/country_year_coder.R
 \name{country_year_coder}
 \alias{country_year_coder}
-\title{Given a set of country-years, find appropriate country codes, standardized
-country names, and determine state system membership}
+\title{Country-Year State System Coding}
 \usage{
 country_year_coder(
   tbl,

@@ -9,18 +9,14 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 13937 rows and 14 columns.
 }
 \source{
-Bell, Curtis. 2016. The Rulers, Elections, and Irregular Governance
-Dataset (REIGN). Broomfield, CO: OEF Research. Available at
-\url{http://oefresearch.org/datasets/reign}
+C. Bell. \emph{The Rulers, Elections, and Irregular Governance Dataset (REIGN)}. 2016. \url{http://oefresearch.org/datasets/reign}.
 }
 \usage{
 REIGN
 }
 \description{
-Bell, Curtis. 2016. The Rulers, Elections, and Irregular Governance Dataset
-(REIGN). Broomfield, CO: OEF Research. The dataset, variable descriptions,
-and technical notes, are available at
-\url{http://oefresearch.org/datasets/reign}. The variable descriptions below
+C. Bell. \emph{The Rulers, Elections, and Irregular Governance Dataset (REIGN)}. 2016. \url{http://oefresearch.org/datasets/reign}. The dataset, variable descriptions,
+and technical notes, are available at the link. The variable descriptions below
 are taken from
 \url{http://oefresearch.org/sites/default/files/REIGN_descriptions.pdf}.
 Collection stopped in 2021; this dataset is now archived in this package.

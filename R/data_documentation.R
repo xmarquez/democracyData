@@ -3,11 +3,8 @@
 
 #' The Anckar-Fredriksson dataset of political regimes
 #'
-#' Dataset described in C. Anckar and C. Fredriksson. 2018. "Classifying
-#' political regimes 1800-2016: a typology and a new dataset". European
-#' Political Science. DOI: 10.1057/s41304-018-0149-8.
-#' \doi{10.1057/s41304-018-0149-8}. Data and codebook at the link. This is
-#' version 2 of the data, available at
+#' Dataset described in `r roxygen_cite("anckar")` Data and codebook at the
+#' link. This is version 2 of the data, available at
 #' \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/7SSSAH&version=2.0}.
 #'
 #' @section Variables:
@@ -28,9 +25,7 @@
 #'
 #'   \item{democracy}{This should be identical to version 2 of Boix, Miller and
 #'   Rosato's Dichotomous democracy measure (\code{democracy_omitteddata}; see
-#'   [bmr]). (Carles Boix, Michael K. Miller, and Sebastian Rosato. 2013. "A
-#'   Complete Data Set of Political Regimes, 1800-2007." Comparative Political
-#'   Studies 46(12): 1523-54). Supplemented for all countries for the period
+#'   [bmr]). Supplemented for all countries for the period
 #'   2011-2016, as well as for Liechtenstein 1866-1990, Monaco 1862-2016, and
 #'   San Marino 1800-1992, by Anckar and Fredriksson. 1 = democracy, 0 =
 #'   non-democracy.}
@@ -60,19 +55,15 @@
 #' @family democracy
 #' @family authoritarianism
 #' @family dichotomous democracy indexes
-#' @source C. Anckar and C. Fredriksson. 2018. "Classifying political regimes
-#'   1800-2016: a typology and a new dataset". European Political Science.
-#'   \doi{10.1057/s41304-018-0149-8}. Version 2 available at
+#' @source `r roxygen_cite("anckar")` Version 2 available at
 #'   \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/7SSSAH&version=2.0}.
 "anckar"
 
 # ANRR ------------------------------------------------------------------
 
-#' The Acemoglu, Naidu, Restrepo and Robinson deocracy dataset
+#' The Acemoglu, Naidu, Restrepo and Robinson democracy dataset
 #'
-#' Dataset described in D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy
-#' Does Cause Growth". In: _Journal of Political Economy_ 127.1 (2019), pp.
-#' 47-100. \doi{10.1086/700936}. Data at the link.
+#' Dataset described in `r roxygen_cite("anrr")` Data at the link.
 #'
 #' @section Variables:
 #'
@@ -211,22 +202,14 @@
 #' @template standard-variables
 #' @family democracy
 #' @family dichotomous democracy indexes
-#' @source D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy Does Cause
-#'   Growth". In: _Journal of Political Economy_ 127.1 (2019), pp. 47-100.
-#'   \doi{10.1086/700936}.
+#' @source `r roxygen_cite("anrr")`
 "anrr"
 
 # Arat --------------------------------------------------------------------
 
 #' The Arat measure of democracy
 #'
-#' Democracy score from Arat, Zehra F. 1991. Democracy and human rights in
-#' developing countries. Boulder: Lynne Rienner Publishers. Taken from Pemstein,
-#' Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
-#' Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-#' Type." In: Harvard Dataverse.
-#' \url{http://hdl.handle.net/1902.1/PMM}. Min =
-#' 29, max = 109, n = 3873.
+#' Democracy score from `r roxygen_cite("arat")` Taken from `r roxygen_cite("pmm2013")`
 #'
 #' @section Variables:
 #'
@@ -240,12 +223,7 @@
 #'   \item{arat_pmm}{Democracy index. Ranges from a minumum of 29 to a maximum of 109.} }
 #'
 #' @template standard-variables
-#' @source Arat, Zehra F. 1991. Democracy and human rights in
-#' developing countries. Boulder: Lynne Rienner Publishers. Taken from Pemstein,
-#' Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
-#' Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-#' Type." In: Harvard Dataverse.
-#' \url{http://hdl.handle.net/1902.1/PMM}
+#' @source `r roxygen_cite("arat")` Taken from `r roxygen_cite("pmm2013")`
 #' @family democracy
 #' @family PMM replication data
 #' @family continuous democracy indexes
@@ -258,11 +236,9 @@
 
 #' The Bowman, Lehoucq, and Mahoney index of democracy for Central America
 #'
-#' Contains the trichotomous measure of regime type from Bowman, Kirk, Fabrice
-#' Lehoucq, and James Mahoney. 2005. Measuring Political Democracy: Case
-#' Expertise, Data Adequacy, and Central America. Comparative Political Studies
-#' 38 (8): 939-970. \url{http://cps.sagepub.com/content/38/8/939}. Data
-#' available at \url{http://www.blmdemocracy.gatech.edu/}.
+#' Contains the trichotomous measure of regime type from `r roxygen_cite("blm")`
+#' \url{http://cps.sagepub.com/content/38/8/939}. Data used to be available at
+#' \url{http://www.blmdemocracy.gatech.edu/}.
 #'
 #' @section Variables:
 #'
@@ -280,10 +256,7 @@
 #'   countries (Costa Rica, El Salvador, Guatemala, Honduras and Nicaragua) from
 #'   1900 to 2000.} }
 #' @template standard-variables
-#' @source Bowman, Kirk, Fabrice Lehoucq, and James Mahoney. 2005. Measuring
-#'   Political Democracy: Case Expertise, Data Adequacy, and Central America.
-#'   Comparative Political Studies 38 (8): 939-970.
-#'   \url{http://cps.sagepub.com/content/38/8/939}. Data available at
+#' @source `r roxygen_cite("blm")` Data used to be available at
 #'   \url{http://www.blmdemocracy.gatech.edu/}.
 #' @family democracy
 #' @family PMM replication data
@@ -294,13 +267,9 @@
 #' @rdname blm
 #' @section Note:
 #'
-#'   The \code{blm_pmm} version of this data is taken from from Pemstein, Daniel,
-#'   Stephen A. Meserve, and James Melton. 2013. "Replication data for:
-#'   Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-#'   Type." In: Harvard Dataverse.
-#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). The
-#'   original dataset is found in \code{blm}. The \code{blm_pmm} data only goes back to
-#'   1946, but is otherwise identical to the \code{blm} data. It is included here for
+#'   The \code{blm_pmm} version of this data is taken from `r roxygen_cite("pmm2013")` The
+#'   original dataset is found in [blm]. The \code{blm_pmm} data only goes back to
+#'   1946, but is otherwise identical to the [blm] data. It is included here for
 #'   completeness.
 "blm_pmm"
 
@@ -311,9 +280,7 @@
 #' Boix-Miller-Rosato dichotomous coding of democracy, 1800-2020, version 4.0
 #'
 #' A dataset containing the Boix-Miller-Rosato (BMR) dichotomous coding of
-#' democracy, first used in the paper Boix, Carles, Michael Miller, and
-#' Sebastian Rosato. 2012. A Complete Data Set of Political Regimes, 1800-2007.
-#' Comparative Political Studies 46 (12): 1523-1554. The complete dataset can be
+#' democracy, first used in the paper `r roxygen_cite("bmr")` The complete dataset can be
 #' downloaded here: \url{https://sites.google.com/site/mkmtwo/data}. The
 #' complete codebook is available there as well.
 #'
@@ -349,9 +316,7 @@
 #' at least half of adult women have the right to vote. 30 countries change
 #' values.} }
 #' @template standard-variables
-#' @source Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A Complete
-#'   Data Set of Political Regimes, 1800-2007. Comparative Political Studies 46
-#'   (12): 1523-1554. Available at
+#' @source `r roxygen_cite("bmr")` Available at
 #'   \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT}
 #'   (versions 1-3) and \url{https://sites.google.com/site/mkmtwo/data} (version
 #'   4.0)
@@ -368,9 +333,7 @@
 #' Breakdowns
 #'
 #' The Bernhard, Nordstrom & Reenock Event History Coding of Democratic
-#' Breakdowns. From Michael Bernhard, Timothy Nordstrom, and Christopher
-#' Reenock, "Economic Performance, Institutional Intermediation and Democratic
-#' Breakdown," Journal of Politics 63:3 (2001), pp. 775-803. Data and coding
+#' Breakdowns. From `r roxygen_cite("bnr")` Data and coding
 #' description used to be available at
 #' \url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}, but no longer.
 #'
@@ -428,9 +391,7 @@
 #'
 #'   }
 #' @template standard-variables
-#' @source Michael Bernhard, Timothy Nordstrom, and Christopher
-#' Reenock, "Economic Performance, Institutional Intermediation and Democratic
-#' Breakdown," Journal of Politics 63:3 (2001), pp. 775-803. Data and coding
+#' @source `r roxygen_cite("bnr")` Data and coding
 #' description used to be available at
 #' \url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}, but no longer.
 #' @family democracy
@@ -628,8 +589,7 @@
 #'
 #'   }
 #' @template standard-variables
-#' @source Transformation Index of the Bertelsmann Stiftung 2022. Bertelsmann
-#'   Stiftung. Available at
+#' @source `r roxygen_cite("bti")` Available at
 #'   \url{https://www.bti-project.org/en/index/political-transformation.html}
 #' @family democracy
 #' @family continuous democracy indexes
@@ -644,10 +604,8 @@
 #' Indicators of Liberal Democracy, 1950-1990." 2nd ICPSR version. Chapel Hill,
 #' NC: University of North Carolina, 1998. Ann Arbor, MI: Inter-university
 #' Consortium for Political and Social Research, 2001. Original data available
-#' at [http://webapp.icpsr.umich.edu/cocoon/ICPSR-STUDY/02532.xml](http://webapp.icpsr.umich.edu/cocoon/ICPSR-STUDY/02532.xml). Taken from
-#' Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication
-#' data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures
-#' of Regime Type." In: Harvard Dataverse. [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM).
+#' at \url{https://www.icpsr.umich.edu/web/ICPSR/studies/2532/publications}.
+#' Taken from `r roxygen_cite("pmm2013")`
 #'
 #' @section Variables:
 #'
@@ -660,14 +618,10 @@
 #'
 #'   \item{bollen_pmm}{Democracy index. Ranges from 0 to 100.} }
 #' @template standard-variables
-#' @source Bollen, Kenneth A. 2001. "Cross-National
-#' Indicators of Liberal Democracy, 1950-1990." 2nd ICPSR version. Chapel Hill,
-#' NC: University of North Carolina, 1998. Ann Arbor, MI: Inter-university
-#' Consortium for Political and Social Research, 2001. Original data available
+#' @source `r roxygen_cite("bollenPaxton")`
+#' @source `r roxygen_cite("bollen2001")` Original data available
 #' at \url{http://webapp.icpsr.umich.edu/cocoon/ICPSR-STUDY/02532.xml}. Taken from
-#' Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication
-#' data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures
-#' of Regime Type." In: Harvard Dataverse. \url{http://hdl.handle.net/1902.1/PMM}.
+#' `r roxygen_cite("pmm2013")`
 #' @family democracy
 #' @family PMM replication data
 #' @family continuous democracy indexes
@@ -680,8 +634,8 @@
 #' The Economist Intelligence Unit's Democracy Index
 #'
 #' A dataset containing the country-year version of the democracy index compiled
-#' by the Economist Intelligence Unit, 2006-2021. From the report "Democracy
-#' Index 2021: The China challenge", available at
+#' by the Economist Intelligence Unit, 2006-2022. From the report "Democracy
+#' Index 2022: Frontline democracy and the battle for Ukraine", available at
 #' \url{https://www.eiu.com/topic/democracy-index}.
 #'
 #' \describe{
@@ -698,9 +652,7 @@
 #' @template standard-variables
 #' @family democracy
 #' @family continuous democracy indexes
-#' @source The economist Intelligence Unit. 2021. Democracy
-#' Index 2020: The Rise of China.
-#'   \url{https://www.eiu.com/topic/democracy-index}.
+#' @source `r roxygen_cite("eiu")` \url{https://www.eiu.com/topic/democracy-index}.
 "eiu"
 
 # Doorenspleet ------------------------------------------------------------
@@ -709,9 +661,7 @@
 #' Renske Doorenspleet's Democracy Dataset
 #'
 #' A dataset containing the country-year version of the democracy classification
-#' described in Doorenspleet, Renske. 2000. Reassessing the Three Waves of
-#' Democratization. World Politics 52 (03): 384-406. DOI:
-#' 10.1017/S0043887100016580. \doi{10.1017/S0043887100016580}.
+#' described in `r roxygen_cite("doorenspleet")`
 #'
 #' \describe{
 #'
@@ -787,9 +737,7 @@
 #' @template standard-variables
 #' @family democracy
 #' @family dichotomous democracy indexes
-#' @source Doorenspleet, Renske. 2000. Reassessing the Three Waves of
-#'   Democratization. World Politics 52 (03): 384-406.
-#'   \doi{10.1017/S0043887100016580}.
+#' @source `r roxygen_cite("doorenspleet")`
 "doorenspleet"
 
 
@@ -799,10 +747,7 @@
 #' Freedom House "Freedom in the World" data from Pemstein, Meserve, and
 #' Melton's replication dataset
 #'
-#' This is the Freedom House data included in Pemstein, Daniel, Stephen A.
-#' Meserve, and James Melton. 2013. "Replication data for: Democratic
-#' Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." In:
-#' Harvard Dataverse. \url{http://hdl.handle.net/1902.1/PMM}. It differs for
+#' This is the Freedom House data included in `r roxygen_cite("pmm2013")` It differs for
 #' some country-years from the current version of the Freedom House data, which
 #' can be accessed using \link{download_fh}; hence its inclusion here.
 #'
@@ -818,15 +763,12 @@
 #'   covers Jan.1981 - Aug. 1982 and its value is assigned to 1982 here.}
 #'
 #'   \item{fh_pmm}{A reversed measure of political rights and civil liberties,
-#'   from 1 to 7, with higher values being more democratic (the oppositie of the
+#'   from 1 to 7, with higher values being more democratic (the opposite of the
 #'   actual FH data).} }
 #'
 #' @template standard-variables
 #'
-#' @source Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
-#'   "Replication data for: Democratic Compromise: A Latent Variable Analysis of
-#'   Ten Measures of Regime Type." In: Harvard Dataverse.
-#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM).
+#' @source `r roxygen_cite("pmm2013")`
 #' @family democracy
 #' @family Freedom House
 #' @family PMM replication data
@@ -840,12 +782,8 @@
 
 #' Axel Hadenius' Index of Democracy
 #'
-#' 0-10 index of democracy from Hadenius, Axel. 1992. Democracy and Development.
-#' Cambridge: Cambridge University Press. Taken from Pemstein, Daniel, Stephen
-#' A. Meserve, and James Melton. 2013. "Replication data for: Democratic
-#' Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." In:
-#' Harvard Dataverse. [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). Higher values are more
-#' democratic.
+#' 0-10 index of democracy from `r roxygen_cite("hadenius1992")`
+#' Taken from `r roxygen_cite("pmm2013")` Higher values are more democratic.
 #'
 #' @section Variables:
 #'
@@ -858,16 +796,12 @@
 #'   single year. In particular, the year 1981 is "skipped" -- a single survey
 #'   covers Jan.1981 - Aug. 1982 and its value is assigned to 1982 here.}
 #'
-#'   \item{hadenius_pmm}{0-10 index of democracy from Hadenius, Axel. 1992.
-#'   Democracy and Development. Cambridge: Cambridge University Press. Only
-#'   available for 129 countries in 1988.} }
+#'   \item{hadenius_pmm}{0-10 index of democracy from `r roxygen_cite("hadenius")`
+#'   Only available for 129 countries in 1988.} }
 #'
 #' @template standard-variables
 #'
-#' @source Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
-#'   "Replication data for: Democratic Compromise: A Latent Variable Analysis of
-#'   Ten Measures of Regime Type." In: Harvard Dataverse.
-#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM).
+#' @source `r roxygen_cite("pmm2013")`
 #' @family democracy
 #' @family PMM replication data
 #' @family continuous democracy indexes
@@ -879,9 +813,7 @@
 
 #' The Lexical Index of Democracy, v. 6.4
 #'
-#' The Lexical Index of Democracy first described in Skaaning, Svend-Erik; John
-#' Gerring; and Henrikas Bartusevičius (2015). "A Lexical Index of Electoral
-#' Democracy." Comparative Political Studies, Vol. 48, No. 12, pp. 1491-1525.
+#' The Lexical Index of Democracy first described in `r roxygen_cite("LIED")`
 #' Original data and variable descriptions available at
 #' \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}.
 #' The dataset is now on version 6.4, and contains new variables. The
@@ -1128,9 +1060,7 @@
 #' @family institutions
 #' @aliases lied
 #' @encoding UTF-8
-#' @source Skaaning, Svend-Erik; John Gerring; and Henrikas Bartusevičius
-#'   (2015). "A Lexical Index of Electoral Democracy." Comparative Political
-#'   Studies, Vol. 48, No. 12, pp. 1491-1525. Original data and variable
+#' @source `r roxygen_cite("LIED")` Original data and variable
 #'   descriptions available at
 #'   \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}
 #'
@@ -1142,9 +1072,9 @@
 
 #' Mainwaring, Brinks, and Perez Linan's democracy measure for Latin America
 #'
-#' Trichotomous democracy indicator from Mainwaring, Scott, Daniel Brinks, and
-#' Anibal Perez Linan. 2008. "Political Regimes in Latin America, 1900-2007."
-#' Original data used to be available from
+#' Trichotomous democracy indicator from `r roxygen_cite("mainwaring2001")`
+#' Extended in `r roxygen_cite("mainwaring2014")` Original data used to be available
+#' from
 #' \url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}, though no
 #' longer.
 #'
@@ -1156,17 +1086,10 @@
 #'
 #'   \item{year}{The calendar year. }
 #'
-#'   \item{mainwaring}{Trichotomous democracy indicator from Mainwaring, Scott,
-#'   Daniel Brinks, and Anibal Perez Linan. 2008. "Political Regimes in Latin
-#'   America, 1900-2007." Original data used to be available from
-#'   [http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf](http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf).
+#'   \item{mainwaring}{Trichotomous numerical democracy indicator from `r roxygen_cite("mainwaring")`
 #'   0 = non-democracy, 0.5 = hybrid, 1 = democracy.}
 #'
-#'   \item{Regime}{Trichotomous democracy indicator from Mainwaring, Scott,
-#'   Daniel Brinks, and Anibal Perez Linan. 2008. "Political Regimes in Latin
-#'   America, 1900-2007." Original data used to be available from
-#'   [http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf](http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf).
-#'   A = Authoritarian, D = Democracy, SD = Semidemocracy. From the published
+#'   \item{Regime}{Trichotomous democracy indicator. From the published
 #'   article:
 #'
 #'   When governments commit no violation of any of the four criteria
@@ -1273,13 +1196,8 @@
 #'
 #' @template standard-variables
 #'
-#' @source Mainwaring, S., D. Brinks and A. Perez-Linan. 2001. "Classifying
-#'   Political Regimes in Latin America." Studies in Comparative International
-#'   Development 36(1): 37-65.
-#' @source Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
-#'   "Replication data for: Democratic Compromise: A Latent Variable Analysis of
-#'   Ten Measures of Regime Type." In: Harvard Dataverse.
-#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM).
+#' @source `r roxygen_cite("mainwaring2014")`
+#' @source `r roxygen_cite("pmm2013")`
 #' @family democracy
 #' @family PMM replication data
 #' @family regional democracy indexes
@@ -1290,19 +1208,15 @@
 #' @rdname mainwaring
 #' @section Note:
 #'
-#'   The \link{mainwaring_pmm} version of this data is taken from from Pemstein,
-#'   Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
-#'   Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-#'   Type." In: Harvard Dataverse.
-#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). It
-#'   only contains a numeric version of the Mainwaring Regime indicator, ranging
-#'   from -1 (Authoritarian) to 0 (Semidemocracy) to 1 (Democracy). The original
-#'   dataset is found in \link{mainwaring}. PMM's replication data is actually
-#'   missing a fair number of the data points in the original data by Mainwaring
-#'   et al (Mainwaring, Brinks, and Perez Linan 2008), but the original data is
-#'   not missing any of their data points, and there are no differences between
-#'   the data points wherever both the original and the replication data have
-#'   values. It is included here for completeness.
+#'   The \link{mainwaring_pmm} version of this data is taken from `r roxygen_cite("pmm2013")`
+#'   It only contains a numeric version of the
+#'   Mainwaring Regime indicator, ranging from -1 (Authoritarian) to 0
+#'   (Semidemocracy) to 1 (Democracy). The original dataset is found in
+#'   \link{mainwaring}. PMM's replication data is actually missing a fair number
+#'   of the data points in the original dataset, but the original dataset is not
+#'   missing any of their data points, and there are no differences between the
+#'   data points wherever both the original and the replication data have values.
+#'   It is included here for completeness.
 "mainwaring_pmm"
 
 
@@ -1310,11 +1224,8 @@
 
 #' Autocracies of the World, 1950-2012 (Version 1.0).
 #'
-#' The "Autocracies of the World" dataset by Beatriz Magaloni, Jonathan Chu, and
-#' Eric Min.  Please cite as Magaloni, Beatriz, Jonathan Chu, and Eric Min.
-#' 2013. Autocracies of the World, 1950-2012 (Version 1.0). Dataset, Stanford
-#' University. Original data and codebook available at
-#' \url{http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset/}.
+#' The "Autocracies of the World" dataset by `r roxygen_cite("magaloni")`
+#' Original data and codebook used to be available at the link.
 #' The documentation here is directly derived from this codebook.
 #'
 #' @section Overview:
@@ -1332,9 +1243,9 @@
 #'   Attempts to study autocracies in a larger-scale, quantitative manner have
 #'   resulted in the creation of datasets that classify countries over time
 #'   using varying taxonomies. The field of extant datasets is relatively new
-#'   and still developing. (For examples, see Wahman et al. 2013; Geddes et
-#'   al. 2011; and Cheibub et al. 2010.) We seek to contribute to this
-#'   research agenda with this first edition of a new dataset.
+#'   and still developing. (For examples, see Wahman et al. 2013; Geddes et al.
+#'   2011; and Cheibub et al. 2010.) We seek to contribute to this research
+#'   agenda with this first edition of a new dataset.
 #'
 #'   Our dataset includes several features that we believe are quite useful.
 #'   These include:
@@ -1351,11 +1262,11 @@
 #'   from 1991 to 2006, where the polity seems truly "stateless.") Similarly, we
 #'   sought to eliminate hybrid regime classifications. There are high quality
 #'   datasets available for scholars who are interested analyzing hybrid
-#'   authoritarian regimes (such as Geddes et al. 2011). We have found,
-#'   however, that hybrid classifications often (1) hinder useful quantitative
-#'   analysis or (2) are actually essentially one type of regime, but only
-#'   appear hybrid due to certain window-dressing institutional features.
-#'   Finding the "essential" regime type seems to be a valuable contribution.
+#'   authoritarian regimes (such as Geddes et al. 2011). We have found, however,
+#'   that hybrid classifications often (1) hinder useful quantitative analysis
+#'   or (2) are actually essentially one type of regime, but only appear hybrid
+#'   due to certain window-dressing institutional features. Finding the
+#'   "essential" regime type seems to be a valuable contribution.
 #'
 #'   * Providing two novel and objective measures of personalism. Currently
 #'   available datasets recognize that certain autocratic regimes are highly
@@ -1534,6 +1445,7 @@
 #' @family democracy
 #' @family authoritarianism
 #' @family dichotomous indexes of democracy
+#' @source `r roxygen_cite("magaloni")`
 "magaloni"
 
 #' @rdname magaloni
@@ -1544,13 +1456,8 @@
 
 #' Munck Index of Democracy
 #'
-#' 0-1 index of democracy from Munck, Gerardo L. 2009. Measuring Democracy: A
-#' Bridge Between Scholarship and Politics. Baltimore: Johns Hopkins University
-#' Press. Taken from Pemstein, Daniel, Stephen A. Meserve, and James Melton.
-#' 2013. Taken from Pemstein, Daniel, Stephen A. Meserve, and James Melton.
-#' 2013. "Replication data for: Democratic Compromise: A Latent Variable
-#' Analysis of Ten Measures of Regime Type." In: Harvard Dataverse.
-#' [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). Higher values are more democratic.
+#' 0-1 index of democracy from `r roxygen_cite("munck")` Taken from
+#' `r roxygen_cite("pmm2013")` Higher values are more democratic.
 #'
 #' @section Variables:
 #'
@@ -1563,20 +1470,13 @@
 #'   single year. In particular, the year 1981 is "skipped" -- a single survey
 #'   covers Jan.1981 - Aug. 1982 and its value is assigned to 1982 here.}
 #'
-#'   \item{munck_pmm}{0-1 index of democracy from Munck, Gerardo L. 2009. Measuring Democracy: A
-#' Bridge Between Scholarship and Politics. Baltimore: Johns Hopkins University
-#' Press. Only available for 18 Latin American countries for 19 years.} }
+#'   \item{munck_pmm}{0-1 index of democracy from Munck. Only available for 18
+#'   Latin American countries for 19 years.} }
 #'
 #' @template standard-variables
 #'
-#' @source Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
-#'   "Replication data for: Democratic Compromise: A Latent Variable Analysis of
-#'   Ten Measures of Regime Type." In: Harvard Dataverse.
-#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM).
-#'
-#' @source Munck, Gerardo L. 2009. Measuring Democracy: A
-#' Bridge Between Scholarship and Politics. Baltimore: Johns Hopkins University
-#' Press.
+#' @source `r roxygen_cite("pmm2013")`
+#' @source `r roxygen_cite("munck")`
 #' @family democracy
 #' @family PMM replication data
 #' @family continuous democracy indexes
@@ -1588,10 +1488,8 @@
 
 #' The Geddes Wright and Frantz Autocratic Regimes dataset
 #'
-#' The dataset described in Barbara Geddes, Joseph Wright, and Erica Frantz.
-#' 2014. "Autocratic Breakdown and Regime Transitions: A New Data Set."
-#' Perspectives on Politics 12(2): 313-331. The full data and codebook can be
-#' downloaded here \url{http://sites.psu.edu/dictators/}. The documentation
+#' The dataset described in `r roxygen_cite("gwf")` The full data and codebook can be
+#' downloaded here: \url{http://sites.psu.edu/dictators/}. The documentation
 #' below is derived from the codebook. Some variables apply to the country-year
 #' version, some to the case version and some to the "extended" version
 #' (extended back before 1945 with info from the case descriptions).
@@ -1667,10 +1565,8 @@
 #' @template standard-variables
 #' @family democracy
 #' @family authoritarianism
-#' @source Barbara Geddes, Joseph Wright, and Erica Frantz.
-#' 2014. "Autocratic Breakdown and Regime Transitions: A New Data Set."
-#' Perspectives on Politics 12(2): 313-331. The full data and codebook can be
-#' downloaded here \url{http://sites.psu.edu/dictators/}.
+#' @source `r roxygen_cite("gwf")` The full data and codebook can be
+#' downloaded here: \url{http://sites.psu.edu/dictators/}.
 "gwf_all"
 
 #' @rdname gwf_all
@@ -1692,10 +1588,7 @@
 
 #' The Steffen Kailitz Dataset of Authoritarian Regime Types
 #'
-#' Contains the authoritarian regime types dataset from Kailitz, Steffen. 2013.
-#' Classifying political regimes revisited: legitimation and durability.
-#' Democratization 20 (1): 39-60. Original data available at
-#' \doi{10.1080/13510347.2013.738861}.
+#' Contains the authoritarian regime types dataset from `r roxygen_cite("kailitz")`
 #'
 #' @section Variables:
 #'
@@ -1755,9 +1648,7 @@
 #'
 #'   }
 #' @template standard-variables
-#' @source Kailitz, Steffen. 2013. Classifying political regimes revisited:
-#'   legitimation and durability. Democratization 20 (1): 39-60. Original data
-#'   available at \doi{10.1080/13510347.2013.738861}.
+#' @source `r roxygen_cite("kailitz")`
 #' @family democracy
 #' @family authoritarianism
 #' @family dichotomous democracy indexes
@@ -1769,10 +1660,8 @@
 
 #' The Democracy and Dictatorship Dataset (DD/PACL/ACLP/CGV)
 #'
-#' This dataset (aka PACL, ACLP or CGV) is described in Cheibub, Jose Antonio,
-#' Jennifer Gandhi, and James Raymond Vreeland. 2010. "Democracy and
-#' Dictatorship Revisited." Public Choice, vol. 143, no. 2-1, pp. 67-101. DOI:
-#' 10.1007/s11127-009-9491-2. The full data and codebook can be downloaded here
+#' This dataset (aka PACL, ACLP or CGV) is described in `r roxygen_cite("pacl2010")`
+#' The full data and codebook can be downloaded here
 #' \url{https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited}.
 #' The documentation below is directly copied from the codebook.
 #'
@@ -2148,9 +2037,7 @@
 #' @family PMM replication data
 #' @family dichotomous democracy indexes
 #'
-#' @source Cheibub, Jose Antonio, Jennifer Gandhi, and James Raymond Vreeland.
-#'   2010. "Democracy and Dictatorship Revisited." Public Choice, vol. 143, no.
-#'   2-1, pp. 67-101. DOI: 10.1007/s11127-009-9491-2. The full data and codebook
+#' @source `r roxygen_cite("pacl2010")` The full data and codebook
 #'   can be downloaded here
 #'   \url{https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited}
 "pacl"
@@ -2158,23 +2045,18 @@
 #' @rdname pacl
 #' @section Note:
 #'
-#'   The \code{pacl_pmm} version of this data is taken from from Pemstein, Daniel,
-#'   Stephen A. Meserve, and James Melton. 2013. It only contains the numberic
-#'   version of the variable \code{democracy} in the original dataset. "Replication
-#'   data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures
-#'   of Regime Type." In: Harvard Dataverse. [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM).
-#'   The original dataset is found in \code{pacl}. \code{pacl_pmm} is missing a few
+#'   The \code{pacl_pmm} version of this data is taken from `r roxygen_cite("pmm2013")`
+#'   It only contains the numeric version of the
+#'   variable \code{democracy} in the original dataset. The
+#'   original dataset is found in \code{pacl}. \code{pacl_pmm} is missing a few
 #'   country-years when compared with \code{pacl}.
 "pacl_pmm"
 
 #'Update of the Democracy and Dictatorship Dataset by Bjørnskov and Rode
 #'
 #'This dataset updates [pacl] with more countries and coverage from 1950 to
-#'2020, as described in C. Bjørnskov and M. Rode. "Regime types and regime
-#'change: A new dataset on democracy, coups, and political institutions". In:
-#'_The Review of International Organizations_ 15.2 (2020), pp. 531-551. DOI:
-#'10.1007/s11558-019-09345-1. The full data and codebook can be downloaded here
-#'\url{http://www.christianbjoernskov.com/bjoernskovrodedata/}. The
+#'2020, as described in `r roxygen_cite("pacl_update")` The full data and codebook
+#'can be downloaded here: \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}. The
 #'documentation below is directly copied from the codebook.
 #'
 #'\describe{
@@ -2350,10 +2232,7 @@
 #'@family democracy
 #'@family dichotomous democracy indexes
 #'
-#'@source C. Bjørnskov and M. Rode. "Regime types and regime change: A new
-#'  dataset on democracy, coups, and political institutions". In: _The Review of
-#'  International Organizations_ 15.2 (2020), pp. 531-551. DOI:
-#'  10.1007/s11558-019-09345-1. The full data and codebook can be downloaded
+#'@source `r roxygen_cite("pacl_update")` The full data and codebook can be downloaded
 #'  here \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}
 "pacl_update"
 
@@ -2364,10 +2243,7 @@
 #' Participation-Enhanced Polity Score
 #'
 #' A dataset containing the Participation-Enhanced Polity score described in
-#' Bruce E. Moon, Jennifer Harvey Birdsall, Sylvia Ceisluk, Lauren M. Garlett,
-#' Joshua J. Hermias, Elizabeth Mendenhall, Patrick D. Schmid, and Wai Hong Wong
-#' (2006) "Voting Counts: Participation in the Measurement of Democracy" Studies
-#' in Comparative International Development 42, 2 (Summer, 2006). The complete
+#' `r roxygen_cite("peps")` The complete
 #' dataset is available here:
 #' \url{http://www.lehigh.edu/~bm05/democracy/Obtain_data.htm}. The
 #' documentation below is based on the iformation in that website.
@@ -2440,11 +2316,7 @@
 #' @family democracy
 #' @family continuous indexes of democracy
 #' @family polity
-#' @source Bruce E. Moon, Jennifer Harvey Birdsall, Sylvia Ceisluk, Lauren M.
-#'   Garlett, Joshua J. Hermias, Elizabeth Mendenhall, Patrick D. Schmid, and
-#'   Wai Hong Wong (2006) "Voting Counts: Participation in the Measurement of
-#'   Democracy" Studies in Comparative International Development 42, 2 (Summer,
-#'   2006).
+#' @source `r roxygen_cite("peps")`
 "peps"
 
 
@@ -2452,13 +2324,10 @@
 
 #' Polity 2 from PMM
 #'
-#' Polity 2 Index from Polity IV. 2013. Taken from Pemstein, Daniel, Stephen A.
-#' Meserve, and James Melton. 2013. "Replication data for: Democratic
-#' Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." In:
-#' Harvard Dataverse.
-#' [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). Higher
-#' values are more democratic. Use \link{download_polity_annual} to download the
-#' latest version of the Polity IV data.
+#' Polity 2 Index from Polity IV. 2013. Taken from `r roxygen_cite("pmm2013")`
+#' Higher values are more democratic. Use [polityIV] for the latest
+#' version of the Polity IV data or [download_polity_annual] to download the
+#' Polity 5 revision.
 #'
 #'
 #' @section Variables:
@@ -2492,13 +2361,9 @@
 #'
 #' @template standard-variables
 #'
-#' @source Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
-#'   "Replication data for: Democratic Compromise: A Latent Variable Analysis of
-#'   Ten Measures of Regime Type." In: Harvard Dataverse.
-#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM).
+#' @source `r roxygen_cite("pmm2013")`
 #'
-#' @source Marshall, Monty G., Ted Robert Gurr, and Keith Jaggers. 2012. "Polity
-#'   IV: Political Regime Characteristics and Transitions, 1800-2012."
+#' @source `r roxygen_cite("polity2019")`
 #'
 #' @family democracy
 #' @family PMM replication data
@@ -2763,10 +2628,8 @@
 #'
 #'@template standard-variables
 #'
-#'@source Marshall, Monty G., Ted Robert Gurr, and Keith Jaggers. 2019. "Polity
-#'  IV Project: Political Regime Characteristics and Transitions, 1800-2018.
-#'  Dataset Users' Manual. Center for Systemic Peace. Available at
-#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf)
+#'@source `r roxygen_cite("polity2019")` Available at
+#'  \url{http://www.systemicpeace.org/inscr/p4manualv2018.pdf}
 #'
 #'
 #'
@@ -2781,11 +2644,9 @@
 
 #' The Political Regime Change (PRC) dataset.
 #'
-#' The Political Regime Change dataset. First described in Gasiorowski, Mark J.
-#' 1996. "An Overview of the Political Regime Change Dataset." Comparative
-#' Political Studies 29(4):469-483. Available in updated form in Reich, G. 2002.
-#' Categorizing Political Regimes: New Data for Old Problems. Democratization 9
-#' (4): 1-24. \url{http://www.tandfonline.com/doi/pdf/10.1080/714000289}.
+#' The Political Regime Change dataset. First described in `r roxygen_cite("gasiorowski1996")`
+#' Available in updated form in `r roxygen_cite("prc_gasiorowski2002")`
+#' \url{http://www.tandfonline.com/doi/pdf/10.1080/714000289}.
 #'
 #' \describe{
 #'
@@ -2822,11 +2683,9 @@
 #'
 #' }
 #' @template standard-variables
-#' @source Gasiorowski, Mark J. 1996. "An Overview of the Political Regime
-#'   Change Dataset." Comparative Political Studies 29(4):469-483.
+#' @source `r roxygen_cite("prc_gasiorowski1996")`
 #'
-#' @source Reich, G. 2002. Categorizing Political Regimes: New Data for Old
-#'   Problems. Democratization 9 (4): 1-24.
+#' @source `r roxygen_cite("prc_gasiorowski2002")`
 #'   \url{http://www.tandfonline.com/doi/pdf/10.1080/714000289}.
 #' @family democracy
 #' @family trichotomous democracy indexes
@@ -2838,17 +2697,13 @@
 #' @rdname prc_gasiorowski
 #' @section Note:
 #'
-#'   The \code{prc_pmm} version of this data is taken from from Pemstein,
-#'   Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
-#'   Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-#'   Type." In: Harvard Dataverse.
-#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). The
-#'   original dataset is found in \code{prc_gasiorowski}. The \code{prc_pmm}
-#'   data only goes back to 1945. It also differs from the original data in 245
-#'   country-years, because it only includes one year per country - whereas
-#'   \code{prc_gasiorowski} can include more than one regime classification for
-#'   a given year. It is included here for completeness (and to enable one to
-#'   replicate the [uds]).
+#'   The \code{prc_pmm} version of this data is taken from `r roxygen_cite("pmm2013")`
+#'   The original dataset is found in
+#'   [prc_gasiorowski]. The [prc_pmm] data only goes back to 1945. It
+#'   also differs from the original data in 245 country-years, because it only
+#'   includes one year per country - whereas [prc_gasiorowski] can include
+#'   more than one regime classification for a given year. It is included here
+#'   for completeness (and to enable one to replicate the [uds] index).
 "prc_pmm"
 
 
@@ -2856,14 +2711,8 @@
 
 #' Suport Vector Machine Democracy Index by Grundler and Krieger
 #'
-#' This is the index described in K. Grundler and T. Krieger. 2018. Machine
-#' Learning Indices, Political Institutions, and Economic Development. Report.
-#' CESifo Group Munich, 2018.
-#' \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}. An earlier
-#' version of this index (used in K. Grundler and T. Krieger. 2016. "Democracy
-#' and growth: Evidence from a machine learning indicator". European Journal of
-#' Political Economy 45, pp. 85-107.
-#' \doi{10.1016/j.ejpoleco.2016.05.005}) is available as
+#' This is the index described in `r roxygen_cite("svmdi2018")` An earlier
+#' version of this index (used in `r roxygen_cite("svmdi2016")`) is available as
 #' [svmdi_2016]; there are some important differences between the values of the
 #' earlier and later versions of the index.
 #'
@@ -2909,9 +2758,9 @@
 #' @template standard-variables
 #' @family democracy
 #' @family continuous democracy indexes
-#' @source K. Grundler and T. Krieger. 2018. Machine Learning Indices, Political
-#'   Institutions, and Economic Development. Report. CESifo Group Munich, 2018.
-#'   \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}.
+#' @source `r roxygen_cite("svmdi2016")`
+#'
+#' @source `r roxygen_cite("svmdi2016")`
 "svmdi"
 
 #' @rdname svmdi
@@ -2926,7 +2775,7 @@
 #'
 #' The data used to classify democracies and dictatorships for Milan Svolik's
 #' *The Politics of Authoritarian Rule*. The full data and codebook can be
-#' downloaded here \url{https://campuspress.yale.edu/svolik/}
+#' downloaded here: \url{https://campuspress.yale.edu/svolik/}
 #'
 #' @section Variables:
 #'
@@ -3016,13 +2865,13 @@
 #' @family democracy
 #' @family dichotomous democracy indexes
 #'
-#' @source Svolik, Milan. 2012. The Politics of Authoritarian Rule. Cambridge and
-#'   New York, Cambridge University Press. The full data and codebook can be
-#'   downloaded here
+#' @source `r roxygen_cite("svolik")` The full data and codebook can be
+#'   downloaded here:
 #'   \url{https://campuspress.yale.edu/svolik/}
 #'
 #'
 "svolik_regime"
+
 # UTIP --------------------------------------------------------------------
 
 
@@ -3030,8 +2879,7 @@
 #' Regimes
 #'
 #' The University of Texas Inequality Project Categorical Dataset of Political
-#' Regimes. Described in Sara Hsu, "The Effect of Political Regimes on
-#' Inequality, 1963-2002," UTIP Working Paper No. 53 (2008),
+#' Regimes. Described in `r roxygen_cite("utip")`
 #' \url{http://utip.gov.utexas.edu/papers/utip_53.pdf}. Data available for
 #' download at
 #' \url{http://utip.gov.utexas.edu/data/}
@@ -3092,6 +2940,7 @@
 #' @family authoritarianism
 #' @family dichotomous democracy indexes
 #' @family trichotomous democracy indexes
+#' @source `r roxygen_cite("utip")`
 "utip"
 
 
@@ -3101,14 +2950,9 @@
 #' PITF democracy indicator
 #'
 #' The democracy indicator used by the political instability task force and
-#' described in Goldstone, Jack, Robert Bates, David Epstein, Ted Gurr, Michael
-#' Lustik, Monty Marshall, Jay Ulfelder, and Mark Woodward. 2010. A Global Model
-#' for Forecasting Political Instability. American Journal of Political Science
-#' 54 (1): 190-208. DOI:10.1111/j.1540-5907.2009.00426.x and in Taylor, Sean J.
-#' and Ulfelder, Jay, A Measurement Error Model of Dichotomous Democracy Status
-#' (May 20, 2015). Available at SSRN: \url{http://ssrn.com/abstract=2726962} or
-#' \doi{10.2139/ssrn.2726962}. This is derived from the Polity
-#' dataset (pitf uses version 5; pitf_p4 uses PolityIV updated to 2018).
+#' described in `r roxygen_cite("pitf2010")` and in `r roxygen_cite("pitf2015")`
+#' This is derived from the Polity dataset (pitf uses version 5; pitf_p4 uses
+#' PolityIV updated to 2018).
 #'
 #' @section Variables:
 #'
@@ -3229,11 +3073,8 @@
 #'   4-Full democracy (exrec = 8, parcomp = 5). See Goldstone et al. 2010 for
 #'   full details.}
 #'
-#'   \item{pitf_binary}{A simplification of the pitf indicator of democracy
-#'   described in Taylor, Sean J. and Ulfelder, Jay, A Measurement Error Model
-#'   of Dichotomous Democracy Status (May 20, 2015). Available at SSRN:
-#'   \url{http://ssrn.com/abstract=2726962} or
-#'   \doi{10.2139/ssrn.2726962}. A country is a democracy (1)
+#'   \item{pitf_binary}{A simplification of the pitf indicator of democracy.
+#'   A country is a democracy (1)
 #'   "if its chief executive is chosen in competitive elections (EXREC equal to
 #'   7 or 8) and political competition is not suppressed (PARCOMP equal to 0 or
 #'   PARCOMP greater than 2)" Otherwise it is a non-democracy (0).} }
@@ -3241,15 +3082,10 @@
 #' @template standard-variables
 #' @references
 #'
-#' Goldstone, Jack, Robert Bates, David Epstein, Ted Gurr, Michael Lustik, Monty
-#' Marshall, Jay Ulfelder, and Mark Woodward. 2010. A Global Model for
-#' Forecasting Political Instability. American Journal of Political Science 54
-#' (1): 190-208. DOI:10.1111/j.1540-5907.2009.00426.x
+#' `r roxygen_cite("pitf2010")`
 #'
-#' Taylor, Sean J. and Ulfelder, Jay, A Measurement Error Model of Dichotomous
-#' Democracy Status (May 20, 2015). Available at SSRN:
-#' \url{http://ssrn.com/abstract=2726962} or
-#' \doi{10.2139/ssrn.2726962}
+#' `r roxygen_cite("pitf2015")`
+#'
 #' @family democracy
 #' @family polity
 "pitf"
@@ -3262,8 +3098,7 @@
 
 #' The Polyarchy Scale and the Contestation Scale
 #'
-#' Michael Coppedge and Wolfgang Reinicke, "Measuring Polyarchy," Studies in
-#' Comparative International Development 25:1 (Spring 1990): 51-72. Data
+#' `r roxygen_cite("polyarchy1990")` Data
 #' available at \url{http://www3.nd.edu/~mcoppedg/crd/datacrd.htm}. The codebook
 #' below is copied from that website.
 #'
@@ -3473,22 +3308,19 @@
 #' @template standard-variables
 #' @family democracy
 #' @family polyarchy
+#' @source `r roxygen_cite("polyarchy1990")`
 "polyarchy"
 
 #' @rdname polyarchy
 #' @section Note:
 #'
-#'   The \code{polyarchy_pmm} version of this data is taken from from Pemstein,
-#'   Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
-#'   Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-#'   Type." In: Harvard Dataverse.
-#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). The
-#'   original dataset is found in \code{polyarchy}. It only contains a reversed
-#'   version of the \code{poly} variable in the original \code{polyarchy} dataset (higher
+#'   The \code{polyarchy_pmm} version of this data is taken from `r roxygen_cite("pmm2013")` The
+#'   original dataset is found in [polyarchy]. It only contains a reversed
+#'   version of the \code{poly} variable in the original [polyarchy] dataset (higher
 #'   values being more democratic). 22 country-years differ between PMM's
 #'   replication data and the original Polyarchy dataset (Coppedge and Reinicke
-#'   1991), and four are missing. These seem to be due to simple transcription
-#'   errors. See the vignetter for more details.
+#'   1990), and four are missing. These seem to be due to simple transcription
+#'   errors. See the vignette for more details.
 "polyarchy_pmm"
 
 #' Indicators of Contestation and Inclusiveness by Michael Coppedge, Angel
@@ -3498,9 +3330,7 @@
 #' dataset contains several versions of two indicators that measure Robert
 #' Dahl's two dimensions of polyarchy: contestation and inclusiveness. For
 #' complete documentation of the analysis that identifies these two dimensions,
-#' see the published article: Michael Coppedge, Angel Alvarez, and Claudia
-#' Maldonado, "Two Persistent Dimensions of Democracy: Contestation and
-#' Inclusiveness," Journal of Politics 70:3 (July 2008): 632-647.
+#' see the published article: `r roxygen_cite("polyarchy_dimensions")`
 #'
 #' @section Introduction:
 #'
@@ -3670,9 +3500,7 @@
 #' @family polyarchy
 #' @family latent variable indexes of democracy
 #' @family continuous indexes of democracy
-#' @source Michael Coppedge, Angel Alvarez, and Claudia
-#' Maldonado, "Two Persistent Dimensions of Democracy: Contestation and
-#' Inclusiveness," Journal of Politics 70:3 (July 2008): 632-647.
+#' @source `r roxygen_cite("polyarchy_dimensions")`
 "polyarchy_dimensions"
 
 
@@ -3680,10 +3508,8 @@
 
 #' The Rulers, Elections, and Irregular Governance Dataset (Regime data)
 #'
-#' Bell, Curtis. 2016. The Rulers, Elections, and Irregular Governance Dataset
-#' (REIGN). Broomfield, CO: OEF Research. The dataset, variable descriptions,
-#' and technical notes, are available at
-#' \url{http://oefresearch.org/datasets/reign}. The variable descriptions below
+#' `r roxygen_cite("REIGN")` The dataset, variable descriptions,
+#' and technical notes, are available at the link. The variable descriptions below
 #' are taken from
 #' \url{http://oefresearch.org/sites/default/files/REIGN_descriptions.pdf}.
 #' Collection stopped in 2021; this dataset is now archived in this package.
@@ -3843,9 +3669,7 @@
 #' @template standard-variables
 #' @aliases reign
 #'
-#' @source Bell, Curtis. 2016. The Rulers, Elections, and Irregular Governance
-#'   Dataset (REIGN). Broomfield, CO: OEF Research. Available at
-#'   \url{http://oefresearch.org/datasets/reign}
+#' @source `r roxygen_cite("REIGN")`
 #' @family democracy
 #' @family authoritarianism
 "REIGN"
@@ -3882,14 +3706,9 @@
 #' }
 #'
 #' @template standard-variables
-#' @source Pemstein, Daniel, Stephen Meserve, and James Melton. 2010. Democratic
-#'   Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.
-#'   Political Analysis 18 (4): 426-449.
+#' @source `r roxygen_cite("pmm2010")`
 #'
-#' @source Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
-#'   "Replication data for: Democratic Compromise: A Latent Variable Analysis of
-#'   Ten Measures of Regime Type." In: Harvard Dataverse.
-#'   \url{http://hdl.handle.net/1902.1/PMM}
+#' @source `r roxygen_cite("pmm2013")`
 #' @family democracy
 #' @family latent variable indexes of democracy
 #' @aliases uds
@@ -3907,8 +3726,7 @@
 
 #' The Democracy/Autocracy Dataset by Jay Ulfelder
 #'
-#' This is the dataset documented in Jay Ulfelder. _Democracy/Autocracy Data
-#' Set_. 2012. \url{http://hdl.handle.net/1902.1/18836}. It comes in two
+#' This is the dataset documented in `r roxygen_cite("ulfelder2012")` It comes in two
 #' versions: \link{ulfelder}, which only goes back to 1955, and
 #' \link{ulfelder_extended}, which extends the regime classifications back in
 #' time using the \code{rgjdura} and \code{rgjdurd} variables, adding 3861
@@ -4432,8 +4250,9 @@
 #'   sftgreg: Undocumented. Region?
 #'
 #' @template standard-variables
-#' @source Jay Ulfelder. _Democracy/Autocracy Data Set_. 2012.
-#'   \url{http://hdl.handle.net/1902.1/18836}
+#' @source `r roxygen_cite("ulfelder2012")`
+#'
+#' @source `r roxygen_cite("ulfelder2007")`
 #'
 #' @family democracy
 #' @family events data
@@ -4448,12 +4267,8 @@
 
 #' Vanhanen measures of democracy, 1800-2018
 #'
-#' A dataset containing Tatu Vanhanen's measures of democracy.
-#'
-#' To cite use Vanhanen, Tatu. 2019. Measures of Democracy 1810-2018 (dataset).
-#' Version 8.0 (2019-06-17). Tampere. <URL:
-#' http://urn.fi/urn:nbn:fi:fsd:T-FSD1289>. Data available at
-#' \url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}.
+#' A dataset containing Tatu Vanhanen's measures of democracy, `r roxygen_cite("vanhanen")`
+#' Data available at \url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}.
 #'
 #' @section Variables:
 #'
@@ -4726,9 +4541,7 @@
 #'   perspective of democracy than more detailed differences among democracies
 #'   or nondemocracies (cf. Vanhanen 2000a, 2000b; 2003).} }
 #' @template standard-variables
-#' @source Vanhanen, Tatu. 2019. Measures of Democracy 1810-2018 (dataset).
-#'   Version 8.0 (2019-06-17). Tampere. <URL:
-#'   http://urn.fi/urn:nbn:fi:fsd:T-FSD1289>. Data available at
+#' @source `r roxygen_cite("vanhanen")` Data available at
 #'   \url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}
 #' @family democracy
 #' @family continuous democracy indexes
@@ -4737,38 +4550,24 @@
 #' @rdname vanhanen
 #' @section Note:
 #'
-#'   The \code{vanhanen_pmm} version of this data is taken from from Pemstein,
-#'   Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
-#'   Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-#'   Type." In: Harvard Dataverse.
-#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). The
-#'   original dataset is found in \code{vanhanen}. The \code{vanhanen_pmm} data only goes
+#'   The \code{vanhanen_pmm} version of this data is taken from `r roxygen_cite("pmm2013")` The
+#'   original dataset is found in [vanhanen]. The \code{vanhanen_pmm} data only goes
 #'   back to 1945. There are some missing values in PMM's data compared to the
 #'   original Vanhanen dataset. For more detail on the differences, see the
-#'   vignette. The vanhanen_pmm data is included here for completeness.
+#'   vignette. The `vanhanen_pmm` data is included here for completeness.
 "vanhanen_pmm"
 
 # vdem_simple --------------------------------------------------------------
 
-#' Simplified version of the V-Dem version 12 dataset
+#' Simplified version of the V-Dem version 13 dataset
 #'
-#' This data frame contains a very reduced version of version 12 of the V-Dem
+#' This data frame contains a very reduced version of version 13 of the V-Dem
 #' dataset, including only the 7 main indexes that measure democracy directly
 #' (v2x_polyarchy, v2x_libdem, v2x_partipdem, v2x_delibdem, v2x_egaldem,
 #' v2x_api, and v2x_mpi) and their associated uncertainty measures. The full
 #' VDem dataset is available via the
 #' [vdemdata](https://github.com/vdeminstitute/vdemdata) package. To cite VDem,
-#' use Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I.
-#' Lindberg, Jan Teorell, Nazifa Alizada, David Altman, Michael Bernhard, Agnes
-#' Cornell, M. Steven Fish, Lisa Gastaldi, Haakon Gjerløw, Adam Glynn, Sandra
-#' Grahn, Allen Hicken, Garry Hindle, Nina Ilchenko, Katrin Kinzelbach, Joshua
-#' Krusell, Kyle L. Marquardt, Kelly McMann, Valeriya Mechkova, Juraj
-#' Medzihorsky, Pamela Paxton, Daniel Pemstein, Josefine Pernes, Oskar Rydén,
-#' Johannes von Römer, Brigitte Seim, Rachel Sigman, Svend-Erik Skaaning,
-#' Jeffrey Staton, Aksel Sundström, Eitan Tzelgov, Yi-ting Wang, Tore Wig,
-#' Steven Wilson and Daniel Ziblatt. 2022. "V- Dem \[Country–Year/Country–Date\]
-#' Dataset v12" Varieties of Democracy (V-Dem) Project.
-#' https://doi.org/10.23696/vdemds22.
+#' use `r roxygen_cite("vdem13codebook")`
 #'
 #' Variable descriptions taken from the V-Dem codebook directly.
 #'
@@ -4967,17 +4766,11 @@
 #' @family democracy
 #' @family continuous democracy indexes
 #' @encoding UTF-8
-#' @references Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I.
-#'   Lindberg, Jan Teorell, Nazifa Alizada, David Altman, Michael Bernhard,
-#'   Agnes Cornell, M. Steven Fish, Lisa Gastaldi, Haakon Gjerløw, Adam Glynn,
-#'   Sandra Grahn, Allen Hicken, Garry Hindle, Nina Ilchenko, Katrin Kinzelbach,
-#'   Joshua Krusell, Kyle L. Marquardt, Kelly McMann, Valeriya Mechkova, Juraj
-#'   Medzihorsky, Pamela Paxton, Daniel Pemstein, Josefine Pernes, Oskar Rydén,
-#'   Johannes von Römer, Brigitte Seim, Rachel Sigman, Svend-Erik Skaaning,
-#'   Jeffrey Staton, Aksel Sundström, Eitan Tzelgov, Yi-ting Wang, Tore Wig,
-#'   Steven Wilson and Daniel Ziblatt. 2022. "V- Dem
-#'   \[Country–Year/Country–Date\] Dataset v12" Varieties of Democracy (V-Dem)
-#'   Project. https://doi.org/10.23696/vdemds22.
+#' @references
+#'
+#' `r roxygen_cite("vdem13codebook")`
+#'
+#' `r roxygen_cite("vdem13measurement")`
 "vdem_simple"
 
 # Wahman Teorell and Hadenius ---------------------------------------------
@@ -4986,10 +4779,8 @@
 #' Michael Wahman
 #'
 #' The Authoritarian Regimes Data set by Axel Hadenius, Jan Teorell, & Michael
-#' Wahman, described in Hadenius, Axel & Jan Teorell. 2007. "Pathways from
-#' Authoritarianism", Journal of Democracy 18(1): 143-156 and Wahman, Michael,
-#' Jan Teorell, and Axel Hadenius. 2013. Authoritarian regime types revisited:
-#' updated data in comparative perspective. Contemporary Politics 19 (1): 19-34.
+#' Wahman, described in `r roxygen_cite("wahman_teorell_hadenius2007")` and
+#' `r roxygen_cite("wahman_teorell_hadenius2013")`
 #' The dataset and codebook can be downloaded from
 #' \url{https://sites.google.com/site/authoritarianregimedataset/data}. I simply
 #' copy the codebook below.
@@ -5413,20 +5204,9 @@
 #'
 #'   }
 #' @template standard-variables
-#' @source Hadenius, Axel and Jan Teorell. 2005. "Assessing Alternative Indices of
-#' Democracy", C&M Working Papers 6, IPSA, August 2005.
+#' @source `r roxygen_cite("wahman_teorell_hadenius2007")`
+#' @source `r roxygen_cite("wahman_teorell_hadenius2013")`
 #'
-#' @source Hadenius, Axel and Jan Teorell. 2006. "Authoritarian Regimes: Stability,
-#' Change, and Pathways to Democracy, 1972-2003", University of Notre Dame,
-#' Kellogg Institute Working Paper Series 331, November 2006
-#' ([http://kellogg.nd.edu/publications/workingpapers/WPS/331.pdf](http://kellogg.nd.edu/publications/workingpapers/WPS/331.pdf)).
-#'
-#' @source Wahman, Michael,
-#' Jan Teorell, and Axel Hadenius. 2013. Authoritarian regime types revisited:
-#' updated data in comparative perspective. Contemporary Politics 19 (1): 19-34
-#'
-#' @source Hadenius, Axel and Jan Teorell. 2007. "Pathways from Authoritarianism",
-#' Journal of Democracy 18(1): 143-156.
 #' @aliases wth
 #'
 #' @family democracy
@@ -5451,8 +5231,7 @@
 #'The Political Institutions and Political Events (PIPE) dataset
 #'
 #'
-#'Przeworski, Adam et al. 2013. Political Institutions and Political Events
-#'(PIPE) Data Set. Department of Politics, New York University. The original
+#'`r roxygen_cite("PIPE")` The original
 #'data and codebook can be downloaded from
 #'\url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}. The
 #'documentation below is directly derived from the codebook, with some
@@ -6996,9 +6775,7 @@
 #'  Development Centre.
 #'@family democracy
 #'@family institutions
-#'@source Adam Przeworski. 2013. _Political Institutions and Political Events
-#'  (PIPE) Data Set_. Data set.
-#'  \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}
+#'@source `r roxygen_cite("PIPE")`
 "PIPE"
 
 
@@ -7081,15 +6858,18 @@
 #'   first used in a 1975 study (though its compilation started in the late
 #'   1960s), but the current Polity 5 data is very different.}
 #'
+#'   \item{source_link}{A link to where the data is (or was) originally hosted.
+#'   Some of these links no longer work.}
+#'
+#'   \item{licensing_info}{Licensing info, if available. I assume CC0 unless
+#'   otherwise stated; some datasets have CC-BY-4.0 licenses.}
+#'
 #'   \item{notes}{Other notes. Evolving.} }
 #'
-#' @references Pemstein, Daniel, Stephen Meserve, and James Melton. 2010.
-#'   Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-#'   Type. Political Analysis 18 (4): 426-449.
+#' @references
 #'
-#'   Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication
-#'   data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures
-#'   of Regime Type." In: Harvard Dataverse.
+#' `r roxygen_cite("pmm")`
+#'
 #'   \url{http://hdl.handle.net/1902.1/PMM}
 "democracy_info"
 

@@ -4,8 +4,7 @@
 \alias{download_polity_annual}
 \alias{polity}
 \alias{polity5}
-\title{Downloads the 2020 update of the Polity 5 dataset (annual time series) and
-processes it using \link{country_year_coder}}
+\title{Polity 5}
 \source{
 Marshall, Monty G., Ted Robert Gurr. 2020.
 "Polity5: Political Regime Characteristics and Transitions, 1800-2018".
@@ -34,7 +33,8 @@ with the additional columns produced by \link{country_year_coder}. Consult the
 for further description.
 }
 \description{
-The original data is available at
+Downloads the 2020 update of the Polity 5 dataset (annual time series) and
+processes it using \link{country_year_coder}. The original data is available at
 \url{http://www.systemicpeace.org/inscrdata.html}
 }
 \section{Variables}{

@@ -18,10 +18,8 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 5301 rows and 21 columns.
 }
 \source{
-Barbara Geddes, Joseph Wright, and Erica Frantz.
-2014. "Autocratic Breakdown and Regime Transitions: A New Data Set."
-Perspectives on Politics 12(2): 313-331. The full data and codebook can be
-downloaded here \url{http://sites.psu.edu/dictators/}.
+B. Geddes, J. Wright, and E. Frantz. "Autocratic Breakdown and Regime Transitions: A New Data Set". In: \emph{Perspectives on Politics} 12.1 (2014), pp. 313-331. DOI: 10.1017/S1537592714000851. The full data and codebook can be
+downloaded here: \url{http://sites.psu.edu/dictators/}.
 }
 \usage{
 gwf_all
@@ -33,10 +31,8 @@ gwf_autocratic
 gwf_autocratic_extended
 }
 \description{
-The dataset described in Barbara Geddes, Joseph Wright, and Erica Frantz.
-2014. "Autocratic Breakdown and Regime Transitions: A New Data Set."
-Perspectives on Politics 12(2): 313-331. The full data and codebook can be
-downloaded here \url{http://sites.psu.edu/dictators/}. The documentation
+The dataset described in B. Geddes, J. Wright, and E. Frantz. "Autocratic Breakdown and Regime Transitions: A New Data Set". In: \emph{Perspectives on Politics} 12.1 (2014), pp. 313-331. DOI: 10.1017/S1537592714000851. The full data and codebook can be
+downloaded here: \url{http://sites.psu.edu/dictators/}. The documentation
 below is derived from the codebook. Some variables apply to the country-year
 version, some to the case version and some to the "extended" version
 (extended back before 1945 with info from the case descriptions).

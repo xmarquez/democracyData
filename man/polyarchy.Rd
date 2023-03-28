@@ -10,14 +10,16 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 353 rows and 7 columns.
 }
+\source{
+M. Coppedge and W. H. Reinicke. "Measuring Polyarchy". In: \emph{Studies in Comparative International Development} 25.1 (1990), pp. 51-72. DOI: 10.1007/Bf02716905.
+}
 \usage{
 polyarchy
 
 polyarchy_pmm
 }
 \description{
-Michael Coppedge and Wolfgang Reinicke, "Measuring Polyarchy," Studies in
-Comparative International Development 25:1 (Spring 1990): 51-72. Data
+M. Coppedge and W. H. Reinicke. "Measuring Polyarchy". In: \emph{Studies in Comparative International Development} 25.1 (1990), pp. 51-72. DOI: 10.1007/Bf02716905. Data
 available at \url{http://www3.nd.edu/~mcoppedg/crd/datacrd.htm}. The codebook
 below is copied from that website.
 }
@@ -265,17 +267,13 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 \section{Note}{
 
 
-The \code{polyarchy_pmm} version of this data is taken from from Pemstein,
-Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication data for:
-Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-Type." In: Harvard Dataverse.
-\url{http://hdl.handle.net/1902.1/PMM}. The
-original dataset is found in \code{polyarchy}. It only contains a reversed
-version of the \code{poly} variable in the original \code{polyarchy} dataset (higher
+The \code{polyarchy_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}. The
+original dataset is found in \link{polyarchy}. It only contains a reversed
+version of the \code{poly} variable in the original \link{polyarchy} dataset (higher
 values being more democratic). 22 country-years differ between PMM's
 replication data and the original Polyarchy dataset (Coppedge and Reinicke
-1991), and four are missing. These seem to be due to simple transcription
-errors. See the vignetter for more details.
+1990), and four are missing. These seem to be due to simple transcription
+errors. See the vignette for more details.
 }
 
 \seealso{

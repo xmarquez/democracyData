@@ -8,25 +8,18 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8050 rows and 7 columns.
 }
 \source{
-Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013.
-"Replication data for: Democratic Compromise: A Latent Variable Analysis of
-Ten Measures of Regime Type." In: Harvard Dataverse.
-\url{http://hdl.handle.net/1902.1/PMM}.
+D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
 
-Marshall, Monty G., Ted Robert Gurr, and Keith Jaggers. 2012. "Polity
-IV: Political Regime Characteristics and Transitions, 1800-2012."
+M. G. Marshall, T. R. Gurr, and K. Jaggers. \emph{Polity IV Project: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual.} Center for Systemic Peace, 2019.
 }
 \usage{
 polity_pmm
 }
 \description{
-Polity 2 Index from Polity IV. 2013. Taken from Pemstein, Daniel, Stephen A.
-Meserve, and James Melton. 2013. "Replication data for: Democratic
-Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." In:
-Harvard Dataverse.
-\url{http://hdl.handle.net/1902.1/PMM}. Higher
-values are more democratic. Use \link{download_polity_annual} to download the
-latest version of the Polity IV data.
+Polity 2 Index from Polity IV. 2013. Taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
+Higher values are more democratic. Use \link{polityIV} for the latest
+version of the Polity IV data or \link{download_polity_annual} to download the
+Polity 5 revision.
 }
 \section{Variables}{
 

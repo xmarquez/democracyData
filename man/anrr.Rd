@@ -3,22 +3,18 @@
 \docType{data}
 \name{anrr}
 \alias{anrr}
-\title{The Acemoglu, Naidu, Restrepo and Robinson deocracy dataset}
+\title{The Acemoglu, Naidu, Restrepo and Robinson democracy dataset}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8733 rows and 8 columns.
 }
 \source{
-D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy Does Cause
-Growth". In: \emph{Journal of Political Economy} 127.1 (2019), pp. 47-100.
-\doi{10.1086/700936}.
+D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy Does Cause Growth". In: \emph{Journal of Political Economy} 127.1 (2019), pp. 47-100. DOI: 10.1086/700936. \url{https://www.journals.uchicago.edu/doi/10.1086/700936}.
 }
 \usage{
 anrr
 }
 \description{
-Dataset described in D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy
-Does Cause Growth". In: \emph{Journal of Political Economy} 127.1 (2019), pp.
-47-100. \doi{10.1086/700936}. Data at the link.
+Dataset described in D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy Does Cause Growth". In: \emph{Journal of Political Economy} 127.1 (2019), pp. 47-100. DOI: 10.1086/700936. \url{https://www.journals.uchicago.edu/doi/10.1086/700936}. Data at the link.
 }
 \section{Variables}{
 

@@ -10,30 +10,17 @@ Michael Wahman}
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8231 rows and 54 columns.
 }
 \source{
-Hadenius, Axel and Jan Teorell. 2005. "Assessing Alternative Indices of
-Democracy", C&M Working Papers 6, IPSA, August 2005.
+A. Hadenius and J. Teorell. "Pathways from Authoritarianism". In: \emph{Journal of Democracy} 18.1 (2007), pp. 143-157.
 
-Hadenius, Axel and Jan Teorell. 2006. "Authoritarian Regimes: Stability,
-Change, and Pathways to Democracy, 1972-2003", University of Notre Dame,
-Kellogg Institute Working Paper Series 331, November 2006
-(\url{http://kellogg.nd.edu/publications/workingpapers/WPS/331.pdf}).
-
-Wahman, Michael,
-Jan Teorell, and Axel Hadenius. 2013. Authoritarian regime types revisited:
-updated data in comparative perspective. Contemporary Politics 19 (1): 19-34
-
-Hadenius, Axel and Jan Teorell. 2007. "Pathways from Authoritarianism",
-Journal of Democracy 18(1): 143-156.
+M. Wahman, J. Teorell, and A. Hadenius. "Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective". In: \emph{Contemporary Politics} 19.1 (2013), pp. 19-34. \url{https://sites.google.com/site/authoritarianregimedataset/data}.
 }
 \usage{
 wahman_teorell_hadenius
 }
 \description{
 The Authoritarian Regimes Data set by Axel Hadenius, Jan Teorell, & Michael
-Wahman, described in Hadenius, Axel & Jan Teorell. 2007. "Pathways from
-Authoritarianism", Journal of Democracy 18(1): 143-156 and Wahman, Michael,
-Jan Teorell, and Axel Hadenius. 2013. Authoritarian regime types revisited:
-updated data in comparative perspective. Contemporary Politics 19 (1): 19-34.
+Wahman, described in A. Hadenius and J. Teorell. "Pathways from Authoritarianism". In: \emph{Journal of Democracy} 18.1 (2007), pp. 143-157. and
+M. Wahman, J. Teorell, and A. Hadenius. "Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective". In: \emph{Contemporary Politics} 19.1 (2013), pp. 19-34. \url{https://sites.google.com/site/authoritarianregimedataset/data}.
 The dataset and codebook can be downloaded from
 \url{https://sites.google.com/site/authoritarianregimedataset/data}. I simply
 copy the codebook below.

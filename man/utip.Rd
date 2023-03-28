@@ -8,13 +8,15 @@ Regimes}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 6215 rows and 18 columns.
 }
+\source{
+S. Hsu. "The Effect of Political Regimes on Inequality, 1963-2002". In: \emph{UTIP Working Paper} (2008).
+}
 \usage{
 utip
 }
 \description{
 The University of Texas Inequality Project Categorical Dataset of Political
-Regimes. Described in Sara Hsu, "The Effect of Political Regimes on
-Inequality, 1963-2002," UTIP Working Paper No. 53 (2008),
+Regimes. Described in S. Hsu. "The Effect of Political Regimes on Inequality, 1963-2002". In: \emph{UTIP Working Paper} (2008).
 \url{http://utip.gov.utexas.edu/papers/utip_53.pdf}. Data available for
 download at
 \url{http://utip.gov.utexas.edu/data/}

@@ -10,9 +10,7 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 32345 rows and 26 columns.
 }
 \source{
-Skaaning, Svend-Erik; John Gerring; and Henrikas Bartusevičius
-(2015). "A Lexical Index of Electoral Democracy." Comparative Political
-Studies, Vol. 48, No. 12, pp. 1491-1525. Original data and variable
+S. Skaaning, J. Gerring, and H. Bartusevičius. "A Lexical Index of Electoral Democracy". In: \emph{Comparative Political Studies} 48.12 (2015), pp. 1491-1525. DOI: 10.1177/0010414015581050. Original data and variable
 descriptions available at
 \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}
 }
@@ -20,9 +18,7 @@ descriptions available at
 LIED
 }
 \description{
-The Lexical Index of Democracy first described in Skaaning, Svend-Erik; John
-Gerring; and Henrikas Bartusevičius (2015). "A Lexical Index of Electoral
-Democracy." Comparative Political Studies, Vol. 48, No. 12, pp. 1491-1525.
+The Lexical Index of Democracy first described in S. Skaaning, J. Gerring, and H. Bartusevičius. "A Lexical Index of Electoral Democracy". In: \emph{Comparative Political Studies} 48.12 (2015), pp. 1491-1525. DOI: 10.1177/0010414015581050.
 Original data and variable descriptions available at
 \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}.
 The dataset is now on version 6.4, and contains new variables. The

@@ -5,7 +5,7 @@
 \name{vdem_simple}
 \alias{vdem_simple}
 \alias{vdem}
-\title{Simplified version of the V-Dem version 12 dataset}
+\title{Simplified version of the V-Dem version 13 dataset}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 27555 rows and 54 columns.
 }
@@ -13,23 +13,13 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 vdem_simple
 }
 \description{
-This data frame contains a very reduced version of version 12 of the V-Dem
+This data frame contains a very reduced version of version 13 of the V-Dem
 dataset, including only the 7 main indexes that measure democracy directly
 (v2x_polyarchy, v2x_libdem, v2x_partipdem, v2x_delibdem, v2x_egaldem,
 v2x_api, and v2x_mpi) and their associated uncertainty measures. The full
 VDem dataset is available via the
 \href{https://github.com/vdeminstitute/vdemdata}{vdemdata} package. To cite VDem,
-use Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I.
-Lindberg, Jan Teorell, Nazifa Alizada, David Altman, Michael Bernhard, Agnes
-Cornell, M. Steven Fish, Lisa Gastaldi, Haakon Gjerløw, Adam Glynn, Sandra
-Grahn, Allen Hicken, Garry Hindle, Nina Ilchenko, Katrin Kinzelbach, Joshua
-Krusell, Kyle L. Marquardt, Kelly McMann, Valeriya Mechkova, Juraj
-Medzihorsky, Pamela Paxton, Daniel Pemstein, Josefine Pernes, Oskar Rydén,
-Johannes von Römer, Brigitte Seim, Rachel Sigman, Svend-Erik Skaaning,
-Jeffrey Staton, Aksel Sundström, Eitan Tzelgov, Yi-ting Wang, Tore Wig,
-Steven Wilson and Daniel Ziblatt. 2022. "V- Dem [Country–Year/Country–Date]
-Dataset v12" Varieties of Democracy (V-Dem) Project.
-https://doi.org/10.23696/vdemds22.
+use M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem Codebook v13}.
 }
 \details{
 Variable descriptions taken from the V-Dem codebook directly.
@@ -264,17 +254,9 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 }
 
 \references{
-Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I.
-Lindberg, Jan Teorell, Nazifa Alizada, David Altman, Michael Bernhard,
-Agnes Cornell, M. Steven Fish, Lisa Gastaldi, Haakon Gjerløw, Adam Glynn,
-Sandra Grahn, Allen Hicken, Garry Hindle, Nina Ilchenko, Katrin Kinzelbach,
-Joshua Krusell, Kyle L. Marquardt, Kelly McMann, Valeriya Mechkova, Juraj
-Medzihorsky, Pamela Paxton, Daniel Pemstein, Josefine Pernes, Oskar Rydén,
-Johannes von Römer, Brigitte Seim, Rachel Sigman, Svend-Erik Skaaning,
-Jeffrey Staton, Aksel Sundström, Eitan Tzelgov, Yi-ting Wang, Tore Wig,
-Steven Wilson and Daniel Ziblatt. 2022. "V- Dem
-[Country–Year/Country–Date] Dataset v12" Varieties of Democracy (V-Dem)
-Project. https://doi.org/10.23696/vdemds22.
+M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem Codebook v13}.
+
+D. Pemstein, K. L. Marquardt, E. Tzelgov, et al. \emph{The V-Dem Measurement Model: Latent Variable Analysis for Cross-National and Cross-Temporal Expert-Coded Data}. Tech. rep. 21. Varieties of Democracy Institute, University of Gothenburg, 2022. \url{https://www.v-dem.net/media/filer_public/25/cb/25cb3f3f-290d-46e1-8eaf-ff2d2c13f4a9/v-dem_working_paper_21.pdf}.
 }
 \seealso{
 Other democracy: 

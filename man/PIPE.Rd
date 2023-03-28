@@ -8,16 +8,13 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18151 rows and 101 columns.
 }
 \source{
-Adam Przeworski. 2013. \emph{Political Institutions and Political Events
-(PIPE) Data Set}. Data set.
-\url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}
+A. Przeworski. \emph{Political Institutions and Political Events (PIPE) Data Set}. Data set. 2013. \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}.
 }
 \usage{
 PIPE
 }
 \description{
-Przeworski, Adam et al. 2013. Political Institutions and Political Events
-(PIPE) Data Set. Department of Politics, New York University. The original
+A. Przeworski. \emph{Political Institutions and Political Events (PIPE) Data Set}. Data set. 2013. \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}. The original
 data and codebook can be downloaded from
 \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}. The
 documentation below is directly derived from the codebook, with some

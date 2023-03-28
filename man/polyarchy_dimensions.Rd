@@ -9,9 +9,7 @@ Alvarez, and Claudia Maldonado}
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 7563 rows and 32 columns.
 }
 \source{
-Michael Coppedge, Angel Alvarez, and Claudia
-Maldonado, "Two Persistent Dimensions of Democracy: Contestation and
-Inclusiveness," Journal of Politics 70:3 (July 2008): 632-647.
+M. Coppedge, A. Alvarez, and C. Maldonado. "Two Persistent Dimensions of Democracy: Contestation and Inclusiveness". In: \emph{The journal of politics} 70.03 (2008), pp. 632-647. DOI: 10.1017/S0022381608080663.
 }
 \usage{
 polyarchy_dimensions
@@ -21,9 +19,7 @@ From the codebook at \url{https://www3.nd.edu/~mcoppedg/crd/datacrd.htm}: This
 dataset contains several versions of two indicators that measure Robert
 Dahl's two dimensions of polyarchy: contestation and inclusiveness. For
 complete documentation of the analysis that identifies these two dimensions,
-see the published article: Michael Coppedge, Angel Alvarez, and Claudia
-Maldonado, "Two Persistent Dimensions of Democracy: Contestation and
-Inclusiveness," Journal of Politics 70:3 (July 2008): 632-647.
+see the published article: M. Coppedge, A. Alvarez, and C. Maldonado. "Two Persistent Dimensions of Democracy: Contestation and Inclusiveness". In: \emph{The journal of politics} 70.03 (2008), pp. 632-647. DOI: 10.1017/S0022381608080663.
 }
 \section{Introduction}{
 

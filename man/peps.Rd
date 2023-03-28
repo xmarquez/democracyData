@@ -8,21 +8,14 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 15089 rows and 28 columns.
 }
 \source{
-Bruce E. Moon, Jennifer Harvey Birdsall, Sylvia Ceisluk, Lauren M.
-Garlett, Joshua J. Hermias, Elizabeth Mendenhall, Patrick D. Schmid, and
-Wai Hong Wong (2006) "Voting Counts: Participation in the Measurement of
-Democracy" Studies in Comparative International Development 42, 2 (Summer,
-2006).
+B. E. Moon, J. H. Birdsall, S. Ciesluk, et al. "Voting Counts: Participation in the Measurement of Democracy". In: \emph{Studies in Comparative International Development} 41.2 (2006), pp. 3-32. DOI: 10.1007/BF02686309.
 }
 \usage{
 peps
 }
 \description{
 A dataset containing the Participation-Enhanced Polity score described in
-Bruce E. Moon, Jennifer Harvey Birdsall, Sylvia Ceisluk, Lauren M. Garlett,
-Joshua J. Hermias, Elizabeth Mendenhall, Patrick D. Schmid, and Wai Hong Wong
-(2006) "Voting Counts: Participation in the Measurement of Democracy" Studies
-in Comparative International Development 42, 2 (Summer, 2006). The complete
+B. E. Moon, J. H. Birdsall, S. Ciesluk, et al. "Voting Counts: Participation in the Measurement of Democracy". In: \emph{Studies in Comparative International Development} 41.2 (2006), pp. 3-32. DOI: 10.1007/BF02686309. The complete
 dataset is available here:
 \url{http://www.lehigh.edu/~bm05/democracy/Obtain_data.htm}. The
 documentation below is based on the iformation in that website.

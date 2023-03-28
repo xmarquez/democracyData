@@ -9,9 +9,8 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8977 rows and 11 columns.
 }
 \source{
-Svolik, Milan. 2012. The Politics of Authoritarian Rule. Cambridge and
-New York, Cambridge University Press. The full data and codebook can be
-downloaded here
+M. Svolik. \emph{The Politics of Authoritarian Rule}. Cambridge: Cambridge University Press, 2012. The full data and codebook can be
+downloaded here:
 \url{https://campuspress.yale.edu/svolik/}
 }
 \usage{
@@ -20,7 +19,7 @@ svolik_regime
 \description{
 The data used to classify democracies and dictatorships for Milan Svolik's
 \emph{The Politics of Authoritarian Rule}. The full data and codebook can be
-downloaded here \url{https://campuspress.yale.edu/svolik/}
+downloaded here: \url{https://campuspress.yale.edu/svolik/}
 }
 \section{Variables}{
 
