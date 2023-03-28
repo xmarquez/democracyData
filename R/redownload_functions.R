@@ -111,10 +111,7 @@
 #'  is \code{TRUE}, in which case the function returns the raw data without
 #'  processing.
 #'
-#'@source Bowman, Kirk, Fabrice Lehoucq, and James Mahoney. 2005. Measuring
-#'  Political Democracy: Case Expertise, Data Adequacy, and Central America.
-#'  Comparative Political Studies 38 (8): 939-970.
-#'  \url{http://cps.sagepub.com/content/38/8/939}. Data available at
+#'@source `r roxygen_cite("blm")` Data used to be available at
 #'  \url{http://www.blmdemocracy.gatech.edu/}.
 #'
 #' @examples
@@ -185,10 +182,7 @@ redownload_blm <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source Anckar, Carsten and Cecilia Fredriksson (2018). "Classifying
-#'   political regimes 1800-2016: a typology and a new dataset." European
-#'   Political Science, doi: 10.1057/s41304-018-0149-8. Data, article, and
-#'   codebook available at: \doi{10.1057/s41304-018-0149-8}. Updated data (V2)
+#' @source `r roxygen_cite("anckar")` Updated data (V2)
 #'   available at
 #'   https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/7SSSAH/DIZXSI&version=2.0.
 #'
@@ -289,9 +283,7 @@ redownload_anckar <- function(url,
 
 
 #' @rdname redownload_blm
-#' @source Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A Complete
-#'   Data Set of Political Regimes, 1800-2007. Comparative Political Studies 46
-#'   (12): 1523-1554. Available at \url{https://sites.google.com/site/mkmtwo/data}
+#' @source `r roxygen_cite("bmr")` Available at \url{https://sites.google.com/site/mkmtwo/data}
 #' @export
 #' @examples
 #' \dontrun{
@@ -360,10 +352,8 @@ redownload_bmr <- function(url,
 #'   democratic and non-democratic regimes ("all"). Default is "all".
 #'
 #' @export
-#' @source Barbara Geddes, Joseph Wright, and Erica Frantz.
-#' 2014. "Autocratic Breakdown and Regime Transitions: A New Data Set."
-#' Perspectives on Politics 12(2): 313-331. The full data and codebook can be
-#' downloaded here \url{http://sites.psu.edu/dictators/}.
+#' @source `r roxygen_cite("gwf")` The full data and codebook can be
+#' downloaded here: \url{http://sites.psu.edu/dictators/}.
 #'
 #' @examples
 #' \dontrun{
@@ -422,10 +412,10 @@ redownload_gwf <- function(url,
              max_year = max(year)) %>%
       select(-year, -gwf_duration) %>%
       group_by_all() %>%
-      summarise(year = list(as.numeric(min(min_year):max(max_year)))) %>%
+      summarise(year = list(as.numeric(min(min_year):max(max_year))),
+                .groups = "drop") %>%
       tidyr::unnest(cols = c(year)) %>%
       distinct() %>%
-      ungroup() %>%
       select(-min_year, -max_year)
 
     if(dataset != "all") {
@@ -487,9 +477,7 @@ redownload_gwf <- function(url,
 #'   \url{https://dataverse.harvard.edu/api/access/datafile/6290760}
 #' @inheritParams redownload_blm
 #'
-#' @source Skaaning, Svend-Erik; John
-#' Gerring; and Henrikas Bartusevicius (2015). "A Lexical Index of Electoral
-#' Democracy." Comparative Political Studies, Vol. 48, No. 12, pp. 1491-1525.
+#' @source `r roxygen_cite("LIED")`
 #' Original data and variable descriptions available at
 #' \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}
 #'
@@ -572,9 +560,7 @@ redownload_lied <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source Cheibub, Jose Antonio, Jennifer Gandhi, and James
-#' Raymond Vreeland. 2010. "Democracy and Dictatorship Revisited." Public
-#' Choice, vol. 143, no. 2-1, pp. 67-101. DOI: 10.1007/s11127-009-9491-2. The
+#' @source `r roxygen_cite("pacl2010")` The
 #' full data and codebook can be downloaded here
 #' \url{https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited}
 #'
@@ -636,10 +622,7 @@ redownload_pacl <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source Bruce E. Moon, Jennifer Harvey Birdsall, Sylvia Ceisluk, Lauren M. Garlett,
-#' Joshua J. Hermias, Elizabeth Mendenhall, Patrick D. Schmid, and Wai Hong Wong
-#' (2006) "Voting Counts: Participation in the Measurement of Democracy" Studies
-#' in Comparative International Development 42, 2 (Summer, 2006). The complete
+#' @source `r roxygen_cite("peps")` The complete
 #' dataset is available here:
 #' \url{http://www.lehigh.edu/~bm05/democracy/Obtain_data.htm}.
 #'
@@ -712,10 +695,7 @@ redownload_peps <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source The University of Texas Inequality Project Categorical Dataset of Political
-#' Regimes. Described in Sara Hsu, "The Effect of Political Regimes on
-#' Inequality, 1963-2002," UTIP Working Paper No. 53 (2008),
-#' \url{http://utip.gov.utexas.edu/papers/utip_53.pdf}. Data available for
+#' @source `r roxygen_cite("utip")` Data available for
 #' download at
 #' \url{http://utip.gov.utexas.edu/data/}
 #'
@@ -794,9 +774,7 @@ redownload_utip <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source Wahman, Michael, Jan Teorell, and Axel Hadenius. 2013. Authoritarian
-#'   regime types revisited: updated data in comparative perspective.
-#'   Contemporary Politics 19 (1): 19-34. The dataset and codebook can be
+#' @source `r roxygen_cite("wahman_teorell_hadenius2013")` The dataset and codebook can be
 #'   downloaded from
 #'   \url{https://sites.google.com/site/authoritarianregimedataset/data}
 #'
@@ -850,8 +828,7 @@ redownload_wahman_teorell_hadenius <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source Michael Coppedge and Wolfgang Reinicke, "Measuring Polyarchy," Studies in
-#' Comparative International Development 25:1 (Spring 1990): 51-72. Data
+#' @source `r roxygen_cite("polyarchy1990")` Data
 #' available at \url{http://www3.nd.edu/~mcoppedg/crd/datacrd.htm}
 #'
 #' @export
@@ -927,9 +904,7 @@ redownload_polyarchy_original <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source Michael Coppedge, Angel Alvarez, and Claudia
-#' Maldonado, "Two Persistent Dimensions of Democracy: Contestation and
-#' Inclusiveness," Journal of Politics 70:3 (July 2008): 632-647.
+#' @source `r roxygen_cite("polyarchy_dimensions")`
 #'
 #' @export
 #'
@@ -980,10 +955,8 @@ redownload_polyarchy_dimensions <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source Magaloni, Beatriz, Jonathan Chu, and Eric Min.
-#' 2013. Autocracies of the World, 1950-2012 (Version 1.0). Dataset, Stanford
-#' University. Original data and codebook available at
-#' \url{http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset/}.
+#' @source `r roxygen_cite("magaloni")` Original data and codebook used to be
+#'   available at the link.
 #'
 #' @export
 #'
@@ -1032,10 +1005,10 @@ redownload_magaloni <- function(url,
              max_year = max(year)) %>%
       select(-year, -duration_nr) %>%
       group_by_all() %>%
-      summarise(year = list(as.numeric(min(min_year):max(max_year)))) %>%
+      summarise(year = list(as.numeric(min(min_year):max(max_year))),
+                .groups = "drop") %>%
       tidyr::unnest(cols = c(year)) %>%
       distinct() %>%
-      ungroup() %>%
       arrange(country, year) %>%
       select(-min_year, -max_year)
 
@@ -1067,11 +1040,8 @@ redownload_magaloni <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source Grundler, Klaus, and Tommy Krieger. 2018. "Machine Learning
-#'   Indicators, Political Institutions, and Economic Development." CESifo
-#'   Working Paper. Original data available at
-#'   \url{https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index\%20Upload.xlsx?dl=0}. Working paper available at
-#'   \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}
+#' @source `r roxygen_cite("svmdi2018")` Original data available at
+#'   \url{https://ml-democracy-index.net/}.
 #'
 #' @export
 #'
@@ -1216,7 +1186,7 @@ redownload_svmdi <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source Jay Ulfelder. 2012. Democracy/Autocracy Data Set. \url{http://hdl.handle.net/1902.1/18836}.
+#' @source `r roxygen_cite("ulfelder2012")`
 #'
 #' @export
 #'
@@ -1319,8 +1289,7 @@ redownload_ulfelder <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source Adam Przeworski. 2013 _Political Institutions and Political Events
-#'   (PIPE) Data Set_. Data set.
+#' @source `r roxygen_cite("PIPE")`
 #'   \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}.
 #'
 #' @export
@@ -1467,13 +1436,13 @@ redownload_pipe <- function(url,
   standardize_columns(PIPE, countryn, cowcodes, verbose = verbose)
 }
 
-#' Downloads the 2019 update of the Polity IV dataset (annual time series, to
-#' 2018) and processes it using [country_year_coder].
+#' Downloads the 2019 update of the Polity IV dataset
 #'
-#' The original data was available at
+#' Downloads the 2019 update of the Polity IV dataset (annual time series, to
+#' 2018) and processes it using [country_year_coder]. The original data is available at
 #' [http://www.systemicpeace.org/inscrdata.html](http://www.systemicpeace.org/inscrdata.html).
 #' Polity is now in version 5, which incorporates substantial changes; this
-#' redownloads the archived version of PolityIV data. Use
+#' redownloads the archived version of [polityIV] data. Use
 #' [download_polity_annual] to download version 5 of Polity.
 #'
 #' @param url The URL of the dataset. Defaults to
@@ -1488,9 +1457,7 @@ redownload_pipe <- function(url,
 #'
 #' @template standard-variables
 #'
-#' @source Marshall, Monty G., Ted Robert Gurr, and Keith Jaggers. 2019. "Polity
-#'   IV Project: Political Regime Characteristics and Transitions, 1800-2018.
-#'   Dataset Users' Manual. Center for Systemic Peace. Available at
+#' @source `r roxygen_cite("polity2019")` Available at
 #'   [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf)
 #'
 #'
@@ -1561,8 +1528,7 @@ redownload_polityIV <- function(url,
 }
 
 #' @rdname redownload_blm
-#' @source Transformation Index of the Bertelsmann Stiftung 2022. Bertelsmann
-#'   Stiftung. Available at
+#' @source `r roxygen_cite("bti")` Available at
 #'   \url{https://bti-project.org/en/index/political-transformation}
 #' @export
 #' @examples
@@ -1658,9 +1624,7 @@ redownload_bti <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source Bjornskov, C. and M. Rode (2020). "Regime types and regime change: A
-#'   new dataset on democracy, coups, and political institutions." The Review of
-#'   International Organizations 15(2): 531-551. Available at
+#' @source `r roxygen_cite("pacl_update")` Available at
 #'   \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}
 #'
 #' @export
@@ -1728,8 +1692,7 @@ redownload_pacl_update <- function(url,
 #' @rdname redownload_blm
 #' @export
 #'
-#' @source Bell, Curtis. 2016. The Rulers, Elections, and Irregular Governance
-#'   Dataset (REIGN). Broomfield, CO: OEF Research. Available at
+#' @source `r roxygen_cite("REIGN")` Available at
 #'   \url{http://oefresearch.org/datasets/reign}
 #'
 #' @examples
