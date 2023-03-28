@@ -32,7 +32,7 @@ War country codes, but with some small differences. These are:
 \if{html}{\out{<div class="sourceCode">}}\preformatted{#> # A tibble: 12 x 5
 #> # Groups:   polityIV_country, polityIV_ccode [12]
 #>    polityIV_country      polityIV_ccode  cown min_year max_year
-#>    <chr>                          <dbl> <int>    <dbl>    <dbl>
+#>    <chr>                          <dbl> <dbl>    <dbl>    <dbl>
 #>  1 Ethiopia                         529   530     1993     2018
 #>  2 Kosovo                           341   347     2008     2018
 #>  3 Montenegro                       348   341     2006     2018

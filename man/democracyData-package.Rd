@@ -4,13 +4,9 @@
 \name{democracyData-package}
 \alias{democracyData}
 \alias{democracyData-package}
-\title{democracyData}
+\title{democracyData: Access and Manipulate Most Available Democracy Datasets}
 \description{
-This package archives a large number of democracy datasets and their
-documentation, many of historical interest. It also contains a number of
-functions to download and process the original source data and to determine
-membership of a country in standard membership lists of the state system
-(according to Gleditsch and Ward, Correlates of War, or Polity).
+Archives a large number of democracy datasets, many of historical interest. It also provides a number of functions to download these datasets (where available) and determine membership of a country in standard membership lists of the state system (according to Gleditsch and Ward, Correlates of War, or Polity).
 }
 \seealso{
 Useful links:
@@ -25,3 +21,46 @@ Useful links:
 \strong{Maintainer}: Xavier Marquez \email{marquez.x@gmail.com} (\href{https://orcid.org/0000-0001-7653-9334}{ORCID})
 
 }
+\keyword{(according}
+\keyword{Correlates}
+\keyword{Gleditsch}
+\keyword{It}
+\keyword{Polity).}
+\keyword{This}
+\keyword{War,}
+\keyword{Ward,}
+\keyword{a}
+\keyword{also}
+\keyword{and}
+\keyword{archives}
+\keyword{contains}
+\keyword{country}
+\keyword{data}
+\keyword{datasets}
+\keyword{democracy}
+\keyword{democracyData}
+\keyword{determine}
+\keyword{documentation,}
+\keyword{download}
+\keyword{functions}
+\keyword{historical}
+\keyword{in}
+\keyword{interest.}
+\keyword{internal}
+\keyword{large}
+\keyword{lists}
+\keyword{many}
+\keyword{membership}
+\keyword{number}
+\keyword{of}
+\keyword{or}
+\keyword{original}
+\keyword{package}
+\keyword{process}
+\keyword{source}
+\keyword{standard}
+\keyword{state}
+\keyword{system}
+\keyword{the}
+\keyword{their}
+\keyword{to}
