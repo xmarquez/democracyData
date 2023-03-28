@@ -445,7 +445,7 @@ list(
 
   tar_target(
     name = data,
-    command = read.csv("data-raw/country_dates_panel.csv")
+    command = read_csv("data-raw/country_year_panel.csv")
   ),
 
   tar_target(
