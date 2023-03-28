@@ -26,7 +26,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -63,6 +63,21 @@
       <small>Source: <a href="https://github.com/xmarquez/democracyData/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.5.0" id="democracydata-050">democracyData 0.5.0<a class="anchor" aria-label="anchor" href="#democracydata-050"></a></h2>
+<ul><li><p>Removed dependence on <code>plyr</code></p></li>
+<li><p>Updated Freedom House download functions [download_fh] to use the latest data (2023 Freedom in the World Report)</p></li>
+<li><p>Updated EIU [eiu] to 2023 release (2023 EIU report).</p></li>
+<li><p>Updated simplified vdem [vdem_simplified] data to latest version (13.0).</p></li>
+<li><p>Deprecated [redownload_pipe] (data no longer available for download)</p></li>
+<li><p>Deprecated [redownload_blm] (data no longer available for download)</p></li>
+<li><p>Deprecated [redownload_bnr] (data no longer available for download)</p></li>
+<li><p>Added licensing info where available</p></li>
+<li><p>Updated documentation for consistency and fixed various problems with citations.</p></li>
+<li><p>Updated <code>anckar</code> data to V2 (with values to 2019).</p></li>
+<li><p>Fixed Türkiye bug in [country_year_coder]</p></li>
+<li><p>Moved to a new build system using [targets] to ensure consistency</p></li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.4.0" id="democracydata-040">democracyData 0.4.0<a class="anchor" aria-label="anchor" href="#democracydata-040"></a></h2>
 <ul><li><p>Updated BMR to version 4.0.</p></li>
@@ -117,7 +132,8 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.3" id="democracydata-023">democracyData 0.2.3<a class="anchor" aria-label="anchor" href="#democracydata-023"></a></h2>
-<ul><li>Fixed download link for the SVMDI dataset, minor typo fixes.</li></ul></div>
+<ul><li>Fixed download link for the SVMDI dataset, minor typo fixes.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.2" id="democracydata-022">democracyData 0.2.2<a class="anchor" aria-label="anchor" href="#democracydata-022"></a></h2>
 <ul><li><p>Updated <code>download_fh</code> and <code>download_fh_electoral</code> to download the latest version (2019, with data up to 2018) of Freedom House.</p></li>
@@ -158,7 +174,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
