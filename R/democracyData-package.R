@@ -1,3 +1,4 @@
+#' @keywords internal
 #' democracyData
 #'
 #'   This package archives a large number of democracy datasets and their
