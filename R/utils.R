@@ -294,8 +294,8 @@ roxygen_cite <- function(dataset_name) {
 
 roxygen_print_bibliography <- function(biblio_keys = "*") {
   RefManageR::BibOptions(sorting = "nyt")
-  RefManageR::NoCite(bibliography, biblio_keys)
-  stringr::str_replace(utils::capture.output(RefManageR::PrintBibliography(bibliography)),
+  RefManageR::NoCite(democracyData::bibliography, biblio_keys)
+  stringr::str_replace(utils::capture.output(RefManageR::PrintBibliography(democracyData::bibliography)),
                        "^\\[.+?\\] ", "\n\n") %>%
     paste(collapse = "")
 }
