@@ -441,6 +441,20 @@ list(
     format = "file"
   ),
 
+  ## State system data for country_year_coder -----
+
+  tar_target(
+    name = data,
+    command = read.csv("data-raw/country_dates_panel.csv")
+  ),
+
+  tar_target(
+    name = add_country_dates_panel,
+    command = usethis::use_data(data, internal = TRUE, overwrite = TRUE) |>
+      c("R/sysdata.rda"),
+    format = "file"
+  ),
+
   ## File testing that all datasets work and are correctly added to the package -----
 
   tar_knit(
