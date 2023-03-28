@@ -6,10 +6,12 @@
 # Load packages required to define the pipeline:
 library(targets)
 library(tarchetypes) # Load other packages as needed. # nolint
+library(tidyverse)
 
 # Set target options:
 tar_option_set(
-  packages = c("tidyverse", "rlang"), # packages that your targets need to run
+  packages = c("tidyverse", "rlang", "democracyData"), # packages that your targets need to run
+  imports = "democracyData",
   format = "rds" # default storage format
   # Set other options as needed.
 )
@@ -21,11 +23,85 @@ options(clustermq.scheduler = "multiprocess")
 future::plan(future.callr::callr)
 
 # Run the R scripts in the R/ folder with your custom functions:
-tar_source()
-load("R/sysdata.rda")
+# tar_source()
 # source("other_functions.R") # Source other scripts as needed. # nolint
-
+devtools::load_all()
+# Set up objects
 verbose <- TRUE
+
+pmm <- tibble(dataset_name = c("polity_pmm", "munck_pmm", "arat_pmm", "hadenius_pmm",
+                               "bollen_pmm", "mainwaring_pmm", "polyarchy_pmm",
+                               "pacl_pmm", "fh_pmm", "vanhanen_pmm", "blm_pmm"),
+              replication_varname = c("pmm_polity", "pmm_munck", "pmm_arat", "pmm_hadenius",
+                                      "pmm_bollen", "pmm_mainwaring", "pmm_polyarchy",
+                                      "pmm_pacl", "pmm_freedomhouse", "pmm_vanhanen", "pmm_blm")) |>
+  mutate(obj_name = dataset_name,
+         add_obj_name = paste("add", obj_name, sep = "_"),
+         data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+         across(any_of(c("replication_varname", "obj_name", "add_obj_name")), rlang::syms))
+
+
+redownloadable <- tibble(dataset_name = c("peps", "polityIV", "REIGN", "bti", "bmr", "pacl",
+                                          "wahman_teorell_hadenius", "pacl_update", "utip",
+                                          "LIED", "polyarchy", "polyarchy_dimensions", "anckar")) |>
+  mutate(obj_name = dataset_name,
+         add_obj_name = paste("add", obj_name, sep = "_"),
+         data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+         fun = paste("redownload", dataset_name, sep = "_"),
+         fun = case_when(fun == "redownload_polyarchy" ~ "redownload_polyarchy_original",
+                         fun == "redownload_LIED" ~ "redownload_lied",
+                         fun == "redownload_REIGN" ~ "redownload_reign",
+                         TRUE ~ fun),
+         across(any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")), rlang::syms))
+
+gwf_df <- tibble(dataset_name = c("gwf_all", "gwf_autocratic"),
+                     dataset_param = c("all", "autocratic")) |>
+  expand_grid(extend_param = c(TRUE, FALSE)) |>
+  mutate(fun = paste("redownload", dataset_name, sep = "_"),
+         dataset_name = case_when(extend_param ~ paste(dataset_name, "extended", sep = "_"),
+                                  !extend_param ~ dataset_name),
+         obj_name = dataset_name,
+         add_obj_name = paste("add", obj_name, sep = "_"),
+         data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+         fun = case_when(str_detect(fun, "redownload_gwf") ~ "redownload_gwf",
+                         TRUE ~ fun),
+         across(any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")), rlang::syms))
+
+other_extendable <- tibble(dataset_name = c("ulfelder", "magaloni")) |>
+  expand_grid(extend_param = c(TRUE, FALSE)) |>
+  mutate(fun = paste("redownload", dataset_name, sep = "_"),
+         dataset_name = case_when(extend_param ~ paste(dataset_name, "extended", sep = "_"),
+                                  !extend_param ~ dataset_name),
+         obj_name = dataset_name,
+         add_obj_name = paste("add", obj_name, sep = "_"),
+         data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+         across(any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")), rlang::syms))
+
+preparable <- tibble(dataset_name = c("eiu", "vanhanen", "kailitz", "anrr", "doorenspleet", "mainwaring",
+                                      "prc_gasiorowski", "svolik_regime"),
+                     data_raw_filename =c("data-raw/DI-final-version-report-2022.pdf",
+                                          "data-raw/FSD1289/FSD1289/Study/data/daF1289e.csv",
+                                          "data-raw/kailitz.yearly.rds",
+                                          "data-raw/DDCGdata_final.dta",
+                                          "data-raw/Doorenspleet data.csv",
+                                          "data-raw/Mainwaring Linan.txt",
+                                          "data-raw/Gasiorowski.csv",
+                                          "data-raw/regime and no authority spells, country-year, 1946-2008.dta"),
+                     dataset_name_filename = paste(dataset_name, "filename", sep = "_")) |>
+  mutate(obj_name = dataset_name,
+         add_obj_name = paste("add", obj_name, sep = "_"),
+         data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+         fun = paste("prepare", dataset_name, sep = "_"),
+         fun = case_when(fun == "prepare_prc_gasiorowski" ~ "prepare_prc",
+                         TRUE ~ fun),
+         across(any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")), rlang::syms))
+
+track_only <- tibble(dataset_name = c("blm", "bnr", "bnr_extended",
+                                      "PIPE", "uds_2010", "uds_2011", "uds_2014")) |>
+  mutate(obj_name = dataset_name,
+         add_obj_name = paste("add", obj_name, sep = "_"),
+         data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+         across(any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")), rlang::syms))
 
 # Replace the target list below with your own:
 list(
@@ -72,202 +148,132 @@ list(
                                            include_in_output = include_in_output)
   ),
 
-  ## Anckar -----
+  ## PMM datasets -----
 
-  tar_target(
-    name = anckar,
-    command = redownload_anckar(verbose = verbose,
-                                include_in_output = include_in_output)
+  tar_eval(
+    values = pmm,
+    tar_target(
+      name = obj_name,
+      command = extract_pmm_var(pmm_replication,
+                                replication_varname,
+                                include_in_output = include_in_output),
+    )
   ),
 
-  tar_target(
-    name = add_anckar,
-    command = usethis::use_data(anckar, overwrite = TRUE) |>
-      c("data/anckar.rda"),
-    format = "file"
+  tar_eval(
+    values = pmm,
+    tar_target(
+      name = add_obj_name,
+      command = usethis::use_data(obj_name, overwrite = TRUE) |>
+        c(data_file_name),
+      format = "file"
+    )
   ),
 
-  ## ANRR -----
+  ## Redownloadable datasets -----
 
-  tar_target(
-    name = anrr_filename,
-    command = "data-raw/DDCGdata_final.dta",
-    format = "file"
+  tar_eval(
+    values = redownloadable,
+    tar_target(
+      name = obj_name,
+      command = fun(verbose = verbose,
+                    include_in_output = include_in_output),
+    )
   ),
 
-  tar_target(
-    name = anrr,
-    command = prepare_anrr(path = anrr_filename,
-                           verbose = verbose,
-                           include_in_output = include_in_output)
+  tar_eval(
+    values = redownloadable,
+    tar_target(
+      name = add_obj_name,
+      command = usethis::use_data(obj_name, overwrite = TRUE) |>
+        c(data_file_name),
+      format = "file"
+    )
   ),
 
-  tar_target(
-    name = add_anrr,
-    command = usethis::use_data(anrr, overwrite = TRUE) |>
-      c("data/anrr.rda"),
-    format = "file"
+  ## Extendable datasets -----
+
+  tar_eval(
+    values = gwf_df,
+    tar_target(
+      name = obj_name,
+      command = fun(extend = extend_param,
+                    verbose = verbose,
+                    include_in_output = include_in_output,
+                    dataset = dataset_param),
+    )
   ),
 
-  ## Arat -----
-
-  tar_target(
-    name = arat_pmm,
-    command = extract_pmm_var(pmm_replication,
-                              pmm_arat,
-                              include_in_output = include_in_output)
+  tar_eval(
+    values = gwf_df,
+    tar_target(
+      name = add_obj_name,
+      command = usethis::use_data(obj_name, overwrite = TRUE) |>
+        c(data_file_name),
+      format = "file"
+    )
   ),
 
-  tar_target(
-    name = add_arat_pmm,
-    command = usethis::use_data(arat_pmm, overwrite = TRUE) |>
-      c("data/arat_pmm.rda"),
-    format = "file"
+  tar_eval(
+    values = other_extendable,
+    tar_target(
+      name = obj_name,
+      command = fun(extend = extend_param,
+                    verbose = verbose,
+                    include_in_output = include_in_output),
+    )
   ),
 
-  ## BLM -----
-
-  # Should normally be like this, but redownload no longer works
-  # tar_target(
-  #   name = blm,
-  #   command = redownload_blm(verbose = verbose,
-  #                               include_in_output = include_in_output)
-  # ),
-
-  # tar_target(
-  #   name = add_blm,
-  #   command = usethis::use_data(blm, overwrite = TRUE) |>
-  #     c("data/blm.rda"),
-  #   format = "file"
-  # ),
-
-  tar_target(
-    name = add_blm,
-    command = c("data/blm.rda"),
-    format = "file"
+  tar_eval(
+    values = other_extendable,
+    tar_target(
+      name = add_obj_name,
+      command = usethis::use_data(obj_name, overwrite = TRUE) |>
+        c(data_file_name),
+      format = "file"
+    )
   ),
 
-  tar_target(
-    name = blm_pmm,
-    command = extract_pmm_var(pmm_replication,
-                              pmm_blm,
-                              include_in_output = include_in_output)
+  ## Preparable datasets
+
+  tar_eval(
+    values = preparable,
+    tar_target(
+      name = dataset_name_filename,
+      command = data_raw_filename,
+      format = "file"
+    )
   ),
 
-  tar_target(
-    name = add_blm_pmm,
-    command = usethis::use_data(blm_pmm, overwrite = TRUE) |>
-      c("data/blm_pmm.rda"),
-    format = "file"
+  tar_eval(
+    values = preparable,
+    tar_target(
+      name = obj_name,
+      command = fun(data_raw_filename,
+                    verbose = verbose,
+                    include_in_output = include_in_output),
+    )
   ),
 
-  ## BMR -----
-
-  tar_target(
-    name = bmr,
-    command = redownload_bmr(verbose = verbose,
-                             include_in_output = include_in_output)
+  tar_eval(
+    values = preparable,
+    tar_target(
+      name = add_obj_name,
+      command = usethis::use_data(obj_name, overwrite = TRUE) |>
+        c(data_file_name),
+      format = "file"
+    )
   ),
 
-  tar_target(
-    name = add_bmr,
-    command = usethis::use_data(bmr, overwrite = TRUE) |>
-      c("data/bmr.rda"),
-    format = "file"
-  ),
+  ## Track only - no longer redownloadable
 
-  ## BNR -----
-
-  # Should normally be like this, but redownload no longer works
-  # tar_target(
-  #   name = bnr,
-  #   command = redownload_bnr(verbose = verbose,
-  #                               include_in_output = include_in_output)
-  # ),
-
-  # tar_target(
-  #   name = add_bnr,
-  #   command = usethis::use_data(bnr, overwrite = TRUE) |>
-  #     c("data/bnr.rda"),
-  #   format = "file"
-  # ),
-
-  # tar_target(
-  #   name = bnr_extended,
-  #   command = redownload_bnr(extend = TRUE, verbose = verbose,
-  #                            include_in_output = include_in_output)
-  # ),
-
-  # tar_target(
-  #   name = add_bnr_extended,
-  #   command = usethis::use_data(bnr_extended, overwrite = TRUE) |>
-  #     c("data/bnr_extended.rda"),
-  #   format = "file"
-  # ),
-
-  tar_target(
-    name = add_bnr,
-    command = c("data/bnr.rda"),
-    format = "file"
-  ),
-
-  tar_target(
-    name = add_bnr_extended,
-    command = c("data/bnr_extended.rda"),
-    format = "file"
-  ),
-
-  ## BTI -----
-
-  tar_target(
-    name = bti,
-    command = redownload_bti(verbose = verbose,
-                             include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_bti,
-    command = usethis::use_data(bti, overwrite = TRUE) |>
-      c("data/bti.rda"),
-    format = "file"
-  ),
-
-  ## Bollen -----
-
-  tar_target(
-    name = bollen_pmm,
-    command = extract_pmm_var(pmm_replication,
-                              pmm_bollen,
-                              include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_bollen_pmm,
-    command = usethis::use_data(bollen_pmm, overwrite = TRUE) |>
-      c("data/bollen_pmm.rda"),
-    format = "file"
-  ),
-
-  ## Doorenspleet -----
-
-  tar_target(
-    name = doorenspleet_filename,
-    command = "data-raw/Doorenspleet data.csv",
-    format = "file"
-  ),
-
-  tar_target(
-    name = doorenspleet,
-    command = prepare_doorenspleet(path = doorenspleet_filename,
-                                   verbose = verbose,
-                                   include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_doorenspleet,
-    command = usethis::use_data(doorenspleet, overwrite = TRUE) |>
-      c("data/doorenspleet.rda"),
-    format = "file"
+  tar_eval(
+    values = track_only,
+    tar_target(
+      name = add_obj_name,
+      command = c(data_file_name),
+      format = "file"
+    )
   ),
 
   ## WGI -----
@@ -285,26 +291,6 @@ list(
     format = "file"
   ),
 
-  ## EIU -----
-
-  tar_target(
-    name = eiu_filename,
-    command = "data-raw/DI-final-version-report-2022.pdf",
-    format = "file"
-  ),
-
-  tar_target(
-    name = eiu,
-    command = prepare_eiu(eiu_filename, verbose = verbose,
-                          include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_eiu,
-    command = usethis::use_data(eiu, overwrite = TRUE) |>
-      c("data/eiu.rda"),
-    format = "file"
-  ),
 
   ## FH -----
 
@@ -333,294 +319,7 @@ list(
                                include_in_output = include_in_output)
   ),
 
-  tar_target(
-    name = fh_pmm,
-    command = extract_pmm_var(pmm_replication,
-                              pmm_freedomhouse,
-                              include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_fh_pmm,
-    command = usethis::use_data(fh_pmm, overwrite = TRUE) |>
-      c("data/fh_pmm.rda"),
-    format = "file"
-  ),
-
-  ## GWF -----
-
-  tar_target(
-    name = gwf_autocratic,
-    command = redownload_gwf(verbose = verbose,
-                             dataset = "autocratic",
-                             include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_gwf_autocratic,
-    command = usethis::use_data(gwf_autocratic, overwrite = TRUE) |>
-      c("data/gwf_autocratic.rda"),
-    format = "file"
-  ),
-
-  tar_target(
-    name = gwf_autocratic_extended,
-    command = redownload_gwf(extend = TRUE, verbose = verbose,
-                             dataset = "autocratic",
-                             include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_gwf_autocratic_extended,
-    command = usethis::use_data(gwf_autocratic_extended, overwrite = TRUE) |>
-      c("data/gwf_autocratic_extended.rda"),
-    format = "file"
-  ),
-
-  tar_target(
-    name = gwf_all,
-    command = redownload_gwf(verbose = verbose,
-                             dataset = "all",
-                             include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_gwf_all,
-    command = usethis::use_data(gwf_all, overwrite = TRUE) |>
-      c("data/gwf_all.rda"),
-    format = "file"
-  ),
-
-  tar_target(
-    name = gwf_all_extended,
-    command = redownload_gwf(extend = TRUE, verbose = verbose,
-                             dataset = "all",
-                             include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_gwf_all_extended,
-    command = usethis::use_data(gwf_all_extended, overwrite = TRUE) |>
-      c("data/gwf_all_extended.rda"),
-    format = "file"
-  ),
-
-  ## Hadenius -----
-
-  tar_target(
-    name = hadenius_pmm,
-    command = extract_pmm_var(pmm_replication,
-                              pmm_hadenius,
-                              include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_hadenius_pmm,
-    command = usethis::use_data(hadenius_pmm, overwrite = TRUE) |>
-      c("data/hadenius_pmm.rda"),
-    format = "file"
-  ),
-
-  ## Kailitz -----
-
-  tar_target(
-    name = kailitz_filename,
-    command = "data-raw/kailitz.yearly.rds",
-    format = "file"
-  ),
-
-  tar_target(
-    name = kailitz,
-    command = prepare_kailitz(kailitz_filename, verbose = verbose,
-                              include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_kailitz,
-    command = usethis::use_data(kailitz, overwrite = TRUE) |>
-      c("data/kailitz.rda"),
-    format = "file"
-  ),
-
-  ## LIED -----
-
-  tar_target(
-    name = LIED,
-    command = redownload_lied(verbose = verbose,
-                              include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_lied,
-    command = usethis::use_data(LIED, overwrite = TRUE) |>
-      c("data/LIED.rda"),
-    format = "file"
-  ),
-
-  ## Magaloni -----
-
-  tar_target(
-    name = magaloni,
-    command = redownload_magaloni(verbose = verbose,
-                                  include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_magaloni,
-    command = usethis::use_data(magaloni, overwrite = TRUE) |>
-      c("data/magaloni.rda"),
-    format = "file"
-  ),
-
-  tar_target(
-    name = magaloni_extended,
-    command = redownload_magaloni(extend = TRUE, verbose = verbose,
-                                  include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_magaloni_extended,
-    command = usethis::use_data(magaloni_extended, overwrite = TRUE) |>
-      c("data/magaloni_extended.rda"),
-    format = "file"
-  ),
-
-  ## Mainwaring -----
-
-  tar_target(
-    name = mainwaring_filename,
-    command = "data-raw/Mainwaring Linan.txt",
-    format = "file"
-  ),
-
-  tar_target(
-    name = mainwaring,
-    command = prepare_mainwaring(mainwaring_filename, verbose = verbose,
-                                 include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_mainwaring,
-    command = usethis::use_data(mainwaring, overwrite = TRUE) |>
-      c("data/mainwaring.rda"),
-    format = "file"
-  ),
-
-  tar_target(
-    name = mainwaring_pmm,
-    command = extract_pmm_var(pmm_replication,
-                              pmm_mainwaring,
-                              include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_mainwaring_pmm,
-    command = usethis::use_data(mainwaring_pmm, overwrite = TRUE) |>
-      c("data/mainwaring_pmm.rda"),
-    format = "file"
-  ),
-
-  ## Munck -----
-
-  tar_target(
-    name = munck_pmm,
-    command = extract_pmm_var(pmm_replication,
-                              pmm_munck,
-                              include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_munck_pmm,
-    command = usethis::use_data(munck_pmm, overwrite = TRUE) |>
-      c("data/munck_pmm.rda"),
-    format = "file"
-  ),
-
-  ## PACL
-
-  tar_target(
-    name = pacl_pmm,
-    command = extract_pmm_var(pmm_replication,
-                              pmm_pacl,
-                              include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_pacl_pmm,
-    command = usethis::use_data(pacl_pmm, overwrite = TRUE) |>
-      c("data/pacl_pmm.rda"),
-    format = "file"
-  ),
-
-  tar_target(
-    name = pacl,
-    command = redownload_pacl(verbose = verbose,
-                              include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_pacl,
-    command = usethis::use_data(pacl, overwrite = TRUE) |>
-      c("data/pacl.rda"),
-    format = "file"
-  ),
-
-  tar_target(
-    name = pacl_update,
-    command = redownload_pacl_update(verbose = verbose,
-                                     include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_pacl_update,
-    command = usethis::use_data(pacl_update, overwrite = TRUE) |>
-      c("data/pacl_update.rda"),
-    format = "file"
-  ),
-
-  ## PEPS
-
-  tar_target(
-    name = peps,
-    command = redownload_peps(verbose = verbose,
-                              include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_peps,
-    command = usethis::use_data(peps, overwrite = TRUE) |>
-      c("data/peps.rda"),
-    format = "file"
-  ),
-
-  ## Polity
-
-  tar_target(
-    name = polity_pmm,
-    command = extract_pmm_var(pmm_replication,
-                              pmm_polity,
-                              include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_polity_pmm,
-    command = usethis::use_data(polity_pmm, overwrite = TRUE) |>
-      c("data/polity_pmm.rda"),
-    format = "file"
-  ),
-
-  tar_target(
-    name = polityIV,
-    command = redownload_polityIV(verbose = verbose,
-                                  include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_polityIV,
-    command = usethis::use_data(polityIV, overwrite = TRUE) |>
-      c("data/polityIV.rda"),
-    format = "file"
-  ),
+  ## Polity 5 -----
 
   tar_target(
     name = polity5,
@@ -654,8 +353,8 @@ list(
   tar_target(
     name = pitf,
     command = create_pitf_scores(polity5,
-                                 verbose = verbose,
-                                 include_in_output = include_in_output)
+                                                 verbose = verbose,
+                                                 include_in_output = include_in_output)
   ),
 
   tar_target(
@@ -665,120 +364,6 @@ list(
     format = "file"
   ),
 
-  ## Polyarchy -----
-
-  tar_target(
-    name = polyarchy_pmm,
-    command = extract_pmm_var(pmm_replication,
-                              pmm_polyarchy,
-                              include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_polyarchy_pmm,
-    command = usethis::use_data(polyarchy_pmm, overwrite = TRUE) |>
-      c("data/polyarchy_pmm.rda"),
-    format = "file"
-  ),
-
-  tar_target(
-    name = polyarchy,
-    command = redownload_polyarchy_original(verbose = verbose,
-                                            include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_polyarchy,
-    command = usethis::use_data(polyarchy, overwrite = TRUE) |>
-      c("data/polyarchy.rda"),
-    format = "file"
-  ),
-
-  tar_target(
-    name = polyarchy_dimensions,
-    command = redownload_polyarchy_dimensions(verbose = verbose,
-                                              include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_polyarchy_dimensions,
-    command = usethis::use_data(polyarchy_dimensions, overwrite = TRUE) |>
-      c("data/polyarchy_dimensions.rda"),
-    format = "file"
-  ),
-
-  ## PRC/Gasiorowski -----
-
-  tar_target(
-    name = prc_pmm,
-    command = extract_pmm_var(pmm_replication,
-                              pmm_prc,
-                              include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_prc_pmm,
-    command = usethis::use_data(prc_pmm, overwrite = TRUE) |>
-      c("data/prc_pmm.rda"),
-    format = "file"
-  ),
-
-  tar_target(
-    name = prc_gasiorowski_filename,
-    command = "data-raw/Gasiorowski.csv",
-    format = "file"
-  ),
-
-  tar_target(
-    name = prc_gasiorowski,
-    command = prepare_prc(prc_gasiorowski_filename,
-                          verbose = verbose,
-                          include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_prc_gasiorowski,
-    command = usethis::use_data(prc_gasiorowski, overwrite = TRUE) |>
-      c("data/prc_gasiorowski.rda"),
-    format = "file"
-  ),
-
-  ## PIPE -----
-
-  # Should normally be like this, but redownload no longer works
-  # tar_target(
-  #   name = PIPE,
-  #   command = redownload_PIPE(verbose = verbose,
-  #                             include_in_output = include_in_output)
-  # ),
-
-  # tar_target(
-  #   name = add_PIPE,
-  #   command = usethis::use_data(PIPE, overwrite = TRUE) |>
-  #     c("data/PIPE.rda"),
-  #   format = "file"
-  # ),
-
-  tar_target(
-    name = add_PIPE,
-    command = c("data/PIPE.rda"),
-    format = "file"
-  ),
-
-  ## REIGN -----
-
-  tar_target(
-    name = REIGN,
-    command = redownload_reign(verbose = verbose,
-                               include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_REIGN,
-    command = usethis::use_data(REIGN, overwrite = TRUE) |>
-      c("data/REIGN.rda"),
-    format = "file"
-  ),
 
   ## SVDMI -----
 
@@ -809,53 +394,6 @@ list(
     format = "file"
   ),
 
-  ## Svolik -----
-
-  tar_target(
-    name = svolik_regime_filename,
-    command = "data-raw/regime and no authority spells, country-year, 1946-2008.dta",
-    format = "file"
-  ),
-
-  tar_target(
-    name = svolik_regime,
-    command = prepare_svolik_regime(svolik_regime_filename,
-                                    verbose = verbose,
-                                    include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_svolik_regime,
-    command = usethis::use_data(svolik_regime, overwrite = TRUE) |>
-      c("data/svolik_regime.rda"),
-    format = "file"
-  ),
-
-  ## UDS -----
-
-  # The original website no longer works, so the only versions of the data are archived here
-
-  tar_target(
-    name = uds_2014,
-    command = "data/uds_2014.rda",
-    format = "file"
-  ),
-
-  tar_target(
-    name = uds_2011,
-    command = "data/uds_2011.rda",
-    format = "file"
-  ),
-
-  tar_target(
-    name = uds_2010,
-    command = "data/uds_2010.rda",
-    format = "file"
-  ),
-
-  # This target needs manual invalidation for large overhauls; it currently does
-  # not detect that it depends on every dataset in the package
-
   tar_target(
     name = extended_uds,
     command = generate_extended_uds(verbose = verbose)
@@ -865,84 +403,6 @@ list(
     name = add_extended_uds,
     command = usethis::use_data(extended_uds, overwrite = TRUE) |>
       c("data/extended_uds.rda"),
-    format = "file"
-  ),
-
-  ## Ulfelder -----
-
-  tar_target(
-    name = ulfelder,
-    command = redownload_ulfelder(verbose = verbose,
-                                  include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_ulfelder,
-    command = usethis::use_data(ulfelder, overwrite = TRUE) |>
-      c("data/ulfelder.rda"),
-    format = "file"
-  ),
-
-  tar_target(
-    name = ulfelder_extended,
-    command = redownload_ulfelder(extend = TRUE, verbose = verbose,
-                                  include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_ulfelder_extended,
-    command = usethis::use_data(ulfelder_extended, overwrite = TRUE) |>
-      c("data/ulfelder_extended.rda"),
-    format = "file"
-  ),
-
-  ## UTIP
-
-  tar_target(
-    name = utip,
-    command = redownload_utip(verbose = verbose,
-                              include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_utip,
-    command = usethis::use_data(utip, overwrite = TRUE) |>
-      c("data/utip.rda"),
-    format = "file"
-  ),
-
-  ## Vanhanen -----
-
-  tar_target(
-    name = vanhanen_filename,
-    command = "data-raw/FSD1289/FSD1289/Study/data/daF1289e.csv",
-    format = "file"
-  ),
-
-  tar_target(
-    name = vanhanen,
-    command = prepare_vanhanen(vanhanen_filename, verbose = verbose,
-                               include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_vanhanen,
-    command = usethis::use_data(vanhanen, overwrite = TRUE) |>
-      c("data/vanhanen.rda"),
-    format = "file"
-  ),
-
-  tar_target(
-    name = vanhanen_pmm,
-    command = extract_pmm_var(pmm_replication,
-                              pmm_vanhanen,
-                              include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_vanhanen_pmm,
-    command = usethis::use_data(prc_pmm, overwrite = TRUE) |>
-      c("data/vanhanen_pmm.rda"),
     format = "file"
   ),
 
@@ -958,21 +418,6 @@ list(
     name = add_vdem_simple,
     command = usethis::use_data(vdem_simple, overwrite = TRUE) |>
       c("data/vdem_simple.rda"),
-    format = "file"
-  ),
-
-  ## Wahman Teorell and Hadenius -----
-
-  tar_target(
-    name = wahman_teorell_hadenius,
-    command = redownload_wahman_teorell_hadenius(verbose = verbose,
-                                                 include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_wahman_teorell_hadenius,
-    command = usethis::use_data(wahman_teorell_hadenius, overwrite = TRUE) |>
-      c("data/wahman_teorell_hadenius.rda"),
     format = "file"
   ),
 
@@ -996,11 +441,19 @@ list(
     format = "file"
   ),
 
-  ## File testing that all datasets work and are correctly added to the package
+  ## File testing that all datasets work and are correctly added to the package -----
 
   tar_knit(
     name = add_and_test_all_scores,
     path = "data-raw/Adding and testing all democracy datasets.Rmd",
     output = "data-raw/Adding and testing all democracy datasets.md"
+  ),
+
+  ## README -----
+
+  tar_knit(
+    name = README,
+    path = "README.Rmd"
   )
+
 )
