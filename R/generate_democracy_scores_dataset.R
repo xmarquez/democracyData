@@ -365,14 +365,11 @@
 #'
 #' @export
 #'
-#' @references Pemstein, Daniel, Stephen Meserve, and James Melton. 2010.
-#'   Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-#'   Type. Political Analysis 18 (4): 426-449.
+#' @references
 #'
-#'   Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication
-#'   data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures
-#'   of Regime Type." In: Harvard Dataverse.
-#'   \url{http://hdl.handle.net/1902.1/PMM}
+#' `r roxygen_cite("pmm2010")`
+#'
+#' `r roxygen_cite("pmm2013")`
 #'
 #' @examples
 #' democracy_data_long_no_download <- generate_democracy_scores_dataset(exclude_downloadable = TRUE,
