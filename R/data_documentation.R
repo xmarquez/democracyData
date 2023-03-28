@@ -6868,7 +6868,9 @@
 #'
 #' @references
 #'
-#' `r roxygen_cite("pmm")`
+#' `r roxygen_cite("pmm2010")`
+#'
+#' `r roxygen_cite("pmm2013")`
 #'
 #'   \url{http://hdl.handle.net/1902.1/PMM}
 "democracy_info"
