@@ -285,6 +285,19 @@ cite_dataset <- function(dataset_name, to_bibtex = FALSE) {
 
 }
 
+roxygen_cite <- function(dataset_name) {
+  stringr::str_remove(utils::capture.output(print(cite_dataset(dataset_name))),
+                      "^\\[.+?\\] ") %>%
+    paste(collapse = " ")
+}
+
+roxygen_print_bibliography <- function(biblio_keys = "*") {
+  RefManageR::NoCite(bibliography, biblio_keys)
+  stringr::str_replace(utils::capture.output(RefManageR::PrintBibliography(bibliography)),
+                       "^\\[.+?\\] ", "\n\n") %>%
+    paste(collapse = "")
+}
+
 
 #' @import knitr
 knit_print.tbl = function(x, ...) {
