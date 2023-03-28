@@ -1070,7 +1070,7 @@
 
 # Mainwaring --------------------------------------------------------------
 
-#' Mainwaring, Brinks, and Perez Linan's democracy measure for Latin America
+#' Mainwaring, Brinks, and Perez Liñán's democracy measure for Latin America
 #'
 #' Trichotomous democracy indicator from `r roxygen_cite("mainwaring2001")`
 #' Extended in `r roxygen_cite("mainwaring2014")` Original data used to be available
