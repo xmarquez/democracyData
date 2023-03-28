@@ -177,7 +177,7 @@
 <div class="section level2">
 <h2 id="downloading-democracy-data">Downloading democracy data<a class="anchor" aria-label="anchor" href="#downloading-democracy-data"></a>
 </h2>
-<p>There are a couple of democracy datasets that are not currently archived in this package: the family of datasets released by <a href="https://freedomhouse.org/" class="external-link">Freedom House</a> and the full V-Dem dataset. To download the Freedom House dataset, use the the <code>download_*</code> family of functions; to download the full V-Dem dataset, use the <a href="https://github.com/vdeminstitute/vdemdata" class="external-link">vdemdata</a> package. The package <em>does</em> include the main indexes of version 13.0 of V-Dem (see [vdem_simple]), so you don’t need to use the <a href="https://github.com/vdeminstitute/vdemdata" class="external-link">vdemdata</a> package if you are only interested in the higher-level indexes of democracy. You can also download directly the latest versions of the World Bank’s Voice and Accountability Index from the <a href="http://info.worldbank.org/governance/wgi/" class="external-link">World Governance Indicators</a> and <a href="http://www.systemicpeace.org/inscrdata.html" class="external-link">Polity5</a>, though there are also archived versions of these two in the package.</p>
+<p>There are a couple of democracy datasets that are not currently archived in this package: the family of datasets released by <a href="https://freedomhouse.org/" class="external-link">Freedom House</a> and the full V-Dem dataset. To download the Freedom House dataset, use the the <code>download_*</code> family of functions; to download the full V-Dem dataset, use the <a href="https://github.com/vdeminstitute/vdemdata" class="external-link">vdemdata</a> package. The package <em>does</em> include the main indexes of version 13.0 of V-Dem (see <code>vdem_simple</code>), so you don’t need to use the <a href="https://github.com/vdeminstitute/vdemdata" class="external-link">vdemdata</a> package if you are only interested in the higher-level indexes of democracy. You can also download directly the latest versions of the World Bank’s Voice and Accountability Index from the <a href="http://info.worldbank.org/governance/wgi/" class="external-link">World Governance Indicators</a> and <a href="http://www.systemicpeace.org/inscrdata.html" class="external-link">Polity5</a>, though there are also archived versions of these two in the package.</p>
 <p>For example, we can download and process the Freedom House “Freedom in the World” dataset as follows:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fh</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/download_fh.html">download_fh</a></span><span class="op">(</span>verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
@@ -200,7 +200,7 @@
 <span><span class="co">#&gt;  9 Afghanistan  1980     7     7 NF           14                 0</span></span>
 <span><span class="co">#&gt; 10 Afghanistan  1982     7     7 NF           14                 0</span></span>
 <span><span class="co">#&gt; # ℹ 9,035 more rows</span></span>
-<span><span class="co">#&gt; # ℹ 4 more variables: extended_country_name &lt;chr&gt;, GWn &lt;dbl&gt;, cown &lt;int&gt;,</span></span>
+<span><span class="co">#&gt; # ℹ 4 more variables: extended_country_name &lt;chr&gt;, GWn &lt;dbl&gt;, cown &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   in_GW_system &lt;lgl&gt;</span></span></code></pre></div>
 <p>This downloads the latest update of the “Freedom in the World” dataset (1972-2021, corresponding to the 2022 report), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables <code>fh_total</code> and <code>fh_total_reversed</code>, and adds state system information, including a standardized country name, the <a href="http://privatewww.essex.ac.uk/~ksg/statelist.html" class="external-link">Gleditsch-Ward</a> country code and the <a href="http://www.correlatesofwar.org/data-sets/state-system-membership" class="external-link">Correlates of War</a> country code.</p>
 <p>Other democracy datasets included in this package do not need to be downloaded, but they can often also be “re-downloaded” from the websites of their creators or maintainers if required. For example, one can either access PACL directly by typing</p>
@@ -359,12 +359,12 @@
 <td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
-<td align="left">TRUE</td>
+<td align="left">FALSE</td>
 <td align="left">TRUE</td>
 <td align="right">2005</td>
 <td align="left">NA</td>
 <td align="left">Unknown. Assumed CC0 1.0</td>
-<td align="left">NA</td>
+<td align="left">This used to be downloadable; the website hosting it is down, however.</td>
 </tr>
 <tr class="odd">
 <td align="left">bmr</td>
@@ -396,7 +396,7 @@
 <td align="right">2001</td>
 <td align="left">NA</td>
 <td align="left">Unknown. Assumed CC0 1.0</td>
-<td align="left">Can be extended using a full panel of sovereign countries (COW). Extended version included in this package.</td>
+<td align="left">Can be extended using a full panel of sovereign countries (COW). Extended version included in this package. This used to be downloadable; the website hosting it is down, however.</td>
 </tr>
 <tr class="odd">
 <td align="left">bti</td>
@@ -665,12 +665,12 @@
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
-<td align="left">TRUE</td>
+<td align="left">FALSE</td>
 <td align="left">TRUE</td>
 <td align="right">2010</td>
 <td align="left"><a href="https://sites.google.com/a/nyu.edu/adam-przeworski/home/data" class="external-link uri">https://sites.google.com/a/nyu.edu/adam-przeworski/home/data</a></td>
 <td align="left">Unknown. Assumed CC0 1.0</td>
-<td align="left">Democracy measures in PIPE are calculated in this package on the basis of imperfect instructions in the codebook. Use with care.</td>
+<td align="left">Democracy measures in PIPE are calculated in this package on the basis of imperfect instructions in the codebook. Use with care. This used to be downloadable; the link no longer works, however.</td>
 </tr>
 <tr class="even">
 <td align="left">pitf</td>
@@ -970,7 +970,7 @@
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">TRUE</td>
-<td align="left">FALSE</td>
+<td align="left">TRUE</td>
 <td align="right">2010</td>
 <td align="left"><a href="http://info.worldbank.org/governance/wgi/" class="external-link uri">http://info.worldbank.org/governance/wgi/</a></td>
 <td align="left">Unknown.</td>
@@ -999,9 +999,9 @@
 <span><span class="co">#&gt; ! NAs introduced by coercion</span></span>
 <span></span>
 <span><span class="va">democracy_data</span></span>
-<span><span class="co">#&gt; # A tibble: 37,177 × 89</span></span>
+<span><span class="co">#&gt; # A tibble: 37,154 × 89</span></span>
 <span><span class="co">#&gt;    extended_country_name   GWn  cown in_GW_system  year PEPS1i PEPS1q PEPS1v</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;                 &lt;dbl&gt; &lt;int&gt; &lt;lgl&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;                 &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt;  1 Abkhazia                396    NA FALSE         1997     NA     NA     NA</span></span>
 <span><span class="co">#&gt;  2 Abkhazia                396    NA FALSE         1998     NA     NA     NA</span></span>
 <span><span class="co">#&gt;  3 Abkhazia                396    NA FALSE         1999     NA     NA     NA</span></span>
@@ -1012,7 +1012,7 @@
 <span><span class="co">#&gt;  8 Abkhazia                396    NA FALSE         2004     NA     NA     NA</span></span>
 <span><span class="co">#&gt;  9 Abkhazia                396    NA FALSE         2005     NA     NA     NA</span></span>
 <span><span class="co">#&gt; 10 Abkhazia                396    NA FALSE         2006     NA     NA     NA</span></span>
-<span><span class="co">#&gt; # ℹ 37,167 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 37,144 more rows</span></span>
 <span><span class="co">#&gt; # ℹ 81 more variables: PEPS2i &lt;dbl&gt;, PEPS2q &lt;dbl&gt;, PEPS2v &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   PIPE_democracy &lt;dbl&gt;, PIPE_regime &lt;dbl&gt;, anckar_democracy &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   anrr_democracy &lt;dbl&gt;, blm &lt;dbl&gt;, bmr_democracy &lt;dbl&gt;,</span></span>
@@ -1027,20 +1027,20 @@
 <p>The package also offers a series of convenience functions to calculate latent variable indexes of democracy (following Pemstein, Meserve, and Melton’s <a href="https://www.jstor.org/stable/25792023?seq=1" class="external-link">2010 article</a> “Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type”); see the vignette on <a href="https://xmarquez.github.io/democracyData/articles/Replicating_and_extending_the_UD_scores.html">Replicating and Extending the UD scores of Pemstein, Meserve, and Melton</a>. It also contains a pre-calculated extended version of these scores, available as <code>extended_uds</code>:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">extended_uds</span></span>
-<span><span class="co">#&gt; # A tibble: 36,864 × 20</span></span>
+<span><span class="co">#&gt; # A tibble: 36,841 × 20</span></span>
 <span><span class="co">#&gt;    extended_country_name   GWn  cown in_GW_system  year     z1 se_z1 z1_pct975</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;                 &lt;dbl&gt; &lt;int&gt; &lt;lgl&gt;        &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Abkhazia                396    NA FALSE         1997 0.0300 0.328     0.673</span></span>
-<span><span class="co">#&gt;  2 Abkhazia                396    NA FALSE         1998 0.0300 0.328     0.673</span></span>
-<span><span class="co">#&gt;  3 Abkhazia                396    NA FALSE         1999 0.0300 0.328     0.673</span></span>
-<span><span class="co">#&gt;  4 Abkhazia                396    NA FALSE         2000 0.0300 0.328     0.673</span></span>
-<span><span class="co">#&gt;  5 Abkhazia                396    NA FALSE         2001 0.0300 0.328     0.673</span></span>
-<span><span class="co">#&gt;  6 Abkhazia                396    NA FALSE         2002 0.0300 0.328     0.673</span></span>
-<span><span class="co">#&gt;  7 Abkhazia                396    NA FALSE         2003 0.0300 0.328     0.673</span></span>
-<span><span class="co">#&gt;  8 Abkhazia                396    NA FALSE         2004 0.0300 0.328     0.673</span></span>
-<span><span class="co">#&gt;  9 Abkhazia                396    NA FALSE         2005 0.235  0.327     0.876</span></span>
-<span><span class="co">#&gt; 10 Abkhazia                396    NA FALSE         2006 0.235  0.327     0.876</span></span>
-<span><span class="co">#&gt; # ℹ 36,854 more rows</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;                 &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;        &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Abkhazia                396    NA FALSE         1997 0.0307 0.328     0.674</span></span>
+<span><span class="co">#&gt;  2 Abkhazia                396    NA FALSE         1998 0.0307 0.328     0.674</span></span>
+<span><span class="co">#&gt;  3 Abkhazia                396    NA FALSE         1999 0.0307 0.328     0.674</span></span>
+<span><span class="co">#&gt;  4 Abkhazia                396    NA FALSE         2000 0.0307 0.328     0.674</span></span>
+<span><span class="co">#&gt;  5 Abkhazia                396    NA FALSE         2001 0.0307 0.328     0.674</span></span>
+<span><span class="co">#&gt;  6 Abkhazia                396    NA FALSE         2002 0.0307 0.328     0.674</span></span>
+<span><span class="co">#&gt;  7 Abkhazia                396    NA FALSE         2003 0.0307 0.328     0.674</span></span>
+<span><span class="co">#&gt;  8 Abkhazia                396    NA FALSE         2004 0.0307 0.328     0.674</span></span>
+<span><span class="co">#&gt;  9 Abkhazia                396    NA FALSE         2005 0.236  0.327     0.876</span></span>
+<span><span class="co">#&gt; 10 Abkhazia                396    NA FALSE         2006 0.236  0.327     0.876</span></span>
+<span><span class="co">#&gt; # ℹ 36,831 more rows</span></span>
 <span><span class="co">#&gt; # ℹ 12 more variables: z1_pct025 &lt;dbl&gt;, z1_adj &lt;dbl&gt;, z1_pct975_adj &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   z1_pct025_adj &lt;dbl&gt;, z1_as_prob &lt;dbl&gt;, z1_pct975_as_prob &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   z1_pct025_as_prob &lt;dbl&gt;, z1_adj_as_prob &lt;dbl&gt;, z1_pct975_adj_as_prob &lt;dbl&gt;,</span></span>
@@ -1369,7 +1369,7 @@
 <code class="sourceCode R"><span><span class="fu"><a href="reference/create_panel.html">create_panel</a></span><span class="op">(</span>system <span class="op">=</span> <span class="st">"cow"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 17,231 × 5</span></span>
 <span><span class="co">#&gt;     cown cow_country_name         cow_startdate cow_enddate  year</span></span>
-<span><span class="co">#&gt;    &lt;int&gt; &lt;chr&gt;                    &lt;date&gt;        &lt;date&gt;      &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;                    &lt;date&gt;        &lt;date&gt;      &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt;  1     2 United States of America 1816-01-01    NA           1816</span></span>
 <span><span class="co">#&gt;  2     2 United States of America 1816-01-01    NA           1817</span></span>
 <span><span class="co">#&gt;  3     2 United States of America 1816-01-01    NA           1818</span></span>
@@ -1436,6 +1436,7 @@
 <p>Kaufmann D, Kraay A (2020). “Worldwide Governance Indicators.” <a href="http://www.govindicators.org" class="external-link uri">http://www.govindicators.org</a>.</p>
 <p>Magaloni B, Chu J, Min E (2013). “Autocracies of the World, 1950-2012 (Version 1.0).” <a href="http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset" class="external-link uri">http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset</a>.</p>
 <p>Mainwaring S, Brinks D, Pérez-Liñán A (2001). “Classifying Political Regimes in Latin America.” <em>Studies in Comparative International Development</em>, <em>36</em>(1), 37-65. <a href="doi:10.1007/bf02687584" class="uri">doi:10.1007/bf02687584</a> <a href="https://doi.org/10.1007/bf02687584" class="external-link uri">https://doi.org/10.1007/bf02687584</a>.</p>
+<p>Mainwaring S, Pérez-Liñán A, Brinks D (2014). “Political Regimes in Latin America, 1900-2007 (with Daniel Brinks).” In <em>Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall</em>, chapter Political Regimes in Latin America, 1900-2007 (with Daniel Brinks). Cambridge University Press, New York.</p>
 <p>Marquez X (2016). “A Quick Method for Extending the Unified Democracy Scores.” <em>Available at SSRN 2753830</em>. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830" class="external-link uri">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830</a>.</p>
 <p>Márquez X (2020). “democracyData: A package for accessing and manipulating existing measures of democracy.” <a href="http://github.com/xmarquez/democracyData" class="external-link uri">http://github.com/xmarquez/democracyData</a>.</p>
 <p>Marshall MG, Gurr TR (2020). <em>Polity 5: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users’ Manual.</em>.</p>
