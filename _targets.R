@@ -30,10 +30,10 @@ devtools::load_all()
 verbose <- TRUE
 
 pmm <- tibble(dataset_name = c("polity_pmm", "munck_pmm", "arat_pmm", "hadenius_pmm",
-                               "bollen_pmm", "mainwaring_pmm", "polyarchy_pmm",
+                               "bollen_pmm", "mainwaring_pmm", "polyarchy_pmm", "prc_pmm",
                                "pacl_pmm", "fh_pmm", "vanhanen_pmm", "blm_pmm"),
               replication_varname = c("pmm_polity", "pmm_munck", "pmm_arat", "pmm_hadenius",
-                                      "pmm_bollen", "pmm_mainwaring", "pmm_polyarchy",
+                                      "pmm_bollen", "pmm_mainwaring", "pmm_polyarchy", "pmm_prc",
                                       "pmm_pacl", "pmm_freedomhouse", "pmm_vanhanen", "pmm_blm")) |>
   mutate(obj_name = dataset_name,
          add_obj_name = paste("add", obj_name, sep = "_"),
