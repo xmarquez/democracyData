@@ -20,90 +20,57 @@
 \alias{redownload_reign}
 \title{Download and process various democracy datasets.}
 \source{
-Bowman, Kirk, Fabrice Lehoucq, and James Mahoney. 2005. Measuring
-Political Democracy: Case Expertise, Data Adequacy, and Central America.
-Comparative Political Studies 38 (8): 939-970.
-\url{http://cps.sagepub.com/content/38/8/939}. Data available at
+K. Bowman, F. Lehoucq, and J. Mahoney. "Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America". In: \emph{Comparative Political Studies} 38.8 (2005), pp. 939-970. DOI: 10.1177/0010414005277083. Data used to be available at
 \url{http://www.blmdemocracy.gatech.edu/}.
 
-Anckar, Carsten and Cecilia Fredriksson (2018). "Classifying
-political regimes 1800-2016: a typology and a new dataset." European
-Political Science, doi: 10.1057/s41304-018-0149-8. Data, article, and
-codebook available at: \doi{10.1057/s41304-018-0149-8}. Updated data (V2)
+C. Anckar and C. Fredriksson. "Classifying political regimes 1800-2016: a typology and a new dataset". In: \emph{European Political Science} (2018). DOI: 10.1057/s41304-018-0149-8. \url{https://doi.org/10.1057/s41304-018-0149-8}. Updated data (V2)
 available at
 https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/7SSSAH/DIZXSI&version=2.0.
 
-Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. A Complete
-Data Set of Political Regimes, 1800-2007. Comparative Political Studies 46
-(12): 1523-1554. Available at \url{https://sites.google.com/site/mkmtwo/data}
+C. Boix, M. Miller, and S. Rosato. "A Complete Dataset of Political Regimes, 1800-2007". In: \emph{Comparative Political Studies} 46.12 (2012), pp. 1523-1554. DOI: 10.1177/0010414012463905. Available at \url{https://sites.google.com/site/mkmtwo/data}
 
-Barbara Geddes, Joseph Wright, and Erica Frantz.
-2014. "Autocratic Breakdown and Regime Transitions: A New Data Set."
-Perspectives on Politics 12(2): 313-331. The full data and codebook can be
-downloaded here \url{http://sites.psu.edu/dictators/}.
+B. Geddes, J. Wright, and E. Frantz. "Autocratic Breakdown and Regime Transitions: A New Data Set". In: \emph{Perspectives on Politics} 12.1 (2014), pp. 313-331. DOI: 10.1017/S1537592714000851. The full data and codebook can be
+downloaded here: \url{http://sites.psu.edu/dictators/}.
 
-Cheibub, Jose Antonio, Jennifer Gandhi, and James
-Raymond Vreeland. 2010. "Democracy and Dictatorship Revisited." Public
-Choice, vol. 143, no. 2-1, pp. 67-101. DOI: 10.1007/s11127-009-9491-2. The
+J. Cheibub, J. Gandhi, and J. Vreeland. "Democracy and dictatorship revisited". In: \emph{Public Choice} 143.1 (2010), pp. 67-101. DOI: 10.1007/s11127-009-9491-2. The
 full data and codebook can be downloaded here
 \url{https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited}
 
-Bruce E. Moon, Jennifer Harvey Birdsall, Sylvia Ceisluk, Lauren M. Garlett,
-Joshua J. Hermias, Elizabeth Mendenhall, Patrick D. Schmid, and Wai Hong Wong
-(2006) "Voting Counts: Participation in the Measurement of Democracy" Studies
-in Comparative International Development 42, 2 (Summer, 2006). The complete
+B. E. Moon, J. H. Birdsall, S. Ciesluk, et al. "Voting Counts: Participation in the Measurement of Democracy". In: \emph{Studies in Comparative International Development} 41.2 (2006), pp. 3-32. DOI: 10.1007/BF02686309. The complete
 dataset is available here:
 \url{http://www.lehigh.edu/~bm05/democracy/Obtain_data.htm}.
 
-The University of Texas Inequality Project Categorical Dataset of Political
-Regimes. Described in Sara Hsu, "The Effect of Political Regimes on
-Inequality, 1963-2002," UTIP Working Paper No. 53 (2008),
-\url{http://utip.gov.utexas.edu/papers/utip_53.pdf}. Data available for
+S. Hsu. "The Effect of Political Regimes on Inequality, 1963-2002". In: \emph{UTIP Working Paper} (2008). Data available for
 download at
 \url{http://utip.gov.utexas.edu/data/}
 
-Wahman, Michael, Jan Teorell, and Axel Hadenius. 2013. Authoritarian
-regime types revisited: updated data in comparative perspective.
-Contemporary Politics 19 (1): 19-34. The dataset and codebook can be
+M. Wahman, J. Teorell, and A. Hadenius. "Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective". In: \emph{Contemporary Politics} 19.1 (2013), pp. 19-34. \url{https://sites.google.com/site/authoritarianregimedataset/data}. The dataset and codebook can be
 downloaded from
 \url{https://sites.google.com/site/authoritarianregimedataset/data}
 
-Michael Coppedge and Wolfgang Reinicke, "Measuring Polyarchy," Studies in
-Comparative International Development 25:1 (Spring 1990): 51-72. Data
+M. Coppedge and W. H. Reinicke. "Measuring Polyarchy". In: \emph{Studies in Comparative International Development} 25.1 (1990), pp. 51-72. DOI: 10.1007/Bf02716905. Data
 available at \url{http://www3.nd.edu/~mcoppedg/crd/datacrd.htm}
 
-Michael Coppedge, Angel Alvarez, and Claudia
-Maldonado, "Two Persistent Dimensions of Democracy: Contestation and
-Inclusiveness," Journal of Politics 70:3 (July 2008): 632-647.
+M. Coppedge, A. Alvarez, and C. Maldonado. "Two Persistent Dimensions of Democracy: Contestation and Inclusiveness". In: \emph{The journal of politics} 70.03 (2008), pp. 632-647. DOI: 10.1017/S0022381608080663.
 
-Magaloni, Beatriz, Jonathan Chu, and Eric Min.
-2013. Autocracies of the World, 1950-2012 (Version 1.0). Dataset, Stanford
-University. Original data and codebook available at
-\url{http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset/}.
+B. Magaloni, J. Chu, and E. Min. \emph{Autocracies of the World, 1950-2012 (Version 1.0)}. Dataset. 2013. \url{http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset}. Original data and codebook used to be
+available at the link.
 
-Grundler, Klaus, and Tommy Krieger. 2018. "Machine Learning
-Indicators, Political Institutions, and Economic Development." CESifo
-Working Paper. Original data available at
-\url{https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index\%20Upload.xlsx?dl=0}. Working paper available at
-\url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}
+K. Gründler and T. Krieger. \emph{Machine Learning Indices, Political Institutions, and Economic Development}. Report. CESifo Group Munich, 2018. \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}. Original data available at
+\url{https://ml-democracy-index.net/}.
 
-Jay Ulfelder. 2012. Democracy/Autocracy Data Set. \url{http://hdl.handle.net/1902.1/18836}.
+J. Ulfelder. \emph{Democracy/Autocracy Data Set}. 2012. \url{http://hdl.handle.net/1902.1/18836}.
 
-Adam Przeworski. 2013 \emph{Political Institutions and Political Events
-(PIPE) Data Set}. Data set.
+A. Przeworski. \emph{Political Institutions and Political Events (PIPE) Data Set}. Data set. 2013. \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}.
 \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}.
 
-Transformation Index of the Bertelsmann Stiftung 2022. Bertelsmann
-Stiftung. Available at
+Bertelsmann Stiftung. \emph{Transformation Index of the Bertelsmann Stiftung 2022}. Tech. rep. Bertelsmann Stiftung, 2022. Available at
 \url{https://bti-project.org/en/index/political-transformation}
 
-Bjornskov, C. and M. Rode (2020). "Regime types and regime change: A
-new dataset on democracy, coups, and political institutions." The Review of
-International Organizations 15(2): 531-551. Available at
+C. Bjørnskov and M. Rode. "Regime types and regime change: A new dataset on democracy, coups, and political institutions". In: \emph{The Review of International Organizations} 15.2 (2020), pp. 531-551. DOI: 10.1007/s11558-019-09345-1. Available at
 \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}
 
-Bell, Curtis. 2016. The Rulers, Elections, and Irregular Governance
-Dataset (REIGN). Broomfield, CO: OEF Research. Available at
+C. Bell. \emph{The Rulers, Elections, and Irregular Governance Dataset (REIGN)}. 2016. \url{http://oefresearch.org/datasets/reign}. Available at
 \url{http://oefresearch.org/datasets/reign}
 }
 \usage{

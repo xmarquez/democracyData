@@ -5,9 +5,7 @@
 \title{Downloads the 2022 update (v. 6.4) of the Lexical Index of Electoral Democracy (annual time series, data to
 2021) and processes it using \link{country_year_coder}.}
 \source{
-Skaaning, Svend-Erik; John
-Gerring; and Henrikas Bartusevicius (2015). "A Lexical Index of Electoral
-Democracy." Comparative Political Studies, Vol. 48, No. 12, pp. 1491-1525.
+S. Skaaning, J. Gerring, and H. Bartusevičius. "A Lexical Index of Electoral Democracy". In: \emph{Comparative Political Studies} 48.12 (2015), pp. 1491-1525. DOI: 10.1177/0010414015581050.
 Original data and variable descriptions available at
 \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}
 }

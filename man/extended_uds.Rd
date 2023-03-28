@@ -132,13 +132,9 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 }
 
 \references{
-Marquez, Xavier. 2016. A Quick Method for Extending the Unified Democracy
-Scores (March 23, 2016). Available at SSRN:
-\url{http://ssrn.com/abstract=2753830}
+X. Marquez. "A Quick Method for Extending the Unified Democracy Scores". In: \emph{Available at SSRN 2753830} (2016). \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830}.
 
-Pemstein, Daniel, Stephen Meserve, and James Melton. 2010. Democratic
-Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.
-Political Analysis 18 (4): 426-449. DOI:10.1093/pan/mpq020
+D. Pemstein, S. Meserve, and J. Melton. "Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type". In: \emph{Political Analysis} 18.4 (2010), pp. 426-449. DOI: 10.1093/pan/mpq020.
 }
 \seealso{
 Other democracy: 
