@@ -1,11 +1,12 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 %within%|function|c68317d71c2b7350|||||||||||||||
-.Random.seed|object|b4bbac8a0e925e6d|||||||||||||||
+.__DEVTOOLS__|object|f0b09a0ea945760c|||||||||||||||
+.Random.seed|object|0989231c10b37210|||||||||||||||
 add_anckar|stem|a572cbdc8b879d89|fadd048fcf4b318a|37f7c29ba7b124c7|1950432345|data/anckar.rda|t19442.7282750791s|320739cdbf8e878e|19877|file|local|vector|||0.39||
-add_and_test_all_scores|stem|6d1667df00b61d24|0cbd62284f78b98c|69621fe0d42df778|-1236974147|data-raw/Adding and testing all democracy datasets.md*data-raw/Adding and testing all democracy datasets.Rmd|t19443.8345841854s|4849091c8a5f11aa|443783|file|local|vector|||498.79||
+add_and_test_all_scores|stem|8536a0bf77fb4b99|0cbd62284f78b98c|69621fe0d42df778|-1236974147|data-raw/Adding and testing all democracy datasets.md*data-raw/Adding and testing all democracy datasets.Rmd|t19444.7374575859s|36cfa1a5458be018|426958|file|local|vector|||444.64||
 add_anrr|stem|034afcc20f745f76|dd91355690bc32b4|ea94f00f16972659|633561329|data/anrr.rda|t19442.7282767342s|c98f12a4e5babeea|11248|file|local|vector|||0.13||
 add_arat_pmm|stem|1a016e40dfb7679e|8e3b6ffe38c3fa2c|dfb2bc98f3d6d9a3|406537360|data/arat_pmm.rda|t19442.7305270644s|e3262c928bcb2674|7294|file|local|vector|||0.2||
-add_bibliography|stem|1c77eb448085188f|a910bf6b6623934e|e3115096c31d6036|-3409986|data/bibliography.rda|t19444.1571038932s|d013a2c7459fd19d|6224|file|local|vector|||0.1||
+add_bibliography|stem|6110287f5f03b9aa|a910bf6b6623934e|bd978307b6a5efdd|-3409986|data/bibliography.rda|t19444.6051677867s|00cabb26925f9aa7|6098|file|local|vector|||0.19||
 add_blm|stem|a8f09897102c5d22|0799ae8ebfbdd600|a3dad144c40657ed|-330832502|data/blm.rda|t18466.9398842593s|dc4bf0cbbfcde739|876|file|local|vector|||1.28|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3|
 add_blm_pmm|stem|fa71c8ff946cb450|9a340e9f8cee5789|12236612ff4cf003|-1298818962|data/blm_pmm.rda|t19442.7967820154s|247baac9174c06df|716|file|local|vector|||0.14||
 add_bmr|stem|850fb9e0ef84cc9c|9642505050240739|93871a6f46a86346|-293380099|data/bmr.rda|t19442.7960577322s|9b5739bd0419f0e2|20554|file|local|vector|||0.55||
@@ -13,18 +14,18 @@ add_bnr|stem|374537e3cbc4bc41|d5da3c20ae7c806f|a3dad144c40657ed|-94341481|data/b
 add_bnr_extended|stem|8720b8f1c2754a21|1db6921093ca1f44|a3dad144c40657ed|1461278890|data/bnr_extended.rda|t18466.9405902778s|daa038f9582bd248|8602|file|local|vector|||1.1|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3|
 add_bollen_pmm|stem|ef3668a8b099d9e3|4b943a381c850c96|7c7a19134569ca4b|-1951100409|data/bollen_pmm.rda|t19442.8045566756s|5e82fc6088035d25|5655|file|local|vector|||0.04||
 add_bti|stem|7f43bcb8f4bce002|88fedf27fceb0d31|e87d68f3db8111ce|276866287|data/bti.rda|t19442.8001722724s|1d167c687ccccd22|78082|file|local|vector|||0.44||
-add_democracy_info|stem|9283334b07a05098|826ddba7f64c5efd|bc86a23d907955de|-338706218|data/democracy_info.rda|t19442.7050225586s|8b21859a7298cd44|4980|file|local|vector|||0.22||
+add_democracy_info|stem|9283334b07a05098|826ddba7f64c5efd|bc86a23d907955de|-338706218|data/democracy_info.rda|t19444.6996300098s|8b21859a7298cd44|4980|file|local|vector|||0.11||
 add_doorenspleet|stem|6e75d0645653e429|5ff67a0867f28a6a|51a867e9393fe8e7|-617163922|data/doorenspleet.rda|t19442.8045557727s|89250276614bceb2|13355|file|local|vector|||0.28||
 add_eiu|stem|7014d40dcb6907b1|c638ec4431a9b31b|e51a97c707232a3b|726638956|data/eiu.rda|t19442.8226590829s|529f249540055642|8840|file|local|vector|||0.27||
 add_extended_uds|stem|9a211a96806db80d|308d3edabfae973c|f48064f7ef61ec0e|-2036717830|data/extended_uds.rda|t19443.6395885104s|f6b745f125355248|1483133|file|local|vector|||5.16||
 add_fh_pmm|stem|a19282ade78ec7b0|2fc678b9caf00354|d50bd84b7ce7cbe4|-142637096|data/fh_pmm.rda|t19442.8350588822s|aefd85c498240704|8293|file|local|vector|||0.2||
 add_gwf_all|stem|48e98596911921b3|841c0c2f3e2c9eae|f10c9d709a1a7704|-352006193|data/gwf_all.rda|t19442.8345085675s|a0449a1cf655c3ab|19790|file|local|vector|||0.47||
 add_gwf_all_extended|stem|376e9e597174c5eb|89973c26131b2a90|be1520d9b4d6eb6a|1214238275|data/gwf_all_extended.rda|t19442.8345126656s|ab34baab33946943|21744|file|local|vector|||0.33||
-add_gwf_autocratic|stem|1dec0178a5187e83|09326515f7fbe058|e47a3d63dc4cf34c|-1963990495|data/gwf_autocratic.rda|t19442.8345181508s|482376a8f6700448|14899|file|local|vector|||0.18||
-add_gwf_autocratic_extended|stem|6738ee6081fcb8e6|1af77bf4f991cb37|5397a20c806e10a0|1898452763|data/gwf_autocratic_extended.rda|t19442.8345152466s|3724be88c2bf41ae|16024|file|local|vector|||0.18||
+add_gwf_autocratic|stem|1dec0178a5187e83|09326515f7fbe058|e47a3d63dc4cf34c|-1963990495|data/gwf_autocratic.rda|t19444.7167878996s|482376a8f6700448|14899|file|local|vector|||0.23||
+add_gwf_autocratic_extended|stem|6738ee6081fcb8e6|1af77bf4f991cb37|5397a20c806e10a0|1898452763|data/gwf_autocratic_extended.rda|t19444.7167906554s|3724be88c2bf41ae|16024|file|local|vector|||0.22||
 add_hadenius_pmm|stem|233a3b50ccfb92d6|192716a8f83282cd|ec9657462f22b923|2012649355|data/hadenius_pmm.rda|t19442.8388139958s|642a122ee2e297df|2575|file|local|vector|||0.16||
 add_kailitz|stem|6fa10cac13224b85|44eaa334b973e991|8147740d7c434e3d|1302706691|data/kailitz.rda|t19442.8448046932s|6d5fe6b0e015880d|12405|file|local|vector|||0.32||
-add_lied|stem|cb8a53ca65054429|dfb57eca04273c46|fb51eacf03c5c416|1787201832|data/LIED.rda|t19442.8474010696s|a021a2b06788e483|33802|file|local|vector|||0.65||
+add_LIED|stem|cb8a53ca65054429|dfb57eca04273c46|fb51eacf03c5c416|954936907|data/LIED.rda|t19444.6973177876s|a021a2b06788e483|33802|file|local|vector|||0.84||
 add_magaloni|stem|55a768aaa2d0953f|507c58392e953e0a|a49f3819ad40f4c1|-582457697|data/magaloni.rda|t19442.8957110873s|94bf211e06aa8614|95720|file|local|vector|||1||
 add_magaloni_extended|stem|012b98f415930d82|33e33e7209e4bd83|5de200555327fbcd|2118651016|data/magaloni_extended.rda|t19442.8957160063s|f3e40da705774a84|11850|file|local|vector|||0.34||
 add_mainwaring|stem|bb64e06a63e1cb9c|827f8f02219b0c5a|3ff5e54b0fd09489|-713696104|data/mainwaring.rda|t19442.8991058181s|5759561efd860fff|3672|file|local|vector|||0.23||
@@ -44,29 +45,35 @@ add_polyarchy|stem|b378e12bcf6ad525|8ba6b98eb92b7a83|1a2b4e177d91d44d|905848547|
 add_polyarchy_dimensions|stem|0529bb05a25b9c5e|c42befef15d826cd|c9d7fd8afffdf4c1|2128852516|data/polyarchy_dimensions.rda|t19442.960309369s|8aa2ef228d624bc4|309092|file|local|vector|||0.54||
 add_polyarchy_pmm|stem|5c75b0b516b89676|941bc91f73368da3|b87af69cd4b3d542|1259808082|data/polyarchy_pmm.rda|t19442.9603166899s|f969c65e3f707243|4148|file|local|vector|||0.1||
 add_prc_gasiorowski|stem|52365dcf7f9dd5a1|44d9b12a47707175|8778e495b12eab48|-1086210951|data/prc_gasiorowski.rda|t19442.9649211042s|ee03a5c563edf84b|12391|file|local|vector|||0.3||
-add_prc_pmm|stem|e36d3938271eaef7|16b5c27d4b5f970f|2481f35ce9bd6818|-328651834|data/prc_pmm.rda|t19443.6022067726s|518fb5e454703407|5866|file|local|vector|||0.08||
+add_prc_pmm|stem|e36d3938271eaef7|16b5c27d4b5f970f|2481f35ce9bd6818|-328651834|data/prc_pmm.rda|t19444.7323003353s|518fb5e454703407|5866|file|local|vector|||0.2||
 add_REIGN|stem|a9a33fa1d4f6442d|5bfa1b3ce4689dc6|91494c9a4ab5dd0d|1632531531|data/REIGN.rda|t19442.9686336009s|7f6b998e7846edc0|36588|file|local|vector|||1.1||
 add_svmdi|stem|6007010f0531f976|3f8057d3593cb2c9|99a34c7f820f0864|1406198406|data/svmdi.rda|t19442.9716294817s|79ded95af33a3288|92420|file|local|vector|||0.25||
 add_svmdi_2016|stem|336d774a2c9aa2bc|8b0d2496307f7f63|3052d21057ee0151|-2019716489|data/svmdi_2016.rda|t19442.9716260359s|8a487a3c9f7ae259|89603|file|local|vector|||0.36||
 add_svolik_regime|stem|13ae8551be824b82|4f7b5507e6fe1eb8|f37ad5ea10a762f8|-1067225573|data/svolik_regime.rda|t19443.0039445381s|02f017a292ae47d5|10088|file|local|vector|||1.24||
+add_uds_2010|stem|c406b7b9eb2a78c7|dfc71779913baa31|a3dad144c40657ed|-988038022|data/uds_2010.rda|t17432.0623148148s|4d95b6a96e598783|304930|file|local|vector|||0.01|package rlang was built under R version 4.2.3|
+add_uds_2011|stem|6f14cc318889c09a|f55d72761090503e|a3dad144c40657ed|-1286006539|data/uds_2011.rda|t17432.0623148148s|c4a4246eea43128e|367395|file|local|vector|||0||
+add_uds_2014|stem|5738357b292597e8|5dfd822c70bfe20b|a3dad144c40657ed|1427954810|data/uds_2014.rda|t17432.0623148148s|eb62386fe496aaf1|395595|file|local|vector|||0||
 add_ulfelder|stem|81cacbb5608d3511|4e8c10e72804342d|f5e7435f2be90a14|-702607252|data/ulfelder.rda|t19443.5994947125s|1a9d505bbad84de3|26211|file|local|vector|||0.64||
 add_ulfelder_extended|stem|c4ff1a040eda3be8|b2714da9a518fff4|bcaa5f71c2380156|825828080|data/ulfelder_extended.rda|t19443.5994804447s|bb6e3a6a419e48e0|32617|file|local|vector|||1.5||
 add_utip|stem|2342866f062fe02e|c9689f0a50b7ed04|dd0e50de51b146df|1745773938|data/utip.rda|t19443.5994865764s|12840d3ee098619e|8111|file|local|vector|||0.21||
 add_vanhanen|stem|2f621ab9cd060494|170e78e0280a4314|8df9cecdb21df58a|1742871981|data/vanhanen.rda|t19443.599501197s|cbecdd62f79f158f|40349|file|local|vector|||0.33||
-add_vanhanen_pmm|stem|11190e99b38c7556|ad689e5b8edc2535|2481f35ce9bd6818|-1995817391|data/vanhanen_pmm.rda|t19442.1078124188s|564eca9fe2c769f6|12453|file|local|vector|||0.14||
+add_vanhanen_pmm|stem|11190e99b38c7556|b437be72dbee7233|2c0e8bbcab59b47d|-1995817391|data/vanhanen_pmm.rda|t19444.7374597585s|564eca9fe2c769f6|12453|file|local|vector|||0.17||
 add_vdem_simple|stem|1819a7ba8856d67d|f4b07e7be90f3177|9c67abe407712158|-240211568|data/vdem_simple.rda|t19443.6021981764s|5ebe448cbe72e716|405236|file|local|vector|||3.35||
 add_wahman_teorell_hadenius|stem|dcbb37e152f6b6b6|7573b9ab945f5a04|638719873c73bebc|-351968275|data/wahman_teorell_hadenius.rda|t19443.603247874s|7f1a2be980a5f4e7|56772|file|local|vector|||0.61||
-add_wgi|stem|f497602ae305b1b7|921d91d75dc97ae8|874b6bd8a6d36baa|-1837108990|data/wgi.rda|t19442.8063531458s|4b456f34c2ee646a|66924|file|local|vector|||0.26||
-anckar|stem|3e994f800011f2c0|6e496302e3ab6afb|54ff58bdafc6813b|-1945360378||t19444.2111588615s|b5526e0615d12c7c|23926|rds|local|vector|||22.27||
-anrr|stem|1bc9738295bee7a7|8112a74b2a062cf5|78dac24fed675a8e|1345722201||t19444.2122002349s|7568d5b901fb1cab|11983|rds|local|vector|||3.15||
+add_wgi|stem|f497602ae305b1b7|921d91d75dc97ae8|874b6bd8a6d36baa|-1837108990|data/wgi.rda|t19444.7010733147s|4b456f34c2ee646a|66924|file|local|vector|||0.21||
+anckar|stem|3e994f800011f2c0|6e496302e3ab6afb|54ff58bdafc6813b|-1945360378||t19444.7268105114s|b5526e0615d12c7c|23926|rds|local|vector|||7.92||
+anrr|stem|1bc9738295bee7a7|46a34662096c697a|2f8dd22f8184bafd|1345722201||t19444.7268546644s|7568d5b901fb1cab|11983|rds|local|vector|||3.79||
 anrr_filename|stem|d6efc7e859608e13|e06226b260195ec0|ef46db3751d8e999|-1725137035|data-raw/DDCGdata_final.dta|t18770.3501157407s|b1a5c5902c8a8a27|23757886|file|local|vector|||0.4|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3|
-arat_pmm|stem|7455d5f706959d58|6286021a9cdd7941|5bce04f185122125|-1329665382||t19443.8288077501s|442f11a2574db5c5|8780|rds|local|vector|||0.02||
-bibliography|stem|8b5ae8aa4825c038|cb206ca654a14b83|b36fb4120c9ffed4|-811510614||t19444.1570457757s|bbca966cb3ab6859|7331|rds|local|vector|||0.58||
-bibliography_file|stem|3a897e1dba648520|2ffe753633998bdc|ef46db3751d8e999|2068563883|data-raw/bibfile.bib|t19444.1554154785s|396ba6311cc3b916|16904|file|local|vector|||0.36|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3|
-blm_pmm|stem|e86889d4c6259d54|88e1518cbc269c5c|a66d725524b18b9f|-211939439||t19443.828807345s|001e75d0cb0314f6|633|rds|local|vector|||0.02||
-bmr|stem|49128c746df8956c|d7a9302515bf4763|8a1b21c8ffad0b0d|-1126428897||t19444.2106945734s|42ae4dba644bef85|27101|rds|local|vector|||19.94||
-bollen_pmm|stem|a6f6f288c0d9b900|e120a2a980005f72|7b5d0709018d0777|1659084550||t19443.8288048219s|74dc427c90fecc5e|5104|rds|local|vector|||0.03||
-bti|stem|03048a66cc16b4b2|7acf7888c224b0d9|e049d986b9f2bab0|-1195471728||t19443.8465139977s|3589eae524fd4bcd|106479|rds|local|vector|||3.4||
+arat_pmm|stem|7455d5f706959d58|6286021a9cdd7941|5bce04f185122125|-1329665382||t19444.728266859s|442f11a2574db5c5|8780|rds|local|vector|||0.01||
+bibliography|stem|49ffaa7923cabcdd|cb206ca654a14b83|035397919b537191|-811510614||t19444.7282564027s|1a854452df218c9e|7226|rds|local|vector|||0.8||
+bibliography_file|stem|e20d0c244d753261|2ffe753633998bdc|ef46db3751d8e999|2068563883|data-raw/bibfile.bib|t19444.6050430961s|f3548e42f7b56f7c|16906|file|local|vector|||0.42|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3|
+blm|object|150daecb5dd6275c|||||||||||||||
+blm_pmm|stem|e86889d4c6259d54|88e1518cbc269c5c|a66d725524b18b9f|-211939439||t19444.728267264s|001e75d0cb0314f6|633|rds|local|vector|||0.02||
+bmr|stem|49128c746df8956c|d7a9302515bf4763|8a1b21c8ffad0b0d|-1126428897||t19444.726661769s|42ae4dba644bef85|27101|rds|local|vector|||11||
+bnr|object|fa327e3dd85fb789|||||||||||||||
+bnr_extended|object|4a09c60a2b0cdca4|||||||||||||||
+bollen_pmm|stem|a6f6f288c0d9b900|e120a2a980005f72|7b5d0709018d0777|1659084550||t19444.7282658752s|74dc427c90fecc5e|5104|rds|local|vector|||0.01||
+bti|stem|03048a66cc16b4b2|7acf7888c224b0d9|d2415dc4dcb93009|-1195471728||t19444.7268830527s|3589eae524fd4bcd|106479|rds|local|vector|||2.4||
 cite_dataset|function|acae834a950c45b2|||||||||||||||
 code_year_match|function|878eb95b4cee7ee8|||||||||||||||
 count_sequence_breaks|function|7a49055f6fdc1a3e|||||||||||||||
@@ -76,11 +83,11 @@ create_panel|function|76acd540d51e44b5|||||||||||||||
 create_pitf_scores|function|6cb94b82be552a8a|||||||||||||||
 cutpoints|function|c08942db7bd4f4c9|||||||||||||||
 data|object|20b21183e0305861|||||||||||||||
-democracy_info|stem|8c93f69d9cd0cbf7|6ad55a70062edbee|77ace23ef4b4c50c|423320325||t19442.7129012472s|ded3e9f66873defb|4877|rds|local|vector|||2.06||
+democracy_info|stem|8c93f69d9cd0cbf7|6ad55a70062edbee|77ace23ef4b4c50c|423320325||t19444.7282469103s|ded3e9f66873defb|4877|rds|local|vector|||0.12||
 democracy_info_filename|stem|a0d681dc92a155ef|5b07513ce8c85cc5|ef46db3751d8e999|275668997|data-raw/democracy_info.csv|t19442.0814165373s|35dd180243568fa6|12754|file|local|vector|||0||
 democracy_scores|function|014ec32856d76542|||||||||||||||
 distance_after|function|d5155c4b3fc930c9|||||||||||||||
-doorenspleet|stem|a2d93f651e37eb5a|b8826a21e057b6fa|b6587ce31cb509fc|-60042926||t19444.2120608519s|65b019098cbcb6d6|17657|rds|local|vector|||7.07|cols is now required when using unnest.ℹ Please use cols  cyear.|
+doorenspleet|stem|a2d93f651e37eb5a|23e110b724052864|2de9bd8086d5219e|-60042926||t19444.7260459733s|65b019098cbcb6d6|17657|rds|local|vector|||6.98|1m22mcols is now required when using unnest.36mℹ39m Please use cols  cyear.|
 doorenspleet_filename|stem|f8a1c1a591b2d317|82b39ab7b0dc585a|ef46db3751d8e999|1255967272|data-raw/Doorenspleet data.csv|t19134.9769097222s|604fca3c400974f0|13289|file|local|vector|||0.38|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3|
 download_and_read_xls|function|de1f0fffe4f0b4e8|||||||||||||||
 download_fh|function|af354693f0b1103f|||||||||||||||
@@ -88,54 +95,59 @@ download_fh_electoral|function|e3b901aa2123ffdb|||||||||||||||
 download_fh_full|function|84d665957f8218be|||||||||||||||
 download_polity_annual|function|90d24b34f4a4c527|||||||||||||||
 download_wgi_voice_and_accountability|function|76d9254216918841|||||||||||||||
-eiu|stem|16dc07d6e58a229a|67687270b90ee3f1|87769a62753c6207|-615916543||t19444.211354955s|d073e68be331ff26|9958|rds|local|vector|||25.03||
+eiu|stem|16dc07d6e58a229a|ce41fe1dd09e16e0|91f939b46c7f02a3|-615916543||t19444.7270542725s|d073e68be331ff26|9958|rds|local|vector|||14.77||
 eiu_filename|stem|5fdfc00d2ee90a60|4ee7a29a58d191d8|ef46db3751d8e999|-89141696|data-raw/DI-final-version-report-2022.pdf|t19441.8257846487s|f20b7454acc7aa1f|5006728|file|local|vector|||0.44|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3|
-extended_uds|stem|7fe71414afc37878|90257dc32c67dd4d|0f2689500f41a3bf|2069805423||t19444.2175730261s|0cdd613828805bc9|1420234|rds|local|vector|||237.03|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3. NAs introduced by coercion. NAs introduced by coercion. 1m22mUsing an external vector in selections was deprecated in tidyselect 1.1.0.36mℹ39m Please use all_of or any_of instead.   Was  data  selectmatched_cols   Now  data  selectall_ofmatched_colsSee httpstidyselect.rlib.orgreferencefaqexternalvector.html.. 1m22mUsing an external vector in selections was deprecated in tidyselect 1.1.0.36mℹ39m Please use all_of or any_of instead.   Was  data  selectinclude_in_output   Now  data  selectall_ofinclude_in_outputSee httpstidyselect.rlib.orgreferencefaqexternalvector.html.. 1m22mThere was 1 warning in mutate.1m22m36mℹ39m In argument prc  structurefunction ..., .x  ..1, .y  ..2, .  ..1  ....Caused by warning33m39m NAs introduced by coercion. 1m22mUsing an external vector in selections was deprecated in tidyselect 1.1.0.36mℹ39m Please use all_of or any_of instead.   Was  data  selectdemocracy_vars   Now  data  selectall_ofdemocracy_varsSee httpstidyselect.rlib.orgreferencefaqexternalvector.html.|
+extendable|object|1649539d23aaa506|||||||||||||||
+extended_uds|stem|7fe71414afc37878|90257dc32c67dd4d|c577b1e3c896dd73|2069805423||t19444.7257744378s|0cdd613828805bc9|1420234|rds|local|vector|||149.81|package rlang was built under R version 4.2.3. NAs introduced by coercion. NAs introduced by coercion. 1m22mThere was 1 warning in mutate.1m22m36mℹ39m In argument prc  structurefunction ..., .x  ..1, .y  ..2, .  ..1  ....Caused by warning33m39m NAs introduced by coercion|
 extract_pmm_var|function|4f9373d5a45f67e9|||||||||||||||
-fh|stem|c572e07ed70559c8|8fdc2e47f1bdfa20|671600bdedd53465|-644038597||t19444.2112024239s|a2ff47a2eea368b2|21807|rds|local|vector|||5.92|NAs introduced by coercion. NAs introduced by coercion|
-fh_electoral|stem|1dc044da0d2b5a04|177f9b87a4617a41|c61e075d4dd7b1b3|853517234||t19444.2114728322s|3bdfd9ad6097f08c|10849|rds|local|vector|||9.94||
-fh_full|stem|b641a565c22e3f31|38cca8872d456ed2|26d6d4564f9b8385|563341362||t19444.2104627495s|8aa38b3a994ec5c2|47773|rds|local|vector|||4.05||
-fh_pmm|stem|9be952fe207103f7|777dcfbaddaa7e96|6cd17be9f05f1b31|-822064540||t19443.8288066158s|098d5030d58a0525|9803|rds|local|vector|||0.02||
-fh_with_territories|stem|43abf4b24bf52780|cd106b48b3e2f8e9|671600bdedd53465|-1428076352||t19444.2114896264s|f9006ee0a9e31a24|23205|rds|local|vector|||7.03|NAs introduced by coercion. NAs introduced by coercion|
-generate_democracy_scores_dataset|function|af06cea6b3d17049|||||||||||||||
-generate_extended_uds|function|c09b76d05e634885|||||||||||||||
+fh|stem|c572e07ed70559c8|8fdc2e47f1bdfa20|671600bdedd53465|-644038597||t19444.6981684432s|a2ff47a2eea368b2|21807|rds|local|vector|||3.04|NAs introduced by coercion. NAs introduced by coercion|
+fh_electoral|stem|1dc044da0d2b5a04|177f9b87a4617a41|c61e075d4dd7b1b3|853517234||t19444.6982088895s|3bdfd9ad6097f08c|10849|rds|local|vector|||3.43||
+fh_full|stem|b641a565c22e3f31|38cca8872d456ed2|26d6d4564f9b8385|563341362||t19444.6982285501s|8aa38b3a994ec5c2|47773|rds|local|vector|||1.66||
+fh_pmm|stem|9be952fe207103f7|777dcfbaddaa7e96|6cd17be9f05f1b31|-822064540||t19444.7282663612s|098d5030d58a0525|9803|rds|local|vector|||0||
+fh_with_territories|stem|43abf4b24bf52780|cd106b48b3e2f8e9|671600bdedd53465|-1428076352||t19444.6982634284s|f9006ee0a9e31a24|23205|rds|local|vector|||2.98|NAs introduced by coercion. NAs introduced by coercion|
+generate_democracy_scores_dataset|function|6fc2435223953bae|||||||||||||||
+generate_extended_uds|function|79d86551802b9e2f|||||||||||||||
 guess_file_extension|function|949b7bb9b4115ca2|||||||||||||||
-gwf_all|stem|4e3664fff41e3fc2|9163bedb1450c344|9b8a3e7d606bd3f4|2045431859||t19444.2107895205s|f78fc1efbc606609|24480|rds|local|vector|||6.3||
-gwf_all_extended|stem|dda576520b3cc2f4|83007c76774b8a72|9b8a3e7d606bd3f4|-780405448||t19444.2104204059s|5be53151f9521f28|27116|rds|local|vector|||11.08|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3. Using an external vector in selections was deprecated in tidyselect 1.1.0.ℹ Please use all_of or any_of instead.   Was  data  selectmatched_cols   Now  data  selectall_ofmatched_colsSee httpstidyselect.rlib.orgreferencefaqexternalvector.html.|
-gwf_autocratic|stem|0fe17217f96efc44|506e4318be703b22|9b8a3e7d606bd3f4|980501544||t19444.2106099272s|100c5695a866b74c|18659|rds|local|vector|||6.97||
-gwf_autocratic_extended|stem|43c0c23592535d93|41148e0eb38a6783|9b8a3e7d606bd3f4|1946523920||t19444.2115556892s|beca00fc4303f184|20125|rds|local|vector|||7.11||
-hadenius_pmm|stem|f2ad82befc6f621a|111edb0e805a7eee|185cacb0b974fd0d|-1875325969||t19443.8288081784s|7be3eeb59b907abd|2485|rds|local|vector|||0||
+gwf_all|stem|4e3664fff41e3fc2|3266b941fb92767c|9b8a3e7d606bd3f4|2045431859||t19444.7261997571s|f78fc1efbc606609|24480|rds|local|vector|||2.71||
+gwf_all_extended|stem|dda576520b3cc2f4|2450ba257473e5ed|9b8a3e7d606bd3f4|-780405448||t19444.7270971396s|5be53151f9521f28|27116|rds|local|vector|||3.64||
+gwf_autocratic|stem|0fe17217f96efc44|ee306a7a937187e1|9b8a3e7d606bd3f4|980501544||t19444.7271209003s|100c5695a866b74c|18659|rds|local|vector|||2.02||
+gwf_autocratic_extended|stem|43c0c23592535d93|8aff4edeb730b5f8|9b8a3e7d606bd3f4|1946523920||t19444.727147901s|beca00fc4303f184|20125|rds|local|vector|||2.3||
+gwf_df|object|59b53eb58cbd4d1b|||||||||||||||
+hadenius_pmm|stem|f2ad82befc6f621a|111edb0e805a7eee|185cacb0b974fd0d|-1875325969||t19444.7282676923s|7be3eeb59b907abd|2485|rds|local|vector|||0.02||
 include_in_output|stem|ab8da67b51cc8543|dfe5bdfffd03d511|a3dad144c40657ed|520064020||t19442.7115178175s|2005da2f14a67e22|98|rds|local|vector|||1.13|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3|
 is_before|function|389864a5b2c9c35b|||||||||||||||
 is_between|function|e4164739073ac656|||||||||||||||
-kailitz|stem|26c923f1de31c5d5|1edf86f71261acba|c4dbce1f089b6937|1967896577||t19444.2108260024s|64a074e935f989e7|17715|rds|local|vector|||2.67|Using an external vector in selections was deprecated in tidyselect 1.1.0.ℹ Please use all_of or any_of instead.   Was  data  selectinclude_in_output   Now  data  selectall_ofinclude_in_outputSee httpstidyselect.rlib.orgreferencefaqexternalvector.html.|
+kailitz|stem|26c923f1de31c5d5|422467749aa73bf9|282fe2e5512c7d52|1967896577||t19444.7271780082s|64a074e935f989e7|17715|rds|local|vector|||2.56||
 kailitz_filename|stem|e765c4a42d78cdc1|b7b4b434d254152c|ef46db3751d8e999|1428866071|data-raw/kailitz.yearly.rds|t19135.0590625s|b330e9213a102770|2193100|file|local|vector|||0.38|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3|
 knit_print.tbl|function|cdab313cf269fbb1|||||||||||||||
-LIED|stem|7ebba21ef4e7c815|b7766b19944b8f4c|bf863e465afffcd7|-1947011635||t19444.2178960842s|5954750e5c83adb5|54003|rds|local|vector|||27.68||
-magaloni|stem|e5b84556557c22df|a112c3a8dec6ad60|06f0b46a5b796173|-1147400226||t19444.2117080307s|e7236f91a938f31a|110631|rds|local|vector|||13.07||
-magaloni_extended|stem|b392ec7e9d1876ae|adb9b10ba6f1c223|06f0b46a5b796173|-799879269||t19444.2104024457s|85c5dc1c9b5afa35|13955|rds|local|vector|||11.06|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3. Using an external vector in selections was deprecated in tidyselect 1.1.0.ℹ Please use all_of or any_of instead.   Was  data  selectmatched_cols   Now  data  selectall_ofmatched_colsSee httpstidyselect.rlib.orgreferencefaqexternalvector.html.|
-mainwaring|stem|a924a2bd05bbaac9|f6900021545cb474|97597ee9a2a2e856|-807016711||t19444.2107133441s|2c3a96bad6ff5923|5152|rds|local|vector|||1.36||
+LIED|stem|7ebba21ef4e7c815|b7766b19944b8f4c|bf863e465afffcd7|-1947011635||t19444.7264236135s|5954750e5c83adb5|54003|rds|local|vector|||19.28||
+magaloni|stem|e5b84556557c22df|00d5701432ea2ad6|06f0b46a5b796173|-1147400226||t19444.7272228858s|e7236f91a938f31a|110631|rds|local|vector|||3.82||
+magaloni_extended|stem|b392ec7e9d1876ae|adb9b10ba6f1c223|06f0b46a5b796173|-799879269||t19444.7272746015s|85c5dc1c9b5afa35|13955|rds|local|vector|||4.44||
+mainwaring|stem|a924a2bd05bbaac9|8251e9deaf4d4e51|88d2641ab4722d25|-807016711||t19444.7272845067s|2c3a96bad6ff5923|5152|rds|local|vector|||0.83||
 mainwaring_filename|stem|c040d79b72c02a64|559671ca6e050232|ef46db3751d8e999|-434291671|data-raw/Mainwaring Linan.txt|t19135.0725s|c0138153fbda10ba|7425|file|local|vector|||0.45|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3|
-mainwaring_pmm|stem|12524de9211897a6|76af4f248cb0c2e7|81652a3154ed6356|1775316273||t19443.828806963s|2ebbc8e78ea49857|1179|rds|local|vector|||0.02||
-munck_pmm|stem|47943268f55703b7|784271f361f7b460|2949a27c63df3616|-1333299177||t19443.8288085487s|4942d91646dd93bc|978|rds|local|vector|||0||
-pacl|stem|f0042a172c24c2eb|48ccc6baee8036ba|6a604a8023ad6c2d|1085032667||t19444.2108978361s|6996f9edc3fc4671|232760|rds|local|vector|||12.41||
-pacl_pmm|stem|b080d2b2a1209be1|7bc07f36a53c5a7b|8b67aaa29aa3b5d4|1494543268||t19443.8288062339s|6fd6808b10ef33bb|8379|rds|local|vector|||0.02||
-pacl_update|stem|766168e68287829a|8a02112b009f636c|b2ca525fabf22675|-1755151260||t19444.2110625383s|39571c856d23fb45|117322|rds|local|vector|||64.1||
-peps|stem|c9efab4073200280|d64f02f771a3631f|77c6ab4dc3db74b0|-883865251||t19444.2119335795s|2a8b2693603d1bf9|174729|rds|local|vector|||19.37||
-pitf|stem|629e8b046d16eef3|51998f96cbd9e4dc|08111e126c9bfc6e|-1050368423||t19444.2117879126s|87f04053bd33464b|54676|rds|local|vector|||0.04||
-pitf_p4|stem|b1e1bd9b4eb94afe|cf687a8c38e8385c|8e75b5fdf44022e6|482279324||t19444.2112053992s|598b8a5c71298a4b|55814|rds|local|vector|||0.08||
-pmm_replication|stem|7c5d4a0e7d8ef82f|f55958fd45bb04dd|13ad36cd27b22821|-913756661||t19444.2120977749s|adb07e5e9ce383bd|38368|rds|local|vector|||2.5||
+mainwaring_pmm|stem|12524de9211897a6|76af4f248cb0c2e7|81652a3154ed6356|1775316273||t19444.7282681436s|2ebbc8e78ea49857|1179|rds|local|vector|||0.02||
+munck_pmm|stem|47943268f55703b7|784271f361f7b460|2949a27c63df3616|-1333299177||t19444.7282686066s|4942d91646dd93bc|978|rds|local|vector|||0.02||
+other_extendable|object|ecd90fb87719cac0|||||||||||||||
+pacl|stem|f0042a172c24c2eb|48ccc6baee8036ba|6a604a8023ad6c2d|1085032667||t19444.7267182842s|6996f9edc3fc4671|232760|rds|local|vector|||4.75||
+pacl_pmm|stem|b080d2b2a1209be1|7bc07f36a53c5a7b|8b67aaa29aa3b5d4|1494543268||t19444.7282691622s|6fd6808b10ef33bb|8379|rds|local|vector|||0.01||
+pacl_update|stem|766168e68287829a|8a02112b009f636c|b2ca525fabf22675|-1755151260||t19444.7273622495s|39571c856d23fb45|117322|rds|local|vector|||6.62||
+peps|stem|c9efab4073200280|d64f02f771a3631f|77c6ab4dc3db74b0|-883865251||t19444.7274743659s|2a8b2693603d1bf9|174729|rds|local|vector|||9.61||
+PIPE|object|454e8e03e5b5581e|||||||||||||||
+pitf|stem|629e8b046d16eef3|51998f96cbd9e4dc|08111e126c9bfc6e|-1050368423||t19444.7282597095s|87f04053bd33464b|54676|rds|local|vector|||0.06||
+pitf_p4|stem|b1e1bd9b4eb94afe|cf687a8c38e8385c|8e75b5fdf44022e6|482279324||t19444.7282577582s|598b8a5c71298a4b|55814|rds|local|vector|||0.06||
+pmm|object|e7295c0e141face0|||||||||||||||
+pmm_replication|stem|7c5d4a0e7d8ef82f|f55958fd45bb04dd|13ad36cd27b22821|-913756661||t19444.6972992303s|adb07e5e9ce383bd|38368|rds|local|vector|||2.76||
 pmm_replication_filename|stem|7680a50fdd06ec7c|17024efdaabf5ee4|ef46db3751d8e999|764915080|data-raw/democracy1946.2008.rda|t19134.9216319444s|6b543a7a1ad82ac5|50587|file|local|vector|||0||
-poliarchy_pmm|stem||174f987a54287c64|1fdeadf76343b93a|340576235||t19442.9582261872s||0|rds|local|vector|||0.08||1m22m36mℹ39m In argument is.napmm_poliarchy.1mCaused by error22m33m39m object pmm_poliarchy not found
-polity_pmm|stem|1d592d242821b682|c839cba1efa909d3|bed7c3d0620d8499|-1807991327||t19443.8288053774s|cd15924b02813f3b|9196|rds|local|vector|||0.03||
-polity5|stem|c85cce6cc6596104|bf305132fb45a665|833aa2e43c60ed62|435163148||t19444.2107499236s|b7d6d3e818d10297|155454|rds|local|vector|||28.13||
-polityIV|stem|8438261b138c408f|2364501e7b35058b|1ba5008e61dcb59a|-1112914859||t19444.2111305306s|3d5df32e017ec55a|151722|rds|local|vector|||25.61||
-polyarchy|stem|f54165369dab30fe|9eb80961097f4aa0|1537fbb59db5222b|537739836||t19444.2104431391s|dfa916be04df1e40|7518|rds|local|vector|||3.49|attributes are not identical across measure variables they will be dropped|
-polyarchy_dimensions|stem|6f7d53729e50be18|4679ad0a5337015a|5f374768f907eb24|-594917934||t19443.8465449042s|8e3bb88cbef27f37|368299|rds|local|vector|||2.61||
-polyarchy_pmm|stem|6465e2d3dbb5e5e4|fa1ebf5e667989e9|395ce77a7f6a3c12|1249319276||t19443.8288056783s|7be05040f7ef626b|3809|rds|local|vector|||0.02||
-prc_gasiorowski|stem|e307aef731687c91|51b273bd4be88d3b|a43ecdf0929afc47|500044518||t19444.2112650907s|02c326302ed78355|17815|rds|local|vector|||9.11||
+polity_pmm|stem|1d592d242821b682|c839cba1efa909d3|bed7c3d0620d8499|-1807991327||t19444.7282653659s|cd15924b02813f3b|9196|rds|local|vector|||0.02||
+polity5|stem|c85cce6cc6596104|bf305132fb45a665|833aa2e43c60ed62|435163148||t19444.7261680804s|b7d6d3e818d10297|155454|rds|local|vector|||10.47||
+polityIV|stem|8438261b138c408f|2364501e7b35058b|1ba5008e61dcb59a|-1112914859||t19444.7259085659s|3d5df32e017ec55a|151722|rds|local|vector|||11.34||
+polyarchy|stem|f54165369dab30fe|9eb80961097f4aa0|1537fbb59db5222b|537739836||t19444.7265340064s|dfa916be04df1e40|7518|rds|local|vector|||1.03|1m22mattributes are not identical across measure variables they will be dropped|
+polyarchy_dimensions|stem|6f7d53729e50be18|4679ad0a5337015a|5f374768f907eb24|-594917934||t19444.727505599s|8e3bb88cbef27f37|368299|rds|local|vector|||2.64||
+polyarchy_pmm|stem|6465e2d3dbb5e5e4|fa1ebf5e667989e9|395ce77a7f6a3c12|1249319276||t19444.7282696252s|7be05040f7ef626b|3809|rds|local|vector|||0.01||
+prc_gasiorowski|stem|e307aef731687c91|8777aac523fcfa02|05fecb1a76a4f28f|500044518||t19444.7234531924s|02c326302ed78355|17815|rds|local|vector|||5.31||
 prc_gasiorowski_filename|stem|45c4fce4e650478e|396a96374f79c444|ef46db3751d8e999|-147159371|data-raw/Gasiorowski.csv|t19135.0779282407s|ba002d9f062b513f|11132|file|local|vector|||0.45|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3|
-prc_pmm|stem|c9e50f6722aefcbb|5c7cdbc3f249ef6c|7aece461dc43a473|1858666237||t19443.8288090928s|9c30d963229eb4bd|6402|rds|local|vector|||0.02||
+prc_pmm|stem|c9e50f6722aefcbb|5c7cdbc3f249ef6c|7aece461dc43a473|1858666237||t19444.7322965868s|9c30d963229eb4bd|6402|rds|local|vector|||0.01||
+preparable|object|c476f922a8b72c32|||||||||||||||
 prepare_anrr|function|5a2fea9b0f13737f|||||||||||||||
 prepare_democracy_data|function|7fa4b54535aaaa77|||||||||||||||
 prepare_dict|function|f976c86f5b6a3ef9|||||||||||||||
@@ -154,10 +166,11 @@ prob_more|function|2647483f35ab2782|||||||||||||||
 raterinfo|function|6e29372728302783|||||||||||||||
 read_by_file_extension|function|27a623903b2c5a12|||||||||||||||
 read_data|function|8d6511661359f8bd|||||||||||||||
+README|stem|e76399a830778a5c|d2bda324ff23c145|4577a5eaaa618f60|-1347750081|README.md*README.Rmd|t19444.6110721137s|6105480469526b3d|88109|file|local|vector|||58.29||
 redownload_anckar|function|59762aef26c93ba2|||||||||||||||
 redownload_blm|function|3fb6651c7990ea20|||||||||||||||
 redownload_bmr|function|44083a7d866b044b|||||||||||||||
-redownload_bti|function|2918d6e4ca736d59|||||||||||||||
+redownload_bti|function|89adb7cd7ef281ab|||||||||||||||
 redownload_gwf|function|88da332cd0a1f3ef|||||||||||||||
 redownload_lied|function|b77e1ab59fde3ab5|||||||||||||||
 redownload_magaloni|function|6a82eeab5cf0cb9d|||||||||||||||
@@ -173,27 +186,30 @@ redownload_svmdi|function|b46d800ef9008f0a|||||||||||||||
 redownload_ulfelder|function|10f0729d9a1f890e|||||||||||||||
 redownload_utip|function|e1d63b3d26bc31a2|||||||||||||||
 redownload_wahman_teorell_hadenius|function|30a8c94f055e5744|||||||||||||||
-REIGN|stem|3b289d5bc648aa68|179be68f50641f64|758587f0b031db65|578131410||t19444.2105287527s|65e59e4e7f196b68|38965|rds|local|vector|||7.35||
+redownloadable|object|8da2a974b0e03bbe|||||||||||||||
+REIGN|stem|3b289d5bc648aa68|179be68f50641f64|758587f0b031db65|578131410||t19444.7275576449s|65e59e4e7f196b68|38965|rds|local|vector|||4.43||
 remove_empty_rows|function|d1fcecceded765a0|||||||||||||||
 roxygen_cite|function|fb26f29574263bdc|||||||||||||||
-roxygen_print_bibliography|function|77deb11e869e45c7|||||||||||||||
+roxygen_print_bibliography|function|70f88e815ced968f|||||||||||||||
 standardize_columns|function|5869c69ba8c28d95|||||||||||||||
-svmdi|stem|1f4db8eb0c4b0970|c6d03aee88312aa8|1ae6ae5331ba289b|1880848901||t19443.8467268645s|35daf4278b5dd941|90268|rds|local|vector|||4.03||
-svmdi_2016|stem|d35a126af1be197b|d29af6cc4c57ae6f|1ae6ae5331ba289b|529864453||t19444.2114075823s|f7b58b8a65c6a6bf|99610|rds|local|vector|||12.05||
-svolik_regime|stem|036fd6019223825a|d0e4b523240298eb|21541a7a5d27433f|-2031385961||t19444.2103165572s|c92fcdf26f3acad6|14087|rds|local|vector|||3.4|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3. Using an external vector in selections was deprecated in tidyselect 1.1.0.ℹ Please use all_of or any_of instead.   Was  data  selectmatched_cols   Now  data  selectall_ofmatched_colsSee httpstidyselect.rlib.orgreferencefaqexternalvector.html.|
+svmdi|stem|1f4db8eb0c4b0970|c6d03aee88312aa8|1ae6ae5331ba289b|1880848901||t19444.7276056329s|35daf4278b5dd941|90268|rds|local|vector|||4.11||
+svmdi_2016|stem|d35a126af1be197b|d29af6cc4c57ae6f|1ae6ae5331ba289b|529864453||t19444.7276502507s|f7b58b8a65c6a6bf|99610|rds|local|vector|||3.79||
+svolik_regime|stem|036fd6019223825a|f20faa5308a44dae|e9aa26c7f46855d6|-2031385961||t19444.7259365115s|c92fcdf26f3acad6|14087|rds|local|vector|||2.38||
 svolik_regime_filename|stem|3e05be12f2c8fe01|21342c49fc8519cc|ef46db3751d8e999|-849408991|data-raw/regime and no authority spells, country-year, 1946-2008.dta|t19135.0813078704s|ebe80527f4d0a3eb|468114|file|local|vector|||1.67|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3|
 test_condition|function|1a6d574b1e3de67e|||||||||||||||
-uds_2010|stem|c406b7b9eb2a78c7|db4b2e3d9756f982|ef46db3751d8e999|-1823612839|data/uds_2010.rda|t17432.0623148148s|4d95b6a96e598783|304930|file|local|vector|||0.41|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3|
-uds_2011|stem|6f14cc318889c09a|f416bc0d5babf532|ef46db3751d8e999|631145724|data/uds_2011.rda|t17432.0623148148s|c4a4246eea43128e|367395|file|local|vector|||0||
-uds_2014|stem|5738357b292597e8|78cacdfee8032a9a|ef46db3751d8e999|-598117777|data/uds_2014.rda|t17432.0623148148s|eb62386fe496aaf1|395595|file|local|vector|||0||
-ulfelder|stem|5d9cd8c78891069d|97a74b277f31dde7|3622fc5470e4be0c|-1260556270||t19444.21192329s|998a9cab2b6729a5|43101|rds|local|vector|||11.61||
-ulfelder_extended|stem|58561b8d4cf3951b|c144cd92358b6f5f|3622fc5470e4be0c|101668864||t19444.1480259336s|aa50907e94ef5311|64333|rds|local|vector|||19.76|1m22mUsing an external vector in selections was deprecated in tidyselect 1.1.0.36mℹ39m Please use all_of or any_of instead.   Was  data  selectmatched_cols   Now  data  selectall_ofmatched_colsSee httpstidyselect.rlib.orgreferencefaqexternalvector.html.|
-utip|stem|9ea8ecb4a3bfde4f|96a7af73ec19f227|a5af50fb86766b17|1562914506||t19443.846474071s|0a85c3b0b61fe706|10686|rds|local|vector|||3.7||
-vanhanen|stem|d99987e3aab580b5|b460f24a408aecd4|f26eeeb4feaf56e5|1473532710||t19444.2104152091s|1276bf3b4a9b4e8e|52044|rds|local|vector|||11.69|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3. Using an external vector in selections was deprecated in tidyselect 1.1.0.ℹ Please use all_of or any_of instead.   Was  data  selectmatched_cols   Now  data  selectall_ofmatched_colsSee httpstidyselect.rlib.orgreferencefaqexternalvector.html.|
+track_only|object|95dc4c0f1ad0ae1d|||||||||||||||
+uds_2010|object|b821b3e18211f581|||||||||||||||
+uds_2011|object|eb4006d2b7b3decd|||||||||||||||
+uds_2014|object|6428c645603251d0|||||||||||||||
+ulfelder|stem|5d9cd8c78891069d|07691d1f34be41a2|3622fc5470e4be0c|-1260556270||t19444.7276890074s|998a9cab2b6729a5|43101|rds|local|vector|||3.29||
+ulfelder_extended|stem|58561b8d4cf3951b|c144cd92358b6f5f|3622fc5470e4be0c|101668864||t19444.7277470042s|aa50907e94ef5311|64333|rds|local|vector|||4.95||
+utip|stem|9ea8ecb4a3bfde4f|96a7af73ec19f227|a5af50fb86766b17|1562914506||t19444.7277843596s|0a85c3b0b61fe706|10686|rds|local|vector|||3.18||
+vanhanen|stem|d99987e3aab580b5|6e3ef185e5b470be|3e5bf32706ad5fc3|1473532710||t19444.7265217361s|1276bf3b4a9b4e8e|52044|rds|local|vector|||8.42||
 vanhanen_filename|stem|07031f9cdc09f791|51601ea9ac03a7bf|ef46db3751d8e999|1021419925|data-raw/FSD1289/FSD1289/Study/data/daF1289e.csv|t19443.645155454s|c2531afd09ab0bd9|344381|file|local|vector|||0.46|package tidyverse was built under R version 4.2.3. package ggplot2 was built under R version 4.2.3. package tibble was built under R version 4.2.3. package tidyr was built under R version 4.2.3. package readr was built under R version 4.2.3. package purrr was built under R version 4.2.3. package dplyr was built under R version 4.2.3. package stringr was built under R version 4.2.2. package forcats was built under R version 4.2.3. package lubridate was built under R version 4.2.3. package rlang was built under R version 4.2.3|
-vanhanen_pmm|stem|d734a53bf4b78fc0|0882c5abae74127f|a6425928c82be391|1554303979||t19443.8288096598s|8a512a8ea87802f0|15377|rds|local|vector|||0.02||
-vdem_simple|stem|56b39c455a030883|232ba92ed2463a23|0e445033f30c20ba|475819914||t19444.2117845038s|4b3250f1fb1e1529|746820|rds|local|vector|||49.61||
+vanhanen_pmm|stem|d734a53bf4b78fc0|0882c5abae74127f|a6425928c82be391|1554303979||t19444.7282701575s|8a512a8ea87802f0|15377|rds|local|vector|||0.01||
+vdem_simple|stem|56b39c455a030883|232ba92ed2463a23|0e445033f30c20ba|475819914||t19444.7282102625s|4b3250f1fb1e1529|746820|rds|local|vector|||36.55||
 verbose|object|909013909b1f03d4|||||||||||||||
-wahman_teorell_hadenius|stem|673132851d09b64d|bd111e71008236b8|62cd4c43a1557b84|-1485474024||t19443.8466797641s|0a1d58bfda62b9ac|103773|rds|local|vector|||2.9||
-wgi|stem|d939dc26aeb7f01b|bbcd456d45d4bd96|a5cc75c9507b32bd|-1552947113||t19444.2122503043s|51753babf0b03539|78203|rds|local|vector|||28.15||
+wahman_teorell_hadenius|stem|673132851d09b64d|bd111e71008236b8|62cd4c43a1557b84|-1485474024||t19444.7282448154s|0a1d58bfda62b9ac|103773|rds|local|vector|||2.9||
+wgi|stem|d939dc26aeb7f01b|bbcd456d45d4bd96|a5cc75c9507b32bd|-1552947113||t19444.7259647097s|51753babf0b03539|78203|rds|local|vector|||2.4||
+wgi_obj|object|320877f0fbb33ae9|||||||||||||||
 year_match_fun|function|a8c891b0cfb96c81|||||||||||||||
