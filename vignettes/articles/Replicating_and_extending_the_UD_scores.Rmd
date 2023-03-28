@@ -236,15 +236,14 @@ data <- extended_scores %>%
   filter(extended_country_name %in% countries) %>%
   tidyr::gather(measure, zscore, uds_2010_mean:uds_2014_mean, z1) %>%
   filter(!is.na(zscore), year >=1946, year < 2008) %>%
-  mutate(measure = plyr::mapvalues(measure, 
-                                   c("uds_2010_mean",
-                                     "uds_2011_mean",
-                                     "uds_2014_mean",
-                                     "z1_matched"),
-                                   c("2010 release of UDS",
-                                     "2011 release of UDS",
-                                     "2014 release of UDS",
-                                     "Extended replication score")))
+  mutate(measure = case_when(
+    measure == "uds_2010_mean" ~ "2010 release of UDS",
+    measure == "uds_2011_mean" ~ "2011 release of UDS",
+    measure == "uds_2014_mean" ~ "2014 release of UDS",
+    measure == "z1_matched" ~ "Extended replication score",
+    TRUE ~ measure
+    )
+)
 
 ggplot(data = data, 
        aes(x = year, y = zscore, color = measure)) + 
@@ -271,15 +270,13 @@ matched_data <- matched_data %>%
   filter(extended_country_name %in% countries) %>%
   tidyr::gather(measure, zscore, uds_2010_mean:uds_2014_mean, z1_matched) %>%
   filter(!is.na(zscore), year >=1946, year < 2008) %>%
-  mutate(measure = plyr::mapvalues(measure, 
-                                   c("uds_2010_mean",
-                                     "uds_2011_mean",
-                                     "uds_2014_mean",
-                                     "z1_matched"),
-                                   c("2010 release of UDS",
-                                     "2011 release of UDS",
-                                     "2014 release of UDS",
-                                     "Matched extended replication score")))
+  mutate(measure = case_when(
+    measure == "uds_2010_mean" ~ "2010 release of UDS",
+    measure == "uds_2011_mean" ~ "2011 release of UDS",
+    measure == "uds_2014_mean" ~ "2014 release of UDS",
+    measure == "z1_matched" ~ "Matched extended replication score",
+    TRUE ~ measure
+    ))
 
 ggplot(data = matched_data, 
        aes(x = year, y = zscore, color = measure)) + 
