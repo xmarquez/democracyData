@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">democracyData</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.4.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5.0</span>
       </span>
     </div>
 
@@ -855,7 +855,7 @@ here).</p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">replication_2011_model</span><span class="op">@</span><span class="va">time</span></span></code></pre></div>
 <pre><code><span><span class="co">## TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">##   7.70   0.16   0.42   6.51   0.59   0.00</span></span></code></pre>
+<span><span class="co">##   7.28   0.14   0.54   5.98   0.62   0.00</span></span></code></pre>
 <p>We can easily check that this model converges and that it accounts
 for most of the variance in the democracy indexes:</p>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
@@ -1373,7 +1373,7 @@ scores from 1919 to 2003.</p>
 <span></span>
 <span><span class="va">panel_model</span><span class="op">@</span><span class="va">time</span></span></code></pre></div>
 <pre><code><span><span class="co">## TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">##  13.95   0.08   0.71  12.41   0.75   0.00</span></span></code></pre>
+<span><span class="co">##  14.92   0.08   0.84  12.75   1.21   0.00</span></span></code></pre>
 <div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">panel_model</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##                                 F1    h2</span></span>
@@ -1777,7 +1777,7 @@ including only measures that have data to 2018:</p>
 <span></span>
 <span><span class="va">panel_model</span><span class="op">@</span><span class="va">time</span></span></code></pre></div>
 <pre><code><span><span class="co">## TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">##  35.33   0.06   1.23  28.69   5.27   0.00</span></span></code></pre>
+<span><span class="co">## 737.69   0.36   1.32 728.85   7.04   0.00</span></span></code></pre>
 <div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">panel_model</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##                                 F1    h2</span></span>
