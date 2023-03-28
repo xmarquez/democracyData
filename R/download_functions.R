@@ -1,9 +1,9 @@
 # Functions for downloading and processing other datasets -----------------
 
-#'Downloads the 2020 update of the Polity 5 dataset (annual time series) and
-#'processes it using [country_year_coder]
+#'Polity 5
 #'
-#'The original data is available at
+#'Downloads the 2020 update of the Polity 5 dataset (annual time series) and
+#'processes it using [country_year_coder]. The original data is available at
 #'[http://www.systemicpeace.org/inscrdata.html](http://www.systemicpeace.org/inscrdata.html)
 #'
 #'@param url The URL of the dataset. Defaults to
@@ -470,11 +470,11 @@ download_wgi_voice_and_accountability <- function(url,
 
 
 
-#' Downloads the 2023 update of the Freedom House Freedom in the World data
-#' and processes it using [country_year_coder]
+#' Freedom House "Freedom in the World" data
 #'
-#' The original data is available at
-#' \url{https://freedomhouse.org/report-types/freedom-world}
+#' Downloads the 2023 update of the Freedom House "Freedom in the World" data
+#' and processes it using [country_year_coder]. The original data is available
+#' at \url{https://freedomhouse.org/report-types/freedom-world}
 #'
 #' @param url The URL of the dataset. Defaults to
 #'   https://freedomhouse.org/sites/default/files/2023-02/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2023%20.xlsx
@@ -685,10 +685,10 @@ download_fh <- function(url,
   standardize_columns(fh, country, verbose = verbose)
 }
 
-#' Downloads the 2023 update of the Freedom House Electoral Democracies list and
-#' processes it using [country_year_coder].
+#' Freedom House Electoral Democracies List
 #'
-#' The original data is available at
+#' Downloads the 2023 update of the Freedom House Electoral Democracies list and
+#' processes it using [country_year_coder]. The original data is available at
 #' [https://freedomhouse.org/report/freedom-world](https://freedomhouse.org/report/freedom-world),
 #' spread over a number of different urls.
 #'
@@ -824,10 +824,11 @@ download_fh_electoral <- function(verbose = TRUE,
    standardize_columns(fh_electoral, country, verbose = verbose)
 }
 
-#' Downloads the 2023 update of the Freedom House Freedom in the World All
-#' Data 2013-2023 file and processes it using [country_year_coder].
+#' Freedom House All Data 2013-2023
 #'
-#' The original data is available at
+#' Downloads the 2023 update of the Freedom House Freedom in the World All Data
+#' 2013-2023 file and processes it using [country_year_coder]. The original data
+#' is available at
 #' [https://freedomhouse.org/report-types/freedom-world](https://freedomhouse.org/report/freedom-world)
 #'
 #' @param url The URL of the dataset. Defaults to
