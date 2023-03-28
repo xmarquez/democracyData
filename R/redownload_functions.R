@@ -125,6 +125,10 @@ redownload_blm <- function(url,
                            verbose = TRUE,
                            return_raw = FALSE,
                            ...) {
+  lifecycle::deprecate_stop("0.5.0", "redownload_blm()",
+                            details = stringr::str_c("Data can no longer be downloaded",
+                                                     " from http://www.blmdemocracy.gatech.edu/blm%20final%20data.xls",
+                                                     " use the archived version of this dataset, `blm`"))
   country <- blm <-  `costa rica` <- Nicaragua <- year <- NULL
 
   if(missing(url)) {
@@ -1293,6 +1297,7 @@ redownload_ulfelder <- function(url,
 #'   \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}.
 #'
 #' @export
+#' @keywords internal
 #'
 #' @examples
 #' \dontrun{
@@ -1303,6 +1308,10 @@ redownload_pipe <- function(url,
                           verbose = TRUE,
                           return_raw = FALSE,
                           ...) {
+  lifecycle::deprecate_stop("0.5.0", "redownload_pipe()",
+                            details = stringr::str_c("Data can no longer be downloaded",
+                                                     " from https://sites.google.com/a/nyu.edu/adam-przeworski/home/data/PIPE_081813.dta?attredirects=0&d=1;",
+                                                     " use the archived version of this dataset, `PIPE`"))
 
   if(missing(url)) {
     url <- "https://sites.google.com/a/nyu.edu/adam-przeworski/home/data/PIPE_081813.dta?attredirects=0&d=1"
