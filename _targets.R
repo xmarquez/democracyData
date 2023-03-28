@@ -5,7 +5,7 @@
 
 # Load packages required to define the pipeline:
 library(targets)
-# library(tarchetypes) # Load other packages as needed. # nolint
+library(tarchetypes) # Load other packages as needed. # nolint
 
 # Set target options:
 tar_option_set(
@@ -853,6 +853,9 @@ list(
     format = "file"
   ),
 
+  # This target needs manual invalidation for large overhauls; it currently does
+  # not detect that it depends on every dataset in the package
+
   tar_target(
     name = extended_uds,
     command = generate_extended_uds(verbose = verbose)
@@ -991,5 +994,13 @@ list(
     command = usethis::use_data(bibliography, overwrite = TRUE) |>
       c("data/bibliography.rda"),
     format = "file"
+  ),
+
+  ## File testing that all datasets work and are correctly added to the package
+
+  tar_knit(
+    name = add_and_test_all_scores,
+    path = "data-raw/Adding and testing all democracy datasets.Rmd",
+    output = "data-raw/Adding and testing all democracy datasets.md"
   )
 )
