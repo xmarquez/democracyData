@@ -245,7 +245,7 @@ B. Magaloni, J. Chu, and E. Min. \emph{Autocracies of the World,1950-2012 (Versi
 
 S. Mainwaring, D. Brinks, and A. Pérez-Liñán. "ClassifyingPolitical Regimes in Latin America". In: \emph{Studies in ComparativeInternational Development} 36.1 (2001), pp. 37-65. DOI:10.1007/bf02687584.
 
-S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political Regimesin Latin America, 1900-2007 (with Daniel Brinks)". In: \emph{Democracies andDictatorships in Latin America: Emergence, Survival, and Fall}. NewYork: Cambridge University Press, 2014.
+S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political Regimesin Latin America, 1900-2007 (with Daniel Brinks)". In: \emph{Democracies andDictatorships in Latin America: Emergence, Survival, and Fall}. NewYork: Cambridge University Press, 2014. Chap. Political Regimes inLatin America, 1900-2007 (with Daniel Brinks).
 
 X. Marquez. "A Quick Method for Extending the Unified DemocracyScores". In: \emph{Available at SSRN 2753830} (2016).\url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830}.
 

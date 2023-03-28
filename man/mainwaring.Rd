@@ -4,14 +4,14 @@
 \name{mainwaring}
 \alias{mainwaring}
 \alias{mainwaring_pmm}
-\title{Mainwaring, Brinks, and Perez Linan's democracy measure for Latin America}
+\title{Mainwaring, Brinks, and Perez Liñán's democracy measure for Latin America}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 2156 rows and 14 columns.
 
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 835 rows and 7 columns.
 }
 \source{
-S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political Regimes in Latin America, 1900-2007 (with Daniel Brinks)". In: \emph{Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall}. New York: Cambridge University Press, 2014.
+S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political Regimes in Latin America, 1900-2007 (with Daniel Brinks)". In: \emph{Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall}. New York: Cambridge University Press, 2014. Chap. Political Regimes in Latin America, 1900-2007 (with Daniel Brinks).
 
 D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
 }
@@ -22,7 +22,7 @@ mainwaring_pmm
 }
 \description{
 Trichotomous democracy indicator from S. Mainwaring, D. Brinks, and A. Pérez-Liñán. "Classifying Political Regimes in Latin America". In: \emph{Studies in Comparative International Development} 36.1 (2001), pp. 37-65. DOI: 10.1007/bf02687584.
-Extended in S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political Regimes in Latin America, 1900-2007 (with Daniel Brinks)". In: \emph{Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall}. New York: Cambridge University Press, 2014. Original data used to be available
+Extended in S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political Regimes in Latin America, 1900-2007 (with Daniel Brinks)". In: \emph{Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall}. New York: Cambridge University Press, 2014. Chap. Political Regimes in Latin America, 1900-2007 (with Daniel Brinks). Original data used to be available
 from
 \url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}, though no
 longer.
@@ -36,7 +36,7 @@ longer.
 
 \item{year}{The calendar year. }
 
-\item{mainwaring}{Trichotomous numerical democracy indicator from S. Mainwaring, D. Brinks, and A. Pérez-Liñán. "Classifying Political Regimes in Latin America". In: \emph{Studies in Comparative International Development} 36.1 (2001), pp. 37-65. DOI: 10.1007/bf02687584.  S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political Regimes in Latin America, 1900-2007 (with Daniel Brinks)". In: \emph{Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall}. New York: Cambridge University Press, 2014.
+\item{mainwaring}{Trichotomous numerical democracy indicator from S. Mainwaring, D. Brinks, and A. Pérez-Liñán. "Classifying Political Regimes in Latin America". In: \emph{Studies in Comparative International Development} 36.1 (2001), pp. 37-65. DOI: 10.1007/bf02687584.  S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political Regimes in Latin America, 1900-2007 (with Daniel Brinks)". In: \emph{Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall}. New York: Cambridge University Press, 2014. Chap. Political Regimes in Latin America, 1900-2007 (with Daniel Brinks).
 0 = non-democracy, 0.5 = hybrid, 1 = democracy.}
 
 \item{Regime}{Trichotomous democracy indicator. From the published
