@@ -220,7 +220,7 @@ prepare_doorenspleet <- function(path = "../../Data/Doorenspleet data.csv",
     select(-end_year_2) %>%
     group_by(country, start_year, end_year, regime) %>%
     mutate(year = list(start_year:end_year)) %>%
-    unnest()  %>%
+    unnest(cols = c(year))  %>%
     ungroup() %>%
     country_year_coder(country,
                        year,
