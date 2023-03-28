@@ -174,7 +174,7 @@
 #'
 #'@references
 #'
-#'`r stringr::str_remove(utils::capture.output(print(democracyData::bibliography)), "^\\[.+?\\] ")`
+#'`r roxygen_print_bibliography()`
 #'
 prepare_democracy_data <- function(data,
                          .funs) {
