@@ -1,5 +1,5 @@
 prepare_pmm_replication_data <- function(
-  path = "../../Pemstein Meserve and Melton Code/uds/data/democracy1946.2008.rda",
+  path = "data-raw/democracy1946.2008.rda",
   verbose = TRUE,
   ...) {
 
@@ -151,7 +151,8 @@ prepare_eiu <- function(path = "DI-final-version-report-2022.pdf",
                      purrr::map_df(~{filter(., y > 155, y < 735) %>%
                          group_by(y) %>%
                          summarise(country = paste(text[is.na(as.numeric(text))], collapse = " "),
-                                   values = list(as.numeric(text[!is.na(as.numeric(text))]))) %>%
+                                   values = list(as.numeric(text[!is.na(as.numeric(text))])),
+                                   .groups = "drop") %>%
                          unnest(cols = c(values)) %>%
                          group_by(country) %>%
                          mutate(year = years[1:n()])}) %>%
