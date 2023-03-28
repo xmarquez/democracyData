@@ -1,5 +1,5 @@
 ---
-title: "Adding all democracy datasets"
+title: "Adding all democracy datasets, testing Targets pipeline works"
 author: "Xavier Marquez"
 date: "`r lubridate::now()`"
 output: 
@@ -10,17 +10,15 @@ output:
 ```{r setup, include=FALSE}
 
 knitr::opts_chunk$set(echo = TRUE,
-                      cache = TRUE,
-                      cache.rebuild = TRUE,
-                      warning=FALSE,
-                      message = TRUE)
+                      warning=TRUE,
+                      message = TRUE,
+                      error = FALSE)
 library(tidyverse)
 library(democracyData)
+library(targets)
 
 verbose <- TRUE
 include_in_output <-  c("extended_country_name", "GWn", "cown", "in_GW_system")
-devtools::load_all()
-
 pmm_replication <-  prepare_pmm_replication_data(path = here::here("data-raw/democracy1946.2008.rda"),
                                                  verbose = verbose,
                                                  include_in_output = include_in_output) 
@@ -34,8 +32,8 @@ cite_dataset("anckar")
 anckar <- redownload_anckar(verbose = verbose,
                             include_in_output = include_in_output)
 
-usethis::use_data(anckar, overwrite = TRUE)
-
+stopifnot(identical(anckar,tar_read(anckar, store = here::here("_targets"))))
+stopifnot(identical(anckar, democracyData::anckar))
 ```
 
 ## ANRR
@@ -44,11 +42,12 @@ usethis::use_data(anckar, overwrite = TRUE)
 
 cite_dataset("anrr")
 
-anrr <- prepare_anrr(verbose = verbose,
+anrr <- prepare_anrr(path = here::here("data-raw/DDCGdata_final.dta"),
+                     verbose = verbose,
                      include_in_output = include_in_output)
 
-usethis::use_data(anrr, overwrite = TRUE)
-
+stopifnot(identical(anrr,tar_read(anrr, store = here::here("_targets"))))
+stopifnot(identical(anrr, democracyData::anrr))
 ```
 
 ## Arat
@@ -59,8 +58,8 @@ cite_dataset("arat")
 arat_pmm <- extract_pmm_var(pmm_replication, pmm_arat, 
                             include_in_output = include_in_output)
 
-usethis::use_data(arat_pmm, overwrite = TRUE)
-
+stopifnot(identical(arat_pmm,tar_read(arat_pmm, store = here::here("_targets"))))
+stopifnot(identical(arat_pmm, democracyData::arat_pmm))
 ```
 
 ## BLM
@@ -73,12 +72,12 @@ cite_dataset("blm")
 #                       include_in_output = include_in_output)
 
 blm_pmm <- extract_pmm_var(pmm_replication, pmm_blm,
-                      include_in_output = include_in_output)
+                           include_in_output = include_in_output)
 
 # usethis::use_data(blm, overwrite = TRUE)
-usethis::use_data(blm_pmm, overwrite = TRUE)
 
-
+stopifnot(identical(blm_pmm,tar_read(blm_pmm, store = here::here("_targets"))))
+stopifnot(identical(blm_pmm, democracyData::blm_pmm))
 ```
 
 # BMR (Boix Miller Rosato)
@@ -89,8 +88,8 @@ cite_dataset("bmr")
 bmr <- redownload_bmr(verbose = verbose, 
                       include_in_output = include_in_output)
 
-
-usethis::use_data(bmr, overwrite = TRUE)
+stopifnot(identical(bmr,tar_read(bmr, store = here::here("_targets"))))
+stopifnot(identical(bmr, democracyData::bmr))
 ```
 
 # BNR
@@ -114,11 +113,10 @@ cite_dataset("bnr")
 # 
 # anti_join(bnr %>% select(-bnr_country), bnr_extended) %>%
 #   knitr::kable()
-# 
-# usethis::use_data(bnr, overwrite = TRUE)
-# usethis::use_data(bnr_extended, overwrite = TRUE)
+
 
 ```
+
 # BTI
 
 ```{r bti, results = 'asis'}
@@ -127,7 +125,9 @@ cite_dataset("bti")
 bti <- redownload_bti(verbose = verbose, 
                       include_in_output = include_in_output)
 
-usethis::use_data(bti, overwrite = TRUE)
+stopifnot(identical(bti, tar_read(bti, store = here::here("_targets"))))
+stopifnot(identical(bti, democracyData::bti))
+
 ```
 
 # Bollen
@@ -138,7 +138,8 @@ cite_dataset("bollen")
 bollen_pmm <- extract_pmm_var(pmm_replication, pmm_bollen,
                               include_in_output = include_in_output)
 
-usethis::use_data(bollen_pmm, overwrite = TRUE)
+stopifnot(identical(bollen_pmm, tar_read(bollen_pmm, store = here::here("_targets"))))
+stopifnot(identical(bollen_pmm, democracyData::bollen_pmm))
 ```
 
 # Doorenspleet
@@ -150,7 +151,9 @@ doorenspleet <- prepare_doorenspleet(path = here::here("data-raw/Doorenspleet da
                                      verbose = verbose, 
                                      include_in_output = include_in_output)
 
-usethis::use_data(doorenspleet, overwrite = TRUE)
+stopifnot(identical(doorenspleet, tar_read(doorenspleet, store = here::here("_targets"))))
+stopifnot(identical(doorenspleet, democracyData::doorenspleet))
+
 ```
 
 # WGI
@@ -158,8 +161,11 @@ usethis::use_data(doorenspleet, overwrite = TRUE)
 ```{r wgi, results = 'asis'}
 cite_dataset("wgi")
 
-wgi_democracy <- download_wgi_voice_and_accountability(verbose = verbose, 
-                                                       include_in_output = include_in_output)
+wgi <- download_wgi_voice_and_accountability(verbose = verbose, 
+                                             include_in_output = include_in_output)
+
+stopifnot(identical(wgi, tar_read(wgi, store = here::here("_targets"))))
+stopifnot(identical(wgi, democracyData::wgi))
 
 ```
 
@@ -168,9 +174,11 @@ wgi_democracy <- download_wgi_voice_and_accountability(verbose = verbose,
 ```{r eiu, results= 'asis'}
 cite_dataset("eiu")
 
-eiu <- prepare_eiu(verbose = verbose, include_in_output = include_in_output)
+eiu <- prepare_eiu(path = here::here("data-raw/DI-final-version-report-2022.pdf"),
+                   verbose = verbose, include_in_output = include_in_output)
 
-usethis::use_data(eiu, overwrite = TRUE)
+stopifnot(identical(eiu, tar_read(eiu, store = here::here("_targets"))))
+stopifnot(identical(eiu, democracyData::eiu))
 ```
 
 # Freedom House
@@ -194,8 +202,12 @@ fh_full <- download_fh_full(verbose = verbose,
 fh_pmm <- extract_pmm_var(pmm_replication, pmm_freedomhouse,
                           include_in_output = include_in_output) 
 
-usethis::use_data(fh_pmm, overwrite = TRUE)
-
+stopifnot(identical(fh, tar_read(fh, store = here::here("_targets"))))
+stopifnot(identical(fh_with_territories, tar_read(fh_with_territories, store = here::here("_targets"))))
+stopifnot(identical(fh_electoral, tar_read(fh_electoral, store = here::here("_targets"))))
+stopifnot(identical(fh_full, tar_read(fh_full, store = here::here("_targets"))))
+stopifnot(identical(fh_pmm, tar_read(fh_pmm, store = here::here("_targets"))))
+stopifnot(identical(fh_pmm, democracyData::fh_pmm))
 ```
 
 # GWF
@@ -221,10 +233,14 @@ gwf_all_extended <- redownload_gwf(verbose = verbose,
                                    include_in_output = include_in_output,
                                    extend = TRUE)
 
-usethis::use_data(gwf_autocratic,
-                   gwf_autocratic_extended,
-                   gwf_all, 
-                   gwf_all_extended, overwrite = TRUE)
+stopifnot(identical(gwf_autocratic, tar_read(gwf_autocratic, store = here::here("_targets"))))
+stopifnot(identical(gwf_autocratic, democracyData::gwf_autocratic))
+stopifnot(identical(gwf_autocratic_extended, tar_read(gwf_autocratic_extended, store = here::here("_targets"))))
+stopifnot(identical(gwf_autocratic_extended, democracyData::gwf_autocratic_extended))
+stopifnot(identical(gwf_all, tar_read(gwf_all, store = here::here("_targets"))))
+stopifnot(identical(gwf_all, democracyData::gwf_all))
+stopifnot(identical(gwf_all_extended, tar_read(gwf_all_extended, store = here::here("_targets"))))
+stopifnot(identical(gwf_all_extended, democracyData::gwf_all_extended))
 
 ```
 
@@ -236,7 +252,9 @@ cite_dataset("hadenius")
 hadenius_pmm <- extract_pmm_var(pmm_replication, pmm_hadenius,
                                 include_in_output = include_in_output)
 
-usethis::use_data(hadenius_pmm, overwrite = TRUE)
+stopifnot(identical(hadenius_pmm, tar_read(hadenius_pmm, store = here::here("_targets"))))
+stopifnot(identical(hadenius_pmm, democracyData::hadenius_pmm))
+
 ```
 
 # Kailitz
@@ -244,23 +262,11 @@ usethis::use_data(hadenius_pmm, overwrite = TRUE)
 ```{r kailitz, results = 'asis'}
 cite_dataset("kailitz")
 
-kailitz <- read_rds("kailitz.yearly.rds") %>%
-  select(kailitz_country, year, cown, combined_regime:transition) %>%
-  rename(kailitz_cown = cown) %>%
-  mutate(year = as.double(year))
+kailitz <- prepare_kailitz(path = here::here("data-raw/kailitz.yearly.rds"),
+                           verbose = verbose, include_in_output = include_in_output)
 
-kailitz <- kailitz %>%
-  country_year_coder(kailitz_country,
-                     year,
-                     code_col = kailitz_cown,
-                     verbose = verbose,
-                     include_in_output = include_in_output,
-                     code_type = "cown") 
-
-kailitz <- kailitz %>% 
-  select(kailitz_country, kailitz_cown, year, combined_regime:transition, include_in_output)
-
-usethis::use_data(kailitz, overwrite = TRUE)
+stopifnot(identical(kailitz, tar_read(kailitz, store = here::here("_targets"))))
+stopifnot(identical(kailitz, democracyData::kailitz))
 ```
 
 
@@ -269,10 +275,11 @@ usethis::use_data(kailitz, overwrite = TRUE)
 ```{r lied, results = 'asis'}
 cite_dataset("LIED")
       
-LIED <- redownload_lied(verbose = verbose, 
-                      include_in_output = include_in_output)
+LIED <- redownload_lied(verbose = verbose,
+                        include_in_output = include_in_output)
 
-usethis::use_data(LIED, overwrite = TRUE)
+stopifnot(identical(LIED, tar_read(LIED, store = here::here("_targets"))))
+stopifnot(identical(LIED, democracyData::LIED))
 ```
 
 
@@ -297,7 +304,10 @@ anti_join(magaloni_extended, magaloni) %>%
   filter(grepl("Pakis",magaloni_country)) %>%
   knitr::kable()
 
-usethis::use_data(magaloni, magaloni_extended, overwrite = TRUE)
+stopifnot(identical(magaloni, tar_read(magaloni, store = here::here("_targets"))))
+stopifnot(identical(magaloni, democracyData::magaloni))
+stopifnot(identical(magaloni_extended, tar_read(magaloni_extended, store = here::here("_targets"))))
+stopifnot(identical(magaloni_extended, democracyData::magaloni_extended))
 ```
 
 
@@ -313,20 +323,24 @@ mainwaring <- prepare_mainwaring(path = here::here("data-raw/Mainwaring Linan.tx
 mainwaring_pmm <- extract_pmm_var(pmm_replication, pmm_mainwaring,
                                  include_in_output = include_in_output)
 
-usethis::use_data(mainwaring, overwrite = TRUE)
-usethis::use_data(mainwaring_pmm, overwrite = TRUE)
+stopifnot(identical(mainwaring, tar_read(mainwaring, store = here::here("_targets"))))
+stopifnot(identical(mainwaring, democracyData::mainwaring))
+stopifnot(identical(mainwaring_pmm, tar_read(mainwaring_pmm, store = here::here("_targets"))))
+stopifnot(identical(mainwaring_pmm, democracyData::mainwaring_pmm))
 
 ```
 
 # Munck
 
 ```{r munck, results = 'asis'}
+
 cite_dataset("munck")
 
 munck_pmm <- extract_pmm_var(pmm_replication, pmm_munck,
-                                 include_in_output = include_in_output)
+                             include_in_output = include_in_output)
 
-usethis::use_data(munck_pmm, overwrite = TRUE)
+stopifnot(identical(munck_pmm, tar_read(munck_pmm, store = here::here("_targets"))))
+stopifnot(identical(munck_pmm, democracyData::munck_pmm))
 ```
 
 # PACL
@@ -335,14 +349,15 @@ usethis::use_data(munck_pmm, overwrite = TRUE)
 cite_dataset("pacl")
 
 pacl_pmm <- extract_pmm_var(pmm_replication, pmm_pacl,
-                                 include_in_output = include_in_output)
+                            include_in_output = include_in_output)
 
 pacl <- redownload_pacl(verbose = verbose,
                         include_in_output = include_in_output)
 
-usethis::use_data(pacl_pmm, overwrite = TRUE)
-usethis::use_data(pacl, overwrite = TRUE)
-
+stopifnot(identical(pacl_pmm, tar_read(pacl_pmm, store = here::here("_targets"))))
+stopifnot(identical(pacl_pmm, democracyData::pacl_pmm))
+stopifnot(identical(pacl, tar_read(pacl, store = here::here("_targets"))))
+stopifnot(identical(pacl, democracyData::pacl))
 ```
 # PACL Update
 
@@ -352,8 +367,8 @@ cite_dataset("pacl_update")
 pacl_update <- redownload_pacl_update(verbose = verbose,
                                       include_in_output = include_in_output)
 
-usethis::use_data(pacl_update, overwrite = TRUE)
-
+stopifnot(identical(pacl_update, tar_read(pacl_update, store = here::here("_targets"))))
+stopifnot(identical(pacl_update, democracyData::pacl_update))
 ```
 
 # PEPS 
@@ -364,7 +379,8 @@ cite_dataset("peps")
 peps <- redownload_peps(verbose = verbose,
                         include_in_output = include_in_output)
 
-usethis::use_data(peps, overwrite = TRUE)
+stopifnot(identical(peps, tar_read(peps, store = here::here("_targets"))))
+stopifnot(identical(peps, democracyData::peps))
 ```
 
 # Polity
@@ -381,8 +397,12 @@ polityIV <- redownload_polityIV(verbose = verbose,
 polity5 <- download_polity_annual(verbose = verbose,
                                  include_in_output = include_in_output)
 
-usethis::use_data(polity_pmm, overwrite = TRUE)
-usethis::use_data(polityIV, overwrite = TRUE)
+stopifnot(identical(polity_pmm, tar_read(polity_pmm, store = here::here("_targets"))))
+stopifnot(identical(polity_pmm, democracyData::polity_pmm))
+stopifnot(identical(polityIV, tar_read(polityIV, store = here::here("_targets"))))
+stopifnot(identical(polityIV, democracyData::polityIV))
+stopifnot(identical(polity5, tar_read(polity5)))
+stopifnot(identical(polity5, democracyData::polity5))
 ```
 
 # PITF
@@ -394,8 +414,10 @@ pitf_p4 <- create_pitf_scores(polityIV, verbose = verbose, include_in_output = i
 
 pitf <- create_pitf_scores(verbose = verbose, include_in_output = include_in_output)
 
-usethis::use_data(pitf_p4, overwrite = TRUE)
-usethis::use_data(pitf, overwrite = TRUE)
+stopifnot(identical(pitf_p4, tar_read(pitf_p4)))
+stopifnot(identical(pitf_p4, democracyData::pitf_p4))
+stopifnot(identical(pitf, tar_read(pitf, store = here::here("_targets"))))
+stopifnot(identical(pitf, democracyData::pitf))
 ```
 
 # Polyarchy
@@ -407,15 +429,17 @@ polyarchy_pmm <- extract_pmm_var(pmm_replication, pmm_polyarchy,
                                  include_in_output = include_in_output)
 
 polyarchy <- redownload_polyarchy_original(verbose = verbose,
-                                         include_in_output = include_in_output)
+                                           include_in_output = include_in_output)
 
-# polyarchy_dimensions <- redownload_polyarchy_dimensions(verbose = verbose,
-                                                # include_in_output = include_in_output)
+polyarchy_dimensions <- redownload_polyarchy_dimensions(verbose = verbose,
+                                                        include_in_output = include_in_output)
 
-usethis::use_data(polyarchy, 
-                   polyarchy_pmm,
-                   # polyarchy_dimensions,
-                   overwrite = TRUE)
+stopifnot(identical(polyarchy_pmm, tar_read(polyarchy_pmm, store = here::here("_targets"))))
+stopifnot(identical(polyarchy_pmm, democracyData::polyarchy_pmm))
+stopifnot(identical(polyarchy, tar_read(polyarchy, store = here::here("_targets"))))
+stopifnot(identical(polyarchy, democracyData::polyarchy))
+stopifnot(identical(polyarchy_dimensions, tar_read(polyarchy_dimensions, store = here::here("_targets"))))
+stopifnot(identical(polyarchy_dimensions, democracyData::polyarchy_dimensions))
 ```
 
 # Political Regime Change (PRC)/Gasiorowski dataset
@@ -430,8 +454,10 @@ prc_gasiorowski <- prepare_prc(path = here::here("data-raw/Gasiorowski.csv"),
 prc_pmm <- extract_pmm_var(pmm_replication, pmm_prc,
                            include_in_output = include_in_output)
 
-usethis::use_data(prc_gasiorowski, 
-                   prc_pmm, overwrite = TRUE)
+stopifnot(identical(prc_gasiorowski, tar_read(prc_gasiorowski, store = here::here("_targets"))))
+stopifnot(identical(prc_gasiorowski, democracyData::prc_gasiorowski))
+stopifnot(identical(prc_pmm, tar_read(prc_pmm, store = here::here("_targets"))))
+stopifnot(identical(prc_pmm, democracyData::prc_pmm))
 ```
 
 # PIPE
@@ -439,10 +465,9 @@ usethis::use_data(prc_gasiorowski,
 ```{r PIPE, results = 'asis'}
 cite_dataset("PIPE")
 
-PIPE <- redownload_pipe(verbose = verbose,
-                        include_in_output = include_in_output)
+# PIPE <- redownload_pipe(verbose = verbose,
+#                         include_in_output = include_in_output)
 
-usethis::use_data(PIPE, overwrite = TRUE)
 ```
 
 # REIGN
@@ -451,9 +476,10 @@ usethis::use_data(PIPE, overwrite = TRUE)
 cite_dataset("reign")
 
 REIGN <- redownload_reign(verbose = verbose,
-                        include_in_output = include_in_output)
+                          include_in_output = include_in_output)
 
-usethis::use_data(REIGN, overwrite = TRUE)
+stopifnot(identical(REIGN, tar_read(REIGN, store = here::here("_targets"))))
+stopifnot(identical(REIGN, democracyData::REIGN))
 ```
 
 # SVMDI
@@ -467,9 +493,10 @@ svmdi <- redownload_svmdi(verbose = verbose,
 svmdi_2016 <- redownload_svmdi(release_year = 2016, verbose = verbose,
                                include_in_output = include_in_output)
 
-usethis::use_data(svmdi, overwrite = TRUE)
-usethis::use_data(svmdi_2016, overwrite = TRUE)
-
+stopifnot(identical(svmdi, tar_read(svmdi, store = here::here("_targets"))))
+stopifnot(identical(svmdi, democracyData::svmdi))
+stopifnot(identical(svmdi_2016, tar_read(svmdi_2016)))
+stopifnot(identical(svmdi_2016, democracyData::svmdi_2016))
 ```
 # Svolik
 
@@ -480,7 +507,8 @@ svolik_regime <- prepare_svolik_regime(path = here::here("data-raw/regime and no
                                        verbose = verbose,
                                        include_in_output = include_in_output)
 
-usethis::use_data(svolik_regime, overwrite = TRUE)
+stopifnot(identical(svolik_regime, tar_read(svolik_regime, store = here::here("_targets"))))
+stopifnot(identical(svolik_regime, democracyData::svolik_regime))
 ```
 
 # UDS
@@ -505,9 +533,11 @@ cite_dataset("uds")
 
 cite_dataset("extended_uds")
 
+set.seed(tar_meta() |> filter(name == "extended_uds") |> pull(seed))
 extended_uds <- generate_extended_uds(verbose = verbose)
 
-usethis::use_data(extended_uds, overwrite = TRUE)
+stopifnot(identical(extended_uds, tar_read(extended_uds, store = here::here("_targets"))))
+stopifnot(identical(extended_uds, democracyData::extended_uds))
 ```
 
 # Ulfelder
@@ -522,7 +552,10 @@ ulfelder_extended <- redownload_ulfelder(verbose = verbose,
                                 include_in_output = include_in_output,
                                 extend = TRUE)
 
-usethis::use_data(ulfelder, ulfelder_extended, overwrite = TRUE)
+stopifnot(identical(ulfelder, tar_read(ulfelder, store = here::here("_targets"))))
+stopifnot(identical(ulfelder, democracyData::ulfelder))
+stopifnot(identical(ulfelder_extended, tar_read(ulfelder_extended, store = here::here("_targets"))))
+stopifnot(identical(ulfelder_extended, democracyData::ulfelder_extended))
 ```
 
 # UTIP
@@ -533,7 +566,8 @@ cite_dataset("utip")
 utip <- redownload_utip(verbose = verbose,
                         include_in_output = include_in_output)
 
-usethis::use_data(utip, overwrite = TRUE)
+stopifnot(identical(utip, tar_read(utip, store = here::here("_targets"))))
+stopifnot(identical(utip, democracyData::utip))
 ```
 
 # Vanhanen
@@ -541,45 +575,27 @@ usethis::use_data(utip, overwrite = TRUE)
 ```{r vanhanen, results = 'asis'}
 cite_dataset("vanhanen")
 
-# vanhanen <- prepare_vanhanen(path = here::here("data-raw/daF1289e.xls"),
-#                              verbose = verbose,
-#                              include_in_output = include_in_output)
-
 vanhanen_pmm <- extract_pmm_var(pmm_replication, pmm_vanhanen,
-                             include_in_output = include_in_output)
+                                verbose = verbose, include_in_output = include_in_output)
 
-vanhanen <- prepare_vanhanen(here::here("data-raw/FSD1289/FSD1289/Study/data/daF1289e.csv"),
-                                  include_in_output = include_in_output)
+vanhanen <- prepare_vanhanen(path = here::here("data-raw/FSD1289/FSD1289/Study/data/daF1289e.csv"),
+                             verbose = verbose, include_in_output = include_in_output)
 
-usethis::use_data(vanhanen, vanhanen_pmm, overwrite = TRUE)
+stopifnot(identical(vanhanen_pmm, tar_read(vanhanen_pmm, store = here::here("_targets"))))
+stopifnot(identical(vanhanen_pmm, democracyData::vanhanen_pmm))
+stopifnot(identical(vanhanen, tar_read(vanhanen, store = here::here("_targets"))))
+stopifnot(identical(vanhanen, democracyData::vanhanen))
 ```
+
 # VDem
 
 ```{r, results='markup'}
-library(vdemdata)
+cite_dataset("vdem")
 
-vdem_simple <- vdemdata::vdem %>%
-  select(country_name:v2x_mpi_sd) %>%
-  as_tibble() %>%
-  country_year_coder(country_name, year, COWcode,
-                     include_in_output = include_in_output) 
+vdem_simple <- prepare_vdem_simple(verbose = verbose, version = "13.0", include_in_output = include_in_output)
 
-vdem_exclude <- vdemdata::vdem %>%
-  select(country_name:v2x_mpi_sd) %>%
-  as_tibble() %>%
-  country_year_coder(country_name, year,
-                     include_in_output = include_in_output) %>%
-  filter(extended_country_name == "Yugoslavia", year %in% c(1804:1829))
-
-vdem_simple <- vdem_simple %>% 
-  anti_join(vdem_exclude)
-
-vdem_simple <- vdem_simple %>%
-  rename(vdem_country_name = country_name,
-         vdem_cowcode = COWcode)
-
-usethis::use_data(vdem_simple, overwrite = TRUE)
- 
+stopifnot(identical(vdem_simple, tar_read(vdem_simple, store = here::here("_targets"))))
+stopifnot(identical(vdem_simple, democracyData::vdem_simple))
 ```
 
 
@@ -591,7 +607,8 @@ cite_dataset("wahman_teorell")
 wahman_teorell_hadenius <- redownload_wahman_teorell_hadenius(verbose = verbose,
                                                               include_in_output = include_in_output)
 
-usethis::use_data(wahman_teorell_hadenius, overwrite = TRUE)
+stopifnot(identical(wahman_teorell_hadenius, tar_read(wahman_teorell_hadenius, store = here::here("_targets"))))
+stopifnot(identical(wahman_teorell_hadenius, democracyData::wahman_teorell_hadenius))
 ```
 
 
