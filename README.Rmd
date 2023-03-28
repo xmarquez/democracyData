@@ -55,7 +55,7 @@ All datasets in this package are fully documented; type `?pacl` for example to s
 
 ## Downloading democracy data
 
-Three democracy datasets are not currently archived in this package: the family of datasets released by [Freedom House](https://freedomhouse.org/); the [Polity5](http://www.systemicpeace.org/inscrdata.html) dataset (which superceded [Polity IV](http://www.systemicpeace.org/inscrdata.html)); and the Voice and Accountability indexes of the [World Governance Indicators](http://info.worldbank.org/governance/wgi/). (The full V-Dem dataset is also not archived here; you can access it via the [vdemdata](https://github.com/vdeminstitute/vdemdata) package). To download these datasets, use the the `download_*` family of functions.
+There are a couple of democracy datasets that are not currently archived in this package: the family of datasets released by [Freedom House](https://freedomhouse.org/) and the full V-Dem dataset. To download the Freedom House dataset, use the the `download_*` family of functions; to download the full V-Dem dataset, use the [vdemdata](https://github.com/vdeminstitute/vdemdata) package. The package *does* include the main indexes of version 13.0 of V-Dem (see [vdem_simple]), so you don't need to use the [vdemdata](https://github.com/vdeminstitute/vdemdata) package if you are only interested in the higher-level indexes of democracy. You can also download directly the latest versions of the World Bank's Voice and Accountability Index from the [World Governance Indicators](http://info.worldbank.org/governance/wgi/) and [Polity5](http://www.systemicpeace.org/inscrdata.html), though there are also archived versions of these two in the package.
 
 For example, we can download and process the Freedom House "Freedom in the World" dataset as follows:
 
@@ -135,27 +135,30 @@ extended_uds
 The package also includes a couple of other convenience functions to work with historical democracy data and determine state system membership. The first is `country_year_coder`, which works like the [`countrycode`](https://CRAN.R-project.org/package=countrycode) package, except that it is able to determine state system information for country-year pairs. Suppose you have this dataset:
 
 ```{r}
-my_weird_democracy_data <- tibble(country = c("Germany", "Germany", "Germany", "Germany", "East Germany",
-                                    "Federal Republic of Germany",
-                                    "Somaliland", "Somalia",
-                                    "Palestine", "Russia",
-                                    "Russia", "USSR",
-                                    "Republic of Vietnam",
-                                    "Yugoslavia", 'Yugoslavia',
-                                    "Vietnam, South"),
-                        year = c( 2015, 1930, 1970, 1945, 1949,
-                                 1992, 1990,
-                                 1990, 1940,
-                                 1917, 1912,
-                                 1922, 1975,
-                                 1990, 1991, 1954),
-                        my_measure = rnorm(16))
+my_weird_democracy_data <- tibble(
+  country = c("Germany", "Germany", "Germany",
+              "Germany", "East Germany",
+              "Federal Republic of Germany",
+              "Somaliland", "Somalia",
+              "Palestine", "Russia",
+              "Russia", "USSR",
+              "Republic of Vietnam",
+              "Yugoslavia", 'Yugoslavia',
+              "Vietnam, South"),
+  year = c( 2015, 1930, 1970, 1945, 1949,
+            1992, 1990, 1990, 1940, 1917, 
+            1912, 1922, 1975, 1990, 1991, 1954),
+  my_measure = rnorm(16))
 
 
 my_weird_democracy_data
 ```
 
 and you then want to add state system information. `country_year_coder` does that for you!
+
+```{r, include = FALSE}
+set.seed(14)
+```
 
 ```{r}
 
@@ -179,7 +182,7 @@ my_weird_democracy_data %>%
 
 `country_year_coder` tries to match not just the country name or the country code (as `countrycode` does), but also to figure out the appropriate state system code *given* the year. (Above, for example, the function figures out that Germany 1970 should get a COW code of 260, but Germany 1992 should get 255 - though it should retain the 260 code in the Gleditsch and Ward system of states. This is, incidentally, how `download_fh` adds the correct COW and GW country codes to Freedom House's Excel data). It also tries to figure out whether a given country-year is in the specific state system list. (In the example above, Germany in 1945 is not listed as a member of the state system in either COW or Gleditsch and Ward, since it was occupied by the Allies as of 31 December 1945, but is listed as a member of the state system in Polity IV as the Federal Republic, though with a polity score of -66, "interregnum").
 
-One nice thing about `country_year_coder` (in my humble opinion!) is that it can sometimes correct country coding errors; I've run across more than one dataset with the supposed COW code 255 for the Federal Republic of Germany for the period 1955-1990, which would prevent a clean join to a dataset with the correct COW code, but would be caught by `country_year_coder`.
+One nice thing about `country_year_coder` (in my humble opinion!) is that it can sometimes correct country coding errors; I've run across more than one dataset with the supposed COW code 255 for the Federal Republic of Germany for the period 1955-1990, which would prevent a clean join to a dataset with the correct COW code, but would be caught by `country_year_coder`. 
 
 There is also a function that allows you to create a blank state system panel for any of the three main state systems:
 
