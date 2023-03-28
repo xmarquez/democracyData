@@ -26,7 +26,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -69,16 +69,16 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">prob_more</span><span class="op">(</span>
-  <span class="va">data</span>,
-  <span class="va">country1</span>,
-  <span class="va">country2</span>,
-  <span class="va">years</span>,
-  mean_col <span class="op">=</span> <span class="st">"z1"</span>,
-  sd_col <span class="op">=</span> <span class="st">"se_z1"</span>,
-  country_col <span class="op">=</span> <span class="st">"extended_country_name"</span>,
-  year_col <span class="op">=</span> <span class="st">"year"</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">prob_more</span><span class="op">(</span></span>
+<span>  <span class="va">data</span>,</span>
+<span>  <span class="va">country1</span>,</span>
+<span>  <span class="va">country2</span>,</span>
+<span>  <span class="va">years</span>,</span>
+<span>  mean_col <span class="op">=</span> <span class="st">"z1"</span>,</span>
+<span>  sd_col <span class="op">=</span> <span class="st">"se_z1"</span>,</span>
+<span>  country_col <span class="op">=</span> <span class="st">"extended_country_name"</span>,</span>
+<span>  year_col <span class="op">=</span> <span class="st">"year"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -87,48 +87,65 @@
 <dd><p>A UD dataset with a country_name, year, latent variable mean and
 latent variable standard deviation columns at least. Little sanity checking
 is performed - careful!</p></dd>
+
+
 <dt>country1</dt>
 <dd><p>The first country to compare.</p></dd>
+
+
 <dt>country2</dt>
 <dd><p>The second country to compare. Can be the same as
 <code>country1</code></p></dd>
+
+
 <dt>years</dt>
 <dd><p>Either a single year, or a length 2 vector of years.</p></dd>
+
+
 <dt>mean_col</dt>
 <dd><p>The name of the column that contains the mean of the latent
 variable (defaults to <code>z1</code>)</p></dd>
+
+
 <dt>sd_col</dt>
 <dd><p>The name of the column that contains the standard error of the
 latent variable (defaults to <code>se_z1</code>)</p></dd>
+
+
 <dt>country_col</dt>
 <dd><p>The name of the column that contains the country name
 (defaults to <code>extended_country_name</code>)</p></dd>
+
+
 <dt>year_col</dt>
 <dd><p>The name of the column that contains the years (defaults to
 <code>year</code>)</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>The probability that the first country-year in the comparison is more
+    
+
+<p>The probability that the first country-year in the comparison is more
 democratic than the second.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># Probability that the USA in 2000 was more democratic than Brazil in 2000,</span></span>
-<span class="r-in"><span class="co"># according to 2010 release of UDS</span></span>
-<span class="r-in"><span class="fu">prob_more</span><span class="op">(</span><span class="va">uds_2010</span>, <span class="st">"United States of America"</span>,<span class="st">"Brazil"</span>,</span>
-<span class="r-in">          <span class="fl">2000</span>, mean_col<span class="op">=</span><span class="st">"mean"</span>, sd_col<span class="op">=</span><span class="st">"sd"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Probability that the USA in 2000 was more democratic than Brazil in 2000,</span></span></span>
+<span class="r-in"><span><span class="co"># according to 2010 release of UDS</span></span></span>
+<span class="r-in"><span><span class="fu">prob_more</span><span class="op">(</span><span class="va">uds_2010</span>, <span class="st">"United States of America"</span>,<span class="st">"Brazil"</span>,</span></span>
+<span class="r-in"><span>          <span class="fl">2000</span>, mean_col<span class="op">=</span><span class="st">"mean"</span>, sd_col<span class="op">=</span><span class="st">"sd"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.9468881</span>
-<span class="r-in"><span class="co"># Probability that Brazil in 1980 was more democratic than the USA in 1980,</span></span>
-<span class="r-in"><span class="co"># according to 2010 release of UDS</span></span>
-<span class="r-in"><span class="fu">prob_more</span><span class="op">(</span><span class="va">uds_2010</span>, <span class="st">"Brazil"</span>,<span class="st">"United States of America"</span>,</span>
-<span class="r-in">          <span class="fl">1980</span>, mean_col<span class="op">=</span><span class="st">"mean"</span>, sd_col<span class="op">=</span><span class="st">"sd"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="co"># Probability that Brazil in 1980 was more democratic than the USA in 1980,</span></span></span>
+<span class="r-in"><span><span class="co"># according to 2010 release of UDS</span></span></span>
+<span class="r-in"><span><span class="fu">prob_more</span><span class="op">(</span><span class="va">uds_2010</span>, <span class="st">"Brazil"</span>,<span class="st">"United States of America"</span>,</span></span>
+<span class="r-in"><span>          <span class="fl">1980</span>, mean_col<span class="op">=</span><span class="st">"mean"</span>, sd_col<span class="op">=</span><span class="st">"sd"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2.325305e-06</span>
-<span class="r-in"><span class="co"># Probability that the USA in 2000 was more democratic than the USA in 1950,</span></span>
-<span class="r-in"><span class="co"># according to 2010 release of UDS</span></span>
-<span class="r-in"><span class="fu">prob_more</span><span class="op">(</span><span class="va">uds_2010</span>, <span class="st">"United States of America"</span>,<span class="st">"United States of America"</span>,</span>
-<span class="r-in">           years <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2000</span>,<span class="fl">1950</span><span class="op">)</span>, mean_col<span class="op">=</span><span class="st">"mean"</span>, sd_col<span class="op">=</span><span class="st">"sd"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="co"># Probability that the USA in 2000 was more democratic than the USA in 1950,</span></span></span>
+<span class="r-in"><span><span class="co"># according to 2010 release of UDS</span></span></span>
+<span class="r-in"><span><span class="fu">prob_more</span><span class="op">(</span><span class="va">uds_2010</span>, <span class="st">"United States of America"</span>,<span class="st">"United States of America"</span>,</span></span>
+<span class="r-in"><span>           years <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2000</span>,<span class="fl">1950</span><span class="op">)</span>, mean_col<span class="op">=</span><span class="st">"mean"</span>, sd_col<span class="op">=</span><span class="st">"sd"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.7605136</span>
 </code></pre></div>
     </div>
@@ -144,7 +161,7 @@ democratic than the second.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

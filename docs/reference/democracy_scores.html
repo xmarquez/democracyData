@@ -29,7 +29,7 @@ mirt::fscores directly."><!-- mathjax --><script src="https://cdnjs.cloudflare.c
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -75,24 +75,31 @@ instead of a matrix. More fine-grained control can be achieved by using
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">democracy_scores</span><span class="op">(</span><span class="va">model</span>, adjust_to_dichotomous <span class="op">=</span> <span class="cn">TRUE</span>, as_prob <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">democracy_scores</span><span class="op">(</span><span class="va">model</span>, adjust_to_dichotomous <span class="op">=</span> <span class="cn">TRUE</span>, as_prob <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>model</dt>
 <dd><p>a <a href="https://rdrr.io/pkg/mirt/man/SingleGroupClass-class.html" class="external-link">mirt::SingleGroupClass</a> model.</p></dd>
+
+
 <dt>adjust_to_dichotomous</dt>
 <dd><p>Whether to calculate an adjusted score where the
 midpoint represents the average cutpoint for dichotomous scores. See the
 vignette for more details. Default is <code>TRUE</code>.</p></dd>
+
+
 <dt>as_prob</dt>
 <dd><p>Whether to output scores as 0-1 probability scales. See the
 vignette for more details. Default is <code>TRUE</code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A data frame with latent variable democracy scores (the equivalent of
+    
+
+<p>A data frame with latent variable democracy scores (the equivalent of
 the UDS posterior means) for all country-years in the data, with standard
 errors and 95% confidence intervals.</p>
     </div>
@@ -140,11 +147,11 @@ the fact that the Gleditsch and Ward list has not been updated since.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
-<span class="r-in"><span class="co"># Replicate the official UDS scores (2011 release)</span></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/philchalmers/mirt" class="external-link">mirt</a></span><span class="op">)</span></span>
-<span class="r-in"><span class="va">democracy_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="generate_democracy_scores_dataset.html">generate_democracy_scores_dataset</a></span><span class="op">(</span>selection <span class="op">=</span> <span class="st">"_pmm"</span>, output_format <span class="op">=</span> <span class="st">"wide"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="co"># Replicate the official UDS scores (2011 release)</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/philchalmers/mirt" class="external-link">mirt</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">democracy_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="generate_democracy_scores_dataset.html">generate_democracy_scores_dataset</a></span><span class="op">(</span>selection <span class="op">=</span> <span class="st">"_pmm"</span>, output_format <span class="op">=</span> <span class="st">"wide"</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding fh_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding polity_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding Arat data</span>
@@ -158,15 +165,32 @@ the fact that the Gleditsch and Ward list has not been updated since.</p></dd>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding prc_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding Vanhanen_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Finalizing</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">democracy_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="prepare_democracy_data.html">prepare_democracy_data</a></span><span class="op">(</span><span class="va">democracy_data</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">replication_2011_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/mirt.html" class="external-link">mirt</a></span><span class="op">(</span><span class="va">democracy_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html" class="external-link">matches</a></span><span class="op">(</span><span class="st">"pmm"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span class="r-in">model <span class="op">=</span> <span class="fl">1</span>, itemtype <span class="op">=</span> <span class="st">"graded"</span>, SE <span class="op">=</span> <span class="cn">TRUE</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">replication_2011_scores</span> <span class="op">&lt;-</span> <span class="fu">democracy_scores</span><span class="op">(</span>model <span class="op">=</span> <span class="va">replication_2011_model</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># }</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">democracy_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="prepare_democracy_data.html">prepare_democracy_data</a></span><span class="op">(</span><span class="va">democracy_data</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">replication_2011_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/mirt.html" class="external-link">mirt</a></span><span class="op">(</span><span class="va">democracy_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html" class="external-link">matches</a></span><span class="op">(</span><span class="st">"pmm"</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>model <span class="op">=</span> <span class="fl">1</span>, itemtype <span class="op">=</span> <span class="st">"graded"</span>, SE <span class="op">=</span> <span class="cn">TRUE</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">democracy_scores</span><span class="op">(</span>model <span class="op">=</span> <span class="va">replication_2011_model</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 9,137 × 13</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       z1 se_z1 z1_pct975 z1_pct025 z1_adj z1_pct975_adj z1_pct025_adj z1_as_prob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> -<span style="color: #BB0000;">1.89</span> 0.486    -<span style="color: #BB0000;">0.933</span>     -<span style="color: #BB0000;">2.84</span>  -<span style="color: #BB0000;">2.03</span>         -<span style="color: #BB0000;">1.08</span>         -<span style="color: #BB0000;">2.99</span>     0.029<span style="text-decoration: underline;">7</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">1.89</span> 0.486    -<span style="color: #BB0000;">0.933</span>     -<span style="color: #BB0000;">2.84</span>  -<span style="color: #BB0000;">2.03</span>         -<span style="color: #BB0000;">1.08</span>         -<span style="color: #BB0000;">2.99</span>     0.029<span style="text-decoration: underline;">7</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> -<span style="color: #BB0000;">1.57</span> 0.323    -<span style="color: #BB0000;">0.940</span>     -<span style="color: #BB0000;">2.21</span>  -<span style="color: #BB0000;">1.72</span>         -<span style="color: #BB0000;">1.09</span>         -<span style="color: #BB0000;">2.35</span>     0.057<span style="text-decoration: underline;">8</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> -<span style="color: #BB0000;">1.57</span> 0.323    -<span style="color: #BB0000;">0.940</span>     -<span style="color: #BB0000;">2.21</span>  -<span style="color: #BB0000;">1.72</span>         -<span style="color: #BB0000;">1.09</span>         -<span style="color: #BB0000;">2.35</span>     0.057<span style="text-decoration: underline;">8</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> -<span style="color: #BB0000;">1.45</span> 0.230    -<span style="color: #BB0000;">0.998</span>     -<span style="color: #BB0000;">1.90</span>  -<span style="color: #BB0000;">1.59</span>         -<span style="color: #BB0000;">1.14</span>         -<span style="color: #BB0000;">2.04</span>     0.073<span style="text-decoration: underline;">9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">1.57</span> 0.323    -<span style="color: #BB0000;">0.940</span>     -<span style="color: #BB0000;">2.21</span>  -<span style="color: #BB0000;">1.72</span>         -<span style="color: #BB0000;">1.09</span>         -<span style="color: #BB0000;">2.35</span>     0.057<span style="text-decoration: underline;">8</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> -<span style="color: #BB0000;">1.57</span> 0.323    -<span style="color: #BB0000;">0.940</span>     -<span style="color: #BB0000;">2.21</span>  -<span style="color: #BB0000;">1.72</span>         -<span style="color: #BB0000;">1.09</span>         -<span style="color: #BB0000;">2.35</span>     0.057<span style="text-decoration: underline;">8</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">1.57</span> 0.323    -<span style="color: #BB0000;">0.940</span>     -<span style="color: #BB0000;">2.21</span>  -<span style="color: #BB0000;">1.72</span>         -<span style="color: #BB0000;">1.09</span>         -<span style="color: #BB0000;">2.35</span>     0.057<span style="text-decoration: underline;">8</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> -<span style="color: #BB0000;">1.57</span> 0.323    -<span style="color: #BB0000;">0.940</span>     -<span style="color: #BB0000;">2.21</span>  -<span style="color: #BB0000;">1.72</span>         -<span style="color: #BB0000;">1.09</span>         -<span style="color: #BB0000;">2.35</span>     0.057<span style="text-decoration: underline;">8</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> -<span style="color: #BB0000;">1.45</span> 0.230    -<span style="color: #BB0000;">0.998</span>     -<span style="color: #BB0000;">1.90</span>  -<span style="color: #BB0000;">1.59</span>         -<span style="color: #BB0000;">1.14</span>         -<span style="color: #BB0000;">2.04</span>     0.073<span style="text-decoration: underline;">9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 9,127 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 5 more variables: z1_pct975_as_prob &lt;dbl&gt;, z1_pct025_as_prob &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   z1_adj_as_prob &lt;dbl&gt;, z1_pct975_adj_as_prob &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   z1_pct025_adj_as_prob &lt;dbl&gt;</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -181,7 +205,7 @@ the fact that the Gleditsch and Ward list has not been updated since.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

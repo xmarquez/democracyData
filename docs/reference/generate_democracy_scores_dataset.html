@@ -32,7 +32,7 @@ more democracy, and that all country-years are appropriately matched."><!-- math
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -80,19 +80,19 @@ more democracy, and that all country-years are appropriately matched.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span>
-  <span class="va">datasets</span>,
-  <span class="va">selection</span>,
-  output_format <span class="op">=</span> <span class="st">"long"</span>,
-  use_extended <span class="op">=</span> <span class="cn">TRUE</span>,
-  include_extra_pmm <span class="op">=</span> <span class="cn">FALSE</span>,
-  verbose <span class="op">=</span> <span class="cn">TRUE</span>,
-  target_system <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"GWn"</span>, <span class="st">"cown"</span><span class="op">)</span>,
-  force_redownload <span class="op">=</span> <span class="cn">FALSE</span>,
-  scale_scores <span class="op">=</span> <span class="cn">FALSE</span>,
-  keep_only_last_in_year <span class="op">=</span> <span class="cn">TRUE</span>,
-  exclude_downloadable <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span></span>
+<span>  <span class="va">datasets</span>,</span>
+<span>  <span class="va">selection</span>,</span>
+<span>  output_format <span class="op">=</span> <span class="st">"long"</span>,</span>
+<span>  use_extended <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  include_extra_pmm <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  target_system <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"GWn"</span>, <span class="st">"cown"</span><span class="op">)</span>,</span>
+<span>  force_redownload <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  scale_scores <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  keep_only_last_in_year <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  exclude_downloadable <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -114,17 +114,25 @@ abbreviation of) "<a href="anckar.html">anckar</a>", "<a href="anrr.html">anrr</
 "<a href="download_polity_annual.html">polity</a>" (or "<a href="download_polity_annual.html">polity_annual</a>"),
 "<a href="download_fh.html">fh</a>", "<a href="download_fh_electoral.html">fh_electoral</a>", "<a href="download_wgi_voice_and_accountability.html">wgi</a>". Default is all of
 them.</p></dd>
+
+
 <dt>selection</dt>
 <dd><p>A regular expression for selecting among the datasets.
 Optional.</p></dd>
+
+
 <dt>output_format</dt>
 <dd><p>Character. Whether to output a "wide" (each measure of
 democracy in a separate column) or a "long" (a column with measure names, a
 column with values) version of the data frame. Default is "long".</p></dd>
+
+
 <dt>use_extended</dt>
 <dd><p>Whether to use "extended" (that is, including values
 before 1945 for some regimes) versions of some datasets (<a href="gwf_all.html">gwf</a>, <a href="ulfelder.html">ulfelder</a>,
 <a href="bnr.html">bnr</a>, and <a href="magaloni.html">magaloni</a>). Default is <code>TRUE</code>.</p></dd>
+
+
 <dt>include_extra_pmm</dt>
 <dd><p>Whether to include versions of some measures found
 in Pemstein, Meserve, and Melton's replication dataset for their 2010 piece
@@ -132,22 +140,32 @@ introducing the Unified Democracy Scores (Pemstein, Meserve, and Melton
 2010, 2013). See <a href="blm.html">blm_pmm</a>, <a href="prc_gasiorowski.html">prc_pmm</a>, <a href="fh_pmm.html">fh_pmm</a>, <a href="pacl.html">pacl_pmm</a>,
 <a href="vanhanen.html">vanhanen_pmm</a>, and <a href="polity_pmm.html">polity_pmm</a> for details. This is included mostly to
 extend or replicate the <a href="uds_2014.html">uds</a> scores.</p></dd>
+
+
 <dt>verbose</dt>
 <dd><p>Provides a running commentary on what the function is is
 doing. Default is <code>TRUE</code>.</p></dd>
+
+
 <dt>target_system</dt>
 <dd><p>Character vector describing which state system to use
 for the combined file, and which country codes to use. Can be one or both
 of "GWn" (Gleditsch and Ward, numeric codes) and "cown" (numeric codes for
 the Correlates of War system). The default is <em>both</em> Gleditsch-ward and
 Correlates of War (<code>c("GWn", "cown")</code>).</p></dd>
+
+
 <dt>force_redownload</dt>
 <dd><p>Whether to re-download all datasets that can be
 re-downloaded, including those archived with this package. Used only for
 debugging; default is <code>FALSE</code>.</p></dd>
+
+
 <dt>scale_scores</dt>
 <dd><p>Whether to scale each measure (substracting their mean
 and dividing by their standard deviation). Default is <code>FALSE</code>.</p></dd>
+
+
 <dt>keep_only_last_in_year</dt>
 <dd><p>Whether to keep only the last regime
 measurement in a given country-year. Some datasets (e.g., <a href="prc_gasiorowski.html">prc</a>, <a href="REIGN.html">reign</a>)
@@ -158,15 +176,20 @@ the year, the standard practice in most datasets. Default is <code>TRUE</code>.
 This setting is only of interest if you set <code>output_format = "long"</code>,
 since it is ignored when <code>output_format = "wide"</code>, which automatically
 discards all regime measurements except the last in the year.</p></dd>
+
+
 <dt>exclude_downloadable</dt>
 <dd><p>Whether to exclude all datasets that must be
 explicitly downloaded (<a href="download_polity_annual.html">polity</a>, <a href="fh_pmm.html">fh</a>, <a href="download_wgi_voice_and_accountability.html">wgi</a>), using only archived
 datasets. This speeds up the process considerably, but you lose some of the
 more important democracy measures out there. Default is <code>FALSE</code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A <a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a> with the selected democracy measures and state system
+    
+
+<p>A <a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a> with the selected democracy measures and state system
 information, in two versions: "long" and "wide". These contain the
 following variables:</p>
     </div>
@@ -662,19 +685,14 @@ to the <code>regimenyrobust</code> variable, 0 all other regimes.</p></dd>
 </dl></div>
     <div id="references">
     <h2>References</h2>
-    <p>Pemstein, Daniel, Stephen Meserve, and James Melton. 2010.
-Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-Type. Political Analysis 18 (4): 426-449.</p>
-<p>Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication
-data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures
-of Regime Type." In: Harvard Dataverse.
-<a href="http://hdl.handle.net/1902.1/PMM" class="external-link">http://hdl.handle.net/1902.1/PMM</a></p>
+    <p>D. Pemstein, S. Meserve, and J. Melton. "Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type". In: <em>Political Analysis</em> 18.4 (2010), pp. 426-449. DOI: 10.1093/pan/mpq020.</p>
+<p>D. Pemstein, S. A. Meserve, and J. Melton. <em>Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type</em>. 2013. <a href="http://hdl.handle.net/1902.1/PMM" class="external-link">http://hdl.handle.net/1902.1/PMM</a>.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">democracy_data_long_no_download</span> <span class="op">&lt;-</span> <span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span>exclude_downloadable <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span class="r-in">         keep_only_last_in_year <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">democracy_data_long_no_download</span> <span class="op">&lt;-</span> <span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span>exclude_downloadable <span class="op">=</span> <span class="cn">TRUE</span>,</span></span>
+<span class="r-in"><span>         keep_only_last_in_year <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding fh_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding old polityIV data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding polity_pmm data</span>
@@ -709,6 +727,11 @@ of Regime Type." In: Harvard Dataverse.
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding polyarchy_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding Polyarchy Dimensions data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding PRC/Gasiorowski data</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>There was 1 warning in `mutate()`.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> In argument: `prc = (structure(function (..., .x = ..1, .y = ..2, . = ..1)</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>   ...`.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> Caused by warning:</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> NAs introduced by coercion</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding prc_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding PIPE data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding REIGN data</span>
@@ -726,17 +749,17 @@ of Regime Type." In: Harvard Dataverse.
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding vdem data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding Wahman, Teorell, and Hadenius data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Finalizing</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># You can select only some datasets</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">democracy_data_gwf</span> <span class="op">&lt;-</span> <span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span>datasets <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gwf_all"</span><span class="op">)</span>,</span>
-<span class="r-in">         output_format <span class="op">=</span> <span class="st">"wide"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># You can select only some datasets</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">democracy_data_gwf</span> <span class="op">&lt;-</span> <span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span>datasets <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gwf_all"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>         output_format <span class="op">=</span> <span class="st">"wide"</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding GWF data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding GWF data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Finalizing</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># all PMM datasets</span></span>
-<span class="r-in"><span class="va">democracy_data_pmm</span> <span class="op">&lt;-</span> <span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span>selection <span class="op">=</span> <span class="st">"pmm"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># all PMM datasets</span></span></span>
+<span class="r-in"><span><span class="va">democracy_data_pmm</span> <span class="op">&lt;-</span> <span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span>selection <span class="op">=</span> <span class="st">"pmm"</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding fh_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding polity_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding Arat data</span>
@@ -750,18 +773,18 @@ of Regime Type." In: Harvard Dataverse.
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding prc_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding Vanhanen_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Finalizing</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="co"># This produces scaled scores</span></span>
-<span class="r-in"><span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span>exclude_downloadable <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span class="r-in">         keep_only_last_in_year <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span class="r-in">         scale_scores <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># These require downloads:</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">democracy_data_long</span> <span class="op">&lt;-</span> <span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">democracy_data_wide</span> <span class="op">&lt;-</span> <span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span>output_format <span class="op">=</span> <span class="st">"wide"</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="co"># This produces scaled scores</span></span></span>
+<span class="r-in"><span><span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span>exclude_downloadable <span class="op">=</span> <span class="cn">TRUE</span>,</span></span>
+<span class="r-in"><span>         keep_only_last_in_year <span class="op">=</span> <span class="cn">FALSE</span>,</span></span>
+<span class="r-in"><span>         scale_scores <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># These require downloads:</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">democracy_data_long</span> <span class="op">&lt;-</span> <span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">democracy_data_wide</span> <span class="op">&lt;-</span> <span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span>output_format <span class="op">=</span> <span class="st">"wide"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -776,7 +799,7 @@ of Regime Type." In: Harvard Dataverse.
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

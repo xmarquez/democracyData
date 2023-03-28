@@ -29,7 +29,7 @@ names, which variables contain democracy scores."><!-- mathjax --><script src="h
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -75,7 +75,7 @@ names, which variables contain democracy scores.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">prepare_democracy_data</span><span class="op">(</span><span class="va">data</span>, <span class="va">.funs</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">prepare_democracy_data</span><span class="op">(</span><span class="va">data</span>, <span class="va">.funs</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -91,6 +91,8 @@ the column names must contain at least one of the following strings:
 <a href="wahman_teorell_hadenius.html">wth</a>. For details of these variables, see
 the documentation for <a href="generate_democracy_scores_dataset.html">generate_democracy_scores_dataset</a> or the
 documentation for the individual datasets.</p></dd>
+
+
 <dt>.funs</dt>
 <dd><p>A names list of functions to modify the columns. It defaults to
 the following:</p>
@@ -107,10 +109,13 @@ the following:</p>
  ordered_result = TRUE), eiu = cut(., breaks = 20, include.lowest = TRUE, right = FALSE,
  ordered_result = TRUE), wgi = cut(., breaks = 20, include.lowest = TRUE, right = FALSE,
  ordered_result = TRUE), peps = round(.), other = as.numeric(unclass(factor(.))))</code></p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A data frame with the transformed scores, if any.</p>
+    
+
+<p>A data frame with the transformed scores, if any.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -205,121 +210,62 @@ check that the results make sense.</p>
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>D. Acemoglu, S. Naidu, P. Restrepo, et al. “Democracy Does Cause Growth”. In: <em>Journal of Political
-Economy</em> 127.1 (2019), pp. 47-100. DOI: 10.1086/700936.</p>
-<p>C. Anckar and C. Fredriksson. “Classifying political regimes 1800-2016: a typology and a new dataset”.
-In: <em>European Political Science</em> (2018). DOI: 10.1057/s41304-018-0149-8. &lt;URL:
-https://doi.org/10.1057/s41304-018-0149-8&gt;.</p>
-<p>Z. F. Arat. <em>Democracy and human rights in developing countries</em>. Boulder: Lynne Rienner Publishers,
-1991.</p>
-<p>C. Bell. <em>The Rulers, Elections, and Irregular Governance Dataset (REIGN)</em>. 2016. &lt;URL:
-http://oefresearch.org/datasets/reign&gt;.</p>
-<p>M. Bernhard, T. Nordstrom, and C. Reenock. “Economic Performance, Institutional Intermediation, and
-Democratic Survival”. In: <em>Journal of Politics</em> 63.3 (2001), pp. 775-803. DOI: 10.1111/0022-3816.00087.</p>
-<p>Bertelsmann Stiftung. <em>Transformation Index of the Bertelsmann Stiftung 2022</em>. Tech. rep. Bertelsmann
-Stiftung, 2022.</p>
-<p>C. Bjørnskov and M. Rode. “Regime types and regime change: A new dataset on democracy, coups, and
-political institutions”. In: <em>The Review of International Organizations</em> 15.2 (2020), pp. 531-551. DOI:
-10.1007/s11558-019-09345-1.</p>
-<p>C. Boix, M. Miller, and S. Rosato. “A Complete Dataset of Political Regimes, 1800-2007”. In:
-<em>Comparative Political Studies</em> 46.12 (2012), pp. 1523-1554. DOI: 10.1177/0010414012463905.</p>
-<p>K. A. Bollen. <em>Cross-National Indicators of Liberal Democracy, 1950-1990</em>. Data set. 2001.</p>
-<p>K. Bollen and P. Paxton. “Subjective Measures of Liberal Democracy”. In: <em>Comparative Political
-Studies</em> 33.1 (2000), pp. 58-86. DOI: 10.1177/0010414000033001003.</p>
-<p>K. Bowman, F. Lehoucq, and J. Mahoney. “Measuring Political Democracy: Case Expertise, Data Adequacy,
-and Central America”. In: <em>Comparative Political Studies</em> 38.8 (2005), pp. 939-970. DOI:
-10.1177/0010414005277083.</p>
-<p>J. Cheibub, J. Gandhi, and J. Vreeland. “Democracy and dictatorship revisited”. In: <em>Public Choice</em>
-143.1 (2010), pp. 67-101. DOI: 10.1007/s11127-009-9491-2.</p>
-<p>M. Coppedge, A. Alvarez, and C. Maldonado. “Two Persistent Dimensions of Democracy: Contestation and
-Inclusiveness”. In: <em>The journal of politics</em> 70.03 (2008), pp. 632-647. DOI: 10.1017/S0022381608080663.</p>
-<p>M. Coppedge, J. Gerring, C. H. Knutsen, et al. <em>V-Dem Country-Year/Country-Date Dataset v12</em>. 2022.
-&lt;URL: https://doi.org/10.23696/vdemds22&gt;.</p>
-<p>M. Coppedge, J. Gerring, C. H. Knutsen, et al. <em>V-Dem Codebook v12</em>. 2022. &lt;URL:
-https://www.v-dem.net/static/website/img/refs/codebookv12.pdf&gt;.</p>
-<p>M. Coppedge and W. H. Reinicke. “Measuring Polyarchy”. In: <em>Studies in Comparative International
-Development</em> 25.1 (1990), pp. 51-72. DOI: 10.1007/Bf02716905.</p>
-<p>R. Doorenspleet. “Reassessing the Three Waves of Democratization”. In: <em>World Politics</em> 52.03 (2000),
-pp. 384-406. DOI: 10.1017/S0043887100016580.</p>
-<p>Freedom House. <em>Freedom in the World 2022: The Global Expansion of Authoritarian Rule</em>. Tech. rep.
-Freedom House, 2022. &lt;URL:
-https://freedomhouse.org/report/freedom-world/2022/global-expansion-authoritarian-rule&gt;.</p>
-<p>M. Gasiorowski. “An Overview of the Political Regime Change Dataset”. In: <em>Comparative Political
-Studies</em> 29.4 (1996), pp. 469-483. DOI: 10.1177/0010414096029004004.</p>
-<p>B. Geddes, J. Wright, and E. Frantz. “Autocratic Breakdown and Regime Transitions: A New Data Set”.
-In: <em>Perspectives on Politics</em> 12.1 (2014), pp. 313-331. DOI: 10.1017/S1537592714000851.</p>
-<p>K. Gleditsch and M. D. Ward. “Interstate system membership: A revised list of independent states since
-the congress of Vienna”. In: <em>International Interactions</em> 25.4 (1999), pp. 393-413. DOI:
-10.1080/03050629908434958.</p>
-<p>J. Goldstone, R. Bates, D. Epstein, et al. “A Global Model for Forecasting Political Instability”. In:
-<em>American Journal of Political Science</em> 54.1 (2010), pp. 190-208. DOI: 10.1111/j.1540-5907.2009.00426.x.</p>
-<p>K. Gründler and T. Krieger. “Democracy and growth: Evidence from a machine learning indicator”. In:
-<em>European Journal of Political Economy</em> 45 (2016), pp. 85-107. DOI:
-https://doi.org/10.1016/j.ejpoleco.2016.05.005. &lt;URL:
-http://www.sciencedirect.com/science/article/pii/S0176268016300222&gt;.</p>
-<p>K. Gründler and T. Krieger. <em>Machine Learning Indices, Political Institutions, and Economic
-Development</em>. Report. CESifo Group Munich, 2018. &lt;URL:
-https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf&gt;.</p>
-<p>K. Gründler and T. Krieger. “Using Machine Learning for measuring democracy: A practitioners guide and
-a new updated dataset for 186 countries from 1919 to 2019”. In: <em>European Journal of Political Economy</em>
-(2021), pp. 102-47. DOI: https://doi.org/10.1016/j.ejpoleco.2021.102047.</p>
-<p>A. Hadenius. <em>Democracy and development</em>. New York: Cambridge University Press, 1992.</p>
-<p>A. Hadenius and J. Teorell. “Pathways from Authoritarianism”. In: <em>Journal of Democracy</em> 18.1 (2007),
-pp. 143-157.</p>
-<p>S. Hsu. “The Effect of Political Regimes on Inequality, 1963-2002”. In: <em>UTIP Working Paper</em> (2008).</p>
-<p>S. Kailitz. “Classifying political regimes revisited: legitimation and durability”. In:
-<em>Democratization</em> 20.1 (2013), pp. 39-60. DOI: 10.1080/13510347.2013.738861.</p>
-<p>D. Kaufmann and A. Kraay. <em>Worldwide Governance Indicators</em>. 2020. &lt;URL:
-http://www.govindicators.org&gt;.</p>
-<p>B. Magaloni, J. Chu, and E. Min. <em>Autocracies of the World, 1950-2012 (Version 1.0)</em>. Dataset. 2013.
-&lt;URL: http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset&gt;.</p>
-<p>S. Mainwaring, D. Brinks, and A. Pérez-Liñán. “Classifying Political Regimes in Latin America”. In:
-<em>Studies in Comparative International Development</em> 36.1 (2001), pp. 37-65. DOI: 10.1007/bf02687584.</p>
-<p>S. Mainwaring, A. Pérez-Liñán, and D. Brinks. “Political Regimes in Latin America, 1900-2007 (with
-Daniel Brinks)”. In: <em>Democracies and Dictatorships in Latin America: Emergence, Survival, and Fall</em>. New
-York: Cambridge University Press, 2014. Chap. Political Regimes in Latin America, 1900-2007 (with Daniel
-Brinks).</p>
-<p>X. Marquez. “A Quick Method for Extending the Unified Democracy Scores”. In: <em>Available at SSRN
-2753830</em> (2016). &lt;URL: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830&gt;.</p>
-<p>X. Márquez. <em>democracyData: A package for accessing and manipulating existing measures of democracy.</em>
-2020. &lt;URL: http://github.com/xmarquez/democracyData&gt;.</p>
-<p>M. G. Marshall and T. R. Gurr. <em>Polity 5: Political Regime Characteristics and Transitions, 1800-2018.
-Dataset Users' Manual.</em> Center for Systemic Peace, 2020.</p>
-<p>M. G. Marshall, T. R. Gurr, and K. Jaggers. <em>Polity IV Project: Political Regime Characteristics and
-Transitions, 1800-2018. Dataset Users' Manual.</em> Center for Systemic Peace, 2019.</p>
-<p>B. E. Moon, J. H. Birdsall, S. Ciesluk, et al. “Voting Counts: Participation in the Measurement of
-Democracy”. In: <em>Studies in Comparative International Development</em> 41.2 (2006), pp. 3-32. DOI:
-10.1007/BF02686309.</p>
-<p>G. Munck. <em>Measuring Democracy: A Bridge between Scholarship and Politics</em>. Baltimore: The Johns
-Hopkins University Press, 2009.</p>
-<p>D. Pemstein, S. A. Meserve, and J. Melton. <em>Replication data for: Democratic Compromise: A Latent
-Variable Analysis of Ten Measures of Regime Type</em>. 2013. &lt;URL: http://hdl.handle.net/1902.1/PMM&gt;.</p>
-<p>D. Pemstein, S. Meserve, and J. Melton. “Democratic Compromise: A Latent Variable Analysis of Ten
-Measures of Regime Type”. In: <em>Political Analysis</em> 18.4 (2010), pp. 426-449. DOI: 10.1093/pan/mpq020.</p>
-<p>A. Przeworski. <em>Political Institutions and Political Events (PIPE) Data Set</em>. Data set. 2013. &lt;URL:
-https://sites.google.com/a/nyu.edu/adam-przeworski/home/data&gt;.</p>
-<p>G. Reich. “Categorizing Political Regimes: New Data for Old Problems”. In: <em>Democratization</em> 9.4
-(2002), pp. 1-24. DOI: 10.1080/714000289.</p>
-<p>S. Skaaning, J. Gerring, and H. Bartusevicius. “A Lexical Index of Electoral Democracy”. In:
-<em>Comparative Political Studies</em> 48.12 (2015), pp. 1491-1525. DOI: 10.1177/0010414015581050.</p>
-<p>M. Svolik. <em>The Politics of Authoritarian Rule</em>. Cambridge: Cambridge University Press, 2012.</p>
-<p>S. J. Taylor and J. Ulfelder. “A Measurement Error Model of Dichotomous Democracy Status”. In:
-<em>Available at SSRN</em> (2015). DOI: 10.2139/ssrn.2726962.</p>
-<p>The Economist Intelligence Unit. <em>Democracy Index 2021: The China Challenge</em>. Tech. rep. The Economist
-Intelligence Unit, 2022.</p>
-<p>J. Ulfelder. <em>Democracy/Autocracy Data Set</em>. 2012. &lt;URL: http://hdl.handle.net/1902.1/18836&gt;.</p>
-<p>J. Ulfelder and M. Lustik. “Modelling Transitions To and From Democracy”. In: <em>Democratization</em> 14.3
-(2007), pp. 351-387. DOI: 10.1080/13510340701303196.</p>
-<p>T. Vanhanen. <em>Measures of Democracy 1810-2018 (dataset). Version 8.0 (2019-06-17).</em> Tampere, 2019.
-&lt;URL: http://urn.fi/urn:nbn:fi:fsd:T-FSD1289&gt;.</p>
-<p>M. Wahman, J. Teorell, and A. Hadenius. “Authoritarian Regime Types Revisited: Updated Data in
-Comparative Perspective”. In: <em>Contemporary Politics</em> 19.1 (2013), pp. 19-34. &lt;URL:
-https://sites.google.com/site/authoritarianregimedataset/data&gt;.</p>
+    <p>D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy Does CauseGrowth". In: <em>Journal of Political Economy</em> 127.1 (2019), pp. 47-100.DOI: 10.1086/700936.<a href="https://www.journals.uchicago.edu/doi/10.1086/700936" class="external-link">https://www.journals.uchicago.edu/doi/10.1086/700936</a>.</p>
+<p>C. Anckar and C. Fredriksson. "Classifying political regimes1800-2016: a typology and a new dataset". In: <em>European PoliticalScience</em> (2018). DOI: 10.1057/s41304-018-0149-8.<a href="https://doi.org/10.1057/s41304-018-0149-8" class="external-link">https://doi.org/10.1057/s41304-018-0149-8</a>.</p>
+<p>Z. F. Arat. <em>Democracy and human rights in developing countries</em>.Boulder: Lynne Rienner Publishers, 1991.</p>
+<p>C. Bell. <em>The Rulers, Elections, and Irregular Governance Dataset(REIGN)</em>. 2016. <a href="http://oefresearch.org/datasets/reign" class="external-link">http://oefresearch.org/datasets/reign</a>.</p>
+<p>M. Bernhard, T. Nordstrom, and C. Reenock. "Economic Performance,Institutional Intermediation, and Democratic Survival". In: <em>Journal ofPolitics</em> 63.3 (2001), pp. 775-803. DOI: 10.1111/0022-3816.00087.</p>
+<p>Bertelsmann Stiftung. <em>Transformation Index of the BertelsmannStiftung 2022</em>. Tech. rep. Bertelsmann Stiftung, 2022.</p>
+<p>C. Bjørnskov and M. Rode. "Regime types and regime change: A newdataset on democracy, coups, and political institutions". In: <em>TheReview of International Organizations</em> 15.2 (2020), pp. 531-551. DOI:10.1007/s11558-019-09345-1.</p>
+<p>C. Boix, M. Miller, and S. Rosato. "A Complete Dataset of PoliticalRegimes, 1800-2007". In: <em>Comparative Political Studies</em> 46.12 (2012),pp. 1523-1554. DOI: 10.1177/0010414012463905.</p>
+<p>K. A. Bollen. <em>Cross-National Indicators of Liberal Democracy,1950-1990</em>. Data set. 2001.</p>
+<p>K. Bollen and P. Paxton. "Subjective Measures of LiberalDemocracy". In: <em>Comparative Political Studies</em> 33.1 (2000), pp. 58-86.DOI: 10.1177/0010414000033001003.</p>
+<p>K. Bowman, F. Lehoucq, and J. Mahoney. "Measuring PoliticalDemocracy: Case Expertise, Data Adequacy, and Central America". In:<em>Comparative Political Studies</em> 38.8 (2005), pp. 939-970. DOI:10.1177/0010414005277083.</p>
+<p>J. Cheibub, J. Gandhi, and J. Vreeland. "Democracy anddictatorship revisited". In: <em>Public Choice</em> 143.1 (2010), pp. 67-101.DOI: 10.1007/s11127-009-9491-2.</p>
+<p>M. Coppedge, A. Alvarez, and C. Maldonado. "Two PersistentDimensions of Democracy: Contestation and Inclusiveness". In: <em>Thejournal of politics</em> 70.03 (2008), pp. 632-647. DOI:10.1017/S0022381608080663.</p>
+<p>M. Coppedge, J. Gerring, C. H. Knutsen, et al. <em>V-Dem Codebookv13</em>.</p>
+<p>M. Coppedge and W. H. Reinicke. "Measuring Polyarchy". In:<em>Studies in Comparative International Development</em> 25.1 (1990), pp.51-72. DOI: 10.1007/Bf02716905.</p>
+<p>R. Doorenspleet. "Reassessing the Three Waves of Democratization".In: <em>World Politics</em> 52.03 (2000), pp. 384-406. DOI:10.1017/S0043887100016580.</p>
+<p>Freedom House. <em>Freedom in the World 2023: Marking 50 Years in theStruggle for Democracy</em>. Tech. rep. Freedom House, 2023.<a href="https://freedomhouse.org/report/freedom-world/2023/marking-50-years" class="external-link">https://freedomhouse.org/report/freedom-world/2023/marking-50-years</a>.</p>
+<p>M. Gasiorowski. "An Overview of the Political Regime ChangeDataset". In: <em>Comparative Political Studies</em> 29.4 (1996), pp. 469-483.DOI: 10.1177/0010414096029004004.</p>
+<p>B. Geddes, J. Wright, and E. Frantz. "Autocratic Breakdown andRegime Transitions: A New Data Set". In: _Perspectives on Politics_12.1 (2014), pp. 313-331. DOI: 10.1017/S1537592714000851.</p>
+<p>K. Gleditsch and M. D. Ward. "Interstate system membership: Arevised list of independent states since the congress of Vienna". In:<em>International Interactions</em> 25.4 (1999), pp. 393-413. DOI:10.1080/03050629908434958.</p>
+<p>J. Goldstone, R. Bates, D. Epstein, et al. "A Global Model forForecasting Political Instability". In: <em>American Journal of PoliticalScience</em> 54.1 (2010), pp. 190-208. DOI:10.1111/j.1540-5907.2009.00426.x.</p>
+<p>K. Gründler and T. Krieger. "Democracy and growth: Evidence from amachine learning indicator". In: <em>European Journal of PoliticalEconomy</em> 45 (2016), pp. 85-107. DOI:https://doi.org/10.1016/j.ejpoleco.2016.05.005.<a href="http://www.sciencedirect.com/science/article/pii/S0176268016300222" class="external-link">http://www.sciencedirect.com/science/article/pii/S0176268016300222</a>.</p>
+<p>K. Gründler and T. Krieger. <em>Machine Learning Indices, PoliticalInstitutions, and Economic Development</em>. Report. CESifo Group Munich,2018. <a href="https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf" class="external-link">https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf</a>.</p>
+<p>K. Gründler and T. Krieger. "Using Machine Learning for measuringdemocracy: A practitioners guide and a new updated dataset for 186countries from 1919 to 2019". In: <em>European Journal of PoliticalEconomy</em> (2021), pp. 102-47. DOI:https://doi.org/10.1016/j.ejpoleco.2021.102047.</p>
+<p>A. Hadenius. <em>Democracy and development</em>. New York: CambridgeUniversity Press, 1992.</p>
+<p>A. Hadenius and J. Teorell. "Pathways from Authoritarianism". In:<em>Journal of Democracy</em> 18.1 (2007), pp. 143-157.</p>
+<p>S. Hsu. "The Effect of Political Regimes on Inequality,1963-2002". In: <em>UTIP Working Paper</em> (2008).</p>
+<p>S. Kailitz. "Classifying political regimes revisited: legitimationand durability". In: <em>Democratization</em> 20.1 (2013), pp. 39-60. DOI:10.1080/13510347.2013.738861.</p>
+<p>D. Kaufmann and A. Kraay. <em>Worldwide Governance Indicators</em>. 2020.<a href="http://www.govindicators.org" class="external-link">http://www.govindicators.org</a>.</p>
+<p>B. Magaloni, J. Chu, and E. Min. <em>Autocracies of the World,1950-2012 (Version 1.0)</em>. Dataset. 2013.<a href="http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset" class="external-link">http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset</a>.</p>
+<p>S. Mainwaring, D. Brinks, and A. Pérez-Liñán. "ClassifyingPolitical Regimes in Latin America". In: <em>Studies in ComparativeInternational Development</em> 36.1 (2001), pp. 37-65. DOI:10.1007/bf02687584.</p>
+<p>S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political Regimesin Latin America, 1900-2007 (with Daniel Brinks)". In: <em>Democracies andDictatorships in Latin America: Emergence, Survival, and Fall</em>. NewYork: Cambridge University Press, 2014. Chap. Political Regimes inLatin America, 1900-2007 (with Daniel Brinks).</p>
+<p>X. Marquez. "A Quick Method for Extending the Unified DemocracyScores". In: <em>Available at SSRN 2753830</em> (2016).<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830" class="external-link">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830</a>.</p>
+<p>M. G. Marshall and T. R. Gurr. _Polity 5: Political RegimeCharacteristics and Transitions, 1800-2018. Dataset Users' Manual._Center for Systemic Peace, 2020.</p>
+<p>M. G. Marshall, T. R. Gurr, and K. Jaggers. <em>Polity IV Project:Political Regime Characteristics and Transitions, 1800-2018. DatasetUsers' Manual.</em> Center for Systemic Peace, 2019.</p>
+<p>B. E. Moon, J. H. Birdsall, S. Ciesluk, et al. "Voting Counts:Participation in the Measurement of Democracy". In: <em>Studies inComparative International Development</em> 41.2 (2006), pp. 3-32. DOI:10.1007/BF02686309.</p>
+<p>G. Munck. <em>Measuring Democracy: A Bridge between Scholarship andPolitics</em>. Baltimore: The Johns Hopkins University Press, 2009.</p>
+<p>X. Márquez. <em>democracyData: A package for accessing andmanipulating existing measures of democracy.</em> 2020.<a href="http://github.com/xmarquez/democracyData" class="external-link">http://github.com/xmarquez/democracyData</a>.</p>
+<p>D. Pemstein, K. L. Marquardt, E. Tzelgov, et al. <em>The V-DemMeasurement Model: Latent Variable Analysis for Cross-National andCross-Temporal Expert-Coded Data</em>. Tech. rep. 21. Varieties ofDemocracy Institute, University of Gothenburg, 2022.<a href="https://www.v-dem.net/media/filer_public/25/cb/25cb3f3f-290d-46e1-8eaf-ff2d2c13f4a9/v-dem_working_paper_21.pdf" class="external-link">https://www.v-dem.net/media/filer_public/25/cb/25cb3f3f-290d-46e1-8eaf-ff2d2c13f4a9/v-dem_working_paper_21.pdf</a>.</p>
+<p>D. Pemstein, S. A. Meserve, and J. Melton. <em>Replication data for:Democratic Compromise: A Latent Variable Analysis of Ten Measures ofRegime Type</em>. 2013. <a href="http://hdl.handle.net/1902.1/PMM" class="external-link">http://hdl.handle.net/1902.1/PMM</a>.</p>
+<p>D. Pemstein, S. Meserve, and J. Melton. "Democratic Compromise: ALatent Variable Analysis of Ten Measures of Regime Type". In:<em>Political Analysis</em> 18.4 (2010), pp. 426-449. DOI: 10.1093/pan/mpq020.</p>
+<p>A. Przeworski. <em>Political Institutions and Political Events (PIPE)Data Set</em>. Data set. 2013.<a href="https://sites.google.com/a/nyu.edu/adam-przeworski/home/data" class="external-link">https://sites.google.com/a/nyu.edu/adam-przeworski/home/data</a>.</p>
+<p>G. Reich. "Categorizing Political Regimes: New Data for OldProblems". In: <em>Democratization</em> 9.4 (2002), pp. 1-24. DOI:10.1080/714000289.</p>
+<p>S. Skaaning, J. Gerring, and H. Bartusevičius. "A Lexical Index ofElectoral Democracy". In: <em>Comparative Political Studies</em> 48.12 (2015),pp. 1491-1525. DOI: 10.1177/0010414015581050.</p>
+<p>M. Svolik. <em>The Politics of Authoritarian Rule</em>. Cambridge:Cambridge University Press, 2012.</p>
+<p>S. J. Taylor and J. Ulfelder. "A Measurement Error Model ofDichotomous Democracy Status". In: <em>Available at SSRN</em> (2015). DOI:10.2139/ssrn.2726962.</p>
+<p>The Economist Intelligence Unit. <em>Democracy Index 2022: Frontlinedemocracy and the battle for Ukraine</em>. Tech. rep. The EconomistIntelligence Unit, 2023.</p>
+<p>J. Ulfelder. <em>Democracy/Autocracy Data Set</em>. 2012.<a href="http://hdl.handle.net/1902.1/18836" class="external-link">http://hdl.handle.net/1902.1/18836</a>.</p>
+<p>J. Ulfelder and M. Lustik. "Modelling Transitions To and FromDemocracy". In: <em>Democratization</em> 14.3 (2007), pp. 351-387. DOI:10.1080/13510340701303196.</p>
+<p>T. Vanhanen. <em>Measures of Democracy 1810-2018 (dataset). Version8.0 (2019-06-17).</em> Tampere, 2019.<a href="http://urn.fi/urn:nbn:fi:fsd:T-FSD1289" class="external-link">http://urn.fi/urn:nbn:fi:fsd:T-FSD1289</a>.</p>
+<p>M. Wahman, J. Teorell, and A. Hadenius. "Authoritarian RegimeTypes Revisited: Updated Data in Comparative Perspective". In:<em>Contemporary Politics</em> 19.1 (2013), pp. 19-34.<a href="https://sites.google.com/site/authoritarianregimedataset/data" class="external-link">https://sites.google.com/site/authoritarianregimedataset/data</a>.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">democracy</span> <span class="op">&lt;-</span> <span class="fu"><a href="generate_democracy_scores_dataset.html">generate_democracy_scores_dataset</a></span><span class="op">(</span>selection <span class="op">=</span> <span class="st">"pmm"</span>, output_format <span class="op">=</span> <span class="st">"wide"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">democracy</span> <span class="op">&lt;-</span> <span class="fu"><a href="generate_democracy_scores_dataset.html">generate_democracy_scores_dataset</a></span><span class="op">(</span>selection <span class="op">=</span> <span class="st">"pmm"</span>, output_format <span class="op">=</span> <span class="st">"wide"</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding fh_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding polity_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding Arat data</span>
@@ -333,7 +279,7 @@ https://sites.google.com/site/authoritarianregimedataset/data&gt;.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding prc_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding Vanhanen_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Finalizing</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">democracy</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">democracy</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  extended_country_name      GWn             cown       in_GW_system   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Length:9137           Min.   :  2.0   Min.   :  2.0   Mode :logical  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Class :character      1st Qu.:225.0   1st Qu.:225.0   FALSE:12       </span>
@@ -366,7 +312,7 @@ https://sites.google.com/site/authoritarianregimedataset/data&gt;.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:  8.0000   3rd Qu.:10.000   3rd Qu.:4.000   3rd Qu.:20.70  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   : 10.0000   Max.   :10.000   Max.   :4.000   Max.   :49.00  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :1087       NA's   :8784     NA's   :3135    NA's   :172    </span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="fu">prepare_democracy_data</span><span class="op">(</span><span class="va">democracy</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="fu">prepare_democracy_data</span><span class="op">(</span><span class="va">democracy</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  extended_country_name      GWn             cown       in_GW_system   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Length:9137           Min.   :  2.0   Min.   :  2.0   Mode :logical  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Class :character      1st Qu.:225.0   1st Qu.:225.0   FALSE:12       </span>
@@ -407,7 +353,7 @@ https://sites.google.com/site/authoritarianregimedataset/data&gt;.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:5.000  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :8.000  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :172    </span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -422,7 +368,7 @@ https://sites.google.com/site/authoritarianregimedataset/data&gt;.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

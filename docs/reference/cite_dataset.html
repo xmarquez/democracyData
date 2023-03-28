@@ -28,7 +28,7 @@ RefManageR package functions."><!-- mathjax --><script src="https://cdnjs.cloudf
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -73,43 +73,48 @@ manipulate the <code><a href="bibliography.html">bibliography</a></code> object 
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">cite_dataset</span><span class="op">(</span><span class="va">dataset_name</span>, to_bibtex <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cite_dataset</span><span class="op">(</span><span class="va">dataset_name</span>, to_bibtex <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>dataset_name</dt>
 <dd><p>The name of the dataset to cite.</p></dd>
+
+
 <dt>to_bibtex</dt>
 <dd><p>Whether to provide bibtex/biblatex markup.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Prints the citation information. Returns the BibEntry object.</p>
+    
+
+<p>Prints the citation information. Returns the BibEntry object.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">cite_dataset</span><span class="op">(</span><span class="st">"gwf"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">cite_dataset</span><span class="op">(</span><span class="st">"gwf"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] B. Geddes, J. Wright, and E. Frantz. "Autocratic Breakdown and</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Regime Transitions: A New Data Set". In: _Perspectives on Politics_</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 12.1 (2014), pp. 313-331. DOI: 10.1017/S1537592714000851.</span>
-<span class="r-in"><span class="fu">cite_dataset</span><span class="op">(</span><span class="st">"pmm"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">cite_dataset</span><span class="op">(</span><span class="st">"pmm"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] D. Pemstein, S. A. Meserve, and J. Melton. _Replication data for:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Democratic Compromise: A Latent Variable Analysis of Ten Measures of</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Regime Type_. 2013. &lt;URL: http://hdl.handle.net/1902.1/PMM&gt;.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Regime Type_. 2013. &lt;http://hdl.handle.net/1902.1/PMM&gt;.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [2] D. Pemstein, S. Meserve, and J. Melton. "Democratic Compromise: A</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Latent Variable Analysis of Ten Measures of Regime Type". In:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> _Political Analysis_ 18.4 (2010), pp. 426-449. DOI: 10.1093/pan/mpq020.</span>
-<span class="r-in"><span class="fu">cite_dataset</span><span class="op">(</span><span class="st">"uds"</span><span class="op">)</span> <span class="co"># Same output as the previous one</span></span>
+<span class="r-in"><span><span class="fu">cite_dataset</span><span class="op">(</span><span class="st">"uds"</span><span class="op">)</span> <span class="co"># Same output as the previous one</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] X. Marquez. "A Quick Method for Extending the Unified Democracy</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Scores". In: _Available at SSRN 2753830_ (2016). &lt;URL:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830&gt;.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Scores". In: _Available at SSRN 2753830_ (2016).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830&gt;.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [2] D. Pemstein, S. A. Meserve, and J. Melton. _Replication data for:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Democratic Compromise: A Latent Variable Analysis of Ten Measures of</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Regime Type_. 2013. &lt;URL: http://hdl.handle.net/1902.1/PMM&gt;.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Regime Type_. 2013. &lt;http://hdl.handle.net/1902.1/PMM&gt;.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [3] D. Pemstein, S. Meserve, and J. Melton. "Democratic Compromise: A</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Latent Variable Analysis of Ten Measures of Regime Type". In:</span>
@@ -128,7 +133,7 @@ manipulate the <code><a href="bibliography.html">bibliography</a></code> object 
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

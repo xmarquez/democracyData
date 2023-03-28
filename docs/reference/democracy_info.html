@@ -27,7 +27,7 @@ know about."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -71,12 +71,12 @@ know about.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="va">democracy_info</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="va">democracy_info</span></span></code></pre></div>
     </div>
 
     <div id="format">
     <h2>Format</h2>
-    <p>An object of class <code>spec_tbl_df</code> (inherits from <code>tbl_df</code>, <code>tbl</code>, <code>data.frame</code>) with 42 rows and 12 columns.</p>
+    <p>An object of class <code>spec_tbl_df</code> (inherits from <code>tbl_df</code>, <code>tbl</code>, <code>data.frame</code>) with 42 rows and 14 columns.</p>
     </div>
     <div id="variables">
     <h2>Variables</h2>
@@ -173,19 +173,25 @@ first used in a 1975 study (though its compilation started in the late
 1960s), but the current Polity 5 data is very different.</p></dd>
 
 
+<dt>source_link</dt>
+<dd><p>A link to where the data is (or was) originally hosted.
+Some of these links no longer work.</p></dd>
+
+
+<dt>licensing_info</dt>
+<dd><p>Licensing info, if available. I assume CC0 unless
+otherwise stated; some datasets have CC-BY-4.0 licenses.</p></dd>
+
+
 <dt>notes</dt>
 <dd><p>Other notes. Evolving.</p></dd>
  
 </dl></div>
     <div id="references">
     <h2>References</h2>
-    <p>Pemstein, Daniel, Stephen Meserve, and James Melton. 2010.
-Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime
-Type. Political Analysis 18 (4): 426-449.</p>
-<p>Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2013. "Replication
-data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures
-of Regime Type." In: Harvard Dataverse.
-<a href="http://hdl.handle.net/1902.1/PMM" class="external-link">http://hdl.handle.net/1902.1/PMM</a></p>
+    <p>D. Pemstein, S. Meserve, and J. Melton. "Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type". In: <em>Political Analysis</em> 18.4 (2010), pp. 426-449. DOI: 10.1093/pan/mpq020.</p>
+<p>D. Pemstein, S. A. Meserve, and J. Melton. <em>Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type</em>. 2013. <a href="http://hdl.handle.net/1902.1/PMM" class="external-link">http://hdl.handle.net/1902.1/PMM</a>.</p>
+<p><a href="http://hdl.handle.net/1902.1/PMM" class="external-link">http://hdl.handle.net/1902.1/PMM</a></p>
     </div>
 
   </div>
@@ -200,7 +206,7 @@ of Regime Type." In: Harvard Dataverse.
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

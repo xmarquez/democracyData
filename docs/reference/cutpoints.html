@@ -28,7 +28,7 @@ variables involved, putting these into a tidy data frame."><!-- mathjax --><scri
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -73,7 +73,7 @@ variables involved, putting these into a tidy data frame.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">cutpoints</span><span class="op">(</span><span class="va">model</span>, type <span class="op">=</span> <span class="st">"score"</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cutpoints</span><span class="op">(</span><span class="va">model</span>, type <span class="op">=</span> <span class="st">"score"</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -81,14 +81,19 @@ variables involved, putting these into a tidy data frame.</p>
     <dl><dt>model</dt>
 <dd><p>A <a href="https://rdrr.io/pkg/mirt/man/SingleGroupClass-class.html" class="external-link">mirt::SingleGroupClass</a> model
 of the democracy scores.</p></dd>
+
+
 <dt>type</dt>
 <dd><p>A string specifying the cutpoint type. Can be (an abbreviation
 of) "score" (for score cutpoints) or "discrimination" (for discrimination
 parameters). Default is "score."</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A <a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a> with either score cutpoints for each variable used to
+    
+
+<p>A <a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a> with either score cutpoints for each variable used to
 construct the latent scores in terms of the latent variable (the default), or
 discrimination parameters for each variable used to construct the index.
 For the score cutpoints (<code>type = 'score'</code>), the columns
@@ -99,15 +104,15 @@ scale as the latent variable.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
-<span class="r-in"><span class="co"># Replicate the official UDS 2011 release and calculate its cutpoints</span></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/philchalmers/mirt" class="external-link">mirt</a></span><span class="op">)</span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>package 'mirt' was built under R version 4.1.3</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="co"># Replicate the official UDS 2011 release and calculate its cutpoints</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/philchalmers/mirt" class="external-link">mirt</a></span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>package 'mirt' was built under R version 4.2.3</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Loading required package: stats4</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Loading required package: lattice</span>
-<span class="r-in"><span class="va">democracy_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="generate_democracy_scores_dataset.html">generate_democracy_scores_dataset</a></span><span class="op">(</span>selection <span class="op">=</span> <span class="st">"_pmm"</span>,</span>
-<span class="r-in">output_format <span class="op">=</span> <span class="st">"wide"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="va">democracy_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="generate_democracy_scores_dataset.html">generate_democracy_scores_dataset</a></span><span class="op">(</span>selection <span class="op">=</span> <span class="st">"_pmm"</span>,</span></span>
+<span class="r-in"><span>output_format <span class="op">=</span> <span class="st">"wide"</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding fh_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding polity_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding Arat data</span>
@@ -121,14 +126,14 @@ scale as the latent variable.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding prc_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding Vanhanen_pmm data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Finalizing</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">democracy_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="prepare_democracy_data.html">prepare_democracy_data</a></span><span class="op">(</span><span class="va">democracy_data</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">replication_2011_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/mirt.html" class="external-link">mirt</a></span><span class="op">(</span><span class="va">democracy_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html" class="external-link">matches</a></span><span class="op">(</span><span class="st">"pmm"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span class="r-in">model <span class="op">=</span> <span class="fl">1</span>, itemtype <span class="op">=</span> <span class="st">"graded"</span>, SE <span class="op">=</span> <span class="cn">TRUE</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">cutpoints</span><span class="op">(</span><span class="va">replication_2011_model</span><span class="op">)</span><span class="co"># }</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 85 x 6</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">democracy_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="prepare_democracy_data.html">prepare_democracy_data</a></span><span class="op">(</span><span class="va">democracy_data</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">replication_2011_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/mirt.html" class="external-link">mirt</a></span><span class="op">(</span><span class="va">democracy_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html" class="external-link">matches</a></span><span class="op">(</span><span class="st">"pmm"</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>model <span class="op">=</span> <span class="fl">1</span>, itemtype <span class="op">=</span> <span class="st">"graded"</span>, SE <span class="op">=</span> <span class="cn">TRUE</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">cutpoints</span><span class="op">(</span><span class="va">replication_2011_model</span><span class="op">)</span><span class="co"># }</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 85 × 6</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    variable   estimate  pct025    pct975      se num_obs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> pmm_arat   -<span style="color: #BB0000;">1.43</span>    -<span style="color: #BB0000;">1.42</span>   -<span style="color: #BB0000;">1.44</span>     0.005<span style="text-decoration: underline;">26</span>    <span style="text-decoration: underline;">3</span>873</span>
@@ -141,7 +146,7 @@ scale as the latent variable.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> pmm_blm     0.473    0.219   1.04     0.290       275</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> pmm_bollen -<span style="color: #BB0000;">1.53</span>    -<span style="color: #BB0000;">1.50</span>   -<span style="color: #BB0000;">1.55</span>     0.014<span style="text-decoration: underline;">5</span>      510</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> pmm_bollen -<span style="color: #BB0000;">1.08</span>    -<span style="color: #BB0000;">1.07</span>   -<span style="color: #BB0000;">1.08</span>     0.002<span style="text-decoration: underline;">43</span>     510</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ... with 75 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 75 more rows</span></span>
 </code></pre></div>
     </div>
   </div>
@@ -156,7 +161,7 @@ scale as the latent variable.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

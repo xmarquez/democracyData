@@ -29,7 +29,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -74,14 +74,12 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">redownload_lied</span><span class="op">(</span><span class="va">url</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span>, return_raw <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">redownload_lied</span><span class="op">(</span><span class="va">url</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span>, return_raw <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="source">
     <h2>Source</h2>
-    <p>Skaaning, Svend-Erik; John
-Gerring; and Henrikas Bartusevicius (2015). "A Lexical Index of Electoral
-Democracy." Comparative Political Studies, Vol. 48, No. 12, pp. 1491-1525.
+    <p>S. Skaaning, J. Gerring, and H. Bartusevičius. "A Lexical Index of Electoral Democracy". In: <em>Comparative Political Studies</em> 48.12 (2015), pp. 1491-1525. DOI: 10.1177/0010414015581050.
 Original data and variable descriptions available at
 <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT" class="external-link">https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT</a></p>
     </div>
@@ -90,20 +88,27 @@ Original data and variable descriptions available at
     <dl><dt>url</dt>
 <dd><p>The URL of the dataset. Defaults to
 <a href="https://dataverse.harvard.edu/api/access/datafile/6290760" class="external-link">https://dataverse.harvard.edu/api/access/datafile/6290760</a></p></dd>
+
+
 <dt>verbose</dt>
 <dd><p>Whether to print a running commentary of what the function is
 doing while processing the data.</p></dd>
+
+
 <dt>return_raw</dt>
 <dd><p>Whether to return the raw data, without any processing.
 Default is <code>FALSE</code>.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>Other parameters passed to <a href="country_year_coder.html">country_year_coder</a>.</p></dd>
+
 </dl></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="fu">redownload_lied</span><span class="op">(</span><span class="op">)</span><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="fu">redownload_lied</span><span class="op">(</span><span class="op">)</span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -118,7 +123,7 @@ Default is <code>FALSE</code>.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

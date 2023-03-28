@@ -26,7 +26,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -69,7 +69,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">create_panel</span><span class="op">(</span>system <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cow"</span>, <span class="st">"GW"</span>, <span class="st">"polity"</span><span class="op">)</span>, max_year <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_panel</span><span class="op">(</span>system <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cow"</span>, <span class="st">"GW"</span>, <span class="st">"polity"</span><span class="op">)</span>, max_year <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -82,22 +82,27 @@ D. Ward. 1999. "Interstate System Membership: A Revised List of the
 Independent States since 1816." International Interactions 25: 393-413,
 available at <a href="http://privatewww.essex.ac.uk/~ksg/statelist.html" class="external-link">http://privatewww.essex.ac.uk/~ksg/statelist.html</a>), or
 "polity" (for the <a href="http://www.systemicpeace.org/polityproject.html" class="external-link">Polity IV</a> system of states).</p></dd>
+
+
 <dt>max_year</dt>
 <dd><p>The maximum year in the panel. If NULL, uses the current year.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A <a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a> with the country code in the relevant system of states,
+    
+
+<p>A <a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a> with the country code in the relevant system of states,
 the official country name and years when the country belongs to the system,
 and the relevant start and end dates for entry and exit into the system.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">create_panel</span><span class="op">(</span><span class="st">"cow"</span><span class="op">)</span> <span class="co"># The correlates of War system is the default</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 17,036 x 5</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">create_panel</span><span class="op">(</span><span class="st">"cow"</span><span class="op">)</span> <span class="co"># The correlates of War system is the default</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 17,231 × 5</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     cown cow_country_name         cow_startdate cow_enddate  year</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     2 United States of America 1816-01-01    <span style="color: #BB0000;">NA</span>           <span style="text-decoration: underline;">1</span>816</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     2 United States of America 1816-01-01    <span style="color: #BB0000;">NA</span>           <span style="text-decoration: underline;">1</span>817</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     2 United States of America 1816-01-01    <span style="color: #BB0000;">NA</span>           <span style="text-decoration: underline;">1</span>818</span>
@@ -108,9 +113,9 @@ and the relevant start and end dates for entry and exit into the system.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     2 United States of America 1816-01-01    <span style="color: #BB0000;">NA</span>           <span style="text-decoration: underline;">1</span>823</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     2 United States of America 1816-01-01    <span style="color: #BB0000;">NA</span>           <span style="text-decoration: underline;">1</span>824</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     2 United States of America 1816-01-01    <span style="color: #BB0000;">NA</span>           <span style="text-decoration: underline;">1</span>825</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ... with 17,026 more rows</span></span>
-<span class="r-in"><span class="fu">create_panel</span><span class="op">(</span><span class="st">"GW"</span><span class="op">)</span> <span class="co"># Use this for the Gleditsch and Ward system</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 19,938 x 5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 17,221 more rows</span></span>
+<span class="r-in"><span><span class="fu">create_panel</span><span class="op">(</span><span class="st">"GW"</span><span class="op">)</span> <span class="co"># Use this for the Gleditsch and Ward system</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 20,135 × 5</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      GWn GW_country_name          GW_startdate GW_enddate  year</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     2 United States of America 1816-01-01   <span style="color: #BB0000;">NA</span>          <span style="text-decoration: underline;">1</span>816</span>
@@ -123,9 +128,9 @@ and the relevant start and end dates for entry and exit into the system.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     2 United States of America 1816-01-01   <span style="color: #BB0000;">NA</span>          <span style="text-decoration: underline;">1</span>823</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     2 United States of America 1816-01-01   <span style="color: #BB0000;">NA</span>          <span style="text-decoration: underline;">1</span>824</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     2 United States of America 1816-01-01   <span style="color: #BB0000;">NA</span>          <span style="text-decoration: underline;">1</span>825</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ... with 19,928 more rows</span></span>
-<span class="r-in"><span class="fu">create_panel</span><span class="op">(</span><span class="st">"polity"</span>, max_year <span class="op">=</span> <span class="fl">1997</span><span class="op">)</span> <span class="co"># You can specify a maximum year</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13,964 x 5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 20,125 more rows</span></span>
+<span class="r-in"><span><span class="fu">create_panel</span><span class="op">(</span><span class="st">"polity"</span>, max_year <span class="op">=</span> <span class="fl">1997</span><span class="op">)</span> <span class="co"># You can specify a maximum year</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13,964 × 5</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    polity_ccode polity_country_name polity_startdate polity_enddate  year</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>            2 United States       1800-01-01       <span style="color: #BB0000;">NA</span>              <span style="text-decoration: underline;">1</span>800</span>
@@ -138,7 +143,7 @@ and the relevant start and end dates for entry and exit into the system.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>            2 United States       1800-01-01       <span style="color: #BB0000;">NA</span>              <span style="text-decoration: underline;">1</span>807</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>            2 United States       1800-01-01       <span style="color: #BB0000;">NA</span>              <span style="text-decoration: underline;">1</span>808</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>            2 United States       1800-01-01       <span style="color: #BB0000;">NA</span>              <span style="text-decoration: underline;">1</span>809</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ... with 13,954 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 13,954 more rows</span></span>
 </code></pre></div>
     </div>
   </div>
@@ -153,7 +158,7 @@ and the relevant start and end dates for entry and exit into the system.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
