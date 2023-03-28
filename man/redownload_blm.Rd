@@ -147,13 +147,13 @@ redownload_reign(url, verbose = TRUE, return_raw = FALSE, ...)
 \url{https://dataverse.harvard.edu/api/access/datafile/3868064?format=original&gbrecs=true}
 
 \item For \link{blm}:
-\url{http://www.blmdemocracy.gatech.edu/blm\%20final\%20data.xls}
+\url{http://www.blmdemocracy.gatech.edu/blm\%20final\%20data.xls} \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}. This doesn't work anymore.
 
 \item For \link{bmr}:
 \url{https://dataverse.harvard.edu/api/access/datafile/3130643}
 
 \item For \link{bnr}:
-\url{http://users.clas.ufl.edu/bernhard/content/data/meister1305.dta}
+\url{http://users.clas.ufl.edu/bernhard/content/data/meister1305.dta} \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}. This doesn't work anymore.
 
 \item For \link{bti}:
 \url{https://bti-project.org/fileadmin/api/content/en/downloads/data/BTI_2006-2022_Scores.xlsx}
@@ -201,7 +201,7 @@ For the 2016 release, it defaults to
 \url{https://dataverse.harvard.edu/api/access/datafile/2420018}
 
 \item For \link{PIPE}:
-\url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data} (no longer publicly available, it seems)
+\url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data} \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}. This doesn't work anymore.
 
 }}
 
