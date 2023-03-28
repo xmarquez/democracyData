@@ -1569,6 +1569,7 @@ redownload_bti <- function(url,
     names(current_sheet)[1:2] <- c("country", "bti_region")
     names(current_sheet) <- str_replace_all(names(current_sheet), "[ |]", "_") %>%
       str_replace_all("___","_")
+    names(current_sheet) <- str_replace_all(names(current_sheet), "\\.\\.\\.[0-9]+$", "")
 
     bti_data <- bind_rows(bti_data,
                           current_sheet)
