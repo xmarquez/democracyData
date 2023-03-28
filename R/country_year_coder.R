@@ -1,3 +1,5 @@
+#' Country-Year State System Coding
+#'
 #' Given a set of country-years, find appropriate country codes, standardized
 #' country names, and determine state system membership
 #'
@@ -941,7 +943,8 @@ print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_tabl
       group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
-                n = n())
+                n = n(),
+                .groups = "drop")
 
     multiple_matches_2 <- tbl %>%
       group_by(!!date_col) %>%
@@ -951,7 +954,8 @@ print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_tabl
       group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
-                n = n())
+                n = n(),
+                .groups = "drop")
 
     not_matched <- tbl %>%
       filter(is.na(!!matched_country_col)) %>%
@@ -959,7 +963,8 @@ print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_tabl
       group_by_at(vars(matched_cols), .add = TRUE)  %>%
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
-                n = n())
+                n = n(),
+                .groups = "drop")
 
   } else if(missing(code_col)) {
 
@@ -972,7 +977,8 @@ print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_tabl
       group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
-                n = n())
+                n = n(),
+                .groups = "drop")
 
     multiple_matches_2 <- tbl %>%
       group_by(!!date_col) %>%
@@ -982,7 +988,8 @@ print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_tabl
       group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
-                n = n())
+                n = n(),
+                .groups = "drop")
 
     not_matched <- tbl %>%
       filter(is.na(!!matched_country_col)) %>%
@@ -990,7 +997,8 @@ print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_tabl
       group_by_at(vars(matched_cols), .add = TRUE)  %>%
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
-                n = n())
+                n = n(),
+                .groups = "drop")
 
   } else {
 
@@ -1005,7 +1013,8 @@ print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_tabl
       group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
-                n = n())
+                n = n(),
+                .groups = "drop")
 
     multiple_matches_2 <- tbl %>%
       group_by(!!date_col) %>%
@@ -1015,7 +1024,8 @@ print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_tabl
       group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
-                n = n())
+                n = n(),
+                .groups = "drop")
 
     not_matched <- tbl %>%
       filter(is.na(!!matched_country_col)) %>%
@@ -1023,7 +1033,8 @@ print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_tabl
       group_by_at(vars(matched_cols), .add = TRUE)  %>%
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
-                n = n())
+                n = n(),
+                .groups = "drop")
   }
 
 
@@ -1035,7 +1046,9 @@ print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_tabl
       group_by_at(vars(matched_cols), .add = TRUE)  %>%
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
-                n = n())
+                n = n(),
+                .groups = "drop")
+
   } else if(!missing(country_col)) {
     country_name_changes <- tbl %>%
       filter(stringr::str_to_lower(!!country_col) !=
@@ -1044,7 +1057,8 @@ print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_tabl
       group_by_at(vars(matched_cols), .add = TRUE)  %>%
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
-                n = n())
+                n = n(),
+                .groups = "drop")
   } else {
     country_name_changes <- tibble()
   }
