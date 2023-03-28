@@ -2,17 +2,17 @@
 
 * Removed dependence on `plyr`
 
-* Updated Freedom House download functions [download_fh] to use the latest data (2023 Freedom in the World Report)
+* Updated Freedom House download functions to use the latest data (2023 Freedom in the World Report)
 
-* Updated EIU [eiu] to 2023 release (2023 EIU report).
+* Updated EIU to 2023 release (2023 EIU report).
 
-* Updated simplified vdem [vdem_simplified] data to latest version (13.0).
+* Updated simplified Vdem (`vdem_simple`) data to latest version (13.0).
 
-* Deprecated [redownload_pipe] (data no longer available for download)
+* Deprecated `redownload_pipe()` (data no longer available for download)
 
-* Deprecated [redownload_blm] (data no longer available for download)
+* Deprecated `redownload_blm()` (data no longer available for download)
 
-* Deprecated [redownload_bnr] (data no longer available for download)
+* Deprecated `redownload_bnr()` (data no longer available for download)
 
 * Added licensing info where available
 
@@ -20,9 +20,9 @@
 
 * Updated `anckar` data to V2 (with values to 2019). 
 
-* Fixed Türkiye bug in [country_year_coder]
+* Fixed Türkiye bug in `country_year_coder()`
 
-* Moved to a new build system using [targets] to ensure consistency
+* Moved to a new build system using [targets](https://books.ropensci.org/targets/) to ensure consistency
 
 # democracyData 0.4.0
 
