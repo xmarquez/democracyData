@@ -1,7 +1,7 @@
 ---
 title: "Adding all democracy datasets, testing Targets pipeline works"
 author: "Xavier Marquez"
-date: "2023-03-28 13:34:31"
+date: "2023-03-28 16:45:40"
 output: 
   html_document: 
     toc: yes
@@ -539,14 +539,7 @@ doorenspleet <- prepare_doorenspleet(path = here::here("data-raw/Doorenspleet da
 ## Original dataset has 667 rows but is not in country-year format
 ## 
 ## Processing the Doorenspleet data - turning to country-year format, adding state system info...
-```
-
-```
-## Warning: `cols` is now required when using `unnest()`.
-## ℹ Please use `cols = c(year)`.
-```
-
-```
+## 
 ## The following country names are different in the destination system:
 ```
 
@@ -624,16 +617,6 @@ wgi <- download_wgi_voice_and_accountability(verbose = verbose,
 ```
 
 ```
-## The following country and/or code-years were not matched:
-```
-
-
-
-|wb_country |wb_code |extended_country_name | GWn| cown| min_date| max_date|  n|
-|:----------|:-------|:---------------------|---:|----:|--------:|--------:|--:|
-|Türkiye    |TUR     |NA                    |  NA|   NA|     1996|     2021| 23|
-
-```
 ## The following country names are different in the destination system:
 ```
 
@@ -683,6 +666,7 @@ wgi <- download_wgi_voice_and_accountability(verbose = verbose,
 |Taiwan, China                  |TWN     |Taiwan                                  | 713|  713|     1996|     2021| 23|
 |Tanzania                       |TZA     |Tanzania/Tanganyika                     | 510|  510|     1996|     2021| 23|
 |Timor-Leste                    |TMP     |East Timor                              | 860|  860|     1996|     2021| 23|
+|Türkiye                        |TUR     |Turkey (Ottoman Empire)                 | 640|  640|     1996|     2021| 23|
 |United States                  |USA     |United States of America                |   2|    2|     1996|     2021| 23|
 |Venezuela, RB                  |VEN     |Venezuela                               | 101|  101|     1996|     2021| 23|
 |Vietnam                        |VNM     |Vietnam, Democratic Republic of         | 816|  816|     1996|     2021| 23|
@@ -1055,20 +1039,20 @@ fh_electoral <- download_fh_electoral(verbose = verbose,
 ## The files in the archive are:
 ```
 
- [1] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/FIW2017_Data/.DS_Store"                                                             
- [2] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/__MACOSX/FIW2017_Data/._.DS_Store"                                                  
- [3] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls"           
- [4] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/__MACOSX/FIW2017_Data/._FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls"
- [5] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/FIW2017_Data/FH_Country_Status_Distribution_1972-2016.xls"                          
- [6] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/__MACOSX/FIW2017_Data/._FH_Country_Status_Distribution_1972-2016.xls"               
- [7] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls"                                
- [8] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/__MACOSX/FIW2017_Data/._FH_Electoral_Democracies_1988-2016.xls"                     
- [9] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/FIW2017_Data/Subcategory_Scores_FIW2017.xlsx"                                       
-[10] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/__MACOSX/FIW2017_Data/._Subcategory_Scores_FIW2017.xlsx"                            
-[11] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/__MACOSX/._FIW2017_Data"                                                            
+ [1] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/FIW2017_Data/.DS_Store"                                                             
+ [2] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/__MACOSX/FIW2017_Data/._.DS_Store"                                                  
+ [3] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls"           
+ [4] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/__MACOSX/FIW2017_Data/._FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls"
+ [5] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/FIW2017_Data/FH_Country_Status_Distribution_1972-2016.xls"                          
+ [6] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/__MACOSX/FIW2017_Data/._FH_Country_Status_Distribution_1972-2016.xls"               
+ [7] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls"                                
+ [8] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/__MACOSX/FIW2017_Data/._FH_Electoral_Democracies_1988-2016.xls"                     
+ [9] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/FIW2017_Data/Subcategory_Scores_FIW2017.xlsx"                                       
+[10] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/__MACOSX/FIW2017_Data/._Subcategory_Scores_FIW2017.xlsx"                            
+[11] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/__MACOSX/._FIW2017_Data"                                                            
 
 ```
-## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls
+## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls
 ```
 
 ```
@@ -1372,20 +1356,20 @@ gwf_autocratic <- redownload_gwf(verbose = verbose,
 ## The files in the archive are:
 ```
 
- [1] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/clean.do"                               
- [2] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF All Political Regimes Case List.xls"
- [3] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF Autocratic Regimes.xlsx"            
- [4] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF Codebook.pdf"                       
- [5] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta"            
- [6] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.txt"            
- [7] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWFcases.dta"                           
- [8] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWFtscs.dta"                            
- [9] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWFtscs.txt"                            
-[10] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/README.tex"                             
-[11] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/UPDATES.tex"                            
+ [1] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/clean.do"                               
+ [2] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF All Political Regimes Case List.xls"
+ [3] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF Autocratic Regimes.xlsx"            
+ [4] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF Codebook.pdf"                       
+ [5] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta"            
+ [6] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.txt"            
+ [7] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWFcases.dta"                           
+ [8] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWFtscs.dta"                            
+ [9] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWFtscs.txt"                            
+[10] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/README.tex"                             
+[11] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/UPDATES.tex"                            
 
 ```
-## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWFtscs.dta
+## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWFtscs.dta
 ```
 
 ```
@@ -1472,20 +1456,20 @@ gwf_autocratic_extended <- redownload_gwf(verbose = verbose,
 ## The files in the archive are:
 ```
 
- [1] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/clean.do"                               
- [2] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF All Political Regimes Case List.xls"
- [3] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF Autocratic Regimes.xlsx"            
- [4] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF Codebook.pdf"                       
- [5] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta"            
- [6] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.txt"            
- [7] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWFcases.dta"                           
- [8] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWFtscs.dta"                            
- [9] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWFtscs.txt"                            
-[10] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/README.tex"                             
-[11] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/UPDATES.tex"                            
+ [1] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/clean.do"                               
+ [2] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF All Political Regimes Case List.xls"
+ [3] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF Autocratic Regimes.xlsx"            
+ [4] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF Codebook.pdf"                       
+ [5] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta"            
+ [6] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.txt"            
+ [7] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWFcases.dta"                           
+ [8] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWFtscs.dta"                            
+ [9] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWFtscs.txt"                            
+[10] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/README.tex"                             
+[11] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/UPDATES.tex"                            
 
 ```
-## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWFtscs.dta
+## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWFtscs.dta
 ```
 
 ```
@@ -1563,20 +1547,20 @@ gwf_all <- redownload_gwf(verbose = verbose,
 ## The files in the archive are:
 ```
 
- [1] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/clean.do"                               
- [2] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF All Political Regimes Case List.xls"
- [3] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF Autocratic Regimes.xlsx"            
- [4] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF Codebook.pdf"                       
- [5] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta"            
- [6] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.txt"            
- [7] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWFcases.dta"                           
- [8] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWFtscs.dta"                            
- [9] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWFtscs.txt"                            
-[10] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/README.tex"                             
-[11] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/UPDATES.tex"                            
+ [1] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/clean.do"                               
+ [2] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF All Political Regimes Case List.xls"
+ [3] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF Autocratic Regimes.xlsx"            
+ [4] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF Codebook.pdf"                       
+ [5] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta"            
+ [6] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.txt"            
+ [7] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWFcases.dta"                           
+ [8] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWFtscs.dta"                            
+ [9] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWFtscs.txt"                            
+[10] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/README.tex"                             
+[11] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/UPDATES.tex"                            
 
 ```
-## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta
+## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta
 ## The downloaded GWF_AllPoliticalRegimes.dta dataset has 7954 rows
 ## Original dataset has 7954 rows
 ## Processing the Autocratic Regimes dataset - adding state system info, fixing NA values...
@@ -1645,20 +1629,20 @@ gwf_all_extended <- redownload_gwf(verbose = verbose,
 ## The files in the archive are:
 ```
 
- [1] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/clean.do"                               
- [2] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF All Political Regimes Case List.xls"
- [3] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF Autocratic Regimes.xlsx"            
- [4] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF Codebook.pdf"                       
- [5] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta"            
- [6] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.txt"            
- [7] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWFcases.dta"                           
- [8] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWFtscs.dta"                            
- [9] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWFtscs.txt"                            
-[10] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/README.tex"                             
-[11] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/UPDATES.tex"                            
+ [1] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/clean.do"                               
+ [2] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF All Political Regimes Case List.xls"
+ [3] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF Autocratic Regimes.xlsx"            
+ [4] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF Codebook.pdf"                       
+ [5] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta"            
+ [6] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.txt"            
+ [7] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWFcases.dta"                           
+ [8] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWFtscs.dta"                            
+ [9] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWFtscs.txt"                            
+[10] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/README.tex"                             
+[11] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/UPDATES.tex"                            
 
 ```
-## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta
+## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/GWF Autocratic Regimes 1.2/GWF_AllPoliticalRegimes.dta
 ## The downloaded GWF_AllPoliticalRegimes.dta dataset has 7954 rows
 ## Original dataset has 7954 rows
 ## Processing the Autocratic Regimes dataset - adding state system info, fixing NA values...
@@ -2319,6 +2303,12 @@ cite_dataset("mainwaring")
 Political Regimes in Latin America". In: _Studies in Comparative
 International Development_ 36.1 (2001), pp. 37-65. DOI:
 10.1007/bf02687584.
+
+[2] S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political Regimes in
+Latin America, 1900-2007 (with Daniel Brinks)". In: _Democracies and
+Dictatorships in Latin America: Emergence, Survival, and Fall_. New
+York: Cambridge University Press, 2014. Chap. Political Regimes in
+Latin America, 1900-2007 (with Daniel Brinks).
 
 ```r
 mainwaring <- prepare_mainwaring(path = here::here("data-raw/Mainwaring Linan.txt"), 
@@ -4539,20 +4529,20 @@ extended_uds <- generate_extended_uds(verbose = verbose)
 ## The files in the archive are:
 ```
 
- [1] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/FIW2017_Data/.DS_Store"                                                             
- [2] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/__MACOSX/FIW2017_Data/._.DS_Store"                                                  
- [3] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls"           
- [4] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/__MACOSX/FIW2017_Data/._FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls"
- [5] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/FIW2017_Data/FH_Country_Status_Distribution_1972-2016.xls"                          
- [6] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/__MACOSX/FIW2017_Data/._FH_Country_Status_Distribution_1972-2016.xls"               
- [7] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls"                                
- [8] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/__MACOSX/FIW2017_Data/._FH_Electoral_Democracies_1988-2016.xls"                     
- [9] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/FIW2017_Data/Subcategory_Scores_FIW2017.xlsx"                                       
-[10] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/__MACOSX/FIW2017_Data/._Subcategory_Scores_FIW2017.xlsx"                            
-[11] "C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/__MACOSX/._FIW2017_Data"                                                            
+ [1] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/FIW2017_Data/.DS_Store"                                                             
+ [2] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/__MACOSX/FIW2017_Data/._.DS_Store"                                                  
+ [3] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/FIW2017_Data/FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls"           
+ [4] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/__MACOSX/FIW2017_Data/._FH_Country_and_Territory_Ratings_and_Statuses_1972-2016.xls"
+ [5] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/FIW2017_Data/FH_Country_Status_Distribution_1972-2016.xls"                          
+ [6] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/__MACOSX/FIW2017_Data/._FH_Country_Status_Distribution_1972-2016.xls"               
+ [7] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls"                                
+ [8] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/__MACOSX/FIW2017_Data/._FH_Electoral_Democracies_1988-2016.xls"                     
+ [9] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/FIW2017_Data/Subcategory_Scores_FIW2017.xlsx"                                       
+[10] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/__MACOSX/FIW2017_Data/._Subcategory_Scores_FIW2017.xlsx"                            
+[11] "C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/__MACOSX/._FIW2017_Data"                                                            
 
 ```
-## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpETkp99/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls
+## Extracting C:/Users/marquexa/AppData/Local/Temp/RtmpS6r4ID/FIW2017_Data/FH_Electoral_Democracies_1988-2016.xls
 ```
 
 ```
@@ -4841,16 +4831,6 @@ extended_uds <- generate_extended_uds(verbose = verbose)
 ```
 
 ```
-## The following country and/or code-years were not matched:
-```
-
-
-
-|wb_country |wb_code |extended_country_name | GWn| cown| min_date| max_date|  n|
-|:----------|:-------|:---------------------|---:|----:|--------:|--------:|--:|
-|Türkiye    |TUR     |NA                    |  NA|   NA|     1996|     2021| 23|
-
-```
 ## The following country names are different in the destination system:
 ```
 
@@ -4900,6 +4880,7 @@ extended_uds <- generate_extended_uds(verbose = verbose)
 |Taiwan, China                  |TWN     |Taiwan                                  | 713|  713|     1996|     2021| 23|
 |Tanzania                       |TZA     |Tanzania/Tanganyika                     | 510|  510|     1996|     2021| 23|
 |Timor-Leste                    |TMP     |East Timor                              | 860|  860|     1996|     2021| 23|
+|Türkiye                        |TUR     |Turkey (Ottoman Empire)                 | 640|  640|     1996|     2021| 23|
 |United States                  |USA     |United States of America                |   2|    2|     1996|     2021| 23|
 |Venezuela, RB                  |VEN     |Venezuela                               | 101|  101|     1996|     2021| 23|
 |Vietnam                        |VNM     |Vietnam, Democratic Republic of         | 816|  816|     1996|     2021| 23|
@@ -5120,7 +5101,7 @@ extended_uds <- generate_extended_uds(verbose = verbose)
 ## Now fitting mirt model...
 ```
 
-Iteration: 1, Log-Lik: -566445.233, Max-Change: 0.90155Iteration: 2, Log-Lik: -492387.763, Max-Change: 0.46798Iteration: 3, Log-Lik: -464646.048, Max-Change: 0.50032Iteration: 4, Log-Lik: -444830.120, Max-Change: 1.14370Iteration: 5, Log-Lik: -419302.852, Max-Change: 1.13080Iteration: 6, Log-Lik: -402209.134, Max-Change: 1.36308Iteration: 7, Log-Lik: -383380.153, Max-Change: 1.28800Iteration: 8, Log-Lik: -370728.402, Max-Change: 1.52184Iteration: 9, Log-Lik: -362499.279, Max-Change: 1.20538Iteration: 10, Log-Lik: -353823.346, Max-Change: 2.35941Iteration: 11, Log-Lik: -347396.060, Max-Change: 0.96349Iteration: 12, Log-Lik: -343087.428, Max-Change: 1.03078Iteration: 13, Log-Lik: -340243.723, Max-Change: 0.86480Iteration: 14, Log-Lik: -338491.339, Max-Change: 0.63835Iteration: 15, Log-Lik: -337058.332, Max-Change: 0.56875Iteration: 16, Log-Lik: -335907.502, Max-Change: 0.47950Iteration: 17, Log-Lik: -334878.074, Max-Change: 0.43561Iteration: 18, Log-Lik: -333953.127, Max-Change: 0.40173Iteration: 19, Log-Lik: -333095.616, Max-Change: 0.37889Iteration: 20, Log-Lik: -332292.821, Max-Change: 0.32976Iteration: 21, Log-Lik: -331572.040, Max-Change: 0.31180Iteration: 22, Log-Lik: -330921.284, Max-Change: 0.36634Iteration: 23, Log-Lik: -330292.747, Max-Change: 0.28652Iteration: 24, Log-Lik: -329726.153, Max-Change: 0.34550Iteration: 25, Log-Lik: -328402.374, Max-Change: 0.25004Iteration: 26, Log-Lik: -327865.487, Max-Change: 0.24663Iteration: 27, Log-Lik: -327406.700, Max-Change: 0.26643Iteration: 28, Log-Lik: -326638.420, Max-Change: 0.17729Iteration: 29, Log-Lik: -326184.408, Max-Change: 0.18524Iteration: 30, Log-Lik: -325830.498, Max-Change: 0.25969Iteration: 31, Log-Lik: -325116.624, Max-Change: 0.18621Iteration: 32, Log-Lik: -324668.519, Max-Change: 0.16897Iteration: 33, Log-Lik: -324275.357, Max-Change: 0.17165Iteration: 34, Log-Lik: -323908.591, Max-Change: 0.16756Iteration: 35, Log-Lik: -323706.050, Max-Change: 0.16640Iteration: 36, Log-Lik: -323392.590, Max-Change: 0.14227Iteration: 37, Log-Lik: -323110.424, Max-Change: 0.15011Iteration: 38, Log-Lik: -322822.032, Max-Change: 0.13663Iteration: 39, Log-Lik: -322631.163, Max-Change: 0.14047Iteration: 40, Log-Lik: -322483.659, Max-Change: 0.14605Iteration: 41, Log-Lik: -322308.831, Max-Change: 0.13649Iteration: 42, Log-Lik: -322140.421, Max-Change: 0.14009Iteration: 43, Log-Lik: -321985.124, Max-Change: 0.15331Iteration: 44, Log-Lik: -321822.928, Max-Change: 0.12018Iteration: 45, Log-Lik: -321673.663, Max-Change: 0.11700Iteration: 46, Log-Lik: -321542.136, Max-Change: 0.11304Iteration: 47, Log-Lik: -321417.469, Max-Change: 0.10740Iteration: 48, Log-Lik: -321296.573, Max-Change: 0.10133Iteration: 49, Log-Lik: -321176.561, Max-Change: 0.09823Iteration: 50, Log-Lik: -321061.585, Max-Change: 0.09214Iteration: 51, Log-Lik: -320944.379, Max-Change: 0.11453Iteration: 52, Log-Lik: -320836.518, Max-Change: 0.14163Iteration: 53, Log-Lik: -320693.360, Max-Change: 0.08793Iteration: 54, Log-Lik: -320594.116, Max-Change: 0.08407Iteration: 55, Log-Lik: -320504.040, Max-Change: 0.09065Iteration: 56, Log-Lik: -320402.503, Max-Change: 0.08678Iteration: 57, Log-Lik: -320317.136, Max-Change: 0.08566Iteration: 58, Log-Lik: -320234.985, Max-Change: 0.08328Iteration: 59, Log-Lik: -320157.802, Max-Change: 0.08410Iteration: 60, Log-Lik: -320104.751, Max-Change: 0.08757Iteration: 61, Log-Lik: -320053.310, Max-Change: 0.10795Iteration: 62, Log-Lik: -319989.753, Max-Change: 0.11656Iteration: 63, Log-Lik: -319932.135, Max-Change: 0.07957Iteration: 64, Log-Lik: -319880.655, Max-Change: 0.06813Iteration: 65, Log-Lik: -319837.110, Max-Change: 0.07001Iteration: 66, Log-Lik: -319797.328, Max-Change: 0.07215Iteration: 67, Log-Lik: -319761.561, Max-Change: 0.10903Iteration: 68, Log-Lik: -319728.196, Max-Change: 0.06016Iteration: 69, Log-Lik: -319693.904, Max-Change: 0.06748Iteration: 70, Log-Lik: -319664.471, Max-Change: 0.06301Iteration: 71, Log-Lik: -319636.068, Max-Change: 0.06240Iteration: 72, Log-Lik: -319608.578, Max-Change: 0.07818Iteration: 73, Log-Lik: -319579.890, Max-Change: 0.06196Iteration: 74, Log-Lik: -319559.135, Max-Change: 0.05471Iteration: 75, Log-Lik: -319527.689, Max-Change: 0.05163Iteration: 76, Log-Lik: -319506.152, Max-Change: 0.04665Iteration: 77, Log-Lik: -319480.593, Max-Change: 0.07450Iteration: 78, Log-Lik: -319454.765, Max-Change: 0.04790Iteration: 79, Log-Lik: -319427.885, Max-Change: 0.03986Iteration: 80, Log-Lik: -319405.489, Max-Change: 0.04237Iteration: 81, Log-Lik: -319381.916, Max-Change: 0.04291Iteration: 82, Log-Lik: -319355.224, Max-Change: 0.03856Iteration: 83, Log-Lik: -319333.287, Max-Change: 0.04094Iteration: 84, Log-Lik: -319303.931, Max-Change: 0.04083Iteration: 85, Log-Lik: -319276.985, Max-Change: 0.04732Iteration: 86, Log-Lik: -319240.503, Max-Change: 0.04894Iteration: 87, Log-Lik: -319205.974, Max-Change: 0.06735Iteration: 88, Log-Lik: -319179.428, Max-Change: 0.06600Iteration: 89, Log-Lik: -319141.473, Max-Change: 0.04274Iteration: 90, Log-Lik: -319113.256, Max-Change: 0.04612Iteration: 91, Log-Lik: -319084.981, Max-Change: 0.04950Iteration: 92, Log-Lik: -319045.858, Max-Change: 0.04603Iteration: 93, Log-Lik: -319016.195, Max-Change: 0.05118Iteration: 94, Log-Lik: -318986.987, Max-Change: 0.05550Iteration: 95, Log-Lik: -318948.397, Max-Change: 0.05315Iteration: 96, Log-Lik: -318917.444, Max-Change: 0.05471Iteration: 97, Log-Lik: -318888.613, Max-Change: 0.05220Iteration: 98, Log-Lik: -318858.434, Max-Change: 0.05373Iteration: 99, Log-Lik: -318828.965, Max-Change: 0.04453Iteration: 100, Log-Lik: -318806.589, Max-Change: 0.08952Iteration: 101, Log-Lik: -318776.599, Max-Change: 0.06050Iteration: 102, Log-Lik: -318748.472, Max-Change: 0.05062Iteration: 103, Log-Lik: -318726.122, Max-Change: 0.07568Iteration: 104, Log-Lik: -318704.037, Max-Change: 0.06915Iteration: 105, Log-Lik: -318677.949, Max-Change: 0.03671Iteration: 106, Log-Lik: -318661.120, Max-Change: 0.05134Iteration: 107, Log-Lik: -318642.874, Max-Change: 0.05818Iteration: 108, Log-Lik: -318628.491, Max-Change: 0.05526Iteration: 109, Log-Lik: -318613.613, Max-Change: 0.03423Iteration: 110, Log-Lik: -318601.757, Max-Change: 0.05249Iteration: 111, Log-Lik: -318590.341, Max-Change: 0.03752Iteration: 112, Log-Lik: -318579.099, Max-Change: 0.03160Iteration: 113, Log-Lik: -318570.332, Max-Change: 0.05503Iteration: 114, Log-Lik: -318562.223, Max-Change: 0.03180Iteration: 115, Log-Lik: -318553.633, Max-Change: 0.04062Iteration: 116, Log-Lik: -318546.010, Max-Change: 0.04295Iteration: 117, Log-Lik: -318538.766, Max-Change: 0.02946Iteration: 118, Log-Lik: -318533.056, Max-Change: 0.03130Iteration: 119, Log-Lik: -318528.474, Max-Change: 0.06154Iteration: 120, Log-Lik: -318523.183, Max-Change: 0.07881Iteration: 121, Log-Lik: -318517.010, Max-Change: 0.02369Iteration: 122, Log-Lik: -318513.055, Max-Change: 0.02544Iteration: 123, Log-Lik: -318510.028, Max-Change: 0.02434Iteration: 124, Log-Lik: -318496.680, Max-Change: 0.03308Iteration: 125, Log-Lik: -318491.914, Max-Change: 0.04384Iteration: 126, Log-Lik: -318489.513, Max-Change: 0.01997Iteration: 127, Log-Lik: -318487.791, Max-Change: 0.02879Iteration: 128, Log-Lik: -318485.898, Max-Change: 0.04749Iteration: 129, Log-Lik: -318483.985, Max-Change: 0.03083Iteration: 130, Log-Lik: -318481.243, Max-Change: 0.02220Iteration: 131, Log-Lik: -318479.938, Max-Change: 0.02320Iteration: 132, Log-Lik: -318478.539, Max-Change: 0.01917Iteration: 133, Log-Lik: -318475.560, Max-Change: 0.01315Iteration: 134, Log-Lik: -318474.213, Max-Change: 0.01779Iteration: 135, Log-Lik: -318473.319, Max-Change: 0.05937Iteration: 136, Log-Lik: -318471.455, Max-Change: 0.01683Iteration: 137, Log-Lik: -318470.548, Max-Change: 0.02144Iteration: 138, Log-Lik: -318469.749, Max-Change: 0.14864Iteration: 139, Log-Lik: -318468.213, Max-Change: 0.02357Iteration: 140, Log-Lik: -318467.085, Max-Change: 0.00768Iteration: 141, Log-Lik: -318466.382, Max-Change: 0.00619Iteration: 142, Log-Lik: -318464.833, Max-Change: 0.00838Iteration: 143, Log-Lik: -318464.271, Max-Change: 0.06205Iteration: 144, Log-Lik: -318463.514, Max-Change: 0.00855Iteration: 145, Log-Lik: -318463.396, Max-Change: 0.00796Iteration: 146, Log-Lik: -318462.813, Max-Change: 0.00725Iteration: 147, Log-Lik: -318462.312, Max-Change: 0.00518Iteration: 148, Log-Lik: -318460.671, Max-Change: 0.00941Iteration: 149, Log-Lik: -318460.019, Max-Change: 0.04100Iteration: 150, Log-Lik: -318459.296, Max-Change: 0.00631Iteration: 151, Log-Lik: -318459.222, Max-Change: 0.00482Iteration: 152, Log-Lik: -318458.816, Max-Change: 0.00676Iteration: 153, Log-Lik: -318458.368, Max-Change: 0.00539Iteration: 154, Log-Lik: -318456.919, Max-Change: 0.01435Iteration: 155, Log-Lik: -318456.349, Max-Change: 0.00460Iteration: 156, Log-Lik: -318455.961, Max-Change: 0.00340Iteration: 157, Log-Lik: -318454.945, Max-Change: 0.01638Iteration: 158, Log-Lik: -318454.429, Max-Change: 0.00533Iteration: 159, Log-Lik: -318453.983, Max-Change: 0.00396Iteration: 160, Log-Lik: -318453.781, Max-Change: 0.00557Iteration: 161, Log-Lik: -318453.434, Max-Change: 0.00720Iteration: 162, Log-Lik: -318453.164, Max-Change: 0.00666Iteration: 163, Log-Lik: -318452.697, Max-Change: 0.00770Iteration: 164, Log-Lik: -318452.284, Max-Change: 0.05334Iteration: 165, Log-Lik: -318451.718, Max-Change: 0.00471Iteration: 166, Log-Lik: -318451.673, Max-Change: 0.00460Iteration: 167, Log-Lik: -318451.288, Max-Change: 0.00494Iteration: 168, Log-Lik: -318450.898, Max-Change: 0.00542Iteration: 169, Log-Lik: -318450.681, Max-Change: 0.00435Iteration: 170, Log-Lik: -318450.287, Max-Change: 0.00471Iteration: 171, Log-Lik: -318449.917, Max-Change: 0.00427Iteration: 172, Log-Lik: -318449.776, Max-Change: 0.01265Iteration: 173, Log-Lik: -318449.326, Max-Change: 0.00436Iteration: 174, Log-Lik: -318448.976, Max-Change: 0.00365Iteration: 175, Log-Lik: -318448.849, Max-Change: 0.00392Iteration: 176, Log-Lik: -318448.508, Max-Change: 0.00420Iteration: 177, Log-Lik: -318448.143, Max-Change: 0.00655Iteration: 178, Log-Lik: -318447.408, Max-Change: 0.00578Iteration: 179, Log-Lik: -318447.085, Max-Change: 0.00593Iteration: 180, Log-Lik: -318446.643, Max-Change: 0.00464Iteration: 181, Log-Lik: -318446.479, Max-Change: 0.05750Iteration: 182, Log-Lik: -318445.871, Max-Change: 0.00448Iteration: 183, Log-Lik: -318445.472, Max-Change: 0.00609Iteration: 184, Log-Lik: -318444.411, Max-Change: 0.01036Iteration: 185, Log-Lik: -318443.984, Max-Change: 0.00465Iteration: 186, Log-Lik: -318443.575, Max-Change: 0.00462Iteration: 187, Log-Lik: -318442.809, Max-Change: 0.00392Iteration: 188, Log-Lik: -318442.397, Max-Change: 0.00775Iteration: 189, Log-Lik: -318441.907, Max-Change: 0.00971Iteration: 190, Log-Lik: -318440.651, Max-Change: 0.00647Iteration: 191, Log-Lik: -318440.128, Max-Change: 0.00576Iteration: 192, Log-Lik: -318439.624, Max-Change: 0.00398Iteration: 193, Log-Lik: -318437.514, Max-Change: 0.01599Iteration: 194, Log-Lik: -318436.936, Max-Change: 0.00678Iteration: 195, Log-Lik: -318436.330, Max-Change: 0.01592Iteration: 196, Log-Lik: -318435.566, Max-Change: 0.00521Iteration: 197, Log-Lik: -318434.992, Max-Change: 0.00500Iteration: 198, Log-Lik: -318434.398, Max-Change: 0.01434Iteration: 199, Log-Lik: -318433.528, Max-Change: 0.00598Iteration: 200, Log-Lik: -318432.877, Max-Change: 0.00489Iteration: 201, Log-Lik: -318432.526, Max-Change: 0.01757Iteration: 202, Log-Lik: -318431.701, Max-Change: 0.00576Iteration: 203, Log-Lik: -318431.032, Max-Change: 0.00647Iteration: 204, Log-Lik: -318430.558, Max-Change: 0.00742Iteration: 205, Log-Lik: -318429.702, Max-Change: 0.01304Iteration: 206, Log-Lik: -318429.006, Max-Change: 0.00596Iteration: 207, Log-Lik: -318428.222, Max-Change: 0.00612Iteration: 208, Log-Lik: -318426.785, Max-Change: 0.00744Iteration: 209, Log-Lik: -318425.787, Max-Change: 0.00712Iteration: 210, Log-Lik: -318425.009, Max-Change: 0.01028Iteration: 211, Log-Lik: -318423.716, Max-Change: 0.00522Iteration: 212, Log-Lik: -318422.961, Max-Change: 0.01439Iteration: 213, Log-Lik: -318421.882, Max-Change: 0.00789Iteration: 214, Log-Lik: -318421.364, Max-Change: 0.00713Iteration: 215, Log-Lik: -318420.529, Max-Change: 0.01069Iteration: 216, Log-Lik: -318419.486, Max-Change: 0.00768Iteration: 217, Log-Lik: -318418.655, Max-Change: 0.00948Iteration: 218, Log-Lik: -318417.649, Max-Change: 0.00870Iteration: 219, Log-Lik: -318416.677, Max-Change: 0.00655Iteration: 220, Log-Lik: -318416.314, Max-Change: 0.01241Iteration: 221, Log-Lik: -318415.190, Max-Change: 0.01190Iteration: 222, Log-Lik: -318414.059, Max-Change: 0.01431Iteration: 223, Log-Lik: -318409.587, Max-Change: 0.01583Iteration: 224, Log-Lik: -318407.384, Max-Change: 0.01159Iteration: 225, Log-Lik: -318405.971, Max-Change: 0.01259Iteration: 226, Log-Lik: -318401.285, Max-Change: 0.01681Iteration: 227, Log-Lik: -318397.500, Max-Change: 0.01108Iteration: 228, Log-Lik: -318395.486, Max-Change: 0.01478Iteration: 229, Log-Lik: -318392.235, Max-Change: 0.01366Iteration: 230, Log-Lik: -318390.198, Max-Change: 0.01374Iteration: 231, Log-Lik: -318388.431, Max-Change: 0.01504Iteration: 232, Log-Lik: -318386.920, Max-Change: 0.01450Iteration: 233, Log-Lik: -318380.153, Max-Change: 0.01193Iteration: 234, Log-Lik: -318378.318, Max-Change: 0.01512Iteration: 235, Log-Lik: -318373.851, Max-Change: 0.01932Iteration: 236, Log-Lik: -318371.439, Max-Change: 0.01368Iteration: 237, Log-Lik: -318369.517, Max-Change: 0.01289Iteration: 238, Log-Lik: -318364.467, Max-Change: 0.01674Iteration: 239, Log-Lik: -318361.669, Max-Change: 0.01439Iteration: 240, Log-Lik: -318360.069, Max-Change: 0.02078Iteration: 241, Log-Lik: -318356.107, Max-Change: 0.02127Iteration: 242, Log-Lik: -318353.716, Max-Change: 0.01433Iteration: 243, Log-Lik: -318351.916, Max-Change: 0.01279Iteration: 244, Log-Lik: -318345.942, Max-Change: 0.02145Iteration: 245, Log-Lik: -318344.157, Max-Change: 0.02076Iteration: 246, Log-Lik: -318342.500, Max-Change: 0.01429Iteration: 247, Log-Lik: -318341.044, Max-Change: 0.01274Iteration: 248, Log-Lik: -318339.600, Max-Change: 0.02139Iteration: 249, Log-Lik: -318338.212, Max-Change: 0.02008Iteration: 250, Log-Lik: -318335.071, Max-Change: 0.01213Iteration: 251, Log-Lik: -318333.538, Max-Change: 0.01457Iteration: 252, Log-Lik: -318332.166, Max-Change: 0.01212Iteration: 253, Log-Lik: -318329.923, Max-Change: 0.00963Iteration: 254, Log-Lik: -318328.952, Max-Change: 0.02173Iteration: 255, Log-Lik: -318327.772, Max-Change: 0.01891Iteration: 256, Log-Lik: -318326.079, Max-Change: 0.02027Iteration: 257, Log-Lik: -318323.398, Max-Change: 0.01566Iteration: 258, Log-Lik: -318322.281, Max-Change: 0.01735Iteration: 259, Log-Lik: -318320.687, Max-Change: 0.01618Iteration: 260, Log-Lik: -318319.039, Max-Change: 0.00931Iteration: 261, Log-Lik: -318318.132, Max-Change: 0.02536Iteration: 262, Log-Lik: -318316.690, Max-Change: 0.01389Iteration: 263, Log-Lik: -318315.865, Max-Change: 0.03850Iteration: 264, Log-Lik: -318315.051, Max-Change: 0.01185Iteration: 265, Log-Lik: -318314.859, Max-Change: 0.01047Iteration: 266, Log-Lik: -318314.289, Max-Change: 0.06464Iteration: 267, Log-Lik: -318313.437, Max-Change: 0.00917Iteration: 268, Log-Lik: -318313.333, Max-Change: 0.00846Iteration: 269, Log-Lik: -318312.821, Max-Change: 0.00604Iteration: 270, Log-Lik: -318312.380, Max-Change: 0.01882Iteration: 271, Log-Lik: -318311.753, Max-Change: 0.00665Iteration: 272, Log-Lik: -318311.370, Max-Change: 0.00413Iteration: 273, Log-Lik: -318311.191, Max-Change: 0.11226Iteration: 274, Log-Lik: -318310.359, Max-Change: 0.00896Iteration: 275, Log-Lik: -318309.869, Max-Change: 0.01382Iteration: 276, Log-Lik: -318309.460, Max-Change: 0.00567Iteration: 277, Log-Lik: -318309.284, Max-Change: 0.00500Iteration: 278, Log-Lik: -318308.990, Max-Change: 0.00563Iteration: 279, Log-Lik: -318308.690, Max-Change: 0.01726Iteration: 280, Log-Lik: -318308.199, Max-Change: 0.00508Iteration: 281, Log-Lik: -318307.938, Max-Change: 0.00471Iteration: 282, Log-Lik: -318307.695, Max-Change: 0.00285Iteration: 283, Log-Lik: -318307.605, Max-Change: 0.00227Iteration: 284, Log-Lik: -318307.509, Max-Change: 0.05350Iteration: 285, Log-Lik: -318307.010, Max-Change: 0.00723Iteration: 286, Log-Lik: -318306.962, Max-Change: 0.00711Iteration: 287, Log-Lik: -318306.689, Max-Change: 0.00671Iteration: 288, Log-Lik: -318306.451, Max-Change: 0.00312Iteration: 289, Log-Lik: -318306.378, Max-Change: 0.00392Iteration: 290, Log-Lik: -318306.302, Max-Change: 0.00217Iteration: 291, Log-Lik: -318306.297, Max-Change: 0.01163Iteration: 292, Log-Lik: -318306.031, Max-Change: 0.00355Iteration: 293, Log-Lik: -318305.886, Max-Change: 0.00306Iteration: 294, Log-Lik: -318305.806, Max-Change: 0.00728Iteration: 295, Log-Lik: -318305.576, Max-Change: 0.00265Iteration: 296, Log-Lik: -318305.491, Max-Change: 0.00517Iteration: 297, Log-Lik: -318305.321, Max-Change: 0.00321Iteration: 298, Log-Lik: -318305.235, Max-Change: 0.00549Iteration: 299, Log-Lik: -318305.081, Max-Change: 0.00249Iteration: 300, Log-Lik: -318305.004, Max-Change: 0.01313Iteration: 301, Log-Lik: -318304.757, Max-Change: 0.00328Iteration: 302, Log-Lik: -318304.668, Max-Change: 0.00116Iteration: 303, Log-Lik: -318304.662, Max-Change: 0.00410Iteration: 304, Log-Lik: -318304.546, Max-Change: 0.00193Iteration: 305, Log-Lik: -318304.510, Max-Change: 0.00627Iteration: 306, Log-Lik: -318304.380, Max-Change: 0.00265Iteration: 307, Log-Lik: -318304.348, Max-Change: 0.00258Iteration: 308, Log-Lik: -318304.298, Max-Change: 0.00313Iteration: 309, Log-Lik: -318304.221, Max-Change: 0.02389Iteration: 310, Log-Lik: -318303.972, Max-Change: 0.00123Iteration: 311, Log-Lik: -318303.969, Max-Change: 0.00242Iteration: 312, Log-Lik: -318303.883, Max-Change: 0.00403Iteration: 313, Log-Lik: -318303.748, Max-Change: 0.00275Iteration: 314, Log-Lik: -318303.700, Max-Change: 0.00282Iteration: 315, Log-Lik: -318303.640, Max-Change: 0.00137Iteration: 316, Log-Lik: -318303.630, Max-Change: 0.00025Iteration: 317, Log-Lik: -318303.626, Max-Change: 0.00169Iteration: 318, Log-Lik: -318303.590, Max-Change: 0.02593Iteration: 319, Log-Lik: -318303.410, Max-Change: 0.00336Iteration: 320, Log-Lik: -318303.343, Max-Change: 0.00078Iteration: 321, Log-Lik: -318303.331, Max-Change: 0.00280Iteration: 322, Log-Lik: -318303.268, Max-Change: 0.00084Iteration: 323, Log-Lik: -318303.265, Max-Change: 0.00175Iteration: 324, Log-Lik: -318303.227, Max-Change: 0.00021Iteration: 325, Log-Lik: -318303.226, Max-Change: 0.00020Iteration: 326, Log-Lik: -318303.223, Max-Change: 0.00046Iteration: 327, Log-Lik: -318303.218, Max-Change: 0.00053Iteration: 328, Log-Lik: -318303.214, Max-Change: 0.00017Iteration: 329, Log-Lik: -318303.212, Max-Change: 0.00101Iteration: 330, Log-Lik: -318303.191, Max-Change: 0.00053Iteration: 331, Log-Lik: -318303.189, Max-Change: 0.00028Iteration: 332, Log-Lik: -318303.185, Max-Change: 0.00018Iteration: 333, Log-Lik: -318303.184, Max-Change: 0.00112Iteration: 334, Log-Lik: -318303.159, Max-Change: 0.00013Iteration: 335, Log-Lik: -318303.157, Max-Change: 0.00031Iteration: 336, Log-Lik: -318303.154, Max-Change: 0.00024Iteration: 337, Log-Lik: -318303.150, Max-Change: 0.00027Iteration: 338, Log-Lik: -318303.147, Max-Change: 0.00017Iteration: 339, Log-Lik: -318303.144, Max-Change: 0.00046Iteration: 340, Log-Lik: -318303.143, Max-Change: 0.00098Iteration: 341, Log-Lik: -318303.130, Max-Change: 0.00052Iteration: 342, Log-Lik: -318303.119, Max-Change: 0.00012Iteration: 343, Log-Lik: -318303.119, Max-Change: 0.00048Iteration: 344, Log-Lik: -318303.117, Max-Change: 0.00032Iteration: 345, Log-Lik: -318303.115, Max-Change: 0.00023Iteration: 346, Log-Lik: -318303.111, Max-Change: 0.00017Iteration: 347, Log-Lik: -318303.110, Max-Change: 0.00023Iteration: 348, Log-Lik: -318303.107, Max-Change: 0.00038Iteration: 349, Log-Lik: -318303.105, Max-Change: 0.00021Iteration: 350, Log-Lik: -318303.103, Max-Change: 0.00025Iteration: 351, Log-Lik: -318303.100, Max-Change: 0.00048Iteration: 352, Log-Lik: -318303.099, Max-Change: 0.00024Iteration: 353, Log-Lik: -318303.097, Max-Change: 0.00036Iteration: 354, Log-Lik: -318303.094, Max-Change: 0.00014Iteration: 355, Log-Lik: -318303.094, Max-Change: 0.00056Iteration: 356, Log-Lik: -318303.093, Max-Change: 0.00034Iteration: 357, Log-Lik: -318303.090, Max-Change: 0.00048Iteration: 358, Log-Lik: -318303.089, Max-Change: 0.00032Iteration: 359, Log-Lik: -318303.085, Max-Change: 0.00044Iteration: 360, Log-Lik: -318303.084, Max-Change: 0.00025Iteration: 361, Log-Lik: -318303.083, Max-Change: 0.00020Iteration: 362, Log-Lik: -318303.081, Max-Change: 0.00031Iteration: 363, Log-Lik: -318303.079, Max-Change: 0.00059Iteration: 364, Log-Lik: -318303.078, Max-Change: 0.00034Iteration: 365, Log-Lik: -318303.075, Max-Change: 0.00048Iteration: 366, Log-Lik: -318303.074, Max-Change: 0.00020Iteration: 367, Log-Lik: -318303.073, Max-Change: 0.00016Iteration: 368, Log-Lik: -318303.072, Max-Change: 0.00026Iteration: 369, Log-Lik: -318303.069, Max-Change: 0.00067Iteration: 370, Log-Lik: -318303.069, Max-Change: 0.00032Iteration: 371, Log-Lik: -318303.066, Max-Change: 0.00043Iteration: 372, Log-Lik: -318303.064, Max-Change: 0.00025Iteration: 373, Log-Lik: -318303.064, Max-Change: 0.00019Iteration: 374, Log-Lik: -318303.062, Max-Change: 0.00030Iteration: 375, Log-Lik: -318303.060, Max-Change: 0.00058Iteration: 376, Log-Lik: -318303.060, Max-Change: 0.00037Iteration: 377, Log-Lik: -318303.057, Max-Change: 0.00051Iteration: 378, Log-Lik: -318303.055, Max-Change: 0.00022Iteration: 379, Log-Lik: -318303.054, Max-Change: 0.00016Iteration: 380, Log-Lik: -318303.053, Max-Change: 0.00027Iteration: 381, Log-Lik: -318303.051, Max-Change: 0.00070Iteration: 382, Log-Lik: -318303.051, Max-Change: 0.00033Iteration: 383, Log-Lik: -318303.048, Max-Change: 0.00044Iteration: 384, Log-Lik: -318303.046, Max-Change: 0.00026Iteration: 385, Log-Lik: -318303.046, Max-Change: 0.00020Iteration: 386, Log-Lik: -318303.044, Max-Change: 0.00031Iteration: 387, Log-Lik: -318303.042, Max-Change: 0.00059Iteration: 388, Log-Lik: -318303.042, Max-Change: 0.00037Iteration: 389, Log-Lik: -318303.039, Max-Change: 0.00051Iteration: 390, Log-Lik: -318303.038, Max-Change: 0.00022Iteration: 391, Log-Lik: -318303.037, Max-Change: 0.00016Iteration: 392, Log-Lik: -318303.036, Max-Change: 0.00026Iteration: 393, Log-Lik: -318303.034, Max-Change: 0.00069Iteration: 394, Log-Lik: -318303.034, Max-Change: 0.00032Iteration: 395, Log-Lik: -318303.031, Max-Change: 0.00043Iteration: 396, Log-Lik: -318303.029, Max-Change: 0.00025Iteration: 397, Log-Lik: -318303.029, Max-Change: 0.00019Iteration: 398, Log-Lik: -318303.028, Max-Change: 0.00030Iteration: 399, Log-Lik: -318303.026, Max-Change: 0.00057Iteration: 400, Log-Lik: -318303.025, Max-Change: 0.00035Iteration: 401, Log-Lik: -318303.023, Max-Change: 0.00048Iteration: 402, Log-Lik: -318303.021, Max-Change: 0.00021Iteration: 403, Log-Lik: -318303.021, Max-Change: 0.00016Iteration: 404, Log-Lik: -318303.019, Max-Change: 0.00025Iteration: 405, Log-Lik: -318303.017, Max-Change: 0.00066Iteration: 406, Log-Lik: -318303.017, Max-Change: 0.00030Iteration: 407, Log-Lik: -318303.015, Max-Change: 0.00040Iteration: 408, Log-Lik: -318303.013, Max-Change: 0.00023Iteration: 409, Log-Lik: -318303.013, Max-Change: 0.00018Iteration: 410, Log-Lik: -318303.012, Max-Change: 0.00028Iteration: 411, Log-Lik: -318303.010, Max-Change: 0.00011Iteration: 412, Log-Lik: -318303.009, Max-Change: 0.00044Iteration: 413, Log-Lik: -318303.008, Max-Change: 0.00026Iteration: 414, Log-Lik: -318303.007, Max-Change: 0.00037Iteration: 415, Log-Lik: -318303.005, Max-Change: 0.00025Iteration: 416, Log-Lik: -318303.003, Max-Change: 0.00034Iteration: 417, Log-Lik: -318303.002, Max-Change: 0.00019Iteration: 418, Log-Lik: -318303.001, Max-Change: 0.00015Iteration: 419, Log-Lik: -318303.000, Max-Change: 0.00024Iteration: 420, Log-Lik: -318302.998, Max-Change: 0.00046Iteration: 421, Log-Lik: -318302.998, Max-Change: 0.00027Iteration: 422, Log-Lik: -318302.995, Max-Change: 0.00038Iteration: 423, Log-Lik: -318302.994, Max-Change: 0.00016Iteration: 424, Log-Lik: -318302.994, Max-Change: 0.00012Iteration: 425, Log-Lik: -318302.993, Max-Change: 0.00021Iteration: 426, Log-Lik: -318302.991, Max-Change: 0.00052Iteration: 427, Log-Lik: -318302.990, Max-Change: 0.00023Iteration: 428, Log-Lik: -318302.988, Max-Change: 0.00032Iteration: 429, Log-Lik: -318302.987, Max-Change: 0.00018Iteration: 430, Log-Lik: -318302.986, Max-Change: 0.00014Iteration: 431, Log-Lik: -318302.985, Max-Change: 0.00023Iteration: 432, Log-Lik: -318302.984, Max-Change: 0.00042Iteration: 433, Log-Lik: -318302.983, Max-Change: 0.00024Iteration: 434, Log-Lik: -318302.981, Max-Change: 0.00034Iteration: 435, Log-Lik: -318302.980, Max-Change: 0.00014Iteration: 436, Log-Lik: -318302.979, Max-Change: 0.00011Iteration: 437, Log-Lik: -318302.978, Max-Change: 0.00019Iteration: 438, Log-Lik: -318302.976, Max-Change: 0.00046Iteration: 439, Log-Lik: -318302.976, Max-Change: 0.00019Iteration: 440, Log-Lik: -318302.974, Max-Change: 0.00028Iteration: 441, Log-Lik: -318302.973, Max-Change: 0.00015Iteration: 442, Log-Lik: -318302.972, Max-Change: 0.00012Iteration: 443, Log-Lik: -318302.971, Max-Change: 0.00020Iteration: 444, Log-Lik: -318302.970, Max-Change: 0.00040Iteration: 445, Log-Lik: -318302.969, Max-Change: 0.00020Iteration: 446, Log-Lik: -318302.967, Max-Change: 0.00031Iteration: 447, Log-Lik: -318302.966, Max-Change: 0.00014Iteration: 448, Log-Lik: -318302.965, Max-Change: 0.00011Iteration: 449, Log-Lik: -318302.964, Max-Change: 0.00017Iteration: 450, Log-Lik: -318302.963, Max-Change: 0.00044Iteration: 451, Log-Lik: -318302.962, Max-Change: 0.00018Iteration: 452, Log-Lik: -318302.960, Max-Change: 0.00029Iteration: 453, Log-Lik: -318302.959, Max-Change: 0.00014Iteration: 454, Log-Lik: -318302.959, Max-Change: 0.00012Iteration: 455, Log-Lik: -318302.958, Max-Change: 0.00020Iteration: 456, Log-Lik: -318302.956, Max-Change: 0.00043Iteration: 457, Log-Lik: -318302.956, Max-Change: 0.00019Iteration: 458, Log-Lik: -318302.954, Max-Change: 0.00032Iteration: 459, Log-Lik: -318302.953, Max-Change: 0.00014Iteration: 460, Log-Lik: -318302.952, Max-Change: 0.00011Iteration: 461, Log-Lik: -318302.951, Max-Change: 0.00018Iteration: 462, Log-Lik: -318302.950, Max-Change: 0.00046Iteration: 463, Log-Lik: -318302.949, Max-Change: 0.00018Iteration: 464, Log-Lik: -318302.947, Max-Change: 0.00030Iteration: 465, Log-Lik: -318302.946, Max-Change: 0.00015Iteration: 466, Log-Lik: -318302.946, Max-Change: 0.00012Iteration: 467, Log-Lik: -318302.945, Max-Change: 0.00021Iteration: 468, Log-Lik: -318302.943, Max-Change: 0.00044Iteration: 469, Log-Lik: -318302.943, Max-Change: 0.00019Iteration: 470, Log-Lik: -318302.941, Max-Change: 0.00033Iteration: 471, Log-Lik: -318302.940, Max-Change: 0.00014Iteration: 472, Log-Lik: -318302.939, Max-Change: 0.00012Iteration: 473, Log-Lik: -318302.938, Max-Change: 0.00019Iteration: 474, Log-Lik: -318302.937, Max-Change: 0.00047Iteration: 475, Log-Lik: -318302.936, Max-Change: 0.00019Iteration: 476, Log-Lik: -318302.934, Max-Change: 0.00031Iteration: 477, Log-Lik: -318302.933, Max-Change: 0.00015Iteration: 478, Log-Lik: -318302.933, Max-Change: 0.00012Iteration: 479, Log-Lik: -318302.932, Max-Change: 0.00021Iteration: 480, Log-Lik: -318302.930, Max-Change: 0.00045Iteration: 481, Log-Lik: -318302.930, Max-Change: 0.00019Iteration: 482, Log-Lik: -318302.928, Max-Change: 0.00033Iteration: 483, Log-Lik: -318302.927, Max-Change: 0.00015Iteration: 484, Log-Lik: -318302.927, Max-Change: 0.00012Iteration: 485, Log-Lik: -318302.926, Max-Change: 0.00019Iteration: 486, Log-Lik: -318302.924, Max-Change: 0.00048Iteration: 487, Log-Lik: -318302.924, Max-Change: 0.00019Iteration: 488, Log-Lik: -318302.922, Max-Change: 0.00031Iteration: 489, Log-Lik: -318302.921, Max-Change: 0.00015Iteration: 490, Log-Lik: -318302.921, Max-Change: 0.00012Iteration: 491, Log-Lik: -318302.920, Max-Change: 0.00021Iteration: 492, Log-Lik: -318302.918, Max-Change: 0.00046Iteration: 493, Log-Lik: -318302.918, Max-Change: 0.00019Iteration: 494, Log-Lik: -318302.916, Max-Change: 0.00033Iteration: 495, Log-Lik: -318302.915, Max-Change: 0.00015Iteration: 496, Log-Lik: -318302.915, Max-Change: 0.00012Iteration: 497, Log-Lik: -318302.914, Max-Change: 0.00019Iteration: 498, Log-Lik: -318302.912, Max-Change: 0.00048Iteration: 499, Log-Lik: -318302.912, Max-Change: 0.00019Iteration: 500, Log-Lik: -318302.910, Max-Change: 0.00031Iteration: 501, Log-Lik: -318302.909, Max-Change: 0.00015Iteration: 502, Log-Lik: -318302.909, Max-Change: 0.00012Iteration: 503, Log-Lik: -318302.908, Max-Change: 0.00021Iteration: 504, Log-Lik: -318302.906, Max-Change: 0.00046Iteration: 505, Log-Lik: -318302.906, Max-Change: 0.00019Iteration: 506, Log-Lik: -318302.904, Max-Change: 0.00033Iteration: 507, Log-Lik: -318302.903, Max-Change: 0.00015Iteration: 508, Log-Lik: -318302.903, Max-Change: 0.00012Iteration: 509, Log-Lik: -318302.902, Max-Change: 0.00019Iteration: 510, Log-Lik: -318302.900, Max-Change: 0.00047Iteration: 511, Log-Lik: -318302.900, Max-Change: 0.00019Iteration: 512, Log-Lik: -318302.898, Max-Change: 0.00031Iteration: 513, Log-Lik: -318302.897, Max-Change: 0.00015Iteration: 514, Log-Lik: -318302.897, Max-Change: 0.00012Iteration: 515, Log-Lik: -318302.896, Max-Change: 0.00021Iteration: 516, Log-Lik: -318302.895, Max-Change: 0.00045Iteration: 517, Log-Lik: -318302.894, Max-Change: 0.00019Iteration: 518, Log-Lik: -318302.893, Max-Change: 0.00033Iteration: 519, Log-Lik: -318302.892, Max-Change: 0.00015Iteration: 520, Log-Lik: -318302.891, Max-Change: 0.00012Iteration: 521, Log-Lik: -318302.890, Max-Change: 0.00019Iteration: 522, Log-Lik: -318302.889, Max-Change: 0.00047Iteration: 523, Log-Lik: -318302.888, Max-Change: 0.00019Iteration: 524, Log-Lik: -318302.887, Max-Change: 0.00031Iteration: 525, Log-Lik: -318302.886, Max-Change: 0.00015Iteration: 526, Log-Lik: -318302.885, Max-Change: 0.00012Iteration: 527, Log-Lik: -318302.885, Max-Change: 0.00021Iteration: 528, Log-Lik: -318302.883, Max-Change: 0.00045Iteration: 529, Log-Lik: -318302.883, Max-Change: 0.00019Iteration: 530, Log-Lik: -318302.881, Max-Change: 0.00033Iteration: 531, Log-Lik: -318302.880, Max-Change: 0.00014Iteration: 532, Log-Lik: -318302.880, Max-Change: 0.00012Iteration: 533, Log-Lik: -318302.879, Max-Change: 0.00019Iteration: 534, Log-Lik: -318302.878, Max-Change: 0.00047Iteration: 535, Log-Lik: -318302.877, Max-Change: 0.00019Iteration: 536, Log-Lik: -318302.876, Max-Change: 0.00031Iteration: 537, Log-Lik: -318302.875, Max-Change: 0.00015Iteration: 538, Log-Lik: -318302.874, Max-Change: 0.00012Iteration: 539, Log-Lik: -318302.873, Max-Change: 0.00021Iteration: 540, Log-Lik: -318302.872, Max-Change: 0.00045Iteration: 541, Log-Lik: -318302.872, Max-Change: 0.00019Iteration: 542, Log-Lik: -318302.870, Max-Change: 0.00032Iteration: 543, Log-Lik: -318302.869, Max-Change: 0.00014Iteration: 544, Log-Lik: -318302.869, Max-Change: 0.00011Iteration: 545, Log-Lik: -318302.868, Max-Change: 0.00019Iteration: 546, Log-Lik: -318302.867, Max-Change: 0.00046Iteration: 547, Log-Lik: -318302.866, Max-Change: 0.00018Iteration: 548, Log-Lik: -318302.865, Max-Change: 0.00030Iteration: 549, Log-Lik: -318302.864, Max-Change: 0.00015Iteration: 550, Log-Lik: -318302.863, Max-Change: 0.00012Iteration: 551, Log-Lik: -318302.863, Max-Change: 0.00020Iteration: 552, Log-Lik: -318302.861, Max-Change: 0.00044Iteration: 553, Log-Lik: -318302.861, Max-Change: 0.00019Iteration: 554, Log-Lik: -318302.859, Max-Change: 0.00032Iteration: 555, Log-Lik: -318302.858, Max-Change: 0.00014Iteration: 556, Log-Lik: -318302.858, Max-Change: 0.00011Iteration: 557, Log-Lik: -318302.857, Max-Change: 0.00019Iteration: 558, Log-Lik: -318302.856, Max-Change: 0.00046Iteration: 559, Log-Lik: -318302.856, Max-Change: 0.00018Iteration: 560, Log-Lik: -318302.854, Max-Change: 0.00030Iteration: 561, Log-Lik: -318302.853, Max-Change: 0.00015Iteration: 562, Log-Lik: -318302.853, Max-Change: 0.00012Iteration: 563, Log-Lik: -318302.852, Max-Change: 0.00020Iteration: 564, Log-Lik: -318302.851, Max-Change: 0.00044Iteration: 565, Log-Lik: -318302.850, Max-Change: 0.00018Iteration: 566, Log-Lik: -318302.849, Max-Change: 0.00032Iteration: 567, Log-Lik: -318302.848, Max-Change: 0.00014Iteration: 568, Log-Lik: -318302.847, Max-Change: 0.00011Iteration: 569, Log-Lik: -318302.847, Max-Change: 0.00018Iteration: 570, Log-Lik: -318302.845, Max-Change: 0.00046Iteration: 571, Log-Lik: -318302.845, Max-Change: 0.00018Iteration: 572, Log-Lik: -318302.843, Max-Change: 0.00030Iteration: 573, Log-Lik: -318302.843, Max-Change: 0.00014Iteration: 574, Log-Lik: -318302.842, Max-Change: 0.00012Iteration: 575, Log-Lik: -318302.841, Max-Change: 0.00020Iteration: 576, Log-Lik: -318302.840, Max-Change: 0.00044Iteration: 577, Log-Lik: -318302.840, Max-Change: 0.00018Iteration: 578, Log-Lik: -318302.838, Max-Change: 0.00031Iteration: 579, Log-Lik: -318302.837, Max-Change: 0.00014Iteration: 580, Log-Lik: -318302.837, Max-Change: 0.00011Iteration: 581, Log-Lik: -318302.836, Max-Change: 0.00018Iteration: 582, Log-Lik: -318302.835, Max-Change: 0.00045Iteration: 583, Log-Lik: -318302.835, Max-Change: 0.00018Iteration: 584, Log-Lik: -318302.833, Max-Change: 0.00030Iteration: 585, Log-Lik: -318302.832, Max-Change: 0.00014Iteration: 586, Log-Lik: -318302.832, Max-Change: 0.00011Iteration: 587, Log-Lik: -318302.831, Max-Change: 0.00020Iteration: 588, Log-Lik: -318302.830, Max-Change: 0.00043Iteration: 589, Log-Lik: -318302.830, Max-Change: 0.00018Iteration: 590, Log-Lik: -318302.828, Max-Change: 0.00031Iteration: 591, Log-Lik: -318302.827, Max-Change: 0.00014Iteration: 592, Log-Lik: -318302.827, Max-Change: 0.00011Iteration: 593, Log-Lik: -318302.826, Max-Change: 0.00018Iteration: 594, Log-Lik: -318302.825, Max-Change: 0.00045Iteration: 595, Log-Lik: -318302.824, Max-Change: 0.00018Iteration: 596, Log-Lik: -318302.823, Max-Change: 0.00029Iteration: 597, Log-Lik: -318302.822, Max-Change: 0.00014Iteration: 598, Log-Lik: -318302.822, Max-Change: 0.00011Iteration: 599, Log-Lik: -318302.821, Max-Change: 0.00020Iteration: 600, Log-Lik: -318302.820, Max-Change: 0.00043Iteration: 601, Log-Lik: -318302.819, Max-Change: 0.00018Iteration: 602, Log-Lik: -318302.818, Max-Change: 0.00031Iteration: 603, Log-Lik: -318302.817, Max-Change: 0.00014Iteration: 604, Log-Lik: -318302.817, Max-Change: 0.00011Iteration: 605, Log-Lik: -318302.816, Max-Change: 0.00018Iteration: 606, Log-Lik: -318302.815, Max-Change: 0.00044Iteration: 607, Log-Lik: -318302.815, Max-Change: 0.00018Iteration: 608, Log-Lik: -318302.813, Max-Change: 0.00029Iteration: 609, Log-Lik: -318302.812, Max-Change: 0.00014Iteration: 610, Log-Lik: -318302.812, Max-Change: 0.00011Iteration: 611, Log-Lik: -318302.811, Max-Change: 0.00019Iteration: 612, Log-Lik: -318302.810, Max-Change: 0.00042Iteration: 613, Log-Lik: -318302.810, Max-Change: 0.00018Iteration: 614, Log-Lik: -318302.808, Max-Change: 0.00030Iteration: 615, Log-Lik: -318302.807, Max-Change: 0.00014Iteration: 616, Log-Lik: -318302.807, Max-Change: 0.00011Iteration: 617, Log-Lik: -318302.806, Max-Change: 0.00018Iteration: 618, Log-Lik: -318302.805, Max-Change: 0.00044Iteration: 619, Log-Lik: -318302.805, Max-Change: 0.00017Iteration: 620, Log-Lik: -318302.803, Max-Change: 0.00029Iteration: 621, Log-Lik: -318302.803, Max-Change: 0.00014Iteration: 622, Log-Lik: -318302.802, Max-Change: 0.00011Iteration: 623, Log-Lik: -318302.801, Max-Change: 0.00019Iteration: 624, Log-Lik: -318302.800, Max-Change: 0.00042Iteration: 625, Log-Lik: -318302.800, Max-Change: 0.00018Iteration: 626, Log-Lik: -318302.799, Max-Change: 0.00030Iteration: 627, Log-Lik: -318302.798, Max-Change: 0.00013Iteration: 628, Log-Lik: -318302.797, Max-Change: 0.00011Iteration: 629, Log-Lik: -318302.797, Max-Change: 0.00018Iteration: 630, Log-Lik: -318302.795, Max-Change: 0.00044Iteration: 631, Log-Lik: -318302.795, Max-Change: 0.00017Iteration: 632, Log-Lik: -318302.794, Max-Change: 0.00029Iteration: 633, Log-Lik: -318302.793, Max-Change: 0.00014Iteration: 634, Log-Lik: -318302.793, Max-Change: 0.00011Iteration: 635, Log-Lik: -318302.792, Max-Change: 0.00019Iteration: 636, Log-Lik: -318302.791, Max-Change: 0.00042Iteration: 637, Log-Lik: -318302.790, Max-Change: 0.00017Iteration: 638, Log-Lik: -318302.789, Max-Change: 0.00030Iteration: 639, Log-Lik: -318302.788, Max-Change: 0.00013Iteration: 640, Log-Lik: -318302.788, Max-Change: 0.00011Iteration: 641, Log-Lik: -318302.787, Max-Change: 0.00018Iteration: 642, Log-Lik: -318302.786, Max-Change: 0.00043Iteration: 643, Log-Lik: -318302.786, Max-Change: 0.00017Iteration: 644, Log-Lik: -318302.784, Max-Change: 0.00028Iteration: 645, Log-Lik: -318302.784, Max-Change: 0.00014Iteration: 646, Log-Lik: -318302.783, Max-Change: 0.00011Iteration: 647, Log-Lik: -318302.782, Max-Change: 0.00019Iteration: 648, Log-Lik: -318302.781, Max-Change: 0.00041Iteration: 649, Log-Lik: -318302.781, Max-Change: 0.00017Iteration: 650, Log-Lik: -318302.780, Max-Change: 0.00030Iteration: 651, Log-Lik: -318302.779, Max-Change: 0.00013Iteration: 652, Log-Lik: -318302.779, Max-Change: 0.00011Iteration: 653, Log-Lik: -318302.778, Max-Change: 0.00017Iteration: 654, Log-Lik: -318302.777, Max-Change: 0.00043Iteration: 655, Log-Lik: -318302.776, Max-Change: 0.00017Iteration: 656, Log-Lik: -318302.775, Max-Change: 0.00028Iteration: 657, Log-Lik: -318302.774, Max-Change: 0.00014Iteration: 658, Log-Lik: -318302.774, Max-Change: 0.00011Iteration: 659, Log-Lik: -318302.773, Max-Change: 0.00019Iteration: 660, Log-Lik: -318302.772, Max-Change: 0.00041Iteration: 661, Log-Lik: -318302.772, Max-Change: 0.00017Iteration: 662, Log-Lik: -318302.770, Max-Change: 0.00029Iteration: 663, Log-Lik: -318302.770, Max-Change: 0.00013Iteration: 664, Log-Lik: -318302.769, Max-Change: 0.00011Iteration: 665, Log-Lik: -318302.769, Max-Change: 0.00017Iteration: 666, Log-Lik: -318302.768, Max-Change: 0.00042Iteration: 667, Log-Lik: -318302.767, Max-Change: 0.00017Iteration: 668, Log-Lik: -318302.766, Max-Change: 0.00028Iteration: 669, Log-Lik: -318302.765, Max-Change: 0.00013Iteration: 670, Log-Lik: -318302.765, Max-Change: 0.00011Iteration: 671, Log-Lik: -318302.764, Max-Change: 0.00019Iteration: 672, Log-Lik: -318302.763, Max-Change: 0.00041Iteration: 673, Log-Lik: -318302.763, Max-Change: 0.00017Iteration: 674, Log-Lik: -318302.761, Max-Change: 0.00029Iteration: 675, Log-Lik: -318302.761, Max-Change: 0.00013Iteration: 676, Log-Lik: -318302.760, Max-Change: 0.00010Iteration: 677, Log-Lik: -318302.760, Max-Change: 0.00017Iteration: 678, Log-Lik: -318302.759, Max-Change: 0.00042Iteration: 679, Log-Lik: -318302.758, Max-Change: 0.00017Iteration: 680, Log-Lik: -318302.757, Max-Change: 0.00028Iteration: 681, Log-Lik: -318302.756, Max-Change: 0.00013Iteration: 682, Log-Lik: -318302.756, Max-Change: 0.00011Iteration: 683, Log-Lik: -318302.755, Max-Change: 0.00019Iteration: 684, Log-Lik: -318302.754, Max-Change: 0.00040Iteration: 685, Log-Lik: -318302.754, Max-Change: 0.00017Iteration: 686, Log-Lik: -318302.752, Max-Change: 0.00029Iteration: 687, Log-Lik: -318302.752, Max-Change: 0.00013Iteration: 688, Log-Lik: -318302.751, Max-Change: 0.00010Iteration: 689, Log-Lik: -318302.751, Max-Change: 0.00017Iteration: 690, Log-Lik: -318302.750, Max-Change: 0.00042Iteration: 691, Log-Lik: -318302.749, Max-Change: 0.00017Iteration: 692, Log-Lik: -318302.748, Max-Change: 0.00027Iteration: 693, Log-Lik: -318302.747, Max-Change: 0.00013Iteration: 694, Log-Lik: -318302.747, Max-Change: 0.00011Iteration: 695, Log-Lik: -318302.746, Max-Change: 0.00018Iteration: 696, Log-Lik: -318302.745, Max-Change: 0.00040Iteration: 697, Log-Lik: -318302.745, Max-Change: 0.00017Iteration: 698, Log-Lik: -318302.744, Max-Change: 0.00029Iteration: 699, Log-Lik: -318302.743, Max-Change: 0.00013Iteration: 700, Log-Lik: -318302.743, Max-Change: 0.00010Iteration: 701, Log-Lik: -318302.742, Max-Change: 0.00017Iteration: 702, Log-Lik: -318302.741, Max-Change: 0.00041Iteration: 703, Log-Lik: -318302.741, Max-Change: 0.00016Iteration: 704, Log-Lik: -318302.739, Max-Change: 0.00027Iteration: 705, Log-Lik: -318302.739, Max-Change: 0.00013Iteration: 706, Log-Lik: -318302.738, Max-Change: 0.00011Iteration: 707, Log-Lik: -318302.738, Max-Change: 0.00018Iteration: 708, Log-Lik: -318302.737, Max-Change: 0.00040Iteration: 709, Log-Lik: -318302.736, Max-Change: 0.00017Iteration: 710, Log-Lik: -318302.735, Max-Change: 0.00029Iteration: 711, Log-Lik: -318302.734, Max-Change: 0.00013Iteration: 712, Log-Lik: -318302.734, Max-Change: 0.00010Iteration: 713, Log-Lik: -318302.733, Max-Change: 0.00017Iteration: 714, Log-Lik: -318302.732, Max-Change: 0.00041Iteration: 715, Log-Lik: -318302.732, Max-Change: 0.00016Iteration: 716, Log-Lik: -318302.731, Max-Change: 0.00027Iteration: 717, Log-Lik: -318302.730, Max-Change: 0.00013Iteration: 718, Log-Lik: -318302.730, Max-Change: 0.00010Iteration: 719, Log-Lik: -318302.729, Max-Change: 0.00018Iteration: 720, Log-Lik: -318302.728, Max-Change: 0.00040Iteration: 721, Log-Lik: -318302.728, Max-Change: 0.00017Iteration: 722, Log-Lik: -318302.726, Max-Change: 0.00028Iteration: 723, Log-Lik: -318302.726, Max-Change: 0.00013Iteration: 724, Log-Lik: -318302.725, Max-Change: 0.00010Iteration: 725, Log-Lik: -318302.725, Max-Change: 0.00017Iteration: 726, Log-Lik: -318302.724, Max-Change: 0.00041Iteration: 727, Log-Lik: -318302.723, Max-Change: 0.00016Iteration: 728, Log-Lik: -318302.722, Max-Change: 0.00027Iteration: 729, Log-Lik: -318302.722, Max-Change: 0.00013Iteration: 730, Log-Lik: -318302.721, Max-Change: 0.00010Iteration: 731, Log-Lik: -318302.721, Max-Change: 0.00018Iteration: 732, Log-Lik: -318302.720, Max-Change: 0.00039Iteration: 733, Log-Lik: -318302.719, Max-Change: 0.00016Iteration: 734, Log-Lik: -318302.718, Max-Change: 0.00028Iteration: 735, Log-Lik: -318302.717, Max-Change: 0.00013Iteration: 736, Log-Lik: -318302.717, Max-Change: 0.00010Iteration: 737, Log-Lik: -318302.716, Max-Change: 0.00017Iteration: 738, Log-Lik: -318302.715, Max-Change: 0.00040Iteration: 739, Log-Lik: -318302.715, Max-Change: 0.00016Iteration: 740, Log-Lik: -318302.714, Max-Change: 0.00027Iteration: 741, Log-Lik: -318302.713, Max-Change: 0.00013Iteration: 742, Log-Lik: -318302.713, Max-Change: 0.00010Iteration: 743, Log-Lik: -318302.712, Max-Change: 0.00018Iteration: 744, Log-Lik: -318302.711, Max-Change: 0.00039Iteration: 745, Log-Lik: -318302.711, Max-Change: 0.00016Iteration: 746, Log-Lik: -318302.710, Max-Change: 0.00028Iteration: 747, Log-Lik: -318302.709, Max-Change: 0.00012Iteration: 748, Log-Lik: -318302.709, Max-Change: 0.00010
+Iteration: 1, Log-Lik: -566378.366, Max-Change: 0.97330Iteration: 2, Log-Lik: -492442.249, Max-Change: 0.59497Iteration: 3, Log-Lik: -468581.891, Max-Change: 0.60253Iteration: 4, Log-Lik: -440577.754, Max-Change: 0.85307Iteration: 5, Log-Lik: -416564.634, Max-Change: 0.91488Iteration: 6, Log-Lik: -399878.441, Max-Change: 1.61025Iteration: 7, Log-Lik: -383294.681, Max-Change: 1.21616Iteration: 8, Log-Lik: -371067.722, Max-Change: 2.06306Iteration: 9, Log-Lik: -361996.510, Max-Change: 1.34074Iteration: 10, Log-Lik: -353206.969, Max-Change: 1.68873Iteration: 11, Log-Lik: -346508.784, Max-Change: 1.61638Iteration: 12, Log-Lik: -342241.761, Max-Change: 1.28088Iteration: 13, Log-Lik: -339996.524, Max-Change: 0.56922Iteration: 14, Log-Lik: -338427.614, Max-Change: 0.50607Iteration: 15, Log-Lik: -337019.553, Max-Change: 0.44502Iteration: 16, Log-Lik: -335811.400, Max-Change: 0.41511Iteration: 17, Log-Lik: -334744.873, Max-Change: 0.43416Iteration: 18, Log-Lik: -333787.460, Max-Change: 0.42140Iteration: 19, Log-Lik: -332925.214, Max-Change: 0.36430Iteration: 20, Log-Lik: -332163.058, Max-Change: 0.36052Iteration: 21, Log-Lik: -331459.988, Max-Change: 0.33791Iteration: 22, Log-Lik: -330819.820, Max-Change: 0.34659Iteration: 23, Log-Lik: -330207.757, Max-Change: 0.29315Iteration: 24, Log-Lik: -329651.061, Max-Change: 0.35275Iteration: 25, Log-Lik: -328309.641, Max-Change: 0.20614Iteration: 26, Log-Lik: -327824.185, Max-Change: 0.24279Iteration: 27, Log-Lik: -327070.318, Max-Change: 0.19461Iteration: 28, Log-Lik: -326636.906, Max-Change: 0.20878Iteration: 29, Log-Lik: -326204.785, Max-Change: 0.20332Iteration: 30, Log-Lik: -325795.926, Max-Change: 0.19629Iteration: 31, Log-Lik: -325408.681, Max-Change: 0.18220Iteration: 32, Log-Lik: -325055.516, Max-Change: 0.19084Iteration: 33, Log-Lik: -324744.057, Max-Change: 0.15722Iteration: 34, Log-Lik: -324457.872, Max-Change: 0.15411Iteration: 35, Log-Lik: -324154.147, Max-Change: 0.20417Iteration: 36, Log-Lik: -323683.127, Max-Change: 0.14212Iteration: 37, Log-Lik: -323406.037, Max-Change: 0.14495Iteration: 38, Log-Lik: -323145.338, Max-Change: 0.13755Iteration: 39, Log-Lik: -322884.806, Max-Change: 0.13934Iteration: 40, Log-Lik: -322727.542, Max-Change: 0.21057Iteration: 41, Log-Lik: -322458.153, Max-Change: 0.18132Iteration: 42, Log-Lik: -322225.471, Max-Change: 0.10892Iteration: 43, Log-Lik: -322083.051, Max-Change: 0.15224Iteration: 44, Log-Lik: -321913.718, Max-Change: 0.12060Iteration: 45, Log-Lik: -321740.203, Max-Change: 0.11197Iteration: 46, Log-Lik: -321588.981, Max-Change: 0.11280Iteration: 47, Log-Lik: -321443.077, Max-Change: 0.11069Iteration: 48, Log-Lik: -321335.413, Max-Change: 0.10861Iteration: 49, Log-Lik: -321212.465, Max-Change: 0.09540Iteration: 50, Log-Lik: -321093.370, Max-Change: 0.10931Iteration: 51, Log-Lik: -320956.814, Max-Change: 0.11441Iteration: 52, Log-Lik: -320844.653, Max-Change: 0.10974Iteration: 53, Log-Lik: -320733.004, Max-Change: 0.08977Iteration: 54, Log-Lik: -320633.685, Max-Change: 0.08588Iteration: 55, Log-Lik: -320547.757, Max-Change: 0.08688Iteration: 56, Log-Lik: -320450.230, Max-Change: 0.08945Iteration: 57, Log-Lik: -320374.613, Max-Change: 0.09818Iteration: 58, Log-Lik: -320274.796, Max-Change: 0.08382Iteration: 59, Log-Lik: -320204.420, Max-Change: 0.07832Iteration: 60, Log-Lik: -320129.772, Max-Change: 0.08452Iteration: 61, Log-Lik: -320062.270, Max-Change: 0.08276Iteration: 62, Log-Lik: -320002.890, Max-Change: 0.11159Iteration: 63, Log-Lik: -319942.184, Max-Change: 0.10262Iteration: 64, Log-Lik: -319888.136, Max-Change: 0.06923Iteration: 65, Log-Lik: -319841.721, Max-Change: 0.09645Iteration: 66, Log-Lik: -319794.495, Max-Change: 0.10080Iteration: 67, Log-Lik: -319749.267, Max-Change: 0.11765Iteration: 68, Log-Lik: -319712.080, Max-Change: 0.07488Iteration: 69, Log-Lik: -319676.332, Max-Change: 0.05847Iteration: 70, Log-Lik: -319643.627, Max-Change: 0.05771Iteration: 71, Log-Lik: -319612.084, Max-Change: 0.05686Iteration: 72, Log-Lik: -319586.193, Max-Change: 0.05618Iteration: 73, Log-Lik: -319561.275, Max-Change: 0.05776Iteration: 74, Log-Lik: -319530.797, Max-Change: 0.05421Iteration: 75, Log-Lik: -319507.477, Max-Change: 0.05264Iteration: 76, Log-Lik: -319477.409, Max-Change: 0.05064Iteration: 77, Log-Lik: -319453.676, Max-Change: 0.05140Iteration: 78, Log-Lik: -319424.654, Max-Change: 0.04788Iteration: 79, Log-Lik: -319395.877, Max-Change: 0.04489Iteration: 80, Log-Lik: -319374.413, Max-Change: 0.04362Iteration: 81, Log-Lik: -319353.328, Max-Change: 0.04459Iteration: 82, Log-Lik: -319325.152, Max-Change: 0.04053Iteration: 83, Log-Lik: -319298.863, Max-Change: 0.04166Iteration: 84, Log-Lik: -319273.217, Max-Change: 0.03963Iteration: 85, Log-Lik: -319245.884, Max-Change: 0.04338Iteration: 86, Log-Lik: -319215.889, Max-Change: 0.04241Iteration: 87, Log-Lik: -319186.611, Max-Change: 0.04287Iteration: 88, Log-Lik: -319154.639, Max-Change: 0.04542Iteration: 89, Log-Lik: -319128.317, Max-Change: 0.04684Iteration: 90, Log-Lik: -319089.419, Max-Change: 0.05212Iteration: 91, Log-Lik: -319055.646, Max-Change: 0.04800Iteration: 92, Log-Lik: -319029.834, Max-Change: 0.06959Iteration: 93, Log-Lik: -318989.636, Max-Change: 0.05083Iteration: 94, Log-Lik: -318957.653, Max-Change: 0.05561Iteration: 95, Log-Lik: -318918.764, Max-Change: 0.05562Iteration: 96, Log-Lik: -318887.250, Max-Change: 0.05313Iteration: 97, Log-Lik: -318855.882, Max-Change: 0.05519Iteration: 98, Log-Lik: -318828.233, Max-Change: 0.05674Iteration: 99, Log-Lik: -318796.193, Max-Change: 0.05303Iteration: 100, Log-Lik: -318768.175, Max-Change: 0.05073Iteration: 101, Log-Lik: -318744.381, Max-Change: 0.06170Iteration: 102, Log-Lik: -318718.901, Max-Change: 0.05361Iteration: 103, Log-Lik: -318696.606, Max-Change: 0.05345Iteration: 104, Log-Lik: -318672.915, Max-Change: 0.06306Iteration: 105, Log-Lik: -318650.475, Max-Change: 0.04635Iteration: 106, Log-Lik: -318632.057, Max-Change: 0.04045Iteration: 107, Log-Lik: -318616.313, Max-Change: 0.04198Iteration: 108, Log-Lik: -318599.949, Max-Change: 0.03888Iteration: 109, Log-Lik: -318586.785, Max-Change: 0.03956Iteration: 110, Log-Lik: -318574.958, Max-Change: 0.04596Iteration: 111, Log-Lik: -318563.411, Max-Change: 0.04675Iteration: 112, Log-Lik: -318552.039, Max-Change: 0.03708Iteration: 113, Log-Lik: -318542.679, Max-Change: 0.03441Iteration: 114, Log-Lik: -318534.534, Max-Change: 0.03374Iteration: 115, Log-Lik: -318526.868, Max-Change: 0.03332Iteration: 116, Log-Lik: -318520.839, Max-Change: 0.04101Iteration: 117, Log-Lik: -318513.713, Max-Change: 0.03774Iteration: 118, Log-Lik: -318507.453, Max-Change: 0.03255Iteration: 119, Log-Lik: -318501.740, Max-Change: 0.03309Iteration: 120, Log-Lik: -318496.608, Max-Change: 0.04934Iteration: 121, Log-Lik: -318491.516, Max-Change: 0.03656Iteration: 122, Log-Lik: -318486.419, Max-Change: 0.02740Iteration: 123, Log-Lik: -318483.335, Max-Change: 0.04998Iteration: 124, Log-Lik: -318476.683, Max-Change: 0.05553Iteration: 125, Log-Lik: -318471.186, Max-Change: 0.01953Iteration: 126, Log-Lik: -318468.159, Max-Change: 0.02431Iteration: 127, Log-Lik: -318464.030, Max-Change: 0.03373Iteration: 128, Log-Lik: -318461.405, Max-Change: 0.02341Iteration: 129, Log-Lik: -318459.445, Max-Change: 0.02387Iteration: 130, Log-Lik: -318456.356, Max-Change: 0.01782Iteration: 131, Log-Lik: -318454.795, Max-Change: 0.02208Iteration: 132, Log-Lik: -318453.171, Max-Change: 0.03456Iteration: 133, Log-Lik: -318449.607, Max-Change: 0.01821Iteration: 134, Log-Lik: -318447.675, Max-Change: 0.01300Iteration: 135, Log-Lik: -318446.498, Max-Change: 0.05126Iteration: 136, Log-Lik: -318444.897, Max-Change: 0.02181Iteration: 137, Log-Lik: -318443.454, Max-Change: 0.01431Iteration: 138, Log-Lik: -318442.321, Max-Change: 0.04919Iteration: 139, Log-Lik: -318441.071, Max-Change: 0.01828Iteration: 140, Log-Lik: -318439.891, Max-Change: 0.02458Iteration: 141, Log-Lik: -318439.055, Max-Change: 0.08691Iteration: 142, Log-Lik: -318437.519, Max-Change: 0.01281Iteration: 143, Log-Lik: -318436.609, Max-Change: 0.06437Iteration: 144, Log-Lik: -318435.809, Max-Change: 0.01009Iteration: 145, Log-Lik: -318435.673, Max-Change: 0.00892Iteration: 146, Log-Lik: -318435.093, Max-Change: 0.00437Iteration: 147, Log-Lik: -318434.644, Max-Change: 0.12742Iteration: 148, Log-Lik: -318433.666, Max-Change: 0.01036Iteration: 149, Log-Lik: -318432.989, Max-Change: 0.00756Iteration: 150, Log-Lik: -318432.517, Max-Change: 0.00523Iteration: 151, Log-Lik: -318431.033, Max-Change: 0.00865Iteration: 152, Log-Lik: -318430.440, Max-Change: 0.00442Iteration: 153, Log-Lik: -318429.991, Max-Change: 0.01880Iteration: 154, Log-Lik: -318429.438, Max-Change: 0.00357Iteration: 155, Log-Lik: -318429.081, Max-Change: 0.00479Iteration: 156, Log-Lik: -318428.714, Max-Change: 0.00336Iteration: 157, Log-Lik: -318427.924, Max-Change: 0.00647Iteration: 158, Log-Lik: -318427.533, Max-Change: 0.02481Iteration: 159, Log-Lik: -318427.001, Max-Change: 0.00451Iteration: 160, Log-Lik: -318426.903, Max-Change: 0.00411Iteration: 161, Log-Lik: -318426.529, Max-Change: 0.00440Iteration: 162, Log-Lik: -318426.308, Max-Change: 0.00581Iteration: 163, Log-Lik: -318425.833, Max-Change: 0.00426Iteration: 164, Log-Lik: -318425.424, Max-Change: 0.04126Iteration: 165, Log-Lik: -318424.887, Max-Change: 0.00434Iteration: 166, Log-Lik: -318424.831, Max-Change: 0.00471Iteration: 167, Log-Lik: -318424.458, Max-Change: 0.00340Iteration: 168, Log-Lik: -318424.138, Max-Change: 0.00284Iteration: 169, Log-Lik: -318423.896, Max-Change: 0.00566Iteration: 170, Log-Lik: -318423.486, Max-Change: 0.00721Iteration: 171, Log-Lik: -318423.089, Max-Change: 0.00478Iteration: 172, Log-Lik: -318423.007, Max-Change: 0.00405Iteration: 173, Log-Lik: -318422.677, Max-Change: 0.00389Iteration: 174, Log-Lik: -318422.327, Max-Change: 0.00315Iteration: 175, Log-Lik: -318422.121, Max-Change: 0.01124Iteration: 176, Log-Lik: -318421.669, Max-Change: 0.00539Iteration: 177, Log-Lik: -318421.267, Max-Change: 0.00679Iteration: 178, Log-Lik: -318421.028, Max-Change: 0.00548Iteration: 179, Log-Lik: -318420.674, Max-Change: 0.01263Iteration: 180, Log-Lik: -318420.210, Max-Change: 0.00451Iteration: 181, Log-Lik: -318420.050, Max-Change: 0.00438Iteration: 182, Log-Lik: -318419.694, Max-Change: 0.00403Iteration: 183, Log-Lik: -318419.380, Max-Change: 0.00403Iteration: 184, Log-Lik: -318419.004, Max-Change: 0.01427Iteration: 185, Log-Lik: -318418.524, Max-Change: 0.00473Iteration: 186, Log-Lik: -318418.123, Max-Change: 0.00510Iteration: 187, Log-Lik: -318417.010, Max-Change: 0.00910Iteration: 188, Log-Lik: -318416.572, Max-Change: 0.00369Iteration: 189, Log-Lik: -318416.196, Max-Change: 0.00337Iteration: 190, Log-Lik: -318414.659, Max-Change: 0.00868Iteration: 191, Log-Lik: -318414.201, Max-Change: 0.01544Iteration: 192, Log-Lik: -318413.615, Max-Change: 0.00557Iteration: 193, Log-Lik: -318413.457, Max-Change: 0.00488Iteration: 194, Log-Lik: -318413.014, Max-Change: 0.00443Iteration: 195, Log-Lik: -318412.581, Max-Change: 0.01206Iteration: 196, Log-Lik: -318411.879, Max-Change: 0.00460Iteration: 197, Log-Lik: -318411.423, Max-Change: 0.00568Iteration: 198, Log-Lik: -318410.941, Max-Change: 0.00487Iteration: 199, Log-Lik: -318409.317, Max-Change: 0.00946Iteration: 200, Log-Lik: -318408.546, Max-Change: 0.01917Iteration: 201, Log-Lik: -318407.829, Max-Change: 0.00663Iteration: 202, Log-Lik: -318407.625, Max-Change: 0.00557Iteration: 203, Log-Lik: -318407.070, Max-Change: 0.00608Iteration: 204, Log-Lik: -318406.472, Max-Change: 0.00397Iteration: 205, Log-Lik: -318405.405, Max-Change: 0.01471Iteration: 206, Log-Lik: -318404.735, Max-Change: 0.00545Iteration: 207, Log-Lik: -318404.136, Max-Change: 0.01687Iteration: 208, Log-Lik: -318403.194, Max-Change: 0.00637Iteration: 209, Log-Lik: -318402.471, Max-Change: 0.00545Iteration: 210, Log-Lik: -318401.808, Max-Change: 0.02025Iteration: 211, Log-Lik: -318400.706, Max-Change: 0.00726Iteration: 212, Log-Lik: -318399.939, Max-Change: 0.00499Iteration: 213, Log-Lik: -318399.334, Max-Change: 0.01617Iteration: 214, Log-Lik: -318398.060, Max-Change: 0.00670Iteration: 215, Log-Lik: -318397.339, Max-Change: 0.00567Iteration: 216, Log-Lik: -318396.602, Max-Change: 0.01505Iteration: 217, Log-Lik: -318395.457, Max-Change: 0.00766Iteration: 218, Log-Lik: -318394.621, Max-Change: 0.00696Iteration: 219, Log-Lik: -318393.752, Max-Change: 0.00637Iteration: 220, Log-Lik: -318389.106, Max-Change: 0.01360Iteration: 221, Log-Lik: -318387.682, Max-Change: 0.00727Iteration: 222, Log-Lik: -318386.960, Max-Change: 0.01167Iteration: 223, Log-Lik: -318385.622, Max-Change: 0.00986Iteration: 224, Log-Lik: -318384.582, Max-Change: 0.01322Iteration: 225, Log-Lik: -318383.317, Max-Change: 0.01026Iteration: 226, Log-Lik: -318381.243, Max-Change: 0.01064Iteration: 227, Log-Lik: -318379.616, Max-Change: 0.01195Iteration: 228, Log-Lik: -318377.877, Max-Change: 0.01363Iteration: 229, Log-Lik: -318372.828, Max-Change: 0.01072Iteration: 230, Log-Lik: -318370.938, Max-Change: 0.00954Iteration: 231, Log-Lik: -318369.616, Max-Change: 0.01138Iteration: 232, Log-Lik: -318368.106, Max-Change: 0.01540Iteration: 233, Log-Lik: -318362.576, Max-Change: 0.01171Iteration: 234, Log-Lik: -318359.838, Max-Change: 0.01566Iteration: 235, Log-Lik: -318356.172, Max-Change: 0.01419Iteration: 236, Log-Lik: -318354.302, Max-Change: 0.01327Iteration: 237, Log-Lik: -318352.104, Max-Change: 0.01481Iteration: 238, Log-Lik: -318350.663, Max-Change: 0.01209Iteration: 239, Log-Lik: -318347.073, Max-Change: 0.01335Iteration: 240, Log-Lik: -318345.120, Max-Change: 0.01418Iteration: 241, Log-Lik: -318356.786, Max-Change: 0.02175Iteration: 242, Log-Lik: -318341.005, Max-Change: 0.01578Iteration: 243, Log-Lik: -318335.909, Max-Change: 0.01516Iteration: 244, Log-Lik: -318333.205, Max-Change: 0.02028Iteration: 245, Log-Lik: -318331.421, Max-Change: 0.01603Iteration: 246, Log-Lik: -318329.301, Max-Change: 0.01904Iteration: 247, Log-Lik: -318326.267, Max-Change: 0.01917Iteration: 248, Log-Lik: -318323.963, Max-Change: 0.02006Iteration: 249, Log-Lik: -318322.304, Max-Change: 0.01385Iteration: 250, Log-Lik: -318320.066, Max-Change: 0.01987Iteration: 251, Log-Lik: -318318.494, Max-Change: 0.01588Iteration: 252, Log-Lik: -318316.904, Max-Change: 0.01367Iteration: 253, Log-Lik: -318312.438, Max-Change: 0.01572Iteration: 254, Log-Lik: -318310.353, Max-Change: 0.01954Iteration: 255, Log-Lik: -318308.925, Max-Change: 0.01964Iteration: 256, Log-Lik: -318306.299, Max-Change: 0.03017Iteration: 257, Log-Lik: -318301.862, Max-Change: 0.01506Iteration: 258, Log-Lik: -318299.891, Max-Change: 0.01549Iteration: 259, Log-Lik: -318297.830, Max-Change: 0.01434Iteration: 260, Log-Lik: -318296.465, Max-Change: 0.01701Iteration: 261, Log-Lik: -318295.302, Max-Change: 0.01407Iteration: 262, Log-Lik: -318292.597, Max-Change: 0.01296Iteration: 263, Log-Lik: -318291.401, Max-Change: 0.01979Iteration: 264, Log-Lik: -318290.507, Max-Change: 0.04627Iteration: 265, Log-Lik: -318288.387, Max-Change: 0.01338Iteration: 266, Log-Lik: -318287.291, Max-Change: 0.01006Iteration: 267, Log-Lik: -318286.495, Max-Change: 0.03155Iteration: 268, Log-Lik: -318285.389, Max-Change: 0.01098Iteration: 269, Log-Lik: -318284.744, Max-Change: 0.04943Iteration: 270, Log-Lik: -318284.009, Max-Change: 0.00928Iteration: 271, Log-Lik: -318283.837, Max-Change: 0.00872Iteration: 272, Log-Lik: -318283.223, Max-Change: 0.00679Iteration: 273, Log-Lik: -318282.760, Max-Change: 0.00614Iteration: 274, Log-Lik: -318282.464, Max-Change: 0.07494Iteration: 275, Log-Lik: -318281.644, Max-Change: 0.00795Iteration: 276, Log-Lik: -318281.163, Max-Change: 0.04675Iteration: 277, Log-Lik: -318280.558, Max-Change: 0.00688Iteration: 278, Log-Lik: -318280.105, Max-Change: 0.00665Iteration: 279, Log-Lik: -318279.703, Max-Change: 0.02060Iteration: 280, Log-Lik: -318279.116, Max-Change: 0.00640Iteration: 281, Log-Lik: -318278.750, Max-Change: 0.00559Iteration: 282, Log-Lik: -318278.465, Max-Change: 0.00910Iteration: 283, Log-Lik: -318278.024, Max-Change: 0.02653Iteration: 284, Log-Lik: -318277.574, Max-Change: 0.00681Iteration: 285, Log-Lik: -318277.282, Max-Change: 0.00646Iteration: 286, Log-Lik: -318276.347, Max-Change: 0.01180Iteration: 287, Log-Lik: -318276.000, Max-Change: 0.00389Iteration: 288, Log-Lik: -318275.852, Max-Change: 0.01023Iteration: 289, Log-Lik: -318275.546, Max-Change: 0.00579Iteration: 290, Log-Lik: -318275.358, Max-Change: 0.00270Iteration: 291, Log-Lik: -318275.235, Max-Change: 0.02924Iteration: 292, Log-Lik: -318274.893, Max-Change: 0.00416Iteration: 293, Log-Lik: -318274.710, Max-Change: 0.00240Iteration: 294, Log-Lik: -318274.643, Max-Change: 0.00496Iteration: 295, Log-Lik: -318274.470, Max-Change: 0.00191Iteration: 296, Log-Lik: -318274.459, Max-Change: 0.01365Iteration: 297, Log-Lik: -318274.243, Max-Change: 0.00466Iteration: 298, Log-Lik: -318274.176, Max-Change: 0.00255Iteration: 299, Log-Lik: -318274.094, Max-Change: 0.00389Iteration: 300, Log-Lik: -318273.975, Max-Change: 0.00219Iteration: 301, Log-Lik: -318273.950, Max-Change: 0.00170Iteration: 302, Log-Lik: -318273.899, Max-Change: 0.00976Iteration: 303, Log-Lik: -318273.748, Max-Change: 0.00371Iteration: 304, Log-Lik: -318273.702, Max-Change: 0.00404Iteration: 305, Log-Lik: -318273.585, Max-Change: 0.00443Iteration: 306, Log-Lik: -318273.474, Max-Change: 0.00280Iteration: 307, Log-Lik: -318273.442, Max-Change: 0.00197Iteration: 308, Log-Lik: -318273.412, Max-Change: 0.00094Iteration: 309, Log-Lik: -318273.408, Max-Change: 0.02239Iteration: 310, Log-Lik: -318273.210, Max-Change: 0.00381Iteration: 311, Log-Lik: -318273.115, Max-Change: 0.00461Iteration: 312, Log-Lik: -318273.035, Max-Change: 0.00129Iteration: 313, Log-Lik: -318273.031, Max-Change: 0.00170Iteration: 314, Log-Lik: -318273.001, Max-Change: 0.00184Iteration: 315, Log-Lik: -318272.961, Max-Change: 0.00183Iteration: 316, Log-Lik: -318272.953, Max-Change: 0.00180Iteration: 317, Log-Lik: -318272.914, Max-Change: 0.00388Iteration: 318, Log-Lik: -318272.835, Max-Change: 0.00141Iteration: 319, Log-Lik: -318272.827, Max-Change: 0.00143Iteration: 320, Log-Lik: -318272.799, Max-Change: 0.00159Iteration: 321, Log-Lik: -318272.768, Max-Change: 0.00136Iteration: 322, Log-Lik: -318272.761, Max-Change: 0.00162Iteration: 323, Log-Lik: -318272.723, Max-Change: 0.00118Iteration: 324, Log-Lik: -318272.710, Max-Change: 0.00069Iteration: 325, Log-Lik: -318272.700, Max-Change: 0.00020Iteration: 326, Log-Lik: -318272.698, Max-Change: 0.00116Iteration: 327, Log-Lik: -318272.679, Max-Change: 0.00154Iteration: 328, Log-Lik: -318272.634, Max-Change: 0.00144Iteration: 329, Log-Lik: -318272.612, Max-Change: 0.00074Iteration: 330, Log-Lik: -318272.604, Max-Change: 0.00021Iteration: 331, Log-Lik: -318272.603, Max-Change: 0.00017Iteration: 332, Log-Lik: -318272.601, Max-Change: 0.00046Iteration: 333, Log-Lik: -318272.597, Max-Change: 0.00043Iteration: 334, Log-Lik: -318272.595, Max-Change: 0.00019Iteration: 335, Log-Lik: -318272.593, Max-Change: 0.00032Iteration: 336, Log-Lik: -318272.590, Max-Change: 0.00035Iteration: 337, Log-Lik: -318272.588, Max-Change: 0.00025Iteration: 338, Log-Lik: -318272.585, Max-Change: 0.00028Iteration: 339, Log-Lik: -318272.582, Max-Change: 0.00047Iteration: 340, Log-Lik: -318272.582, Max-Change: 0.00031Iteration: 341, Log-Lik: -318272.578, Max-Change: 0.00023Iteration: 342, Log-Lik: -318272.576, Max-Change: 0.00012Iteration: 343, Log-Lik: -318272.575, Max-Change: 0.00045Iteration: 344, Log-Lik: -318272.575, Max-Change: 0.00030Iteration: 345, Log-Lik: -318272.571, Max-Change: 0.00029Iteration: 346, Log-Lik: -318272.569, Max-Change: 0.00022Iteration: 347, Log-Lik: -318272.566, Max-Change: 0.00033Iteration: 348, Log-Lik: -318272.564, Max-Change: 0.00013Iteration: 349, Log-Lik: -318272.563, Max-Change: 0.00053Iteration: 350, Log-Lik: -318272.563, Max-Change: 0.00031Iteration: 351, Log-Lik: -318272.559, Max-Change: 0.00044Iteration: 352, Log-Lik: -318272.559, Max-Change: 0.00040Iteration: 353, Log-Lik: -318272.550, Max-Change: 0.00012Iteration: 354, Log-Lik: -318272.549, Max-Change: 0.00089Iteration: 355, Log-Lik: -318272.544, Max-Change: 0.00071Iteration: 356, Log-Lik: -318272.533, Max-Change: 0.00025Iteration: 357, Log-Lik: -318272.529, Max-Change: 0.00031Iteration: 358, Log-Lik: -318272.528, Max-Change: 0.00014Iteration: 359, Log-Lik: -318272.525, Max-Change: 0.00040Iteration: 360, Log-Lik: -318272.523, Max-Change: 0.00010Iteration: 361, Log-Lik: -318272.522, Max-Change: 0.00043Iteration: 362, Log-Lik: -318272.522, Max-Change: 0.00018Iteration: 363, Log-Lik: -318272.519, Max-Change: 0.00037Iteration: 364, Log-Lik: -318272.518, Max-Change: 0.00023Iteration: 365, Log-Lik: -318272.514, Max-Change: 0.00040Iteration: 366, Log-Lik: -318272.513, Max-Change: 0.00014Iteration: 367, Log-Lik: -318272.512, Max-Change: 0.00012Iteration: 368, Log-Lik: -318272.511, Max-Change: 0.00031Iteration: 369, Log-Lik: -318272.508, Max-Change: 0.00048Iteration: 370, Log-Lik: -318272.506, Max-Change: 0.00015Iteration: 371, Log-Lik: -318272.505, Max-Change: 0.00025Iteration: 372, Log-Lik: -318272.503, Max-Change: 0.00063Iteration: 373, Log-Lik: -318272.502, Max-Change: 0.00024Iteration: 374, Log-Lik: -318272.499, Max-Change: 0.00034Iteration: 375, Log-Lik: -318272.497, Max-Change: 0.00019Iteration: 376, Log-Lik: -318272.497, Max-Change: 0.00015Iteration: 377, Log-Lik: -318272.496, Max-Change: 0.00024Iteration: 378, Log-Lik: -318272.493, Max-Change: 0.00045Iteration: 379, Log-Lik: -318272.492, Max-Change: 0.00028Iteration: 380, Log-Lik: -318272.490, Max-Change: 0.00040Iteration: 381, Log-Lik: -318272.488, Max-Change: 0.00016Iteration: 382, Log-Lik: -318272.488, Max-Change: 0.00013Iteration: 383, Log-Lik: -318272.487, Max-Change: 0.00022Iteration: 384, Log-Lik: -318272.484, Max-Change: 0.00054Iteration: 385, Log-Lik: -318272.484, Max-Change: 0.00026Iteration: 386, Log-Lik: -318272.481, Max-Change: 0.00035Iteration: 387, Log-Lik: -318272.479, Max-Change: 0.00020Iteration: 388, Log-Lik: -318272.479, Max-Change: 0.00016Iteration: 389, Log-Lik: -318272.478, Max-Change: 0.00025Iteration: 390, Log-Lik: -318272.475, Max-Change: 0.00047Iteration: 391, Log-Lik: -318272.475, Max-Change: 0.00028Iteration: 392, Log-Lik: -318272.472, Max-Change: 0.00040Iteration: 393, Log-Lik: -318272.471, Max-Change: 0.00017Iteration: 394, Log-Lik: -318272.470, Max-Change: 0.00013Iteration: 395, Log-Lik: -318272.469, Max-Change: 0.00021Iteration: 396, Log-Lik: -318272.467, Max-Change: 0.00055Iteration: 397, Log-Lik: -318272.466, Max-Change: 0.00025Iteration: 398, Log-Lik: -318272.463, Max-Change: 0.00034Iteration: 399, Log-Lik: -318272.462, Max-Change: 0.00019Iteration: 400, Log-Lik: -318272.461, Max-Change: 0.00015Iteration: 401, Log-Lik: -318272.460, Max-Change: 0.00024Iteration: 402, Log-Lik: -318272.458, Max-Change: 0.00045Iteration: 403, Log-Lik: -318272.458, Max-Change: 0.00026Iteration: 404, Log-Lik: -318272.455, Max-Change: 0.00037Iteration: 405, Log-Lik: -318272.454, Max-Change: 0.00015Iteration: 406, Log-Lik: -318272.453, Max-Change: 0.00012Iteration: 407, Log-Lik: -318272.452, Max-Change: 0.00020Iteration: 408, Log-Lik: -318272.450, Max-Change: 0.00050Iteration: 409, Log-Lik: -318272.449, Max-Change: 0.00021Iteration: 410, Log-Lik: -318272.447, Max-Change: 0.00032Iteration: 411, Log-Lik: -318272.445, Max-Change: 0.00017Iteration: 412, Log-Lik: -318272.445, Max-Change: 0.00013Iteration: 413, Log-Lik: -318272.443, Max-Change: 0.00022Iteration: 414, Log-Lik: -318272.441, Max-Change: 0.00045Iteration: 415, Log-Lik: -318272.441, Max-Change: 0.00022Iteration: 416, Log-Lik: -318272.438, Max-Change: 0.00032Iteration: 417, Log-Lik: -318272.437, Max-Change: 0.00015Iteration: 418, Log-Lik: -318272.436, Max-Change: 0.00012Iteration: 419, Log-Lik: -318272.435, Max-Change: 0.00021Iteration: 420, Log-Lik: -318272.433, Max-Change: 0.00045Iteration: 421, Log-Lik: -318272.433, Max-Change: 0.00020Iteration: 422, Log-Lik: -318272.430, Max-Change: 0.00034Iteration: 423, Log-Lik: -318272.429, Max-Change: 0.00015Iteration: 424, Log-Lik: -318272.428, Max-Change: 0.00012Iteration: 425, Log-Lik: -318272.427, Max-Change: 0.00019Iteration: 426, Log-Lik: -318272.425, Max-Change: 0.00048Iteration: 427, Log-Lik: -318272.425, Max-Change: 0.00020Iteration: 428, Log-Lik: -318272.422, Max-Change: 0.00033Iteration: 429, Log-Lik: -318272.421, Max-Change: 0.00016Iteration: 430, Log-Lik: -318272.420, Max-Change: 0.00013Iteration: 431, Log-Lik: -318272.419, Max-Change: 0.00022Iteration: 432, Log-Lik: -318272.417, Max-Change: 0.00047Iteration: 433, Log-Lik: -318272.417, Max-Change: 0.00020Iteration: 434, Log-Lik: -318272.415, Max-Change: 0.00035Iteration: 435, Log-Lik: -318272.413, Max-Change: 0.00016Iteration: 436, Log-Lik: -318272.413, Max-Change: 0.00012Iteration: 437, Log-Lik: -318272.411, Max-Change: 0.00020Iteration: 438, Log-Lik: -318272.410, Max-Change: 0.00051Iteration: 439, Log-Lik: -318272.409, Max-Change: 0.00020Iteration: 440, Log-Lik: -318272.407, Max-Change: 0.00034Iteration: 441, Log-Lik: -318272.405, Max-Change: 0.00016Iteration: 442, Log-Lik: -318272.405, Max-Change: 0.00013Iteration: 443, Log-Lik: -318272.404, Max-Change: 0.00023Iteration: 444, Log-Lik: -318272.402, Max-Change: 0.00049Iteration: 445, Log-Lik: -318272.401, Max-Change: 0.00021Iteration: 446, Log-Lik: -318272.399, Max-Change: 0.00036Iteration: 447, Log-Lik: -318272.398, Max-Change: 0.00016Iteration: 448, Log-Lik: -318272.397, Max-Change: 0.00013Iteration: 449, Log-Lik: -318272.396, Max-Change: 0.00021Iteration: 450, Log-Lik: -318272.394, Max-Change: 0.00052Iteration: 451, Log-Lik: -318272.394, Max-Change: 0.00021Iteration: 452, Log-Lik: -318272.392, Max-Change: 0.00034Iteration: 453, Log-Lik: -318272.390, Max-Change: 0.00017Iteration: 454, Log-Lik: -318272.390, Max-Change: 0.00013Iteration: 455, Log-Lik: -318272.389, Max-Change: 0.00023Iteration: 456, Log-Lik: -318272.387, Max-Change: 0.00050Iteration: 457, Log-Lik: -318272.386, Max-Change: 0.00021Iteration: 458, Log-Lik: -318272.384, Max-Change: 0.00036Iteration: 459, Log-Lik: -318272.383, Max-Change: 0.00016Iteration: 460, Log-Lik: -318272.382, Max-Change: 0.00013Iteration: 461, Log-Lik: -318272.381, Max-Change: 0.00021Iteration: 462, Log-Lik: -318272.379, Max-Change: 0.00052Iteration: 463, Log-Lik: -318272.379, Max-Change: 0.00021Iteration: 464, Log-Lik: -318272.377, Max-Change: 0.00034Iteration: 465, Log-Lik: -318272.375, Max-Change: 0.00017Iteration: 466, Log-Lik: -318272.375, Max-Change: 0.00013Iteration: 467, Log-Lik: -318272.374, Max-Change: 0.00023Iteration: 468, Log-Lik: -318272.372, Max-Change: 0.00050Iteration: 469, Log-Lik: -318272.372, Max-Change: 0.00021Iteration: 470, Log-Lik: -318272.369, Max-Change: 0.00036Iteration: 471, Log-Lik: -318272.368, Max-Change: 0.00016Iteration: 472, Log-Lik: -318272.368, Max-Change: 0.00013Iteration: 473, Log-Lik: -318272.367, Max-Change: 0.00021Iteration: 474, Log-Lik: -318272.365, Max-Change: 0.00052Iteration: 475, Log-Lik: -318272.364, Max-Change: 0.00021Iteration: 476, Log-Lik: -318272.362, Max-Change: 0.00034Iteration: 477, Log-Lik: -318272.361, Max-Change: 0.00017Iteration: 478, Log-Lik: -318272.360, Max-Change: 0.00013Iteration: 479, Log-Lik: -318272.359, Max-Change: 0.00023Iteration: 480, Log-Lik: -318272.358, Max-Change: 0.00050Iteration: 481, Log-Lik: -318272.357, Max-Change: 0.00021Iteration: 482, Log-Lik: -318272.355, Max-Change: 0.00036Iteration: 483, Log-Lik: -318272.354, Max-Change: 0.00016Iteration: 484, Log-Lik: -318272.353, Max-Change: 0.00013Iteration: 485, Log-Lik: -318272.352, Max-Change: 0.00021Iteration: 486, Log-Lik: -318272.351, Max-Change: 0.00052Iteration: 487, Log-Lik: -318272.350, Max-Change: 0.00021Iteration: 488, Log-Lik: -318272.348, Max-Change: 0.00034Iteration: 489, Log-Lik: -318272.347, Max-Change: 0.00017Iteration: 490, Log-Lik: -318272.346, Max-Change: 0.00013Iteration: 491, Log-Lik: -318272.345, Max-Change: 0.00023Iteration: 492, Log-Lik: -318272.343, Max-Change: 0.00050Iteration: 493, Log-Lik: -318272.343, Max-Change: 0.00021Iteration: 494, Log-Lik: -318272.341, Max-Change: 0.00036Iteration: 495, Log-Lik: -318272.340, Max-Change: 0.00016Iteration: 496, Log-Lik: -318272.339, Max-Change: 0.00013Iteration: 497, Log-Lik: -318272.338, Max-Change: 0.00021Iteration: 498, Log-Lik: -318272.337, Max-Change: 0.00052Iteration: 499, Log-Lik: -318272.336, Max-Change: 0.00021Iteration: 500, Log-Lik: -318272.334, Max-Change: 0.00034Iteration: 501, Log-Lik: -318272.333, Max-Change: 0.00016Iteration: 502, Log-Lik: -318272.332, Max-Change: 0.00013Iteration: 503, Log-Lik: -318272.331, Max-Change: 0.00023Iteration: 504, Log-Lik: -318272.330, Max-Change: 0.00050Iteration: 505, Log-Lik: -318272.329, Max-Change: 0.00021Iteration: 506, Log-Lik: -318272.327, Max-Change: 0.00036Iteration: 507, Log-Lik: -318272.326, Max-Change: 0.00016Iteration: 508, Log-Lik: -318272.325, Max-Change: 0.00013Iteration: 509, Log-Lik: -318272.324, Max-Change: 0.00021Iteration: 510, Log-Lik: -318272.323, Max-Change: 0.00052Iteration: 511, Log-Lik: -318272.322, Max-Change: 0.00020Iteration: 512, Log-Lik: -318272.320, Max-Change: 0.00034Iteration: 513, Log-Lik: -318272.319, Max-Change: 0.00016Iteration: 514, Log-Lik: -318272.319, Max-Change: 0.00013Iteration: 515, Log-Lik: -318272.318, Max-Change: 0.00023Iteration: 516, Log-Lik: -318272.316, Max-Change: 0.00050Iteration: 517, Log-Lik: -318272.316, Max-Change: 0.00021Iteration: 518, Log-Lik: -318272.314, Max-Change: 0.00036Iteration: 519, Log-Lik: -318272.312, Max-Change: 0.00016Iteration: 520, Log-Lik: -318272.312, Max-Change: 0.00013Iteration: 521, Log-Lik: -318272.311, Max-Change: 0.00021Iteration: 522, Log-Lik: -318272.309, Max-Change: 0.00051Iteration: 523, Log-Lik: -318272.309, Max-Change: 0.00020Iteration: 524, Log-Lik: -318272.307, Max-Change: 0.00034Iteration: 525, Log-Lik: -318272.306, Max-Change: 0.00016Iteration: 526, Log-Lik: -318272.305, Max-Change: 0.00013Iteration: 527, Log-Lik: -318272.304, Max-Change: 0.00023Iteration: 528, Log-Lik: -318272.303, Max-Change: 0.00049Iteration: 529, Log-Lik: -318272.302, Max-Change: 0.00021Iteration: 530, Log-Lik: -318272.300, Max-Change: 0.00035Iteration: 531, Log-Lik: -318272.299, Max-Change: 0.00016Iteration: 532, Log-Lik: -318272.299, Max-Change: 0.00013Iteration: 533, Log-Lik: -318272.298, Max-Change: 0.00021Iteration: 534, Log-Lik: -318272.296, Max-Change: 0.00051Iteration: 535, Log-Lik: -318272.296, Max-Change: 0.00020Iteration: 536, Log-Lik: -318272.294, Max-Change: 0.00033Iteration: 537, Log-Lik: -318272.293, Max-Change: 0.00016Iteration: 538, Log-Lik: -318272.292, Max-Change: 0.00013Iteration: 539, Log-Lik: -318272.291, Max-Change: 0.00022Iteration: 540, Log-Lik: -318272.290, Max-Change: 0.00049Iteration: 541, Log-Lik: -318272.289, Max-Change: 0.00020Iteration: 542, Log-Lik: -318272.287, Max-Change: 0.00035Iteration: 543, Log-Lik: -318272.286, Max-Change: 0.00016Iteration: 544, Log-Lik: -318272.286, Max-Change: 0.00013Iteration: 545, Log-Lik: -318272.285, Max-Change: 0.00021Iteration: 546, Log-Lik: -318272.283, Max-Change: 0.00050Iteration: 547, Log-Lik: -318272.283, Max-Change: 0.00020Iteration: 548, Log-Lik: -318272.281, Max-Change: 0.00033Iteration: 549, Log-Lik: -318272.280, Max-Change: 0.00016Iteration: 550, Log-Lik: -318272.279, Max-Change: 0.00013Iteration: 551, Log-Lik: -318272.278, Max-Change: 0.00022Iteration: 552, Log-Lik: -318272.277, Max-Change: 0.00048Iteration: 553, Log-Lik: -318272.276, Max-Change: 0.00020Iteration: 554, Log-Lik: -318272.274, Max-Change: 0.00035Iteration: 555, Log-Lik: -318272.273, Max-Change: 0.00015Iteration: 556, Log-Lik: -318272.273, Max-Change: 0.00012Iteration: 557, Log-Lik: -318272.272, Max-Change: 0.00020Iteration: 558, Log-Lik: -318272.270, Max-Change: 0.00050Iteration: 559, Log-Lik: -318272.270, Max-Change: 0.00020Iteration: 560, Log-Lik: -318272.268, Max-Change: 0.00033Iteration: 561, Log-Lik: -318272.267, Max-Change: 0.00016Iteration: 562, Log-Lik: -318272.266, Max-Change: 0.00013Iteration: 563, Log-Lik: -318272.266, Max-Change: 0.00022Iteration: 564, Log-Lik: -318272.264, Max-Change: 0.00048Iteration: 565, Log-Lik: -318272.263, Max-Change: 0.00020Iteration: 566, Log-Lik: -318272.262, Max-Change: 0.00034Iteration: 567, Log-Lik: -318272.261, Max-Change: 0.00015Iteration: 568, Log-Lik: -318272.260, Max-Change: 0.00012Iteration: 569, Log-Lik: -318272.259, Max-Change: 0.00020Iteration: 570, Log-Lik: -318272.258, Max-Change: 0.00050Iteration: 571, Log-Lik: -318272.257, Max-Change: 0.00020Iteration: 572, Log-Lik: -318272.255, Max-Change: 0.00033Iteration: 573, Log-Lik: -318272.254, Max-Change: 0.00016Iteration: 574, Log-Lik: -318272.254, Max-Change: 0.00013Iteration: 575, Log-Lik: -318272.253, Max-Change: 0.00022Iteration: 576, Log-Lik: -318272.252, Max-Change: 0.00048Iteration: 577, Log-Lik: -318272.251, Max-Change: 0.00020Iteration: 578, Log-Lik: -318272.249, Max-Change: 0.00034Iteration: 579, Log-Lik: -318272.248, Max-Change: 0.00015Iteration: 580, Log-Lik: -318272.248, Max-Change: 0.00012Iteration: 581, Log-Lik: -318272.247, Max-Change: 0.00020Iteration: 582, Log-Lik: -318272.245, Max-Change: 0.00049Iteration: 583, Log-Lik: -318272.245, Max-Change: 0.00020Iteration: 584, Log-Lik: -318272.243, Max-Change: 0.00032Iteration: 585, Log-Lik: -318272.242, Max-Change: 0.00016Iteration: 586, Log-Lik: -318272.242, Max-Change: 0.00013Iteration: 587, Log-Lik: -318272.241, Max-Change: 0.00022Iteration: 588, Log-Lik: -318272.239, Max-Change: 0.00047Iteration: 589, Log-Lik: -318272.239, Max-Change: 0.00020Iteration: 590, Log-Lik: -318272.237, Max-Change: 0.00034Iteration: 591, Log-Lik: -318272.236, Max-Change: 0.00015Iteration: 592, Log-Lik: -318272.236, Max-Change: 0.00012Iteration: 593, Log-Lik: -318272.235, Max-Change: 0.00020Iteration: 594, Log-Lik: -318272.233, Max-Change: 0.00049Iteration: 595, Log-Lik: -318272.233, Max-Change: 0.00019Iteration: 596, Log-Lik: -318272.231, Max-Change: 0.00032Iteration: 597, Log-Lik: -318272.230, Max-Change: 0.00015Iteration: 598, Log-Lik: -318272.230, Max-Change: 0.00012Iteration: 599, Log-Lik: -318272.229, Max-Change: 0.00021Iteration: 600, Log-Lik: -318272.227, Max-Change: 0.00047Iteration: 601, Log-Lik: -318272.227, Max-Change: 0.00020Iteration: 602, Log-Lik: -318272.225, Max-Change: 0.00034Iteration: 603, Log-Lik: -318272.224, Max-Change: 0.00015Iteration: 604, Log-Lik: -318272.224, Max-Change: 0.00012Iteration: 605, Log-Lik: -318272.223, Max-Change: 0.00020Iteration: 606, Log-Lik: -318272.221, Max-Change: 0.00048Iteration: 607, Log-Lik: -318272.221, Max-Change: 0.00019Iteration: 608, Log-Lik: -318272.219, Max-Change: 0.00032Iteration: 609, Log-Lik: -318272.218, Max-Change: 0.00015Iteration: 610, Log-Lik: -318272.218, Max-Change: 0.00012Iteration: 611, Log-Lik: -318272.217, Max-Change: 0.00021Iteration: 612, Log-Lik: -318272.215, Max-Change: 0.00047Iteration: 613, Log-Lik: -318272.215, Max-Change: 0.00019Iteration: 614, Log-Lik: -318272.213, Max-Change: 0.00033Iteration: 615, Log-Lik: -318272.212, Max-Change: 0.00015Iteration: 616, Log-Lik: -318272.212, Max-Change: 0.00012Iteration: 617, Log-Lik: -318272.211, Max-Change: 0.00020Iteration: 618, Log-Lik: -318272.209, Max-Change: 0.00048Iteration: 619, Log-Lik: -318272.209, Max-Change: 0.00019Iteration: 620, Log-Lik: -318272.207, Max-Change: 0.00032Iteration: 621, Log-Lik: -318272.206, Max-Change: 0.00015Iteration: 622, Log-Lik: -318272.206, Max-Change: 0.00012Iteration: 623, Log-Lik: -318272.205, Max-Change: 0.00021Iteration: 624, Log-Lik: -318272.204, Max-Change: 0.00046Iteration: 625, Log-Lik: -318272.203, Max-Change: 0.00019Iteration: 626, Log-Lik: -318272.201, Max-Change: 0.00033Iteration: 627, Log-Lik: -318272.200, Max-Change: 0.00015Iteration: 628, Log-Lik: -318272.200, Max-Change: 0.00012Iteration: 629, Log-Lik: -318272.199, Max-Change: 0.00020Iteration: 630, Log-Lik: -318272.198, Max-Change: 0.00048Iteration: 631, Log-Lik: -318272.197, Max-Change: 0.00019Iteration: 632, Log-Lik: -318272.196, Max-Change: 0.00031Iteration: 633, Log-Lik: -318272.195, Max-Change: 0.00015Iteration: 634, Log-Lik: -318272.194, Max-Change: 0.00012Iteration: 635, Log-Lik: -318272.193, Max-Change: 0.00021Iteration: 636, Log-Lik: -318272.192, Max-Change: 0.00046Iteration: 637, Log-Lik: -318272.192, Max-Change: 0.00019Iteration: 638, Log-Lik: -318272.190, Max-Change: 0.00033Iteration: 639, Log-Lik: -318272.189, Max-Change: 0.00015Iteration: 640, Log-Lik: -318272.189, Max-Change: 0.00012Iteration: 641, Log-Lik: -318272.188, Max-Change: 0.00019Iteration: 642, Log-Lik: -318272.186, Max-Change: 0.00047Iteration: 643, Log-Lik: -318272.186, Max-Change: 0.00019Iteration: 644, Log-Lik: -318272.184, Max-Change: 0.00031Iteration: 645, Log-Lik: -318272.183, Max-Change: 0.00015Iteration: 646, Log-Lik: -318272.183, Max-Change: 0.00012Iteration: 647, Log-Lik: -318272.182, Max-Change: 0.00021Iteration: 648, Log-Lik: -318272.181, Max-Change: 0.00046Iteration: 649, Log-Lik: -318272.180, Max-Change: 0.00019Iteration: 650, Log-Lik: -318272.179, Max-Change: 0.00033Iteration: 651, Log-Lik: -318272.178, Max-Change: 0.00015Iteration: 652, Log-Lik: -318272.177, Max-Change: 0.00012Iteration: 653, Log-Lik: -318272.176, Max-Change: 0.00019Iteration: 654, Log-Lik: -318272.175, Max-Change: 0.00047Iteration: 655, Log-Lik: -318272.175, Max-Change: 0.00019Iteration: 656, Log-Lik: -318272.173, Max-Change: 0.00031Iteration: 657, Log-Lik: -318272.172, Max-Change: 0.00015Iteration: 658, Log-Lik: -318272.172, Max-Change: 0.00012Iteration: 659, Log-Lik: -318272.171, Max-Change: 0.00021Iteration: 660, Log-Lik: -318272.169, Max-Change: 0.00045Iteration: 661, Log-Lik: -318272.169, Max-Change: 0.00019Iteration: 662, Log-Lik: -318272.167, Max-Change: 0.00032Iteration: 663, Log-Lik: -318272.166, Max-Change: 0.00014Iteration: 664, Log-Lik: -318272.166, Max-Change: 0.00012Iteration: 665, Log-Lik: -318272.165, Max-Change: 0.00019Iteration: 666, Log-Lik: -318272.164, Max-Change: 0.00047Iteration: 667, Log-Lik: -318272.163, Max-Change: 0.00019Iteration: 668, Log-Lik: -318272.162, Max-Change: 0.00031Iteration: 669, Log-Lik: -318272.161, Max-Change: 0.00015Iteration: 670, Log-Lik: -318272.161, Max-Change: 0.00012Iteration: 671, Log-Lik: -318272.160, Max-Change: 0.00021Iteration: 672, Log-Lik: -318272.158, Max-Change: 0.00045Iteration: 673, Log-Lik: -318272.158, Max-Change: 0.00019Iteration: 674, Log-Lik: -318272.156, Max-Change: 0.00032Iteration: 675, Log-Lik: -318272.155, Max-Change: 0.00014Iteration: 676, Log-Lik: -318272.155, Max-Change: 0.00012Iteration: 677, Log-Lik: -318272.154, Max-Change: 0.00019Iteration: 678, Log-Lik: -318272.153, Max-Change: 0.00046Iteration: 679, Log-Lik: -318272.152, Max-Change: 0.00018Iteration: 680, Log-Lik: -318272.151, Max-Change: 0.00031Iteration: 681, Log-Lik: -318272.150, Max-Change: 0.00015Iteration: 682, Log-Lik: -318272.150, Max-Change: 0.00012Iteration: 683, Log-Lik: -318272.149, Max-Change: 0.00020Iteration: 684, Log-Lik: -318272.147, Max-Change: 0.00045Iteration: 685, Log-Lik: -318272.147, Max-Change: 0.00019Iteration: 686, Log-Lik: -318272.146, Max-Change: 0.00032Iteration: 687, Log-Lik: -318272.145, Max-Change: 0.00014Iteration: 688, Log-Lik: -318272.144, Max-Change: 0.00011Iteration: 689, Log-Lik: -318272.143, Max-Change: 0.00019Iteration: 690, Log-Lik: -318272.142, Max-Change: 0.00046Iteration: 691, Log-Lik: -318272.142, Max-Change: 0.00018Iteration: 692, Log-Lik: -318272.140, Max-Change: 0.00030Iteration: 693, Log-Lik: -318272.139, Max-Change: 0.00015Iteration: 694, Log-Lik: -318272.139, Max-Change: 0.00012Iteration: 695, Log-Lik: -318272.138, Max-Change: 0.00020Iteration: 696, Log-Lik: -318272.137, Max-Change: 0.00044Iteration: 697, Log-Lik: -318272.136, Max-Change: 0.00018Iteration: 698, Log-Lik: -318272.135, Max-Change: 0.00032Iteration: 699, Log-Lik: -318272.134, Max-Change: 0.00014Iteration: 700, Log-Lik: -318272.134, Max-Change: 0.00011Iteration: 701, Log-Lik: -318272.133, Max-Change: 0.00019Iteration: 702, Log-Lik: -318272.131, Max-Change: 0.00046Iteration: 703, Log-Lik: -318272.131, Max-Change: 0.00018Iteration: 704, Log-Lik: -318272.130, Max-Change: 0.00030Iteration: 705, Log-Lik: -318272.129, Max-Change: 0.00014Iteration: 706, Log-Lik: -318272.128, Max-Change: 0.00012Iteration: 707, Log-Lik: -318272.127, Max-Change: 0.00020Iteration: 708, Log-Lik: -318272.126, Max-Change: 0.00044Iteration: 709, Log-Lik: -318272.126, Max-Change: 0.00018Iteration: 710, Log-Lik: -318272.124, Max-Change: 0.00031Iteration: 711, Log-Lik: -318272.123, Max-Change: 0.00014Iteration: 712, Log-Lik: -318272.123, Max-Change: 0.00011Iteration: 713, Log-Lik: -318272.122, Max-Change: 0.00019Iteration: 714, Log-Lik: -318272.121, Max-Change: 0.00045Iteration: 715, Log-Lik: -318272.121, Max-Change: 0.00018Iteration: 716, Log-Lik: -318272.119, Max-Change: 0.00030Iteration: 717, Log-Lik: -318272.118, Max-Change: 0.00014Iteration: 718, Log-Lik: -318272.118, Max-Change: 0.00012Iteration: 719, Log-Lik: -318272.117, Max-Change: 0.00020Iteration: 720, Log-Lik: -318272.116, Max-Change: 0.00044Iteration: 721, Log-Lik: -318272.115, Max-Change: 0.00018Iteration: 722, Log-Lik: -318272.114, Max-Change: 0.00031Iteration: 723, Log-Lik: -318272.113, Max-Change: 0.00014Iteration: 724, Log-Lik: -318272.113, Max-Change: 0.00011Iteration: 725, Log-Lik: -318272.112, Max-Change: 0.00018Iteration: 726, Log-Lik: -318272.111, Max-Change: 0.00045Iteration: 727, Log-Lik: -318272.110, Max-Change: 0.00018Iteration: 728, Log-Lik: -318272.109, Max-Change: 0.00030Iteration: 729, Log-Lik: -318272.108, Max-Change: 0.00014Iteration: 730, Log-Lik: -318272.107, Max-Change: 0.00011Iteration: 731, Log-Lik: -318272.107, Max-Change: 0.00020Iteration: 732, Log-Lik: -318272.105, Max-Change: 0.00043Iteration: 733, Log-Lik: -318272.105, Max-Change: 0.00018Iteration: 734, Log-Lik: -318272.104, Max-Change: 0.00031Iteration: 735, Log-Lik: -318272.103, Max-Change: 0.00014Iteration: 736, Log-Lik: -318272.102, Max-Change: 0.00011Iteration: 737, Log-Lik: -318272.102, Max-Change: 0.00018Iteration: 738, Log-Lik: -318272.100, Max-Change: 0.00045Iteration: 739, Log-Lik: -318272.100, Max-Change: 0.00018Iteration: 740, Log-Lik: -318272.098, Max-Change: 0.00030Iteration: 741, Log-Lik: -318272.098, Max-Change: 0.00014Iteration: 742, Log-Lik: -318272.097, Max-Change: 0.00011Iteration: 743, Log-Lik: -318272.096, Max-Change: 0.00020Iteration: 744, Log-Lik: -318272.095, Max-Change: 0.00043Iteration: 745, Log-Lik: -318272.095, Max-Change: 0.00018Iteration: 746, Log-Lik: -318272.093, Max-Change: 0.00031Iteration: 747, Log-Lik: -318272.093, Max-Change: 0.00014Iteration: 748, Log-Lik: -318272.092, Max-Change: 0.00011Iteration: 749, Log-Lik: -318272.091, Max-Change: 0.00018Iteration: 750, Log-Lik: -318272.090, Max-Change: 0.00044Iteration: 751, Log-Lik: -318272.090, Max-Change: 0.00018Iteration: 752, Log-Lik: -318272.088, Max-Change: 0.00029Iteration: 753, Log-Lik: -318272.088, Max-Change: 0.00014Iteration: 754, Log-Lik: -318272.087, Max-Change: 0.00011Iteration: 755, Log-Lik: -318272.086, Max-Change: 0.00020Iteration: 756, Log-Lik: -318272.085, Max-Change: 0.00043Iteration: 757, Log-Lik: -318272.085, Max-Change: 0.00018Iteration: 758, Log-Lik: -318272.083, Max-Change: 0.00031Iteration: 759, Log-Lik: -318272.083, Max-Change: 0.00014Iteration: 760, Log-Lik: -318272.082, Max-Change: 0.00011Iteration: 761, Log-Lik: -318272.081, Max-Change: 0.00018Iteration: 762, Log-Lik: -318272.080, Max-Change: 0.00044Iteration: 763, Log-Lik: -318272.080, Max-Change: 0.00018Iteration: 764, Log-Lik: -318272.078, Max-Change: 0.00029Iteration: 765, Log-Lik: -318272.078, Max-Change: 0.00014Iteration: 766, Log-Lik: -318272.077, Max-Change: 0.00011Iteration: 767, Log-Lik: -318272.077, Max-Change: 0.00019Iteration: 768, Log-Lik: -318272.075, Max-Change: 0.00043Iteration: 769, Log-Lik: -318272.075, Max-Change: 0.00018Iteration: 770, Log-Lik: -318272.074, Max-Change: 0.00030Iteration: 771, Log-Lik: -318272.073, Max-Change: 0.00014Iteration: 772, Log-Lik: -318272.072, Max-Change: 0.00011Iteration: 773, Log-Lik: -318272.072, Max-Change: 0.00018Iteration: 774, Log-Lik: -318272.070, Max-Change: 0.00044Iteration: 775, Log-Lik: -318272.070, Max-Change: 0.00017Iteration: 776, Log-Lik: -318272.069, Max-Change: 0.00029Iteration: 777, Log-Lik: -318272.068, Max-Change: 0.00014Iteration: 778, Log-Lik: -318272.067, Max-Change: 0.00011Iteration: 779, Log-Lik: -318272.067, Max-Change: 0.00019Iteration: 780, Log-Lik: -318272.066, Max-Change: 0.00042Iteration: 781, Log-Lik: -318272.065, Max-Change: 0.00018Iteration: 782, Log-Lik: -318272.064, Max-Change: 0.00030Iteration: 783, Log-Lik: -318272.063, Max-Change: 0.00014Iteration: 784, Log-Lik: -318272.063, Max-Change: 0.00011Iteration: 785, Log-Lik: -318272.062, Max-Change: 0.00018Iteration: 786, Log-Lik: -318272.061, Max-Change: 0.00044Iteration: 787, Log-Lik: -318272.060, Max-Change: 0.00017Iteration: 788, Log-Lik: -318272.059, Max-Change: 0.00029Iteration: 789, Log-Lik: -318272.058, Max-Change: 0.00014Iteration: 790, Log-Lik: -318272.058, Max-Change: 0.00011Iteration: 791, Log-Lik: -318272.057, Max-Change: 0.00019Iteration: 792, Log-Lik: -318272.056, Max-Change: 0.00042Iteration: 793, Log-Lik: -318272.056, Max-Change: 0.00018Iteration: 794, Log-Lik: -318272.054, Max-Change: 0.00030Iteration: 795, Log-Lik: -318272.053, Max-Change: 0.00013Iteration: 796, Log-Lik: -318272.053, Max-Change: 0.00011Iteration: 797, Log-Lik: -318272.052, Max-Change: 0.00018Iteration: 798, Log-Lik: -318272.051, Max-Change: 0.00043Iteration: 799, Log-Lik: -318272.051, Max-Change: 0.00017Iteration: 800, Log-Lik: -318272.049, Max-Change: 0.00029Iteration: 801, Log-Lik: -318272.049, Max-Change: 0.00014Iteration: 802, Log-Lik: -318272.048, Max-Change: 0.00011Iteration: 803, Log-Lik: -318272.048, Max-Change: 0.00019Iteration: 804, Log-Lik: -318272.046, Max-Change: 0.00042Iteration: 805, Log-Lik: -318272.046, Max-Change: 0.00017Iteration: 806, Log-Lik: -318272.045, Max-Change: 0.00030Iteration: 807, Log-Lik: -318272.044, Max-Change: 0.00013Iteration: 808, Log-Lik: -318272.044, Max-Change: 0.00011Iteration: 809, Log-Lik: -318272.043, Max-Change: 0.00018Iteration: 810, Log-Lik: -318272.042, Max-Change: 0.00043Iteration: 811, Log-Lik: -318272.041, Max-Change: 0.00017Iteration: 812, Log-Lik: -318272.040, Max-Change: 0.00028Iteration: 813, Log-Lik: -318272.039, Max-Change: 0.00014Iteration: 814, Log-Lik: -318272.039, Max-Change: 0.00011Iteration: 815, Log-Lik: -318272.038, Max-Change: 0.00019Iteration: 816, Log-Lik: -318272.037, Max-Change: 0.00042Iteration: 817, Log-Lik: -318272.037, Max-Change: 0.00017Iteration: 818, Log-Lik: -318272.035, Max-Change: 0.00030Iteration: 819, Log-Lik: -318272.035, Max-Change: 0.00013Iteration: 820, Log-Lik: -318272.034, Max-Change: 0.00011Iteration: 821, Log-Lik: -318272.033, Max-Change: 0.00018Iteration: 822, Log-Lik: -318272.032, Max-Change: 0.00043Iteration: 823, Log-Lik: -318272.032, Max-Change: 0.00017Iteration: 824, Log-Lik: -318272.031, Max-Change: 0.00028Iteration: 825, Log-Lik: -318272.030, Max-Change: 0.00014Iteration: 826, Log-Lik: -318272.030, Max-Change: 0.00011Iteration: 827, Log-Lik: -318272.029, Max-Change: 0.00019Iteration: 828, Log-Lik: -318272.028, Max-Change: 0.00041Iteration: 829, Log-Lik: -318272.027, Max-Change: 0.00017Iteration: 830, Log-Lik: -318272.026, Max-Change: 0.00029Iteration: 831, Log-Lik: -318272.025, Max-Change: 0.00013Iteration: 832, Log-Lik: -318272.025, Max-Change: 0.00011Iteration: 833, Log-Lik: -318272.024, Max-Change: 0.00017Iteration: 834, Log-Lik: -318272.023, Max-Change: 0.00042Iteration: 835, Log-Lik: -318272.023, Max-Change: 0.00017Iteration: 836, Log-Lik: -318272.021, Max-Change: 0.00028Iteration: 837, Log-Lik: -318272.021, Max-Change: 0.00013Iteration: 838, Log-Lik: -318272.020, Max-Change: 0.00011Iteration: 839, Log-Lik: -318272.020, Max-Change: 0.00019Iteration: 840, Log-Lik: -318272.019, Max-Change: 0.00041Iteration: 841, Log-Lik: -318272.018, Max-Change: 0.00017Iteration: 842, Log-Lik: -318272.017, Max-Change: 0.00029Iteration: 843, Log-Lik: -318272.016, Max-Change: 0.00013Iteration: 844, Log-Lik: -318272.016, Max-Change: 0.00011Iteration: 845, Log-Lik: -318272.015, Max-Change: 0.00017Iteration: 846, Log-Lik: -318272.014, Max-Change: 0.00042Iteration: 847, Log-Lik: -318272.014, Max-Change: 0.00017Iteration: 848, Log-Lik: -318272.012, Max-Change: 0.00028Iteration: 849, Log-Lik: -318272.012, Max-Change: 0.00013Iteration: 850, Log-Lik: -318272.011, Max-Change: 0.00011Iteration: 851, Log-Lik: -318272.011, Max-Change: 0.00018Iteration: 852, Log-Lik: -318272.010, Max-Change: 0.00041Iteration: 853, Log-Lik: -318272.009, Max-Change: 0.00017Iteration: 854, Log-Lik: -318272.008, Max-Change: 0.00029Iteration: 855, Log-Lik: -318272.007, Max-Change: 0.00013Iteration: 856, Log-Lik: -318272.007, Max-Change: 0.00010Iteration: 857, Log-Lik: -318272.006, Max-Change: 0.00017Iteration: 858, Log-Lik: -318272.005, Max-Change: 0.00042Iteration: 859, Log-Lik: -318272.005, Max-Change: 0.00017Iteration: 860, Log-Lik: -318272.003, Max-Change: 0.00028Iteration: 861, Log-Lik: -318272.003, Max-Change: 0.00013Iteration: 862, Log-Lik: -318272.002, Max-Change: 0.00011Iteration: 863, Log-Lik: -318272.002, Max-Change: 0.00018Iteration: 864, Log-Lik: -318272.001, Max-Change: 0.00041Iteration: 865, Log-Lik: -318272.000, Max-Change: 0.00017Iteration: 866, Log-Lik: -318271.999, Max-Change: 0.00029Iteration: 867, Log-Lik: -318271.998, Max-Change: 0.00013Iteration: 868, Log-Lik: -318271.998, Max-Change: 0.00010Iteration: 869, Log-Lik: -318271.997, Max-Change: 0.00017Iteration: 870, Log-Lik: -318271.996, Max-Change: 0.00042Iteration: 871, Log-Lik: -318271.996, Max-Change: 0.00017Iteration: 872, Log-Lik: -318271.995, Max-Change: 0.00028Iteration: 873, Log-Lik: -318271.994, Max-Change: 0.00013Iteration: 874, Log-Lik: -318271.993, Max-Change: 0.00011Iteration: 875, Log-Lik: -318271.993, Max-Change: 0.00018Iteration: 876, Log-Lik: -318271.992, Max-Change: 0.00040Iteration: 877, Log-Lik: -318271.991, Max-Change: 0.00017Iteration: 878, Log-Lik: -318271.990, Max-Change: 0.00029Iteration: 879, Log-Lik: -318271.989, Max-Change: 0.00013Iteration: 880, Log-Lik: -318271.989, Max-Change: 0.00010Iteration: 881, Log-Lik: -318271.988, Max-Change: 0.00017Iteration: 882, Log-Lik: -318271.987, Max-Change: 0.00041Iteration: 883, Log-Lik: -318271.987, Max-Change: 0.00016Iteration: 884, Log-Lik: -318271.986, Max-Change: 0.00027Iteration: 885, Log-Lik: -318271.985, Max-Change: 0.00013Iteration: 886, Log-Lik: -318271.985, Max-Change: 0.00011Iteration: 887, Log-Lik: -318271.984, Max-Change: 0.00018Iteration: 888, Log-Lik: -318271.983, Max-Change: 0.00040Iteration: 889, Log-Lik: -318271.983, Max-Change: 0.00017Iteration: 890, Log-Lik: -318271.981, Max-Change: 0.00029Iteration: 891, Log-Lik: -318271.981, Max-Change: 0.00013Iteration: 892, Log-Lik: -318271.980, Max-Change: 0.00010Iteration: 893, Log-Lik: -318271.980, Max-Change: 0.00017Iteration: 894, Log-Lik: -318271.979, Max-Change: 0.00041Iteration: 895, Log-Lik: -318271.978, Max-Change: 0.00016Iteration: 896, Log-Lik: -318271.977, Max-Change: 0.00027Iteration: 897, Log-Lik: -318271.976, Max-Change: 0.00013Iteration: 898, Log-Lik: -318271.976, Max-Change: 0.00010Iteration: 899, Log-Lik: -318271.975, Max-Change: 0.00018Iteration: 900, Log-Lik: -318271.974, Max-Change: 0.00040Iteration: 901, Log-Lik: -318271.974, Max-Change: 0.00017Iteration: 902, Log-Lik: -318271.973, Max-Change: 0.00028Iteration: 903, Log-Lik: -318271.972, Max-Change: 0.00013Iteration: 904, Log-Lik: -318271.972, Max-Change: 0.00010Iteration: 905, Log-Lik: -318271.971, Max-Change: 0.00017Iteration: 906, Log-Lik: -318271.970, Max-Change: 0.00041Iteration: 907, Log-Lik: -318271.970, Max-Change: 0.00016Iteration: 908, Log-Lik: -318271.969, Max-Change: 0.00027Iteration: 909, Log-Lik: -318271.968, Max-Change: 0.00013Iteration: 910, Log-Lik: -318271.968, Max-Change: 0.00010Iteration: 911, Log-Lik: -318271.967, Max-Change: 0.00018Iteration: 912, Log-Lik: -318271.966, Max-Change: 0.00040Iteration: 913, Log-Lik: -318271.966, Max-Change: 0.00016Iteration: 914, Log-Lik: -318271.964, Max-Change: 0.00028Iteration: 915, Log-Lik: -318271.964, Max-Change: 0.00013Iteration: 916, Log-Lik: -318271.963, Max-Change: 0.00010Iteration: 917, Log-Lik: -318271.963, Max-Change: 0.00017Iteration: 918, Log-Lik: -318271.962, Max-Change: 0.00041Iteration: 919, Log-Lik: -318271.961, Max-Change: 0.00016Iteration: 920, Log-Lik: -318271.960, Max-Change: 0.00027Iteration: 921, Log-Lik: -318271.959, Max-Change: 0.00013Iteration: 922, Log-Lik: -318271.959, Max-Change: 0.00010Iteration: 923, Log-Lik: -318271.959, Max-Change: 0.00018Iteration: 924, Log-Lik: -318271.958, Max-Change: 0.00039Iteration: 925, Log-Lik: -318271.957, Max-Change: 0.00016Iteration: 926, Log-Lik: -318271.956, Max-Change: 0.00028Iteration: 927, Log-Lik: -318271.955, Max-Change: 0.00013Iteration: 928, Log-Lik: -318271.955, Max-Change: 0.00010Iteration: 929, Log-Lik: -318271.954, Max-Change: 0.00017Iteration: 930, Log-Lik: -318271.953, Max-Change: 0.00040Iteration: 931, Log-Lik: -318271.953, Max-Change: 0.00016Iteration: 932, Log-Lik: -318271.952, Max-Change: 0.00027Iteration: 933, Log-Lik: -318271.951, Max-Change: 0.00013Iteration: 934, Log-Lik: -318271.951, Max-Change: 0.00010Iteration: 935, Log-Lik: -318271.950, Max-Change: 0.00018Iteration: 936, Log-Lik: -318271.949, Max-Change: 0.00039Iteration: 937, Log-Lik: -318271.949, Max-Change: 0.00016Iteration: 938, Log-Lik: -318271.948, Max-Change: 0.00028Iteration: 939, Log-Lik: -318271.947, Max-Change: 0.00012Iteration: 940, Log-Lik: -318271.947, Max-Change: 0.00010Iteration: 941, Log-Lik: -318271.946, Max-Change: 0.00017Iteration: 942, Log-Lik: -318271.945, Max-Change: 0.00040Iteration: 943, Log-Lik: -318271.945, Max-Change: 0.00016Iteration: 944, Log-Lik: -318271.944, Max-Change: 0.00027Iteration: 945, Log-Lik: -318271.943, Max-Change: 0.00013Iteration: 946, Log-Lik: -318271.943, Max-Change: 0.00010Iteration: 947, Log-Lik: -318271.942, Max-Change: 0.00018Iteration: 948, Log-Lik: -318271.941, Max-Change: 0.00039Iteration: 949, Log-Lik: -318271.941, Max-Change: 0.00016Iteration: 950, Log-Lik: -318271.940, Max-Change: 0.00028Iteration: 951, Log-Lik: -318271.939, Max-Change: 0.00012Iteration: 952, Log-Lik: -318271.939, Max-Change: 0.00010
 
 Calculating information matrix...
 
@@ -5130,7 +5111,7 @@ mirt::mirt(data = extended_data %>% select(-dplyr::any_of(identifiers)),
     technical = list(NCYCLES = 1000))
 
 Full-information item factor analysis with 1 factor(s).
-Converged within 1e-04 tolerance after 748 EM iterations.
+Converged within 1e-04 tolerance after 952 EM iterations.
 mirt version: 1.38.1 
 M-step optimizer: BFGS 
 EM acceleration: Ramsay 
@@ -5139,12 +5120,12 @@ Latent density type: Gaussian
 
 Information matrix estimated with method: Oakes
 Second-order test: model is a possible local maximum
-Condition number of information matrix =  48308.68
+Condition number of information matrix =  47871.77
 
-Log-likelihood = -318302.7
+Log-likelihood = -318271.9
 Estimated parameters: 310 
-AIC = 637225.4
-BIC = 639865.1; SABIC = 638879.9
+AIC = 637163.9
+BIC = 639803.3; SABIC = 638818.1
 
                                     F1    h2
 anckar_democracy                 0.987 0.974
@@ -5152,7 +5133,7 @@ anrr_democracy                   0.982 0.965
 blm                              0.984 0.968
 bmr_democracy_femalesuffrage     0.985 0.971
 bnr_extended                     0.967 0.935
-bti_democracy                    0.977 0.955
+bti_democracy                    0.977 0.954
 csvmdi                           0.965 0.931
 doorenspleet                     0.971 0.943
 eiu                              0.966 0.934
@@ -5167,10 +5148,10 @@ pacl                             0.968 0.937
 pacl_update                      0.951 0.905
 PEPS1v                           0.982 0.965
 pitf                             0.958 0.918
-pmm_arat                         0.934 0.873
+pmm_arat                         0.935 0.873
 pmm_bollen                       0.946 0.894
 pmm_hadenius                     0.964 0.930
-pmm_munck                        0.932 0.869
+pmm_munck                        0.932 0.868
 polity2                          0.974 0.948
 polyarchy_contestation_dimension 0.936 0.876
 polyarchy_inclusion_dimension    0.556 0.309
@@ -5181,7 +5162,7 @@ reign_democracy                  0.944 0.890
 svolik_democracy                 0.965 0.932
 ulfelder_democracy_extended      0.970 0.940
 utip_trichotomous                0.939 0.881
-v2x_polyarchy                    0.957 0.917
+v2x_polyarchy                    0.958 0.917
 vanhanen_democratization         0.937 0.878
 wgi_democracy                    0.967 0.936
 wth_democrobust                  0.987 0.973
@@ -5195,92 +5176,92 @@ Factor correlations:
 F1  1
 $rotF
                                         F1
-anckar_democracy                 0.9869250
-anrr_democracy                   0.9821513
-blm                              0.9840170
-bmr_democracy_femalesuffrage     0.9851415
-bnr_extended                     0.9667420
-bti_democracy                    0.9770683
-csvmdi                           0.9647051
-doorenspleet                     0.9709430
-eiu                              0.9663237
-fh_electoral                     0.8894228
-fh_total_reversed                0.9500674
-gwf_democracy_extended_strict    0.9607899
-kailitz_tri                      0.9459146
-lexical_index                    0.9469341
-magaloni_democracy_extended      0.9732748
-mainwaring                       0.9771163
-pacl                             0.9682275
-pacl_update                      0.9510767
-PEPS1v                           0.9822550
-pitf                             0.9581498
-pmm_arat                         0.9344678
-pmm_bollen                       0.9456611
-pmm_hadenius                     0.9644252
-pmm_munck                        0.9320497
-polity2                          0.9738058
-polyarchy_contestation_dimension 0.9361830
-polyarchy_inclusion_dimension    0.5556032
-polyarchy_original_contestation  0.9642792
-polyarchy_original_polyarchy     0.9678205
-prc                              0.9698551
-reign_democracy                  0.9435065
-svolik_democracy                 0.9653044
-ulfelder_democracy_extended      0.9696018
-utip_trichotomous                0.9386578
-v2x_polyarchy                    0.9574795
-vanhanen_democratization         0.9368597
-wgi_democracy                    0.9672571
-wth_democrobust                  0.9866205
+anckar_democracy                 0.9869261
+anrr_democracy                   0.9821582
+blm                              0.9838808
+bmr_democracy_femalesuffrage     0.9851457
+bnr_extended                     0.9667473
+bti_democracy                    0.9769765
+csvmdi                           0.9647516
+doorenspleet                     0.9709470
+eiu                              0.9663488
+fh_electoral                     0.8894242
+fh_total_reversed                0.9501173
+gwf_democracy_extended_strict    0.9608242
+kailitz_tri                      0.9459496
+lexical_index                    0.9469682
+magaloni_democracy_extended      0.9732907
+mainwaring                       0.9771093
+pacl                             0.9682423
+pacl_update                      0.9510803
+PEPS1v                           0.9822472
+pitf                             0.9581711
+pmm_arat                         0.9345189
+pmm_bollen                       0.9456436
+pmm_hadenius                     0.9641867
+pmm_munck                        0.9318719
+polity2                          0.9738126
+polyarchy_contestation_dimension 0.9362095
+polyarchy_inclusion_dimension    0.5557239
+polyarchy_original_contestation  0.9642085
+polyarchy_original_polyarchy     0.9677568
+prc                              0.9698938
+reign_democracy                  0.9435291
+svolik_democracy                 0.9653264
+ulfelder_democracy_extended      0.9696240
+utip_trichotomous                0.9387012
+v2x_polyarchy                    0.9575238
+vanhanen_democratization         0.9368946
+wgi_democracy                    0.9674633
+wth_democrobust                  0.9866270
 
 $h2
                                         h2
-anckar_democracy                 0.9740210
-anrr_democracy                   0.9646213
-blm                              0.9682895
-bmr_democracy_femalesuffrage     0.9705039
-bnr_extended                     0.9345900
-bti_democracy                    0.9546624
-csvmdi                           0.9306560
-doorenspleet                     0.9427304
-eiu                              0.9337816
-fh_electoral                     0.7910730
-fh_total_reversed                0.9026281
-gwf_democracy_extended_strict    0.9231173
-kailitz_tri                      0.8947543
-lexical_index                    0.8966843
-magaloni_democracy_extended      0.9472638
-mainwaring                       0.9547563
-pacl                             0.9374644
-pacl_update                      0.9045469
-PEPS1v                           0.9648250
-pitf                             0.9180510
-pmm_arat                         0.8732301
-pmm_bollen                       0.8942749
-pmm_hadenius                     0.9301161
-pmm_munck                        0.8687167
-polity2                          0.9482977
-polyarchy_contestation_dimension 0.8764386
-polyarchy_inclusion_dimension    0.3086949
-polyarchy_original_contestation  0.9298344
-polyarchy_original_polyarchy     0.9366766
-prc                              0.9406188
-reign_democracy                  0.8902045
-svolik_democracy                 0.9318125
-ulfelder_democracy_extended      0.9401276
-utip_trichotomous                0.8810784
-v2x_polyarchy                    0.9167671
-vanhanen_democratization         0.8777060
-wgi_democracy                    0.9355863
-wth_democrobust                  0.9734201
+anckar_democracy                 0.9740232
+anrr_democracy                   0.9646348
+blm                              0.9680214
+bmr_democracy_femalesuffrage     0.9705121
+bnr_extended                     0.9346003
+bti_democracy                    0.9544831
+csvmdi                           0.9307456
+doorenspleet                     0.9427380
+eiu                              0.9338300
+fh_electoral                     0.7910754
+fh_total_reversed                0.9027230
+gwf_democracy_extended_strict    0.9231832
+kailitz_tri                      0.8948206
+lexical_index                    0.8967487
+magaloni_democracy_extended      0.9472948
+mainwaring                       0.9547426
+pacl                             0.9374931
+pacl_update                      0.9045538
+PEPS1v                           0.9648095
+pitf                             0.9180919
+pmm_arat                         0.8733257
+pmm_bollen                       0.8942419
+pmm_hadenius                     0.9296560
+pmm_munck                        0.8683853
+polity2                          0.9483110
+polyarchy_contestation_dimension 0.8764882
+polyarchy_inclusion_dimension    0.3088290
+polyarchy_original_contestation  0.9296980
+polyarchy_original_polyarchy     0.9365532
+prc                              0.9406940
+reign_democracy                  0.8902472
+svolik_democracy                 0.9318550
+ulfelder_democracy_extended      0.9401708
+utip_trichotomous                0.8811600
+v2x_polyarchy                    0.9168519
+vanhanen_democratization         0.8777715
+wgi_democracy                    0.9359853
+wth_democrobust                  0.9734328
 
 $fcor
    F1
 F1  1
 
 TOTAL:   Data  Estep  Mstep     SE   Post 
-137.90   2.05  26.92  86.67  22.11   0.00 
+194.35   1.99  53.56  94.44  44.15   0.00 
 
 ```
 ## Extracting scores and binding to identifiers...
@@ -5674,16 +5655,14 @@ stopifnot(identical(vanhanen, democracyData::vanhanen))
 cite_dataset("vdem")
 ```
 
-```
-## [1] M. Coppedge, J. Gerring, C. H. Knutsen, et al. _V-Dem Codebook
-## v13_.
-## 
-## [2] D. Pemstein, K. L. Marquardt, E. Tzelgov, et al. _The V-Dem
-## Measurement Model: Latent Variable Analysis for Cross-National and
-## Cross-Temporal Expert-Coded Data_. Tech. rep. 21. Varieties of
-## Democracy Institute, University of Gothenburg, 2022.
-## <https://www.v-dem.net/media/filer_public/25/cb/25cb3f3f-290d-46e1-8eaf-ff2d2c13f4a9/v-dem_working_paper_21.pdf>.
-```
+[1] M. Coppedge, J. Gerring, C. H. Knutsen, et al. _V-Dem Codebook
+v13_.
+
+[2] D. Pemstein, K. L. Marquardt, E. Tzelgov, et al. _The V-Dem
+Measurement Model: Latent Variable Analysis for Cross-National and
+Cross-Temporal Expert-Coded Data_. Tech. rep. 21. Varieties of
+Democracy Institute, University of Gothenburg, 2022.
+<https://www.v-dem.net/media/filer_public/25/cb/25cb3f3f-290d-46e1-8eaf-ff2d2c13f4a9/v-dem_working_paper_21.pdf>.
 
 ```r
 vdem_simple <- prepare_vdem_simple(verbose = verbose, version = "13.0", include_in_output = include_in_output)
@@ -5693,202 +5672,186 @@ vdem_simple <- prepare_vdem_simple(verbose = verbose, version = "13.0", include_
 ## The following country and/or code-years were matched more than once:
 ```
 
-```
-## 
-## 
-## |country_name | COWcode|extended_country_name | GWn| cown| min_date| max_date|  n|
-## |:------------|-------:|:---------------------|---:|----:|--------:|--------:|--:|
-## |Serbia       |     345|Serbia                | 340|  345|     1804|     1829| 25|
-## |Serbia       |     345|Yugoslavia            | 345|  345|     1804|     1829| 25|
-```
+
+
+|country_name | COWcode|extended_country_name | GWn| cown| min_date| max_date|  n|
+|:------------|-------:|:---------------------|---:|----:|--------:|--------:|--:|
+|Serbia       |     345|Serbia                | 340|  345|     1804|     1829| 25|
+|Serbia       |     345|Yugoslavia            | 345|  345|     1804|     1829| 25|
 
 ```
 ## The following different countries/country codes match to a single country unit in the destination system:
 ```
 
-```
-## 
-## 
-## |country_name        | COWcode|extended_country_name | GWn| cown| min_date| max_date|  n|
-## |:-------------------|-------:|:---------------------|---:|----:|--------:|--------:|--:|
-## |Italy               |     325|Italy/Sardinia        | 325|  325|     1861|     1861|  1|
-## |Palestine/Gaza      |      NA|Palestine, State of   |  NA|   NA|     1948|     2022| 18|
-## |Palestine/West Bank |      NA|Palestine, State of   |  NA|   NA|     1948|     2022| 18|
-## |Piedmont-Sardinia   |      NA|Italy/Sardinia        | 325|  325|     1861|     1861|  1|
-```
+
+
+|country_name        | COWcode|extended_country_name | GWn| cown| min_date| max_date|  n|
+|:-------------------|-------:|:---------------------|---:|----:|--------:|--------:|--:|
+|Italy               |     325|Italy/Sardinia        | 325|  325|     1861|     1861|  1|
+|Palestine/Gaza      |      NA|Palestine, State of   |  NA|   NA|     1948|     2022| 18|
+|Palestine/West Bank |      NA|Palestine, State of   |  NA|   NA|     1948|     2022| 18|
+|Piedmont-Sardinia   |      NA|Italy/Sardinia        | 325|  325|     1861|     1861|  1|
 
 ```
 ## The following country and/or code-years were not matched:
 ```
 
-```
-## 
-## 
-## |country_name         | COWcode|extended_country_name | GWn| cown| min_date| max_date|  n|
-## |:--------------------|-------:|:---------------------|---:|----:|--------:|--------:|--:|
-## |Brunswick            |      NA|NA                    |  NA|   NA|     1789|     1867| 74|
-## |Hamburg              |      NA|NA                    |  NA|   NA|     1789|     1867| 79|
-## |Nassau               |      NA|NA                    |  NA|   NA|     1806|     1866| 61|
-## |Oldenburg            |      NA|NA                    |  NA|   NA|     1789|     1867| 77|
-## |Saxe-Weimar-Eisenach |      NA|NA                    |  NA|   NA|     1809|     1867| 59|
-## |WÃ¼rtemberg          |     271|NA                    |  NA|   NA|     1789|     1871| 83|
-```
+
+
+|country_name         | COWcode|extended_country_name | GWn| cown| min_date| max_date|  n|
+|:--------------------|-------:|:---------------------|---:|----:|--------:|--------:|--:|
+|Brunswick            |      NA|NA                    |  NA|   NA|     1789|     1867| 74|
+|Hamburg              |      NA|NA                    |  NA|   NA|     1789|     1867| 79|
+|Nassau               |      NA|NA                    |  NA|   NA|     1806|     1866| 61|
+|Oldenburg            |      NA|NA                    |  NA|   NA|     1789|     1867| 77|
+|Saxe-Weimar-Eisenach |      NA|NA                    |  NA|   NA|     1809|     1867| 59|
+|WÃ¼rtemberg          |     271|NA                    |  NA|   NA|     1789|     1871| 83|
 
 ```
 ## The following country names are different in the destination system:
 ```
 
-```
-## 
-## 
-## |country_name                     | COWcode|extended_country_name                   | GWn| cown| min_date| max_date|   n|
-## |:--------------------------------|-------:|:---------------------------------------|---:|----:|--------:|--------:|---:|
-## |Belarus                          |     370|Belarus (Byelorussia)                   | 370|  370|     1990|     2022|  33|
-## |Bosnia and Herzegovina           |     346|Bosnia-Herzegovina                      | 346|  346|     1992|     2022|  31|
-## |Burkina Faso                     |     439|Burkina Faso (Upper Volta)              | 439|  439|     1919|     2022|  89|
-## |Burma/Myanmar                    |     775|Myanmar (Burma)                         | 775|  775|     1789|     2022| 234|
-## |Cambodia                         |     811|Cambodia (Kampuchea)                    | 811|  811|     1900|     2022| 123|
-## |Czechia                          |     315|Czech Republic                          | 316|  316|     1918|     1992|  75|
-## |Czechia                          |     316|Czech Republic                          | 316|  316|     1993|     2022|  30|
-## |Democratic Republic of the Congo |     490|Congo, Democratic Republic of (Zaire)   | 490|  490|     1900|     2022| 123|
-## |Eswatini                         |     572|Swaziland                               | 572|  572|     1900|     2022| 123|
-## |Germany                          |     255|German Federal Republic                 | 260|  255|     1991|     2022|  32|
-## |Germany                          |     255|Germany (Prussia)                       | 255|  255|     1789|     1944| 156|
-## |Germany                          |     260|German Federal Republic                 | 260|  260|     1949|     1990|  42|
-## |Hesse-Darmstadt                  |     275|Hesse-Darmstadt (Ducal)                 | 275|  275|     1789|     1867|  79|
-## |Hesse-Darmstadt                  |      NA|Hesse-Darmstadt (Ducal)                 | 275|  275|     1868|     1871|   4|
-## |Hesse-Kassel                     |     273|Hesse-Kassel (Electoral)                | 273|  273|     1789|     1866|  78|
-## |Iran                             |     630|Iran (Persia)                           | 630|  630|     1789|     2022| 234|
-## |Italy                            |     325|Italy/Sardinia                          | 325|  325|     1861|     2022| 162|
-## |Ivory Coast                      |     437|Cote D'Ivoire                           | 437|  437|     1900|     2022| 123|
-## |Kyrgyzstan                       |     703|Kyrgyz Republic                         | 703|  703|     1990|     2022|  33|
-## |Madagascar                       |     580|Madagascar (Malagasy)                   | 580|  580|     1817|     2022| 206|
-## |Mecklenburg Schwerin             |     280|Mecklenburg-Schwerin                    | 280|  280|     1789|     1867|  79|
-## |North Korea                      |     731|Korea, People's Republic of             | 731|  731|     1945|     2022|  78|
-## |North Macedonia                  |     343|Macedonia (Former Yugoslav Republic of) | 343|  343|     1991|     2022|  32|
-## |Palestine/British Mandate        |      NA|British Mandate of Palestine            |  NA|   NA|     1918|     1948|  31|
-## |Palestine/Gaza                   |      NA|Palestine, State of                     |  NA|   NA|     1948|     2022|  35|
-## |Palestine/West Bank              |      NA|Palestine, State of                     |  NA|   NA|     1948|     2022|  58|
-## |Piedmont-Sardinia                |      NA|Italy/Sardinia                          | 325|  325|     1789|     1861|  73|
-## |Republic of Vietnam              |     817|Vietnam, Republic of                    | 817|  817|     1802|     1975| 174|
-## |Republic of the Congo            |     484|Congo                                   | 484|  484|     1903|     2022| 120|
-## |Russia                           |     365|Russia (Soviet Union)                   | 365|  365|     1789|     2022| 234|
-## |Serbia                           |     345|Yugoslavia                              | 345|  345|     1804|     2005| 113|
-## |South Korea                      |     730|Korea                                   | 730|  730|     1789|     1905| 117|
-## |South Korea                      |     732|Korea                                   | 730|  730|     1906|     1909|   4|
-## |South Korea                      |     732|Korea, Republic of                      | 732|  732|     1910|     2022| 113|
-## |South Yemen                      |     680|Yemen, People's Republic of             | 680|  680|     1900|     1990|  91|
-## |Sri Lanka                        |     780|Sri Lanka (Ceylon)                      | 780|  780|     1900|     2022| 123|
-## |Suriname                         |     115|Surinam                                 | 115|  115|     1900|     2022| 123|
-## |Tanzania                         |     510|Tanzania/Tanganyika                     | 510|  510|     1914|     2022| 109|
-## |The Gambia                       |     420|Gambia                                  | 420|  420|     1900|     2022| 123|
-## |Timor-Leste                      |     860|East Timor                              | 860|  860|     1900|     2022| 123|
-## |Turkey                           |     640|Turkey (Ottoman Empire)                 | 640|  640|     1789|     2022| 234|
-## |Two Sicilies                     |     329|Sicily (Two Sicilies)                   | 329|  329|     1789|     1860|  72|
-## |Vietnam                          |     816|Vietnam, Democratic Republic of         | 816|  816|     1945|     2022|  78|
-## |Yemen                            |     678|Yemen (Arab Republic of Yemen)          | 678|  678|     1789|     1989| 134|
-## |Yemen                            |     679|Yemen (Arab Republic of Yemen)          | 678|  679|     1990|     2022|  33|
-## |Zimbabwe                         |     552|Zimbabwe (Rhodesia)                     | 552|  552|     1900|     2022| 123|
-```
+
+
+|country_name                     | COWcode|extended_country_name                   | GWn| cown| min_date| max_date|   n|
+|:--------------------------------|-------:|:---------------------------------------|---:|----:|--------:|--------:|---:|
+|Belarus                          |     370|Belarus (Byelorussia)                   | 370|  370|     1990|     2022|  33|
+|Bosnia and Herzegovina           |     346|Bosnia-Herzegovina                      | 346|  346|     1992|     2022|  31|
+|Burkina Faso                     |     439|Burkina Faso (Upper Volta)              | 439|  439|     1919|     2022|  89|
+|Burma/Myanmar                    |     775|Myanmar (Burma)                         | 775|  775|     1789|     2022| 234|
+|Cambodia                         |     811|Cambodia (Kampuchea)                    | 811|  811|     1900|     2022| 123|
+|Czechia                          |     315|Czech Republic                          | 316|  316|     1918|     1992|  75|
+|Czechia                          |     316|Czech Republic                          | 316|  316|     1993|     2022|  30|
+|Democratic Republic of the Congo |     490|Congo, Democratic Republic of (Zaire)   | 490|  490|     1900|     2022| 123|
+|Eswatini                         |     572|Swaziland                               | 572|  572|     1900|     2022| 123|
+|Germany                          |     255|German Federal Republic                 | 260|  255|     1991|     2022|  32|
+|Germany                          |     255|Germany (Prussia)                       | 255|  255|     1789|     1944| 156|
+|Germany                          |     260|German Federal Republic                 | 260|  260|     1949|     1990|  42|
+|Hesse-Darmstadt                  |     275|Hesse-Darmstadt (Ducal)                 | 275|  275|     1789|     1867|  79|
+|Hesse-Darmstadt                  |      NA|Hesse-Darmstadt (Ducal)                 | 275|  275|     1868|     1871|   4|
+|Hesse-Kassel                     |     273|Hesse-Kassel (Electoral)                | 273|  273|     1789|     1866|  78|
+|Iran                             |     630|Iran (Persia)                           | 630|  630|     1789|     2022| 234|
+|Italy                            |     325|Italy/Sardinia                          | 325|  325|     1861|     2022| 162|
+|Ivory Coast                      |     437|Cote D'Ivoire                           | 437|  437|     1900|     2022| 123|
+|Kyrgyzstan                       |     703|Kyrgyz Republic                         | 703|  703|     1990|     2022|  33|
+|Madagascar                       |     580|Madagascar (Malagasy)                   | 580|  580|     1817|     2022| 206|
+|Mecklenburg Schwerin             |     280|Mecklenburg-Schwerin                    | 280|  280|     1789|     1867|  79|
+|North Korea                      |     731|Korea, People's Republic of             | 731|  731|     1945|     2022|  78|
+|North Macedonia                  |     343|Macedonia (Former Yugoslav Republic of) | 343|  343|     1991|     2022|  32|
+|Palestine/British Mandate        |      NA|British Mandate of Palestine            |  NA|   NA|     1918|     1948|  31|
+|Palestine/Gaza                   |      NA|Palestine, State of                     |  NA|   NA|     1948|     2022|  35|
+|Palestine/West Bank              |      NA|Palestine, State of                     |  NA|   NA|     1948|     2022|  58|
+|Piedmont-Sardinia                |      NA|Italy/Sardinia                          | 325|  325|     1789|     1861|  73|
+|Republic of Vietnam              |     817|Vietnam, Republic of                    | 817|  817|     1802|     1975| 174|
+|Republic of the Congo            |     484|Congo                                   | 484|  484|     1903|     2022| 120|
+|Russia                           |     365|Russia (Soviet Union)                   | 365|  365|     1789|     2022| 234|
+|Serbia                           |     345|Yugoslavia                              | 345|  345|     1804|     2005| 113|
+|South Korea                      |     730|Korea                                   | 730|  730|     1789|     1905| 117|
+|South Korea                      |     732|Korea                                   | 730|  730|     1906|     1909|   4|
+|South Korea                      |     732|Korea, Republic of                      | 732|  732|     1910|     2022| 113|
+|South Yemen                      |     680|Yemen, People's Republic of             | 680|  680|     1900|     1990|  91|
+|Sri Lanka                        |     780|Sri Lanka (Ceylon)                      | 780|  780|     1900|     2022| 123|
+|Suriname                         |     115|Surinam                                 | 115|  115|     1900|     2022| 123|
+|Tanzania                         |     510|Tanzania/Tanganyika                     | 510|  510|     1914|     2022| 109|
+|The Gambia                       |     420|Gambia                                  | 420|  420|     1900|     2022| 123|
+|Timor-Leste                      |     860|East Timor                              | 860|  860|     1900|     2022| 123|
+|Turkey                           |     640|Turkey (Ottoman Empire)                 | 640|  640|     1789|     2022| 234|
+|Two Sicilies                     |     329|Sicily (Two Sicilies)                   | 329|  329|     1789|     1860|  72|
+|Vietnam                          |     816|Vietnam, Democratic Republic of         | 816|  816|     1945|     2022|  78|
+|Yemen                            |     678|Yemen (Arab Republic of Yemen)          | 678|  678|     1789|     1989| 134|
+|Yemen                            |     679|Yemen (Arab Republic of Yemen)          | 678|  679|     1990|     2022|  33|
+|Zimbabwe                         |     552|Zimbabwe (Rhodesia)                     | 552|  552|     1900|     2022| 123|
 
 ```
 ## The following country and/or code-years were matched more than once:
 ```
 
-```
-## 
-## 
-## |country_name |extended_country_name | GWn| cown| min_date| max_date|  n|
-## |:------------|:---------------------|---:|----:|--------:|--------:|--:|
-## |Serbia       |Serbia                | 340|  345|     1804|     1829| 25|
-## |Serbia       |Yugoslavia            | 345|  345|     1804|     1829| 25|
-```
+
+
+|country_name |extended_country_name | GWn| cown| min_date| max_date|  n|
+|:------------|:---------------------|---:|----:|--------:|--------:|--:|
+|Serbia       |Serbia                | 340|  345|     1804|     1829| 25|
+|Serbia       |Yugoslavia            | 345|  345|     1804|     1829| 25|
 
 ```
 ## The following different countries/country codes match to a single country unit in the destination system:
 ```
 
-```
-## 
-## 
-## |country_name        |extended_country_name | GWn| cown| min_date| max_date|  n|
-## |:-------------------|:---------------------|---:|----:|--------:|--------:|--:|
-## |Italy               |Italy/Sardinia        | 325|  325|     1861|     1861|  1|
-## |Palestine/Gaza      |Palestine, State of   |  NA|   NA|     1948|     2022| 18|
-## |Palestine/West Bank |Palestine, State of   |  NA|   NA|     1948|     2022| 18|
-## |Piedmont-Sardinia   |Italy/Sardinia        | 325|  325|     1861|     1861|  1|
-```
+
+
+|country_name        |extended_country_name | GWn| cown| min_date| max_date|  n|
+|:-------------------|:---------------------|---:|----:|--------:|--------:|--:|
+|Italy               |Italy/Sardinia        | 325|  325|     1861|     1861|  1|
+|Palestine/Gaza      |Palestine, State of   |  NA|   NA|     1948|     2022| 18|
+|Palestine/West Bank |Palestine, State of   |  NA|   NA|     1948|     2022| 18|
+|Piedmont-Sardinia   |Italy/Sardinia        | 325|  325|     1861|     1861|  1|
 
 ```
 ## The following country and/or code-years were not matched:
 ```
 
-```
-## 
-## 
-## |country_name         |extended_country_name | GWn| cown| min_date| max_date|  n|
-## |:--------------------|:---------------------|---:|----:|--------:|--------:|--:|
-## |Brunswick            |NA                    |  NA|   NA|     1789|     1867| 74|
-## |Hamburg              |NA                    |  NA|   NA|     1789|     1867| 79|
-## |Nassau               |NA                    |  NA|   NA|     1806|     1866| 61|
-## |Oldenburg            |NA                    |  NA|   NA|     1789|     1867| 77|
-## |Saxe-Weimar-Eisenach |NA                    |  NA|   NA|     1809|     1867| 59|
-## |WÃ¼rtemberg          |NA                    |  NA|   NA|     1789|     1871| 83|
-```
+
+
+|country_name         |extended_country_name | GWn| cown| min_date| max_date|  n|
+|:--------------------|:---------------------|---:|----:|--------:|--------:|--:|
+|Brunswick            |NA                    |  NA|   NA|     1789|     1867| 74|
+|Hamburg              |NA                    |  NA|   NA|     1789|     1867| 79|
+|Nassau               |NA                    |  NA|   NA|     1806|     1866| 61|
+|Oldenburg            |NA                    |  NA|   NA|     1789|     1867| 77|
+|Saxe-Weimar-Eisenach |NA                    |  NA|   NA|     1809|     1867| 59|
+|WÃ¼rtemberg          |NA                    |  NA|   NA|     1789|     1871| 83|
 
 ```
 ## The following country names are different in the destination system:
 ```
 
-```
-## 
-## 
-## |country_name                     |extended_country_name                   | GWn| cown| min_date| max_date|   n|
-## |:--------------------------------|:---------------------------------------|---:|----:|--------:|--------:|---:|
-## |Belarus                          |Belarus (Byelorussia)                   | 370|  370|     1990|     2022|  33|
-## |Bosnia and Herzegovina           |Bosnia-Herzegovina                      | 346|  346|     1992|     2022|  31|
-## |Burkina Faso                     |Burkina Faso (Upper Volta)              | 439|  439|     1919|     2022|  89|
-## |Burma/Myanmar                    |Myanmar (Burma)                         | 775|  775|     1789|     2022| 234|
-## |Cambodia                         |Cambodia (Kampuchea)                    | 811|  811|     1900|     2022| 123|
-## |Czechia                          |Czech Republic                          | 316|  316|     1918|     2022| 105|
-## |Democratic Republic of the Congo |Congo, Democratic Republic of (Zaire)   | 490|  490|     1900|     2022| 123|
-## |Eswatini                         |Swaziland                               | 572|  572|     1900|     2022| 123|
-## |Germany                          |German Federal Republic                 | 260|  255|     1990|     2022|  33|
-## |Germany                          |German Federal Republic                 | 260|  260|     1949|     1989|  41|
-## |Germany                          |Germany (Prussia)                       | 255|  255|     1789|     1944| 156|
-## |Hesse-Darmstadt                  |Hesse-Darmstadt (Ducal)                 | 275|  275|     1789|     1871|  83|
-## |Hesse-Kassel                     |Hesse-Kassel (Electoral)                | 273|  273|     1789|     1866|  78|
-## |Iran                             |Iran (Persia)                           | 630|  630|     1789|     2022| 234|
-## |Italy                            |Italy/Sardinia                          | 325|  325|     1861|     2022| 162|
-## |Ivory Coast                      |Cote D'Ivoire                           | 437|  437|     1900|     2022| 123|
-## |Kyrgyzstan                       |Kyrgyz Republic                         | 703|  703|     1990|     2022|  33|
-## |Madagascar                       |Madagascar (Malagasy)                   | 580|  580|     1817|     2022| 206|
-## |Mecklenburg Schwerin             |Mecklenburg-Schwerin                    | 280|  280|     1789|     1867|  79|
-## |North Korea                      |Korea, People's Republic of             | 731|  731|     1945|     2022|  78|
-## |North Macedonia                  |Macedonia (Former Yugoslav Republic of) | 343|  343|     1991|     2022|  32|
-## |Palestine/British Mandate        |British Mandate of Palestine            |  NA|   NA|     1918|     1948|  31|
-## |Palestine/Gaza                   |Palestine, State of                     |  NA|   NA|     1948|     2022|  35|
-## |Palestine/West Bank              |Palestine, State of                     |  NA|   NA|     1948|     2022|  58|
-## |Piedmont-Sardinia                |Italy/Sardinia                          | 325|  325|     1789|     1861|  73|
-## |Republic of Vietnam              |Vietnam, Republic of                    | 817|  817|     1802|     1975| 174|
-## |Republic of the Congo            |Congo                                   | 484|  484|     1903|     2022| 120|
-## |Russia                           |Russia (Soviet Union)                   | 365|  365|     1789|     2022| 234|
-## |Serbia                           |Yugoslavia                              | 345|  345|     1804|     2005| 113|
-## |South Korea                      |Korea                                   | 730|  730|     1789|     1909| 121|
-## |South Korea                      |Korea, Republic of                      | 732|  732|     1910|     2022| 113|
-## |South Yemen                      |Yemen, People's Republic of             | 680|  680|     1900|     1990|  91|
-## |Sri Lanka                        |Sri Lanka (Ceylon)                      | 780|  780|     1900|     2022| 123|
-## |Suriname                         |Surinam                                 | 115|  115|     1900|     2022| 123|
-## |Tanzania                         |Tanzania/Tanganyika                     | 510|  510|     1914|     2022| 109|
-## |The Gambia                       |Gambia                                  | 420|  420|     1900|     2022| 123|
-## |Timor-Leste                      |East Timor                              | 860|  860|     1900|     2022| 123|
-## |Turkey                           |Turkey (Ottoman Empire)                 | 640|  640|     1789|     2022| 234|
-## |Two Sicilies                     |Sicily (Two Sicilies)                   | 329|  329|     1789|     1860|  72|
-## |Vietnam                          |Vietnam, Democratic Republic of         | 816|  816|     1945|     2022|  78|
-## |Yemen                            |Yemen (Arab Republic of Yemen)          | 678|  678|     1789|     1989| 134|
-## |Yemen                            |Yemen (Arab Republic of Yemen)          | 678|  679|     1990|     2022|  33|
-## |Zimbabwe                         |Zimbabwe (Rhodesia)                     | 552|  552|     1900|     2022| 123|
-```
+
+
+|country_name                     |extended_country_name                   | GWn| cown| min_date| max_date|   n|
+|:--------------------------------|:---------------------------------------|---:|----:|--------:|--------:|---:|
+|Belarus                          |Belarus (Byelorussia)                   | 370|  370|     1990|     2022|  33|
+|Bosnia and Herzegovina           |Bosnia-Herzegovina                      | 346|  346|     1992|     2022|  31|
+|Burkina Faso                     |Burkina Faso (Upper Volta)              | 439|  439|     1919|     2022|  89|
+|Burma/Myanmar                    |Myanmar (Burma)                         | 775|  775|     1789|     2022| 234|
+|Cambodia                         |Cambodia (Kampuchea)                    | 811|  811|     1900|     2022| 123|
+|Czechia                          |Czech Republic                          | 316|  316|     1918|     2022| 105|
+|Democratic Republic of the Congo |Congo, Democratic Republic of (Zaire)   | 490|  490|     1900|     2022| 123|
+|Eswatini                         |Swaziland                               | 572|  572|     1900|     2022| 123|
+|Germany                          |German Federal Republic                 | 260|  255|     1990|     2022|  33|
+|Germany                          |German Federal Republic                 | 260|  260|     1949|     1989|  41|
+|Germany                          |Germany (Prussia)                       | 255|  255|     1789|     1944| 156|
+|Hesse-Darmstadt                  |Hesse-Darmstadt (Ducal)                 | 275|  275|     1789|     1871|  83|
+|Hesse-Kassel                     |Hesse-Kassel (Electoral)                | 273|  273|     1789|     1866|  78|
+|Iran                             |Iran (Persia)                           | 630|  630|     1789|     2022| 234|
+|Italy                            |Italy/Sardinia                          | 325|  325|     1861|     2022| 162|
+|Ivory Coast                      |Cote D'Ivoire                           | 437|  437|     1900|     2022| 123|
+|Kyrgyzstan                       |Kyrgyz Republic                         | 703|  703|     1990|     2022|  33|
+|Madagascar                       |Madagascar (Malagasy)                   | 580|  580|     1817|     2022| 206|
+|Mecklenburg Schwerin             |Mecklenburg-Schwerin                    | 280|  280|     1789|     1867|  79|
+|North Korea                      |Korea, People's Republic of             | 731|  731|     1945|     2022|  78|
+|North Macedonia                  |Macedonia (Former Yugoslav Republic of) | 343|  343|     1991|     2022|  32|
+|Palestine/British Mandate        |British Mandate of Palestine            |  NA|   NA|     1918|     1948|  31|
+|Palestine/Gaza                   |Palestine, State of                     |  NA|   NA|     1948|     2022|  35|
+|Palestine/West Bank              |Palestine, State of                     |  NA|   NA|     1948|     2022|  58|
+|Piedmont-Sardinia                |Italy/Sardinia                          | 325|  325|     1789|     1861|  73|
+|Republic of Vietnam              |Vietnam, Republic of                    | 817|  817|     1802|     1975| 174|
+|Republic of the Congo            |Congo                                   | 484|  484|     1903|     2022| 120|
+|Russia                           |Russia (Soviet Union)                   | 365|  365|     1789|     2022| 234|
+|Serbia                           |Yugoslavia                              | 345|  345|     1804|     2005| 113|
+|South Korea                      |Korea                                   | 730|  730|     1789|     1909| 121|
+|South Korea                      |Korea, Republic of                      | 732|  732|     1910|     2022| 113|
+|South Yemen                      |Yemen, People's Republic of             | 680|  680|     1900|     1990|  91|
+|Sri Lanka                        |Sri Lanka (Ceylon)                      | 780|  780|     1900|     2022| 123|
+|Suriname                         |Surinam                                 | 115|  115|     1900|     2022| 123|
+|Tanzania                         |Tanzania/Tanganyika                     | 510|  510|     1914|     2022| 109|
+|The Gambia                       |Gambia                                  | 420|  420|     1900|     2022| 123|
+|Timor-Leste                      |East Timor                              | 860|  860|     1900|     2022| 123|
+|Turkey                           |Turkey (Ottoman Empire)                 | 640|  640|     1789|     2022| 234|
+|Two Sicilies                     |Sicily (Two Sicilies)                   | 329|  329|     1789|     1860|  72|
+|Vietnam                          |Vietnam, Democratic Republic of         | 816|  816|     1945|     2022|  78|
+|Yemen                            |Yemen (Arab Republic of Yemen)          | 678|  678|     1789|     1989| 134|
+|Yemen                            |Yemen (Arab Republic of Yemen)          | 678|  679|     1990|     2022|  33|
+|Zimbabwe                         |Zimbabwe (Rhodesia)                     | 552|  552|     1900|     2022| 123|
 
 ```
 ## Joining with `by = join_by(country_name, country_text_id, country_id, year,

@@ -16,6 +16,7 @@ knitr::opts_chunk$set(echo = TRUE,
 library(tidyverse)
 library(democracyData)
 library(targets)
+devtools::load_all()
 
 verbose <- TRUE
 include_in_output <-  c("extended_country_name", "GWn", "cown", "in_GW_system")
@@ -589,7 +590,7 @@ stopifnot(identical(vanhanen, democracyData::vanhanen))
 
 # VDem
 
-```{r, results='markup'}
+```{r, results='asis'}
 cite_dataset("vdem")
 
 vdem_simple <- prepare_vdem_simple(verbose = verbose, version = "13.0", include_in_output = include_in_output)
