@@ -350,7 +350,7 @@ download_polity_annual <- function(url,
 #'
 #'
 #' @param url The URL of the dataset. Defaults to
-#'   \url{http://info.worldbank.org/governance/wgi/Home/downLoadFile?fileName=wgidataset.xlsx}
+#'   \url{https://www.worldbank.org/content/dam/sites/govindicators/doc/wgidataset.xlsx}
 #' @inheritParams redownload_blm
 #'
 #' @import dplyr
