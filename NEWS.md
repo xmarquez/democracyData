@@ -1,3 +1,7 @@
+# democracyData 0.5.1
+
+* Fixed broken WGI URL, now data available to 2022
+
 # democracyData 0.5.0
 
 * Removed dependence on `plyr`

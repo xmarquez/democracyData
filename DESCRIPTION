@@ -1,7 +1,7 @@
 Package: democracyData
 Type: Package
 Title: Access and Manipulate Most Available Democracy Datasets 
-Version: 0.5.0
+Version: 0.5.1
 Description: Archives a large number of democracy datasets, many of historical 
     interest. It also provides a number of functions to download these datasets 
     (where available) and determine membership of a country in standard 

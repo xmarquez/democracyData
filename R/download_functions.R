@@ -413,7 +413,7 @@ download_wgi_voice_and_accountability <- function(url,
                                                   return_raw = FALSE,
                                                   ...) {
   if(missing(url)) {
-    url <- "http://info.worldbank.org/governance/wgi/Home/downLoadFile?fileName=wgidataset.xlsx"
+    url <- "https://www.worldbank.org/content/dam/sites/govindicators/doc/wgidataset.xlsx"
   }
 
   Estimate <- wb_country <- year <-  wb_code <- name <- NULL
@@ -428,7 +428,7 @@ download_wgi_voice_and_accountability <- function(url,
                    paste(rep(c("Estimate", "StdErr", "NumSrc",
                                "Rank", "Lower", "Upper"),
                              (ncol(data) - 2)/6),
-                         rep(c(1996, 1998, 2000, 2002:2021), each = 6),
+                         rep(c(1996, 1998, 2000, 2002:2022), each = 6),
                          sep = "_"))
 
   if(return_raw) {
