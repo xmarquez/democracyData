@@ -164,6 +164,7 @@ test_that("UTIP redownloads correctly", {
 })
 
 test_that("Wahman-Teorell-Hadenius redownloads correctly", {
+  skip("File not available")
   skip_on_cran()
   skip_on_travis()
   skip_if_offline()
