@@ -88,7 +88,7 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
-<p><!-- badges: start --> <a href="https://github.com/xmarquez/democracyData/actions" class="external-link"><img src="https://github.com/xmarquez/democracyData/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a> <!-- badges: end --></p>
+
 <div class="section level1">
 <div class="page-header"><h1 id="democracydata">democracyData<a class="anchor" aria-label="anchor" href="#democracydata"></a>
 </h1></div>
@@ -97,7 +97,7 @@
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>The package is only available on Github. Install as follows:</p>
-<pre><code><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"xmarquez/democracyData"</span><span class="op">)</span></span></code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"xmarquez/democracyData"</span>)</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="basic-usage">Basic usage<a class="anchor" aria-label="anchor" href="#basic-usage"></a>
@@ -265,6 +265,15 @@
 <p>For a list of all the democracy datasets available through this package, type <code>democracy_info</code>:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning: package 'dplyr' was built under R version 4.2.3</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Attaching package: 'dplyr'</span></span>
+<span><span class="co">#&gt; The following objects are masked from 'package:stats':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     filter, lag</span></span>
+<span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span>
 <span></span>
 <span><span class="va">democracy_info</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -283,7 +292,7 @@
 <col width="2%">
 <col width="17%">
 <col width="2%">
-<col width="38%">
+<col width="37%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">dataset</th>
@@ -999,7 +1008,7 @@
 <span><span class="co">#&gt; ! NAs introduced by coercion</span></span>
 <span></span>
 <span><span class="va">democracy_data</span></span>
-<span><span class="co">#&gt; # A tibble: 37,154 × 89</span></span>
+<span><span class="co">#&gt; # A tibble: 37,164 × 89</span></span>
 <span><span class="co">#&gt;    extended_country_name   GWn  cown in_GW_system  year PEPS1i PEPS1q PEPS1v</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;                 &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt;  1 Abkhazia                396    NA FALSE         1997     NA     NA     NA</span></span>
@@ -1012,7 +1021,7 @@
 <span><span class="co">#&gt;  8 Abkhazia                396    NA FALSE         2004     NA     NA     NA</span></span>
 <span><span class="co">#&gt;  9 Abkhazia                396    NA FALSE         2005     NA     NA     NA</span></span>
 <span><span class="co">#&gt; 10 Abkhazia                396    NA FALSE         2006     NA     NA     NA</span></span>
-<span><span class="co">#&gt; # ℹ 37,144 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 37,154 more rows</span></span>
 <span><span class="co">#&gt; # ℹ 81 more variables: PEPS2i &lt;dbl&gt;, PEPS2q &lt;dbl&gt;, PEPS2v &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   PIPE_democracy &lt;dbl&gt;, PIPE_regime &lt;dbl&gt;, anckar_democracy &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   anrr_democracy &lt;dbl&gt;, blm &lt;dbl&gt;, bmr_democracy &lt;dbl&gt;,</span></span>
@@ -1071,22 +1080,22 @@
 <span><span class="co">#&gt; # A tibble: 16 × 3</span></span>
 <span><span class="co">#&gt;    country                      year my_measure</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;                       &lt;dbl&gt;      &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Germany                      2015     -1.74 </span></span>
-<span><span class="co">#&gt;  2 Germany                      1930      1.89 </span></span>
-<span><span class="co">#&gt;  3 Germany                      1970      0.705</span></span>
-<span><span class="co">#&gt;  4 Germany                      1945      0.299</span></span>
-<span><span class="co">#&gt;  5 East Germany                 1949     -0.684</span></span>
-<span><span class="co">#&gt;  6 Federal Republic of Germany  1992      0.341</span></span>
-<span><span class="co">#&gt;  7 Somaliland                   1990      1.32 </span></span>
-<span><span class="co">#&gt;  8 Somalia                      1990     -0.660</span></span>
-<span><span class="co">#&gt;  9 Palestine                    1940      0.169</span></span>
-<span><span class="co">#&gt; 10 Russia                       1917     -1.04 </span></span>
-<span><span class="co">#&gt; 11 Russia                       1912     -1.12 </span></span>
-<span><span class="co">#&gt; 12 USSR                         1922      0.659</span></span>
-<span><span class="co">#&gt; 13 Republic of Vietnam          1975     -0.880</span></span>
-<span><span class="co">#&gt; 14 Yugoslavia                   1990     -0.333</span></span>
-<span><span class="co">#&gt; 15 Yugoslavia                   1991     -0.188</span></span>
-<span><span class="co">#&gt; 16 Vietnam, South               1954      0.353</span></span></code></pre></div>
+<span><span class="co">#&gt;  1 Germany                      2015    -0.848 </span></span>
+<span><span class="co">#&gt;  2 Germany                      1930     0.151 </span></span>
+<span><span class="co">#&gt;  3 Germany                      1970    -0.474 </span></span>
+<span><span class="co">#&gt;  4 Germany                      1945    -1.31  </span></span>
+<span><span class="co">#&gt;  5 East Germany                 1949     0.495 </span></span>
+<span><span class="co">#&gt;  6 Federal Republic of Germany  1992    -0.528 </span></span>
+<span><span class="co">#&gt;  7 Somaliland                   1990     0.508 </span></span>
+<span><span class="co">#&gt;  8 Somalia                      1990    -0.868 </span></span>
+<span><span class="co">#&gt;  9 Palestine                    1940     0.691 </span></span>
+<span><span class="co">#&gt; 10 Russia                       1917     0.794 </span></span>
+<span><span class="co">#&gt; 11 Russia                       1912    -2.02  </span></span>
+<span><span class="co">#&gt; 12 USSR                         1922     0.0446</span></span>
+<span><span class="co">#&gt; 13 Republic of Vietnam          1975     0.133 </span></span>
+<span><span class="co">#&gt; 14 Yugoslavia                   1990     2.12  </span></span>
+<span><span class="co">#&gt; 15 Yugoslavia                   1991     1.37  </span></span>
+<span><span class="co">#&gt; 16 Vietnam, South               1954     0.171</span></span></code></pre></div>
 <p>and you then want to add state system information. <code>country_year_coder</code> does that for you!</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
@@ -1106,14 +1115,14 @@
 <span></span>
 <span><span class="va">my_weird_democracy_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<table class="table">
+<table style="width:100%;" class="table">
 <colgroup>
-<col width="16%">
-<col width="2%">
+<col width="15%">
+<col width="3%">
 <col width="6%">
 <col width="16%">
 <col width="2%">
-<col width="2%">
+<col width="3%">
 <col width="7%">
 <col width="7%">
 <col width="8%">
@@ -1139,7 +1148,7 @@
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="right">2015</td>
-<td align="right">-1.7377619</td>
+<td align="right">-0.8484332</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -1153,7 +1162,7 @@
 <tr class="even">
 <td align="left">Germany</td>
 <td align="right">1930</td>
-<td align="right">1.8884001</td>
+<td align="right">0.1509633</td>
 <td align="left">Germany (Prussia)</td>
 <td align="right">255</td>
 <td align="right">255</td>
@@ -1167,7 +1176,7 @@
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="right">1970</td>
-<td align="right">0.7050808</td>
+<td align="right">-0.4741500</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -1181,7 +1190,7 @@
 <tr class="even">
 <td align="left">Germany</td>
 <td align="right">1945</td>
-<td align="right">0.2990500</td>
+<td align="right">-1.3103168</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -1195,7 +1204,7 @@
 <tr class="odd">
 <td align="left">East Germany</td>
 <td align="right">1949</td>
-<td align="right">-0.6841123</td>
+<td align="right">0.4952382</td>
 <td align="left">German Democratic Republic</td>
 <td align="right">265</td>
 <td align="right">265</td>
@@ -1209,7 +1218,7 @@
 <tr class="even">
 <td align="left">Federal Republic of Germany</td>
 <td align="right">1992</td>
-<td align="right">0.3406902</td>
+<td align="right">-0.5282101</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -1223,7 +1232,7 @@
 <tr class="odd">
 <td align="left">Somaliland</td>
 <td align="right">1990</td>
-<td align="right">1.3150338</td>
+<td align="right">0.5084614</td>
 <td align="left">Somaliland</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -1237,7 +1246,7 @@
 <tr class="even">
 <td align="left">Somalia</td>
 <td align="right">1990</td>
-<td align="right">-0.6602939</td>
+<td align="right">-0.8683599</td>
 <td align="left">Somalia</td>
 <td align="right">520</td>
 <td align="right">520</td>
@@ -1251,7 +1260,7 @@
 <tr class="odd">
 <td align="left">Palestine</td>
 <td align="right">1940</td>
-<td align="right">0.1685963</td>
+<td align="right">0.6913429</td>
 <td align="left">British Mandate of Palestine</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -1265,7 +1274,7 @@
 <tr class="even">
 <td align="left">Russia</td>
 <td align="right">1917</td>
-<td align="right">-1.0372334</td>
+<td align="right">0.7942985</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1279,7 +1288,7 @@
 <tr class="odd">
 <td align="left">Russia</td>
 <td align="right">1912</td>
-<td align="right">-1.1168415</td>
+<td align="right">-2.0181489</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1293,7 +1302,7 @@
 <tr class="even">
 <td align="left">USSR</td>
 <td align="right">1922</td>
-<td align="right">0.6587556</td>
+<td align="right">0.0445613</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1307,7 +1316,7 @@
 <tr class="odd">
 <td align="left">Republic of Vietnam</td>
 <td align="right">1975</td>
-<td align="right">-0.8795720</td>
+<td align="right">0.1333470</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
@@ -1321,7 +1330,7 @@
 <tr class="even">
 <td align="left">Yugoslavia</td>
 <td align="right">1990</td>
-<td align="right">-0.3325757</td>
+<td align="right">2.1189569</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1335,7 +1344,7 @@
 <tr class="odd">
 <td align="left">Yugoslavia</td>
 <td align="right">1991</td>
-<td align="right">-0.1879705</td>
+<td align="right">1.3728548</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1349,7 +1358,7 @@
 <tr class="even">
 <td align="left">Vietnam, South</td>
 <td align="right">1954</td>
-<td align="right">0.3527754</td>
+<td align="right">0.1714102</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
@@ -1504,7 +1513,12 @@
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/xmarquez/democracyData/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/xmarquez/democracyData/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+</ul>
+</div>
 
   </div>
 </div>
