@@ -419,7 +419,7 @@ download_wgi_voice_and_accountability <- function(url,
   Estimate <- wb_country <- year <-  wb_code <- name <- NULL
 
   tmp <- tempfile(fileext = ".xlsx")
-  utils::download.file(url, tmp, mode = "wb")
+  utils::download.file(url, tmp, quiet = !verbose, mode = "wb")
 
   data <- readxl::read_excel(tmp, sheet = 2, skip = 14,
                              .name_repair = "unique_quiet")
