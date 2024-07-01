@@ -62,9 +62,10 @@ create_panel <- function(system = c("cow", "GW", "polity"),
 
 }
 
-download_and_read_xls <- function(url, fileext, ...) {
+download_and_read_xls <- function(url, fileext,
+                                  verbose = verbose, ...) {
   tmpfile <- tempfile(fileext = fileext)
-  utils::download.file(url, tmpfile, mode = "wb")
+  utils::download.file(url, tmpfile, mode = "wb", quiet = !verbose)
 
   if("na" %in% names(rlang::dots_list(...))) {
     data  <- readxl::read_excel(tmpfile, .name_repair = "unique_quiet", ...) %>%
@@ -137,7 +138,8 @@ read_data <- function(path,
 
   if(file_extension %in% c("xls", "xlsx") &
      is_url) {
-    data <- download_and_read_xls(path, paste0(".", file_extension), ...)
+    data <- download_and_read_xls(path, paste0(".", file_extension),
+                                  verbose = verbose, ...)
   } else if(file_extension == "zip" & is_url) {
     tmpfile <- tempfile()
     utils::download.file(path, tmpfile, quiet = !verbose)
