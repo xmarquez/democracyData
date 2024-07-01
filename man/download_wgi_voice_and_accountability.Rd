@@ -31,10 +31,10 @@ Default is \code{FALSE}.}
 }
 \value{
 A dataset containing the country-year version of the latest update
-(to 2021) of the World Governance Indicators "Democracy, Voice and
+(to 2022) of the World Governance Indicators "Democracy, Voice and
 Accountability" Index, compiled by Daniel Kaufmann and Aart Kraay. The
 original data are available at
-http://info.worldbank.org/governance/wgi/index.aspx#home, along with a full
+https://www.worldbank.org/en/publication/worldwide-governance-indicators#home, along with a full
 explanation of the methodology used to compile the index.
 
 According to the compilers, "Voice and accountability captures perceptions
@@ -138,9 +138,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
 \code{\link{fh_pmm}},
@@ -150,14 +150,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},

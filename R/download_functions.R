@@ -355,10 +355,10 @@ download_polity_annual <- function(url,
 #' @export
 #'
 #' @return A dataset containing the country-year version of the latest update
-#'   (to 2021) of the World Governance Indicators "Democracy, Voice and
+#'   (to 2022) of the World Governance Indicators "Democracy, Voice and
 #'   Accountability" Index, compiled by Daniel Kaufmann and Aart Kraay. The
 #'   original data are available at
-#'   http://info.worldbank.org/governance/wgi/index.aspx#home, along with a full
+#'   https://www.worldbank.org/en/publication/worldwide-governance-indicators#home, along with a full
 #'   explanation of the methodology used to compile the index.
 #'
 #'   According to the compilers, "Voice and accountability captures perceptions
