@@ -289,8 +289,6 @@ download_polity_annual <- function(url,
                                    verbose = TRUE,
                                    return_raw = FALSE,
                                    ...) {
-#  ccode <- country <- year <- NULL
-
   if(missing(url)) {
     url <- "http://www.systemicpeace.org/inscr/p5v2018.sav"
   }
@@ -338,7 +336,7 @@ download_polity_annual <- function(url,
   }
 
 
-  standardize_columns(polity_annual, country, ccode, verbose = verbose)
+  standardize_columns(polity_annual, "country", "ccode", verbose = verbose)
 }
 
 #' Democracy, Voice, and Accountability Index from the World Governance
