@@ -6,7 +6,7 @@
 \title{Freedom House Electoral Democracies List}
 \source{
 The "Freedom in the World" dataset from Freedom House, updated to
-2022 (Freedom in the World report 2023 edition). Original data and
+2023 (Freedom in the World report 2024 edition). Original data and
 methodology is available at
 \url{https://freedomhouse.org/report/freedom-world}
 }
@@ -42,7 +42,7 @@ is a little opaque).
 }
 }
 \description{
-Downloads the 2023 update of the Freedom House Electoral Democracies list and
+Downloads the 2024 update of the Freedom House Electoral Democracies list and
 processes it using \link{country_year_coder}. The original data is available at
 \url{https://freedomhouse.org/report/freedom-world},
 spread over a number of different urls.
@@ -109,8 +109,8 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
-\code{\link{download_fh_full}()},
 \code{\link{download_fh}()},
+\code{\link{download_fh_full}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -121,14 +121,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -140,13 +140,13 @@ Other democracy:
 \code{\link{wahman_teorell_hadenius}}
 
 Other Freedom House: 
-\code{\link{download_fh_full}()},
 \code{\link{download_fh}()},
+\code{\link{download_fh_full}()},
 \code{\link{fh_pmm}}
 
 Other ordinal democracy indexes: 
-\code{\link{download_fh_full}()},
 \code{\link{download_fh}()},
+\code{\link{download_fh_full}()},
 \code{\link{fh_pmm}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}}

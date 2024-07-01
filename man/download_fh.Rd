@@ -5,7 +5,7 @@
 \title{Freedom House "Freedom in the World" data}
 \source{
 The "Freedom in the World" dataset from Freedom House, updated to
-2022 (Freedom in the World 2023 Report). Original data and methodology is
+2023 (Freedom in the World 2024 Report). Original data and methodology is
 available at \url{https://freedomhouse.org/report/freedom-world}
 }
 \usage{
@@ -19,7 +19,7 @@ download_fh(
 }
 \arguments{
 \item{url}{The URL of the dataset. Defaults to
-https://freedomhouse.org/sites/default/files/2023-02/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2023\%20.xlsx}
+https://freedomhouse.org/sites/default/files/2024-02/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2024.xlsx}
 
 \item{include_territories}{Whether to include scores from non-independent
 territories (e.g., Indian Kashmir, Northern Ireland) compiled by FH.
@@ -62,7 +62,7 @@ free."
 }
 }
 \description{
-Downloads the 2023 update of the Freedom House "Freedom in the World" data
+Downloads the 2024 update of the Freedom House "Freedom in the World" data
 and processes it using \link{country_year_coder}. The original data is available
 at \url{https://freedomhouse.org/report-types/freedom-world}
 }
@@ -194,14 +194,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
