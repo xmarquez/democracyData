@@ -766,7 +766,7 @@ download_fh_electoral <- function(verbose = TRUE,
   if(verbose) {
     message(sprintf("Original dataset has %d rows, but is not in country-year format",
                     nrow(data) + sum(unlist(lapply(later_urls, nrow)))))
-    message("Processing the FH Electoral Democracies 1989-2022 data",
+    message("Processing the FH Electoral Democracies 1989-2024 data",
             " - putting it in country-year format, adding state system info...")
   }
 
@@ -1019,7 +1019,7 @@ download_fh_full <- function(url,
   if(verbose) {
     message(sprintf("Original dataset has %d rows",
                     nrow(data)))
-    message("Processing the FH full 2013-2022 data - ",
+    message("Processing the FH full 2013-2024 data - ",
             "adding state system info, fixing column names...")
   }
 
