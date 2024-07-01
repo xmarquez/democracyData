@@ -289,7 +289,7 @@ download_polity_annual <- function(url,
                                    verbose = TRUE,
                                    return_raw = FALSE,
                                    ...) {
-  ccode <- country <- year <- NULL
+#  ccode <- country <- year <- NULL
 
   if(missing(url)) {
     url <- "http://www.systemicpeace.org/inscr/p5v2018.sav"
@@ -317,9 +317,9 @@ download_polity_annual <- function(url,
 
 
   polity_annual <- country_year_coder(data,
-                                      country_col = country,
-                                      date_col = year,
-                                      code_col = ccode,
+                                      country_col = .data$country,
+                                      date_col = .data$year,
+                                      code_col = .data$ccode,
                                       code_type = "polity_ccode",
                                       match_type = "country",
                                       verbose = verbose,
@@ -472,12 +472,12 @@ download_wgi_voice_and_accountability <- function(url,
 
 #' Freedom House "Freedom in the World" data
 #'
-#' Downloads the 2023 update of the Freedom House "Freedom in the World" data
+#' Downloads the 2024 update of the Freedom House "Freedom in the World" data
 #' and processes it using [country_year_coder]. The original data is available
 #' at \url{https://freedomhouse.org/report-types/freedom-world}
 #'
 #' @param url The URL of the dataset. Defaults to
-#'   https://freedomhouse.org/sites/default/files/2023-02/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2023%20.xlsx
+#'   https://freedomhouse.org/sites/default/files/2024-02/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2024.xlsx
 #'
 #' @param include_territories Whether to include scores from non-independent
 #'   territories (e.g., Indian Kashmir, Northern Ireland) compiled by FH.
@@ -578,7 +578,7 @@ download_wgi_voice_and_accountability <- function(url,
 #' @family Freedom House
 #' @family ordinal democracy indexes
 #' @source The "Freedom in the World" dataset from Freedom House, updated to
-#'   2022 (Freedom in the World 2023 Report). Original data and methodology is
+#'   2023 (Freedom in the World 2024 Report). Original data and methodology is
 #'   available at \url{https://freedomhouse.org/report/freedom-world}
 #'
 #' @seealso [fh]
@@ -596,11 +596,8 @@ download_fh <- function(url,
                         return_raw = FALSE,
                         ...) {
 
-  status <- year <- pr <- cl <- fh_total <- NULL
-  indicator <- value <- country <- NULL
-
   if(missing(url)) {
-    url <- "https://freedomhouse.org/sites/default/files/2023-02/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2023%20.xlsx"
+    url <- "https://freedomhouse.org/sites/default/files/2024-02/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2024.xlsx"
   }
 
 
@@ -633,7 +630,7 @@ download_fh <- function(url,
   if(verbose) {
     message(sprintf("Original dataset has %d rows, but is not in country-year format",
                     nrow(data)))
-    message("Processing the FH 2022 data - ",
+    message("Processing the FH 2024 data - ",
             "putting it in country-year format, adding state system info...")
   }
 
@@ -641,33 +638,33 @@ download_fh <- function(url,
   var_years <- expand.grid(x = c('pr', 'cl', 'status'), y = c(1972:1980,1982:(1972 + nYears)))
   names(data) <- c('country', paste(var_years$x, var_years$y, sep = "_"))
 
-  data$pr_1972 <- as.double(data$pr_1972)
-  data$cl_1972 <- as.double(data$cl_1972)
+  data$pr_1972 <- suppressWarnings(as.double(data$pr_1972))
+  data$cl_1972 <- suppressWarnings(as.double(data$cl_1972))
 
   # melt the data, split the variable_year column and voila!
 
   data <- data %>%
-    tidyr::pivot_longer(names_to = "indicator", values_to = "value", matches("[12][0-9]{3}"),
+    tidyr::pivot_longer(cols = matches("[12][0-9]{3}"), names_to = "indicator", values_to = "value",
                         values_transform = list(value = as.character)) %>%
-    tidyr::separate(indicator, into = c("status", "year"), sep ="_")  %>%
-    filter(!is.na(value)) %>%
+    tidyr::separate(.data$indicator, into = c("status", "year"), sep ="_")  %>%
+    filter(!is.na(.data$value)) %>%
     distinct() %>%
     tidyr::pivot_wider(names_from = "status", values_from = "value") %>%
-    mutate(across(year:cl, as.numeric)) %>%
-    mutate(cl = ifelse(country == "South Africa" & year == 1972, 5, cl),
-           pr = ifelse(country == "South Africa" & year == 1972, 6, pr),
-           status = ifelse(country == "South Africa" & year == 1972, "NF", status),
-           status = as.factor(status),
-           fh_total = pr + cl,
-           fh_total_reversed = 14 - fh_total,
+    mutate(across("year":"cl", as.numeric)) %>%
+    mutate(cl = ifelse(.data$country == "South Africa" & year == 1972, 5, .data$cl),
+           pr = ifelse(.data$country == "South Africa" & year == 1972, 6, .data$pr),
+           status = ifelse(.data$country == "South Africa" & year == 1972, "NF", .data$status),
+           status = as.factor(.data$status),
+           fh_total = .data$pr + .data$cl,
+           fh_total_reversed = 14 - .data$fh_total,
            country = case_when(country == "Yemen, S." ~ "South Yemen",
                                       country == "Vietnam, S." ~ "South Vietnam",
                                       country == "Germany, E." ~ "East Germany",
-                                      TRUE ~ as.character(country)))
+                                      TRUE ~ as.character(.data$country)))
 
   fh <- data %>%
-    country_year_coder(country,
-                       year,
+    country_year_coder(.data$country,
+                       .data$year,
                        match_type = c("country"),
                        verbose = verbose,
                        ...)
@@ -682,12 +679,12 @@ download_fh <- function(url,
   }
 
 
-  standardize_columns(fh, country, verbose = verbose)
+  standardize_columns(fh, "country", verbose = verbose)
 }
 
 #' Freedom House Electoral Democracies List
 #'
-#' Downloads the 2023 update of the Freedom House Electoral Democracies list and
+#' Downloads the 2024 update of the Freedom House Electoral Democracies list and
 #' processes it using [country_year_coder]. The original data is available at
 #' [https://freedomhouse.org/report/freedom-world](https://freedomhouse.org/report/freedom-world),
 #' spread over a number of different urls.
@@ -727,7 +724,7 @@ download_fh <- function(url,
 #' @family Freedom House
 #' @family ordinal democracy indexes
 #' @source The "Freedom in the World" dataset from Freedom House, updated to
-#'   2022 (Freedom in the World report 2023 edition). Original data and
+#'   2023 (Freedom in the World report 2024 edition). Original data and
 #'   methodology is available at
 #'   \url{https://freedomhouse.org/report/freedom-world}
 #' @examples
@@ -744,10 +741,8 @@ download_fh_electoral <- function(verbose = TRUE,
                  "https://freedomhouse.org/sites/default/files/List_of_Electoral_Democracies_FIW19.xls",
                  "https://freedomhouse.org/sites/default/files/2020-02/2020_List_of_Electoral_Democracies_FIW_2020.xlsx",
                  "https://freedomhouse.org/sites/default/files/2022-03/List_of_Electoral_Democracies_FIW22.xlsx",
-                 "https://freedomhouse.org/sites/default/files/2023-02/List_of_Electoral_Democracies_FIW23.xlsx")
-
-  indicator <- value <- electoral_dem <- year <- NULL
-  electoral <- country <- Country <- NULL
+                 "https://freedomhouse.org/sites/default/files/2023-02/List_of_Electoral_Democracies_FIW23.xlsx",
+                 "https://freedomhouse.org/sites/default/files/2024-02/List_of_Electoral_Democracies_FIW24.xlsx")
 
   data <- read_data(url,
                     verbose = verbose,
@@ -757,7 +752,7 @@ download_fh_electoral <- function(verbose = TRUE,
                     col_names = FALSE,
                     na = c("","-"))
 
-  later_urls <- lapply(later_urls, read_data, skip = 1) %>%
+  later_urls <- lapply(later_urls, \(x) read_data(x, verbose = verbose, skip = 1)) %>%
     lapply(function(x) rename_with(x, ~"electoral",
                                           starts_with("Electoral Democracy")))
 
@@ -775,31 +770,31 @@ download_fh_electoral <- function(verbose = TRUE,
             " - putting it in country-year format, adding state system info...")
   }
 
-  names(data) <- c('country', paste("electoral", 1989:2016, sep = "_"))
+  names(data) <- c("country", paste("electoral", 1989:2016, sep = "_"))
 
   # melt the data, split the variable_year column and voila!
 
   data <- data %>%
     tidyr::pivot_longer(names_to = "indicator", values_to = "value", matches("electoral_[0-9]{4}")) %>%
-    tidyr::separate(indicator, into = c("electoral_dem", "year"), sep ="_")  %>%
-    filter(!is.na(value)) %>%
-    tidyr::spread(electoral_dem, value) %>%
-    mutate(year = as.numeric(year),
+    tidyr::separate("indicator", into = c("electoral_dem", "year"), sep ="_")  %>%
+    filter(!is.na(.data$value)) %>%
+    tidyr::pivot_wider(names_from = "electoral_dem", values_from = "value") %>%
+    mutate(year = as.numeric(.data$year),
            electoral = ifelse(electoral == "Yes", TRUE, FALSE),
            country = case_when(country == "Yemen, S." ~ "South Yemen",
-                                      country == "Vietnam, S." ~ "South Vietnam",
-                                      country == "Germany, E." ~ "East Germany",
+                                      .data$country == "Vietnam, S." ~ "South Vietnam",
+                                      .data$country == "Germany, E." ~ "East Germany",
                                       TRUE ~ as.character(country)))
 
   for(i in 1:length(later_urls)) {
     later_urls[[i]] <- later_urls[[i]] %>%
       mutate(year = 2017+i,
-             electoral = ifelse(electoral == "yes", TRUE, FALSE),
-             country = case_when(Country == "Yemen, S." ~ "South Yemen",
-                                        Country == "Vietnam, S." ~ "South Vietnam",
-                                        Country == "Germany, E." ~ "East Germany",
-                                        TRUE ~ as.character(Country))) %>%
-      select(-Country)
+             electoral = ifelse(.data$electoral == "yes", TRUE, FALSE),
+             country = case_when(.data$Country == "Yemen, S." ~ "South Yemen",
+                                 .data$Country == "Vietnam, S." ~ "South Vietnam",
+                                 .data$Country == "Germany, E." ~ "East Germany",
+                                 TRUE ~ as.character(.data$Country))) %>%
+      select(-"Country")
   }
 
   later_urls <- bind_rows(later_urls)
@@ -807,8 +802,8 @@ download_fh_electoral <- function(verbose = TRUE,
   data <- bind_rows(data, later_urls)
 
   fh_electoral <- data %>%
-    country_year_coder(country,
-                       year,
+    country_year_coder(.data$country,
+                       .data$year,
                        match_type = c("country"),
                        verbose = verbose,
                        ...)
@@ -821,18 +816,18 @@ download_fh_electoral <- function(verbose = TRUE,
     }
   }
 
-   standardize_columns(fh_electoral, country, verbose = verbose)
+   standardize_columns(fh_electoral, "country", verbose = verbose)
 }
 
-#' Freedom House All Data 2013-2023
+#' Freedom House All Data 2013-2024
 #'
-#' Downloads the 2023 update of the Freedom House Freedom in the World All Data
-#' 2013-2023 file and processes it using [country_year_coder]. The original data
+#' Downloads the 2024 update of the Freedom House Freedom in the World All Data
+#' 2013-2024 file and processes it using [country_year_coder]. The original data
 #' is available at
 #' [https://freedomhouse.org/report-types/freedom-world](https://freedomhouse.org/report/freedom-world)
 #'
 #' @param url The URL of the dataset. Defaults to
-#'   \url{https://freedomhouse.org/sites/default/files/2023-02/All_data_FIW_2013-2023.xlsx}
+#'   \url{https://freedomhouse.org/sites/default/files/2024-02/All_data_FIW_2013-2024.xlsx}
 #'
 #'
 #'
@@ -988,7 +983,7 @@ download_fh_electoral <- function(verbose = TRUE,
 #' @family Freedom House
 #' @family ordinal democracy indexes
 #' @source The "Freedom in the World" dataset from Freedom House, updated to
-#'   2021 (Freedom in the World 2022 Report). Original data and methodology is
+#'   2023 (Freedom in the World 2024 Report). Original data and methodology is
 #'   available at \url{https://freedomhouse.org/report/freedom-world}
 #'
 #' @seealso [fh]
@@ -1003,10 +998,8 @@ download_fh_full <- function(url,
                         return_raw = FALSE,
                         ...) {
 
-  status <- year <- country <- edition <- NULL
-
   if(missing(url)) {
-    url <- "https://freedomhouse.org/sites/default/files/2023-02/All_data_FIW_2013-2023.xlsx"
+    url <- "https://freedomhouse.org/sites/default/files/2024-02/All_data_FIW_2013-2024.xlsx"
   }
 
 
@@ -1039,16 +1032,16 @@ download_fh_full <- function(url,
 
 
   data <- data %>%
-    mutate(status = as.factor(status),
-           year = edition - 1,
-           country = case_when(country == "Yemen, S." ~ "South Yemen",
-                               country == "Vietnam, S." ~ "South Vietnam",
-                               country == "Germany, E." ~ "East Germany",
-                               TRUE ~ as.character(country)))
+    mutate(status = as.factor(.data$status),
+           year = .data$edition - 1,
+           country = case_when(.data$country == "Yemen, S." ~ "South Yemen",
+                               .data$country == "Vietnam, S." ~ "South Vietnam",
+                               .data$country == "Germany, E." ~ "East Germany",
+                               TRUE ~ as.character(.data$country)))
 
   fh_full <- data %>%
-    country_year_coder(country,
-                       year,
+    country_year_coder(.data$country,
+                       .data$year,
                        match_type = c("country"),
                        verbose = verbose,
                        ...)
@@ -1062,10 +1055,10 @@ download_fh_full <- function(url,
   }
 
   fh_full <- fh_full %>%
-    relocate(year, .after = edition)
+    relocate("year", .after = edition)
 
 
-  standardize_columns(fh_full, country, verbose = verbose)
+  standardize_columns(fh_full, "country", verbose = verbose)
 }
 
 
