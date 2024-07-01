@@ -414,10 +414,8 @@ download_wgi_voice_and_accountability <- function(url,
     url <- "https://www.worldbank.org/content/dam/sites/govindicators/doc/wgidataset.xlsx"
   }
 
-  Estimate <- wb_country <- year <-  wb_code <- name <- NULL
-
   tmp <- tempfile(fileext = ".xlsx")
-  utils::download.file(url, tmp, mode = "wb")
+  utils::download.file(url, tmp, mode = "wb", quiet = !verbose)
 
   data <- readxl::read_excel(tmp, sheet = 2, skip = 14,
                              .name_repair = "unique_quiet")
@@ -451,10 +449,10 @@ download_wgi_voice_and_accountability <- function(url,
                                                    "NumSrc", "Rank", "Lower",
                                                    "Upper")),
                                           as.numeric)) %>%
-                            filter(!is.na(Estimate)) %>%
+                            filter(!is.na(.data$Estimate)) %>%
                             country_year_coder(wb_country,
-                                               year,
-                                               wb_code,
+                                               .data$year,
+                                               .data$wb_code,
                                                code_type = "wb",
                                                match_type = "country",
                                                verbose = verbose,
