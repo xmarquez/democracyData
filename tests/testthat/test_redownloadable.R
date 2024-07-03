@@ -1,13 +1,15 @@
 library(dplyr)
 
-context("Redownloadable datasets")
-
 test_that("Anckar redownloads correctly", {
   skip_on_cran()
   skip_on_travis()
   skip_if_offline()
-  anckar_redownloaded <- redownload_anckar(verbose = FALSE)
+  expect_no_message(anckar_redownloaded <- redownload_anckar(verbose = FALSE))
+  expect_no_warning(anckar_redownloaded <- redownload_anckar(verbose = FALSE))
+  expect_no_message(anckar_redownloaded <- redownload_anckar(verbose = TRUE),
+                    message = "The following country and/or code-years were matched more than once:")
   expect_identical(anckar, anckar_redownloaded)
+  expect_snapshot(anckar_redownloaded <- redownload_anckar(verbose = TRUE))
 })
 
 test_that("BLM redownloads correctly", {
@@ -15,7 +17,8 @@ test_that("BLM redownloads correctly", {
   skip_on_cran()
   skip_on_travis()
   skip_if_offline()
-  blm_redownloaded <- redownload_blm(verbose = FALSE)
+  expect_no_message(blm_redownloaded <- redownload_blm(verbose = FALSE))
+  expect_no_warning(blm_redownloaded <- redownload_blm(verbose = FALSE))
   expect_identical(blm, blm_redownloaded)
 })
 
@@ -23,7 +26,11 @@ test_that("BMR redownloads correctly", {
   skip_on_cran()
   skip_on_travis()
   skip_if_offline()
-  bmr_redownloaded <- redownload_bmr(verbose = FALSE)
+  expect_no_message(bmr_redownloaded <- redownload_bmr(verbose = FALSE))
+  expect_no_warning(bmr_redownloaded <- redownload_bmr(verbose = FALSE))
+  expect_no_message(bmr_redownloaded <- redownload_bmr(verbose = TRUE),
+                    message = "The following country and/or code-years were matched more than once:")
+  expect_snapshot(bmr_redownloaded <- redownload_bmr(verbose = TRUE))
   expect_identical(bmr, bmr_redownloaded)
 })
 
@@ -31,7 +38,10 @@ test_that("BTI redownloads correctly", {
   skip_on_cran()
   skip_on_travis()
   skip_if_offline()
-  bti_redownloaded <- redownload_bti(verbose = FALSE)
+  expect_no_message(bti_redownloaded <- redownload_bti(verbose = FALSE))
+  expect_no_warning(bti_redownloaded <- redownload_bti(verbose = FALSE))
+  expect_no_message(bti_redownloaded <- redownload_bti(verbose = TRUE),
+                    message = "The following country and/or code-years were matched more than once:")
   expect_identical(bti, bti_redownloaded)
 })
 
@@ -39,8 +49,10 @@ test_that("GWF-autocratic redownloads correctly", {
   skip_on_cran()
   skip_on_travis()
   skip_if_offline()
-  gwf_autocratic_redownloaded <- redownload_gwf(verbose = FALSE,
-                                                dataset = "autocratic")
+  expect_no_message(gwf_autocratic_redownloaded <- redownload_gwf(verbose = FALSE,
+                                                                  dataset = "autocratic"))
+  expect_no_warning(gwf_autocratic_redownloaded <- redownload_gwf(verbose = FALSE,
+                                                                  dataset = "autocratic"))
   expect_identical(gwf_autocratic, gwf_autocratic_redownloaded)
 })
 
