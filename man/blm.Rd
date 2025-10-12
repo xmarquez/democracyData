@@ -11,8 +11,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 275 rows and 7 columns.
 }
 \source{
-K. Bowman, F. Lehoucq, and J. Mahoney. "Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America". In: \emph{Comparative Political Studies} 38.8 (2005), pp. 939-970. DOI: 10.1177/0010414005277083. Data used to be available at
-\url{http://www.blmdemocracy.gatech.edu/}.
+K. Bowman, F. Lehoucq, and J. Mahoney. "Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America". In: \emph{Comparative Political Studies} 38.8 (2005), pp. 939-970. DOI: \href{https://dx.doi.org/10.1177/0010414005277083}{10.1177/0010414005277083}. Data archived at \url{https://web.archive.org/web/20221128114909/http://blmdemocracy.gatech.edu/}.
 }
 \usage{
 blm
@@ -20,9 +19,8 @@ blm
 blm_pmm
 }
 \description{
-Contains the trichotomous measure of regime type from K. Bowman, F. Lehoucq, and J. Mahoney. "Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America". In: \emph{Comparative Political Studies} 38.8 (2005), pp. 939-970. DOI: 10.1177/0010414005277083.
-\url{http://cps.sagepub.com/content/38/8/939}. Data used to be available at
-\url{http://www.blmdemocracy.gatech.edu/}.
+Contains the trichotomous measure of regime type from K. Bowman, F. Lehoucq, and J. Mahoney. "Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America". In: \emph{Comparative Political Studies} 38.8 (2005), pp. 939-970. DOI: \href{https://dx.doi.org/10.1177/0010414005277083}{10.1177/0010414005277083}.
+Data archived at \url{https://web.archive.org/web/20221128114909/http://blmdemocracy.gatech.edu/}.
 }
 \section{Variables}{
 
@@ -79,7 +77,7 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 \section{Note}{
 
 
-The \code{blm_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}. The
+The \code{blm_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}. The
 original dataset is found in \link{blm}. The \code{blm_pmm} data only goes back to
 1946, but is otherwise identical to the \link{blm} data. It is included here for
 completeness.
@@ -98,9 +96,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -111,14 +109,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -126,6 +124,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

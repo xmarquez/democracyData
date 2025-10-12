@@ -11,7 +11,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 10291 rows and 10 columns.
 }
 \source{
-B. Magaloni, J. Chu, and E. Min. \emph{Autocracies of the World, 1950-2012 (Version 1.0)}. Dataset. 2013. \url{http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset}.
+B. Magaloni, J. Chu, and E. Min. \emph{Autocracies of the World, 1950-2012 (Version 1.0)}. Dataset. 2013.
 }
 \usage{
 magaloni
@@ -19,7 +19,7 @@ magaloni
 magaloni_extended
 }
 \description{
-The "Autocracies of the World" dataset by B. Magaloni, J. Chu, and E. Min. \emph{Autocracies of the World, 1950-2012 (Version 1.0)}. Dataset. 2013. \url{http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset}.
+The "Autocracies of the World" dataset by B. Magaloni, J. Chu, and E. Min. \emph{Autocracies of the World, 1950-2012 (Version 1.0)}. Dataset. 2013.
 Original data and codebook used to be available at the link.
 The documentation here is directly derived from this codebook.
 }
@@ -202,7 +202,7 @@ regime. (See the "Personalism" subsection for a substantive explanation of
 this metric.) The variable is essentially a Herfendahl index (sum of
 squared shares) using the column exname. For a given country-year in a
 unique regime (see \code{reg_id}), the following calculation is made:
-$sum_{i=1}^{m} (exec_i/n)^2$ where n is the age of the regime up to that
+$sum_\{i=1\}^\{m\} (exec_i/n)^2$ where n is the age of the regime up to that
 year, and exec is the number of years that a unique executive i (out of a
 total m executives up to that year) has led the regime. As such, a regime
 led by only one person up through that year yields a personalism index of
@@ -287,9 +287,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -299,14 +299,14 @@ Other democracy:
 \code{\link{kailitz}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -314,6 +314,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

@@ -24,9 +24,9 @@ count_sequence_breaks(c(1900:1910, 1920:1930))
 
 # This is how I typically use it
 
-polityIV \%>\%
-group_by(polityIV_country, polityIV_ccode) \%>\%
-mutate(groups = count_sequence_breaks(year)) \%>\%
+polityIV |>
+group_by(polityIV_country, polityIV_ccode) |>
+mutate(groups = count_sequence_breaks(year)) |>
 filter(any(groups > 1))
 
 }

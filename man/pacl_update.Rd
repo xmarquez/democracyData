@@ -3,21 +3,30 @@
 \docType{data}
 \name{pacl_update}
 \alias{pacl_update}
+\alias{dd_update}
+\alias{aclp_update}
+\alias{cgv_update}
 \title{Update of the Democracy and Dictatorship Dataset by Bjørnskov and Rode}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 14768 rows and 46 columns.
 }
 \source{
-C. Bjørnskov and M. Rode. "Regime types and regime change: A new dataset on democracy, coups, and political institutions". In: \emph{The Review of International Organizations} 15.2 (2020), pp. 531-551. DOI: 10.1007/s11558-019-09345-1. The full data and codebook can be downloaded
-here \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}
+C. Bjørnskov and M. Rode. "Regime Types and Regime Change: A New Dataset on Democracy, Coups, and Political Institutions". In: \emph{The Review of International Organizations} 15.2 (2020), pp. 531-551. DOI: \href{https://dx.doi.org/10.1007/s11558-019-09345-1}{10.1007/s11558-019-09345-1}. The full data and codebook can be downloaded
+at \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}
 }
 \usage{
 pacl_update
+
+aclp_update()
+
+dd_update()
+
+cgv_update()
 }
 \description{
 This dataset updates \link{pacl} with more countries and coverage from 1950 to
-2020, as described in C. Bjørnskov and M. Rode. "Regime types and regime change: A new dataset on democracy, coups, and political institutions". In: \emph{The Review of International Organizations} 15.2 (2020), pp. 531-551. DOI: 10.1007/s11558-019-09345-1. The full data and codebook
-can be downloaded here: \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}. The
+2020, as described in C. Bjørnskov and M. Rode. "Regime Types and Regime Change: A New Dataset on Democracy, Coups, and Political Institutions". In: \emph{The Review of International Organizations} 15.2 (2020), pp. 531-551. DOI: \href{https://dx.doi.org/10.1007/s11558-019-09345-1}{10.1007/s11558-019-09345-1}. The full data and codebook
+can be downloaded at \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}. The
 documentation below is directly copied from the codebook.
 }
 \details{
@@ -237,9 +246,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -255,8 +264,8 @@ Other democracy:
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -264,6 +273,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

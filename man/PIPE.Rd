@@ -8,13 +8,13 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18151 rows and 101 columns.
 }
 \source{
-A. Przeworski. \emph{Political Institutions and Political Events (PIPE) Data Set}. Data set. 2013. \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}.
+A. Przeworski. \emph{Political Institutions and Political Events (PIPE) Data Set}. Data Set. 2013.
 }
 \usage{
 PIPE
 }
 \description{
-A. Przeworski. \emph{Political Institutions and Political Events (PIPE) Data Set}. Data set. 2013. \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}. The original
+A. Przeworski. \emph{Political Institutions and Political Events (PIPE) Data Set}. Data Set. 2013. The original
 data and codebook can be downloaded from
 \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}. The
 documentation below is directly derived from the codebook, with some
@@ -332,7 +332,7 @@ code them as missing. If there is a functional body along with territorial
 body, we focus on the latter. Quotas, such as that some proportion of the
 legislature must be female, are not considered unless there are separate
 electorates for male and female seats. The codes for particular categories
-are represented by cell entries in the table (table cannot be reporduced
+are represented by cell entries in the table (table cannot be reproduced
 properly here - consult online codebook at
 \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}):
 
@@ -1633,9 +1633,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -1646,14 +1646,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -1661,11 +1661,13 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
 Other institutions: 
-\code{\link{LIED}}
+\code{\link{LIED}},
+\code{\link{vaporeg}}
 }
 \concept{democracy}
 \concept{institutions}

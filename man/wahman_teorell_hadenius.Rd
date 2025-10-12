@@ -10,18 +10,18 @@ Michael Wahman}
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8231 rows and 54 columns.
 }
 \source{
-A. Hadenius and J. Teorell. "Pathways from Authoritarianism". In: \emph{Journal of Democracy} 18.1 (2007), pp. 143-157.
+A. Hadenius and J. Teorell. "Pathways from Authoritarianism". In: \emph{Journal of Democracy} 18.1 (2007), pp. 143-157. DOI: \href{https://dx.doi.org/10.1353/jod.2007.0009}{10.1353/jod.2007.0009}.
 
-M. Wahman, J. Teorell, and A. Hadenius. "Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective". In: \emph{Contemporary Politics} 19.1 (2013), pp. 19-34. \url{https://sites.google.com/site/authoritarianregimedataset/data}.
+M. Wahman, J. Teorell, and A. Hadenius. "Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective". In: \emph{Contemporary Politics} 19.1 (2013), pp. 19-34. DOI: \href{https://dx.doi.org/10.1080/13569775.2013.773200}{10.1080/13569775.2013.773200}.
 }
 \usage{
 wahman_teorell_hadenius
 }
 \description{
 The Authoritarian Regimes Data set by Axel Hadenius, Jan Teorell, & Michael
-Wahman, described in A. Hadenius and J. Teorell. "Pathways from Authoritarianism". In: \emph{Journal of Democracy} 18.1 (2007), pp. 143-157. and
-M. Wahman, J. Teorell, and A. Hadenius. "Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective". In: \emph{Contemporary Politics} 19.1 (2013), pp. 19-34. \url{https://sites.google.com/site/authoritarianregimedataset/data}.
-The dataset and codebook can be downloaded from
+Wahman, described first in A. Hadenius and J. Teorell. "Pathways from Authoritarianism". In: \emph{Journal of Democracy} 18.1 (2007), pp. 143-157. DOI: \href{https://dx.doi.org/10.1353/jod.2007.0009}{10.1353/jod.2007.0009}. Modified in
+M. Wahman, J. Teorell, and A. Hadenius. "Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective". In: \emph{Contemporary Politics} 19.1 (2013), pp. 19-34. DOI: \href{https://dx.doi.org/10.1080/13569775.2013.773200}{10.1080/13569775.2013.773200}.
+The dataset and codebook can sometimes be downloaded from
 \url{https://sites.google.com/site/authoritarianregimedataset/data}. I simply
 copy the codebook below.
 }
@@ -500,9 +500,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -513,14 +513,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -528,6 +528,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}}
 
 Other dichotomous democracy indexes: 
@@ -537,8 +538,8 @@ Other dichotomous democracy indexes:
 \code{\link{bnr}},
 \code{\link{doorenspleet}},
 \code{\link{kailitz}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{svolik_regime}},
 \code{\link{ulfelder}},
 \code{\link{utip}}

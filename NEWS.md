@@ -1,3 +1,30 @@
+# democracyData 0.5.2
+
+* Updated Freedom House downloads to latest year (2024).
+
+* Updated EIU to latest year (2024)
+
+* Updated VDem simple data to latest year (2024, version 15.0)
+
+* Added new VaPoReg data on political regimes by Kailitz (2024)
+
+* Incorporated corrected Arat data from Zehra Arat's original book.
+
+* Added newest version of LIED (6.6)
+
+* Fixed problem with FH Electoral Democracies list download that was wrongly 
+coding later democracies and missing one year.
+
+* [TODO] update R and make sure everything works. Fix all those NULL bits of code.
+
+* [TODO] fix countrycode conversions
+
+* [TODO] update documentation and tests
+
+* Minor updates to ensure `verbose=FALSE` really results in quiet downloads (no messages/warnings).
+
+* Now uses `testthat` 3rd edition. Updated tests to use snapshots.
+
 # democracyData 0.5.1
 
 * Fixed broken WGI URL, now data available to 2022

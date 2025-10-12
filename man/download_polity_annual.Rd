@@ -15,13 +15,12 @@ Dataset Users' Manual. Center for Systemic Peace. Available at
 download_polity_annual(url, verbose = TRUE, return_raw = FALSE, ...)
 }
 \arguments{
-\item{url}{The URL of the dataset. Defaults to
-http://www.systemicpeace.org/inscr/p5v2018.sav}
+\item{url}{The URL of the dataset. Defaults to \url{http://www.systemicpeace.org/inscr/p5v2018.sav}.}
 
 \item{verbose}{Whether to print a running commentary of what the function is
 doing while processing the data.}
 
-\item{return_raw}{Whether to return the raw data, without any processing.
+\item{return_raw}{Whether to return the raw data, with minimal processing.
 Default is \code{FALSE}.}
 
 \item{...}{Other parameters passed to \link{country_year_coder}.}
@@ -35,7 +34,7 @@ for further description.
 \description{
 Downloads the 2020 update of the Polity 5 dataset (annual time series) and
 processes it using \link{country_year_coder}. The original data is available at
-\url{http://www.systemicpeace.org/inscrdata.html}
+\url{http://www.systemicpeace.org/inscrdata.html}'.
 }
 \section{Variables}{
 

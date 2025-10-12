@@ -5,10 +5,8 @@
 \alias{fh_electoral}
 \title{Freedom House Electoral Democracies List}
 \source{
-The "Freedom in the World" dataset from Freedom House, updated to
-2023 (Freedom in the World report 2024 edition). Original data and
-methodology is available at
-\url{https://freedomhouse.org/report/freedom-world}
+F. House. \emph{Freedom in the World 2025: The Uphill Battle to Safeguard Rights}. Tech. rep. Freedom House, Feb. 2025.. Original data and
+methodology is available at \url{https://freedomhouse.org/report/freedom-world}
 }
 \usage{
 download_fh_electoral(verbose = TRUE, return_raw = FALSE, ...)
@@ -17,7 +15,7 @@ download_fh_electoral(verbose = TRUE, return_raw = FALSE, ...)
 \item{verbose}{Whether to print a running commentary of what the function is
 doing while processing the data.}
 
-\item{return_raw}{Whether to return the raw data, without any processing.
+\item{return_raw}{Whether to return the raw data, with minimal processing.
 Default is \code{FALSE}.}
 
 \item{...}{Other parameters passed to \link{country_year_coder}.}
@@ -39,13 +37,76 @@ list of electoral democracies using the full FH data, but the methodology
 is a little opaque).
 \item electoral: Electoral democracy indicator. \code{TRUE} = yes, \code{FALSE}
 = no.
+\item electoral_calc: Electoral democracy indicator, calculated from the full
+scores (see \link{download_fh_full}) using the definition of electoral democracy
+that Freedom House uses from 2017 onwards. \code{TRUE} = yes, \code{FALSE}
+= no. Because Freedom House changed the criteria for designating an
+electoral democracy in the 2018 edition of their
+\emph{Freedom in the World} report, this variable is included to allow users to
+understand which countries would not have been considered electoral
+democracies after 2017 that would have been considered electoral
+democracies before 2017. As the \href{https://freedomhouse.org/reports/freedom-world/freedom-world-research-methodology}{Freedom House methodology page notes},
+"beginning with the 2018 edition, countries require an overall Civil
+Liberties score of 30 or better—in addition to a score of 7 or better in
+subcategory A (Electoral Process), and an overall Political Rights score of
+20 or better—to qualify as an electoral democracy." This change resulted in
+32 country-years that would have been classified as electoral democracies
+before 2017 not being considered electoral democracies using the post-2017
+criteria:
 }
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{fh_electoral <- download_fh_electoral(verbose = FALSE)
+fh_electoral |>
+  dplyr::filter(electoral != electoral_calc) |>
+  dplyr::select(extended_country_name, year, electoral, electoral_calc) |>
+  print(n = 32)
+#> # A tibble: 32 x 4
+#>    extended_country_name    year electoral electoral_calc
+#>    <chr>                   <dbl> <lgl>     <lgl>         
+#>  1 Bangladesh               2013 TRUE      FALSE         
+#>  2 Bangladesh               2014 TRUE      FALSE         
+#>  3 Bangladesh               2015 TRUE      FALSE         
+#>  4 Bangladesh               2016 TRUE      FALSE         
+#>  5 Bhutan                   2012 TRUE      FALSE         
+#>  6 Bhutan                   2013 TRUE      FALSE         
+#>  7 Bhutan                   2014 TRUE      FALSE         
+#>  8 Bhutan                   2015 TRUE      FALSE         
+#>  9 Bhutan                   2016 TRUE      FALSE         
+#> 10 Honduras                 2014 TRUE      FALSE         
+#> 11 Kenya                    2014 TRUE      FALSE         
+#> 12 Kenya                    2015 TRUE      FALSE         
+#> 13 Kenya                    2016 TRUE      FALSE         
+#> 14 Kosovo                   2014 TRUE      FALSE         
+#> 15 Kosovo                   2015 TRUE      FALSE         
+#> 16 Kosovo                   2016 TRUE      FALSE         
+#> 17 Libya                    2012 TRUE      FALSE         
+#> 18 Libya                    2013 TRUE      FALSE         
+#> 19 Maldives                 2014 TRUE      FALSE         
+#> 20 Nepal                    2013 TRUE      FALSE         
+#> 21 Nepal                    2014 TRUE      FALSE         
+#> 22 Nepal                    2015 TRUE      FALSE         
+#> 23 Nepal                    2016 TRUE      FALSE         
+#> 24 Niger                    2015 TRUE      FALSE         
+#> 25 Nigeria                  2015 TRUE      FALSE         
+#> 26 Nigeria                  2016 TRUE      FALSE         
+#> 27 Pakistan                 2013 TRUE      FALSE         
+#> 28 Pakistan                 2014 TRUE      FALSE         
+#> 29 Pakistan                 2015 TRUE      FALSE         
+#> 30 Pakistan                 2016 TRUE      FALSE         
+#> 31 Turkey (Ottoman Empire)  2014 TRUE      FALSE         
+#> 32 Turkey (Ottoman Empire)  2015 TRUE      FALSE
+}\if{html}{\out{</div>}}
+
+Note that \code{electoral_calc} is not available for years before 2012, because
+Freedom House does not make available full scores for years before 2012,
+despite the fact that the list of electoral democracies goes back to 1989.
 }
 \description{
-Downloads the 2024 update of the Freedom House Electoral Democracies list and
+Downloads the 2025 update of the Freedom House Electoral Democracies list and
 processes it using \link{country_year_coder}. The original data is available at
-\url{https://freedomhouse.org/report/freedom-world},
-spread over a number of different urls.
+\url{https://freedomhouse.org/report/freedom-world}, spread over a number
+of different urls. This function uses the full data (see \link{download_fh_full})
+to recalculate the list.
 }
 \section{Standard descriptive variables (generated by this package)}{
 
@@ -136,6 +197,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

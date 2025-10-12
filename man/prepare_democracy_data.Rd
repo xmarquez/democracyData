@@ -183,105 +183,119 @@ summary(prepare_democracy_data(democracy))
 
 }
 \references{
-D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy Does CauseGrowth". In: \emph{Journal of Political Economy} 127.1 (2019), pp. 47-100.DOI: 10.1086/700936.\url{https://www.journals.uchicago.edu/doi/10.1086/700936}.
+D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy Does CauseGrowth". In: \emph{Journal of Political Economy} 127.1 (2019), pp. 47-100.DOI: 10.1086/700936.
 
-C. Anckar and C. Fredriksson. "Classifying political regimes1800-2016: a typology and a new dataset". In: \emph{European PoliticalScience} (2018). DOI: 10.1057/s41304-018-0149-8.\url{https://doi.org/10.1057/s41304-018-0149-8}.
+C. Anckar and C. Fredriksson. "Classifying Political Regimes1800–2016: A Typology and a New Dataset". In: \emph{European PoliticalScience} 18.1 (Mar. 2018), pp. 84-96. DOI: 10.1057/s41304-018-0149-8.
 
-Z. F. Arat. \emph{Democracy and human rights in developing countries}.Boulder: Lynne Rienner Publishers, 1991.
+Z. F. Arat. \emph{Democracy and Human Rights in Developing Countries}.Boulder: Lynne Rienner Publishers, 1991.
 
-C. Bell. \emph{The Rulers, Elections, and Irregular Governance Dataset(REIGN)}. 2016. \url{http://oefresearch.org/datasets/reign}.
+C. Bell. \emph{The Rulers, Elections, and Irregular Governance Dataset(REIGN)}. 2016.
 
 M. Bernhard, T. Nordstrom, and C. Reenock. "Economic Performance,Institutional Intermediation, and Democratic Survival". In: \emph{Journal ofPolitics} 63.3 (2001), pp. 775-803. DOI: 10.1111/0022-3816.00087.
 
-Bertelsmann Stiftung. \emph{Transformation Index of the BertelsmannStiftung 2022}. Tech. rep. Bertelsmann Stiftung, 2022.
+Bertelsmann Stiftung. \emph{Transformation Index of the BertelsmannStiftung 2024}. Tech. rep. Bertelsmann Stiftung, 2024.
 
-C. Bjørnskov and M. Rode. "Regime types and regime change: A newdataset on democracy, coups, and political institutions". In: \emph{TheReview of International Organizations} 15.2 (2020), pp. 531-551. DOI:10.1007/s11558-019-09345-1.
+C. Bjørnskov and M. Rode. "Regime Types and Regime Change: A NewDataset on Democracy, Coups, and Political Institutions". In: \emph{TheReview of International Organizations} 15.2 (2020), pp. 531-551. DOI:10.1007/s11558-019-09345-1.
 
-C. Boix, M. Miller, and S. Rosato. "A Complete Dataset of PoliticalRegimes, 1800-2007". In: \emph{Comparative Political Studies} 46.12 (2012),pp. 1523-1554. DOI: 10.1177/0010414012463905.
+C. Boix, M. Miller, and S. Rosato. "A Complete Data Set ofPolitical Regimes, 1800–2007". In: _Comparative Political Studies_46.12 (2012), pp. 1523-1554. DOI: 10.1177/0010414012463905.
 
-K. A. Bollen. \emph{Cross-National Indicators of Liberal Democracy,1950-1990}. Data set. 2001.
+K. A. Bollen. \emph{Cross-National Indicators of Liberal Democracy,1950-1990}. 2001. DOI: 10.3886/ICPSR02532.v2.
 
 K. Bollen and P. Paxton. "Subjective Measures of LiberalDemocracy". In: \emph{Comparative Political Studies} 33.1 (2000), pp. 58-86.DOI: 10.1177/0010414000033001003.
 
 K. Bowman, F. Lehoucq, and J. Mahoney. "Measuring PoliticalDemocracy: Case Expertise, Data Adequacy, and Central America". In:\emph{Comparative Political Studies} 38.8 (2005), pp. 939-970. DOI:10.1177/0010414005277083.
 
-J. Cheibub, J. Gandhi, and J. Vreeland. "Democracy anddictatorship revisited". In: \emph{Public Choice} 143.1 (2010), pp. 67-101.DOI: 10.1007/s11127-009-9491-2.
+J. A. Cheibub, J. Gandhi, and J. R. Vreeland. "Democracy andDictatorship Revisited". In: \emph{Public Choice} 143.1-2 (2009), pp.67-101. DOI: 10.1007/s11127-009-9491-2.
 
 M. Coppedge, A. Alvarez, and C. Maldonado. "Two PersistentDimensions of Democracy: Contestation and Inclusiveness". In: \emph{Thejournal of politics} 70.03 (2008), pp. 632-647. DOI:10.1017/S0022381608080663.
 
-M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem Codebookv13}.
+M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem CodebookV14}. Tech. rep. Varieties of Democracy (V-Dem) Project, 2024.
 
-M. Coppedge and W. H. Reinicke. "Measuring Polyarchy". In:\emph{Studies in Comparative International Development} 25.1 (1990), pp.51-72. DOI: 10.1007/Bf02716905.
+M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem CodebookV15}. Report. Varieties of Democracy (V-Dem) Project, 2025.
+
+M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem CodebookV13}.
+
+M. Coppedge and W. H. Reinicke. "Measuring Polyarchy". In:\emph{Studies in Comparative International Development} 25.1 (1990), pp.51-72.
 
 R. Doorenspleet. "Reassessing the Three Waves of Democratization".In: \emph{World Politics} 52.03 (2000), pp. 384-406. DOI:10.1017/S0043887100016580.
 
-Freedom House. \emph{Freedom in the World 2023: Marking 50 Years in theStruggle for Democracy}. Tech. rep. Freedom House, 2023.\url{https://freedomhouse.org/report/freedom-world/2023/marking-50-years}.
+Freedom House. \emph{Freedom in the World 2024: The Mounting Damage ofFlawed Elections and Armed Conflict}. Tech. rep. Freedom House, 2024.
 
 M. Gasiorowski. "An Overview of the Political Regime ChangeDataset". In: \emph{Comparative Political Studies} 29.4 (1996), pp. 469-483.DOI: 10.1177/0010414096029004004.
 
 B. Geddes, J. Wright, and E. Frantz. "Autocratic Breakdown andRegime Transitions: A New Data Set". In: _Perspectives on Politics_12.1 (2014), pp. 313-331. DOI: 10.1017/S1537592714000851.
 
-K. Gleditsch and M. D. Ward. "Interstate system membership: Arevised list of independent states since the congress of Vienna". In:\emph{International Interactions} 25.4 (1999), pp. 393-413. DOI:10.1080/03050629908434958.
+K. S. Gleditsch and M. D. Ward. "Interstate System Membership: ARevised List of Independent States since the Congress of Vienna". In:\emph{International Interactions} 25.4 (1999), pp. 393-413. DOI:10.1080/03050629908434958.
 
 J. Goldstone, R. Bates, D. Epstein, et al. "A Global Model forForecasting Political Instability". In: \emph{American Journal of PoliticalScience} 54.1 (2010), pp. 190-208. DOI:10.1111/j.1540-5907.2009.00426.x.
 
-K. Gründler and T. Krieger. "Democracy and growth: Evidence from amachine learning indicator". In: \emph{European Journal of PoliticalEconomy} 45 (2016), pp. 85-107. DOI:https://doi.org/10.1016/j.ejpoleco.2016.05.005.\url{http://www.sciencedirect.com/science/article/pii/S0176268016300222}.
+K. Gründler and T. Krieger. "Democracy and Growth: Evidence from aMachine Learning Indicator". In: \emph{European Journal of PoliticalEconomy} 45 (2016), pp. 85-107. DOI: 10.1016/j.ejpoleco.2016.05.005.
 
-K. Gründler and T. Krieger. \emph{Machine Learning Indices, PoliticalInstitutions, and Economic Development}. Report. CESifo Group Munich,2018. \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}.
+K. Gründler and T. Krieger. \emph{Machine Learning Indices, PoliticalInstitutions, and Economic Development}. Report. CESifo Group Munich,2018.
 
-K. Gründler and T. Krieger. "Using Machine Learning for measuringdemocracy: A practitioners guide and a new updated dataset for 186countries from 1919 to 2019". In: \emph{European Journal of PoliticalEconomy} (2021), pp. 102-47. DOI:https://doi.org/10.1016/j.ejpoleco.2021.102047.
+K. Gründler and T. Krieger. "Using Machine Learning for MeasuringDemocracy: A Practitioners Guide and a New Updated Dataset for 186Countries from 1919 to 2019". In: \emph{European Journal of PoliticalEconomy} (), p. 102047. DOI: 10.1016/j.ejpoleco.2021.102047.
 
-A. Hadenius. \emph{Democracy and development}. New York: CambridgeUniversity Press, 1992.
+A. Hadenius. \emph{Democracy and Development}. New York: CambridgeUniversity Press, 1992.
 
-A. Hadenius and J. Teorell. "Pathways from Authoritarianism". In:\emph{Journal of Democracy} 18.1 (2007), pp. 143-157.
+A. Hadenius and J. Teorell. "Pathways from Authoritarianism". In:\emph{Journal of Democracy} 18.1 (2007), pp. 143-157. DOI:10.1353/jod.2007.0009.
+
+F. House. \emph{Freedom in the World 2025: The Uphill Battle toSafeguard Rights}. Tech. rep. Freedom House, Feb. 2025.
 
 S. Hsu. "The Effect of Political Regimes on Inequality,1963-2002". In: \emph{UTIP Working Paper} (2008).
 
-S. Kailitz. "Classifying political regimes revisited: legitimationand durability". In: \emph{Democratization} 20.1 (2013), pp. 39-60. DOI:10.1080/13510347.2013.738861.
+S. Kailitz. "Classifying Political Regimes Revisited: Legitimationand Durability". In: \emph{Democratization} 20.1 (2013), pp. 39-60.
 
-D. Kaufmann and A. Kraay. \emph{Worldwide Governance Indicators}. 2020.\url{http://www.govindicators.org}.
+S. Kailitz. \emph{Varieties of Political Regimes (va-PoReg). Codebook.Version 1.7}. Tech. rep. Dresden: Hannah Arendt Institute forTotalitarianism Studies, 2024.
 
-B. Magaloni, J. Chu, and E. Min. \emph{Autocracies of the World,1950-2012 (Version 1.0)}. Dataset. 2013.\url{http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset}.
+S. Kailitz. \emph{Varieties of Political Regimes (va-PoReg). Dataset}.Dresden, 2024.
+
+D. Kaufmann and A. Kraay. \emph{Worldwide Governance Indicators}. 2020.
+
+B. Magaloni, J. Chu, and E. Min. \emph{Autocracies of the World,1950-2012 (Version 1.0)}. Dataset. 2013.
 
 S. Mainwaring, D. Brinks, and A. Pérez-Liñán. "ClassifyingPolitical Regimes in Latin America". In: \emph{Studies in ComparativeInternational Development} 36.1 (2001), pp. 37-65. DOI:10.1007/bf02687584.
 
-S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political Regimesin Latin America, 1900-2007 (with Daniel Brinks)". In: \emph{Democracies andDictatorships in Latin America: Emergence, Survival, and Fall}. NewYork: Cambridge University Press, 2014. Chap. Political Regimes inLatin America, 1900-2007 (with Daniel Brinks).
+S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political Regimesin Latin America, 1900-2007 (with Daniel Brinks)". In: \emph{Democracies andDictatorships in Latin America: Emergence, Survival, and Fall}. NewYork: Cambridge University Press, 2014.
 
-X. Marquez. "A Quick Method for Extending the Unified DemocracyScores". In: \emph{Available at SSRN 2753830} (2016).\url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830}.
+M. G. Marshall and T. R. Gurr. _Polity 5: Political RegimeCharacteristics and Transitions, 1800-2018. Dataset Users' Manual._Manual. 2020.
 
-M. G. Marshall and T. R. Gurr. _Polity 5: Political RegimeCharacteristics and Transitions, 1800-2018. Dataset Users' Manual._Center for Systemic Peace, 2020.
-
-M. G. Marshall, T. R. Gurr, and K. Jaggers. \emph{Polity IV Project:Political Regime Characteristics and Transitions, 1800-2018. DatasetUsers' Manual.} Center for Systemic Peace, 2019.
+M. G. Marshall, T. R. Gurr, and K. Jaggers. \emph{Polity IV Project:Political Regime Characteristics and Transitions, 1800-2018. DatasetUsers' Manual.} Manual. 2019.
 
 B. E. Moon, J. H. Birdsall, S. Ciesluk, et al. "Voting Counts:Participation in the Measurement of Democracy". In: \emph{Studies inComparative International Development} 41.2 (2006), pp. 3-32. DOI:10.1007/BF02686309.
 
 G. Munck. \emph{Measuring Democracy: A Bridge between Scholarship andPolitics}. Baltimore: The Johns Hopkins University Press, 2009.
 
-X. Márquez. \emph{democracyData: A package for accessing andmanipulating existing measures of democracy.} 2020.\url{http://github.com/xmarquez/democracyData}.
+X. Márquez. "A Quick Method for Extending the Unified DemocracyScores". In: \emph{Available at SSRN 2753830} (2016). DOI:10.2139/ssrn.2753830.
 
-D. Pemstein, K. L. Marquardt, E. Tzelgov, et al. \emph{The V-DemMeasurement Model: Latent Variable Analysis for Cross-National andCross-Temporal Expert-Coded Data}. Tech. rep. 21. Varieties ofDemocracy Institute, University of Gothenburg, 2022.\url{https://www.v-dem.net/media/filer_public/25/cb/25cb3f3f-290d-46e1-8eaf-ff2d2c13f4a9/v-dem_working_paper_21.pdf}.
+X. Márquez. \emph{democracyData: A Package for Accessing andManipulating Existing Measures of Democracy.} 2020.
 
-D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for:Democratic Compromise: A Latent Variable Analysis of Ten Measures ofRegime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
+D. Pemstein, K. L. Marquardt, E. Tzelgov, et al. \emph{The V-demMeasurement Model: Latent Variable Analysis for Cross-national andCross-temporal Expert-coded Data}. Tech. rep. 21. Varieties ofDemocracy Institute, University of Gothenburg, 2022.
+
+D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for:Democratic Compromise: A Latent Variable Analysis of Ten Measures ofRegime Type}. 2013. DOI: 10.7910/DVN/WWYOHU.
 
 D. Pemstein, S. Meserve, and J. Melton. "Democratic Compromise: ALatent Variable Analysis of Ten Measures of Regime Type". In:\emph{Political Analysis} 18.4 (2010), pp. 426-449. DOI: 10.1093/pan/mpq020.
 
-A. Przeworski. \emph{Political Institutions and Political Events (PIPE)Data Set}. Data set. 2013.\url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}.
+A. Przeworski. \emph{Political Institutions and Political Events (PIPE)Data Set}. Data Set. 2013.
 
 G. Reich. "Categorizing Political Regimes: New Data for OldProblems". In: \emph{Democratization} 9.4 (2002), pp. 1-24. DOI:10.1080/714000289.
 
 S. Skaaning, J. Gerring, and H. Bartusevičius. "A Lexical Index ofElectoral Democracy". In: \emph{Comparative Political Studies} 48.12 (2015),pp. 1491-1525. DOI: 10.1177/0010414015581050.
 
-M. Svolik. \emph{The Politics of Authoritarian Rule}. Cambridge:Cambridge University Press, 2012.
+M. Svolik. \emph{The Politics of Authoritarian Rule}. Cambridge and NewYork: Cambridge University Press, 2012.
 
 S. J. Taylor and J. Ulfelder. "A Measurement Error Model ofDichotomous Democracy Status". In: \emph{Available at SSRN} (2015). DOI:10.2139/ssrn.2726962.
 
-The Economist Intelligence Unit. \emph{Democracy Index 2022: Frontlinedemocracy and the battle for Ukraine}. Tech. rep. The EconomistIntelligence Unit, 2023.
+The Economist Intelligence Unit. \emph{Democracy Index 2022: FrontlineDemocracy and the Battle for Ukraine}. Tech. rep. The EconomistIntelligence Unit, 2023.
 
-J. Ulfelder. \emph{Democracy/Autocracy Data Set}. 2012.\url{http://hdl.handle.net/1902.1/18836}.
+The Economist Intelligence Unit. \emph{Democracy Index 2024: What'sWrong with Representative Democracy?} Tech. rep. London, UK: TheEconomist Intelligence Unit Limited, 2025.
 
-J. Ulfelder and M. Lustik. "Modelling Transitions To and FromDemocracy". In: \emph{Democratization} 14.3 (2007), pp. 351-387. DOI:10.1080/13510340701303196.
+J. Ulfelder. \emph{Democracy/Autocracy Data Set}. 2012. DOI:10.7910/DVN/M11WFC.
 
-T. Vanhanen. \emph{Measures of Democracy 1810-2018 (dataset). Version8.0 (2019-06-17).} Tampere, 2019.\url{http://urn.fi/urn:nbn:fi:fsd:T-FSD1289}.
+J. Ulfelder and M. Lustik. "Modelling Transitions to and fromDemocracy". In: \emph{Democratization} 14.3 (2007), pp. 351-387. DOI:10.1080/13510340701303196.
 
-M. Wahman, J. Teorell, and A. Hadenius. "Authoritarian RegimeTypes Revisited: Updated Data in Comparative Perspective". In:\emph{Contemporary Politics} 19.1 (2013), pp. 19-34.\url{https://sites.google.com/site/authoritarianregimedataset/data}.
+T. E. I. Unit. \emph{Democracy Index 2023: Age of Conflict}. Tech. rep.London, United Kingdom: Economist Intelligence Unit, 2024.
+
+T. Vanhanen. \emph{Measures of Democracy 1810-2018 (Dataset). Version8.0 (2019-06-17).} Tampere, 2019.
+
+M. Wahman, J. Teorell, and A. Hadenius. "Authoritarian RegimeTypes Revisited: Updated Data in Comparative Perspective". In:\emph{Contemporary Politics} 19.1 (2013), pp. 19-34. DOI:10.1080/13569775.2013.773200.
 }

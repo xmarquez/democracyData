@@ -5,19 +5,17 @@
 \alias{bti}
 \title{The Bertelsmann Transformation Index}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1233 rows and 88 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1370 rows and 87 columns.
 }
 \source{
-Bertelsmann Stiftung. \emph{Transformation Index of the Bertelsmann Stiftung 2022}. Tech. rep. Bertelsmann Stiftung, 2022. Available at
-\url{https://www.bti-project.org/en/index/political-transformation.html}
+Bertelsmann Stiftung. \emph{Transformation Index of the Bertelsmann Stiftung 2024}. Tech. rep. Bertelsmann Stiftung, 2024. Available at \url{https://bti-project.org/en/index/political-transformation}.
 }
 \usage{
 bti
 }
 \description{
-The Bertelsmann Transformation Index of the Bertelsmann Stiftung (2022
-edition). Data and coding description available at
-\url{https://www.bti-project.org/en/index/political-transformation.html}
+The Bertelsmann Transformation Index of the Bertelsmann Stiftung (2024
+edition, up to 2022). Data and coding description available at \url{https://bti-project.org/en/index/political-transformation}.
 }
 \section{Description}{
 
@@ -43,8 +41,6 @@ economy".}
 \item{S_Status_Index}{Status index, which combines the democracy and
 economy index.}
 
-\item{Ranking_Democracy_Status}{Ranking in democracy status index.}
-
 \item{SI_Democracy_Status}{Democracy status index.}
 
 \item{Q1_Stateness (Q1.1-1.4)}{Scores on questions on stateness (1-10),
@@ -52,7 +48,7 @@ from monopoly on the use of force to basic administration. The BTI codebook
 says that this concept measures whether "there is clarity about the
 nation's existence as a state with adequately established and
 differentiated power structures." See codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+<\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}>
 for details.}
 
 \item{Q2_Political_Participation (Q2.1-2.4)}{Scores on questions on
@@ -60,14 +56,14 @@ political participation (1-10), from free and fair elections to freedom of
 expression. The BTI codebook says this concept indicates whether "The
 populace decides who rules, and it has other political freedoms". See
 codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}
 for details.}
 
 \item{Q3_Rule_of_Law (Q3.1-3.4)}{Scores on questions on rule of law (1-10),
 from checks and balances to civil rights. The BTI codebook says that this
 concept measures whether "state powers check and balance one another and
 ensure civil rights." See codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}
 for details.}
 
 \item{Q4_Stability_of_Democratic_Institutions (Q4.1-4.2)}{Scores on
@@ -76,7 +72,7 @@ of democratic institutions to commitment to democratic institutions. The
 BTI codebook says that this concept measures whether "democratic
 institutions are capable of performing, and they are adequately accepted."
 See codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}
 for details.}
 
 \item{Q5_Political_and_Social_Integration (Q5.1-5.4)}{Scores on questions
@@ -84,10 +80,8 @@ on political and social integration (1-10), from rootedness of party system
 to social capital. The BTI codebook says that this concept measures whether
 "Stable patterns of representation exist for mediating between society and
 the state; there is also a consolidated civic culture." See codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}
 for details.}
-
-\item{Ranking_Economy_Status}{Ranking in economy status index.}
 
 \item{SII_Economy_Status}{Economy status index.}
 
@@ -96,7 +90,7 @@ the level of socioeconomic development (1-10). The BTI codebook says that
 this concept measures whether "In principle, the country's level of
 development permits adequate freedom of choice for all citizens." See
 codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}
 for details.}
 
 \item{Q7_Organization_of_the_Market_and_Competition (Q7.1-7.4)}{Scores on
@@ -104,42 +98,42 @@ questions on market organization and competition (1-10), from market
 organization to banking system. The BTI codebook says that this concept
 measures whether "There are clear rules for stable, market-based
 competition." See codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}
 for details.}
 
 \item{Q8_Monetary_and_Fiscal_Stability (Q8.1-8.2)}{Scores on questions on
 monetary and fiscal stability (1-10). The BTI codebook says that this
 concept measures whether "There are institutional and political precautions
 to achieve monetary and fiscal stability." See codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}
 for details.}
 
 \item{Q9_Private_Property (Q9.1-9.2)}{Scores on questions on private
 property and property rights (1-10). The BTI codebook says that this
 concept measures whether "There are adequate conditions to support a
 functional private sector." See codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}
 for details.}
 
 \item{Q10_Welfare_Regime (Q10.1-10.2)}{Scores on questions on welfare
 policy and safety nets (1-10). The BTI codebook says that this concept
 measures whether "There are viable arrangements to compensate for social
 risks." See codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}
 for details.}
 
 \item{Q11_Economic_Performance (Q11.1)}{Score on question on economic
 performance (1-10). The BTI codebook says that this concept measures
 whether "The economy's performance points to solid development." See
 codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}
 for details.}
 
 \item{Q12_Sustainability (Q12.1-12.2)}{Scores on questions on
 sustainability, from environmental policy to R&D policy (1-10). The BTI
 codebook says that this concept measures whether "Economic growth is
 balanced, environmentally sustainable and future-oriented." See codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}
 for details.}
 
 \item{Ranking_Governance_Index}{Ranking in governance status index.}
@@ -149,7 +143,7 @@ for details.}
 \item{Q13_Level_of_Difficulty (Q13.1-13.5)}{Scores on questions on level of
 difficulty in governance (1-10), plus some rescaled measures of objective
 difficulty (education, stateness, GNI per capita). See codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}
 for details.}
 
 \item{Q14_Steering_Capability (Q14.1-14.3)}{Scores on questions on the
@@ -157,14 +151,14 @@ government's steering capability, from prioritization to policy learning
 (1-10). The BTI codebook says that this concept measures whether "The
 government manages reforms effectively and can achieve its policy
 priorities." See codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}
 for details.}
 
 \item{Q15_Resource_Efficiency (Q15.1-15.3)}{Scores on questions on the
 government's efficiency, from efficient use of assets to anti-corruption
 capability (1-10). The BTI codebook says that this concept measures whether
 "The government makes optimum use of available resources." See codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}
 for details.}
 
 \item{Q16_Consensus-Building (Q16.1-16.6)}{Scores on questions on the
@@ -173,7 +167,7 @@ society participation to reconciliation (1-10). The BTI codebook says that
 this concept measures whether "The political leadership establishes a broad
 consensus on reform with other actors in society without sacrificing its
 reform goals." See codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}
 for details.}
 
 \item{Q17_Consensus-Building (Q17.1-17.3)}{Scores on questions on the
@@ -181,8 +175,17 @@ government's international cooperation, from effective use of support to
 credibility to regional cooperation (1-10). The BTI codebook says that this
 concept measures whether "The political leadership is willing and able to
 cooperate with external supporters and organizations." See codebook at
-https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+\url{https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf}
 for details.}
+
+\item{pol_sys}{A dichotomous indicator of the political system. 1 = democracy, 0 = autocracy.}
+
+\item{cat_dem_stat}{A more fine-grained indicator of democracy, ranging from 1 (most democratic) to 5 (least democratic).}
+
+\item{cat_dem_stat_label}{A label for the more fine-grained indicator of democracy,
+ranging from "Democracies in consolidation" to "Hard-line autocracies".}
+
+\item{report_year}{Report year. This is always two years more than \code{year}}.
 
 }
 }
@@ -234,9 +237,9 @@ Other democracy:
 \code{\link{bnr}},
 \code{\link{bollen_pmm}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -247,14 +250,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -262,6 +265,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

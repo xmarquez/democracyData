@@ -9,17 +9,17 @@ Alvarez, and Claudia Maldonado}
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 7563 rows and 32 columns.
 }
 \source{
-M. Coppedge, A. Alvarez, and C. Maldonado. "Two Persistent Dimensions of Democracy: Contestation and Inclusiveness". In: \emph{The journal of politics} 70.03 (2008), pp. 632-647. DOI: 10.1017/S0022381608080663.
+M. Coppedge, A. Alvarez, and C. Maldonado. "Two Persistent Dimensions of Democracy: Contestation and Inclusiveness". In: \emph{The journal of politics} 70.03 (2008), pp. 632-647. DOI: \href{https://dx.doi.org/10.1017/S0022381608080663}{10.1017/S0022381608080663}.
 }
 \usage{
 polyarchy_dimensions
 }
 \description{
-From the codebook at \url{https://www3.nd.edu/~mcoppedg/crd/datacrd.htm}: This
+From the codebook at \url{https://web.archive.org/web/20160309180905/http://www3.nd.edu/~mcoppedg/crd/datacrd.htm}: This
 dataset contains several versions of two indicators that measure Robert
 Dahl's two dimensions of polyarchy: contestation and inclusiveness. For
 complete documentation of the analysis that identifies these two dimensions,
-see the published article: M. Coppedge, A. Alvarez, and C. Maldonado. "Two Persistent Dimensions of Democracy: Contestation and Inclusiveness". In: \emph{The journal of politics} 70.03 (2008), pp. 632-647. DOI: 10.1017/S0022381608080663.
+see the published article: M. Coppedge, A. Alvarez, and C. Maldonado. "Two Persistent Dimensions of Democracy: Contestation and Inclusiveness". In: \emph{The journal of politics} 70.03 (2008), pp. 632-647. DOI: \href{https://dx.doi.org/10.1017/S0022381608080663}{10.1017/S0022381608080663}.
 }
 \section{Introduction}{
 
@@ -235,9 +235,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -248,8 +248,8 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
@@ -262,6 +262,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

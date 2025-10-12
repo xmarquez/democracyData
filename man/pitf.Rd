@@ -17,8 +17,8 @@ pitf_p4
 }
 \description{
 The democracy indicator used by the political instability task force and
-described in J. Goldstone, R. Bates, D. Epstein, et al. "A Global Model for Forecasting Political Instability". In: \emph{American Journal of Political Science} 54.1 (2010), pp. 190-208. DOI: 10.1111/j.1540-5907.2009.00426.x. and in S. J. Taylor and J. Ulfelder. "A Measurement Error Model of Dichotomous Democracy Status". In: \emph{Available at SSRN} (2015). DOI: 10.2139/ssrn.2726962.
-This is derived from the Polity dataset (pitf uses version 5; pitf_p4 uses
+described in J. Goldstone, R. Bates, D. Epstein, et al. "A Global Model for Forecasting Political Instability". In: \emph{American Journal of Political Science} 54.1 (2010), pp. 190-208. DOI: \href{https://dx.doi.org/10.1111/j.1540-5907.2009.00426.x}{10.1111/j.1540-5907.2009.00426.x}.
+The data is derived from the Polity dataset (pitf uses version 5; pitf_p4 uses
 PolityIV updated to 2018).
 }
 \section{Variables}{
@@ -183,9 +183,9 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 }
 
 \references{
-J. Goldstone, R. Bates, D. Epstein, et al. "A Global Model for Forecasting Political Instability". In: \emph{American Journal of Political Science} 54.1 (2010), pp. 190-208. DOI: 10.1111/j.1540-5907.2009.00426.x.
+J. Goldstone, R. Bates, D. Epstein, et al. "A Global Model for Forecasting Political Instability". In: \emph{American Journal of Political Science} 54.1 (2010), pp. 190-208. DOI: \href{https://dx.doi.org/10.1111/j.1540-5907.2009.00426.x}{10.1111/j.1540-5907.2009.00426.x}.
 
-S. J. Taylor and J. Ulfelder. "A Measurement Error Model of Dichotomous Democracy Status". In: \emph{Available at SSRN} (2015). DOI: 10.2139/ssrn.2726962.
+S. J. Taylor and J. Ulfelder. "A Measurement Error Model of Dichotomous Democracy Status". In: \emph{Available at SSRN} (2015). DOI: \href{https://dx.doi.org/10.2139/ssrn.2726962}{10.2139/ssrn.2726962}.
 }
 \seealso{
 Other democracy: 
@@ -201,9 +201,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -214,13 +214,13 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -228,6 +228,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

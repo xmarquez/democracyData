@@ -8,15 +8,15 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8050 rows and 7 columns.
 }
 \source{
-D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
+D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}.
 
-M. G. Marshall, T. R. Gurr, and K. Jaggers. \emph{Polity IV Project: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual.} Center for Systemic Peace, 2019.
+M. G. Marshall, T. R. Gurr, and K. Jaggers. \emph{Polity IV Project: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual.} Manual. 2019.
 }
 \usage{
 polity_pmm
 }
 \description{
-Polity 2 Index from Polity IV. 2013. Taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
+Polity 2 Index from Polity IV. 2013. Taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}.
 Higher values are more democratic. Use \link{polityIV} for the latest
 version of the Polity IV data or \link{download_polity_annual} to download the
 Polity 5 revision.
@@ -32,14 +32,17 @@ Polity 5 revision.
 
 \item{polity_pmm}{Annual polity2 index, interpolating values for
 interruption, interregnum, and transition periods. Higher values are more
-democratic. Taken from Pemstein, Daniel, Stephen A. Meserve, and James
-Melton. 2013. "Replication data for: Democratic Compromise: A Latent
-Variable Analysis of Ten Measures of Regime Type." In: Harvard Dataverse.
-\url{http://hdl.handle.net/1902.1/PMM}. In
+democratic. Taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}. In
 this version the indicator only goes to 1945, and it differs from polity2
 in a few cases:
 
-\if{html}{\out{<div class="sourceCode">}}\preformatted{#> Joining with `by = join_by(year, extended_country_name, GWn, cown,
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{polity_pmm |>
+   dplyr::left_join(polityIV) |>
+   dplyr::filter(pmm_polity != polity2) |>
+   dplyr::select(pmm_country, year, pmm_polity, polity2) |>
+   dplyr::group_by(pmm_country, pmm_polity, polity2) |>
+   dplyr::summarise(min_year = min(year), max_year = max(year), n_years = dplyr::n())
+#> Joining with `by = join_by(year, extended_country_name, GWn, cown,
 #> in_GW_system)`
 #> # A tibble: 17 x 6
 #> # Groups:   pmm_country, pmm_polity [17]
@@ -123,9 +126,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -136,13 +139,13 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -150,6 +153,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
@@ -165,9 +169,9 @@ Other PMM replication data:
 \code{\link{prc_gasiorowski}}
 
 Other ordinal democracy indexes: 
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{fh_pmm}},
 \code{\link{polityIV}}
 }

@@ -9,9 +9,8 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8977 rows and 11 columns.
 }
 \source{
-M. Svolik. \emph{The Politics of Authoritarian Rule}. Cambridge: Cambridge University Press, 2012. The full data and codebook can be
-downloaded here:
-\url{https://campuspress.yale.edu/svolik/}
+M. Svolik. \emph{The Politics of Authoritarian Rule}. Cambridge and New York: Cambridge University Press, 2012. The full data and codebook can be
+downloaded at \url{https://campuspress.yale.edu/svolik/the-politics-of-authoritarian-rule/}.
 }
 \usage{
 svolik_regime
@@ -19,7 +18,7 @@ svolik_regime
 \description{
 The data used to classify democracies and dictatorships for Milan Svolik's
 \emph{The Politics of Authoritarian Rule}. The full data and codebook can be
-downloaded here: \url{https://campuspress.yale.edu/svolik/}
+downloaded at \url{https://campuspress.yale.edu/svolik/the-politics-of-authoritarian-rule/}.
 }
 \section{Variables}{
 
@@ -153,9 +152,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -166,20 +165,21 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{uds_2014}},
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
@@ -190,8 +190,8 @@ Other dichotomous democracy indexes:
 \code{\link{bnr}},
 \code{\link{doorenspleet}},
 \code{\link{kailitz}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{wahman_teorell_hadenius}}

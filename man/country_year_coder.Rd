@@ -53,7 +53,7 @@ these systems.
 \item "extended_GWn": Identical to \code{GWn}, but includes a number of not commonly
 used codes for units of doubtful sovereignty (751 for Hyderabad before its
 incorporation into India, 666.001 and 666.002 for Israel pre 1967 borders
-amd occupied territories, and 605 for Western Sahara). These codes are used
+and occupied territories, and 605 for Western Sahara). These codes are used
 in some UCDP/PRIO (\url{https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO/})
 datasets.
 

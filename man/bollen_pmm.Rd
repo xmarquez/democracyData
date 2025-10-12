@@ -9,22 +9,19 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 510 rows and 7 columns.
 }
 \source{
-K. Bollen and P. Paxton. "Subjective Measures of Liberal Democracy". In: \emph{Comparative Political Studies} 33.1 (2000), pp. 58-86. DOI: 10.1177/0010414000033001003.
+K. Bollen and P. Paxton. "Subjective Measures of Liberal Democracy". In: \emph{Comparative Political Studies} 33.1 (2000), pp. 58-86. DOI: \href{https://dx.doi.org/10.1177/0010414000033001003}{10.1177/0010414000033001003}.
 
-K. A. Bollen. \emph{Cross-National Indicators of Liberal Democracy, 1950-1990}. Data set. 2001. Original data available
-at \url{http://webapp.icpsr.umich.edu/cocoon/ICPSR-STUDY/02532.xml}. Taken from
-D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
+K. A. Bollen. \emph{Cross-National Indicators of Liberal Democracy, 1950-1990}. 2001. DOI: \href{https://dx.doi.org/10.3886/ICPSR02532.v2}{10.3886/ICPSR02532.v2}. Original data available
+at \url{https://www.icpsr.umich.edu/web/ICPSR/studies/2532/publications}. Taken from
+D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}.
 }
 \usage{
 bollen_pmm
 }
 \description{
-0-100 index of democracy from Bollen, Kenneth A. 2001. "Cross-National
-Indicators of Liberal Democracy, 1950-1990." 2nd ICPSR version. Chapel Hill,
-NC: University of North Carolina, 1998. Ann Arbor, MI: Inter-university
-Consortium for Political and Social Research, 2001. Original data available
-at \url{https://www.icpsr.umich.edu/web/ICPSR/studies/2532/publications}.
-Taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
+0-100 index of democracy from K. A. Bollen. \emph{Cross-National Indicators of Liberal Democracy, 1950-1990}. 2001. DOI: \href{https://dx.doi.org/10.3886/ICPSR02532.v2}{10.3886/ICPSR02532.v2}. Original data
+available at \url{https://www.icpsr.umich.edu/web/ICPSR/studies/2532/publications}.
+Taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}.
 }
 \section{Variables}{
 
@@ -86,9 +83,9 @@ Other democracy:
 \code{\link{bnr}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -99,14 +96,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -114,6 +111,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

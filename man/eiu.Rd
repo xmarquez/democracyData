@@ -5,19 +5,19 @@
 \alias{eiu}
 \title{The Economist Intelligence Unit's Democracy Index}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 2505 rows and 7 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 2839 rows and 7 columns.
 }
 \source{
-The Economist Intelligence Unit. \emph{Democracy Index 2022: Frontline democracy and the battle for Ukraine}. Tech. rep. The Economist Intelligence Unit, 2023. \url{https://www.eiu.com/topic/democracy-index}.
+The Economist Intelligence Unit. \emph{Democracy Index 2024: What's Wrong with Representative Democracy?} Tech. rep. London, UK: The Economist Intelligence Unit Limited, 2025..
+
+T. E. I. Unit. \emph{Democracy Index 2023: Age of Conflict}. Tech. rep. London, United Kingdom: Economist Intelligence Unit, 2024..
 }
 \usage{
 eiu
 }
 \description{
 A dataset containing the country-year version of the democracy index compiled
-by the Economist Intelligence Unit, 2006-2022. From the report "Democracy
-Index 2022: Frontline democracy and the battle for Ukraine", available at
-\url{https://www.eiu.com/topic/democracy-index}.
+by the Economist Intelligence Unit.
 }
 \details{
 \describe{
@@ -80,9 +80,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{extended_uds}},
 \code{\link{fh_pmm}},
@@ -92,14 +92,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -107,6 +107,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

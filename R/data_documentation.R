@@ -4,8 +4,7 @@
 #' The Anckar-Fredriksson dataset of political regimes
 #'
 #' Dataset described in `r roxygen_cite("anckar")` Data and codebook at the
-#' link. This is version 2 of the data, available at
-#' \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/7SSSAH&version=2.0}.
+#' link. This is version 2 of the data, available at <`r find_url("anckar", "documentation")`>.
 #'
 #' @section Variables:
 #'
@@ -55,15 +54,15 @@
 #' @family democracy
 #' @family authoritarianism
 #' @family dichotomous democracy indexes
-#' @source `r roxygen_cite("anckar")` Version 2 available at
-#'   \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/7SSSAH&version=2.0}.
+#' @source `r roxygen_cite("anckar")` Version 2 available at <`r find_url("anckar", "documentation")`>.
 "anckar"
 
 # ANRR ------------------------------------------------------------------
 
 #' The Acemoglu, Naidu, Restrepo and Robinson democracy dataset
 #'
-#' Dataset described in `r roxygen_cite("anrr")` Data at the link.
+#' Dataset described in `r roxygen_cite("anrr")`
+#' Original data available at <`r find_url("anrr", "documentation")`>.
 #'
 #' @section Variables:
 #'
@@ -209,27 +208,49 @@
 
 #' The Arat measure of democracy
 #'
-#' Democracy score from `r roxygen_cite("arat")` Taken from `r roxygen_cite("pmm2013")`
+#' Democracy score from `r roxygen_cite("arat")` `arat_pmm` is taken from
+#' `r roxygen_cite("pmm2013")` `arat` is taken directly from a scan of Arat's book.
+#'
+#' @details
+#' The original Arat dataset (in `arat`) is different from `arat_pmm`
+#' for two country-years, likely due to an error in transcription in the PMM
+#' replication dataset:
+#'
+#' ```{r}
+#' arat_pmm |>
+#'    dplyr::full_join(arat) |>
+#'    filter(pmm_arat != arat_dem) |>
+#'    select(extended_country_name, year, pmm_arat, arat_dem)
+#' ```
 #'
 #' @section Variables:
 #'
 #'   \describe{
 #'
-#'   \item{original_country}{The country name, as in the PMM dataset. Use
+#'   \item{pmm_country}{The country name, as in the PMM dataset. Use
+#'   \code{extended_country_name} instead if you want a consistent name.}
+#
+#'   \item{arat_country}{The country name, as in the Arat dataset, slightly edited. Use
 #'   \code{extended_country_name} instead if you want a consistent name.}
 #'
 #'   \item{year}{The calendar year.}
 #'
-#'   \item{arat_pmm}{Democracy index. Ranges from a minumum of 29 to a maximum of 109.} }
+#'   \item{pmm_arat}{Democracy index. Ranges from a minumum of 29 to a maximum of 109. In `arat_pmm` only.}
+#'
+#'   \item{arat_dem}{Democracy index. Ranges from a minumum of 29 to a maximum of 109. In `arat` only.}
+#'   }
 #'
 #' @template standard-variables
-#' @source `r roxygen_cite("arat")` Taken from `r roxygen_cite("pmm2013")`
+#' @source `r roxygen_cite("arat")`
+#' @source `r roxygen_cite("pmm2013")`
 #' @family democracy
 #' @family PMM replication data
 #' @family continuous democracy indexes
 #' @aliases arat
 "arat_pmm"
 
+#' @rdname arat_pmm
+"arat"
 
 # BLM ---------------------------------------------------------------------
 
@@ -237,8 +258,7 @@
 #' The Bowman, Lehoucq, and Mahoney index of democracy for Central America
 #'
 #' Contains the trichotomous measure of regime type from `r roxygen_cite("blm")`
-#' \url{http://cps.sagepub.com/content/38/8/939}. Data used to be available at
-#' \url{http://www.blmdemocracy.gatech.edu/}.
+#' Data archived at <`r find_url("blm", "documentation")`>.
 #'
 #' @section Variables:
 #'
@@ -256,8 +276,7 @@
 #'   countries (Costa Rica, El Salvador, Guatemala, Honduras and Nicaragua) from
 #'   1900 to 2000.} }
 #' @template standard-variables
-#' @source `r roxygen_cite("blm")` Data used to be available at
-#'   \url{http://www.blmdemocracy.gatech.edu/}.
+#' @source `r roxygen_cite("blm")` Data archived at <`r find_url("blm", "documentation")`>.
 #' @family democracy
 #' @family PMM replication data
 #' @family regional democracy indexes
@@ -281,7 +300,7 @@
 #'
 #' A dataset containing the Boix-Miller-Rosato (BMR) dichotomous coding of
 #' democracy, first used in the paper `r roxygen_cite("bmr")` The complete dataset can be
-#' downloaded here: \url{https://sites.google.com/site/mkmtwo/data}. The
+#' downloaded at <`r find_url("bmr", "documentation")`>. The
 #' complete codebook is available there as well.
 #'
 #' \describe{ \item{bmr_country}{The country name in BMR.}
@@ -317,9 +336,8 @@
 #' values.} }
 #' @template standard-variables
 #' @source `r roxygen_cite("bmr")` Available at
-#'   \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT}
-#'   (versions 1-3) and \url{https://sites.google.com/site/mkmtwo/data} (version
-#'   4.0)
+#'   <https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT>
+#'   (versions 1-3) and <`r find_url("bmr", "documentation")`> (version 4.0).
 #' @family democracy
 #' @family events data
 #' @family dichotomous democracy indexes
@@ -333,9 +351,8 @@
 #' Breakdowns
 #'
 #' The Bernhard, Nordstrom & Reenock Event History Coding of Democratic
-#' Breakdowns. From `r roxygen_cite("bnr")` Data and coding
-#' description used to be available at
-#' \url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}, but no longer.
+#' Breakdowns. From `r roxygen_cite("bnr")` Original data page archived at <`r find_url("bnr", "documentation")`>.
+#' The original dataset itself was never archived by the Wayback machine, and no longer exists on the web except here.
 #'
 #' @section Description:
 #'
@@ -364,7 +381,7 @@
 #'   expressing themselves, or in which political parties representing a
 #'   substantial portion of the population were banned.
 #'
-#'   Inclusivness:  We only include competitive polities in which at least fifty
+#'   Inclusiveness:  We only include competitive polities in which at least fifty
 #'   percent of all adult citizens are enfranchised to vote in our set of
 #'   democracies.
 #'
@@ -391,9 +408,7 @@
 #'
 #'   }
 #' @template standard-variables
-#' @source `r roxygen_cite("bnr")` Data and coding
-#' description used to be available at
-#' \url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}, but no longer.
+#' @source `r roxygen_cite("bnr")` Original data page archived at <`r find_url("bnr", "documentation")`>.
 #' @family democracy
 #' @family events data
 #' @family dichotomous democracy indexes
@@ -419,9 +434,8 @@
 
 #' The Bertelsmann Transformation Index
 #'
-#' The Bertelsmann Transformation Index of the Bertelsmann Stiftung (2022
-#' edition). Data and coding description available at
-#' \url{https://www.bti-project.org/en/index/political-transformation.html}
+#' The Bertelsmann Transformation Index of the Bertelsmann Stiftung (2024
+#' edition, up to 2022). Data and coding description available at <`r find_url("bti", "documentation")`>.
 #'
 #' @section Description:
 #'
@@ -446,8 +460,6 @@
 #'   \item{S_Status_Index}{Status index, which combines the democracy and
 #'   economy index.}
 #'
-#'   \item{Ranking_Democracy_Status}{Ranking in democracy status index.}
-#'
 #'   \item{SI_Democracy_Status}{Democracy status index.}
 #'
 #'   \item{Q1_Stateness (Q1.1-1.4)}{Scores on questions on stateness (1-10),
@@ -455,7 +467,7 @@
 #'   says that this concept measures whether "there is clarity about the
 #'   nation's existence as a state with adequately established and
 #'   differentiated power structures." See codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <<https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>>
 #'    for details.}
 #'
 #'   \item{Q2_Political_Participation (Q2.1-2.4)}{Scores on questions on
@@ -463,14 +475,14 @@
 #'   expression. The BTI codebook says this concept indicates whether "The
 #'   populace decides who rules, and it has other political freedoms". See
 #'   codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>
 #'    for details.}
 #'
 #'   \item{Q3_Rule_of_Law (Q3.1-3.4)}{Scores on questions on rule of law (1-10),
 #'   from checks and balances to civil rights. The BTI codebook says that this
 #'   concept measures whether "state powers check and balance one another and
 #'   ensure civil rights." See codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>
 #'    for details.}
 #'
 #'   \item{Q4_Stability_of_Democratic_Institutions (Q4.1-4.2)}{Scores on
@@ -479,7 +491,7 @@
 #'   BTI codebook says that this concept measures whether "democratic
 #'   institutions are capable of performing, and they are adequately accepted."
 #'   See codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>
 #'    for details.}
 #'
 #'   \item{Q5_Political_and_Social_Integration (Q5.1-5.4)}{Scores on questions
@@ -487,10 +499,8 @@
 #'   to social capital. The BTI codebook says that this concept measures whether
 #'   "Stable patterns of representation exist for mediating between society and
 #'   the state; there is also a consolidated civic culture." See codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>
 #'    for details.}
-#'
-#'   \item{Ranking_Economy_Status}{Ranking in economy status index.}
 #'
 #'   \item{SII_Economy_Status}{Economy status index.}
 #'
@@ -499,7 +509,7 @@
 #'   this concept measures whether "In principle, the country's level of
 #'   development permits adequate freedom of choice for all citizens." See
 #'   codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>
 #'    for details.}
 #'
 #'   \item{Q7_Organization_of_the_Market_and_Competition (Q7.1-7.4)}{Scores on
@@ -507,42 +517,42 @@
 #'   organization to banking system. The BTI codebook says that this concept
 #'   measures whether "There are clear rules for stable, market-based
 #'   competition." See codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>
 #'    for details.}
 #'
 #'   \item{Q8_Monetary_and_Fiscal_Stability (Q8.1-8.2)}{Scores on questions on
 #'   monetary and fiscal stability (1-10). The BTI codebook says that this
 #'   concept measures whether "There are institutional and political precautions
 #'   to achieve monetary and fiscal stability." See codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>
 #'    for details.}
 #'
 #'   \item{Q9_Private_Property (Q9.1-9.2)}{Scores on questions on private
 #'   property and property rights (1-10). The BTI codebook says that this
 #'   concept measures whether "There are adequate conditions to support a
 #'   functional private sector." See codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>
 #'    for details.}
 #'
 #'   \item{Q10_Welfare_Regime (Q10.1-10.2)}{Scores on questions on welfare
 #'   policy and safety nets (1-10). The BTI codebook says that this concept
 #'   measures whether "There are viable arrangements to compensate for social
 #'   risks." See codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>
 #'    for details.}
 #'
 #'   \item{Q11_Economic_Performance (Q11.1)}{Score on question on economic
 #'   performance (1-10). The BTI codebook says that this concept measures
 #'   whether "The economy's performance points to solid development." See
 #'   codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>
 #'    for details.}
 #'
 #'   \item{Q12_Sustainability (Q12.1-12.2)}{Scores on questions on
 #'   sustainability, from environmental policy to R&D policy (1-10). The BTI
 #'   codebook says that this concept measures whether "Economic growth is
 #'   balanced, environmentally sustainable and future-oriented." See codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>
 #'    for details.}
 #'
 #'   \item{Ranking_Governance_Index}{Ranking in governance status index.}
@@ -552,7 +562,7 @@
 #'   \item{Q13_Level_of_Difficulty (Q13.1-13.5)}{Scores on questions on level of
 #'   difficulty in governance (1-10), plus some rescaled measures of objective
 #'   difficulty (education, stateness, GNI per capita). See codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>
 #'    for details.}
 #'
 #'   \item{Q14_Steering_Capability (Q14.1-14.3)}{Scores on questions on the
@@ -560,14 +570,14 @@
 #'   (1-10). The BTI codebook says that this concept measures whether "The
 #'   government manages reforms effectively and can achieve its policy
 #'   priorities." See codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>
 #'    for details.}
 #'
 #'   \item{Q15_Resource_Efficiency (Q15.1-15.3)}{Scores on questions on the
 #'   government's efficiency, from efficient use of assets to anti-corruption
 #'   capability (1-10). The BTI codebook says that this concept measures whether
 #'   "The government makes optimum use of available resources." See codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>
 #'    for details.}
 #'
 #'   \item{Q16_Consensus-Building (Q16.1-16.6)}{Scores on questions on the
@@ -576,7 +586,7 @@
 #'   this concept measures whether "The political leadership establishes a broad
 #'   consensus on reform with other actors in society without sacrificing its
 #'   reform goals." See codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>
 #'    for details.}
 #'
 #'   \item{Q17_Consensus-Building (Q17.1-17.3)}{Scores on questions on the
@@ -584,13 +594,21 @@
 #'   credibility to regional cooperation (1-10). The BTI codebook says that this
 #'   concept measures whether "The political leadership is willing and able to
 #'   cooperate with external supporters and organizations." See codebook at
-#'   https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf
+#'   <https://www.bti-project.org/content/en/downloads/codebooks/BTI_2020_Codebook.pdf>
 #'    for details.}
+#'
+#'    \item{pol_sys}{A dichotomous indicator of the political system. 1 = democracy, 0 = autocracy.}
+#'
+#'    \item{cat_dem_stat}{A more fine-grained indicator of democracy, ranging from 1 (most democratic) to 5 (least democratic).}
+#'
+#'    \item{cat_dem_stat_label}{A label for the more fine-grained indicator of democracy,
+#'    ranging from "Democracies in consolidation" to "Hard-line autocracies".}
+#'
+#'    \item{report_year}{Report year. This is always two years more than `year`}.
 #'
 #'   }
 #' @template standard-variables
-#' @source `r roxygen_cite("bti")` Available at
-#'   \url{https://www.bti-project.org/en/index/political-transformation.html}
+#' @source `r roxygen_cite("bti")` Available at <`r find_url("bti", "documentation")`>.
 #' @family democracy
 #' @family continuous democracy indexes
 "bti"
@@ -600,11 +618,8 @@
 
 #' The Bollen measure of democracy
 #'
-#' 0-100 index of democracy from Bollen, Kenneth A. 2001. "Cross-National
-#' Indicators of Liberal Democracy, 1950-1990." 2nd ICPSR version. Chapel Hill,
-#' NC: University of North Carolina, 1998. Ann Arbor, MI: Inter-university
-#' Consortium for Political and Social Research, 2001. Original data available
-#' at \url{https://www.icpsr.umich.edu/web/ICPSR/studies/2532/publications}.
+#' 0-100 index of democracy from `r roxygen_cite("bollen2001")` Original data
+#' available at <`r find_url("bollen_pmm", "documentation")`>.
 #' Taken from `r roxygen_cite("pmm2013")`
 #'
 #' @section Variables:
@@ -620,7 +635,7 @@
 #' @template standard-variables
 #' @source `r roxygen_cite("bollenPaxton")`
 #' @source `r roxygen_cite("bollen2001")` Original data available
-#' at \url{http://webapp.icpsr.umich.edu/cocoon/ICPSR-STUDY/02532.xml}. Taken from
+#' at <`r find_url("bollen_pmm", "documentation")`>. Taken from
 #' `r roxygen_cite("pmm2013")`
 #' @family democracy
 #' @family PMM replication data
@@ -634,9 +649,7 @@
 #' The Economist Intelligence Unit's Democracy Index
 #'
 #' A dataset containing the country-year version of the democracy index compiled
-#' by the Economist Intelligence Unit, 2006-2022. From the report "Democracy
-#' Index 2022: Frontline democracy and the battle for Ukraine", available at
-#' \url{https://www.eiu.com/topic/democracy-index}.
+#' by the Economist Intelligence Unit.
 #'
 #' \describe{
 #'
@@ -652,7 +665,8 @@
 #' @template standard-variables
 #' @family democracy
 #' @family continuous democracy indexes
-#' @source `r roxygen_cite("eiu")` \url{https://www.eiu.com/topic/democracy-index}.
+#' @source `r roxygen_cite("eiu2025")`.
+#' @source `r roxygen_cite("eiu2024")`.
 "eiu"
 
 # Doorenspleet ------------------------------------------------------------
@@ -744,12 +758,12 @@
 # Freedom House -----------------------------------------------------------
 
 
-#' Freedom House "Freedom in the World" data from Pemstein, Meserve, and
-#' Melton's replication dataset
+#' Freedom House "Freedom in the World" data
 #'
-#' This is the Freedom House data included in `r roxygen_cite("pmm2013")` It differs for
-#' some country-years from the current version of the Freedom House data, which
-#' can be accessed using \link{download_fh}; hence its inclusion here.
+#' `fh_pmm` archives the Freedom House data included in `r roxygen_cite("pmm2013")`,
+#' while `fh` archives the 2025 edition of the Freedom
+#' in the World data (updated to 2024). For the latest version of the Freedom House data, always
+#' use [download_fh].
 #'
 #' @section Variables:
 #'
@@ -762,9 +776,37 @@
 #'   single year. In particular, the year 1981 is "skipped" -- a single survey
 #'   covers Jan.1981 - Aug. 1982 and its value is assigned to 1982 here.}
 #'
-#'   \item{fh_pmm}{A reversed measure of political rights and civil liberties,
+#'   \item{pmm_freedomhouse }{A reversed measure of political rights and civil liberties,
 #'   from 1 to 7, with higher values being more democratic (the opposite of the
-#'   actual FH data).} }
+#'   actual FH data).}
+#'
+#'   \item{fh_total_reversed }{A reversed measure of political rights and civil liberties,
+#'   from 0 to 12, with higher values being more democratic (the opposite of the
+#'   actual FH data). To convert to the same scale as `pmm_freedomhouse`, divide by two and add 1,
+#'   or average `pr` and `cl` and then reverse.}
+#'
+#'   \item{pr}{The political rights scores (from 1 to 7) in the archived Freedom House data (`fh`).}
+#'
+#'   \item{cl}{The civil rights scores (from 1 to 7) in the archived Freedom House data (`fh`).}
+#'
+#'   \item{status}{The status of the country in the archived Freedom House data (Free, Partly Free, Not Free).}
+#'
+#'   \item{fh_total}{The sum of the political rights and civil liberties scores. Ranges from 2 to 14.}
+#'   }
+#'
+#' @details
+#' The Freedom House dataset released in 2025 is different from the archived
+#' PMM data for 49 country years:
+#'
+#' ```{r}
+#' fh |>
+#'   dplyr::inner_join(fh_pmm) |>
+#'   dplyr::select(extended_country_name, year, fh_total_reversed, pmm_freedomhouse) |>
+#'   dplyr::mutate(fh_total_reversed = (fh_total_reversed/2)+ 1) |>
+#'   dplyr::filter(fh_total_reversed != pmm_freedomhouse) |>
+#'   print(n = 50)
+#' ```
+#' Many, but not all of these cases seem to be concentrated around the problematic year of 1982.
 #'
 #' @template standard-variables
 #'
@@ -774,9 +816,11 @@
 #' @family PMM replication data
 #' @family ordinal democracy indexes
 #' @seealso \link{download_fh} and \link{download_fh_electoral}
-#' @aliases fh
 "fh_pmm"
 
+#'@rdname fh_pmm
+#'@source `r roxygen_cite("fh2025")`
+"fh"
 
 # Hadenius ----------------------------------------------------------------
 
@@ -796,7 +840,7 @@
 #'   single year. In particular, the year 1981 is "skipped" -- a single survey
 #'   covers Jan.1981 - Aug. 1982 and its value is assigned to 1982 here.}
 #'
-#'   \item{hadenius_pmm}{0-10 index of democracy from `r roxygen_cite("hadenius")`
+#'   \item{hadenius_pmm}{0-10 index of democracy from `r roxygen_cite("hadenius1992")`
 #'   Only available for 129 countries in 1988.} }
 #'
 #' @template standard-variables
@@ -811,12 +855,12 @@
 # LIED --------------------------------------------------------------------
 
 
-#' The Lexical Index of Democracy, v. 6.4
+#' The Lexical Index of Democracy, v. 6.8
 #'
 #' The Lexical Index of Democracy first described in `r roxygen_cite("LIED")`
 #' Original data and variable descriptions available at
-#' \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}.
-#' The dataset is now on version 6.4, and contains new variables. The
+#' <`r find_url("LIED", "documentation")`>.
+#' The dataset is now on version 6.8, and contains new variables. The
 #' documentation below is copied from their codebook, with some small additions
 #' for clarification purposes.
 #'
@@ -913,11 +957,11 @@
 #'   In a small number of cases, the resulting index appears to have been
 #'   incorrectly constructed:
 #'
-#'   ```{r, echo = FALSE}
+#'   ```{r}
 #'
-#'   LIED %>% filter(lexical_index !=
-#'   lexical_index_original) %>% select(lied_country, year, lexical_index,
-#'   lexical_index_original)
+#'   LIED |>
+#'     dplyr::filter(lexical_index != lexical_index_original) |>
+#'     dplyr::select(lied_country, year, lexical_index, lexical_index_original)
 #'
 #'   ```
 #'
@@ -1061,8 +1105,7 @@
 #' @aliases lied
 #' @encoding UTF-8
 #' @source `r roxygen_cite("LIED")` Original data and variable
-#'   descriptions available at
-#'   \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}
+#'   descriptions available at <`r find_url("LIED", "documentation")`>.
 #'
 #'
 "LIED"
@@ -1073,10 +1116,8 @@
 #' Mainwaring, Brinks, and Perez Liñán's democracy measure for Latin America
 #'
 #' Trichotomous democracy indicator from `r roxygen_cite("mainwaring2001")`
-#' Extended in `r roxygen_cite("mainwaring2014")` Original data used to be available
-#' from
-#' \url{http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf}, though no
-#' longer.
+#' Extended in `r roxygen_cite("mainwaring2014")` Original data description
+#' archived at <`r find_url("mainwaring", "documentation")`>.
 #'
 #' @section Variables:
 #'
@@ -1408,7 +1449,7 @@
 #'   this metric.) The variable is essentially a Herfendahl index (sum of
 #'   squared shares) using the column exname. For a given country-year in a
 #'   unique regime (see \code{reg_id}), the following calculation is made:
-#'   $sum_{i=1}^{m} (exec_i/n)^2$ where n is the age of the regime up to that
+#'   $sum_\{i=1\}^\{m\} (exec_i/n)^2$ where n is the age of the regime up to that
 #'   year, and exec is the number of years that a unique executive i (out of a
 #'   total m executives up to that year) has led the regime. As such, a regime
 #'   led by only one person up through that year yields a personalism index of
@@ -1456,19 +1497,15 @@
 
 #' Munck Index of Democracy
 #'
-#' 0-1 index of democracy from `r roxygen_cite("munck")` Taken from
-#' `r roxygen_cite("pmm2013")` Higher values are more democratic.
+#' 0-1 index of democracy from `r roxygen_cite("munck")` Taken from `r roxygen_cite("pmm2013")`
+#' Higher values are more democratic. I've double-checked this against the
+#' original dataset in Munck's book and found it to be identical.
 #'
 #' @section Variables:
 #'
 #'   \describe{
 #'
 #'   \item{pmm_country}{The original country name in the PMM replication data.}
-#'
-#'   \item{year}{The calendar year. This is approximate. The surveys cover
-#'   specific periods in the original data that do not always overlap with a
-#'   single year. In particular, the year 1981 is "skipped" -- a single survey
-#'   covers Jan.1981 - Aug. 1982 and its value is assigned to 1982 here.}
 #'
 #'   \item{munck_pmm}{0-1 index of democracy from Munck. Only available for 18
 #'   Latin American countries for 19 years.} }
@@ -1489,7 +1526,7 @@
 #' The Geddes Wright and Frantz Autocratic Regimes dataset
 #'
 #' The dataset described in `r roxygen_cite("gwf")` The full data and codebook can be
-#' downloaded here: \url{http://sites.psu.edu/dictators/}. The documentation
+#' downloaded at <`r find_url("gwf", "documentation")`>. The documentation
 #' below is derived from the codebook. Some variables apply to the country-year
 #' version, some to the case version and some to the "extended" version
 #' (extended back before 1945 with info from the case descriptions).
@@ -1588,7 +1625,10 @@
 
 #' The Steffen Kailitz Dataset of Authoritarian Regime Types
 #'
-#' Contains the authoritarian regime types dataset from `r roxygen_cite("kailitz")`
+#' Contains the authoritarian regime types dataset from
+#' `r roxygen_cite("kailitz2013")`. This has been superceded by
+#' `r roxygen_cite("kailitz2024dataset")`. Use [vaporeg] for the most up to date
+#' version.
 #'
 #' @section Variables:
 #'
@@ -1648,12 +1688,172 @@
 #'
 #'   }
 #' @template standard-variables
-#' @source `r roxygen_cite("kailitz")`
+#' @source `r roxygen_cite("kailitz2013")`
 #' @family democracy
 #' @family authoritarianism
 #' @family dichotomous democracy indexes
 #' @family trichotomous democracy indexes
 "kailitz"
+
+# VaPoReg (Kailitz update) -------------------------------------------------------
+
+#' The Varieties of Political Regimes (VaPoReg) dataset
+#'
+#' `r roxygen_cite("kailitzVarietiesPoliticalRegimes2024")` The original data
+#' and codebook can be downloaded from <`r find_url("vaporeg",
+#' "documentation")>. The documentation below is derived from the codebook, with
+#' modifications.
+#'
+#' @section Credits: The data were originally compiled by Steffen Kailitz and
+#'   the Varieties of Political Regimes project. The dataset has been revised
+#'   and expanded based on historical sources, country reports, and
+#'   international political datasets.
+#'
+#' @section Introduction:
+#'
+#'   The VaPoReg dataset provides a classification of political regimes globally
+#'   from 1900 to 2024. It covers independent states, colonial regimes,
+#'   occupation regimes, and semi-sovereign entities such as protectorates. The
+#'   dataset codes each country-year according to different regime typologies,
+#'   integrating various sources of political regime data.
+#'
+#'   The dataset includes unique features such as:
+#'  - Distinguishing between **electoral** and **non-electoral** autocracies.
+#'  - Differentiating between **constitutional monarchies, absolute monarchies, and personalist regimes**.
+#'  - Identifying **colonial and occupation regimes** separately from independent states.
+#'  - Incorporating non-sovereign entities that have historically been excluded from other datasets.
+#'
+#' @section Conceptual Framework:
+#'
+#'   The dataset classifies regimes based on their **institutional structure,
+#'   political legitimation, and origin of rule**. The classification emphasizes
+#'   observable characteristics, such as whether a regime emerged from a coup,
+#'   follows ideological principles, or relies on military governance.
+#'
+#' @section Variables:
+#'
+#'  \describe{
+#'
+#'  \item{country_name}{The name of the country for a given year.}
+#'
+#'  \item{year}{The calendar year.}
+#'
+#'  \item{vaporeg_code}{The country code based on the Correlates of War (COW) dataset.}
+#'
+#'  \item{GeoNames_ID}{Geographic identifier for linking with spatial datasets.}
+#'
+#'  \item{vaporeg_s}{The **standard classification** of political regimes. Coded as:
+#'
+#'    - 10: Democracy
+#'    - 20: Semidemocracy
+#'    - 30: Electoral Oligarchy
+#'    - 40: Non-electoral Transitional Regime
+#'    - 50: Electoral Autocracy
+#'    - 60: Constitutional Monarchy
+#'    - 70: Absolute Monarchy
+#'    - 80: One-party Autocracy
+#'    - 90: Right-wing Autocracy
+#'    - 100: Communist Ideocracy
+#'    - 110: Islamist Ideocracy
+#'    - 120: Military Autocracy
+#'    - 130: Personalist Autocracy
+#'    - 140: Colonial Regime
+#'    - 150: Occupation Regime
+#'    - 160: No Central Authority
+#'  }
+#'
+#'  \item{vaporeg_a}{An **alternative classification**, which merges democracy and semidemocracy and groups
+#'  monarchies together as ruling monarchies.}
+#'
+#'  \item{vaporeg_cr}{A classification similar to **VaPoReg_s**, but includes an additional category for **"Part of Other Country"**.}
+#'
+#'  \item{vaporeg_governing_country}{For colonial and occupation regimes, this variable identifies the ruling country.}
+#'
+#'  \item{vaporeg_s_of_gc}{The **standard regime classification** for the governing country.}
+#'
+#'  \item{vaporeg_a_of_gc}{The **alternative regime classification** for the governing country.}
+#'
+#'  \item{vaporeg_s_start}{The date on which the political regime type,
+#'  as defined by the standard version of our political regime categorization,
+#'  began.}
+#'
+#'  \item{vaporeg_s_end}{The date on which the political regime type,
+#'  as defined by the standard version of our political regime categorization,
+#'  ended.}
+#'
+#'  \item{vaporeg_s_duration}{The number of years the political regime has lasted,
+#'  as defined by the standard version of our political regime categorization,
+#'  counting only if the regime was still in power on July 1st of each year.}
+#'
+#'  \item{vaporeg_s_change}{The variable identifies regime changes based on the
+#'  standard version of our political regimecategorization. It takes a value of
+#'  one if a different regime is in place on July 1st compared to July 1st of
+#'  the previous year.}
+#'
+#'  \item{vaporeg_a_start}{The date on which the political regime type,
+#'  according to the alternative version of our political regime categorization,
+#'  began.}
+#'
+#'  \item{vaporeg_a_end}{The date on which the political regime type,
+#'  according to the alternative version of our political regime categorization,
+#'  ended.}
+#'
+#'  \item{vaporeg_a_duration}{The number of years the political regime has lasted,
+#'  as defined by the alternative version of our political regime categorization,
+#'  counting only if the regime was still in power on July 1st ofeach year.}
+#'
+#'  \item{vaporeg_a_change}{The variable identifies regime changes based on the
+#'  standard version of our political regime categorization. It takes a value of
+#'  one if a different regime is in place on July 1st compared to July 1st of the
+#'  previous year.}
+#'
+#'  \item{vaporeg_binary_strict}{A **dichotomous classification** of democracy, based
+#'        on `VaPoReg_s`. Coded as 1 if `VaPoReg_s` is a Democracy (10), 0 otherwise.}
+#'
+#'  \item{vaporeg_binary_non-strict}{A **dichotomous classification** of democracy, based
+#'        on `VaPoReg_s`, but less strict. Coded as 1 if `VaPoReg_s` is a Democracy (10) or a Semidemocracy (20),
+#'        0 otherwise.}
+#'
+#'  \item{vaporeg_trichotomous}{A **trichotomous classification** of democracy, based
+#'        on `VaPoReg_s`. Coded as 2 if `VaPoReg_s` is a Democracy (10), 1 if it is a Semidemocracy (20),
+#'        0 otherwise.}
+#'
+#'  \item{Gapminder_pop}{Population, per the Gapminder dataset.}
+#'
+#'  \item{gm_world_pop}{World population, per the Gapminder dataset}
+#'
+#'  \item{un_region}{UN region}
+#'
+#'  \item{un_cntinent}{UN continent}
+#'
+#'  }
+#'
+#'
+#' @section Special Cases:
+#'
+#'  - **Colonial Regimes**: Defined by foreign rule, legal discrimination, and lack of sovereignty.
+#'  - **Occupation Regimes**: Military-controlled administrations imposed by foreign powers.
+#'  - **No Central Authority**: Cases where no governing entity holds effective control (e.g., Somalia post-1991).
+#'  - **Protectorates and Mandates**: Semi-sovereign territories coded separately in some instances.
+#'
+#' @section Sources:
+#'
+#'   The dataset integrates multiple sources, including:
+#'  - **Freedom House**
+#'  - **Polity IV**
+#'  - **V-Dem (Varieties of Democracy Project)**
+#'  - **LIED (Lexical Index of Electoral Democracy)**
+#'  - **Historical country reports, election archives, and secondary literature**
+#'
+#' @template standard-variables
+#' @references Kailitz, Steffen. "Varieties of Political Regimes." Available at
+#'   \url{https://www.va-poreg.de/home}.
+#' @family democracy
+#' @family institutions
+#' @source `r roxygen_cite("kailitz2024dataset")`
+#' @source `r roxygen_cite("kailitzVarietiesPoliticalRegimes2024")`
+"vaporeg"
+
 
 # DD/PACL/ACLP/CGV --------------------------------------------------------
 
@@ -1661,8 +1861,7 @@
 #' The Democracy and Dictatorship Dataset (DD/PACL/ACLP/CGV)
 #'
 #' This dataset (aka PACL, ACLP or CGV) is described in `r roxygen_cite("pacl2010")`
-#' The full data and codebook can be downloaded here
-#' \url{https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited}.
+#' The full data and codebook can be downloaded at <`r find_url("pacl", "documentation")`>.
 #' The documentation below is directly copied from the codebook.
 #'
 #' \describe{
@@ -1675,8 +1874,8 @@
 #'
 #' \item{aclpcode}{Country identifier (numeric) used in previous versions of the
 #' regime classification contained in this dataset (the so-called ACLP, PPD,
-#' etc., databases). See Alvarez,Cheibub, Limongi, Przeworski 1996, Przeworski,
-#' Alvarez, Cheibub and Limongi 2000, andCheibub 2007.}
+#' etc., databases). See Alvarez, Cheibub, Limongi, Przeworski 1996, Przeworski,
+#' Alvarez, Cheibub and Limongi 2000, and Cheibub 2007.}
 #'
 #' \item{pacl_cowcode}{Correlates of war (numeric) country identifier.}
 #'
@@ -2038,9 +2237,30 @@
 #' @family dichotomous democracy indexes
 #'
 #' @source `r roxygen_cite("pacl2010")` The full data and codebook
-#'   can be downloaded here
-#'   \url{https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited}
+#'   can be downloaded at <`r find_url("pacl", "documentation")`>.
+#' @aliases dd
+#' @aliases aclp
+#' @aliases cgv
 "pacl"
+
+#' @rdname pacl
+#' @export
+aclp <- function() {
+  democracyData::pacl
+}
+
+
+#' @rdname pacl
+#' @export
+dd <- function() {
+  democracyData::pacl
+}
+
+#' @rdname pacl
+#' @export
+cgv <- function() {
+  democracyData::pacl
+}
 
 #' @rdname pacl
 #' @section Note:
@@ -2050,13 +2270,16 @@
 #'   variable \code{democracy} in the original dataset. The
 #'   original dataset is found in \code{pacl}. \code{pacl_pmm} is missing a few
 #'   country-years when compared with \code{pacl}.
+#'
+#'   The functions [dd], [cgv], and [aclp] are aliases for [pacl], provided for
+#'   convenience.
 "pacl_pmm"
 
 #'Update of the Democracy and Dictatorship Dataset by Bjørnskov and Rode
 #'
 #'This dataset updates [pacl] with more countries and coverage from 1950 to
 #'2020, as described in `r roxygen_cite("pacl_update")` The full data and codebook
-#'can be downloaded here: \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}. The
+#'can be downloaded at <`r find_url("pacl_update", "documentation")`>. The
 #'documentation below is directly copied from the codebook.
 #'
 #'\describe{
@@ -2231,11 +2454,26 @@
 #'
 #'@family democracy
 #'@family dichotomous democracy indexes
+#' @aliases dd_update
+#' @aliases aclp_update
+#' @aliases cgv_update
 #'
 #'@source `r roxygen_cite("pacl_update")` The full data and codebook can be downloaded
-#'  here \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}
+#'  at <`r find_url("pacl_update", "documentation")`>
 "pacl_update"
 
+
+#' @rdname pacl_update
+#' @export
+aclp_update <- function() democracyData::pacl_update
+
+#' @rdname pacl_update
+#' @export
+dd_update <- function() democracyData::pacl_update
+
+#' @rdname pacl_update
+#' @export
+cgv_update <- function() democracyData::pacl_update
 
 # PEPS --------------------------------------------------------------------
 
@@ -2244,9 +2482,8 @@
 #'
 #' A dataset containing the Participation-Enhanced Polity score described in
 #' `r roxygen_cite("peps")` The complete
-#' dataset is available here:
-#' \url{http://www.lehigh.edu/~bm05/democracy/Obtain_data.htm}. The
-#' documentation below is based on the iformation in that website.
+#' dataset is available at <`r find_url("peps", "documentation")`>. The
+#' documentation below is based on the information in that website.
 #'
 #' \describe{
 #'
@@ -2340,20 +2577,17 @@
 #'
 #'   \item{polity_pmm}{Annual polity2 index, interpolating values for
 #'   interruption, interregnum, and transition periods. Higher values are more
-#'   democratic. Taken from Pemstein, Daniel, Stephen A. Meserve, and James
-#'   Melton. 2013. "Replication data for: Democratic Compromise: A Latent
-#'   Variable Analysis of Ten Measures of Regime Type." In: Harvard Dataverse.
-#'   [http://hdl.handle.net/1902.1/PMM](http://hdl.handle.net/1902.1/PMM). In
+#'   democratic. Taken from `r roxygen_cite("pmm2013")` In
 #'   this version the indicator only goes to 1945, and it differs from polity2
 #'   in a few cases:
 #'
-#'   ```{r, echo = FALSE}
-#'   polity_pmm %>%
-#'   dplyr::left_join(polityIV) %>%
-#'   dplyr::filter(pmm_polity != polity2) %>%
-#'   dplyr::select(pmm_country, year, pmm_polity, polity2) %>%
-#'   dplyr::group_by(pmm_country, pmm_polity, polity2) %>%
-#'   dplyr::summarise(min_year = min(year), max_year = max(year), n_years = dplyr::n())
+#'   ```{r}
+#'   polity_pmm |>
+#'      dplyr::left_join(polityIV) |>
+#'      dplyr::filter(pmm_polity != polity2) |>
+#'      dplyr::select(pmm_country, year, pmm_polity, polity2) |>
+#'      dplyr::group_by(pmm_country, pmm_polity, polity2) |>
+#'      dplyr::summarise(min_year = min(year), max_year = max(year), n_years = dplyr::n())
 #'   ```
 #'   }
 #'
@@ -2362,9 +2596,7 @@
 #' @template standard-variables
 #'
 #' @source `r roxygen_cite("pmm2013")`
-#'
 #' @source `r roxygen_cite("polity2019")`
-#'
 #' @family democracy
 #' @family PMM replication data
 #' @family ordinal democracy indexes
@@ -2458,10 +2690,10 @@
 #'  and actively separated from the central authority of the regime.}
 #'
 #'  \item{democ}{Institutionalized democracy indicator, 0-10 scale. See PolityIV
-#'  users' manual at [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf)}
+#'  users' manual at <http://www.systemicpeace.org/inscr/p4manualv2018.pdf>}
 #'
 #'  \item{autoc}{Institutionalized autocracy indicator, 0-10 scale. See PolityIV
-#'  users' manual at [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf)}
+#'  users' manual at <http://www.systemicpeace.org/inscr/p4manualv2018.pdf>}
 #'
 #'  \item{polity}{Annual polity index (`autoc` - `democ`), including values for
 #'  interruption (-66), interregnum (-77), and transition periods (-88). Higher
@@ -2494,43 +2726,43 @@
 #'  democratic.}
 #'
 #'  \item{durable}{Regime durability. See PolityIV users' manual at
-#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.}
+#'  <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.}
 #'
 #'  \item{xrreg}{Regulation of Chief Executive Recruitment. 1 = unregulated, 2 =
 #'  designational/transitional, 3 = regulated. See PolityIV users' manual at
-#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.}
+#'  <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.}
 #'
 #'  \item{xrcomp}{Competitiveness of Chief Executive Recruitment. 1 = selection,
 #'  2 = dual/transitional, 3 = election. See PolityIV users' manual at
-#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.}
+#'  <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.}
 #'
 #'  \item{xropen}{Openness of Chief Executive Recruitment. 1 = unlimited, 2 =
 #'  dual/transitional, 3 = election. See PolityIV users' manual at
-#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.}
+#'  <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.}
 #'
 #'  \item{xconst}{Executive constraints. 1 = closed, 2 = intermediate, 3 =
 #'  slight to moderate limitation, 4 = intermediate, 5 = substantial
 #'  limitations, 6 = intermediate, 7 = executive parity or subordination. See
 #'  PolityIV users' manual at
-#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.}
+#'  <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.}
 #'
 #'  \item{parcomp}{Regulation of participation. 0 = Not applicable, 1 =
 #'  repressed, 2 = suppressed, 3 = factional, 4 = transitional, 5 = competitive.
 #'  See PolityIV users' manual at
-#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.}
+#'  <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.}
 #'
 #'  \item{exrec}{Executive recruitment (concept). 1 = ascription, 2 = dual
 #'  (ascription + designation), 3 = designation, 4 = Self selection, 5 = gradual
 #'  transition from self selection, 6 = dual (ascription + election), 7 =
 #'  transitional or restricted election, 8 = competitive election. See PolityIV
-#'  users' manual at [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for
+#'  users' manual at <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for
 #'  details.}
 #'
 #'  \item{exconst}{Executive constraints (concept). Identical to `xconst`. 1 =
 #'  closed, 2 = intermediate, 3 = slight to moderate limitation, 4 =
 #'  intermediate, 5 = substantial limitations, 6 = intermediate, 7 = executive
 #'  parity or subordination. See PolityIV users' manual at
-#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.}
+#'  <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.}
 #'
 #'  \item{polcomp}{Political competition (concept). 1 = suppressed, 2 =
 #'  restricted 3 = Imposed transition, 4 = Uninstitutionalized, 5 = gradual
@@ -2538,7 +2770,7 @@
 #'  factional, 8 = electoral transition: persistent conflict/coercion, 9 =
 #'  electoral transition: limited conflict/coercion, 10 = institutionalized
 #'  electoral. See PolityIV users' manual at
-#'  [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.}
+#'  <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.}
 #'
 #'  \item{prior}{Regime Polity code immediately prior to regime end date. The
 #'  polity users' manual (p. 31) says "The PRIOR code may be a number from -10
@@ -2600,7 +2832,7 @@
 #'  \item{post}{Regime `polity` code immediately after the current regime.}
 #'
 #'  \item{change}{Net difference between `prior` and `post`. See PolityIV users'
-#'  manual at [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf) for details.
+#'  manual at <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
 #'  Note the code 88 denotes a "pre-existing polity" (for polities that existed
 #'  before 1800), 96 indicates state disintegration, 0 a state in transition, 97
 #'  state transformation, 98 state demise, and 99 state creation.}
@@ -2628,10 +2860,7 @@
 #'
 #'@template standard-variables
 #'
-#'@source `r roxygen_cite("polity2019")` Available at
-#'  \url{http://www.systemicpeace.org/inscr/p4manualv2018.pdf}
-#'
-#'
+#'@source `r roxygen_cite("polity2019")` Available at <`r find_url("polityIV", "documentation")`>
 #'
 #'@family democracy
 #'@family ordinal democracy indexes
@@ -2646,7 +2875,6 @@
 #'
 #' The Political Regime Change dataset. First described in `r roxygen_cite("gasiorowski1996")`
 #' Available in updated form in `r roxygen_cite("prc_gasiorowski2002")`
-#' \url{http://www.tandfonline.com/doi/pdf/10.1080/714000289}.
 #'
 #' \describe{
 #'
@@ -2683,10 +2911,8 @@
 #'
 #' }
 #' @template standard-variables
-#' @source `r roxygen_cite("prc_gasiorowski1996")`
-#'
+#' @source `r roxygen_cite("gasiorowski1996")`
 #' @source `r roxygen_cite("prc_gasiorowski2002")`
-#'   \url{http://www.tandfonline.com/doi/pdf/10.1080/714000289}.
 #' @family democracy
 #' @family trichotomous democracy indexes
 #' @family PMM replication data
@@ -2775,7 +3001,7 @@
 #'
 #' The data used to classify democracies and dictatorships for Milan Svolik's
 #' *The Politics of Authoritarian Rule*. The full data and codebook can be
-#' downloaded here: \url{https://campuspress.yale.edu/svolik/}
+#' downloaded at <`r find_url("svolik_regime", "documentation")`>.
 #'
 #' @section Variables:
 #'
@@ -2866,8 +3092,7 @@
 #' @family dichotomous democracy indexes
 #'
 #' @source `r roxygen_cite("svolik")` The full data and codebook can be
-#'   downloaded here:
-#'   \url{https://campuspress.yale.edu/svolik/}
+#'   downloaded at <`r find_url("svolik_regime", "documentation")`>.
 #'
 #'
 "svolik_regime"
@@ -2881,8 +3106,7 @@
 #' The University of Texas Inequality Project Categorical Dataset of Political
 #' Regimes. Described in `r roxygen_cite("utip")`
 #' \url{http://utip.gov.utexas.edu/papers/utip_53.pdf}. Data available for
-#' download at
-#' \url{http://utip.gov.utexas.edu/data/}
+#' download at <`r find_url("utip", "documentation")`>.
 #'
 #' @section Description:
 #'
@@ -2950,8 +3174,8 @@
 #' PITF democracy indicator
 #'
 #' The democracy indicator used by the political instability task force and
-#' described in `r roxygen_cite("pitf2010")` and in `r roxygen_cite("pitf2015")`
-#' This is derived from the Polity dataset (pitf uses version 5; pitf_p4 uses
+#' described in `r roxygen_cite("pitf2010")`
+#' The data is derived from the Polity dataset (pitf uses version 5; pitf_p4 uses
 #' PolityIV updated to 2018).
 #'
 #' @section Variables:
@@ -3099,7 +3323,7 @@
 #' The Polyarchy Scale and the Contestation Scale
 #'
 #' `r roxygen_cite("polyarchy1990")` Data
-#' available at \url{http://www3.nd.edu/~mcoppedg/crd/datacrd.htm}. The codebook
+#' available at <`r find_url("polyarchy", "documentation")`>. The codebook
 #' below is copied from that website.
 #'
 #' @section About the Coding and the Scales:
@@ -3320,13 +3544,22 @@
 #'   values being more democratic). 22 country-years differ between PMM's
 #'   replication data and the original Polyarchy dataset (Coppedge and Reinicke
 #'   1990), and four are missing. These seem to be due to simple transcription
-#'   errors. See the vignette for more details.
+#'   errors:
+#'
+#'   ```{r}
+#'   polyarchy |>
+#'      dplyr::full_join(polyarchy_pmm) |>
+#'      dplyr::mutate(poly_reversed = (10 - poly)) |>
+#'      dplyr::filter(pmm_polyarchy != poly_reversed | (is.na(pmm_polyarchy) & !is.na(poly_reversed))) |>
+#'      dplyr::select(extended_country_name, year, poly_reversed, pmm_polyarchy) |>
+#'      print(n = 32)
+#'   ```
 "polyarchy_pmm"
 
 #' Indicators of Contestation and Inclusiveness by Michael Coppedge, Angel
 #' Alvarez, and Claudia Maldonado
 #'
-#' From the codebook at [https://www3.nd.edu/~mcoppedg/crd/datacrd.htm](https://www3.nd.edu/~mcoppedg/crd/datacrd.htm): This
+#' From the codebook at <`r find_url("polyarchy_dimensions", "documentation")`>: This
 #' dataset contains several versions of two indicators that measure Robert
 #' Dahl's two dimensions of polyarchy: contestation and inclusiveness. For
 #' complete documentation of the analysis that identifies these two dimensions,
@@ -3509,9 +3742,7 @@
 #' The Rulers, Elections, and Irregular Governance Dataset (Regime data)
 #'
 #' `r roxygen_cite("REIGN")` The dataset, variable descriptions,
-#' and technical notes, are available at the link. The variable descriptions below
-#' are taken from
-#' \url{http://oefresearch.org/sites/default/files/REIGN_descriptions.pdf}.
+#' and technical notes, are available at <`r find_url("REIGN", "documentation")`>.
 #' Collection stopped in 2021; this dataset is now archived in this package.
 #'
 #' @section Overview:
@@ -3707,7 +3938,6 @@
 #'
 #' @template standard-variables
 #' @source `r roxygen_cite("pmm2010")`
-#'
 #' @source `r roxygen_cite("pmm2013")`
 #' @family democracy
 #' @family latent variable indexes of democracy
@@ -4251,7 +4481,6 @@
 #'
 #' @template standard-variables
 #' @source `r roxygen_cite("ulfelder2012")`
-#'
 #' @source `r roxygen_cite("ulfelder2007")`
 #'
 #' @family democracy
@@ -4268,7 +4497,7 @@
 #' Vanhanen measures of democracy, 1800-2018
 #'
 #' A dataset containing Tatu Vanhanen's measures of democracy, `r roxygen_cite("vanhanen")`
-#' Data available at \url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}.
+#' Data available at <`r find_url("vanhanen", "documentation")`>.
 #'
 #' @section Variables:
 #'
@@ -4541,8 +4770,7 @@
 #'   perspective of democracy than more detailed differences among democracies
 #'   or nondemocracies (cf. Vanhanen 2000a, 2000b; 2003).} }
 #' @template standard-variables
-#' @source `r roxygen_cite("vanhanen")` Data available at
-#'   \url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}
+#' @source `r roxygen_cite("vanhanen")` Data available at <`r find_url("vanhanen", "documentation")`>
 #' @family democracy
 #' @family continuous democracy indexes
 "vanhanen"
@@ -4559,15 +4787,15 @@
 
 # vdem_simple --------------------------------------------------------------
 
-#' Simplified version of the V-Dem version 13 dataset
+#' Simplified version of the V-Dem version 14 dataset
 #'
-#' This data frame contains a very reduced version of version 13 of the V-Dem
+#' This data frame contains a very reduced version of version 14 of the V-Dem
 #' dataset, including only the 7 main indexes that measure democracy directly
 #' (v2x_polyarchy, v2x_libdem, v2x_partipdem, v2x_delibdem, v2x_egaldem,
 #' v2x_api, and v2x_mpi) and their associated uncertainty measures. The full
 #' VDem dataset is available via the
 #' [vdemdata](https://github.com/vdeminstitute/vdemdata) package. To cite VDem,
-#' use `r roxygen_cite("vdem13codebook")`
+#' use `r roxygen_cite("vdem14codebook")`
 #'
 #' Variable descriptions taken from the V-Dem codebook directly.
 #'
@@ -4768,7 +4996,7 @@
 #' @encoding UTF-8
 #' @references
 #'
-#' `r roxygen_cite("vdem13codebook")`
+#' `r roxygen_cite("vdem14codebook")`
 #'
 #' `r roxygen_cite("vdem13measurement")`
 "vdem_simple"
@@ -4779,10 +5007,10 @@
 #' Michael Wahman
 #'
 #' The Authoritarian Regimes Data set by Axel Hadenius, Jan Teorell, & Michael
-#' Wahman, described in `r roxygen_cite("wahman_teorell_hadenius2007")` and
+#' Wahman, described first in `r roxygen_cite("wahman_teorell_hadenius2007")` Modified in
 #' `r roxygen_cite("wahman_teorell_hadenius2013")`
-#' The dataset and codebook can be downloaded from
-#' \url{https://sites.google.com/site/authoritarianregimedataset/data}. I simply
+#' The dataset and codebook can sometimes be downloaded from
+#' <`r find_url("wahman_teorell_hadenius", "documentation")`>. I simply
 #' copy the codebook below.
 #'
 #' @section NOTE ON VERSION 4: In this update between version 2.0 and 3.0
@@ -5233,7 +5461,7 @@
 #'
 #'`r roxygen_cite("PIPE")` The original
 #'data and codebook can be downloaded from
-#'\url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}. The
+#'<`r find_url("PIPE", "documentation")`>. The
 #'documentation below is directly derived from the codebook, with some
 #'modifications.
 #'
@@ -5540,9 +5768,9 @@
 #'  body, we focus on the latter. Quotas, such as that some proportion of the
 #'  legislature must be female, are not considered unless there are separate
 #'  electorates for male and female seats. The codes for particular categories
-#'  are represented by cell entries in the table (table cannot be reporduced
+#'  are represented by cell entries in the table (table cannot be reproduced
 #'  properly here - consult online codebook at
-#'  \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}):
+#'  <`r find_url("PIPE", "documentation")`>):
 #'
 #'  None Income, Race Both Property, Ethnicity Profession Religion Estate Gender
 #'  None 0 0 0 0 Fully appointed& 1 2 3 4 Partly appointed 5& 6& 7& 8& Fully
@@ -6872,7 +7100,6 @@
 #'
 #' `r roxygen_cite("pmm2013")`
 #'
-#'   \url{http://hdl.handle.net/1902.1/PMM}
 "democracy_info"
 
 

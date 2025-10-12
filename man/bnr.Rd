@@ -12,9 +12,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 10320 rows and 9 columns.
 }
 \source{
-M. Bernhard, T. Nordstrom, and C. Reenock. "Economic Performance, Institutional Intermediation, and Democratic Survival". In: \emph{Journal of Politics} 63.3 (2001), pp. 775-803. DOI: 10.1111/0022-3816.00087. Data and coding
-description used to be available at
-\url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}, but no longer.
+M. Bernhard, T. Nordstrom, and C. Reenock. "Economic Performance, Institutional Intermediation, and Democratic Survival". In: \emph{Journal of Politics} 63.3 (2001), pp. 775-803. DOI: \href{https://dx.doi.org/10.1111/0022-3816.00087}{10.1111/0022-3816.00087}. Original data page archived at \url{https://web.archive.org/web/20160210002155/http://users.clas.ufl.edu/bernhard/content/data/data.htm}.
 }
 \usage{
 bnr
@@ -23,9 +21,8 @@ bnr_extended
 }
 \description{
 The Bernhard, Nordstrom & Reenock Event History Coding of Democratic
-Breakdowns. From M. Bernhard, T. Nordstrom, and C. Reenock. "Economic Performance, Institutional Intermediation, and Democratic Survival". In: \emph{Journal of Politics} 63.3 (2001), pp. 775-803. DOI: 10.1111/0022-3816.00087. Data and coding
-description used to be available at
-\url{http://users.clas.ufl.edu/bernhard/content/data/data.htm}, but no longer.
+Breakdowns. From M. Bernhard, T. Nordstrom, and C. Reenock. "Economic Performance, Institutional Intermediation, and Democratic Survival". In: \emph{Journal of Politics} 63.3 (2001), pp. 775-803. DOI: \href{https://dx.doi.org/10.1111/0022-3816.00087}{10.1111/0022-3816.00087}. Original data page archived at \url{https://web.archive.org/web/20160210002155/http://users.clas.ufl.edu/bernhard/content/data/data.htm}.
+The original dataset itself was never archived by the Wayback machine, and no longer exists on the web except here.
 }
 \section{Description}{
 
@@ -55,7 +52,7 @@ there was either extensive or extreme violence that inhibited voters from
 expressing themselves, or in which political parties representing a
 substantial portion of the population were banned.
 
-Inclusivness:  We only include competitive polities in which at least fifty
+Inclusiveness:  We only include competitive polities in which at least fifty
 percent of all adult citizens are enfranchised to vote in our set of
 democracies.
 
@@ -144,9 +141,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -157,14 +154,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -172,6 +169,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
@@ -186,8 +184,8 @@ Other dichotomous democracy indexes:
 \code{\link{bmr}},
 \code{\link{doorenspleet}},
 \code{\link{kailitz}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{svolik_regime}},
 \code{\link{ulfelder}},
 \code{\link{utip}},

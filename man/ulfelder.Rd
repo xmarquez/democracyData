@@ -11,9 +11,9 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 11582 rows and 62 columns.
 }
 \source{
-J. Ulfelder. \emph{Democracy/Autocracy Data Set}. 2012. \url{http://hdl.handle.net/1902.1/18836}.
+J. Ulfelder. \emph{Democracy/Autocracy Data Set}. 2012. DOI: \href{https://dx.doi.org/10.7910/DVN/M11WFC}{10.7910/DVN/M11WFC}.
 
-J. Ulfelder and M. Lustik. "Modelling Transitions To and From Democracy". In: \emph{Democratization} 14.3 (2007), pp. 351-387. DOI: 10.1080/13510340701303196.
+J. Ulfelder and M. Lustik. "Modelling Transitions to and from Democracy". In: \emph{Democratization} 14.3 (2007), pp. 351-387. DOI: \href{https://dx.doi.org/10.1080/13510340701303196}{10.1080/13510340701303196}.
 }
 \usage{
 ulfelder
@@ -21,7 +21,7 @@ ulfelder
 ulfelder_extended
 }
 \description{
-This is the dataset documented in J. Ulfelder. \emph{Democracy/Autocracy Data Set}. 2012. \url{http://hdl.handle.net/1902.1/18836}. It comes in two
+This is the dataset documented in J. Ulfelder. \emph{Democracy/Autocracy Data Set}. 2012. DOI: \href{https://dx.doi.org/10.7910/DVN/M11WFC}{10.7910/DVN/M11WFC}. It comes in two
 versions: \link{ulfelder}, which only goes back to 1955, and
 \link{ulfelder_extended}, which extends the regime classifications back in
 time using the \code{rgjdura} and \code{rgjdurd} variables, adding 3861
@@ -594,9 +594,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -607,20 +607,21 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
 \code{\link{uds_2014}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
@@ -636,8 +637,8 @@ Other dichotomous democracy indexes:
 \code{\link{bnr}},
 \code{\link{doorenspleet}},
 \code{\link{kailitz}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{svolik_regime}},
 \code{\link{utip}},
 \code{\link{wahman_teorell_hadenius}}

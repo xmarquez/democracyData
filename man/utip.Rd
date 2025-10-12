@@ -18,8 +18,7 @@ utip
 The University of Texas Inequality Project Categorical Dataset of Political
 Regimes. Described in S. Hsu. "The Effect of Political Regimes on Inequality, 1963-2002". In: \emph{UTIP Working Paper} (2008).
 \url{http://utip.gov.utexas.edu/papers/utip_53.pdf}. Data available for
-download at
-\url{http://utip.gov.utexas.edu/data/}
+download at \url{http://utip.gov.utexas.edu/data/}.
 }
 \section{Description}{
 
@@ -123,9 +122,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -136,20 +135,21 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
 \code{\link{uds_2014}},
 \code{\link{ulfelder}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
@@ -168,8 +168,8 @@ Other dichotomous democracy indexes:
 \code{\link{bnr}},
 \code{\link{doorenspleet}},
 \code{\link{kailitz}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{svolik_regime}},
 \code{\link{ulfelder}},
 \code{\link{wahman_teorell_hadenius}}

@@ -8,18 +8,17 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 19775 rows and 16 columns.
 }
 \source{
-C. Boix, M. Miller, and S. Rosato. "A Complete Dataset of Political Regimes, 1800-2007". In: \emph{Comparative Political Studies} 46.12 (2012), pp. 1523-1554. DOI: 10.1177/0010414012463905. Available at
+C. Boix, M. Miller, and S. Rosato. "A Complete Data Set of Political Regimes, 1800–2007". In: \emph{Comparative Political Studies} 46.12 (2012), pp. 1523-1554. DOI: \href{https://dx.doi.org/10.1177/0010414012463905}{10.1177/0010414012463905}. Available at
 \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FJLMKT}
-(versions 1-3) and \url{https://sites.google.com/site/mkmtwo/data} (version
-4.0)
+(versions 1-3) and \url{https://sites.google.com/site/mkmtwo/data} (version 4.0).
 }
 \usage{
 bmr
 }
 \description{
 A dataset containing the Boix-Miller-Rosato (BMR) dichotomous coding of
-democracy, first used in the paper C. Boix, M. Miller, and S. Rosato. "A Complete Dataset of Political Regimes, 1800-2007". In: \emph{Comparative Political Studies} 46.12 (2012), pp. 1523-1554. DOI: 10.1177/0010414012463905. The complete dataset can be
-downloaded here: \url{https://sites.google.com/site/mkmtwo/data}. The
+democracy, first used in the paper C. Boix, M. Miller, and S. Rosato. "A Complete Data Set of Political Regimes, 1800–2007". In: \emph{Comparative Political Studies} 46.12 (2012), pp. 1523-1554. DOI: \href{https://dx.doi.org/10.1177/0010414012463905}{10.1177/0010414012463905}. The complete dataset can be
+downloaded at \url{https://sites.google.com/site/mkmtwo/data}. The
 complete codebook is available there as well.
 }
 \details{
@@ -102,9 +101,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -115,14 +114,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -130,6 +129,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
@@ -144,8 +144,8 @@ Other dichotomous democracy indexes:
 \code{\link{bnr}},
 \code{\link{doorenspleet}},
 \code{\link{kailitz}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{svolik_regime}},
 \code{\link{ulfelder}},
 \code{\link{utip}},

@@ -15,7 +15,7 @@ You will need the package [`mirt`](https://cran.r-project.org/web/packages/mirt/
 The basic procedure for replicating or extending the UD scores is very simple. 
 
 1. Generate a dataset of democracy scores with a call to `generate_democracy_scores_dataset()`; 
-2. Prepare the democracy data using the convenience function ```prepare_democracy_data()```; 
+2. Prepare the democracy data using the convenience function `prepare_democracy_data()`; 
 3. Fit a simple [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html) model; 
 4. Extract the calculated scores with a call to `democracy_scores()` or to `mirt::fscores()`. 
 
@@ -28,7 +28,7 @@ opts_chunk$set(echo=TRUE)
 
 The first step is to prepare the democracy measures for use with [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html). I focus first on replicating the 2011 release of the UDS, and then explain how to extend and augment these scores.
 
-In order to replicate the original UD scores, we need to use PMM's replication dataset [@pmm2013uds2010]. This dataset is included this package: we just need to generate a data frame of democracy scores from all the datasets with names ending in ```_pmm```. We can then use the function ```prepare_democracy_data()``` to put the data in the right format for use with [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html).
+In order to replicate the original UD scores, we need to use PMM's replication dataset [@pmm2013uds2010]. This dataset is included this package: we just need to generate a data frame of democracy scores from all the datasets with names ending in `_pmm`. We can then use the function `prepare_democracy_data()` to put the data in the right format for use with [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html).
 
 ```{r}
 
@@ -38,95 +38,97 @@ library(democracyData)
 
 identifiers <- c("extended_country_name", "GWn", "cown", "in_GW_system", "year")
 
-democracy_data <- generate_democracy_scores_dataset(selection = "_pmm", 
+democracy_data <- generate_democracy_scores_dataset(selection = "_pmm", include_extra_pmm = TRUE,
                                                     output_format = "wide") 
 ```
 
 Before transformation by `prepare_democracy_data()`, the data looks like this:
 
 ```{r}
-skimr::skim(democracy_data %>% select(matches("pmm")))
+skimr::skim(democracy_data |> select(matches("pmm")))
 ```
 After transformation, it looks like this:
 
 ```{r}
 democracy_data_transformed <- prepare_democracy_data(democracy_data)
 
-skimr::skim(democracy_data_transformed %>% select(matches("pmm")))
+skimr::skim(democracy_data_transformed |> select(matches("pmm")))
 
 ```
 
-The function ```prepare_democracy_data()``` gets rid of "empty rows" (country-years that have no measurements of democracy for the chosen indexes; such patterns will make [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html) fail) and transforms selected democracy indexes into ordinal variables suitable for use with [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html), mostly following the advice in Pemstein, Meserve, and Melton's original article (2010). 
+The function `prepare_democracy_data()` gets rid of "empty rows" (country-years that have no measurements of democracy for the chosen indexes; such patterns will make [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html) fail) and transforms selected democracy indexes into ordinal variables suitable for use with [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html), mostly following the advice in Pemstein, Meserve, and Melton's original article (2010). 
 
-In particular, ```prepare_democracy_data()``` will try to do the following on your dataset: 
+In particular, `prepare_democracy_data()` will try to do the following on your dataset: 
 
-* If a selected index contains the string ```arat```, the function assumes the index is Arat's [@Arat1991] 0-109 democracy score, and cuts it into 7 intervals with the following cutoffs: 50, 60, 70, 80, 90, and 100. The resulting score is ordinal from 1 to 8 (following Pemstein, Meserve, and Melton's advice).
+* If a selected index contains the string `arat`, the function assumes the index is Arat's [@Arat1991] 0-109 democracy score, and cuts it into 7 intervals with the following cutoffs: 50, 60, 70, 80, 90, and 100. The resulting score is ordinal from 1 to 8 (following Pemstein, Meserve, and Melton's advice).
 
-* If a selected index contains the string ```bollen```, the function assumes the index is Bollen's [@Bollen2001] 0-100 democracy score, and cuts it into 10 intervals with the following cutoffs: 10,20,30,40,50,60,70,80, and 90. The resulting score is ordinal from 1 to 10 (following Pemstein, Meserve, and Melton's advice).
+* If a selected index contains the string `bollen`, the function assumes the index is Bollen's [@Bollen2001] 0-100 democracy score, and cuts it into 10 intervals with the following cutoffs: 10,20,30,40,50,60,70,80, and 90. The resulting score is ordinal from 1 to 10 (following Pemstein, Meserve, and Melton's advice).
 
-* If a selected index contains the string ```wgi```, the function assumes the index is the World Governance Indicator's "Voice and Accountability" index [@wgi2017], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
+* If a selected index contains the string `wgi`, the function assumes the index is the World Governance Indicator's "Voice and Accountability" index [@wgi2017], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
 
-* If a selected index contains the string ```eiu```, the function assumes the index is the Economist Intelligence Unit's democracy index [@eiu2021], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
+* If a selected index contains the string `eiu`, the function assumes the index is the Economist Intelligence Unit's democracy index [@eiu2021], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
 
-* If a selected index contains the string ```hadenius_pmm```, the function assumes the index is Hadenius's 0-10 democracy score [@hadenius1992], and it will cut it into 8 intervals with the following cutoffs: 1, 2,3,4, 7, 8, and 9. The resulting score is ordinal from 1 to 8 (following Pemstein, Meserve, and Melton's advice). 
+* If a selected index contains the string `hadenius_pmm`, the function assumes the index is Hadenius's 0-10 democracy score [@hadenius1992], and it will cut it into 8 intervals with the following cutoffs: 1, 2,3,4, 7, 8, and 9. The resulting score is ordinal from 1 to 8 (following Pemstein, Meserve, and Melton's advice). 
 
-* If the selected index contains the string ```munck```, the function assumes the index is Munck's 0-1 democracy score [@munck2009], and it will cut it into 4 intervals with the following cutoffs: 0.5,0.5,0.75, and 0.99. The resulting score is ordinal from 1 to 4 (following Pemstein, Meserve, and Melton's advice).
+* If the selected index contains the string `munck`, the function assumes the index is Munck's 0-1 democracy score [@munck2009], and it will cut it into 4 intervals with the following cutoffs: 0.5,0.5,0.75, and 0.99. The resulting score is ordinal from 1 to 4 (following Pemstein, Meserve, and Melton's advice).
 
-* If the selected index contains the string ```peps```, the function assumes the index is one of the variants of the Participation-Enhanced Polity Score [@peps2006], and it will round its value (eliminating the decimal) and then transform it into an ordinal measure from 1 to 21.
+* If the selected index contains the string `peps`, the function assumes the index is one of the variants of the Participation-Enhanced Polity Score [@peps2006], and it will round its value (eliminating the decimal) and then transform it into an ordinal measure from 1 to 21.
 
-* If the selected index contains the string ```polity```, the function assumes this is the Polity IV or Polity 5 score [@polity2019; @polity2020], and it will thus set any values below -10 to NA and then transform the variable into an ordinal measure from 1 to 21.
+* If the selected index contains the string `polity`, the function assumes this is the Polity IV or Polity 5 score [@polity2019; @polity2020], and it will thus set any values below -10 to NA and then transform the variable into an ordinal measure from 1 to 21.
 
-* If the selected index contains the string ```polyarchy_inclusion_dimension``` or ```polyarchy_contestation_dimension```, the function assumes this is one of the two dimensions of polyarchy estimated by @polyarchy_dimensions2008, and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
+* If the selected index contains the string `polyarchy_inclusion_dimension` or `polyarchy_contestation_dimension`, the function assumes this is one of the two dimensions of polyarchy estimated by @polyarchy_dimensions2008, and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
 
-* If the selected index contains the string ```v2x```, the function assumes this is one of the v2x_ continuous indexes of democracy from the V-Dem dataset [@vdem11dataset], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
+* If the selected index contains the string `v2x`, the function assumes this is one of the v2x_ continuous indexes of democracy from the V-Dem dataset [@vdem11dataset], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
 
-* If the selected index contains the string ```csvdmi``` or ```svdmi_2016```, the function assumes this is one of the continuous indexes of democracy from the SVMDI dataset [@svmdi2016; @svmdi2018], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
+* If the selected index contains the string `csvdmi` or `svdmi_2016`, the function assumes this is one of the continuous indexes of democracy from the SVMDI dataset [@svmdi2016; @svmdi2018], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
 
-* If the selected index contains the string ```bti```, the function assumes this is the Bertelsman Transformation Index [@bti2020], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
+* If the selected index contains the string `bti`, the function assumes this is the Bertelsman Transformation Index [@bti2020], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
 
-* If the selected index contains the string ```vanhanen_democratization``` or ```vanhanen_pmm```, the function assumes this is Vanhanen's index of democratization [@vanhanen2014], and it will cut it into 8 intervals with the following cutoffs: 5,10,15,20,25,30, and 35 (following Pemstein, Meserve, and Melton's advice). The resulting score is ordinal from 1 to 8.
+* If the selected index contains the string `vanhanen_democratization` or `vanhanen_pmm`, the function assumes this is Vanhanen's index of democratization [@vanhanen2014], and it will cut it into 8 intervals with the following cutoffs: 5,10,15,20,25,30, and 35 (following Pemstein, Meserve, and Melton's advice). The resulting score is ordinal from 1 to 8.
 
-```prepare_democracy_data()``` will also work on column names that contain the following strings: 
+`prepare_democracy_data()` will also work on column names that contain the following strings: 
 
-* ```anckar``` [assumes it's the democracy indicator from @AnckarFredriksson2018]
-* ```anrr``` [assumes it's the democracy indicator from @anrr2019]
-* ```blm``` [assumes it's from @blm2005]
-* ```bmr``` [assumes it's from @bmr2007]
-* ```doorenspleet``` [assumes it's from @doorenspleet2000]
-* ```dsvmdi``` [assumes it's the discrete machine-learning index @svmdi2018]
-* ```e_v2x``` [assumes it's one of the "ordinal" indexes from the V-dem project, @vdem11dataset]
-* ```fh``` or ```freedomhouse``` [assumes it's from @fh2020]
-* ```gwf``` [assumes it's from @gwf2014 - the dichotomous democracy indicator only]
-* ```kailitz``` [assumes it's from from @Kailitz2013 - democracy/electoral autocracy/non-democracy indicator only]
-* ```lied``` or ```lexical_index``` [assumes it's from @LIED2015]
-* ```mainwaring``` [assumes it's from @mainwaring2014]
-* ```magaloni``` [assumes it's from @MagaloniChuMin2013]
-* ```pacl``` or ```cgv``` [assumes it's from @pacl2010 or its later updates]
-* ```pitf``` [assumes it's the measure of democracy used in @pitf2010; @pitf2015]
-* ```polyarchy``` [assumes it's from @polyarchy1990]
-* ```prc``` [assumes it's from @prc_gasiorowski1996 or its later update]
-* ```przeworski``` [assumes it's the "regime" variable from @PIPE2013]
-* ```reign``` [assumes it's the democracy/dictatorship indicator from @reign2016]
-* ```svolik``` [assumes it's the democracy/dictatorship indicator from @svolik2012]
-* ```ulfelder``` [assumes it's from @ulfelder2012]
-* ```utip``` [assumes it's from @utip2008]
-* ```wahman_teorell_hadenius``` or ```wth``` [assumes it's a democracy/non-democracy indicator from @wahman_teorell_hadenius2013]. 
+* `anckar` [assumes it's the democracy indicator from @AnckarFredriksson2018]
+* `anrr` [assumes it's the democracy indicator from @anrr2019]
+* `blm` [assumes it's from @blm2005]
+* `bmr` [assumes it's from @bmr2007]
+* `doorenspleet` [assumes it's from @doorenspleet2000]
+* `dsvmdi` [assumes it's the discrete machine-learning index @svmdi2018]
+* `e_v2x` [assumes it's one of the "ordinal" indexes from the V-dem project, @vdem11dataset]
+* `fh` or `freedomhouse` [assumes it's from @fh2020]
+* `gwf` [assumes it's from @gwf2014 - the dichotomous democracy indicator only]
+* `kailitz` [assumes it's from from @Kailitz2013 - democracy/electoral autocracy/non-democracy indicator only]
+* `lied` or `lexical_index` [assumes it's from @LIED2015]
+* `mainwaring` [assumes it's from @mainwaring2014]
+* `magaloni` [assumes it's from @MagaloniChuMin2013]
+* `pacl` or `cgv` [assumes it's from @pacl2010 or its later updates]
+* `pitf` [assumes it's the measure of democracy used in @pitf2010; @pitf2015]
+* `polyarchy` [assumes it's from @polyarchy1990]
+* `prc` [assumes it's from @prc_gasiorowski1996 or its later update]
+* `przeworski` [assumes it's the "regime" variable from @PIPE2013]
+* `reign` [assumes it's the democracy/dictatorship indicator from @reign2016]
+* `svolik` [assumes it's the democracy/dictatorship indicator from @svolik2012]
+* `ulfelder` [assumes it's from @ulfelder2012]
+* `utip` [assumes it's from @utip2008]
+* `wahman_teorell_hadenius` or `wth` [assumes it's a democracy/non-democracy indicator from @wahman_teorell_hadenius2013]. 
 
-In each of these cases the function ```prepare_democracy_data()``` transforms the values of the scores by running ```as.numeric(unclass(factor(x)))```, which transforms each index into ordinal variables from 1 to the number of categories.
+In each of these cases the function `prepare_democracy_data()` transforms the values of the scores by running `as.numeric(unclass(factor(x)))`, which transforms each index into ordinal variables from 1 to the number of categories.
 
-If you are using democracy indexes not included in the ```democracy``` dataset, or want to use your own custom measures of democracy, or transform them in a very particular way, you simply need to ensure that there are no "blank" country-years in your data (i.e., country-years without any democracy measurements; the package provides the convenience function `remove_empty_rows()` for this purpose) and that the indexes you are using are ordinal measures from 1 to N with every category present in the data. [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html) is pretty flexible and forgiving: it will accept ordinal variables in any range and will attempt to transform your indexes so that every category is within a distance of 1 of its neighboring categories. But it's useful to have a good sense of what the algorithm is doing to your data before you begin!
+If you are using democracy indexes not included in the `democracy` dataset, or want to use your own custom measures of democracy, or transform them in a very particular way, you simply need to ensure that there are no "blank" country-years in your data (i.e., country-years without any democracy measurements; the package provides the convenience function `remove_empty_rows()` for this purpose) and that the indexes you are using are ordinal measures from 1 to N with every category present in the data. [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html) is pretty flexible and forgiving: it will accept ordinal variables in any range and will attempt to transform your indexes so that every category is within a distance of 1 of its neighboring categories. But it's useful to have a good sense of what the algorithm is doing to your data before you begin!
 
 ## Fitting a democracy model
 
 After you've prepared the data, you can then fit a model as follows:
 
 ```{r}
-replication_2011_model <- mirt(democracy_data_transformed %>% select(matches("pmm")), model = 1, 
+
+replication_2011_model <- mirt(democracy_data_transformed |> select(matches("pmm")), model = 1, 
                                itemtype = "graded", SE = TRUE, 
                                verbose = FALSE)
+                               
 ```
 
-This just tells [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html) to fit a one-factor, full information graded response model like that in @pmm2010uds2010, and to calculate the standard errors for the coefficients. (See ```?mirt``` for details of the many options you can use to tweak your model, and see [my paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830) for a fuller description of why this model is useful here). 
+This just tells [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html) to fit a one-factor, full information graded response model like that in @pmm2010uds2010, and to calculate the standard errors for the coefficients. (See `?mirt` for details of the many options you can use to tweak your model, and see [my paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830) for a fuller description of why this model is useful here). 
 
 Fitting this model is reasonably fast:
 
@@ -141,7 +143,7 @@ replication_2011_model
 summary(replication_2011_model)
 ```
 
-And we can then extract the latent democracy scores, either via ```mirt::fscore()```, or via this package's convenient wrapper ```democracy_scores``` (which returns a tidy dataset with the latent scores and automatically calculates 95\% confidence intervals):
+And we can then extract the latent democracy scores, either via `mirt::fscore()`, or via this package's convenient wrapper `democracy_scores` (which returns a tidy dataset with the latent scores and automatically calculates 95\% confidence intervals):
 
 ```{r}
 replication_2011_scores <-  fscores(replication_2011_model, 
@@ -167,10 +169,10 @@ We can check that these scores are, in fact, almost perfectly correlated with Pe
 
 uds <- generate_democracy_scores_dataset(selection = "uds", output_format = "wide")
 
-replication_2011_scores <- replication_2011_scores %>% 
+replication_2011_scores <- replication_2011_scores |> 
   left_join(uds)
 
-cor(replication_2011_scores %>% select(matches("uds_2011"), z1), use = "pairwise")
+cor(replication_2011_scores |> select(matches("uds_2011"), z1), use = "pairwise")
 
 ```
 
@@ -200,8 +202,8 @@ all_dem <- generate_democracy_scores_dataset(output_format = "wide",
                                              verbose = FALSE)
 
 
-other_dem <- all_dem %>%
-  select(any_of(identifiers), pmm_arat, blm, bmr_democracy_femalesuffrage,
+other_dem <- all_dem |>
+  select(any_of(identifiers), arat, blm, bmr_democracy_femalesuffrage,
          pmm_bollen, doorenspleet, wgi_democracy, fh_total_reversed, 
          gwf_democracy_extended_strict, pmm_hadenius, kailitz_tri, svolik_democracy, 
          lexical_index, ulfelder_democracy_extended, prc, mainwaring, 
@@ -209,21 +211,21 @@ other_dem <- all_dem %>%
 
 other_dem <- prepare_democracy_data(other_dem)
 
-extended_model <- mirt(other_dem %>% select(-any_of(identifiers)), 
+extended_model <- mirt(other_dem |> select(-any_of(identifiers)), 
                        model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
 
 summary(extended_model)
 
 extended_scores <- democracy_scores(model = extended_model)
 
-extended_scores <- bind_cols(other_dem %>% select(any_of(identifiers)),
+extended_scores <- bind_cols(other_dem |> select(any_of(identifiers)),
                              extended_scores)
 
-extended_scores <- extended_scores %>%
-  left_join(uds %>% select(any_of(identifiers), matches("_mean")))
+extended_scores <- extended_scores |>
+  left_join(uds |> select(any_of(identifiers), matches("_mean")))
 ```
 
-[`mirt`](https://cran.r-project.org/web/packages/mirt/index.html) will stop by default after 500 EM cycles, but some models will take longer to converge. If your model has not converged after 500 iterations of the algorithm, you can try increasing the number of cycles with the ```technical``` option. Use ```?mirt``` for more details.
+[`mirt`](https://cran.r-project.org/web/packages/mirt/index.html) will stop by default after 500 EM cycles, but some models will take longer to converge. If your model has not converged after 500 iterations of the algorithm, you can try increasing the number of cycles with the `technical` option. Use `?mirt` for more details.
 
 One important point to note about latent variable democracy scores is that they are normalized with mean zero and standard deviation one, so a score of 1 just means that the country-year is 1 standard deviation more democratic than the average country-year in the sample. But this means that adding extra country-years to our model will typically result in scores that have a higher mean (though usually smaller standard errors) than the original UD model, given that the world has become substantially more democratic over the last two centuries:
 
@@ -232,10 +234,10 @@ countries <- c("United States of America",
                "United Kingdom","Argentina",
                "Chile","Venezuela","Spain")
 
-data <- extended_scores %>% 
-  filter(extended_country_name %in% countries) %>%
-  tidyr::gather(measure, zscore, uds_2010_mean:uds_2014_mean, z1) %>%
-  filter(!is.na(zscore), year >=1946, year < 2008) %>%
+data <- extended_scores |> 
+  filter(extended_country_name %in% countries) |>
+  tidyr::gather(measure, zscore, uds_2014_mean, z1) |>
+  filter(!is.na(zscore), year >=1946, year < 2008) |>
   mutate(measure = case_when(
     measure == "uds_2010_mean" ~ "2010 release of UDS",
     measure == "uds_2011_mean" ~ "2011 release of UDS",
@@ -260,16 +262,16 @@ If necessary, one can therefore "match" the extended scores to the official UD r
 
 ```{r, fig.height=8, fig.width=7}
 
-matched_data <- extended_scores %>% 
-  filter(!is.na(uds_2014_mean)) %>%
+matched_data <- extended_scores |> 
+  filter(!is.na(uds_2014_mean)) |>
   mutate(z1_matched = z1 - mean(z1, na.rm = TRUE), 
          z1_pct975_matched = z1_pct975 - mean(z1, na.rm = TRUE), 
          z1_pct025_matched = z1_pct025 - mean(z1, na.rm = TRUE))
 
-matched_data <- matched_data %>% 
-  filter(extended_country_name %in% countries) %>%
-  tidyr::gather(measure, zscore, uds_2010_mean:uds_2014_mean, z1_matched) %>%
-  filter(!is.na(zscore), year >=1946, year < 2008) %>%
+matched_data <- matched_data |> 
+  filter(extended_country_name %in% countries) |>
+  tidyr::gather(measure, zscore, uds_2014_mean, z1_matched) |>
+  filter(!is.na(zscore), year >=1946, year < 2008) |>
   mutate(measure = case_when(
     measure == "uds_2010_mean" ~ "2010 release of UDS",
     measure == "uds_2011_mean" ~ "2011 release of UDS",
@@ -294,14 +296,14 @@ In the graph above, we can see that the 2014 release of the UDS seems to overest
 These scores have a more natural interpretation when transformed to a 0-1 index using the cumulative distribution function as the "probability that a country-year is democratic" (so the 0 is now a natural minimum, and 1 a natural maximum). These indexes are automatically produced by the function `democracy_scores`; they are in the column `z1_as_prob` of the output, and are produced by applying the `pnorm` function to `z1`, as follows:
 
 ```{r}
-extended_scores <- extended_scores %>% 
+extended_scores <- extended_scores |> 
   mutate(index = pnorm(z1), 
          index_pct025 = pnorm(z1_pct025), 
          index_pct975 = pnorm(z1_pct975))
 
 # These are equal to z1_as_prob, which is automatically calculated:
 
-extended_scores %>% filter(index != z1_as_prob)
+extended_scores |> filter(index != z1_as_prob)
 ```
 
 It is also possible to to set the cutpoint for this index at, for example, the average cutpoint in the latent variable of the dichotomous indexes of democracy (so that 0.5 correponds more naturally to the point at which a regime could be either democratic or non-democratic according to the dichotomous measures of democracy included in your model). These scores are also automatically calculated (they are in the column `z1_adj`) but they can also be manually added as follows: 
@@ -311,8 +313,8 @@ cutpoints_extended <- cutpoints(extended_model)
 
 cutpoints_extended
 
-dichotomous_cutpoints <- cutpoints_extended %>% 
-  group_by(variable) %>%
+dichotomous_cutpoints <- cutpoints_extended |> 
+  group_by(variable) |>
   filter(n() == 1) 
 
 dichotomous_cutpoints
@@ -321,14 +323,14 @@ avg_dichotomous <- mean(dichotomous_cutpoints$estimate)
 
 avg_dichotomous
 
-extended_scores <- extended_scores %>% mutate(adj_z1 = z1 - avg_dichotomous, 
+extended_scores <- extended_scores |> mutate(adj_z1 = z1 - avg_dichotomous, 
                                         adj_pct025 = z1_pct025 - avg_dichotomous, 
                                         adj_pct975 =z1_pct975 - avg_dichotomous,
                                         index = pnorm(adj_z1),
                                         index_pct025 = pnorm(adj_pct025),
                                         index_pct975 = pnorm(adj_pct975))
 
-ggplot(data = extended_scores %>% filter(extended_country_name %in% countries), 
+ggplot(data = extended_scores |> filter(extended_country_name %in% countries), 
        aes(x= year, y = index, 
            ymin = index_pct025, ymax = index_pct975)) + 
   geom_line() + 
@@ -341,36 +343,36 @@ ggplot(data = extended_scores %>% filter(extended_country_name %in% countries),
   facet_wrap(~extended_country_name,ncol=2)  
 ```
 
-A pre-computed and documented version of the extended UDS scores, with data from all the indexes mentioned above, plus the participation-enhanced Polity Scores of @peps2006, a trichotomous democracy indicator calculated from Magaloni, Min, and Chu's "Autocracies of the World" datset [@MagaloniChuMin2013], a dichotomous democracy indicator calculated from @utip2008, the REIGN dataset of @reign2016, which extends @gwf2014, a dichotomous democracy indicator from @anrr2019, the Bertelsmann Transformation index [@bti2020], and an indicator of democracy used by the Political Instability Task Force [@pitf2010; @pitf2015], is included with the package; it can be loaded by simply typing ```extended_uds```. Use ```?extended_uds``` to examine the documentation for all its variables, and see my working paper ([Marquez 2016](http://ssrn.com/abstract=2753830)) for more detail on the data and its uses.
+A pre-computed and documented version of the extended UDS scores, with data from all the indexes mentioned above, plus the participation-enhanced Polity Scores of @peps2006, a trichotomous democracy indicator calculated from Magaloni, Min, and Chu's "Autocracies of the World" datset [@MagaloniChuMin2013], a dichotomous democracy indicator calculated from @utip2008, the REIGN dataset of @reign2016, which extends @gwf2014, a dichotomous democracy indicator from @anrr2019, the Bertelsmann Transformation index [@bti2020], and an indicator of democracy used by the Political Instability Task Force [@pitf2010; @pitf2015], is included with the package; it can be loaded by simply typing `extended_uds`. Use `?extended_uds` to examine the documentation for all its variables, and see my working paper ([Marquez 2016](http://ssrn.com/abstract=2753830)) for more detail on the data and its uses.
 
-The function `generate_extended_uds()` recreates these scores in one line of code, at the cost of some flexibility. It requires that the vdem package be installed; you can install it by using ```remotes::install_github("xmarquez/vdem)```.
+The function `generate_extended_uds()` recreates these scores in one line of code, at the cost of some flexibility. It requires that the vdem package be installed; you can install it by using `remotes::install_github("xmarquez/vdem)`.
 
 ## Other Extensions
 
 We can also use this method to create indexes from specific types of scores, such as dichotomous measures of democracy. Here we compute a 2-parameter logistic model from all dichotomous indexes of democracy (excluding near-duplicates):
 
 ```{r}
-dichotomous_dem <- all_dem %>%
-  select(any_of(identifiers), where(~n_distinct(.) <= 3))  %>%
-  select(-pacl, -pmm_pacl, -magaloni_democracy, 
-         -bmr_democracy_omitteddata, -bmr_democracy, -bnr, 
-         -wth_democ1, -ulfelder_democracy, 
+dichotomous_dem <- all_dem |>
+  select(any_of(identifiers), where(~n_distinct(.) <= 3))  |>
+  select(-pacl, 
+         -bmr_democracy_omitteddata, -bmr_democracy, 
+         -wth_democ1, 
          -gwf_democracy_extended, -utip_dichotomous)
 
 dichotomous_dem <- prepare_democracy_data(dichotomous_dem)
 
-dichotomous_model <- mirt(dichotomous_dem %>% select(-any_of(identifiers)),
+dichotomous_model <- mirt(dichotomous_dem |> select(-any_of(identifiers)),
                           model = 1, itemtype = "2PL", SE = TRUE, verbose = FALSE)
 
 summary(dichotomous_model)
 
 dichotomous_scores <- democracy_scores(dichotomous_model)
 
-dichotomous_scores <- bind_cols(dichotomous_dem %>% select(any_of(identifiers)),
+dichotomous_scores <- bind_cols(dichotomous_dem |> select(any_of(identifiers)),
                                 dichotomous_scores)
 
 
-ggplot(data = dichotomous_scores %>% filter(extended_country_name %in% countries), 
+ggplot(data = dichotomous_scores |> filter(extended_country_name %in% countries), 
        aes(x= year, y = z1_as_prob, 
            ymin = z1_pct025_as_prob, ymax = z1_pct975_as_prob)) + 
   geom_line() + 
@@ -386,21 +388,21 @@ ggplot(data = dichotomous_scores %>% filter(extended_country_name %in% countries
 As @svmdi2021 note, latent variable indexes suffer from arbitrary changes in level related to variables entering into or out of the source data. One way to get around this is to use a panel, with every measure present for every country-year in the panel. For example, suppose we're interested only in measures with long coverage. Here we select a set of indexes with coverage down to the 19th century and then select the set of rows for which all measures exist, producing a panel with 159 countries and scores from 1919 to 2003.
 
 ```{r}
-full_panel <- all_dem %>%
+full_panel <- all_dem |>
   select(any_of(identifiers), reign_democracy, polity2, 
          bmr_democracy_femalesuffrage, v2x_polyarchy,
          ulfelder_democracy_extended, bnr_extended, 
          magaloni_democracy_extended, csvmdi, pitf,
-         anckar_democracy, PEPS1v, vanhanen_democratization) %>%
-  rowwise() %>%
-  mutate(num_nas = sum(is.na(c_across(-any_of(identifiers))))) %>%
-  filter(num_nas == 0) %>%
-  ungroup() %>%
+         anckar_democracy, PEPS1v, vanhanen_democratization) |>
+  rowwise() |>
+  mutate(num_nas = sum(is.na(c_across(-any_of(identifiers))))) |>
+  filter(num_nas == 0) |>
+  ungroup() |>
   select(-num_nas)
 
 full_panel <- prepare_democracy_data(full_panel)
 
-panel_model <- mirt(full_panel %>% select(-any_of(identifiers)),
+panel_model <- mirt(full_panel |> select(-any_of(identifiers)),
                     model = 1, itemtype = "graded", SE = TRUE, 
                     verbose = FALSE, technical = list(NCYCLES = 1000))
 
@@ -410,12 +412,12 @@ summary(panel_model)
 
 panel_scores <- democracy_scores(panel_model)
 
-panel_scores <- bind_cols(full_panel %>% select(any_of(identifiers)),
+panel_scores <- bind_cols(full_panel |> select(any_of(identifiers)),
                                 panel_scores)
 
 skimr::skim(panel_scores)
 
-ggplot(data = panel_scores %>% filter(extended_country_name %in% countries), 
+ggplot(data = panel_scores |> filter(extended_country_name %in% countries), 
        aes(x= year, y = z1_as_prob, 
            ymin = z1_pct025_as_prob, ymax = z1_pct975_as_prob)) + 
   geom_line() + 
@@ -432,24 +434,24 @@ ggplot(data = panel_scores %>% filter(extended_country_name %in% countries),
 Or suppose we're interested in a particular coverage period, including only measures that have data to 2018:
 
 ```{r}
-full_panel <- all_dem %>%
-  pivot_longer(-any_of(identifiers), values_drop_na = TRUE) %>%
-  filter(name %in% name[year == 2018]) %>%
-  filter(year <= 2018) %>%
-  pivot_wider(id_cols = any_of(identifiers), names_from = "name", values_from = "value") %>%
-  unnest(fh_total_reversed:eiu) %>%
+full_panel <- all_dem |>
+  pivot_longer(-any_of(identifiers), values_drop_na = TRUE) |>
+  filter(name %in% name[year == 2018]) |>
+  filter(year <= 2018) |>
+  pivot_wider(id_cols = any_of(identifiers), names_from = "name", values_from = "value") |>
+  unnest(fh_total_reversed:eiu) |>
   select(-pitf_binary, -dsvmdi, -polityIV, -polity2IV, 
          -polity, -bti_democracy, -vanhanen_competition, 
-         -vanhanen_participation) %>%
-  rowwise() %>%
-  mutate(num_nas = sum(is.na(c_across(-any_of(identifiers))))) %>%
-  filter(num_nas == 0) %>%
-  ungroup() %>%
+         -vanhanen_participation) |>
+  rowwise() |>
+  mutate(num_nas = sum(is.na(c_across(-any_of(identifiers))))) |>
+  filter(num_nas == 0) |>
+  ungroup() |>
   select(-num_nas)
 
 full_panel <- prepare_democracy_data(full_panel)
 
-panel_model <- mirt(full_panel %>% select(-any_of(identifiers)),
+panel_model <- mirt(full_panel |> select(-any_of(identifiers)),
                     model = 1, itemtype = "graded", SE = TRUE, 
                     verbose = FALSE, technical = list(NCYCLES = 1000))
 
@@ -459,12 +461,12 @@ summary(panel_model)
 
 panel_scores <- democracy_scores(panel_model)
 
-panel_scores <- bind_cols(full_panel %>% select(any_of(identifiers)),
+panel_scores <- bind_cols(full_panel |> select(any_of(identifiers)),
                                 panel_scores)
 
 skimr::skim(panel_scores)
 
-ggplot(data = panel_scores %>% filter(extended_country_name %in% countries), 
+ggplot(data = panel_scores |> filter(extended_country_name %in% countries), 
        aes(x= year, y = z1_as_prob, 
            ymin = z1_pct025_as_prob, ymax = z1_pct975_as_prob)) + 
   geom_line() + 

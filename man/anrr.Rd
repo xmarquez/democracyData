@@ -8,13 +8,14 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8733 rows and 8 columns.
 }
 \source{
-D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy Does Cause Growth". In: \emph{Journal of Political Economy} 127.1 (2019), pp. 47-100. DOI: 10.1086/700936. \url{https://www.journals.uchicago.edu/doi/10.1086/700936}.
+D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy Does Cause Growth". In: \emph{Journal of Political Economy} 127.1 (2019), pp. 47-100. DOI: \href{https://dx.doi.org/10.1086/700936}{10.1086/700936}.
 }
 \usage{
 anrr
 }
 \description{
-Dataset described in D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy Does Cause Growth". In: \emph{Journal of Political Economy} 127.1 (2019), pp. 47-100. DOI: 10.1086/700936. \url{https://www.journals.uchicago.edu/doi/10.1086/700936}. Data at the link.
+Dataset described in D. Acemoglu, S. Naidu, P. Restrepo, et al. "Democracy Does Cause Growth". In: \emph{Journal of Political Economy} 127.1 (2019), pp. 47-100. DOI: \href{https://dx.doi.org/10.1086/700936}{10.1086/700936}.
+Original data available at \url{https://www.journals.uchicago.edu/doi/suppl/10.1086/700936}.
 }
 \section{Variables}{
 
@@ -194,9 +195,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -207,14 +208,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -222,6 +223,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
@@ -231,8 +233,8 @@ Other dichotomous democracy indexes:
 \code{\link{bnr}},
 \code{\link{doorenspleet}},
 \code{\link{kailitz}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{svolik_regime}},
 \code{\link{ulfelder}},
 \code{\link{utip}},

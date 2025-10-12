@@ -9,7 +9,7 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 342 rows and 7 columns.
 }
 \source{
-D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
+D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}.
 
 G. Munck. \emph{Measuring Democracy: A Bridge between Scholarship and Politics}. Baltimore: The Johns Hopkins University Press, 2009.
 }
@@ -17,8 +17,9 @@ G. Munck. \emph{Measuring Democracy: A Bridge between Scholarship and Politics}.
 munck_pmm
 }
 \description{
-0-1 index of democracy from G. Munck. \emph{Measuring Democracy: A Bridge between Scholarship and Politics}. Baltimore: The Johns Hopkins University Press, 2009. Taken from
-D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}. Higher values are more democratic.
+0-1 index of democracy from G. Munck. \emph{Measuring Democracy: A Bridge between Scholarship and Politics}. Baltimore: The Johns Hopkins University Press, 2009. Taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}.
+Higher values are more democratic. I've double-checked this against the
+original dataset in Munck's book and found it to be identical.
 }
 \section{Variables}{
 
@@ -26,11 +27,6 @@ D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democrati
 \describe{
 
 \item{pmm_country}{The original country name in the PMM replication data.}
-
-\item{year}{The calendar year. This is approximate. The surveys cover
-specific periods in the original data that do not always overlap with a
-single year. In particular, the year 1981 is "skipped" -- a single survey
-covers Jan.1981 - Aug. 1982 and its value is assigned to 1982 here.}
 
 \item{munck_pmm}{0-1 index of democracy from Munck. Only available for 18
 Latin American countries for 19 years.} }
@@ -84,9 +80,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -96,14 +92,14 @@ Other democracy:
 \code{\link{kailitz}},
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -111,6 +107,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

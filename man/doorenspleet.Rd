@@ -8,14 +8,14 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 13877 rows and 10 columns.
 }
 \source{
-R. Doorenspleet. "Reassessing the Three Waves of Democratization". In: \emph{World Politics} 52.03 (2000), pp. 384-406. DOI: 10.1017/S0043887100016580.
+R. Doorenspleet. "Reassessing the Three Waves of Democratization". In: \emph{World Politics} 52.03 (2000), pp. 384-406. DOI: \href{https://dx.doi.org/10.1017/S0043887100016580}{10.1017/S0043887100016580}.
 }
 \usage{
 doorenspleet
 }
 \description{
 A dataset containing the country-year version of the democracy classification
-described in R. Doorenspleet. "Reassessing the Three Waves of Democratization". In: \emph{World Politics} 52.03 (2000), pp. 384-406. DOI: 10.1017/S0043887100016580.
+described in R. Doorenspleet. "Reassessing the Three Waves of Democratization". In: \emph{World Politics} 52.03 (2000), pp. 384-406. DOI: \href{https://dx.doi.org/10.1017/S0043887100016580}{10.1017/S0043887100016580}.
 }
 \details{
 \describe{
@@ -137,9 +137,9 @@ Other democracy:
 \code{\link{bnr}},
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -150,14 +150,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -165,6 +165,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
@@ -174,8 +175,8 @@ Other dichotomous democracy indexes:
 \code{\link{bmr}},
 \code{\link{bnr}},
 \code{\link{kailitz}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{svolik_regime}},
 \code{\link{ulfelder}},
 \code{\link{utip}},

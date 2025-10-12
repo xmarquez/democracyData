@@ -11,7 +11,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 353 rows and 7 columns.
 }
 \source{
-M. Coppedge and W. H. Reinicke. "Measuring Polyarchy". In: \emph{Studies in Comparative International Development} 25.1 (1990), pp. 51-72. DOI: 10.1007/Bf02716905.
+M. Coppedge and W. H. Reinicke. "Measuring Polyarchy". In: \emph{Studies in Comparative International Development} 25.1 (1990), pp. 51-72.
 }
 \usage{
 polyarchy
@@ -19,8 +19,8 @@ polyarchy
 polyarchy_pmm
 }
 \description{
-M. Coppedge and W. H. Reinicke. "Measuring Polyarchy". In: \emph{Studies in Comparative International Development} 25.1 (1990), pp. 51-72. DOI: 10.1007/Bf02716905. Data
-available at \url{http://www3.nd.edu/~mcoppedg/crd/datacrd.htm}. The codebook
+M. Coppedge and W. H. Reinicke. "Measuring Polyarchy". In: \emph{Studies in Comparative International Development} 25.1 (1990), pp. 51-72. Data
+available at \url{https://web.archive.org/web/20160309180905/http://www3.nd.edu/~mcoppedg/crd/datacrd.htm}. The codebook
 below is copied from that website.
 }
 \section{About the Coding and the Scales}{
@@ -267,13 +267,52 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 \section{Note}{
 
 
-The \code{polyarchy_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}. The
+The \code{polyarchy_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}. The
 original dataset is found in \link{polyarchy}. It only contains a reversed
 version of the \code{poly} variable in the original \link{polyarchy} dataset (higher
 values being more democratic). 22 country-years differ between PMM's
 replication data and the original Polyarchy dataset (Coppedge and Reinicke
 1990), and four are missing. These seem to be due to simple transcription
-errors. See the vignette for more details.
+errors:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{polyarchy |>
+   dplyr::full_join(polyarchy_pmm) |>
+   dplyr::mutate(poly_reversed = (10 - poly)) |>
+   dplyr::filter(pmm_polyarchy != poly_reversed | (is.na(pmm_polyarchy) & !is.na(poly_reversed))) |>
+   dplyr::select(extended_country_name, year, poly_reversed, pmm_polyarchy) |>
+   print(n = 32)
+#> Joining with `by = join_by(year, extended_country_name, GWn, cown,
+#> in_GW_system)`
+#> # A tibble: 26 x 4
+#>    extended_country_name    year poly_reversed pmm_polyarchy
+#>    <chr>                   <dbl>         <dbl>         <int>
+#>  1 Algeria                  2000             6             7
+#>  2 Myanmar (Burma)          2000             1             0
+#>  3 Burundi                  2000             5             4
+#>  4 Brunei                   1985             3            NA
+#>  5 Colombia                 2000             8             7
+#>  6 Egypt                    2000             4             6
+#>  7 Eritrea                  2000             3             2
+#>  8 East Timor               2000            10            NA
+#>  9 Fiji                     2000             5             4
+#> 10 German Federal Republic  2000            10             9
+#> 11 Iran (Persia)            2000             5             3
+#> 12 Mongolia                 2000             9             8
+#> 13 Oman                     2000             3             2
+#> 14 Panama                   2000            10             9
+#> 15 Poland                   2000            10             8
+#> 16 Russia (Soviet Union)    2000             6             8
+#> 17 Western Sahara           2000             0            NA
+#> 18 San Marino               1985            10            NA
+#> 19 Senegal                  2000             9             7
+#> 20 Solomon Islands          2000             9             7
+#> 21 Tonga                    2000             8             7
+#> 22 Uganda                   2000             6             7
+#> 23 Ukraine                  2000             6             9
+#> 24 Uruguay                  2000            10             9
+#> 25 Venezuela                2000            10             8
+#> 26 Zimbabwe (Rhodesia)      2000             6             7
+}\if{html}{\out{</div>}}
 }
 
 \seealso{
@@ -290,9 +329,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -303,8 +342,8 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
@@ -317,6 +356,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

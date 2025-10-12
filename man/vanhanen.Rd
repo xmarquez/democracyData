@@ -6,13 +6,12 @@
 \alias{vanhanen_pmm}
 \title{Vanhanen measures of democracy, 1800-2018}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 16849 rows and 9 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 16869 rows and 9 columns.
 
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8965 rows and 7 columns.
 }
 \source{
-T. Vanhanen. \emph{Measures of Democracy 1810-2018 (dataset). Version 8.0 (2019-06-17).} Tampere, 2019. \url{http://urn.fi/urn:nbn:fi:fsd:T-FSD1289}. Data available at
-\url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}
+T. Vanhanen. \emph{Measures of Democracy 1810-2018 (Dataset). Version 8.0 (2019-06-17).} Tampere, 2019. Data available at \url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}
 }
 \usage{
 vanhanen
@@ -20,7 +19,7 @@ vanhanen
 vanhanen_pmm
 }
 \description{
-A dataset containing Tatu Vanhanen's measures of democracy, T. Vanhanen. \emph{Measures of Democracy 1810-2018 (dataset). Version 8.0 (2019-06-17).} Tampere, 2019. \url{http://urn.fi/urn:nbn:fi:fsd:T-FSD1289}.
+A dataset containing Tatu Vanhanen's measures of democracy, T. Vanhanen. \emph{Measures of Democracy 1810-2018 (Dataset). Version 8.0 (2019-06-17).} Tampere, 2019.
 Data available at \url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}.
 }
 \section{Variables}{
@@ -333,7 +332,7 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 \section{Note}{
 
 
-The \code{vanhanen_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}. The
+The \code{vanhanen_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}. The
 original dataset is found in \link{vanhanen}. The \code{vanhanen_pmm} data only goes
 back to 1945. There are some missing values in PMM's data compared to the
 original Vanhanen dataset. For more detail on the differences, see the
@@ -354,9 +353,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -367,20 +366,21 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
 \code{\link{uds_2014}},
 \code{\link{ulfelder}},
 \code{\link{utip}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

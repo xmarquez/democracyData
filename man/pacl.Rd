@@ -3,6 +3,9 @@
 \docType{data}
 \name{pacl}
 \alias{pacl}
+\alias{dd}
+\alias{aclp}
+\alias{cgv}
 \alias{pacl_pmm}
 \title{The Democracy and Dictatorship Dataset (DD/PACL/ACLP/CGV)}
 \format{
@@ -11,19 +14,23 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 9067 rows and 7 columns.
 }
 \source{
-J. Cheibub, J. Gandhi, and J. Vreeland. "Democracy and dictatorship revisited". In: \emph{Public Choice} 143.1 (2010), pp. 67-101. DOI: 10.1007/s11127-009-9491-2. The full data and codebook
-can be downloaded here
-\url{https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited}
+J. A. Cheibub, J. Gandhi, and J. R. Vreeland. "Democracy and Dictatorship Revisited". In: \emph{Public Choice} 143.1-2 (2009), pp. 67-101. DOI: \href{https://dx.doi.org/10.1007/s11127-009-9491-2}{10.1007/s11127-009-9491-2}. The full data and codebook
+can be downloaded at \url{https://sites.google.com/site/joseantoniocheibub/datasets/dd}.
 }
 \usage{
 pacl
 
+aclp()
+
+dd()
+
+cgv()
+
 pacl_pmm
 }
 \description{
-This dataset (aka PACL, ACLP or CGV) is described in J. Cheibub, J. Gandhi, and J. Vreeland. "Democracy and dictatorship revisited". In: \emph{Public Choice} 143.1 (2010), pp. 67-101. DOI: 10.1007/s11127-009-9491-2.
-The full data and codebook can be downloaded here
-\url{https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited}.
+This dataset (aka PACL, ACLP or CGV) is described in J. A. Cheibub, J. Gandhi, and J. R. Vreeland. "Democracy and Dictatorship Revisited". In: \emph{Public Choice} 143.1-2 (2009), pp. 67-101. DOI: \href{https://dx.doi.org/10.1007/s11127-009-9491-2}{10.1007/s11127-009-9491-2}.
+The full data and codebook can be downloaded at \url{https://sites.google.com/site/joseantoniocheibub/datasets/dd}.
 The documentation below is directly copied from the codebook.
 }
 \details{
@@ -37,8 +44,8 @@ The documentation below is directly copied from the codebook.
 
 \item{aclpcode}{Country identifier (numeric) used in previous versions of the
 regime classification contained in this dataset (the so-called ACLP, PPD,
-etc., databases). See Alvarez,Cheibub, Limongi, Przeworski 1996, Przeworski,
-Alvarez, Cheibub and Limongi 2000, andCheibub 2007.}
+etc., databases). See Alvarez, Cheibub, Limongi, Przeworski 1996, Przeworski,
+Alvarez, Cheibub and Limongi 2000, and Cheibub 2007.}
 
 \item{pacl_cowcode}{Correlates of war (numeric) country identifier.}
 
@@ -429,11 +436,14 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 \section{Note}{
 
 
-The \code{pacl_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
+The \code{pacl_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}.
 It only contains the numeric version of the
 variable \code{democracy} in the original dataset. The
 original dataset is found in \code{pacl}. \code{pacl_pmm} is missing a few
 country-years when compared with \code{pacl}.
+
+The functions \link{dd}, \link{cgv}, and \link{aclp} are aliases for \link{pacl}, provided for
+convenience.
 }
 
 \seealso{
@@ -450,9 +460,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -468,8 +478,8 @@ Other democracy:
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -477,6 +487,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

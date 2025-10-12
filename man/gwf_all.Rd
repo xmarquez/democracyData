@@ -18,7 +18,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 5301 rows and 21 columns.
 }
 \source{
-B. Geddes, J. Wright, and E. Frantz. "Autocratic Breakdown and Regime Transitions: A New Data Set". In: \emph{Perspectives on Politics} 12.1 (2014), pp. 313-331. DOI: 10.1017/S1537592714000851. The full data and codebook can be
+B. Geddes, J. Wright, and E. Frantz. "Autocratic Breakdown and Regime Transitions: A New Data Set". In: \emph{Perspectives on Politics} 12.1 (2014), pp. 313-331. DOI: \href{https://dx.doi.org/10.1017/S1537592714000851}{10.1017/S1537592714000851}. The full data and codebook can be
 downloaded here: \url{http://sites.psu.edu/dictators/}.
 }
 \usage{
@@ -31,8 +31,8 @@ gwf_autocratic
 gwf_autocratic_extended
 }
 \description{
-The dataset described in B. Geddes, J. Wright, and E. Frantz. "Autocratic Breakdown and Regime Transitions: A New Data Set". In: \emph{Perspectives on Politics} 12.1 (2014), pp. 313-331. DOI: 10.1017/S1537592714000851. The full data and codebook can be
-downloaded here: \url{http://sites.psu.edu/dictators/}. The documentation
+The dataset described in B. Geddes, J. Wright, and E. Frantz. "Autocratic Breakdown and Regime Transitions: A New Data Set". In: \emph{Perspectives on Politics} 12.1 (2014), pp. 313-331. DOI: \href{https://dx.doi.org/10.1017/S1537592714000851}{10.1017/S1537592714000851}. The full data and codebook can be
+downloaded at \url{http://sites.psu.edu/dictators/}. The documentation
 below is derived from the codebook. Some variables apply to the country-year
 version, some to the case version and some to the "extended" version
 (extended back before 1945 with info from the case descriptions).
@@ -160,9 +160,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -172,14 +172,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -187,6 +187,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

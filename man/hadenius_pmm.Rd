@@ -9,14 +9,14 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 129 rows and 7 columns.
 }
 \source{
-D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
+D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}.
 }
 \usage{
 hadenius_pmm
 }
 \description{
-0-10 index of democracy from A. Hadenius. \emph{Democracy and development}. New York: Cambridge University Press, 1992.
-Taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}. Higher values are more democratic.
+0-10 index of democracy from A. Hadenius. \emph{Democracy and Development}. New York: Cambridge University Press, 1992.
+Taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}. Higher values are more democratic.
 }
 \section{Variables}{
 
@@ -30,7 +30,7 @@ specific periods in the original data that do not always overlap with a
 single year. In particular, the year 1981 is "skipped" -- a single survey
 covers Jan.1981 - Aug. 1982 and its value is assigned to 1982 here.}
 
-\item{hadenius_pmm}{0-10 index of democracy from A. Hadenius. \emph{Democracy and development}. New York: Cambridge University Press, 1992.  A. Hadenius and J. Teorell. "Pathways from Authoritarianism". In: \emph{Journal of Democracy} 18.1 (2007), pp. 143-157.  M. Wahman, J. Teorell, and A. Hadenius. "Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective". In: \emph{Contemporary Politics} 19.1 (2013), pp. 19-34. \url{https://sites.google.com/site/authoritarianregimedataset/data}.
+\item{hadenius_pmm}{0-10 index of democracy from A. Hadenius. \emph{Democracy and Development}. New York: Cambridge University Press, 1992.
 Only available for 129 countries in 1988.} }
 }
 
@@ -82,9 +82,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -94,14 +94,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -109,6 +109,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

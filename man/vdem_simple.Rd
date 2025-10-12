@@ -5,21 +5,21 @@
 \name{vdem_simple}
 \alias{vdem_simple}
 \alias{vdem}
-\title{Simplified version of the V-Dem version 13 dataset}
+\title{Simplified version of the V-Dem version 14 dataset}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 27555 rows and 54 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 27913 rows and 54 columns.
 }
 \usage{
 vdem_simple
 }
 \description{
-This data frame contains a very reduced version of version 13 of the V-Dem
+This data frame contains a very reduced version of version 14 of the V-Dem
 dataset, including only the 7 main indexes that measure democracy directly
 (v2x_polyarchy, v2x_libdem, v2x_partipdem, v2x_delibdem, v2x_egaldem,
 v2x_api, and v2x_mpi) and their associated uncertainty measures. The full
 VDem dataset is available via the
 \href{https://github.com/vdeminstitute/vdemdata}{vdemdata} package. To cite VDem,
-use M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem Codebook v13}.
+use M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem Codebook V14}. Tech. rep. Varieties of Democracy (V-Dem) Project, 2024.
 }
 \details{
 Variable descriptions taken from the V-Dem codebook directly.
@@ -254,9 +254,9 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 }
 
 \references{
-M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem Codebook v13}.
+M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem Codebook V14}. Tech. rep. Varieties of Democracy (V-Dem) Project, 2024.
 
-D. Pemstein, K. L. Marquardt, E. Tzelgov, et al. \emph{The V-Dem Measurement Model: Latent Variable Analysis for Cross-National and Cross-Temporal Expert-Coded Data}. Tech. rep. 21. Varieties of Democracy Institute, University of Gothenburg, 2022. \url{https://www.v-dem.net/media/filer_public/25/cb/25cb3f3f-290d-46e1-8eaf-ff2d2c13f4a9/v-dem_working_paper_21.pdf}.
+D. Pemstein, K. L. Marquardt, E. Tzelgov, et al. \emph{The V-dem Measurement Model: Latent Variable Analysis for Cross-national and Cross-temporal Expert-coded Data}. Tech. rep. 21. Varieties of Democracy Institute, University of Gothenburg, 2022.
 }
 \seealso{
 Other democracy: 
@@ -272,9 +272,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -285,14 +285,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -300,6 +300,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{wahman_teorell_hadenius}}
 
 Other continuous democracy indexes: 

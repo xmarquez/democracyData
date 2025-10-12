@@ -8,13 +8,16 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 9606 rows and 18 columns.
 }
 \source{
-S. Kailitz. "Classifying political regimes revisited: legitimation and durability". In: \emph{Democratization} 20.1 (2013), pp. 39-60. DOI: 10.1080/13510347.2013.738861.
+S. Kailitz. "Classifying Political Regimes Revisited: Legitimation and Durability". In: \emph{Democratization} 20.1 (2013), pp. 39-60.
 }
 \usage{
 kailitz
 }
 \description{
-Contains the authoritarian regime types dataset from S. Kailitz. "Classifying political regimes revisited: legitimation and durability". In: \emph{Democratization} 20.1 (2013), pp. 39-60. DOI: 10.1080/13510347.2013.738861.
+Contains the authoritarian regime types dataset from
+S. Kailitz. "Classifying Political Regimes Revisited: Legitimation and Durability". In: \emph{Democratization} 20.1 (2013), pp. 39-60.. This has been superceded by
+S. Kailitz. \emph{Varieties of Political Regimes (va-PoReg). Dataset}. Dresden, 2024.. Use \link{vaporeg} for the most up to date
+version.
 }
 \section{Variables}{
 
@@ -124,9 +127,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -136,14 +139,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -151,6 +154,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
@@ -168,8 +172,8 @@ Other dichotomous democracy indexes:
 \code{\link{bmr}},
 \code{\link{bnr}},
 \code{\link{doorenspleet}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{svolik_regime}},
 \code{\link{ulfelder}},
 \code{\link{utip}},

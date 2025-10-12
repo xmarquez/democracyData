@@ -5,23 +5,22 @@
 \name{LIED}
 \alias{LIED}
 \alias{lied}
-\title{The Lexical Index of Democracy, v. 6.4}
+\title{The Lexical Index of Democracy, v. 6.8}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 32345 rows and 26 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 32891 rows and 27 columns.
 }
 \source{
-S. Skaaning, J. Gerring, and H. Bartusevičius. "A Lexical Index of Electoral Democracy". In: \emph{Comparative Political Studies} 48.12 (2015), pp. 1491-1525. DOI: 10.1177/0010414015581050. Original data and variable
-descriptions available at
-\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}
+S. Skaaning, J. Gerring, and H. Bartusevičius. "A Lexical Index of Electoral Democracy". In: \emph{Comparative Political Studies} 48.12 (2015), pp. 1491-1525. DOI: \href{https://dx.doi.org/10.1177/0010414015581050}{10.1177/0010414015581050}. Original data and variable
+descriptions available at \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}.
 }
 \usage{
 LIED
 }
 \description{
-The Lexical Index of Democracy first described in S. Skaaning, J. Gerring, and H. Bartusevičius. "A Lexical Index of Electoral Democracy". In: \emph{Comparative Political Studies} 48.12 (2015), pp. 1491-1525. DOI: 10.1177/0010414015581050.
+The Lexical Index of Democracy first described in S. Skaaning, J. Gerring, and H. Bartusevičius. "A Lexical Index of Electoral Democracy". In: \emph{Comparative Political Studies} 48.12 (2015), pp. 1491-1525. DOI: \href{https://dx.doi.org/10.1177/0010414015581050}{10.1177/0010414015581050}.
 Original data and variable descriptions available at
 \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}.
-The dataset is now on version 6.4, and contains new variables. The
+The dataset is now on version 6.8, and contains new variables. The
 documentation below is copied from their codebook, with some small additions
 for clarification purposes.
 }
@@ -119,7 +118,11 @@ L6: LEGSELEC=1 & OPPOSITION=1 & EXSELEC=1 & COMPETITION=1 & MALE SUFFRAGE=1
 In a small number of cases, the resulting index appears to have been
 incorrectly constructed:
 
-\if{html}{\out{<div class="sourceCode">}}\preformatted{#> # A tibble: 14 x 4
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{
+LIED |>
+  dplyr::filter(lexical_index != lexical_index_original) |>
+  dplyr::select(lied_country, year, lexical_index, lexical_index_original)
+#> # A tibble: 17 x 4
 #>    lied_country  year lexical_index lexical_index_original
 #>    <chr>        <dbl>         <dbl>                  <dbl>
 #>  1 Newfoundland  1925             6                      4
@@ -130,12 +133,15 @@ incorrectly constructed:
 #>  6 Newfoundland  1930             6                      4
 #>  7 Newfoundland  1931             6                      4
 #>  8 Newfoundland  1932             6                      4
-#>  9 Somalia       1960             6                      5
-#> 10 Somalia       1961             6                      5
-#> 11 Somalia       1962             6                      5
-#> 12 Somalia       1963             6                      5
-#> 13 Sudan         1964             1                      0
-#> 14 Cambodia      1946             2                      0
+#>  9 Ecuador       1934             3                      4
+#> 10 Cyprus        1973             6                      3
+#> 11 Somalia       1960             6                      5
+#> 12 Somalia       1961             6                      5
+#> 13 Somalia       1962             6                      5
+#> 14 Somalia       1963             6                      5
+#> 15 Sudan         1964             1                      0
+#> 16 Thailand      2007             6                      4
+#> 17 Cambodia      1946             2                      0
 }\if{html}{\out{</div>}}
 
 I've recalculated the index for these cases and put the original value in
@@ -323,9 +329,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -336,14 +342,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -351,11 +357,13 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
 Other institutions: 
-\code{\link{PIPE}}
+\code{\link{PIPE}},
+\code{\link{vaporeg}}
 }
 \concept{democracy}
 \concept{institutions}

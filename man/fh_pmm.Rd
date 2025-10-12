@@ -4,21 +4,97 @@
 \name{fh_pmm}
 \alias{fh_pmm}
 \alias{fh}
-\title{Freedom House "Freedom in the World" data from Pemstein, Meserve, and
-Melton's replication dataset}
+\title{Freedom House "Freedom in the World" data}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 6438 rows and 7 columns.
+
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 9966 rows and 11 columns.
 }
 \source{
-D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}.
+D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}.
+
+F. House. \emph{Freedom in the World 2025: The Uphill Battle to Safeguard Rights}. Tech. rep. Freedom House, Feb. 2025.
 }
 \usage{
 fh_pmm
+
+fh
 }
 \description{
-This is the Freedom House data included in D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. \url{http://hdl.handle.net/1902.1/PMM}. It differs for
-some country-years from the current version of the Freedom House data, which
-can be accessed using \link{download_fh}; hence its inclusion here.
+\code{fh_pmm} archives the Freedom House data included in D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}.,
+while \code{fh} archives the 2025 edition of the Freedom
+in the World data (updated to 2024). For the latest version of the Freedom House data, always
+use \link{download_fh}.
+}
+\details{
+The Freedom House dataset released in 2025 is different from the archived
+PMM data for 49 country years:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{fh |>
+  dplyr::inner_join(fh_pmm) |>
+  dplyr::select(extended_country_name, year, fh_total_reversed, pmm_freedomhouse) |>
+  dplyr::mutate(fh_total_reversed = (fh_total_reversed/2)+ 1) |>
+  dplyr::filter(fh_total_reversed != pmm_freedomhouse) |>
+  print(n = 50)
+#> Joining with `by = join_by(year, extended_country_name, GWn, cown,
+#> in_GW_system)`
+#> # A tibble: 62 x 4
+#>    extended_country_name                 year fh_total_reversed pmm_freedomhouse
+#>    <chr>                                <dbl>             <dbl>            <dbl>
+#>  1 Antigua & Barbuda                     1982               6                5.5
+#>  2 Argentina                             1982               2.5              5  
+#>  3 Bahamas                               1982               6.5              6  
+#>  4 Bangladesh                            1982               3                2.5
+#>  5 Bolivia                               1982               2.5              5.5
+#>  6 Brazil                                1982               4.5              5  
+#>  7 Burundi                               1982               1.5              2  
+#>  8 Comoros                               1982               3.5              4  
+#>  9 Congo                                 1993               5                4  
+#> 10 Congo, Democratic Republic of (Zair~  1977               2                1.5
+#> 11 Congo, Democratic Republic of (Zair~  1978               2                1.5
+#> 12 Congo, Democratic Republic of (Zair~  1982               2                1.5
+#> 13 Cote D'Ivoire                         1980               3                2.5
+#> 14 Cote D'Ivoire                         1999               2.5              3  
+#> 15 Swaziland                             1978               3                2.5
+#> 16 Grenada                               1982               2.5              2  
+#> 17 Guinea-Bissau                         1982               2                1.5
+#> 18 Guyana                                1982               3.5              3  
+#> 19 Honduras                              1982               5.5              5  
+#> 20 India                                 1976               4                4.5
+#> 21 Kiribati                              1982               6                6.5
+#> 22 Liberia                               1982               2                3  
+#> 23 Liberia                               2001               2                2.5
+#> 24 Malta                                 1982               5.5              5  
+#> 25 Mauritius                             1982               5.5              6  
+#> 26 Mozambique                            1982               1                1.5
+#> 27 Myanmar (Burma)                       1982               1.5              1  
+#> 28 Panama                                1982               3                3.5
+#> 29 Peru                                  2000               4.5              5  
+#> 30 Philippines                           1982               3.5              3  
+#> 31 Poland                                1982               2                2.5
+#> 32 Portugal                              1982               6                6.5
+#> 33 Sao Tome and Principe                 1982               2                1  
+#> 34 Saudi Arabia                          1982               2                1.5
+#> 35 Korea, Republic of                    1982               3                2.5
+#> 36 Spain                                 1982               5.5              6.5
+#> 37 Sri Lanka (Ceylon)                    1982               5.5              4.5
+#> 38 Surinam                               1982               2                1.5
+#> 39 Surinam                               1990               3                4.5
+#> 40 Syria                                 1982               2                1.5
+#> 41 Taiwan                                1978               3                3.5
+#> 42 Taiwan                                1980               3                2.5
+#> 43 Taiwan                                1991               5                3  
+#> 44 Tajikistan                            1991               3                5  
+#> 45 Turkey (Ottoman Empire)               1982               3                3.5
+#> 46 Uganda                                1982               3                3.5
+#> 47 Uruguay                               1982               3                3.5
+#> 48 Vanuatu                               1982               6                5  
+#> 49 Zimbabwe (Rhodesia)                   1982               4                3.5
+#> 50 Israel                                1996               2.5              6  
+#> # i 12 more rows
+}\if{html}{\out{</div>}}
+
+Many, but not all of these cases seem to be concentrated around the problematic year of 1982.
 }
 \section{Variables}{
 
@@ -32,9 +108,23 @@ specific periods in the original data that do not always overlap with a
 single year. In particular, the year 1981 is "skipped" -- a single survey
 covers Jan.1981 - Aug. 1982 and its value is assigned to 1982 here.}
 
-\item{fh_pmm}{A reversed measure of political rights and civil liberties,
+\item{pmm_freedomhouse }{A reversed measure of political rights and civil liberties,
 from 1 to 7, with higher values being more democratic (the opposite of the
-actual FH data).} }
+actual FH data).}
+
+\item{fh_total_reversed }{A reversed measure of political rights and civil liberties,
+from 0 to 12, with higher values being more democratic (the opposite of the
+actual FH data). To convert to the same scale as \code{pmm_freedomhouse}, divide by two and add 1,
+or average \code{pr} and \code{cl} and then reverse.}
+
+\item{pr}{The political rights scores (from 1 to 7) in the archived Freedom House data (\code{fh}).}
+
+\item{cl}{The civil rights scores (from 1 to 7) in the archived Freedom House data (\code{fh}).}
+
+\item{status}{The status of the country in the archived Freedom House data (Free, Partly Free, Not Free).}
+
+\item{fh_total}{The sum of the political rights and civil liberties scores. Ranges from 2 to 14.}
+}
 }
 
 \section{Standard descriptive variables (generated by this package)}{
@@ -87,9 +177,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -99,14 +189,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -114,13 +204,14 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
 Other Freedom House: 
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
-\code{\link{download_fh_full}()},
-\code{\link{download_fh}()}
+\code{\link{download_fh_full}()}
 
 Other PMM replication data: 
 \code{\link{arat_pmm}},
@@ -134,9 +225,9 @@ Other PMM replication data:
 \code{\link{prc_gasiorowski}}
 
 Other ordinal democracy indexes: 
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}}
 }

@@ -6,7 +6,7 @@
 \alias{bibliography}
 \title{References to all the datasets included in this package.}
 \format{
-An object of class \code{BibEntry} (inherits from \code{bibentry}) of length 51.
+An object of class \code{BibEntry} (inherits from \code{bibentry}) of length 58.
 }
 \usage{
 bibliography

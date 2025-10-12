@@ -8,8 +8,7 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 17562 rows and 40 columns.
 }
 \source{
-M. G. Marshall, T. R. Gurr, and K. Jaggers. \emph{Polity IV Project: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual.} Center for Systemic Peace, 2019. Available at
-\url{http://www.systemicpeace.org/inscr/p4manualv2018.pdf}
+M. G. Marshall, T. R. Gurr, and K. Jaggers. \emph{Polity IV Project: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual.} Manual. 2019. Available at \url{http://www.systemicpeace.org/inscrdata.html}
 }
 \usage{
 polityIV
@@ -334,9 +333,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -347,13 +346,13 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -361,13 +360,14 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
 Other ordinal democracy indexes: 
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{fh_pmm}},
 \code{\link{polity_pmm}}
 }

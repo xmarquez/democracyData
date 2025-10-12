@@ -8,16 +8,14 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18777 rows and 13 columns.
 }
 \source{
-C. Anckar and C. Fredriksson. "Classifying political regimes 1800-2016: a typology and a new dataset". In: \emph{European Political Science} (2018). DOI: 10.1057/s41304-018-0149-8. \url{https://doi.org/10.1057/s41304-018-0149-8}. Version 2 available at
-\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/7SSSAH&version=2.0}.
+C. Anckar and C. Fredriksson. "Classifying Political Regimes 1800–2016: A Typology and a New Dataset". In: \emph{European Political Science} 18.1 (Mar. 2018), pp. 84-96. DOI: \href{https://dx.doi.org/10.1057/s41304-018-0149-8}{10.1057/s41304-018-0149-8}. Version 2 available at \url{https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/7SSSAH/DIZXSI&version=2.0}.
 }
 \usage{
 anckar
 }
 \description{
-Dataset described in C. Anckar and C. Fredriksson. "Classifying political regimes 1800-2016: a typology and a new dataset". In: \emph{European Political Science} (2018). DOI: 10.1057/s41304-018-0149-8. \url{https://doi.org/10.1057/s41304-018-0149-8}. Data and codebook at the
-link. This is version 2 of the data, available at
-\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/7SSSAH&version=2.0}.
+Dataset described in C. Anckar and C. Fredriksson. "Classifying Political Regimes 1800–2016: A Typology and a New Dataset". In: \emph{European Political Science} 18.1 (Mar. 2018), pp. 84-96. DOI: \href{https://dx.doi.org/10.1057/s41304-018-0149-8}{10.1057/s41304-018-0149-8}. Data and codebook at the
+link. This is version 2 of the data, available at \url{https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/7SSSAH/DIZXSI&version=2.0}.
 }
 \section{Variables}{
 
@@ -112,9 +110,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -125,14 +123,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -140,6 +138,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
@@ -157,8 +156,8 @@ Other dichotomous democracy indexes:
 \code{\link{bnr}},
 \code{\link{doorenspleet}},
 \code{\link{kailitz}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{svolik_regime}},
 \code{\link{ulfelder}},
 \code{\link{utip}},

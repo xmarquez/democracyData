@@ -8,17 +8,16 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 15089 rows and 28 columns.
 }
 \source{
-B. E. Moon, J. H. Birdsall, S. Ciesluk, et al. "Voting Counts: Participation in the Measurement of Democracy". In: \emph{Studies in Comparative International Development} 41.2 (2006), pp. 3-32. DOI: 10.1007/BF02686309.
+B. E. Moon, J. H. Birdsall, S. Ciesluk, et al. "Voting Counts: Participation in the Measurement of Democracy". In: \emph{Studies in Comparative International Development} 41.2 (2006), pp. 3-32. DOI: \href{https://dx.doi.org/10.1007/BF02686309}{10.1007/BF02686309}.
 }
 \usage{
 peps
 }
 \description{
 A dataset containing the Participation-Enhanced Polity score described in
-B. E. Moon, J. H. Birdsall, S. Ciesluk, et al. "Voting Counts: Participation in the Measurement of Democracy". In: \emph{Studies in Comparative International Development} 41.2 (2006), pp. 3-32. DOI: 10.1007/BF02686309. The complete
-dataset is available here:
-\url{http://www.lehigh.edu/~bm05/democracy/Obtain_data.htm}. The
-documentation below is based on the iformation in that website.
+B. E. Moon, J. H. Birdsall, S. Ciesluk, et al. "Voting Counts: Participation in the Measurement of Democracy". In: \emph{Studies in Comparative International Development} 41.2 (2006), pp. 3-32. DOI: \href{https://dx.doi.org/10.1007/BF02686309}{10.1007/BF02686309}. The complete
+dataset is available at \url{http://www.lehigh.edu/~bm05/democracy/Obtain_data.htm}. The
+documentation below is based on the information in that website.
 }
 \details{
 \describe{
@@ -133,9 +132,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -146,13 +145,13 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -160,6 +159,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

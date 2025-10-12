@@ -9,16 +9,14 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 13937 rows and 14 columns.
 }
 \source{
-C. Bell. \emph{The Rulers, Elections, and Irregular Governance Dataset (REIGN)}. 2016. \url{http://oefresearch.org/datasets/reign}.
+C. Bell. \emph{The Rulers, Elections, and Irregular Governance Dataset (REIGN)}. 2016.
 }
 \usage{
 REIGN
 }
 \description{
-C. Bell. \emph{The Rulers, Elections, and Irregular Governance Dataset (REIGN)}. 2016. \url{http://oefresearch.org/datasets/reign}. The dataset, variable descriptions,
-and technical notes, are available at the link. The variable descriptions below
-are taken from
-\url{http://oefresearch.org/sites/default/files/REIGN_descriptions.pdf}.
+C. Bell. \emph{The Rulers, Elections, and Irregular Governance Dataset (REIGN)}. 2016. The dataset, variable descriptions,
+and technical notes, are available at \url{https://oefdatascience.github.io/REIGN.github.io/}.
 Collection stopped in 2021; this dataset is now archived in this package.
 }
 \section{Overview}{
@@ -215,9 +213,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -228,14 +226,14 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svmdi}},
 \code{\link{svolik_regime}},
@@ -243,6 +241,7 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 

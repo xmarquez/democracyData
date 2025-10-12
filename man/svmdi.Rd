@@ -11,9 +11,9 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 5376 rows and 13 columns.
 }
 \source{
-K. Gründler and T. Krieger. "Democracy and growth: Evidence from a machine learning indicator". In: \emph{European Journal of Political Economy} 45 (2016), pp. 85-107. DOI: https://doi.org/10.1016/j.ejpoleco.2016.05.005. \url{http://www.sciencedirect.com/science/article/pii/S0176268016300222}.
+K. Gründler and T. Krieger. "Democracy and Growth: Evidence from a Machine Learning Indicator". In: \emph{European Journal of Political Economy} 45 (2016), pp. 85-107. DOI: \href{https://dx.doi.org/10.1016/j.ejpoleco.2016.05.005}{10.1016/j.ejpoleco.2016.05.005}.
 
-K. Gründler and T. Krieger. "Democracy and growth: Evidence from a machine learning indicator". In: \emph{European Journal of Political Economy} 45 (2016), pp. 85-107. DOI: https://doi.org/10.1016/j.ejpoleco.2016.05.005. \url{http://www.sciencedirect.com/science/article/pii/S0176268016300222}.
+K. Gründler and T. Krieger. "Democracy and Growth: Evidence from a Machine Learning Indicator". In: \emph{European Journal of Political Economy} 45 (2016), pp. 85-107. DOI: \href{https://dx.doi.org/10.1016/j.ejpoleco.2016.05.005}{10.1016/j.ejpoleco.2016.05.005}.
 }
 \usage{
 svmdi
@@ -21,8 +21,8 @@ svmdi
 svmdi_2016
 }
 \description{
-This is the index described in K. Gründler and T. Krieger. \emph{Machine Learning Indices, Political Institutions, and Economic Development}. Report. CESifo Group Munich, 2018. \url{https://www.cesifo-group.de/DocDL/cesifo1_wp6930.pdf}. An earlier
-version of this index (used in K. Gründler and T. Krieger. "Democracy and growth: Evidence from a machine learning indicator". In: \emph{European Journal of Political Economy} 45 (2016), pp. 85-107. DOI: https://doi.org/10.1016/j.ejpoleco.2016.05.005. \url{http://www.sciencedirect.com/science/article/pii/S0176268016300222}.) is available as
+This is the index described in K. Gründler and T. Krieger. \emph{Machine Learning Indices, Political Institutions, and Economic Development}. Report. CESifo Group Munich, 2018. An earlier
+version of this index (used in K. Gründler and T. Krieger. "Democracy and Growth: Evidence from a Machine Learning Indicator". In: \emph{European Journal of Political Economy} 45 (2016), pp. 85-107. DOI: \href{https://dx.doi.org/10.1016/j.ejpoleco.2016.05.005}{10.1016/j.ejpoleco.2016.05.005}.) is available as
 \link{svmdi_2016}; there are some important differences between the values of the
 earlier and later versions of the index.
 }
@@ -115,9 +115,9 @@ Other democracy:
 \code{\link{bollen_pmm}},
 \code{\link{bti}},
 \code{\link{doorenspleet}},
+\code{\link{download_fh}()},
 \code{\link{download_fh_electoral}()},
 \code{\link{download_fh_full}()},
-\code{\link{download_fh}()},
 \code{\link{download_wgi_voice_and_accountability}()},
 \code{\link{eiu}},
 \code{\link{extended_uds}},
@@ -128,20 +128,21 @@ Other democracy:
 \code{\link{magaloni}},
 \code{\link{mainwaring}},
 \code{\link{munck_pmm}},
-\code{\link{pacl_update}},
 \code{\link{pacl}},
+\code{\link{pacl_update}},
 \code{\link{peps}},
 \code{\link{pitf}},
 \code{\link{polityIV}},
 \code{\link{polity_pmm}},
-\code{\link{polyarchy_dimensions}},
 \code{\link{polyarchy}},
+\code{\link{polyarchy_dimensions}},
 \code{\link{prc_gasiorowski}},
 \code{\link{svolik_regime}},
 \code{\link{uds_2014}},
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg}},
 \code{\link{vdem_simple}},
 \code{\link{wahman_teorell_hadenius}}
 
