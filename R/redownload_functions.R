@@ -2,16 +2,15 @@
 #'
 #'Download and process various democracy datasets. Note that the datasets
 #'returned by the \code{redownload_*} family of functions (\link{blm},
-#'\link{bmr}, \link{bnr}, \link{bti}, \link{gwf_autocratic},
-#'\link{gwf_autocratic_extended}, \link{gwf_all}, \link{gwf_all_extended},
-#'\link{LIED}, \link{magaloni}, \link{pacl}, \link{pacl_update}, \link{PIPE},
-#'\link{peps}, [polityIV], \link{polyarchy}, \link{polyarchy_dimensions},
-#'\link{REIGN}, \link{uds_2014}, \link{uds_2010}, \link{uds_2011},
-#'\link{ulfelder}, \link{utip}, \link{wahman_teorell_hadenius}, \link{anckar},
-#'\link{svmdi}) are all available directly from this package and are unlikely to
-#'have changed since the package was installed. Access the respective dataset by
-#'typing its name, and refer to their documentation for details. You will not
-#'normally need to redownload
+#'\link{bmr}, \link{bti}, \link{gwf_autocratic}, \link{gwf_autocratic_extended},
+#'\link{gwf_all}, \link{gwf_all_extended}, \link{LIED}, \link{magaloni},
+#'\link{pacl}, \link{pacl_update}, \link{PIPE}, \link{peps}, [polityIV],
+#'\link{polyarchy}, \link{polyarchy_dimensions}, \link{REIGN}, \link{uds_2014},
+#'\link{uds_2010}, \link{uds_2011}, \link{ulfelder}, \link{utip},
+#'\link{wahman_teorell_hadenius}, \link{anckar}, \link{svmdi}) are all available
+#'directly from this package and are unlikely to have changed since the package
+#'was installed. Access the respective dataset by typing its name, and refer to
+#'their documentation for details. You will not normally need to redownload
 #'them, unless you want to process the raw data yourself (set \code{return_raw =
 #'TRUE}) or suspect they have changed since the package was installed.
 #'
@@ -19,78 +18,59 @@
 #'
 #'  \itemize{
 #'
-#'  \item For \link{anckar}:
-#'  \url{https://dataverse.harvard.edu/api/access/datafile/3868064?format=original&gbrecs=true}
+#'  \item For \link{anckar}: <`r find_url("anckar")`>.
 #'
-#'  \item For \link{blm}:
-#'  \url{http://www.blmdemocracy.gatech.edu/blm\%20final\%20data.xls} `r lifecycle::badge('deprecated')`. This doesn't work anymore.
+#'  \item For \link{blm}: <`r find_url("blm")`>.
 #'
-#'  \item For \link{bmr}:
-#'  \url{https://dataverse.harvard.edu/api/access/datafile/3130643}
+#'  \item For \link{bmr}: <`r find_url("bmr")`>.
 #'
-#'  \item For \link{bnr}:
-#'  \url{http://users.clas.ufl.edu/bernhard/content/data/meister1305.dta} `r lifecycle::badge('deprecated')`. This doesn't work anymore.
+#'  \item For \link{bti}: <`r find_url("bti")`>.
 #'
-#'  \item For \link{bti}:
-#'  \url{https://bti-project.org/fileadmin/api/content/en/downloads/data/BTI_2006-2022_Scores.xlsx}
+#'  \item For \link{gwf_all} and \link{gwf_autocratic}: <`r find_url("gwf")`>.
 #'
-#'  \item For \link{gwf_all} and \link{gwf_autocratic}:
-#'  \url{http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip}
+#'  \item For \link{LIED}: <`r find_url("LIED")`>.
 #'
-#'  \item For \link{LIED}:
-#'  \url{https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/29106/SXRLK1}
+#'  \item For \link{pacl}: <`r find_url("pacl")`>.
 #'
-#'  \item For \link{pacl}:
-#'  \url{https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta}
+#'  \item For \link{pacl_update}: <`r find_url("pacl_update")`>.
 #'
-#'  \item For \link{pacl_update}
-#'  \url{http://www.christianbjoernskov.com/wp-content/uploads/2020/09/Bj\%C3\%B8rnskov-Rode-integrated-dataset-v3.2.xlsx}
+#'  \item For \link{peps}: <`r find_url("peps")`>.
 #'
-#'  \item For \link{peps}:
-#'  \url{http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta}
+#'  \item For \link{polityIV}: <`r find_url("polityIV")`>.
 #'
-#'  \item For \link{svmdi}:
-#'  \url{https://www.dropbox.com/s/a7yqs5txt3qpwn0/Index\%20Upload.xlsx?dl=1}.
+#'  \item For \link{svmdi}: <`r find_url("svmdi2020")`> or <`r find_url("svmdi2016")`>,
+#'  depending on `release_year` (2020 or 2016).
 #'
-#'  For the 2016 release, it defaults to
-#'  \url{http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta}
+#'  \item For \link{REIGN}: <`r find_url("REIGN")`>.
 #'
-#'  \item For \link{REIGN}:
-#'  \url{https://github.com/OEFDataScience/REIGN.github.io/blob/gh-pages/data_sets/regime_list.csv?raw=true}
+#'  \item For \link{utip}: <`r find_url("utip")`>.
 #'
-#'  \item For \link{utip}:
-#'  \url{http://utip.lbj.utexas.edu/data/political\%20regime\%20data\%20set\%20RV.xls}
+#'  \item For \link{uds}: <`r find_url("uds2014")`>, <`r find_url("uds2011")`> or
+#'  <`r find_url("uds2010")`>, depending on `release_year` (2014, 2011, or 2010).
 #'
-#'  \item For \link{wahman_teorell_hadenius}:
-#'  \url{https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&d=1}
+#'  \item For \link{vaporeg}: <`r find_url("vaporeg")`>.
 #'
+#'  \item For \link{wahman_teorell_hadenius}: <`r find_url("wahman_teorell_hadenius")`>.
 #'
+#'  \item For \link{polyarchy}: <`r find_url("polyarchy")`>.
 #'
-#'  \item For \link{polyarchy}:
-#'  \url{https://www3.nd.edu/~mcoppedg/crd/poly8500.sav}
+#'  \item For \link{polyarchy_dimensions}: <`r find_url("polyarchy_dimensions")`>.
 #'
-#'  \item For \link{polyarchy_dimensions}:
-#'  \url{http://www3.nd.edu/~mcoppedg/crd/DahlDims.sav}
+#'  \item For \link{magaloni}: <`r find_url("magaloni")`>.
 #'
-#'  \item For \link{magaloni}:
-#'  \url{https://fsi-live.s3.us-west-1.amazonaws.com/s3fs-public/res/Data_Set.xls}
+#'  \item For \link{ulfelder}: <`r find_url("ulfelder")`>.
 #'
-#'
-#'
-#'  \item For \link{ulfelder}:
-#'  \url{https://dataverse.harvard.edu/api/access/datafile/2420018}
-#'
-#'  \item For \link{PIPE}:
-#'  \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data} `r lifecycle::badge('deprecated')`. This doesn't work anymore.
+#'  \item For \link{PIPE}: <`r find_url("PIPE")`>.
 #'
 #'  }
 #'
-#'@param release_year (Only in \link{redownload_svmdi}). The year of the release
-#'  to be downloaded. For [svmdi], it can be 2016 or 2020.
+#'@param release_year (Only in \link{redownload_svmdi} and
+#'  \link{redownload_uds}). The year of the release to be downloaded. For
+#'  [svmdi], it can be 2016 or 2020.
 #'
 #'@param verbose Whether to print a running commentary of what the function is
 #'  doing while processing the data.
-#'@param return_raw Whether to return the raw data, without any processing.
+#'@param return_raw Whether to return the raw data, with minimal processing.
 #'  Default is \code{FALSE}.
 #'@param extend (Only for \link{redownload_gwf}, \link{redownload_magaloni}, and
 #'  \link{redownload_ulfelder}). Whether to extend the dataset back in time
@@ -111,28 +91,22 @@
 #'  is \code{TRUE}, in which case the function returns the raw data without
 #'  processing.
 #'
-#'@source `r roxygen_cite("blm")` Data used to be available at
-#'  \url{http://www.blmdemocracy.gatech.edu/}.
+#'@source `r roxygen_cite("blm")`. Data and documentation archived at
+#'  <`r find_url("blm", "documentation")`>.
 #'
 #' @examples
 #' \dontrun{
-#' # The download URL for BLM doesn't seem to work anymore; it may work again
-#' # in the future
-#' # blm <- redownload_blm()
-#' # blm
+#' blm <- redownload_blm()
+#' blm
 #' }
 redownload_blm <- function(url,
                            verbose = TRUE,
                            return_raw = FALSE,
                            ...) {
-  lifecycle::deprecate_stop("0.5.0", "redownload_blm()",
-                            details = stringr::str_c("Data can no longer be downloaded",
-                                                     " from http://www.blmdemocracy.gatech.edu/blm%20final%20data.xls",
-                                                     " use the archived version of this dataset, `blm`"))
   country <- blm <-  `costa rica` <- Nicaragua <- year <- NULL
 
   if(missing(url)) {
-    url <-  "http://www.blmdemocracy.gatech.edu/blm%20final%20data.xls"
+    url <-  find_url("blm")
   }
 
 
@@ -155,9 +129,9 @@ redownload_blm <- function(url,
 
   names(data)[1] <- "year"
 
-  blm <- data %>%
-    tidyr::gather(country, blm, `costa rica`:Nicaragua)  %>%
-    mutate(country = ifelse(country == "costa rica", "Costa Rica", country)) %>%
+  blm <- data |>
+    tidyr::gather(country, blm, `costa rica`:Nicaragua)  |>
+    mutate(country = ifelse(country == "costa rica", "Costa Rica", country)) |>
     country_year_coder(country,
                        year,
                        match_type = "country",
@@ -187,8 +161,7 @@ redownload_blm <- function(url,
 #' @rdname redownload_blm
 #'
 #' @source `r roxygen_cite("anckar")` Updated data (V2)
-#'   available at
-#'   https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/7SSSAH/DIZXSI&version=2.0.
+#'   available at <`r find_url("anckar", "documentation")`>
 #'
 #'
 #' @export
@@ -200,11 +173,8 @@ redownload_anckar <- function(url,
                             return_raw = FALSE,
                             ...) {
 
-  ccode <- country <- year <- democracy <- NULL
-  regimebroadcat <- regimenarrowcat <- abbreviation <- NULL
-
   if(missing(url)) {
-    url <- "https://dataverse.harvard.edu/api/access/datafile/3868064?format=original&gbrecs=true"
+    url <- find_url("anckar")
   }
 
 
@@ -224,25 +194,29 @@ redownload_anckar <- function(url,
     message("Fixing country names, adding state system information and regime category names")
   }
 
-  data <- data %>%
-    mutate(country = country %>%
+  country <- abbreviation <- ccode <- year <- regimebroadcat <- regimenarrowcat <- NULL
+  monarchy <- democracy <- NULL
+
+  data <- data |>
+    mutate(country = country |>
              str_replace_all('\\"', ""),
-           abbreviation = abbreviation %>%
+           abbreviation = abbreviation |>
              str_replace_all('\\"', ""),
            country = case_when(country == "EQUATORIA G" ~ "EQUATORIAL GUINEA",
                                country == "GUNIEA- BISS" ~ "GUINEA-BISSAU",
                                country == "CONGO" & ccode == 490 ~ "DEMOCRATIC REPUBLIC OF CONGO",
                                TRUE ~ country))
 
-  anckar <- data %>%
+  anckar <- data |>
     country_year_coder(country,
-                       year, code_col = ccode,
+                       year,
+                       code_col = ccode,
                        code_type = "cown",
                        match_type = "country",
                        verbose = verbose,
                        ...)
 
-  anckar <- anckar %>%
+  anckar <- anckar |>
     mutate(democracy = if_else(democracy == 99, NA_real_, democracy),
            regimebroadcat = case_when(regimebroadcat == 0 ~ "Parliamentarism",
                                       regimebroadcat == 1 ~ "Semi-presidentialism",
@@ -281,13 +255,13 @@ redownload_anckar <- function(url,
   }
 
 
-  standardize_columns(anckar, country, ccode, verbose = verbose)
+  standardize_columns(anckar, "country", "ccode", verbose = verbose)
 
 }
 
 
 #' @rdname redownload_blm
-#' @source `r roxygen_cite("bmr")` Available at \url{https://sites.google.com/site/mkmtwo/data}
+#' @source `r roxygen_cite("bmr")` Available at <`r find_url("bmr", "documentation")`>.
 #' @export
 #' @examples
 #' \dontrun{
@@ -298,17 +272,16 @@ redownload_bmr <- function(url,
                            verbose = TRUE,
                            return_raw = FALSE,
                            ...) {
-  ccode <- country <- year <- democracy <- NULL
+  ccode <- country <- year <- democracy <- abbreviation <-NULL
 
   if(missing(url)) {
-    url <-  "https://drive.google.com/u/0/uc?id=1P9fBqJejGktGLlRMSDgTkjyKMnVFcXac&export=download"
+    url <- find_url("bmr")
   }
-
 
   data <- read_data(url,
                     verbose = verbose,
                     name = "BMR",
-                    file_extension = "csv")
+                    file_extension = "dta")
 
   if(return_raw) {
     if(verbose) {
@@ -323,11 +296,16 @@ redownload_bmr <- function(url,
     message("Processing the BMR data - adding state system info, fixing bad ccode...")
   }
 
-  data <- data %>%
-    mutate(ccode = ifelse(ccode == 626, 525, ccode),
-           sovereign = ifelse(is.na(democracy), 0, 1))
+  ccode <- country <- year <- NULL
 
-  bmr <- country_year_coder(data, country, year,
+  data <- data |>
+    mutate(ccode = ifelse(ccode == 626, 525, ccode),
+           sovereign = ifelse(is.na(democracy), 0, 1),
+           abbreviation = ifelse(abbreviation == "NA", NA, abbreviation))
+
+  bmr <- country_year_coder(data,
+                            country,
+                            year,
                             code_col = ccode,
                             code_type = "polity_ccode",
                             match_type = "country",
@@ -346,7 +324,12 @@ redownload_bmr <- function(url,
     }
   }
 
-  standardize_columns(bmr, country, ccode, verbose = verbose)
+  bmr <- haven::zap_formats(bmr)
+  bmr <- haven::zap_label(bmr)
+
+  attr(bmr, "label") <- NULL
+
+  standardize_columns(bmr, "country", "ccode", verbose = verbose)
 }
 
 
@@ -357,7 +340,7 @@ redownload_bmr <- function(url,
 #'
 #' @export
 #' @source `r roxygen_cite("gwf")` The full data and codebook can be
-#' downloaded here: \url{http://sites.psu.edu/dictators/}.
+#' downloaded here: <`r find_url("gwf", "documentation")`>.
 #'
 #' @examples
 #' \dontrun{
@@ -377,7 +360,7 @@ redownload_gwf <- function(url,
   dataset <- match.arg(dataset)
 
   if(missing(url)) {
-    url <-  "http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip"
+    url <-  find_url("gwf")
   }
 
 
@@ -409,36 +392,36 @@ redownload_gwf <- function(url,
     if(verbose) {
       message("Extending the dataset...")
     }
-    gwf_panel <- data %>%
-      select(gwf_casename, gwf_country, cowcode, year, gwf_spell, gwf_duration) %>%
-      group_by(gwf_casename) %>%
+    gwf_panel <- data |>
+      select(gwf_casename, gwf_country, cowcode, year, gwf_spell, gwf_duration) |>
+      group_by(gwf_casename) |>
       mutate(min_year = ifelse(gwf_duration != 1, min(year) - min(gwf_duration) + 1, min(year)),
-             max_year = max(year)) %>%
-      select(-year, -gwf_duration) %>%
-      group_by_all() %>%
+             max_year = max(year)) |>
+      select(-year, -gwf_duration) |>
+      group_by_all() |>
       summarise(year = list(as.numeric(min(min_year):max(max_year))),
-                .groups = "drop") %>%
-      tidyr::unnest(cols = c(year)) %>%
-      distinct() %>%
+                .groups = "drop") |>
+      tidyr::unnest(cols = c(year)) |>
+      distinct() |>
       select(-min_year, -max_year)
 
     if(dataset != "all") {
-      gwf <- gwf_panel %>%
-        left_join(data) %>%
-        group_by(gwf_casename, gwf_country, cowcode, gwf_spell) %>%
-        arrange(gwf_casename, year) %>%
-        tidyr::fill(gwf_country:gwf_monarch, .direction = "up") %>%
-        mutate(gwf_duration = as.numeric(seq_along(year))) %>%
-        ungroup() %>%
+      gwf <- gwf_panel |>
+        left_join(data) |>
+        group_by(gwf_casename, gwf_country, cowcode, gwf_spell) |>
+        arrange(gwf_casename, year) |>
+        tidyr::fill(gwf_country:gwf_monarch, .direction = "up") |>
+        mutate(gwf_duration = as.numeric(seq_along(year))) |>
+        ungroup() |>
         arrange(gwf_country, year)
     } else {
-      gwf <- gwf_panel %>%
-        left_join(data) %>%
-        group_by(gwf_casename, gwf_country, cowcode, gwf_spell) %>%
-        arrange(gwf_casename, year) %>%
-        tidyr::fill(gwf_country:gwf_disagree, .direction = "up") %>%
-        mutate(gwf_duration = as.numeric(seq_along(year))) %>%
-        ungroup() %>%
+      gwf <- gwf_panel |>
+        left_join(data) |>
+        group_by(gwf_casename, gwf_country, cowcode, gwf_spell) |>
+        arrange(gwf_casename, year) |>
+        tidyr::fill(gwf_country:gwf_disagree, .direction = "up") |>
+        mutate(gwf_duration = as.numeric(seq_along(year))) |>
+        ungroup() |>
         arrange(gwf_country, year)
     }
 
@@ -448,14 +431,14 @@ redownload_gwf <- function(url,
     gwf <- data
   }
 
-  gwf <- gwf %>%
+  gwf <- gwf |>
     country_year_coder(gwf_country,
                        year,
                        # code_col = cowcode,
                        # code_type = "cown",
                        match_type = "country",
                        verbose = verbose,
-                       ...) %>%
+                       ...) |>
     mutate_if(is.character,
               ~ifelse(. %in% c("NA",""),
                       as.character(NA), .))
@@ -474,17 +457,10 @@ redownload_gwf <- function(url,
 
 }
 
-#' Downloads the 2022 update (v. 6.4) of the Lexical Index of Electoral Democracy (annual time series, data to
-#' 2021) and processes it using [country_year_coder].
+#' @source `r roxygen_cite("LIED")`. Original data and variable descriptions available at
+#' <`r find_url("LIED", "documentation")`>. This is for version 6.6 (2023 update).
 #'
-#' @param url The URL of the dataset. Defaults to
-#'   \url{https://dataverse.harvard.edu/api/access/datafile/6290760}
-#' @inheritParams redownload_blm
-#'
-#' @source `r roxygen_cite("LIED")`
-#' Original data and variable descriptions available at
-#' \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}
-#'
+#' @rdname redownload_blm
 #' @export
 #' @examples
 #' \dontrun{
@@ -497,16 +473,24 @@ redownload_lied <- function(url,
   executive_elections <- legislative_elections <- `multi-party_legislative_elections` <- NULL
   competitive_elections <- countryn <- year <- cow <- lexical_index <- L0 <- L1 <- L2 <- L3 <- L4 <- L5 <- L6 <- NULL
   competition <- exselec <- female_suffrage <- legselec <- male_suffrage <- opposition <- NULL
+  extended_country_name <- NULL
+
+  vdem <- NULL
 
   if(missing(url)) {
-    url <- "https://dataverse.harvard.edu/api/access/datafile/6290760"
+    url <- find_url("LIED")
   }
 
 
   data <- read_data(url,
                     verbose = verbose,
                     name = "LIED",
-                    file_extension = "xlsx")
+                    file_extension = "xlsx") |>
+    suppressWarnings()
+
+  # Fix Chile
+  data <- data |>
+    mutate(year = ifelse(is.na(year) & countryn == "Chile", 2023, year))
 
   if(return_raw) {
     if(verbose) {
@@ -519,30 +503,38 @@ redownload_lied <- function(url,
     message("Changing column names, adding state system information, reconstructing index")
   }
 
-  lied <- data %>%
+  data <- data |>
     rename(exselec = `executive_elections`,
            legselec = `legislative_elections`,
            opposition = `multi-party_legislative_elections`,
-           competition = competitive_elections) %>%
+           competition = competitive_elections)
+
+  lied <- data |>
     country_year_coder(countryn,
-                       year, code_col = cow,
+                       year,
+                       code_col = cow,
                        code_type = "cown",
-                       match_type = "country",
+                       match_type = "country and code",
                        verbose = verbose,
                        ...)
 
-  lied <- lied %>%
+  lied <- lied |>
+    filter(!(countryn == "Palestine/British Mandate" & year <= 1919 & extended_country_name == "Palestine, State of"),
+           !(countryn == "Serbia" & year <= 1829 & extended_country_name == "Yugoslavia"),
+           !(countryn == "Vietnam" & year <= 1815 & extended_country_name == "Vietnam, Democratic Republic of"))
+
+  lied <- lied |>
     mutate(L0 = (legselec == 0 & exselec == 0)*1,
            L1 = (legselec | exselec)*2,
            L2 = (legselec & opposition)*3,
            L3 = (legselec & exselec & opposition)*4,
            L4 = (legselec & exselec & opposition & competition)*5,
            L5 = (legselec & exselec & opposition & competition & (male_suffrage | female_suffrage))*6,
-           L6 = (legselec & exselec & opposition & competition & male_suffrage & female_suffrage)*7) %>%
-    rowwise() %>%
+           L6 = (legselec & exselec & opposition & competition & male_suffrage & female_suffrage)*7) |>
+    rowwise() |>
     mutate(lexical_index_original = lexical_index,
-           lexical_index = max(L0,L1,L2,L3,L4,L5,L6) - 1) %>%
-    select(-L0:-L6) %>%
+           lexical_index = max(L0,L1,L2,L3,L4,L5,L6) - 1) |>
+    select(-L0:-L6) |>
     ungroup()
 
   if(verbose) {
@@ -564,9 +556,94 @@ redownload_lied <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source `r roxygen_cite("pacl2010")` The
-#' full data and codebook can be downloaded here
-#' \url{https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited}
+#' @source `r roxygen_cite("kailitz2024dataset")`
+#' Original data and variable descriptions available at <`r find_url("vaporeg", "documentation")`>.
+#'
+#' @export
+#' @examples
+#' \dontrun{
+#' redownload_vaporeg()}
+redownload_vaporeg <- function(url,
+                               verbose = TRUE,
+                               return_raw = FALSE,
+                               ...) {
+
+  country_name <- cowcode <- year <- VaPoReg_s <- extended_country_name <- NULL
+  if(missing(url)) {
+    url <- find_url("vaporeg")
+  }
+
+  data <- readr::read_rds(url)
+
+  if(return_raw) {
+    if(verbose) {
+      message("Returning raw data, without processing.")
+    }
+    return(data)
+  }
+
+    # Fix the Uzbekistan problem
+
+
+  if(verbose) {
+    message("Changing column names, adding state system information, fixing problem with Uzbekistan and Serbia")
+  }
+ 
+  data <- data |>
+    filter(!(is.na(vaporeg_code) & country_name == "Uzbekistan")) |>
+    mutate(cowcode = case_when(cowcode == 0 & country_name == "Uzbekistan" ~ vaporeg_code,
+                               TRUE ~ cowcode),
+           un_region = case_when(is.na(un_region) & country_name == "Uzbekistan" ~ 4,
+                                 TRUE ~ un_region),
+           un_continent = case_when(is.na(un_continent) & country_name == "Uzbekistan" ~ 3,
+                                    TRUE ~ un_continent),
+           vaporeg_s_change = case_when(year == 1990 & country_name == "Uzbekistan" ~ 1,
+                                    TRUE ~ vaporeg_s_change),
+           vaporeg_a_change = case_when(year == 1990 & country_name == "Uzbekistan" ~ 1,
+                                    TRUE ~ vaporeg_a_change))
+  
+  
+  vaporeg <- data |>
+    country_year_coder(country_name,
+                       year,
+                       code_col = vaporeg_code,
+                       code_type = "cown",
+                       match_type = "country and code",
+                       verbose = verbose,
+                       ...) |>
+    mutate(extended_country_name = case_when(
+              country_name == "Serbia" & 
+                year %in% c(1919:2002) ~ "Serbia",
+              TRUE ~ extended_country_name))
+    
+
+  vaporeg <- vaporeg |>
+    filter(!(country_name == "Palestine" & year <= 1919 & extended_country_name == "Palestine, State of"))
+
+  if(verbose) {
+    message(sprintf("Resulting dataset after processing has %d rows.",
+                    nrow(vaporeg)))
+    if(nrow(data) != nrow(vaporeg)) {
+      message("Note: the number of rows in the processed VaPoReg data is different from the number of rows in the original data.")
+    }
+  }
+
+  vaporeg <- vaporeg |>
+    mutate(vaporeg_binary_strict = ifelse(vaporeg_s == 10, 1, 0),
+           vaporeg_binary_non_strict = ifelse(vaporeg_s <= 20, 1, 0),
+           vaporeg_trichotomous = case_when(vaporeg_s == 10 ~ 2,
+                                            vaporeg_s == 20 ~ 1,
+                                            !is.na(vaporeg_s) ~ 0,
+                                            TRUE ~ NA_real_))
+
+  standardize_columns(vaporeg, country_name, cowcode, verbose = verbose)
+
+}
+
+#' @rdname redownload_blm
+#'
+#' @source `r roxygen_cite("pacl2010")` The full data and codebook can be
+#'   downloaded here: <`r find_url("pacl", "documentation")`>.
 #'
 #' @export
 #' @examples
@@ -580,13 +657,14 @@ redownload_pacl <- function(url,
   ctryname <- year <- cowcode <- NULL
 
   if(missing(url)) {
-    url <- "https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta"
+    url <- find_url("pacl")
   }
 
 
   data <- read_data(url,
                     verbose = verbose,
-                    name = "PACL/ACLP")
+                    name = "PACL/ACLP",
+                    file_extension = "dta")
 
 
   if(return_raw) {
@@ -602,7 +680,7 @@ redownload_pacl <- function(url,
     message("Processing the PACL/ACLP data - adding state system info...")
   }
 
-  pacl <- data %>%
+  pacl <- data |>
     country_year_coder(ctryname,
                        year,
                        code_col = cowcode,
@@ -626,9 +704,7 @@ redownload_pacl <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source `r roxygen_cite("peps")` The complete
-#' dataset is available here:
-#' \url{http://www.lehigh.edu/~bm05/democracy/Obtain_data.htm}.
+#' @source `r roxygen_cite("peps")` The complete dataset is available here: <`r find_url("peps", "documentation")`>.
 #'
 #' @export
 #' @examples
@@ -642,7 +718,7 @@ redownload_peps <- function(url,
   Iname <- Pname <- FHname <- country <- year <- ccode <- NULL
 
   if(missing(url)) {
-    url <- "http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta"
+    url <- find_url("peps")
   }
 
 
@@ -665,15 +741,15 @@ redownload_peps <- function(url,
     message("New country column combines country names from Pname, Iname, and FHname to fill in blanks...")
   }
 
-  peps <- data %>%
+  peps <- data |>
     mutate(country = ifelse(Pname == "", Iname, Pname),
            country = ifelse(country == "", FHname, country),
            country = case_when(
              country == "Cameron" ~ "Cameroon",
              country == "N. Korea" ~ "North Korea",
              TRUE ~ country
-           )) %>%
-    filter(Pname != "") %>%
+           )) |>
+    filter(Pname != "") |>
     country_year_coder(country,
                        year,
                        code_col = ccode,
@@ -692,16 +768,14 @@ redownload_peps <- function(url,
     }
   }
 
-  standardize_columns(peps, country, ccode, verbose = verbose) %>%
+  standardize_columns(peps, country, ccode, verbose = verbose) |>
     select(-Pname, -Iname, -FHname)
 
 }
 
 #' @rdname redownload_blm
 #'
-#' @source `r roxygen_cite("utip")` Data available for
-#' download at
-#' \url{http://utip.gov.utexas.edu/data/}
+#' @source `r roxygen_cite("utip")` Data available for download at <`r find_url("utip", "documentation")`>.
 #'
 #' @export
 #' @examples
@@ -716,7 +790,7 @@ redownload_utip <- function(url,
   conservative_democracy <- social_democracy <- one_party_democracy <- NULL
 
   if(missing(url)) {
-    url <- "http://utip.lbj.utexas.edu/data/political%20regime%20data%20set%20RV.xls"
+    url <- find_url("utip")
   }
 
   cname <- year <- DI <- NULL
@@ -733,13 +807,13 @@ redownload_utip <- function(url,
     return(data)
   }
 
-  utip <- data %>%
+  utip <- data |>
     country_year_coder(cname,
                        year,
                        match_type = "country",
                        verbose = verbose,
-                       ...) %>%
-    filter(!is.na(DI)) %>%
+                       ...) |>
+    filter(!is.na(DI)) |>
     rename(other_dictatorship = DI,
            military_dictatorship = MD,
            civil_war = W,
@@ -748,7 +822,7 @@ redownload_utip <- function(url,
            islamic_republic = IR,
            social_democracy = SD,
            european_colony = EC,
-           conservative_democracy = CO) %>%
+           conservative_democracy = CO) |>
     mutate(utip_dichotomous = as.numeric(one_party_democracy == 1 | social_democracy == 1 | conservative_democracy == 1),
            utip_dichotomous_strict =  as.numeric(social_democracy == 1 | conservative_democracy == 1),
            utip_trichotomous = ifelse(social_democracy == 1 | conservative_democracy == 1, 2,
@@ -779,8 +853,7 @@ redownload_utip <- function(url,
 #' @rdname redownload_blm
 #'
 #' @source `r roxygen_cite("wahman_teorell_hadenius2013")` The dataset and codebook can be
-#'   downloaded from
-#'   \url{https://sites.google.com/site/authoritarianregimedataset/data}
+#'   downloaded from <`r find_url("wahman_teorell_hadenius", "documentation")`>.
 #'
 #' @export
 #' @examples
@@ -792,7 +865,7 @@ redownload_wahman_teorell_hadenius <- function(url,
                                                ...) {
 
   if(missing(url)) {
-    url <-"https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&d=1"
+    url <- find_url("wahman_teorell_hadenius")
   }
 
   country <- year <- cowcode <- NULL
@@ -811,7 +884,7 @@ redownload_wahman_teorell_hadenius <- function(url,
     return(data)
   }
 
-  wahman_teorell_hadenius <- data %>%
+  wahman_teorell_hadenius <- data |>
     country_year_coder(country,
                        year,
                        # cowcode,
@@ -832,8 +905,7 @@ redownload_wahman_teorell_hadenius <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source `r roxygen_cite("polyarchy1990")` Data
-#' available at \url{http://www3.nd.edu/~mcoppedg/crd/datacrd.htm}
+#' @source `r roxygen_cite("polyarchy1990")` Data available at <`r find_url("polyarchy", "documentation")`>.
 #'
 #' @export
 #'
@@ -846,16 +918,16 @@ redownload_polyarchy_original <- function(url,
                                         ...) {
 
   if(missing(url)) {
-    url <-"https://www3.nd.edu/~mcoppedg/crd/poly8500.sav"
+    url <- find_url("polyarchy")
   }
 
   variable <- value <- suff85 <- cont2000 <- year <- Country <- NULL
-
-
+  code <- NULL
 
   data <- read_data(url,
                     name = "Polyarchy original",
-                    verbose = verbose)
+                    verbose = verbose,
+                    file_extension = "sav")
 
   if(return_raw) {
     if(verbose) {
@@ -868,8 +940,9 @@ redownload_polyarchy_original <- function(url,
     message("Putting the dataset in country-year format and adding state system information.")
   }
 
-  polyarchy <- data %>%
-    tidyr::gather(variable, value, suff85:cont2000) %>%
+  polyarchy <- data |>
+    tidyr::gather(variable, value, suff85:cont2000) |>
+    suppressWarnings() |>
     mutate(year = stringr::str_extract(variable, "[0-9]+"),
            year = case_when(
              year == "85" ~ 1985,
@@ -884,9 +957,9 @@ redownload_polyarchy_original <- function(url,
              Country == "Yemen, N" ~ "North Yemen",
              Country == "Yemen, S" ~ "South Yemen",
              TRUE ~ Country
-           )) %>%
-    filter(!is.na(value)) %>%
-    tidyr::spread(variable, value) %>%
+           )) |>
+    filter(!is.na(value)) |>
+    tidyr::spread(variable, value) |>
     country_year_coder(Country,
                        year,
                        match_type = "country",
@@ -902,13 +975,14 @@ redownload_polyarchy_original <- function(url,
     }
   }
 
-  standardize_columns(polyarchy, Country, verbose = verbose)
+  standardize_columns(polyarchy, Country, verbose = verbose) |>
+    arrange(code, year)
 
 }
 
 #' @rdname redownload_blm
 #'
-#' @source `r roxygen_cite("polyarchy_dimensions")`
+#' @source `r roxygen_cite("polyarchy_dimensions")` Data available at <`r find_url("polyarchy_dimensions", "documentation")`>.
 #'
 #' @export
 #'
@@ -921,7 +995,7 @@ redownload_polyarchy_dimensions <- function(url,
                                           ...) {
 
   if(missing(url)) {
-    url <-"http://www3.nd.edu/~mcoppedg/crd/DahlDims.sav"
+    url <- find_url("polyarchy_dimensions")
   }
 
   cname <- year <- ccodecow <- NULL
@@ -937,7 +1011,7 @@ redownload_polyarchy_dimensions <- function(url,
     return(data)
   }
 
-  polyarchy_dimensions <- data %>%
+  polyarchy_dimensions <- data |>
     country_year_coder(cname,
                        year,
                        # ccodecow,
@@ -960,7 +1034,7 @@ redownload_polyarchy_dimensions <- function(url,
 #' @rdname redownload_blm
 #'
 #' @source `r roxygen_cite("magaloni")` Original data and codebook used to be
-#'   available at the link.
+#'   available at <`r find_url("magaloni", "documentation")`>.
 #'
 #' @export
 #'
@@ -974,7 +1048,7 @@ redownload_magaloni <- function(url,
                               ...) {
 
   if(missing(url)) {
-    url <- "https://fsi-live.s3.us-west-1.amazonaws.com/s3fs-public/res/Data_Set.xls"
+    url <- find_url("magaloni")
   }
 
   country <- year <- ccode <- NULL
@@ -986,7 +1060,7 @@ redownload_magaloni <- function(url,
   data <- read_data(url,
                     name = "Magaloni, Chu, and Min",
                     verbose = verbose,
-                    na = c("","NA", ".")) %>%
+                    na = c("","NA", ".")) |>
     mutate_at(vars(demo_r, duration_r:lindex), as.numeric)
 
   if(return_raw) {
@@ -1001,19 +1075,19 @@ redownload_magaloni <- function(url,
       message("Extending the dataset using the duration_nr variable")
     }
 
-    magaloni_panel <- data %>%
-      filter(!is.na(reg_id)) %>%
-      select(country, year, ccode, demo_nr, regime_nr, duration_nr, reg_id) %>%
-      group_by(country, ccode, reg_id) %>%
+    magaloni_panel <- data |>
+      filter(!is.na(reg_id)) |>
+      select(country, year, ccode, demo_nr, regime_nr, duration_nr, reg_id) |>
+      group_by(country, ccode, reg_id) |>
       mutate(min_year = ifelse(min(year) > 1950, min(year), min(year, min(max(year) - duration_nr + 1))),
-             max_year = max(year)) %>%
-      select(-year, -duration_nr) %>%
-      group_by_all() %>%
+             max_year = max(year)) |>
+      select(-year, -duration_nr) |>
+      group_by_all() |>
       summarise(year = list(as.numeric(min(min_year):max(max_year))),
-                .groups = "drop") %>%
-      tidyr::unnest(cols = c(year)) %>%
-      distinct() %>%
-      arrange(country, year) %>%
+                .groups = "drop") |>
+      tidyr::unnest(cols = c(year)) |>
+      distinct() |>
+      arrange(country, year) |>
       select(-min_year, -max_year)
 
 
@@ -1021,7 +1095,7 @@ redownload_magaloni <- function(url,
     magaloni_panel <- data
   }
 
-  magaloni <- magaloni_panel %>%
+  magaloni <- magaloni_panel |>
     country_year_coder(country,
                        year,
                        # ccode,
@@ -1044,8 +1118,7 @@ redownload_magaloni <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source `r roxygen_cite("svmdi2018")` Original data available at
-#'   \url{https://ml-democracy-index.net/}.
+#' @source `r roxygen_cite("svmdi2018")` Original data available at <`r find_url("svmdi2020", "documentation")`>.
 #'
 #' @export
 #'
@@ -1062,13 +1135,15 @@ redownload_svmdi <- function(url,
 
   if(!release_year %in% c(2018, 2016)) {
     release_year <- 2020
-    message("release_year can only be 2020 or 2016. Defaulting to 2020.")
+    if(verbose) {
+      message("release_year can only be 2020 or 2016. Defaulting to 2020.")
+    }
   }
 
   if(release_year == 2020 & missing(url)) {
-    url <- "https://ml-democracy-index.net/downloadfiles/ML%20indices.xlsx"
+    url <- find_url("svmdi2020")
   } else if(release_year == 2016 & missing(url)) {
-    url <- "http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta"
+    url <- find_url("svmdi2016")
   }
 
   if(release_year == 2020) {
@@ -1088,7 +1163,7 @@ redownload_svmdi <- function(url,
 
 
 
-  data <- data %>%
+  data <- data |>
     mutate(country = if_else(country == "Congo_Democratic Republic of",
                              "Democratic Republic of Congo", country))
 
@@ -1099,7 +1174,7 @@ redownload_svmdi <- function(url,
     return(data)
   }
 
-  svmdi <- data %>%
+  svmdi <- data |>
     country_year_coder(country,
                        year,
                        # cowcode,
@@ -1116,81 +1191,82 @@ redownload_svmdi <- function(url,
     }
   }
 
-  svmdi <- svmdi %>%
+  svmdi <- svmdi |>
     select(-starts_with("id"), -starts_with("cid"), -starts_with("instrument"))
 
   standardize_columns(svmdi, country, iso, verbose = verbose)
 
 }
 
-# #' @rdname redownload_blm
-# #'
-# #' @source Pemstein, Daniel, Stephen Meserve, and James Melton. 2010. Democratic
-# #'   Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.
-# #'   Political Analysis 18 (4): 426-449. Original data and codebook available at
-# #'   \url{http://www.unified-democracy-scores.org/}.
-# #'
-# #' @export
-# #'
-# #' @examples
-# #' \dontrun{
-# #' redownload_uds()
-# #' redownload_uds(2011)}
-# redownload_uds <- function(release_year = 2014,
-#                          verbose = TRUE,
-#                          return_raw = FALSE,
-#                          ...) {
-#
-#   if(!release_year %in% c(2014, 2011, 2010)) {
-#     release_year <- 2014
-#     message("release_year can only be 2014, 2011, or 2010. Defaulting to 2014.")
-#   }
-#
-#   url <- ifelse(release_year == 2014,
-#                 "http://www.unified-democracy-scores.org/files/20140312/z/uds_summary.csv.gz",
-#                 ifelse(release_year == 2011,
-#                        "http://www.unified-democracy-scores.org/files/20110104/uds_summary.csv.gz",
-#                        "http://www.unified-democracy-scores.org/files/20100726/uds_summary.csv.gz"))
-#
-#
-#   country <- year <- cowcode <- NULL
-#
-#   data <- read_data(url,
-#                     verbose = verbose,
-#                     name = "UDS",
-#                     file_extension = "csv")
-#
-#   if(return_raw) {
-#     if(verbose) {
-#       message("Returning raw data, without processing.")
-#     }
-#     return(data)
-#   }
-#
-#   uds <- data %>%
-#     country_year_coder(country,
-#                        year,
-#                        # cowcode,
-#                        # code_type = "cown",
-#                        match_type = "country",
-#                        verbose = verbose,
-#                        ...)
-#
-#   if(verbose) {
-#     message(sprintf("Resulting dataset after processing has %d rows.",
-#                     nrow(uds)))
-#     if(nrow(data) != nrow(uds)) {
-#       message("Note: the number of rows in the processed UDS Dataset is different from the number of rows in the original data.")
-#     }
-#   }
-#
-#   standardize_columns(uds, country, cowcode, verbose = verbose)
-#
-# }
+#' @rdname redownload_blm
+#'
+#' @source `r roxygen_cite("pmm2010")` Original data and codebook archived at
+#'   <`r find_url("uds2014", "documentation")`>.
+#'
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' redownload_uds()
+#' redownload_uds(2011)}
+redownload_uds <- function(url,
+                           release_year = 2014,
+                           verbose = TRUE,
+                           return_raw = FALSE,
+                           ...) {
+
+  if(!release_year %in% c(2014, 2011, 2010)) {
+    release_year <- 2014
+    message("release_year can only be 2014, 2011, or 2010. Defaulting to 2014.")
+  }
+
+  if(missing(url)) {
+    url <- ifelse(release_year == 2014,
+                  find_url("uds2014"),
+                  ifelse(release_year == 2011,
+                         find_url("uds2011"),
+                         find_url("uds2010")))
+  }
+
+  country <- year <- cowcode <- NULL
+
+  data <- read_data(url,
+                    verbose = verbose,
+                    name = "UDS",
+                    file_extension = "csv",
+                    show_col_types = verbose)
+
+  if(return_raw) {
+    if(verbose) {
+      message("Returning raw data, without processing.")
+    }
+    return(data)
+  }
+
+  uds <- data |>
+    country_year_coder(country,
+                       year,
+                       # cowcode,
+                       # code_type = "cown",
+                       match_type = "country",
+                       verbose = verbose,
+                       ...)
+
+  if(verbose) {
+    message(sprintf("Resulting dataset after processing has %d rows.",
+                    nrow(uds)))
+    if(nrow(data) != nrow(uds)) {
+      message("Note: the number of rows in the processed UDS Dataset is different from the number of rows in the original data.")
+    }
+  }
+
+  standardize_columns(uds, country, cowcode, verbose = verbose)
+
+}
 
 #' @rdname redownload_blm
 #'
-#' @source `r roxygen_cite("ulfelder2012")`
+#' @source `r roxygen_cite("ulfelder2012")` Original data available at <`r find_url("ulfelder", "documentation")`>.
 #'
 #' @export
 #'
@@ -1207,12 +1283,13 @@ redownload_ulfelder <- function(url,
   duration <- prev_regime <- rgjdura <- rgjdurd <- NULL
 
   if(missing(url)) {
-    url <- "https://dataverse.harvard.edu/api/access/datafile/2420018"
+    url <- find_url("ulfelder")
   }
 
   data <- read_data(url,
                     verbose = verbose,
-                    file_extension = "csv")
+                    file_extension = "csv",
+                    show_col_types = verbose)
 
   if(return_raw) {
     if(verbose) {
@@ -1221,7 +1298,7 @@ redownload_ulfelder <- function(url,
     return(data)
   }
 
-  data <- data %>%
+  data <- data |>
     mutate(ulfelder_scode =
              case_when(
                pitfcode == "GER" ~ "GMY",
@@ -1230,7 +1307,7 @@ redownload_ulfelder <- function(url,
                pitfcode == "UK" ~ "UKG",
                pitfcode == "USS" ~ "USR",
                TRUE ~ pitfcode
-             )) %>%
+             )) |>
     filter(!is.na(rgjtype))
 
   if(verbose) {
@@ -1245,37 +1322,37 @@ redownload_ulfelder <- function(url,
       message("Extending the data back in time using the duration variable")
     }
 
-    ulfelder_panel <- data %>%
-      select(ulfelder_scode, year, rgjtype, rgjdurd, rgjdura) %>%
-      group_by(ulfelder_scode) %>%
-      filter(year == min(year), year <= 1956) %>%
+    ulfelder_panel <- data |>
+      select(ulfelder_scode, year, rgjtype, rgjdurd, rgjdura) |>
+      group_by(ulfelder_scode) |>
+      filter(year == min(year), year <= 1956) |>
       mutate(duration = ifelse(is.na(rgjdurd), rgjdura,
                                ifelse(is.na(rgjdura), rgjdurd, max(rgjdura, rgjdurd))),
              prev_regime = ifelse(is.na(rgjdurd), "A",
                                   ifelse(is.na(rgjdura), "D",
                                          ifelse(rgjdura > rgjdurd, "A", "D"))),
-             year = list(year:(year-duration + 1))) %>%
-      unnest(cols = c(year)) %>%
-      filter(year != max(year)) %>%
-      arrange(ulfelder_scode, year) %>%
+             year = list(year:(year-duration + 1))) |>
+      unnest(cols = c(year)) |>
+      filter(year != max(year)) |>
+      arrange(ulfelder_scode, year) |>
       mutate(rgjtype = prev_regime,
              rgjdurd = ifelse(rgjtype == "D", seq_along(ulfelder_scode), NA),
-             rgjdura = ifelse(rgjtype == "A", seq_along(ulfelder_scode), NA))  %>%
+             rgjdura = ifelse(rgjtype == "A", seq_along(ulfelder_scode), NA))  |>
       select(-duration, -prev_regime)
 
-    data <- bind_rows(ulfelder_panel, data) %>%
-      arrange(ulfelder_scode, year) %>%
+    data <- bind_rows(ulfelder_panel, data) |>
+      arrange(ulfelder_scode, year) |>
       ungroup()
 
   }
 
 
-  ulfelder <- data  %>%
+  ulfelder <- data  |>
     country_year_coder(date_col = year,
                        code_col = ulfelder_scode,
                        code_type = "polity_scode",
                        match_type = "code",
-                       verbose = verbose, ...) %>%
+                       verbose = verbose, ...) |>
     mutate(year = as.numeric(year))
 
   if(verbose) {
@@ -1293,11 +1370,9 @@ redownload_ulfelder <- function(url,
 
 #' @rdname redownload_blm
 #'
-#' @source `r roxygen_cite("PIPE")`
-#'   \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}.
+#' @source `r roxygen_cite("PIPE")` Original data available at <`r find_url("PIPE", "documentation")`>.
 #'
 #' @export
-#' @keywords internal
 #'
 #' @examples
 #' \dontrun{
@@ -1308,14 +1383,11 @@ redownload_pipe <- function(url,
                           verbose = TRUE,
                           return_raw = FALSE,
                           ...) {
-  lifecycle::deprecate_stop("0.5.0", "redownload_pipe()",
-                            details = stringr::str_c("Data can no longer be downloaded",
-                                                     " from https://sites.google.com/a/nyu.edu/adam-przeworski/home/data/PIPE_081813.dta?attredirects=0&d=1;",
-                                                     " use the archived version of this dataset, `PIPE`"))
 
   if(missing(url)) {
-    url <- "https://sites.google.com/a/nyu.edu/adam-przeworski/home/data/PIPE_081813.dta?attredirects=0&d=1"
+    url <- find_url("PIPE")
   }
+
 
   countryn <- year <- cowcodes <- NULL
   country_number <- cum_salterel <- cum_term <- NULL
@@ -1341,31 +1413,31 @@ redownload_pipe <- function(url,
     message("Eliminating blank rows (country identifier is NA), fixing country names, filling in the correct cowcodes, adding state system info...")
   }
 
-  PIPE <- data %>%
-    filter(!is.na(country)) %>% # First we eliminate rows which are all NA
-    rename(country_number = country) %>%
-    group_by(country_number) %>%
-    mutate(countryn = ifelse(countryn == "", NA, countryn)) %>%
-    arrange(countryn, desc(year)) %>%
-    tidyr::fill(countryn) %>%
-    ungroup() %>%
+  PIPE <- data |>
+    filter(!is.na(country)) |> # First we eliminate rows which are all NA
+    rename(country_number = country) |>
+    group_by(country_number) |>
+    mutate(countryn = ifelse(countryn == "", NA, countryn)) |>
+    arrange(countryn, desc(year)) |>
+    tidyr::fill(countryn) |>
+    ungroup() |>
     mutate(countryn = str_to_title(countryn))
 
-  no.cowcodes <- PIPE %>%
-    group_by(country_number) %>%
+  no.cowcodes <- PIPE |>
+    group_by(country_number) |>
     filter(all(is.na(cowcodes)))
-  with.cowcodes <- PIPE %>%
-    group_by(country_number) %>%
+  with.cowcodes <- PIPE |>
+    group_by(country_number) |>
     filter(any(!is.na(cowcodes)))
 
-  with.cowcodes <- with.cowcodes %>%
-    group_by(country_number) %>%
-    arrange(desc(cowcodes),desc(year)) %>%
-    tidyr::fill(cowcodes) %>%
-    ungroup() %>%
+  with.cowcodes <- with.cowcodes |>
+    group_by(country_number) |>
+    arrange(desc(cowcodes),desc(year)) |>
+    tidyr::fill(cowcodes) |>
+    ungroup() |>
     arrange(countryn, desc(year))
 
-  PIPE <- bind_rows(with.cowcodes,no.cowcodes) %>%
+  PIPE <- bind_rows(with.cowcodes,no.cowcodes) |>
     arrange(countryn, desc(year))
 
   if(verbose) {
@@ -1384,18 +1456,18 @@ redownload_pipe <- function(url,
   PIPE$countryn[ PIPE$countryn == "Hungary Empire" ] <- "Austria-Hungary (Hungary)"
   PIPE$countryn[ PIPE$countryn == "Austria Empire" ] <- "Austria-Hungary (Austria)"
 
-  PIPE <- PIPE %>%
+  PIPE <- PIPE |>
     filter(!(cowcodes %in% 255 & year %in% 1946:1989),
            !(cowcodes %in% 679 & year < 1990))
 
-  PIPE <- PIPE %>%
+  PIPE <- PIPE |>
     country_year_coder(countryn,
                        year,
                        code_col = cowcodes,
                        code_type = "cown",
                        match_type = "country",
                        verbose = verbose,
-                       ...) %>%
+                       ...) |>
     mutate(countryn = case_when(
       countryn == "West Indies F" ~ "West Indies Federation",
       countryn == "Leeward Island F" ~ "Leeward Islands Federation",
@@ -1409,32 +1481,32 @@ redownload_pipe <- function(url,
             " democracy2, democracy_age, regime, regime_period)...")
   }
 
-  PIPE <- PIPE %>%
-    group_by(country_number) %>%
-    arrange(country_number, year) %>%
+  PIPE <- PIPE |>
+    group_by(country_number) |>
+    arrange(country_number, year) |>
     mutate(republic = ifelse(is.na(republic_age), 0, 1),
-           republican_period = count_sequence_breaks(republic, seq_step=0)) %>%
-    group_by(country_number, republican_period) %>%
+           republican_period = count_sequence_breaks(republic, seq_step=0)) |>
+    group_by(country_number, republican_period) |>
     mutate(cum_salterel = ifelse(is.na(salterel), 0, salterel),
            cum_salterel = cumsum(cum_salterel),
            cum_term = cumsum(term),
            democracy = (!is.na(republic_age) & cum_salterel > 0 & cum_term > 0),
-           democracy2 = (!is.na(republic_age) & cum_salterel > 0 & cum_term > 0 & polstatus > 0)) %>%
-    group_by(country_number) %>%
-    arrange(country_number, year) %>%
-    mutate(democratic_period = count_sequence_breaks(democracy2, seq_step=0)) %>%
-    group_by(country_number,democratic_period) %>%
+           democracy2 = (!is.na(republic_age) & cum_salterel > 0 & cum_term > 0 & polstatus > 0)) |>
+    group_by(country_number) |>
+    arrange(country_number, year) |>
+    mutate(democratic_period = count_sequence_breaks(democracy2, seq_step=0)) |>
+    group_by(country_number,democratic_period) |>
     mutate(democracy_age = count_sequence_breaks(democratic_period),
            democracy_age = as.numeric(ifelse(democracy2, democracy_age, NA)),
            regime = ifelse(is.na(electoral_age), 0,
                            ifelse(((!is.na(electoral_age) & opposition == 0) |
                                      is.na(republic_age)), 1,
-                                  ifelse(!is.na(democracy_age),3,ifelse(!is.na(republic_age),2,NA))))) %>%
-    group_by(country_number) %>%
-    arrange(country_number, year) %>%
+                                  ifelse(!is.na(democracy_age),3,ifelse(!is.na(republic_age),2,NA))))) |>
+    group_by(country_number) |>
+    arrange(country_number, year) |>
     mutate(regime_period = ifelse(is.na(regime), -1, regime),
-           regime_period = count_sequence_breaks(regime_period, seq_step=0)) %>%
-    ungroup() %>%
+           regime_period = count_sequence_breaks(regime_period, seq_step=0)) |>
+    ungroup() |>
     arrange(countryn, year)
 
   if(verbose) {
@@ -1445,30 +1517,17 @@ redownload_pipe <- function(url,
   standardize_columns(PIPE, countryn, cowcodes, verbose = verbose)
 }
 
-#' Downloads the 2019 update of the Polity IV dataset
-#'
-#' Downloads the 2019 update of the Polity IV dataset (annual time series, to
+#' @details
+#' `redownload_polityIV` downloads the 2019 update of the Polity IV dataset (annual time series, to
 #' 2018) and processes it using [country_year_coder]. The original data is available at
-#' [http://www.systemicpeace.org/inscrdata.html](http://www.systemicpeace.org/inscrdata.html).
+#' <`r find_url("polityIV", "documentation")`>.
 #' Polity is now in version 5, which incorporates substantial changes; this
 #' redownloads the archived version of [polityIV] data. Use
 #' [download_polity_annual] to download version 5 of Polity.
 #'
-#' @param url The URL of the dataset. Defaults to
-#'   http://www.systemicpeace.org/inscr/p4v2018.xls
-#' @inheritParams redownload_blm
+#' @rdname redownload_blm
 #'
-#' @return The annual time series version of the polity IV dataset, as a
-#'   [tibble], with the additional columns produced by [country_year_coder].
-#'   Consult the Polity IV codebook for further description.
-#'
-#' @inheritSection polityIV Variables
-#'
-#' @template standard-variables
-#'
-#' @source `r roxygen_cite("polity2019")` Available at
-#'   [http://www.systemicpeace.org/inscr/p4manualv2018.pdf](http://www.systemicpeace.org/inscr/p4manualv2018.pdf)
-#'
+#' @source `r roxygen_cite("polity2019")` Data and codebook available at <`r find_url("polityIV", "documentation")`>.
 #'
 #' @export
 #' @import dplyr
@@ -1488,7 +1547,7 @@ redownload_polityIV <- function(url,
   ccode <- country <- year <- NULL
 
   if(missing(url)) {
-    url <- "http://www.systemicpeace.org/inscr/p4v2018.xls"
+    url <- find_url("polityIV")
   }
 
 
@@ -1512,13 +1571,13 @@ redownload_polityIV <- function(url,
 
 
   polityIV <- country_year_coder(data,
-                                      country_col = country,
-                                      date_col = year,
-                                      code_col = ccode,
-                                      code_type = "polity_ccode",
-                                      match_type = "country",
-                                      verbose = verbose,
-                                      ...)
+                                 country_col = country,
+                                 date_col = year,
+                                 code_col = ccode,
+                                 code_type = "polity_ccode",
+                                 match_type = "country",
+                                 verbose = verbose,
+                                 ...)
 
   if(verbose) {
     message(sprintf("Resulting dataset after processing has %d rows.",
@@ -1537,8 +1596,8 @@ redownload_polityIV <- function(url,
 }
 
 #' @rdname redownload_blm
-#' @source `r roxygen_cite("bti")` Available at
-#'   \url{https://bti-project.org/en/index/political-transformation}
+#' @source `r roxygen_cite("bti")` Available at <`r find_url("bti", "documentation")`>.
+#'
 #' @export
 #' @examples
 #' \dontrun{
@@ -1550,41 +1609,74 @@ redownload_bti <- function(url,
                            return_raw = FALSE,
                            ...) {
   country <- year <- NULL
-  bti_region <- NULL
+  bti_region <- pol_sys <- NULL
 
   if(missing(url)) {
-    url <-  "https://bti-project.org/fileadmin/api/content/en/downloads/data/BTI_2006-2022_Scores.xlsx"
+    url <- find_url("bti")
   }
 
   tmpfile <- tempfile(fileext = "xlsx")
-  utils::download.file(url, tmpfile, mode = "wb")
-
+  utils::download.file(url, tmpfile, mode = "wb", quiet = !verbose)
 
   bti_data <- tibble()
-  year <- seq(from = 2020, to = 2004, by = -2)
+  year <- seq(from = 2022, to = 2004, by = -2)
 
-  for(i in 1:9) {
+  for(i in 1:length(year)) {
     current_sheet <- read_data(tmpfile,
                                verbose = verbose,
                                name = "BTI",
                                file_extension = "xlsx",
                                sheet = i)
 
-    current_sheet <- current_sheet %>%
-      select(1:80) %>%
-      mutate(across(c(2:80), ~suppressWarnings(as.numeric(.))),
-             year = year[i])
+    Q17.3 <- which(stringr::str_detect(names(current_sheet),"Q.?17.3"))
+    if(length(Q17.3) == 0) {
+      stop("No Q17.3 column found in the BTI data. This is unexpected.")
+    }
+
+    democracy_autocracy <- which(stringr::str_detect(names(current_sheet),"Democracy/Autocracy"))
+    if(length(democracy_autocracy) == 0) {
+      stop("No Democracy/Autocracy column found in the BTI data. This is unexpected.")
+    }
+
+    cat_dem_stat_num <- which(stringr::str_detect(names(current_sheet),"SI \\| Democracy Status")) |>
+      max()
+    cat_dem_stat <- cat_dem_stat_num + 1
+    cat_dem_stat_label <- cat_dem_stat_num + 2
+
+    current_sheet <- current_sheet |>
+      select(c(1:eval(Q17.3)), all_of(c(democracy_autocracy, cat_dem_stat, cat_dem_stat_label))) |>
+      mutate(year = year[i])
 
     names(current_sheet)[1:2] <- c("country", "bti_region")
-    names(current_sheet) <- str_replace_all(names(current_sheet), "[ |]", "_") %>%
+    names(current_sheet)[(Q17.3+1):(Q17.3+3)] <- c("pol_sys", "cat_dem_stat", "cat_dem_stat_label")
+    names(current_sheet) <- str_replace_all(names(current_sheet), "[ |]", "_") |>
       str_replace_all("___","_")
     names(current_sheet) <- str_replace_all(names(current_sheet), "\\.\\.\\.[0-9]+$", "")
+
+    current_sheet <- current_sheet |>
+      mutate(pol_sys = ifelse(pol_sys == "Aut.", 0, 1))
+
+    current_sheet <- suppressWarnings(current_sheet |>
+      mutate(across(!any_of(c("country", "bti_region", "cat_dem_stat_label")), as.numeric)))
+
+    if("Q16.5_Public_consultation" %in% names(current_sheet)) {
+      current_sheet <- current_sheet |>
+        rename_with(~str_replace(., "Q16.5_Public_consultation", "Q16.4_Public_consultation"))
+    }
+
+    if("Q16.6_Reconciliation" %in% names(current_sheet)) {
+      current_sheet <- current_sheet |>
+        rename_with(~str_replace(., "Q16.6_Reconciliation", "Q16.5_Reconciliation"))
+    }
 
     bti_data <- bind_rows(bti_data,
                           current_sheet)
 
   }
   unlink(tmpfile)
+
+  bti_data <- bti_data |>
+    mutate(report_year = year + 2)
 
   if(return_raw) {
     if(verbose) {
@@ -1599,8 +1691,8 @@ redownload_bti <- function(url,
     message("Processing the BTI data - adding state system info, regions...")
   }
 
-  bti_data <- bti_data %>%
-    relocate(year, .after = country) %>%
+  bti_data <- bti_data |>
+    relocate(year, .after = country) |>
     mutate(bti_region = as.character(bti_region),
            bti_region = case_when(bti_region == "1" ~ "East-Central and Southeast Europe",
                                   bti_region == "2" ~ "Latin America and the Caribbean",
@@ -1629,13 +1721,12 @@ redownload_bti <- function(url,
     }
   }
 
-  standardize_columns(bti, country, verbose = verbose)
+  standardize_columns(bti, "country", verbose = verbose)
 }
 
 #' @rdname redownload_blm
 #'
-#' @source `r roxygen_cite("pacl_update")` Available at
-#'   \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}
+#' @source `r roxygen_cite("pacl_update")` Available at <`r find_url("pacl_update", "documentation")`>.
 #'
 #' @export
 #' @examples
@@ -1649,9 +1740,8 @@ redownload_pacl_update <- function(url,
   ctryname <- year <- cowcode <- country_isocode <- country <- NULL
 
   if(missing(url)) {
-    url <- "http://www.christianbjoernskov.com/wp-content/uploads/2020/09/Bj%C3%B8rnskov-Rode-integrated-dataset-v3.2.xlsx"
+    url <- find_url("pacl_update")
   }
-
 
   data <- read_data(url,
                     verbose = verbose,
@@ -1671,7 +1761,7 @@ redownload_pacl_update <- function(url,
     message("Processing the Bjornskov and Rode PACL update data - adding state system info...")
   }
 
-  pacl_update <- data %>%
+  pacl_update <- data |>
     country_year_coder(country,
                        year,
                        match_type = "country",
@@ -1686,7 +1776,7 @@ redownload_pacl_update <- function(url,
     }
   }
 
-  pacl_update <- pacl_update %>%
+  pacl_update <- pacl_update |>
     select(-starts_with("..."))
 
   names(pacl_update) <- str_remove_all(names(pacl_update), "\\(.+\\)")
@@ -1702,8 +1792,7 @@ redownload_pacl_update <- function(url,
 #' @rdname redownload_blm
 #' @export
 #'
-#' @source `r roxygen_cite("REIGN")` Available at
-#'   \url{http://oefresearch.org/datasets/reign}
+#' @source `r roxygen_cite("REIGN")` Data available at <`r find_url("REIGN", "documentation")`>.
 #'
 #' @examples
 #' \dontrun{
@@ -1713,15 +1802,16 @@ redownload_reign <- function(url,
                            return_raw = FALSE,
                            ...) {
   if(missing(url)) {
-    url <- "https://github.com/OEFDataScience/REIGN.github.io/blob/gh-pages/data_sets/regime_list.csv?raw=true"
-
+    url <- find_url("REIGN")
   }
 
   cowcode <- gwf_country <- gwf_casename <- gwf_startdate <- gwf_enddate <- gwf_regimetype <- NULL
   Start <- End <- year <- NULL
 
   data <- read_data(url,
-                    verbose = verbose, file_extension = "csv")
+                    verbose = verbose,
+                    file_extension = "csv",
+                    show_col_types = verbose)
 
   if(return_raw) {
     if(verbose) {
@@ -1730,18 +1820,18 @@ redownload_reign <- function(url,
     return(data)
   }
 
-  reign <- data %>%
+  reign <- data |>
     mutate(Start = lubridate::mdy(gwf_startdate),
            End = lubridate::mdy(gwf_enddate),
            cow = as.double(cowcode),
            gwf_country = case_when(gwf_country == "Cananda" ~ "Canada",
                                    gwf_country == "UKG" ~ "United Kingdom",
-                                   TRUE ~ gwf_country)) %>%
-    group_by_all() %>%
-    mutate(year = list(lubridate::year(Start):lubridate::year(End))) %>%
-    tidyr::unnest(cols = c(year)) %>%
-    ungroup() %>%
-    # filter(year < lubridate::year(lubridate::now())) %>% # If excluding the 2017 countries
+                                   TRUE ~ gwf_country)) |>
+    group_by_all() |>
+    mutate(year = list(lubridate::year(Start):lubridate::year(End))) |>
+    tidyr::unnest(cols = c(year)) |>
+    ungroup() |>
+    # filter(year < lubridate::year(lubridate::now())) |> # If excluding the 2017 countries
     country_year_coder(gwf_country,
                        year,
                        cowcode,

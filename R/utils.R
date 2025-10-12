@@ -42,22 +42,22 @@ create_panel <- function(system = c("cow", "GW", "polity"),
 
   country_name <- parse_expr(paste(system, "country_name", sep = "_"))
 
-  panel <-  data %>%
-    filter(!is.na(UQ(code)), UQ(membership)) %>%
+  panel <-  data |>
+    filter(!is.na(UQ(code)), UQ(membership)) |>
     select(!!code, !!country_name,
            !!startdate,
-           !!enddate) %>%
-    distinct() %>%
+           !!enddate) |>
+    distinct() |>
     group_by(!!code, !!country_name,
-             !!startdate, !!enddate) %>%
+             !!startdate, !!enddate) |>
     mutate(year = list(lubridate::year(UQ(startdate)):ifelse(is.na(lubridate::year(UQ(enddate))),
                                                              max_year,
-                                                             lubridate::year(UQ(enddate))))) %>%
-    tidyr::unnest(cols = c(year)) %>%
-    ungroup() %>%
+                                                             lubridate::year(UQ(enddate))))) |>
+    tidyr::unnest(cols = c(year)) |>
+    ungroup() |>
     mutate(year = as.numeric(year))
 
-  panel %>%
+  panel |>
     filter(year <= max_year)
 
 }
@@ -68,10 +68,10 @@ download_and_read_xls <- function(url, fileext,
   utils::download.file(url, tmpfile, mode = "wb", quiet = !verbose)
 
   if("na" %in% names(rlang::dots_list(...))) {
-    data  <- readxl::read_excel(tmpfile, .name_repair = "unique_quiet", ...) %>%
+    data  <- readxl::read_excel(tmpfile, .name_repair = "unique_quiet", progress = verbose, ...) |>
       distinct()
   } else {
-    data  <- readxl::read_excel(tmpfile, na = c("-", ""), .name_repair = "unique_quiet", ...) %>%
+    data  <- readxl::read_excel(tmpfile, na = c("-", ""), .name_repair = "unique_quiet", progress = verbose, ...) |>
       distinct()
   }
 
@@ -98,9 +98,9 @@ download_and_read_xls <- function(url, fileext,
 #'
 #' # This is how I typically use it
 #'
-#' polityIV %>%
-#' group_by(polityIV_country, polityIV_ccode) %>%
-#' mutate(groups = count_sequence_breaks(year)) %>%
+#' polityIV |>
+#' group_by(polityIV_country, polityIV_ccode) |>
+#' mutate(groups = count_sequence_breaks(year)) |>
 #' filter(any(groups > 1))
 #'
 count_sequence_breaks <- function(seq, seq_step = 1) {
@@ -159,14 +159,14 @@ read_data <- function(path,
 
     extracted_file_extension <- guess_file_extension(extracted_filename)
 
-    data <- read_by_file_extension(extracted_filename, extracted_file_extension, ...)
+    data <- read_by_file_extension(extracted_filename, extracted_file_extension, verbose = verbose, ...)
 
     unlink(tmpfile)
     unlink(tmpdir)
 
 
   } else {
-    data <- read_by_file_extension(path, file_extension, ...)
+    data <- read_by_file_extension(path, file_extension, verbose = verbose, ...)
   }
 
   if(verbose) {
@@ -181,7 +181,7 @@ read_data <- function(path,
 }
 
 guess_file_extension <- function(filename) {
-  file_extension <- stringr::str_extract(filename, "(\\.[a-z]{3,4})?\\.[a-z]{2,4}$") %>%
+  file_extension <- stringr::str_extract(filename, "(\\.[a-z]{3,4})?\\.[a-z]{2,4}$") |>
     stringr::str_replace_all("^\\.", "")
 
   if(!file_extension %in% c("zip", "dta", "xls",
@@ -193,13 +193,13 @@ guess_file_extension <- function(filename) {
   file_extension
 }
 
-read_by_file_extension <- function(filename, file_extension, ...) {
+read_by_file_extension <- function(filename, file_extension, verbose, ...) {
   if(file_extension == "sav") {
     data <- haven::read_sav(filename, .name_repair = "unique_quiet", ...)
   }
 
   if(file_extension %in% c("xls", "xlsx")) {
-    data <- readxl::read_excel(filename, .name_repair = "unique_quiet", ...)
+    data <- readxl::read_excel(filename, .name_repair = "unique_quiet", progress = verbose, ...)
   }
 
   if(file_extension == "dta") {
@@ -207,11 +207,11 @@ read_by_file_extension <- function(filename, file_extension, ...) {
   }
 
   if(file_extension == "csv") {
-    data <- readr::read_csv(filename, name_repair = "unique_quiet", ...)
+    data <- readr::read_csv(filename, name_repair = "unique_quiet", progress = verbose, ...)
   }
 
   if(file_extension %in% c("tsv", "txt")) {
-    data <- readr::read_tsv(filename, .name_repair = "unique_quiet", ...)
+    data <- readr::read_tsv(filename, .name_repair = "unique_quiet", progress = verbose, ...)
   }
 
   data
@@ -237,8 +237,8 @@ standardize_columns <- function(data,
     message("Ensuring year column is numeric...")
   }
 
-  data <- data %>%
-    mutate(year = as.numeric(year)) %>%
+  data <- data |>
+    mutate(year = as.numeric(year)) |>
     rename(!!new_country_col := !!country_col)
 
   if(!missing(code_col)) {
@@ -249,7 +249,7 @@ standardize_columns <- function(data,
       message(sprintf("Changing the name of the original code column from %s to %s...",
                       old_code_col, new_code_col))
     }
-    data <- data %>%
+    data <- data |>
       rename(!!new_code_col := !!code_col)
   }
 
@@ -289,19 +289,45 @@ cite_dataset <- function(dataset_name, to_bibtex = FALSE) {
 
 roxygen_cite <- function(dataset_name) {
   RefManageR::BibOptions(sorting = "nyt")
-  stringr::str_remove(utils::capture.output(print(cite_dataset(dataset_name))),
-                      "^\\[.+?\\] ") %>%
+  citation <- stringr::str_remove(utils::capture.output(print(cite_dataset(dataset_name))),
+                      "^\\[.+?\\] ") |>
     paste(collapse = " ")
+  citation <- wrap_doi_md(citation)
+  citation
+}
+
+wrap_doi_md <- function(citation) {
+  citation <- str_replace_all(
+    citation,
+    regex("DOI: *(10\\.[0-9]{4,9}/[-._;()/:a-zA-Z0-9]+)(?=\\.$)", ignore_case = TRUE),
+    "DOI: [\\1](https://dx.doi.org/\\1)"
+  )
+  citation
 }
 
 roxygen_print_bibliography <- function(biblio_keys = "*") {
   RefManageR::BibOptions(sorting = "nyt")
   RefManageR::NoCite(democracyData::bibliography, biblio_keys)
   stringr::str_replace(utils::capture.output(RefManageR::PrintBibliography(democracyData::bibliography)),
-                       "^\\[.+?\\] ", "\n\n") %>%
+                       "^\\[.+?\\] ", "\n\n") |>
     paste(collapse = "")
 }
 
+find_url <- function(dataset, type = c("download", "documentation")) {
+  dataset_name <- NULL
+
+  dataset <- match.arg(dataset, url_list$dataset_name)
+  type <- match.arg(type)
+  if(type == "download") {
+    url_list |>
+      dplyr::filter(dataset_name == dataset) |>
+      dplyr::pull("download")
+  } else {
+    url_list |>
+      dplyr::filter(dataset_name == dataset) |>
+      dplyr::pull("documentation")
+  }
+}
 
 #' @import knitr
 knit_print.tbl = function(x, ...) {
