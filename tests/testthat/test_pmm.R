@@ -1,7 +1,5 @@
 library(dplyr)
 
-context("PMM")
-
 test_that("There is always a pmm_country variable in the pmm datasets", {
   expect_true("pmm_country" %in% names(arat_pmm))
   expect_true("pmm_country" %in% names(blm_pmm))
