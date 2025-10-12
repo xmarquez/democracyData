@@ -1,0 +1,3879 @@
+Country,Year,Score
+Afghanistan,1948,54
+Afghanistan,1949,55
+Afghanistan,1950,54
+Afghanistan,1951,55
+Afghanistan,1952,56
+Afghanistan,1953,55
+Afghanistan,1954,56
+Afghanistan,1955,54
+Afghanistan,1956,55
+Afghanistan,1957,52
+Afghanistan,1958,54
+Afghanistan,1959,54
+Afghanistan,1960,54
+Afghanistan,1961,55
+Afghanistan,1962,56
+Afghanistan,1963,56
+Afghanistan,1964,45
+Afghanistan,1965,64
+Afghanistan,1966,64
+Afghanistan,1967,65
+Afghanistan,1968,65
+Afghanistan,1969,66
+Afghanistan,1970,66
+Afghanistan,1971,66
+Afghanistan,1972,67
+Afghanistan,1973,50
+Afghanistan,1974,51
+Afghanistan,1975,51
+Afghanistan,1976,51
+Afghanistan,1977,51
+Afghanistan,1978,47
+Afghanistan,1979,46
+Afghanistan,1980,46
+Afghanistan,1981,47
+Afghanistan,1982,46
+Albania,1948,57
+Albania,1949,59
+Albania,1950,60
+Albania,1951,57
+Albania,1952,59
+Albania,1953,58
+Albania,1954,60
+Albania,1955,58
+Albania,1956,60
+Albania,1957,57
+Albania,1958,59
+Albania,1959,58
+Albania,1960,59
+Albania,1961,58
+Albania,1962,60
+Albania,1963,60
+Albania,1964,60
+Albania,1965,60
+Albania,1966,61
+Albania,1967,61
+Albania,1968,62
+Albania,1969,63
+Albania,1970,62
+Albania,1971,63
+Albania,1972,64
+Albania,1973,64
+Albania,1974,64
+Albania,1975,64
+Albania,1976,64
+Albania,1977,64
+Albania,1978,63
+Albania,1979,62
+Albania,1980,62
+Albania,1981,62
+Albania,1982,61
+Algeria,1967,46
+Algeria,1968,46
+Algeria,1969,49
+Algeria,1970,47
+Algeria,1971,49
+Algeria,1972,50
+Algeria,1973,50
+Algeria,1974,51
+Algeria,1975,51
+Algeria,1976,53
+Algeria,1977,67
+Algeria,1978,67
+Algeria,1979,66
+Algeria,1980,65
+Algeria,1981,67
+Algeria,1982,65
+Angola,1975,51
+Angola,1976,54
+Angola,1977,50
+Angola,1978,48
+Angola,1979,48
+Angola,1980,62
+Angola,1981,62
+Angola,1982,61
+Argentina,1948,81
+Argentina,1949,72
+Argentina,1950,65
+Argentina,1951,65
+Argentina,1952,69
+Argentina,1953,70
+Argentina,1954,69
+Argentina,1955,32
+Argentina,1956,36
+Argentina,1957,38
+Argentina,1958,70
+Argentina,1959,73
+Argentina,1960,77
+Argentina,1961,78
+Argentina,1962,43
+Argentina,1963,78
+Argentina,1964,76
+Argentina,1965,80
+Argentina,1966,43
+Argentina,1967,45
+Argentina,1968,45
+Argentina,1969,48
+Argentina,1970,48
+Argentina,1971,52
+Argentina,1972,51
+Argentina,1973,87
+Argentina,1974,89
+Argentina,1975,87
+Argentina,1976,52
+Argentina,1977,52
+Argentina,1978,52
+Argentina,1979,48
+Argentina,1980,48
+Argentina,1981,46
+Argentina,1982,47
+Australia,1948,98
+Australia,1949,97
+Australia,1950,97
+Australia,1951,99
+Australia,1952,98
+Australia,1953,97
+Australia,1954,98
+Australia,1955,97
+Australia,1956,98
+Australia,1957,97
+Australia,1958,98
+Australia,1959,97
+Australia,1960,98
+Australia,1961,98
+Australia,1962,98
+Australia,1963,99
+Australia,1964,100
+Australia,1965,99
+Australia,1966,101
+Australia,1967,100
+Australia,1968,99
+Australia,1969,102
+Australia,1970,103
+Australia,1971,101
+Australia,1972,101
+Australia,1973,102
+Australia,1974,103
+Australia,1975,103
+Australia,1976,106
+Australia,1977,102
+Australia,1978,101
+Australia,1979,100
+Australia,1980,100
+Australia,1981,100
+Australia,1982,100
+Austria,1960,99
+Austria,1961,100
+Austria,1962,99
+Austria,1963,100
+Austria,1964,100
+Austria,1965,100
+Austria,1966,99
+Austria,1967,100
+Austria,1968,100
+Austria,1969,101
+Austria,1970,101
+Austria,1971,102
+Austria,1972,102
+Austria,1973,103
+Austria,1974,103
+Austria,1975,102
+Austria,1976,102
+Austria,1977,101
+Austria,1978,102
+Austria,1979,100
+Austria,1980,100
+Austria,1981,99
+Austria,1982,99
+Bahamas,1973,97
+Bahamas,1974,97
+Bahamas,1975,96
+Bahamas,1976,96
+Bahamas,1977,96
+Bahamas,1978,95
+Bahamas,1979,94
+Bahamas,1980,94
+Bahamas,1981,94
+Bahamas,1982,94
+Bahrain,1972,60
+Bahrain,1973,61
+Bahrain,1974,61
+Bahrain,1975,51
+Bahrain,1976,51
+Bahrain,1977,51
+Bahrain,1978,50
+Bahrain,1979,48
+Bahrain,1980,48
+Bahrain,1981,47
+Bahrain,1982,46
+Bangladesh,1972,82
+Bangladesh,1973,87
+Bangladesh,1974,67
+Bangladesh,1975,50
+Bangladesh,1976,50
+Bangladesh,1977,50
+Bangladesh,1978,53
+Bangladesh,1979,75
+Bangladesh,1980,75
+Bangladesh,1981,75
+Bangladesh,1982,45
+Barbados,1967,101
+Barbados,1968,101
+Barbados,1969,102
+Barbados,1970,101
+Barbados,1971,96
+Barbados,1972,97
+Barbados,1973,97
+Barbados,1974,97
+Barbados,1975,96
+Barbados,1976,96
+Barbados,1977,96
+Barbados,1978,95
+Barbados,1979,94
+Barbados,1980,94
+Barbados,1981,100
+Barbados,1982,100
+Belgium,1948,96
+Belgium,1949,98
+Belgium,1950,99
+Belgium,1951,98
+Belgium,1952,98
+Belgium,1953,99
+Belgium,1954,98
+Belgium,1955,101
+Belgium,1956,97
+Belgium,1957,97
+Belgium,1958,98
+Belgium,1959,97
+Belgium,1960,98
+Belgium,1961,99
+Belgium,1962,98
+Belgium,1963,100
+Belgium,1964,100
+Belgium,1965,99
+Belgium,1966,99
+Belgium,1967,99
+Belgium,1968,100
+Belgium,1969,101
+Belgium,1970,100
+Belgium,1971,101
+Belgium,1972,104
+Belgium,1973,102
+Belgium,1974,102
+Belgium,1975,102
+Belgium,1976,102
+Belgium,1977,101
+Belgium,1978,100
+Belgium,1979,101
+Belgium,1980,99
+Belgium,1981,100
+Belgium,1982,100
+Benin,1960,69
+Benin,1961,68
+Benin,1962,69
+Benin,1963,44
+Benin,1964,64
+Benin,1965,44
+Benin,1966,46
+Benin,1967,47
+Benin,1968,46
+Benin,1969,49
+Benin,1970,48
+Benin,1971,48
+Benin,1972,49
+Benin,1973,50
+Benin,1974,51
+Benin,1975,51
+Benin,1976,51
+Benin,1977,51
+Benin,1978,50
+Benin,1979,62
+Benin,1980,66
+Benin,1981,65
+Benin,1982,65
+Bhutan,1972,57
+Bhutan,1973,57
+Bhutan,1974,58
+Bhutan,1975,58
+Bhutan,1976,58
+Bhutan,1977,58
+Bhutan,1978,57
+Bhutan,1979,56
+Bhutan,1980,56
+Bolivia,1948,76
+Bolivia,1949,76
+Bolivia,1950,75
+Bolivia,1951,41
+Bolivia,1952,43
+Bolivia,1953,41
+Bolivia,1954,44
+Bolivia,1955,42
+Bolivia,1956,77
+Bolivia,1957,77
+Bolivia,1958,77
+Bolivia,1959,77
+Bolivia,1960,79
+Bolivia,1961,78
+Bolivia,1962,78
+Bolivia,1963,85
+Bolivia,1964,44
+Bolivia,1965,42
+Bolivia,1966,74
+Bolivia,1967,74
+Bolivia,1968,75
+Bolivia,1969,49
+Bolivia,1970,49
+Bolivia,1971,49
+Bolivia,1972,50
+Bolivia,1973,52
+Bolivia,1974,50
+Bolivia,1975,53
+Bolivia,1976,53
+Bolivia,1977,51
+Bolivia,1978,47
+Bolivia,1979,97
+Bolivia,1980,46
+Bolivia,1981,48
+Bolivia,1982,98
+Botswana,1967,90
+Botswana,1968,90
+Botswana,1969,91
+Botswana,1970,97
+Botswana,1971,98
+Botswana,1972,98
+Botswana,1973,99
+Botswana,1974,93
+Botswana,1975,92
+Botswana,1976,92
+Botswana,1977,91
+Botswana,1978,91
+Botswana,1979,90
+Botswana,1980,90
+Botswana,1981,90
+Botswana,1982,89
+Brazil,1948,84
+Brazil,1949,84
+Brazil,1950,83
+Brazil,1951,83
+Brazil,1952,86
+Brazil,1953,85
+Brazil,1954,88
+Brazil,1955,83
+Brazil,1956,89
+Brazil,1957,90
+Brazil,1958,90
+Brazil,1959,91
+Brazil,1960,92
+Brazil,1961,92
+Brazil,1962,94
+Brazil,1963,86
+Brazil,1964,39
+Brazil,1965,44
+Brazil,1966,73
+Brazil,1967,76
+Brazil,1968,46
+Brazil,1969,51
+Brazil,1970,70
+Brazil,1971,72
+Brazil,1972,73
+Brazil,1973,74
+Brazil,1974,81
+Brazil,1975,80
+Brazil,1976,80
+Brazil,1977,80
+Brazil,1978,80
+Brazil,1979,79
+Brazil,1980,78
+Brazil,1981,65
+Bulgaria,1948,57
+Bulgaria,1949,57
+Bulgaria,1950,57
+Bulgaria,1951,57
+Bulgaria,1952,59
+Bulgaria,1953,58
+Bulgaria,1954,60
+Bulgaria,1955,58
+Bulgaria,1956,55
+Bulgaria,1957,57
+Bulgaria,1958,58
+Bulgaria,1959,58
+Bulgaria,1960,59
+Bulgaria,1961,59
+Bulgaria,1962,64
+Bulgaria,1963,64
+Bulgaria,1964,65
+Bulgaria,1965,64
+Bulgaria,1966,64
+Bulgaria,1967,65
+Bulgaria,1968,65
+Bulgaria,1969,66
+Bulgaria,1970,66
+Bulgaria,1971,67
+Bulgaria,1972,67
+Bulgaria,1973,68
+Bulgaria,1974,68
+Bulgaria,1975,68
+Bulgaria,1976,68
+Bulgaria,1977,67
+Bulgaria,1978,67
+Bulgaria,1979,66
+Bulgaria,1980,66
+Bulgaria,1981,65
+Bulgaria,1982,65
+Burma,1953,92
+Burma,1954,93
+Burma,1955,93
+Burma,1956,98
+Burma,1957,98
+Burma,1958,67
+Burma,1959,66
+Burma,1960,82
+Burma,1961,87
+Burma,1962,43
+Burma,1963,43
+Burma,1964,43
+Burma,1965,43
+Burma,1966,45
+Burma,1967,46
+Burma,1968,46
+Burma,1969,49
+Burma,1970,48
+Burma,1971,49
+Burma,1972,50
+Burma,1973,50
+Burma,1974,69
+Burma,1975,70
+Burma,1976,66
+Burma,1977,67
+Burma,1978,66
+Burma,1979,66
+Burma,1980,66
+Burma,1981,65
+Burma,1982,65
+Burundi,1967,47
+Burundi,1968,47
+Burundi,1969,49
+Burundi,1970,48
+Burundi,1971,49
+Burundi,1972,52
+Burundi,1973,48
+Burundi,1974,51
+Burundi,1975,51
+Burundi,1976,51
+Burundi,1977,51
+Burundi,1978,50
+Burundi,1979,48
+Burundi,1980,48
+Burundi,1981,47
+Burundi,1982,64
+Cameroon,1960,91
+Cameroon,1961,91
+Cameroon,1962,90
+Cameroon,1963,68
+Cameroon,1964,68
+Cameroon,1965,68
+Cameroon,1966,68
+Cameroon,1967,68
+Cameroon,1968,68
+Cameroon,1969,69
+Cameroon,1970,69
+Cameroon,1971,70
+Cameroon,1972,70
+Cameroon,1973,67
+Cameroon,1974,67
+Cameroon,1975,67
+Cameroon,1976,68
+Cameroon,1977,67
+Cameroon,1978,66
+Cameroon,1979,65
+Cameroon,1980,65
+Cameroon,1981,65
+Cameroon,1982,64
+Canada,1948,97
+Canada,1949,92
+Canada,1950,92
+Canada,1951,91
+Canada,1952,92
+Canada,1953,98
+Canada,1954,98
+Canada,1955,97
+Canada,1956,97
+Canada,1957,97
+Canada,1958,92
+Canada,1959,91
+Canada,1960,92
+Canada,1961,92
+Canada,1962,98
+Canada,1963,99
+Canada,1964,99
+Canada,1965,98
+Canada,1966,99
+Canada,1967,100
+Canada,1968,100
+Canada,1969,100
+Canada,1970,95
+Canada,1971,101
+Canada,1972,102
+Canada,1973,103
+Canada,1974,103
+Canada,1975,105
+Canada,1976,102
+Canada,1977,100
+Canada,1978,101
+Canada,1979,100
+Canada,1980,100
+Canada,1981,100
+Canada,1982,99
+Cape Verde,1975,67
+Cape Verde,1976,68
+Cape Verde,1977,67
+Cape Verde,1978,66
+Cape Verde,1979,65
+Cape Verde,1980,65
+Cape Verde,1981,65
+Cape Verde,1982,65
+Central African Republic,1960,72
+Central African Republic,1961,73
+Central African Republic,1962,67
+Central African Republic,1963,68
+Central African Republic,1964,68
+Central African Republic,1965,68
+Central African Republic,1966,45
+Central African Republic,1967,47
+Central African Republic,1968,47
+Central African Republic,1969,49
+Central African Republic,1970,48
+Central African Republic,1971,49
+Central African Republic,1972,50
+Central African Republic,1973,50
+Central African Republic,1974,51
+Central African Republic,1975,51
+Central African Republic,1976,51
+Central African Republic,1977,50
+Central African Republic,1978,50
+Central African Republic,1979,47
+Central African Republic,1980,48
+Central African Republic,1981,47
+Central African Republic,1982,46
+Chad,1960,74
+Chad,1961,68
+Chad,1962,63
+Chad,1963,64
+Chad,1964,64
+Chad,1965,64
+Chad,1966,64
+Chad,1967,65
+Chad,1968,65
+Chad,1969,68
+Chad,1970,66
+Chad,1971,66
+Chad,1972,67
+Chad,1973,67
+Chad,1974,67
+Chad,1975,51
+Chad,1976,51
+Chad,1977,51
+Chad,1978,49
+Chad,1979,49
+Chad,1980,48
+Chad,1981,47
+Chad,1982,46
+Chile,1948,81
+Chile,1949,88
+Chile,1950,89
+Chile,1951,88
+Chile,1952,90
+Chile,1953,88
+Chile,1954,87
+Chile,1955,89
+Chile,1956,90
+Chile,1957,88
+Chile,1958,89
+Chile,1959,94
+Chile,1960,92
+Chile,1961,96
+Chile,1962,95
+Chile,1963,97
+Chile,1964,97
+Chile,1965,97
+Chile,1966,97
+Chile,1967,97
+Chile,1968,97
+Chile,1969,99
+Chile,1970,100
+Chile,1971,102
+Chile,1972,104
+Chile,1973,54
+Chile,1974,51
+Chile,1975,50
+Chile,1976,51
+Chile,1977,50
+Chile,1978,45
+Chile,1979,50
+Chile,1980,45
+Chile,1981,46
+Chile,1982,48
+China,1948,64
+China,1949,41
+China,1950,41
+China,1951,41
+China,1952,40
+China,1953,43
+China,1954,61
+China,1955,59
+China,1956,62
+China,1957,61
+China,1958,61
+China,1959,59
+China,1960,59
+China,1961,59
+China,1962,60
+China,1963,60
+China,1964,60
+China,1965,60
+China,1966,48
+China,1967,51
+China,1968,59
+China,1969,61
+China,1970,62
+China,1971,63
+China,1972,64
+China,1973,64
+China,1974,64
+China,1975,66
+China,1976,68
+China,1977,64
+China,1978,63
+China,1979,68
+China,1980,63
+China,1981,61
+China,1982,60
+Colombia,1948,82
+Colombia,1949,76
+Colombia,1950,74
+Colombia,1951,72
+Colombia,1952,70
+Colombia,1953,66
+Colombia,1954,51
+Colombia,1955,52
+Colombia,1956,46
+Colombia,1957,46
+Colombia,1958,82
+Colombia,1959,81
+Colombia,1960,83
+Colombia,1961,83
+Colombia,1962,84
+Colombia,1963,83
+Colombia,1964,85
+Colombia,1965,84
+Colombia,1966,84
+Colombia,1967,85
+Colombia,1968,85
+Colombia,1969,86
+Colombia,1970,85
+Colombia,1971,89
+Colombia,1972,87
+Colombia,1973,87
+Colombia,1974,93
+Colombia,1975,93
+Colombia,1976,97
+Colombia,1977,95
+Colombia,1978,92
+Colombia,1979,92
+Colombia,1980,90
+Colombia,1981,90
+Colombia,1982,89
+Comoros,1975,51
+Comoros,1976,51
+Comoros,1977,56
+Comoros,1978,66
+Comoros,1979,66
+Comoros,1980,66
+Comoros,1981,65
+Comoros,1982,65
+Congo,1960,80
+Congo,1961,81
+Congo,1962,81
+Congo,1963,64
+Congo,1964,65
+Congo,1965,62
+Congo,1966,64
+Congo,1967,65
+Congo,1968,47
+Congo,1969,49
+Congo,1970,48
+Congo,1971,49
+Congo,1972,49
+Congo,1973,64
+Congo,1974,64
+Congo,1975,64
+Congo,1976,65
+Congo,1977,50
+Congo,1978,49
+Congo,1979,62
+Congo,1980,62
+Congo,1981,62
+Congo,1982,61
+Costa Rica,1948,58
+Costa Rica,1949,86
+Costa Rica,1950,86
+Costa Rica,1951,87
+Costa Rica,1952,86
+Costa Rica,1953,91
+Costa Rica,1954,92
+Costa Rica,1955,91
+Costa Rica,1956,92
+Costa Rica,1957,91
+Costa Rica,1958,92
+Costa Rica,1959,91
+Costa Rica,1960,92
+Costa Rica,1961,93
+Costa Rica,1962,93
+Costa Rica,1963,94
+Costa Rica,1964,94
+Costa Rica,1965,94
+Costa Rica,1966,93
+Costa Rica,1967,94
+Costa Rica,1968,94
+Costa Rica,1969,95
+Costa Rica,1970,94
+Costa Rica,1971,96
+Costa Rica,1972,97
+Costa Rica,1973,97
+Costa Rica,1974,97
+Costa Rica,1975,103
+Costa Rica,1976,102
+Costa Rica,1977,102
+Costa Rica,1978,101
+Costa Rica,1979,100
+Costa Rica,1980,100
+Costa Rica,1981,99
+Costa Rica,1982,99
+Cuba,1948,88
+Cuba,1949,90
+Cuba,1950,89
+Cuba,1951,90
+Cuba,1952,40
+Cuba,1953,41
+Cuba,1954,40
+Cuba,1955,73
+Cuba,1956,68
+Cuba,1957,71
+Cuba,1958,62
+Cuba,1959,29
+Cuba,1960,29
+Cuba,1961,36
+Cuba,1962,42
+Cuba,1963,44
+Cuba,1964,42
+Cuba,1965,42
+Cuba,1966,44
+Cuba,1967,46
+Cuba,1968,45
+Cuba,1969,49
+Cuba,1970,48
+Cuba,1971,49
+Cuba,1972,50
+Cuba,1973,50
+Cuba,1974,51
+Cuba,1975,51
+Cuba,1976,68
+Cuba,1977,68
+Cuba,1978,67
+Cuba,1979,66
+Cuba,1980,66
+Cuba,1981,65
+Cuba,1982,64
+Cyprus,1960,89
+Cyprus,1961,91
+Cyprus,1962,90
+Cyprus,1963,83
+Cyprus,1964,79
+Cyprus,1965,80
+Cyprus,1966,79
+Cyprus,1967,80
+Cyprus,1968,80
+Cyprus,1969,81
+Cyprus,1970,79
+Cyprus,1971,82
+Cyprus,1972,83
+Cyprus,1973,84
+Cyprus,1974,84
+Cyprus,1975,84
+Cyprus,1976,87
+Cyprus,1977,85
+Cyprus,1978,85
+Cyprus,1979,84
+Cyprus,1980,84
+Cyprus,1981,84
+Cyprus,1982,83
+Czechoslovakia,1948,48
+Czechoslovakia,1949,48
+Czechoslovakia,1950,49
+Czechoslovakia,1951,54
+Czechoslovakia,1952,55
+Czechoslovakia,1953,57
+Czechoslovakia,1954,58
+Czechoslovakia,1955,57
+Czechoslovakia,1956,54
+Czechoslovakia,1957,56
+Czechoslovakia,1958,57
+Czechoslovakia,1959,57
+Czechoslovakia,1960,58
+Czechoslovakia,1961,58
+Czechoslovakia,1962,59
+Czechoslovakia,1963,59
+Czechoslovakia,1964,60
+Czechoslovakia,1965,60
+Czechoslovakia,1966,60
+Czechoslovakia,1967,60
+Czechoslovakia,1968,56
+Czechoslovakia,1969,56
+Czechoslovakia,1970,55
+Czechoslovakia,1971,61
+Czechoslovakia,1972,62
+Czechoslovakia,1973,64
+Czechoslovakia,1974,64
+Czechoslovakia,1975,68
+Czechoslovakia,1976,67
+Czechoslovakia,1977,61
+Czechoslovakia,1978,63
+Czechoslovakia,1979,63
+Czechoslovakia,1980,65
+Czechoslovakia,1981,65
+Czechoslovakia,1982,64
+Denmark,1948,82
+Denmark,1949,82
+Denmark,1950,82
+Denmark,1951,83
+Denmark,1952,84
+Denmark,1953,97
+Denmark,1954,98
+Denmark,1955,96
+Denmark,1956,97
+Denmark,1957,96
+Denmark,1958,97
+Denmark,1959,96
+Denmark,1960,97
+Denmark,1961,98
+Denmark,1962,98
+Denmark,1963,99
+Denmark,1964,99
+Denmark,1965,100
+Denmark,1966,99
+Denmark,1967,100
+Denmark,1968,99
+Denmark,1969,100
+Denmark,1970,100
+Denmark,1971,101
+Denmark,1972,102
+Denmark,1973,102
+Denmark,1974,103
+Denmark,1975,102
+Denmark,1976,102
+Denmark,1977,101
+Denmark,1978,101
+Denmark,1979,100
+Denmark,1980,100
+Denmark,1981,100
+Denmark,1982,100
+Dominican Republic,1948,59
+Dominican Republic,1949,59
+Dominican Republic,1950,58
+Dominican Republic,1951,59
+Dominican Republic,1952,60
+Dominican Republic,1953,59
+Dominican Republic,1954,60
+Dominican Republic,1955,58
+Dominican Republic,1956,59
+Dominican Republic,1957,57
+Dominican Republic,1958,59
+Dominican Republic,1959,58
+Dominican Republic,1960,57
+Dominican Republic,1961,63
+Dominican Republic,1962,51
+Dominican Republic,1963,40
+Dominican Republic,1964,44
+Dominican Republic,1965,45
+Dominican Republic,1966,85
+Dominican Republic,1967,83
+Dominican Republic,1968,85
+Dominican Republic,1969,86
+Dominican Republic,1970,92
+Dominican Republic,1971,93
+Dominican Republic,1972,93
+Dominican Republic,1973,93
+Dominican Republic,1974,87
+Dominican Republic,1975,87
+Dominican Republic,1976,87
+Dominican Republic,1977,86
+Dominican Republic,1978,92
+Dominican Republic,1979,92
+Dominican Republic,1980,91
+Dominican Republic,1981,92
+Dominican Republic,1982,90
+Ecuador,1948,81
+Ecuador,1949,82
+Ecuador,1950,82
+Ecuador,1951,82
+Ecuador,1952,83
+Ecuador,1953,77
+Ecuador,1954,79
+Ecuador,1955,76
+Ecuador,1956,76
+Ecuador,1957,75
+Ecuador,1958,76
+Ecuador,1959,78
+Ecuador,1960,89
+Ecuador,1961,89
+Ecuador,1962,90
+Ecuador,1963,43
+Ecuador,1964,44
+Ecuador,1965,45
+Ecuador,1966,48
+Ecuador,1967,49
+Ecuador,1968,65
+Ecuador,1969,67
+Ecuador,1970,48
+Ecuador,1971,50
+Ecuador,1972,49
+Ecuador,1973,50
+Ecuador,1974,51
+Ecuador,1975,51
+Ecuador,1976,49
+Ecuador,1977,53
+Ecuador,1978,49
+Ecuador,1979,95
+Ecuador,1980,96
+Ecuador,1981,96
+Ecuador,1982,96
+Egypt,1953,40
+Egypt,1954,44
+Egypt,1955,42
+Egypt,1956,41
+Egypt,1957,66
+Egypt,1958,66
+Egypt,1959,62
+Egypt,1960,63
+Egypt,1961,43
+Egypt,1962,64
+Egypt,1963,64
+Egypt,1964,64
+Egypt,1965,63
+Egypt,1966,61
+Egypt,1967,63
+Egypt,1968,62
+Egypt,1969,65
+Egypt,1970,65
+Egypt,1971,65
+Egypt,1972,66
+Egypt,1973,67
+Egypt,1974,68
+Egypt,1975,67
+Egypt,1976,74
+Egypt,1977,70
+Egypt,1978,68
+Egypt,1979,71
+Egypt,1980,71
+Egypt,1981,66
+Egypt,1982,76
+El Salvador,1948,42
+El Salvador,1949,43
+El Salvador,1950,60
+El Salvador,1951,61
+El Salvador,1952,62
+El Salvador,1953,61
+El Salvador,1954,62
+El Salvador,1955,62
+El Salvador,1956,62
+El Salvador,1957,61
+El Salvador,1958,62
+El Salvador,1959,62
+El Salvador,1960,41
+El Salvador,1961,56
+El Salvador,1962,73
+El Salvador,1963,74
+El Salvador,1964,85
+El Salvador,1965,84
+El Salvador,1966,84
+El Salvador,1967,85
+El Salvador,1968,85
+El Salvador,1969,86
+El Salvador,1970,85
+El Salvador,1971,86
+El Salvador,1972,81
+El Salvador,1973,81
+El Salvador,1974,87
+El Salvador,1975,86
+El Salvador,1976,87
+El Salvador,1977,89
+El Salvador,1978,82
+El Salvador,1979,50
+El Salvador,1980,50
+El Salvador,1981,45
+El Salvador,1982,84
+Equatorial Guinea,1968,75
+Equatorial Guinea,1969,65
+Equatorial Guinea,1970,65
+Equatorial Guinea,1971,51
+Equatorial Guinea,1972,50
+Equatorial Guinea,1973,50
+Equatorial Guinea,1974,51
+Equatorial Guinea,1975,51
+Equatorial Guinea,1976,51
+Equatorial Guinea,1977,51
+Equatorial Guinea,1978,49
+Equatorial Guinea,1979,49
+Equatorial Guinea,1980,48
+Equatorial Guinea,1981,47
+Equatorial Guinea,1982,48
+Ethiopia,1948,48
+Ethiopia,1949,49
+Ethiopia,1950,48
+Ethiopia,1951,49
+Ethiopia,1952,51
+Ethiopia,1953,50
+Ethiopia,1954,51
+Ethiopia,1955,48
+Ethiopia,1956,49
+Ethiopia,1957,57
+Ethiopia,1958,58
+Ethiopia,1959,58
+Ethiopia,1960,58
+Ethiopia,1961,58
+Ethiopia,1962,59
+Ethiopia,1963,60
+Ethiopia,1964,60
+Ethiopia,1965,60
+Ethiopia,1966,60
+Ethiopia,1967,61
+Ethiopia,1968,61
+Ethiopia,1969,63
+Ethiopia,1970,62
+Ethiopia,1971,63
+Ethiopia,1972,63
+Ethiopia,1973,64
+Ethiopia,1974,53
+Ethiopia,1975,52
+Ethiopia,1976,51
+Ethiopia,1977,51
+Ethiopia,1978,50
+Ethiopia,1979,48
+Ethiopia,1980,48
+Ethiopia,1981,47
+Ethiopia,1982,46
+Fiji,1970,100
+Fiji,1971,101
+Fiji,1972,102
+Fiji,1973,102
+Fiji,1974,102
+Fiji,1975,102
+Fiji,1976,102
+Fiji,1977,101
+Fiji,1978,100
+Fiji,1979,99
+Fiji,1980,99
+Fiji,1981,99
+Fiji,1982,99
+Finland,1948,96
+Finland,1949,97
+Finland,1950,98
+Finland,1951,98
+Finland,1952,98
+Finland,1953,98
+Finland,1954,97
+Finland,1955,97
+Finland,1956,97
+Finland,1957,97
+Finland,1958,98
+Finland,1959,97
+Finland,1960,98
+Finland,1961,98
+Finland,1962,98
+Finland,1963,99
+Finland,1964,99
+Finland,1965,99
+Finland,1966,99
+Finland,1967,100
+Finland,1968,100
+Finland,1969,101
+Finland,1970,100
+Finland,1971,101
+Finland,1972,103
+Finland,1973,103
+Finland,1974,103
+Finland,1975,102
+Finland,1976,103
+Finland,1977,102
+Finland,1978,101
+Finland,1979,100
+Finland,1980,100
+Finland,1981,100
+Finland,1982,100
+France,1948,97
+France,1949,98
+France,1950,97
+France,1951,98
+France,1952,96
+France,1953,98
+France,1954,98
+France,1955,99
+France,1956,96
+France,1957,97
+France,1958,98
+France,1959,96
+France,1960,97
+France,1961,96
+France,1962,95
+France,1963,98
+France,1964,97
+France,1965,98
+France,1966,99
+France,1967,101
+France,1968,92
+France,1969,92
+France,1970,95
+France,1971,98
+France,1972,95
+France,1973,103
+France,1974,103
+France,1975,104
+France,1976,104
+France,1977,103
+France,1978,101
+France,1979,99
+France,1980,97
+France,1981,99
+France,1982,99
+Gabon,1960,85
+Gabon,1961,63
+Gabon,1962,63
+Gabon,1963,64
+Gabon,1964,75
+Gabon,1965,64
+Gabon,1966,64
+Gabon,1967,65
+Gabon,1968,65
+Gabon,1969,66
+Gabon,1970,65
+Gabon,1971,66
+Gabon,1972,67
+Gabon,1973,67
+Gabon,1974,67
+Gabon,1975,67
+Gabon,1976,67
+Gabon,1977,67
+Gabon,1978,66
+Gabon,1979,65
+Gabon,1980,71
+Gabon,1981,72
+Gabon,1982,70
+Gambia,1965,95
+Gambia,1966,95
+Gambia,1967,95
+Gambia,1968,95
+Gambia,1969,95
+Gambia,1970,95
+Gambia,1971,96
+Gambia,1972,93
+Gambia,1973,94
+Gambia,1974,94
+Gambia,1975,93
+Gambia,1976,93
+Gambia,1977,92
+Gambia,1978,86
+Gambia,1979,85
+Gambia,1980,85
+Gambia,1981,84
+Gambia,1982,84
+Germany DR,1953,48
+Germany DR,1954,53
+Germany DR,1955,57
+Germany DR,1956,55
+Germany DR,1957,57
+Germany DR,1958,57
+Germany DR,1959,56
+Germany DR,1960,60
+Germany DR,1961,56
+Germany DR,1962,52
+Germany DR,1963,60
+Germany DR,1964,60
+Germany DR,1965,60
+Germany DR,1966,61
+Germany DR,1967,64
+Germany DR,1968,62
+Germany DR,1969,63
+Germany DR,1970,64
+Germany DR,1971,63
+Germany DR,1972,63
+Germany DR,1973,63
+Germany DR,1974,64
+Germany DR,1975,64
+Germany DR,1976,66
+Germany DR,1977,67
+Germany DR,1978,64
+Germany DR,1979,64
+Germany DR,1980,65
+Germany DR,1981,65
+Germany DR,1982,65
+Germany FR,1953,89
+Germany FR,1954,92
+Germany FR,1955,94
+Germany FR,1956,89
+Germany FR,1957,90
+Germany FR,1958,89
+Germany FR,1959,88
+Germany FR,1960,88
+Germany FR,1961,90
+Germany FR,1962,89
+Germany FR,1963,93
+Germany FR,1964,92
+Germany FR,1965,92
+Germany FR,1966,91
+Germany FR,1967,92
+Germany FR,1968,93
+Germany FR,1969,94
+Germany FR,1970,95
+Germany FR,1971,95
+Germany FR,1972,95
+Germany FR,1973,96
+Germany FR,1974,92
+Germany FR,1975,92
+Germany FR,1976,94
+Germany FR,1977,92
+Germany FR,1978,93
+Germany FR,1979,91
+Germany FR,1980,94
+Germany FR,1981,99
+Germany FR,1982,94
+Ghana,1960,62
+Ghana,1961,61
+Ghana,1962,61
+Ghana,1963,63
+Ghana,1964,62
+Ghana,1965,52
+Ghana,1966,46
+Ghana,1967,45
+Ghana,1968,64
+Ghana,1969,77
+Ghana,1970,78
+Ghana,1971,79
+Ghana,1972,49
+Ghana,1973,50
+Ghana,1974,51
+Ghana,1975,51
+Ghana,1976,51
+Ghana,1977,51
+Ghana,1978,54
+Ghana,1979,95
+Ghana,1980,96
+Ghana,1981,47
+Ghana,1982,46
+Greece,1948,87
+Greece,1949,88
+Greece,1950,90
+Greece,1951,89
+Greece,1952,90
+Greece,1953,84
+Greece,1954,86
+Greece,1955,90
+Greece,1956,92
+Greece,1957,91
+Greece,1958,92
+Greece,1959,91
+Greece,1960,92
+Greece,1961,92
+Greece,1962,92
+Greece,1963,93
+Greece,1964,93
+Greece,1965,91
+Greece,1966,93
+Greece,1967,34
+Greece,1968,35
+Greece,1969,38
+Greece,1970,38
+Greece,1971,61
+Greece,1972,61
+Greece,1973,36
+Greece,1974,92
+Greece,1975,96
+Greece,1976,98
+Greece,1977,102
+Greece,1978,104
+Greece,1979,103
+Greece,1980,103
+Greece,1981,104
+Greece,1982,103
+Grenada,1974,95
+Grenada,1975,93
+Grenada,1976,99
+Grenada,1977,98
+Grenada,1978,98
+Grenada,1979,47
+Grenada,1980,49
+Grenada,1981,47
+Grenada,1982,46
+Guatemala,1948,94
+Guatemala,1949,89
+Guatemala,1950,82
+Guatemala,1951,89
+Guatemala,1952,91
+Guatemala,1953,84
+Guatemala,1954,42
+Guatemala,1955,71
+Guatemala,1956,71
+Guatemala,1957,62
+Guatemala,1958,83
+Guatemala,1959,82
+Guatemala,1960,84
+Guatemala,1961,77
+Guatemala,1962,83
+Guatemala,1963,42
+Guatemala,1964,44
+Guatemala,1965,45
+Guatemala,1966,83
+Guatemala,1967,84
+Guatemala,1968,84
+Guatemala,1969,87
+Guatemala,1970,86
+Guatemala,1971,88
+Guatemala,1972,87
+Guatemala,1973,87
+Guatemala,1974,88
+Guatemala,1975,87
+Guatemala,1976,87
+Guatemala,1977,87
+Guatemala,1978,89
+Guatemala,1979,84
+Guatemala,1980,85
+Guatemala,1981,87
+Guatemala,1982,45
+Guinea,1960,63
+Guinea,1961,64
+Guinea,1962,64
+Guinea,1963,64
+Guinea,1964,64
+Guinea,1965,64
+Guinea,1966,64
+Guinea,1967,65
+Guinea,1968,65
+Guinea,1969,66
+Guinea,1970,65
+Guinea,1971,67
+Guinea,1972,67
+Guinea,1973,67
+Guinea,1974,68
+Guinea,1975,68
+Guinea,1976,68
+Guinea,1977,67
+Guinea,1978,67
+Guinea,1979,54
+Guinea,1980,66
+Guinea,1981,65
+Guinea,1982,65
+Guinea-Bissau,1975,64
+Guinea-Bissau,1976,64
+Guinea-Bissau,1977,67
+Guinea-Bissau,1978,66
+Guinea-Bissau,1979,65
+Guinea-Bissau,1980,48
+Guinea-Bissau,1981,47
+Guinea-Bissau,1982,46
+Guyana,1967,101
+Guyana,1968,101
+Guyana,1969,102
+Guyana,1970,101
+Guyana,1971,102
+Guyana,1972,103
+Guyana,1973,97
+Guyana,1974,97
+Guyana,1975,96
+Guyana,1976,96
+Guyana,1977,96
+Guyana,1978,95
+Guyana,1979,93
+Guyana,1980,91
+Guyana,1981,90
+Guyana,1982,90
+Haiti,1948,66
+Haiti,1949,66
+Haiti,1950,64
+Haiti,1951,72
+Haiti,1952,73
+Haiti,1953,72
+Haiti,1954,72
+Haiti,1955,67
+Haiti,1956,59
+Haiti,1957,65
+Haiti,1958,64
+Haiti,1959,63
+Haiti,1960,64
+Haiti,1961,63
+Haiti,1962,62
+Haiti,1963,57
+Haiti,1964,57
+Haiti,1965,60
+Haiti,1966,60
+Haiti,1967,59
+Haiti,1968,60
+Haiti,1969,62
+Haiti,1970,62
+Haiti,1971,63
+Haiti,1972,64
+Haiti,1973,64
+Haiti,1974,64
+Haiti,1975,64
+Haiti,1976,64
+Haiti,1977,64
+Haiti,1978,63
+Haiti,1979,61
+Haiti,1980,61
+Haiti,1981,60
+Haiti,1982,60
+Honduras,1948,63
+Honduras,1949,67
+Honduras,1950,66
+Honduras,1951,67
+Honduras,1952,68
+Honduras,1953,67
+Honduras,1954,56
+Honduras,1955,53
+Honduras,1956,39
+Honduras,1957,65
+Honduras,1958,83
+Honduras,1959,82
+Honduras,1960,83
+Honduras,1961,83
+Honduras,1962,84
+Honduras,1963,43
+Honduras,1964,45
+Honduras,1965,84
+Honduras,1966,84
+Honduras,1967,85
+Honduras,1968,85
+Honduras,1969,87
+Honduras,1970,85
+Honduras,1971,86
+Honduras,1972,50
+Honduras,1973,50
+Honduras,1974,51
+Honduras,1975,52
+Honduras,1976,51
+Honduras,1977,51
+Honduras,1978,49
+Honduras,1979,48
+Honduras,1980,48
+Honduras,1981,47
+Honduras,1982,90
+Hungary,1948,71
+Hungary,1949,57
+Hungary,1950,56
+Hungary,1951,55
+Hungary,1952,58
+Hungary,1953,56
+Hungary,1954,60
+Hungary,1955,56
+Hungary,1956,63
+Hungary,1957,47
+Hungary,1958,47
+Hungary,1959,57
+Hungary,1960,58
+Hungary,1961,63
+Hungary,1962,62
+Hungary,1963,64
+Hungary,1964,63
+Hungary,1965,59
+Hungary,1966,60
+Hungary,1967,61
+Hungary,1968,61
+Hungary,1969,63
+Hungary,1970,62
+Hungary,1971,63
+Hungary,1972,64
+Hungary,1973,64
+Hungary,1974,64
+Hungary,1975,64
+Hungary,1976,65
+Hungary,1977,64
+Hungary,1978,63
+Hungary,1979,62
+Hungary,1980,62
+Hungary,1981,62
+Hungary,1982,61
+Iceland,1948,97
+Iceland,1949,98
+Iceland,1950,99
+Iceland,1951,98
+Iceland,1952,98
+Iceland,1953,98
+Iceland,1954,98
+Iceland,1955,97
+Iceland,1956,98
+Iceland,1957,97
+Iceland,1958,98
+Iceland,1959,97
+Iceland,1960,98
+Iceland,1961,98
+Iceland,1962,98
+Iceland,1963,99
+Iceland,1964,100
+Iceland,1965,99
+Iceland,1966,99
+Iceland,1967,100
+Iceland,1968,100
+Iceland,1969,101
+Iceland,1970,100
+Iceland,1971,101
+Iceland,1972,102
+Iceland,1973,103
+Iceland,1974,103
+Iceland,1975,102
+Iceland,1976,102
+Iceland,1977,101
+Iceland,1978,101
+Iceland,1979,100
+Iceland,1980,100
+Iceland,1981,100
+Iceland,1982,99
+India,1953,95
+India,1954,96
+India,1955,95
+India,1956,92
+India,1957,92
+India,1958,91
+India,1959,91
+India,1960,93
+India,1961,96
+India,1962,91
+India,1963,93
+India,1964,97
+India,1965,93
+India,1966,93
+India,1967,97
+India,1968,92
+India,1969,92
+India,1970,92
+India,1971,98
+India,1972,102
+India,1973,100
+India,1974,103
+India,1975,96
+India,1976,93
+India,1977,100
+India,1978,100
+India,1979,98
+India,1980,100
+India,1981,96
+India,1982,101
+Indonesia,1953,62
+Indonesia,1954,62
+Indonesia,1955,85
+Indonesia,1956,81
+Indonesia,1957,75
+Indonesia,1958,73
+Indonesia,1959,77
+Indonesia,1960,54
+Indonesia,1961,55
+Indonesia,1962,57
+Indonesia,1963,57
+Indonesia,1964,54
+Indonesia,1965,46
+Indonesia,1966,49
+Indonesia,1967,49
+Indonesia,1968,65
+Indonesia,1969,66
+Indonesia,1970,67
+Indonesia,1971,79
+Indonesia,1972,79
+Indonesia,1973,80
+Indonesia,1974,80
+Indonesia,1975,80
+Indonesia,1976,80
+Indonesia,1977,80
+Indonesia,1978,80
+Indonesia,1979,78
+Indonesia,1980,78
+Indonesia,1981,77
+Indonesia,1982,75
+Iran,1948,59
+Iran,1949,58
+Iran,1950,61
+Iran,1951,60
+Iran,1952,61
+Iran,1953,54
+Iran,1954,54
+Iran,1955,54
+Iran,1956,54
+Iran,1957,52
+Iran,1958,54
+Iran,1959,54
+Iran,1960,54
+Iran,1961,48
+Iran,1962,43
+Iran,1963,61
+Iran,1964,70
+Iran,1965,75
+Iran,1966,76
+Iran,1967,70
+Iran,1968,70
+Iran,1969,73
+Iran,1970,71
+Iran,1971,73
+Iran,1972,73
+Iran,1973,73
+Iran,1974,74
+Iran,1975,73
+Iran,1976,68
+Iran,1977,71
+Iran,1978,68
+Iran,1979,47
+Iran,1980,69
+Iran,1981,73
+Iran,1982,70
+Iraq,1948,63
+Iraq,1949,65
+Iraq,1950,58
+Iraq,1951,64
+Iraq,1952,64
+Iraq,1953,65
+Iraq,1954,52
+Iraq,1955,52
+Iraq,1956,50
+Iraq,1957,51
+Iraq,1958,40
+Iraq,1959,41
+Iraq,1960,41
+Iraq,1961,42
+Iraq,1962,42
+Iraq,1963,40
+Iraq,1964,44
+Iraq,1965,43
+Iraq,1966,44
+Iraq,1967,45
+Iraq,1968,44
+Iraq,1969,46
+Iraq,1970,45
+Iraq,1971,49
+Iraq,1972,50
+Iraq,1973,50
+Iraq,1974,51
+Iraq,1975,51
+Iraq,1976,51
+Iraq,1977,50
+Iraq,1978,50
+Iraq,1979,47
+Iraq,1980,62
+Iraq,1981,62
+Iraq,1982,61
+Ireland,1948,97
+Ireland,1949,98
+Ireland,1950,98
+Ireland,1951,98
+Ireland,1952,99
+Ireland,1953,98
+Ireland,1954,98
+Ireland,1955,97
+Ireland,1956,97
+Ireland,1957,97
+Ireland,1958,98
+Ireland,1959,97
+Ireland,1960,98
+Ireland,1961,98
+Ireland,1962,98
+Ireland,1963,99
+Ireland,1964,100
+Ireland,1965,99
+Ireland,1966,99
+Ireland,1967,100
+Ireland,1968,100
+Ireland,1969,100
+Ireland,1970,100
+Ireland,1971,99
+Ireland,1972,100
+Ireland,1973,102
+Ireland,1974,102
+Ireland,1975,101
+Ireland,1976,100
+Ireland,1977,101
+Ireland,1978,101
+Ireland,1979,100
+Ireland,1980,100
+Ireland,1981,100
+Ireland,1982,99
+Israel,1953,92
+Israel,1954,93
+Israel,1955,92
+Israel,1956,92
+Israel,1957,92
+Israel,1958,93
+Israel,1959,92
+Israel,1960,93
+Israel,1961,94
+Israel,1962,93
+Israel,1963,95
+Israel,1964,94
+Israel,1965,95
+Israel,1966,93
+Israel,1967,94
+Israel,1968,91
+Israel,1969,91
+Israel,1970,90
+Israel,1971,94
+Israel,1972,92
+Israel,1973,93
+Israel,1974,94
+Israel,1975,93
+Israel,1976,94
+Israel,1977,95
+Israel,1978,92
+Israel,1979,86
+Israel,1980,83
+Israel,1981,90
+Israel,1982,78
+Italy,1948,97
+Italy,1949,97
+Italy,1950,97
+Italy,1951,96
+Italy,1952,97
+Italy,1953,96
+Italy,1954,96
+Italy,1955,97
+Italy,1956,98
+Italy,1957,97
+Italy,1958,97
+Italy,1959,97
+Italy,1960,100
+Italy,1961,100
+Italy,1962,98
+Italy,1963,99
+Italy,1964,99
+Italy,1965,99
+Italy,1966,99
+Italy,1967,99
+Italy,1968,100
+Italy,1969,99
+Italy,1970,101
+Italy,1971,104
+Italy,1972,103
+Italy,1973,100
+Italy,1974,105
+Italy,1975,108
+Italy,1976,104
+Italy,1977,101
+Italy,1978,101
+Italy,1979,97
+Italy,1980,98
+Italy,1981,98
+Italy,1982,96
+Ivory Coast,1960,62
+Ivory Coast,1961,63
+Ivory Coast,1962,63
+Ivory Coast,1963,62
+Ivory Coast,1964,64
+Ivory Coast,1965,64
+Ivory Coast,1966,64
+Ivory Coast,1967,65
+Ivory Coast,1968,65
+Ivory Coast,1969,66
+Ivory Coast,1970,65
+Ivory Coast,1971,66
+Ivory Coast,1972,67
+Ivory Coast,1973,67
+Ivory Coast,1974,67
+Ivory Coast,1975,67
+Ivory Coast,1976,68
+Ivory Coast,1977,67
+Ivory Coast,1978,66
+Ivory Coast,1979,65
+Ivory Coast,1980,65
+Ivory Coast,1981,65
+Ivory Coast,1982,65
+Jamaica,1967,100
+Jamaica,1968,100
+Jamaica,1969,101
+Jamaica,1970,100
+Jamaica,1971,101
+Jamaica,1972,96
+Jamaica,1973,96
+Jamaica,1974,96
+Jamaica,1975,96
+Jamaica,1976,96
+Jamaica,1977,97
+Jamaica,1978,95
+Jamaica,1979,95
+Jamaica,1980,95
+Jamaica,1981,94
+Jamaica,1982,94
+Japan,1953,98
+Japan,1954,99
+Japan,1955,97
+Japan,1956,98
+Japan,1957,97
+Japan,1958,98
+Japan,1959,98
+Japan,1960,101
+Japan,1961,100
+Japan,1962,102
+Japan,1963,100
+Japan,1964,100
+Japan,1965,101
+Japan,1966,99
+Japan,1967,101
+Japan,1968,99
+Japan,1969,98
+Japan,1970,101
+Japan,1971,103
+Japan,1972,102
+Japan,1973,103
+Japan,1974,104
+Japan,1975,104
+Japan,1976,101
+Japan,1977,101
+Japan,1978,104
+Japan,1979,100
+Japan,1980,100
+Japan,1981,100
+Japan,1982,100
+Jordan,1948,54
+Jordan,1949,55
+Jordan,1950,57
+Jordan,1951,58
+Jordan,1952,58
+Jordan,1953,58
+Jordan,1954,59
+Jordan,1955,57
+Jordan,1956,56
+Jordan,1957,51
+Jordan,1958,55
+Jordan,1959,55
+Jordan,1960,56
+Jordan,1961,58
+Jordan,1962,58
+Jordan,1963,59
+Jordan,1964,59
+Jordan,1965,59
+Jordan,1966,44
+Jordan,1967,59
+Jordan,1968,59
+Jordan,1969,61
+Jordan,1970,59
+Jordan,1971,62
+Jordan,1972,62
+Jordan,1973,63
+Jordan,1974,51
+Jordan,1975,51
+Jordan,1976,51
+Jordan,1977,51
+Jordan,1978,50
+Jordan,1979,48
+Jordan,1980,48
+Jordan,1981,47
+Jordan,1982,46
+Kampuchea,1953,43
+Kampuchea,1954,45
+Kampuchea,1955,64
+Kampuchea,1956,64
+Kampuchea,1957,62
+Kampuchea,1958,64
+Kampuchea,1959,64
+Kampuchea,1960,64
+Kampuchea,1961,65
+Kampuchea,1962,65
+Kampuchea,1963,65
+Kampuchea,1964,66
+Kampuchea,1965,66
+Kampuchea,1966,66
+Kampuchea,1967,66
+Kampuchea,1968,66
+Kampuchea,1969,68
+Kampuchea,1970,68
+Kampuchea,1971,49
+Kampuchea,1972,74
+Kampuchea,1973,73
+Kampuchea,1974,74
+Kampuchea,1975,50
+Kampuchea,1976,67
+Kampuchea,1977,67
+Kampuchea,1978,61
+Kampuchea,1979,48
+Kampuchea,1980,48
+Kampuchea,1981,65
+Kampuchea,1982,64
+Kenya,1967,74
+Kenya,1968,74
+Kenya,1969,70
+Kenya,1970,69
+Kenya,1971,69
+Kenya,1972,70
+Kenya,1973,70
+Kenya,1974,71
+Kenya,1975,70
+Kenya,1976,72
+Kenya,1977,71
+Kenya,1978,76
+Kenya,1979,76
+Kenya,1980,76
+Kenya,1981,75
+Kenya,1982,75
+Korea PR,1953,59
+Korea PR,1954,60
+Korea PR,1955,58
+Korea PR,1956,59
+Korea PR,1957,57
+Korea PR,1958,59
+Korea PR,1959,58
+Korea PR,1960,59
+Korea PR,1961,59
+Korea PR,1962,60
+Korea PR,1963,60
+Korea PR,1964,61
+Korea PR,1965,60
+Korea PR,1966,60
+Korea PR,1967,61
+Korea PR,1968,62
+Korea PR,1969,62
+Korea PR,1970,62
+Korea PR,1971,63
+Korea PR,1972,67
+Korea PR,1973,68
+Korea PR,1974,68
+Korea PR,1975,68
+Korea PR,1976,68
+Korea PR,1977,67
+Korea R,1953,66
+Korea R,1954,66
+Korea R,1955,65
+Korea R,1956,59
+Korea R,1957,62
+Korea R,1958,65
+Korea R,1959,65
+Korea R,1960,64
+Korea R,1961,38
+Korea R,1962,40
+Korea R,1963,73
+Korea R,1964,74
+Korea R,1965,74
+Korea R,1966,76
+Korea R,1967,71
+Korea R,1968,69
+Korea R,1969,73
+Korea R,1970,72
+Korea R,1971,78
+Korea R,1972,51
+Korea R,1973,86
+Korea R,1974,81
+Korea R,1975,80
+Korea R,1976,78
+Korea R,1977,83
+Kuwait,1967,60
+Kuwait,1968,60
+Kuwait,1969,61
+Kuwait,1970,61
+Kuwait,1971,62
+Kuwait,1972,63
+Kuwait,1973,63
+Kuwait,1974,64
+Kuwait,1975,64
+Kuwait,1976,50
+Kuwait,1977,50
+Kuwait,1978,50
+Kuwait,1979,48
+Kuwait,1980,48
+Laos,1960,75
+Laos,1961,76
+Laos,1962,78
+Laos,1963,77
+Laos,1964,84
+Laos,1965,86
+Laos,1966,46
+Laos,1967,62
+Laos,1968,60
+Laos,1969,62
+Laos,1970,64
+Laos,1971,63
+Laos,1972,65
+Laos,1973,63
+Laos,1974,51
+Laos,1975,58
+Laos,1976,56
+Laos,1977,55
+Laos,1978,54
+Laos,1979,54
+Laos,1980,53
+Laos,1981,53
+Laos,1982,52
+Lebanon,1948,89
+Lebanon,1949,86
+Lebanon,1950,91
+Lebanon,1951,90
+Lebanon,1952,90
+Lebanon,1953,93
+Lebanon,1954,95
+Lebanon,1955,92
+Lebanon,1956,92
+Lebanon,1957,93
+Lebanon,1958,93
+Lebanon,1959,92
+Lebanon,1960,93
+Lebanon,1961,81
+Lebanon,1962,78
+Lebanon,1963,82
+Lebanon,1964,84
+Lebanon,1965,83
+Lebanon,1966,82
+Lebanon,1967,84
+Lebanon,1968,84
+Lebanon,1969,82
+Lebanon,1970,84
+Lebanon,1971,84
+Lebanon,1972,85
+Lebanon,1973,86
+Lebanon,1974,87
+Lebanon,1975,84
+Lebanon,1976,80
+Lebanon,1977,78
+Lebanon,1978,79
+Lebanon,1979,76
+Lebanon,1980,78
+Lebanon,1981,78
+Lebanon,1982,75
+Lesotho,1967,86
+Lesotho,1968,87
+Lesotho,1969,88
+Lesotho,1970,50
+Lesotho,1971,51
+Lesotho,1972,51
+Lesotho,1973,63
+Lesotho,1974,64
+Lesotho,1975,64
+Lesotho,1976,64
+Lesotho,1977,64
+Lesotho,1978,63
+Lesotho,1979,61
+Lesotho,1980,61
+Lesotho,1981,61
+Lesotho,1982,60
+Liberia,1948,65
+Liberia,1949,66
+Liberia,1950,65
+Liberia,1951,65
+Liberia,1952,67
+Liberia,1953,66
+Liberia,1954,67
+Liberia,1955,59
+Liberia,1956,59
+Liberia,1957,58
+Liberia,1958,59
+Liberia,1959,59
+Liberia,1960,59
+Liberia,1961,60
+Liberia,1962,61
+Liberia,1963,61
+Liberia,1964,61
+Liberia,1965,61
+Liberia,1966,61
+Liberia,1967,62
+Liberia,1968,62
+Liberia,1969,63
+Liberia,1970,63
+Liberia,1971,64
+Liberia,1972,64
+Liberia,1973,64
+Liberia,1974,65
+Liberia,1975,65
+Liberia,1976,65
+Liberia,1977,65
+Liberia,1978,64
+Liberia,1979,62
+Liberia,1980,47
+Liberia,1981,46
+Liberia,1982,46
+Libya,1953,55
+Libya,1954,58
+Libya,1955,54
+Libya,1956,52
+Libya,1957,53
+Libya,1958,55
+Libya,1959,54
+Libya,1960,55
+Libya,1961,55
+Libya,1962,56
+Libya,1963,56
+Libya,1964,61
+Libya,1965,60
+Libya,1966,61
+Libya,1967,61
+Libya,1968,62
+Libya,1969,48
+Libya,1970,45
+Libya,1971,49
+Libya,1972,49
+Libya,1973,50
+Libya,1974,51
+Libya,1975,51
+Libya,1976,64
+Libya,1977,67
+Libya,1978,67
+Libya,1979,66
+Libya,1980,66
+Libya,1981,65
+Libya,1982,64
+Luxembourg,1948,97
+Luxembourg,1949,98
+Luxembourg,1950,98
+Luxembourg,1951,98
+Luxembourg,1952,98
+Luxembourg,1953,98
+Luxembourg,1954,98
+Luxembourg,1955,97
+Luxembourg,1956,98
+Luxembourg,1957,97
+Luxembourg,1958,98
+Luxembourg,1959,97
+Luxembourg,1960,98
+Luxembourg,1961,98
+Luxembourg,1962,98
+Luxembourg,1963,99
+Luxembourg,1964,100
+Luxembourg,1965,99
+Luxembourg,1966,99
+Luxembourg,1967,100
+Luxembourg,1968,100
+Luxembourg,1969,101
+Luxembourg,1970,100
+Luxembourg,1971,101
+Luxembourg,1972,103
+Luxembourg,1973,103
+Luxembourg,1974,103
+Luxembourg,1975,103
+Luxembourg,1976,103
+Luxembourg,1977,102
+Luxembourg,1978,101
+Luxembourg,1979,100
+Luxembourg,1980,100
+Luxembourg,1981,100
+Luxembourg,1982,100
+Madagascar,1960,88
+Madagascar,1961,88
+Madagascar,1962,89
+Madagascar,1963,89
+Madagascar,1964,90
+Madagascar,1965,90
+Madagascar,1966,89
+Madagascar,1967,90
+Madagascar,1968,90
+Madagascar,1969,91
+Madagascar,1970,91
+Madagascar,1971,91
+Madagascar,1972,52
+Madagascar,1973,64
+Madagascar,1974,64
+Madagascar,1975,64
+Madagascar,1976,59
+Madagascar,1977,67
+Madagascar,1978,65
+Madagascar,1979,65
+Madagascar,1980,65
+Madagascar,1981,67
+Madagascar,1982,65
+Malawi,1967,68
+Malawi,1968,68
+Malawi,1969,69
+Malawi,1970,69
+Malawi,1971,63
+Malawi,1972,63
+Malawi,1973,64
+Malawi,1974,64
+Malawi,1975,64
+Malawi,1976,64
+Malawi,1977,64
+Malawi,1978,63
+Malawi,1979,62
+Malawi,1980,62
+Malawi,1981,61
+Malawi,1982,61
+Malaysia,1960,84
+Malaysia,1961,84
+Malaysia,1962,83
+Malaysia,1963,83
+Malaysia,1964,85
+Malaysia,1965,88
+Malaysia,1966,88
+Malaysia,1967,89
+Malaysia,1968,90
+Malaysia,1969,75
+Malaysia,1970,76
+Malaysia,1971,91
+Malaysia,1972,92
+Malaysia,1973,93
+Malaysia,1974,86
+Malaysia,1975,86
+Malaysia,1976,86
+Malaysia,1977,86
+Malaysia,1978,84
+Malaysia,1979,84
+Malaysia,1980,83
+Malaysia,1981,83
+Malaysia,1982,80
+Maldives,1967,68
+Maldives,1968,72
+Maldives,1969,73
+Maldives,1970,72
+Maldives,1971,73
+Maldives,1972,74
+Maldives,1973,74
+Maldives,1974,74
+Maldives,1975,70
+Maldives,1976,71
+Maldives,1977,70
+Maldives,1978,70
+Maldives,1979,69
+Maldives,1980,69
+Maldives,1981,68
+Maldives,1982,68
+Mali,1960,62
+Mali,1961,63
+Mali,1962,63
+Mali,1963,64
+Mali,1964,64
+Mali,1965,64
+Mali,1966,64
+Mali,1967,65
+Mali,1968,46
+Mali,1969,49
+Mali,1970,48
+Mali,1971,49
+Mali,1972,50
+Mali,1973,50
+Mali,1974,51
+Mali,1975,51
+Mali,1976,51
+Mali,1977,51
+Mali,1978,48
+Mali,1979,51
+Mali,1980,51
+Mali,1981,49
+Mali,1982,68
+Malta,1967,100
+Malta,1968,100
+Malta,1969,100
+Malta,1970,100
+Malta,1971,101
+Malta,1972,102
+Malta,1973,102
+Malta,1974,103
+Malta,1975,103
+Malta,1976,103
+Malta,1977,102
+Malta,1978,100
+Malta,1979,100
+Malta,1980,100
+Malta,1981,99
+Malta,1982,100
+Mauritania,1960,62
+Mauritania,1961,63
+Mauritania,1962,63
+Mauritania,1963,63
+Mauritania,1964,64
+Mauritania,1965,64
+Mauritania,1966,64
+Mauritania,1967,64
+Mauritania,1968,65
+Mauritania,1969,66
+Mauritania,1970,65
+Mauritania,1971,66
+Mauritania,1972,67
+Mauritania,1973,67
+Mauritania,1974,67
+Mauritania,1975,67
+Mauritania,1976,68
+Mauritania,1977,67
+Mauritania,1978,49
+Mauritania,1979,48
+Mauritania,1980,48
+Mauritania,1981,46
+Mauritania,1982,46
+Mauritius,1968,96
+Mauritius,1969,97
+Mauritius,1970,97
+Mauritius,1971,98
+Mauritius,1972,98
+Mauritius,1973,99
+Mauritius,1974,99
+Mauritius,1975,98
+Mauritius,1976,99
+Mauritius,1977,98
+Mauritius,1978,99
+Mauritius,1979,97
+Mauritius,1980,97
+Mauritius,1981,97
+Mauritius,1982,96
+Mexico,1948,76
+Mexico,1949,77
+Mexico,1950,77
+Mexico,1951,77
+Mexico,1952,78
+Mexico,1953,77
+Mexico,1954,78
+Mexico,1955,76
+Mexico,1956,77
+Mexico,1957,76
+Mexico,1958,77
+Mexico,1959,75
+Mexico,1960,78
+Mexico,1961,79
+Mexico,1962,77
+Mexico,1963,78
+Mexico,1964,79
+Mexico,1965,78
+Mexico,1966,78
+Mexico,1967,80
+Mexico,1968,80
+Mexico,1969,80
+Mexico,1970,81
+Mexico,1971,80
+Mexico,1972,81
+Mexico,1973,81
+Mexico,1974,81
+Mexico,1975,82
+Mexico,1976,82
+Mexico,1977,80
+Mexico,1978,79
+Mexico,1979,81
+Mexico,1980,79
+Mexico,1981,78
+Mexico,1982,90
+Mongolia,1948,48
+Mongolia,1949,49
+Mongolia,1950,48
+Mongolia,1951,59
+Mongolia,1952,60
+Mongolia,1953,59
+Mongolia,1954,60
+Mongolia,1955,58
+Mongolia,1956,59
+Mongolia,1957,57
+Mongolia,1958,59
+Mongolia,1959,58
+Mongolia,1960,59
+Mongolia,1961,59
+Mongolia,1962,60
+Mongolia,1963,60
+Mongolia,1964,61
+Mongolia,1965,60
+Mongolia,1966,61
+Mongolia,1967,62
+Mongolia,1968,62
+Mongolia,1969,63
+Mongolia,1970,62
+Mongolia,1971,63
+Mongolia,1972,64
+Mongolia,1973,64
+Mongolia,1974,68
+Mongolia,1975,68
+Mongolia,1976,68
+Mongolia,1977,67
+Mongolia,1978,67
+Mongolia,1979,66
+Mongolia,1980,66
+Mongolia,1981,65
+Mongolia,1982,65
+Morocco,1960,41
+Morocco,1961,48
+Morocco,1962,51
+Morocco,1963,70
+Morocco,1964,71
+Morocco,1965,44
+Morocco,1966,44
+Morocco,1967,46
+Morocco,1968,46
+Morocco,1969,47
+Morocco,1970,61
+Morocco,1971,61
+Morocco,1972,49
+Morocco,1973,49
+Morocco,1974,51
+Morocco,1975,51
+Morocco,1976,51
+Morocco,1977,72
+Morocco,1978,84
+Morocco,1979,83
+Morocco,1980,83
+Morocco,1981,82
+Morocco,1982,82
+Mozambique,1975,52
+Mozambique,1976,51
+Mozambique,1977,64
+Mozambique,1978,63
+Mozambique,1979,62
+Mozambique,1980,62
+Mozambique,1981,61
+Mozambique,1982,61
+Nepal,1948,42
+Nepal,1949,43
+Nepal,1950,41
+Nepal,1951,43
+Nepal,1952,44
+Nepal,1953,43
+Nepal,1954,45
+Nepal,1955,42
+Nepal,1956,42
+Nepal,1957,39
+Nepal,1958,42
+Nepal,1959,63
+Nepal,1960,41
+Nepal,1961,41
+Nepal,1962,42
+Nepal,1963,59
+Nepal,1964,59
+Nepal,1965,59
+Nepal,1966,60
+Nepal,1967,61
+Nepal,1968,61
+Nepal,1969,62
+Nepal,1970,62
+Nepal,1971,63
+Nepal,1972,63
+Nepal,1973,64
+Nepal,1974,64
+Nepal,1975,64
+Nepal,1976,64
+Nepal,1977,63
+Nepal,1978,63
+Nepal,1979,62
+Nepal,1980,65
+Nepal,1981,65
+Nepal,1982,64
+Netherlands,1948,97
+Netherlands,1949,97
+Netherlands,1950,97
+Netherlands,1951,97
+Netherlands,1952,97
+Netherlands,1953,97
+Netherlands,1954,98
+Netherlands,1955,96
+Netherlands,1956,97
+Netherlands,1957,97
+Netherlands,1958,98
+Netherlands,1959,97
+Netherlands,1960,98
+Netherlands,1961,98
+Netherlands,1962,98
+Netherlands,1963,99
+Netherlands,1964,100
+Netherlands,1965,99
+Netherlands,1966,99
+Netherlands,1967,99
+Netherlands,1968,100
+Netherlands,1969,100
+Netherlands,1970,101
+Netherlands,1971,100
+Netherlands,1972,102
+Netherlands,1973,103
+Netherlands,1974,103
+Netherlands,1975,102
+Netherlands,1976,102
+Netherlands,1977,99
+Netherlands,1978,101
+Netherlands,1979,100
+Netherlands,1980,101
+Netherlands,1981,100
+Netherlands,1982,101
+New Zealand,1948,98
+New Zealand,1949,99
+New Zealand,1950,99
+New Zealand,1951,99
+New Zealand,1952,99
+New Zealand,1953,99
+New Zealand,1954,99
+New Zealand,1955,98
+New Zealand,1956,99
+New Zealand,1957,98
+New Zealand,1958,99
+New Zealand,1959,98
+New Zealand,1960,99
+New Zealand,1961,99
+New Zealand,1962,99
+New Zealand,1963,100
+New Zealand,1964,101
+New Zealand,1965,100
+New Zealand,1966,100
+New Zealand,1967,101
+New Zealand,1968,101
+New Zealand,1969,102
+New Zealand,1970,102
+New Zealand,1971,102
+New Zealand,1972,103
+New Zealand,1973,103
+New Zealand,1974,103
+New Zealand,1975,102
+New Zealand,1976,105
+New Zealand,1977,101
+New Zealand,1978,100
+New Zealand,1979,100
+New Zealand,1980,99
+New Zealand,1981,101
+New Zealand,1982,99
+Nicaragua,1948,63
+Nicaragua,1949,65
+Nicaragua,1950,70
+Nicaragua,1951,75
+Nicaragua,1952,75
+Nicaragua,1953,74
+Nicaragua,1954,76
+Nicaragua,1955,73
+Nicaragua,1956,74
+Nicaragua,1957,72
+Nicaragua,1958,74
+Nicaragua,1959,74
+Nicaragua,1960,74
+Nicaragua,1961,74
+Nicaragua,1962,75
+Nicaragua,1963,80
+Nicaragua,1964,80
+Nicaragua,1965,80
+Nicaragua,1966,80
+Nicaragua,1967,80
+Nicaragua,1968,81
+Nicaragua,1969,82
+Nicaragua,1970,81
+Nicaragua,1971,78
+Nicaragua,1972,76
+Nicaragua,1973,76
+Nicaragua,1974,81
+Nicaragua,1975,79
+Nicaragua,1976,80
+Nicaragua,1977,79
+Nicaragua,1978,75
+Nicaragua,1979,44
+Nicaragua,1980,51
+Nicaragua,1981,50
+Nicaragua,1982,50
+Niger,1960,62
+Niger,1961,63
+Niger,1962,63
+Niger,1963,63
+Niger,1964,63
+Niger,1965,64
+Niger,1966,64
+Niger,1967,65
+Niger,1968,65
+Niger,1969,66
+Niger,1970,65
+Niger,1971,66
+Niger,1972,67
+Niger,1973,67
+Niger,1974,51
+Niger,1975,51
+Niger,1976,51
+Niger,1977,51
+Niger,1978,50
+Niger,1979,48
+Niger,1980,48
+Niger,1981,47
+Niger,1982,46
+Nigeria,1960,91
+Nigeria,1961,91
+Nigeria,1962,91
+Nigeria,1963,92
+Nigeria,1964,79
+Nigeria,1965,77
+Nigeria,1966,47
+Nigeria,1967,44
+Nigeria,1968,46
+Nigeria,1969,48
+Nigeria,1970,44
+Nigeria,1971,48
+Nigeria,1972,49
+Nigeria,1973,50
+Nigeria,1974,51
+Nigeria,1975,50
+Nigeria,1976,50
+Nigeria,1977,50
+Nigeria,1978,49
+Nigeria,1979,94
+Nigeria,1980,94
+Nigeria,1981,92
+Nigeria,1982,94
+Norway,1948,97
+Norway,1949,97
+Norway,1950,98
+Norway,1951,98
+Norway,1952,98
+Norway,1953,98
+Norway,1954,97
+Norway,1955,97
+Norway,1956,98
+Norway,1957,97
+Norway,1958,98
+Norway,1959,97
+Norway,1960,98
+Norway,1961,98
+Norway,1962,98
+Norway,1963,99
+Norway,1964,99
+Norway,1965,99
+Norway,1966,99
+Norway,1967,99
+Norway,1968,100
+Norway,1969,101
+Norway,1970,100
+Norway,1971,101
+Norway,1972,102
+Norway,1973,102
+Norway,1974,102
+Norway,1975,102
+Norway,1976,101
+Norway,1977,101
+Norway,1978,101
+Norway,1979,100
+Norway,1980,100
+Norway,1981,100
+Norway,1982,100
+Oman,1974,51
+Oman,1975,51
+Oman,1976,51
+Oman,1977,51
+Oman,1978,50
+Oman,1979,48
+Oman,1980,48
+Oman,1981,53
+Oman,1982,52
+Pakistan,1953,74
+Pakistan,1954,67
+Pakistan,1955,77
+Pakistan,1956,77
+Pakistan,1957,81
+Pakistan,1958,42
+Pakistan,1959,40
+Pakistan,1960,43
+Pakistan,1961,45
+Pakistan,1962,81
+Pakistan,1963,86
+Pakistan,1964,84
+Pakistan,1965,79
+Pakistan,1966,76
+Pakistan,1967,67
+Pakistan,1968,66
+Pakistan,1969,51
+Pakistan,1970,77
+Pakistan,1971,70
+Pakistan,1972,78
+Pakistan,1973,78
+Pakistan,1974,80
+Pakistan,1975,79
+Pakistan,1976,79
+Pakistan,1977,48
+Pakistan,1978,45
+Pakistan,1979,45
+Pakistan,1980,47
+Pakistan,1981,45
+Pakistan,1982,49
+Panama,1948,87
+Panama,1949,88
+Panama,1950,83
+Panama,1951,84
+Panama,1952,88
+Panama,1953,82
+Panama,1954,77
+Panama,1955,75
+Panama,1956,75
+Panama,1957,75
+Panama,1958,76
+Panama,1959,82
+Panama,1960,82
+Panama,1961,83
+Panama,1962,83
+Panama,1963,83
+Panama,1964,82
+Panama,1965,83
+Panama,1966,84
+Panama,1967,84
+Panama,1968,67
+Panama,1969,47
+Panama,1970,48
+Panama,1971,49
+Panama,1972,63
+Panama,1973,64
+Panama,1974,64
+Panama,1975,66
+Panama,1976,64
+Panama,1977,64
+Panama,1978,68
+Panama,1979,68
+Panama,1980,66
+Panama,1981,65
+Panama,1982,64
+Papua New Guinea,1977,98
+Papua New Guinea,1978,98
+Papua New Guinea,1979,96
+Papua New Guinea,1980,97
+Papua New Guinea,1981,97
+Papua New Guinea,1982,96
+Paraguay,1948,57
+Paraguay,1949,58
+Paraguay,1950,57
+Paraguay,1951,58
+Paraguay,1952,59
+Paraguay,1953,58
+Paraguay,1954,59
+Paraguay,1955,57
+Paraguay,1956,58
+Paraguay,1957,56
+Paraguay,1958,63
+Paraguay,1959,62
+Paraguay,1960,63
+Paraguay,1961,63
+Paraguay,1962,64
+Paraguay,1963,76
+Paraguay,1964,77
+Paraguay,1965,76
+Paraguay,1966,77
+Paraguay,1967,77
+Paraguay,1968,77
+Paraguay,1969,79
+Paraguay,1970,77
+Paraguay,1971,79
+Paraguay,1972,80
+Paraguay,1973,80
+Paraguay,1974,80
+Paraguay,1975,80
+Paraguay,1976,80
+Paraguay,1977,80
+Paraguay,1978,78
+Paraguay,1979,79
+Paraguay,1980,77
+Paraguay,1981,77
+Paraguay,1982,76
+Peru,1948,42
+Peru,1949,42
+Peru,1950,60
+Peru,1951,60
+Peru,1952,63
+Peru,1953,61
+Peru,1954,62
+Peru,1955,60
+Peru,1956,84
+Peru,1957,86
+Peru,1958,88
+Peru,1959,87
+Peru,1960,88
+Peru,1961,90
+Peru,1962,45
+Peru,1963,87
+Peru,1964,87
+Peru,1965,88
+Peru,1966,88
+Peru,1967,89
+Peru,1968,46
+Peru,1969,49
+Peru,1970,48
+Peru,1971,49
+Peru,1972,51
+Peru,1973,52
+Peru,1974,50
+Peru,1975,51
+Peru,1976,50
+Peru,1977,55
+Peru,1978,73
+Peru,1979,47
+Peru,1980,90
+Peru,1981,89
+Peru,1982,89
+Philippines,1948,86
+Philippines,1949,87
+Philippines,1950,85
+Philippines,1951,88
+Philippines,1952,84
+Philippines,1953,86
+Philippines,1954,87
+Philippines,1955,87
+Philippines,1956,82
+Philippines,1957,81
+Philippines,1958,82
+Philippines,1959,82
+Philippines,1960,83
+Philippines,1961,84
+Philippines,1962,89
+Philippines,1963,90
+Philippines,1964,90
+Philippines,1965,91
+Philippines,1966,90
+Philippines,1967,92
+Philippines,1968,91
+Philippines,1969,87
+Philippines,1970,87
+Philippines,1971,89
+Philippines,1972,64
+Philippines,1973,50
+Philippines,1974,53
+Philippines,1975,54
+Philippines,1976,51
+Philippines,1977,52
+Philippines,1978,73
+Philippines,1979,72
+Philippines,1980,69
+Philippines,1981,73
+Philippines,1982,69
+Poland,1948,60
+Poland,1949,65
+Poland,1950,64
+Poland,1951,65
+Poland,1952,58
+Poland,1953,57
+Poland,1954,57
+Poland,1955,57
+Poland,1956,57
+Poland,1957,57
+Poland,1958,55
+Poland,1959,56
+Poland,1960,57
+Poland,1961,58
+Poland,1962,59
+Poland,1963,59
+Poland,1964,58
+Poland,1965,60
+Poland,1966,58
+Poland,1967,59
+Poland,1968,53
+Poland,1969,62
+Poland,1970,59
+Poland,1971,67
+Poland,1972,64
+Poland,1973,64
+Poland,1974,64
+Poland,1975,64
+Poland,1976,68
+Poland,1977,63
+Poland,1978,63
+Poland,1979,62
+Poland,1980,59
+Poland,1981,59
+Poland,1982,60
+Portugal,1948,55
+Portugal,1949,55
+Portugal,1950,54
+Portugal,1951,56
+Portugal,1952,56
+Portugal,1953,56
+Portugal,1954,58
+Portugal,1955,55
+Portugal,1956,56
+Portugal,1957,54
+Portugal,1958,54
+Portugal,1959,55
+Portugal,1960,56
+Portugal,1961,55
+Portugal,1962,55
+Portugal,1963,57
+Portugal,1964,58
+Portugal,1965,58
+Portugal,1966,56
+Portugal,1967,58
+Portugal,1968,57
+Portugal,1969,62
+Portugal,1970,62
+Portugal,1971,63
+Portugal,1972,64
+Portugal,1973,63
+Portugal,1974,44
+Portugal,1975,94
+Portugal,1976,101
+Portugal,1977,104
+Portugal,1978,101
+Portugal,1979,100
+Portugal,1980,100
+Portugal,1981,100
+Portugal,1982,100
+Qatar,1972,55
+Qatar,1973,55
+Qatar,1974,56
+Qatar,1975,56
+Qatar,1976,56
+Qatar,1977,56
+Qatar,1978,55
+Qatar,1979,54
+Qatar,1980,53
+Qatar,1981,53
+Qatar,1982,52
+Romania,1948,55
+Romania,1949,57
+Romania,1950,55
+Romania,1951,58
+Romania,1952,58
+Romania,1953,59
+Romania,1954,59
+Romania,1955,58
+Romania,1956,57
+Romania,1957,57
+Romania,1958,58
+Romania,1959,58
+Romania,1960,59
+Romania,1961,59
+Romania,1962,60
+Romania,1963,60
+Romania,1964,61
+Romania,1965,60
+Romania,1966,61
+Romania,1967,65
+Romania,1968,65
+Romania,1969,67
+Romania,1970,66
+Romania,1971,67
+Romania,1972,67
+Romania,1973,68
+Romania,1974,68
+Romania,1975,71
+Romania,1976,71
+Romania,1977,70
+Romania,1978,70
+Romania,1979,69
+Romania,1980,69
+Romania,1981,69
+Romania,1982,68
+Rwanda,1967,65
+Rwanda,1968,65
+Rwanda,1969,66
+Rwanda,1970,65
+Rwanda,1971,66
+Rwanda,1972,67
+Rwanda,1973,50
+Rwanda,1974,51
+Rwanda,1975,51
+Rwanda,1976,51
+Rwanda,1977,51
+Rwanda,1978,51
+Rwanda,1979,50
+Rwanda,1980,50
+Rwanda,1981,65
+Rwanda,1982,65
+Sao Tome and Principe,1975,67
+Sao Tome and Principe,1976,68
+Sao Tome and Principe,1977,67
+Sao Tome and Principe,1978,66
+Sao Tome and Principe,1979,65
+Sao Tome and Principe,1980,65
+Sao Tome and Principe,1981,65
+Sao Tome and Principe,1982,64
+Saudi Arabia,1948,42
+Saudi Arabia,1949,43
+Saudi Arabia,1950,41
+Saudi Arabia,1951,43
+Saudi Arabia,1952,45
+Saudi Arabia,1953,44
+Saudi Arabia,1954,45
+Saudi Arabia,1955,42
+Saudi Arabia,1956,42
+Saudi Arabia,1957,39
+Saudi Arabia,1958,42
+Saudi Arabia,1959,42
+Saudi Arabia,1960,42
+Saudi Arabia,1961,42
+Saudi Arabia,1962,44
+Saudi Arabia,1963,44
+Saudi Arabia,1964,44
+Saudi Arabia,1965,45
+Saudi Arabia,1966,45
+Saudi Arabia,1967,46
+Saudi Arabia,1968,47
+Saudi Arabia,1969,48
+Saudi Arabia,1970,47
+Saudi Arabia,1971,49
+Saudi Arabia,1972,50
+Saudi Arabia,1973,50
+Saudi Arabia,1974,51
+Saudi Arabia,1975,51
+Saudi Arabia,1976,51
+Saudi Arabia,1977,51
+Saudi Arabia,1978,49
+Saudi Arabia,1979,48
+Saudi Arabia,1980,47
+Saudi Arabia,1981,47
+Saudi Arabia,1982,46
+Senegal,1960,62
+Senegal,1961,62
+Senegal,1962,63
+Senegal,1963,63
+Senegal,1964,63
+Senegal,1965,64
+Senegal,1966,64
+Senegal,1967,63
+Senegal,1968,64
+Senegal,1969,65
+Senegal,1970,65
+Senegal,1971,66
+Senegal,1972,67
+Senegal,1973,67
+Senegal,1974,67
+Senegal,1975,73
+Senegal,1976,73
+Senegal,1977,73
+Senegal,1978,72
+Senegal,1979,71
+Senegal,1980,71
+Senegal,1981,77
+Senegal,1982,76
+Seychelles,1976,83
+Seychelles,1977,50
+Seychelles,1978,49
+Seychelles,1979,65
+Seychelles,1980,65
+Seychelles,1981,65
+Seychelles,1982,64
+Sierra Leone,1967,44
+Sierra Leone,1968,95
+Sierra Leone,1969,85
+Sierra Leone,1970,79
+Sierra Leone,1971,86
+Sierra Leone,1972,86
+Sierra Leone,1973,73
+Sierra Leone,1974,74
+Sierra Leone,1975,73
+Sierra Leone,1976,74
+Sierra Leone,1977,80
+Sierra Leone,1978,66
+Sierra Leone,1979,65
+Sierra Leone,1980,65
+Sierra Leone,1981,66
+Sierra Leone,1982,66
+Singapore,1967,90
+Singapore,1968,78
+Singapore,1969,79
+Singapore,1970,79
+Singapore,1971,78
+Singapore,1972,80
+Singapore,1973,80
+Singapore,1974,80
+Singapore,1975,80
+Singapore,1976,79
+Singapore,1977,79
+Singapore,1978,79
+Singapore,1979,78
+Singapore,1980,78
+Singapore,1981,78
+Singapore,1982,77
+Somalia,1960,89
+Somalia,1961,90
+Somalia,1962,91
+Somalia,1963,90
+Somalia,1964,86
+Somalia,1965,86
+Somalia,1966,91
+Somalia,1967,86
+Somalia,1968,87
+Somalia,1969,49
+Somalia,1970,47
+Somalia,1971,49
+Somalia,1972,50
+Somalia,1973,50
+Somalia,1974,51
+Somalia,1975,51
+Somalia,1976,51
+Somalia,1977,51
+Somalia,1978,49
+Somalia,1979,62
+Somalia,1980,66
+Somalia,1981,65
+Somalia,1982,66
+South Africa,1948,75
+South Africa,1949,77
+South Africa,1950,74
+South Africa,1951,76
+South Africa,1952,73
+South Africa,1953,75
+South Africa,1954,75
+South Africa,1955,71
+South Africa,1956,73
+South Africa,1957,74
+South Africa,1958,71
+South Africa,1959,71
+South Africa,1960,68
+South Africa,1961,68
+South Africa,1962,72
+South Africa,1963,69
+South Africa,1964,66
+South Africa,1965,68
+South Africa,1966,67
+South Africa,1967,69
+South Africa,1968,69
+South Africa,1969,70
+South Africa,1970,67
+South Africa,1971,70
+South Africa,1972,74
+South Africa,1973,70
+South Africa,1974,72
+South Africa,1975,72
+South Africa,1976,73
+South Africa,1977,72
+South Africa,1978,65
+South Africa,1979,69
+South Africa,1980,72
+South Africa,1981,64
+South Africa,1982,66
+Spain,1948,46
+Spain,1949,49
+Spain,1950,47
+Spain,1951,50
+Spain,1952,49
+Spain,1953,48
+Spain,1954,50
+Spain,1955,47
+Spain,1956,49
+Spain,1957,46
+Spain,1958,47
+Spain,1959,46
+Spain,1960,47
+Spain,1961,47
+Spain,1962,47
+Spain,1963,49
+Spain,1964,48
+Spain,1965,48
+Spain,1966,49
+Spain,1967,50
+Spain,1968,47
+Spain,1969,51
+Spain,1970,56
+Spain,1971,53
+Spain,1972,52
+Spain,1973,54
+Spain,1974,51
+Spain,1975,49
+Spain,1976,49
+Spain,1977,90
+Spain,1978,96
+Spain,1979,95
+Spain,1980,94
+Spain,1981,91
+Spain,1982,95
+Sri Lanka,1953,96
+Sri Lanka,1954,97
+Sri Lanka,1955,96
+Sri Lanka,1956,97
+Sri Lanka,1957,97
+Sri Lanka,1958,96
+Sri Lanka,1959,95
+Sri Lanka,1960,98
+Sri Lanka,1961,98
+Sri Lanka,1962,97
+Sri Lanka,1963,99
+Sri Lanka,1964,99
+Sri Lanka,1965,99
+Sri Lanka,1966,97
+Sri Lanka,1967,100
+Sri Lanka,1968,99
+Sri Lanka,1969,100
+Sri Lanka,1970,101
+Sri Lanka,1971,98
+Sri Lanka,1972,102
+Sri Lanka,1973,103
+Sri Lanka,1974,103
+Sri Lanka,1975,103
+Sri Lanka,1976,102
+Sri Lanka,1977,96
+Sri Lanka,1978,91
+Sri Lanka,1979,92
+Sri Lanka,1980,90
+Sri Lanka,1981,90
+Sri Lanka,1982,91
+Sudan,1960,42
+Sudan,1961,42
+Sudan,1962,44
+Sudan,1963,44
+Sudan,1964,41
+Sudan,1965,66
+Sudan,1966,68
+Sudan,1967,68
+Sudan,1968,96
+Sudan,1969,46
+Sudan,1970,46
+Sudan,1971,49
+Sudan,1972,70
+Sudan,1973,70
+Sudan,1974,70
+Sudan,1975,70
+Sudan,1976,70
+Sudan,1977,70
+Sudan,1978,73
+Sudan,1979,73
+Sudan,1980,69
+Sudan,1981,64
+Sudan,1982,65
+Suriname,1975,99
+Suriname,1976,99
+Suriname,1977,98
+Suriname,1978,97
+Suriname,1979,97
+Suriname,1980,46
+Suriname,1981,47
+Suriname,1982,45
+Swaziland,1968,71
+Swaziland,1969,72
+Swaziland,1970,71
+Swaziland,1971,72
+Swaziland,1972,73
+Swaziland,1973,50
+Swaziland,1974,51
+Swaziland,1975,51
+Swaziland,1976,51
+Swaziland,1977,51
+Swaziland,1978,63
+Swaziland,1979,62
+Swaziland,1980,62
+Swaziland,1981,61
+Swaziland,1982,60
+Sweden,1948,97
+Sweden,1949,97
+Sweden,1948,97
+Sweden,1949,97
+Sweden,1950,98
+Sweden,1951,98
+Sweden,1952,96
+Sweden,1953,98
+Sweden,1954,98
+Sweden,1955,96
+Sweden,1956,97
+Sweden,1957,97
+Sweden,1958,98
+Sweden,1959,97
+Sweden,1960,98
+Sweden,1961,98
+Sweden,1962,98
+Sweden,1963,99
+Sweden,1964,99
+Sweden,1965,99
+Sweden,1966,99
+Sweden,1967,100
+Sweden,1968,100
+Sweden,1969,100
+Sweden,1970,100
+Sweden,1971,104
+Sweden,1972,102
+Sweden,1973,102
+Sweden,1974,102
+Sweden,1975,102
+Sweden,1976,103
+Sweden,1977,101
+Sweden,1978,101
+Sweden,1979,100
+Sweden,1980,101
+Sweden,1981,100
+Sweden,1982,100
+Switzerland,1948,90
+Switzerland,1949,90
+Switzerland,1950,90
+Switzerland,1951,90
+Switzerland,1952,91
+Switzerland,1953,90
+Switzerland,1954,90
+Switzerland,1955,88
+Switzerland,1956,90
+Switzerland,1957,88
+Switzerland,1958,90
+Switzerland,1959,89
+Switzerland,1960,90
+Switzerland,1961,90
+Switzerland,1962,91
+Switzerland,1963,91
+Switzerland,1964,92
+Switzerland,1965,92
+Switzerland,1966,91
+Switzerland,1967,93
+Switzerland,1968,93
+Switzerland,1969,94
+Switzerland,1970,100
+Switzerland,1971,101
+Switzerland,1972,102
+Switzerland,1973,103
+Switzerland,1974,103
+Switzerland,1975,101
+Switzerland,1976,101
+Switzerland,1977,100
+Syria,1948,77
+Syria,1949,55
+Syria,1950,58
+Syria,1951,42
+Syria,1952,44
+Syria,1953,69
+Syria,1954,70
+Syria,1955,75
+Syria,1956,74
+Syria,1957,77
+Syria,1961,67
+Syria,1962,43
+Syria,1963,41
+Syria,1964,45
+Syria,1965,43
+Syria,1966,48
+Syria,1967,45
+Syria,1968,46
+Syria,1969,48
+Syria,1970,56
+Syria,1971,56
+Syria,1972,56
+Syria,1973,74
+Syria,1974,74
+Syria,1975,73
+Syria,1976,73
+Syria,1977,73
+Syria,1978,72
+Syria,1979,70
+Syria,1980,73
+Syria,1981,71
+Syria,1982,71
+Tanzania,1967,77
+Tanzania,1968,78
+Tanzania,1969,78
+Tanzania,1970,79
+Tanzania,1971,80
+Tanzania,1972,80
+Tanzania,1973,81
+Tanzania,1974,81
+Tanzania,1975,81
+Tanzania,1976,81
+Tanzania,1977,74
+Tanzania,1978,73
+Tanzania,1979,73
+Tanzania,1980,72
+Tanzania,1981,73
+Tanzania,1982,72
+Thailand,1948,58
+Thailand,1949,59
+Thailand,1950,58
+Thailand,1951,59
+Thailand,1952,58
+Thailand,1953,57
+Thailand,1954,59
+Thailand,1955,57
+Thailand,1956,55
+Thailand,1957,72
+Thailand,1958,38
+Thailand,1959,48
+Thailand,1960,48
+Thailand,1961,48
+Thailand,1962,49
+Thailand,1963,50
+Thailand,1964,50
+Thailand,1965,50
+Thailand,1966,51
+Thailand,1967,52
+Thailand,1968,52
+Thailand,1969,74
+Thailand,1970,73
+Thailand,1971,48
+Thailand,1972,57
+Thailand,1973,50
+Thailand,1974,53
+Thailand,1975,98
+Thailand,1976,48
+Thailand,1977,50
+Thailand,1978,50
+Thailand,1979,86
+Thailand,1980,86
+Thailand,1981,85
+Thailand,1982,85
+Togo,1960,62
+Togo,1961,62
+Togo,1962,63
+Togo,1963,63
+Togo,1964,64
+Togo,1965,64
+Togo,1966,63
+Togo,1967,46
+Togo,1968,47
+Togo,1969,49
+Togo,1970,48
+Togo,1971,49
+Togo,1972,51
+Togo,1973,52
+Togo,1974,53
+Togo,1975,53
+Togo,1976,53
+Togo,1977,53
+Togo,1978,51
+Togo,1979,65
+Togo,1980,65
+Togo,1981,65
+Togo,1982,64
+Trinidad and Tobago,1967,100
+Trinidad and Tobago,1968,100
+Trinidad and Tobago,1969,101
+Trinidad and Tobago,1970,100
+Trinidad and Tobago,1971,82
+Trinidad and Tobago,1972,83
+Trinidad and Tobago,1973,84
+Trinidad and Tobago,1974,83
+Trinidad and Tobago,1975,83
+Trinidad and Tobago,1976,103
+Trinidad and Tobago,1977,102
+Trinidad and Tobago,1978,101
+Trinidad and Tobago,1979,94
+Trinidad and Tobago,1980,95
+Trinidad and Tobago,1981,94
+Trinidad and Tobago,1982,94
+Tunisia,1960,67
+Tunisia,1961,68
+Tunisia,1962,67
+Tunisia,1963,67
+Tunisia,1964,67
+Tunisia,1965,67
+Tunisia,1966,67
+Tunisia,1967,68
+Tunisia,1968,68
+Tunisia,1969,69
+Tunisia,1970,68
+Tunisia,1971,70
+Tunisia,1972,71
+Tunisia,1973,70
+Tunisia,1974,70
+Tunisia,1975,70
+Tunisia,1976,71
+Tunisia,1977,70
+Tunisia,1978,68
+Tunisia,1979,69
+Tunisia,1980,69
+Tunisia,1981,68
+Tunisia,1982,67
+Turkey,1948,85
+Turkey,1949,87
+Turkey,1950,86
+Turkey,1951,85
+Turkey,1952,86
+Turkey,1953,85
+Turkey,1954,85
+Turkey,1955,84
+Turkey,1956,82
+Turkey,1957,91
+Turkey,1958,90
+Turkey,1959,89
+Turkey,1960,40
+Turkey,1961,84
+Turkey,1962,85
+Turkey,1963,86
+Turkey,1964,86
+Turkey,1965,93
+Turkey,1966,92
+Turkey,1967,94
+Turkey,1968,94
+Turkey,1969,95
+Turkey,1970,94
+Turkey,1971,82
+Turkey,1972,85
+Turkey,1973,95
+Turkey,1974,95
+Turkey,1975,100
+Turkey,1976,94
+Turkey,1977,98
+Turkey,1978,94
+Turkey,1979,94
+Turkey,1980,43
+Turkey,1981,41
+Turkey,1982,43
+Uganda,1967,74
+Uganda,1968,74
+Uganda,1969,74
+Uganda,1970,70
+Uganda,1971,49
+Uganda,1972,51
+Uganda,1973,51
+Uganda,1974,51
+Uganda,1975,52
+Uganda,1976,50
+Uganda,1977,50
+Uganda,1978,50
+Uganda,1979,47
+Uganda,1980,85
+Uganda,1981,86
+Uganda,1982,85
+United Arab Emirates,1972,55
+United Arab Emirates,1973,55
+United Arab Emirates,1974,56
+United Arab Emirates,1975,56
+United Arab Emirates,1976,56
+United Arab Emirates,1977,56
+United Arab Emirates,1978,54
+United Arab Emirates,1979,54
+United Arab Emirates,1980,54
+United Arab Emirates,1981,53
+United Arab Emirates,1982,52
+USSR,1948,58
+USSR,1949,58
+USSR,1950,58
+USSR,1951,55
+USSR,1952,56
+USSR,1953,54
+USSR,1954,56
+USSR,1955,57
+USSR,1956,56
+USSR,1957,57
+USSR,1958,58
+USSR,1959,54
+USSR,1960,56
+USSR,1961,56
+USSR,1962,56
+USSR,1963,55
+USSR,1964,57
+USSR,1965,58
+USSR,1966,57
+USSR,1967,57
+USSR,1968,57
+USSR,1969,55
+USSR,1970,55
+USSR,1971,57
+USSR,1972,60
+USSR,1973,58
+USSR,1974,59
+USSR,1975,61
+USSR,1976,60
+USSR,1977,55
+USSR,1978,55
+USSR,1979,61
+USSR,1980,61
+USSR,1981,61
+USSR,1982,58
+United Kingdom,1948,96
+United Kingdom,1949,97
+United Kingdom,1950,97
+United Kingdom,1951,97
+United Kingdom,1952,98
+United Kingdom,1953,98
+United Kingdom,1954,97
+United Kingdom,1955,97
+United Kingdom,1956,98
+United Kingdom,1957,97
+United Kingdom,1958,97
+United Kingdom,1959,97
+United Kingdom,1960,98
+United Kingdom,1961,100
+United Kingdom,1962,98
+United Kingdom,1963,99
+United Kingdom,1964,100
+United Kingdom,1965,99
+United Kingdom,1966,98
+United Kingdom,1967,98
+United Kingdom,1968,98
+United Kingdom,1969,98
+United Kingdom,1970,96
+United Kingdom,1971,99
+United Kingdom,1972,87
+United Kingdom,1973,99
+United Kingdom,1974,88
+United Kingdom,1975,92
+United Kingdom,1976,93
+United Kingdom,1977,95
+United Kingdom,1978,98
+United Kingdom,1979,100
+United Kingdom,1980,98
+United Kingdom,1981,101
+United Kingdom,1982,99
+United States,1948,96
+United States,1949,97
+United States,1950,98
+United States,1951,97
+United States,1952,96
+United States,1953,98
+United States,1954,96
+United States,1955,97
+United States,1956,97
+United States,1957,95
+United States,1958,97
+United States,1959,96
+United States,1960,97
+United States,1961,92
+United States,1962,100
+United States,1963,98
+United States,1964,97
+United States,1965,100
+United States,1966,99
+United States,1967,103
+United States,1968,100
+United States,1969,103
+United States,1970,97
+United States,1971,92
+United States,1972,98
+United States,1973,107
+United States,1974,101
+United States,1975,109
+United States,1976,100
+United States,1977,102
+United States,1978,97
+United States,1979,86
+United States,1980,86
+United States,1981,89
+United States,1982,88
+Upper Volta (Burkina Faso),1960,62
+Upper Volta (Burkina Faso),1961,63
+Upper Volta (Burkina Faso),1962,63
+Upper Volta (Burkina Faso),1963,63
+Upper Volta (Burkina Faso),1964,64
+Upper Volta (Burkina Faso),1965,64
+Upper Volta (Burkina Faso),1966,46
+Upper Volta (Burkina Faso),1967,47
+Upper Volta (Burkina Faso),1968,47
+Upper Volta (Burkina Faso),1969,49
+Upper Volta (Burkina Faso),1970,74
+Upper Volta (Burkina Faso),1971,75
+Upper Volta (Burkina Faso),1972,76
+Upper Volta (Burkina Faso),1973,76
+Upper Volta (Burkina Faso),1974,51
+Upper Volta (Burkina Faso),1975,51
+Upper Volta (Burkina Faso),1976,51
+Upper Volta (Burkina Faso),1977,51
+Upper Volta (Burkina Faso),1978,78
+Upper Volta (Burkina Faso),1979,77
+Upper Volta (Burkina Faso),1980,47
+Upper Volta (Burkina Faso),1981,46
+Upper Volta (Burkina Faso),1982,46
+Uruguay,1948,90
+Uruguay,1949,90
+Uruguay,1950,91
+Uruguay,1951,92
+Uruguay,1952,99
+Uruguay,1953,99
+Uruguay,1954,98
+Uruguay,1955,98
+Uruguay,1956,98
+Uruguay,1957,98
+Uruguay,1958,99
+Uruguay,1959,98
+Uruguay,1960,99
+Uruguay,1961,100
+Uruguay,1962,100
+Uruguay,1963,100
+Uruguay,1964,102
+Uruguay,1965,99
+Uruguay,1966,99
+Uruguay,1967,101
+Uruguay,1968,99
+Uruguay,1969,101
+Uruguay,1970,101
+Uruguay,1971,102
+Uruguay,1972,104
+Uruguay,1973,57
+Uruguay,1974,56
+Uruguay,1975,56
+Uruguay,1976,56
+Uruguay,1977,56
+Venezuela,1948,41
+Venezuela,1949,42
+Venezuela,1950,41
+Venezuela,1951,41
+Venezuela,1952,58
+Venezuela,1953,69
+Venezuela,1954,71
+Venezuela,1955,69
+Venezuela,1956,69
+Venezuela,1957,56
+Venezuela,1958,60
+Venezuela,1959,85
+Venezuela,1960,84
+Venezuela,1961,87
+Venezuela,1962,87
+Venezuela,1963,82
+Venezuela,1964,85
+Venezuela,1965,87
+Venezuela,1966,87
+Venezuela,1967,88
+Venezuela,1968,88
+Venezuela,1969,90
+Venezuela,1970,89
+Venezuela,1971,89
+Venezuela,1972,90
+Venezuela,1973,91
+Venezuela,1974,91
+Venezuela,1975,90
+Venezuela,1976,90
+Venezuela,1977,89
+Venezuela,1978,95
+Venezuela,1979,94
+Venezuela,1980,94
+Venezuela,1981,94
+Venezuela,1982,94
+Vietnam,1976,64
+Vietnam,1977,64
+Vietnam,1978,63
+Vietnam,1979,62
+Vietnam,1980,62
+Vietnam,1981,62
+Vietnam,1982,61
+Vietnam PR,1960,63
+Vietnam PR,1961,63
+Vietnam PR,1962,64
+Vietnam PR,1963,64
+Vietnam PR,1964,64
+Vietnam PR,1965,64
+Vietnam PR,1966,60
+Vietnam PR,1967,66
+Vietnam PR,1968,65
+Vietnam PR,1969,63
+Vietnam PR,1970,62
+Vietnam PR,1971,63
+Vietnam PR,1972,64
+Vietnam PR,1973,64
+Vietnam PR,1974,64
+Vietnam PR,1975,64
+Vietnam S,1960,74
+Vietnam S,1961,74
+Vietnam S,1962,76
+Vietnam S,1963,41
+Vietnam S,1964,41
+Vietnam S,1965,44
+Vietnam S,1966,41
+Vietnam S,1975,52
+Western Samoa,1967,76
+Western Samoa,1968,76
+Western Samoa,1969,76
+Western Samoa,1970,76
+Western Samoa,1971,77
+Western Samoa,1972,77
+Western Samoa,1973,77
+Western Samoa,1974,77
+Western Samoa,1975,77
+Western Samoa,1976,77
+Western Samoa,1977,77
+Western Samoa,1978,76
+Western Samoa,1979,99
+Western Samoa,1980,99
+Western Samoa,1981,99
+Western Samoa,1982,99
+Yemen AR,1948,42
+Yemen AR,1949,43
+Yemen AR,1950,41
+Yemen AR,1951,43
+Yemen AR,1952,45
+Yemen AR,1953,43
+Yemen AR,1954,45
+Yemen AR,1955,42
+Yemen AR,1956,43
+Yemen AR,1957,39
+Yemen AR,1958,42
+Yemen AR,1959,42
+Yemen AR,1960,42
+Yemen AR,1961,42
+Yemen AR,1962,44
+Yemen AR,1963,45
+Yemen AR,1964,44
+Yemen AR,1965,45
+Yemen AR,1966,48
+Yemen AR,1967,46
+Yemen AR,1968,48
+Yemen AR,1969,51
+Yemen AR,1970,47
+Yemen AR,1971,59
+Yemen AR,1972,60
+Yemen AR,1973,61
+Yemen AR,1974,55
+Yemen AR,1975,56
+Yemen AR,1976,56
+Yemen AR,1977,56
+Yemen AR,1978,57
+Yemen AR,1979,55
+Yemen AR,1980,55
+Yemen AR,1981,56
+Yemen AR,1982,54
+Yemen PDR,1967,48
+Yemen PDR,1968,47
+Yemen PDR,1969,48
+Yemen PDR,1970,47
+Yemen PDR,1971,56
+Yemen PDR,1972,58
+Yemen PDR,1973,57
+Yemen PDR,1974,58
+Yemen PDR,1975,58
+Yemen PDR,1976,58
+Yemen PDR,1977,57
+Yemen PDR,1978,67
+Yemen PDR,1979,66
+Yemen PDR,1980,66
+Yemen PDR,1981,65
+Yemen PDR,1982,65
+Yugoslavia,1948,54
+Yugoslavia,1949,57
+Yugoslavia,1950,55
+Yugoslavia,1951,53
+Yugoslavia,1952,53
+Yugoslavia,1953,71
+Yugoslavia,1954,71
+Yugoslavia,1955,70
+Yugoslavia,1956,69
+Yugoslavia,1957,70
+Yugoslavia,1958,70
+Yugoslavia,1959,70
+Yugoslavia,1960,71
+Yugoslavia,1961,71
+Yugoslavia,1962,71
+Yugoslavia,1963,72
+Yugoslavia,1964,72
+Yugoslavia,1965,72
+Yugoslavia,1966,71
+Yugoslavia,1967,71
+Yugoslavia,1968,73
+Yugoslavia,1969,73
+Yugoslavia,1970,72
+Yugoslavia,1971,72
+Yugoslavia,1972,73
+Yugoslavia,1973,74
+Yugoslavia,1974,74
+Yugoslavia,1975,73
+Yugoslavia,1976,73
+Yugoslavia,1977,73
+Yugoslavia,1978,74
+Yugoslavia,1979,73
+Yugoslavia,1980,72
+Yugoslavia,1981,70
+Yugoslavia,1982,72
+Zaire,1960,75
+Zaire,1961,72
+Zaire,1962,78
+Zaire,1963,55
+Zaire,1964,44
+Zaire,1965,46
+Zaire,1966,43
+Zaire,1967,46
+Zaire,1968,47
+Zaire,1969,49
+Zaire,1970,65
+Zaire,1971,67
+Zaire,1972,67
+Zaire,1973,67
+Zaire,1974,68
+Zaire,1975,67
+Zaire,1976,68
+Zaire,1977,67
+Zaire,1978,65
+Zaire,1979,66
+Zaire,1980,65
+Zaire,1981,65
+Zaire,1982,65
+Zambia,1967,75
+Zambia,1968,75
+Zambia,1969,76
+Zambia,1970,75
+Zambia,1971,76
+Zambia,1972,77
+Zambia,1973,68
+Zambia,1974,68
+Zambia,1975,68
+Zambia,1976,67
+Zambia,1977,66
+Zambia,1978,66
+Zambia,1979,65
+Zambia,1980,66
+Zambia,1981,65
+Zambia,1982,65
+Zimbabwe,1967,66
+Zimbabwe,1968,67
+Zimbabwe,1969,67
+Zimbabwe,1970,69
+Zimbabwe,1971,70
+Zimbabwe,1972,69
+Zimbabwe,1973,71
+Zimbabwe,1974,72
+Zimbabwe,1975,71
+Zimbabwe,1976,72
+Zimbabwe,1977,82
+Zimbabwe,1978,68
+Zimbabwe,1979,47
+Zimbabwe,1980,87
+Zimbabwe,1981,91
+Zimbabwe,1982,89

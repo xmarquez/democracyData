@@ -1,0 +1,343 @@
+Country,Year,Electoral Democracy Index
+Argentina,1960,0.25
+Argentina,1977,0.00
+Argentina,1985,1.00
+Argentina,1990,1.00
+Argentina,1991,1.00
+Argentina,1992,1.00
+Argentina,1993,1.00
+Argentina,1994,1.00
+Argentina,1995,1.00
+Argentina,1996,1.00
+Argentina,1997,1.00
+Argentina,1998,1.00
+Argentina,1999,1.00
+Argentina,2000,1.00
+Argentina,2001,0.92
+Argentina,2002,1.00
+Argentina,2003,1.00
+Argentina,2004,1.00
+Argentina,2005,1.00
+Bolivia,1960,1.00
+Bolivia,1977,0.00
+Bolivia,1985,0.75
+Bolivia,1990,1.00
+Bolivia,1991,1.00
+Bolivia,1992,1.00
+Bolivia,1993,1.00
+Bolivia,1994,1.00
+Bolivia,1995,1.00
+Bolivia,1996,1.00
+Bolivia,1997,1.00
+Bolivia,1998,1.00
+Bolivia,1999,1.00
+Bolivia,2000,1.00
+Bolivia,2001,1.00
+Bolivia,2002,1.00
+Bolivia,2003,0.75
+Bolivia,2004,0.75
+Bolivia,2005,0.75
+Brazil,1960,0.69
+Brazil,1977,0.26
+Brazil,1985,0.40
+Brazil,1990,1.00
+Brazil,1991,1.00
+Brazil,1992,1.00
+Brazil,1993,1.00
+Brazil,1994,1.00
+Brazil,1995,1.00
+Brazil,1996,1.00
+Brazil,1997,1.00
+Brazil,1998,1.00
+Brazil,1999,1.00
+Brazil,2000,1.00
+Brazil,2001,1.00
+Brazil,2002,1.00
+Brazil,2003,1.00
+Brazil,2004,1.00
+Brazil,2005,1.00
+Chile,1960,0.75
+Chile,1977,0.00
+Chile,1985,0.00
+Chile,1990,0.75
+Chile,1991,0.75
+Chile,1992,0.75
+Chile,1993,0.75
+Chile,1994,0.75
+Chile,1995,0.75
+Chile,1996,0.75
+Chile,1997,0.75
+Chile,1998,0.75
+Chile,1999,0.75
+Chile,2000,0.75
+Chile,2001,0.75
+Chile,2002,0.75
+Chile,2003,0.75
+Chile,2004,0.75
+Chile,2005,0.75
+Colombia,1960,0.75
+Colombia,1977,0.83
+Colombia,1985,1.00
+Colombia,1990,0.56
+Colombia,1991,0.56
+Colombia,1992,0.56
+Colombia,1993,0.56
+Colombia,1994,0.56
+Colombia,1995,0.56
+Colombia,1996,0.56
+Colombia,1997,0.56
+Colombia,1998,0.56
+Colombia,1999,0.56
+Colombia,2000,0.56
+Colombia,2001,0.56
+Colombia,2002,0.69
+Colombia,2003,0.69
+Colombia,2004,0.69
+Colombia,2005,0.69
+Costa Rica,1960,1.00
+Costa Rica,1977,1.00
+Costa Rica,1985,1.00
+Costa Rica,1990,1.00
+Costa Rica,1991,1.00
+Costa Rica,1992,1.00
+Costa Rica,1993,1.00
+Costa Rica,1994,1.00
+Costa Rica,1995,1.00
+Costa Rica,1996,1.00
+Costa Rica,1997,1.00
+Costa Rica,1998,1.00
+Costa Rica,1999,1.00
+Costa Rica,2000,1.00
+Costa Rica,2001,1.00
+Costa Rica,2002,1.00
+Costa Rica,2003,1.00
+Costa Rica,2004,1.00
+Costa Rica,2005,1.00
+Dominican Republic,1960,0.08
+Dominican Republic,1977,0.08
+Dominican Republic,1985,1.00
+Dominican Republic,1990,0.83
+Dominican Republic,1991,0.83
+Dominican Republic,1992,0.83
+Dominican Republic,1993,0.83
+Dominican Republic,1994,0.50
+Dominican Republic,1995,0.50
+Dominican Republic,1996,1.00
+Dominican Republic,1997,1.00
+Dominican Republic,1998,1.00
+Dominican Republic,1999,1.00
+Dominican Republic,2000,1.00
+Dominican Republic,2001,1.00
+Dominican Republic,2002,1.00
+Dominican Republic,2003,1.00
+Dominican Republic,2004,1.00
+Dominican Republic,2005,1.00
+Ecuador,1960,0.75
+Ecuador,1977,0.00
+Ecuador,1985,1.00
+Ecuador,1990,1.00
+Ecuador,1991,1.00
+Ecuador,1992,1.00
+Ecuador,1993,1.00
+Ecuador,1994,1.00
+Ecuador,1995,1.00
+Ecuador,1996,1.00
+Ecuador,1997,0.83
+Ecuador,1998,1.00
+Ecuador,1999,1.00
+Ecuador,2000,0.75
+Ecuador,2001,0.75
+Ecuador,2002,0.75
+Ecuador,2003,1.00
+Ecuador,2004,1.00
+Ecuador,2005,0.75
+El Salvador,1960,0.00
+El Salvador,1977,0.69
+El Salvador,1985,0.56
+El Salvador,1990,0.56
+El Salvador,1991,0.75
+El Salvador,1992,0.75
+El Salvador,1993,0.75
+El Salvador,1994,1.00
+El Salvador,1995,1.00
+El Salvador,1996,1.00
+El Salvador,1997,1.00
+El Salvador,1998,1.00
+El Salvador,1999,1.00
+El Salvador,2000,1.00
+El Salvador,2001,1.00
+El Salvador,2002,1.00
+El Salvador,2003,1.00
+El Salvador,2004,1.00
+El Salvador,2005,1.00
+Guatemala,1960,0.56
+Guatemala,1977,0.56
+Guatemala,1985,0.00
+Guatemala,1990,0.56
+Guatemala,1991,0.56
+Guatemala,1992,0.56
+Guatemala,1993,0.42
+Guatemala,1994,0.56
+Guatemala,1995,0.56
+Guatemala,1996,0.56
+Guatemala,1997,0.56
+Guatemala,1998,0.56
+Guatemala,1999,0.56
+Guatemala,2000,1.00
+Guatemala,2001,1.00
+Guatemala,2002,1.00
+Guatemala,2003,1.00
+Guatemala,2004,0.84
+Guatemala,2005,0.84
+Honduras,1960,1.00
+Honduras,1977,0.00
+Honduras,1985,0.92
+Honduras,1990,1.00
+Honduras,1991,1.00
+Honduras,1992,1.00
+Honduras,1993,1.00
+Honduras,1994,1.00
+Honduras,1995,1.00
+Honduras,1996,1.00
+Honduras,1997,1.00
+Honduras,1998,1.00
+Honduras,1999,1.00
+Honduras,2000,1.00
+Honduras,2001,1.00
+Honduras,2002,1.00
+Honduras,2003,1.00
+Honduras,2004,1.00
+Honduras,2005,1.00
+Mexico,1960,0.56
+Mexico,1977,0.56
+Mexico,1985,0.75
+Mexico,1990,0.42
+Mexico,1991,0.42
+Mexico,1992,0.50
+Mexico,1993,0.50
+Mexico,1994,0.50
+Mexico,1995,1.00
+Mexico,1996,1.00
+Mexico,1997,1.00
+Mexico,1998,1.00
+Mexico,1999,1.00
+Mexico,2000,1.00
+Mexico,2001,1.00
+Mexico,2002,1.00
+Mexico,2003,1.00
+Mexico,2004,1.00
+Mexico,2005,1.00
+Nicaragua,1960,0.06
+Nicaragua,1977,0.06
+Nicaragua,1985,0.75
+Nicaragua,1990,1.00
+Nicaragua,1991,1.00
+Nicaragua,1992,1.00
+Nicaragua,1993,1.00
+Nicaragua,1994,1.00
+Nicaragua,1995,1.00
+Nicaragua,1996,1.00
+Nicaragua,1997,1.00
+Nicaragua,1998,1.00
+Nicaragua,1999,1.00
+Nicaragua,2000,1.00
+Nicaragua,2001,0.92
+Nicaragua,2002,0.92
+Nicaragua,2003,0.92
+Nicaragua,2004,0.92
+Nicaragua,2005,0.84
+Panama,1960,0.75
+Panama,1977,0.00
+Panama,1985,0.54
+Panama,1990,1.00
+Panama,1991,1.00
+Panama,1992,1.00
+Panama,1993,1.00
+Panama,1994,1.00
+Panama,1995,1.00
+Panama,1996,1.00
+Panama,1997,1.00
+Panama,1998,1.00
+Panama,1999,1.00
+Panama,2000,1.00
+Panama,2001,1.00
+Panama,2002,1.00
+Panama,2003,1.00
+Panama,2004,1.00
+Panama,2005,1.00
+Paraguay,1960,0.03
+Paraguay,1977,0.06
+Paraguay,1985,0.06
+Paraguay,1990,0.75
+Paraguay,1991,0.75
+Paraguay,1992,0.75
+Paraguay,1993,0.75
+Paraguay,1994,0.75
+Paraguay,1995,0.75
+Paraguay,1996,0.75
+Paraguay,1997,0.75
+Paraguay,1998,1.00
+Paraguay,1999,0.58
+Paraguay,2000,1.00
+Paraguay,2001,1.00
+Paraguay,2002,1.00
+Paraguay,2003,1.00
+Paraguay,2004,1.00
+Paraguay,2005,1.00
+Peru,1960,0.19
+Peru,1977,0.00
+Peru,1985,1.00
+Peru,1990,1.00
+Peru,1991,1.00
+Peru,1992,0.50
+Peru,1993,0.75
+Peru,1994,0.75
+Peru,1995,0.75
+Peru,1996,0.75
+Peru,1997,0.75
+Peru,1998,0.75
+Peru,1999,0.75
+Peru,2000,0.38
+Peru,2001,1.00
+Peru,2002,1.00
+Peru,2003,1.00
+Peru,2004,1.00
+Peru,2005,1.00
+Uruguay,1960,1.00
+Uruguay,1977,0.00
+Uruguay,1985,0.75
+Uruguay,1990,1.00
+Uruguay,1991,1.00
+Uruguay,1992,1.00
+Uruguay,1993,1.00
+Uruguay,1994,1.00
+Uruguay,1995,1.00
+Uruguay,1996,1.00
+Uruguay,1997,1.00
+Uruguay,1998,1.00
+Uruguay,1999,1.00
+Uruguay,2000,1.00
+Uruguay,2001,1.00
+Uruguay,2002,1.00
+Uruguay,2003,1.00
+Uruguay,2004,1.00
+Uruguay,2005,1.00
+Venezuela,1960,1.00
+Venezuela,1977,1.00
+Venezuela,1985,1.00
+Venezuela,1990,1.00
+Venezuela,1991,1.00
+Venezuela,1992,1.00
+Venezuela,1993,1.00
+Venezuela,1994,1.00
+Venezuela,1995,1.00
+Venezuela,1996,1.00
+Venezuela,1997,1.00
+Venezuela,1998,1.00
+Venezuela,1999,1.00
+Venezuela,2000,1.00
+Venezuela,2001,1.00
+Venezuela,2002,0.67
+Venezuela,2003,1.00
+Venezuela,2004,0.84
+Venezuela,2005,0.84
