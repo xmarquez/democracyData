@@ -5,7 +5,7 @@ standardize_selection <- function(x, include_in_output) {
   x |>
     dplyr::filter(!is.na(value)) |>
     dplyr::select(dplyr::all_of(c(include_in_output, "year", "measure", "value")), dplyr::matches("_country$|ulfelder_scode|vdem_country_name")) |>
-    dplyr::select(-dplyr::any_of("governing_country")) |>
+    dplyr::select(-dplyr::matches("governing_country")) |>
     dplyr::mutate(value = as.numeric(value)) |>
     dplyr::rename_with(~"original_country_name", dplyr::matches("_country$|ulfelder_scode|vdem_country_name"))
 
@@ -110,7 +110,7 @@ standardize_polity5 <- function(force_redownload = FALSE,
   }
 
   res <- polity5 |>
-    dplyr::mutate(across(measure, \(x) ifelse(x < -10, NA, x))) |>
+    dplyr::mutate(across(dplyr::all_of(measure), \(x) ifelse(x < -10, NA, x))) |>
     tidyr::pivot_longer(dplyr::all_of(measure),
                         names_to = "measure", values_to = "value") |>
     standardize_selection(include_in_output = include_in_output)
@@ -138,7 +138,7 @@ standardize_polity4 <- function(force_redownload = FALSE,
   }
 
   res <- polity4 |>
-    dplyr::mutate(across(measure, \(x) ifelse(x < -10, NA, x))) |>
+    dplyr::mutate(across(dplyr::all_of(measure), \(x) ifelse(x < -10, NA, x))) |>
     tidyr::pivot_longer(dplyr::all_of(measure),
                         names_to = "measure", values_to = "value") |>
     standardize_selection(include_in_output = include_in_output)
@@ -601,6 +601,7 @@ standardize_vaporeg <- function(force_redownload = FALSE,
                                             "vaporeg_binary_non_strict",
                                             "vaporeg_trichotomous"),
                                 ...) {
+  
   if(verbose) {
     message("Adding VaPoReg data")
   }
@@ -990,21 +991,23 @@ standardize_prc_gasiorowski <- function(include_in_output = c("extended_country_
 
   if (keep_only_last_in_year) {
     prc <- prc |>
-      dplyr::group_by(dplyr::across(all_of(c(include_in_output, "year")))) |>
-      dplyr::filter(end == max(end, na.rm = TRUE)) |>
-      dplyr::filter(prc_at_end_year == last(prc_at_end_year)) |>
+      dplyr::group_by(dplyr::across(all_of(c("prc_gasiorowski_country", "year", include_in_output)))) |>
+      dplyr::summarise(prc = last(.data[["prc_at_end_year"]][.data[["end"]] == max(.data[["end"]])])) |>
       dplyr::ungroup() |>
-      dplyr::distinct()
+      dplyr::distinct() |>
+      dplyr::mutate(prc = ifelse(prc == 2, NA_real_, prc)) 
+  } else {
+    prc <- prc |>
+      dplyr::mutate(prc = dplyr::case_when(
+        .data[[measure]] == "A" ~ 1,
+        .data[[measure]] == "S" ~ 3,
+        .data[[measure]] == "D" ~ 4,
+        .data[[measure]] == "T" ~ NA_real_)
+      )
   }
 
   res <- prc |>
-    dplyr::mutate(prc = dplyr::case_when(
-      .data[[measure]] == "A" ~ 1,
-      .data[[measure]] == "S" ~ 3,
-      .data[[measure]] == "D" ~ 4,
-      .data[[measure]] == "T" ~ NA_real_)
-    ) |>
-    tidyr::pivot_longer(cols = "prc",
+    tidyr::pivot_longer(cols = dplyr::all_of("prc"),
                         names_to = "measure", values_to = "value") |>
     standardize_selection(include_in_output = include_in_output)
 
@@ -1098,7 +1101,7 @@ standardize_REIGN <- function(force_redownload = FALSE,
       .data[[measure]] %in% c("presidential", "parliamentary") ~ 1,
       TRUE ~ 0
     )) |>
-    tidyr::pivot_longer(cols = "reign_democracy",
+    tidyr::pivot_longer(cols = dplyr::all_of("reign_democracy"),
                         names_to = "measure", values_to = "value") |>
     standardize_selection(include_in_output = include_in_output)
 
@@ -1164,8 +1167,8 @@ standardize_svolik <- function(include_in_output = c("extended_country_name",
   svolik <- democracyData::svolik_regime
 
   res <- svolik |>
-    dplyr::rename_with(~"svolik_democracy", measure) |>
-    tidyr::pivot_longer(cols = "svolik_democracy",
+    dplyr::rename_with(~"svolik_democracy", .cols = dplyr::all_of(measure)) |>
+    tidyr::pivot_longer(cols = dplyr::all_of("svolik_democracy"),
                         names_to = "measure", values_to = "value") |>
     standardize_selection(include_in_output = include_in_output)
 
@@ -1206,7 +1209,7 @@ standardize_uds <- function(force_redownload = FALSE,
   # Rename measures
   new_names <- paste0("uds_", release_year, "_", measure)
   uds <- uds |>
-    dplyr::rename_with(~new_names, .cols = measure)
+    dplyr::rename_with(~new_names, .cols = dplyr::all_of(measure))
 
   res <- uds |>
     tidyr::pivot_longer(cols = dplyr::all_of(new_names),
@@ -1375,7 +1378,7 @@ standardize_wahman_teorell_hadenius <- function(include_in_output = c("extended_
       wth_democ1 = haven::zap_label(regime1ny) == 100,
       wth_democrobust = haven::zap_label(regimenyrobust) == 100
     ) |>
-    tidyr::pivot_longer(cols = c("wth_democ1", "wth_democrobust"),
+    tidyr::pivot_longer(cols = dplyr::all_of(c("wth_democ1", "wth_democrobust")),
                         names_to = "measure", values_to = "value") |>
     standardize_selection(include_in_output = include_in_output)
 

@@ -13,14 +13,13 @@ generate_democracy_scores_dataset(
   verbose = TRUE,
   force_redownload = FALSE,
   scale_scores = FALSE,
+  keep_only_last_in_year = TRUE,
   uds_release_year = c(2014, 2011, 2010),
   svmdi_release_year = c(2020, 2016),
-  exclude_pmm_duplicates = FALSE,
-  keep_dissolution_year = FALSE,
-  keep_cow_extras = FALSE,
-  keep_PIPE_extras = FALSE,
-  keep_polity_extras = FALSE,
-  keep_only_last_in_year = TRUE
+  exclude_pmm_duplicates = TRUE,
+  prefer_successor = TRUE,
+  fix_PIPE = TRUE,
+  enforce_GW_enddates = TRUE
 )
 }
 \arguments{
@@ -60,13 +59,6 @@ debugging; default is \code{FALSE}.}
 \item{scale_scores}{Whether to scale each measure (substracting their mean
 and dividing by their standard deviation). Default is \code{FALSE}.}
 
-\item{uds_release_year}{Which release of the original \link{uds} dataset to
-include. Defaults to the latest, 2014. Can be 2014, 2011, or 2010, or all
-of them.}
-
-\item{svmdi_release_year}{Which release of the \link{svmdi} dataset to include.
-Defaults to the latest, 2020. Can be 2020 or 2016, or both of them.}
-
 \item{keep_only_last_in_year}{Whether to keep only the last regime
 measurement in a given country-year. Some datasets (e.g., \link{prc}, \link{reign})
 contain more than one regime measurement per country-year in some cases (if
@@ -77,18 +69,88 @@ This setting is only of interest if you set \code{output_format = "long"},
 since it is ignored when \code{output_format = "wide"}, which automatically
 discards all regime measurements except the last in the year.}
 
+\item{uds_release_year}{Which release of the original \link{uds} dataset to
+include. Defaults to the latest, 2014. Can be 2014, 2011, or 2010, or all
+of them.}
+
+\item{svmdi_release_year}{Which release of the \link{svmdi} dataset to include.
+Defaults to the latest, 2020. Can be 2020 or 2016, or both of them.}
+
+\item{exclude_pmm_duplicates}{Whether to exclude versions of some measures
+found in Pemstein, Meserve, and Melton's replication dataset for their 2010
+piece introducing the Unified Democracy Scores (Pemstein, Meserve, and
+Melton 2010, 2013). See \link{blm_pmm}, \link{prc_pmm}, \link{fh_pmm}, \link{pacl_pmm},
+\link{vanhanen_pmm}, and \link{polity_pmm} for details. This is included mostly to
+extend or replicate the \link{uds} scores. Default is \code{TRUE}; set to
+\code{FALSE} to keep these.}
+
+\item{prefer_successor}{In some cases (e.g., Italy 1861) some datasets
+contain two measurements in the same year: one for the precursor state
+(Piedmont-Sardinia, which is Italy/Sardinia in \code{extended_country_name}) and
+one for the successor state (unified Italy). The problem affects the
+following entities in different datasets: Ethiopia (Eritrea split in 1993);
+Germany (reunification in 1993); Italy (unification in 1861, previously
+Piedmont-Sardinia); Pakistan (Bangladesh split in 1971); the Soviet Union
+(creation in 1922; dissolution in 1991); Sudan (South Sudan split in 2011);
+Vietnam (1945-1953 period and reunification in 1976); Yemen (unification in
+1990); Yugoslavia (1991 breakup). Setting \code{prefer_successor} to \code{TRUE}
+ensures the successor state is the only measurement included, where the
+successor state is preferentially the state in the Gleditsch-Ward system.
+Setting it to \code{FALSE} ensures both measurements are included, which results
+in two measurements for the same country-year (where country means the
+country in \code{extended_country_name}).}
+
+\item{fix_PIPE}{The \link{PIPE} dataset uses a particularly tangled state system,
+measuring some countries when they should not exist, or splitting some
+countries into historical and modern states but measuring both during the
+historical period:\tabular{llrr}{
+   extended_country_name \tab PIPE_country \tab min_year \tab max_year \cr
+   Austria \tab Austria \tab 1918 \tab 1918 \cr
+   Austria \tab Austria-Hungary (Austria) \tab 1918 \tab 1918 \cr
+   Austria-Hungary \tab Austria-Hungary (Austria) \tab 1848 \tab 1917 \cr
+   Austria-Hungary \tab Austria-Hungary (Hungary) \tab 1848 \tab 1917 \cr
+   Czechoslovakia \tab Czech Republic \tab 1990 \tab 1992 \cr
+   Czechoslovakia \tab Czechoslovakia \tab 1990 \tab 1992 \cr
+   German Federal Republic \tab Germany \tab 1990 \tab 1990 \cr
+   German Federal Republic \tab Germanywest \tab 1990 \tab 1990 \cr
+   Korea \tab North Korea \tab 1820 \tab 1870 \cr
+   Korea \tab South Korea \tab 1820 \tab 1870 \cr
+   Pakistan \tab Pakistan \tab 1950 \tab 1970 \cr
+   Pakistan \tab Pakistanincludingbangladesh \tab 1950 \tab 1970 \cr
+   Turkey (Ottoman Empire) \tab Ottoman Empire \tab 1820 \tab 1913 \cr
+   Turkey (Ottoman Empire) \tab Turkey \tab 1820 \tab 1913 \cr
+   Vietnam, Democratic Republic of \tab Vietnam \tab 1954 \tab 1975 \cr
+   Vietnam, Democratic Republic of \tab Vietnam, North \tab 1954 \tab 1975 \cr
+   Yemen (Arab Republic of Yemen) \tab Yemen \tab 1990 \tab 1990 \cr
+   Yemen (Arab Republic of Yemen) \tab Yemennorth \tab 1990 \tab 1990 \cr
+   Yugoslavia \tab Serbia \tab 1990 \tab 1990 \cr
+   Yugoslavia \tab Serbia And Montenegro \tab 1991 \tab 1991 \cr
+   Yugoslavia \tab Yugoslavia \tab 1990 \tab 1991 \cr
+}
+
+
+Some of these are fixed by setting \code{prefer_successor} to \code{TRUE} (the default)
+but others do not make much sense. \code{fix_PIPE = TRUE} (the default) deletes
+Austria-Hungary entirely (as there is no principled choice about which half
+to retain); removes the Czech Republic from the period 1990-1992; removes
+North and South Korea from the 19th century; assumes Pakistan from 1950-1970
+must include Bangladesh, and Turkey from 1820-1913 refers to the Ottoman
+Empire; removes unified Vietnam from the period 1954-1975, Serbia from 1990,
+and Serbia and Montenegro from 1990 to 1991 (leaving only Yugoslabia from
+1990 to 1991).}
+
+\item{enforce_GW_enddates}{This enforces the Gleditsch-Ward enddates of
+historical states, so they are not measured after their dissolution. This
+only affects a limited number of entities: Tibet (ends in 1950),
+Czechoslovakia (ends in 1992), Gran Colombia (ends in 1831; Polity measures
+it until 1832), the Vatican (identified with the Papal States, ends in 1870)
+and Zanzibar (ends in 1964). The default is \code{FALSE}.}
+
 \item{target_system}{Character vector describing which state system to use
 for the combined file, and which country codes to use. Can be one or both
 of "GWn" (Gleditsch and Ward, numeric codes) and "cown" (numeric codes for
 the Correlates of War system). The default is \emph{both} Gleditsch-ward and
 Correlates of War (\code{c("GWn", "cown")}).}
-
-\item{exclude_extra_pmm}{Whether to exclude versions of some measures found
-in Pemstein, Meserve, and Melton's replication dataset for their 2010 piece
-introducing the Unified Democracy Scores (Pemstein, Meserve, and Melton
-2010, 2013). See \link{blm_pmm}, \link{prc_pmm}, \link{fh_pmm}, \link{pacl_pmm},
-\link{vanhanen_pmm}, and \link{polity_pmm} for details. This is included mostly to
-extend or replicate the \link{uds} scores. Default is \code{TRUE}.}
 }
 \value{
 A \link{tibble} with the selected democracy measures and state system
@@ -139,8 +201,8 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 \section{Long version}{
 
 
-In the "long" version of the dataset (\code{format = "long"}), the output
-data frame also contains the following variables:
+In the "long" version of the dataset (\code{output_format = "long"}), the
+output data frame also contains the following variables:
 
 \describe{
 
@@ -166,10 +228,10 @@ ordinal/graded, continuous).}
 \section{Wide version}{
 
 
-In the "wide" version of the dataset (\code{format = "wide"}), the output
-data frame can also contain any of the following variables (in the scales
-described below, unless \code{scale_scores = TRUE}, in which case the
-measures are converted to z-scores):
+In the "wide" version of the dataset (\code{output_format = "wide"}), the
+output data frame can also contain any of the following variables (in the
+scales described below, unless \code{scale_scores = TRUE}, in which case
+the measures are converted to z-scores):
 
 \describe{
 
@@ -182,11 +244,11 @@ value. Up to 2010 this should be identical to \code{bmr_democracy_omitteddata}.
 0 = non-democracy, 1 = democracy.}
 
 \item{arat}{The original \link{arat} measure of democracy, converted to numeric
-form. Ranges from 29 (least democratic) to 109 (most democratic).
-See \link{arat} for details.}
+form. Ranges from 29 (least democratic) to 109 (most democratic). See
+\link{arat} for details.}
 
-\item{anrr_democracy}{The \link{anrr} measure of democracy, as a numeric value. 0 =
-non-democracy, 1 = democracy.}
+\item{anrr_democracy}{The \link{anrr} measure of democracy, as a numeric value.
+0 = non-democracy, 1 = democracy.}
 
 \item{blm}{The \link{blm} measure of democracy, as a numeric value. Can be 0
 (authoritarian), 0.5 (hybrid), or 1 (democracy). }
@@ -408,8 +470,9 @@ if it is a one-party democracy, 0 otherwise.}
 
 \item{vaporeg_binary_strict}{A dichotomous measure of democracy from the
 \link{vaporeg} dataset. Coded as 1 if the regime is classified as a full
-democracy (VaPoReg_s = 10), and 0 otherwise. This strict definition excludes
-semi-democracies and other intermediate forms. See \link{vaporeg} for details.}
+democracy (VaPoReg_s = 10), and 0 otherwise. This strict definition
+excludes semi-democracies and other intermediate forms. See \link{vaporeg} for
+details.}
 
 \item{vaporeg_binary_non_strict}{A less restrictive dichotomous measure of
 democracy from \link{vaporeg}, coded as 1 if the regime is a full democracy
@@ -453,69 +516,73 @@ to the \code{regimenyrobust} variable, 0 all other regimes.}
 \section{State-system choices}{
 
 
-State system choices are not always straightforward or clear. Most democracy
-datasets use some version of the Correlates of War system of states, though
-not consistently or entirely correctly. Gleditsch and Ward developed their own system V-Dem has developed its own system
-of states, which is not always consistent with the Gleditsch and Ward system.
+State system choices are not always straightforward or clear. Most
+democracy datasets use some version of the Correlates of War system of
+states, though not consistently or entirely correctly (which is why this
+package uses \link{country_year_coder}). There are a number of alternatives,
+including the Gleditsch and Ward system, the Polity system (both based on
+the COW system, with some modifications), and the V-Dem system (wich is at
+the basis of \link{LIED}, though \link{LIED} also draws on the idiosyncratic \link{PIPE}
+system). Freedom House and VaPoReg also develop their own panel of states,
+including many units considered non-sovereign by others. I have opted for
+maximal coverage (including all non-sovereign units), with three
+exceptions.
 
-I have made some state-system choices to fit (mostly) with the Gleditsch
-and Ward system of states. The overarching rule is: no democracy score
-appears for a state that ceased to exist at the close of the calendar year.
-With few exceptions, I thus trim and rewrite country–year observations so
-that every surviving row corresponds to a political unit recognized by the
-Gleditsch–Ward (GW) state–system on 31 December of the calendar year,
-unless the country is not in the GW panel (in which case I make some ad-hoc
-decisions, as for the British Mandate of Palestine and Sardinia, which end
-in 1948 and 1861, respectively).
+First, the default is to prefer the successor state where a country-year
+unit is measured twice in a single year (for the precursor and the
+successor state). This setting affects Ethiopia (Eritrea split in 1993);
+Germany (reunification in 1993); Italy (unification in 1861, previously
+Piedmont-Sardinia); Pakistan (Bangladesh split in 1971); the Soviet Union
+(creation in 1922; dissolution in 1991); Sudan (South Sudan split in 2011);
+Vietnam (1945-1953 period and reunification in 1976); Yemen (unification in
+1990); Yugoslavia (1991 breakup). Use \code{prefer_successor = FALSE} to
+override.
 
-The main exception is that I do not delete country–year observations for
-Vietnam before 1954 or Korea before 1947 (unless these are separated into
-North and South, as in the \link{PIPE} dataset), since these states have extant
-successors, and several datasets (including \link{LIED} and \link{vdem_simple}
-measure them for those periods). Thus, the following countries should have
-no observations in the year of their dissolution (and years after), unless
-the dissolution occurred on 31 December, in which case the last observation
-is for the year of dissolution (e.g., 1992 for Czechoslovakia):\tabular{lllr}{
+Second, the default is to delete various entities in the \link{PIPE} dataset
+that are measured before their appearance as states (e.g., North and South
+Korea in the 19th century). To keep these entities, use \code{fix_PIPE = FALSE}.
+
+Finally, whenever there is more than one measurement per year, I keep only
+the last one (as far as I can determine it); use \code{keep_only_last_in_year = FALSE} to override. I also keep the last year for no longer existing
+entities, but delete any subsequent years (if they appear). Thus the
+following entities should have no observations in the years after their
+dissolution:\tabular{lllr}{
    extended_country_name \tab panel \tab dissolution_date \tab last_observation \cr
-   Austria-Hungary \tab GWn \tab 1918-11-13 \tab 1917 \cr
-   Baden \tab GWn \tab 1871-01-17 \tab 1870 \cr
-   Bavaria \tab GWn \tab 1871-01-17 \tab 1870 \cr
-   British Mandate of Palestine \tab none \tab 1948-05-14 \tab 1947 \cr
+   Austria-Hungary \tab GWn \tab 1918-11-13 \tab 1918 \cr
+   Baden \tab GWn \tab 1871-01-17 \tab 1871 \cr
+   Bavaria \tab GWn \tab 1871-01-17 \tab 1871 \cr
+   British Mandate of Palestine \tab none \tab 1948-05-14 \tab 1948 \cr
    Czechoslovakia \tab GWn \tab 1992-12-31 \tab 1992 \cr
-   German Democratic Republic \tab GWn \tab 1990-10-02 \tab 1989 \cr
-   Germany (Prussia) \tab GWn \tab 1945-05-07 \tab 1944 \cr
-   Hanover \tab GWn \tab 1871-01-17 \tab 1870 \cr
-   Hesse-Kassel (Electoral) \tab GWn \tab 1871-01-17 \tab 1870 \cr
-   Hesse-Darmstadt (Ducal) \tab GWn \tab 1871-01-17 \tab 1870 \cr
-   Mecklenburg-Schwerin \tab GWn \tab 1871-01-17 \tab 1870 \cr
-   Modena \tab GWn \tab 1861-03-16 \tab 1860 \cr
-   Papal States \tab GWn \tab 1870-09-22 \tab 1869 \cr
+   German Democratic Republic \tab GWn \tab 1990-10-02 \tab 1990 \cr
+   Germany (Prussia) \tab GWn \tab 1945-05-07 \tab 1945 \cr
+   Hanover \tab GWn \tab 1871-01-17 \tab 1871 \cr
+   Hesse-Kassel (Electoral) \tab GWn \tab 1871-01-17 \tab 1871 \cr
+   Hesse-Darmstadt (Ducal) \tab GWn \tab 1871-01-17 \tab 1871 \cr
+   Mecklenburg-Schwerin \tab GWn \tab 1871-01-17 \tab 1871 \cr
+   Modena \tab GWn \tab 1861-03-16 \tab 1861 \cr
+   Papal States \tab GWn \tab 1870-09-22 \tab 1870 \cr
    Parma \tab GWn \tab 1861-03-16 \tab 1860 \cr
    Vietnam, Republic of \tab GWn \tab 1975-04-30 \tab 1974 \cr
-   Sardinia \tab polity \tab 1861-03-16 \tab 1860 \cr
-   Saxony \tab GWn \tab 1871-01-17 \tab 1870 \cr
-   Tuscany \tab GWn \tab 1861-03-16 \tab 1860 \cr
-   Sicily (Two Sicilies) \tab GWn \tab 1861-03-16 \tab 1860 \cr
-   Wurttemberg \tab GWn \tab 1871-01-17 \tab 1870 \cr
-   Yemen, People's Republic of \tab GWn \tab 1990-05-21 \tab 1989 \cr
-   Yugoslavia \tab GWn \tab 2006-06-04 \tab 2005 \cr
-   Zanzibar \tab GWn \tab 1964-04-26 \tab 1963 \cr
-   Great Colombia \tab GWn \tab 1830-09-22 \tab 1829 \cr
-   Orange Free State \tab GWn \tab 1910-05-30 \tab 1909 \cr
-   Tibet \tab GWn \tab 1950-10-01 \tab 1949 \cr
-   Transvaal \tab GWn \tab 1910-05-30 \tab 1909 \cr
+   Sardinia \tab polity \tab 1861-03-16 \tab 1861 \cr
+   Saxony \tab GWn \tab 1871-01-17 \tab 1871 \cr
+   Tuscany \tab GWn \tab 1861-03-16 \tab 1861 \cr
+   Sicily (Two Sicilies) \tab GWn \tab 1861-03-16 \tab 1861 \cr
+   Wurttemberg \tab GWn \tab 1871-01-17 \tab 1871 \cr
+   Yemen, People's Republic of \tab GWn \tab 1990-05-21 \tab 1990 \cr
+   Yugoslavia \tab GWn \tab 2006-06-04 \tab 2006 \cr
+   Zanzibar \tab GWn \tab 1964-04-26 \tab 1964 \cr
+   Great Colombia \tab GWn \tab 1830-09-22 \tab 1830 \cr
+   Orange Free State \tab GWn \tab 1910-05-30 \tab 1910 \cr
+   Tibet \tab GWn \tab 1950-10-01 \tab 1950 \cr
+   Transvaal \tab GWn \tab 1910-05-30 \tab 1910 \cr
    United Provinces of Central America \tab GWn \tab 1839-12-31 \tab 1839 \cr
 }
 
 
-The total number of rows affected is small. If you want to keep the
-observations for the year of dissolution (e.g., measures for the GDR in 1990),
-set \code{keep_dissolution_year = TRUE}.
-
-As noted, Korea and Vietnam do contain observations for years after
-their exit from the system of states in the Gleditsch and Ward panel in
-1910 and 1893, respectively, since they have extant successors and are
-measured by some datasets for those periods:\tabular{lll}{
+As noted, Korea and Vietnam do contain observations for years after their
+exit from the system of states in the Gleditsch and Ward panel in 1910 and
+1893, respectively, since they have extant successors and are measured by
+some datasets for those periods:\tabular{lll}{
    extended_country_name \tab panel \tab dissolution_date \cr
    Korea \tab GWn \tab 1910-08-22 \cr
    Vietnam (Annam/Cochin China/Tonkin) \tab GWn \tab 1893-01-01 \cr
@@ -523,10 +590,10 @@ measured by some datasets for those periods:\tabular{lll}{
 
 
 The treatment of Palestine is also complicated. Several datasets (e.g.,
-\link{vdem}, \link{fh}, and \link{LIED}) contain separate measurements for the West Bank
-and Gaza; \link{fh} includes the West Bank, Gaza, and "Israeli-Occupied
-Territories" (I'm assuming the occupied territories in Lebanon and Syria).
-I've labeled them as follows:\tabular{lllrr}{
+\link{vdem}, \link{fh}, and \link{LIED}) contain separate measurements for the West Bank and
+Gaza; \link{fh} includes the West Bank, Gaza, and "Israeli-Occupied Territories"
+(I'm assuming the occupied territories in Lebanon and Syria). I've labeled
+them as follows:\tabular{lllrr}{
    extended_country_name \tab original_country_name \tab dataset \tab min_year \tab max_year \cr
    British Mandate of Palestine \tab Palestine \tab vaporeg \tab 1919 \tab 1947 \cr
    British Mandate of Palestine \tab Palestine/British Mandate \tab LIED \tab 1918 \tab 1947 \cr
@@ -549,69 +616,41 @@ I've labeled them as follows:\tabular{lllrr}{
 
 
 There are some other oddities, primarily concerning \link{fh} and the \link{polity} and
-Polity-derived datasets such as \link{pitf}. \link{fh} includes measures for many
-non-sovereign territories, including a measure for the "Russian-occupied
-territories of Ukraine"; I've left it as is (\verb{extended_country_name = }
-\code{"Russian-occupied territories of Ukraine"}, not allocated to either Ukraine
-or Russia). And \link{polity} includes separate
-observations for both Russia 1922 and USSR 1922; I've excluded the USSR
-1922 observation since it officially began on 31 December 1922. I similarly
-exclude the observation for the USSR in 1991, since it was dissolved on 26
-December 1991. Polity also contains two observations for Ethiopia in 1993,
-one for before (\code{polity_ccode = 530}) and one for after  the splitting off of
-Eritrea (\code{polity_ccode = 529}). I've kept the one after the split. You can keep
-both USSR and Ethiopia observations by setting the flag
-\code{keep_polity_extras = TRUE}.
+Polity-derived datasets such as \link{pitf}. \link{fh} includes a measure for the
+"Russian-occupied territories of Ukraine"; I've left it as is
+(\code{extended_country_name = "Russian-occupied territories of Ukraine"}, not
+allocated to either Ukraine or Russia). And \link{polity} includes separate
+observations for both Russia 1922 and USSR 1922; I've excluded the USSR 1922
+observation since it officially began on 31 December 1922.
 
-Some datasets based on the Correlates of War system include an observation for
-both the German Federal Republic in 1990 (COW code 260) and re-unified Germany
-(COW code 255). I've only kept the observation for re-unified Germany, but you can
-keep both by setting the flag \code{keep_cow_extras = TRUE}. Note also that though
-I've excluded Germany 1945 (COW code 255, per the table above, since it ends
-in 1945 in the Gleditsch-Ward panel), there are observations for the (occupied)
-territory of both the later German Federal Republic and the later German Democratic
-Republic in 1945. Setting \code{keep_cow_extras = TRUE} will keep these observations.
-
-Finally, the \link{PIPE} dataset makes a number of unusual choices for the state
-system, including country-year observations for North and South Vietnam in
-periods before their existence as separate states, and distinct
-Austria-Hungary (Austria) and Austria-Hungary (Hungary) observations. I've
-deleted most of these:\tabular{lll}{
-   Entity in PIPE \tab Years dropped \tab Reason \cr
-   Austria‑Hungary (Austria) & (Hungary) \tab <= 1918 \tab Kept existing Austria-Hungary observations. \cr
-   Czech Republic \tab <= 1992 \tab Czechoslovakia till 31 Dec 1992. \cr
-   Vietnam North \tab <=  1870 \tab Anachronistic rows. \cr
-   Vietnam (unified) \tab 1954–1975 \tab Split state period. \cr
-   Turkey \tab < 1922 \tab Ottoman Empire until Oct 1923 - kept existing Ottoman Empire observations. \cr
-   Pakistan \tab 1950–1970 \tab Pre‑independence East Pakistan period mis-label. \cr
-   Serbia \tab 1990 \tab Still inside Yugoslavia. \cr
-   Serbia and Montenegro \tab 1991 \tab State not yet created. \cr
-}
-
-
-I do not recommend that you keep these observations, but you can keep them by
-setting the flag \code{keep_PIPE_extras = TRUE}.
+Note also that though I've kept Germany 1945 (COW code 255, per the table
+above, since it ends in 1945 in the Gleditsch-Ward panel), there are
+observations for the (occupied) territory of both the later German Federal
+Republic and the later German Democratic Republic in 1945.
 }
 
 \examples{
 # You can select only some datasets
 
-democracy_data_gwf <- generate_democracy_scores_dataset(datasets = c("gwf", "pacl", "bmr"),
-         output_format = "wide")
+democracy_data_gwf <- generate_democracy_scores_dataset(datasets = c("gwf",
+         "pacl", "bmr"), output_format = "wide")
 
 # all PMM datasets
 democracy_data_pmm <- generate_democracy_scores_dataset(selection = "pmm")
 
 \dontrun{
 # This produces scaled scores
-generate_democracy_scores_dataset(keep_only_last_in_year = FALSE, scale_scores = TRUE)
+generate_democracy_scores_dataset(keep_only_last_in_year = FALSE,
+scale_scores = TRUE)
 
 # These require downloads:
 
-democracy_data_long <- generate_democracy_scores_dataset(datasets = "pacl", force_redownload = TRUE)
-democracy_data_wide <- generate_democracy_scores_dataset(datasets = "pacl", force_redownload = TRUE,
-                                                         output_format = "wide")
-}
+democracy_data_long <- generate_democracy_scores_dataset(datasets = "pacl",
+                                                         force_redownload =
+TRUE) democracy_data_wide <- generate_democracy_scores_dataset(datasets =
+                                                         "pacl",
+                                                         force_redownload =
+TRUE, output_format = "wide") }
 }
 \references{
 D. Pemstein, S. Meserve, and J. Melton. "Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type". In: \emph{Political Analysis} 18.4 (2010), pp. 426-449. DOI: \href{https://dx.doi.org/10.1093/pan/mpq020}{10.1093/pan/mpq020}.
