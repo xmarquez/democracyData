@@ -4,13 +4,12 @@
 #'
 #'Downloads the 2020 update of the Polity 5 dataset (annual time series) and
 #'processes it using [country_year_coder]. The original data is available at
-#'[http://www.systemicpeace.org/inscrdata.html](http://www.systemicpeace.org/inscrdata.html)
+#'<`r find_url("polity_annual", "documentation")`>'.
 #'
-#'@param url The URL of the dataset. Defaults to
-#'  http://www.systemicpeace.org/inscr/p5v2018.sav
+#'@param url The URL of the dataset. Defaults to <`r find_url("polity_annual")`>.
 #'@inheritParams redownload_blm
 #'
-#'@return The annual time series version of the Polity 5 dataset, as a [tibble],
+#'@return The annual time series version of the Polity 5 dataset, as a [tibble::tibble()],
 #'  with the additional columns produced by [country_year_coder]. Consult the
 #'  [Polity 5 codebook](http://www.systemicpeace.org/inscr/p5manualv2018.pdf)
 #'  for further description.
@@ -90,10 +89,10 @@
 #'  and actively separated from the central authority of the regime.}
 #'
 #'  \item{democ}{Institutionalized democracy indicator, 0-10 scale. See PolityIV
-#'  users' manual at [http://www.systemicpeace.org/inscr/p5manualv2018.pdf](http://www.systemicpeace.org/inscr/p5manualv2018.pdf)}
+#'  users' manual at <http://www.systemicpeace.org/inscr/p5manualv2018.pdf>}
 #'
 #'  \item{autoc}{Institutionalized autocracy indicator, 0-10 scale. See PolityIV
-#'  users' manual at [http://www.systemicpeace.org/inscr/p5manualv2018.pdf](http://www.systemicpeace.org/inscr/p5manualv2018.pdf)}
+#'  users' manual at <http://www.systemicpeace.org/inscr/p5manualv2018.pdf>}
 #'
 #'  \item{polity}{Annual polity index (`autoc` - `democ`), including values for
 #'  interruption (-66), interregnum (-77), and transition periods (-88). Higher
@@ -126,43 +125,43 @@
 #'  democratic.}
 #'
 #'  \item{durable}{Regime durability. See PolityIV users' manual at
-#'  [http://www.systemicpeace.org/inscr/p5manualv2018.pdf](http://www.systemicpeace.org/inscr/p5manualv2018.pdf) for details.}
+#'  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.}
 #'
 #'  \item{xrreg}{Regulation of Chief Executive Recruitment. 1 = unregulated, 2 =
 #'  designational/transitional, 3 = regulated. See PolityIV users' manual at
-#'  [http://www.systemicpeace.org/inscr/p5manualv2018.pdf](http://www.systemicpeace.org/inscr/p5manualv2018.pdf) for details.}
+#'  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.}
 #'
 #'  \item{xrcomp}{Competitiveness of Chief Executive Recruitment. 1 = selection,
 #'  2 = dual/transitional, 3 = election. See PolityIV users' manual at
-#'  [http://www.systemicpeace.org/inscr/p5manualv2018.pdf](http://www.systemicpeace.org/inscr/p5manualv2018.pdf) for details.}
+#'  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.}
 #'
 #'  \item{xropen}{Openness of Chief Executive Recruitment. 1 = unlimited, 2 =
 #'  dual/transitional, 3 = election. See PolityIV users' manual at
-#'  [http://www.systemicpeace.org/inscr/p5manualv2018.pdf](http://www.systemicpeace.org/inscr/p5manualv2018.pdf) for details.}
+#'  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.}
 #'
 #'  \item{xconst}{Executive constraints. 1 = closed, 2 = intermediate, 3 =
 #'  slight to moderate limitation, 4 = intermediate, 5 = substantial
 #'  limitations, 6 = intermediate, 7 = executive parity or subordination. See
 #'  PolityIV users' manual at
-#'  [http://www.systemicpeace.org/inscr/p5manualv2018.pdf](http://www.systemicpeace.org/inscr/p5manualv2018.pdf) for details.}
+#'  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.}
 #'
 #'  \item{parcomp}{Regulation of participation. 0 = Not applicable, 1 =
 #'  repressed, 2 = suppressed, 3 = factional, 4 = transitional, 5 = competitive.
 #'  See PolityIV users' manual at
-#'  [http://www.systemicpeace.org/inscr/p5manualv2018.pdf](http://www.systemicpeace.org/inscr/p5manualv2018.pdf) for details.}
+#'  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.}
 #'
 #'  \item{exrec}{Executive recruitment (concept). 1 = ascription, 2 = dual
 #'  (ascription + designation), 3 = designation, 4 = Self selection, 5 = gradual
 #'  transition from self selection, 6 = dual (ascription + election), 7 =
 #'  transitional or restricted election, 8 = competitive election. See PolityIV
-#'  users' manual at [http://www.systemicpeace.org/inscr/p5manualv2018.pdf](http://www.systemicpeace.org/inscr/p5manualv2018.pdf) for
+#'  users' manual at <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for
 #'  details.}
 #'
 #'  \item{exconst}{Executive constraints (concept). Identical to `xconst`. 1 =
 #'  closed, 2 = intermediate, 3 = slight to moderate limitation, 4 =
 #'  intermediate, 5 = substantial limitations, 6 = intermediate, 7 = executive
 #'  parity or subordination. See PolityIV users' manual at
-#'  [http://www.systemicpeace.org/inscr/p5manualv2018.pdf](http://www.systemicpeace.org/inscr/p5manualv2018.pdf) for details.}
+#'  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.}
 #'
 #'  \item{polcomp}{Political competition (concept). 1 = suppressed, 2 =
 #'  restricted 3 = Imposed transition, 4 = Uninstitutionalized, 5 = gradual
@@ -170,7 +169,7 @@
 #'  factional, 8 = electoral transition: persistent conflict/coercion, 9 =
 #'  electoral transition: limited conflict/coercion, 10 = institutionalized
 #'  electoral. See PolityIV users' manual at
-#'  [http://www.systemicpeace.org/inscr/p5manualv2018.pdf](http://www.systemicpeace.org/inscr/p5manualv2018.pdf) for details.}
+#'  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.}
 #'
 #'  \item{prior}{Regime Polity code immediately prior to regime end date. The
 #'  polity users' manual (p. 31) says "The PRIOR code may be a number from -10
@@ -232,7 +231,7 @@
 #'  \item{post}{Regime `polity` code immediately after the current regime.}
 #'
 #'  \item{change}{Net difference between `prior` and `post`. See PolityIV users'
-#'  manual at [http://www.systemicpeace.org/inscr/p5manualv2018.pdf](http://www.systemicpeace.org/inscr/p5manualv2018.pdf) for details.
+#'  manual at <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
 #'  Note the code 88 denotes a "pre-existing polity" (for polities that existed
 #'  before 1800), 96 indicates state disintegration, 0 a state in transition, 97
 #'  state transformation, 98 state demise, and 99 state creation.}
@@ -269,7 +268,7 @@
 #'@source Marshall, Monty G., Ted Robert Gurr. 2020.
 #'  "Polity5: Political Regime Characteristics and Transitions, 1800-2018".
 #'  Dataset Users' Manual. Center for Systemic Peace. Available at
-#'  [http://www.systemicpeace.org/inscr/p5manualv2018.pdf](http://www.systemicpeace.org/inscr/p5manualv2018.pdf)
+#'  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf>
 #'
 #'
 #'@export
@@ -290,13 +289,13 @@ download_polity_annual <- function(url,
                                    return_raw = FALSE,
                                    ...) {
   if(missing(url)) {
-    url <- "http://www.systemicpeace.org/inscr/p5v2018.sav"
+    url <- find_url("polity_annual")
   }
 
 
   data <- read_data(url,
                     verbose = verbose,
-                    name = "polity") %>%
+                    name = "polity") |>
     haven::as_factor()
 
 
@@ -313,11 +312,12 @@ download_polity_annual <- function(url,
     message("Processing the Polity 5 data - adding state system info...")
   }
 
+  country <- year <- ccode <- NULL
 
   polity_annual <- country_year_coder(data,
-                                      country_col = .data$country,
-                                      date_col = .data$year,
-                                      code_col = .data$ccode,
+                                      country_col = country,
+                                      date_col = year,
+                                      code_col = ccode,
                                       code_type = "polity_ccode",
                                       match_type = "country",
                                       verbose = verbose,
@@ -342,13 +342,12 @@ download_polity_annual <- function(url,
 #' Democracy, Voice, and Accountability Index from the World Governance
 #' Indicators
 #'
-#' Download the latest version (data up to 2021) of the Democracy, Voice, and
+#' Download the latest version (data up to 2023) of the Democracy, Voice, and
 #' Accountability index from the World Governance Indicators and process it via
-#' [country_year_coder]
+#' [country_year_coder].
 #'
 #'
-#' @param url The URL of the dataset. Defaults to
-#'   \url{https://www.worldbank.org/content/dam/sites/govindicators/doc/wgidataset.xlsx}
+#' @param url The URL of the dataset. Defaults to <`r find_url("wgi")`>.
 #' @inheritParams redownload_blm
 #'
 #' @import dplyr
@@ -357,9 +356,8 @@ download_polity_annual <- function(url,
 #' @return A dataset containing the country-year version of the latest update
 #'   (to 2022) of the World Governance Indicators "Democracy, Voice and
 #'   Accountability" Index, compiled by Daniel Kaufmann and Aart Kraay. The
-#'   original data are available at
-#'   https://www.worldbank.org/en/publication/worldwide-governance-indicators#home, along with a full
-#'   explanation of the methodology used to compile the index.
+#'   original data are available at <`r find_url("wgi", "documentation")`>,
+#'   along with a full explanation of the methodology used to compile the index.
 #'
 #'   According to the compilers, "Voice and accountability captures perceptions
 #'   of the extent to which a country's citizens are able to participate in
@@ -385,7 +383,7 @@ download_polity_annual <- function(url,
 #'   House, the World Economic Forum Global Competitiveness Report, the Gallup
 #'   World Poll, the Institutional Profiles Database, the Political Risk
 #'   Services International Country Risk Guide, and Reporters Without Borders
-#'   Press Freedom Index. See http://info.worldbank.org/governance/wgi/va.pdf
+#'   Press Freedom Index. See <http://info.worldbank.org/governance/wgi/va.pdf>
 #'   for more details.}
 #'
 #'   \item{Rank}{Percentile rank among all countries (ranges from 0 (lowest) to
@@ -402,7 +400,7 @@ download_polity_annual <- function(url,
 #' @family continuous democracy indexes
 #' @aliases wgi
 #' @aliases wgi_democracy
-#' @source Worldwide Governance Indicators (http://www.govindicators.org).
+#' @source Worldwide Governance Indicators. Data and documentation available at <`r find_url("wgi", "documentation")`>.
 #' @examples
 #' \dontrun{
 #' download_wgi_voice_and_accountability()}
@@ -410,22 +408,23 @@ download_wgi_voice_and_accountability <- function(url,
                                                   verbose = TRUE,
                                                   return_raw = FALSE,
                                                   ...) {
+
+  indicator <- NULL
+
   if(missing(url)) {
-    url <- "https://www.worldbank.org/content/dam/sites/govindicators/doc/wgidataset.xlsx"
+    url <- find_url("wgi")
   }
 
-  tmp <- tempfile(fileext = ".xlsx")
-  utils::download.file(url, tmp, mode = "wb", quiet = !verbose)
+  data <- read_data(url, file_extension = "zip",
+                    name = "wgidataset.dta",
+                    verbose = verbose) |>
+    filter(indicator == "va")
 
-  data <- readxl::read_excel(tmp, sheet = 2, skip = 14,
-                             .name_repair = "unique_quiet")
+  data$codeindyr <- data$indicator <- NULL
 
-  names(data) <- c("wb_country", "wb_code",
-                   paste(rep(c("Estimate", "StdErr", "NumSrc",
-                               "Rank", "Lower", "Upper"),
-                             (ncol(data) - 2)/6),
-                         rep(c(1996, 1998, 2000, 2002:2022), each = 6),
-                         sep = "_"))
+  names(data) <- c("wb_code", "wb_country",
+                   "year", "Estimate", "StdErr", "NumSrc",
+                   "Rank", "Lower", "Upper")
 
   if(return_raw) {
     if(verbose) {
@@ -440,40 +439,32 @@ download_wgi_voice_and_accountability <- function(url,
     message("Processing the WGI data - putting it in country-year format, adding state system info...")
   }
 
-  wgi <- suppressWarnings(data %>%
-                            mutate(across(everything(), as.character)) %>%
-                            tidyr::pivot_longer(!starts_with("wb_")) %>%
-                            tidyr::separate(name, into = c("measure", "year"), sep = "_") %>%
-                            tidyr::pivot_wider(names_from = "measure") %>%
-                            mutate(across(all_of(c("year", "Estimate", "StdErr",
-                                                   "NumSrc", "Rank", "Lower",
-                                                   "Upper")),
-                                          as.numeric)) %>%
-                            filter(!is.na(.data$Estimate)) %>%
-                            country_year_coder(wb_country,
-                                               .data$year,
-                                               .data$wb_code,
-                                               code_type = "wb",
-                                               match_type = "country",
-                                               verbose = verbose,
-                                               ...))
+  wb_country <- year <- wb_code <- NULL
 
-  unlink(tmp)
+  wgi <- country_year_coder(data,
+                            country_col = wb_country,
+                            date_col = year,
+                            code_col = wb_code,
+                            code_type = "wb",
+                            match_type = "country",
+                            verbose = verbose,
+                            ...)
+
+  wgi <- wgi |>
+    dplyr::relocate("wb_country", "wb_code", "year")
 
   wgi
 
 }
 
 
-
 #' Freedom House "Freedom in the World" data
 #'
 #' Downloads the 2024 update of the Freedom House "Freedom in the World" data
 #' and processes it using [country_year_coder]. The original data is available
-#' at \url{https://freedomhouse.org/report-types/freedom-world}
+#' at <`r find_url("fh_2024", "documentation")`>
 #'
-#' @param url The URL of the dataset. Defaults to
-#'   https://freedomhouse.org/sites/default/files/2024-02/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2024.xlsx
+#' @param url The URL of the dataset. Defaults to <`r find_url("fh_2024")`>.
 #'
 #' @param include_territories Whether to include scores from non-independent
 #'   territories (e.g., Indian Kashmir, Northern Ireland) compiled by FH.
@@ -575,7 +566,7 @@ download_wgi_voice_and_accountability <- function(url,
 #' @family ordinal democracy indexes
 #' @source The "Freedom in the World" dataset from Freedom House, updated to
 #'   2023 (Freedom in the World 2024 Report). Original data and methodology is
-#'   available at \url{https://freedomhouse.org/report/freedom-world}
+#'   available at <`r find_url("fh_2024", "documentation")`>.
 #'
 #' @seealso [fh]
 #'
@@ -592,8 +583,11 @@ download_fh <- function(url,
                         return_raw = FALSE,
                         ...) {
 
+  year <- indicator <- value <- country <- status <- NULL
+  pr <- cl <- fh_total <- NULL
+
   if(missing(url)) {
-    url <- "https://freedomhouse.org/sites/default/files/2024-02/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2024.xlsx"
+    url <- find_url("fh_2024")
   }
 
 
@@ -611,7 +605,7 @@ download_fh <- function(url,
                                 skip = 3,
                                 col_names = FALSE)
 
-    data <- rbind(data, territory_data %>%
+    data <- rbind(data, territory_data |>
                         mutate(across(c(2:3), as.character)))
 
   }
@@ -639,28 +633,28 @@ download_fh <- function(url,
 
   # melt the data, split the variable_year column and voila!
 
-  data <- data %>%
+  data <- data |>
     tidyr::pivot_longer(cols = matches("[12][0-9]{3}"), names_to = "indicator", values_to = "value",
-                        values_transform = list(value = as.character)) %>%
-    tidyr::separate(.data$indicator, into = c("status", "year"), sep ="_")  %>%
-    filter(!is.na(.data$value)) %>%
-    distinct() %>%
-    tidyr::pivot_wider(names_from = "status", values_from = "value") %>%
-    mutate(across("year":"cl", as.numeric)) %>%
-    mutate(cl = ifelse(.data$country == "South Africa" & year == 1972, 5, .data$cl),
-           pr = ifelse(.data$country == "South Africa" & year == 1972, 6, .data$pr),
-           status = ifelse(.data$country == "South Africa" & year == 1972, "NF", .data$status),
-           status = as.factor(.data$status),
-           fh_total = .data$pr + .data$cl,
-           fh_total_reversed = 14 - .data$fh_total,
+                        values_transform = list(value = as.character)) |>
+    tidyr::separate(indicator, into = c("status", "year"), sep ="_")  |>
+    filter(!is.na(value)) |>
+    distinct() |>
+    tidyr::pivot_wider(names_from = "status", values_from = "value") |>
+    mutate(across("year":"cl", as.numeric)) |>
+    mutate(cl = ifelse(country == "South Africa" & year == 1972, 5, cl),
+           pr = ifelse(country == "South Africa" & year == 1972, 6, pr),
+           status = ifelse(country == "South Africa" & year == 1972, "NF", status),
+           status = as.factor(status),
+           fh_total = pr + cl,
+           fh_total_reversed = 14 - fh_total,
            country = case_when(country == "Yemen, S." ~ "South Yemen",
                                       country == "Vietnam, S." ~ "South Vietnam",
                                       country == "Germany, E." ~ "East Germany",
-                                      TRUE ~ as.character(.data$country)))
+                                      TRUE ~ as.character(country)))
 
-  fh <- data %>%
-    country_year_coder(.data$country,
-                       .data$year,
+  fh <- data |>
+    country_year_coder(country,
+                       year,
                        match_type = c("country"),
                        verbose = verbose,
                        ...)
@@ -680,10 +674,11 @@ download_fh <- function(url,
 
 #' Freedom House Electoral Democracies List
 #'
-#' Downloads the 2024 update of the Freedom House Electoral Democracies list and
+#' Downloads the 2025 update of the Freedom House Electoral Democracies list and
 #' processes it using [country_year_coder]. The original data is available at
-#' [https://freedomhouse.org/report/freedom-world](https://freedomhouse.org/report/freedom-world),
-#' spread over a number of different urls.
+#' <`r unique(find_url("fh_electoral", "documentation"))`>, spread over a number
+#' of different urls. This function uses the full data (see [download_fh_full])
+#' to recalculate the list.
 #'
 #' @inheritParams redownload_blm
 #'
@@ -706,6 +701,36 @@ download_fh <- function(url,
 #'   * electoral: Electoral democracy indicator. \code{TRUE} = yes, \code{FALSE}
 #'   = no.
 #'
+#'   * electoral_calc: Electoral democracy indicator, calculated from the full
+#'   scores (see [download_fh_full]) using the definition of electoral democracy
+#'   that Freedom House uses from 2017 onwards. \code{TRUE} = yes, \code{FALSE}
+#'   = no. Because Freedom House changed the criteria for designating an
+#'   electoral democracy in the 2018 edition of their
+#'   *Freedom in the World* report, this variable is included to allow users to
+#'   understand which countries would not have been considered electoral
+#'   democracies after 2017 that would have been considered electoral
+#'   democracies before 2017. As the [Freedom House methodology page
+#'   notes](https://freedomhouse.org/reports/freedom-world/freedom-world-research-methodology),
+#'   "beginning with the 2018 edition, countries require an overall Civil
+#'   Liberties score of 30 or better—in addition to a score of 7 or better in
+#'   subcategory A (Electoral Process), and an overall Political Rights score of
+#'   20 or better—to qualify as an electoral democracy." This change resulted in
+#'   32 country-years that would have been classified as electoral democracies
+#'   before 2017 not being considered electoral democracies using the post-2017
+#'   criteria:
+#'
+#'   ```{r}
+#'   fh_electoral <- download_fh_electoral(verbose = FALSE)
+#'   fh_electoral |>
+#'     dplyr::filter(electoral != electoral_calc) |>
+#'     dplyr::select(extended_country_name, year, electoral, electoral_calc) |>
+#'     print(n = 32)
+#'   ```
+#'
+#'   Note that `electoral_calc` is not available for years before 2012, because
+#'   Freedom House does not make available full scores for years before 2012,
+#'   despite the fact that the list of electoral democracies goes back to 1989.
+#'
 #' @template standard-variables
 #' @inheritSection download_polity_annual Note
 #'
@@ -719,10 +744,8 @@ download_fh <- function(url,
 #' @family democracy
 #' @family Freedom House
 #' @family ordinal democracy indexes
-#' @source The "Freedom in the World" dataset from Freedom House, updated to
-#'   2023 (Freedom in the World report 2024 edition). Original data and
-#'   methodology is available at
-#'   \url{https://freedomhouse.org/report/freedom-world}
+#' @source `r roxygen_cite("fh2025")`. Original data and
+#'   methodology is available at <`r find_url("fh_2024", "documentation")`>
 #' @examples
 #' \dontrun{
 #' fh <- download_fh_electoral()
@@ -732,15 +755,12 @@ download_fh_electoral <- function(verbose = TRUE,
                                   return_raw = FALSE,
                                   ...) {
 
-  url <- "https://freedomhouse.org/sites/default/files/FIW2017_Data.zip"
-  later_urls = c("https://freedomhouse.org/sites/default/files/List%20of%20Electoral%20Democracies%20FIW%202018.xlsx",
-                 "https://freedomhouse.org/sites/default/files/List_of_Electoral_Democracies_FIW19.xls",
-                 "https://freedomhouse.org/sites/default/files/2020-02/2020_List_of_Electoral_Democracies_FIW_2020.xlsx",
-                 "https://freedomhouse.org/sites/default/files/2022-03/List_of_Electoral_Democracies_FIW22.xlsx",
-                 "https://freedomhouse.org/sites/default/files/2023-02/List_of_Electoral_Democracies_FIW23.xlsx",
-                 "https://freedomhouse.org/sites/default/files/2024-02/List_of_Electoral_Democracies_FIW24.xlsx")
+  electoral <- year <- fh_full_country <- electoral_calc <- country <- NULL
+  extended_country_name <- GWn <- cown <- in_GW_system <- value <- NULL
 
-  data <- read_data(url,
+  urls <- find_url("fh_electoral")
+
+  data <- read_data(urls[1],
                     verbose = verbose,
                     name = "/FH_Electoral_Democracies_1988-2016.xls",
                     sheet = 1,
@@ -748,9 +768,6 @@ download_fh_electoral <- function(verbose = TRUE,
                     col_names = FALSE,
                     na = c("","-"))
 
-  later_urls <- lapply(later_urls, \(x) read_data(x, verbose = verbose, skip = 1)) %>%
-    lapply(function(x) rename_with(x, ~"electoral",
-                                          starts_with("Electoral Democracy")))
 
   if(return_raw) {
     if(verbose) {
@@ -760,8 +777,6 @@ download_fh_electoral <- function(verbose = TRUE,
   }
 
   if(verbose) {
-    message(sprintf("Original dataset has %d rows, but is not in country-year format",
-                    nrow(data) + sum(unlist(lapply(later_urls, nrow)))))
     message("Processing the FH Electoral Democracies 1989-2024 data",
             " - putting it in country-year format, adding state system info...")
   }
@@ -770,39 +785,55 @@ download_fh_electoral <- function(verbose = TRUE,
 
   # melt the data, split the variable_year column and voila!
 
-  data <- data %>%
-    tidyr::pivot_longer(names_to = "indicator", values_to = "value", matches("electoral_[0-9]{4}")) %>%
-    tidyr::separate("indicator", into = c("electoral_dem", "year"), sep ="_")  %>%
-    filter(!is.na(.data$value)) %>%
-    tidyr::pivot_wider(names_from = "electoral_dem", values_from = "value") %>%
-    mutate(year = as.numeric(.data$year),
-           electoral = ifelse(electoral == "Yes", TRUE, FALSE),
+  data <- data |>
+    tidyr::pivot_longer(names_to = "indicator", values_to = "value", matches("electoral_[0-9]{4}")) |>
+    tidyr::separate("indicator", into = c("electoral_dem", "year"), sep ="_")  |>
+    filter(!is.na(value)) |>
+    tidyr::pivot_wider(names_from = "electoral_dem", values_from = "value") |>
+    mutate(year = as.numeric(year),
+           electoral = ifelse(electoral %in% c("Yes", "yes"), TRUE, FALSE),
            country = case_when(country == "Yemen, S." ~ "South Yemen",
-                                      .data$country == "Vietnam, S." ~ "South Vietnam",
-                                      .data$country == "Germany, E." ~ "East Germany",
+                                      country == "Vietnam, S." ~ "South Vietnam",
+                                      country == "Germany, E." ~ "East Germany",
                                       TRUE ~ as.character(country)))
 
-  for(i in 1:length(later_urls)) {
-    later_urls[[i]] <- later_urls[[i]] %>%
-      mutate(year = 2017+i,
-             electoral = ifelse(.data$electoral == "yes", TRUE, FALSE),
-             country = case_when(.data$Country == "Yemen, S." ~ "South Yemen",
-                                 .data$Country == "Vietnam, S." ~ "South Vietnam",
-                                 .data$Country == "Germany, E." ~ "East Germany",
-                                 TRUE ~ as.character(.data$Country))) %>%
-      select(-"Country")
-  }
 
-  later_urls <- bind_rows(later_urls)
+  full_data <- download_fh_full(verbose = verbose)
 
-  data <- bind_rows(data, later_urls)
+  full_data_post_2017 <- full_data |>
+    filter(year >= 2017) |>
+    mutate(electoral = case_when(A >= 7 & pr_full >= 20 & cl_full >= 30 ~ TRUE,
+                                 TRUE ~ FALSE)) |>
+    select(fh_full_country, year, electoral) |>
+    rename(country = fh_full_country)
 
-  fh_electoral <- data %>%
-    country_year_coder(.data$country,
-                       .data$year,
+  full_data <- full_data |>
+    mutate(electoral_calc = case_when(A >= 7 & pr_full >= 20 & cl_full >= 30 ~ TRUE,
+                                 TRUE ~ FALSE)) |>
+    select(fh_full_country, year, electoral_calc) |>
+    rename(country = fh_full_country) |>
+    country_year_coder(country,
+                       year,
+                       match_type = c("country"),
+                       verbose = FALSE,
+                       ...) |>
+    select(-country)
+
+  data <- bind_rows(data, full_data_post_2017)
+
+  fh_electoral <- data |>
+    country_year_coder(country,
+                       year,
                        match_type = c("country"),
                        verbose = verbose,
                        ...)
+
+  fh_electoral <- fh_electoral |>
+    left_join(full_data,
+              by = join_by(year, extended_country_name, GWn, cown, in_GW_system),
+              relationship = "many-to-many") |>
+    distinct()
+
 
   if(verbose) {
     message(sprintf("Resulting dataset after processing has %d rows.",
@@ -817,19 +848,16 @@ download_fh_electoral <- function(verbose = TRUE,
 
 #' Freedom House All Data 2013-2024
 #'
-#' Downloads the 2024 update of the Freedom House Freedom in the World All Data
-#' 2013-2024 file and processes it using [country_year_coder]. The original data
-#' is available at
-#' [https://freedomhouse.org/report-types/freedom-world](https://freedomhouse.org/report/freedom-world)
+#' Downloads the 2025 update of the Freedom House Freedom in the World All Data
+#' 2013-2024 file (calendar years 2013 to 2024) and processes it using
+#' [country_year_coder]. The original data
+#' is available at <`r find_url("fh_full_2025", "documentation")`>
 #'
-#' @param url The URL of the dataset. Defaults to
-#'   \url{https://freedomhouse.org/sites/default/files/2024-02/All_data_FIW_2013-2024.xlsx}
-#'
-#'
+#' @param url The URL of the dataset. Defaults to <`r find_url("fh_full_2025")`>
 #'
 #' @inheritParams redownload_blm
 #'
-#' @return A time-series tidy version of the FH "all data 2013-2023" dataset,
+#' @return A time-series tidy version of the FH "all data 2012-2024" dataset,
 #'   with the following variables:
 #'
 #'   * country: The original country name.
@@ -980,7 +1008,7 @@ download_fh_electoral <- function(verbose = TRUE,
 #' @family ordinal democracy indexes
 #' @source The "Freedom in the World" dataset from Freedom House, updated to
 #'   2023 (Freedom in the World 2024 Report). Original data and methodology is
-#'   available at \url{https://freedomhouse.org/report/freedom-world}
+#'   available at <`r find_url("fh_2024", "documentation")`>
 #'
 #' @seealso [fh]
 #'
@@ -994,8 +1022,10 @@ download_fh_full <- function(url,
                         return_raw = FALSE,
                         ...) {
 
+  edition <- country <- NULL
+
   if(missing(url)) {
-    url <- "https://freedomhouse.org/sites/default/files/2024-02/All_data_FIW_2013-2024.xlsx"
+    url <- find_url("fh_full_2025")
   }
 
 
@@ -1026,18 +1056,19 @@ download_fh_full <- function(url,
                    "D", "E1", "E2", "E3", "E", "F1", "F2", "F3", "F4",
                    "F", "G1", "G2", "G3", "G4", "G", "cl_full", "total")
 
+  country <- year <- status <- edition <- NULL
 
-  data <- data %>%
-    mutate(status = as.factor(.data$status),
-           year = .data$edition - 1,
-           country = case_when(.data$country == "Yemen, S." ~ "South Yemen",
-                               .data$country == "Vietnam, S." ~ "South Vietnam",
-                               .data$country == "Germany, E." ~ "East Germany",
-                               TRUE ~ as.character(.data$country)))
+  data <- data |>
+    mutate(status = as.factor(status),
+           year = edition - 1,
+           country = case_when(country == "Yemen, S." ~ "South Yemen",
+                               country == "Vietnam, S." ~ "South Vietnam",
+                               country == "Germany, E." ~ "East Germany",
+                               TRUE ~ as.character(country)))
 
-  fh_full <- data %>%
-    country_year_coder(.data$country,
-                       .data$year,
+  fh_full <- data |>
+    country_year_coder(country,
+                       year,
                        match_type = c("country"),
                        verbose = verbose,
                        ...)
@@ -1050,7 +1081,7 @@ download_fh_full <- function(url,
     }
   }
 
-  fh_full <- fh_full %>%
+  fh_full <- fh_full |>
     relocate("year", .after = edition)
 
 

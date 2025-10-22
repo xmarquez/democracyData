@@ -5447,8 +5447,9 @@ cgv_update <- function() democracyData::pacl_update
 
 #' References to all the datasets included in this package.
 #'
-#' This is a \link{BibEntry} object that can be manipulated using the \link{RefManageR}
-#' package functions or the standard citation functions in R.
+#' This is a [RefManageR::BibEntry()] object that can be manipulated using the
+#' [RefManageR::RefManageR] package functions or the standard citation functions
+#' in R.
 #'
 #' @encoding UTF-8
 "bibliography"

@@ -15,7 +15,7 @@ Authors@R:
            comment = c(ORCID = "0000-0001-7653-9334"))
 License: GPL-3
 Depends:
-    R (>= 3.5.0)
+    R (>= 4.1.0)
 Imports:
     dplyr,
     tidyr,
@@ -30,7 +30,7 @@ Imports:
     RefManageR,
     knitr,
     mirt,
-    lifecycle
+    here
 RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
@@ -42,6 +42,7 @@ Suggests:
     vdemdata (>= 13.0),
     pdftools,
     purrr
+Config/testthat/edition: 3
 URL: https://xmarquez.github.io/democracyData/, https://github.com/xmarquez/democracyData
 BugReports: https://github.com/xmarquez/democracyData/issues
 Remotes: 

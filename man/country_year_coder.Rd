@@ -88,47 +88,47 @@ similar, but not identical, to the Gleditsch and Ward and COW codes. See
 the vignette in this package for an overview of the differences between
 these systems.
 
-\item "eurostat": Eurostat 2-letter country code. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "eurostat": Eurostat 2-letter country code. Taken from \link{countrycode}.
 
 \item "eu28": Whether the state is a member of the European Union (as of
-December 2015), without special territories. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+December 2015), without special territories. Taken from \link{countrycode}.
 
 \item "fao": Food and Agriculture Organization of the United Nations numerical
-country code. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+country code. Taken from \link{countrycode}.
 
 \item "fips105": FIPS 10-5 (Federal Information Processing Standard) 2-letter
-country code. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+country code. Taken from \link{countrycode}.
 
 \item "icao": International Civil Aviation Organization 2-letter country code.
-Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+Taken from \link{countrycode}.
 
 \item "icao_region": International Civil Aviation Organization region code.
-Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+Taken from \link{countrycode}.
 
 \item "imf": International Monetary Fund numeric country code. Taken from
-\link[countrycode:countrycode]{countrycode::countrycode}.
+\link{countrycode}.
 
 \item "ioc": International Olympic Committee 3-letter country code. Taken from
-\link[countrycode:countrycode]{countrycode::countrycode}.
+\link{countrycode}.
 
-\item "iso2c": ISO-2 character. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "iso2c": ISO-2 character. Taken from \link{countrycode}.
 
-\item "iso3c": ISO-3 character. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "iso3c": ISO-3 character. Taken from \link{countrycode}.
 
-\item "iso2n": ISO-2 numeric. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "iso2n": ISO-2 numeric. Taken from \link{countrycode}.
 
-\item "iso3n": ISO-3 numeric. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "iso3n": ISO-3 numeric. Taken from \link{countrycode}.
 
-\item "un": United Nations numerical code. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "un": United Nations numerical code. Taken from \link{countrycode}.
 
 \item "wb": World Bank (very similar but not identical to iso3c). Taken from
-\link[countrycode:countrycode]{countrycode::countrycode}.
+\link{countrycode}.
 
-\item "wb_api2c": World Bank API 2 character code. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "wb_api2c": World Bank API 2 character code. Taken from \link{countrycode}.
 
-\item "wb_api3c": World Bank API 3 character code. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "wb_api3c": World Bank API 3 character code. Taken from \link{countrycode}.
 
-\item "wvs": World Values Survey numeric code. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "wvs": World Values Survey numeric code. Taken from \link{countrycode}.
 }}
 
 \item{to_system}{State system to match to. Default is Gledistsch and Ward.}
@@ -254,7 +254,7 @@ compiled. Is always \code{NA} if the country was never in the Correlates of War
 system of states.
 
 \item "official_region": Regions as defined in the World Bank Development
-Indicators. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+Indicators. Taken from \link{countrycode}.
 
 \item "extended_region": The same as "official_region", except it adds region
 information for historical states. It assigns "Austria-Hungary" the
@@ -262,7 +262,7 @@ information for historical states. It assigns "Austria-Hungary" the
 Europe and Austria to Western Europe in the World Bank scheme.
 
 \item "official_continent": Continents as defined in the World Bank Development
-Indicators. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+Indicators. Taken from \link{countrycode}.
 
 \item "extended_continent": The same as "official_continent", except it adds
 continent information for historical states. Is \code{NA} only for Antarctica
@@ -293,70 +293,70 @@ particular date.
 
 \item ar5: IPCC's regional mapping used both in the Fifth Assessment Report
 (AR5) and for the Reference Concentration Pathways (RCP). Taken from
-\link[countrycode:countrycode]{countrycode::countrycode}.
+\link{countrycode}.
 
 \item continent: Continent as defined in the World Bank Development Indicators.
-Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+Taken from \link{countrycode}.
 
 \item "eurocontrol_pru": European Organisation for the Safety of Air Navigation
-region. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+region. Taken from \link{countrycode}.
 
 \item "eurocontrol_statfor": European Organisation for the Safety of Air
-Navigation region. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+Navigation region. Taken from \link{countrycode}.
 
-\item "eurostat": Eurostat 2-letter country code. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "eurostat": Eurostat 2-letter country code. Taken from \link{countrycode}.
 
 \item "eu28": Whether the state is a member of the European Union (as of
-December 2015), without special territories. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+December 2015), without special territories. Taken from \link{countrycode}.
 
 \item "fao": Food and Agriculture Organization of the United Nations numerical
-country code. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+country code. Taken from \link{countrycode}.
 
 \item "fips105": FIPS 10-5 (Federal Information Processing Standard) 2-letter
-country code. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+country code. Taken from \link{countrycode}.
 
 \item "icao": International Civil Aviation Organization 2-letter country code.
-Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+Taken from \link{countrycode}.
 
 \item "icao_region": International Civil Aviation Organization region code. Taken
-from \link[countrycode:countrycode]{countrycode::countrycode}.
+from \link{countrycode}.
 
 \item "imf": International Monetary Fund numeric country code. Taken from
-\link[countrycode:countrycode]{countrycode::countrycode}.
+\link{countrycode}.
 
 \item "ioc": International Olympic Committee 3-letter country code. Taken from
-\link[countrycode:countrycode]{countrycode::countrycode}.
+\link{countrycode}.
 
-\item "iso2c": ISO-2 character. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "iso2c": ISO-2 character. Taken from \link{countrycode}.
 
-\item "iso3c": ISO-3 character. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "iso3c": ISO-3 character. Taken from \link{countrycode}.
 
-\item "iso2n": ISO-2 numeric. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "iso2n": ISO-2 numeric. Taken from \link{countrycode}.
 
-\item "iso3n": ISO-3 numeric. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "iso3n": ISO-3 numeric. Taken from \link{countrycode}.
 
-\item "un": United Nations numerical code. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "un": United Nations numerical code. Taken from \link{countrycode}.
 
 \item "wb": World Bank (very similar but not identical to iso3c). Taken from
-\link[countrycode:countrycode]{countrycode::countrycode}.
+\link{countrycode}.
 
-\item "wb_api2c": World Bank API 2 character code. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "wb_api2c": World Bank API 2 character code. Taken from \link{countrycode}.
 
-\item "wb_api3c": World Bank API 3 character code. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "wb_api3c": World Bank API 3 character code. Taken from \link{countrycode}.
 
-\item "wvs": World Values Survey numeric code. Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "wvs": World Values Survey numeric code. Taken from \link{countrycode}.
 
-\item "country_name_ar": country name (Arabic). Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "country_name_ar": country name (Arabic). Taken from \link{countrycode}.
 
-\item "country_name_de": country name (German). Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "country_name_de": country name (German). Taken from \link{countrycode}.
 
-\item "country_name_es": country name (Spanish). Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "country_name_es": country name (Spanish). Taken from \link{countrycode}.
 
-\item "country_name_fr": country name (French). Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "country_name_fr": country name (French). Taken from \link{countrycode}.
 
-\item "country_name_ru": country name (Russian). Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "country_name_ru": country name (Russian). Taken from \link{countrycode}.
 
-\item "country_name_zh": country name (Chinese). Taken from \link[countrycode:countrycode]{countrycode::countrycode}.
+\item "country_name_zh": country name (Chinese). Taken from \link{countrycode}.
 }}
 
 \item{verbose}{Prints information about countries matched multiple times,

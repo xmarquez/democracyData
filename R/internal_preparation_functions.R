@@ -18,8 +18,8 @@ prepare_pmm_replication_data <- function(
     message("Processing the PMM replication data - adding state system info...")
   }
 
-  pmm <- democracy %>%
-    as_tibble() %>%
+  pmm <- democracy |>
+    as_tibble() |>
     country_year_coder(country_col = country,
                        date_col = year,
                        # code_col = cowcode,
@@ -58,10 +58,10 @@ extract_pmm_var <- function(pmm_replication_data, pmm_var,
 
   pmm_country  <- variable <- value <- year <- NULL
 
-  pmm_var_extracted <- pmm_replication_data %>%
-    filter(!is.na(!!pmm_var)) %>%
-    tidyr::gather(variable, value, !!pmm_var) %>%
-    mutate(!!var_name := value) %>%
+  pmm_var_extracted <- pmm_replication_data |>
+    filter(!is.na(!!pmm_var)) |>
+    tidyr::gather(variable, value, !!pmm_var) |>
+    mutate(!!var_name := value) |>
     select(pmm_country, year, !!var_name, all_of(include_in_output))
 
   pmm_var_extracted
@@ -90,11 +90,11 @@ prepare_mainwaring <- function(path = "../../Data/Mainwaring Linan.txt",
   }
 
 
-  mainwaring <- data %>%
-    group_by(Country, From, To) %>%
-    mutate(year = list(From:To)) %>%
-    unnest(cols = c(year)) %>%
-    ungroup() %>%
+  mainwaring <- data |>
+    group_by(Country, From, To) |>
+    mutate(year = list(From:To)) |>
+    unnest(cols = c(year)) |>
+    ungroup() |>
     country_year_coder(Country,
                        year,
                        match_type = "country",
@@ -110,12 +110,12 @@ prepare_mainwaring <- function(path = "../../Data/Mainwaring Linan.txt",
     }
   }
 
-  mainwaring <- mainwaring %>%
+  mainwaring <- mainwaring |>
     mutate(mainwaring = case_when(Regime == "A" ~ "0",
                                   Regime == "SD" ~ "0.5",
                                   Regime == "D" ~ "1",
                                   TRUE ~ Regime),
-           mainwaring = as.numeric(mainwaring))  %>%
+           mainwaring = as.numeric(mainwaring))  |>
     select(Country, year, mainwaring, Regime:Civilian.Power, everything())
 
   standardize_columns(mainwaring,
@@ -125,42 +125,103 @@ prepare_mainwaring <- function(path = "../../Data/Mainwaring Linan.txt",
 
 }
 
-prepare_eiu <- function(path = "DI-final-version-report-2022.pdf",
+prepare_eiu <- function(path = "EIU-democracy-index-2024.pdf",
                         verbose = TRUE,
                         ...) {
 
   if(verbose) {
     message("Preparing EIU data...")
-    message(sprintf("Trying %s ...", path))
   }
+
+  path_1 <- here::here("data-raw","EIU-democracy-index-2023.pdf")
+  path_2 <- here::here("data-raw","EIU-democracy-index-2024.pdf")
 
   rlang::check_installed("pdftools")
   rlang::check_installed("purrr")
 
   y <- values <- NULL
 
-  tables_eiu <- pdftools::pdf_data(path)
+  tables_eiu_2023 <- pdftools::pdf_data(path_1)
 
-  years <- c(2022:2010, 2008, 2006)
+  tables_eiu_2024 <- pdftools::pdf_data(path_2)
 
+  years <- c(2023:2010, 2008, 2006)
 
   year <- country <- extended_country_name <- text <- NULL
 
-  suppressWarnings(table_3 <- 16:20 %>%
-                     purrr::map(~tables_eiu[[.]]) %>%
-                     purrr::map_df(~{filter(., y > 155, y < 735) %>%
-                         group_by(y) %>%
+  first_page_2023 <- suppressWarnings(tables_eiu_2023[[19]] |>
+    filter(y > 455, y < 734) |>
+    group_by(y) |>
+    summarise(country = paste(text[is.na(as.numeric(text))], collapse = " "),
+              values = list(as.numeric(text[!is.na(as.numeric(text))])),
+              .groups = "drop") |>
+    unnest(cols = c(values)) |>
+    group_by(country) |>
+    mutate(year = years[1:n()]) |>
+    select(-y))
+
+  min_y <- tables_eiu_2023[[20]] |>
+    filter(text == "2006") |>
+    pull(y)
+
+  suppressWarnings(table_3_2023 <- 20:24 |>
+                     purrr::map(~tables_eiu_2023[[.]]) |>
+                     purrr::map_df(~{filter(., y > min_y, y < 734) |>
+                         group_by(y) |>
                          summarise(country = paste(text[is.na(as.numeric(text))], collapse = " "),
                                    values = list(as.numeric(text[!is.na(as.numeric(text))])),
-                                   .groups = "drop") %>%
-                         unnest(cols = c(values)) %>%
-                         group_by(country) %>%
-                         mutate(year = years[1:n()])}) %>%
+                                   .groups = "drop") |>
+                         unnest(cols = c(values)) |>
+                         group_by(country) |>
+                         mutate(year = years[1:n()])}) |>
                      select(-y))
 
-  data <- table_3 %>%
-    filter(!country %in% c("", "average", "World average")) %>%
-    rename(eiu = values)
+  table_3_2023 <- bind_rows(first_page_2023, table_3_2023)
+
+  first_page_2024 <- suppressWarnings(tables_eiu_2024[[15]] |>
+    filter(y > 336, y < 797) |>
+    group_by(y) |>
+    summarise(country = paste(text[is.na(as.numeric(text))], collapse = " "),
+              values = list(as.numeric(text[!is.na(as.numeric(text))])),
+              .groups = "drop") |>
+    unnest(cols = c(values)) |>
+    group_by(country) |>
+    mutate(year = 2024) |>
+    select(-y)) |>
+    distinct(country, year, .keep_all = TRUE) |>
+    mutate(country = case_when(country == "Estonia 21=" ~ "Estonia",
+                               TRUE ~ country))
+
+  suppressWarnings(table_1_2024 <- 16:21 |>
+                     purrr::map(~tables_eiu_2024[[.]]) |>
+                     purrr::map_df(~{filter(., y > 180, y < 797) |>
+                         group_by(y) |>
+                         summarise(country = paste(text[is.na(as.numeric(text))], collapse = " "),
+                                   values = list(as.numeric(text[!is.na(as.numeric(text))])),
+                                   .groups = "drop") |>
+                         unnest(cols = c(values)) |>
+                         group_by(country) |>
+                         mutate(year = 2024)}) |>
+                     select(-y))
+
+  table_1_2024 <- table_1_2024 |>
+    mutate(country = str_remove(country, " [0-9]+="),
+           country = case_when(country == "" & values == 7.85 ~ "United States of America",
+                               country == "" & values == 5.06 ~ "Bosnia and Hercegovina",
+                               country == "" & values == 3.07 ~ "United Arab Emirates",
+                               country == "156=" & values == 1.92 ~ "Democratic Republic of Congo",
+                               country == "" & values == 1.18 ~ "Central African Republic",
+                               TRUE ~ country)) |>
+    distinct(country, year, .keep_all = TRUE) |>
+    filter(country != "", country != "156=")
+
+
+  table_1_2024 <- bind_rows(first_page_2024, table_1_2024)
+
+  data <- bind_rows(table_1_2024, table_3_2023) |>
+    filter(!country %in% c("", "average", "World average")) |>
+    rename(eiu = values) |>
+    ungroup()
 
   if(verbose) {
     message(sprintf("Original dataset has %d rows and is in country-year format",
@@ -168,13 +229,13 @@ prepare_eiu <- function(path = "DI-final-version-report-2022.pdf",
     message("Processing the EIU data - adding state system info...")
   }
 
-  eiu <- data %>%
-    mutate(country = ifelse(country == "Saudi", "Saudi Arabia", country)) %>%
+  eiu <- data |>
+    mutate(country = ifelse(country == "Saudi", "Saudi Arabia", country)) |>
     country_year_coder(country_col = country, date_col = year,
                        verbose = verbose,
-                       ...) %>%
-    mutate(country = ifelse(country == "Saudi Arabia", "Saudi", country)) %>%
-    arrange(extended_country_name, year) %>%
+                       ...) |>
+    mutate(country = ifelse(country == "Saudi Arabia", "Saudi", country)) |>
+    arrange(extended_country_name, year) |>
     ungroup()
 
   if(verbose) {
@@ -211,25 +272,25 @@ prepare_doorenspleet <- function(path = "../../Data/Doorenspleet data.csv",
   }
 
 
-  doorenspleet <- data %>%
-    mutate(country = ifelse(country == "Republic of Vietnam", "South Vietnam", country)) %>%
-    group_by(country) %>%
+  doorenspleet <- data |>
+    mutate(country = ifelse(country == "Republic of Vietnam", "South Vietnam", country)) |>
+    group_by(country) |>
     mutate(end_year_2 = lead(start_year) - 1,
            end_year_2 = ifelse(is.na(end_year), end_year_2,as.numeric(end_year)),
-           end_year_2 = ifelse(is.na(end_year_2),1994,end_year_2), end_year = end_year_2) %>%
-    select(-end_year_2) %>%
-    group_by(country, start_year, end_year, regime) %>%
-    mutate(year = list(start_year:end_year)) %>%
-    unnest(cols = c(year))  %>%
-    ungroup() %>%
+           end_year_2 = ifelse(is.na(end_year_2),1994,end_year_2), end_year = end_year_2) |>
+    select(-end_year_2) |>
+    group_by(country, start_year, end_year, regime) |>
+    mutate(year = list(start_year:end_year)) |>
+    unnest(cols = c(year))  |>
+    ungroup() |>
     country_year_coder(country,
                        year,
                        match_type = "country",
                        verbose = verbose,
-                       ...) %>%
+                       ...) |>
     mutate(doorenspleet = case_when(regime == "A" ~ 1,
                                     regime == "I" ~ NA_real_,
-                                    regime == "D" ~ 2)) %>%
+                                    regime == "D" ~ 2)) |>
     select(country, year, regime, doorenspleet, everything())
 
   if(verbose) {
@@ -259,24 +320,24 @@ prepare_prc <- function(path = "../../Data/Gasiorowski.csv", verbose = TRUE, ...
     message("Converting to country-year format and adding state system info...")
   }
 
-  prc_gasiorowski <- data %>%
-    group_by(country, regime, start, end)%>%
-    mutate(year = list(start:end)) %>%
-    unnest(cols = c(year))  %>%
-    ungroup() %>%
+  prc_gasiorowski <- data |>
+    group_by(country, regime, start, end)|>
+    mutate(year = list(start:end)) |>
+    unnest(cols = c(year))  |>
+    ungroup() |>
     country_year_coder(country,
                        year,
                        match_type = "country",
-                       verbose = verbose, ...) %>%
+                       verbose = verbose, ...) |>
     mutate(prc = case_when(regime == "A" ~ 1,
                            regime == "T" ~ 2,
                            regime == "S" ~ 3,
-                           regime == "D" ~ 4)) %>%
-    arrange(country, year, start, end) %>%
-    group_by(country, year) %>%
+                           regime == "D" ~ 4)) |>
+    arrange(country, year, start, end) |>
+    group_by(country, year) |>
     mutate(prc_at_end_year = last(prc),
-           prc_at_beginning_year = first(prc)) %>%
-    ungroup() %>%
+           prc_at_beginning_year = first(prc)) |>
+    ungroup() |>
     select(country, year, regime, starts_with("prc"), everything())
 
   if(verbose) {
@@ -307,9 +368,9 @@ create_pitf_scores <- function(polity_annual, verbose = TRUE,
     message("Creating PITF scores -- excluding interruption codes...")
   }
 
-  pitf <- polity_annual %>%
-    select(cyear:year, exrec, parcomp, include_in_output) %>%
-    filter(exrec >= 0, parcomp >= 0) %>%
+  pitf <- polity_annual |>
+    select(cyear:year, exrec, parcomp, include_in_output) |>
+    filter(exrec >= 0, parcomp >= 0) |>
     mutate(pitf = ifelse(exrec < 6 & parcomp %in% c(1, 2),"0-Full autocracy",
                          ifelse(exrec < 6 & !(parcomp %in% c(1,2)), "1-Partial autocracy",
                                 ifelse(exrec >= 6 & parcomp %in% c(1,2), "1-Partial autocracy",
@@ -340,17 +401,17 @@ prepare_svolik_regime <- function(
             verbose = verbose,
             name = 'Svolik regime data')
 
-  svolik_regime <- data %>%
+  svolik_regime <- data |>
     country_year_coder(cname,
                        year,
                        ccode,
                        code_type = "cown",
                        verbose = verbose,
-                       ...) %>%
+                       ...) |>
     mutate(regime_numeric = case_when(regime == "democracy" ~ 1,
                                       regime == "dictatorship" ~ 0,
                                       regime == "independence" ~ NA_real_,
-                                      regime == "no authority" ~ NA_real_)) %>%
+                                      regime == "no authority" ~ NA_real_)) |>
     select(cname, ccode, year, regime, regime_numeric, everything())
 
   standardize_columns(svolik_regime, cname, ccode, verbose = verbose)
@@ -369,14 +430,14 @@ prepare_svolik_institutions <- function(
                     verbose = verbose,
                     ...)
 
-  svolik_institutions <- data %>%
-    mutate(cname = NA_character_) %>%
+  svolik_institutions <- data |>
+    mutate(cname = NA_character_) |>
     country_year_coder(cname,
                        year,
                        ccode,
                        code_type = "cown",
                        verbose = verbose,
-                       ...) %>%
+                       ...) |>
     mutate_if(is.character, ~ifelse(. == ".", NA, .))
 
   standardize_columns(svolik_institutions, cname, ccode, verbose = verbose)
@@ -394,20 +455,20 @@ prepare_vanhanen <- function(
 
   fi_loc <- readr::locale(decimal_mark = ",")
 
-  data <- readr::read_delim(path, delim = ";") %>%
-    tidyr::pivot_longer(dplyr::matches("q[0-9]")) %>%
-    tidyr::separate(name, into = c("year", "index"), sep = "_") %>%
-    dplyr::mutate(value = readr::parse_double(value, locale = fi_loc)) %>%
-    dplyr::select(bv1:value) %>%
+  data <- readr::read_delim(path, delim = ";") |>
+    tidyr::pivot_longer(dplyr::matches("q[0-9]")) |>
+    tidyr::separate(name, into = c("year", "index"), sep = "_") |>
+    dplyr::mutate(value = readr::parse_double(value, locale = fi_loc)) |>
+    dplyr::select(bv1:value) |>
     dplyr::mutate(index = paste("index", index, sep = "_"),
-                  year = stringr::str_remove(year, "q") %>%
+                  year = stringr::str_remove(year, "q") |>
                     as.numeric(),
-           year = year + 1809) %>%
-    tidyr::pivot_wider(id_cols = bv1:year, names_from = index, values_from = value) %>%
+           year = year + 1809) |>
+    tidyr::pivot_wider(id_cols = bv1:year, names_from = index, values_from = value) |>
     dplyr::rename(vanhanen_competition = index_1,
            vanhanen_participation = index_2,
            vanhanen_democratization = index_3,
-           Country = bv1) %>%
+           Country = bv1) |>
     dplyr::filter(!(is.na(vanhanen_competition) &
                       is.na(vanhanen_participation) &
                       is.na(vanhanen_democratization)))
@@ -416,7 +477,7 @@ prepare_vanhanen <- function(
     message(sprintf("Converted to country-year format, the dataset has %d rows", nrow(data)))
   }
 
-  vanhanen <- data %>%
+  vanhanen <- data |>
     country_year_coder(Country,
                        year,
                        match_type = "country and code",
@@ -427,64 +488,75 @@ prepare_vanhanen <- function(
 
 }
 
-prepare_anrr <- function(path = "DDCGdata_final.dta",
+prepare_anrr <- function(path = here::here("data-raw/DDCGdata_final.dta"),
                          verbose = TRUE,
                          ...) {
 
   country_name <- wbcode <- year <- dem <- NULL
 
   anrr <- haven::read_dta(path)
-
-  anrr <- anrr %>%
-    dplyr::select(country_name, wbcode, year, dem) %>%
-    dplyr::filter(!is.na(dem)) %>%
-    dplyr::mutate(country_name = ifelse(str_detect(country_name, "ncipe"),
-                                 "Sao Tome and Principe", country_name)) %>%
+  
+  anrr <- anrr |>
+    dplyr::select(country_name, wbcode, year, dem) |>
+    dplyr::filter(!is.na(dem)) |>
+    dplyr::mutate(country_name = case_when(str_detect(country_name, "ncipe") ~ "Sao Tome and Principe",
+                                           str_detect(country_name, "d'Ivoire") ~ "Cote d'Ivoire",
+                                           TRUE ~ country_name)) |>
     country_year_coder(country_name,
                        year,
                        verbose = verbose,
-                       ...)
+                       ...) |>
+    dplyr::mutate(extended_country_name = dplyr::case_when(
+        extended_country_name %in% "Yugoslavia" & year > 2006 ~ "Serbia",
+          TRUE ~ extended_country_name),
+        cown = dplyr::case_when(
+          country_name %in% "Serbia & Montenegro" & year > 2006 ~ 340,
+            TRUE ~ cown))
 
   standardize_columns(anrr, country_name, wbcode, verbose = verbose)
 
 }
 
-prepare_vdem_simple <- function(verbose = TRUE, version = "13.0", ...) {
+prepare_vdem_simple <- function(verbose = TRUE, version = "15.0", ...) {
   rlang::check_installed("vdemdata", version = version)
 
   country_name <- v2x_mpi_sd <- COWcode <- year <- extended_country_name <- NULL
 
   vdem <- vdemdata::vdem
 
-  Encoding(vdem$country_name) <- "latin1"
-  vdem$country_name <- iconv(vdem$country_name,
-                             "latin1",
-                             "UTF-8")
+  # Encoding(vdem$country_name) <- "UTF-8"
+  # Encoding(vdem$histname) <- "UTF-8"
 
-  Encoding(vdem$histname) <- "latin1"
-  vdem$histname <- iconv(vdem$histname,
-                         "latin1",
-                         "UTF-8")
-
-  vdem_simple <- vdem %>%
-    dplyr::select(country_name:v2x_mpi_sd) %>%
-    dplyr::as_tibble() %>%
+  vdem_simple <- vdem |>
+    dplyr::select(country_name:v2x_mpi_sd) |>
+    dplyr::as_tibble() |>
     country_year_coder(country_name, year, COWcode,
                        ...)
 
-  vdem_exclude <- vdem %>%
-    dplyr::select(country_name:v2x_mpi_sd) %>%
-    dplyr::as_tibble() %>%
-    country_year_coder(country_name, year,
-                       ...) %>%
-    dplyr::filter(extended_country_name == "Yugoslavia", year %in% c(1804:1829))
+  vdem_exclude <- vdem_simple |>
+    dplyr::filter(extended_country_name == "Yugoslavia" & year %in% c(1804:1829) |
+                  extended_country_name == "German Federal Republic" & year %in% c(1789:1799))
 
-  vdem_simple <- vdem_simple %>%
+  vdem_simple <- vdem_simple |>
     dplyr::anti_join(vdem_exclude)
 
-  vdem_simple <- vdem_simple %>%
+  # Manual fixes
+
+  vdem_simple <- vdem_simple |>
     dplyr::rename(vdem_country_name = country_name,
-           vdem_cowcode = COWcode)
+           vdem_cowcode = COWcode) |>
+    mutate(extended_country_name = case_when(
+              vdem_country_name == "Republic of Vietnam" & 
+                year < 1955 ~ "Vietnam (Annam/Cochin China/Tonkin)",
+              TRUE ~ extended_country_name),
+           GWn = case_when(
+              vdem_country_name == "Republic of Vietnam" & 
+                year < 1955 ~ 815,
+              TRUE ~ GWn),
+           cown = case_when(
+              vdem_country_name == "Republic of Vietnam" & 
+                year < 1955 ~ NA_real_,
+              TRUE ~ cown))
 
   vdem_simple
 }
@@ -493,12 +565,12 @@ prepare_kailitz <- function(path, verbose = TRUE, include_in_output) {
 
   kailitz_country <- kailitz_cown <- year <- cown <- combined_regime <- transition <- NULL
 
-  kailitz <- readr::read_rds(path) %>%
-    select(kailitz_country, year, cown, combined_regime:transition) %>%
-    rename(kailitz_cown = cown) %>%
+  kailitz <- readr::read_rds(path) |>
+    select(kailitz_country, year, cown, combined_regime:transition) |>
+    rename(kailitz_cown = cown) |>
     mutate(year = as.double(year))
 
-  kailitz <- kailitz %>%
+  kailitz <- kailitz |>
     country_year_coder(kailitz_country,
                        year,
                        code_col = kailitz_cown,
@@ -506,12 +578,40 @@ prepare_kailitz <- function(path, verbose = TRUE, include_in_output) {
                        include_in_output = include_in_output,
                        code_type = "cown")
 
-  kailitz <- kailitz %>%
+  kailitz <- kailitz |>
     select(kailitz_country, kailitz_cown, year, combined_regime:transition, include_in_output)
 
   standardize_columns(kailitz, kailitz_country, kailitz_cown, verbose = verbose)
 
 }
+
+prepare_arat <- function(path, verbose = TRUE, include_in_output) {
+
+  Score <- Year <- Country <- country <- year <- extended_country_name <- NULL
+
+  arat <- readr::read_csv(path) |>
+    rename(arat_dem = Score,
+           year = Year,
+           country = Country) |>
+    mutate(country = case_when(country == "Germany DR" ~ "East Germany",
+                               country == "Germany FR" ~ "West Germany",
+                               country == "Korea PR" ~ "North Korea",
+                               country == "Vietnam PF" ~ "North Vietnam",
+                               country == "Vietnam S" ~ "South Vietnam",
+                               TRUE ~ country))
+
+  arat <- arat |>
+    country_year_coder(country,
+                       year,
+                       verbose = verbose,
+                       include_in_output = include_in_output) |>
+    filter(!(extended_country_name == "Brazil" & year == 1981),
+           !(extended_country_name == "Gambia" & year %in% c(1965, 1966)))
+
+  standardize_columns(arat, country, verbose = verbose)
+
+}
+
 
 # create_anrr_scores <- function(verbose = TRUE) {
 #   anrr_data <- generate_democracy_scores_dataset(datasets = c("pacl", "bmr",
@@ -523,11 +623,11 @@ prepare_kailitz <- function(path, verbose = TRUE, include_in_output) {
 #
 #   fh <- download_fh(verbose = verbose, include_territories = TRUE)
 #
-#   anrr_data <- anrr_data %>%
-#     left_join(fh %>% select(extended_country_name:in_GW_system, year,
+#   anrr_data <- anrr_data |>
+#     left_join(fh |> select(extended_country_name:in_GW_system, year,
 #                             fh_total_reversed, fh_total, status))
 #
-#   anrr_data <- anrr_data %>%
+#   anrr_data <- anrr_data |>
 #     mutate(anrr_dem = case_when(fh_total <= 10 & polity2 > 0 ~ 1,
 #                                 fh_total <= 10 & is.na(polity2) & (pacl_update == 1 | bmr_democracy == 1) ~ 1,
 #                                 is.na(fh_total) & polity2 > 0 & (pacl_update == 1 | bmr_democracy == 1) ~ 1,
@@ -535,8 +635,8 @@ prepare_kailitz <- function(path, verbose = TRUE, include_in_output) {
 #                                 (is.na(fh_total) & is.na(polity2) & is.na(pacl_update) & is.na(bmr_democracy)) ~ NA_real_,
 #                                 TRUE ~ 0))
 #
-#   anrr_data <- anrr_data %>%
-#     filter(year >= 1960) %>%
+#   anrr_data <- anrr_data |>
+#     filter(year >= 1960) |>
 #     left_join(anrr)
 #
 # }

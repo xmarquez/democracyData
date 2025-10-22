@@ -87,7 +87,7 @@
 #'
 #'@export
 #'
-#'@return A \link{tibble} with the processed dataset, unless \code{return_raw}
+#'@return A [tibble::tibble()] with the processed dataset, unless \code{return_raw}
 #'  is \code{TRUE}, in which case the function returns the raw data without
 #'  processing.
 #'
@@ -521,7 +521,14 @@ redownload_lied <- function(url,
   lied <- lied |>
     filter(!(countryn == "Palestine/British Mandate" & year <= 1919 & extended_country_name == "Palestine, State of"),
            !(countryn == "Serbia" & year <= 1829 & extended_country_name == "Yugoslavia"),
-           !(countryn == "Vietnam" & year <= 1815 & extended_country_name == "Vietnam, Democratic Republic of"))
+           !(countryn == "Vietnam" & year <= 1815 & extended_country_name == "Vietnam, Democratic Republic of")) |>
+    mutate(extended_country_name = case_when(extended_country_name == "Vietnam, Democratic Republic of" &
+                                              year < 1945 ~ "Vietnam (Annam/Cochin China/Tonkin)",
+                                             TRUE ~ extended_country_name),
+          cown = case_when(cow == 817 & year < 1945 ~ NA_real_,
+                            TRUE ~ cown),
+          GWn = case_when(cow == 817 & year < 1945 ~ 815,
+                            TRUE ~ cown))
 
   lied <- lied |>
     mutate(L0 = (legselec == 0 & exselec == 0)*1,
@@ -569,6 +576,7 @@ redownload_vaporeg <- function(url,
                                ...) {
 
   country_name <- cowcode <- year <- VaPoReg_s <- extended_country_name <- NULL
+  vaporeg_code <- vaporeg_s <- NULL
   if(missing(url)) {
     url <- find_url("vaporeg")
   }
@@ -582,13 +590,11 @@ redownload_vaporeg <- function(url,
     return(data)
   }
 
-    # Fix the Uzbekistan problem
-
-
   if(verbose) {
     message("Changing column names, adding state system information, fixing problem with Uzbekistan and Serbia")
   }
  
+   # Fix the Uzbekistan problem
   data <- data |>
     filter(!(is.na(vaporeg_code) & country_name == "Uzbekistan")) |>
     mutate(cowcode = case_when(cowcode == 0 & country_name == "Uzbekistan" ~ vaporeg_code,
@@ -614,7 +620,19 @@ redownload_vaporeg <- function(url,
     mutate(extended_country_name = case_when(
               country_name == "Serbia" & 
                 year %in% c(1919:2002) ~ "Serbia",
-              TRUE ~ extended_country_name))
+              country_name == "Vietnam" & 
+                year < 1954 ~ "Vietnam (Annam/Cochin China/Tonkin)",
+              TRUE ~ extended_country_name),
+           GWn = case_when(
+              country_name == "Serbia" & 
+                year %in% c(1919:2002) ~ 340,
+              country_name == "Vietnam" & 
+                year < 1954 ~ 815,
+              TRUE ~ GWn),
+           cown = case_when(
+              country_name == "Vietnam" & 
+                year < 1954 ~ NA_real_,
+              TRUE ~ NA_real_))
     
 
   vaporeg <- vaporeg |>
@@ -1473,7 +1491,19 @@ redownload_pipe <- function(url,
       countryn == "Leeward Island F" ~ "Leeward Islands Federation",
       countryn == "Leeward Islands" ~ "Leeward Islands Federation",
       TRUE ~ countryn
-    ))
+      ),
+      extended_country_name = case_when(
+              countryn == "Vietnam" & 
+                year < 1954 ~ "Vietnam (Annam/Cochin China/Tonkin)",
+              TRUE ~ extended_country_name),
+           GWn = case_when(
+              countryn == "Vietnam" & 
+                year < 1954 ~ 815,
+              TRUE ~ GWn),
+           cown = case_when(
+              countryn == "Vietnam" & 
+                year < 1954 ~ NA_real_,
+              TRUE ~ cown))
 
   if(verbose) {
     message("Adding calculated variables")

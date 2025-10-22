@@ -9,7 +9,7 @@
 #'   "polity" (for the [Polity IV](http://www.systemicpeace.org/polityproject.html) system of states).
 #' @param max_year The maximum year in the panel. If NULL, uses the current year.
 #'
-#' @return A [tibble] with the country code in the relevant system of states,
+#' @return A [tibble::tibble()] with the country code in the relevant system of states,
 #'   the official country name and years when the country belongs to the system,
 #'   and the relevant start and end dates for entry and exit into the system.
 #'
@@ -260,20 +260,26 @@ standardize_columns <- function(data,
 
 #' Retrieve the citation for a specific dataset included in this package
 #'
-#' This is a convenient wrapper for \code{print(bibliography)}, searching by \code{key = dataset_name}, with \code{BibOptions(use.regex = TRUE)}. You can also search and
-#' manipulate the \code{\link{bibliography}} object directly using the
-#' \code{\link{RefManageR}} package functions.
+#' This is a convenient wrapper for \code{print(bibliography)}, searching by
+#' \code{key = dataset_name}, with \code{BibOptions(use.regex = TRUE)}. You can
+#' also search and manipulate the \code{\link{bibliography}} object directly
+#' using the [RefManageR::RefManageR] package functions.
 #'
-#' @param dataset_name The name of the dataset to cite.
+#' @param dataset_name The name of the dataset to cite. 
+#' 
 #' @param to_bibtex Whether to provide bibtex/biblatex markup.
 #'
-#' @return Prints the citation information. Returns the [BibEntry] object.
-#' @export
+#' @return Prints the citation information. Returns the [RefManageR::BibEntry()] object.
+#' @export 
+#' 
 #' @import RefManageR
 #'
-#' @examples
-#' cite_dataset("gwf")
-#' cite_dataset("pmm")
+#' @examples 
+#' 
+#' cite_dataset("gwf") 
+#' 
+#' cite_dataset("pmm") 
+#' 
 #' cite_dataset("uds") # Same output as the previous one
 cite_dataset <- function(dataset_name, to_bibtex = FALSE) {
   RefManageR::BibOptions(use.regex = TRUE)

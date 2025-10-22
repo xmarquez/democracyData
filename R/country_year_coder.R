@@ -10,7 +10,7 @@
 #'   but is not always possible and can introduce errors if the code column is
 #'   incorrect.
 #' @param date_col The (unquoted) name of the year column. Defaults to \code{year}.
-#'   Must exist in \code{tbl} - otherwise just use [countrycode] if you don't care
+#'   Must exist in \code{tbl} - otherwise just use [countrycode::countrycode] if you don't care
 #'   about country-year matching.
 #' @param code_col The (unquoted) name of the code column. Defaults to \code{NULL}.
 #' @param code_type Type of code to match on (only needed if \code{code_col} is not
@@ -33,7 +33,7 @@
 #'   \item "extended_GWn": Identical to \code{GWn}, but includes a number of not commonly
 #'   used codes for units of doubtful sovereignty (751 for Hyderabad before its
 #'   incorporation into India, 666.001 and 666.002 for Israel pre 1967 borders
-#'   amd occupied territories, and 605 for Western Sahara). These codes are used
+#'   and occupied territories, and 605 for Western Sahara). These codes are used
 #'   in some UCDP/PRIO (\url{https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO/})
 #'   datasets.
 #'
@@ -141,7 +141,7 @@
 #'   dataset. Is \code{NA} if the country is not in Polity.
 #'
 #'   \item "country_name_en": The official name of the country (official short
-#'   English country name), as defined by the ISO organization. Taken from [countrycode]. See also
+#'   English country name), as defined by the ISO organization. Taken from [countrycode::countrycode]. See also
 #'   \url{https://en.wikipedia.org/wiki/ISO_3166-1}.
 #'    Some names are missing because the state no longer exists or there is
 #'   controversy about its sovereign status.
@@ -444,12 +444,12 @@ cow_startdate <- cow_enddate <- NULL
     code_col <- enquo(code_col)
 
     if(missing(country_col)) {
-      code_years <- tbl %>%
-        select(!!code_col, !!date_col) %>%
+      code_years <- tbl |>
+        select(!!code_col, !!date_col) |>
         distinct()
     } else {
-      code_years <- tbl %>%
-        select(!!country_col, !!code_col, !!date_col) %>%
+      code_years <- tbl |>
+        select(!!country_col, !!code_col, !!date_col) |>
         distinct()
     }
 
@@ -461,7 +461,7 @@ cow_startdate <- cow_enddate <- NULL
                                  code_type = code_type,
                                  to_system = to_system)
 
-    result_df <- result_df %>%
+    result_df <- result_df |>
       mutate(matches_country = FALSE,
              matches_country_year = FALSE,
              matches_code = ifelse(is.na(matches_code),
@@ -478,8 +478,8 @@ cow_startdate <- cow_enddate <- NULL
 
   if(match_type != "code only") {
     if(missing(code_col)) {
-      country_years <- tbl %>%
-        select(!!country_col, !!date_col) %>%
+      country_years <- tbl |>
+        select(!!country_col, !!date_col) |>
         distinct()
 
       result_df <- country_year_match(data = country_years,
@@ -492,8 +492,8 @@ cow_startdate <- cow_enddate <- NULL
     } else {
       code_col <- enquo(code_col)
 
-      country_years <- tbl %>%
-        select(!!country_col, !!date_col, !!code_col) %>%
+      country_years <- tbl |>
+        select(!!country_col, !!date_col, !!code_col) |>
         distinct()
 
       result_df <- country_year_match(data = country_years,
@@ -517,13 +517,13 @@ cow_startdate <- cow_enddate <- NULL
   enddate_col <- parse_expr(paste(to_system, "enddate", sep = "_"))
 
   if(!missing(code_col) & !missing(country_col)) {
-    result_df <- result_df %>%
+    result_df <- result_df |>
       group_by(!!country_col, !!code_col, !!date_col)
   } else if(!missing(code_col) & missing(country_col)) {
-    result_df <- result_df %>%
+    result_df <- result_df |>
       group_by(!!code_col, !!date_col)
   } else {
-    result_df <- result_df %>%
+    result_df <- result_df |>
       group_by(!!country_col, !!date_col)
   }
 
@@ -544,7 +544,7 @@ cow_startdate <- cow_enddate <- NULL
 
   to_system_col <- parse_expr(paste("in", to_system, "system", sep = "_"))
 
-  result_df <- result_df %>%
+  result_df <- result_df |>
     mutate(in_GW_system = matches_code_year_GW & GW_membership |
              matches_country_year_GW & GW_membership,
            in_polity_system = matches_code_year_polity & polity_membership |
@@ -554,7 +554,7 @@ cow_startdate <- cow_enddate <- NULL
            total_system_matches = total_system_matches +
              in_GW_system + in_polity_system + in_cow_system + !!to_system_col)
 
-  result_df <- result_df %>%
+  result_df <- result_df |>
     filter(test_condition(as.integer(!!date_col), startdate,
                           enddate,
                           GW_startdate,
@@ -563,22 +563,22 @@ cow_startdate <- cow_enddate <- NULL
                           polity_enddate,
                           cow_startdate,
                           cow_enddate,
-                          total_system_matches)) %>%
+                          total_system_matches)) |>
     ungroup()
 
   if(!missing(code_col) & !missing(country_col)) {
-    result_df <- result_df %>%
+    result_df <- result_df |>
       select(!!country_col, !!code_col, !!date_col, all_of(include_in_output), starts_with("matches_"))
   } else if(!missing(code_col) & missing(country_col)) {
-    result_df <- result_df %>%
+    result_df <- result_df |>
       select(!!code_col, !!date_col, all_of(include_in_output), starts_with("matches_"))
   } else {
-    result_df <- result_df %>%
+    result_df <- result_df |>
       select(!!country_col, !!date_col, all_of(include_in_output), starts_with("matches_"))
   }
 
   if(!debug) {
-    result_df <- result_df %>%
+    result_df <- result_df |>
       select(-starts_with("matches_"))
   }
 
@@ -617,7 +617,7 @@ cow_startdate <- cow_enddate <- NULL
     }
   }
 
-  tbl %>% distinct()
+  tbl |> distinct()
 
 }
 
@@ -651,14 +651,14 @@ code_year_match <- function(data, dict, date_col, code_col, code_type,
   }
 
 
-  suppressWarnings(code_matches <- data %>%
-                     filter(!is.na(UQ(code_col))) %>%
-                     left_join(dict, by = code_type) %>%
+  suppressWarnings(code_matches <- data |>
+                     filter(!is.na(UQ(code_col))) |>
+                     left_join(dict, by = code_type) |>
                      mutate(matches_code = (!is.na(UQ(code_col)))))
 
   today <- floor_date(now(), unit = "day")
 
-  code_matches <- code_matches %>%
+  code_matches <- code_matches |>
     mutate(matches_code_year = year_match_fun(!!date_col, startdate, enddate),
            matches_code_year_GW = year_match_fun(!!date_col, GW_startdate, GW_enddate),
            matches_code_year_polity = year_match_fun(!!date_col, polity_startdate, polity_enddate),
@@ -690,12 +690,12 @@ code_year_match <- function(data, dict, date_col, code_col, code_type,
            total_matches_after = matches_after_code_year +
              matches_after_code_year_GW +
              matches_after_code_year_cow +
-             matches_after_code_year_polity) %>%
-    group_by(!!code_col, !!date_col) %>%
-    filter(total_system_matches == max(total_system_matches)) %>%
-    filter(total_matches_between == max(total_matches_between)) %>%
-    filter(total_matches_before == max(total_matches_before)) %>%
-    filter(total_matches_after == max(total_matches_after)) %>%
+             matches_after_code_year_polity) |>
+    group_by(!!code_col, !!date_col) |>
+    filter(total_system_matches == max(total_system_matches)) |>
+    filter(total_matches_between == max(total_matches_between)) |>
+    filter(total_matches_before == max(total_matches_before)) |>
+    filter(total_matches_after == max(total_matches_after)) |>
     ungroup()
 
   code_matches
@@ -729,27 +729,27 @@ country_year_match <- function(data, dict, country_col,
   join_by <- "regex"
   names(join_by) <- quo_name(country_col)
 
-  suppressWarnings(country_matches <- data %>%
+  suppressWarnings(country_matches <- data |>
                      fuzzyjoin::regex_full_join(dict, by = join_by,
-                                     ignore_case = TRUE) %>%
+                                     ignore_case = TRUE) |>
                      filter(!is.na(UQ(country_col))))
 
   if(!missing(code_col)) {
     code_col <- enquo(code_col)
     code_type <- parse_expr(code_type)
 
-    country_matches <- country_matches %>%
+    country_matches <- country_matches |>
       mutate(matches_code = (UQ(code_col) == UQ(code_type)),
              matches_code = ifelse(is.na(matches_code), FALSE, matches_code))
 
   } else {
-    country_matches <- country_matches %>%
+    country_matches <- country_matches |>
       mutate(matches_code = FALSE)
   }
 
   today <- as_date(floor_date(now(),unit = "day"))
 
-  country_matches <- country_matches %>%
+  country_matches <- country_matches |>
     mutate(matches_country_year = year_match_fun(!!date_col, startdate, enddate),
            matches_country_year_GW = year_match_fun(!!date_col, GW_startdate, GW_enddate),
            matches_country_year_polity = year_match_fun(!!date_col, polity_startdate, polity_enddate),
@@ -794,19 +794,19 @@ country_year_match <- function(data, dict, country_col,
            total_matches_after = matches_after_country_year +
              matches_after_country_year_GW +
              matches_after_country_year_cow +
-             matches_after_country_year_polity) %>%
+             matches_after_country_year_polity) |>
     group_by(!!country_col, !!date_col)
 
   if(!missing(code_col)) {
-    country_matches <- country_matches %>%
+    country_matches <- country_matches |>
       group_by(!!code_col, .add = TRUE)
   }
 
-  country_matches <- country_matches %>%
-    filter(total_system_matches == max(total_system_matches)) %>%
-    filter(total_matches_between == max(total_matches_between)) %>%
-    filter(total_matches_before == max(total_matches_before)) %>%
-    filter(total_matches_after == max(total_matches_after)) %>%
+  country_matches <- country_matches |>
+    filter(total_system_matches == max(total_system_matches)) |>
+    filter(total_matches_between == max(total_matches_between)) |>
+    filter(total_matches_before == max(total_matches_before)) |>
+    filter(total_matches_after == max(total_matches_after)) |>
     ungroup()
 
   country_matches
@@ -851,13 +851,13 @@ is_between <- function(date_col, startdate, enddate) {
   # Create a tibble with the date_col, startdate, and enddate columns
   result <- tibble(date_col = ymd(paste0(date_col, "-12-31")),
                    startdate = startdate,
-                   enddate = enddate) %>%
+                   enddate = enddate) |>
     # Group by the date_col
-    group_by(date_col) %>%
+    group_by(date_col) |>
     # Add a column indicating whether the date is between the start and end dates
     mutate(between = (date_col > min(startdate) &
                         date_col < max(startdate) &
-                        date_col > min(enddate))) %>%
+                        date_col > min(enddate))) |>
     # Extract the between column
     pull(between)
 
@@ -896,7 +896,7 @@ prepare_dict <- function(to_system, match_final_year) {
   dict <- data
 
   if(match_final_year) {
-    dict <- dict %>%
+    dict <- dict |>
       mutate_at(c("GW_enddate",
                   "cow_enddate",
                   "polity_enddate",
@@ -910,13 +910,13 @@ prepare_dict <- function(to_system, match_final_year) {
 
   today <- as_date(floor_date(now(),unit = "day"))
 
-  dict <- dict %>%
-    mutate(enddate = if_else(is.na(enddate) & !is.na(startdate), today, enddate)) %>%
-    group_by_all() %>%
+  dict <- dict |>
+    mutate(enddate = if_else(is.na(enddate) & !is.na(startdate), today, enddate)) |>
+    group_by_all() |>
     mutate(interval = list(c(startdate,enddate)),
            GW_interval = list(c(GW_startdate,GW_enddate)),
            cow_interval = list(c(cow_startdate,cow_enddate)),
-           polity_interval = list(c(polity_startdate,polity_enddate))) %>%
+           polity_interval = list(c(polity_startdate,polity_enddate))) |>
     ungroup()
 
   dict
@@ -924,7 +924,7 @@ prepare_dict <- function(to_system, match_final_year) {
 
 print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_table = TRUE) {
 
-  tbl <- tbl %>%
+  tbl <- tbl |>
     distinct()
 
   date_col <- enquo(date_col)
@@ -936,31 +936,31 @@ print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_tabl
 
     code_col <- enquo(code_col)
 
-    multiple_matches <- tbl %>%
-      group_by(!!code_col, !!date_col) %>%
-      filter(n() > 1) %>%
-      group_by(!!code_col) %>%
-      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
+    multiple_matches <- tbl |>
+      group_by(!!code_col, !!date_col) |>
+      filter(n() > 1) |>
+      group_by(!!code_col) |>
+      group_by(dplyr::pick(dplyr::all_of(matched_cols)), .add = TRUE)  |>
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
                 n = n(),
                 .groups = "drop")
 
-    multiple_matches_2 <- tbl %>%
-      group_by(!!date_col) %>%
-      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
-      filter(n() > 1, !is.na(!!matched_country_col)) %>%
-      group_by(!!code_col) %>%
-      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
+    multiple_matches_2 <- tbl |>
+      group_by(!!date_col) |>
+      group_by(dplyr::pick(dplyr::all_of(matched_cols)), .add = TRUE) |>
+      filter(n() > 1, !is.na(!!matched_country_col)) |>
+      group_by(!!code_col) |>
+      group_by(dplyr::pick(dplyr::all_of(matched_cols)), .add = TRUE) |>
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
                 n = n(),
                 .groups = "drop")
 
-    not_matched <- tbl %>%
-      filter(is.na(!!matched_country_col)) %>%
-      group_by(!!code_col) %>%
-      group_by_at(vars(matched_cols), .add = TRUE)  %>%
+    not_matched <- tbl |>
+      filter(is.na(!!matched_country_col)) |>
+      group_by(!!code_col) |>
+      group_by(dplyr::pick(dplyr::all_of(matched_cols)), .add = TRUE) |>
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
                 n = n(),
@@ -970,31 +970,31 @@ print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_tabl
 
     country_col <- enquo(country_col)
 
-    multiple_matches <- tbl %>%
-      group_by(!!country_col, !!date_col) %>%
-      filter(n() > 1) %>%
-      group_by(!!country_col) %>%
-      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
+    multiple_matches <- tbl |>
+      group_by(!!country_col, !!date_col) |>
+      filter(n() > 1) |>
+      group_by(!!country_col) |>
+      group_by(dplyr::pick(dplyr::all_of(matched_cols)), .add = TRUE) |>
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
                 n = n(),
                 .groups = "drop")
 
-    multiple_matches_2 <- tbl %>%
-      group_by(!!date_col) %>%
-      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
-      filter(n() > 1, !is.na(!!matched_country_col)) %>%
-      group_by(!!country_col) %>%
-      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
+    multiple_matches_2 <- tbl |>
+      group_by(!!date_col) |>
+      group_by(dplyr::pick(dplyr::all_of(matched_cols)), .add = TRUE) |>
+      filter(n() > 1, !is.na(!!matched_country_col)) |>
+      group_by(!!country_col) |>
+      group_by(dplyr::pick(dplyr::all_of(matched_cols)), .add = TRUE) |>
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
                 n = n(),
                 .groups = "drop")
 
-    not_matched <- tbl %>%
-      filter(is.na(!!matched_country_col)) %>%
-      group_by(!!country_col)  %>%
-      group_by_at(vars(matched_cols), .add = TRUE)  %>%
+    not_matched <- tbl |>
+      filter(is.na(!!matched_country_col)) |>
+      group_by(!!country_col)  |>
+      group_by(dplyr::pick(dplyr::all_of(matched_cols)), .add = TRUE) |>
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
                 n = n(),
@@ -1006,31 +1006,31 @@ print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_tabl
 
     code_col <- enquo(code_col)
 
-    multiple_matches <- tbl %>%
-      group_by(!!country_col, !!code_col, !!date_col) %>%
-      filter(n() > 1) %>%
-      group_by(!!country_col, !!code_col) %>%
-      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
+    multiple_matches <- tbl |>
+      group_by(!!country_col, !!code_col, !!date_col) |>
+      filter(n() > 1) |>
+      group_by(!!country_col, !!code_col) |>
+      group_by(dplyr::pick(dplyr::all_of(matched_cols)), .add = TRUE) |>
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
                 n = n(),
                 .groups = "drop")
 
-    multiple_matches_2 <- tbl %>%
-      group_by(!!date_col) %>%
-      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
-      filter(n() > 1, !is.na(!!matched_country_col)) %>%
-      group_by(!!country_col, !!code_col) %>%
-      group_by_at(.vars = vars(matched_cols), .add = TRUE) %>%
+    multiple_matches_2 <- tbl |>
+      group_by(!!date_col) |>
+      group_by(dplyr::pick(dplyr::all_of(matched_cols)), .add = TRUE) |>
+      filter(n() > 1, !is.na(!!matched_country_col)) |>
+      group_by(!!country_col, !!code_col) |>
+      group_by(dplyr::pick(dplyr::all_of(matched_cols)), .add = TRUE) |>
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
                 n = n(),
                 .groups = "drop")
 
-    not_matched <- tbl %>%
-      filter(is.na(!!matched_country_col)) %>%
-      group_by(!!country_col, !!code_col)  %>%
-      group_by_at(vars(matched_cols), .add = TRUE)  %>%
+    not_matched <- tbl |>
+      filter(is.na(!!matched_country_col)) |>
+      group_by(!!country_col, !!code_col)  |>
+      group_by(dplyr::pick(dplyr::all_of(matched_cols)), .add = TRUE) |>
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
                 n = n(),
@@ -1039,22 +1039,22 @@ print_diagnostic <- function(tbl, country_col, code_col, date_col, print_as_tabl
 
 
   if(!missing(country_col) & !missing(code_col)) {
-    country_name_changes <- tbl %>%
+    country_name_changes <- tbl |>
       filter(stringr::str_to_lower(!!country_col) !=
-               stringr::str_to_lower(!!matched_country_col)) %>%
-      group_by(!!country_col, !!code_col) %>%
-      group_by_at(vars(matched_cols), .add = TRUE)  %>%
+               stringr::str_to_lower(!!matched_country_col)) |>
+      group_by(!!country_col, !!code_col) |>
+      group_by(dplyr::pick(dplyr::all_of(matched_cols)), .add = TRUE)  |>
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
                 n = n(),
                 .groups = "drop")
 
   } else if(!missing(country_col)) {
-    country_name_changes <- tbl %>%
+    country_name_changes <- tbl |>
       filter(stringr::str_to_lower(!!country_col) !=
-               stringr::str_to_lower(!!matched_country_col)) %>%
-      group_by(!!country_col) %>%
-      group_by_at(vars(matched_cols), .add = TRUE)  %>%
+               stringr::str_to_lower(!!matched_country_col)) |>
+      group_by(!!country_col) |>
+      group_by(dplyr::pick(dplyr::all_of(matched_cols)), .add = TRUE) |>
       summarise(min_date = suppressWarnings(min(!!date_col)),
                 max_date  = suppressWarnings(max(!!date_col)),
                 n = n(),

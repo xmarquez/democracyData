@@ -36,12 +36,6 @@
 #' @param verbose Provides a running commentary on what the function is is
 #' doing. Default is \code{TRUE}. 
 #' 
-#' @param target_system Character vector describing which state system to use
-#'   for the combined file, and which country codes to use. Can be one or both
-#'   of "GWn" (Gleditsch and Ward, numeric codes) and "cown" (numeric codes for
-#'   the Correlates of War system). The default is *both* Gleditsch-ward and
-#'   Correlates of War (`c("GWn", "cown")`). 
-#' 
 #' @param force_redownload Whether to re-download all datasets that can be
 #'   re-downloaded, including those archived with this package. Used only for
 #'   debugging; default is \code{FALSE}.
@@ -138,7 +132,7 @@
 #'  
 #' @import dplyr
 #'
-#' @return A [tibble] with the selected democracy measures and state system
+#' @return A [tibble::tibble()] with the selected democracy measures and state system
 #'   information, in two versions: "long" and "wide". These contain the
 #'   following variables:
 #'
@@ -613,9 +607,10 @@ generate_democracy_scores_dataset <- function(datasets,
                                               exclude_pmm_duplicates = TRUE,
                                               prefer_successor = TRUE,
                                               fix_PIPE = TRUE,
-                                              enforce_GW_enddates = TRUE) {
+                                              enforce_GW_enddates = FALSE) {
 
-  value <- NULL
+  value <- dataset <- pmm_only <- release_year <- extend <- NULL
+  measure <- NULL
   include_in_output <- c("extended_country_name", "GWn", "cown", "in_GW_system")
   output_format <- match.arg(output_format, c("long", "wide"))
 
@@ -777,6 +772,9 @@ generate_democracy_scores_dataset <- function(datasets,
 }
 
 select_successor <- function(democracy_data) {
+  year <- cown <- dataset <- panel <- extended_country_name <- NULL
+  original_country_name <- value <- NULL
+
   # Germany 1990
   democracy_data <- democracy_data |>
     dplyr::filter(!(extended_country_name == "German Federal Republic" & 
@@ -871,6 +869,7 @@ select_successor <- function(democracy_data) {
 }
 
 fix_PIPE <- function(democracy_data) {
+  dataset <- original_country_name <- year <- NULL
   # PIPE
   democracy_data <- democracy_data |>
     dplyr::filter(!(dataset == "PIPE" & original_country_name == "Austria-Hungary (Austria)" & year <= 1918),
@@ -889,6 +888,9 @@ fix_PIPE <- function(democracy_data) {
 }
 
 enforce_enddates <- function(democracy_data, target_panel = "GW") {
+  dataset <- measure <- extended_country_name <- year <- panel <- NULL
+  enddate <- closest <- last_year <- NULL
+  browser()
   DEBUG <- FALSE
  
   # Check for duplicates

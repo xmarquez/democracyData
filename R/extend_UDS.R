@@ -2,7 +2,7 @@
 #'Prepare democracy data before replicating the UDS model
 #'
 #'This function is designed to take the democracy data included in this package
-#'and put it in a form suitable for use with the [mirt] package to replicate the
+#'and put it in a form suitable for use with the [mirt::mirt] package to replicate the
 #'UDS model. It takes a data frame and tries to determine, from the column
 #'names, which variables contain democracy scores.
 #'
@@ -119,7 +119,7 @@
 #'  the documentation for [generate_democracy_scores_dataset] or the
 #'  documentation for the individual datasets.
 #'
-#'@param .funs A names list of functions to modify the columns. It defaults to
+#'@param .funs A named list of functions to modify the columns. It defaults to
 #'  the following:
 #'
 #'  \code{funs(arat = cut(., breaks = c(0, 50, 60, 70, 80, 90, 100, 109), labels
@@ -168,7 +168,10 @@
 #'@encoding UTF-8
 #'
 #' @examples
-#' democracy <- generate_democracy_scores_dataset(selection = "pmm", output_format = "wide")
+#' democracy <- generate_democracy_scores_dataset(
+#'   selection = "pmm", output_format = "wide", exclude_pmm_duplicates = FALSE
+#'   )
+#' 
 #' summary(democracy)
 #' summary(prepare_democracy_data(democracy))
 #'
@@ -234,27 +237,27 @@ prepare_democracy_data <- function(data,
                            "eiu",
                            "peps"),collapse="|")
 
-  data <- data %>%
-    mutate(across(matches("arat"), .funs[['arat']])) %>%
-    mutate(across(matches("hadenius_pmm"), .funs[['hadenius']])) %>%
-    mutate(across(matches("bollen"), .funs[['bollen']])) %>%
-    mutate(across(matches("bti"), .funs[['bti']])) %>%
+  data <- data |>
+    mutate(across(matches("arat"), .funs[['arat']])) |>
+    mutate(across(matches("hadenius_pmm"), .funs[['hadenius']])) |>
+    mutate(across(matches("bollen"), .funs[['bollen']])) |>
+    mutate(across(matches("bti"), .funs[['bti']])) |>
     mutate(across(matches("pmm_vanhanen|vanhanen_"),
-              .funs[['vanhanen']])) %>%
-    mutate(across(matches("munck"), .funs[['munck']])) %>%
+              .funs[['vanhanen']])) |>
+    mutate(across(matches("munck"), .funs[['munck']])) |>
     mutate(across(matches("polyarchy_(inclusion|contestation)_dimension"),
-              .funs[['polyarchy_dimensions']])) %>%
-    mutate(across(matches("polity"), .funs[['polity']])) %>%
-    mutate(across(starts_with("v2x"), .funs[['v2x']])) %>%
-    mutate(across(c(starts_with("csvmdi"), starts_with("svmdi_2016")), .funs[['svmdi']])) %>%
-    mutate(across(matches("wgi"), .funs[['wgi']])) %>%
-    mutate(across(matches("eiu"), .funs[['eiu']])) %>%
-    mutate(across(matches("peps"), .funs[['peps']])) %>%
+              .funs[['polyarchy_dimensions']])) |>
+    mutate(across(matches("polity"), .funs[['polity']])) |>
+    mutate(across(starts_with("v2x"), .funs[['v2x']])) |>
+    mutate(across(c(starts_with("csvmdi"), starts_with("svmdi_2016")), .funs[['svmdi']])) |>
+    mutate(across(matches("wgi"), .funs[['wgi']])) |>
+    mutate(across(matches("eiu"), .funs[['eiu']])) |>
+    mutate(across(matches("peps"), .funs[['peps']])) |>
     mutate(across(matches(other_pattern), .funs[['other']]))
 
   democracy_vars <- names(data)[str_detect(names(data), other_pattern)]
 
-  data %>%
+  data |>
     remove_empty_rows(democracy_vars)
 
 }
@@ -332,7 +335,7 @@ prob_more <- function(data, country1, country2, years, mean_col = "z1",
 #'   of) "score" (for score cutpoints) or "discrimination" (for discrimination
 #'   parameters). Default is "score."
 #'
-#' @return A [tibble] with either score cutpoints for each variable used to
+#' @return A [tibble::tibble()] with either score cutpoints for each variable used to
 #'   construct the latent scores in terms of the latent variable (the default), or
 #'   discrimination parameters for each variable used to construct the index.
 #'   For the score cutpoints (`type = 'score'`), the columns
@@ -349,15 +352,17 @@ prob_more <- function(data, country1, country2, years, mean_col = "z1",
 #' # Replicate the official UDS 2011 release and calculate its cutpoints
 #' library(dplyr)
 #' library(mirt)
-#' democracy_data <- generate_democracy_scores_dataset(selection = "_pmm",
-#' output_format = "wide")
+#' democracy_data <- generate_democracy_scores_dataset(
+#'   selection = "_pmm", output_format = "wide", exclude_pmm_duplicates = FALSE
+#'   )
 #'
 #' democracy_data <- prepare_democracy_data(democracy_data)
 #'
-#' replication_2011_model <- mirt(democracy_data %>% select(matches("pmm")),
-#' model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
+#' replication_2011_model <- mirt(democracy_data |> 
+#'   select(matches("pmm")), model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
 #'
-#' cutpoints(replication_2011_model)}
+#' cutpoints(replication_2011_model)
+#' }
 cutpoints <- function(model, type = "score") {
   stopifnot(class(model) == "SingleGroupClass")
 
@@ -371,31 +376,31 @@ cutpoints <- function(model, type = "score") {
 
   coefs <- as.data.frame(mirt::coef(model, as.data.frame = TRUE))
 
-  coefs <- coefs %>%
+  coefs <- coefs |>
     mutate(variable = rownames(coefs),
            coef_type = stringr::str_extract(variable,"a([0-9]+)?$|d([0-9]+)?$"),
            variable = stringr::str_replace(variable,"\\.a([0-9]+)?$|\\.d([0-9]+)?$",""))
 
-  coefs <- coefs %>%
-    group_by(variable) %>%
+  coefs <- coefs |>
+    group_by(variable) |>
     mutate(estimate = (par)/-(par[1]),
            pct975 = (CI_2.5)/-(CI_2.5[1]),
            pct025 = (CI_97.5)/-(CI_97.5[1]),
-           se = abs(pct975 - estimate)/1.96) %>%
+           se = abs(pct975 - estimate)/1.96) |>
     filter(!is.na(coef_type))
 
-  num_obs <- model@Data$data %>%
-    as_tibble() %>%
-    summarise_all(~sum(!is.na(.))) %>%
+  num_obs <- model@Data$data |>
+    as_tibble() |>
+    summarise_all(~sum(!is.na(.))) |>
     tidyr::gather("variable", "num_obs")
 
-  coefs <- coefs %>%
+  coefs <- coefs |>
     left_join(num_obs,
               by = "variable")
 
   if(type == "score") {
-    coefs <- coefs %>%
-      filter(!grepl("^a",coef_type)) %>%
+    coefs <- coefs |>
+      filter(!grepl("^a",coef_type)) |>
       select(variable,
              estimate,
              pct025,
@@ -403,11 +408,11 @@ cutpoints <- function(model, type = "score") {
              se,
              num_obs)
   } else {
-    coefs <- coefs %>%
-      filter(grepl("^a",coef_type)) %>%
+    coefs <- coefs |>
+      filter(grepl("^a",coef_type)) |>
       mutate(estimate = par,
              pct025 = CI_2.5,
-             pct975 = CI_97.5) %>%
+             pct975 = CI_97.5) |>
       select(variable,
              estimate,
              pct025,
@@ -415,7 +420,7 @@ cutpoints <- function(model, type = "score") {
              num_obs)
   }
 
-  coefs %>% ungroup()
+  coefs |> ungroup()
 
 
 }
@@ -436,16 +441,17 @@ cutpoints <- function(model, type = "score") {
 #' # Replicate the official UDS scores (2011 release)
 #' library(dplyr)
 #' library(mirt)
-#' democracy_data <- generate_democracy_scores_dataset(selection = "_pmm", output_format = "wide")
+#' democracy_data <- generate_democracy_scores_dataset(
+#'   selection = "_pmm", output_format = "wide", exclude_pmm_duplicates = FALSE
+#'   )
 #'
 #' democracy_data <- prepare_democracy_data(democracy_data)
 #'
-#' replication_2011_model <- mirt(democracy_data %>% select(matches("pmm")),
-#' model = 1,
-#' itemtype = "graded",
-#' SE = TRUE, verbose = FALSE)
+#' replication_2011_model <- mirt(democracy_data |> 
+#'   select(matches("pmm")), model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
 #'
-#' raterinfo(replication_2011_model)}
+#' raterinfo(replication_2011_model)
+#' }
 raterinfo <- function(model) {
     raters <- dimnames(model@Data$data)[[2]]
     Theta <- model@Model$Theta
@@ -458,7 +464,7 @@ raterinfo <- function(model) {
                                            info = iteminfo(extract.item(model, i),
                                                            Theta = Theta))))
     }
-    rater.info %>%
+    rater.info |>
       as_tibble()
 }
 
@@ -493,12 +499,14 @@ raterinfo <- function(model) {
 #' # Replicate the official UDS scores (2011 release)
 #' library(dplyr)
 #' library(mirt)
-#' democracy_data <- generate_democracy_scores_dataset(selection = "_pmm", output_format = "wide")
+#' democracy_data <- generate_democracy_scores_dataset(
+#'   selection = "_pmm", output_format = "wide", exclude_pmm_duplicates = FALSE
+#'   )
 #'
 #' democracy_data <- prepare_democracy_data(democracy_data)
 #'
-#' replication_2011_model <- mirt(democracy_data %>% select(matches("pmm")),
-#' model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
+#' replication_2011_model <- mirt(democracy_data |> 
+#'   select(matches("pmm")), model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
 #'
 #' democracy_scores(model = replication_2011_model)
 #'
@@ -517,38 +525,38 @@ democracy_scores <- function(model,
                   "uds_2011_mean",
                   "uds_2014_mean")
 
-  . <- NULL
+  . <- se_z1 <- NULL
 
   stopifnot("SingleGroupClass" %in% class(model))
 
-  scores <- mirt::fscores(model, full.scores = TRUE, full.scores.SE = TRUE) %>%
-    dplyr::as_tibble() %>%
-    dplyr::rename_with(~tolower(.) %>%
+  scores <- mirt::fscores(model, full.scores = TRUE, full.scores.SE = TRUE) |>
+    dplyr::as_tibble() |>
+    dplyr::rename_with(~tolower(.) |>
                          stringr::str_replace("f1", "z1"),
-                       dplyr::matches("F1"))  %>%
+                       dplyr::matches("F1"))  |>
     dplyr::mutate(dplyr::across(dplyr::all_of("z1"),
-                         list(pct975 = ~. + 1.96 * .data$se_z1,
-                              pct025 = ~. - 1.96 * .data$se_z1)))
+                         list(pct975 = ~. + 1.96 * se_z1,
+                              pct025 = ~. - 1.96 * se_z1)))
 
   if(adjust_to_dichotomous) {
-    avg_dichotomous <- cutpoints(model) %>%
-      dplyr::group_by(dplyr::across(dplyr::all_of("variable"))) %>%
+    avg_dichotomous <- cutpoints(model) |>
+      dplyr::group_by(dplyr::across(dplyr::all_of("variable"))) |>
       dplyr::filter(n() == 1)
 
     avg_dichotomous <- mean(avg_dichotomous$estimate)
 
-    scores <- scores %>%
+    scores <- scores |>
       dplyr::mutate(dplyr::across(dplyr::starts_with("z1"),
                     list(adj = ~. - avg_dichotomous)))
   }
 
   if(as_prob) {
-    scores <- scores %>%
+    scores <- scores |>
       dplyr::mutate(dplyr::across(dplyr::starts_with("z1"),
                 list(as_prob = ~stats::pnorm(.))))
   }
 
-  scores %>% dplyr::ungroup()
+  scores |> dplyr::ungroup()
 }
 
 
@@ -559,7 +567,7 @@ democracy_scores <- function(model,
 #'   function is doing, including information from [mirt::mirt] about the model
 #'   being fit. Default is `FALSE`.
 #'
-#' @return A [tibble] described in [extended_uds]. Right now there's no
+#' @return A [tibble::tibble()] described in [extended_uds]. Right now there's no
 #'   flexibility at all to choose the variables to generate this data, though
 #'   this might change in the future. See
 #'   `vignette("Replicating_and_extending_the_UD_scores")` for more info on how
@@ -573,7 +581,7 @@ democracy_scores <- function(model,
 #' }
 generate_extended_uds <- function(verbose = FALSE) {
 
-  extended_country_name <- vdem_country_name <- name <- NULL
+  extended_country_name <- vdem_country_name <- name <- GWn <- cown <- in_GW_system <- year <- NULL
 
   identifiers <- c("extended_country_name", "GWn", "cown", "in_GW_system", "year")
 
@@ -592,7 +600,7 @@ generate_extended_uds <- function(verbose = FALSE) {
   extended_data <- generate_democracy_scores_dataset(output_format = "wide",
                                                      verbose = verbose)
 
-  extended_data <- extended_data %>%
+  extended_data <- extended_data |>
     dplyr::select(dplyr::any_of(c(identifiers, vars)))
 
   if(verbose) {
@@ -606,7 +614,7 @@ generate_extended_uds <- function(verbose = FALSE) {
     message("Now fitting mirt model...")
   }
 
-  extended_uds_model <- mirt::mirt(extended_data %>%
+  extended_uds_model <- mirt::mirt(extended_data |>
                                      select(-dplyr::any_of(identifiers)),
                                    model = 1, itemtype = "graded", SE = TRUE,
                                    verbose = verbose,
@@ -625,7 +633,7 @@ generate_extended_uds <- function(verbose = FALSE) {
 
   extended_uds <- democracy_scores(extended_uds_model)
 
-  extended_uds <- bind_cols(extended_data %>%
+  extended_uds <- bind_cols(extended_data |>
                               dplyr::select(any_of(identifiers)),
                             extended_uds)
 
@@ -633,15 +641,16 @@ generate_extended_uds <- function(verbose = FALSE) {
     message("Adding number of measures and finalizing...")
   }
 
-  extended_data_vars <- extended_data  %>%
+  extended_data_vars <- extended_data  |>
     tidyr::pivot_longer(-dplyr::any_of(identifiers),
-                        values_drop_na = TRUE) %>%
-    dplyr::group_by(dplyr::across(dplyr::any_of(identifiers))) %>%
+                        values_drop_na = TRUE) |>
+    dplyr::group_by(dplyr::across(dplyr::any_of(identifiers))) |>
     dplyr::summarise(num_measures = dplyr::n_distinct(name),
                      measures = list(unique(name)))
 
-  extended_uds <- extended_uds %>%
-    dplyr::left_join(extended_data_vars)
+  extended_uds <- extended_uds |>
+    dplyr::left_join(extended_data_vars, 
+      by = dplyr::join_by(extended_country_name, GWn, cown, in_GW_system, year))
 
   extended_uds
 
@@ -665,18 +674,18 @@ generate_extended_uds <- function(verbose = FALSE) {
 #' na.omit(df)
 remove_empty_rows <- function(df, vars) {
 
-  empty_rows <- df %>%
+  empty_rows <- df |>
     dplyr::select({{vars}})
 
   num_cols <- ncol(empty_rows)
 
-  empty_rows <- empty_rows %>%
-    is.na() %>%
+  empty_rows <- empty_rows |>
+    is.na() |>
     rowSums()
 
   empty_rows <- empty_rows == num_cols
 
-  df %>%
+  df |>
     dplyr::filter(!empty_rows)
 }
 
