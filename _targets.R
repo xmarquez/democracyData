@@ -11,7 +11,7 @@ library(tidyverse)
 # Set target options:
 tar_option_set(
   packages = c("tidyverse", "rlang", "democracyData"), # packages that your targets need to run
-  imports = "democracyData",
+  imports = c("democracyData"),
   format = "rds" # default storage format
   # Set other options as needed.
 )
@@ -25,8 +25,12 @@ future::plan(future.callr::callr)
 # Run the R scripts in the R/ folder with your custom functions:
 # tar_source()
 # source("other_functions.R") # Source other scripts as needed. # nolint
+tar_source("data-raw/prepare_internal_country_data.R")
+tar_source("R")
+
 devtools::load_all()
 # Set up objects
+
 verbose <- TRUE
 
 pmm <- tibble(dataset_name = c("polity_pmm", "munck_pmm", "arat_pmm", "hadenius_pmm",
@@ -41,9 +45,9 @@ pmm <- tibble(dataset_name = c("polity_pmm", "munck_pmm", "arat_pmm", "hadenius_
          across(any_of(c("replication_varname", "obj_name", "add_obj_name")), rlang::syms))
 
 
-redownloadable <- tibble(dataset_name = c("peps", "polityIV", "REIGN", "bti", "bmr", "pacl",
-                                          "wahman_teorell_hadenius", "pacl_update", "utip",
-                                          "LIED", "polyarchy", "polyarchy_dimensions", "anckar")) |>
+redownloadable <- tibble(dataset_name = c("blm", "peps", "polityIV", "REIGN", "bti", "bmr", "pacl", "pacl_update", "utip",
+                                          "LIED", "polyarchy", "polyarchy_dimensions", "anckar",
+                                          "vaporeg", "PIPE")) |>
   mutate(obj_name = dataset_name,
          add_obj_name = paste("add", obj_name, sep = "_"),
          data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
@@ -51,6 +55,7 @@ redownloadable <- tibble(dataset_name = c("peps", "polityIV", "REIGN", "bti", "b
          fun = case_when(fun == "redownload_polyarchy" ~ "redownload_polyarchy_original",
                          fun == "redownload_LIED" ~ "redownload_lied",
                          fun == "redownload_REIGN" ~ "redownload_reign",
+                         fun == "redownload_PIPE" ~ "redownload_pipe",
                          TRUE ~ fun),
          across(any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")), rlang::syms))
 
@@ -77,16 +82,28 @@ other_extendable <- tibble(dataset_name = c("ulfelder", "magaloni")) |>
          data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
          across(any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")), rlang::syms))
 
+multi_release <- tibble(dataset_name = c("svmdi", "svmdi", "uds", "uds", "uds"),
+                        release_year_param = c(2020, 2016, 2014, 2011, 2010)) |>
+  mutate(fun = paste("redownload", dataset_name, sep = "_"),
+         dataset_name = paste(dataset_name, release_year_param, sep = "_"),
+         dataset_name = case_when(dataset_name == "svmdi_2020" ~ "svmdi",
+                                  TRUE ~ dataset_name),
+         obj_name = dataset_name,
+         add_obj_name = paste("add", obj_name, sep = "_"),
+         data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+         across(any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")), rlang::syms))
+
 preparable <- tibble(dataset_name = c("eiu", "vanhanen", "kailitz", "anrr", "doorenspleet", "mainwaring",
-                                      "prc_gasiorowski", "svolik_regime"),
-                     data_raw_filename =c("data-raw/DI-final-version-report-2022.pdf",
+                                      "prc_gasiorowski", "svolik_regime", "arat"),
+                     data_raw_filename =c("data-raw/EIU-democracy-index-2024.pdf",
                                           "data-raw/FSD1289/FSD1289/Study/data/daF1289e.csv",
                                           "data-raw/kailitz.yearly.rds",
                                           "data-raw/DDCGdata_final.dta",
                                           "data-raw/Doorenspleet data.csv",
                                           "data-raw/Mainwaring Linan.txt",
                                           "data-raw/Gasiorowski.csv",
-                                          "data-raw/regime and no authority spells, country-year, 1946-2008.dta"),
+                                          "data-raw/regime and no authority spells, country-year, 1946-2008.dta",
+                                          "data-raw/arat-democracy-scores.csv"),
                      dataset_name_filename = paste(dataset_name, "filename", sep = "_")) |>
   mutate(obj_name = dataset_name,
          add_obj_name = paste("add", obj_name, sep = "_"),
@@ -96,15 +113,18 @@ preparable <- tibble(dataset_name = c("eiu", "vanhanen", "kailitz", "anrr", "doo
                          TRUE ~ fun),
          across(any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")), rlang::syms))
 
-track_only <- tibble(dataset_name = c("blm", "bnr", "bnr_extended",
-                                      "PIPE", "uds_2010", "uds_2011", "uds_2014")) |>
+track_only <- tibble(dataset_name = c("bnr", "bnr_extended",
+                                      "wahman_teorell_hadenius")) |>
   mutate(obj_name = dataset_name,
          add_obj_name = paste("add", obj_name, sep = "_"),
          data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
          across(any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")), rlang::syms))
 
-# Replace the target list below with your own:
 list(
+  ## Country-year coder data
+
+  internal_country_data,
+
 
   ## Democracy Info dataset -----
 
@@ -130,7 +150,10 @@ list(
 
   tar_target(
     name = include_in_output,
-    command = c("extended_country_name", "GWn", "cown", "in_GW_system")
+    command = {
+      data
+      c("extended_country_name", "GWn", "cown", "in_GW_system")
+    }
   ),
 
   ## PMM replication data -----
@@ -143,9 +166,11 @@ list(
 
   tar_target(
     name = pmm_replication,
-    command = prepare_pmm_replication_data(pmm_replication_filename,
+    command = {
+      data
+      prepare_pmm_replication_data(pmm_replication_filename,
                                            verbose = verbose,
-                                           include_in_output = include_in_output)
+                                           include_in_output = include_in_output)}
   ),
 
   ## PMM datasets -----
@@ -154,9 +179,11 @@ list(
     values = pmm,
     tar_target(
       name = obj_name,
-      command = extract_pmm_var(pmm_replication,
+      command = {
+        data
+        extract_pmm_var(pmm_replication,
                                 replication_varname,
-                                include_in_output = include_in_output),
+                                include_in_output = include_in_output)}
     )
   ),
 
@@ -176,8 +203,10 @@ list(
     values = redownloadable,
     tar_target(
       name = obj_name,
-      command = fun(verbose = verbose,
-                    include_in_output = include_in_output),
+      command = {
+        data
+        fun(verbose = verbose,
+                    include_in_output = include_in_output)},
     )
   ),
 
@@ -197,10 +226,13 @@ list(
     values = gwf_df,
     tar_target(
       name = obj_name,
-      command = fun(extend = extend_param,
+      command = {
+        data
+        fun(extend = extend_param,
                     verbose = verbose,
                     include_in_output = include_in_output,
-                    dataset = dataset_param),
+                    dataset = dataset_param)
+      }
     )
   ),
 
@@ -218,9 +250,11 @@ list(
     values = other_extendable,
     tar_target(
       name = obj_name,
-      command = fun(extend = extend_param,
+      command = {
+        data
+        fun(extend = extend_param,
                     verbose = verbose,
-                    include_in_output = include_in_output),
+                    include_in_output = include_in_output)}
     )
   ),
 
@@ -233,6 +267,31 @@ list(
       format = "file"
     )
   ),
+
+  ## Multi Release -----
+
+  tar_eval(
+    values = multi_release,
+    tar_target(
+      name = obj_name,
+      command = {
+        data
+        fun(release_year = release_year_param,
+                    verbose = verbose,
+                    include_in_output = include_in_output)}
+    )
+  ),
+
+  tar_eval(
+    values = multi_release,
+    tar_target(
+      name = add_obj_name,
+      command = usethis::use_data(obj_name, overwrite = TRUE) |>
+        c(data_file_name),
+      format = "file"
+    )
+  ),
+
 
   ## Preparable datasets
 
@@ -249,9 +308,12 @@ list(
     values = preparable,
     tar_target(
       name = obj_name,
-      command = fun(data_raw_filename,
+      command = {
+        data
+        fun(data_raw_filename,
                     verbose = verbose,
-                    include_in_output = include_in_output),
+                    include_in_output = include_in_output)
+      }
     )
   ),
 
@@ -280,8 +342,11 @@ list(
 
   tar_target(
     name = wgi,
-    command = download_wgi_voice_and_accountability(verbose = verbose,
+    command = {
+      data
+      download_wgi_voice_and_accountability(verbose = verbose,
                                                     include_in_output = include_in_output)
+    }
   ),
 
   tar_target(
@@ -296,35 +361,56 @@ list(
 
   tar_target(
     name = fh,
-    command = download_fh(verbose = verbose,
-                          include_in_output = include_in_output)
+    command = {
+      data
+      download_fh(verbose = verbose,
+                          include_in_output = include_in_output,
+                          include_territories = TRUE)
+    }
   ),
 
   tar_target(
-    name = fh_with_territories,
-    command = download_fh(include_territories = TRUE,
-                          verbose = verbose,
-                          include_in_output = include_in_output)
+    name = add_fh,
+    command = usethis::use_data(fh, overwrite = TRUE) |>
+      c("data/fh.rda")
   ),
 
   tar_target(
     name = fh_electoral,
-    command = download_fh_electoral(verbose = verbose,
-                                    include_in_output = include_in_output)
+    command = {
+      data
+      download_fh_electoral(verbose = verbose,
+                                    include_in_output = include_in_output)}
+  ),
+
+  tar_target(
+    name = add_fh_electoral,
+    command = usethis::use_data(fh_electoral, overwrite = TRUE) |>
+      c("data/fh_electoral.rda")
   ),
 
   tar_target(
     name = fh_full,
-    command = download_fh_full(verbose = verbose,
-                               include_in_output = include_in_output)
+    command = {
+      data
+      download_fh_full(verbose = verbose,
+                               include_in_output = include_in_output)}
+  ),
+
+  tar_target(
+    name = add_fh_full,
+    command = usethis::use_data(fh_full, overwrite = TRUE) |>
+      c("data/fh_full.rda")
   ),
 
   ## Polity 5 -----
 
   tar_target(
     name = polity5,
-    command = download_polity_annual(verbose = verbose,
-                                     include_in_output = include_in_output)
+    command = {
+      data
+      download_polity_annual(verbose = verbose,
+                                     include_in_output = include_in_output)}
   ),
 
   tar_target(
@@ -338,9 +424,11 @@ list(
 
   tar_target(
     name = pitf_p4,
-    command = create_pitf_scores(polityIV,
+    command = {
+      data
+      create_pitf_scores(polityIV,
                                  verbose = verbose,
-                                 include_in_output = include_in_output)
+                                 include_in_output = include_in_output)}
   ),
 
   tar_target(
@@ -352,9 +440,11 @@ list(
 
   tar_target(
     name = pitf,
-    command = create_pitf_scores(polity5,
-                                                 verbose = verbose,
-                                                 include_in_output = include_in_output)
+    command = {
+      data
+      create_pitf_scores(polity5,
+                                 verbose = verbose,
+                                 include_in_output = include_in_output)}
   ),
 
   tar_target(
@@ -365,38 +455,15 @@ list(
   ),
 
 
-  ## SVDMI -----
-
-  tar_target(
-    name = svmdi,
-    command = redownload_svmdi(verbose = verbose,
-                               include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_svmdi,
-    command = usethis::use_data(svmdi, overwrite = TRUE) |>
-      c("data/svmdi.rda"),
-    format = "file"
-  ),
-
-  tar_target(
-    name = svmdi_2016,
-    command = redownload_svmdi(release_year = 2016,
-                               verbose = verbose,
-                               include_in_output = include_in_output)
-  ),
-
-  tar_target(
-    name = add_svmdi_2016,
-    command = usethis::use_data(svmdi_2016, overwrite = TRUE) |>
-      c("data/svmdi_2016.rda"),
-    format = "file"
-  ),
+  ## Extended UDS ----
 
   tar_target(
     name = extended_uds,
-    command = generate_extended_uds(verbose = verbose)
+    command = {
+      data
+      generate_extended_uds(verbose = verbose)
+    },
+    error = "continue"
   ),
 
   tar_target(
@@ -410,8 +477,10 @@ list(
 
   tar_target(
     name = vdem_simple,
-    command = prepare_vdem_simple(version = "13.0", verbose = verbose,
-                                  include_in_output = include_in_output)
+    command = {
+      data
+      prepare_vdem_simple(version = "15.0", verbose = verbose,
+                                  include_in_output = include_in_output)}
   ),
 
   tar_target(
@@ -443,25 +512,25 @@ list(
 
   ## State system data for country_year_coder -----
 
-  tar_target(
-    name = data,
-    command = read_csv("data-raw/country_year_panel.csv")
-  ),
-
-  tar_target(
-    name = add_country_dates_panel,
-    command = usethis::use_data(data, internal = TRUE, overwrite = TRUE) |>
-      c("R/sysdata.rda"),
-    format = "file"
-  ),
+  # tar_target(
+  #   name = data,
+  #   command = read_csv(here::here("data-raw/country_year_panel.csv"))
+  # ),
+  #
+  # tar_target(
+  #   name = add_country_dates_panel,
+  #   command = usethis::use_data(data, internal = TRUE, overwrite = TRUE) |>
+  #     c("R/sysdata.rda"),
+  #   format = "file"
+  # ),
 
   ## File testing that all datasets work and are correctly added to the package -----
 
-  tar_knit(
-    name = add_and_test_all_scores,
-    path = "data-raw/Adding and testing all democracy datasets.Rmd",
-    output = "data-raw/Adding and testing all democracy datasets.md"
-  ),
+  # tar_knit(
+  #   name = add_and_test_all_scores,
+  #   path = "data-raw/Adding and testing all democracy datasets.Rmd",
+  #   output = "data-raw/Adding and testing all democracy datasets.md"
+  # ),
 
   ## README -----
 

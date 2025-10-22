@@ -589,7 +589,7 @@ internal_country_data <- list(
         "Bukhara", "Cape Colony", "Hejaz", "Khiva", "Natal",
         "Newfoundland", "Saint Martin", "Sikkim", "Tanganyika",
         "Leeward Islands Federation", "West Indies Federation", "Kashmir",
-        "Vichy France"),
+        "Russian-occupied territories of Ukraine", "Vichy France"),
       GW_membership = FALSE,
       cow_membership = FALSE,
       polity_membership = FALSE,
@@ -598,27 +598,27 @@ internal_country_data <- list(
         "Asia", "Asia", "Europe",
         "Asia", "Africa", "Asia", "Asia", "Africa",
         "Americas", "Americas", "Asia", "Africa",
-        "Americas", "Americas", "Asia", "Europe"),
+        "Americas", "Americas", "Asia", "Europe", "Europe"),
       extended_region = c(
         "Western Europe", "Western Europe", "Western Europe", "Western Europe",
         "Western Asia", "Western Asia", "Western Europe",
         "Central Asia", "Southern Africa", "Western Asia", "Central Asia",
         "Southern Africa", "Northern America", "Caribbean", "South Asia", "Eastern Africa",
-        "Caribbean", "Caribbean", "South Asia", "Western Europe"
+        "Caribbean", "Caribbean", "South Asia", "Eastern Europe", "Western Europe"
       ),
       lat = c(
         52.2659, 53.5511, 50.0878, 53.1439,
         31.5017, 31.9522, 50.9794,
         39.7670, -33.9249, 21.5000, 41.3880, -29.8587,
         47.5615, 18.0708, 27.3389, -6.1630,
-        17.05, 10.65, 34.0837, 46.13
+        17.05, 10.65, 34.0837, 47.3333, 46.13
       ),
       lon = c(
         10.5226, 9.9937, 8.2400, 8.2147,
         34.4668, 35.2332, 11.3297,
         64.4220, 18.4241, 39.5000, 60.3590, 31.0218,
         -52.7126, -63.0501, 88.6065, 35.7516,
-        -61.80, -61.50, 74.7973, 3.43
+        -61.80, -61.50, 74.7973, 37.9833, 3.43
       ),
       regex = c(
         "brunswick", "hamburg", "nassau", "oldenburg",
@@ -626,6 +626,7 @@ internal_country_data <- list(
         "bukhara", "cape.?colony", "hejaz", "khiva", "natal",
         "newfoundland", "saint.?martin", "sikkim", "tanganyika",
         "leeward.?island(s)?.?f?", "west.?indies.?f", "^kashmir$",
+        "^russian-occupied territories of ukraine$",
         "vichy.*france|france.*vichy")
     )
   ),
@@ -705,13 +706,20 @@ internal_country_data <- list(
         str_detect(extended_country_name, "Pakistani Kashmir") ~ "^pak.*kashmir|kashmir.*pak",
         str_detect(extended_country_name, "Pakistan") ~ "^(?!.*east)(?!.*kashmir).*paki?stan(?!.*kashmir)",
         str_detect(extended_country_name, "India") ~ "(?!.*kashmir.*)\\bindia\\b(?!.*ocea)(?!.*kashmir)",
+        str_detect(extended_country_name, "Italy") ~ "italy|sardinia|italy|italian.?republic",
         extended_country_name == "France" ~ "^(?!.*vichy)(?!.*\\bdep)(?!.*martinique).*france(?!.*vichy)|french.?republic|\\bgaul",
         extended_country_name == "Vichy France" ~ "vichy.*france|france.*vichy",
         extended_country_name == "British Mandate of Palestine" ~ "mandat.*palestine|british.*palestine|palestine.*british",
         extended_country_name == "Palestine, State of" ~ "^(?!.*british.*)(?!.*gaza.*)(?!.*west bank.*)palestin(?!.*british.*)(?!.*gaza.*)(?!.*west bank.*)|west bank and gaza|gaza and west bank",
+        extended_country_name == "Vietnam (Annam/Cochin China/Tonkin)" ~ "^(?!.*republic)^(?!.*dem).*viet.?nam(?!.*democratic republic)|^(?!south)(?!republic).*viet.?nam(?!.*south)|democratic.republic.of.vietnam|socialist.republic.of.viet.?nam|north.viet.?nam|viet.?nam.north",
+        extended_country_name == "Vietnam, Democratic Republic of" ~ "^(?!.*republic)(?!.*south).*viet.?nam(?!.*south)(?!.*s$)|^(?=.*socialist)(?!.*south).*viet.?nam(?!.*south)|(?!.*south).*viet.?nam.*(?=.*socialist)|viet.?nam.*(?=.*democr)|(?=.*democr).*viet.?nam|^(?!.*south)(?!.*republic).*viet.?nam|democratic.republic.of.vietnam|socialist.republic.of.viet.?nam|north.viet.?nam|viet.?nam.north|vietnam, n",
+        extended_country_name == "Russia (Soviet Union)" ~ "\\brussia(?!.*ukrain)|soviet.?union|u\\.?s\\.?s\\.?r|socialist.?republics",
+        extended_country_name == "Ukraine" ~ "^(?!russian-occupied territories of).*ukrain",
+        extended_country_name == "Israel" ~ "israel(?!.+occupied)",
         TRUE ~ regex
       )) |>
-      filter(extended_country_name != "^kashmir$") 
+      filter(extended_country_name != "^kashmir$",
+             extended_country_name != "Piedmont-Sardinia") 
   ),
 
   tar_file(
@@ -727,7 +735,9 @@ internal_country_data <- list(
   # 3.13 Save and Export Data
   tar_target(
     save_data,
-    usethis::use_data(data, url_list, overwrite = TRUE, internal = TRUE)
+    usethis::use_data(data, url_list, overwrite = TRUE, internal = TRUE) |>
+      c("R/sysdata.rda"),
+    format = "file"
   )
 )
 
