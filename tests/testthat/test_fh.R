@@ -18,9 +18,9 @@ test_that("Freedom House data with territories downloads correctly", {
   expect_silent(fh_downloaded <- download_fh(verbose = FALSE, include_territories = TRUE))
   expect_no_message(fh_downloaded <- download_fh(include_territories = TRUE),
                     message = "The following country and/or code-years were not matched")
-  expect_equal(nrow(fh_downloaded), 9966)
+  expect_equal(nrow(fh_downloaded), 9965)
   expect_equal(max(fh_downloaded$year), 2024)
-  expect_equal(sum(is.na(fh_downloaded$GWn)), 419)
+  expect_equal(sum(is.na(fh_downloaded$GWn)), 434)
   expect_false(any(is.na(fh_downloaded$extended_country_name)))
   expect_identical(fh_downloaded, fh)
 })
@@ -80,7 +80,7 @@ test_that("Freedom House full data downloads correctly", {
                  regexp = "Processing the FH full 2013-2024 data - ")
   expect_no_message(fh_full_downloaded <- download_fh_full(),
                     message = "The following country and/or code-years were not matched")
-  expect_equal(nrow(fh_full_downloaded), 2724)
+  expect_equal(nrow(fh_full_downloaded), 2723)
   expect_equal(max(fh_full_downloaded$year), 2024)
-  expect_equal(sum(is.na(fh_full_downloaded$GWn)), 148)
+  expect_equal(sum(is.na(fh_full_downloaded$GWn)), 149)
 })

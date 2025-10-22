@@ -8,4 +8,6 @@ test_that("vdem_simple contains all countries and is the right version", {
   expect_equal(vdem_simple_prepared |>
                  filter(duplicated(paste(vdem_simple_prepared$vdem_country_name, vdem_simple_prepared$year))) |> nrow(), 0)
   expect_identical(vdem_simple_prepared, vdem_simple)
+  expect_true(all(vdem_simple_prepared$extended_country_name != "Piedmont-Sardinia"))
+  expect_true(all(vdem_simple$extended_country_name != "Piedmont-Sardinia"))
 })

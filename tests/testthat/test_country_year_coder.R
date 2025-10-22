@@ -1,7 +1,5 @@
 library(dplyr)
 
-context("country_year_coder")
-
 test_data <- tibble(country = c("Germany", "Germany", "Germany", "Germany", "Germany",
                                     "Federal Republic of Germany",
                                     "Somaliland", "Somalia",
@@ -99,3 +97,25 @@ test_that("country_year_coder codes problem countries correctly", {
   expect_equal(nrow(result_GW_code), nrow(test_data))
 
 })
+
+
+test_that("Palestine matches historical entities across periods", {
+  palestine_test <- tibble(country = rep('Palestine', 2),
+                                year = c(1918, 1955))
+  res <- country_year_coder(palestine_test,
+                           country,
+                           year,
+                           match_type = "country",
+                           to_system = "GW",
+                           include_in_output = c("extended_country_name"),
+                           verbose = FALSE,
+                           match_final_year = FALSE)
+  res <- arrange(res, year)
+  expect_equal(nrow(res), nrow(palestine_test))
+  expect_equal(sum(res$year == 1918), 1)
+  expect_equal(sum(res$year == 1955), 1)
+  expect_equal(res$year, palestine_test$year)
+  expect_identical(res$extended_country_name, c("British Mandate of Palestine",
+                                                 "Palestine, State of"))
+})
+
