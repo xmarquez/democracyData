@@ -22,14 +22,15 @@ Extract rater info from a UD model in a tidy format.
 # Replicate the official UDS scores (2011 release)
 library(dplyr)
 library(mirt)
-democracy_data <- generate_democracy_scores_dataset(selection = "_pmm", output_format = "wide")
+democracy_data <- generate_democracy_scores_dataset(
+  selection = "_pmm", output_format = "wide", exclude_pmm_duplicates = FALSE
+  )
 
 democracy_data <- prepare_democracy_data(democracy_data)
 
-replication_2011_model <- mirt(democracy_data \%>\% select(matches("pmm")),
-model = 1,
-itemtype = "graded",
-SE = TRUE, verbose = FALSE)
+replication_2011_model <- mirt(democracy_data |> 
+  select(matches("pmm")), model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
 
-raterinfo(replication_2011_model)}
+raterinfo(replication_2011_model)
+}
 }

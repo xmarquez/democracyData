@@ -18,7 +18,7 @@ available at \url{http://privatewww.essex.ac.uk/~ksg/statelist.html}), or
 \item{max_year}{The maximum year in the panel. If NULL, uses the current year.}
 }
 \value{
-A \link{tibble} with the country code in the relevant system of states,
+A \code{\link[tibble:tibble]{tibble::tibble()}} with the country code in the relevant system of states,
 the official country name and years when the country belongs to the system,
 and the relevant start and end dates for entry and exit into the system.
 }

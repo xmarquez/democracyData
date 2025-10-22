@@ -26,7 +26,7 @@ Default is \code{FALSE}.}
 \item{...}{Other parameters passed to \link{country_year_coder}.}
 }
 \value{
-The annual time series version of the Polity 5 dataset, as a \link{tibble},
+The annual time series version of the Polity 5 dataset, as a \code{\link[tibble:tibble]{tibble::tibble()}},
 with the additional columns produced by \link{country_year_coder}. Consult the
 \href{http://www.systemicpeace.org/inscr/p5manualv2018.pdf}{Polity 5 codebook}
 for further description.

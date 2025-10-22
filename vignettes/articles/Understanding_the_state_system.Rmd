@@ -23,9 +23,9 @@ theme_set(theme_bw())
 state_system_data <- democracyData:::data
 ```
 
-The measurement of democracy at the state level requires a "state system", a list of states with measurable forms of democracy. The state system is more controversial than one might expect: what units count as sovereign states is not always entirely obvious, and some projects (e.g., V-Dem) explicitly include units that are not independent-sovereign states.
+The measurement of democracy at the state level requires a "state system", a list of states with measurable forms of democracy. The state system is more controversial than one might expect: what units count as sovereign states is not always entirely obvious, and some projects (e.g., V-Dem, Freedom House, and the Varieties of POlitical Regimes project) explicitly include units that are not independent-sovereign states but may be part of larger empires.
 
-There are four state systems used (and sometimes modified) by most measurement projects. The base system for three of these is the Correlates of War system [@correlatesofwarprojectStateSystemMembership2017]. The COW project states:
+The "base system" for most democracy measurement projects is the Correlates of War system [@correlatesofwarprojectStateSystemMembership2017]. The COW project states:
 
 > The Correlates of War project includes a state in the international system from 1816-2016 for the following criteria. Prior to 1920, the entity must have had a population greater than 500,000 and have had diplomatic missions at or above the rank of charge d’affaires with Britain and France. After 1920, the entity must be a member of the League of Nations or the United Nations, or have a population greater than 500,000 and receive diplomatic missions from two major powers.
 
@@ -79,7 +79,7 @@ state_system_data |>
                               "COW end date", "Polity start date", "Polity end date"))
 ```
 
-Many democracy measurement projects also measure political units that are either non-sovereign or otherwise fail to meet the criteria for membership in the state system. There are 145 of these units, some of which are actually included in COW or GW, but many of which are not (@tbl-non-sovereign).
+Across other measurement projects, there are also 145 units that are either non-sovereign or fail to meet the criteria for membership in the state system of COW, Gleditsch-Ward, or Polity (@tbl-non-sovereign).
 
 ```{r}
 #| label: tbl-non-sovereign
@@ -90,7 +90,7 @@ state_system_data |>
   knitr::kable(col.names = c("Country name", "In GW", "In polity", "In COW"))
 ```
 
-Many of these units are included in the V-Dem dataset, the Freedom House dataset, and the LIED dataset, which attempt to have the widest possible coverage. Their coding varies, but the following are not in COW.
+Most of these units are included in the V-Dem dataset (@tbl-vdem-not-cow), the LIED dataset (@tbl-lied-not-cow), the Freedom House dataset (@tbl-fh-not-cow), the PIPE dataset (@tbl-pipe-not-cow), and the VaPoReg dataset (@tbl-vaporeg-not-cow), which attempt to have the widest possible coverage. Their coding varies, but the following are not in COW.
 
 
 ```{r}
@@ -128,6 +128,17 @@ fh |>
 ```
 
 ```{r}
+#| label: tbl-pipe-not-cow
+#| tbl-cap: "PIPE countries not in the COW system"
+PIPE |>
+  distinct(PIPE_country, cown ) |> 
+  mutate(cown = ifelse(is.na(cown), -1, cown)) |>
+  anti_join(state_system_data |> distinct(extended_country_name, cown), by = join_by(cown)) |>
+  mutate(cown = NA) |>
+  knitr::kable()
+```
+
+```{r}
 #| label: tbl-vaporeg-not-cow
 #| tbl-cap: "VaPoReg countries not in the COW system"
 vaporeg |>
@@ -137,3 +148,5 @@ vaporeg |>
   mutate(vaporeg_cowcode = NA) |>
   knitr::kable()
 ```
+
+When generating a comprehensive dataset of all democracy measures using [generate_democracy_scores_dataset], some decisions about the composition of the broader universe of states have to be made, and in particular about the end dates of some states. The main problem are states that "split" and "reunify", like Germany. 

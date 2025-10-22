@@ -6,11 +6,11 @@
 
 * Updated VDem simple data to latest year (2024, version 15.0)
 
-* Added new VaPoReg data on political regimes by Kailitz (2024)
+* Added new VaPoReg data on political regimes by Kailitz (2025)
 
 * Incorporated corrected Arat data from Zehra Arat's original book.
 
-* Added newest version of LIED (6.6)
+* Added newest version of LIED (6.8)
 
 * Fixed problem with FH Electoral Democracies list download that was wrongly 
 coding later democracies and missing one year.

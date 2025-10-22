@@ -8,7 +8,7 @@
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 6438 rows and 7 columns.
 
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 9966 rows and 11 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 9965 rows and 11 columns.
 }
 \source{
 D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}.
@@ -38,7 +38,7 @@ PMM data for 49 country years:
   print(n = 50)
 #> Joining with `by = join_by(year, extended_country_name, GWn, cown,
 #> in_GW_system)`
-#> # A tibble: 62 x 4
+#> # A tibble: 49 x 4
 #>    extended_country_name                 year fh_total_reversed pmm_freedomhouse
 #>    <chr>                                <dbl>             <dbl>            <dbl>
 #>  1 Antigua & Barbuda                     1982               6                5.5
@@ -90,8 +90,6 @@ PMM data for 49 country years:
 #> 47 Uruguay                               1982               3                3.5
 #> 48 Vanuatu                               1982               6                5  
 #> 49 Zimbabwe (Rhodesia)                   1982               4                3.5
-#> 50 Israel                                1996               2.5              6  
-#> # i 12 more rows
 }\if{html}{\out{</div>}}
 
 Many, but not all of these cases seem to be concentrated around the problematic year of 1982.

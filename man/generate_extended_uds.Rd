@@ -13,7 +13,7 @@ function is doing, including information from \link[mirt:mirt]{mirt::mirt} about
 being fit. Default is \code{FALSE}.}
 }
 \value{
-A \link{tibble} described in \link{extended_uds}. Right now there's no
+A \code{\link[tibble:tibble]{tibble::tibble()}} described in \link{extended_uds}. Right now there's no
 flexibility at all to choose the variables to generate this data, though
 this might change in the future. See
 \code{vignette("Replicating_and_extending_the_UD_scores")} for more info on how

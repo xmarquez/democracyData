@@ -12,7 +12,8 @@ An object of class \code{BibEntry} (inherits from \code{bibentry}) of length 58.
 bibliography
 }
 \description{
-This is a \link{BibEntry} object that can be manipulated using the \link{RefManageR}
-package functions or the standard citation functions in R.
+This is a \code{\link[RefManageR:BibEntry]{RefManageR::BibEntry()}} object that can be manipulated using the
+\link[RefManageR:RefManageR-package]{RefManageR::RefManageR} package functions or the standard citation functions
+in R.
 }
 \keyword{datasets}

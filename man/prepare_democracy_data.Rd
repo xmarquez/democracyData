@@ -19,7 +19,7 @@ the column names must contain at least one of the following strings:
 the documentation for \link{generate_democracy_scores_dataset} or the
 documentation for the individual datasets.}
 
-\item{.funs}{A names list of functions to modify the columns. It defaults to
+\item{.funs}{A named list of functions to modify the columns. It defaults to
 the following:
 
 \code{funs(arat = cut(., breaks = c(0, 50, 60, 70, 80, 90, 100, 109), labels
@@ -67,7 +67,7 @@ A data frame with the transformed scores, if any.
 }
 \description{
 This function is designed to take the democracy data included in this package
-and put it in a form suitable for use with the \link{mirt} package to replicate the
+and put it in a form suitable for use with the \link[mirt:mirt]{mirt::mirt} package to replicate the
 UDS model. It takes a data frame and tries to determine, from the column
 names, which variables contain democracy scores.
 }
@@ -177,7 +177,10 @@ check that the results make sense.
 }
 
 \examples{
-democracy <- generate_democracy_scores_dataset(selection = "pmm", output_format = "wide")
+democracy <- generate_democracy_scores_dataset(
+  selection = "pmm", output_format = "wide", exclude_pmm_duplicates = FALSE
+  )
+
 summary(democracy)
 summary(prepare_democracy_data(democracy))
 

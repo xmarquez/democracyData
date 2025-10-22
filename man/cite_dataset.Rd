@@ -12,15 +12,19 @@ cite_dataset(dataset_name, to_bibtex = FALSE)
 \item{to_bibtex}{Whether to provide bibtex/biblatex markup.}
 }
 \value{
-Prints the citation information. Returns the \link{BibEntry} object.
+Prints the citation information. Returns the \code{\link[RefManageR:BibEntry]{RefManageR::BibEntry()}} object.
 }
 \description{
-This is a convenient wrapper for \code{print(bibliography)}, searching by \code{key = dataset_name}, with \code{BibOptions(use.regex = TRUE)}. You can also search and
-manipulate the \code{\link{bibliography}} object directly using the
-\code{\link{RefManageR}} package functions.
+This is a convenient wrapper for \code{print(bibliography)}, searching by
+\code{key = dataset_name}, with \code{BibOptions(use.regex = TRUE)}. You can
+also search and manipulate the \code{\link{bibliography}} object directly
+using the \link[RefManageR:RefManageR-package]{RefManageR::RefManageR} package functions.
 }
 \examples{
-cite_dataset("gwf")
-cite_dataset("pmm")
+
+cite_dataset("gwf") 
+
+cite_dataset("pmm") 
+
 cite_dataset("uds") # Same output as the previous one
 }

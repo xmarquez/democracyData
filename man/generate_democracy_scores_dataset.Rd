@@ -19,7 +19,7 @@ generate_democracy_scores_dataset(
   exclude_pmm_duplicates = TRUE,
   prefer_successor = TRUE,
   fix_PIPE = TRUE,
-  enforce_GW_enddates = TRUE
+  enforce_GW_enddates = FALSE
 )
 }
 \arguments{
@@ -145,15 +145,9 @@ only affects a limited number of entities: Tibet (ends in 1950),
 Czechoslovakia (ends in 1992), Gran Colombia (ends in 1831; Polity measures
 it until 1832), the Vatican (identified with the Papal States, ends in 1870)
 and Zanzibar (ends in 1964). The default is \code{FALSE}.}
-
-\item{target_system}{Character vector describing which state system to use
-for the combined file, and which country codes to use. Can be one or both
-of "GWn" (Gleditsch and Ward, numeric codes) and "cown" (numeric codes for
-the Correlates of War system). The default is \emph{both} Gleditsch-ward and
-Correlates of War (\code{c("GWn", "cown")}).}
 }
 \value{
-A \link{tibble} with the selected democracy measures and state system
+A \code{\link[tibble:tibble]{tibble::tibble()}} with the selected democracy measures and state system
 information, in two versions: "long" and "wide". These contain the
 following variables:
 }

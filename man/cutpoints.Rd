@@ -15,7 +15,7 @@ of) "score" (for score cutpoints) or "discrimination" (for discrimination
 parameters). Default is "score."}
 }
 \value{
-A \link{tibble} with either score cutpoints for each variable used to
+A \code{\link[tibble:tibble]{tibble::tibble()}} with either score cutpoints for each variable used to
 construct the latent scores in terms of the latent variable (the default), or
 discrimination parameters for each variable used to construct the index.
 For the score cutpoints (\code{type = 'score'}), the columns
@@ -33,13 +33,15 @@ variables involved, putting these into a tidy data frame.
 # Replicate the official UDS 2011 release and calculate its cutpoints
 library(dplyr)
 library(mirt)
-democracy_data <- generate_democracy_scores_dataset(selection = "_pmm",
-output_format = "wide")
+democracy_data <- generate_democracy_scores_dataset(
+  selection = "_pmm", output_format = "wide", exclude_pmm_duplicates = FALSE
+  )
 
 democracy_data <- prepare_democracy_data(democracy_data)
 
-replication_2011_model <- mirt(democracy_data \%>\% select(matches("pmm")),
-model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
+replication_2011_model <- mirt(democracy_data |> 
+  select(matches("pmm")), model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
 
-cutpoints(replication_2011_model)}
+cutpoints(replication_2011_model)
+}
 }

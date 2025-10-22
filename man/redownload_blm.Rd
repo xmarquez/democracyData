@@ -232,7 +232,7 @@ democratic and non-democratic regimes ("all"). Default is "all".}
 \link{svmdi}, it can be 2016 or 2020.}
 }
 \value{
-A \link{tibble} with the processed dataset, unless \code{return_raw}
+A \code{\link[tibble:tibble]{tibble::tibble()}} with the processed dataset, unless \code{return_raw}
 is \code{TRUE}, in which case the function returns the raw data without
 processing.
 }
