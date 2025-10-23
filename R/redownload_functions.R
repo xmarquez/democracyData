@@ -167,7 +167,8 @@ redownload_blm <- function(url,
 #' @export
 #' @examples
 #' \dontrun{
-#' redownload_anckar()}
+#' redownload_anckar()
+#' }
 redownload_anckar <- function(url,
                             verbose = TRUE,
                             return_raw = FALSE,
@@ -464,7 +465,8 @@ redownload_gwf <- function(url,
 #' @export
 #' @examples
 #' \dontrun{
-#' redownload_lied()}
+#' redownload_lied()
+#' }
 redownload_lied <- function(url,
                             verbose = TRUE,
                             return_raw = FALSE,
@@ -569,7 +571,8 @@ redownload_lied <- function(url,
 #' @export
 #' @examples
 #' \dontrun{
-#' redownload_vaporeg()}
+#' redownload_vaporeg()
+#' }
 redownload_vaporeg <- function(url,
                                verbose = TRUE,
                                return_raw = FALSE,
@@ -632,7 +635,7 @@ redownload_vaporeg <- function(url,
            cown = case_when(
               country_name == "Vietnam" & 
                 year < 1954 ~ NA_real_,
-              TRUE ~ NA_real_))
+              TRUE ~ cown))
     
 
   vaporeg <- vaporeg |>
@@ -727,7 +730,8 @@ redownload_pacl <- function(url,
 #' @export
 #' @examples
 #' \dontrun{
-#' redownload_peps()}
+#' redownload_peps()
+#' }
 redownload_peps <- function(url,
                           verbose = TRUE,
                           return_raw = FALSE,
@@ -798,7 +802,8 @@ redownload_peps <- function(url,
 #' @export
 #' @examples
 #' \dontrun{
-#' redownload_utip()}
+#' redownload_utip()
+#' }
 redownload_utip <- function(url,
                           verbose = TRUE,
                           return_raw = FALSE,
@@ -876,7 +881,8 @@ redownload_utip <- function(url,
 #' @export
 #' @examples
 #' \dontrun{
-#' redownload_wahman_teorell_hadenius()}
+#' redownload_wahman_teorell_hadenius()
+#' }
 redownload_wahman_teorell_hadenius <- function(url,
                                                verbose = TRUE,
                                                return_raw = FALSE,
@@ -929,7 +935,8 @@ redownload_wahman_teorell_hadenius <- function(url,
 #'
 #' @examples
 #' \dontrun{
-#' redownload_polyarchy_original()}
+#' redownload_polyarchy_original()
+#' }
 redownload_polyarchy_original <- function(url,
                                         verbose = TRUE,
                                         return_raw = FALSE,
@@ -1006,7 +1013,8 @@ redownload_polyarchy_original <- function(url,
 #'
 #' @examples
 #' \dontrun{
-#' redownload_polyarchy_dimensions()}
+#' redownload_polyarchy_dimensions()
+#' }
 redownload_polyarchy_dimensions <- function(url,
                                           verbose = TRUE,
                                           return_raw = FALSE,
@@ -1058,7 +1066,8 @@ redownload_polyarchy_dimensions <- function(url,
 #'
 #' @examples
 #' \dontrun{
-#' redownload_magaloni()}
+#' redownload_magaloni()
+#' }
 redownload_magaloni <- function(url,
                               verbose = TRUE,
                               extend = FALSE,
@@ -1143,7 +1152,9 @@ redownload_magaloni <- function(url,
 #' @examples
 #' \dontrun{
 #' redownload_svmdi(release_year = 2016)
-#' redownload_svmdi() # For release year 2020}
+#' redownload_svmdi() # For release year 2020
+#' 
+#' }
 redownload_svmdi <- function(url,
                              release_year = 2020,
                              verbose = TRUE,
@@ -1226,7 +1237,8 @@ redownload_svmdi <- function(url,
 #' @examples
 #' \dontrun{
 #' redownload_uds()
-#' redownload_uds(2011)}
+#' redownload_uds(2011)
+#' }
 redownload_uds <- function(url,
                            release_year = 2014,
                            verbose = TRUE,
@@ -1290,7 +1302,8 @@ redownload_uds <- function(url,
 #'
 #' @examples
 #' \dontrun{
-#' redownload_ulfelder()}
+#' redownload_ulfelder()
+#' }
 redownload_ulfelder <- function(url,
                               verbose = TRUE,
                               return_raw = FALSE,
@@ -1394,9 +1407,8 @@ redownload_ulfelder <- function(url,
 #'
 #' @examples
 #' \dontrun{
-#' # The download URL for PIPE doesn't seem to work anymore; it may work again
-#' # in the future.
-#' # redownload_pipe()}
+#' redownload_pipe()
+#' }
 redownload_pipe <- function(url,
                           verbose = TRUE,
                           return_raw = FALSE,
@@ -1761,7 +1773,8 @@ redownload_bti <- function(url,
 #' @export
 #' @examples
 #' \dontrun{
-#' redownload_pacl_update()}
+#' redownload_pacl_update()
+#' }
 redownload_pacl_update <- function(url,
                                    verbose = TRUE,
                                    return_raw = FALSE,
@@ -1826,7 +1839,8 @@ redownload_pacl_update <- function(url,
 #'
 #' @examples
 #' \dontrun{
-#' reign <- redownload_reign()}
+#' reign <- redownload_reign()
+#' }
 redownload_reign <- function(url,
                            verbose = TRUE,
                            return_raw = FALSE,

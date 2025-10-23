@@ -265,7 +265,8 @@ blm <- redownload_blm()
 blm
 }
 \dontrun{
-redownload_anckar()}
+redownload_anckar()
+}
 \dontrun{
 bmr <- redownload_bmr()
 bmr
@@ -275,35 +276,46 @@ gwf <- redownload_gwf()
 gwf
 }
 \dontrun{
-redownload_lied()}
+redownload_lied()
+}
 \dontrun{
-redownload_vaporeg()}
+redownload_vaporeg()
+}
 \dontrun{
 redownload_pacl()}
 \dontrun{
-redownload_peps()}
+redownload_peps()
+}
 \dontrun{
-redownload_utip()}
+redownload_utip()
+}
 \dontrun{
-redownload_wahman_teorell_hadenius()}
+redownload_wahman_teorell_hadenius()
+}
 \dontrun{
-redownload_polyarchy_original()}
+redownload_polyarchy_original()
+}
 \dontrun{
-redownload_polyarchy_dimensions()}
+redownload_polyarchy_dimensions()
+}
 \dontrun{
-redownload_magaloni()}
+redownload_magaloni()
+}
 \dontrun{
 redownload_svmdi(release_year = 2016)
-redownload_svmdi() # For release year 2020}
+redownload_svmdi() # For release year 2020
+
+}
 \dontrun{
 redownload_uds()
-redownload_uds(2011)}
+redownload_uds(2011)
+}
 \dontrun{
-redownload_ulfelder()}
+redownload_ulfelder()
+}
 \dontrun{
-# The download URL for PIPE doesn't seem to work anymore; it may work again
-# in the future.
-# redownload_pipe()}
+redownload_pipe()
+}
 \dontrun{
 polityIV <- redownload_polityIV()
 polityIV
@@ -313,9 +325,11 @@ bti <- redownload_bti()
 bti
 }
 \dontrun{
-redownload_pacl_update()}
+redownload_pacl_update()
+}
 \dontrun{
-reign <- redownload_reign()}
+reign <- redownload_reign()
+}
 }
 \seealso{
 \link{polity_pmm}
