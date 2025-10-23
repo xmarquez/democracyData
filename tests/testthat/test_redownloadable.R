@@ -2,7 +2,7 @@ library(dplyr)
 
 test_that("Anckar redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(anckar_redownloaded <- redownload_anckar(verbose = FALSE))
   expect_no_message(anckar_redownloaded <- redownload_anckar(verbose = TRUE),
@@ -12,7 +12,7 @@ test_that("Anckar redownloads correctly", {
 
 test_that("BLM redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(blm_redownloaded <- redownload_blm(verbose = FALSE))
   expect_no_message(blm_redownloaded <- redownload_blm(verbose = TRUE),
@@ -23,7 +23,7 @@ test_that("BLM redownloads correctly", {
 
 test_that("BMR redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(bmr_redownloaded <- redownload_bmr(verbose = FALSE))
   expect_no_message(bmr_redownloaded <- redownload_bmr(verbose = TRUE),
@@ -34,7 +34,7 @@ test_that("BMR redownloads correctly", {
 
 test_that("BTI redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(bti_redownloaded <- redownload_bti(verbose = FALSE))
   expect_no_message(bti_redownloaded <- redownload_bti(verbose = TRUE),
@@ -47,7 +47,7 @@ test_that("BTI redownloads correctly", {
 
 test_that("GWF-autocratic redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(gwf_autocratic_redownloaded <- redownload_gwf(verbose = FALSE, dataset = "autocratic"))
   expect_no_message(gwf_autocratic_redownloaded <- redownload_gwf(verbose = TRUE,
@@ -59,7 +59,7 @@ test_that("GWF-autocratic redownloads correctly", {
 
 test_that("GWF-all redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(gwf_all_redownloaded <- redownload_gwf(verbose = FALSE, dataset = "all"))
   expect_no_message(gwf_all_redownloaded <- redownload_gwf(verbose = TRUE,
@@ -71,7 +71,7 @@ test_that("GWF-all redownloads correctly", {
 
 test_that("LIED redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(LIED_redownloaded <- redownload_lied(verbose = FALSE))
   expect_no_message(LIED_redownloaded <- redownload_lied(verbose = TRUE),
@@ -83,7 +83,7 @@ test_that("LIED redownloads correctly", {
 
 test_that("VaPoReg redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(vaporeg_redownloaded <- redownload_vaporeg(verbose = FALSE))
   expect_no_message(vaporeg_redownloaded <- redownload_vaporeg(verbose = TRUE),
@@ -94,7 +94,7 @@ test_that("VaPoReg redownloads correctly", {
 
 test_that("magaloni redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(magaloni_redownloaded <- redownload_magaloni(verbose = FALSE))
   expect_no_message(magaloni_redownloaded <- redownload_magaloni(verbose = TRUE),
@@ -105,7 +105,7 @@ test_that("magaloni redownloads correctly", {
 
 test_that("PACL redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(pacl_redownloaded <- redownload_pacl(verbose = FALSE))
   expect_no_message(pacl_redownloaded <- redownload_pacl(verbose = TRUE),
@@ -116,7 +116,7 @@ test_that("PACL redownloads correctly", {
 
 test_that("PACL update redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(pacl_update_redownloaded <- redownload_pacl_update(verbose = FALSE))
   expect_no_message(pacl_update_redownloaded <- redownload_pacl_update(verbose = TRUE),
@@ -127,7 +127,7 @@ test_that("PACL update redownloads correctly", {
 
 test_that("peps redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(peps_redownloaded <- redownload_peps(verbose = FALSE))
   expect_no_message(peps_redownloaded <- redownload_peps(verbose = TRUE),
@@ -138,7 +138,7 @@ test_that("peps redownloads correctly", {
 
 test_that("polityIV redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(polityIV_redownloaded <- redownload_polityIV(verbose = FALSE))
   expect_no_message(polityIV_redownloaded <- redownload_polityIV(verbose = TRUE),
@@ -149,7 +149,7 @@ test_that("polityIV redownloads correctly", {
 
 test_that("polyarchy redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(polyarchy_redownloaded <- redownload_polyarchy_original(verbose = FALSE))
   expect_no_message(polyarchy_redownloaded <- redownload_polyarchy_original(verbose = TRUE),
@@ -160,7 +160,7 @@ test_that("polyarchy redownloads correctly", {
 
 test_that("polyarchy dimensions redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(polyarchy_dimensions_redownloaded <- redownload_polyarchy_dimensions(verbose = FALSE))
   expect_no_message(polyarchy_dimensions_redownloaded <- redownload_polyarchy_dimensions(verbose = TRUE),
@@ -171,7 +171,7 @@ test_that("polyarchy dimensions redownloads correctly", {
 
 test_that("PIPE redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(PIPE_redownloaded <- redownload_pipe(verbose = FALSE))
   expect_no_message(PIPE_redownloaded <- redownload_pipe(verbose = TRUE),
@@ -182,7 +182,7 @@ test_that("PIPE redownloads correctly", {
 
 test_that("REIGN redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(REIGN_redownloaded <- redownload_reign(verbose = FALSE))
   expect_no_message(REIGN_redownloaded <- redownload_reign(verbose = TRUE),
@@ -193,7 +193,7 @@ test_that("REIGN redownloads correctly", {
 
 test_that("svmdi redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(svmdi_redownloaded <- redownload_svmdi(verbose = FALSE))
   expect_no_message(svmdi_redownloaded <- redownload_svmdi(verbose = TRUE),
@@ -209,7 +209,7 @@ test_that("svmdi redownloads correctly", {
 
 test_that("Ulfelder redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(ulfelder_redownloaded <- redownload_ulfelder(verbose = FALSE))
   expect_no_message(ulfelder_redownloaded <- redownload_ulfelder(verbose = TRUE),
@@ -225,7 +225,7 @@ test_that("Ulfelder redownloads correctly", {
 
 test_that("UTIP redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(utip_redownloaded <- redownload_utip(verbose = FALSE))
   expect_no_message(utip_redownloaded <- redownload_utip(verbose = TRUE),
@@ -237,7 +237,7 @@ test_that("UTIP redownloads correctly", {
 test_that("Wahman-Teorell-Hadenius redownloads correctly", {
   skip("File not available")
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(wahman_teorell_hadenius_redownloaded <- redownload_wahman_teorell_hadenius(verbose = FALSE))
   expect_no_message(wahman_teorell_hadenius_redownloaded <- redownload_wahman_teorell_hadenius(verbose = TRUE),
@@ -248,7 +248,7 @@ test_that("Wahman-Teorell-Hadenius redownloads correctly", {
 
 test_that("UDS redownloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   skip_if_offline()
   expect_silent(uds_redownloaded <- redownload_uds(verbose = FALSE))
   expect_no_message(uds_redownloaded <- redownload_uds(verbose = TRUE),

@@ -2,7 +2,7 @@ library(dplyr)
 
 test_that("Freedom House data downloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   expect_silent(fh_downloaded <- download_fh(verbose = FALSE))
   expect_message(fh_downloaded <- download_fh(), regexp = "Processing the FH 2024 data")
   expect_no_message(fh_downloaded <- download_fh(), message = "The following country and/or code-years were matched more than once")
@@ -14,7 +14,7 @@ test_that("Freedom House data downloads correctly", {
 
 test_that("Freedom House data with territories downloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   expect_silent(fh_downloaded <- download_fh(verbose = FALSE, include_territories = TRUE))
   expect_no_message(fh_downloaded <- download_fh(include_territories = TRUE),
                     message = "The following country and/or code-years were not matched")
@@ -28,7 +28,7 @@ test_that("Freedom House data with territories downloads correctly", {
 
 test_that("Freedom House electoral democracies data downloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   expect_silent(fh_electoral_downloaded <- download_fh_electoral(verbose = FALSE))
   expect_message(fh_electoral_downloaded <- download_fh_electoral(),
                  regexp = "Processing the FH Electoral Democracies 1989-2024 data")
@@ -74,7 +74,7 @@ test_that("Freedom House electoral democracies data downloads correctly", {
 
 test_that("Freedom House full data downloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   expect_silent(fh_full_downloaded <- download_fh_full(verbose = FALSE))
   expect_message(fh_full_downloaded <- download_fh_full(),
                  regexp = "Processing the FH full 2013-2024 data - ")

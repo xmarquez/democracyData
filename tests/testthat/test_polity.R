@@ -2,7 +2,7 @@ library(dplyr)
 
 test_that("PolityIV is the same as the redownloaded data, has the correct number of rows", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   expect_silent(polityIV_redownloaded <- redownload_polityIV(verbose = FALSE))
   expect_no_message(polityIV_redownloaded <- redownload_polityIV(verbose = TRUE),
                     message = "The following country and/or code-years were matched more than once:")
@@ -15,7 +15,7 @@ test_that("PolityIV is the same as the redownloaded data, has the correct number
 
 test_that("Polity5 downloads correctly", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   expect_silent(polity5 <- download_polity_annual(verbose = FALSE))
   expect_no_message(polity5 <- download_polity_annual(verbose = TRUE),
                     message = "The following country and/or code-years were matched more than once:")
