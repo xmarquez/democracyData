@@ -1,4 +1,4 @@
-# democracyData 0.5.2
+# democracyData 0.6.0
 
 * Converted pkgdown articles to Quarto for consistent rendering; site now builds with Bootstrap 5.
 
