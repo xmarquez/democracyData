@@ -134,6 +134,8 @@ test_that("verbose = FALSE gives no message", {
 })
 
 test_that("force_redownload works", {
+  skip_on_cran()
+  skip_on_ci()
   pacl <- generate_democracy_scores_dataset(selection = "pacl")
   expect_no_message(pacl_redownload <- generate_democracy_scores_dataset(selection = "pacl",
                                                                          force_redownload = TRUE,
