@@ -604,7 +604,7 @@ generate_extended_uds <- function(verbose = FALSE) {
     dplyr::select(dplyr::any_of(c(identifiers, vars)))
 
   if(verbose) {
-    message(stringr::str_glue("Using {vars} to generate extended uds..."))
+    message(stringr::str_glue("Using {paste(vars, collapse = ", ")} to generate extended uds..."))
     message("Now preparing data for use with mirt...")
   }
 

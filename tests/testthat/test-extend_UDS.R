@@ -1,5 +1,5 @@
 test_that("remove_empty_rows drops rows that are all NA", {
-  df <- tibble::tibble(
+  df <- data.frame(
     a = c(1, NA, NA),
     b = c(2, NA, 3),
     other = letters[1:3]
@@ -12,7 +12,7 @@ test_that("remove_empty_rows drops rows that are all NA", {
 })
 
 test_that("prepare_democracy_data applies default transformations", {
-  input <- tibble::tibble(
+  input <- data.frame(
     id = 1:3,
     arat_score = c(55, 101, NA),
     polity_score = c(-11, -5, NA),
@@ -33,7 +33,7 @@ test_that("prepare_democracy_data applies default transformations", {
 })
 
 test_that("prob_more returns probabilities for same year and cross-year comparisons", {
-  scores <- tibble::tibble(
+  scores <- data.frame(
     extended_country_name = c("A", "B", "A", "B"),
     year = c(2000, 2000, 2001, 2001),
     z1 = c(0.5, 0.2, 0.1, 0.7),
