@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">democracyData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -1093,22 +1093,22 @@
 <span><span class="co">#&gt; # A tibble: 16 × 3</span></span>
 <span><span class="co">#&gt;    country                      year my_measure</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;                       &lt;dbl&gt;      &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Germany                      2015     0.659 </span></span>
-<span><span class="co">#&gt;  2 Germany                      1930    -0.734 </span></span>
-<span><span class="co">#&gt;  3 Germany                      1970    -0.742 </span></span>
-<span><span class="co">#&gt;  4 Germany                      1945     0.196 </span></span>
-<span><span class="co">#&gt;  5 East Germany                 1949     0.654 </span></span>
-<span><span class="co">#&gt;  6 Federal Republic of Germany  1992    -1.10  </span></span>
-<span><span class="co">#&gt;  7 Somaliland                   1990    -0.121 </span></span>
-<span><span class="co">#&gt;  8 Somalia                      1990     0.0339</span></span>
-<span><span class="co">#&gt;  9 Palestine                    1940     0.688 </span></span>
-<span><span class="co">#&gt; 10 Russia                       1917    -0.512 </span></span>
-<span><span class="co">#&gt; 11 Russia                       1912    -0.410 </span></span>
-<span><span class="co">#&gt; 12 USSR                         1922    -0.571 </span></span>
-<span><span class="co">#&gt; 13 Republic of Vietnam          1975    -0.0276</span></span>
-<span><span class="co">#&gt; 14 Yugoslavia                   1990    -0.579 </span></span>
-<span><span class="co">#&gt; 15 Yugoslavia                   1991     1.08  </span></span>
-<span><span class="co">#&gt; 16 Vietnam, South               1954    -0.652</span></span></code></pre></div>
+<span><span class="co">#&gt;  1 Germany                      2015     1.70  </span></span>
+<span><span class="co">#&gt;  2 Germany                      1930     0.437 </span></span>
+<span><span class="co">#&gt;  3 Germany                      1970    -0.122 </span></span>
+<span><span class="co">#&gt;  4 Germany                      1945    -0.834 </span></span>
+<span><span class="co">#&gt;  5 East Germany                 1949     1.22  </span></span>
+<span><span class="co">#&gt;  6 Federal Republic of Germany  1992     0.405 </span></span>
+<span><span class="co">#&gt;  7 Somaliland                   1990    -0.902 </span></span>
+<span><span class="co">#&gt;  8 Somalia                      1990    -0.532 </span></span>
+<span><span class="co">#&gt;  9 Palestine                    1940     0.509 </span></span>
+<span><span class="co">#&gt; 10 Russia                       1917     0.106 </span></span>
+<span><span class="co">#&gt; 11 Russia                       1912     0.394 </span></span>
+<span><span class="co">#&gt; 12 USSR                         1922    -0.205 </span></span>
+<span><span class="co">#&gt; 13 Republic of Vietnam          1975    -0.844 </span></span>
+<span><span class="co">#&gt; 14 Yugoslavia                   1990    -0.159 </span></span>
+<span><span class="co">#&gt; 15 Yugoslavia                   1991     2.41  </span></span>
+<span><span class="co">#&gt; 16 Vietnam, South               1954     0.0950</span></span></code></pre></div>
 <p>and you then want to add state system information. <code>country_year_coder</code> does that for you!</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
@@ -1161,7 +1161,7 @@
 <tr>
 <td align="left">Germany</td>
 <td align="right">2015</td>
-<td align="right">0.6586485</td>
+<td align="right">1.6985623</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -1175,7 +1175,7 @@
 <tr>
 <td align="left">Germany</td>
 <td align="right">1930</td>
-<td align="right">-0.7340776</td>
+<td align="right">0.4372860</td>
 <td align="left">Germany (Prussia)</td>
 <td align="right">255</td>
 <td align="right">255</td>
@@ -1189,7 +1189,7 @@
 <tr>
 <td align="left">Germany</td>
 <td align="right">1970</td>
-<td align="right">-0.7416926</td>
+<td align="right">-0.1222703</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -1203,7 +1203,7 @@
 <tr>
 <td align="left">Germany</td>
 <td align="right">1945</td>
-<td align="right">0.1956005</td>
+<td align="right">-0.8337433</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -1217,7 +1217,7 @@
 <tr>
 <td align="left">East Germany</td>
 <td align="right">1949</td>
-<td align="right">0.6544846</td>
+<td align="right">1.2246558</td>
 <td align="left">German Democratic Republic</td>
 <td align="right">265</td>
 <td align="right">265</td>
@@ -1231,7 +1231,7 @@
 <tr>
 <td align="left">Federal Republic of Germany</td>
 <td align="right">1992</td>
-<td align="right">-1.0957629</td>
+<td align="right">0.4051241</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -1245,7 +1245,7 @@
 <tr>
 <td align="left">Somaliland</td>
 <td align="right">1990</td>
-<td align="right">-0.1207260</td>
+<td align="right">-0.9020201</td>
 <td align="left">Somaliland</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -1259,7 +1259,7 @@
 <tr>
 <td align="left">Somalia</td>
 <td align="right">1990</td>
-<td align="right">0.0338650</td>
+<td align="right">-0.5321832</td>
 <td align="left">Somalia</td>
 <td align="right">520</td>
 <td align="right">520</td>
@@ -1273,7 +1273,7 @@
 <tr>
 <td align="left">Palestine</td>
 <td align="right">1940</td>
-<td align="right">0.6881314</td>
+<td align="right">0.5091588</td>
 <td align="left">Palestine, State of</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -1287,7 +1287,7 @@
 <tr>
 <td align="left">Russia</td>
 <td align="right">1917</td>
-<td align="right">-0.5120455</td>
+<td align="right">0.1057913</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1301,7 +1301,7 @@
 <tr>
 <td align="left">Russia</td>
 <td align="right">1912</td>
-<td align="right">-0.4097251</td>
+<td align="right">0.3935541</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1315,7 +1315,7 @@
 <tr>
 <td align="left">USSR</td>
 <td align="right">1922</td>
-<td align="right">-0.5714257</td>
+<td align="right">-0.2045818</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1329,7 +1329,7 @@
 <tr>
 <td align="left">Republic of Vietnam</td>
 <td align="right">1975</td>
-<td align="right">-0.0275654</td>
+<td align="right">-0.8444520</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
@@ -1343,7 +1343,7 @@
 <tr>
 <td align="left">Yugoslavia</td>
 <td align="right">1990</td>
-<td align="right">-0.5786761</td>
+<td align="right">-0.1594665</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1357,7 +1357,7 @@
 <tr>
 <td align="left">Yugoslavia</td>
 <td align="right">1991</td>
-<td align="right">1.0826558</td>
+<td align="right">2.4142987</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1371,7 +1371,7 @@
 <tr>
 <td align="left">Vietnam, South</td>
 <td align="right">1954</td>
-<td align="right">-0.6521153</td>
+<td align="right">0.0949766</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
