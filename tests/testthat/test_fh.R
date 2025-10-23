@@ -39,17 +39,17 @@ test_that("Freedom House electoral democracies data downloads correctly", {
   # expect_false(any(is.na(fh_electoral_downloaded$GWn)))
   expect_false(any(is.na(fh_electoral_downloaded$extended_country_name)))
   urls <- find_url("fh_electoral")
-  later_urls <- lapply(urls[-1], \(x) read_data(x, verbose = FALSE, skip = 1)) %>%
+  later_urls <- lapply(urls[-1], \(x) read_data(x, verbose = FALSE, skip = 1)) |>
     lapply(function(x) rename_with(x, ~"electoral",
                                    starts_with("Electoral Democracy")))
   for(i in 1:length(later_urls)) {
-    later_urls[[i]] <- later_urls[[i]] %>%
+    later_urls[[i]] <- later_urls[[i]] |>
       mutate(year = 2017+i,
              electoral = ifelse(.data$electoral %in% c("yes", "Yes"), TRUE, FALSE),
              country = case_when(.data$Country == "Yemen, S." ~ "South Yemen",
                                  .data$Country == "Vietnam, S." ~ "South Vietnam",
                                  .data$Country == "Germany, E." ~ "East Germany",
-                                 TRUE ~ as.character(.data$Country))) %>%
+                                 TRUE ~ as.character(.data$Country))) |>
       select(-"Country")
   }
 

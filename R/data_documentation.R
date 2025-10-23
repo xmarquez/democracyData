@@ -2621,8 +2621,8 @@ cgv_update <- function() democracyData::pacl_update
 #'  War country codes, but with some small differences. These are:
 #'
 #'  ```{r echo = FALSE}
-#'  polityIV %>% filter(polityIV_ccode != cown) %>%
-#'  group_by(polityIV_country, polityIV_ccode, cown) %>% summarise(min_year =
+#'  polityIV |> filter(polityIV_ccode != cown) |>
+#'  group_by(polityIV_country, polityIV_ccode, cown) |> summarise(min_year =
 #'  min(year), max_year = max(year))
 #'  ```
 #'
