@@ -83,7 +83,6 @@ anrr|stem|097a3d0eba6c6719|b309ae9c72c08238|c3854c313fa60525|-1005952583||t20383
 LIED|stem|2764b6eab5eaec55|23470ee73e2507a0|6a3d51906e7d33ba|1070703594||t20383.190980309s|s55607b|55607|rds|local|vector|||30.47||
 polyarchy|stem|3edb658b5c0402cb|4e94264186786f80|71dc3e564dc40be9|-1285130753||t20383.1910187387s|s6884b|6884|rds|local|vector|||3.28||
 eiu|stem|8ec02677c8bbc30d|9486912861bdd6ea|aa567efda8ee04b8|-486146792||t20383.1910573444s|s10529b|10529|rds|local|vector|||3.32||
-vaporeg|stem|b4f7f79adb81b76f|e9ad5b0ced5cf974|84b62604944d8661|-1924599656||t20383.1912222939s|s204498b|204498|rds|local|vector|||14.17||
 gwf_autocratic|stem|6a32d0ae2c7f60cb|8254e815d996a959|417ed8849ab66014|-1755317521||t20383.1912681331s|s18688b|18688|rds|local|vector|||3.91||
 REIGN|stem|d0da0c4b47fb1097|4441b3225a5fd6d3|a072409c96f260a1|781675484||t20383.1913249919s|s39012b|39012|rds|local|vector|||4.87||
 svmdi|stem|7d97f854573e24b3|fd4580859bd4c7d4|b1bd48a8c2f0a360|325739875||t20383.191396412s|s90458b|90458|rds|local|vector|||6.13||
@@ -144,7 +143,6 @@ add_anrr|stem|2148d7246ac4426b|8ae0e8f13d0b2246|977ff0a24cc81d22|1419992324|data
 add_LIED|stem|fb4d8d9578141e49|79c757241657d33f|520e23df4d65e116|-1903709082|data/LIED.rda|t20383.1917842866s|s33860b|33860|file|local|vector|||0.47||
 add_polyarchy|stem|a6cd1dfa5351ae04|1f0508600f9c7955|23c86573ee80b211|-43410626|data/polyarchy.rda|t20383.191784958s|s5462b|5462|file|local|vector|||0.01||
 add_eiu|stem|90fcfe35678b2812|f561931ffba26e8e|f5704f0d8e7f7fa3|370904618|data/eiu.rda|t20383.191785786s|s8493b|8493|file|local|vector|||0.06||
-add_vaporeg|stem|f8c97e2ba9a2b7af|1e969a75d1e0fd5a|c47d27b350b04afc|480910743|data/vaporeg.rda|t20383.1917954019s|s160132b|160132|file|local|vector|||0.78||
 add_gwf_autocratic|stem|6063488b75272516|0cabc32d66f7784c|9647466374233b34|-131120514|data/gwf_autocratic.rda|t20383.1917967482s|s14394b|14394|file|local|vector|||0.09||
 add_REIGN|stem|596ee029a92ed84a|05da1065b8639414|0f5ce5f266757272|-1561068204|data/REIGN.rda|t20383.1918005196s|s35628b|35628|file|local|vector|||0.28||
 add_svmdi|stem|9f06381824a7174a|23ad1c859c22f7eb|9b4dffa15b5ebe56|965155407|data/svmdi.rda|t20383.1918026814s|s92322b|92322|file|local|vector|||0.14||
@@ -170,6 +168,7 @@ all_countries|stem|845f186305245177|78f807b59ab76e55|0bc9ed4940d09543|105866348|
 full_codes|stem|d191199171bfb845|a111fbc2773adc4f|907fd1a660fc66c4|1313809338||t20383.1918370902s|s14753b|14753|rds|local|vector|||0||
 test_all_countries_have_regexes|stem|aa6f6008a7e43b00|baad6063e69905ab|ce38b52b8f8f7fd3|-289037754||t20383.1918376751s|s49b|49|rds|local|vector|||0.02||
 all_countries_full_data|stem|293c0b0b9968e718|4c6082ddbf765a95|c359604da0f97a22|423315775||t20383.1918407211s|s65713b|65713|rds|local|vector|||0.2|Detected an unexpected many-to-many relationship between `x` and `y`. ℹ Row 698 of `x` matches multiple rows in `y`. ℹ Row 1 of `y` matches multiple rows in `x`. ℹ If a many-to-many relationship is expected, set `relationship =   'many-to-many'` to silence this warning.|
+kailitz|stem|55310e4bb7d4b251|1b60143daa394de6|435a557c61059653|-2093442948||t20383.2079611801s|s17805b|17805|rds|local|vector|||2.29|Using an external vector in selections was deprecated in tidyselect 1.1.0. ℹ Please use `all_of()` or `any_of()` instead.   # Was:   data %>% select(include_in_output)    # Now:   data %>% select(all_of(include_in_output))  See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.|
 find_url|function|93cbe5e08385de43
 standardize_columns|function|e84fcf86bd4a13b4
 enforce_enddates|function|7e2c28ea54d10c5c
@@ -197,7 +196,7 @@ cgv|function|0ba50b5a3beb2578
 cldr_examples|object|7c43ee930296b3b7
 is_before|function|0e12a813964f9ba8
 track_only|object|78c553c7609fe0c8
-.Random.seed|object|31b5e293f50baf0c
+.Random.seed|object|1d1d4735f8df0064
 prob_more|function|c4a507cf2869870b
 verbose|object|988c41ba10911dc8
 get_dictionary|function|91ef66a7ed156590
@@ -256,7 +255,7 @@ code_year_match|function|e8094fd6fcd5bd8e
 countryname|function|bded086d7e8b0410
 country_year_coder|function|bf5d207b736a42e8
 download_fh|function|f792a87b86573fbb
-redownload_vaporeg|function|7543823e1925827b
+redownload_vaporeg|function|c22d31f9092e172f
 download_wgi_voice_and_accountability|function|0ec71e44f8e25064
 redownload_pipe|function|2d1ce04943a1b5c7
 redownload_peps|function|b5465e95ddacaa37
@@ -293,7 +292,7 @@ prepare_svolik_institutions|function|edb7742d4654ad46
 redownload_wahman_teorell_hadenius|function|40896e8db1110749
 prepare_anrr|function|14e65465630c397d
 standardize_fh|function|16d1060fa5d0d299
-standardize_vaporeg|function|6d4ee33849a20a7b
+standardize_vaporeg|function|a74b0ff1a1928f46
 standardize_wgi|function|3ea9b5e30580d80e
 standardize_PIPE|function|838082d2778c54d8
 standardize_peps|function|85ff1cfbdc9d47b4
@@ -319,6 +318,7 @@ standardize_REIGN|function|279ddcfaca12ff92
 standardize_anckar|function|fb6658fb8dd977e4
 standardize_fh_electoral|function|d0ab36204ab0dcf5
 standardize_pitf|function|a700eeb1b413b6bf
-generate_democracy_scores_dataset|function|fed5790b82b6cbfc
-generate_extended_uds|function|e67637a1c755344e
-kailitz|stem|55310e4bb7d4b251|1b60143daa394de6|435a557c61059653|-2093442948||t20383.2079611801s|s17805b|17805|rds|local|vector|||2.29|Using an external vector in selections was deprecated in tidyselect 1.1.0. ℹ Please use `all_of()` or `any_of()` instead.   # Was:   data %>% select(include_in_output)    # Now:   data %>% select(all_of(include_in_output))  See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.|
+generate_democracy_scores_dataset|function|0a8e899aea2ab3c3
+generate_extended_uds|function|c43b27353596925c
+vaporeg|stem|983ba5a525501ca2|e9ad5b0ced5cf974|bf9e53faaba10bd6|-1924599656||t20383.9141904595s|s205560b|205560|rds|local|vector|||14.83||
+add_vaporeg|stem|09ace45a1d5f08a9|1e969a75d1e0fd5a|f46d8f4a59a03154|480910743|data/vaporeg.rda|t20383.9142029471s|s161122b|161122|file|local|vector|||0.95||
