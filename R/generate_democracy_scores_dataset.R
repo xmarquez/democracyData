@@ -575,25 +575,35 @@
 #' @examples
 #' # You can select only some datasets
 #'
-#' democracy_data_gwf <- generate_democracy_scores_dataset(datasets = c("gwf",
-#'          "pacl", "bmr"), output_format = "wide")
+#' democracy_data_gwf <- generate_democracy_scores_dataset(
+#'  datasets = c("gwf", "pacl", "bmr"), 
+#'  output_format = "wide"
+#'  )
 #'
 #' # all PMM datasets
-#' democracy_data_pmm <- generate_democracy_scores_dataset(selection = "pmm")
+#' democracy_data_pmm <- generate_democracy_scores_dataset(
+#'   selection = "pmm", exclude_pmm_duplicates = FALSE
+#'  )
 #'
 #' \dontrun{
 #' # This produces scaled scores
-#' generate_democracy_scores_dataset(keep_only_last_in_year = FALSE,
-#' scale_scores = TRUE)
+#' generate_democracy_scores_dataset(
+#'  keep_only_last_in_year = FALSE,
+#'  scale_scores = TRUE)
 #'
 #' # These require downloads:
 #'
-#' democracy_data_long <- generate_democracy_scores_dataset(datasets = "pacl",
-#'                                                          force_redownload =
-#' TRUE) democracy_data_wide <- generate_democracy_scores_dataset(datasets =
-#'                                                          "pacl",
-#'                                                          force_redownload =
-#' TRUE, output_format = "wide") }
+#' democracy_data_long <- generate_democracy_scores_dataset(
+#'  datasets = "pacl",
+#'  force_redownload = TRUE
+#' ) 
+#' 
+#' democracy_data_wide <- generate_democracy_scores_dataset(
+#'  datasets = "pacl",
+#'  force_redownload = TRUE, 
+#'  output_format = "wide"
+#' ) 
+#' }
 generate_democracy_scores_dataset <- function(datasets,
                                               selection,
                                               output_format = "long",

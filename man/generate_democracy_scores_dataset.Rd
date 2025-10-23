@@ -626,25 +626,35 @@ Republic and the later German Democratic Republic in 1945.
 \examples{
 # You can select only some datasets
 
-democracy_data_gwf <- generate_democracy_scores_dataset(datasets = c("gwf",
-         "pacl", "bmr"), output_format = "wide")
+democracy_data_gwf <- generate_democracy_scores_dataset(
+ datasets = c("gwf", "pacl", "bmr"), 
+ output_format = "wide"
+ )
 
 # all PMM datasets
-democracy_data_pmm <- generate_democracy_scores_dataset(selection = "pmm")
+democracy_data_pmm <- generate_democracy_scores_dataset(
+  selection = "pmm", exclude_pmm_duplicates = FALSE
+ )
 
 \dontrun{
 # This produces scaled scores
-generate_democracy_scores_dataset(keep_only_last_in_year = FALSE,
-scale_scores = TRUE)
+generate_democracy_scores_dataset(
+ keep_only_last_in_year = FALSE,
+ scale_scores = TRUE)
 
 # These require downloads:
 
-democracy_data_long <- generate_democracy_scores_dataset(datasets = "pacl",
-                                                         force_redownload =
-TRUE) democracy_data_wide <- generate_democracy_scores_dataset(datasets =
-                                                         "pacl",
-                                                         force_redownload =
-TRUE, output_format = "wide") }
+democracy_data_long <- generate_democracy_scores_dataset(
+ datasets = "pacl",
+ force_redownload = TRUE
+) 
+
+democracy_data_wide <- generate_democracy_scores_dataset(
+ datasets = "pacl",
+ force_redownload = TRUE, 
+ output_format = "wide"
+) 
+}
 }
 \references{
 D. Pemstein, S. Meserve, and J. Melton. "Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type". In: \emph{Political Analysis} 18.4 (2010), pp. 426-449. DOI: \href{https://dx.doi.org/10.1093/pan/mpq020}{10.1093/pan/mpq020}.
