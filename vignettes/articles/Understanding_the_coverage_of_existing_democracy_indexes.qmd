@@ -1,0 +1,265 @@
+---
+title: "Understanding the geographic and temporal coverage of existing democracy indexes"
+author: "Xavier Marquez"
+date: "`r format(Sys.Date())`"
+bibliography: bibfile.bib
+csl: american-political-science-review.csl
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: true
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: "#>"
+---
+
+```{r}
+#| label: setup
+#| cache: false
+library(democracyData)
+library(tidyverse)
+
+```
+
+The geographical and temporal coverage of different democracy indexes varies greatly.
+
+```{r}
+
+theme_set(theme_bw())
+
+long_data <- generate_democracy_scores_dataset(verbose = FALSE)
+
+long_data <- long_data |>
+  group_by(measure) |>
+  mutate(value_rescaled = scales::rescale(value, to = c(0,1))) |>
+  group_by(measure, extended_country_name) |>
+  mutate(coverage = n()) |>
+  ungroup() 
+
+
+wars <- tibble(xmin = c(1775, 1789, 1914, 1939, 1989), 
+                      xmax = c(1787, 1810, 1918, 1945, 1991),
+                      ymin = -Inf, ymax = Inf)
+
+state_system <- democracyData:::data |> 
+  distinct(extended_country_name, GWn, extended_region, extended_continent) 
+
+long_data <- left_join(long_data, state_system, relationship = "many-to-many")
+
+long_data <- distinct(long_data)
+
+duplicated <- long_data |> 
+  group_by(extended_country_name, GWn, year, measure) |> 
+  filter(n() > 1)
+
+duplicated <- duplicated |>
+  slice_tail(n = 1)
+
+long_data <- anti_join(long_data, duplicated)
+```
+
+[VDem](../../reference/vdem_simple.html) and [LIED](../../reference/LIED.html) code the largest total number of country-years, while specialist indexes like [BLM](../../reference/blm.html) (which covers only 5 countries in Latin America) code the smallest number. Given the increase in the number of states in the state system, it's no surprise that coverage increases greatly after WWII, with many datasets covering a large number of countries. 
+
+```{r}
+#| fig-height: 12
+#| warning: false
+#| message: false
+
+ggplot(long_data |>
+         group_by(dataset, year) |>
+         summarise(num_countries = n_distinct(extended_country_name)) |>
+         filter(!is.na(num_countries))) +
+  geom_tile(aes(x = year, y = fct_reorder(dataset, num_countries, sum), alpha = num_countries)) +
+  labs(y = "", fill = "Number of countries", alpha = "Number of countries",
+       title = "Temporal coverage of all datasets", 
+       subtitle = "Ordered by total number of country-years coded by all measures in dataset. \nSome datasets offer more than one measure of democracy. \nShaded red areas indicate the American and French revolutions, \nthe First World War, the Second World War, and the end of the Cold War") +
+  geom_rect(data = wars, aes(xmin = xmin, 
+                      xmax = xmax,
+                      ymin = -Inf, ymax = Inf), fill = "red", alpha = 0.3) +
+  theme_bw() +
+  theme(legend.position = "bottom")
+
+```
+
+```{r}
+#| fig-height: 20
+#| warning: false
+#| message: false
+ggplot() +
+  geom_tile(data = long_data |>
+  group_by(measure, year) |>
+  summarise(num_countries = n_distinct(extended_country_name)) |>
+  filter(!is.na(num_countries)),
+  aes(x = year, y = (fct_reorder(measure, num_countries, sum)), alpha = num_countries)) +
+  labs(y = "", alpha = "Number of countries",
+       title = "Temporal coverage of all measures", 
+       subtitle = "Ordered by total number of country-years. Shaded red areas indicate \nthe American and French revolutions, the First World War, \nthe Second World War, and the end of the Cold War") +
+  geom_rect(data = wars, aes(xmin = xmin, 
+                      xmax = xmax,
+                      ymin = -Inf, ymax = Inf), fill = "red", alpha = 0.3) +
+  theme(legend.position = "bottom")
+
+```
+
+As we can see, the majority of datasets measure democracy between the end of the Second World War and the first two decades after the end of the Cold War. The most heavily measured country is the United States; the earliest measurement is for Iran (1502, in the Ulfelder extended dataset; this is the regime start date). The vast majority of measurements are after 1945 (bluer = more measurements of democracy for a given country-year), but most datasets created in the 2000s were not updated, so the number of measurements decreases post 2010 (only a few datasets are updated to 2020).
+
+```{r}
+#| fig-height: 30
+#| warning: false
+#| message: false
+
+ggplot(data = long_data |>
+  group_by(extended_country_name, year) |>
+  summarise(num_measures = n(), in_GW_system = unique(in_GW_system)) |>
+  filter(!is.na(num_measures)) |> 
+  group_by(extended_country_name) |> 
+  mutate(total_measures = sum(num_measures)) |>
+  ungroup()) +
+  geom_tile(aes(x = year, y = (fct_reorder(extended_country_name, total_measures, mean)), 
+             alpha = in_GW_system, fill = num_measures)) +
+  labs(y = "", fill = "Number of measures", alpha = "In state system",
+       title = "Coverage of democracy measures per country or territory",
+       subtitle = "Ordered by total number of democracy measures")  +
+  geom_rect(data = wars, aes(xmin = xmin, 
+                      xmax = xmax,
+                      ymin = -Inf, ymax = Inf), fill = "red", alpha = 0.3) +
+  scale_fill_gradient2(midpoint = 20, mid = "grey") +
+  scale_alpha_discrete(range = c(0.3,1)) +
+  theme_bw() +
+  theme(legend.position = "bottom") 
+
+```
+
+There can be a fair amount of disagreement in these measures, especially at regime transition points (see article on correlations between measures for more discussion). Consider the USA, Venezuela, and Russia (darker colors = more democratic):
+
+```{r}
+#| fig-height: 20
+long_data |>
+  filter(extended_country_name == "United States of America") |>
+  # mutate(measure_country = paste(extended_country_name, measure)) |>
+  ggplot() +
+  geom_tile(aes(x = year, fill = value_rescaled, y = fct_reorder(measure, coverage))) +
+  labs(fill = "Measure value\n(Rescaled to 0-1)",
+       y = "",
+       title = "Measurements of democracy for the USA")  +
+  geom_rect(data = wars, aes(xmin = xmin, 
+                      xmax = xmax,
+                      ymin = -Inf, ymax = Inf), fill = "red", alpha = 0.3) +
+  scale_fill_viridis_c(direction = -1)  +
+  theme(legend.position = "bottom")
+```
+
+```{r}
+#| fig-height: 20
+long_data |>
+  filter(extended_country_name == "Venezuela") |>
+  # mutate(measure_country = paste(extended_country_name, measure)) |>
+  ggplot() +
+  geom_tile(aes(x = year, fill = value_rescaled, y = fct_reorder(measure, coverage))) +
+  labs(fill = "Measure value\n(Rescaled to 0-1)",
+       y = "",
+       title = "Measurements of democracy for Venezuela")  +
+  geom_rect(data = wars, aes(xmin = xmin, 
+                      xmax = xmax,
+                      ymin = -Inf, ymax = Inf), fill = "red", alpha = 0.3) +
+  scale_fill_viridis_c(direction = -1) +
+  theme(legend.position = "bottom")
+```
+
+```{r}
+#| fig-height: 20
+long_data |>
+  filter(extended_country_name == "Russia (Soviet Union)") |>
+  # mutate(measure_country = paste(extended_country_name, measure)) |>
+  ggplot() +
+  geom_tile(aes(x = year, fill = value_rescaled, y = fct_reorder(measure, coverage))) +
+  labs(fill = "Measure value\n(Rescaled to 0-1)",
+       y = "",
+       title = "Measurements of democracy for Russia (Soviet Union)")  +
+  geom_rect(data = wars, aes(xmin = xmin, 
+                      xmax = xmax,
+                      ymin = -Inf, ymax = Inf), fill = "red", alpha = 0.3) +
+  scale_fill_viridis_c(direction = -1) +
+  theme(legend.position = "bottom")
+```
+
+We can also take a look at the average level of democracy for each measure, across the world. As we can see, the world has become more democratic (darker colors = more democratic), though the particular moment at which this happened varies from measure to measure.
+
+```{r}
+#| fig-height: 12
+long_data |>
+  group_by(dataset, year) |>
+  summarise(value_rescaled = mean(value_rescaled),
+            coverage = sum(coverage),
+            num_countries = n_distinct(extended_country_name)) |>
+  ggplot() +
+  geom_tile(aes(x = year, fill = value_rescaled, y = fct_reorder(dataset, coverage),
+                alpha = num_countries)) +
+  labs(fill = "Average measure value\n(Rescaled to 0-1, 1 = democracy)",
+       y = "",
+       title = "Average measurements of democracy for the World",
+       alpha = "Number of countries measured")  +
+  geom_rect(data = wars, aes(xmin = xmin, 
+                      xmax = xmax,
+                      ymin = -Inf, ymax = Inf), fill = "red", alpha = 0.3) +
+  scale_fill_viridis_c(direction = -1) +
+  theme_bw() +
+  theme(legend.position = "bottom") 
+
+```
+
+```{r}
+#| message: false
+#| warning: false
+#| fig-height: 15
+long_data |>
+  group_by(measure, year) |>
+  summarise(value_rescaled = mean(value_rescaled),
+            coverage = sum(coverage),
+            num_countries = n_distinct(extended_country_name)) |>
+  ggplot() +
+  geom_tile(aes(x = year, fill = value_rescaled, y = fct_reorder(measure, coverage),
+                alpha = num_countries)) +
+  labs(fill = "Average measure value\n(Rescaled to 0-1, 1 = democracy)",
+       y = "",
+       title = "Average measurements of democracy for the World",
+       alpha = "Number of countries measured")  +
+  geom_rect(data = wars, aes(xmin = xmin, 
+                      xmax = xmax,
+                      ymin = -Inf, ymax = Inf), fill = "red", alpha = 0.3) +
+  scale_fill_viridis_c(direction = -1) +
+  theme_bw() +
+  theme(legend.position = "bottom")
+
+```
+
+Finally, we visualize the average level of democracy per country (averaging across all measures that code a country-year; darker colors = more democratic).
+
+```{r}
+#| message: false
+#| warning: false
+#| fig-height: 30
+theme_set(theme_bw())
+long_data |>
+  group_by(extended_country_name, year) |>
+  summarise(value_rescaled = mean(value_rescaled),
+            coverage = sum(coverage),
+            num_measures = n_distinct(measure)) |>
+  ggplot() +
+  geom_tile(aes(x = year, fill = value_rescaled, y = fct_reorder(extended_country_name, coverage),
+                alpha = num_measures)) +
+  labs(fill = "Average measure value\n(Rescaled to 0-1, 1 = democracy)",
+       y = "",
+       title = "Average level of democracy per country, all measures",
+       alpha = "Number of measures")  +
+  geom_rect(data = wars, aes(xmin = xmin, 
+                      xmax = xmax,
+                      ymin = -Inf, ymax = Inf), fill = "red", alpha = 0.3) +
+  scale_fill_viridis_c(direction = -1) +
+  theme(legend.position = "bottom") 
+
+```
+
+

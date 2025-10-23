@@ -1,0 +1,154 @@
+---
+title: "Understanding the state system"
+author: "Xavier Marquez"
+date: "`r format(Sys.Date())`"
+bibliography: bibfile.bib
+csl: american-political-science-review.csl
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: "#>"
+---
+
+```{r}
+#| label: setup
+#| cache: false
+library(democracyData)
+library(tidyverse)
+
+theme_set(theme_bw())
+state_system_data <- democracyData:::data
+```
+
+The measurement of democracy at the state level requires a "state system", a list of states with measurable forms of democracy. The state system is more controversial than one might expect: what units count as sovereign states is not always entirely obvious, and some projects (e.g., V-Dem, Freedom House, and the Varieties of POlitical Regimes project) explicitly include units that are not independent-sovereign states but may be part of larger empires.
+
+The "base system" for most democracy measurement projects is the Correlates of War system [@correlatesofwarprojectStateSystemMembership2017]. The COW project states:
+
+> The Correlates of War project includes a state in the international system from 1816-2016 for the following criteria. Prior to 1920, the entity must have had a population greater than 500,000 and have had diplomatic missions at or above the rank of charge d’affaires with Britain and France. After 1920, the entity must be a member of the League of Nations or the United Nations, or have a population greater than 500,000 and receive diplomatic missions from two major powers.
+
+This full list is as follows:
+
+```{r}
+#| label: tbl-cow-membership
+#| tbl-cap: "Membership in the Correlates of War state system. Data from "
+state_system_data |>
+  filter(cow_membership) |>
+  select(contains("cow")) |>
+  distinct() |>
+  knitr::kable()
+```
+ 
+The list includes 217 distinct units, 172 of which still exist. 24 of the 217 countries have "gaps" in statehood - they were incorporated into other states through conquest at some point, or their sovereignty was otherwise extinguished, but reverted to independent statehood later.
+
+This list is used as the basis for two other lists: the Gledistch-Ward system of states [@GleditschWard1999] and the Polity system of states [@polity2020; @polity2019]. These are very similar to the COW list, with some exceptions. First, as @tbl-differences-cow-GW and @tbl-differences-cow-polity indicate, the treatment of Germany (post-1945 and post-1990), Yemen (post-unification), Yugoslavia (pre- 1918, before its official creation, and post-breakup), the Eritrea/Ethiopia split, the Pakistan/Bangladesh split, and the treatment of Italy pre-unification  differs across them. Second, there are some minor differences in the numerical codes for four small island states which do not affect their inclusion. Finally, there are also eight states that appear in GW and/or Polity but not in COW, due to different inclusion criteria. 
+
+```{r}
+#| label: tbl-differences-cow-GW
+#| tbl-cap: "Differences between the state membership lists of COW and Gleditsch and Ward"
+state_system_data |> 
+  filter((cown != GWn) | (!is.na(cown) & is.na(GWn)) | (is.na(cown) & !is.na(GWn)))  |>
+  select(cow_country_name, cown, GW_country_name, GWn, cow_startdate, cow_enddate, GW_startdate, GW_enddate) |>
+  distinct() |>
+  knitr::kable(col.names = c("Country name in COW", "COW code", "Country name in GW", "GW code", "COW start date",
+                              "COW end date", "GW start date", "GW end date"))
+```
+
+```{r}
+#| label: tbl-differences-cow-polity
+#| tbl-cap: "Differences between the state membership lists of COW and Gleditsch and Ward"
+state_system_data |> 
+  filter((cown != polity_ccode) | (!is.na(cown) & is.na(polity_ccode)) | (is.na(cown) & !is.na(polity_ccode)))  |>
+  select(cow_country_name, cown, polity_country_name, polity_ccode, cow_startdate, cow_enddate, polity_startdate, polity_enddate) |>
+  distinct() |>
+  knitr::kable(col.names = c("Country name in COW", "COW code", "Country name in Polity", "Polity code", "COW start date",
+                              "COW end date", "Polity start date", "Polity end date"))
+```
+
+```{r}
+#| label: tbl-differences-cow-polity-gw-dates
+#| tbl-cap: "Differences between the state membership lists of COW and Gleditsch and Ward"
+state_system_data |> 
+  filter((cown == polity_ccode),
+         GW_membership)  |>
+  select(cow_country_name, cown, polity_country_name, polity_ccode, cow_startdate, cow_enddate, polity_startdate, polity_enddate) |>
+  distinct() |>
+  knitr::kable(col.names = c("Country name in COW", "COW code", "Country name in Polity", "Polity code", "COW start date",
+                              "COW end date", "Polity start date", "Polity end date"))
+```
+
+Across other measurement projects, there are also 145 units that are either non-sovereign or fail to meet the criteria for membership in the state system of COW, Gleditsch-Ward, or Polity (@tbl-non-sovereign).
+
+```{r}
+#| label: tbl-non-sovereign
+#| tbl-cap: "Units not included in any state system"
+state_system_data |> 
+  filter(if_all(ends_with("_membership"), \(x) !x)) |> 
+  distinct(extended_country_name, across(ends_with("_membership"))) |>
+  knitr::kable(col.names = c("Country name", "In GW", "In polity", "In COW"))
+```
+
+Most of these units are included in the V-Dem dataset (@tbl-vdem-not-cow), the LIED dataset (@tbl-lied-not-cow), the Freedom House dataset (@tbl-fh-not-cow), the PIPE dataset (@tbl-pipe-not-cow), and the VaPoReg dataset (@tbl-vaporeg-not-cow), which attempt to have the widest possible coverage. Their coding varies, but the following are not in COW.
+
+
+```{r}
+#| label: tbl-vdem-not-cow
+#| tbl-cap: "VDEM countries not in the COW system"
+vdem_simple |>
+  distinct(vdem_country_name, country_id, vdem_cowcode) |> 
+  mutate(vdem_cowcode = ifelse(is.na(vdem_cowcode), -1, vdem_cowcode))|>
+  anti_join(state_system_data |> distinct(extended_country_name, cown), by = join_by(vdem_cowcode == cown)) |>
+  mutate(vdem_cowcode = NA) |>
+  knitr::kable()
+```
+
+```{r}
+#| label: tbl-lied-not-cow
+#| tbl-cap: "LIED countries not in the COW system"
+LIED |>
+  distinct(lied_country, vdem, lied_cow) |> 
+  mutate(lied_cow = ifelse(is.na(lied_cow), -1, lied_cow)) |>
+  anti_join(state_system_data |> distinct(extended_country_name, cown), by = join_by(lied_cow == cown)) |>
+  mutate(lied_cow = NA) |>
+  knitr::kable()
+```
+
+
+```{r}
+#| label: tbl-fh-not-cow
+#| tbl-cap: "Freedom House countries not in the COW system"
+fh |>
+  distinct(fh_country, cown) |> 
+  mutate(cown = ifelse(is.na(cown), -1, cown)) |>
+  anti_join(state_system_data |> distinct(extended_country_name, cown), by = join_by(cown)) |>
+  mutate(cown= NA) |>
+  knitr::kable()
+```
+
+```{r}
+#| label: tbl-pipe-not-cow
+#| tbl-cap: "PIPE countries not in the COW system"
+PIPE |>
+  distinct(PIPE_country, cown ) |> 
+  mutate(cown = ifelse(is.na(cown), -1, cown)) |>
+  anti_join(state_system_data |> distinct(extended_country_name, cown), by = join_by(cown)) |>
+  mutate(cown = NA) |>
+  knitr::kable()
+```
+
+```{r}
+#| label: tbl-vaporeg-not-cow
+#| tbl-cap: "VaPoReg countries not in the COW system"
+vaporeg |>
+  distinct(vaporeg_country, vaporeg_code, vaporeg_cowcode ) |> 
+  mutate(vaporeg_cowcode  = ifelse(is.na(vaporeg_cowcode ), -1, vaporeg_cowcode )) |>
+  anti_join(state_system_data |> distinct(extended_country_name, cown), by = join_by(vaporeg_cowcode == cown)) |>
+  mutate(vaporeg_cowcode = NA) |>
+  knitr::kable()
+```
+
+When generating a comprehensive dataset of all democracy measures using [generate_democracy_scores_dataset], some decisions about the composition of the broader universe of states have to be made, and in particular about the end dates of some states. The main problem are states that "split" and "reunify", like Germany. 

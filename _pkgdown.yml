@@ -13,6 +13,7 @@ reference:
   - doorenspleet
   - eiu
   - extended_uds
+  - fh
   - fh_pmm
   - gwf_all
   - hadenius_pmm
@@ -38,6 +39,7 @@ reference:
   - ulfelder
   - utip
   - vanhanen
+  - vaporeg
   - vdem_simple
   - wahman_teorell_hadenius
 - title: "Download_ functions"
@@ -74,3 +76,5 @@ reference:
   - remove_empty_rows
   - count_sequence_breaks
 url: https://xmarquez.github.io/democracyData/
+template:
+  bootstrap: 5
