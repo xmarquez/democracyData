@@ -1,228 +1,75 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/404.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/articles/articles/Relationships_between_democracy_measures.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/articles/articles/Replicating_and_extending_the_UD_scores.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/articles/articles/Understanding_the_coverage_of_existing_democracy_indexes.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/articles/Relationships_between_democracy_measures.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/articles/Replicating_and_extending_the_UD_scores.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/articles/Understanding_the_coverage_of_existing_democracy_indexes.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/index.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/anckar.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/anrr.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/arat_pmm.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/bibliography.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/blm.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/bmr.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/bnr.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/bollen_pmm.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/bti.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/cite_dataset.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/country_year_coder.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/count_sequence_breaks.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/create_panel.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/cutpoints.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/democracyData-package.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/democracy_info.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/democracy_model.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/democracy_scores.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/doorenspleet.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/download_fh.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/download_fh_electoral.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/download_fh_full.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/download_polity_annual.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/download_reign.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/download_wgi_voice_and_accountability.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/eiu.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/extended_uds.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/fh_pmm.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/generate_democracy_scores_dataset.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/generate_extended_uds.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/gwf_all.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/hadenius_pmm.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/kailitz.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/LIED.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/magaloni.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/mainwaring.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/munck_pmm.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/pacl.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/pacl_update.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/peps.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/PIPE.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/pitf.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/polityIV.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/polity_pmm.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/polyarchy.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/polyarchy_dimensions.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/prc_gasiorowski.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/prepare_democracy_data.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/prob_more.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/raterinfo.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/redownload_blm.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/redownload_lied.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/redownload_polityIV.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/REIGN.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/remove_empty_rows.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/svmdi.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/svolik_regime.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/uds_2014.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/ulfelder.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/utip.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/vanhanen.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/vdem_simple.html</loc>
-  </url>
-  <url>
-    <loc>https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://xmarquez.github.io/democracyData/404.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/articles/index.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/articles/Relationships_between_democracy_measures.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/articles/Replicating_and_extending_the_UD_scores.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/articles/Understanding_the_coverage_of_existing_democracy_indexes.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/articles/Understanding_the_state_system.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/authors.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/index.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/news/index.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/anckar.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/anrr.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/arat_pmm.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/bibliography.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/blm.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/bmr.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/bnr.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/bollen_pmm.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/bti.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/cite_dataset.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/country_year_coder.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/count_sequence_breaks.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/create_panel.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/cutpoints.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/democracyData-package.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/democracy_info.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/democracy_model.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/democracy_scores.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/doorenspleet.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/download_fh.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/download_fh_electoral.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/download_fh_full.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/download_polity_annual.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/download_reign.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/download_wgi_voice_and_accountability.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/eiu.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/extended_uds.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/fh_pmm.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/generate_democracy_scores_dataset.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/generate_extended_uds.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/gwf_all.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/hadenius_pmm.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/index.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/kailitz.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/LIED.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/magaloni.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/mainwaring.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/munck_pmm.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/pacl.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/pacl_update.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/peps.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/PIPE.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/pitf.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/polityIV.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/polity_pmm.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/polyarchy.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/polyarchy_dimensions.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/prc_gasiorowski.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/prepare_democracy_data.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/prob_more.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/raterinfo.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/redownload_blm.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/REIGN.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/remove_empty_rows.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/svmdi.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/svolik_regime.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/uds_2014.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/ulfelder.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/utip.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/vanhanen.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/vaporeg.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/vdem_simple.html</loc></url>
+<url><loc>https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.html</loc></url>
 </urlset>
+
