@@ -21,7 +21,6 @@ add_bnr|stem|927c5360d7b3421e|2eddbd5762f2e3a7|2c530c1562a7fbd1|-1705037300|data
 countrycode_codelist|stem|312e180744d0ffe9|8317eebb29073a43|2c530c1562a7fbd1|374810185||t20383.1858459639s|s59163b|59163|rds|local|vector|||0.22||
 cow_panel_csv_url|stem|e9f63a6ea9fb602a|7ae0cb2b19cb44a4|2c530c1562a7fbd1|1360091366|https://correlatesofwar.org/wp-content/uploads/states2016.csv|t20383.1858561065s||0|url|local|vector|||0||
 add_bnr_extended|stem|43501bc5ad48a021|9ae57111c64a7c88|2c530c1562a7fbd1|-46547019|data/bnr_extended.rda|t18466.9405902778s|s8602b|8602|file|local|vector|||0||
-README|stem|bbb714ee946a83ed|f139d82ba91ae0a2|2c530c1562a7fbd1|1466784939|README.md*README.Rmd|t20383.1867424408s|s234200206b|234200206|file|local|vector|||76.56||
 vanhanen_filename|stem|6b89ea03a893954c|d84f9f48ba93a550|2c530c1562a7fbd1|153239879|data-raw/FSD1289/FSD1289/Study/data/daF1289e.csv|t19443.645150463s|s344381b|344381|file|local|vector|||0||
 doorenspleet_filename|stem|b9477f94bec8006f|dd87427057cc4806|2c530c1562a7fbd1|-1714410620|data-raw/Doorenspleet data.csv|t19134.9769097222s|s13289b|13289|file|local|vector|||0||
 kailitz_filename|stem|efa7af87c94954c1|1114c4517ca4c575|2c530c1562a7fbd1|1138537076|data-raw/kailitz.yearly.rds|t19135.0590625s|s2193100b|2193100|file|local|vector|||0||
@@ -39,7 +38,6 @@ cow_panel_csv|stem|5b5a37d77bf48285|a4c2cb21bac526c6|633267ca6561a31a|-193611126
 add_bibliography|stem|1290ebdaf094a777|5886b4ac4e9759de|031005584793bcd6|1530090649|data/bibliography.rda|t20383.1868128623s|s10502b|10502|file|local|vector|||0.07||
 gw_panel|stem|ec82bfd32ccf1d11|354a76f233f61743|85c4b22611312317|-1064250316||t20383.18681332s|s5117b|5117|rds|local|vector|||0.02||
 include_in_output|stem|375294cbca6cfbd7|743007d10ebaafd9|2ea8fcbe87c82571|1061794592||t20383.1868136555s|s99b|99|rds|local|vector|||0||
-extended_uds|stem|bb662dbdb51b081d|e784cf0610abaed8|585c9d29b787f1a7|-1145773236||t20383.1878276437s|s1387041b|1387041|rds|local|vector|||87.5|Using an external vector in selections was deprecated in tidyselect 1.1.0. ℹ Please use `all_of()` or `any_of()` instead.   # Was:   data %>% select(democracy_vars)    # Now:   data %>% select(all_of(democracy_vars))  See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.|
 add_democracy_info|stem|cfa4b0866657bf1d|3e2779f96c3d9727|be20f0c04cf5f170|-1325016648|data/democracy_info.rda|t20383.1878285259s|s5126b|5126|file|local|vector|||0.07||
 save_data|stem|212e3a16efc2d32a|c6a8d29ed9875018|cc3504f4c3261078|-934457909|R/sysdata.rda|t20383.1878299624s|s45392b|45392|file|local|vector|||0.09||
 test_existing_panel_not_in_polity|stem|eb45ff0c28bde2dc|540049889276bc18|87d686c8a7b91c75|1556172296||t20383.1878312075s|s49b|49|rds|local|vector|||0.08||
@@ -169,6 +167,8 @@ full_codes|stem|d191199171bfb845|a111fbc2773adc4f|907fd1a660fc66c4|1313809338||t
 test_all_countries_have_regexes|stem|aa6f6008a7e43b00|baad6063e69905ab|ce38b52b8f8f7fd3|-289037754||t20383.1918376751s|s49b|49|rds|local|vector|||0.02||
 all_countries_full_data|stem|293c0b0b9968e718|4c6082ddbf765a95|c359604da0f97a22|423315775||t20383.1918407211s|s65713b|65713|rds|local|vector|||0.2|Detected an unexpected many-to-many relationship between `x` and `y`. ℹ Row 698 of `x` matches multiple rows in `y`. ℹ Row 1 of `y` matches multiple rows in `x`. ℹ If a many-to-many relationship is expected, set `relationship =   'many-to-many'` to silence this warning.|
 kailitz|stem|55310e4bb7d4b251|1b60143daa394de6|435a557c61059653|-2093442948||t20383.2079611801s|s17805b|17805|rds|local|vector|||2.29|Using an external vector in selections was deprecated in tidyselect 1.1.0. ℹ Please use `all_of()` or `any_of()` instead.   # Was:   data %>% select(include_in_output)    # Now:   data %>% select(all_of(include_in_output))  See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.|
+vaporeg|stem|983ba5a525501ca2|e9ad5b0ced5cf974|bf9e53faaba10bd6|-1924599656||t20383.9141904595s|s205560b|205560|rds|local|vector|||14.83||
+add_vaporeg|stem|09ace45a1d5f08a9|1e969a75d1e0fd5a|f46d8f4a59a03154|480910743|data/vaporeg.rda|t20383.9142029471s|s161122b|161122|file|local|vector|||0.95||
 find_url|function|93cbe5e08385de43
 standardize_columns|function|e84fcf86bd4a13b4
 enforce_enddates|function|7e2c28ea54d10c5c
@@ -196,7 +196,7 @@ cgv|function|0ba50b5a3beb2578
 cldr_examples|object|7c43ee930296b3b7
 is_before|function|0e12a813964f9ba8
 track_only|object|78c553c7609fe0c8
-.Random.seed|object|1d1d4735f8df0064
+.Random.seed|object|c8c4208d34888b8c
 prob_more|function|c4a507cf2869870b
 verbose|object|988c41ba10911dc8
 get_dictionary|function|91ef66a7ed156590
@@ -320,5 +320,5 @@ standardize_fh_electoral|function|d0ab36204ab0dcf5
 standardize_pitf|function|a700eeb1b413b6bf
 generate_democracy_scores_dataset|function|0a8e899aea2ab3c3
 generate_extended_uds|function|c43b27353596925c
-vaporeg|stem|983ba5a525501ca2|e9ad5b0ced5cf974|bf9e53faaba10bd6|-1924599656||t20383.9141904595s|s205560b|205560|rds|local|vector|||14.83||
-add_vaporeg|stem|09ace45a1d5f08a9|1e969a75d1e0fd5a|f46d8f4a59a03154|480910743|data/vaporeg.rda|t20383.9142029471s|s161122b|161122|file|local|vector|||0.95||
+README|stem|fde93760f7db1bc7|f139d82ba91ae0a2|2c530c1562a7fbd1|1466784939|README.md*README.Rmd|t20384.0987281411s|s206346732b|206346732|file|local|vector|||93.7||
+extended_uds|stem|bb662dbdb51b081d|e784cf0610abaed8|e19ad9959b69e2cf|-1145773236||t20384.1000278612s|s1387041b|1387041|rds|local|vector|||111.49|Using an external vector in selections was deprecated in tidyselect 1.1.0. ℹ Please use `all_of()` or `any_of()` instead.   # Was:   data %>% select(democracy_vars)    # Now:   data %>% select(all_of(democracy_vars))  See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.|
