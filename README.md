@@ -184,7 +184,7 @@ fh_downloaded
 ```
 
 This downloads the latest update of the “Freedom in the World” dataset
-(1972-2021, corresponding to the 2022 report), puts it in country-year
+(1972-2024, corresponding to the 2025 report), puts it in country-year
 format (extracting the relevant info from the awful Excel table that
 Freedom House makes available), calculates the variables `fh_total` and
 `fh_total_reversed`, and adds state system information, including a
@@ -455,22 +455,22 @@ my_weird_democracy_data
 #> # A tibble: 16 × 3
 #>    country                      year my_measure
 #>    <chr>                       <dbl>      <dbl>
-#>  1 Germany                      2015     1.70  
-#>  2 Germany                      1930     0.437 
-#>  3 Germany                      1970    -0.122 
-#>  4 Germany                      1945    -0.834 
-#>  5 East Germany                 1949     1.22  
-#>  6 Federal Republic of Germany  1992     0.405 
-#>  7 Somaliland                   1990    -0.902 
-#>  8 Somalia                      1990    -0.532 
-#>  9 Palestine                    1940     0.509 
-#> 10 Russia                       1917     0.106 
-#> 11 Russia                       1912     0.394 
-#> 12 USSR                         1922    -0.205 
-#> 13 Republic of Vietnam          1975    -0.844 
-#> 14 Yugoslavia                   1990    -0.159 
-#> 15 Yugoslavia                   1991     2.41  
-#> 16 Vietnam, South               1954     0.0950
+#>  1 Germany                      2015     -0.181
+#>  2 Germany                      1930      0.480
+#>  3 Germany                      1970     -2.12 
+#>  4 Germany                      1945     -1.40 
+#>  5 East Germany                 1949      1.55 
+#>  6 Federal Republic of Germany  1992     -0.898
+#>  7 Somaliland                   1990     -1.73 
+#>  8 Somalia                      1990      1.70 
+#>  9 Palestine                    1940     -1.21 
+#> 10 Russia                       1917     -0.137
+#> 11 Russia                       1912      0.771
+#> 12 USSR                         1922      0.194
+#> 13 Republic of Vietnam          1975     -0.823
+#> 14 Yugoslavia                   1990     -0.150
+#> 15 Yugoslavia                   1991      1.50 
+#> 16 Vietnam, South               1954      1.67
 ```
 
 and you then want to add state system information. `country_year_coder`
@@ -498,22 +498,22 @@ my_weird_democracy_data |>
 
 | country | year | my_measure | extended_country_name | GWn | cown | polity_ccode | in_GW_system | in_cow_system | in_polity_system | polity_startdate | polity_enddate |
 |:---|---:|---:|:---|---:|---:|---:|:---|:---|:---|:---|:---|
-| Germany | 2015 | 1.6985623 | German Federal Republic | 260 | 255 | 255 | TRUE | TRUE | TRUE | 1990-10-02 | NA |
-| Germany | 1930 | 0.4372860 | Germany (Prussia) | 255 | 255 | 255 | TRUE | TRUE | TRUE | 1871-01-19 | 1945-05-07 |
-| Germany | 1970 | -0.1222703 | German Federal Republic | 260 | 260 | 260 | TRUE | TRUE | TRUE | 1945-05-08 | 1990-10-02 |
-| Germany | 1945 | -0.8337433 | German Federal Republic | 260 | 260 | 260 | FALSE | FALSE | TRUE | 1945-05-08 | 1990-10-02 |
-| East Germany | 1949 | 1.2246558 | German Democratic Republic | 265 | 265 | 265 | TRUE | FALSE | TRUE | 1945-05-08 | 1990-10-02 |
-| Federal Republic of Germany | 1992 | 0.4051241 | German Federal Republic | 260 | 255 | 255 | TRUE | TRUE | TRUE | 1990-10-02 | NA |
-| Somaliland | 1990 | -0.9020201 | Somaliland | NA | NA | NA | FALSE | FALSE | FALSE | NA | NA |
-| Somalia | 1990 | -0.5321832 | Somalia | 520 | 520 | 520 | TRUE | TRUE | TRUE | 1960-07-01 | NA |
-| Palestine | 1940 | 0.5091588 | Palestine, State of | NA | NA | NA | FALSE | FALSE | FALSE | NA | NA |
-| Russia | 1917 | 0.1057913 | Russia (Soviet Union) | 365 | 365 | 365 | TRUE | TRUE | TRUE | 1800-01-01 | 1922-12-29 |
-| Russia | 1912 | 0.3935541 | Russia (Soviet Union) | 365 | 365 | 365 | TRUE | TRUE | TRUE | 1800-01-01 | 1922-12-29 |
-| USSR | 1922 | -0.2045818 | Russia (Soviet Union) | 365 | 365 | 364 | TRUE | TRUE | TRUE | 1922-12-30 | 1991-12-31 |
-| Republic of Vietnam | 1975 | -0.8444520 | Vietnam, Republic of | 817 | 817 | 817 | FALSE | FALSE | TRUE | 1955-10-26 | 1975-12-31 |
-| Yugoslavia | 1990 | -0.1594665 | Yugoslavia | 345 | 345 | 345 | TRUE | TRUE | TRUE | 1921-01-01 | 1991-07-01 |
-| Yugoslavia | 1991 | 2.4142987 | Yugoslavia | 345 | 345 | 347 | TRUE | TRUE | TRUE | 1991-07-01 | 2003-03-11 |
-| Vietnam, South | 1954 | 0.0949766 | Vietnam, Republic of | 817 | 817 | 817 | TRUE | TRUE | FALSE | 1955-10-26 | 1975-12-31 |
+| Germany | 2015 | -0.1809378 | German Federal Republic | 260 | 255 | 255 | TRUE | TRUE | TRUE | 1990-10-02 | NA |
+| Germany | 1930 | 0.4800263 | Germany (Prussia) | 255 | 255 | 255 | TRUE | TRUE | TRUE | 1871-01-19 | 1945-05-07 |
+| Germany | 1970 | -2.1234532 | German Federal Republic | 260 | 260 | 260 | TRUE | TRUE | TRUE | 1945-05-08 | 1990-10-02 |
+| Germany | 1945 | -1.3974111 | German Federal Republic | 260 | 260 | 260 | FALSE | FALSE | TRUE | 1945-05-08 | 1990-10-02 |
+| East Germany | 1949 | 1.5519219 | German Democratic Republic | 265 | 265 | 265 | TRUE | FALSE | TRUE | 1945-05-08 | 1990-10-02 |
+| Federal Republic of Germany | 1992 | -0.8984450 | German Federal Republic | 260 | 255 | 255 | TRUE | TRUE | TRUE | 1990-10-02 | NA |
+| Somaliland | 1990 | -1.7347272 | Somaliland | NA | NA | NA | FALSE | FALSE | FALSE | NA | NA |
+| Somalia | 1990 | 1.7028987 | Somalia | 520 | 520 | 520 | TRUE | TRUE | TRUE | 1960-07-01 | NA |
+| Palestine | 1940 | -1.2112663 | Palestine, State of | NA | NA | NA | FALSE | FALSE | FALSE | NA | NA |
+| Russia | 1917 | -0.1369872 | Russia (Soviet Union) | 365 | 365 | 365 | TRUE | TRUE | TRUE | 1800-01-01 | 1922-12-29 |
+| Russia | 1912 | 0.7705973 | Russia (Soviet Union) | 365 | 365 | 365 | TRUE | TRUE | TRUE | 1800-01-01 | 1922-12-29 |
+| USSR | 1922 | 0.1935170 | Russia (Soviet Union) | 365 | 365 | 364 | TRUE | TRUE | TRUE | 1922-12-30 | 1991-12-31 |
+| Republic of Vietnam | 1975 | -0.8230275 | Vietnam, Republic of | 817 | 817 | 817 | FALSE | FALSE | TRUE | 1955-10-26 | 1975-12-31 |
+| Yugoslavia | 1990 | -0.1503804 | Yugoslavia | 345 | 345 | 345 | TRUE | TRUE | TRUE | 1921-01-01 | 1991-07-01 |
+| Yugoslavia | 1991 | 1.5028396 | Yugoslavia | 345 | 345 | 347 | TRUE | TRUE | TRUE | 1991-07-01 | 2003-03-11 |
+| Vietnam, South | 1954 | 1.6693457 | Vietnam, Republic of | 817 | 817 | 817 | TRUE | TRUE | FALSE | 1955-10-26 | 1975-12-31 |
 
 `country_year_coder` tries to match not just the country name or the
 country code (as `countrycode` does), but also to figure out the

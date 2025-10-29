@@ -1,0 +1,2269 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+padding-top: 0px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+<!-- badges: start -->
+
+<p><a href="https://github.com/xmarquez/democracyData/actions/workflows/R-CMD-check.yaml"><img role="img" aria-label="R-CMD-check" src="data:image/svg+xml; charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTIiIGhlaWdodD0iMjAiPgogIDx0aXRsZT5SLUNNRC1jaGVjayAtIHBhc3Npbmc8L3RpdGxlPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJ3b3JrZmxvdy1maWxsIiB4MT0iNTAlIiB5MT0iMCUiIHgyPSI1MCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iIzQ0NEQ1NiIgb2Zmc2V0PSIwJSI+PC9zdG9wPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjMjQyOTJFIiBvZmZzZXQ9IjEwMCUiPjwvc3RvcD4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InN0YXRlLWZpbGwiIHgxPSI1MCUiIHkxPSIwJSIgeDI9IjUwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjMzREMDU4IiBvZmZzZXQ9IjAlIj48L3N0b3A+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiMyOEE3NDUiIG9mZnNldD0iMTAwJSI+PC9zdG9wPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgIDxnIGZvbnQtZmFtaWx5PSImIzM5O0RlamFWdSBTYW5zJiMzOTssVmVyZGFuYSxHZW5ldmEsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSI+CiAgICAgIDxwYXRoIGlkPSJ3b3JrZmxvdy1iZyIgZD0iTTAsMyBDMCwxLjM0MzEgMS4zNTUyLDAgMy4wMjcwMjcwMywwIEwxMDIsMCBMMTAyLDIwIEwzLjAyNzAyNzAzLDIwIEMxLjM1NTIsMjAgMCwxOC42NTY5IDAsMTcgTDAsMyBaIiBmaWxsPSJ1cmwoI3dvcmtmbG93LWZpbGwpIiBmaWxsLXJ1bGU9Im5vbnplcm8iPjwvcGF0aD4KICAgICAgPHRleHQgZmlsbD0iIzAxMDEwMSIgZmlsbC1vcGFjaXR5PSIuMyI+CiAgICAgICAgPHRzcGFuIHg9IjIyLjE5ODE5ODIiIHk9IjE1IiBhcmlhLWhpZGRlbj0idHJ1ZSI+Ui1DTUQtY2hlY2s8L3RzcGFuPgogICAgICA8L3RleHQ+CiAgICAgIDx0ZXh0IGZpbGw9IiNGRkZGRkYiPgogICAgICAgIDx0c3BhbiB4PSIyMi4xOTgxOTgyIiB5PSIxNCI+Ui1DTUQtY2hlY2s8L3RzcGFuPgogICAgICA8L3RleHQ+CiAgICA8L2c+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDIpIiBmb250LWZhbWlseT0iJiMzOTtEZWphVnUgU2FucyYjMzk7LFZlcmRhbmEsR2VuZXZhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiPgogICAgICA8cGF0aCBkPSJNMCAwaDQ2LjkzOUM0OC42MjkgMCA1MCAxLjM0MyA1MCAzdjE0YzAgMS42NTctMS4zNyAzLTMuMDYxIDNIMFYweiIgaWQ9InN0YXRlLWJnIiBmaWxsPSJ1cmwoI3N0YXRlLWZpbGwpIiBmaWxsLXJ1bGU9Im5vbnplcm8iPjwvcGF0aD4KICAgICAgPHRleHQgZmlsbD0iIzAxMDEwMSIgZmlsbC1vcGFjaXR5PSIuMyIgYXJpYS1oaWRkZW49InRydWUiPgogICAgICAgIDx0c3BhbiB4PSI0IiB5PSIxNSI+cGFzc2luZzwvdHNwYW4+CiAgICAgIDwvdGV4dD4KICAgICAgPHRleHQgZmlsbD0iI0ZGRkZGRiI+CiAgICAgICAgPHRzcGFuIHg9IjQiIHk9IjE0Ij5wYXNzaW5nPC90c3Bhbj4KICAgICAgPC90ZXh0PgogICAgPC9nPgogICAgPHBhdGggZmlsbD0iIzk1OURBNSIgZD0iTTExIDNjLTMuODY4IDAtNyAzLjEzMi03IDdhNi45OTYgNi45OTYgMCAwIDAgNC43ODYgNi42NDFjLjM1LjA2Mi40ODItLjE0OC40ODItLjMzMiAwLS4xNjYtLjAxLS43MTgtLjAxLTEuMzA0LTEuNzU4LjMyNC0yLjIxMy0uNDI5LTIuMzUzLS44MjItLjA3OS0uMjAyLS40Mi0uODIzLS43MTctLjk5LS4yNDUtLjEzLS41OTUtLjQ1NC0uMDEtLjQ2My41NTItLjAwOS45NDYuNTA4IDEuMDc3LjcxOC42MyAxLjA1OCAxLjYzNi43NiAyLjAzOS41NzcuMDYxLS40NTUuMjQ1LS43NjEuNDQ2LS45MzYtMS41NTctLjE3NS0zLjE4NS0uNzc5LTMuMTg1LTMuNDU2IDAtLjc2Mi4yNzEtMS4zOTIuNzE4LTEuODgyLS4wNy0uMTc1LS4zMTUtLjg5Mi4wNy0xLjg1NSAwIDAgLjU4Ni0uMTgzIDEuOTI1LjcxOGE2LjUgNi41IDAgMCAxIDEuNzUtLjIzNiA2LjUgNi41IDAgMCAxIDEuNzUuMjM2YzEuMzM4LS45MSAxLjkyNS0uNzE4IDEuOTI1LS43MTguMzg1Ljk2My4xNCAxLjY4LjA3IDEuODU1LjQ0Ni40OS43MTcgMS4xMTIuNzE3IDEuODgyIDAgMi42ODYtMS42MzYgMy4yOC0zLjE5NCAzLjQ1Ni4yNTQuMjE5LjQ3My42MzkuNDczIDEuMjk1IDAgLjkzNi0uMDA5IDEuNjg5LS4wMDkgMS45MjUgMCAuMTg0LjEzMS40MDIuNDgxLjMzMkE3LjAxMSA3LjAxMSAwIDAgMCAxOCAxMGMwLTMuODY3LTMuMTMzLTctNy03eiI+PC9wYXRoPgogIDwvZz4KPC9zdmc+Cgo=" alt="R-CMD-check" /></a></p>
+<!-- badges: end -->
+
+<h1 id="democracydata">democracyData</h1>
+<p>This package archives a large number of datasets measuring democracy
+in use in the scholarly literature, and it provides functions to access
+many others. You can use it to access some widely used datasets,
+including <a href="http://www.systemicpeace.org/inscrdata.html">Polity5</a>, <a href="https://freedomhouse.org/">Freedom House</a>, <a href="http://sites.psu.edu/dictators/">Geddes, Wright, and Frantz’
+autocratic regimes dataset</a>, the <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106">Lexical
+Index of Electoral Democracy</a>, the <a href="https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited">DD/ACLP/PACL/CGV
+dataset</a>, the main indexes of the <a href="https://www.v-dem.net/vdemds.html">V-Dem dataset</a>, and many
+others.</p>
+<h2 id="installation">Installation</h2>
+<p>The package is only available on Github. Install as follows:</p>
+<pre><code>remotes::install_github(&quot;xmarquez/democracyData&quot;)</code></pre>
+<h2 id="basic-usage">Basic usage</h2>
+<p>For the vast majority of use cases, you can just type the name of the
+dataset you require. For example, here’s the <a href="https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited">DD/ACLP/PACL/CGV</a>
+dataset:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(democracyData)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>pacl</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 9,159 × 82</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co">#&gt;    order pacl_country  year aclpcode pacl_cowcode cowcode2 ccdcodelet ccdcodenum</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt;  1     1 Afghanistan   1946      142          700      700 AFG                 1</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#&gt;  2     2 Afghanistan   1947      142          700      700 AFG                 1</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt;  3     3 Afghanistan   1948      142          700      700 AFG                 1</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt;  4     4 Afghanistan   1949      142          700      700 AFG                 1</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt;  5     5 Afghanistan   1950      142          700      700 AFG                 1</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt;  6     6 Afghanistan   1951      142          700      700 AFG                 1</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt;  7     7 Afghanistan   1952      142          700      700 AFG                 1</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt;  8     8 Afghanistan   1953      142          700      700 AFG                 1</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt;  9     9 Afghanistan   1954      142          700      700 AFG                 1</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">#&gt; 10    10 Afghanistan   1955      142          700      700 AFG                 1</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#&gt; # ℹ 9,149 more rows</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="co">#&gt; # ℹ 74 more variables: aclpyear &lt;dbl&gt;, cowcode2year &lt;dbl&gt;, cowcodeyear &lt;dbl&gt;,</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="co">#&gt; #   chgterr &lt;dbl&gt;, ychgterr &lt;dbl&gt;, flagc_cowcode2 &lt;dbl&gt;, flage_cowcode2 &lt;dbl&gt;,</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="co">#&gt; #   entryy &lt;dbl&gt;, exity &lt;dbl&gt;, cid &lt;dbl&gt;, wdicode &lt;chr&gt;, imf_code &lt;dbl&gt;,</span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="co">#&gt; #   politycode &lt;dbl&gt;, bankscode &lt;dbl&gt;, dpicode &lt;chr&gt;, uncode &lt;dbl&gt;,</span></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="co">#&gt; #   un_region &lt;dbl&gt;, un_region_name &lt;chr&gt;, un_continent &lt;dbl&gt;,</span></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a><span class="co">#&gt; #   un_continent_name &lt;chr&gt;, aclp_region &lt;dbl&gt;, bornyear &lt;dbl&gt;, …</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># You can also use an alias:</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">dd</span>()</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 9,159 × 82</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt;    order pacl_country  year aclpcode pacl_cowcode cowcode2 ccdcodelet ccdcodenum</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt;  1     1 Afghanistan   1946      142          700      700 AFG                 1</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt;  2     2 Afghanistan   1947      142          700      700 AFG                 1</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt;  3     3 Afghanistan   1948      142          700      700 AFG                 1</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt;  4     4 Afghanistan   1949      142          700      700 AFG                 1</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt;  5     5 Afghanistan   1950      142          700      700 AFG                 1</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt;  6     6 Afghanistan   1951      142          700      700 AFG                 1</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt;  7     7 Afghanistan   1952      142          700      700 AFG                 1</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt;  8     8 Afghanistan   1953      142          700      700 AFG                 1</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt;  9     9 Afghanistan   1954      142          700      700 AFG                 1</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; 10    10 Afghanistan   1955      142          700      700 AFG                 1</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt; # ℹ 9,149 more rows</span></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">#&gt; # ℹ 74 more variables: aclpyear &lt;dbl&gt;, cowcode2year &lt;dbl&gt;, cowcodeyear &lt;dbl&gt;,</span></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt; #   chgterr &lt;dbl&gt;, ychgterr &lt;dbl&gt;, flagc_cowcode2 &lt;dbl&gt;, flage_cowcode2 &lt;dbl&gt;,</span></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co">#&gt; #   entryy &lt;dbl&gt;, exity &lt;dbl&gt;, cid &lt;dbl&gt;, wdicode &lt;chr&gt;, imf_code &lt;dbl&gt;,</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co">#&gt; #   politycode &lt;dbl&gt;, bankscode &lt;dbl&gt;, dpicode &lt;chr&gt;, uncode &lt;dbl&gt;,</span></span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a><span class="co">#&gt; #   un_region &lt;dbl&gt;, un_region_name &lt;chr&gt;, un_continent &lt;dbl&gt;,</span></span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a><span class="co">#&gt; #   un_continent_name &lt;chr&gt;, aclp_region &lt;dbl&gt;, bornyear &lt;dbl&gt;, …</span></span></code></pre></div>
+<p>Here’s <a href="http://www.systemicpeace.org/inscrdata.html">Polity
+IV</a>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>polityIV</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 17,562 × 40</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt;    cyear polityIV_ccode scode polityIV_country  year  flag fragment democ autoc</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt;    &lt;dbl&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt;  1 21800              2 USA   United States     1800     0       NA     7     3</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt;  2 21801              2 USA   United States     1801     0       NA     7     3</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt;  3 21802              2 USA   United States     1802     0       NA     7     3</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt;  4 21803              2 USA   United States     1803     0       NA     7     3</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt;  5 21804              2 USA   United States     1804     0       NA     7     3</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt;  6 21805              2 USA   United States     1805     0       NA     7     3</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt;  7 21806              2 USA   United States     1806     0       NA     7     3</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt;  8 21807              2 USA   United States     1807     0       NA     7     3</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt;  9 21808              2 USA   United States     1808     0       NA     7     3</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; 10 21809              2 USA   United States     1809     0       NA     9     0</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; # ℹ 17,552 more rows</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt; # ℹ 31 more variables: polity &lt;dbl&gt;, polity2 &lt;dbl&gt;, durable &lt;dbl&gt;, xrreg &lt;dbl&gt;,</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt; #   xrcomp &lt;dbl&gt;, xropen &lt;dbl&gt;, xconst &lt;dbl&gt;, parreg &lt;dbl&gt;, parcomp &lt;dbl&gt;,</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co">#&gt; #   exrec &lt;dbl&gt;, exconst &lt;dbl&gt;, polcomp &lt;dbl&gt;, prior &lt;dbl&gt;, emonth &lt;dbl&gt;,</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="co">#&gt; #   eday &lt;dbl&gt;, eyear &lt;dbl&gt;, eprec &lt;dbl&gt;, interim &lt;dbl&gt;, bmonth &lt;dbl&gt;,</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co">#&gt; #   bday &lt;dbl&gt;, byear &lt;dbl&gt;, bprec &lt;dbl&gt;, post &lt;dbl&gt;, change &lt;dbl&gt;, d4 &lt;dbl&gt;,</span></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt; #   sf &lt;dbl&gt;, regtrans &lt;dbl&gt;, extended_country_name &lt;chr&gt;, GWn &lt;dbl&gt;, …</span></span></code></pre></div>
+<p>And here’s a basic version of the V-Dem dataset, including only the 7
+main indexes of democracy:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>vdem_simple</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 27,913 × 54</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt;    vdem_country_name country_text_id country_id  year historical_date project</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;             &lt;chr&gt;                &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;            &lt;dbl&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#&gt;  1 Mexico            MEX                      3  1789 1789-12-31            1</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co">#&gt;  2 Mexico            MEX                      3  1790 1790-12-31            1</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt;  3 Mexico            MEX                      3  1791 1791-12-31            1</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt;  4 Mexico            MEX                      3  1792 1792-12-31            1</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">#&gt;  5 Mexico            MEX                      3  1793 1793-12-31            1</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="co">#&gt;  6 Mexico            MEX                      3  1794 1794-12-31            1</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">#&gt;  7 Mexico            MEX                      3  1795 1795-12-31            1</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="co">#&gt;  8 Mexico            MEX                      3  1796 1796-12-31            1</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co">#&gt;  9 Mexico            MEX                      3  1797 1797-12-31            1</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co">#&gt; 10 Mexico            MEX                      3  1798 1798-12-31            1</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co">#&gt; # ℹ 27,903 more rows</span></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co">#&gt; # ℹ 48 more variables: historical &lt;dbl&gt;, histname &lt;chr&gt;, codingstart &lt;dbl&gt;,</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="co">#&gt; #   codingend &lt;dbl&gt;, codingstart_contemp &lt;dbl&gt;, codingend_contemp &lt;dbl&gt;,</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="co">#&gt; #   codingstart_hist &lt;dbl&gt;, codingend_hist &lt;dbl&gt;, gapstart1 &lt;dbl&gt;,</span></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="co">#&gt; #   gapstart2 &lt;dbl&gt;, gapstart3 &lt;dbl&gt;, gapend1 &lt;dbl&gt;, gapend2 &lt;dbl&gt;,</span></span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="co">#&gt; #   gapend3 &lt;dbl&gt;, gap_index &lt;dbl&gt;, vdem_cowcode &lt;dbl&gt;, v2x_polyarchy &lt;dbl&gt;,</span></span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="co">#&gt; #   v2x_polyarchy_codelow &lt;dbl&gt;, v2x_polyarchy_codehigh &lt;dbl&gt;, …</span></span></code></pre></div>
+<p>All datasets in this package are fully documented; type
+<code>?pacl</code> for example to see the documentation for the PACL
+dataset.</p>
+<h2 id="downloading-democracy-data">Downloading democracy data</h2>
+<p>Though all datasets can be accessed directly from this package, most
+datasets can also be downloaded directly from the internet, including
+the family of datasets released by <a href="https://freedomhouse.org/">Freedom House</a> and the full V-Dem
+dataset. To download the Freedom House dataset, use the the
+<code>download_*</code> family of functions; to download the full V-Dem
+dataset, use the <a href="https://github.com/vdeminstitute/vdemdata">vdemdata</a> package.
+The package <em>does</em> include the main indexes of version 15.0 of
+V-Dem (see <code>vdem_simple</code>), so you don’t need to use the <a href="https://github.com/vdeminstitute/vdemdata">vdemdata</a> package if
+you are only interested in the higher-level indexes of democracy. You
+can also download directly the latest versions of the World Bank’s Voice
+and Accountability Index from the <a href="http://info.worldbank.org/governance/wgi/">World Governance
+Indicators</a> and <a href="http://www.systemicpeace.org/inscrdata.html">Polity5</a>, though
+there are also archived versions of these two in the package.</p>
+<p>For example, we can download and process the Freedom House “Freedom
+in the World” dataset as follows:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>fh_downloaded <span class="ot">&lt;-</span> <span class="fu">download_fh</span>(<span class="at">verbose =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>fh_downloaded </span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co">#&gt; # A tibble: 9,435 × 11</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">#&gt;    fh_country   year    pr    cl status fh_total fh_total_reversed</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;     &lt;dbl&gt;             &lt;dbl&gt;</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">#&gt;  1 Afghanistan  1972     4     5 PF            9                 5</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">#&gt;  2 Afghanistan  1973     7     6 NF           13                 1</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co">#&gt;  3 Afghanistan  1974     7     6 NF           13                 1</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co">#&gt;  4 Afghanistan  1975     7     6 NF           13                 1</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co">#&gt;  5 Afghanistan  1976     7     6 NF           13                 1</span></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co">#&gt;  6 Afghanistan  1977     6     6 NF           12                 2</span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co">#&gt;  7 Afghanistan  1978     7     7 NF           14                 0</span></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co">#&gt;  8 Afghanistan  1979     7     7 NF           14                 0</span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="co">#&gt;  9 Afghanistan  1980     7     7 NF           14                 0</span></span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="co">#&gt; 10 Afghanistan  1982     7     7 NF           14                 0</span></span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a><span class="co">#&gt; # ℹ 9,425 more rows</span></span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a><span class="co">#&gt; # ℹ 4 more variables: extended_country_name &lt;chr&gt;, GWn &lt;dbl&gt;, cown &lt;dbl&gt;,</span></span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a><span class="co">#&gt; #   in_GW_system &lt;lgl&gt;</span></span></code></pre></div>
+<p>This downloads the latest update of the “Freedom in the World”
+dataset (1972-2024, corresponding to the 2025 report), puts it in
+country-year format (extracting the relevant info from the awful Excel
+table that Freedom House makes available), calculates the variables
+<code>fh_total</code> and <code>fh_total_reversed</code>, and adds state
+system information, including a standardized country name, the <a href="http://privatewww.essex.ac.uk/~ksg/statelist.html">Gleditsch-Ward</a>
+country code and the <a href="http://www.correlatesofwar.org/data-sets/state-system-membership">Correlates
+of War</a> country code. You can also, however, use the archived version
+(<code>fh</code>):</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">identical</span>(fh_downloaded, fh)</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co">#&gt; [1] FALSE</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>fh</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt; # A tibble: 9,965 × 11</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt;    fh_country   year    pr    cl status fh_total fh_total_reversed</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;     &lt;dbl&gt;             &lt;dbl&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt;  1 Afghanistan  1972     4     5 PF            9                 5</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt;  2 Afghanistan  1973     7     6 NF           13                 1</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">#&gt;  3 Afghanistan  1974     7     6 NF           13                 1</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt;  4 Afghanistan  1975     7     6 NF           13                 1</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt;  5 Afghanistan  1976     7     6 NF           13                 1</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">#&gt;  6 Afghanistan  1977     6     6 NF           12                 2</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">#&gt;  7 Afghanistan  1978     7     7 NF           14                 0</span></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="co">#&gt;  8 Afghanistan  1979     7     7 NF           14                 0</span></span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a><span class="co">#&gt;  9 Afghanistan  1980     7     7 NF           14                 0</span></span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a><span class="co">#&gt; 10 Afghanistan  1982     7     7 NF           14                 0</span></span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a><span class="co">#&gt; # ℹ 9,955 more rows</span></span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a><span class="co">#&gt; # ℹ 4 more variables: extended_country_name &lt;chr&gt;, GWn &lt;dbl&gt;, cown &lt;dbl&gt;,</span></span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a><span class="co">#&gt; #   in_GW_system &lt;lgl&gt;</span></span></code></pre></div>
+<p>Other democracy datasets can often also be “re-downloaded” from the
+websites of their creators or maintainers if required. For example, one
+can either access PACL directly by typing</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>pacl</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 9,159 × 82</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">#&gt;    order pacl_country  year aclpcode pacl_cowcode cowcode2 ccdcodelet ccdcodenum</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co">#&gt;  1     1 Afghanistan   1946      142          700      700 AFG                 1</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">#&gt;  2     2 Afghanistan   1947      142          700      700 AFG                 1</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">#&gt;  3     3 Afghanistan   1948      142          700      700 AFG                 1</span></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt;  4     4 Afghanistan   1949      142          700      700 AFG                 1</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt;  5     5 Afghanistan   1950      142          700      700 AFG                 1</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt;  6     6 Afghanistan   1951      142          700      700 AFG                 1</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">#&gt;  7     7 Afghanistan   1952      142          700      700 AFG                 1</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt;  8     8 Afghanistan   1953      142          700      700 AFG                 1</span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">#&gt;  9     9 Afghanistan   1954      142          700      700 AFG                 1</span></span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt; 10    10 Afghanistan   1955      142          700      700 AFG                 1</span></span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="co">#&gt; # ℹ 9,149 more rows</span></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">#&gt; # ℹ 74 more variables: aclpyear &lt;dbl&gt;, cowcode2year &lt;dbl&gt;, cowcodeyear &lt;dbl&gt;,</span></span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">#&gt; #   chgterr &lt;dbl&gt;, ychgterr &lt;dbl&gt;, flagc_cowcode2 &lt;dbl&gt;, flage_cowcode2 &lt;dbl&gt;,</span></span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="co">#&gt; #   entryy &lt;dbl&gt;, exity &lt;dbl&gt;, cid &lt;dbl&gt;, wdicode &lt;chr&gt;, imf_code &lt;dbl&gt;,</span></span>
+<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a><span class="co">#&gt; #   politycode &lt;dbl&gt;, bankscode &lt;dbl&gt;, dpicode &lt;chr&gt;, uncode &lt;dbl&gt;,</span></span>
+<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a><span class="co">#&gt; #   un_region &lt;dbl&gt;, un_region_name &lt;chr&gt;, un_continent &lt;dbl&gt;,</span></span>
+<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a><span class="co">#&gt; #   un_continent_name &lt;chr&gt;, aclp_region &lt;dbl&gt;, bornyear &lt;dbl&gt;, …</span></span></code></pre></div>
+<p>Or re-download the dataset from Jose Antonio Cheibub’s website as
+follows:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>pacl_redownloaded <span class="ot">&lt;-</span> <span class="fu">redownload_pacl</span>(<span class="at">verbose =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>pacl_redownloaded</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="co">#&gt; # A tibble: 9,159 × 82</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="co">#&gt;    order pacl_country  year aclpcode pacl_cowcode cowcode2 ccdcodelet ccdcodenum</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;</span></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="co">#&gt;  1     1 Afghanistan   1946      142          700      700 AFG                 1</span></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="co">#&gt;  2     2 Afghanistan   1947      142          700      700 AFG                 1</span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="co">#&gt;  3     3 Afghanistan   1948      142          700      700 AFG                 1</span></span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="co">#&gt;  4     4 Afghanistan   1949      142          700      700 AFG                 1</span></span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a><span class="co">#&gt;  5     5 Afghanistan   1950      142          700      700 AFG                 1</span></span>
+<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a><span class="co">#&gt;  6     6 Afghanistan   1951      142          700      700 AFG                 1</span></span>
+<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a><span class="co">#&gt;  7     7 Afghanistan   1952      142          700      700 AFG                 1</span></span>
+<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a><span class="co">#&gt;  8     8 Afghanistan   1953      142          700      700 AFG                 1</span></span>
+<span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a><span class="co">#&gt;  9     9 Afghanistan   1954      142          700      700 AFG                 1</span></span>
+<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a><span class="co">#&gt; 10    10 Afghanistan   1955      142          700      700 AFG                 1</span></span>
+<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a><span class="co">#&gt; # ℹ 9,149 more rows</span></span>
+<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a><span class="co">#&gt; # ℹ 74 more variables: aclpyear &lt;dbl&gt;, cowcode2year &lt;dbl&gt;, cowcodeyear &lt;dbl&gt;,</span></span>
+<span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a><span class="co">#&gt; #   chgterr &lt;dbl&gt;, ychgterr &lt;dbl&gt;, flagc_cowcode2 &lt;dbl&gt;, flage_cowcode2 &lt;dbl&gt;,</span></span>
+<span id="cb9-21"><a href="#cb9-21" tabindex="-1"></a><span class="co">#&gt; #   entryy &lt;dbl&gt;, exity &lt;dbl&gt;, cid &lt;dbl&gt;, wdicode &lt;chr&gt;, imf_code &lt;dbl&gt;,</span></span>
+<span id="cb9-22"><a href="#cb9-22" tabindex="-1"></a><span class="co">#&gt; #   politycode &lt;dbl&gt;, bankscode &lt;dbl&gt;, dpicode &lt;chr&gt;, uncode &lt;dbl&gt;,</span></span>
+<span id="cb9-23"><a href="#cb9-23" tabindex="-1"></a><span class="co">#&gt; #   un_region &lt;dbl&gt;, un_region_name &lt;chr&gt;, un_continent &lt;dbl&gt;,</span></span>
+<span id="cb9-24"><a href="#cb9-24" tabindex="-1"></a><span class="co">#&gt; #   un_continent_name &lt;chr&gt;, aclp_region &lt;dbl&gt;, bornyear &lt;dbl&gt;, …</span></span></code></pre></div>
+<p>These two data frames should be identical:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="fu">identical</span>(pacl, pacl_redownloaded)</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
+<p>You should thus normally use the “archived” versions of these
+datasets, unless you want to manipulate the raw data yourself (using the
+<code>redownload_*</code> functions with the option
+<code>return_raw = TRUE</code>), or think they might have been updated
+since you installed this package.</p>
+<h2 id="included-democracy-datasets">Included democracy datasets</h2>
+<p>For a list of all the democracy datasets available through this
+package, type <code>democracy_info</code>:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="co">#&gt; Attaching package: &#39;dplyr&#39;</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="co">#&gt; The following objects are masked from &#39;package:stats&#39;:</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a><span class="co">#&gt;     filter, lag</span></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="co">#&gt; The following objects are masked from &#39;package:base&#39;:</span></span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a>democracy_info <span class="sc">|&gt;</span></span>
+<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">dataset</th>
+<th align="left">long_name</th>
+<th align="left">main_democracy_measure_col</th>
+<th align="left">measure_type</th>
+<th align="left">based_on</th>
+<th align="left">in_pmm_replication</th>
+<th align="left">categorical_regime_types</th>
+<th align="left">user_extendable</th>
+<th align="left">downloadable</th>
+<th align="left">included_in_package</th>
+<th align="right">first_published_use</th>
+<th align="left">source_link</th>
+<th align="left">licensing_info</th>
+<th align="left">notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">anckar</td>
+<td align="left">The Anckar-Fredriksson dataset of political
+regimes</td>
+<td align="left">democracy</td>
+<td align="left">dichotomous</td>
+<td align="left">bmr</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2018</td>
+<td align="left"><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/7SSSAH&amp;version=2.0">https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/7SSSAH&amp;version=2.0</a></td>
+<td align="left">CC0 1.0</td>
+<td align="left">The democracy measure should be equivalent to
+democracy_omitteddata from bmr up to 2010; it may have some divergences
+for the 2011-2016 period.</td>
+</tr>
+<tr>
+<td align="left">anrr</td>
+<td align="left">The Acemoglu, Naidu, Restrepo, and Robinson
+dataset</td>
+<td align="left">dem</td>
+<td align="left">dichotomous</td>
+<td align="left">FH,Polity</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">2019</td>
+<td align="left"><a href="https://www.journals.uchicago.edu/doi/full/10.1086/700936">https://www.journals.uchicago.edu/doi/full/10.1086/700936</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">The measure can be extended by using the latest FH,
+Polity, and PACL Data, but the rules are not entirely transparent, and
+some cases in the original dataset have been hand-coded.</td>
+</tr>
+<tr>
+<td align="left">arat_pmm</td>
+<td align="left">The Arat measure of democracy</td>
+<td align="left">pmm_arat</td>
+<td align="left">continuous</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">1991</td>
+<td align="left">NA</td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">Only available via the Pemstein, Meserve, and Melton
+(2013) replication data. I have not been able to access the original
+data.</td>
+</tr>
+<tr>
+<td align="left">blm</td>
+<td align="left">The Bowman, Lehoucq, and Mahoney index of democracy for
+Central America</td>
+<td align="left">blm</td>
+<td align="left">trichotomous</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">2005</td>
+<td align="left">NA</td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">This used to be downloadable; the website hosting it is
+down, however.</td>
+</tr>
+<tr>
+<td align="left">bmr</td>
+<td align="left">The Boix-Miller-Rosato dichotomous coding of democracy,
+1800-2015, version 4.0</td>
+<td align="left">democracy,democracy_omitteddata,democracy_femalesuffrage</td>
+<td align="left">dichotomous</td>
+<td align="left">PACL</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2010</td>
+<td align="left"><a href="https://sites.google.com/site/mkmtwo/data">https://sites.google.com/site/mkmtwo/data</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">bnr</td>
+<td align="left">The Bernhard, Nordstrom &amp; Reenock Event History
+Coding of Democratic Breakdowns</td>
+<td align="left">event,bnr</td>
+<td align="left">dichotomous</td>
+<td align="left">NA</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">2001</td>
+<td align="left">NA</td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">Can be extended using a full panel of sovereign
+countries (COW). Extended version included in this package. This used to
+be downloadable; the website hosting it is down, however.</td>
+</tr>
+<tr>
+<td align="left">bti</td>
+<td align="left">The Berteslmann Index of Political transformation</td>
+<td align="left">SI_Democracy_Status</td>
+<td align="left">continuous</td>
+<td align="left">NA</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2006</td>
+<td align="left"><a href="https://bti-project.org/fileadmin/api/content/en/downloads/data/BTI_2006-2022_Scores.xlsx">https://bti-project.org/fileadmin/api/content/en/downloads/data/BTI_2006-2022_Scores.xlsx</a></td>
+<td align="left">Unknown.</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">bollen_pmm</td>
+<td align="left">The Bollen measure of democracy</td>
+<td align="left">pmm_bollen</td>
+<td align="left">continuous</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">1978</td>
+<td align="left">NA</td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">The original data was compiled in 1978, for Bollen’s
+dissertation; existing data seems to be from the 2000 update. I do not
+know how much it changed over time. Only available via the Pemstein,
+Meserve, and Melton (2013) replication data. I have not been able to
+access the original data.</td>
+</tr>
+<tr>
+<td align="left">doorenspleet</td>
+<td align="left">Renske Doorenspleet’s Democracy Dataset</td>
+<td align="left">doorenspleet,regime</td>
+<td align="left">dichotomous</td>
+<td align="left">Polity</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">2000</td>
+<td align="left"><a href="https://www.cambridge.org/core/journals/world-politics/article/abs/reassessing-the-three-waves-of-democratization/25A6CB38E6746F98D882DFC43A54D211">https://www.cambridge.org/core/journals/world-politics/article/abs/reassessing-the-three-waves-of-democratization/25A6CB38E6746F98D882DFC43A54D211</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">eiu</td>
+<td align="left">The Economist Intelligence Unit’s Democracy Index</td>
+<td align="left">eiu</td>
+<td align="left">continuous</td>
+<td align="left">NA</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">2006</td>
+<td align="left">NA</td>
+<td align="left">Unknown.</td>
+<td align="left">The original data has to be manually extracted from the
+tables in the EIU’s pdf report on the index.</td>
+</tr>
+<tr>
+<td align="left">fh</td>
+<td align="left">Freedom House “Freedom in the World” data</td>
+<td align="left">status,fh_total,fh_total_reversed</td>
+<td align="left">ordinal</td>
+<td align="left">FH</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="right">1973</td>
+<td align="left"><a href="https://freedomhouse.org/reports/publication-archives">https://freedomhouse.org/reports/publication-archives</a></td>
+<td align="left">Unknown.</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">fh_full</td>
+<td align="left">Freedom House “Freedom in the World” data</td>
+<td align="left">total</td>
+<td align="left">continuous</td>
+<td align="left">FH</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="right">2013</td>
+<td align="left">NA</td>
+<td align="left">Unknown.</td>
+<td align="left">This is the 0-100 score Freedom House uses for its more
+aggregated ratings. Freedom House changed its methodology in 2013, so
+the full data is different for this period; full data from 2003-2012 is
+available in their website, but is not yet included in this
+package.</td>
+</tr>
+<tr>
+<td align="left">fh_electoral</td>
+<td align="left">Freedom House “Electoral Democracies” List</td>
+<td align="left">electoral</td>
+<td align="left">dichotomous</td>
+<td align="left">FH</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="right">1990</td>
+<td align="left">NA</td>
+<td align="left">Unknown.</td>
+<td align="left">The electoral democracy list seems to have only been
+compiled since the 1990s, but I have not been able to find an exact date
+of first compilation.</td>
+</tr>
+<tr>
+<td align="left">gwf</td>
+<td align="left">The Geddes Wright and Frantz Autocratic Regimes
+dataset</td>
+<td align="left">gwf_regimetype,gwf_nonautocracy</td>
+<td align="left">dichotomous</td>
+<td align="left">PACL</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2014</td>
+<td align="left"><a href="http://sites.psu.edu/dictators/">http://sites.psu.edu/dictators/</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">Can be extended using the gwf_duration variable.
+Extended version included in this package.</td>
+</tr>
+<tr>
+<td align="left">hadenius_pmm</td>
+<td align="left">Axel Hadenius’ Index of Democracy</td>
+<td align="left">pmm_hadenius</td>
+<td align="left">continuous</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">1992</td>
+<td align="left">NA</td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">Only available via the Pemstein, Meserve, and Melton
+(2013) replication data. I have not been able to access the original
+data.</td>
+</tr>
+<tr>
+<td align="left">kailitz</td>
+<td align="left">The Steffen Kailitz Dataset of Authoritarian Regime
+Types</td>
+<td align="left">combined_regime,kailitz_binary,kailitz_tri</td>
+<td align="left">dichotomous</td>
+<td align="left">NA</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">2013</td>
+<td align="left"><a href="https://journals.sagepub.com/doi/full/10.1177/0192512115616830">https://journals.sagepub.com/doi/full/10.1177/0192512115616830</a></td>
+<td align="left">Unknown.</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">LIED</td>
+<td align="left">The Lexical Index of Electoral Democracy, v. 3</td>
+<td align="left">lexical_index</td>
+<td align="left">ordinal</td>
+<td align="left">PIPE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2015</td>
+<td align="left"><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT">https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT</a></td>
+<td align="left">CC0 1.0</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">magaloni</td>
+<td align="left">Autocracies of the World, 1950-2012 (Version 1.0).</td>
+<td align="left">demo_nr,demo_r,regime_r,regime_nr</td>
+<td align="left">dichotomous</td>
+<td align="left">PACL</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2013</td>
+<td align="left"><a href="http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset/">http://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset/</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">Can be extended using the duration_nr variable.
+Extended version included in this package.</td>
+</tr>
+<tr>
+<td align="left">mainwaring</td>
+<td align="left">Mainwaring, Brinks, and Perez Linan’s democracy measure
+for Latin America</td>
+<td align="left">mainwaring,Regime</td>
+<td align="left">trichotomous</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">2001</td>
+<td align="left">NA</td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">munck_pmm</td>
+<td align="left">Munck Index of Democracy</td>
+<td align="left">pmm_munck</td>
+<td align="left">continuous</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">2009</td>
+<td align="left">NA</td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">Only available via the Pemstein, Meserve, and Melton
+(2013) replication data. I have not been able to access the original
+data.</td>
+</tr>
+<tr>
+<td align="left">pacl, pacl_update</td>
+<td align="left">The Democracy and Dictatorship Dataset
+(DD/PACL/ACLP/CGV)</td>
+<td align="left">democracy,regime,Democracy,DD_regime,DD_category</td>
+<td align="left">dichotomous</td>
+<td align="left">PACL</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1996</td>
+<td align="left"><a href="http://www.christianbjoernskov.com/bjoernskovrodedata/">http://www.christianbjoernskov.com/bjoernskovrodedata/</a>,
+<a href="https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta">https://uofi.box.com/shared/static/bba3968d7c3397c024ec.dta</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">The original data was first compiled, as far as I know,
+for the famous ACLP study “Modernization: Theories and Facts” study of
+1996. It was extended and changed by Cheibub, Gandhi, and Vreeland in
+2010 (pacl dataset) and further updated by Bjornskov and Rode (2020;
+pacl_update dataset), who added new institutional variables.</td>
+</tr>
+<tr>
+<td align="left">peps</td>
+<td align="left">Participation-Enhanced Polity Score</td>
+<td align="left">PEPS1i,PEPS2i,PEPS1q,PEPS2q,PEPS1v,PEPS2v,polity1raw,Polity1,Polity2,Polity3</td>
+<td align="left">continuous</td>
+<td align="left">Polity</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2006</td>
+<td align="left"><a href="http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta">http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">PIPE</td>
+<td align="left">The Political Institutions and Political Events (PIPE)
+dataset</td>
+<td align="left">democracy,democracy2,regime</td>
+<td align="left">dichotomous</td>
+<td align="left">PIPE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">2010</td>
+<td align="left"><a href="https://sites.google.com/a/nyu.edu/adam-przeworski/home/data">https://sites.google.com/a/nyu.edu/adam-przeworski/home/data</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">Democracy measures in PIPE are calculated in this
+package on the basis of imperfect instructions in the codebook. Use with
+care. This used to be downloadable; the link no longer works,
+however.</td>
+</tr>
+<tr>
+<td align="left">pitf</td>
+<td align="left">Political Instability Task Force democracy
+indicator</td>
+<td align="left">pitf_binary</td>
+<td align="left">dichotomous</td>
+<td align="left">Polity</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">2010</td>
+<td align="left"><a href="http://www.systemicpeace.org/inscr/">http://www.systemicpeace.org/inscr/</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">Constructed score on the basis of Polity data.</td>
+</tr>
+<tr>
+<td align="left">pitf</td>
+<td align="left">Political Instability Task Force democracy
+indicator</td>
+<td align="left">pitf</td>
+<td align="left">ordinal</td>
+<td align="left">Polity</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">2010</td>
+<td align="left"><a href="http://www.systemicpeace.org/inscr/">http://www.systemicpeace.org/inscr/</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">Constructed score on the basis of Polity data.</td>
+</tr>
+<tr>
+<td align="left">polityIV</td>
+<td align="left">The Polity IV dataset</td>
+<td align="left">polity,polity2</td>
+<td align="left">ordinal</td>
+<td align="left">Polity</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1975</td>
+<td align="left"><a href="http://www.systemicpeace.org/inscr/">http://www.systemicpeace.org/inscr/</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">The first compilation of this dataset (POLITY I) was
+probably first used in a 1975 study by Eckstein and Gurr, but had been
+collected by Gurr since the late 1960s. The current form of the data is
+very different from the original Polity I data. The Polity II codebook
+survives, but I find no record of the Polity I codebook.</td>
+</tr>
+<tr>
+<td align="left">polity_annual</td>
+<td align="left">The Polity5 dataset</td>
+<td align="left">polity,polity2</td>
+<td align="left">ordinal</td>
+<td align="left">Polity</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="right">1975</td>
+<td align="left"><a href="http://www.systemicpeace.org/inscr/">http://www.systemicpeace.org/inscr/</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">The first compilation of this dataset (POLITY I) was
+probably first used in a 1975 study by Eckstein and Gurr, but had been
+collected by Gurr since the late 1960s. The current form of the data is
+very different from the original Polity I data. The Polity II codebook
+survives, but I find no record of the Polity I codebook.</td>
+</tr>
+<tr>
+<td align="left">polyarchy</td>
+<td align="left">The Polyarchy Scale and the Contestation Scale</td>
+<td align="left">cont,poly</td>
+<td align="left">ordinal</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1990</td>
+<td align="left"><a href="https://www3.nd.edu/~mcoppedg/crd/poly8500.sav">https://www3.nd.edu/~mcoppedg/crd/poly8500.sav</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">polyarchy_dimensions</td>
+<td align="left">Latent Dimensions of Contestation and Inclusiveness by
+Michael Coppedge, Angel Alvarez, and Claudia Maldonado</td>
+<td align="left">CONTEST,INCLUS</td>
+<td align="left">continuous</td>
+<td align="left">latent variable</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2008</td>
+<td align="left"><a href="http://www3.nd.edu/~mcoppedg/crd/DahlDims.sav">http://www3.nd.edu/~mcoppedg/crd/DahlDims.sav</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">prc_gasiorowski</td>
+<td align="left">The Political Regime Change (PRC) dataset.</td>
+<td align="left">regime,prc,prc_at_end_year,prc_at_beginning_year</td>
+<td align="left">trichotomous</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">1996</td>
+<td align="left">NA</td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">reign</td>
+<td align="left">The Rulers, Elections, and Irregular Governance (REIGN)
+dataset, regime characteristics worksheet.</td>
+<td align="left">gwf_regimetype</td>
+<td align="left">dichotomous</td>
+<td align="left">GWF</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2016</td>
+<td align="left"><a href="https://github.com/OEFDataScience/REIGN.github.io">https://github.com/OEFDataScience/REIGN.github.io</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">Archived here now, since collection has stopped.</td>
+</tr>
+<tr>
+<td align="left">svmdi</td>
+<td align="left">Suport Vector Machine Democracy Index by Grundler and
+Krieger</td>
+<td align="left">svmdi, csvmdi</td>
+<td align="left">continuous</td>
+<td align="left">latent variable</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2016</td>
+<td align="left"><a href="https://ml-democracy-index.net/">https://ml-democracy-index.net/</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">svmdi</td>
+<td align="left">Suport Vector Machine Democracy Index by Grundler and
+Krieger</td>
+<td align="left">dsvmdi</td>
+<td align="left">dichotomous</td>
+<td align="left">latent variable</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2016</td>
+<td align="left"><a href="https://ml-democracy-index.net/">https://ml-democracy-index.net/</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">svolik_regime</td>
+<td align="left">Milan Svolik’s Regime Dataset</td>
+<td align="left">regime,regime_numeric</td>
+<td align="left">dichotomous</td>
+<td align="left">PACL</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">2012</td>
+<td align="left"><a href="https://campuspress.yale.edu/svolik/the-politics-of-authoritarian-rule/">https://campuspress.yale.edu/svolik/the-politics-of-authoritarian-rule/</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">uds</td>
+<td align="left">The Unified Democracy Scores</td>
+<td align="left">mean,median</td>
+<td align="left">continuous</td>
+<td align="left">latent variable</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">2010</td>
+<td align="left">NA</td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">Can be extended using the methods described in this
+package’s “Replicating and Extending the UD scores of Pemstein, Meserve,
+and Melton” article (<a href="https://xmarquez.github.io/democracyData/articles/articles/Replicating_and_extending_the_UD_scores.html">https://xmarquez.github.io/democracyData/articles/articles/Replicating_and_extending_the_UD_scores.html</a>)</td>
+</tr>
+<tr>
+<td align="left">ulfelder</td>
+<td align="left">The Democracy/Autocracy Dataset by Jay Ulfelder</td>
+<td align="left">rgjtype</td>
+<td align="left">dichotomous</td>
+<td align="left">Polity</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2007</td>
+<td align="left"><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=hdl:1902.1/18836">https://dataverse.harvard.edu/dataset.xhtml?persistentId=hdl:1902.1/18836</a></td>
+<td align="left">CC0 1.0</td>
+<td align="left">Can be extended using the rgjdurd and rgjdura
+variables. Extended version included in this package.</td>
+</tr>
+<tr>
+<td align="left">utip</td>
+<td align="left">The University of Texas Inequality Project Categorical
+Dataset of Political Regimes</td>
+<td align="left">utip_trichotomous</td>
+<td align="left">trichotomous</td>
+<td align="left">NA</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2008</td>
+<td align="left"><a href="http://utip.lbj.utexas.edu/datasets.html">http://utip.lbj.utexas.edu/datasets.html</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">Both the dichotomous and trichotomous versions of these
+measures are calculated by this package. The original dataset
+distinguishes several different types of democracy.</td>
+</tr>
+<tr>
+<td align="left">utip</td>
+<td align="left">The University of Texas Inequality Project Categorical
+Dataset of Political Regimes</td>
+<td align="left">utip_dichotomous,utip_dichotomous_strict</td>
+<td align="left">dichotomous</td>
+<td align="left">NA</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2008</td>
+<td align="left"><a href="http://utip.lbj.utexas.edu/datasets.html">http://utip.lbj.utexas.edu/datasets.html</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">Both the dichotomous and trichotomous versions of these
+measures are calculated by this package. The original dataset
+distinguishes several different types of democracy.</td>
+</tr>
+<tr>
+<td align="left">vanhanen</td>
+<td align="left">Vanhanen measures of democracy, 1800-2018</td>
+<td align="left">vanhanen_democratization</td>
+<td align="left">continuous</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">1968</td>
+<td align="left"><a href="https://services.fsd.tuni.fi/catalogue/FSD1289?lang=en&amp;study_language=en">https://services.fsd.tuni.fi/catalogue/FSD1289?lang=en&amp;study_language=en</a></td>
+<td align="left">CC-BY 4.0</td>
+<td align="left">Vanhanen first collected democracy data on 12 countries
+for his 1968 dissertation. Current data is different from the original
+data, though it still uses a similar conceptual scheme.</td>
+</tr>
+<tr>
+<td align="left">vaporeg</td>
+<td align="left">The Varieties of Political Regimes dataset by
+Kailitz</td>
+<td align="left">vaporeg_dem</td>
+<td align="left">dichotomous</td>
+<td align="left">NA</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">2024</td>
+<td align="left"><a href="https://www.va-poreg.de/">https://www.va-poreg.de/</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">This revises and extends the Kailitz dataset of
+political regimes.</td>
+</tr>
+<tr>
+<td align="left">vdem</td>
+<td align="left">The Varieties of Democracy Dataset, version 14</td>
+<td align="left">v2x_polyarchy,v2x_api,v2x_mpi,v2x_libdem,v2x_partipdem,v2x_delibdem,v2x_egaldem</td>
+<td align="left">continuous</td>
+<td align="left">NA</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">2015</td>
+<td align="left"><a href="https://www.v-dem.net/data/the-v-dem-dataset/">https://www.v-dem.net/data/the-v-dem-dataset/</a></td>
+<td align="left">CC-BY-SA 4.0</td>
+<td align="left">The full dataset be accessed using the package
+vdemdata. (Use “remotes::install_github(”vdeminstitute/vdemdata”)“; the
+package is not on CRAN)</td>
+</tr>
+<tr>
+<td align="left">wahman_teorell_hadenius</td>
+<td align="left">Authoritarian Regimes Data Set, version 5.0, by Axel
+Hadenius, Jan Teorell, &amp; Michael Wahman</td>
+<td align="left">regime1ny,regime1nyrobust, regimeny,
+regimenyrobust</td>
+<td align="left">dichotomous</td>
+<td align="left">FH,Polity</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2007</td>
+<td align="left"><a href="https://sites.google.com/site/authoritarianregimedataset/data">https://sites.google.com/site/authoritarianregimedataset/data</a></td>
+<td align="left">Unknown. Assumed CC0 1.0</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">wgi_democracy</td>
+<td align="left">The World Governance Indicators “Voice and
+Accountability” Index</td>
+<td align="left">Estimate</td>
+<td align="left">continuous</td>
+<td align="left">FH</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2010</td>
+<td align="left"><a href="http://info.worldbank.org/governance/wgi/">http://info.worldbank.org/governance/wgi/</a></td>
+<td align="left">Unknown.</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+<h2 id="combining-all-democracy-datasets">Combining all democracy
+datasets</h2>
+<p>You can create one huge data frame including all democracy measures
+with one call:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>democracy_data <span class="ot">&lt;-</span> <span class="fu">generate_democracy_scores_dataset</span>(<span class="at">output_format =</span> <span class="st">&quot;wide&quot;</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>                                                    <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>democracy_data</span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co">#&gt; # A tibble: 41,382 × 81</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co">#&gt;    extended_country_name   GWn  cown in_GW_system  year anckar_democracy</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                 &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;        &lt;dbl&gt;            &lt;dbl&gt;</span></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="co">#&gt;  1 Abkhazia                396    NA FALSE         1997               NA</span></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="co">#&gt;  2 Abkhazia                396    NA FALSE         1998               NA</span></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co">#&gt;  3 Abkhazia                396    NA FALSE         1999               NA</span></span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a><span class="co">#&gt;  4 Abkhazia                396    NA FALSE         2000               NA</span></span>
+<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a><span class="co">#&gt;  5 Abkhazia                396    NA FALSE         2001               NA</span></span>
+<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a><span class="co">#&gt;  6 Abkhazia                396    NA FALSE         2002               NA</span></span>
+<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a><span class="co">#&gt;  7 Abkhazia                396    NA FALSE         2003               NA</span></span>
+<span id="cb12-16"><a href="#cb12-16" tabindex="-1"></a><span class="co">#&gt;  8 Abkhazia                396    NA FALSE         2004               NA</span></span>
+<span id="cb12-17"><a href="#cb12-17" tabindex="-1"></a><span class="co">#&gt;  9 Abkhazia                396    NA FALSE         2005               NA</span></span>
+<span id="cb12-18"><a href="#cb12-18" tabindex="-1"></a><span class="co">#&gt; 10 Abkhazia                396    NA FALSE         2006               NA</span></span>
+<span id="cb12-19"><a href="#cb12-19" tabindex="-1"></a><span class="co">#&gt; # ℹ 41,372 more rows</span></span>
+<span id="cb12-20"><a href="#cb12-20" tabindex="-1"></a><span class="co">#&gt; # ℹ 75 more variables: anrr_democracy &lt;dbl&gt;, arat &lt;dbl&gt;, blm &lt;dbl&gt;,</span></span>
+<span id="cb12-21"><a href="#cb12-21" tabindex="-1"></a><span class="co">#&gt; #   bmr_democracy &lt;dbl&gt;, bmr_democracy_femalesuffrage &lt;dbl&gt;,</span></span>
+<span id="cb12-22"><a href="#cb12-22" tabindex="-1"></a><span class="co">#&gt; #   bmr_democracy_omitteddata &lt;dbl&gt;, bnr_extended &lt;dbl&gt;, pmm_bollen &lt;dbl&gt;,</span></span>
+<span id="cb12-23"><a href="#cb12-23" tabindex="-1"></a><span class="co">#&gt; #   bti &lt;dbl&gt;, doorenspleet &lt;dbl&gt;, eiu &lt;dbl&gt;, fh_total_reversed &lt;dbl&gt;,</span></span>
+<span id="cb12-24"><a href="#cb12-24" tabindex="-1"></a><span class="co">#&gt; #   fh_electoral &lt;dbl&gt;, gwf_democracy_extended &lt;dbl&gt;,</span></span>
+<span id="cb12-25"><a href="#cb12-25" tabindex="-1"></a><span class="co">#&gt; #   gwf_democracy_extended_strict &lt;dbl&gt;, pmm_hadenius &lt;dbl&gt;, …</span></span></code></pre></div>
+<p>You can select exactly which datasets to include in your big data
+frame. See <code>?generate_democracy_scores_dataset</code> for further
+options to customize the output.</p>
+<h2 id="latent-variable-indexes-of-democracy">Latent Variable Indexes of
+Democracy</h2>
+<p>The package also offers a series of convenience functions to
+calculate latent variable indexes of democracy (following Pemstein,
+Meserve, and Melton’s <a href="https://www.jstor.org/stable/25792023?seq=1">2010 article</a>
+“Democratic Compromise: A Latent Variable Analysis of Ten Measures of
+Regime Type”); see the vignette on <a href="https://xmarquez.github.io/democracyData/articles/Replicating_and_extending_the_UD_scores.html">Replicating
+and Extending the UD scores of Pemstein, Meserve, and Melton</a>. It
+also contains a pre-calculated extended version of these scores,
+available as <code>extended_uds</code>:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>extended_uds</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 37,738 × 20</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="co">#&gt;    extended_country_name   GWn  cown in_GW_system  year      z1 se_z1 z1_pct975</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                 &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;        &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co">#&gt;  1 Abkhazia                396    NA FALSE         1997 -0.0558 0.320     0.571</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co">#&gt;  2 Abkhazia                396    NA FALSE         1998 -0.0558 0.320     0.571</span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="co">#&gt;  3 Abkhazia                396    NA FALSE         1999 -0.0558 0.320     0.571</span></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co">#&gt;  4 Abkhazia                396    NA FALSE         2000 -0.0558 0.320     0.571</span></span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="co">#&gt;  5 Abkhazia                396    NA FALSE         2001 -0.0558 0.320     0.571</span></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="co">#&gt;  6 Abkhazia                396    NA FALSE         2002 -0.0558 0.320     0.571</span></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co">#&gt;  7 Abkhazia                396    NA FALSE         2003 -0.0558 0.320     0.571</span></span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a><span class="co">#&gt;  8 Abkhazia                396    NA FALSE         2004 -0.0558 0.320     0.571</span></span>
+<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a><span class="co">#&gt;  9 Abkhazia                396    NA FALSE         2005  0.144  0.318     0.767</span></span>
+<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a><span class="co">#&gt; 10 Abkhazia                396    NA FALSE         2006  0.144  0.318     0.767</span></span>
+<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a><span class="co">#&gt; # ℹ 37,728 more rows</span></span>
+<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a><span class="co">#&gt; # ℹ 12 more variables: z1_pct025 &lt;dbl&gt;, z1_adj &lt;dbl&gt;, z1_pct975_adj &lt;dbl&gt;,</span></span>
+<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a><span class="co">#&gt; #   z1_pct025_adj &lt;dbl&gt;, z1_as_prob &lt;dbl&gt;, z1_pct975_as_prob &lt;dbl&gt;,</span></span>
+<span id="cb13-18"><a href="#cb13-18" tabindex="-1"></a><span class="co">#&gt; #   z1_pct025_as_prob &lt;dbl&gt;, z1_adj_as_prob &lt;dbl&gt;, z1_pct975_adj_as_prob &lt;dbl&gt;,</span></span>
+<span id="cb13-19"><a href="#cb13-19" tabindex="-1"></a><span class="co">#&gt; #   z1_pct025_adj_as_prob &lt;dbl&gt;, num_measures &lt;int&gt;, measures &lt;list&gt;</span></span></code></pre></div>
+<h2 id="state-system-functions">State system functions</h2>
+<p>The package also includes a couple of other convenience functions to
+work with historical democracy data and determine state system
+membership. The first is <code>country_year_coder</code>, which works
+like the <a href="https://CRAN.R-project.org/package=countrycode"><code>countrycode</code></a>
+package, except that it is able to determine state system information
+for country-year pairs. Suppose you have this dataset:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>my_weird_democracy_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="at">country =</span> <span class="fu">c</span>(<span class="st">&quot;Germany&quot;</span>, <span class="st">&quot;Germany&quot;</span>, <span class="st">&quot;Germany&quot;</span>,</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>              <span class="st">&quot;Germany&quot;</span>, <span class="st">&quot;East Germany&quot;</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>              <span class="st">&quot;Federal Republic of Germany&quot;</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>              <span class="st">&quot;Somaliland&quot;</span>, <span class="st">&quot;Somalia&quot;</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>              <span class="st">&quot;Palestine&quot;</span>, <span class="st">&quot;Russia&quot;</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>              <span class="st">&quot;Russia&quot;</span>, <span class="st">&quot;USSR&quot;</span>,</span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a>              <span class="st">&quot;Republic of Vietnam&quot;</span>,</span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>              <span class="st">&quot;Yugoslavia&quot;</span>, <span class="st">&#39;Yugoslavia&#39;</span>,</span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>              <span class="st">&quot;Vietnam, South&quot;</span>),</span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a>  <span class="at">year =</span> <span class="fu">c</span>( <span class="dv">2015</span>, <span class="dv">1930</span>, <span class="dv">1970</span>, <span class="dv">1945</span>, <span class="dv">1949</span>,</span>
+<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a>            <span class="dv">1992</span>, <span class="dv">1990</span>, <span class="dv">1990</span>, <span class="dv">1940</span>, <span class="dv">1917</span>, </span>
+<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a>            <span class="dv">1912</span>, <span class="dv">1922</span>, <span class="dv">1975</span>, <span class="dv">1990</span>, <span class="dv">1991</span>, <span class="dv">1954</span>),</span>
+<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a>  <span class="at">my_measure =</span> <span class="fu">rnorm</span>(<span class="dv">16</span>))</span>
+<span id="cb14-15"><a href="#cb14-15" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="#cb14-17" tabindex="-1"></a>my_weird_democracy_data</span>
+<span id="cb14-18"><a href="#cb14-18" tabindex="-1"></a><span class="co">#&gt; # A tibble: 16 × 3</span></span>
+<span id="cb14-19"><a href="#cb14-19" tabindex="-1"></a><span class="co">#&gt;    country                      year my_measure</span></span>
+<span id="cb14-20"><a href="#cb14-20" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                       &lt;dbl&gt;      &lt;dbl&gt;</span></span>
+<span id="cb14-21"><a href="#cb14-21" tabindex="-1"></a><span class="co">#&gt;  1 Germany                      2015     -0.181</span></span>
+<span id="cb14-22"><a href="#cb14-22" tabindex="-1"></a><span class="co">#&gt;  2 Germany                      1930      0.480</span></span>
+<span id="cb14-23"><a href="#cb14-23" tabindex="-1"></a><span class="co">#&gt;  3 Germany                      1970     -2.12 </span></span>
+<span id="cb14-24"><a href="#cb14-24" tabindex="-1"></a><span class="co">#&gt;  4 Germany                      1945     -1.40 </span></span>
+<span id="cb14-25"><a href="#cb14-25" tabindex="-1"></a><span class="co">#&gt;  5 East Germany                 1949      1.55 </span></span>
+<span id="cb14-26"><a href="#cb14-26" tabindex="-1"></a><span class="co">#&gt;  6 Federal Republic of Germany  1992     -0.898</span></span>
+<span id="cb14-27"><a href="#cb14-27" tabindex="-1"></a><span class="co">#&gt;  7 Somaliland                   1990     -1.73 </span></span>
+<span id="cb14-28"><a href="#cb14-28" tabindex="-1"></a><span class="co">#&gt;  8 Somalia                      1990      1.70 </span></span>
+<span id="cb14-29"><a href="#cb14-29" tabindex="-1"></a><span class="co">#&gt;  9 Palestine                    1940     -1.21 </span></span>
+<span id="cb14-30"><a href="#cb14-30" tabindex="-1"></a><span class="co">#&gt; 10 Russia                       1917     -0.137</span></span>
+<span id="cb14-31"><a href="#cb14-31" tabindex="-1"></a><span class="co">#&gt; 11 Russia                       1912      0.771</span></span>
+<span id="cb14-32"><a href="#cb14-32" tabindex="-1"></a><span class="co">#&gt; 12 USSR                         1922      0.194</span></span>
+<span id="cb14-33"><a href="#cb14-33" tabindex="-1"></a><span class="co">#&gt; 13 Republic of Vietnam          1975     -0.823</span></span>
+<span id="cb14-34"><a href="#cb14-34" tabindex="-1"></a><span class="co">#&gt; 14 Yugoslavia                   1990     -0.150</span></span>
+<span id="cb14-35"><a href="#cb14-35" tabindex="-1"></a><span class="co">#&gt; 15 Yugoslavia                   1991      1.50 </span></span>
+<span id="cb14-36"><a href="#cb14-36" tabindex="-1"></a><span class="co">#&gt; 16 Vietnam, South               1954      1.67</span></span></code></pre></div>
+<p>and you then want to add state system information.
+<code>country_year_coder</code> does that for you!</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>my_weird_democracy_data <span class="ot">&lt;-</span> my_weird_democracy_data <span class="sc">|&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  <span class="fu">country_year_coder</span>(country,</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>                     year,</span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>                     <span class="at">match_type =</span> <span class="st">&quot;country&quot;</span>,</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>                     <span class="at">verbose =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>                     <span class="at">include_in_output =</span> <span class="fu">c</span>(<span class="st">&quot;extended_country_name&quot;</span>, </span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>                                           <span class="st">&quot;GWn&quot;</span>, <span class="st">&quot;cown&quot;</span>, </span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>                                           <span class="st">&quot;polity_ccode&quot;</span>, </span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a>                                           <span class="st">&quot;in_GW_system&quot;</span>, </span>
+<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a>                                           <span class="st">&quot;in_cow_system&quot;</span>, </span>
+<span id="cb15-12"><a href="#cb15-12" tabindex="-1"></a>                                           <span class="st">&quot;in_polity_system&quot;</span>,</span>
+<span id="cb15-13"><a href="#cb15-13" tabindex="-1"></a>                                           <span class="st">&quot;polity_startdate&quot;</span>,</span>
+<span id="cb15-14"><a href="#cb15-14" tabindex="-1"></a>                                           <span class="st">&quot;polity_enddate&quot;</span>))</span>
+<span id="cb15-15"><a href="#cb15-15" tabindex="-1"></a></span>
+<span id="cb15-16"><a href="#cb15-16" tabindex="-1"></a>my_weird_democracy_data <span class="sc">|&gt;</span></span>
+<span id="cb15-17"><a href="#cb15-17" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">country</th>
+<th align="right">year</th>
+<th align="right">my_measure</th>
+<th align="left">extended_country_name</th>
+<th align="right">GWn</th>
+<th align="right">cown</th>
+<th align="right">polity_ccode</th>
+<th align="left">in_GW_system</th>
+<th align="left">in_cow_system</th>
+<th align="left">in_polity_system</th>
+<th align="left">polity_startdate</th>
+<th align="left">polity_enddate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Germany</td>
+<td align="right">2015</td>
+<td align="right">-0.1809378</td>
+<td align="left">German Federal Republic</td>
+<td align="right">260</td>
+<td align="right">255</td>
+<td align="right">255</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">1990-10-02</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">Germany</td>
+<td align="right">1930</td>
+<td align="right">0.4800263</td>
+<td align="left">Germany (Prussia)</td>
+<td align="right">255</td>
+<td align="right">255</td>
+<td align="right">255</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">1871-01-19</td>
+<td align="left">1945-05-07</td>
+</tr>
+<tr>
+<td align="left">Germany</td>
+<td align="right">1970</td>
+<td align="right">-2.1234532</td>
+<td align="left">German Federal Republic</td>
+<td align="right">260</td>
+<td align="right">260</td>
+<td align="right">260</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">1945-05-08</td>
+<td align="left">1990-10-02</td>
+</tr>
+<tr>
+<td align="left">Germany</td>
+<td align="right">1945</td>
+<td align="right">-1.3974111</td>
+<td align="left">German Federal Republic</td>
+<td align="right">260</td>
+<td align="right">260</td>
+<td align="right">260</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">1945-05-08</td>
+<td align="left">1990-10-02</td>
+</tr>
+<tr>
+<td align="left">East Germany</td>
+<td align="right">1949</td>
+<td align="right">1.5519219</td>
+<td align="left">German Democratic Republic</td>
+<td align="right">265</td>
+<td align="right">265</td>
+<td align="right">265</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">1945-05-08</td>
+<td align="left">1990-10-02</td>
+</tr>
+<tr>
+<td align="left">Federal Republic of Germany</td>
+<td align="right">1992</td>
+<td align="right">-0.8984450</td>
+<td align="left">German Federal Republic</td>
+<td align="right">260</td>
+<td align="right">255</td>
+<td align="right">255</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">1990-10-02</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">Somaliland</td>
+<td align="right">1990</td>
+<td align="right">-1.7347272</td>
+<td align="left">Somaliland</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">Somalia</td>
+<td align="right">1990</td>
+<td align="right">1.7028987</td>
+<td align="left">Somalia</td>
+<td align="right">520</td>
+<td align="right">520</td>
+<td align="right">520</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">1960-07-01</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">Palestine</td>
+<td align="right">1940</td>
+<td align="right">-1.2112663</td>
+<td align="left">Palestine, State of</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr>
+<td align="left">Russia</td>
+<td align="right">1917</td>
+<td align="right">-0.1369872</td>
+<td align="left">Russia (Soviet Union)</td>
+<td align="right">365</td>
+<td align="right">365</td>
+<td align="right">365</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">1800-01-01</td>
+<td align="left">1922-12-29</td>
+</tr>
+<tr>
+<td align="left">Russia</td>
+<td align="right">1912</td>
+<td align="right">0.7705973</td>
+<td align="left">Russia (Soviet Union)</td>
+<td align="right">365</td>
+<td align="right">365</td>
+<td align="right">365</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">1800-01-01</td>
+<td align="left">1922-12-29</td>
+</tr>
+<tr>
+<td align="left">USSR</td>
+<td align="right">1922</td>
+<td align="right">0.1935170</td>
+<td align="left">Russia (Soviet Union)</td>
+<td align="right">365</td>
+<td align="right">365</td>
+<td align="right">364</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">1922-12-30</td>
+<td align="left">1991-12-31</td>
+</tr>
+<tr>
+<td align="left">Republic of Vietnam</td>
+<td align="right">1975</td>
+<td align="right">-0.8230275</td>
+<td align="left">Vietnam, Republic of</td>
+<td align="right">817</td>
+<td align="right">817</td>
+<td align="right">817</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">1955-10-26</td>
+<td align="left">1975-12-31</td>
+</tr>
+<tr>
+<td align="left">Yugoslavia</td>
+<td align="right">1990</td>
+<td align="right">-0.1503804</td>
+<td align="left">Yugoslavia</td>
+<td align="right">345</td>
+<td align="right">345</td>
+<td align="right">345</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">1921-01-01</td>
+<td align="left">1991-07-01</td>
+</tr>
+<tr>
+<td align="left">Yugoslavia</td>
+<td align="right">1991</td>
+<td align="right">1.5028396</td>
+<td align="left">Yugoslavia</td>
+<td align="right">345</td>
+<td align="right">345</td>
+<td align="right">347</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">1991-07-01</td>
+<td align="left">2003-03-11</td>
+</tr>
+<tr>
+<td align="left">Vietnam, South</td>
+<td align="right">1954</td>
+<td align="right">1.6693457</td>
+<td align="left">Vietnam, Republic of</td>
+<td align="right">817</td>
+<td align="right">817</td>
+<td align="right">817</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">1955-10-26</td>
+<td align="left">1975-12-31</td>
+</tr>
+</tbody>
+</table>
+<p><code>country_year_coder</code> tries to match not just the country
+name or the country code (as <code>countrycode</code> does), but also to
+figure out the appropriate state system code <em>given</em> the year.
+(Above, for example, the function figures out that Germany 1970 should
+get a COW code of 260, but Germany 1992 should get 255 - though it
+should retain the 260 code in the Gleditsch and Ward system of states.
+This is, incidentally, how <code>download_fh</code> adds the correct COW
+and GW country codes to Freedom House’s Excel data). It also tries to
+figure out whether a given country-year is in the specific state system
+list. (In the example above, Germany in 1945 is not listed as a member
+of the state system in either COW or Gleditsch and Ward, since it was
+occupied by the Allies as of 31 December 1945, but is listed as a member
+of the state system in Polity IV as the Federal Republic, though with a
+polity score of -66, “interregnum”).</p>
+<p>One nice thing about <code>country_year_coder</code> (in my humble
+opinion!) is that it can sometimes correct country coding errors; I’ve
+run across more than one dataset with the supposed COW code 255 for the
+Federal Republic of Germany for the period 1955-1990, which would
+prevent a clean join to a dataset with the correct COW code, but would
+be caught by <code>country_year_coder</code>.</p>
+<p>There is also a function that allows you to create a blank state
+system panel for any of the three main state systems:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">create_panel</span>(<span class="at">system =</span> <span class="st">&quot;cow&quot;</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 17,621 × 5</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="co">#&gt;     cown cow_country_name cow_startdate cow_enddate  year</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;            &lt;date&gt;        &lt;date&gt;      &lt;dbl&gt;</span></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a><span class="co">#&gt;  1   700 Afghanistan      1919-08-08    NA           1919</span></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a><span class="co">#&gt;  2   700 Afghanistan      1919-08-08    NA           1920</span></span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a><span class="co">#&gt;  3   700 Afghanistan      1919-08-08    NA           1921</span></span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a><span class="co">#&gt;  4   700 Afghanistan      1919-08-08    NA           1922</span></span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a><span class="co">#&gt;  5   700 Afghanistan      1919-08-08    NA           1923</span></span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a><span class="co">#&gt;  6   700 Afghanistan      1919-08-08    NA           1924</span></span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a><span class="co">#&gt;  7   700 Afghanistan      1919-08-08    NA           1925</span></span>
+<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a><span class="co">#&gt;  8   700 Afghanistan      1919-08-08    NA           1926</span></span>
+<span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a><span class="co">#&gt;  9   700 Afghanistan      1919-08-08    NA           1927</span></span>
+<span id="cb16-14"><a href="#cb16-14" tabindex="-1"></a><span class="co">#&gt; 10   700 Afghanistan      1919-08-08    NA           1928</span></span>
+<span id="cb16-15"><a href="#cb16-15" tabindex="-1"></a><span class="co">#&gt; # ℹ 17,611 more rows</span></span>
+<span id="cb16-16"><a href="#cb16-16" tabindex="-1"></a></span>
+<span id="cb16-17"><a href="#cb16-17" tabindex="-1"></a><span class="fu">create_panel</span>(<span class="at">system =</span> <span class="st">&quot;GW&quot;</span>)</span>
+<span id="cb16-18"><a href="#cb16-18" tabindex="-1"></a><span class="co">#&gt; # A tibble: 20,529 × 5</span></span>
+<span id="cb16-19"><a href="#cb16-19" tabindex="-1"></a><span class="co">#&gt;      GWn GW_country_name GW_startdate GW_enddate  year</span></span>
+<span id="cb16-20"><a href="#cb16-20" tabindex="-1"></a><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;           &lt;date&gt;       &lt;date&gt;     &lt;dbl&gt;</span></span>
+<span id="cb16-21"><a href="#cb16-21" tabindex="-1"></a><span class="co">#&gt;  1   700 Afghanistan     1919-05-01   NA          1919</span></span>
+<span id="cb16-22"><a href="#cb16-22" tabindex="-1"></a><span class="co">#&gt;  2   700 Afghanistan     1919-05-01   NA          1920</span></span>
+<span id="cb16-23"><a href="#cb16-23" tabindex="-1"></a><span class="co">#&gt;  3   700 Afghanistan     1919-05-01   NA          1921</span></span>
+<span id="cb16-24"><a href="#cb16-24" tabindex="-1"></a><span class="co">#&gt;  4   700 Afghanistan     1919-05-01   NA          1922</span></span>
+<span id="cb16-25"><a href="#cb16-25" tabindex="-1"></a><span class="co">#&gt;  5   700 Afghanistan     1919-05-01   NA          1923</span></span>
+<span id="cb16-26"><a href="#cb16-26" tabindex="-1"></a><span class="co">#&gt;  6   700 Afghanistan     1919-05-01   NA          1924</span></span>
+<span id="cb16-27"><a href="#cb16-27" tabindex="-1"></a><span class="co">#&gt;  7   700 Afghanistan     1919-05-01   NA          1925</span></span>
+<span id="cb16-28"><a href="#cb16-28" tabindex="-1"></a><span class="co">#&gt;  8   700 Afghanistan     1919-05-01   NA          1926</span></span>
+<span id="cb16-29"><a href="#cb16-29" tabindex="-1"></a><span class="co">#&gt;  9   700 Afghanistan     1919-05-01   NA          1927</span></span>
+<span id="cb16-30"><a href="#cb16-30" tabindex="-1"></a><span class="co">#&gt; 10   700 Afghanistan     1919-05-01   NA          1928</span></span>
+<span id="cb16-31"><a href="#cb16-31" tabindex="-1"></a><span class="co">#&gt; # ℹ 20,519 more rows</span></span></code></pre></div>
+<h2 id="citation">Citation</h2>
+<p>The standard <code>citation</code> function from base <code>R</code>
+will produce a list of citations for all the datasets included in this
+package:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">citation</span>(<span class="at">package =</span> <span class="st">&quot;democracyData&quot;</span>)</span></code></pre></div>
+<p>To cite any of the datasets included in this package use:</p>
+<p>Acemoglu D, Naidu S, Restrepo P, Robinson JA (2019). “Democracy Does
+Cause Growth.” <em>Journal of Political Economy</em>, <em>127</em>(1),
+47-100. <a href="doi:10.1086/700936">doi:10.1086/700936</a> <a href="https://doi.org/10.1086/700936">https://doi.org/10.1086/700936</a>.</p>
+<p>Anckar C, Fredriksson C (2018). “Classifying Political Regimes
+1800–2016: A Typology and a New Dataset.” <em>European Political
+Science</em>, <em>18</em>(1), 84-96. <a href="doi:10.1057/s41304-018-0149-8">doi:10.1057/s41304-018-0149-8</a>
+<a href="https://doi.org/10.1057/s41304-018-0149-8">https://doi.org/10.1057/s41304-018-0149-8</a>.</p>
+<p>Arat ZF (1991). <em>Democracy and Human Rights in Developing
+Countries</em>. Lynne Rienner Publishers, Boulder.</p>
+<p>Bell C (2016). “The Rulers, Elections, and Irregular Governance
+Dataset (REIGN).”</p>
+<p>Bernhard M, Nordstrom T, Reenock C (2001). “Economic Performance,
+Institutional Intermediation, and Democratic Survival.” <em>Journal of
+Politics</em>, <em>63</em>(3), 775-803. <a href="doi:10.1111/0022-3816.00087">doi:10.1111/0022-3816.00087</a> <a href="https://doi.org/10.1111/0022-3816.00087">https://doi.org/10.1111/0022-3816.00087</a>.</p>
+<p>Bertelsmann Stiftung (2024). “Transformation Index of the Bertelsmann
+Stiftung 2024.” Bertelsmann Stiftung.</p>
+<p>Bjørnskov C, Rode M (2020). “Regime Types and Regime Change: A New
+Dataset on Democracy, Coups, and Political Institutions.” <em>The Review
+of International Organizations</em>, <em>15</em>(2), 531-551. <a href="doi:10.1007/s11558-019-09345-1">doi:10.1007/s11558-019-09345-1</a>
+<a href="https://doi.org/10.1007/s11558-019-09345-1">https://doi.org/10.1007/s11558-019-09345-1</a>.</p>
+<p>Boix C, Miller M, Rosato S (2012). “A Complete Data Set of Political
+Regimes, 1800–2007.” <em>Comparative Political Studies</em>,
+<em>46</em>(12), 1523-1554. <a href="doi:10.1177/0010414012463905">doi:10.1177/0010414012463905</a> <a href="https://doi.org/10.1177/0010414012463905">https://doi.org/10.1177/0010414012463905</a>.</p>
+<p>Bollen KA (2001). “Cross-National Indicators of Liberal Democracy,
+1950-1990.” <a href="doi:10.3886/ICPSR02532.v2">doi:10.3886/ICPSR02532.v2</a> <a href="https://doi.org/10.3886/ICPSR02532.v2">https://doi.org/10.3886/ICPSR02532.v2</a>.</p>
+<p>Bollen K, Paxton P (2000). “Subjective Measures of Liberal
+Democracy.” <em>Comparative Political Studies</em>, <em>33</em>(1),
+58-86. <a href="doi:10.1177/0010414000033001003">doi:10.1177/0010414000033001003</a>
+<a href="https://doi.org/10.1177/0010414000033001003">https://doi.org/10.1177/0010414000033001003</a>.</p>
+<p>Bowman K, Lehoucq F, Mahoney J (2005). “Measuring Political
+Democracy: Case Expertise, Data Adequacy, and Central America.”
+<em>Comparative Political Studies</em>, <em>38</em>(8), 939-970. <a href="doi:10.1177/0010414005277083">doi:10.1177/0010414005277083</a> <a href="https://doi.org/10.1177/0010414005277083">https://doi.org/10.1177/0010414005277083</a>.</p>
+<p>Cheibub JA, Gandhi J, Vreeland JR (2009). “Democracy and Dictatorship
+Revisited.” <em>Public Choice</em>, <em>143</em>(1-2), 67-101. <a href="doi:10.1007/s11127-009-9491-2">doi:10.1007/s11127-009-9491-2</a>
+<a href="https://doi.org/10.1007/s11127-009-9491-2">https://doi.org/10.1007/s11127-009-9491-2</a>.</p>
+<p>Coppedge M, Alvarez A, Maldonado C (2008). “Two Persistent Dimensions
+of Democracy: Contestation and Inclusiveness.” <em>The journal of
+politics</em>, <em>70</em>(03), 632-647. <a href="doi:10.1017/S0022381608080663">doi:10.1017/S0022381608080663</a>
+<a href="https://doi.org/10.1017/S0022381608080663">https://doi.org/10.1017/S0022381608080663</a>.</p>
+<p>Coppedge M, Gerring J, Knutsen CH, Lindberg SI, Teorell J, Altman D,
+Angiolillo F, Bernhard M, Borella C, Cornell A, Fish MS, Fox L, Gastaldi
+L, Gjerløw H, Glynn A, Good God A, Grahn S, Hicken A, Kinzelbach K,
+Marquardt KL, McMann K, Mechkova V, Neundorf A, Paxton P, Pemstein D,
+Rydén O, von Römer J, Seim B, Sigman R, Skaaning S, Staton J, Sundström
+A, Tzelgov E, Uberti L, Wang Y, Wig T, Ziblatt D (2024). “V-Dem Codebook
+V14.” Varieties of Democracy (V-Dem) Project.</p>
+<p>Coppedge M, Gerring J, Knutsen CH, Lindberg SI, Teorell J, Altman D,
+Angiolillo F, Bernhard M, Cornell A, Fish MS, Fox L, Gastaldi L, Gjerløw
+H, Glynn A, God AG, Grahn S, Hicken A, Kinzelbach K, Marquardt KL,
+McMann K, Mechkova V, Neundorf A, Paxton P, Pemstein D, von Römer J,
+Seim B, Sigman R, Skaaning S, Staton J, Sundström A, Tannenberg M,
+Tzelgov E, Wang Y, Wiebrecht F, Wig T, Ziblatt D (2025). “V-Dem Codebook
+V15.” Varieties of Democracy (V-Dem) Project.</p>
+<p>Coppedge M, Gerring J, Knutsen CH, Lindberg SI, Teorell J, Altman D,
+Bernhard M, Cornell A, Fish MS, Gastaldi L, Gjerløw H, Glynn A, Grahn S,
+Hicken A, Kinzelbach K, Marquardt KL, McMann K, Mechkova V, Neundorf A,
+Paxton P, Pemstein D, Rydén O, von Römer J, Seim B, Sigman R, Skaaning
+S, Staton J, Sundström A, Tzelgov E, Uberti L, Wang Y, Wig T, Ziblatt D
+(????). “V-Dem Codebook V13.”</p>
+<p>Coppedge M, Reinicke WH (1990). “Measuring Polyarchy.” <em>Studies in
+Comparative International Development</em>, <em>25</em>(1), 51-72.</p>
+<p>Doorenspleet R (2000). “Reassessing the Three Waves of
+Democratization.” <em>World Politics</em>, <em>52</em>(03), 384-406. <a href="doi:10.1017/S0043887100016580">doi:10.1017/S0043887100016580</a>
+<a href="https://doi.org/10.1017/S0043887100016580">https://doi.org/10.1017/S0043887100016580</a>.</p>
+<p>Freedom House (2024). “Freedom in the World 2024: The Mounting Damage
+of Flawed Elections and Armed Conflict.” Freedom House.</p>
+<p>Gasiorowski M (1996). “An Overview of the Political Regime Change
+Dataset.” <em>Comparative Political Studies</em>, <em>29</em>(4),
+469-483. <a href="doi:10.1177/0010414096029004004">doi:10.1177/0010414096029004004</a>
+<a href="https://doi.org/10.1177/0010414096029004004">https://doi.org/10.1177/0010414096029004004</a>.</p>
+<p>Geddes B, Wright J, Frantz E (2014). “Autocratic Breakdown and Regime
+Transitions: A New Data Set.” <em>Perspectives on Politics</em>,
+<em>12</em>(1), 313-331. <a href="doi:10.1017/S1537592714000851">doi:10.1017/S1537592714000851</a>
+<a href="https://doi.org/10.1017/S1537592714000851">https://doi.org/10.1017/S1537592714000851</a>.</p>
+<p>Gleditsch KS, Ward MD (1999). “Interstate System Membership: A
+Revised List of Independent States since the Congress of Vienna.”
+<em>International Interactions</em>, <em>25</em>(4), 393-413. <a href="doi:10.1080/03050629908434958">doi:10.1080/03050629908434958</a>
+<a href="https://doi.org/10.1080/03050629908434958">https://doi.org/10.1080/03050629908434958</a>.</p>
+<p>Goldstone J, Bates R, Epstein D, Gurr T, Lustik M, Marshall M,
+Ulfelder J, Woodward M (2010). “A Global Model for Forecasting Political
+Instability.” <em>American Journal of Political Science</em>,
+<em>54</em>(1), 190-208. <a href="doi:10.1111/j.1540-5907.2009.00426.x">doi:10.1111/j.1540-5907.2009.00426.x</a>
+<a href="https://doi.org/10.1111/j.1540-5907.2009.00426.x">https://doi.org/10.1111/j.1540-5907.2009.00426.x</a>.</p>
+<p>Gründler K, Krieger T (2016). “Democracy and Growth: Evidence from a
+Machine Learning Indicator.” <em>European Journal of Political
+Economy</em>, <em>45</em>, 85-107. <a href="doi:10.1016/j.ejpoleco.2016.05.005">doi:10.1016/j.ejpoleco.2016.05.005</a>
+<a href="https://doi.org/10.1016/j.ejpoleco.2016.05.005">https://doi.org/10.1016/j.ejpoleco.2016.05.005</a>.</p>
+<p>Gründler K, Krieger T (2018). “Machine Learning Indices, Political
+Institutions, and Economic Development.” CESifo Group Munich.</p>
+<p>Gründler K, Krieger T (2021/05/17/). “Using Machine Learning for
+Measuring Democracy: A Practitioners Guide and a New Updated Dataset for
+186 Countries from 1919 to 2019.” <em>European Journal of Political
+Economy</em>, 102047. <a href="doi:10.1016/j.ejpoleco.2021.102047">doi:10.1016/j.ejpoleco.2021.102047</a>
+<a href="https://doi.org/10.1016/j.ejpoleco.2021.102047">https://doi.org/10.1016/j.ejpoleco.2021.102047</a>.</p>
+<p>Hadenius A (1992). <em>Democracy and Development</em>. Cambridge
+University Press, New York.</p>
+<p>Hadenius A, Teorell J (2007). “Pathways from Authoritarianism.”
+<em>Journal of Democracy</em>, <em>18</em>(1), 143-157. <a href="doi:10.1353/jod.2007.0009">doi:10.1353/jod.2007.0009</a> <a href="https://doi.org/10.1353/jod.2007.0009">https://doi.org/10.1353/jod.2007.0009</a>.</p>
+<p>House F (2025). “Freedom in the World 2025: The Uphill Battle to
+Safeguard Rights.” Freedom House.</p>
+<p>Hsu S (2008). “The Effect of Political Regimes on Inequality,
+1963-2002.” <em>UTIP Working Paper</em>.</p>
+<p>Kailitz S (2013). “Classifying Political Regimes Revisited:
+Legitimation and Durability.” <em>Democratization</em>, <em>20</em>(1),
+39-60.</p>
+<p>Kailitz S (2024). “Varieties of Political Regimes (va-PoReg).
+Codebook. Version 1.7.” Hannah Arendt Institute for Totalitarianism
+Studies, Dresden.</p>
+<p>Kailitz S (2024). “Varieties of Political Regimes (va-PoReg).
+Dataset.”</p>
+<p>Kaufmann D, Kraay A (2020). “Worldwide Governance Indicators.”</p>
+<p>Magaloni B, Chu J, Min E (2013). “Autocracies of the World, 1950-2012
+(Version 1.0).”</p>
+<p>Mainwaring S, Brinks D, Pérez-Liñán A (2001). “Classifying Political
+Regimes in Latin America.” <em>Studies in Comparative International
+Development</em>, <em>36</em>(1), 37-65. <a href="doi:10.1007/bf02687584">doi:10.1007/bf02687584</a> <a href="https://doi.org/10.1007/bf02687584">https://doi.org/10.1007/bf02687584</a>.</p>
+<p>Mainwaring S, Pérez-Liñán A, Brinks D (2014). “Political Regimes in
+Latin America, 1900-2007 (with Daniel Brinks).” In <em>Democracies and
+Dictatorships in Latin America: Emergence, Survival, and Fall</em>.
+Cambridge University Press, New York.</p>
+<p>Márquez X (2020). “democracyData: A Package for Accessing and
+Manipulating Existing Measures of Democracy.”</p>
+<p>Márquez X (2016). “A Quick Method for Extending the Unified Democracy
+Scores.” <em>Available at SSRN 2753830</em>. <a href="doi:10.2139/ssrn.2753830">doi:10.2139/ssrn.2753830</a> <a href="https://doi.org/10.2139/ssrn.2753830">https://doi.org/10.2139/ssrn.2753830</a>.</p>
+<p>Marshall MG, Gurr TR (2020). <em>Polity 5: Political Regime
+Characteristics and Transitions, 1800-2018. Dataset Users’
+Manual.</em>.</p>
+<p>Marshall MG, Gurr TR, Jaggers K (2019). <em>Polity IV Project:
+Political Regime Characteristics and Transitions, 1800-2018. Dataset
+Users’ Manual.</em>.</p>
+<p>Moon BE, Birdsall JH, Ciesluk S, Garlett LM, Hermias JJ, Mendenhall
+E, Schmid PD, Wong WH (2006). “Voting Counts: Participation in the
+Measurement of Democracy.” <em>Studies in Comparative International
+Development</em>, <em>41</em>(2), 3-32. <a href="doi:10.1007/BF02686309">doi:10.1007/BF02686309</a> <a href="https://doi.org/10.1007/BF02686309">https://doi.org/10.1007/BF02686309</a>.</p>
+<p>Munck G (2009). <em>Measuring Democracy: A Bridge between Scholarship
+and Politics</em>. The Johns Hopkins University Press, Baltimore.</p>
+<p>Pemstein D, Marquardt KL, Tzelgov E, Wang Y, Medzihorsky J, Krusell
+J, Miri F, von Römer J (2022). “The V-dem Measurement Model: Latent
+Variable Analysis for Cross-national and Cross-temporal Expert-coded
+Data.” Technical Report 21, Varieties of Democracy Institute, University
+of Gothenburg.</p>
+<p>Pemstein D, Meserve SA, Melton J (2013). “Replication Data for:
+Democratic Compromise: A Latent Variable Analysis of Ten Measures of
+Regime Type.” <a href="doi:10.7910/DVN/WWYOHU">doi:10.7910/DVN/WWYOHU</a> <a href="https://doi.org/10.7910/DVN/WWYOHU">https://doi.org/10.7910/DVN/WWYOHU</a>.</p>
+<p>Pemstein D, Meserve S, Melton J (2010). “Democratic Compromise: A
+Latent Variable Analysis of Ten Measures of Regime Type.” <em>Political
+Analysis</em>, <em>18</em>(4), 426-449. <a href="doi:10.1093/pan/mpq020">doi:10.1093/pan/mpq020</a> <a href="https://doi.org/10.1093/pan/mpq020">https://doi.org/10.1093/pan/mpq020</a>.</p>
+<p>Przeworski A (2013). “Political Institutions and Political Events
+(PIPE) Data Set.”</p>
+<p>Reich G (2002). “Categorizing Political Regimes: New Data for Old
+Problems.” <em>Democratization</em>, <em>9</em>(4), 1-24. <a href="doi:10.1080/714000289">doi:10.1080/714000289</a> <a href="https://doi.org/10.1080/714000289">https://doi.org/10.1080/714000289</a>.</p>
+<p>Skaaning S, Gerring J, Bartusevičius H (2015). “A Lexical Index of
+Electoral Democracy.” <em>Comparative Political Studies</em>,
+<em>48</em>(12), 1491-1525. <a href="doi:10.1177/0010414015581050">doi:10.1177/0010414015581050</a> <a href="https://doi.org/10.1177/0010414015581050">https://doi.org/10.1177/0010414015581050</a>.</p>
+<p>Svolik M (2012). <em>The Politics of Authoritarian Rule</em>.
+Cambridge University Press, Cambridge and New York.</p>
+<p>Taylor SJ, Ulfelder J (2015). “A Measurement Error Model of
+Dichotomous Democracy Status.” <em>Available at SSRN</em>. <a href="doi:10.2139/ssrn.2726962">doi:10.2139/ssrn.2726962</a> <a href="https://doi.org/10.2139/ssrn.2726962">https://doi.org/10.2139/ssrn.2726962</a>.</p>
+<p>The Economist Intelligence Unit (2025). “Democracy Index 2024: What’s
+Wrong with Representative Democracy?” The Economist Intelligence Unit
+Limited, London, UK.</p>
+<p>The Economist Intelligence Unit (2023). “Democracy Index 2022:
+Frontline Democracy and the Battle for Ukraine.” The Economist
+Intelligence Unit.</p>
+<p>Ulfelder J (2012). “Democracy/Autocracy Data Set.” <a href="doi:10.7910/DVN/M11WFC">doi:10.7910/DVN/M11WFC</a> <a href="https://doi.org/10.7910/DVN/M11WFC">https://doi.org/10.7910/DVN/M11WFC</a>.</p>
+<p>Ulfelder J, Lustik M (2007). “Modelling Transitions to and from
+Democracy.” <em>Democratization</em>, <em>14</em>(3), 351-387. <a href="doi:10.1080/13510340701303196">doi:10.1080/13510340701303196</a>
+<a href="https://doi.org/10.1080/13510340701303196">https://doi.org/10.1080/13510340701303196</a>.</p>
+<p>Unit TEI (2024). “Democracy Index 2023: Age of Conflict.” Economist
+Intelligence Unit, London, United Kingdom.</p>
+<p>Vanhanen T (2019). “Measures of Democracy 1810-2018 (Dataset).
+Version 8.0 (2019-06-17).”</p>
+<p>Wahman M, Teorell J, Hadenius A (2013). “Authoritarian Regime Types
+Revisited: Updated Data in Comparative Perspective.” <em>Contemporary
+Politics</em>, <em>19</em>(1), 19-34. <a href="doi:10.1080/13569775.2013.773200">doi:10.1080/13569775.2013.773200</a>
+<a href="https://doi.org/10.1080/13569775.2013.773200">https://doi.org/10.1080/13569775.2013.773200</a>.</p>
+<p>To see these entries in BibTeX format, use ‘print(<citation>,
+bibtex=TRUE)’, ‘toBibtex(.)’, or set
+‘options(citation.bibtex.max=999)’.</p>
+<p>You can also find the citation for a specific dataset using the
+wrapper <code>cite_dataset</code> with the name of the dataset in this
+package:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">cite_dataset</span>(<span class="st">&quot;gwf&quot;</span>)</span></code></pre></div>
+<p>[1] B. Geddes, J. Wright, and E. Frantz. “Autocratic Breakdown and
+Regime Transitions: A New Data Set”. In: <em>Perspectives on
+Politics</em> 12.1 (2014), pp. 313-331. DOI:
+10.1017/S1537592714000851.</p>
+<h1 id="feedback-and-caveats">Feedback and Caveats</h1>
+<p>Feedback welcome!</p>
+<p>Note that some functions in this package can be quite slow:
+generating a full democracy dataset (including downloading Freedom
+House, Polity, and WGI) or applying <code>country_year_coder</code> to a
+large data frame both can take some time. Suggestions to accelerate the
+code are welcome.</p>
+<p><code>country_year_coder</code> fails to give correct answers in some
+weird edge cases mostly involving Yugoslavia, Germany, or Vietnam. If
+you run across any of these cases, let me know.</p>
+
+</body>
+</html>

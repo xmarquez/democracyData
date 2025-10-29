@@ -72,7 +72,7 @@ fh_downloaded
 
 ```
 
-This downloads the latest update of the "Freedom in the World" dataset (1972-2021, corresponding to the 2022 report), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables `fh_total` and `fh_total_reversed`, and adds state system information, including a standardized country name, the [Gleditsch-Ward](http://privatewww.essex.ac.uk/~ksg/statelist.html) country code and the [Correlates of War](http://www.correlatesofwar.org/data-sets/state-system-membership) country code. You can also, however, use the archived version (`fh`):
+This downloads the latest update of the "Freedom in the World" dataset (1972-2024, corresponding to the 2025 report), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables `fh_total` and `fh_total_reversed`, and adds state system information, including a standardized country name, the [Gleditsch-Ward](http://privatewww.essex.ac.uk/~ksg/statelist.html) country code and the [Correlates of War](http://www.correlatesofwar.org/data-sets/state-system-membership) country code. You can also, however, use the archived version (`fh`):
 
 
 ```{r}
