@@ -32,15 +32,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
-<li class="active nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/Relationships_between_democracy_measures.html">Relationships between democracy measures</a></li>
-    <li><a class="dropdown-item" href="../articles/Replicating_and_extending_the_UD_scores.html">Replicating and Extending the UD scores of Pemstein, Meserve, and Melton</a></li>
-    <li><a class="dropdown-item" href="../articles/Understanding_the_coverage_of_existing_democracy_indexes.html">Understanding the geographic and temporal coverage of existing democracy indexes</a></li>
-    <li><a class="dropdown-item" href="../articles/Understanding_the_state_system.html">Understanding the state system</a></li>
-  </ul>
-</li>
+<li class="active nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
@@ -75,16 +67,24 @@
 <p><a href="../../reference/vdem_simple.html">VDem</a> and <a href="../../reference/LIED.html">LIED</a> code the largest total number of country-years, while specialist indexes like <a href="../../reference/blm.html">BLM</a> (which covers only 5 countries in Latin America) code the smallest number. Given the increase in the number of states in the state system, it’s no surprise that coverage increases greatly after WWII, with many datasets covering a large number of countries.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure><p><img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/unnamed-chunk-2-1.png" width="672"></p>
+<div id="fig-temporal-coverage-datasets" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-temporal-coverage-datasets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 1: Temporal coverage of each dataset, ordered by total number of country-years. Shaded red bands mark the American and French revolutions, the First and Second World Wars, and the end of the Cold War.
+</figcaption><div aria-describedby="fig-temporal-coverage-datasets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/fig-temporal-coverage-datasets-1.png" width="672">
+</div>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure><p><img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/unnamed-chunk-3-1.png" width="672"></p>
+<div id="fig-temporal-coverage-measures" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-temporal-coverage-measures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 2: Temporal coverage of every individual democracy measure, ordered by total number of country-years.
+</figcaption><div aria-describedby="fig-temporal-coverage-measures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/fig-temporal-coverage-measures-1.png" width="672">
+</div>
 </figure>
 </div>
 </div>
@@ -92,8 +92,12 @@
 <p>As we can see, the majority of datasets measure democracy between the end of the Second World War and the first two decades after the end of the Cold War. The most heavily measured country is the United States; the earliest measurement is for Iran (1502, in the Ulfelder extended dataset; this is the regime start date). The vast majority of measurements are after 1945 (bluer = more measurements of democracy for a given country-year), but most datasets created in the 2000s were not updated, so the number of measurements decreases post 2010 (only a few datasets are updated to 2020).</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure><p><img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/unnamed-chunk-4-1.png" width="672"></p>
+<div id="fig-coverage-by-country" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-coverage-by-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 3: Coverage of democracy measures per country or territory, ordered by total number of measurements. Alpha shading marks whether the unit is in the Gleditsch-Ward state system in that year.
+</figcaption><div aria-describedby="fig-coverage-by-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/fig-coverage-by-country-1.png" width="672">
+</div>
 </figure>
 </div>
 </div>
@@ -101,24 +105,36 @@
 <p>There can be a fair amount of disagreement in these measures, especially at regime transition points (see article on correlations between measures for more discussion). Consider the USA, Venezuela, and Russia (darker colors = more democratic):</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure><p><img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/unnamed-chunk-5-1.png" width="672"></p>
+<div id="fig-coverage-usa" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-coverage-usa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 4: Measurements of democracy for the United States of America across all indexes, rescaled to 0-1.
+</figcaption><div aria-describedby="fig-coverage-usa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/fig-coverage-usa-1.png" width="672">
+</div>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure><p><img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/unnamed-chunk-6-1.png" width="672"></p>
+<div id="fig-coverage-venezuela" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-coverage-venezuela-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 5: Measurements of democracy for Venezuela across all indexes, rescaled to 0-1.
+</figcaption><div aria-describedby="fig-coverage-venezuela-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/fig-coverage-venezuela-1.png" width="672">
+</div>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure><p><img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/unnamed-chunk-7-1.png" width="672"></p>
+<div id="fig-coverage-russia" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-coverage-russia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 6: Measurements of democracy for Russia / the Soviet Union across all indexes, rescaled to 0-1.
+</figcaption><div aria-describedby="fig-coverage-russia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/fig-coverage-russia-1.png" width="672">
+</div>
 </figure>
 </div>
 </div>
@@ -126,16 +142,24 @@
 <p>We can also take a look at the average level of democracy for each measure, across the world. As we can see, the world has become more democratic (darker colors = more democratic), though the particular moment at which this happened varies from measure to measure.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure><p><img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/unnamed-chunk-8-1.png" width="672"></p>
+<div id="fig-world-averages-by-dataset" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-world-averages-by-dataset-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 7: Average level of democracy for the world by year, by dataset (rescaled to 0-1, darker = more democratic). Alpha shading reflects the number of countries measured in each year.
+</figcaption><div aria-describedby="fig-world-averages-by-dataset-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/fig-world-averages-by-dataset-1.png" width="672">
+</div>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure><p><img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/unnamed-chunk-9-1.png" width="672"></p>
+<div id="fig-world-averages-by-measure" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-world-averages-by-measure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 8: Average level of democracy for the world by year, by individual measure (rescaled to 0-1, darker = more democratic).
+</figcaption><div aria-describedby="fig-world-averages-by-measure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/fig-world-averages-by-measure-1.png" width="672">
+</div>
 </figure>
 </div>
 </div>
@@ -143,8 +167,12 @@
 <p>Finally, we visualize the average level of democracy per country (averaging across all measures that code a country-year; darker colors = more democratic).</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure><p><img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/unnamed-chunk-10-1.png" width="672"></p>
+<div id="fig-average-level-by-country" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-average-level-by-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 9: Average level of democracy per country, averaged across all measures that code a given country-year (rescaled to 0-1, darker = more democratic).
+</figcaption><div aria-describedby="fig-average-level-by-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Understanding_the_coverage_of_existing_democracy_indexes_files/figure-html/fig-average-level-by-country-1.png" width="672">
+</div>
 </figure>
 </div>
 </div>
@@ -170,6 +198,8 @@
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // default icon
+            link.classList.add("external");
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

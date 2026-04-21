@@ -32,15 +32,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
-<li class="active nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/Relationships_between_democracy_measures.html">Relationships between democracy measures</a></li>
-    <li><a class="dropdown-item" href="../articles/Replicating_and_extending_the_UD_scores.html">Replicating and Extending the UD scores of Pemstein, Meserve, and Melton</a></li>
-    <li><a class="dropdown-item" href="../articles/Understanding_the_coverage_of_existing_democracy_indexes.html">Understanding the geographic and temporal coverage of existing democracy indexes</a></li>
-    <li><a class="dropdown-item" href="../articles/Understanding_the_state_system.html">Understanding the state system</a></li>
-  </ul>
-</li>
+<li class="active nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
@@ -6258,6 +6250,8 @@ Marshall, Monty G., Ted Robert Gurr, and Keith Jaggers. 2019. <em>Polity <span>I
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // default icon
+            link.classList.add("external");
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

@@ -55,14 +55,14 @@ raterinfo(replication_2011_model)
 #>    <chr>    <dbl>      <dbl>
 #>  1 pmm_arat  -6   0.00000122
 #>  2 pmm_arat  -5.8 0.00000247
-#>  3 pmm_arat  -5.6 0.00000502
+#>  3 pmm_arat  -5.6 0.00000501
 #>  4 pmm_arat  -5.4 0.0000102 
 #>  5 pmm_arat  -5.2 0.0000206 
 #>  6 pmm_arat  -5   0.0000418 
-#>  7 pmm_arat  -4.8 0.0000849 
+#>  7 pmm_arat  -4.8 0.0000848 
 #>  8 pmm_arat  -4.6 0.000172  
 #>  9 pmm_arat  -4.4 0.000349  
-#> 10 pmm_arat  -4.2 0.000708  
+#> 10 pmm_arat  -4.2 0.000707  
 #> # ℹ 722 more rows
 # }
 ```

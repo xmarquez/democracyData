@@ -29,8 +29,7 @@
 
 - **Freedom House.** Freedom House moved their machine-readable FIW data
   to email-request distribution in 2026. `fh`, `fh_full`, and
-  `fh_electoral` therefore remain frozen at the 2024 report / 2025
-  release.
+  `fh_electoral` therefore remain frozen at the 2025 release.
 
 - **Freedom House download functions.**
   [`download_fh()`](https://xmarquez.github.io/democracyData/reference/download_fh.md),

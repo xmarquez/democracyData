@@ -46,31 +46,12 @@ datasets with names ending in `_pmm`. We can then use the function
 to put the data in the right format for use with
 [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html).
 
+Code
+
 ``` r
+
 library(mirt)
-```
-
-    Loading required package: stats4
-
-    Loading required package: lattice
-
-``` r
 library(tidyverse)
-```
-
-    ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-    ✔ dplyr     1.2.1     ✔ readr     2.2.0
-    ✔ forcats   1.0.1     ✔ stringr   1.6.0
-    ✔ ggplot2   4.0.2     ✔ tibble    3.3.1
-    ✔ lubridate 1.9.5     ✔ tidyr     1.3.2
-    ✔ purrr     1.2.2     
-
-    ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ✖ dplyr::filter() masks stats::filter()
-    ✖ dplyr::lag()    masks stats::lag()
-    ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-
-``` r
 library(democracyData)
 
 identifiers <- c("extended_country_name", "GWn", "cown", "in_GW_system", "year")
@@ -81,22 +62,11 @@ democracy_data <- generate_democracy_scores_dataset(
   output_format = "wide") 
 ```
 
-    Adding arat_pmm data
-    Adding blm_pmm data
-    Adding bollen_pmm data
-    Adding fh_pmm data
-    Adding hadenius_pmm data
-    Adding mainwaring_pmm data
-    Adding Munck data
-    Adding pacl_pmm data
-    Adding polity_pmm data
-    Adding polyarchy_pmm data
-    Adding prc_pmm data
-    Adding vanhanen_pmm data
-
 Before transformation by
 [`prepare_democracy_data()`](https://xmarquez.github.io/democracyData/reference/prepare_democracy_data.md),
 the data looks like this:
+
+Code
 
 ``` r
 skimr::skim(democracy_data |> select(matches("pmm")))
@@ -133,6 +103,8 @@ Data summary
 | pmm_vanhanen   |       172 |          0.98 | 11.31 | 12.67 |   0 |  0.00 |  5.90 | 20.70 |   49 | ▇▂▂▂▁ |
 
 After transformation, it looks like this:
+
+Code
 
 ``` r
 democracy_data_transformed <- prepare_democracy_data(democracy_data)
@@ -199,9 +171,14 @@ will try to do the following on your dataset:
 
 - If a selected index contains the string `wgi`, the function assumes
   the index is the World Governance Indicator’s “Voice and
-  Accountability” index ([Kaufmann and Kraay 2020](#ref-wgi2017)), and
-  it will cut it into 20 categories. The resulting score is ordinal from
-  1 to 20.
+  Accountability” index ([Kaufmann and Kraay 2020](#ref-wgi2017)). Note
+  that as of the 2025 data release, the WGI team rebuilt the aggregation
+  model and recomputed all estimates back to 1996, so values returned by
+  [`download_wgi_voice_and_accountability()`](https://xmarquez.github.io/democracyData/reference/download_wgi_voice_and_accountability.md)
+  are **not comparable** to those used in pre-0.7.0 releases of this
+  package; the prior series is preserved as `wgi_legacy`. The function
+  cuts the index into 20 categories, producing an ordinal score from 1
+  to 20.
 
 - If a selected index contains the string `eiu`, the function assumes
   the index is the Economist Intelligence Unit’s democracy index ([The
@@ -282,8 +259,12 @@ will also work on column names that contain the following strings:
 - `dsvmdi` (assumes it’s the discrete machine-learning index [Gründler
   and Krieger 2018](#ref-svmdi2018))
 - `e_v2x` (assumes it’s one of the “ordinal” indexes from the V-dem
-  project, [Coppedge et al. 2025](#ref-vdem15codebook))
-- `fh` or `freedomhouse` (assumes it’s from [House 2025](#ref-fh2025))
+  project, [Coppedge et al. 2026](#ref-vdem16codebook))
+- `fh` or `freedomhouse` \[assumes it’s from House
+  ([2025](#ref-fh2025)); note that the packaged Freedom House objects
+  (`fh`, `fh_full`, `fh_electoral`) are frozen at the 2025 release (data
+  through 2024), because Freedom House moved to email-request
+  distribution in 2026\]
 - `gwf` (assumes it’s from [Geddes, Wright, and Frantz
   2014](#ref-gwf2014) - the dichotomous democracy indicator only)
 - `kailitz` (assumes it’s from from [Kailitz 2013](#ref-kailitz2013) -
@@ -340,7 +321,10 @@ you begin!
 
 After you’ve prepared the data, you can then fit a model as follows:
 
+Code
+
 ``` r
+
 replication_2011_model <- mirt(
   democracy_data_transformed |> 
     select(
@@ -350,6 +334,7 @@ replication_2011_model <- mirt(
       itemtype = "graded", SE = TRUE,
       verbose = FALSE
       )
+                               
 ```
 
 This just tells
@@ -364,85 +349,86 @@ a fuller description of why this model is useful here).
 
 Fitting this model is reasonably fast:
 
+Code
+
 ``` r
 replication_2011_model@time
+#> TOTAL:   Data  Estep  Mstep     SE   Post 
+#>  5.297  0.124  0.630  3.579  0.930  0.001
 ```
-
-    TOTAL:   Data  Estep  Mstep     SE   Post
-     4.387  0.107  0.542  2.966  0.749  0.001 
 
 We can easily check that this model converges and that it accounts for
 most of the variance in the democracy indexes:
 
+Code
+
 ``` r
 replication_2011_model
-```
-
-    Call:
-    mirt(data = select(democracy_data_transformed, matches("pmm")),
-        model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
-
-    Full-information item factor analysis with 1 factor(s).
-    Converged within 1e-04 tolerance after 153 EM iterations.
-    mirt version: 1.46.1
-    M-step optimizer: BFGS
-    EM acceleration: Ramsay
-    Number of rectangular quadrature: 61
-    Latent density type: Gaussian
-
-    Information matrix estimated with method: Oakes
-    Second-order test: model is a possible local maximum
-    Condition number of information matrix =  92210.37
-
-    Log-likelihood = -55716.14
-    Estimated parameters: 97
-    AIC = 111626.3
-    BIC = 112316.9; SABIC = 112008.7
-
-``` r
+#> 
+#> Call:
+#> mirt(data = select(democracy_data_transformed, matches("pmm")), 
+#>     model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
+#> 
+#> Full-information item factor analysis with 1 factor(s).
+#> Converged within 1e-04 tolerance after 146 EM iterations.
+#> mirt version: 1.46.1 
+#> M-step optimizer: BFGS 
+#> EM acceleration: Ramsay 
+#> Number of rectangular quadrature: 61
+#> Latent density type: Gaussian 
+#> 
+#> Information matrix estimated with method: Oakes
+#> Second-order test: model is a possible local maximum
+#> Condition number of information matrix =  89112.81
+#> 
+#> Log-likelihood = -55716.18
+#> Estimated parameters: 97 
+#> AIC = 111626.4
+#> BIC = 112317; SABIC = 112008.8
 summary(replication_2011_model)
+#>                   F1    h2
+#> pmm_arat       0.901 0.812
+#> pmm_blm        0.992 0.985
+#> pmm_bollen     0.951 0.904
+#> pmm_fh         0.941 0.885
+#> pmm_hadenius   0.986 0.972
+#> pmm_mainwaring 0.994 0.989
+#> pmm_munck      0.955 0.912
+#> pmm_pacl       0.967 0.936
+#> pmm_polity     0.954 0.911
+#> pmm_polyarchy  0.965 0.932
+#> pmm_prc        0.969 0.938
+#> pmm_vanhanen   0.928 0.861
+#> 
+#>                 SE.F1
+#> pmm_arat       0.0045
+#> pmm_blm        0.0030
+#> pmm_bollen     0.0066
+#> pmm_fh         0.0024
+#> pmm_hadenius   0.0050
+#> pmm_mainwaring 0.0017
+#> pmm_munck      0.0090
+#> pmm_pacl       0.0022
+#> pmm_polity     0.0018
+#> pmm_polyarchy  0.0058
+#> pmm_prc        0.0019
+#> pmm_vanhanen   0.0024
+#> 
+#> SS loadings:  11.035 
+#> Proportion Var:  0.92 
+#> 
+#> Factor correlations: 
+#> 
+#>    F1
+#> F1  1
 ```
-
-                      F1    h2
-    pmm_arat       0.901 0.812
-    pmm_blm        0.992 0.985
-    pmm_bollen     0.951 0.904
-    pmm_fh         0.941 0.885
-    pmm_hadenius   0.986 0.972
-    pmm_mainwaring 0.995 0.989
-    pmm_munck      0.955 0.912
-    pmm_pacl       0.967 0.936
-    pmm_polity     0.954 0.911
-    pmm_polyarchy  0.965 0.932
-    pmm_prc        0.969 0.938
-    pmm_vanhanen   0.928 0.861
-
-                    SE.F1
-    pmm_arat       0.0045
-    pmm_blm        0.0030
-    pmm_bollen     0.0066
-    pmm_fh         0.0024
-    pmm_hadenius   0.0050
-    pmm_mainwaring 0.0017
-    pmm_munck      0.0090
-    pmm_pacl       0.0022
-    pmm_polity     0.0018
-    pmm_polyarchy  0.0058
-    pmm_prc        0.0019
-    pmm_vanhanen   0.0024
-
-    SS loadings:  11.035
-    Proportion Var:  0.92
-
-    Factor correlations:
-
-       F1
-    F1  1
 
 And we can then extract the latent democracy scores, either via
 `mirt::fscore()`, or via this package’s convenient wrapper
 `democracy_scores` (which returns a tidy dataset with the latent scores
 and automatically calculates 95% confidence intervals):
+
+Code
 
 ``` r
 replication_2011_scores <-  fscores(replication_2011_model, 
@@ -450,14 +436,11 @@ replication_2011_scores <-  fscores(replication_2011_model,
                                     full.scores.SE = TRUE)
 # Not a data frame, no country-years:
 str(replication_2011_scores)
-```
+#>  'matrix' num [1:9137, 1:2] -1.89 -1.89 -1.57 -1.57 -1.45 ...
+#>  - attr(*, "dimnames")=List of 2
+#>   ..$ : NULL
+#>   ..$ : chr [1:2] "F1" "SE_F1"
 
-     'matrix' num [1:9137, 1:2] -1.89 -1.89 -1.57 -1.57 -1.45 ...
-     - attr(*, "dimnames")=List of 2
-      ..$ : NULL
-      ..$ : chr [1:2] "F1" "SE_F1"
-
-``` r
 replication_2011_scores <- democracy_scores(model = replication_2011_model)
 
 replication_2011_scores <- bind_cols(democracy_data, replication_2011_scores)
@@ -465,62 +448,50 @@ replication_2011_scores <- bind_cols(democracy_data, replication_2011_scores)
 # A data frame with confidence intervals and country-years:
 
 replication_2011_scores
+#> # A tibble: 9,137 × 30
+#>    extended_country_name   GWn  cown in_GW_system  year pmm_arat pmm_blm
+#>    <chr>                 <dbl> <dbl> <lgl>        <dbl>    <dbl>   <dbl>
+#>  1 Afghanistan             700   700 TRUE          1946       NA      NA
+#>  2 Afghanistan             700   700 TRUE          1947       NA      NA
+#>  3 Afghanistan             700   700 TRUE          1948       54      NA
+#>  4 Afghanistan             700   700 TRUE          1949       55      NA
+#>  5 Afghanistan             700   700 TRUE          1950       54      NA
+#>  6 Afghanistan             700   700 TRUE          1951       55      NA
+#>  7 Afghanistan             700   700 TRUE          1952       56      NA
+#>  8 Afghanistan             700   700 TRUE          1953       55      NA
+#>  9 Afghanistan             700   700 TRUE          1954       56      NA
+#> 10 Afghanistan             700   700 TRUE          1955       54      NA
+#> # ℹ 9,127 more rows
+#> # ℹ 23 more variables: pmm_bollen <dbl>, pmm_fh <dbl>, pmm_hadenius <dbl>,
+#> #   pmm_mainwaring <dbl>, pmm_munck <dbl>, pmm_pacl <dbl>, pmm_polity <dbl>,
+#> #   pmm_polyarchy <dbl>, pmm_prc <dbl>, pmm_vanhanen <dbl>, z1 <matrix>,
+#> #   se_z1 <matrix>, z1_pct975 <matrix>, z1_pct025 <matrix>, z1_adj <matrix>,
+#> #   z1_pct975_adj <matrix>, z1_pct025_adj <matrix>, z1_as_prob <matrix>,
+#> #   z1_pct975_as_prob <matrix>, z1_pct025_as_prob <matrix>, …
 ```
-
-    # A tibble: 9,137 × 30
-       extended_country_name   GWn  cown in_GW_system  year pmm_arat pmm_blm
-       <chr>                 <dbl> <dbl> <lgl>        <dbl>    <dbl>   <dbl>
-     1 Afghanistan             700   700 TRUE          1946       NA      NA
-     2 Afghanistan             700   700 TRUE          1947       NA      NA
-     3 Afghanistan             700   700 TRUE          1948       54      NA
-     4 Afghanistan             700   700 TRUE          1949       55      NA
-     5 Afghanistan             700   700 TRUE          1950       54      NA
-     6 Afghanistan             700   700 TRUE          1951       55      NA
-     7 Afghanistan             700   700 TRUE          1952       56      NA
-     8 Afghanistan             700   700 TRUE          1953       55      NA
-     9 Afghanistan             700   700 TRUE          1954       56      NA
-    10 Afghanistan             700   700 TRUE          1955       54      NA
-    # ℹ 9,127 more rows
-    # ℹ 23 more variables: pmm_bollen <dbl>, pmm_fh <dbl>, pmm_hadenius <dbl>,
-    #   pmm_mainwaring <dbl>, pmm_munck <dbl>, pmm_pacl <dbl>, pmm_polity <dbl>,
-    #   pmm_polyarchy <dbl>, pmm_prc <dbl>, pmm_vanhanen <dbl>, z1 <matrix>,
-    #   se_z1 <matrix>, z1_pct975 <matrix>, z1_pct025 <matrix>, z1_adj <matrix>,
-    #   z1_pct975_adj <matrix>, z1_pct025_adj <matrix>, z1_as_prob <matrix>,
-    #   z1_pct975_as_prob <matrix>, z1_pct025_as_prob <matrix>, …
 
 We can check that these scores are, in fact, almost perfectly correlated
 with Pemstein, Meserve, and Melton’s 2011 UDS release:
 
+Code
+
 ``` r
+
 uds <- generate_democracy_scores_dataset(
   selection = "uds", 
   output_format = "wide"
   )
-```
 
-    Adding UDS data (2010 release)
-
-    Adding UDS data (2011 release)
-
-    Adding UDS data (2014 release)
-
-``` r
 replication_2011_scores <- replication_2011_scores |> 
   left_join(uds)
-```
 
-    Joining with `by = join_by(extended_country_name, GWn, cown, in_GW_system,
-    year)`
-
-``` r
 cor(replication_2011_scores |> 
   select(matches("uds_2011"), z1), use = "pairwise")
+#>                 uds_2011_mean uds_2011_median        z1
+#> uds_2011_mean       1.0000000       0.9999485 0.9996735
+#> uds_2011_median     0.9999485       1.0000000 0.9995924
+#> z1                  0.9996735       0.9995924 1.0000000
 ```
-
-                    uds_2011_mean uds_2011_median        z1
-    uds_2011_mean       1.0000000       0.9999485 0.9996730
-    uds_2011_median     0.9999485       1.0000000 0.9995921
-    z1                  0.9996730       0.9995921 1.0000000
 
 (For more details on the relationship between the original UD scores and
 the replicated scores produced using this method, see my [working
@@ -548,12 +519,17 @@ For example, suppose we want to use:
   of which go back to the beginning of the 20th century or before but
   are not used to their fullest extent in the official UD releases.
 - One of the new V-Dem indexes of democracy, ordinal or continuous
-  ([Coppedge et al. 2025](#ref-vdem15codebook))
+  ([Coppedge et al. 2026](#ref-vdem16codebook))
 - Renske Doorenspleet’s dichotomous indicator of democracy including
   suffrage info ([Doorenspleet 2000](#ref-doorenspleet2000))
 - The World Governance Indicator’s latest Voice and Accountability index
-- The most current release of Freedom House’s data, to 2020, and the
-  most current Polity data, to 2018
+  (note: the WGI was re-estimated under a new methodology in 2025, so
+  current values are not comparable to those used in pre-0.7.0 analyses;
+  the prior series is preserved as `wgi_legacy` for reproducibility)
+- The archived 2025 release of Freedom House’s data (data through 2024,
+  frozen because Freedom House no longer distributes machine-readable
+  FIW data as a public download), and Polity 5 data through its most
+  recent available update
 - The indicators of democracy in various autocratic regime datasets
   ([Geddes, Wright, and Frantz 2014](#ref-gwf2014); [Kailitz
   2013](#ref-kailitz2013); [Svolik
@@ -566,7 +542,10 @@ For example, suppose we want to use:
 
 This package makes the process extremely simple:
 
+Code
+
 ``` r
+
 all_dem <- generate_democracy_scores_dataset(
   output_format = "wide",
   verbose = FALSE
@@ -586,55 +565,52 @@ extended_model <- mirt(other_dem |> select(-any_of(identifiers)),
                        model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
 
 summary(extended_model)
-```
+#>                                  F1    h2
+#> arat                          0.962 0.925
+#> blm                           0.991 0.981
+#> bmr_democracy_femalesuffrage  0.989 0.978
+#> pmm_bollen                    0.966 0.933
+#> doorenspleet                  0.979 0.959
+#> wgi_democracy                 0.973 0.947
+#> fh_total_reversed             0.960 0.921
+#> gwf_democracy_extended_strict 0.970 0.941
+#> pmm_hadenius                  0.982 0.964
+#> kailitz_tri                   0.965 0.932
+#> svolik_democracy              0.976 0.952
+#> lexical_index                 0.969 0.939
+#> ulfelder_democracy_extended   0.980 0.960
+#> prc                           0.986 0.972
+#> mainwaring                    0.986 0.972
+#> vanhanen_democratization      0.944 0.892
+#> v2x_polyarchy                 0.980 0.961
+#> 
+#>                                 SE.F1
+#> arat                          0.00172
+#> blm                           0.00213
+#> bmr_democracy_femalesuffrage  0.00072
+#> pmm_bollen                    0.00396
+#> doorenspleet                  0.00134
+#> wgi_democracy                 0.00103
+#> fh_total_reversed             0.00111
+#> gwf_democracy_extended_strict 0.00162
+#> pmm_hadenius                  0.00453
+#> kailitz_tri                   0.00130
+#> svolik_democracy              0.00145
+#> lexical_index                 0.00073
+#> ulfelder_democracy_extended   0.00117
+#> prc                           0.00071
+#> mainwaring                    0.00135
+#> vanhanen_democratization      0.00129
+#> v2x_polyarchy                 0.00047
+#> 
+#> SS loadings:  16.129 
+#> Proportion Var:  0.949 
+#> 
+#> Factor correlations: 
+#> 
+#>    F1
+#> F1  1
 
-                                     F1    h2
-    arat                          0.962 0.925
-    blm                           0.991 0.981
-    bmr_democracy_femalesuffrage  0.989 0.978
-    pmm_bollen                    0.966 0.933
-    doorenspleet                  0.979 0.959
-    wgi_democracy                 0.973 0.947
-    fh_total_reversed             0.960 0.921
-    gwf_democracy_extended_strict 0.970 0.941
-    pmm_hadenius                  0.982 0.964
-    kailitz_tri                   0.965 0.932
-    svolik_democracy              0.976 0.952
-    lexical_index                 0.969 0.939
-    ulfelder_democracy_extended   0.980 0.960
-    prc                           0.986 0.972
-    mainwaring                    0.986 0.972
-    vanhanen_democratization      0.944 0.892
-    v2x_polyarchy                 0.980 0.961
-
-                                    SE.F1
-    arat                          0.00172
-    blm                           0.00213
-    bmr_democracy_femalesuffrage  0.00072
-    pmm_bollen                    0.00396
-    doorenspleet                  0.00134
-    wgi_democracy                 0.00103
-    fh_total_reversed             0.00111
-    gwf_democracy_extended_strict 0.00162
-    pmm_hadenius                  0.00454
-    kailitz_tri                   0.00130
-    svolik_democracy              0.00145
-    lexical_index                 0.00073
-    ulfelder_democracy_extended   0.00117
-    prc                           0.00071
-    mainwaring                    0.00136
-    vanhanen_democratization      0.00129
-    v2x_polyarchy                 0.00047
-
-    SS loadings:  16.128
-    Proportion Var:  0.949
-
-    Factor correlations:
-
-       F1
-    F1  1
-
-``` r
 extended_scores <- democracy_scores(model = extended_model)
 
 extended_scores <- bind_cols(
@@ -649,9 +625,6 @@ extended_scores <- extended_scores |>
       select(any_of(identifiers), 
       matches("_mean")))
 ```
-
-    Joining with `by = join_by(extended_country_name, GWn, cown, in_GW_system,
-    year)`
 
 [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html) will
 stop by default after 500 EM cycles, but some models will take longer to
@@ -670,8 +643,10 @@ scores that have a higher mean (though usually smaller standard errors)
 than the original UD model, given that the world has become
 substantially more democratic over the last two centuries:
 
+Code
+
 ``` r
-countries <- c("United States of America", 
+countries <- c("United States of America",
                "United Kingdom","Argentina",
                "Chile","Venezuela","Spain")
 
@@ -687,12 +662,7 @@ data <- extended_scores |>
     TRUE ~ measure
     )
 )
-```
 
-    Warning: attributes are not identical across measure variables; they will be
-    dropped
-
-``` r
 ggplot(data = data, 
        aes(x = year, y = zscore, color = measure)) + 
   geom_path() + 
@@ -703,7 +673,10 @@ ggplot(data = data,
   facet_wrap(~extended_country_name, ncol = 2)  
 ```
 
-![](Replicating_and_extending_the_UD_scores_files/figure-html/unnamed-chunk-10-1.png)
+![](Replicating_and_extending_the_UD_scores_files/figure-html/fig-extended-vs-uds2014-1.png)
+
+Figure 1: Extended replication scores vs. the 2014 UDS release, for
+selected countries (1946-2008).
 
 If necessary, one can therefore “match” the extended scores to the
 official UD release by substracting the mean of the extended scores for
@@ -711,8 +684,10 @@ the period of the UD release one wants to match from the extended scores
 (that is, making the mean of the extended scores equal to zero for the
 period of adjustment):
 
+Code
+
 ``` r
-matched_data <- extended_scores |> 
+matched_data <- extended_scores |>
   filter(!is.na(uds_2014_mean)) |>
   mutate(z1_matched = z1 - mean(z1, na.rm = TRUE), 
          z1_pct975_matched = z1_pct975 - mean(z1, na.rm = TRUE), 
@@ -729,12 +704,7 @@ matched_data <- matched_data |>
     measure == "z1_matched" ~ "Matched extended replication score",
     TRUE ~ measure
     ))
-```
 
-    Warning: attributes are not identical across measure variables; they will be
-    dropped
-
-``` r
 ggplot(data = matched_data, 
        aes(x = year, y = zscore, color = measure)) + 
   geom_path() + 
@@ -745,7 +715,10 @@ ggplot(data = matched_data,
   facet_wrap(~extended_country_name,ncol=2)  
 ```
 
-![](Replicating_and_extending_the_UD_scores_files/figure-html/unnamed-chunk-11-1.png)
+![](Replicating_and_extending_the_UD_scores_files/figure-html/fig-matched-extended-scores-1.png)
+
+Figure 2: Extended replication scores, mean-adjusted to match the 2014
+UDS release period, for selected countries.
 
 In the graph above, we can see that the 2014 release of the UDS seems to
 overestimate the degree of democracy in the USA in the early decades of
@@ -759,6 +732,8 @@ the function `democracy_scores`; they are in the column `z1_as_prob` of
 the output, and are produced by applying the `pnorm` function to `z1`,
 as follows:
 
+Code
+
 ``` r
 extended_scores <- extended_scores |> 
   mutate(index = pnorm(z1), 
@@ -768,16 +743,15 @@ extended_scores <- extended_scores |>
 # These are equal to z1_as_prob, which is automatically calculated:
 
 extended_scores |> filter(index != z1_as_prob)
+#> # A tibble: 0 × 24
+#> # ℹ 24 variables: extended_country_name <chr>, GWn <dbl>, cown <dbl>,
+#> #   in_GW_system <lgl>, year <dbl>, z1 <matrix>, se_z1 <matrix>,
+#> #   z1_pct975 <matrix>, z1_pct025 <matrix>, z1_adj <matrix>,
+#> #   z1_pct975_adj <matrix>, z1_pct025_adj <matrix>, z1_as_prob <matrix>,
+#> #   z1_pct975_as_prob <matrix>, z1_pct025_as_prob <matrix>,
+#> #   z1_adj_as_prob <matrix>, z1_pct975_adj_as_prob <matrix>,
+#> #   z1_pct025_adj_as_prob <matrix>, uds_2010_mean <dbl>, uds_2011_mean <dbl>, …
 ```
-
-    # A tibble: 0 × 24
-    # ℹ 24 variables: extended_country_name <chr>, GWn <dbl>, cown <dbl>,
-    #   in_GW_system <lgl>, year <dbl>, z1 <matrix>, se_z1 <matrix>,
-    #   z1_pct975 <matrix>, z1_pct025 <matrix>, z1_adj <matrix>,
-    #   z1_pct975_adj <matrix>, z1_pct025_adj <matrix>, z1_as_prob <matrix>,
-    #   z1_pct975_as_prob <matrix>, z1_pct025_as_prob <matrix>,
-    #   z1_adj_as_prob <matrix>, z1_pct975_adj_as_prob <matrix>,
-    #   z1_pct025_adj_as_prob <matrix>, uds_2010_mean <dbl>, uds_2011_mean <dbl>, …
 
 It is also possible to to set the cutpoint for this index at, for
 example, the average cutpoint in the latent variable of the dichotomous
@@ -787,54 +761,47 @@ to the dichotomous measures of democracy included in your model). These
 scores are also automatically calculated (they are in the column
 `z1_adj`) but they can also be manually added as follows:
 
+Code
+
 ``` r
 cutpoints_extended <- cutpoints(extended_model)
 
 cutpoints_extended
-```
+#> # A tibble: 101 × 6
+#>    variable                     estimate pct025 pct975      se num_obs
+#>    <chr>                           <dbl>  <dbl>  <dbl>   <dbl>   <int>
+#>  1 arat                           -0.518 -0.523 -0.514 0.00245    3873
+#>  2 arat                           -0.191 -0.203 -0.177 0.00693    3873
+#>  3 arat                            0.239  0.206  0.276 0.0186     3873
+#>  4 arat                            0.525  0.471  0.584 0.0302     3873
+#>  5 arat                            0.908  0.822  1.00  0.0479     3873
+#>  6 arat                            1.69   1.54   1.86  0.0838     3873
+#>  7 blm                             0.480  0.302  0.761 0.143       505
+#>  8 blm                             1.06   0.678  1.67  0.309       505
+#>  9 bmr_democracy_femalesuffrage    0.842  0.741  0.956 0.0583    19126
+#> 10 pmm_bollen                     -0.651 -0.660 -0.639 0.00612     510
+#> # ℹ 91 more rows
 
-    # A tibble: 101 × 6
-       variable                     estimate pct025 pct975      se num_obs
-       <chr>                           <dbl>  <dbl>  <dbl>   <dbl>   <int>
-     1 arat                           -0.519 -0.523 -0.514 0.00245    3873
-     2 arat                           -0.191 -0.203 -0.177 0.00693    3873
-     3 arat                            0.239  0.206  0.275 0.0186     3873
-     4 arat                            0.525  0.471  0.584 0.0302     3873
-     5 arat                            0.908  0.822  1.00  0.0479     3873
-     6 arat                            1.69   1.54   1.86  0.0837     3873
-     7 blm                             0.479  0.302  0.760 0.143       505
-     8 blm                             1.06   0.677  1.67  0.309       505
-     9 bmr_democracy_femalesuffrage    0.842  0.741  0.956 0.0583    19126
-    10 pmm_bollen                     -0.652 -0.661 -0.640 0.00610     510
-    # ℹ 91 more rows
-
-``` r
 dichotomous_cutpoints <- cutpoints_extended |> 
   group_by(variable) |>
   filter(n() == 1) 
 
 dichotomous_cutpoints
-```
+#> # A tibble: 5 × 6
+#> # Groups:   variable [5]
+#>   variable                      estimate pct025 pct975     se num_obs
+#>   <chr>                            <dbl>  <dbl>  <dbl>  <dbl>   <int>
+#> 1 bmr_democracy_femalesuffrage     0.842  0.741  0.956 0.0583   19126
+#> 2 doorenspleet                     0.925  0.816  1.05  0.0638   13009
+#> 3 gwf_democracy_extended_strict    0.663  0.590  0.745 0.0417    9243
+#> 4 svolik_democracy                 0.720  0.635  0.817 0.0492    8554
+#> 5 ulfelder_democracy_extended      0.712  0.631  0.803 0.0464   11545
 
-    # A tibble: 5 × 6
-    # Groups:   variable [5]
-      variable                      estimate pct025 pct975     se num_obs
-      <chr>                            <dbl>  <dbl>  <dbl>  <dbl>   <int>
-    1 bmr_democracy_femalesuffrage     0.842  0.741  0.956 0.0583   19126
-    2 doorenspleet                     0.925  0.816  1.05  0.0638   13009
-    3 gwf_democracy_extended_strict    0.663  0.590  0.745 0.0417    9243
-    4 svolik_democracy                 0.720  0.635  0.816 0.0492    8554
-    5 ulfelder_democracy_extended      0.711  0.631  0.802 0.0464   11545
-
-``` r
 avg_dichotomous <- mean(dichotomous_cutpoints$estimate)
 
 avg_dichotomous
-```
+#> [1] 0.7723956
 
-    [1] 0.7722639
-
-``` r
 extended_scores <- extended_scores |> mutate(adj_z1 = z1 - avg_dichotomous, 
                                         adj_pct025 = z1_pct025 - avg_dichotomous, 
                                         adj_pct975 =z1_pct975 - avg_dichotomous,
@@ -855,14 +822,11 @@ ggplot(data = extended_scores |> filter(extended_country_name %in% countries),
   facet_wrap(~extended_country_name,ncol=2)  
 ```
 
-    Don't know how to automatically pick scale for object of type
-    <matrix/array/mirt_matrix>. Defaulting to continuous.
-    Don't know how to automatically pick scale for object of type
-    <matrix/array/mirt_matrix>. Defaulting to continuous.
-    Don't know how to automatically pick scale for object of type
-    <matrix/array/mirt_matrix>. Defaulting to continuous.
+![](Replicating_and_extending_the_UD_scores_files/figure-html/fig-extended-scores-probability-1.png)
 
-![](Replicating_and_extending_the_UD_scores_files/figure-html/unnamed-chunk-13-1.png)
+Figure 3: Extended scores transformed to a 0-1 probability scale, with
+the cutpoint set at the average cutpoint of the dichotomous rater
+indicators.
 
 A pre-computed and documented version of the extended UDS scores, with
 data from all the indexes mentioned above, plus the
@@ -875,12 +839,16 @@ REIGN dataset of Bell ([2016](#ref-reign2016)), which extends Geddes,
 Wright, and Frantz ([2014](#ref-gwf2014)), a dichotomous democracy
 indicator from Acemoglu et al. ([2019](#ref-anrr2019)), the Bertelsmann
 Transformation index ([Bertelsmann Stiftung 2026](#ref-bti2026)), the
-new Varieties of Political Regimes dataset ([Kailitz
-2026](#ref-vaporeg32dataset)), and an indicator of democracy used by the
-Political Instability Task Force ([Goldstone et al.
-2010](#ref-pitf2010); [Taylor and Ulfelder 2015](#ref-pitf2015)), is
+Varieties of Political Regimes dataset ([Kailitz
+2026](#ref-vaporeg32dataset)) (the 0.7.0 release refreshed VaPoReg to
+the March 2026 upstream schema; the legacy pre-0.7.0 VaPoReg variables
+are preserved separately as `vaporeg_2024`), and an indicator of
+democracy used by the Political Instability Task Force ([Goldstone et
+al. 2010](#ref-pitf2010); [Taylor and Ulfelder 2015](#ref-pitf2015)), is
 included with the package; it can be loaded by simply typing
-`extended_uds`. Use
+`extended_uds`. The `extended_uds` object shipped with 0.7.0 was rebuilt
+using the revised WGI and current VaPoReg inputs alongside the other
+refreshed datasets. Use
 [`?extended_uds`](https://xmarquez.github.io/democracyData/reference/extended_uds.md)
 to examine the documentation for all its variables, and see my working
 paper ([Marquez 2016](http://ssrn.com/abstract=2753830)) for more detail
@@ -898,12 +866,14 @@ scores, such as dichotomous measures of democracy. Here we compute a
 2-parameter logistic model from all dichotomous indexes of democracy
 (excluding near-duplicates):
 
+Code
+
 ``` r
 dichotomous_dem <- all_dem |>
   select(any_of(identifiers), where(~n_distinct(.) <= 3))  |>
-  select(-pacl, 
-         -bmr_democracy_omitteddata, -bmr_democracy, 
-         -wth_democ1, 
+  select(-pacl,
+         -bmr_democracy_omitteddata, -bmr_democracy,
+         -wth_democ1,
          -gwf_democracy_extended, -utip_dichotomous)
 
 dichotomous_dem <- prepare_democracy_data(dichotomous_dem)
@@ -912,88 +882,81 @@ dichotomous_model <- mirt(dichotomous_dem |> select(-any_of(identifiers)),
                           model = 1, itemtype = "2PL", SE = TRUE, verbose = FALSE)
 
 summary(dichotomous_model)
-```
+#>                                  F1    h2
+#> anckar_democracy              0.996 0.992
+#> anrr_democracy                0.985 0.971
+#> bmr_democracy_femalesuffrage  0.996 0.992
+#> bnr_extended                  0.974 0.948
+#> doorenspleet                  0.978 0.956
+#> fh_electoral                  0.982 0.965
+#> gwf_democracy_extended_strict 0.978 0.956
+#> kailitz_binary                0.981 0.963
+#> magaloni_democracy_extended   0.983 0.966
+#> pacl_update                   0.971 0.943
+#> PIPE_democracy                0.813 0.661
+#> pitf_binary                   0.975 0.951
+#> reign_democracy               0.971 0.942
+#> dsvmdi                        0.959 0.919
+#> svolik_democracy              0.979 0.959
+#> ulfelder_democracy_extended   0.979 0.959
+#> utip_dichotomous_strict       0.930 0.865
+#> vaporeg_binary_strict         0.982 0.964
+#> vaporeg_binary_non_strict     0.981 0.962
+#> wth_democrobust               0.976 0.953
+#> 
+#>                                 SE.F1
+#> anckar_democracy              0.00050
+#> anrr_democracy                0.00118
+#> bmr_democracy_femalesuffrage  0.00056
+#> bnr_extended                  0.00164
+#> doorenspleet                  0.00154
+#> fh_electoral                  0.00138
+#> gwf_democracy_extended_strict 0.00147
+#> kailitz_binary                0.00127
+#> magaloni_democracy_extended   0.00119
+#> pacl_update                   0.00155
+#> PIPE_democracy                0.00538
+#> pitf_binary                   0.00130
+#> reign_democracy               0.00156
+#> dsvmdi                        0.00195
+#> svolik_democracy              0.00144
+#> ulfelder_democracy_extended   0.00130
+#> utip_dichotomous_strict       0.00398
+#> vaporeg_binary_strict         0.00156
+#> vaporeg_binary_non_strict     0.00097
+#> wth_democrobust               0.00175
+#> 
+#> SS loadings:  18.787 
+#> Proportion Var:  0.939 
+#> 
+#> Factor correlations: 
+#> 
+#>    F1
+#> F1  1
 
-                                     F1    h2
-    anckar_democracy              0.996 0.992
-    anrr_democracy                0.985 0.971
-    bmr_democracy_femalesuffrage  0.996 0.992
-    bnr_extended                  0.974 0.948
-    doorenspleet                  0.978 0.956
-    fh_electoral                  0.982 0.965
-    gwf_democracy_extended_strict 0.978 0.956
-    kailitz_binary                0.981 0.963
-    magaloni_democracy_extended   0.983 0.966
-    pacl_update                   0.971 0.943
-    PIPE_democracy                0.813 0.661
-    pitf_binary                   0.975 0.951
-    reign_democracy               0.971 0.942
-    dsvmdi                        0.959 0.919
-    svolik_democracy              0.979 0.959
-    ulfelder_democracy_extended   0.979 0.959
-    utip_dichotomous_strict       0.930 0.865
-    vaporeg_binary_strict         0.982 0.964
-    vaporeg_binary_non_strict     0.981 0.962
-    wth_democrobust               0.976 0.953
-
-                                    SE.F1
-    anckar_democracy              0.00050
-    anrr_democracy                0.00118
-    bmr_democracy_femalesuffrage  0.00056
-    bnr_extended                  0.00164
-    doorenspleet                  0.00154
-    fh_electoral                  0.00138
-    gwf_democracy_extended_strict 0.00147
-    kailitz_binary                0.00127
-    magaloni_democracy_extended   0.00119
-    pacl_update                   0.00155
-    PIPE_democracy                0.00538
-    pitf_binary                   0.00130
-    reign_democracy               0.00156
-    dsvmdi                        0.00195
-    svolik_democracy              0.00144
-    ulfelder_democracy_extended   0.00130
-    utip_dichotomous_strict       0.00398
-    vaporeg_binary_strict         0.00156
-    vaporeg_binary_non_strict     0.00097
-    wth_democrobust               0.00175
-
-    SS loadings:  18.787
-    Proportion Var:  0.939
-
-    Factor correlations:
-
-       F1
-    F1  1
-
-``` r
 dichotomous_scores <- democracy_scores(dichotomous_model)
 
 dichotomous_scores <- bind_cols(dichotomous_dem |> select(any_of(identifiers)),
                                 dichotomous_scores)
 
 
-ggplot(data = dichotomous_scores |> filter(extended_country_name %in% countries), 
-       aes(x= year, y = z1_as_prob, 
-           ymin = z1_pct025_as_prob, ymax = z1_pct975_as_prob)) + 
-  geom_line() + 
-  geom_ribbon(alpha=0.2) + 
-  theme_bw() + 
-  labs(x = "Year", y = "Latent unified democracy scores,\nper year\nconverted to 0-1 probability scale")  + 
-  theme(legend.position="bottom") + 
-  guides(color = guide_legend(ncol=1),fill = guide_legend(nrow=1)) + 
+ggplot(data = dichotomous_scores |> filter(extended_country_name %in% countries),
+       aes(x= year, y = z1_as_prob,
+           ymin = z1_pct025_as_prob, ymax = z1_pct975_as_prob)) +
+  geom_line() +
+  geom_ribbon(alpha=0.2) +
+  theme_bw() +
+  labs(x = "Year", y = "Latent unified democracy scores,\nper year\nconverted to 0-1 probability scale")  +
+  theme(legend.position="bottom") +
+  guides(color = guide_legend(ncol=1),fill = guide_legend(nrow=1)) +
   geom_hline(yintercept=0.5,color="red") +
   facet_wrap(~extended_country_name,ncol=2)
 ```
 
-    Don't know how to automatically pick scale for object of type
-    <matrix/array/mirt_matrix>. Defaulting to continuous.
-    Don't know how to automatically pick scale for object of type
-    <matrix/array/mirt_matrix>. Defaulting to continuous.
-    Don't know how to automatically pick scale for object of type
-    <matrix/array/mirt_matrix>. Defaulting to continuous.
+![](Replicating_and_extending_the_UD_scores_files/figure-html/fig-dichotomous-only-scores-1.png)
 
-![](Replicating_and_extending_the_UD_scores_files/figure-html/unnamed-chunk-14-1.png)
+Figure 4: Latent democracy scores fit only from dichotomous raters
+(2-parameter logistic model), on the 0-1 probability scale.
 
 As Gründler and Krieger ([2021/05/17/](#ref-svmdi2021)) note, latent
 variable indexes suffer from arbitrary changes in level related to
@@ -1005,9 +968,11 @@ coverage down to the 19th century and then select the set of rows for
 which all measures exist, producing a panel with 159 countries and
 scores from 1919 to 2003.
 
+Code
+
 ``` r
 full_panel <- all_dem |>
-  select(any_of(identifiers), reign_democracy, polity2, 
+  select(any_of(identifiers), reign_democracy, polity2,
          bmr_democracy_femalesuffrage, v2x_polyarchy,
          ulfelder_democracy_extended, bnr_extended, 
          magaloni_democracy_extended, csvmdi, pitf,
@@ -1025,52 +990,46 @@ panel_model <- mirt(full_panel |> select(-any_of(identifiers)),
                     verbose = FALSE, technical = list(NCYCLES = 1000))
 
 panel_model@time
-```
+#> TOTAL:   Data  Estep  Mstep     SE   Post 
+#>  8.405  0.052  1.216  6.077  1.033  0.001
 
-    TOTAL:   Data  Estep  Mstep     SE   Post
-     6.736  0.041  0.993  4.839  0.839  0.000 
-
-``` r
 summary(panel_model)
-```
+#>                                 F1    h2
+#> reign_democracy              0.979 0.958
+#> polity2                      0.990 0.980
+#> bmr_democracy_femalesuffrage 0.984 0.969
+#> v2x_polyarchy                0.924 0.854
+#> ulfelder_democracy_extended  0.978 0.956
+#> bnr_extended                 0.975 0.951
+#> magaloni_democracy_extended  0.989 0.979
+#> csvmdi                       0.958 0.917
+#> pitf                         0.981 0.963
+#> anckar_democracy             0.988 0.977
+#> PEPS1v                       0.991 0.982
+#> vanhanen_democratization     0.949 0.900
+#> 
+#>                                SE.F1
+#> reign_democracy              0.00157
+#> polity2                      0.00040
+#> bmr_democracy_femalesuffrage 0.00132
+#> v2x_polyarchy                0.00203
+#> ulfelder_democracy_extended  0.00159
+#> bnr_extended                 0.00178
+#> magaloni_democracy_extended  0.00110
+#> csvmdi                       0.00135
+#> pitf                         0.00083
+#> anckar_democracy             0.00107
+#> PEPS1v                       0.00036
+#> vanhanen_democratization     0.00170
+#> 
+#> SS loadings:  11.386 
+#> Proportion Var:  0.949 
+#> 
+#> Factor correlations: 
+#> 
+#>    F1
+#> F1  1
 
-                                    F1    h2
-    reign_democracy              0.979 0.958
-    polity2                      0.990 0.980
-    bmr_democracy_femalesuffrage 0.984 0.969
-    v2x_polyarchy                0.924 0.854
-    ulfelder_democracy_extended  0.978 0.956
-    bnr_extended                 0.975 0.951
-    magaloni_democracy_extended  0.989 0.979
-    csvmdi                       0.958 0.917
-    pitf                         0.981 0.963
-    anckar_democracy             0.988 0.977
-    PEPS1v                       0.991 0.982
-    vanhanen_democratization     0.949 0.900
-
-                                   SE.F1
-    reign_democracy              0.00157
-    polity2                      0.00040
-    bmr_democracy_femalesuffrage 0.00132
-    v2x_polyarchy                0.00203
-    ulfelder_democracy_extended  0.00159
-    bnr_extended                 0.00178
-    magaloni_democracy_extended  0.00110
-    csvmdi                       0.00135
-    pitf                         0.00083
-    anckar_democracy             0.00107
-    PEPS1v                       0.00036
-    vanhanen_democratization     0.00170
-
-    SS loadings:  11.386
-    Proportion Var:  0.949
-
-    Factor correlations:
-
-       F1
-    F1  1
-
-``` r
 panel_scores <- democracy_scores(panel_model)
 
 panel_scores <- bind_cols(full_panel |> select(any_of(identifiers)),
@@ -1078,33 +1037,6 @@ panel_scores <- bind_cols(full_panel |> select(any_of(identifiers)),
 
 skimr::skim(panel_scores)
 ```
-
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
 
 |                                                  |              |
 |:-------------------------------------------------|:-------------|
@@ -1127,17 +1059,17 @@ Data summary
 |:----------------------|----------:|--------------:|----:|----:|------:|---------:|-----------:|
 | extended_country_name |         0 |             1 |   4 |  39 |     0 |      158 |          0 |
 | z1                    |         0 |             1 |  14 |  21 |     0 |     1625 |          0 |
-| se_z1                 |         0 |             1 |  15 |  18 |     0 |     1625 |          0 |
-| z1_pct975             |         0 |             1 |  14 |  20 |     0 |     1625 |          0 |
-| z1_pct025             |         0 |             1 |  14 |  20 |     0 |     1625 |          0 |
-| z1_adj                |         0 |             1 |  14 |  21 |     0 |     1625 |          0 |
+| se_z1                 |         0 |             1 |  14 |  18 |     0 |     1625 |          0 |
+| z1_pct975             |         0 |             1 |  13 |  20 |     0 |     1625 |          0 |
+| z1_pct025             |         0 |             1 |  14 |  21 |     0 |     1625 |          0 |
+| z1_adj                |         0 |             1 |  15 |  21 |     0 |     1625 |          0 |
 | z1_pct975_adj         |         0 |             1 |  14 |  20 |     0 |     1625 |          0 |
-| z1_pct025_adj         |         0 |             1 |  13 |  21 |     0 |     1625 |          0 |
+| z1_pct025_adj         |         0 |             1 |  15 |  21 |     0 |     1625 |          0 |
 | z1_as_prob            |         0 |             1 |  14 |  18 |     0 |     1625 |          0 |
-| z1_pct975_as_prob     |         0 |             1 |  15 |  18 |     0 |     1625 |          0 |
-| z1_pct025_as_prob     |         0 |             1 |  15 |  19 |     0 |     1625 |          0 |
+| z1_pct975_as_prob     |         0 |             1 |  14 |  18 |     0 |     1625 |          0 |
+| z1_pct025_as_prob     |         0 |             1 |  13 |  19 |     0 |     1625 |          0 |
 | z1_adj_as_prob        |         0 |             1 |  15 |  19 |     0 |     1625 |          0 |
-| z1_pct975_adj_as_prob |         0 |             1 |  14 |  18 |     0 |     1625 |          0 |
+| z1_pct975_adj_as_prob |         0 |             1 |  13 |  18 |     0 |     1625 |          0 |
 | z1_pct025_adj_as_prob |         0 |             1 |  15 |  20 |     0 |     1625 |          0 |
 
 **Variable type: logical**
@@ -1154,7 +1086,13 @@ Data summary
 | cown          |         0 |             1 |  455.33 | 246.19 |   20 |  230 |  451 |  663 |  950 | ▇▇▇▇▅ |
 | year          |         0 |             1 | 1976.28 |  18.27 | 1919 | 1964 | 1978 | 1992 | 2003 | ▁▂▅▇▇ |
 
+Figure 5: Latent democracy scores from a panel of long-coverage
+measures, constrained to country-years with no missing values.
+
+Code
+
 ``` r
+
 ggplot(data = panel_scores |> filter(extended_country_name %in% countries), 
        aes(x= year, y = z1_as_prob, 
            ymin = z1_pct025_as_prob, ymax = z1_pct975_as_prob)) + 
@@ -1168,17 +1106,15 @@ ggplot(data = panel_scores |> filter(extended_country_name %in% countries),
   facet_wrap(~extended_country_name,ncol=2)
 ```
 
-    Don't know how to automatically pick scale for object of type
-    <matrix/array/mirt_matrix>. Defaulting to continuous.
-    Don't know how to automatically pick scale for object of type
-    <matrix/array/mirt_matrix>. Defaulting to continuous.
-    Don't know how to automatically pick scale for object of type
-    <matrix/array/mirt_matrix>. Defaulting to continuous.
+![](Replicating_and_extending_the_UD_scores_files/figure-html/fig-long-coverage-panel-1.png)
 
-![](Replicating_and_extending_the_UD_scores_files/figure-html/unnamed-chunk-15-1.png)
+Figure 6: Latent democracy scores from a panel of long-coverage
+measures, constrained to country-years with no missing values.
 
 Or suppose we’re interested in a particular coverage period, including
 only measures that have data to 2018:
+
+Code
 
 ``` r
 full_panel <- all_dem |>
@@ -1203,82 +1139,76 @@ panel_model <- mirt(full_panel |> select(-any_of(identifiers)),
                     verbose = FALSE, technical = list(NCYCLES = 1000))
 
 panel_model@time
-```
+#> TOTAL:   Data  Estep  Mstep     SE   Post 
+#> 15.113  0.045  0.768  9.953  4.274  0.001
 
-    TOTAL:   Data  Estep  Mstep     SE   Post
-    12.225  0.028  0.601  8.239  3.306  0.000 
-
-``` r
 summary(panel_model)
-```
+#>                                 F1    h2
+#> fh_total_reversed            0.917 0.842
+#> fh_electoral                 0.934 0.873
+#> lexical_index                0.929 0.862
+#> lexical_index_plus           0.926 0.858
+#> v2x_polyarchy                0.997 0.995
+#> v2x_libdem                   0.968 0.937
+#> v2x_partipdem                0.960 0.922
+#> v2x_api                      0.996 0.993
+#> v2x_mpi                      0.997 0.994
+#> anckar_democracy             0.930 0.864
+#> bmr_democracy                0.905 0.819
+#> bmr_democracy_femalesuffrage 0.905 0.819
+#> bmr_democracy_omitteddata    0.905 0.819
+#> pitf                         0.849 0.721
+#> polity2                      0.859 0.738
+#> vaporeg_binary_strict        0.868 0.753
+#> vaporeg_binary_non_strict    0.934 0.872
+#> vaporeg_trichotomous         0.919 0.845
+#> v2x_delibdem                 0.945 0.893
+#> v2x_egaldem                  0.909 0.827
+#> csvmdi                       0.879 0.773
+#> vanhanen_democratization     0.605 0.366
+#> reign_democracy              0.831 0.690
+#> pacl_update                  0.807 0.651
+#> wgi_democracy                0.903 0.815
+#> bti                          0.889 0.791
+#> eiu                          0.834 0.696
+#> 
+#>                                SE.F1
+#> fh_total_reversed            0.00511
+#> fh_electoral                 0.00997
+#> lexical_index                0.00673
+#> lexical_index_plus           0.00591
+#> v2x_polyarchy                0.00038
+#> v2x_libdem                   0.00215
+#> v2x_partipdem                0.00262
+#> v2x_api                      0.00040
+#> v2x_mpi                      0.00040
+#> anckar_democracy             0.01041
+#> bmr_democracy                0.01258
+#> bmr_democracy_femalesuffrage 0.01258
+#> bmr_democracy_omitteddata    0.01258
+#> pitf                         0.01061
+#> polity2                      0.00810
+#> vaporeg_binary_strict        0.02206
+#> vaporeg_binary_non_strict    0.01041
+#> vaporeg_trichotomous         0.00850
+#> v2x_delibdem                 0.00343
+#> v2x_egaldem                  0.00541
+#> csvmdi                       0.00755
+#> vanhanen_democratization     0.01789
+#> reign_democracy              0.01743
+#> pacl_update                  0.01893
+#> wgi_democracy                0.00569
+#> bti                          0.00639
+#> eiu                          0.00907
+#> 
+#> SS loadings:  22.026 
+#> Proportion Var:  0.816 
+#> 
+#> Factor correlations: 
+#> 
+#>    F1
+#> F1  1
 
-                                    F1    h2
-    fh_total_reversed            0.917 0.841
-    fh_electoral                 0.934 0.872
-    lexical_index                0.928 0.861
-    lexical_index_plus           0.926 0.857
-    v2x_polyarchy                0.997 0.995
-    v2x_libdem                   0.968 0.937
-    v2x_partipdem                0.960 0.921
-    v2x_api                      0.997 0.993
-    v2x_mpi                      0.997 0.994
-    anckar_democracy             0.929 0.863
-    bmr_democracy                0.905 0.818
-    bmr_democracy_femalesuffrage 0.905 0.818
-    bmr_democracy_omitteddata    0.905 0.818
-    pitf                         0.848 0.719
-    polity2                      0.859 0.737
-    vaporeg_binary_strict        0.867 0.753
-    vaporeg_binary_non_strict    0.933 0.871
-    vaporeg_trichotomous         0.919 0.844
-    v2x_delibdem                 0.945 0.893
-    v2x_egaldem                  0.909 0.826
-    csvmdi                       0.878 0.772
-    vanhanen_democratization     0.604 0.365
-    reign_democracy              0.830 0.689
-    pacl_update                  0.806 0.650
-    wgi_democracy                0.902 0.814
-    bti                          0.889 0.790
-    eiu                          0.834 0.695
-
-                                   SE.F1
-    fh_total_reversed            0.00512
-    fh_electoral                 0.01013
-    lexical_index                0.00808
-    lexical_index_plus           0.00691
-    v2x_polyarchy                0.00037
-    v2x_libdem                   0.00216
-    v2x_partipdem                0.00271
-    v2x_api                      0.00046
-    v2x_mpi                      0.00039
-    anckar_democracy             0.01061
-    bmr_democracy                0.01281
-    bmr_democracy_femalesuffrage 0.01281
-    bmr_democracy_omitteddata    0.01281
-    pitf                         0.01137
-    polity2                      0.00838
-    vaporeg_binary_strict        0.02209
-    vaporeg_binary_non_strict    0.01057
-    vaporeg_trichotomous         0.00886
-    v2x_delibdem                 0.00348
-    v2x_egaldem                  0.00553
-    csvmdi                       0.00839
-    vanhanen_democratization     0.01913
-    reign_democracy              0.01840
-    pacl_update                  0.01943
-    wgi_democracy                0.00586
-    bti                          0.00658
-    eiu                          0.00927
-
-    SS loadings:  22.007
-    Proportion Var:  0.815
-
-    Factor correlations:
-
-       F1
-    F1  1
-
-``` r
 panel_scores <- democracy_scores(panel_model)
 
 panel_scores <- bind_cols(full_panel |> select(any_of(identifiers)),
@@ -1286,33 +1216,6 @@ panel_scores <- bind_cols(full_panel |> select(any_of(identifiers)),
 
 skimr::skim(panel_scores)
 ```
-
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
-    Warning: Couldn't find skimmers for class: matrix, array, mirt_matrix; No
-    user-defined `sfl` provided. Falling back to `character`.
 
 |                                                  |              |
 |:-------------------------------------------------|:-------------|
@@ -1334,18 +1237,18 @@ Data summary
 | skim_variable         | n_missing | complete_rate | min | max | empty | n_unique | whitespace |
 |:----------------------|----------:|--------------:|----:|----:|------:|---------:|-----------:|
 | extended_country_name |         0 |             1 |   4 |  39 |     0 |      129 |          0 |
-| z1                    |         0 |             1 |  14 |  21 |     0 |      792 |          0 |
-| se_z1                 |         0 |             1 |  15 |  18 |     0 |      792 |          0 |
+| z1                    |         0 |             1 |  15 |  20 |     0 |      792 |          0 |
+| se_z1                 |         0 |             1 |  16 |  18 |     0 |      792 |          0 |
 | z1_pct975             |         0 |             1 |  13 |  19 |     0 |      792 |          0 |
-| z1_pct025             |         0 |             1 |  14 |  20 |     0 |      792 |          0 |
+| z1_pct025             |         0 |             1 |  15 |  20 |     0 |      792 |          0 |
 | z1_adj                |         0 |             1 |  14 |  20 |     0 |      792 |          0 |
-| z1_pct975_adj         |         0 |             1 |  15 |  20 |     0 |      792 |          0 |
-| z1_pct025_adj         |         0 |             1 |  15 |  20 |     0 |      792 |          0 |
-| z1_as_prob            |         0 |             1 |  13 |  19 |     0 |      792 |          0 |
+| z1_pct975_adj         |         0 |             1 |  14 |  20 |     0 |      792 |          0 |
+| z1_pct025_adj         |         0 |             1 |  14 |  20 |     0 |      792 |          0 |
+| z1_as_prob            |         0 |             1 |  15 |  19 |     0 |      792 |          0 |
 | z1_pct975_as_prob     |         0 |             1 |  15 |  18 |     0 |      792 |          0 |
 | z1_pct025_as_prob     |         0 |             1 |  15 |  19 |     0 |      792 |          0 |
-| z1_adj_as_prob        |         0 |             1 |  15 |  19 |     0 |      792 |          0 |
-| z1_pct975_adj_as_prob |         0 |             1 |  14 |  19 |     0 |      792 |          0 |
+| z1_adj_as_prob        |         0 |             1 |  14 |  19 |     0 |      792 |          0 |
+| z1_pct975_adj_as_prob |         0 |             1 |  15 |  19 |     0 |      792 |          0 |
 | z1_pct025_adj_as_prob |         0 |             1 |  15 |  19 |     0 |      792 |          0 |
 
 **Variable type: logical**
@@ -1362,7 +1265,13 @@ Data summary
 | cown          |         0 |             1 |  483.69 | 226.96 |   40 |  355 |  500 |  690 |  910 | ▆▆▇▇▅ |
 | year          |         0 |             1 | 2012.06 |   4.02 | 2006 | 2008 | 2012 | 2016 | 2018 | ▇▃▃▃▇ |
 
+Figure 7: Latent democracy scores from a panel restricted to measures
+with data through 2018.
+
+Code
+
 ``` r
+
 ggplot(data = panel_scores |> filter(extended_country_name %in% countries), 
        aes(x= year, y = z1_as_prob, 
            ymin = z1_pct025_as_prob, ymax = z1_pct975_as_prob)) + 
@@ -1376,14 +1285,10 @@ ggplot(data = panel_scores |> filter(extended_country_name %in% countries),
   facet_wrap(~extended_country_name,ncol=2)
 ```
 
-    Don't know how to automatically pick scale for object of type
-    <matrix/array/mirt_matrix>. Defaulting to continuous.
-    Don't know how to automatically pick scale for object of type
-    <matrix/array/mirt_matrix>. Defaulting to continuous.
-    Don't know how to automatically pick scale for object of type
-    <matrix/array/mirt_matrix>. Defaulting to continuous.
+![](Replicating_and_extending_the_UD_scores_files/figure-html/fig-2018-coverage-panel-1.png)
 
-![](Replicating_and_extending_the_UD_scores_files/figure-html/unnamed-chunk-16-1.png)
+Figure 8: Latent democracy scores from a panel restricted to measures
+with data through 2018.
 
 ### Extracting useful information from a model
 
@@ -1398,27 +1303,26 @@ cutoffs, and rater information curves from a model produced by this
 procedure in a tidy data frame format suitable for graphing. Here, for
 example, we can replicate the figures in PMM’s original paper:
 
+Code
+
 ``` r
 replication_2011_cutpoints <- cutpoints(replication_2011_model, type ="score")
 replication_2011_cutpoints
-```
+#> # A tibble: 85 × 6
+#>    variable   estimate  pct025   pct975      se num_obs
+#>    <chr>         <dbl>   <dbl>    <dbl>   <dbl>   <int>
+#>  1 pmm_arat   -1.43    -1.42   -1.44    0.00526    3873
+#>  2 pmm_arat   -1.02    -1.02   -1.01    0.00149    3873
+#>  3 pmm_arat   -0.427   -0.449  -0.403   0.0123     3873
+#>  4 pmm_arat   -0.0428  -0.0801 -0.00145 0.0211     3873
+#>  5 pmm_arat    0.420    0.356   0.491   0.0361     3873
+#>  6 pmm_arat    1.42     1.28    1.58    0.0797     3873
+#>  7 pmm_blm    -0.00455 -0.0459  0.0871  0.0468      275
+#>  8 pmm_blm     0.473    0.220   1.03    0.286       275
+#>  9 pmm_bollen -1.53    -1.51   -1.55    0.0145      510
+#> 10 pmm_bollen -1.08    -1.07   -1.08    0.00244     510
+#> # ℹ 75 more rows
 
-    # A tibble: 85 × 6
-       variable   estimate  pct025   pct975      se num_obs
-       <chr>         <dbl>   <dbl>    <dbl>   <dbl>   <int>
-     1 pmm_arat   -1.43    -1.42   -1.44    0.00526    3873
-     2 pmm_arat   -1.02    -1.02   -1.01    0.00150    3873
-     3 pmm_arat   -0.427   -0.449  -0.403   0.0123     3873
-     4 pmm_arat   -0.0427  -0.0800 -0.00132 0.0211     3873
-     5 pmm_arat    0.420    0.356   0.491   0.0361     3873
-     6 pmm_arat    1.42     1.28    1.58    0.0797     3873
-     7 pmm_blm    -0.00425 -0.0456  0.0878  0.0470      275
-     8 pmm_blm     0.473    0.219   1.04    0.288       275
-     9 pmm_bollen -1.53    -1.51   -1.55    0.0145      510
-    10 pmm_bollen -1.08    -1.07   -1.08    0.00243     510
-    # ℹ 75 more rows
-
-``` r
 # We plot the "normalized" cutpoints ("estimate," in the same scale as the latent scores), 
 # not the untransformed ones ("par")
 
@@ -1431,35 +1335,28 @@ ggplot(data = replication_2011_cutpoints,
   geom_errorbar() + 
   geom_hline(yintercept =0, color="red") + 
   coord_flip()
-```
 
-![](Replicating_and_extending_the_UD_scores_files/figure-html/unnamed-chunk-17-1.png)
-
-``` r
 # We can also plot discrimination parameters, which are in a different scale:
 replication_2011_discrimination <- cutpoints(replication_2011_model, 
                                              type ="discrimination")
 
 replication_2011_discrimination
-```
+#> # A tibble: 12 × 5
+#>    variable       estimate pct025 pct975 num_obs
+#>    <chr>             <dbl>  <dbl>  <dbl>   <int>
+#>  1 pmm_arat           3.54   3.35   3.72    3873
+#>  2 pmm_blm           13.6    8.45  18.8      275
+#>  3 pmm_bollen         5.22   4.48   5.96     510
+#>  4 pmm_fh             4.72   4.51   4.92    6438
+#>  5 pmm_hadenius       9.97   6.45  13.5      129
+#>  6 pmm_mainwaring    16.1   11.2   21.1      835
+#>  7 pmm_munck          5.47   4.33   6.62     342
+#>  8 pmm_pacl           6.50   6.05   6.95    9067
+#>  9 pmm_polity         5.44   5.21   5.67    8050
+#> 10 pmm_polyarchy      6.30   5.21   7.38     353
+#> 11 pmm_prc            6.64   6.22   7.06    6002
+#> 12 pmm_vanhanen       4.23   4.07   4.39    8965
 
-    # A tibble: 12 × 5
-       variable       estimate pct025 pct975 num_obs
-       <chr>             <dbl>  <dbl>  <dbl>   <int>
-     1 pmm_arat           3.54   3.35   3.72    3873
-     2 pmm_blm           13.6    8.45  18.8      275
-     3 pmm_bollen         5.21   4.48   5.95     510
-     4 pmm_fh             4.72   4.51   4.92    6438
-     5 pmm_hadenius      10.1    6.47  13.6      129
-     6 pmm_mainwaring    16.2   11.2   21.2      835
-     7 pmm_munck          5.48   4.33   6.63     342
-     8 pmm_pacl           6.50   6.05   6.95    9067
-     9 pmm_polity         5.44   5.21   5.67    8050
-    10 pmm_polyarchy      6.29   5.21   7.37     353
-    11 pmm_prc            6.64   6.22   7.06    6002
-    12 pmm_vanhanen       4.23   4.07   4.39    8965
-
-``` r
 ggplot(data = replication_2011_discrimination, 
        aes(x=reorder(variable,estimate),
            y = estimate, ymin = pct025, 
@@ -1470,32 +1367,25 @@ ggplot(data = replication_2011_discrimination,
   geom_point() + 
   geom_errorbar() + 
   coord_flip()
-```
 
-![](Replicating_and_extending_the_UD_scores_files/figure-html/unnamed-chunk-17-2.png)
-
-``` r
 # And we can plot item information curves for each rater:
 replication_2011_info <- raterinfo(replication_2011_model)
 replication_2011_info
-```
+#> # A tibble: 732 × 3
+#>    rater    theta       info
+#>    <chr>    <dbl>      <dbl>
+#>  1 pmm_arat  -6   0.00000122
+#>  2 pmm_arat  -5.8 0.00000247
+#>  3 pmm_arat  -5.6 0.00000501
+#>  4 pmm_arat  -5.4 0.0000102 
+#>  5 pmm_arat  -5.2 0.0000206 
+#>  6 pmm_arat  -5   0.0000418 
+#>  7 pmm_arat  -4.8 0.0000848 
+#>  8 pmm_arat  -4.6 0.000172  
+#>  9 pmm_arat  -4.4 0.000349  
+#> 10 pmm_arat  -4.2 0.000707  
+#> # ℹ 722 more rows
 
-    # A tibble: 732 × 3
-       rater    theta       info
-       <chr>    <dbl>      <dbl>
-     1 pmm_arat  -6   0.00000122
-     2 pmm_arat  -5.8 0.00000247
-     3 pmm_arat  -5.6 0.00000502
-     4 pmm_arat  -5.4 0.0000102
-     5 pmm_arat  -5.2 0.0000206
-     6 pmm_arat  -5   0.0000418
-     7 pmm_arat  -4.8 0.0000849
-     8 pmm_arat  -4.6 0.000172
-     9 pmm_arat  -4.4 0.000349
-    10 pmm_arat  -4.2 0.000708
-    # ℹ 722 more rows
-
-``` r
 ggplot(data = replication_2011_info, aes(x=theta,y=info)) + 
   geom_path() + 
   facet_wrap(~rater) + 
@@ -1504,7 +1394,23 @@ ggplot(data = replication_2011_info, aes(x=theta,y=info)) +
   theme(legend.position="bottom")
 ```
 
-![](Replicating_and_extending_the_UD_scores_files/figure-html/unnamed-chunk-17-3.png)
+![](Replicating_and_extending_the_UD_scores_files/figure-html/fig-rater-cutpoints-and-info-1.png)
+
+Figure 9: Rater cutoffs, discrimination parameters, and item information
+curves for each democracy measure used in the 2011 UDS replication
+model.
+
+![](Replicating_and_extending_the_UD_scores_files/figure-html/fig-rater-cutpoints-and-info-2.png)
+
+Figure 10: Rater cutoffs, discrimination parameters, and item
+information curves for each democracy measure used in the 2011 UDS
+replication model.
+
+![](Replicating_and_extending_the_UD_scores_files/figure-html/fig-rater-cutpoints-and-info-3.png)
+
+Figure 11: Rater cutoffs, discrimination parameters, and item
+information curves for each democracy measure used in the 2011 UDS
+replication model.
 
 Finally, the package offers a simple function to estimate the
 probability that a given country is more democratic than another in a
@@ -1513,38 +1419,32 @@ example, suppose we want to know the probability that the USA was more
 democratic than France in the year 2000 for both the replicated 2011
 scores and our extended model:
 
+Code
+
 ``` r
 prob_more(replication_2011_scores, "United States of America","France", 2000)
-```
-
-    [1] 0.8782352
-
-``` r
+#> [1] 0.8782654
 prob_more(extended_scores, "United States of America","France", 2000)
+#> [1] 0.5768139
 ```
-
-    [1] 0.5768137
 
 Or perhaps we wish to know the probability that the United States was
 more democratic in the year 2000 than in the year 1953:
+
+Code
 
 ``` r
 prob_more(replication_2011_scores, 
           "United States of America",
           "United States of America", 
           c(2000,1953))
-```
-
-    [1] 0.9179133
-
-``` r
+#> [1] 0.9179056
 prob_more(extended_scores, 
           "United States of America",
           "United States of America", 
           c(2000,1953))
+#> [1] 0.9999967
 ```
-
-    [1] 0.9999966
 
 ## References
 
@@ -1595,11 +1495,6 @@ Coppedge, Michael, Angel Alvarez, and Claudia Maldonado. 2008. “Two
 Persistent Dimensions of Democracy: Contestation and Inclusiveness.”
 *The journal of politics* 70(03): 632–47.
 doi:[10.1017/S0022381608080663](https://doi.org/10.1017/S0022381608080663).
-
-Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I.
-Lindberg, Jan Teorell, David Altman, Fabio Angiolillo, et al. 2025.
-*V-Dem Codebook V15*. Varieties of Democracy (V-Dem) Project. Report.
-<https://www.v-dem.net/>.
 
 Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I.
 Lindberg, Jan Teorell, David Altman, Fabio Angiolillo, et al. 2026.

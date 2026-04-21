@@ -8,11 +8,17 @@ can nevertheless vary quite a bit across measures, years, and countries.
 Consider first dichotomous measures of democracy, which classify
 countries into two categories: democracies and non-democracies. These
 are very highly correlated (median pairwise correlation coefficient =
-0.84).
+0.82).
 
-![](Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-2-1.png)
+![](Relationships_between_democracy_measures_files/figure-html/fig-dichotomous-correlations-1.png)
 
-![](Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-3-1.png)
+Figure 1: Pairwise correlations among all dichotomous measures of
+democracy, reordered by hierarchical clustering.
+
+![](Relationships_between_democracy_measures_files/figure-html/fig-dichotomous-density-1.png)
+
+Figure 2: Distribution of pairwise correlation coefficients among
+dichotomous measures of democracy.
 
 Nevertheless, a few of these measures are poorly correlated with the
 rest, in particular, the
@@ -23,7 +29,14 @@ Nordstrom, and Reenock 2001](#ref-bnr2001)) measures. The
 [PIPE](https://xmarquez.github.io/reference/PIPE.md) measure of
 democracy is likely not properly constructed; there are no clear
 instructions for replicating it in the original documentation, and I
-can’t be sure I succeeded in replicating it.
+can’t be sure I succeeded in replicating it. The 0.7.0 release
+recalculated the package-derived PIPE variables (`cum_salterel`,
+`cum_term`, `democracy`, `democracy2`, `democracy_age`, `regime`,
+`regime_period`) to better match the PIPE codebook: only `salterel == 1`
+and `term == 1` now advance democratic spells, and
+`regime`/`regime_period` are now missing before independence, so
+PIPE-derived correlations here may differ from previously rendered
+versions of this article.
 
 The [bnr](https://xmarquez.github.io/reference/bnr.md) measure is
 different from most other dichotomous measures of democracy because it
@@ -50,9 +63,12 @@ There are a number of measures of democracy that distinguish between
 democracy, non-democracy, and some hybrid or intermediate category.
 These trichotomous measures are also highly correlated.
 
-![](Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-4-1.png)
+![](Relationships_between_democracy_measures_files/figure-html/fig-trichotomous-correlations-1.png)
 
-All of these are specialist measures that are no longer maintained, but
+Figure 3: Pairwise correlations among all trichotomous measures of
+democracy.
+
+Most of these are specialist measures that are no longer maintained, but
 remain of historical interest. The lowest correlation levels are with
 the [Kailitz](https://xmarquez.github.io/reference/kailitz.md)
 trichotomous index calculated by taking “electoral autocracy” as the
@@ -68,10 +84,16 @@ House](https://xmarquez.github.io/reference/download_fh.md) ([House
 2025](#ref-fh2025)) distinguishes 14 different “grades” between the most
 unfree and the most free category, but it is not clear that the
 difference between one grade and another means the same across all
-grades. In any case, these measures are highly correlated among
+grades. Note that the Freedom House objects bundled with this package
+(`fh`, `fh_full`, `fh_electoral`) are frozen at the 2025 release (data
+through 2024), since Freedom House moved to email-request distribution
+in 2026. In any case, these measures are highly correlated among
 themselves.
 
-![](Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-5-1.png)
+![](Relationships_between_democracy_measures_files/figure-html/fig-ordinal-correlations-1.png)
+
+Figure 4: Pairwise correlations among all ordinal/graded measures of
+democracy.
 
 ## Continous Measures of Democracy
 
@@ -79,14 +101,20 @@ Finally, there are a number of continuous measures of democracy (usually
 in the 0-1 range), which like other measures, are very highly
 correlated.
 
-![](Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-6-1.png)
+![](Relationships_between_democracy_measures_files/figure-html/fig-continuous-correlations-1.png)
+
+Figure 5: Pairwise correlations among all continuous measures of
+democracy.
 
 ## All Correlations
 
 The median correlation coefficient between any two measures (of any
 type) is 0.83.
 
-![](Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-8-1.png)
+![](Relationships_between_democracy_measures_files/figure-html/fig-all-correlations-density-1.png)
+
+Figure 6: Distribution of pairwise correlation coefficients among all
+democracy measures (rescaled to 0-1).
 
 A simple hierarchical cluster analysis can help us to better visualize
 the relationships among these measures.
@@ -95,7 +123,7 @@ At the top of the figure below, we find the main outlier, the measure of
 democracy from [PIPE](https://xmarquez.github.io/reference/PIPE.md)
 ([Przeworski 2013](#ref-PIPE2013)). The next cluster includes a set of
 continous measures, mostly from V-Dem ([Coppedge et al.
-2025](#ref-vdem15codebook)), but also the
+2026](#ref-vdem16codebook)), but also the
 [vanhanen](https://xmarquez.github.io/reference/vanhanen.md) measure
 ([Vanhanen 2019](#ref-vanhanen2019)) that includes information about
 participation. These are “thicker” measures of democracy. The bottom two
@@ -121,7 +149,10 @@ heavily influenced by the inclusion of
 Ulfelder 2015](#ref-pitf2015)), which are built from
 [polity](https://xmarquez.github.io/reference/polityIV.md).
 
-![](Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-9-1.png)
+![](Relationships_between_democracy_measures_files/figure-html/fig-hclust-dendrogram-1.png)
+
+Figure 7: Hierarchical cluster analysis of most democracy measures,
+using Euclidean distance on the rescaled value series.
 
 ## Variation in per-country and per-year correlations
 
@@ -135,14 +166,21 @@ different measurements do not agree on when the country first became
 democratic, or how democratic it actually was at any given point in
 time.
 
-![](Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-10-1.png)
+![](Relationships_between_democracy_measures_files/figure-html/fig-usa-measures-1.png)
+
+Figure 8: Measurements of democracy for the USA across all indexes,
+rescaled to 0-1. Shaded red bands are the American and French
+revolutions, the two World Wars, and the end of the Cold War.
 
 A latent variable analysis of most of these measures (using the
 \[extended_uds\] measure - see the vignette on replicating and extended
 the UD scores in this package) makes the evolution of democracy in the
 USA look like this:
 
-![](Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-11-1.png)
+![](Relationships_between_democracy_measures_files/figure-html/fig-usa-extended-uds-1.png)
+
+Figure 9: Extended UD scores for the United States, with annotated
+political milestones.
 
 The average correlation between democracy measures varies substantially
 year by year, due in part to the particular states that are measured on
@@ -158,12 +196,18 @@ effort has been focused. It is worth noting that correlations also dip
 after the Cold War, as more countries take on difficult to classify
 hybrid forms.
 
-![](Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-12-1.png)
+![](Relationships_between_democracy_measures_files/figure-html/fig-avg-correlation-per-year-1.png)
+
+Figure 10: Average pairwise correlation among all democracy measures, by
+year, with 95% confidence intervals.
 
 Correlations among measures can also vary substantially within a given
 country.
 
-![](Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-13-1.png)
+![](Relationships_between_democracy_measures_files/figure-html/fig-correlations-by-country-1.png)
+
+Figure 11: Distribution of pairwise correlation coefficients among
+democracy measures, for selected countries.
 
 Here we see that for a country like the USA, the pairwise correlation
 coefficient between any two measures of democracy ranges from nearly 1
@@ -176,7 +220,11 @@ We can find the “hardest” countries to classify by looking at the
 standard deviation of the rescaled measures per year. Here are the top
 12 most difficult to classify countries by this measure:
 
-![](Relationships_between_democracy_measures_files/figure-html/unnamed-chunk-15-1.png)
+![](Relationships_between_democracy_measures_files/figure-html/fig-hardest-countries-1.png)
+
+Figure 12: The twelve countries with the greatest within-year
+disagreement among democracy measures, measured by the average standard
+deviation of rescaled scores weighted by coverage.
 
 There is clearly a great deal of uncertainty in these measures for many
 country-years, though the overall patterns are usually clear. Two ways
@@ -209,9 +257,9 @@ Cheibub, José Antonio, Jennifer Gandhi, and James Raymond Vreeland.
 doi:[10.1007/s11127-009-9491-2](https://doi.org/10.1007/s11127-009-9491-2).
 
 Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I.
-Lindberg, Jan Teorell, David Altman, Fabio Angiolillo, et al. 2025.
-*V-Dem Codebook V15*. Varieties of Democracy (V-Dem) Project. Report.
-<https://www.v-dem.net/>.
+Lindberg, Jan Teorell, David Altman, Fabio Angiolillo, et al. 2026.
+*V-Dem Codebook V16*. Varieties of Democracy (V-Dem) Project. Report.
+<https://www.v-dem.net/documents/70/codebook_v16.pdf>.
 
 Doorenspleet, Renske. 2000. “Reassessing the Three Waves of
 Democratization.” *World Politics* 52(03): 384–406.
