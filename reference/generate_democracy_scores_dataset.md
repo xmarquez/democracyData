@@ -21,6 +21,9 @@ generate_democracy_scores_dataset(
   keep_only_last_in_year = TRUE,
   uds_release_year = c(2014, 2011, 2010),
   svmdi_release_year = c(2020, 2016),
+  wgi_version = c("current", "legacy"),
+  vaporeg_version = c("current", "legacy"),
+  pitf_version = c("current", "legacy", "polity5", "polity4"),
   exclude_pmm_duplicates = TRUE,
   prefer_successor = TRUE,
   fix_PIPE = TRUE,
@@ -39,6 +42,7 @@ generate_democracy_scores_dataset(
   "[anrr](https://xmarquez.github.io/democracyData/reference/anrr.md)",
   "[LIED](https://xmarquez.github.io/democracyData/reference/LIED.md)",
   "[PIPE](https://xmarquez.github.io/democracyData/reference/PIPE.md)",
+  "[arat](https://xmarquez.github.io/democracyData/reference/arat_pmm.md)",
   "[arat_pmm](https://xmarquez.github.io/democracyData/reference/arat_pmm.md)",
   "[blm](https://xmarquez.github.io/democracyData/reference/blm.md)",
   "[blm_pmm](https://xmarquez.github.io/democracyData/reference/blm.md)",
@@ -77,6 +81,7 @@ generate_democracy_scores_dataset(
   "[ulfelder_extended](https://xmarquez.github.io/democracyData/reference/ulfelder.md)",
   "[utip](https://xmarquez.github.io/democracyData/reference/utip.md)",
   "[vanhanen](https://xmarquez.github.io/democracyData/reference/vanhanen.md)",
+  "[vaporeg](https://xmarquez.github.io/democracyData/reference/vaporeg.md)",
   "[vdem](https://xmarquez.github.io/democracyData/reference/vdem_simple.md)",
   "[wahman_teorell_hadenius](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)",
   "[reign](https://xmarquez.github.io/democracyData/reference/REIGN.md)"
@@ -111,8 +116,8 @@ generate_democracy_scores_dataset(
 
 - verbose:
 
-  Provides a running commentary on what the function is is doing.
-  Default is `TRUE`.
+  Provides a running commentary on what the function is doing. Default
+  is `TRUE`.
 
 - force_redownload:
 
@@ -122,7 +127,7 @@ generate_democracy_scores_dataset(
 
 - scale_scores:
 
-  Whether to scale each measure (substracting their mean and dividing by
+  Whether to scale each measure (subtracting their mean and dividing by
   their standard deviation). Default is `FALSE`.
 
 - keep_only_last_in_year:
@@ -153,6 +158,30 @@ generate_democracy_scores_dataset(
   [svmdi](https://xmarquez.github.io/democracyData/reference/svmdi.md)
   dataset to include. Defaults to the latest, 2020. Can be 2020 or 2016,
   or both of them.
+
+- wgi_version:
+
+  Which WGI series to include. `"current"` uses the revised
+  [wgi](https://xmarquez.github.io/democracyData/reference/download_wgi_voice_and_accountability.md)
+  series; `"legacy"` uses the archived
+  [wgi_legacy](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
+  series. Default is `"current"`.
+
+- vaporeg_version:
+
+  Which VaPoReg schema to include. `"current"` uses the current
+  [vaporeg](https://xmarquez.github.io/democracyData/reference/vaporeg.md)
+  object; `"legacy"` uses the archived
+  [vaporeg_2024](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md)
+  object. Default is `"current"`.
+
+- pitf_version:
+
+  Which PITF variant to include. `"current"` and `"polity5"` use
+  [pitf](https://xmarquez.github.io/democracyData/reference/pitf.md);
+  `"legacy"` and `"polity4"` use
+  [pitf_p4](https://xmarquez.github.io/democracyData/reference/pitf.md).
+  Default is `"current"`.
 
 - exclude_pmm_duplicates:
 
@@ -231,7 +260,7 @@ generate_democracy_scores_dataset(
   century; assumes Pakistan from 1950-1970 must include Bangladesh, and
   Turkey from 1820-1913 refers to the Ottoman Empire; removes unified
   Vietnam from the period 1954-1975, Serbia from 1990, and Serbia and
-  Montenegro from 1990 to 1991 (leaving only Yugoslabia from 1990 to
+  Montenegro from 1990 to 1991 (leaving only Yugoslavia from 1990 to
   1991).
 
 - enforce_GW_enddates:
@@ -264,8 +293,9 @@ two versions: "long" and "wide". These contain the following variables:
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -276,7 +306,7 @@ two versions: "long" and "wide". These contain the following variables:
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -298,16 +328,16 @@ output data frame also contains the following variables:
 
   The calendar year. Most measures of democracy reflect the country's
   situation as of 31 December of the year. If
-  `keep_last_in_year = FALSE` (and `format = "long"`), a single country
-  year may nevertheless contain more than one measurement for some
-  measures (e.g.,
+  `keep_only_last_in_year = FALSE` (and `output_format = "long"`), a
+  single country year may nevertheless contain more than one measurement
+  for some measures (e.g.,
   [prc](https://xmarquez.github.io/democracyData/reference/prc_gasiorowski.md)).
 
 - measure:
 
   The name of the measure. (e.g., "blm", "fh_total_reversed").
 
-- variable:
+- value:
 
   The numerical value of the measure, in the original scale (if
   `scale_scores = FALSE`) or as a z-score (if `scale_scores = TRUE`).
@@ -412,7 +442,7 @@ the measures are converted to z-scores):
 - bti:
 
   The [bti](https://xmarquez.github.io/democracyData/reference/bti.md) -
-  Berteslmann Transformation Democracy Status index. Ranges from 1 to
+  Bertelsmann Transformation Democracy Status index. Ranges from 1 to
   10.
 
 - doorenspleet:
@@ -561,7 +591,7 @@ the measures are converted to z-scores):
 
   The measures of democracy from
   [pitf](https://xmarquez.github.io/democracyData/reference/pitf.md),
-  converted to numberic values. Higher values indicate more democracy.
+  converted to numeric values. Higher values indicate more democracy.
 
 - pmm_arat:
 
@@ -681,7 +711,7 @@ the measures are converted to z-scores):
   The original polyarchy scale (`poly`) in
   [polyarchy](https://xmarquez.github.io/democracyData/reference/polyarchy.md),
   reversed so that higher values imply more democracy. The codebook
-  suggests this was superceded by `polyarchy_original_contestation`.
+  suggests this was superseded by `polyarchy_original_contestation`.
 
 - prc:
 
@@ -731,7 +761,7 @@ the measures are converted to z-scores):
 
 - ulfelder_democracy:
 
-  The dichotmous measure of democracy in
+  The dichotomous measure of democracy in
   [ulfelder](https://xmarquez.github.io/democracyData/reference/ulfelder.md).
 
 - ulfelder_democracy_extended:
@@ -779,29 +809,31 @@ the measures are converted to z-scores):
 
   A dichotomous measure of democracy from the
   [vaporeg](https://xmarquez.github.io/democracyData/reference/vaporeg.md)
-  dataset. Coded as 1 if the regime is classified as a full democracy
-  (VaPoReg_s = 10), and 0 otherwise. This strict definition excludes
-  semi-democracies and other intermediate forms. See
+  dataset. This is a package-derived strict democracy indicator: it is
+  coded 1 only when `vaporeg_regtype_reports == 10`, 0 for all other
+  observations that remain inside VaPoReg's binary democracy universe,
+  and `NA` where VaPoReg does not classify the observation in that
+  universe. See
   [vaporeg](https://xmarquez.github.io/democracyData/reference/vaporeg.md)
   for details.
 
 - vaporeg_binary_non_strict:
 
   A less restrictive dichotomous measure of democracy from
-  [vaporeg](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
-  coded as 1 if the regime is a full democracy (VaPoReg_s = 10) or a
-  semi-democracy (VaPoReg_s = 20), and 0 otherwise. See
+  [vaporeg](https://xmarquez.github.io/democracyData/reference/vaporeg.md).
+  It is the package-facing version of the upstream
+  `vaporeg_regtype_bindem` variable, coded 1 for Democracy and 0 for
+  Non-Democracy. See
   [vaporeg](https://xmarquez.github.io/democracyData/reference/vaporeg.md)
   for details.
 
 - vaporeg_trichotomous:
 
   A trichotomous democracy measure from
-  [vaporeg](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
-  based on the VaPoReg_s classification. Coded as 2 for full democracies
-  (10), 1 for semi-democracies (20), and 0 for all other regime types.
-  This measure distinguishes between fully and partially democratic
-  regimes. See
+  [vaporeg](https://xmarquez.github.io/democracyData/reference/vaporeg.md).
+  It is a package-facing recode of the upstream `vaporeg_regtype_triple`
+  variable, with 2 for Democracy, 1 for Hybrid Regime, and 0 for
+  Autocracy. See
   [vaporeg](https://xmarquez.github.io/democracyData/reference/vaporeg.md)
   for details.
 
@@ -849,15 +881,15 @@ the measures are converted to z-scores):
 
   A dichotomous measure of democracy from
   [wahman_teorell_hadenius](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
-  obtaining by coding 1 all democracies according to the `regime1ny`
+  obtained by coding 1 all democracies according to the `regime1ny`
   variable, 0 all other regimes.
 
 - wth_democrobust:
 
   A dichotomous measure of democracy from
   [wahman_teorell_hadenius](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
-  obtaining by coding 1 all democracies according to the
-  `regimenyrobust` variable, 0 all other regimes.
+  obtained by coding 1 all democracies according to the `regimenyrobust`
+  variable, 0 all other regimes.
 
 ## State-system choices
 
@@ -868,7 +900,7 @@ package uses
 [country_year_coder](https://xmarquez.github.io/democracyData/reference/country_year_coder.md)).
 There are a number of alternatives, including the Gleditsch and Ward
 system, the Polity system (both based on the COW system, with some
-modifications), and the V-Dem system (wich is at the basis of
+modifications), and the V-Dem system (which is at the basis of
 [LIED](https://xmarquez.github.io/democracyData/reference/LIED.md),
 though
 [LIED](https://xmarquez.github.io/democracyData/reference/LIED.md) also
@@ -955,26 +987,27 @@ includes the West Bank, Gaza, and "Israeli-Occupied Territories" (I'm
 assuming the occupied territories in Lebanon and Syria). I've labeled
 them as follows:
 
-|                                     |                                                |               |          |          |
-|-------------------------------------|------------------------------------------------|---------------|----------|----------|
-| extended_country_name               | original_country_name                          | dataset       | min_year | max_year |
-| British Mandate of Palestine        | Palestine                                      | vaporeg       | 1919     | 1947     |
-| British Mandate of Palestine        | Palestine/British Mandate                      | LIED          | 1918     | 1947     |
-| British Mandate of Palestine        | Palestine/British Mandate                      | vdem          | 1918     | 1947     |
-| Israeli-Occupied Territories        | Israeli-Occupied Territories                   | fh            | 1996     | 2009     |
-| Palestine, State of                 | Palestine                                      | eiu           | 2006     | 2024     |
-| Palestine, State of                 | Palestine                                      | vaporeg       | 1948     | 2006     |
-| Palestine, State of                 | Palestinian Authority-Administered Territories | fh            | 1996     | 2009     |
-| Palestine, State of                 | West Bank and Gaza                             | wgi_democracy | 1996     | 2023     |
-| Palestine, State of                 | West Bank and Gaza Strip                       | fh            | 1977     | 1995     |
-| Palestine, State of/Gaza Strip Only | Gaza Strip                                     | fh            | 2010     | 2024     |
-| Palestine, State of/Gaza Strip Only | Palestine Gaza Strip                           | vaporeg       | 2007     | 2024     |
-| Palestine, State of/Gaza Strip Only | Palestine/Gaza                                 | LIED          | 1948     | 2023     |
-| Palestine, State of/Gaza Strip Only | Palestine/Gaza                                 | vdem          | 1948     | 2024     |
-| Palestine, State of/West Bank Only  | Palestine West Bank                            | vaporeg       | 2007     | 2024     |
-| Palestine, State of/West Bank Only  | Palestine/West Bank                            | LIED          | 1948     | 2023     |
-| Palestine, State of/West Bank Only  | Palestine/West Bank                            | vdem          | 1948     | 2024     |
-| Palestine, State of/West Bank Only  | West Bank                                      | fh            | 2010     | 2024     |
+|                                   |                                                |               |          |          |
+|-----------------------------------|------------------------------------------------|---------------|----------|----------|
+| extended_country_name             | original_country_name                          | dataset       | min_year | max_year |
+| British Mandate of Palestine      | Palestine/British Mandate                      | LIED          | 1918     | 1947     |
+| British Mandate of Palestine      | Palestine/British Mandate                      | vdem          | 1918     | 1948     |
+| Israel, occupied territories only | Israeli-Occupied Territories                   | fh            | 1996     | 2009     |
+| Palestine, State of               | Palestine                                      | eiu           | 2006     | 2025     |
+| Palestine, State of               | Palestinian Authority-Administered Territories | fh            | 1996     | 2009     |
+| Palestine, State of               | West Bank and Gaza Strip                       | fh            | 1977     | 1995     |
+| Palestine, State of               | Palestine                                      | vaporeg       | 1920     | 1947     |
+| Palestine, State of               | West Bank and Gaza                             | wgi_democracy | 1996     | 2024     |
+| Palestine/Gaza                    | Gaza Strip                                     | fh            | 2010     | 2024     |
+| Palestine/Gaza                    | Gaza Strip                                     | fh_electoral  | 2017     | 2024     |
+| Palestine/Gaza                    | Palestine/Gaza                                 | LIED          | 1948     | 2025     |
+| Palestine/Gaza                    | Palestine, Gaza Strip                          | vaporeg       | 1948     | 2025     |
+| Palestine/Gaza                    | Palestine/Gaza                                 | vdem          | 1948     | 2025     |
+| Palestine/West Bank               | West Bank                                      | fh            | 2010     | 2024     |
+| Palestine/West Bank               | West Bank                                      | fh_electoral  | 2017     | 2024     |
+| Palestine/West Bank               | Palestine/West Bank                            | LIED          | 1948     | 2025     |
+| Palestine/West Bank               | Palestine, West Bank                           | vaporeg       | 1948     | 2025     |
+| Palestine/West Bank               | Palestine/West Bank                            | vdem          | 1948     | 2025     |
 
 There are some other oddities, primarily concerning
 [fh](https://xmarquez.github.io/democracyData/reference/fh_pmm.md) and
@@ -1006,8 +1039,7 @@ Analysis* 18.4 (2010), pp. 426-449. DOI:
 
 D. Pemstein, S. A. Meserve, and J. Melton. *Replication Data for:
 Democratic Compromise: A Latent Variable Analysis of Ten Measures of
-Regime Type*. 2013. DOI:
-[10.7910/DVN/WWYOHU](https://dx.doi.org/10.7910/DVN/WWYOHU).
+Regime Type*. 2013. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM.
 
 ## Examples
 
@@ -1015,7 +1047,7 @@ Regime Type*. 2013. DOI:
 # You can select only some datasets
 
 democracy_data_gwf <- generate_democracy_scores_dataset(
- datasets = c("gwf", "pacl", "bmr"), 
+ datasets = c("gwf", "pacl", "bmr"),
  output_format = "wide"
  )
 #> Adding BMR data
@@ -1050,12 +1082,12 @@ generate_democracy_scores_dataset(
 democracy_data_long <- generate_democracy_scores_dataset(
  datasets = "pacl",
  force_redownload = TRUE
-) 
+)
 
 democracy_data_wide <- generate_democracy_scores_dataset(
  datasets = "pacl",
- force_redownload = TRUE, 
+ force_redownload = TRUE,
  output_format = "wide"
-) 
+)
 } # }
 ```

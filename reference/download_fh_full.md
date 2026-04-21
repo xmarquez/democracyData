@@ -1,7 +1,8 @@
 # Freedom House All Data 2013-2024
 
-Downloads the 2025 update of the Freedom House Freedom in the World All
-Data 2013-2024 file (calendar years 2013 to 2024) and processes it using
+Downloads the archived 2025 update of the Freedom House Freedom in the
+World All Data 2013-2024 file (calendar years 2013 to 2024) and
+processes it using
 [country_year_coder](https://xmarquez.github.io/democracyData/reference/country_year_coder.md).
 The original data is available at
 <https://freedomhouse.org/report/freedom-world>
@@ -14,9 +15,11 @@ download_fh_full(url, verbose = TRUE, return_raw = FALSE, ...)
 
 ## Source
 
-The "Freedom in the World" dataset from Freedom House, updated to 2023
-(Freedom in the World 2024 Report). Original data and methodology is
-available at <https://freedomhouse.org/report/freedom-world>
+F. House. *Freedom in the World 2025: The Uphill Battle to Safeguard
+Rights*. Report. Freedom House, 2025.
+<https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights>.
+Original data and methodology are available at
+<https://freedomhouse.org/report/freedom-world>
 
 ## Arguments
 
@@ -73,24 +76,16 @@ the following variables:
 - A: aggregate score for electoral process subcategory.
 
 - B1: score for political pluralism and participation subcategory
-  question
-
-1.  
+  question 1.
 
 - B2: score for political pluralism and participation subcategory
-  question
-
-1.  
+  question 2.
 
 - B3: score for political pluralism and participation subcategory
-  question
-
-1.  
+  question 3.
 
 - B4: score for political pluralism and participation subcategory
-  question
-
-1.  
+  question 4.
 
 - B: aggregate score for political pluralism and participation
   subcategory.
@@ -124,19 +119,13 @@ the following variables:
 - D: aggregate score for freedom of expression subcategory.
 
 - E1: score for associational and organizational rights subcategory
-  question
-
-1.  
+  question 1.
 
 - E2: score for associational and organizational rights subcategory
-  question
-
-1.  
+  question 2.
 
 - E3: score for associational and organizational rights subcategory
-  question
-
-1.  
+  question 3.
 
 - E: aggregate score for associational and organizational rights
   subcategory.
@@ -183,8 +172,9 @@ the following variables:
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -195,7 +185,7 @@ the following variables:
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -207,6 +197,12 @@ the following variables:
   April 1975 (being absorbed by North Vietnam). It is also `TRUE` for
   dates beyond 2012 for countries that did not end by then, depsite the
   fact that the Gleditsch and Ward list has not been updated since.
+
+## Lifecycle
+
+This function is softly deprecated. It is retained to download the last
+public Freedom House full-score spreadsheet release (the 2025 update,
+covering 2024), but it no longer retrieves a current release.
 
 ## Methodological notes
 
@@ -286,8 +282,10 @@ Other democracy:
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
 [`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
 [`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
 [`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
-[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
+[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
 
 Other Freedom House:
 [`download_fh()`](https://xmarquez.github.io/democracyData/reference/download_fh.md),

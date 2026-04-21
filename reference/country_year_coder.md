@@ -53,14 +53,14 @@ country_year_coder(
 
   - "GWn": Numeric code for the country in the Gleditsch-Ward system of
     states
-    ([http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md)).
+    (<https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>).
     This is very similar, but not identical, to the Correlates of War
     and Polity codes. See the vignette in this package for the
     differences.
 
   - "GWc": Three letter code for the country in the Gleditsch-Ward
     system of states
-    ([http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md)).
+    (<https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>).
     This is very similar, but not identical, to the Correlates of War
     and Polity codes. See the vignette in this package for an overview
     of the differences between these systems.
@@ -81,27 +81,27 @@ country_year_coder(
 
   - "cown": Numeric code for the country in the Correlates of War system
     of states
-    (<http://www.correlatesofwar.org/data-sets/cow-country-codes>). This
+    (<https://correlatesofwar.org/data-sets/cow-country-codes/>). This
     is very similar, but not identical, to the Gleditsch and Ward and
     Polity codes. See the vignette in this package for an overview of
     the differences between these systems.
 
   - "cowc": Three letter code for the country in the Correlates of War
     system of states
-    (<http://www.correlatesofwar.org/data-sets/cow-country-codes>). This
+    (<https://correlatesofwar.org/data-sets/cow-country-codes/>). This
     is very similar, but not identical, to the Gleditsch and Ward and
     Polity codes. See the vignette in this package for an overview of
     the differences between these systems.
 
   - "polity_ccode": Numeric code for the country in the Polity IV
-    dataset (<http://www.systemicpeace.org/polity/polity4.htm>). This is
-    very similar, but not identical, to the Gleditsch and Ward and COW
-    codes. See the vignette in this package for the differences.
+    dataset (<https://www.systemicpeace.org/polity/polity4.htm>). This
+    is very similar, but not identical, to the Gleditsch and Ward and
+    COW codes. See the vignette in this package for the differences.
 
   - "polity_scode": Three letter code for the country in the Polity IV
-    dataset (<http://www.systemicpeace.org/polity/polity4.htm>). This is
-    very similar, but not identical, to the Gleditsch and Ward and COW
-    codes. See the vignette in this package for an overview of the
+    dataset (<https://www.systemicpeace.org/polity/polity4.htm>). This
+    is very similar, but not identical, to the Gleditsch and Ward and
+    COW codes. See the vignette in this package for an overview of the
     differences between these systems.
 
   - "eurostat": Eurostat 2-letter country code. Taken from
@@ -188,12 +188,12 @@ country_year_coder(
 
   - "GW_country_name": The name of the country in the Gleditsch-Ward
     system of states
-    ([http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md))
+    (<https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>)
     (Gleditsch and War 1999).
 
   - "extended_country_name": The name of the country in the
     Gleditsch-Ward system of states
-    ([http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md))
+    (<https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>)
     (Gleditsch and War 1999), of the official name of the entity (for
     non-sovereign entities and states not in the Gleditsch and Ward
     system of states) or else a common name for disputed cases that do
@@ -201,7 +201,7 @@ country_year_coder(
 
   - "cow_country_name": The name of the state in the Correlates of War
     state system (2016 version). See
-    <http://www.correlatesofwar.org/data-sets/cow-country-codes> for
+    <https://correlatesofwar.org/data-sets/cow-country-codes/> for
     details. Is `NA` if the country is not in the COW system of states.
 
   - "polity_country_name": The name of the state in the official Polity
@@ -217,7 +217,7 @@ country_year_coder(
 
   - "GWn": Numeric code for the country in the Gleditsch-Ward system of
     states
-    ([http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md))
+    (<https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>)
     (Gleditsch and War 1999). This is very similar, but not identical,
     to the Correlates of War and Polity codes. See the vignette in this
     package for the differences.
@@ -231,7 +231,7 @@ country_year_coder(
 
   - "GWc": Three letter code for the country in the Gleditsch-Ward
     system of states
-    ([http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md))
+    (<https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>)
     (Gleditsch and War 1999). This is very similar, but not identical,
     to the Correlates of War and Polity codes. See the vignette in this
     package for an overview of the differences between these systems.
@@ -245,27 +245,27 @@ country_year_coder(
 
   - "cown": Numeric code for the country in the Correlates of War system
     of states
-    (<http://www.correlatesofwar.org/data-sets/cow-country-codes>), 2016
+    (<https://correlatesofwar.org/data-sets/cow-country-codes/>), 2016
     release. This is very similar, but not identical, to the Gleditsch
     and Ward and Polity codes. See the vignette in this package for an
     overview of the differences between these systems.
 
   - "cowc": Three letter code for the country in the Correlates of War
     system of states
-    (<http://www.correlatesofwar.org/data-sets/cow-country-codes>), 2016
+    (<https://correlatesofwar.org/data-sets/cow-country-codes/>), 2016
     release. This is very similar, but not identical, to the Gleditsch
     and Ward and Polity codes. See the vignette in this package for an
     overview of the differences between these systems.
 
   - "polity_ccode": Numeric code for the country in the Polity IV
-    dataset (<http://www.systemicpeace.org/polity/polity4.htm>). This is
-    very similar, but not identical, to the Gleditsch and Ward and COW
-    codes. See the vignette in this package for the differences.
+    dataset (<https://www.systemicpeace.org/polity/polity4.htm>). This
+    is very similar, but not identical, to the Gleditsch and Ward and
+    COW codes. See the vignette in this package for the differences.
 
   - "polity_scode": Three letter code for the country in the Polity IV
-    dataset (<http://www.systemicpeace.org/polity/polity4.htm>). This is
-    very similar, but not identical, to the Gleditsch and Ward and COW
-    codes. See the vignette in this package for an overview of the
+    dataset (<https://www.systemicpeace.org/polity/polity4.htm>). This
+    is very similar, but not identical, to the Gleditsch and Ward and
+    COW codes. See the vignette in this package for an overview of the
     differences between these systems.
 
   - "regex": The regular expression used to match the country name.
@@ -326,8 +326,9 @@ country_year_coder(
     adjustments for historical states).
 
   - "microstate": Whether the state is a microstate, according to
-    Gleditsch. His tentative list of microstates is available at
-    [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+    Gleditsch. His tentative list of microstates is available via the
+    Wayback Machine at
+    <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
   - "in_GW_system": Whether the state is "in system" (that is, is
     independent and sovereign), according to Gleditsch and Ward, for a

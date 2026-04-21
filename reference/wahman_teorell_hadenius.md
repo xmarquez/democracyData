@@ -82,8 +82,8 @@ independence of Kosovo. Kosovo is treated as a new case from 2009.
 
 - wahman_teorell_hadenius_cow:
 
-  (n:7150, N: 192) Corralates of war country code. Source: Corralates of
-  war 2 project <http://www.correlatesofwar.org/.>
+  (n:7150, N: 192) Correlates of war country code. Source: Correlates of
+  war 2 project <https://correlatesofwar.org/>.
 
 - ccode:
 
@@ -97,7 +97,7 @@ independence of Kosovo. Kosovo is treated as a new case from 2009.
   Integrated Network for societal Conflict research (INSCR) Program
   Center for International Development and Conflict Management (CIDCM)
   University of Maryland, Collage Park 20742,
-  <http://www.cidcm.umd.edu/inscr/polity.>
+  <https://www.systemicpeace.org/polity/polity4.htm>.
 
 - ccode_qog:
 
@@ -107,8 +107,8 @@ independence of Kosovo. Kosovo is treated as a new case from 2009.
   Germany (ccode 276) Ethiopia before 1993 (original code: 230) =
   Ethiopia (ccode 231) North Vietnam before 1976 (original code: 998) =
   Vietnam (ccode 704) Source:
-  [http://www.iso.org/en/prods-services/iso3166ma/02iso-3166-code-lists/index.html](http://www.iso.org/en/prods-services/iso3166ma/02iso-3166-code-lists/index.md),
-  <http://en.wikipedia.org/wiki/ISO3166-1>
+  <https://www.iso.org/iso-3166-country-codes.html>,
+  <https://en.wikipedia.org/wiki/ISO_3166-1>
 
 - year:
 
@@ -132,7 +132,7 @@ independence of Kosovo. Kosovo is treated as a new case from 2009.
   Integrated Network for societal Conflict research (INSCR) Program
   Center for International Development and Conflict Management (CIDCM)
   University of Maryland, Collage Park 20742,
-  <http://www.systemicpeace.org/polity/polity4.htm>.
+  <https://www.systemicpeace.org/polity/polity4.htm>.
 
 - fhpol:
 
@@ -226,29 +226,31 @@ independence of Kosovo. Kosovo is treated as a new case from 2009.
   respectively. The minor types (regimeny=9, 19, 20, 21, 22) are treated
   as other. Our regime classification pertains to December 31 as of each
   year. Sources: Banks and Wilson (2012), supplemented with: Elections
-  in the world <http://www.electionworld.org>, IFES Election guide
-  <http://209.50.195.230>, Journal of democracy: Election watch
+  in the world <https://www.electionworld.org/>, IFES Election guide
+  <https://www.electionguide.org/home/>, Journal of democracy: Election
+  watch
   <http://muse.jhu.edu/journals/journal_of_democracy/election_watch/>,
   Parties and elections in Europe
   [http://www.parties-and-elections.de/index.html](http://www.parties-and-elections.de/index.md),
   Freedom House "Freedom in the World Reports"
-  <http://www.freedomhouse.org>, The interparliamentary Union
-  <http://www.ipu.org/english/home.htm>, Political Database of the
-  Americas <http://www.georgetown.edu/pdba/>, Rulers
-  <http://www.rulers.org>, Keesing's Record of World Events
-  <http://keesings.gvpi.net/keesings/lpext.dll?f=templates&fn=main-h.htm>,
-  The Swedish Institute of International affairs, Country guides
-  <http://www.landguiden.se>, The US Library of congress Country Studies
-  (Federal Research Division of Library of Congress)
-  <http://memory.loc.gov/frd/cs/cshome.html#toc>, Banks and Mueller:
-  Political handbook of the world 1979, The Europe world tear book,
-  various years, The Economist Intelligence Unit: Quaterly Economic
-  Reviews, Country profiles and Country Reports, various years, The CIA
-  World Fact book <http://www.cia.gov/cia/publications/factbook>,
+  <https://freedomhouse.org>, The interparliamentary Union
+  <https://web.archive.org/web/20000301171839/http://www.ipu.org/english/home.htm>,
+  Political Database of the Americas <https://pdba.georgetown.edu/>,
+  Rulers <http://www.rulers.org>, Keesing's Record of World Events
+  <https://www.keesings.com/>, The Swedish Institute of International
+  affairs, Country guides <https://www.ui.se/landguiden/>, The US
+  Library of congress Country Studies (Federal Research Division of
+  Library of Congress)
+  <https://web.archive.org/web/20000413181827/http://memory.loc.gov/frd/cs/cshome.html>,
+  Banks and Mueller: Political handbook of the world 1979, The Europe
+  world tear book, various years, The Economist Intelligence Unit:
+  Quaterly Economic Reviews, Country profiles and Country Reports,
+  various years, The CIA World Fact book
+  <https://web.archive.org/web/20010413164935/http://www.cia.gov/cia/publications/factbook/>,
   Country Reports on Human Rights practices (Reports submitted to
   Congress by US Department of State), various years, later editions on
-  <http://www.state.gov/g/drl/hr/c1470.htm>, Encycopledia Britannica
-  online <http://search.eb.com.>
+  <https://web.archive.org/web/20020202063224/http://www.state.gov/g/drl/hr/c1470.htm>,
+  Encycopledia Britannica online <https://academic.eb.com>.
 
 - regime1nyrobust:
 
@@ -342,16 +344,18 @@ independence of Kosovo. Kosovo is treated as a new case from 2009.
   the legislative assembles' total number of seats expressed in
   fractions. In countries with a two-chamber parliament the lower house
   is counted. Source: Banks and Wilson (2012), Elections in the world
-  <http://www.electionworld.org>, Beck et al (2001), IFES Election guide
-  http:// 209.50.195.230, Journal of democracy: Election watch
+  <https://www.electionworld.org/>, Beck et al (2001), IFES Election
+  guide <https://www.electionguide.org/home/>, Journal of democracy:
+  Election watch
   <http://muse.jhu.edu/journals/journal_of_democracy/election_watch/>,
   Parties and elections in Europe
   [http://www.parties-and-elections.de/index.html](http://www.parties-and-elections.de/index.md),
-  The interparliamentary Union <http://www.ipu.org/english/home.htm>,
-  Political Database of the Americas <http://www.georgetown.edu/pdba/>,
+  The interparliamentary Union
+  <https://web.archive.org/web/20000301171839/http://www.ipu.org/english/home.htm>,
+  Political Database of the Americas <https://pdba.georgetown.edu/>,
   Rulers <http://www.rulers.org>, Keesing's Record of World Events
-  <http://keesings.gvpi.net/keesings/lpext.dll?f=templates&fn=main-h.htm>,
-  The CIA World Fact book <http://www.cia.gov/cia/publications/factbook>
+  <https://www.keesings.com/>, The CIA World Fact book
+  <https://web.archive.org/web/20010413164935/http://www.cia.gov/cia/publications/factbook/>
 
 - partsz1:
 
@@ -480,13 +484,12 @@ independence of Kosovo. Kosovo is treated as a new case from 2009.
   president, prime minister, leader of the ruling party, the monarch or
   the ruling military junta, or someone else, working behind political
   figure heads. Source: Banks and Wilson (2012), Elections in the world
-  <http://www.electionworld.org>, Rulers <http://www.rulers.org>,
-  Keesing's Record of World Events
-  <http://keesings.gvpi.net/keesings/lpext.dll?f=templates&fn=main-h.htm>,
-  The Swedish Institute of International affairs: Country guides
-  <http://www.landguiden.se>, Country Reports on Human Rights practices
-  (Reports submitted to Congress by US Department of State),
-  Encyclopedia Britannica <http://search.eb.com>
+  <https://www.electionworld.org/>, Rulers <http://www.rulers.org>,
+  Keesing's Record of World Events <https://www.keesings.com/>, The
+  Swedish Institute of International affairs: Country guides
+  <https://www.ui.se/landguiden/>, Country Reports on Human Rights
+  practices (Reports submitted to Congress by US Department of State),
+  Encyclopedia Britannica <https://academic.eb.com>
 
 - persagg1nyrobust:
 
@@ -539,8 +542,9 @@ independence of Kosovo. Kosovo is treated as a new case from 2009.
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -551,7 +555,7 @@ independence of Kosovo. Kosovo is treated as a new case from 2009.
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -608,7 +612,9 @@ Other democracy:
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
 [`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
 [`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
-[`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md)
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
+[`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
 
 Other dichotomous democracy indexes:
 [`anckar`](https://xmarquez.github.io/democracyData/reference/anckar.md),
@@ -621,7 +627,9 @@ Other dichotomous democracy indexes:
 [`pacl_update`](https://xmarquez.github.io/democracyData/reference/pacl_update.md),
 [`svolik_regime`](https://xmarquez.github.io/democracyData/reference/svolik_regime.md),
 [`ulfelder`](https://xmarquez.github.io/democracyData/reference/ulfelder.md),
-[`utip`](https://xmarquez.github.io/democracyData/reference/utip.md)
+[`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
+[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md)
 
 Other authoritarianism:
 [`REIGN`](https://xmarquez.github.io/democracyData/reference/REIGN.md),

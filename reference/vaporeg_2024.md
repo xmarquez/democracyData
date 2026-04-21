@@ -1,127 +1,95 @@
-# The Varieties of Political Regimes (VaPoReg) dataset
+# The Varieties of Political Regimes (VaPoReg) dataset, legacy 2024 schema
 
-`vaporeg` contains the March 2026 VaPoReg release in its current
-country-year schema. To follow package conventions, `democracyData`
-renames the upstream `country_name` and `cowcode` columns to
-`vaporeg_country` and `vaporeg_cowcode`, adds standardized state-system
-identifiers, and derives packaged democracy indicators from the current
-VaPoReg classifications. Use
-[vaporeg_2024](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md)
-for the archived legacy schema.
+`vaporeg_2024` preserves the pre-0.7.0 `democracyData` interface for
+VaPoReg. It is the last packaged version of the old schema, covering
+1900 to 2024 and including the package's standardized country
+identifiers and derived democracy measures. Use
+[vaporeg](https://xmarquez.github.io/democracyData/reference/vaporeg.md)
+for the current March 2026 edition.
 
 ## Usage
 
 ``` r
-vaporeg
+vaporeg_2024
 ```
 
 ## Format
 
 An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
-30574 rows and 46 columns.
+29840 rows and 30 columns.
 
 ## Source
 
-S. Kailitz. *Varieties of Political Regimes (va-PoReg). Dataset. Version
-3.2*. Hannah Arendt Institute for Totalitarianism Studies. Dresden,
-2026. Dataset download at
-<https://www.va-poreg.de/download/Kailitz,%20Varieties%20of%20Political%20Regimes%20March%202026.rds>.
-
 S. Kailitz. *Varieties of Political Regimes (va-PoReg). Codebook.
-Version 3.2*. Tech. rep. Dresden: Hannah Arendt Institute for
-Totalitarianism Studies, 2026. Codebook PDF at
-<https://www.va-poreg.de/download/Kailitz%2C%20Varieties%20of%20Political%20Regimes%2C%20Codebook%203.2.pdf>.
-
-## Introduction
-
-VaPoReg classifies political regimes from 1900 to 2025 using multiple
-classification schemes, including detailed, compact, quadruple, triple,
-binary-democracy, and binary-autocracy versions. It also codes dominant
-political authorities in dependent entities, monarchy status, regime
-spell timing, and population. The documentation below is based on the
-VaPoReg Codebook, Version 3.2 (March 2026), especially the variable list
-on pages 163-167.
+Version 1.7*. Tech. rep. Dresden: Hannah Arendt Institute for
+Totalitarianism Studies, 2024. S. Kailitz. *Varieties of Political
+Regimes (va-PoReg). Dataset*. Dresden, 2024.
 
 ## Variables
 
 - vaporeg_country:
 
-  Political unit name. This is the packaged name of the upstream
-  `country_name` column.
+  The name of the country or political unit for a given year.
 
 - year:
 
-  Calendar year. Annual codings use July 1 as the reference date.
+  The calendar year.
 
-- vaporeg_regtype_detailed:
+- vaporeg_code:
 
-  Detailed regime classification. Codes: 10 Liberal Democracy; 20
-  Electoral Democracy; 30 Electoral Oligarchy; 40 Democratizing Regime;
-  50 Electoral Hybrid Regime; 60 Electoral Autocracy; 70 Electoral
-  Oligarchical Autocracy; 80 Non-Electoral Transitional Regime; 90
-  Constitutional Monarchy; 100 Autocratic Monarchy; 110 One-Party
-  Autocracy; 120 Right-Wing Autocracy; 130 Communist Ideocracy; 140
-  Islamist Ideocracy; 150 Military Autocracy; 160 Personalist Autocracy;
-  170 Direct Rule Colonial Regime; 180 Indirect Rule Colonial Regime;
-  190 Direct Rule Occupation Regime; 200 Indirect Rule Occupation
-  Regime; 210 No Central Authority; 220 Part of Other Country.
+  The VaPoReg unit identifier.
 
-- vaporeg_regtype_reports:
+- GeoNamesID:
 
-  Country reports regime classification. Uses the same 22-category
-  coding as `vaporeg_regtype_detailed`.
-
-- vaporeg_regtype_compact:
-
-  Compact regime classification. Codes: 10 Democracy; 20 Electoral and
-  Liberal Hybrid Regime; 30 Provisional Regime; 40 Electoral Autocracy;
-  50 Ruling Monarchy; 60 One-Party Autocracy; 70 Right-Wing Autocracy;
-  80 Communist Ideocracy; 90 Islamist Ideocracy; 100 Military Autocracy;
-  110 Personalist Autocracy; 120 Colonial Regime; 130 Occupation Regime;
-  140 No Central Authority.
-
-- vaporeg_regtype_quadruple:
-
-  Four-category regime classification: 1 Democracy; 2 Hybrid Regime; 3
-  Electoral Autocracy; 4 Closed Autocracy.
-
-- vaporeg_regtype_triple:
-
-  Three-category regime classification: 1 Democracy; 2 Hybrid Regime; 3
-  Autocracy.
-
-- vaporeg_regtype_bindem:
-
-  Binary democracy classification: 0 Non-Democracy; 1 Democracy.
-
-- vaporeg_regtype_binaut:
-
-  Binary autocracy classification: 0 Non-Autocracy; 1 Autocracy.
-
-- vaporeg_identifier:
-
-  VaPoReg unit identifier. The codebook describes this as an identifier
-  based on the Correlates of War dataset.
+  Legacy geographic identifier for linking with spatial datasets.
 
 - vaporeg_cowcode:
 
-  Correlates of War country code, where available. This is the packaged
-  name of the upstream `cowcode` column.
+  The Correlates of War country code, where available.
 
-- vaporeg_dpa_country:
+- vaporeg_cr:
 
-  Dominant political authority in cases of dependence.
+  Legacy compatibility alias of `vaporeg_s`.
 
-- vaporeg_dpa_regdetailed:
+- vaporeg_s:
 
-  Detailed regime classification of the dominant political authority. It
-  uses the same coding structure as the detailed regime scale, but the
-  current codebook labels category 20 as Defective Democracy and
-  category 80 as Non-Electoral Autocratic Transitional Regime.
+  The standard classification of political regimes.
 
-- vaporeg_dpa_regcompact:
+- vaporeg_a:
 
-  Compact regime classification of the dominant political authority.
+  An alternative classification that merges democracies and
+  semi-democracies and groups monarchies together as ruling monarchies.
+
+- vaporeg_governing_country:
+
+  For colonial and occupation regimes, the ruling country.
+
+- vaporeg_s_gc, vaporeg_a_gc:
+
+  Standard and alternative regime classifications for the governing
+  country.
+
+- vaporeg_s_start, vaporeg_s_end, vaporeg_s_duration, vaporeg_s_change:
+
+  Start date, end date, duration, and annual change indicator for the
+  standard classification.
+
+- vaporeg_a_start, vaporeg_a_end, vaporeg_a_duration, vaporeg_a_change:
+
+  Start date, end date, duration, and annual change indicator for the
+  alternative classification.
+
+- Gapminder_pop, gm_world_pop:
+
+  Population variables included in the legacy interface.
+
+- un_region, un_continent:
+
+  UN region and continent codes.
+
+- extended_country_name, GWn, cown, in_GW_system:
+
+  Standardized country identifiers added by `democracyData`.
 
 - vaporeg_binary_strict:
 
@@ -137,83 +105,6 @@ on pages 163-167.
 
   A trichotomous democracy indicator coded 2 for full democracy, 1 for
   defective democracy, and 0 otherwise.
-
-- vaporeg_monarchy:
-
-  Monarchy status. Codes: 10 Autocratic Monarchy; 20 Governed by
-  Autocratic Monarchy; 30 Constitutional Monarchy; 40 Governed by
-  Constitutional Monarchy; 50 Ceremonial Monarchy; 60 Governed by
-  Ceremonial Monarchy; 70 Republic; 80 Governed by Republic.
-
-- vaporeg_regtype_rwasubtype:
-
-  Right-wing autocracy subtype. Codes: 0 Not applicable; 1 Fascist; 2
-  Corporatist.
-
-- vaporeg_continent:
-
-  Continent code. Codes: 0 missing or not assigned; 1 Africa; 2
-  Americas; 3 Asia; 4 Europe; 5 Oceania.
-
-- vaporeg_region:
-
-  UN-style region code. Codes: 0 missing or not assigned; 1 Australia
-  and New Zealand; 2 Caribbean; 3 Central America; 4 Central Asia; 5
-  Eastern Africa; 6 Eastern Asia; 7 Eastern Europe; 8 Melanesia,
-  Micronesia, Polynesia; 9 Middle Africa; 10 Northern Africa; 11
-  Northern America; 12 Northern Europe; 13 South America; 14
-  South-Eastern Asia; 15 Southern Africa; 16 Southern Asia; 17 Southern
-  Europe; 18 Western Africa; 19 Western Asia; 20 Western Europe.
-
-- vaporeg_regstart_reports, vaporeg_regend_reports,
-  vaporeg_regduration_reports, vaporeg_regchange_reports:
-
-  Spell start date, end date, duration in years, and annual change
-  indicator for the country reports classification. Change equals 1 if
-  the July 1 regime differs from the previous July 1.
-
-- vaporeg_regstart_detailed, vaporeg_regend_detailed,
-  vaporeg_regduration_detailed, vaporeg_regchange_detailed:
-
-  Spell start date, end date, duration in years, and annual change
-  indicator for the detailed classification.
-
-- vaporeg_regstart_compact, vaporeg_regend_compact,
-  vaporeg_regduration_compact, vaporeg_regchange_compact:
-
-  Spell start date, end date, duration in years, and annual change
-  indicator for the compact classification.
-
-- vaporeg_regduration_quadruple, vaporeg_regchange_quadruple:
-
-  Spell duration in years and annual change indicator for the quadruple
-  classification.
-
-- vaporeg_regduration_triple, vaporeg_regchange_triple:
-
-  Spell duration in years and annual change indicator for the triple
-  classification.
-
-- vaporeg_regduration_binaut, vaporeg_regchange_binaut:
-
-  Spell duration in years and annual change indicator for the binary
-  autocracy classification.
-
-- vaporeg_regduration_bindem, vaporeg_regchange_bindem:
-
-  Spell duration in years and annual change indicator for the binary
-  democracy classification.
-
-- vaporeg_population:
-
-  Population series based on Gapminder and UN data. The codebook notes
-  that units coded as "Part of Other Country" are excluded from this
-  series.
-
-- vaporeg_population_sources:
-
-  Source flag for `vaporeg_population`. Codes: 1 Modified based on
-  Gapminder; 2 Modified based on UN; 3 UN Data; 4 Gapminder Data.
 
 ## Standard descriptive variables (generated by this package)
 
@@ -298,7 +189,7 @@ Other democracy:
 [`ulfelder`](https://xmarquez.github.io/democracyData/reference/ulfelder.md),
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
 [`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
-[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
+[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
 [`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
 [`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
 [`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
@@ -306,7 +197,7 @@ Other democracy:
 Other institutions:
 [`LIED`](https://xmarquez.github.io/democracyData/reference/LIED.md),
 [`PIPE`](https://xmarquez.github.io/democracyData/reference/PIPE.md),
-[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md)
+[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md)
 
 Other dichotomous democracy indexes:
 [`anckar`](https://xmarquez.github.io/democracyData/reference/anckar.md),
@@ -320,7 +211,7 @@ Other dichotomous democracy indexes:
 [`svolik_regime`](https://xmarquez.github.io/democracyData/reference/svolik_regime.md),
 [`ulfelder`](https://xmarquez.github.io/democracyData/reference/ulfelder.md),
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
-[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
+[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
 [`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
 
 Other trichotomous democracy indexes:
@@ -329,4 +220,4 @@ Other trichotomous democracy indexes:
 [`mainwaring`](https://xmarquez.github.io/democracyData/reference/mainwaring.md),
 [`prc_gasiorowski`](https://xmarquez.github.io/democracyData/reference/prc_gasiorowski.md),
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
-[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md)
+[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md)

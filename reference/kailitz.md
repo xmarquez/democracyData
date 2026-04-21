@@ -3,10 +3,14 @@
 Contains the authoritarian regime types dataset from S. Kailitz.
 "Classifying Political Regimes Revisited: Legitimation and Durability".
 In: *Democratization* 20.1 (2013), pp. 39-60.. This has been superceded
-by S. Kailitz. *Varieties of Political Regimes (va-PoReg). Dataset*.
-Dresden, 2024.. Use
+by S. Kailitz. *Varieties of Political Regimes (va-PoReg). Codebook.
+Version 1.7*. Tech. rep. Dresden: Hannah Arendt Institute for
+Totalitarianism Studies, 2024. S. Kailitz. *Varieties of Political
+Regimes (va-PoReg). Dataset*. Dresden, 2024.. Use
 [vaporeg](https://xmarquez.github.io/democracyData/reference/vaporeg.md)
-for the most up to date version.
+for the current VaPoReg edition or
+[vaporeg_2024](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md)
+for the variable names from 2024-25.
 
 ## Usage
 
@@ -109,8 +113,9 @@ Durability". In: *Democratization* 20.1 (2013), pp. 39-60.
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -121,7 +126,7 @@ Durability". In: *Democratization* 20.1 (2013), pp. 39-60.
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -177,8 +182,10 @@ Other democracy:
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
 [`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
 [`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
 [`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
-[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
+[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
 
 Other authoritarianism:
 [`REIGN`](https://xmarquez.github.io/democracyData/reference/REIGN.md),
@@ -199,10 +206,14 @@ Other dichotomous democracy indexes:
 [`svolik_regime`](https://xmarquez.github.io/democracyData/reference/svolik_regime.md),
 [`ulfelder`](https://xmarquez.github.io/democracyData/reference/ulfelder.md),
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
+[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
 [`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
 
 Other trichotomous democracy indexes:
 [`blm`](https://xmarquez.github.io/democracyData/reference/blm.md),
 [`mainwaring`](https://xmarquez.github.io/democracyData/reference/mainwaring.md),
 [`prc_gasiorowski`](https://xmarquez.github.io/democracyData/reference/prc_gasiorowski.md),
-[`utip`](https://xmarquez.github.io/democracyData/reference/utip.md)
+[`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
+[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md)

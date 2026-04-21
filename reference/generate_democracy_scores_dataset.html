@@ -15,7 +15,7 @@ more democracy, and that all country-years are appropriately matched."></head><b
 
     <a class="navbar-brand me-2" href="../index.html">democracyData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,6 +69,9 @@ more democracy, and that all country-years are appropriately matched.</p>
 <span>  keep_only_last_in_year <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  uds_release_year <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2014</span>, <span class="fl">2011</span>, <span class="fl">2010</span><span class="op">)</span>,</span>
 <span>  svmdi_release_year <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2020</span>, <span class="fl">2016</span><span class="op">)</span>,</span>
+<span>  wgi_version <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"current"</span>, <span class="st">"legacy"</span><span class="op">)</span>,</span>
+<span>  vaporeg_version <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"current"</span>, <span class="st">"legacy"</span><span class="op">)</span>,</span>
+<span>  pitf_version <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"current"</span>, <span class="st">"legacy"</span>, <span class="st">"polity5"</span>, <span class="st">"polity4"</span><span class="op">)</span>,</span>
 <span>  exclude_pmm_duplicates <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  prefer_successor <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  fix_PIPE <span class="op">=</span> <span class="cn">TRUE</span>,</span>
@@ -83,7 +86,8 @@ more democracy, and that all country-years are appropriately matched.</p>
 <dl><dt id="arg-datasets">datasets<a class="anchor" aria-label="anchor" href="#arg-datasets"></a></dt>
 <dd><p>Character vector indicating which datasets to use in
 producing the combined data frame. Can be any or all of (an unambiguous
-abbreviation of) "<a href="anckar.html">anckar</a>", "<a href="anrr.html">anrr</a>", "<a href="LIED.html">LIED</a>", "<a href="PIPE.html">PIPE</a>", "<a href="arat_pmm.html">arat_pmm</a>",
+abbreviation of) "<a href="anckar.html">anckar</a>", "<a href="anrr.html">anrr</a>", "<a href="LIED.html">LIED</a>", "<a href="PIPE.html">PIPE</a>", "<a href="arat_pmm.html">arat</a>",
+"<a href="arat_pmm.html">arat_pmm</a>",
 "<a href="blm.html">blm</a>", "<a href="blm.html">blm_pmm</a>", "<a href="bmr.html">bmr</a>", "<a href="bnr.html">bnr</a>", "<a href="bnr.html">bnr_extended</a>", "<a href="bti.html">bti</a>",
 "<a href="bollen_pmm.html">bollen_pmm</a>", "<a href="doorenspleet.html">doorenspleet</a>", "<a href="eiu.html">eiu</a>", "<a href="fh_pmm.html">fh_pmm</a>", "<a href="gwf_all.html">gwf_all</a>",
 "<a href="gwf_all.html">gwf_all_extended</a>", "<a href="hadenius_pmm.html">hadenius_pmm</a>", "<a href="kailitz.html">kailitz</a>", "<a href="magaloni.html">magaloni</a>",
@@ -91,7 +95,8 @@ abbreviation of) "<a href="anckar.html">anckar</a>", "<a href="anrr.html">anrr</
 "<a href="pacl.html">pacl</a>", "<a href="pacl.html">pacl_pmm</a>", "<a href="pacl_update.html">pacl_update</a>", "<a href="peps.html">peps</a>", "<a href="pitf.html">pitf</a>",
 "<a href="polity_pmm.html">polity_pmm</a>", "<a href="polyarchy.html">polyarchy</a>", "<a href="polyarchy_dimensions.html">polyarchy_dimensions</a>", "<a href="polyarchy.html">polyarchy_pmm</a>",
 "<a href="prc_gasiorowski.html">prc_gasiorowski</a>", "<a href="prc_gasiorowski.html">prc_pmm</a>", "<a href="svmdi.html">svmdi</a>", "<a href="svolik_regime.html">svolik_regime</a>", "<a href="uds_2014.html">uds</a>",
-"<a href="ulfelder.html">ulfelder</a>", "<a href="ulfelder.html">ulfelder_extended</a>", "<a href="utip.html">utip</a>", "<a href="vanhanen.html">vanhanen</a>", "<a href="vdem_simple.html">vdem</a>",
+"<a href="ulfelder.html">ulfelder</a>", "<a href="ulfelder.html">ulfelder_extended</a>", "<a href="utip.html">utip</a>", "<a href="vanhanen.html">vanhanen</a>", "<a href="vaporeg.html">vaporeg</a>",
+"<a href="vdem_simple.html">vdem</a>",
 "<a href="wahman_teorell_hadenius.html">wahman_teorell_hadenius</a>", "<a href="REIGN.html">reign</a>" or "<a href="REIGN.html">REIGN</a>", "<a href="polityIV.html">polityIV</a>",
 "<a href="download_polity_annual.html">polity5</a>", "<a href="fh_pmm.html">fh</a>", "<a href="download_fh_electoral.html">fh_electoral</a>", "<a href="download_wgi_voice_and_accountability.html">wgi</a>". It can also be empty; the
 default is all of them.</p></dd>
@@ -115,7 +120,7 @@ before 1945 for some regimes) versions of some datasets (<a href="gwf_all.html">
 
 
 <dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
-<dd><p>Provides a running commentary on what the function is is
+<dd><p>Provides a running commentary on what the function is
 doing. Default is <code>TRUE</code>.</p></dd>
 
 
@@ -126,7 +131,7 @@ debugging; default is <code>FALSE</code>.</p></dd>
 
 
 <dt id="arg-scale-scores">scale_scores<a class="anchor" aria-label="anchor" href="#arg-scale-scores"></a></dt>
-<dd><p>Whether to scale each measure (substracting their mean
+<dd><p>Whether to scale each measure (subtracting their mean
 and dividing by their standard deviation). Default is <code>FALSE</code>.</p></dd>
 
 
@@ -151,6 +156,24 @@ of them.</p></dd>
 <dt id="arg-svmdi-release-year">svmdi_release_year<a class="anchor" aria-label="anchor" href="#arg-svmdi-release-year"></a></dt>
 <dd><p>Which release of the <a href="svmdi.html">svmdi</a> dataset to include.
 Defaults to the latest, 2020. Can be 2020 or 2016, or both of them.</p></dd>
+
+
+<dt id="arg-wgi-version">wgi_version<a class="anchor" aria-label="anchor" href="#arg-wgi-version"></a></dt>
+<dd><p>Which WGI series to include. <code>"current"</code> uses the revised
+<a href="download_wgi_voice_and_accountability.html">wgi</a> series; <code>"legacy"</code> uses the archived <a href="wgi_legacy.html">wgi_legacy</a> series. Default is
+<code>"current"</code>.</p></dd>
+
+
+<dt id="arg-vaporeg-version">vaporeg_version<a class="anchor" aria-label="anchor" href="#arg-vaporeg-version"></a></dt>
+<dd><p>Which VaPoReg schema to include. <code>"current"</code> uses the
+current <a href="vaporeg.html">vaporeg</a> object; <code>"legacy"</code> uses the archived <a href="vaporeg_2024.html">vaporeg_2024</a>
+object. Default is <code>"current"</code>.</p></dd>
+
+
+<dt id="arg-pitf-version">pitf_version<a class="anchor" aria-label="anchor" href="#arg-pitf-version"></a></dt>
+<dd><p>Which PITF variant to include. <code>"current"</code> and
+<code>"polity5"</code> use <a href="pitf.html">pitf</a>; <code>"legacy"</code> and <code>"polity4"</code> use <a href="pitf.html">pitf_p4</a>. Default
+is <code>"current"</code>.</p></dd>
 
 
 <dt id="arg-exclude-pmm-duplicates">exclude_pmm_duplicates<a class="anchor" aria-label="anchor" href="#arg-exclude-pmm-duplicates"></a></dt>
@@ -192,7 +215,7 @@ to retain); removes the Czech Republic from the period 1990-1992; removes
 North and South Korea from the 19th century; assumes Pakistan from 1950-1970
 must include Bangladesh, and Turkey from 1820-1913 refers to the Ottoman
 Empire; removes unified Vietnam from the period 1954-1975, Serbia from 1990,
-and Serbia and Montenegro from 1990 to 1991 (leaving only Yugoslabia from
+and Serbia and Montenegro from 1990 to 1991 (leaving only Yugoslavia from
 1990 to 1991).</p></dd>
 
 
@@ -226,8 +249,9 @@ parentheses) the name of an earlier incarnation of the state: thus, they
 have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
 For details, see Gleditsch, Kristian S. &amp; Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-<a href="http://privatewww.essex.ac.uk/~ksg/statelist.html" class="external-link">http://privatewww.essex.ac.uk/~ksg/statelist.html</a>.</p></dd>
+International Interactions 25: 393-413. The list can be found via the
+Wayback Machine at
+<a href="https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html" class="external-link">https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html</a>.</p></dd>
 
 
 <dt>GWn</dt>
@@ -238,7 +262,7 @@ Ward list of independent states.</p></dd>
 <dt>cown</dt>
 <dd><p>The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
-<a href="http://www.correlatesofwar.org/data-sets/state-system-membership" class="external-link">http://www.correlatesofwar.org/data-sets/state-system-membership</a> for
+<a href="https://correlatesofwar.org/data-sets/state-system-membership/" class="external-link">https://correlatesofwar.org/data-sets/state-system-membership/</a> for
 the full list.</p></dd>
 
 
@@ -262,7 +286,8 @@ output data frame also contains the following variables:</p>
 <dl><dt>year</dt>
 <dd><p>The calendar year. Most measures of democracy reflect the
 country's situation as of 31 December of the year. If
-<code>keep_last_in_year = FALSE</code> (and <code>format = "long"</code>), a single
+<code>keep_only_last_in_year = FALSE</code> (and <code>output_format = "long"</code>),
+a single
 country year may nevertheless contain more than one measurement for some
 measures (e.g., <a href="prc_gasiorowski.html">prc</a>).</p></dd>
 
@@ -271,7 +296,7 @@ measures (e.g., <a href="prc_gasiorowski.html">prc</a>).</p></dd>
 <dd><p>The name of the measure. (e.g., "blm", "fh_total_reversed").</p></dd>
 
 
-<dt>variable</dt>
+<dt>value</dt>
 <dd><p>The numerical value of the measure, in the original scale
 (if <code>scale_scores = FALSE</code>) or as a z-score (if <code>scale_scores =
   TRUE</code>).</p></dd>
@@ -360,7 +385,7 @@ years of non-democracy back to 1913.</p></dd>
 
 
 <dt>bti</dt>
-<dd><p>The <a href="bti.html">bti</a> - Berteslmann Transformation Democracy Status index.
+<dd><p>The <a href="bti.html">bti</a> - Bertelsmann Transformation Democracy Status index.
 Ranges from 1 to 10.</p></dd>
 
 
@@ -482,7 +507,7 @@ instructions and may contain errors.</p></dd>
 
 <dt>pitf, pitf_binary</dt>
 <dd><p>The measures of democracy from <a href="pitf.html">pitf</a>, converted
-to numberic values. Higher values indicate more democracy.</p></dd>
+to numeric values. Higher values indicate more democracy.</p></dd>
 
 
 <dt>pmm_arat</dt>
@@ -577,7 +602,7 @@ documentation in the polity manual).</p></dd>
 <dt>polyarchy_original_polyarchy</dt>
 <dd><p>The original polyarchy scale
 (<code>poly</code>) in <a href="polyarchy.html">polyarchy</a>, reversed so that higher values imply more
-democracy. The codebook suggests this was superceded by
+democracy. The codebook suggests this was superseded by
 <code>polyarchy_original_contestation</code>.</p></dd>
 
 
@@ -621,7 +646,7 @@ democratic.</p></dd>
 
 
 <dt>ulfelder_democracy</dt>
-<dd><p>The dichotmous measure of democracy in
+<dd><p>The dichotomous measure of democracy in
 <a href="ulfelder.html">ulfelder</a>.</p></dd>
 
 
@@ -662,25 +687,25 @@ if it is a one-party democracy, 0 otherwise.</p></dd>
 
 <dt>vaporeg_binary_strict</dt>
 <dd><p>A dichotomous measure of democracy from the
-<a href="vaporeg.html">vaporeg</a> dataset. Coded as 1 if the regime is classified as a full
-democracy (VaPoReg_s = 10), and 0 otherwise. This strict definition
-excludes semi-democracies and other intermediate forms. See <a href="vaporeg.html">vaporeg</a> for
-details.</p></dd>
+<a href="vaporeg.html">vaporeg</a> dataset. This is a package-derived strict democracy indicator:
+it is coded 1 only when <code>vaporeg_regtype_reports == 10</code>, 0 for all other
+observations that remain inside VaPoReg's binary democracy universe, and
+<code>NA</code> where VaPoReg does not classify the observation in that universe.
+See <a href="vaporeg.html">vaporeg</a> for details.</p></dd>
 
 
 <dt>vaporeg_binary_non_strict</dt>
 <dd><p>A less restrictive dichotomous measure of
-democracy from <a href="vaporeg.html">vaporeg</a>, coded as 1 if the regime is a full democracy
-(VaPoReg_s = 10) or a semi-democracy (VaPoReg_s = 20), and 0 otherwise. See
-<a href="vaporeg.html">vaporeg</a> for details.</p></dd>
+democracy from <a href="vaporeg.html">vaporeg</a>. It is the package-facing version of the upstream
+<code>vaporeg_regtype_bindem</code> variable, coded 1 for Democracy and 0 for
+Non-Democracy. See <a href="vaporeg.html">vaporeg</a> for details.</p></dd>
 
 
 <dt>vaporeg_trichotomous</dt>
 <dd><p>A trichotomous democracy measure from
-<a href="vaporeg.html">vaporeg</a>, based on the VaPoReg_s classification. Coded as 2 for full
-democracies (10), 1 for semi-democracies (20), and 0 for all other regime
-types. This measure distinguishes between fully and partially democratic
-regimes. See <a href="vaporeg.html">vaporeg</a> for details.</p></dd>
+<a href="vaporeg.html">vaporeg</a>. It is a package-facing recode of the upstream
+<code>vaporeg_regtype_triple</code> variable, with 2 for Democracy, 1 for Hybrid
+Regime, and 0 for Autocracy. See <a href="vaporeg.html">vaporeg</a> for details.</p></dd>
 
 
 <dt>v2x_api</dt>
@@ -718,13 +743,13 @@ regimes. See <a href="vaporeg.html">vaporeg</a> for details.</p></dd>
 
 <dt>wth_democ1</dt>
 <dd><p>A dichotomous measure of democracy from
-<a href="wahman_teorell_hadenius.html">wahman_teorell_hadenius</a>, obtaining by coding 1 all democracies according
+<a href="wahman_teorell_hadenius.html">wahman_teorell_hadenius</a>, obtained by coding 1 all democracies according
 to the <code>regime1ny</code> variable, 0 all other regimes.</p></dd>
 
 
 <dt>wth_democrobust</dt>
 <dd><p>A dichotomous measure of democracy from
-<a href="wahman_teorell_hadenius.html">wahman_teorell_hadenius</a>, obtaining by coding 1 all democracies according
+<a href="wahman_teorell_hadenius.html">wahman_teorell_hadenius</a>, obtained by coding 1 all democracies according
 to the <code>regimenyrobust</code> variable, 0 all other regimes.</p></dd>
 
 
@@ -740,7 +765,7 @@ democracy datasets use some version of the Correlates of War system of
 states, though not consistently or entirely correctly (which is why this
 package uses <a href="country_year_coder.html">country_year_coder</a>). There are a number of alternatives,
 including the Gleditsch and Ward system, the Polity system (both based on
-the COW system, with some modifications), and the V-Dem system (wich is at
+the COW system, with some modifications), and the V-Dem system (which is at
 the basis of <a href="LIED.html">LIED</a>, though <a href="LIED.html">LIED</a> also draws on the idiosyncratic <a href="PIPE.html">PIPE</a>
 system). Freedom House and VaPoReg also develop their own panel of states,
 including many units considered non-sovereign by others. I have opted for
@@ -769,7 +794,7 @@ some datasets for those periods:</p><table class="table table"><tr><td>extended_
 <a href="vdem_simple.html">vdem</a>, <a href="fh_pmm.html">fh</a>, and <a href="LIED.html">LIED</a>) contain separate measurements for the West Bank and
 Gaza; <a href="fh_pmm.html">fh</a> includes the West Bank, Gaza, and "Israeli-Occupied Territories"
 (I'm assuming the occupied territories in Lebanon and Syria). I've labeled
-them as follows:</p><table class="table table"><tr><td>extended_country_name</td><td>original_country_name</td><td>dataset</td><td>min_year</td><td>max_year</td></tr><tr><td>British Mandate of Palestine</td><td>Palestine</td><td>vaporeg</td><td>1919</td><td>1947</td></tr><tr><td>British Mandate of Palestine</td><td>Palestine/British Mandate</td><td>LIED</td><td>1918</td><td>1947</td></tr><tr><td>British Mandate of Palestine</td><td>Palestine/British Mandate</td><td>vdem</td><td>1918</td><td>1947</td></tr><tr><td>Israeli-Occupied Territories</td><td>Israeli-Occupied Territories</td><td>fh</td><td>1996</td><td>2009</td></tr><tr><td>Palestine, State of</td><td>Palestine</td><td>eiu</td><td>2006</td><td>2024</td></tr><tr><td>Palestine, State of</td><td>Palestine</td><td>vaporeg</td><td>1948</td><td>2006</td></tr><tr><td>Palestine, State of</td><td>Palestinian Authority-Administered Territories</td><td>fh</td><td>1996</td><td>2009</td></tr><tr><td>Palestine, State of</td><td>West Bank and Gaza</td><td>wgi_democracy</td><td>1996</td><td>2023</td></tr><tr><td>Palestine, State of</td><td>West Bank and Gaza Strip</td><td>fh</td><td>1977</td><td>1995</td></tr><tr><td>Palestine, State of/Gaza Strip Only</td><td>Gaza Strip</td><td>fh</td><td>2010</td><td>2024</td></tr><tr><td>Palestine, State of/Gaza Strip Only</td><td>Palestine Gaza Strip</td><td>vaporeg</td><td>2007</td><td>2024</td></tr><tr><td>Palestine, State of/Gaza Strip Only</td><td>Palestine/Gaza</td><td>LIED</td><td>1948</td><td>2023</td></tr><tr><td>Palestine, State of/Gaza Strip Only</td><td>Palestine/Gaza</td><td>vdem</td><td>1948</td><td>2024</td></tr><tr><td>Palestine, State of/West Bank Only</td><td>Palestine West Bank</td><td>vaporeg</td><td>2007</td><td>2024</td></tr><tr><td>Palestine, State of/West Bank Only</td><td>Palestine/West Bank</td><td>LIED</td><td>1948</td><td>2023</td></tr><tr><td>Palestine, State of/West Bank Only</td><td>Palestine/West Bank</td><td>vdem</td><td>1948</td><td>2024</td></tr><tr><td>Palestine, State of/West Bank Only</td><td>West Bank</td><td>fh</td><td>2010</td><td>2024</td></tr></table><p>There are some other oddities, primarily concerning <a href="fh_pmm.html">fh</a> and the <a href="download_polity_annual.html">polity</a> and
+them as follows:</p><table class="table table"><tr><td>extended_country_name</td><td>original_country_name</td><td>dataset</td><td>min_year</td><td>max_year</td></tr><tr><td>British Mandate of Palestine</td><td>Palestine/British Mandate</td><td>LIED</td><td>1918</td><td>1947</td></tr><tr><td>British Mandate of Palestine</td><td>Palestine/British Mandate</td><td>vdem</td><td>1918</td><td>1948</td></tr><tr><td>Israel, occupied territories only</td><td>Israeli-Occupied Territories</td><td>fh</td><td>1996</td><td>2009</td></tr><tr><td>Palestine, State of</td><td>Palestine</td><td>eiu</td><td>2006</td><td>2025</td></tr><tr><td>Palestine, State of</td><td>Palestinian Authority-Administered Territories</td><td>fh</td><td>1996</td><td>2009</td></tr><tr><td>Palestine, State of</td><td>West Bank and Gaza Strip</td><td>fh</td><td>1977</td><td>1995</td></tr><tr><td>Palestine, State of</td><td>Palestine</td><td>vaporeg</td><td>1920</td><td>1947</td></tr><tr><td>Palestine, State of</td><td>West Bank and Gaza</td><td>wgi_democracy</td><td>1996</td><td>2024</td></tr><tr><td>Palestine/Gaza</td><td>Gaza Strip</td><td>fh</td><td>2010</td><td>2024</td></tr><tr><td>Palestine/Gaza</td><td>Gaza Strip</td><td>fh_electoral</td><td>2017</td><td>2024</td></tr><tr><td>Palestine/Gaza</td><td>Palestine/Gaza</td><td>LIED</td><td>1948</td><td>2025</td></tr><tr><td>Palestine/Gaza</td><td>Palestine, Gaza Strip</td><td>vaporeg</td><td>1948</td><td>2025</td></tr><tr><td>Palestine/Gaza</td><td>Palestine/Gaza</td><td>vdem</td><td>1948</td><td>2025</td></tr><tr><td>Palestine/West Bank</td><td>West Bank</td><td>fh</td><td>2010</td><td>2024</td></tr><tr><td>Palestine/West Bank</td><td>West Bank</td><td>fh_electoral</td><td>2017</td><td>2024</td></tr><tr><td>Palestine/West Bank</td><td>Palestine/West Bank</td><td>LIED</td><td>1948</td><td>2025</td></tr><tr><td>Palestine/West Bank</td><td>Palestine, West Bank</td><td>vaporeg</td><td>1948</td><td>2025</td></tr><tr><td>Palestine/West Bank</td><td>Palestine/West Bank</td><td>vdem</td><td>1948</td><td>2025</td></tr></table><p>There are some other oddities, primarily concerning <a href="fh_pmm.html">fh</a> and the <a href="download_polity_annual.html">polity</a> and
 Polity-derived datasets such as <a href="pitf.html">pitf</a>. <a href="fh_pmm.html">fh</a> includes a measure for the
 "Russian-occupied territories of Ukraine"; I've left it as is
 (<code>extended_country_name = "Russian-occupied territories of Ukraine"</code>, not
@@ -784,7 +809,7 @@ Republic and the later German Democratic Republic in 1945.</p>
     <div class="section level2">
     <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>
     <p>D. Pemstein, S. Meserve, and J. Melton. "Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type". In: <em>Political Analysis</em> 18.4 (2010), pp. 426-449. DOI: <a href="https://dx.doi.org/10.1093/pan/mpq020" class="external-link">10.1093/pan/mpq020</a>.</p>
-<p>D. Pemstein, S. A. Meserve, and J. Melton. <em>Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type</em>. 2013. DOI: <a href="https://dx.doi.org/10.7910/DVN/WWYOHU" class="external-link">10.7910/DVN/WWYOHU</a>.</p>
+<p>D. Pemstein, S. A. Meserve, and J. Melton. <em>Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type</em>. 2013. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM.</p>
     </div>
 
     <div class="section level2">
@@ -792,7 +817,7 @@ Republic and the later German Democratic Republic in 1945.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># You can select only some datasets</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">democracy_data_gwf</span> <span class="op">&lt;-</span> <span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span></span></span>
-<span class="r-in"><span> datasets <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gwf"</span>, <span class="st">"pacl"</span>, <span class="st">"bmr"</span><span class="op">)</span>, </span></span>
+<span class="r-in"><span> datasets <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gwf"</span>, <span class="st">"pacl"</span>, <span class="st">"bmr"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span> output_format <span class="op">=</span> <span class="st">"wide"</span></span></span>
 <span class="r-in"><span> <span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding BMR data</span>
@@ -827,13 +852,13 @@ Republic and the later German Democratic Republic in 1945.</p>
 <span class="r-in"><span><span class="va">democracy_data_long</span> <span class="op">&lt;-</span> <span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span></span></span>
 <span class="r-in"><span> datasets <span class="op">=</span> <span class="st">"pacl"</span>,</span></span>
 <span class="r-in"><span> force_redownload <span class="op">=</span> <span class="cn">TRUE</span></span></span>
-<span class="r-in"><span><span class="op">)</span> </span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">democracy_data_wide</span> <span class="op">&lt;-</span> <span class="fu">generate_democracy_scores_dataset</span><span class="op">(</span></span></span>
 <span class="r-in"><span> datasets <span class="op">=</span> <span class="st">"pacl"</span>,</span></span>
-<span class="r-in"><span> force_redownload <span class="op">=</span> <span class="cn">TRUE</span>, </span></span>
+<span class="r-in"><span> force_redownload <span class="op">=</span> <span class="cn">TRUE</span>,</span></span>
 <span class="r-in"><span> output_format <span class="op">=</span> <span class="st">"wide"</span></span></span>
-<span class="r-in"><span><span class="op">)</span> </span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

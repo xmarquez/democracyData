@@ -2,8 +2,9 @@
 
 The "Autocracies of the World" dataset by B. Magaloni, J. Chu, and E.
 Min. *Autocracies of the World, 1950-2012 (Version 1.0)*. Dataset. 2013.
-Original data and codebook used to be available at the link. The
-documentation here is directly derived from this codebook.
+<https://dx.doi.org/10.2139/ssrn.4346003>. Original data and codebook
+used to be available at the link. The documentation here is directly
+derived from this codebook.
 
 ## Usage
 
@@ -25,6 +26,7 @@ An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
 
 B. Magaloni, J. Chu, and E. Min. *Autocracies of the World, 1950-2012
 (Version 1.0)*. Dataset. 2013.
+<https://dx.doi.org/10.2139/ssrn.4346003>.
 
 ## Overview
 
@@ -304,8 +306,9 @@ of personalism or head of government.
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -316,7 +319,7 @@ of personalism or head of government.
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -372,8 +375,10 @@ Other democracy:
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
 [`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
 [`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
 [`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
-[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
+[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
 
 Other authoritarianism:
 [`REIGN`](https://xmarquez.github.io/democracyData/reference/REIGN.md),

@@ -98,7 +98,7 @@ An object of class `spec_tbl_df` (inherits from `tbl_df`, `tbl`,
   see vignette("Replicating_and_extending_the_UD_scores")). The
   "extended" versions of some datasets are included in this package.
 
-- donwloadable:
+- downloadable:
 
   Whether this package includes a function to download the dataset
   directly from the original source.
@@ -141,5 +141,4 @@ Analysis* 18.4 (2010), pp. 426-449. DOI:
 
 D. Pemstein, S. A. Meserve, and J. Melton. *Replication Data for:
 Democratic Compromise: A Latent Variable Analysis of Ten Measures of
-Regime Type*. 2013. DOI:
-[10.7910/DVN/WWYOHU](https://dx.doi.org/10.7910/DVN/WWYOHU).
+Regime Type*. 2013. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM.

@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">democracyData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,6 +39,39 @@
       <small>Source: <a href="https://github.com/xmarquez/democracyData/blob/master/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.7.0" id="democracydata-070">democracyData 0.7.0<a class="anchor" aria-label="anchor" href="#democracydata-070"></a></h2>
+<div class="section level3">
+<h3 id="dataset-updates-0-7-0">Dataset updates<a class="anchor" aria-label="anchor" href="#dataset-updates-0-7-0"></a></h3>
+<ul><li><p><strong>V-Dem v16.</strong> Moved <code>vdem_simple</code> and the <code>vdemdata</code> Suggests version to 16.0 (V-Dem v16, released 2026-03-17).</p></li>
+<li><p><strong>BTI 2026.</strong> Updated <code>bti</code> to the Bertelsmann Transformation Index 2026 edition (data through 2024).</p></li>
+<li><p><strong>Bjørnskov-Rode v6.2.</strong> Updated <code>pacl_update</code> to the September 2025 release (v6.2).</p></li>
+<li><p><strong>WGI 2.0 methodology break.</strong> The World Bank released a full methodological revision of the Worldwide Governance Indicators in 2025: the source pool was expanded (to 35 sources, including the Arab, Asian, and Euro barometers), the aggregation model changed, and estimates were recomputed back to 1996. <code><a href="../reference/download_wgi_voice_and_accountability.html">download_wgi_voice_and_accountability()</a></code> now reads the new <code>wgidataset_with_sourcedata-2025.xlsx</code> file (covering 1996-2024). <strong>Scores produced by this function are not comparable to those returned by <code>democracyData</code> 0.6.0 or earlier.</strong> See the methodology PDF linked from the documentation URL.</p></li>
+<li><p>Added <code>wgi_legacy</code>, an archived snapshot of the pre-0.7.0 WGI series (1996-2023) with the same variable schema as the revised <code>wgi</code> object.</p></li>
+<li><p><strong>Freedom House.</strong> Freedom House moved their machine-readable FIW data to email-request distribution in 2026. <code>fh</code>, <code>fh_full</code>, and <code>fh_electoral</code> therefore remain frozen at the 2024 report / 2025 release.</p></li>
+<li><p><strong>Freedom House download functions.</strong> <code><a href="../reference/download_fh.html">download_fh()</a></code>, <code><a href="../reference/download_fh_full.html">download_fh_full()</a></code>, and <code><a href="../reference/download_fh_electoral.html">download_fh_electoral()</a></code> now explicitly target the archived 2025 release and are soft-deprecated to reflect that Freedom House no longer provides the latest machine-readable data as a public direct download.</p></li>
+<li><p><strong>Anckar v3.0.</strong> Updated <code>anckar</code> to version 3.0 using the May 16, 2025 Harvard Dataverse release (<code>doi:10.7910/DVN/AK8NVX</code>). It now covers 1800-2024.</p></li>
+<li><p><strong>LIED 6.9.</strong> Updated <code>LIED</code> to version 6.9 using the April 1, 2026 Harvard Dataverse file. It now covers up to 2025.</p></li>
+<li><p><strong>EIU Democracy Index 2025.</strong> Updated <code>eiu</code> to cover 2006-2025 (167 countries × 18 year panels: 2006, 2008, 2010-2025). The 2025 EIU report is the first edition that no longer publishes a country-by-country appendix of scores — EIU moved per-country data behind paid Country Analysis / Snowflake services — so <code>eiu</code> is now built from the Wikipedia aggregation at <a href="https://en.wikipedia.org/wiki/The_Economist_Democracy_Index" class="external-link uri">https://en.wikipedia.org/wiki/The_Economist_Democracy_Index</a>, which we validated against our prior snapshot (99.8% agreement for 2006-2024). As a side effect, the Niger / Nigeria swap for 2015 present in the previously shipped snapshot is now corrected.</p></li>
+<li><p><strong>VaPoReg (Kailitz).</strong> This is now an explicit breaking change. The current <code>vaporeg</code> object contains the March 2026 VaPoReg release in its current upstream schema (data through 2025), and <code><a href="../reference/redownload_blm.html">redownload_vaporeg()</a></code> returns that upstream country-year table directly rather than translating it back into legacy <code>democracyData</code> variable names. The old packaged interface is preserved separately as <code>vaporeg_2024</code>, with different variable names. Internally, <code><a href="../reference/generate_democracy_scores_dataset.html">generate_democracy_scores_dataset()</a></code> now derives its VaPoReg democracy measures from the new release using VaPoReg’s own simplified classifications (<code>vaporeg_regtype_bindem</code> and <code>vaporeg_regtype_triple</code>) plus a package-specific strict democracy indicator.</p></li>
+<li><p><strong>PIPE constructed variables.</strong> Recalculated the package-derived PIPE variables (<code>cum_salterel</code>, <code>cum_term</code>, <code>democracy</code>, <code>democracy2</code>, <code>democracy_age</code>, <code>regime</code>, and <code>regime_period</code>) to better match the PIPE codebook. In particular, only <code>salterel == 1</code> and <code>term == 1</code> now advance democratic spells, and <code>regime</code>/<code>regime_period</code> are now missing before independence.</p></li>
+<li><p><strong>Extended UDS refresh.</strong> Rebuilt <code>extended_uds</code> from the current datasets, replacing the old Kailitz-based path with the current VaPoReg and revised WGI inputs alongside the other refreshed component datasets.</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="country_year_coder-rework-0-7-0">
+<code>country_year_coder()</code> rework<a class="anchor" aria-label="anchor" href="#country_year_coder-rework-0-7-0"></a></h3>
+<ul><li><p><strong>Fixed a duplicated “between-periods” bug.</strong> The same date-range gap check appeared at two sites (<code>is_between()</code> and the inline <code>test_condition()</code> tiebreaker). Both now delegate to a single helper (<code>date_year_in_gap()</code>), so fixes and future changes stay in one place.</p></li>
+<li><p><strong>Added two-sided normalization of country names.</strong> Input country names are now normalized before the fuzzy join (diacritics mapped to ASCII via <code><a href="https://rdrr.io/pkg/stringi/man/stri_trans_general.html" class="external-link">stringi::stri_trans_general</a></code>, punctuation collapsed to whitespace, case folded). The dictionary regexes are normalized symmetrically at match time so that “Türkiye”, “Turkiye”, and “TURKEY” now all match, as do “Côte d’Ivoire” / “Cote d’Ivoire” / “Ivory Coast”, “Congo, Dem. Rep.” / “Democratic Republic of the Congo” / “DR Congo”, “U.S.A.” / “USA”, etc.</p></li>
+<li><p>Exported <code><a href="../reference/normalize_country.html">normalize_country()</a></code> as a helper for callers that want to pre-normalize country names themselves.</p></li>
+<li><p>Added <code>stringi</code> to <code>Imports</code>.</p></li>
+<li><p>Raised the minimum supported R version to <code>4.2.0</code>.</p></li>
+<li><p>A small number of successor-state country-year rows that previously fell into the “between-periods” gap may now resolve differently as a side effect of the bug fix. Behavior on the “golden” regression fixture is unchanged.</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="other-0-7-0">Other<a class="anchor" aria-label="anchor" href="#other-0-7-0"></a></h3>
+<ul><li>Moved to github actions for pkgdown site instead of tracking the <code>/docs</code> folder.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.6.0" id="democracydata-060">democracyData 0.6.0<a class="anchor" aria-label="anchor" href="#democracydata-060"></a></h2>
 <ul><li><p>Converted pkgdown articles to Quarto for consistent rendering; site now builds with Bootstrap 5.</p></li>
@@ -122,7 +155,7 @@
 <li><p><code>LIED</code> now updated to the latest release (2020, version 5.2, with data to 2019).</p></li>
 <li><p>Fixed <code>redownload_magaloni</code> download link, which had changed.</p></li>
 <li><p><code>pitf</code> now has two versions: <code>pitf_p4</code> based on Polity IV data, and <code>pitf</code>, calculated from Polity5. Both now include data to 2018.</p></li>
-<li><p>Eliminated <code>redownload_uds</code> function since the <a href="http://www.unified-democracy-scores.org/" class="external-link">UDS website</a> is no longer online.</p></li>
+<li><p>Eliminated <code>redownload_uds</code> function since the <a href="https://www.unified-democracy-scores.org/" class="external-link">UDS website</a> is no longer online.</p></li>
 <li><p>Updated bibliography and documentation for many datasets.</p></li>
 </ul></div>
     <div class="section level2">

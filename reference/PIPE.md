@@ -1,8 +1,10 @@
 # The Political Institutions and Political Events (PIPE) dataset
 
 A. Przeworski. *Political Institutions and Political Events (PIPE) Data
-Set*. Data Set. 2013. The original data and codebook can be downloaded
-from <https://sites.google.com/a/nyu.edu/adam-przeworski/home/data>. The
+Set*. Data set. Department of Politics, New York University, 2013.
+<https://sites.google.com/a/nyu.edu/adam-przeworski/home/data>. The
+original data and codebook can be downloaded from
+<https://sites.google.com/a/nyu.edu/adam-przeworski/home/data>. The
 documentation below is directly derived from the codebook, with some
 modifications.
 
@@ -20,7 +22,8 @@ An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
 ## Source
 
 A. Przeworski. *Political Institutions and Political Events (PIPE) Data
-Set*. Data Set. 2013.
+Set*. Data set. Department of Politics, New York University, 2013.
+<https://sites.google.com/a/nyu.edu/adam-przeworski/home/data>.
 
 ## Credits
 
@@ -1746,8 +1749,9 @@ Caveats are many and some are consequential.
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -1758,7 +1762,7 @@ Caveats are many and some are consequential.
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -1776,9 +1780,9 @@ Caveats are many and some are consequential.
 Caramani, Daniele. 2000. Elections in Western Europe since 1815:
 electoral results by constituencies. London: Macmillan. CD-ROM.
 
-Elections Canada On-Line, <http://www.elections.ca>
+Elections Canada On-Line, <https://www.elections.ca/>
 
-Federal Election Commission, <http://www.fec.gov> (USA) Historical
+Federal Election Commission, <https://www.fec.gov/> (USA) Historical
 Statistics of the United States. Colonial times to 1957. Washington, DC:
 US Department of Commerce. Series Y 146-149.
 
@@ -1812,7 +1816,8 @@ Handbook Volume 1: North America, Central America, and the Caribbean.
 New York: Oxford University Press.
 
 Vanhanen, Tatu. The Polyarchy Dataset, Norwegian University of Science
-and Technology. <http://www.svt.ntnu.no/iss/data/vanhanen>
+and Technology.
+<https://web.archive.org/web/20010604084154/http://www.svt.ntnu.no/iss/data/vanhanen/>
 
 Historical Statistics Of The United States. Colonial Times To 1970.
 Washington, Dc: Us Department Of Commerce. Series Y 135-186.
@@ -1869,9 +1874,12 @@ Other democracy:
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
 [`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
 [`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
 [`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
-[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
+[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
 
 Other institutions:
 [`LIED`](https://xmarquez.github.io/democracyData/reference/LIED.md),
-[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md)
+[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md)

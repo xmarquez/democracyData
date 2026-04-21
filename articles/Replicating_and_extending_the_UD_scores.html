@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">democracyData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,8 +71,8 @@
 
 
 
-    <p>We can use this package to replicate and extend the <a href="http://www.unified-democracy-scores.org/" class="external-link">Unified Democracy Scores</a> of <span class="citation" data-cites="pmm2010">Pemstein, Meserve, and Melton (<a href="#ref-pmm2010" role="doc-biblioref">2010</a>)</span> (which are no longer being updated or maintained), and in general to calculate latent variable indexes of democracy.<a class="footnote-ref" role="doc-noteref" tabindex="0" data-bs-toggle="popover" data-bs-content='&lt;p&gt;For more detail on the models used to generate these indexes, and their characteristics, see my working paper &lt;span class="citation" data-cites="Marquez2016"&gt;(&lt;a href="#ref-Marquez2016" role="doc-biblioref"&gt;&lt;strong&gt;Marquez2016?&lt;/strong&gt;&lt;/a&gt;)&lt;/span&gt;, available at &lt;a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830" class="external-link"&gt;https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830&lt;/a&gt;.&lt;/p&gt;'><sup>1</sup></a> This article is a modified version of the vignette for my package <a href="https://xmarquez.github.io/QuickUDS" class="external-link">QuickUDS</a>, which I am no longer actively maintaining; I am slowly migrating the functions in that package to this package to avoid having to update two different data sets of democracy measures.</p>
-<p>You will need the package <a href="https://cran.r-project.org/web/packages/mirt/index.html" class="external-link"><code>mirt</code></a> <span class="citation" data-cites="Chalmers2012">(<a href="#ref-Chalmers2012" role="doc-biblioref"><strong>Chalmers2012?</strong></a>)</span>, which can quickly compute full-information factor analyses.</p>
+    <p>We can use this package to replicate and extend the <a href="http://www.unified-democracy-scores.org/" class="external-link">Unified Democracy Scores</a> of <span class="citation" data-cites="pmm2010">Pemstein, Meserve, and Melton (<a href="#ref-pmm2010" role="doc-biblioref">2010</a>)</span> (which are no longer being updated or maintained), and in general to calculate latent variable indexes of democracy.<a class="footnote-ref" role="doc-noteref" tabindex="0" data-bs-toggle="popover" data-bs-content='&lt;p&gt;For more detail on the models used to generate these indexes, and their characteristics, see my working paper &lt;span class="citation" data-cites="extended_uds_marquez2016"&gt;(&lt;a href="#ref-extended_uds_marquez2016" role="doc-biblioref"&gt;Márquez 2016&lt;/a&gt;)&lt;/span&gt;, available at &lt;a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830" class="external-link"&gt;https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830&lt;/a&gt;.&lt;/p&gt;'><sup>1</sup></a> This article is a modified version of the vignette for my package <a href="https://xmarquez.github.io/QuickUDS" class="external-link">QuickUDS</a>, which I am no longer actively maintaining; I am slowly migrating the functions in that package to this package to avoid having to update two different data sets of democracy measures.</p>
+<p>You will need the package <a href="https://cran.r-project.org/web/packages/mirt/index.html" class="external-link"><code>mirt</code></a> <span class="citation" data-cites="chalmersMirtMultidimensionalItem2012">(<a href="#ref-chalmersMirtMultidimensionalItem2012" role="doc-biblioref">Chalmers 2012</a>)</span>, which can quickly compute full-information factor analyses.</p>
 <p>The basic procedure for replicating or extending the UD scores is very simple.</p>
 <ol type="1">
 <li>Generate a dataset of democracy scores with a call to <code><a href="../reference/generate_democracy_scores_dataset.html">generate_democracy_scores_dataset()</a></code>;</li>
@@ -600,24 +600,24 @@ Adding vanhanen_pmm data</code></pre>
 <p>The function <code><a href="../reference/prepare_democracy_data.html">prepare_democracy_data()</a></code> gets rid of “empty rows” (country-years that have no measurements of democracy for the chosen indexes; such patterns will make <a href="https://cran.r-project.org/web/packages/mirt/index.html" class="external-link"><code>mirt</code></a> fail) and transforms selected democracy indexes into ordinal variables suitable for use with <a href="https://cran.r-project.org/web/packages/mirt/index.html" class="external-link"><code>mirt</code></a>, mostly following the advice in Pemstein, Meserve, and Melton’s original article (2010).</p>
 <p>In particular, <code><a href="../reference/prepare_democracy_data.html">prepare_democracy_data()</a></code> will try to do the following on your dataset:</p>
 <ul>
-<li><p>If a selected index contains the string <code>arat</code>, the function assumes the index is Arat’s <span class="citation" data-cites="Arat1991">(<a href="#ref-Arat1991" role="doc-biblioref">Arat 1991</a>)</span> 0-109 democracy score, and cuts it into 7 intervals with the following cutoffs: 50, 60, 70, 80, 90, and 100. The resulting score is ordinal from 1 to 8 (following Pemstein, Meserve, and Melton’s advice).</p></li>
-<li><p>If a selected index contains the string <code>bollen</code>, the function assumes the index is Bollen’s <span class="citation" data-cites="Bollen2001">(<a href="#ref-Bollen2001" role="doc-biblioref"><strong>Bollen2001?</strong></a>)</span> 0-100 democracy score, and cuts it into 10 intervals with the following cutoffs: 10,20,30,40,50,60,70,80, and 90. The resulting score is ordinal from 1 to 10 (following Pemstein, Meserve, and Melton’s advice).</p></li>
+<li><p>If a selected index contains the string <code>arat</code>, the function assumes the index is Arat’s <span class="citation" data-cites="arat1991">(<a href="#ref-arat1991" role="doc-biblioref">Arat 1991</a>)</span> 0-109 democracy score, and cuts it into 7 intervals with the following cutoffs: 50, 60, 70, 80, 90, and 100. The resulting score is ordinal from 1 to 8 (following Pemstein, Meserve, and Melton’s advice).</p></li>
+<li><p>If a selected index contains the string <code>bollen</code>, the function assumes the index is Bollen’s <span class="citation" data-cites="bollen2001">(<a href="#ref-bollen2001" role="doc-biblioref">Bollen 2001</a>)</span> 0-100 democracy score, and cuts it into 10 intervals with the following cutoffs: 10,20,30,40,50,60,70,80, and 90. The resulting score is ordinal from 1 to 10 (following Pemstein, Meserve, and Melton’s advice).</p></li>
 <li><p>If a selected index contains the string <code>wgi</code>, the function assumes the index is the World Governance Indicator’s “Voice and Accountability” index <span class="citation" data-cites="wgi2017">(<a href="#ref-wgi2017" role="doc-biblioref">Kaufmann and Kraay 2020</a>)</span>, and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.</p></li>
-<li><p>If a selected index contains the string <code>eiu</code>, the function assumes the index is the Economist Intelligence Unit’s democracy index <span class="citation" data-cites="eiu2021">(<a href="#ref-eiu2021" role="doc-biblioref"><strong>eiu2021?</strong></a>)</span>, and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.</p></li>
-<li><p>If a selected index contains the string <code>hadenius_pmm</code>, the function assumes the index is Hadenius’s 0-10 democracy score <span class="citation" data-cites="hadenius1992">(<a href="#ref-hadenius1992" role="doc-biblioref"><strong>hadenius1992?</strong></a>)</span>, and it will cut it into 8 intervals with the following cutoffs: 1, 2,3,4, 7, 8, and 9. The resulting score is ordinal from 1 to 8 (following Pemstein, Meserve, and Melton’s advice).</p></li>
+<li><p>If a selected index contains the string <code>eiu</code>, the function assumes the index is the Economist Intelligence Unit’s democracy index <span class="citation" data-cites="eiu2025">(<a href="#ref-eiu2025" role="doc-biblioref">The Economist Intelligence Unit 2026</a>)</span>, and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.</p></li>
+<li><p>If a selected index contains the string <code>hadenius_pmm</code>, the function assumes the index is Hadenius’s 0-10 democracy score <span class="citation" data-cites="Hadenius1992">(<a href="#ref-Hadenius1992" role="doc-biblioref">Hadenius 1992</a>)</span>, and it will cut it into 8 intervals with the following cutoffs: 1, 2,3,4, 7, 8, and 9. The resulting score is ordinal from 1 to 8 (following Pemstein, Meserve, and Melton’s advice).</p></li>
 <li><p>If the selected index contains the string <code>munck</code>, the function assumes the index is Munck’s 0-1 democracy score <span class="citation" data-cites="munck2009">(<a href="#ref-munck2009" role="doc-biblioref">Munck 2009</a>)</span>, and it will cut it into 4 intervals with the following cutoffs: 0.5,0.5,0.75, and 0.99. The resulting score is ordinal from 1 to 4 (following Pemstein, Meserve, and Melton’s advice).</p></li>
 <li><p>If the selected index contains the string <code>peps</code>, the function assumes the index is one of the variants of the Participation-Enhanced Polity Score <span class="citation" data-cites="peps2006">(<a href="#ref-peps2006" role="doc-biblioref">Moon et al. 2006</a>)</span>, and it will round its value (eliminating the decimal) and then transform it into an ordinal measure from 1 to 21.</p></li>
 <li><p>If the selected index contains the string <code>polity</code>, the function assumes this is the Polity IV or Polity 5 score <span class="citation" data-cites="polity2019 polity2020">(<a href="#ref-polity2020" role="doc-biblioref">Marshall and Gurr 2020</a>; <a href="#ref-polity2019" role="doc-biblioref">Marshall, Gurr, and Jaggers 2019</a>)</span>, and it will thus set any values below -10 to NA and then transform the variable into an ordinal measure from 1 to 21.</p></li>
 <li><p>If the selected index contains the string <code>polyarchy_inclusion_dimension</code> or <code>polyarchy_contestation_dimension</code>, the function assumes this is one of the two dimensions of polyarchy estimated by <span class="citation" data-cites="polyarchy_dimensions2008">Coppedge, Alvarez, and Maldonado (<a href="#ref-polyarchy_dimensions2008" role="doc-biblioref">2008</a>)</span>, and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.</p></li>
-<li><p>If the selected index contains the string <code>v2x</code>, the function assumes this is one of the v2x_ continuous indexes of democracy from the V-Dem dataset <span class="citation" data-cites="vdem11dataset">(<a href="#ref-vdem11dataset" role="doc-biblioref"><strong>vdem11dataset?</strong></a>)</span>, and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.</p></li>
+<li><p>If the selected index contains the string <code>v2x</code>, the function assumes this is one of the v2x_ continuous indexes of democracy from the V-Dem dataset <span class="citation" data-cites="vdem16codebook">(<a href="#ref-vdem16codebook" role="doc-biblioref">Coppedge et al. 2026</a>)</span>, and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.</p></li>
 <li><p>If the selected index contains the string <code>csvdmi</code> or <code>svdmi_2016</code>, the function assumes this is one of the continuous indexes of democracy from the SVMDI dataset <span class="citation" data-cites="svmdi2016 svmdi2018">(<a href="#ref-svmdi2016" role="doc-biblioref">Gründler and Krieger 2016</a>, <a href="#ref-svmdi2018" role="doc-biblioref">2018</a>)</span>, and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.</p></li>
-<li><p>If the selected index contains the string <code>bti</code>, the function assumes this is the Bertelsman Transformation Index <span class="citation" data-cites="bti2020">(<a href="#ref-bti2020" role="doc-biblioref"><strong>bti2020?</strong></a>)</span>, and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.</p></li>
-<li><p>If the selected index contains the string <code>vanhanen_democratization</code> or <code>vanhanen_pmm</code>, the function assumes this is Vanhanen’s index of democratization <span class="citation" data-cites="vanhanen2014">(<a href="#ref-vanhanen2014" role="doc-biblioref"><strong>vanhanen2014?</strong></a>)</span>, and it will cut it into 8 intervals with the following cutoffs: 5,10,15,20,25,30, and 35 (following Pemstein, Meserve, and Melton’s advice). The resulting score is ordinal from 1 to 8.</p></li>
+<li><p>If the selected index contains the string <code>bti</code>, the function assumes this is the Bertelsman Transformation Index <span class="citation" data-cites="bti2026">(<a href="#ref-bti2026" role="doc-biblioref">Bertelsmann Stiftung 2026</a>)</span>, and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.</p></li>
+<li><p>If the selected index contains the string <code>vanhanen_democratization</code> or <code>vanhanen_pmm</code>, the function assumes this is Vanhanen’s index of democratization <span class="citation" data-cites="vanhanen2019">(<a href="#ref-vanhanen2019" role="doc-biblioref">Vanhanen 2019</a>)</span>, and it will cut it into 8 intervals with the following cutoffs: 5,10,15,20,25,30, and 35 (following Pemstein, Meserve, and Melton’s advice). The resulting score is ordinal from 1 to 8.</p></li>
 </ul>
 <p><code><a href="../reference/prepare_democracy_data.html">prepare_democracy_data()</a></code> will also work on column names that contain the following strings:</p>
 <ul>
 <li>
-<code>anckar</code> <span class="citation" data-cites="AnckarFredriksson2018">(assumes it’s the democracy indicator from <a href="#ref-AnckarFredriksson2018" role="doc-biblioref"><strong>AnckarFredriksson2018?</strong></a>)</span>
+<code>anckar</code> <span class="citation" data-cites="anckarClassifyingPoliticalRegimes2018a">(assumes it’s the democracy indicator from <a href="#ref-anckarClassifyingPoliticalRegimes2018a" role="doc-biblioref">Anckar and Fredriksson 2018</a>)</span>
 </li>
 <li>
 <code>anrr</code> <span class="citation" data-cites="anrr2019">(assumes it’s the democracy indicator from <a href="#ref-anrr2019" role="doc-biblioref">Acemoglu et al. 2019</a>)</span>
@@ -626,7 +626,7 @@ Adding vanhanen_pmm data</code></pre>
 <code>blm</code> <span class="citation" data-cites="blm2005">(assumes it’s from <a href="#ref-blm2005" role="doc-biblioref">Bowman, Lehoucq, and Mahoney 2005</a>)</span>
 </li>
 <li>
-<code>bmr</code> <span class="citation" data-cites="bmr2007">(assumes it’s from <a href="#ref-bmr2007" role="doc-biblioref"><strong>bmr2007?</strong></a>)</span>
+<code>bmr</code> <span class="citation" data-cites="bmr2012">(assumes it’s from <a href="#ref-bmr2012" role="doc-biblioref">Boix, Miller, and Rosato 2012</a>)</span>
 </li>
 <li>
 <code>doorenspleet</code> <span class="citation" data-cites="doorenspleet2000">(assumes it’s from <a href="#ref-doorenspleet2000" role="doc-biblioref">Doorenspleet 2000</a>)</span>
@@ -638,13 +638,13 @@ Adding vanhanen_pmm data</code></pre>
 <code>e_v2x</code> <span class="citation" data-cites="vdem15codebook">(assumes it’s one of the “ordinal” indexes from the V-dem project, <a href="#ref-vdem15codebook" role="doc-biblioref">Coppedge et al. 2025</a>)</span>
 </li>
 <li>
-<code>fh</code> or <code>freedomhouse</code> <span class="citation" data-cites="fh2020">(assumes it’s from <a href="#ref-fh2020" role="doc-biblioref"><strong>fh2020?</strong></a>)</span>
+<code>fh</code> or <code>freedomhouse</code> <span class="citation" data-cites="fh2025">(assumes it’s from <a href="#ref-fh2025" role="doc-biblioref">House 2025</a>)</span>
 </li>
 <li>
 <code>gwf</code> <span class="citation" data-cites="gwf2014">(assumes it’s from <a href="#ref-gwf2014" role="doc-biblioref">Geddes, Wright, and Frantz 2014</a> - the dichotomous democracy indicator only)</span>
 </li>
 <li>
-<code>kailitz</code> <span class="citation" data-cites="Kailitz2013">(assumes it’s from from <a href="#ref-Kailitz2013" role="doc-biblioref"><strong>Kailitz2013?</strong></a> - democracy/electoral autocracy/non-democracy indicator only)</span>
+<code>kailitz</code> <span class="citation" data-cites="kailitz2013">(assumes it’s from from <a href="#ref-kailitz2013" role="doc-biblioref">Kailitz 2013</a> - democracy/electoral autocracy/non-democracy indicator only)</span>
 </li>
 <li>
 <code>lied</code> or <code>lexical_index</code> <span class="citation" data-cites="LIED2015">(assumes it’s from <a href="#ref-LIED2015" role="doc-biblioref">Skaaning, Gerring, and Bartusevičius 2015</a>)</span>
@@ -665,7 +665,7 @@ Adding vanhanen_pmm data</code></pre>
 <code>polyarchy</code> <span class="citation" data-cites="polyarchy1990">(assumes it’s from <a href="#ref-polyarchy1990" role="doc-biblioref">Coppedge and Reinicke 1990</a>)</span>
 </li>
 <li>
-<code>prc</code> <span class="citation" data-cites="prc_gasiorowski1996">(assumes it’s from <a href="#ref-prc_gasiorowski1996" role="doc-biblioref"><strong>prc_gasiorowski1996?</strong></a> or its later update)</span>
+<code>prc</code> <span class="citation" data-cites="Gasiorowski1996">(assumes it’s from <a href="#ref-Gasiorowski1996" role="doc-biblioref">Gasiorowski 1996</a> or its later update)</span>
 </li>
 <li>
 <code>przeworski</code> <span class="citation" data-cites="PIPE2013">(assumes it’s the “regime” variable from <a href="#ref-PIPE2013" role="doc-biblioref">Przeworski 2013</a>)</span>
@@ -674,7 +674,7 @@ Adding vanhanen_pmm data</code></pre>
 <code>reign</code> <span class="citation" data-cites="reign2016">(assumes it’s the democracy/dictatorship indicator from <a href="#ref-reign2016" role="doc-biblioref">Bell 2016</a>)</span>
 </li>
 <li>
-<code>svolik</code> <span class="citation" data-cites="svolik2012">(assumes it’s the democracy/dictatorship indicator from <a href="#ref-svolik2012" role="doc-biblioref"><strong>svolik2012?</strong></a>)</span>
+<code>svolik</code> <span class="citation" data-cites="svolikPoliticsAuthoritarianRule2012a">(assumes it’s the democracy/dictatorship indicator from <a href="#ref-svolikPoliticsAuthoritarianRule2012a" role="doc-biblioref">Svolik 2012</a>)</span>
 </li>
 <li>
 <code>ulfelder</code> <span class="citation" data-cites="ulfelder2012">(assumes it’s from <a href="#ref-ulfelder2012" role="doc-biblioref">Ulfelder 2012</a>)</span>
@@ -702,14 +702,14 @@ Adding vanhanen_pmm data</code></pre>
 <span>      verbose <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span>      <span class="op">)</span></span></code></pre></div>
 </div>
-<p>This just tells <a href="https://cran.r-project.org/web/packages/mirt/index.html" class="external-link"><code>mirt</code></a> to fit a one-factor, full information graded response model like that in <span class="citation" data-cites="pmm2010uds2010">(<a href="#ref-pmm2010uds2010" role="doc-biblioref"><strong>pmm2010uds2010?</strong></a>)</span>, and to calculate the standard errors for the coefficients. (See <code><a href="https://philchalmers.github.io/mirt/reference/mirt.html" class="external-link">?mirt</a></code> for details of the many options you can use to tweak your model, and see <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830" class="external-link">my paper</a> for a fuller description of why this model is useful here).</p>
+<p>This just tells <a href="https://cran.r-project.org/web/packages/mirt/index.html" class="external-link"><code>mirt</code></a> to fit a one-factor, full information graded response model like that in <span class="citation" data-cites="pmm2010">Pemstein, Meserve, and Melton (<a href="#ref-pmm2010" role="doc-biblioref">2010</a>)</span>, and to calculate the standard errors for the coefficients. (See <code><a href="https://philchalmers.github.io/mirt/reference/mirt.html" class="external-link">?mirt</a></code> for details of the many options you can use to tweak your model, and see <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830" class="external-link">my paper</a> for a fuller description of why this model is useful here).</p>
 <p>Fitting this model is reasonably fast:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">replication_2011_model</span><span class="op">@</span><span class="va">time</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>TOTAL:   Data  Estep  Mstep     SE   Post
- 5.195  0.102  0.624  3.530  0.913  0.001 </code></pre>
+ 5.204  0.117  0.629  3.514  0.914  0.000 </code></pre>
 </div>
 </div>
 <p>We can easily check that this model converges and that it accounts for most of the variance in the democracy indexes:</p>
@@ -863,16 +863,16 @@ z1                  0.9996735       0.9995924 1.0000000</code></pre>
 <p>Now suppose you want to create a new latent score derived but want to include other measures, or updated measures, or want to restrict your sources to dichotomous indicators of democracy or a particular set of measures that seem especially reliable.</p>
 <p>For example, suppose we want to use:</p>
 <ul>
-<li>The dichotomous indicator of democracy, adjusted for female suffrage, in version 3.0 of the Boix, Miller and Rosato dataset of political regimes <span class="citation" data-cites="bmr2007">(<a href="#ref-bmr2007" role="doc-biblioref"><strong>bmr2007?</strong></a>)</span>
+<li>The dichotomous indicator of democracy, adjusted for female suffrage, in version 3.0 of the Boix, Miller and Rosato dataset of political regimes <span class="citation" data-cites="bmr2012">(<a href="#ref-bmr2012" role="doc-biblioref">Boix, Miller, and Rosato 2012</a>)</span>
 </li>
-<li>The full extent of the Political Regime Change dataset <span class="citation" data-cites="prc_gasiorowski2002 prc_gasiorowski1996">(<a href="#ref-prc_gasiorowski2002" role="doc-biblioref">Reich 2002</a>; <a href="#ref-prc_gasiorowski1996" role="doc-biblioref"><strong>prc_gasiorowski1996?</strong></a>)</span>, Vanhanen’s index of democratization <span class="citation" data-cites="vanhanen2014">(<a href="#ref-vanhanen2014" role="doc-biblioref"><strong>vanhanen2014?</strong></a>)</span>, Bowman, Lehoucq, and Mahoney’s data on Central America <span class="citation" data-cites="blm2005">(<a href="#ref-blm2005" role="doc-biblioref">Bowman, Lehoucq, and Mahoney 2005</a>)</span> and Mainwaring, Brinks and Perez-Linan’s data on Latin America <span class="citation" data-cites="mainwaring2014">(<a href="#ref-mainwaring2014" role="doc-biblioref">Mainwaring, Pérez-Liñán, and Brinks 2014</a>)</span>, all of which go back to the beginning of the 20th century or before but are not used to their fullest extent in the official UD releases.</li>
+<li>The full extent of the Political Regime Change dataset <span class="citation" data-cites="prc_gasiorowski2002 Gasiorowski1996">(<a href="#ref-Gasiorowski1996" role="doc-biblioref">Gasiorowski 1996</a>; <a href="#ref-prc_gasiorowski2002" role="doc-biblioref">Reich 2002</a>)</span>, Vanhanen’s index of democratization <span class="citation" data-cites="vanhanen2019">(<a href="#ref-vanhanen2019" role="doc-biblioref">Vanhanen 2019</a>)</span>, Bowman, Lehoucq, and Mahoney’s data on Central America <span class="citation" data-cites="blm2005">(<a href="#ref-blm2005" role="doc-biblioref">Bowman, Lehoucq, and Mahoney 2005</a>)</span> and Mainwaring, Brinks and Perez-Linan’s data on Latin America <span class="citation" data-cites="mainwaring2014">(<a href="#ref-mainwaring2014" role="doc-biblioref">Mainwaring, Pérez-Liñán, and Brinks 2014</a>)</span>, all of which go back to the beginning of the 20th century or before but are not used to their fullest extent in the official UD releases.</li>
 <li>One of the new V-Dem indexes of democracy, ordinal or continuous <span class="citation" data-cites="vdem15codebook">(<a href="#ref-vdem15codebook" role="doc-biblioref">Coppedge et al. 2025</a>)</span>
 </li>
 <li>Renske Doorenspleet’s dichotomous indicator of democracy including suffrage info <span class="citation" data-cites="doorenspleet2000">(<a href="#ref-doorenspleet2000" role="doc-biblioref">Doorenspleet 2000</a>)</span>
 </li>
 <li>The World Governance Indicator’s latest Voice and Accountability index</li>
 <li>The most current release of Freedom House’s data, to 2020, and the most current Polity data, to 2018</li>
-<li>The indicators of democracy in various autocratic regime datasets <span class="citation" data-cites="gwf2014 svolik2012 Kailitz2013 wahman_teorell_hadenius2013">(<a href="#ref-gwf2014" role="doc-biblioref">Geddes, Wright, and Frantz 2014</a>; <a href="#ref-wahman_teorell_hadenius2013" role="doc-biblioref">Wahman, Teorell, and Hadenius 2013</a>; <a href="#ref-svolik2012" role="doc-biblioref"><strong>svolik2012?</strong></a>; <a href="#ref-Kailitz2013" role="doc-biblioref"><strong>Kailitz2013?</strong></a>)</span>
+<li>The indicators of democracy in various autocratic regime datasets <span class="citation" data-cites="gwf2014 svolikPoliticsAuthoritarianRule2012a kailitz2013 wahman_teorell_hadenius2013">(<a href="#ref-gwf2014" role="doc-biblioref">Geddes, Wright, and Frantz 2014</a>; <a href="#ref-kailitz2013" role="doc-biblioref">Kailitz 2013</a>; <a href="#ref-svolikPoliticsAuthoritarianRule2012a" role="doc-biblioref">Svolik 2012</a>; <a href="#ref-wahman_teorell_hadenius2013" role="doc-biblioref">Wahman, Teorell, and Hadenius 2013</a>)</span>
 </li>
 <li>The 7-level Lexical Index of Democracy and Autocracy <span class="citation" data-cites="LIED2015">(<a href="#ref-LIED2015" role="doc-biblioref">Skaaning, Gerring, and Bartusevičius 2015</a>)</span>
 </li>
@@ -904,43 +904,43 @@ z1                  0.9996735       0.9995924 1.0000000</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                 F1    h2
 arat                          0.962 0.925
-blm                           0.990 0.981
-bmr_democracy_femalesuffrage  0.989 0.977
+blm                           0.991 0.981
+bmr_democracy_femalesuffrage  0.989 0.978
 pmm_bollen                    0.966 0.933
 doorenspleet                  0.979 0.959
-wgi_democracy                 0.978 0.957
-fh_total_reversed             0.962 0.926
-gwf_democracy_extended_strict 0.970 0.940
-pmm_hadenius                  0.982 0.965
-kailitz_tri                   0.964 0.930
-svolik_democracy              0.975 0.951
-lexical_index                 0.968 0.937
+wgi_democracy                 0.973 0.947
+fh_total_reversed             0.960 0.921
+gwf_democracy_extended_strict 0.970 0.941
+pmm_hadenius                  0.982 0.964
+kailitz_tri                   0.965 0.932
+svolik_democracy              0.976 0.952
+lexical_index                 0.969 0.939
 ulfelder_democracy_extended   0.980 0.960
 prc                           0.986 0.972
-mainwaring                    0.986 0.971
-vanhanen_democratization      0.943 0.890
-v2x_polyarchy                 0.980 0.960
+mainwaring                    0.986 0.972
+vanhanen_democratization      0.944 0.892
+v2x_polyarchy                 0.980 0.961
 
                                 SE.F1
 arat                          0.00172
-blm                           0.00215
-bmr_democracy_femalesuffrage  0.00073
-pmm_bollen                    0.00398
+blm                           0.00213
+bmr_democracy_femalesuffrage  0.00072
+pmm_bollen                    0.00396
 doorenspleet                  0.00134
-wgi_democracy                 0.00092
-fh_total_reversed             0.00107
-gwf_democracy_extended_strict 0.00164
-pmm_hadenius                  0.00441
-kailitz_tri                   0.00132
-svolik_democracy              0.00147
-lexical_index                 0.00075
-ulfelder_democracy_extended   0.00118
-prc                           0.00072
-mainwaring                    0.00136
-vanhanen_democratization      0.00131
-v2x_polyarchy                 0.00048
+wgi_democracy                 0.00103
+fh_total_reversed             0.00111
+gwf_democracy_extended_strict 0.00162
+pmm_hadenius                  0.00453
+kailitz_tri                   0.00130
+svolik_democracy              0.00145
+lexical_index                 0.00073
+ulfelder_democracy_extended   0.00117
+prc                           0.00071
+mainwaring                    0.00135
+vanhanen_democratization      0.00129
+v2x_polyarchy                 0.00047
 
-SS loadings:  16.133
+SS loadings:  16.129
 Proportion Var:  0.949
 
 Factor correlations:
@@ -1080,16 +1080,16 @@ dropped</code></pre>
 <pre><code># A tibble: 101 × 6
    variable                     estimate pct025 pct975      se num_obs
    &lt;chr&gt;                           &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt;
- 1 arat                           -0.511 -0.515 -0.506 0.00254    3873
- 2 arat                           -0.183 -0.195 -0.169 0.00704    3873
- 3 arat                            0.249  0.215  0.286 0.0189     3873
- 4 arat                            0.537  0.482  0.597 0.0307     3873
- 5 arat                            0.922  0.835  1.02  0.0486     3873
- 6 arat                            1.70   1.55   1.87  0.0843     3873
- 7 blm                             0.491  0.310  0.775 0.145       505
- 8 blm                             1.08   0.691  1.70  0.314       505
- 9 bmr_democracy_femalesuffrage    0.856  0.754  0.972 0.0590    19126
-10 pmm_bollen                     -0.645 -0.655 -0.633 0.00638     510
+ 1 arat                           -0.518 -0.523 -0.514 0.00245    3873
+ 2 arat                           -0.191 -0.203 -0.177 0.00693    3873
+ 3 arat                            0.239  0.206  0.276 0.0186     3873
+ 4 arat                            0.525  0.471  0.584 0.0302     3873
+ 5 arat                            0.908  0.822  1.00  0.0479     3873
+ 6 arat                            1.69   1.54   1.86  0.0838     3873
+ 7 blm                             0.480  0.302  0.761 0.143       505
+ 8 blm                             1.06   0.678  1.67  0.309       505
+ 9 bmr_democracy_femalesuffrage    0.842  0.741  0.956 0.0583    19126
+10 pmm_bollen                     -0.651 -0.660 -0.639 0.00612     510
 # ℹ 91 more rows</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb44"><pre class="downlit sourceCode r">
@@ -1103,18 +1103,18 @@ dropped</code></pre>
 # Groups:   variable [5]
   variable                      estimate pct025 pct975     se num_obs
   &lt;chr&gt;                            &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;int&gt;
-1 bmr_democracy_femalesuffrage     0.856  0.754  0.972 0.0590   19126
-2 doorenspleet                     0.939  0.828  1.07  0.0645   13009
-3 gwf_democracy_extended_strict    0.676  0.602  0.758 0.0422    9243
-4 svolik_democracy                 0.735  0.648  0.832 0.0497    8554
-5 ulfelder_democracy_extended      0.725  0.643  0.817 0.0470   11545</code></pre>
+1 bmr_democracy_femalesuffrage     0.842  0.741  0.956 0.0583   19126
+2 doorenspleet                     0.925  0.816  1.05  0.0638   13009
+3 gwf_democracy_extended_strict    0.663  0.590  0.745 0.0417    9243
+4 svolik_democracy                 0.720  0.635  0.817 0.0492    8554
+5 ulfelder_democracy_extended      0.712  0.631  0.803 0.0464   11545</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">avg_dichotomous</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">dichotomous_cutpoints</span><span class="op">$</span><span class="va">estimate</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">avg_dichotomous</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.7860133</code></pre>
+<pre><code>[1] 0.7723956</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb48"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">extended_scores</span> <span class="op">&lt;-</span> <span class="va">extended_scores</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>adj_z1 <span class="op">=</span> <span class="va">z1</span> <span class="op">-</span> <span class="va">avg_dichotomous</span>, </span>
@@ -1150,7 +1150,7 @@ Don't know how to automatically pick scale for object of type
 </div>
 </div>
 </div>
-<p>A pre-computed and documented version of the extended UDS scores, with data from all the indexes mentioned above, plus the participation-enhanced Polity Scores of <span class="citation" data-cites="peps2006">Moon et al. (<a href="#ref-peps2006" role="doc-biblioref">2006</a>)</span>, a trichotomous democracy indicator calculated from Magaloni, Min, and Chu’s “Autocracies of the World” datset <span class="citation" data-cites="MagaloniChuMin2013">(<a href="#ref-MagaloniChuMin2013" role="doc-biblioref">Magaloni, Chu, and Min 2013</a>)</span>, a dichotomous democracy indicator calculated from <span class="citation" data-cites="utip2008">Hsu (<a href="#ref-utip2008" role="doc-biblioref">2008</a>)</span>, the REIGN dataset of <span class="citation" data-cites="reign2016">Bell (<a href="#ref-reign2016" role="doc-biblioref">2016</a>)</span>, which extends <span class="citation" data-cites="gwf2014">Geddes, Wright, and Frantz (<a href="#ref-gwf2014" role="doc-biblioref">2014</a>)</span>, a dichotomous democracy indicator from <span class="citation" data-cites="anrr2019">Acemoglu et al. (<a href="#ref-anrr2019" role="doc-biblioref">2019</a>)</span>, the Bertelsmann Transformation index <span class="citation" data-cites="bti2020">(<a href="#ref-bti2020" role="doc-biblioref"><strong>bti2020?</strong></a>)</span>, the new Varieties of Political Regimes dataset <span class="citation" data-cites="kailitz2024dataset">(<a href="#ref-kailitz2024dataset" role="doc-biblioref">Kailitz 2024</a>)</span>, and an indicator of democracy used by the Political Instability Task Force <span class="citation" data-cites="pitf2010 pitf2015">(<a href="#ref-pitf2010" role="doc-biblioref">Goldstone et al. 2010</a>; <a href="#ref-pitf2015" role="doc-biblioref">Taylor and Ulfelder 2015</a>)</span>, is included with the package; it can be loaded by simply typing <code>extended_uds</code>. Use <code><a href="../reference/extended_uds.html">?extended_uds</a></code> to examine the documentation for all its variables, and see my working paper (<a href="http://ssrn.com/abstract=2753830" class="external-link">Marquez 2016</a>) for more detail on the data and its uses.</p>
+<p>A pre-computed and documented version of the extended UDS scores, with data from all the indexes mentioned above, plus the participation-enhanced Polity Scores of <span class="citation" data-cites="peps2006">Moon et al. (<a href="#ref-peps2006" role="doc-biblioref">2006</a>)</span>, a trichotomous democracy indicator calculated from Magaloni, Min, and Chu’s “Autocracies of the World” datset <span class="citation" data-cites="MagaloniChuMin2013">(<a href="#ref-MagaloniChuMin2013" role="doc-biblioref">Magaloni, Chu, and Min 2013</a>)</span>, a dichotomous democracy indicator calculated from <span class="citation" data-cites="utip2008">Hsu (<a href="#ref-utip2008" role="doc-biblioref">2008</a>)</span>, the REIGN dataset of <span class="citation" data-cites="reign2016">Bell (<a href="#ref-reign2016" role="doc-biblioref">2016</a>)</span>, which extends <span class="citation" data-cites="gwf2014">Geddes, Wright, and Frantz (<a href="#ref-gwf2014" role="doc-biblioref">2014</a>)</span>, a dichotomous democracy indicator from <span class="citation" data-cites="anrr2019">Acemoglu et al. (<a href="#ref-anrr2019" role="doc-biblioref">2019</a>)</span>, the Bertelsmann Transformation index <span class="citation" data-cites="bti2026">(<a href="#ref-bti2026" role="doc-biblioref">Bertelsmann Stiftung 2026</a>)</span>, the new Varieties of Political Regimes dataset <span class="citation" data-cites="vaporeg32dataset">(<a href="#ref-vaporeg32dataset" role="doc-biblioref">Kailitz 2026</a>)</span>, and an indicator of democracy used by the Political Instability Task Force <span class="citation" data-cites="pitf2010 pitf2015">(<a href="#ref-pitf2010" role="doc-biblioref">Goldstone et al. 2010</a>; <a href="#ref-pitf2015" role="doc-biblioref">Taylor and Ulfelder 2015</a>)</span>, is included with the package; it can be loaded by simply typing <code>extended_uds</code>. Use <code><a href="../reference/extended_uds.html">?extended_uds</a></code> to examine the documentation for all its variables, and see my working paper (<a href="http://ssrn.com/abstract=2753830" class="external-link">Marquez 2016</a>) for more detail on the data and its uses.</p>
 <p>The function <code><a href="../reference/generate_extended_uds.html">generate_extended_uds()</a></code> recreates these scores in one line of code, at the cost of some flexibility.</p>
 </section><section class="section level3"><h3 id="other-extensions">Other Extensions<a class="anchor" aria-label="anchor" href="#other-extensions"></a>
 </h3>
@@ -1172,51 +1172,51 @@ Don't know how to automatically pick scale for object of type
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">dichotomous_model</span><span class="op">)</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                 F1    h2
-anckar_democracy              0.995 0.989
-anrr_democracy                0.987 0.975
-bmr_democracy_femalesuffrage  0.991 0.983
-bnr_extended                  0.975 0.951
-doorenspleet                  0.976 0.952
-fh_electoral                  0.985 0.971
-gwf_democracy_extended_strict 0.981 0.963
-kailitz_binary                0.984 0.967
-magaloni_democracy_extended   0.987 0.975
-pacl_update                   0.974 0.948
-PIPE_democracy                0.817 0.667
-pitf_binary                   0.977 0.954
-reign_democracy               0.975 0.951
-dsvmdi                        0.962 0.926
-svolik_democracy              0.982 0.965
-ulfelder_democracy_extended   0.978 0.957
-utip_dichotomous_strict       0.936 0.877
-vaporeg_binary_strict         0.977 0.955
-vaporeg_binary_non_strict     0.983 0.966
-wth_democrobust               0.978 0.956
+anckar_democracy              0.996 0.992
+anrr_democracy                0.985 0.971
+bmr_democracy_femalesuffrage  0.996 0.992
+bnr_extended                  0.974 0.948
+doorenspleet                  0.978 0.956
+fh_electoral                  0.982 0.965
+gwf_democracy_extended_strict 0.978 0.956
+kailitz_binary                0.981 0.963
+magaloni_democracy_extended   0.983 0.966
+pacl_update                   0.971 0.943
+PIPE_democracy                0.813 0.661
+pitf_binary                   0.975 0.951
+reign_democracy               0.971 0.942
+dsvmdi                        0.959 0.919
+svolik_democracy              0.979 0.959
+ulfelder_democracy_extended   0.979 0.959
+utip_dichotomous_strict       0.930 0.865
+vaporeg_binary_strict         0.982 0.964
+vaporeg_binary_non_strict     0.981 0.962
+wth_democrobust               0.976 0.953
 
                                 SE.F1
-anckar_democracy              0.00045
-anrr_democracy                0.00103
-bmr_democracy_femalesuffrage  0.00058
-bnr_extended                  0.00152
-doorenspleet                  0.00153
-fh_electoral                  0.00123
-gwf_democracy_extended_strict 0.00130
-kailitz_binary                0.00114
-magaloni_democracy_extended   0.00102
-pacl_update                   0.00152
-PIPE_democracy                0.00558
-pitf_binary                   0.00122
-reign_democracy               0.00141
-dsvmdi                        0.00181
-svolik_democracy              0.00129
-ulfelder_democracy_extended   0.00127
-utip_dichotomous_strict       0.00375
-vaporeg_binary_strict         0.00180
-vaporeg_binary_non_strict     0.00094
-wth_democrobust               0.00165
+anckar_democracy              0.00050
+anrr_democracy                0.00118
+bmr_democracy_femalesuffrage  0.00056
+bnr_extended                  0.00164
+doorenspleet                  0.00154
+fh_electoral                  0.00138
+gwf_democracy_extended_strict 0.00147
+kailitz_binary                0.00127
+magaloni_democracy_extended   0.00119
+pacl_update                   0.00155
+PIPE_democracy                0.00538
+pitf_binary                   0.00130
+reign_democracy               0.00156
+dsvmdi                        0.00195
+svolik_democracy              0.00144
+ulfelder_democracy_extended   0.00130
+utip_dichotomous_strict       0.00398
+vaporeg_binary_strict         0.00156
+vaporeg_binary_non_strict     0.00097
+wth_democrobust               0.00175
 
-SS loadings:  18.848
-Proportion Var:  0.942
+SS loadings:  18.787
+Proportion Var:  0.939
 
 Factor correlations:
 
@@ -1256,7 +1256,7 @@ Don't know how to automatically pick scale for object of type
 </div>
 </div>
 </div>
-<p>As <span class="citation" data-cites="svmdi2021">(<a href="#ref-svmdi2021" role="doc-biblioref"><strong>svmdi2021?</strong></a>)</span> note, latent variable indexes suffer from arbitrary changes in level related to variables entering into or out of the source data. One way to get around this is to use a panel, with every measure present for every country-year in the panel. For example, suppose we’re interested only in measures with long coverage. Here we select a set of indexes with coverage down to the 19th century and then select the set of rows for which all measures exist, producing a panel with 159 countries and scores from 1919 to 2003.</p>
+<p>As <span class="citation" data-cites="svmdi2021">Gründler and Krieger (<a href="#ref-svmdi2021" role="doc-biblioref">2021/05/17/</a>)</span> note, latent variable indexes suffer from arbitrary changes in level related to variables entering into or out of the source data. One way to get around this is to use a panel, with every measure present for every country-year in the panel. For example, suppose we’re interested only in measures with long coverage. Here we select a set of indexes with coverage down to the 19th century and then select the set of rows for which all measures exist, producing a panel with 159 countries and scores from 1919 to 2003.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">full_panel</span> <span class="op">&lt;-</span> <span class="va">all_dem</span> <span class="op">|&gt;</span></span>
@@ -1280,7 +1280,7 @@ Don't know how to automatically pick scale for object of type
 <span><span class="va">panel_model</span><span class="op">@</span><span class="va">time</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>TOTAL:   Data  Estep  Mstep     SE   Post
- 8.242  0.054  1.144  5.927  1.085  0.001 </code></pre>
+ 8.327  0.052  1.186  6.012  1.049  0.000 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb56"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">panel_model</span><span class="op">)</span></span></code></pre></div>
@@ -1288,33 +1288,33 @@ Don't know how to automatically pick scale for object of type
 <pre><code>                                F1    h2
 reign_democracy              0.979 0.958
 polity2                      0.990 0.980
-bmr_democracy_femalesuffrage 0.984 0.968
-v2x_polyarchy                0.924 0.853
+bmr_democracy_femalesuffrage 0.984 0.969
+v2x_polyarchy                0.924 0.854
 ulfelder_democracy_extended  0.978 0.956
-bnr_extended                 0.975 0.952
+bnr_extended                 0.975 0.951
 magaloni_democracy_extended  0.989 0.979
 csvmdi                       0.958 0.917
 pitf                         0.981 0.963
-anckar_democracy             0.986 0.972
+anckar_democracy             0.988 0.977
 PEPS1v                       0.991 0.982
 vanhanen_democratization     0.949 0.900
 
                                SE.F1
-reign_democracy              0.00158
+reign_democracy              0.00157
 polity2                      0.00040
-bmr_democracy_femalesuffrage 0.00134
-v2x_polyarchy                0.00204
+bmr_democracy_femalesuffrage 0.00132
+v2x_polyarchy                0.00203
 ulfelder_democracy_extended  0.00159
 bnr_extended                 0.00178
-magaloni_democracy_extended  0.00111
-csvmdi                       0.00134
-pitf                         0.00082
-anckar_democracy             0.00121
+magaloni_democracy_extended  0.00110
+csvmdi                       0.00135
+pitf                         0.00083
+anckar_democracy             0.00107
 PEPS1v                       0.00036
 vanhanen_democratization     0.00170
 
-SS loadings:  11.38
-Proportion Var:  0.948
+SS loadings:  11.386
+Proportion Var:  0.949
 
 Factor correlations:
 
@@ -1440,9 +1440,9 @@ user-defined `sfl` provided. Falling back to `character`.</code></pre>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">14</td>
-<td style="text-align: right;">20</td>
+<td style="text-align: right;">21</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1638</td>
+<td style="text-align: right;">1625</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
@@ -1452,17 +1452,17 @@ user-defined `sfl` provided. Falling back to `character`.</code></pre>
 <td style="text-align: right;">14</td>
 <td style="text-align: right;">18</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1638</td>
+<td style="text-align: right;">1625</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">z1_pct975</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">14</td>
+<td style="text-align: right;">13</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1638</td>
+<td style="text-align: right;">1625</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
@@ -1472,27 +1472,27 @@ user-defined `sfl` provided. Falling back to `character`.</code></pre>
 <td style="text-align: right;">14</td>
 <td style="text-align: right;">21</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1638</td>
+<td style="text-align: right;">1625</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">z1_adj</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">20</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">21</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1638</td>
+<td style="text-align: right;">1625</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">z1_pct975_adj</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">20</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1638</td>
+<td style="text-align: right;">1625</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
@@ -1500,9 +1500,9 @@ user-defined `sfl` provided. Falling back to `character`.</code></pre>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">15</td>
-<td style="text-align: right;">20</td>
+<td style="text-align: right;">21</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1638</td>
+<td style="text-align: right;">1625</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
@@ -1512,47 +1512,47 @@ user-defined `sfl` provided. Falling back to `character`.</code></pre>
 <td style="text-align: right;">14</td>
 <td style="text-align: right;">18</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1638</td>
+<td style="text-align: right;">1625</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">z1_pct975_as_prob</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">15</td>
+<td style="text-align: right;">14</td>
 <td style="text-align: right;">18</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1638</td>
+<td style="text-align: right;">1625</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">z1_pct025_as_prob</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">14</td>
+<td style="text-align: right;">13</td>
 <td style="text-align: right;">19</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1638</td>
+<td style="text-align: right;">1625</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">z1_adj_as_prob</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">14</td>
+<td style="text-align: right;">15</td>
 <td style="text-align: right;">19</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1638</td>
+<td style="text-align: right;">1625</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">z1_pct975_adj_as_prob</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">15</td>
+<td style="text-align: right;">13</td>
 <td style="text-align: right;">18</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1638</td>
+<td style="text-align: right;">1625</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
@@ -1560,9 +1560,9 @@ user-defined `sfl` provided. Falling back to `character`.</code></pre>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">15</td>
-<td style="text-align: right;">19</td>
+<td style="text-align: right;">20</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1638</td>
+<td style="text-align: right;">1625</td>
 <td style="text-align: right;">0</td>
 </tr>
 </tbody>
@@ -1709,71 +1709,71 @@ Don't know how to automatically pick scale for object of type
 <span><span class="va">panel_model</span><span class="op">@</span><span class="va">time</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>TOTAL:   Data  Estep  Mstep     SE   Post
-16.011  0.038  0.803 10.744  4.358  0.001 </code></pre>
+15.084  0.045  0.770  9.931  4.269  0.000 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb64"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">panel_model</span><span class="op">)</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                F1    h2
-fh_total_reversed            0.927 0.859
-fh_electoral                 0.945 0.894
-lexical_index                0.932 0.868
-lexical_index_plus           0.931 0.867
+fh_total_reversed            0.917 0.842
+fh_electoral                 0.934 0.873
+lexical_index                0.929 0.862
+lexical_index_plus           0.926 0.858
 v2x_polyarchy                0.997 0.995
-v2x_libdem                   0.971 0.942
-v2x_partipdem                0.963 0.927
-v2x_api                      0.996 0.992
-v2x_mpi                      0.996 0.992
-anckar_democracy             0.946 0.895
-bmr_democracy                0.921 0.848
-bmr_democracy_femalesuffrage 0.921 0.848
-bmr_democracy_omitteddata    0.921 0.848
-pitf                         0.864 0.746
-polity2                      0.873 0.762
-vaporeg_binary_strict        0.919 0.845
-vaporeg_binary_non_strict    0.946 0.895
-vaporeg_trichotomous         0.936 0.876
-v2x_delibdem                 0.950 0.903
-v2x_egaldem                  0.916 0.839
-csvmdi                       0.893 0.797
-vanhanen_democratization     0.628 0.394
-reign_democracy              0.847 0.717
-pacl_update                  0.830 0.689
-wgi_democracy                0.933 0.870
-bti                          0.902 0.813
-eiu                          0.850 0.723
+v2x_libdem                   0.968 0.937
+v2x_partipdem                0.960 0.922
+v2x_api                      0.996 0.993
+v2x_mpi                      0.997 0.994
+anckar_democracy             0.930 0.864
+bmr_democracy                0.905 0.819
+bmr_democracy_femalesuffrage 0.905 0.819
+bmr_democracy_omitteddata    0.905 0.819
+pitf                         0.849 0.721
+polity2                      0.859 0.738
+vaporeg_binary_strict        0.868 0.753
+vaporeg_binary_non_strict    0.934 0.872
+vaporeg_trichotomous         0.919 0.845
+v2x_delibdem                 0.945 0.893
+v2x_egaldem                  0.909 0.827
+csvmdi                       0.879 0.773
+vanhanen_democratization     0.605 0.366
+reign_democracy              0.831 0.690
+pacl_update                  0.807 0.651
+wgi_democracy                0.903 0.815
+bti                          0.889 0.791
+eiu                          0.834 0.696
 
                                SE.F1
-fh_total_reversed            0.00466
-fh_electoral                 0.00869
-lexical_index                0.00683
-lexical_index_plus           0.00586
-v2x_polyarchy                0.00039
-v2x_libdem                   0.00199
-v2x_partipdem                0.00247
-v2x_api                      0.00053
-v2x_mpi                      0.00055
-anckar_democracy             0.00878
-bmr_democracy                0.01134
-bmr_democracy_femalesuffrage 0.01134
-bmr_democracy_omitteddata    0.01134
-pitf                         0.01002
-polity2                      0.00761
-vaporeg_binary_strict        0.01510
-vaporeg_binary_non_strict    0.00905
-vaporeg_trichotomous         0.00802
-v2x_delibdem                 0.00314
-v2x_egaldem                  0.00509
-csvmdi                       0.00709
-vanhanen_democratization     0.01804
-reign_democracy              0.01659
-pacl_update                  0.01776
-wgi_democracy                0.00421
-bti                          0.00587
-eiu                          0.00846
+fh_total_reversed            0.00511
+fh_electoral                 0.00997
+lexical_index                0.00673
+lexical_index_plus           0.00591
+v2x_polyarchy                0.00038
+v2x_libdem                   0.00215
+v2x_partipdem                0.00262
+v2x_api                      0.00040
+v2x_mpi                      0.00040
+anckar_democracy             0.01041
+bmr_democracy                0.01258
+bmr_democracy_femalesuffrage 0.01258
+bmr_democracy_omitteddata    0.01258
+pitf                         0.01061
+polity2                      0.00810
+vaporeg_binary_strict        0.02206
+vaporeg_binary_non_strict    0.01041
+vaporeg_trichotomous         0.00850
+v2x_delibdem                 0.00343
+v2x_egaldem                  0.00541
+csvmdi                       0.00755
+vanhanen_democratization     0.01789
+reign_democracy              0.01743
+pacl_update                  0.01893
+wgi_democracy                0.00569
+bti                          0.00639
+eiu                          0.00907
 
-SS loadings:  22.647
-Proportion Var:  0.839
+SS loadings:  22.026
+Proportion Var:  0.816
 
 Factor correlations:
 
@@ -1898,40 +1898,40 @@ user-defined `sfl` provided. Falling back to `character`.</code></pre>
 <td style="text-align: left;">z1</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">20</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">787</td>
+<td style="text-align: right;">792</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">se_z1</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">15</td>
+<td style="text-align: right;">16</td>
 <td style="text-align: right;">18</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">787</td>
+<td style="text-align: right;">792</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">z1_pct975</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">20</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">19</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">787</td>
+<td style="text-align: right;">792</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">z1_pct025</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: right;">15</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">787</td>
+<td style="text-align: right;">792</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
@@ -1941,37 +1941,37 @@ user-defined `sfl` provided. Falling back to `character`.</code></pre>
 <td style="text-align: right;">14</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">787</td>
+<td style="text-align: right;">792</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">z1_pct975_adj</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">15</td>
+<td style="text-align: right;">14</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">787</td>
+<td style="text-align: right;">792</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">z1_pct025_adj</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: right;">14</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">787</td>
+<td style="text-align: right;">792</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">z1_as_prob</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: right;">15</td>
 <td style="text-align: right;">19</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">787</td>
+<td style="text-align: right;">792</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
@@ -1981,7 +1981,7 @@ user-defined `sfl` provided. Falling back to `character`.</code></pre>
 <td style="text-align: right;">15</td>
 <td style="text-align: right;">18</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">787</td>
+<td style="text-align: right;">792</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
@@ -1991,17 +1991,17 @@ user-defined `sfl` provided. Falling back to `character`.</code></pre>
 <td style="text-align: right;">15</td>
 <td style="text-align: right;">19</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">787</td>
+<td style="text-align: right;">792</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">z1_adj_as_prob</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">15</td>
+<td style="text-align: right;">14</td>
 <td style="text-align: right;">19</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">787</td>
+<td style="text-align: right;">792</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
@@ -2011,17 +2011,17 @@ user-defined `sfl` provided. Falling back to `character`.</code></pre>
 <td style="text-align: right;">15</td>
 <td style="text-align: right;">19</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">787</td>
+<td style="text-align: right;">792</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">z1_pct025_adj_as_prob</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">14</td>
+<td style="text-align: right;">15</td>
 <td style="text-align: right;">19</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">787</td>
+<td style="text-align: right;">792</td>
 <td style="text-align: right;">0</td>
 </tr>
 </tbody>
@@ -2267,7 +2267,7 @@ Don't know how to automatically pick scale for object of type
 <div class="sourceCode cell-code" id="cb81"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/prob_more.html">prob_more</a></span><span class="op">(</span><span class="va">extended_scores</span>, <span class="st">"United States of America"</span>,<span class="st">"France"</span>, <span class="fl">2000</span><span class="op">)</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.7719469</code></pre>
+<pre><code>[1] 0.5768139</code></pre>
 </div>
 </div>
 <p>Or perhaps we wish to know the probability that the United States was more democratic in the year 2000 than in the year 1953:</p>
@@ -2286,7 +2286,7 @@ Don't know how to automatically pick scale for object of type
 <span>          <span class="st">"United States of America"</span>, </span>
 <span>          <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2000</span>,<span class="fl">1953</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9999987</code></pre>
+<pre><code>[1] 0.9999967</code></pre>
 </div>
 </div>
 </section><section class="section level2"><h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
@@ -2295,14 +2295,29 @@ Don't know how to automatically pick scale for object of type
 <div id="ref-anrr2019" class="csl-entry" role="listitem">
 Acemoglu, Daron, Suresh Naidu, Pascual Restrepo, and James A. Robinson. 2019. <span>“Democracy Does Cause Growth.”</span> <em>Journal of Political Economy</em> 127(1): 47–100. doi:<a href="https://doi.org/10.1086/700936" class="external-link">10.1086/700936</a>.
 </div>
-<div id="ref-Arat1991" class="csl-entry" role="listitem">
+<div id="ref-anckarClassifyingPoliticalRegimes2018a" class="csl-entry" role="listitem">
+Anckar, Carsten, and Cecilia Fredriksson. 2018. <span>“Classifying Political Regimes 1800–2016: A Typology and a New Dataset.”</span> <em>European Political Science</em> 18(1): 84–96. doi:<a href="https://doi.org/10.1057/s41304-018-0149-8" class="external-link">10.1057/s41304-018-0149-8</a>.
+</div>
+<div id="ref-arat1991" class="csl-entry" role="listitem">
 Arat, Zehra F. 1991. <em>Democracy and Human Rights in Developing Countries</em>. Boulder: Lynne Rienner Publishers.
 </div>
 <div id="ref-reign2016" class="csl-entry" role="listitem">
-Bell, Curtis. 2016. <span>“The Rulers, Elections, and Irregular Governance Dataset (<span>REIGN</span>).”</span> <a href="https://oneearthfuture.org/en/one-earth-future/reign-dataset-international-elections-and-leaders" class="external-link">https://oneearthfuture.org/en/one-earth-future/reign-dataset-international-elections-and-leaders</a>.
+Bell, Curtis. 2016. <span>“The Rulers, Elections, and Irregular Governance Dataset (<span>REIGN</span>).”</span> <a href="https://oefdatascience.github.io/REIGN.github.io/" class="external-link">https://oefdatascience.github.io/REIGN.github.io/</a>.
+</div>
+<div id="ref-bti2026" class="csl-entry" role="listitem">
+Bertelsmann Stiftung. 2026. <em>Transformation Index <span>BTI</span> 2026: <span>Governance</span> in International Comparison</em>. Gütersloh: Bertelsmann Stiftung. Report. <a href="https://www.bertelsmann-stiftung.de/en/publications/publication/did/transformation-index-bti-2026" class="external-link">https://www.bertelsmann-stiftung.de/en/publications/publication/did/transformation-index-bti-2026</a>.
+</div>
+<div id="ref-bmr2012" class="csl-entry" role="listitem">
+Boix, Carles, Michael Miller, and Sebastian Rosato. 2012. <span>“A <span>Complete Data Set</span> of <span>Political Regimes</span>, 1800–2007.”</span> <em>Comparative Political Studies</em> 46(12): 1523–54. doi:<a href="https://doi.org/10.1177/0010414012463905" class="external-link">10.1177/0010414012463905</a>.
+</div>
+<div id="ref-bollen2001" class="csl-entry" role="listitem">
+Bollen, Kenneth A. 2001. <span>“Cross-National Indicators of Liberal Democracy, 1950-1990.”</span> doi:<a href="https://doi.org/10.3886/ICPSR02532.v2" class="external-link">10.3886/ICPSR02532.v2</a>.
 </div>
 <div id="ref-blm2005" class="csl-entry" role="listitem">
 Bowman, Kirk, Fabrice Lehoucq, and James Mahoney. 2005. <span>“Measuring Political Democracy: <span>Case</span> Expertise, Data Adequacy, and Central America.”</span> <em>Comparative Political Studies</em> 38(8): 939–70. doi:<a href="https://doi.org/10.1177/0010414005277083" class="external-link">10.1177/0010414005277083</a>.
+</div>
+<div id="ref-chalmersMirtMultidimensionalItem2012" class="csl-entry" role="listitem">
+Chalmers, R. Philip. 2012. <span>“Mirt: A Multidimensional Item Response Theory Package for the <span>R</span> Environment.”</span> <em>Journal of Statistical Software</em> 48(6): 1–29. doi:<a href="https://doi.org/10.18637/jss.v048.i06" class="external-link">10.18637/jss.v048.i06</a>.
 </div>
 <div id="ref-pacl2010" class="csl-entry" role="listitem">
 Cheibub, José Antonio, Jennifer Gandhi, and James Raymond Vreeland. 2009. <span>“Democracy and Dictatorship Revisited.”</span> <em>Public Choice</em> 143(1–2): 67–101. doi:<a href="https://doi.org/10.1007/s11127-009-9491-2" class="external-link">10.1007/s11127-009-9491-2</a>.
@@ -2313,11 +2328,17 @@ Coppedge, Michael, Angel Alvarez, and Claudia Maldonado. 2008. <span>“Two Pers
 <div id="ref-vdem15codebook" class="csl-entry" role="listitem">
 Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I. Lindberg, Jan Teorell, David Altman, Fabio Angiolillo, et al. 2025. <em>V-<span>Dem Codebook</span> V15</em>. Varieties of Democracy (V-Dem) Project. Report. <a href="https://www.v-dem.net/" class="external-link">https://www.v-dem.net/</a>.
 </div>
+<div id="ref-vdem16codebook" class="csl-entry" role="listitem">
+Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I. Lindberg, Jan Teorell, David Altman, Fabio Angiolillo, et al. 2026. <em>V-Dem Codebook V16</em>. Varieties of Democracy (V-Dem) Project. Report. <a href="https://www.v-dem.net/documents/70/codebook_v16.pdf" class="external-link">https://www.v-dem.net/documents/70/codebook_v16.pdf</a>.
+</div>
 <div id="ref-polyarchy1990" class="csl-entry" role="listitem">
 Coppedge, Michael, and Wolfgang H. Reinicke. 1990. <span>“Measuring Polyarchy.”</span> <em>Studies in Comparative International Development</em> 25(1): 51–72.
 </div>
 <div id="ref-doorenspleet2000" class="csl-entry" role="listitem">
 Doorenspleet, Renske. 2000. <span>“Reassessing the Three Waves of Democratization.”</span> <em>World Politics</em> 52(03): 384–406. doi:<a href="https://doi.org/10.1017/S0043887100016580" class="external-link">10.1017/S0043887100016580</a>.
+</div>
+<div id="ref-Gasiorowski1996" class="csl-entry" role="listitem">
+Gasiorowski, Mark. 1996. <span>“An Overview of the Political Regime Change Dataset.”</span> <em>Comparative Political Studies</em> 29(4): 469–83. doi:<a href="https://doi.org/10.1177/0010414096029004004" class="external-link">10.1177/0010414096029004004</a>.
 </div>
 <div id="ref-gwf2014" class="csl-entry" role="listitem">
 Geddes, Barbara, Joseph Wright, and Erica Frantz. 2014. <span>“Autocratic Breakdown and Regime Transitions: <span>A</span> New Data Set.”</span> <em>Perspectives on Politics</em> 12(1): 313–31. doi:<a href="https://doi.org/10.1017/S1537592714000851" class="external-link">10.1017/S1537592714000851</a>.
@@ -2325,17 +2346,29 @@ Geddes, Barbara, Joseph Wright, and Erica Frantz. 2014. <span>“Autocratic Brea
 <div id="ref-pitf2010" class="csl-entry" role="listitem">
 Goldstone, Jack, Robert Bates, David Epstein, Ted Gurr, Michael Lustik, Monty Marshall, Jay Ulfelder, and Mark Woodward. 2010. <span>“A Global Model for Forecasting Political Instability.”</span> <em>American Journal of Political Science</em> 54(1): 190–208. doi:<a href="https://doi.org/10.1111/j.1540-5907.2009.00426.x" class="external-link">10.1111/j.1540-5907.2009.00426.x</a>.
 </div>
+<div id="ref-svmdi2021" class="csl-entry" role="listitem">
+Gründler, Klaus, and Tommy Krieger. 2021/05/17/. <span>“Using <span>Machine Learning</span> for Measuring Democracy: <span>A</span> Practitioners Guide and a New Updated Dataset for 186 Countries from 1919 to 2019.”</span> <em>European Journal of Political Economy</em>: 102047. doi:<a href="https://doi.org/10.1016/j.ejpoleco.2021.102047" class="external-link">10.1016/j.ejpoleco.2021.102047</a>.
+</div>
 <div id="ref-svmdi2016" class="csl-entry" role="listitem">
 Gründler, Klaus, and Tommy Krieger. 2016. <span>“Democracy and Growth: <span>Evidence</span> from a Machine Learning Indicator.”</span> <em>European Journal of Political Economy</em> 45: 85–107. doi:<a href="https://doi.org/10.1016/j.ejpoleco.2016.05.005" class="external-link">10.1016/j.ejpoleco.2016.05.005</a>.
 </div>
 <div id="ref-svmdi2018" class="csl-entry" role="listitem">
 Gründler, Klaus, and Tommy Krieger. 2018. <em>Machine Learning Indices, Political Institutions, and Economic Development</em>. CESifo Group Munich. Report. <a href="https://dx.doi.org/10.2139/ssrn.3171982" class="external-link">https://dx.doi.org/10.2139/ssrn.3171982</a>.
 </div>
+<div id="ref-Hadenius1992" class="csl-entry" role="listitem">
+Hadenius, Axel. 1992. <em>Democracy and Development</em>. New York: Cambridge University Press.
+</div>
+<div id="ref-fh2025" class="csl-entry" role="listitem">
+House, Freedom. 2025. <em>Freedom in the World 2025: <span>The Uphill Battle</span> to <span>Safeguard Rights</span></em>. Freedom House. Report. <a href="https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights" class="external-link">https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights</a>.
+</div>
 <div id="ref-utip2008" class="csl-entry" role="listitem">
 Hsu, Sara. 2008. <span>“The Effect of Political Regimes on Inequality, 1963-2002.”</span> <em>UTIP Working Paper</em> (53).
 </div>
-<div id="ref-kailitz2024dataset" class="csl-entry" role="listitem">
-Kailitz, Steffen. 2024. <span>“Varieties of Political Regimes (Va-<span>PoReg</span>). <span>Dataset</span>.”</span>
+<div id="ref-kailitz2013" class="csl-entry" role="listitem">
+Kailitz, Steffen. 2013. <span>“Classifying Political Regimes Revisited: Legitimation and Durability.”</span> <em>Democratization</em> 20(1): 39–60.
+</div>
+<div id="ref-vaporeg32dataset" class="csl-entry" role="listitem">
+Kailitz, Steffen. 2026. <span>“Varieties of Political Regimes (Va-<span>PoReg</span>). <span>Dataset</span>. <span>Version</span> 3.2.”</span>
 </div>
 <div id="ref-wgi2017" class="csl-entry" role="listitem">
 Kaufmann, Daniel, and Aart Kraay. 2020. <span>“Worldwide Governance Indicators.”</span> <a href="http://www.govindicators.org" class="external-link">http://www.govindicators.org</a>.
@@ -2344,7 +2377,10 @@ Kaufmann, Daniel, and Aart Kraay. 2020. <span>“Worldwide Governance Indicators
 Magaloni, Beatriz, Jonathan Chu, and Eric Min. 2013. <span>“Autocracies of the World, 1950-2012 (Version 1.0).”</span> <a href="https://dx.doi.org/10.2139/ssrn.4346003" class="external-link">https://dx.doi.org/10.2139/ssrn.4346003</a>.
 </div>
 <div id="ref-mainwaring2014" class="csl-entry" role="listitem">
-Mainwaring, Scott, Aníbal Pérez-Liñán, and Daniel Brinks. 2014. <span>“Political <span>Regimes</span> in <span>Latin America</span>, 1900-2007 (with <span>Daniel Brinks</span>).”</span> In <em>Democracies and <span>Dictatorships</span> in <span>Latin America</span>: <span>Emergence</span>, <span>Survival</span>, and <span>Fall</span></em>, New York: Cambridge University Press. <a href="http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf" class="external-link">http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf</a>.
+Mainwaring, Scott, Aníbal Pérez-Liñán, and Daniel Brinks. 2014. <span>“Political <span>Regimes</span> in <span>Latin America</span>, 1900-2007 (with <span>Daniel Brinks</span>).”</span> In <em>Democracies and <span>Dictatorships</span> in <span>Latin America</span>: <span>Emergence</span>, <span>Survival</span>, and <span>Fall</span></em>, New York: Cambridge University Press. <a href="https://web.archive.org/web/20120119050029/http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf" class="external-link">https://web.archive.org/web/20120119050029/http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf</a>.
+</div>
+<div id="ref-extended_uds_marquez2016" class="csl-entry" role="listitem">
+Márquez, Xavier. 2016. <span>“A Quick Method for Extending the Unified Democracy Scores.”</span> <em>Available at SSRN 2753830</em>. doi:<a href="https://doi.org/10.2139/ssrn.2753830" class="external-link">10.2139/ssrn.2753830</a>.
 </div>
 <div id="ref-polity2020" class="csl-entry" role="listitem">
 Marshall, Monty G., and Ted Robert Gurr. 2020. <em>Polity 5: <span>Political</span> Regime Characteristics and Transitions, 1800-2018. <span>Dataset</span> Users’ Manual.</em> Center for Systemic Peace. manual.
@@ -2373,11 +2409,20 @@ Reich, G. 2002. <span>“Categorizing Political Regimes: <span>New</span> Data f
 <div id="ref-LIED2015" class="csl-entry" role="listitem">
 Skaaning, Svend-Erik, John Gerring, and Henrikas Bartusevičius. 2015. <span>“A Lexical Index of Electoral Democracy.”</span> <em>Comparative Political Studies</em> 48(12): 1491–1525. doi:<a href="https://doi.org/10.1177/0010414015581050" class="external-link">10.1177/0010414015581050</a>.
 </div>
+<div id="ref-svolikPoliticsAuthoritarianRule2012a" class="csl-entry" role="listitem">
+Svolik, Milan. 2012. <em>The <span>Politics</span> of <span>Authoritarian Rule</span></em>. Cambridge; New York: Cambridge University Press.
+</div>
 <div id="ref-pitf2015" class="csl-entry" role="listitem">
 Taylor, Sean J., and Jay Ulfelder. 2015. <span>“A <span>Measurement Error Model</span> of <span>Dichotomous Democracy Status</span>.”</span> <em>Available at SSRN</em>. doi:<a href="https://doi.org/10.2139/ssrn.2726962" class="external-link">10.2139/ssrn.2726962</a>.
 </div>
+<div id="ref-eiu2025" class="csl-entry" role="listitem">
+The Economist Intelligence Unit. 2026. <em>Democracy <span>Index</span> 2025: <span>Democracy</span> Stabilises After Eight Years of Decline</em>. London: Economist Intelligence Unit. Report. <a href="https://www.eiu.com/n/campaigns/democracy-index-2025/" class="external-link">https://www.eiu.com/n/campaigns/democracy-index-2025/</a>.
+</div>
 <div id="ref-ulfelder2012" class="csl-entry" role="listitem">
 Ulfelder, Jay. 2012. <span>“Democracy/Autocracy Data Set.”</span> doi:<a href="https://doi.org/10.7910/DVN/M11WFC" class="external-link">10.7910/DVN/M11WFC</a>.
+</div>
+<div id="ref-vanhanen2019" class="csl-entry" role="listitem">
+Vanhanen, Tatu. 2019. <span>“Measures of Democracy 1810-2018 (Dataset). <span>Version</span> 8.0 (2019-06-17).”</span> <a href="https://urn.fi/urn:nbn:fi:fsd:T-FSD1289" class="external-link">https://urn.fi/urn:nbn:fi:fsd:T-FSD1289</a>.
 </div>
 <div id="ref-wahman_teorell_hadenius2013" class="csl-entry" role="listitem">
 Wahman, Michael, Jan Teorell, and Axel Hadenius. 2013. <span>“Authoritarian Regime Types Revisited: <span>Updated</span> Data in Comparative Perspective.”</span> <em>Contemporary Politics</em> 19(1): 19–34. doi:<a href="https://doi.org/10.1080/13569775.2013.773200" class="external-link">10.1080/13569775.2013.773200</a>.

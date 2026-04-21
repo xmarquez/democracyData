@@ -776,65 +776,83 @@ Table 8: Freedom House countries not in the COW system
 
 Table 9: PIPE countries not in the COW system
 
-| vaporeg_country                              | vaporeg_code | vaporeg_cowcode |
-|:---------------------------------------------|-------------:|:----------------|
-| Anguilla                                     |           62 | NA              |
-| Artsakh                                      |           NA | NA              |
-| Aruba                                        |          102 | NA              |
-| Bermuda                                      |           24 | NA              |
-| British Virgin Islands                       |           44 | NA              |
-| Bukhara                                      |          706 | NA              |
-| Cape Colony                                  |          559 | NA              |
-| Cayman Islands                               |           45 | NA              |
-| Cook Islands                                 |          958 | NA              |
-| Curaçao                                      |          103 | NA              |
-| Cyprus, Northern                             |           NA | NA              |
-| Falkland Islands                             |          166 | NA              |
-| Faroe Islands                                |          396 | NA              |
-| France, Vichy                                |           NA | NA              |
-| French Guiana                                |           69 | NA              |
-| French Polynesia                             |          957 | NA              |
-| Gibraltar                                    |          231 | NA              |
-| Greenland                                    |           22 | NA              |
-| Guadeloupe                                   |           61 | NA              |
-| Guam                                         |          985 | NA              |
-| Hejaz                                        |          699 | NA              |
-| Hong Kong                                    |          709 | NA              |
-| Kashmir                                      |           NA | NA              |
-| Kashmir, Indian                              |           NA | NA              |
-| Kashmir, Pakistani                           |           NA | NA              |
-| Khiva                                        |          707 | NA              |
-| Macau                                        |          708 | NA              |
-| Martinique                                   |           65 | NA              |
-| Mayotte                                      |          582 | NA              |
-| Montserrat                                   |           59 | NA              |
-| Natal                                        |          558 | NA              |
-| New Caledonia                                |          936 | NA              |
-| Newfoundland                                 |           21 | NA              |
-| Niue                                         |          956 | NA              |
-| Northern Mariana Islands                     |          984 | NA              |
-| Orange Free State                            |          556 | NA              |
-| Palestine                                    |          667 | NA              |
-| Palestine, Gaza Strip                        |          668 | NA              |
-| Palestine, West Bank                         |          669 | NA              |
-| Puerto Rico                                  |           67 | NA              |
-| Réunion                                      |          583 | NA              |
-| Saint Barthélemy                             |           66 | NA              |
-| Saint Helena, Ascension and Tristan da Cunha |          566 | NA              |
-| Saint Martin                                 |           63 | NA              |
-| Saint Pierre and Miquelon                    |           23 | NA              |
-| Samoa, American                              |          991 | NA              |
-| Senegal                                      |          433 | NA              |
-| Sikkim                                       |          761 | NA              |
-| Sint Maarten                                 |           64 | NA              |
-| Slovakia                                     |          317 | NA              |
-| Somaliland                                   |          521 | NA              |
-| Tibet                                        |          711 | NA              |
-| Transvaal                                    |          557 | NA              |
-| Turks and Caicos Islands                     |           68 | NA              |
-| U.S. Virgin Islands                          |           43 | NA              |
-| Wallis and Futuna                            |          948 | NA              |
-| Western Sahara                               |          605 | NA              |
+| vaporeg_country                               | vaporeg_identifier | vaporeg_cowcode |
+|:----------------------------------------------|-------------------:|:----------------|
+| Alaska                                        |                  3 | NA              |
+| Anguilla                                      |                201 | NA              |
+| Artsakh                                       |                374 | NA              |
+| Aruba                                         |                102 | NA              |
+| Bermuda                                       |                 24 | NA              |
+| Bukhara                                       |                704 | NA              |
+| Cape Colony                                   |                560 | NA              |
+| Cayman Islands                                |                 45 | NA              |
+| Cook Islands                                  |                958 | NA              |
+| Curaçao                                       |                103 | NA              |
+| Curaçao                                       |                 NA | NA              |
+| Cyprus, Northern                              |                353 | NA              |
+| Czechoslovakia                                |                315 | NA              |
+| Falkland Islands                              |                166 | NA              |
+| Faroe Islands                                 |                396 | NA              |
+| France, Vichy                                 |                221 | NA              |
+| French Guiana                                 |                 69 | NA              |
+| French Polynesia                              |                957 | NA              |
+| Gibraltar                                     |                231 | NA              |
+| Greenland                                     |                 22 | NA              |
+| Guadeloupe                                    |                 61 | NA              |
+| Guam                                          |                985 | NA              |
+| Hawaii                                        |                  4 | NA              |
+| Hejaz                                         |                699 | NA              |
+| Hong Kong                                     |                709 | NA              |
+| Kashmir                                       |                751 | NA              |
+| Kashmir, Indian                               |                752 | NA              |
+| Kashmir, Pakistani                            |                753 | NA              |
+| Khiva                                         |                704 | NA              |
+| Korea                                         |                730 | NA              |
+| Macau                                         |                708 | NA              |
+| Martinique                                    |                 65 | NA              |
+| Mayotte                                       |                582 | NA              |
+| Montserrat                                    |                 59 | NA              |
+| Natal                                         |                560 | NA              |
+| Netherlands Antilles                          |                 NA | NA              |
+| New Caledonia                                 |                936 | NA              |
+| Newfoundland                                  |                 20 | NA              |
+| Niue                                          |                916 | NA              |
+| Northern Mariana Islands                      |                986 | NA              |
+| Orange Free State                             |                560 | NA              |
+| Palestine                                     |                666 | NA              |
+| Palestine, Gaza Strip                         |                668 | NA              |
+| Palestine, West Bank                          |                667 | NA              |
+| Puerto Rico                                   |                 67 | NA              |
+| Russia                                        |                365 | NA              |
+| Réunion                                       |                583 | NA              |
+| Saarland                                      |                 NA | NA              |
+| Saint Barthélemy                              |                 66 | NA              |
+| Saint Helena, Ascension and Tristan da Cunha  |                566 | NA              |
+| Saint Martin                                  |                 63 | NA              |
+| Saint Pierre and Miquelon                     |                 23 | NA              |
+| Samoa, American                               |                 NA | NA              |
+| Samoa, American                               |                990 | NA              |
+| Senegal                                       |                433 | NA              |
+| Sikkim                                        |                750 | NA              |
+| Sint Maarten                                  |                 64 | NA              |
+| Slovakia                                      |                317 | NA              |
+| Somaliland                                    |                521 | NA              |
+| Tanganyika                                    |                510 | NA              |
+| Tibet                                         |                711 | NA              |
+| Transcaucasian Democratic Federative Republic |                374 | NA              |
+| Transvaal                                     |                560 | NA              |
+| Turks and Caicos Islands                      |                 46 | NA              |
+| Vietnam                                       |                816 | NA              |
+| Vietnam, South                                |                 NA | NA              |
+| Vietnam, North                                |                816 | NA              |
+| Vietnam, South                                |                817 | NA              |
+| Virgin Islands, British                       |                 62 | NA              |
+| Virgin Islands, U.S.                          |                988 | NA              |
+| Wallis and Futuna                             |                956 | NA              |
+| Western Sahara                                |                605 | NA              |
+| Yemen, North                                  |                678 | NA              |
+| Yugoslavia                                    |                345 | NA              |
+| Yugoslavia                                    |                 NA | NA              |
 
 Table 10: VaPoReg countries not in the COW system
 

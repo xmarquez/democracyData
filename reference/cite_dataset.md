@@ -33,15 +33,15 @@ object.
 ## Examples
 
 ``` r
-cite_dataset("gwf") 
+cite_dataset("gwf")
 #> [1] B. Geddes, J. Wright, and E. Frantz. “Autocratic Breakdown and
 #> Regime Transitions: A New Data Set”. In: _Perspectives on Politics_
 #> 12.1 (2013), pp. 313-331. DOI: 10.1017/S1537592714000851.
 
-cite_dataset("pmm") 
+cite_dataset("pmm")
 #> [1] D. Pemstein, S. A. Meserve, and J. Melton. _Replication Data for:
 #> Democratic Compromise: A Latent Variable Analysis of Ten Measures of
-#> Regime Type_. 2012. DOI: 10.7910/DVN/WWYOHU.
+#> Regime Type_. 2012. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM.
 #> 
 #> [2] D. Pemstein, S. Meserve, and J. Melton. “Democratic Compromise: A
 #> Latent Variable Analysis of Ten Measures of Regime Type”. In:
@@ -54,5 +54,5 @@ cite_dataset("uds") # Same output as the previous one
 #> 
 #> [2] D. Pemstein, S. A. Meserve, and J. Melton. _Replication Data for:
 #> Democratic Compromise: A Latent Variable Analysis of Ten Measures of
-#> Regime Type_. 2012. DOI: 10.7910/DVN/WWYOHU.
+#> Regime Type_. 2012. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM.
 ```

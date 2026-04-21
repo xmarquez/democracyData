@@ -223,7 +223,7 @@ Politics* 12(1): 313–31.
 doi:[10.1017/S1537592714000851](https://doi.org/10.1017/S1537592714000851).
 
 House, Freedom. 2025. *Freedom in the World 2025: The Uphill Battle to
-Safeguard Rights*. Freedom House.
+Safeguard Rights*. Freedom House. Report.
 <https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights>.
 
 Hsu, Sara. 2008. “The Effect of Political Regimes on Inequality,
@@ -253,4 +253,4 @@ Dichotomous Democracy Status.” *Available at SSRN*.
 doi:[10.2139/ssrn.2726962](https://doi.org/10.2139/ssrn.2726962).
 
 Vanhanen, Tatu. 2019. “Measures of Democracy 1810-2018 (Dataset).
-Version 8.0 (2019-06-17).” <http://urn.fi/urn:nbn:fi:fsd:T-FSD1289>.
+Version 8.0 (2019-06-17).” <https://urn.fi/urn:nbn:fi:fsd:T-FSD1289>.

@@ -52,8 +52,9 @@ standard errors and 95% confidence intervals.
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -64,7 +65,7 @@ standard errors and 95% confidence intervals.
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -102,7 +103,7 @@ democracy_data <- generate_democracy_scores_dataset(
 
 democracy_data <- prepare_democracy_data(democracy_data)
 
-replication_2011_model <- mirt(democracy_data |> 
+replication_2011_model <- mirt(democracy_data |>
   select(matches("pmm")), model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
 
 democracy_scores(model = replication_2011_model)

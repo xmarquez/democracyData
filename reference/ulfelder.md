@@ -1,12 +1,11 @@
 # The Democracy/Autocracy Dataset by Jay Ulfelder
 
 This is the dataset documented in J. Ulfelder. *Democracy/Autocracy Data
-Set*. 2012. DOI:
-[10.7910/DVN/M11WFC](https://dx.doi.org/10.7910/DVN/M11WFC). It comes in
-two versions: ulfelder, which only goes back to 1955, and
-ulfelder_extended, which extends the regime classifications back in time
-using the `rgjdura` and `rgjdurd` variables, adding 3861 country-years
-to the original data, mostly authoritarian regimes.
+Set*. 2012. DOI: 10.7910/DVN/M11WFC. HDL: 1902.1/18836. It comes in two
+versions: ulfelder, which only goes back to 1955, and ulfelder_extended,
+which extends the regime classifications back in time using the
+`rgjdura` and `rgjdurd` variables, adding 3861 country-years to the
+original data, mostly authoritarian regimes.
 
 ## Usage
 
@@ -27,7 +26,7 @@ An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
 ## Source
 
 J. Ulfelder. *Democracy/Autocracy Data Set*. 2012. DOI:
-[10.7910/DVN/M11WFC](https://dx.doi.org/10.7910/DVN/M11WFC).
+10.7910/DVN/M11WFC. HDL: 1902.1/18836.
 
 J. Ulfelder and M. Lustik. "Modelling Transitions to and from
 Democracy". In: *Democratization* 14.3 (2007), pp. 351-387. DOI:
@@ -571,8 +570,9 @@ sftgreg: Undocumented. Region?
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -583,7 +583,7 @@ sftgreg: Undocumented. Region?
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -639,8 +639,10 @@ Other democracy:
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
 [`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
 [`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
 [`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
-[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
+[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
 
 Other events data:
 [`bmr`](https://xmarquez.github.io/democracyData/reference/bmr.md),
@@ -658,4 +660,6 @@ Other dichotomous democracy indexes:
 [`pacl_update`](https://xmarquez.github.io/democracyData/reference/pacl_update.md),
 [`svolik_regime`](https://xmarquez.github.io/democracyData/reference/svolik_regime.md),
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
+[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
 [`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)

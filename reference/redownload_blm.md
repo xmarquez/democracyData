@@ -127,10 +127,12 @@ Data and documentation archived at
 
 C. Anckar and C. Fredriksson. "Classifying Political Regimes 1800–2016:
 A Typology and a New Dataset". In: *European Political Science* 18.1
-(Mar. 2018), pp. 84-96. DOI:
+(2018), pp. 84-96. DOI:
 [10.1057/s41304-018-0149-8](https://dx.doi.org/10.1057/s41304-018-0149-8).
-Updated data (V2) available at
-<https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/7SSSAH/DIZXSI&version=2.0>
+Updated data (V3.0) available at
+<https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/AK8NVX&version=2.0>.
+Codebook at
+<https://dataverse.harvard.edu/api/access/datafile/11496290>.
 
 C. Boix, M. Miller, and S. Rosato. "A Complete Data Set of Political
 Regimes, 1800–2007". In: *Comparative Political Studies* 46.12 (2012),
@@ -143,7 +145,7 @@ Transitions: A New Data Set". In: *Perspectives on Politics* 12.1
 (2014), pp. 313-331. DOI:
 [10.1017/S1537592714000851](https://dx.doi.org/10.1017/S1537592714000851).
 The full data and codebook can be downloaded here:
-<http://sites.psu.edu/dictators/>.
+<https://sites.psu.edu/dictators/>.
 
 S. Skaaning, J. Gerring, and H. Bartusevičius. "A Lexical Index of
 Electoral Democracy". In: *Comparative Political Studies* 48.12 (2015),
@@ -151,10 +153,9 @@ pp. 1491-1525. DOI:
 [10.1177/0010414015581050](https://dx.doi.org/10.1177/0010414015581050)..
 Original data and variable descriptions available at
 <https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT>.
-This is for version 6.6 (2023 update).
+This is for version 6.9 (2026 update).
 
-S. Kailitz. *Varieties of Political Regimes (va-PoReg). Dataset*.
-Dresden, 2024. Original data and variable descriptions available at
+The current dataset and documentation are available at
 <https://www.va-poreg.de/home>.
 
 J. A. Cheibub, J. Gandhi, and J. R. Vreeland. "Democracy and
@@ -169,11 +170,11 @@ Participation in the Measurement of Democracy". In: *Studies in
 Comparative International Development* 41.2 (2006), pp. 3-32. DOI:
 [10.1007/BF02686309](https://dx.doi.org/10.1007/BF02686309). The
 complete dataset is available here:
-<http://www.lehigh.edu/~bm05/democracy/Obtain_data.htm>.
+<https://www.lehigh.edu/~bm05/democracy/Obtain_data.htm>.
 
 S. Hsu. "The Effect of Political Regimes on Inequality, 1963-2002". In:
 *UTIP Working Paper* (2008). Data available for download at
-<http://utip.gov.utexas.edu/data/>.
+<https://utip.gov.utexas.edu/datasets.html>.
 
 M. Wahman, J. Teorell, and A. Hadenius. "Authoritarian Regime Types
 Revisited: Updated Data in Comparative Perspective". In: *Contemporary
@@ -195,13 +196,15 @@ Data available at
 <https://web.archive.org/web/20160309180905/http://www3.nd.edu/~mcoppedg/crd/datacrd.htm>.
 
 B. Magaloni, J. Chu, and E. Min. *Autocracies of the World, 1950-2012
-(Version 1.0)*. Dataset. 2013. Original data and codebook used to be
-available at
+(Version 1.0)*. Dataset. 2013.
+<https://dx.doi.org/10.2139/ssrn.4346003>. Original data and codebook
+used to be available at
 <https://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset>.
 
 K. Gründler and T. Krieger. *Machine Learning Indices, Political
 Institutions, and Economic Development*. Report. CESifo Group Munich,
-2018. Original data available at <https://ml-democracy-index.net/>.
+2018. <https://dx.doi.org/10.2139/ssrn.3171982>. Original data available
+at <https://ml-democracy-index.net/>.
 
 D. Pemstein, S. Meserve, and J. Melton. "Democratic Compromise: A Latent
 Variable Analysis of Ten Measures of Regime Type". In: *Political
@@ -211,30 +214,39 @@ data and codebook archived at
 <https://web.archive.org/web/20191224160254/http://www.unified-democracy-scores.org/>.
 
 J. Ulfelder. *Democracy/Autocracy Data Set*. 2012. DOI:
-[10.7910/DVN/M11WFC](https://dx.doi.org/10.7910/DVN/M11WFC). Original
-data available at <https://doi.org/10.7910/DVN/M11WFC>.
+10.7910/DVN/M11WFC. HDL: 1902.1/18836. Original data available at
+<https://doi.org/10.7910/DVN/M11WFC>.
 
 A. Przeworski. *Political Institutions and Political Events (PIPE) Data
-Set*. Data Set. 2013. Original data available at
+Set*. Data set. Department of Politics, New York University, 2013.
+<https://sites.google.com/a/nyu.edu/adam-przeworski/home/data>. Original
+data available at
 <https://sites.google.com/a/nyu.edu/adam-przeworski/home/data>.
 
 M. G. Marshall, T. R. Gurr, and K. Jaggers. *Polity IV Project:
 Political Regime Characteristics and Transitions, 1800-2018. Dataset
-Users' Manual.* Manual. 2019. Data and codebook available at
-[http://www.systemicpeace.org/inscrdata.html](http://www.systemicpeace.org/inscrdata.md).
+Users' Manual.* manual. Center for Systemic Peace, 2019. Data and
+codebook available at <https://www.systemicpeace.org/inscrdata.html>.
 
 Bertelsmann Stiftung. *Transformation Index of the Bertelsmann Stiftung
-2024*. Tech. rep. Bertelsmann Stiftung, 2024. Available at
+2024*. Report. Bertelsmann Stiftung, 2024. Bertelsmann Stiftung.
+*Transformation Index BTI 2026: Governance in International Comparison*.
+Report. Gütersloh: Bertelsmann Stiftung, 2026.
+<https://www.bertelsmann-stiftung.de/en/publications/publication/did/transformation-index-bti-2026>.
+Available at
 <https://bti-project.org/en/index/political-transformation>.
 
 C. Bjørnskov and M. Rode. "Regime Types and Regime Change: A New Dataset
 on Democracy, Coups, and Political Institutions". In: *The Review of
 International Organizations* 15.2 (2020), pp. 531-551. DOI:
-[10.1007/s11558-019-09345-1](https://dx.doi.org/10.1007/s11558-019-09345-1).
-Available at <http://www.christianbjoernskov.com/bjoernskovrodedata/>.
+10.1007/s11558-019-09345-1. C. Bjørnskov and M. Rode. *Bjørnskov-Rode
+Integrated Dataset v6.2*. 2025.
+<http://www.christianbjoernskov.com/bjoernskovrodedata/>. Available at
+<http://www.christianbjoernskov.com/bjoernskovrodedata/>.
 
 C. Bell. *The Rulers, Elections, and Irregular Governance Dataset
-(REIGN)*. 2016. Data available at
+(REIGN)*. OEF Research, 2016.
+<https://oefdatascience.github.io/REIGN.github.io/>. Data available at
 <https://oefdatascience.github.io/REIGN.github.io/>.
 
 ## Arguments
@@ -245,7 +257,7 @@ C. Bell. *The Rulers, Elections, and Irregular Governance Dataset
 
   - For
     [anckar](https://xmarquez.github.io/democracyData/reference/anckar.md):
-    <https://dataverse.harvard.edu/api/access/datafile/3868064?format=original&gbrecs=true>.
+    <https://dataverse.harvard.edu/api/access/datafile/11496289?format=original&gbrecs=true>.
 
   - For
     [blm](https://xmarquez.github.io/democracyData/reference/blm.md):
@@ -257,17 +269,17 @@ C. Bell. *The Rulers, Elections, and Irregular Governance Dataset
 
   - For
     [bti](https://xmarquez.github.io/democracyData/reference/bti.md):
-    <https://bti-project.org/fileadmin/api/content/en/downloads/data/BTI_2006-2024_Scores.xlsx>.
+    <https://bti-project.org/fileadmin/api/content/en/downloads/data/BTI_2006-2026_Scores.xlsx>.
 
   - For
     [gwf_all](https://xmarquez.github.io/democracyData/reference/gwf_all.md)
     and
     [gwf_autocratic](https://xmarquez.github.io/democracyData/reference/gwf_all.md):
-    <http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip>.
+    <https://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip>.
 
   - For
     [LIED](https://xmarquez.github.io/democracyData/reference/LIED.md):
-    <https://dataverse.harvard.edu/api/access/datafile/11068563>.
+    <https://dataverse.harvard.edu/api/access/datafile/13640161>.
 
   - For
     [pacl](https://xmarquez.github.io/democracyData/reference/pacl.md):
@@ -275,20 +287,20 @@ C. Bell. *The Rulers, Elections, and Irregular Governance Dataset
 
   - For
     [pacl_update](https://xmarquez.github.io/democracyData/reference/pacl_update.md):
-    <http://www.christianbjoernskov.com/wp-content/uploads/2020/09/Bj%C3%B8rnskov-Rode-integrated-dataset-v3.2.xlsx>.
+    <http://www.christianbjoernskov.com/wp-content/uploads/2025/09/Bjornskov-Rode-integrated-dataset-v6.2.xlsx>.
 
   - For
     [peps](https://xmarquez.github.io/democracyData/reference/peps.md):
-    <http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta>.
+    <https://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta>.
 
   - For
     [polityIV](https://xmarquez.github.io/democracyData/reference/polityIV.md):
-    <http://www.systemicpeace.org/inscr/p4v2018.xls>.
+    <https://www.systemicpeace.org/inscr/p4v2018.xls>.
 
   - For
     [svmdi](https://xmarquez.github.io/democracyData/reference/svmdi.md):
     <https://ml-democracy-index.net/downloadfiles/ML%20indices.xlsx> or
-    <http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta>,
+    <https://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta>,
     depending on `release_year` (2020 or 2016).
 
   - For
@@ -297,7 +309,7 @@ C. Bell. *The Rulers, Elections, and Irregular Governance Dataset
 
   - For
     [utip](https://xmarquez.github.io/democracyData/reference/utip.md):
-    <http://utip.lbj.utexas.edu/data/political%20regime%20data%20set%20RV.xls>.
+    <https://utip.gov.utexas.edu/data/political%20regime%20data%20set%20RV.xls>.
 
   - For
     [uds](https://xmarquez.github.io/democracyData/reference/uds_2014.md):
@@ -309,11 +321,11 @@ C. Bell. *The Rulers, Elections, and Irregular Governance Dataset
 
   - For
     [vaporeg](https://xmarquez.github.io/democracyData/reference/vaporeg.md):
-    <https://www.va-poreg.de/download/Kailitz,%20Varieties%20of%20Political%20Regimes%20April%202025.rds>.
+    <https://www.va-poreg.de/download/Kailitz,%20Varieties%20of%20Political%20Regimes%20March%202026.rds>.
 
   - For
     [wahman_teorell_hadenius](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md):
-    <https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&d=1>.
+    <https://web.archive.org/web/20201023083736/https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&d=1>.
 
   - For
     [polyarchy](https://xmarquez.github.io/democracyData/reference/polyarchy.md):
@@ -382,15 +394,19 @@ A
 with the processed dataset, unless `return_raw` is `TRUE`, in which case
 the function returns the raw data without processing.
 
+By default, a tibble with the March 2026 VaPoReg country-year schema. If
+`return_raw = TRUE`, returns the full nested download object, including
+the `data` and `labels` elements from the upstream `.rds` file.
+
 ## Details
 
 `redownload_polityIV` downloads the 2019 update of the Polity IV dataset
 (annual time series, to 2018) and processes it using
 [country_year_coder](https://xmarquez.github.io/democracyData/reference/country_year_coder.md).
 The original data is available at
-[http://www.systemicpeace.org/inscrdata.html](http://www.systemicpeace.org/inscrdata.md).
-Polity is now in version 5, which incorporates substantial changes; this
-redownloads the archived version of
+<https://www.systemicpeace.org/inscrdata.html>. Polity is now in version
+5, which incorporates substantial changes; this redownloads the archived
+version of
 [polityIV](https://xmarquez.github.io/democracyData/reference/polityIV.md)
 data. Use
 [download_polity_annual](https://xmarquez.github.io/democracyData/reference/download_polity_annual.md)

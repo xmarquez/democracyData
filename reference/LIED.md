@@ -1,4 +1,4 @@
-# The Lexical Index of Democracy, v. 6.8
+# The Lexical Index of Democracy, v. 6.9
 
 The Lexical Index of Democracy first described in S. Skaaning, J.
 Gerring, and H. Bartusevičius. "A Lexical Index of Electoral Democracy".
@@ -6,9 +6,9 @@ In: *Comparative Political Studies* 48.12 (2015), pp. 1491-1525. DOI:
 [10.1177/0010414015581050](https://dx.doi.org/10.1177/0010414015581050).
 Original data and variable descriptions available at
 <https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT>.
-The dataset is now on version 6.8, and contains new variables. The
-documentation below is copied from their codebook, with some small
-additions for clarification purposes.
+The dataset is now on version 6.9, extends through 2025, and contains
+new variables. The documentation below is copied from their codebook,
+with some small additions for clarification purposes.
 
 ## Usage
 
@@ -19,7 +19,7 @@ LIED
 ## Format
 
 An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
-32891 rows and 27 columns.
+33090 rows and 27 columns.
 
 ## Source
 
@@ -150,26 +150,11 @@ following circumstances obtain, and 0 otherwise.
       LIED |>
         dplyr::filter(lexical_index != lexical_index_original) |>
         dplyr::select(lied_country, year, lexical_index, lexical_index_original)
-      #> # A tibble: 17 x 4
-      #>    lied_country  year lexical_index lexical_index_original
-      #>    <chr>        <dbl>         <dbl>                  <dbl>
-      #>  1 Newfoundland  1925             6                      4
-      #>  2 Newfoundland  1926             6                      4
-      #>  3 Newfoundland  1927             6                      4
-      #>  4 Newfoundland  1928             6                      4
-      #>  5 Newfoundland  1929             6                      4
-      #>  6 Newfoundland  1930             6                      4
-      #>  7 Newfoundland  1931             6                      4
-      #>  8 Newfoundland  1932             6                      4
-      #>  9 Ecuador       1934             3                      4
-      #> 10 Cyprus        1973             6                      3
-      #> 11 Somalia       1960             6                      5
-      #> 12 Somalia       1961             6                      5
-      #> 13 Somalia       1962             6                      5
-      #> 14 Somalia       1963             6                      5
-      #> 15 Sudan         1964             1                      0
-      #> 16 Thailand      2007             6                      4
-      #> 17 Cambodia      1946             2                      0
+      #> # A tibble: 2 x 4
+      #>   lied_country  year lexical_index lexical_index_original
+      #>   <chr>        <dbl>         <dbl>                  <dbl>
+      #> 1 Cyprus        1973             6                      4
+      #> 2 Cambodia      1946             2                      0
 
   I've recalculated the index for these cases and put the original value
   in the `lexical_index_original` variable.
@@ -285,8 +270,9 @@ following circumstances obtain, and 0 otherwise.
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -297,7 +283,7 @@ following circumstances obtain, and 0 otherwise.
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -412,9 +398,12 @@ Other democracy:
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
 [`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
 [`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
 [`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
-[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
+[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
 
 Other institutions:
 [`PIPE`](https://xmarquez.github.io/democracyData/reference/PIPE.md),
-[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md)
+[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md)

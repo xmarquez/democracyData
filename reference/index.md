@@ -45,7 +45,7 @@ Datasets with measures of democracy.
 - [`kailitz`](https://xmarquez.github.io/democracyData/reference/kailitz.md)
   : The Steffen Kailitz Dataset of Authoritarian Regime Types
 - [`LIED`](https://xmarquez.github.io/democracyData/reference/LIED.md) :
-  The Lexical Index of Democracy, v. 6.8
+  The Lexical Index of Democracy, v. 6.9
 - [`magaloni`](https://xmarquez.github.io/democracyData/reference/magaloni.md)
   [`magaloni_extended`](https://xmarquez.github.io/democracyData/reference/magaloni.md)
   : Autocracies of the World, 1950-2012 (Version 1.0).
@@ -110,11 +110,17 @@ Datasets with measures of democracy.
   : Vanhanen measures of democracy, 1800-2018
 - [`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md)
   : The Varieties of Political Regimes (VaPoReg) dataset
+- [`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md)
+  : The Varieties of Political Regimes (VaPoReg) dataset, legacy 2024
+  schema
 - [`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md)
-  : Simplified version of the V-Dem version 14 dataset
+  : Simplified version of the V-Dem version 16 dataset
 - [`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
   : Authoritarian Regimes Data Set, version 5.0, by Axel Hadenius, Jan
   Teorell, & Michael Wahman
+- [`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
+  : Democracy, Voice, and Accountability Index from the World Governance
+  Indicators, legacy series
 
 ## Download\_ functions
 
@@ -207,6 +213,8 @@ system information.
   : Country-Year State System Coding
 - [`create_panel()`](https://xmarquez.github.io/democracyData/reference/create_panel.md)
   : Create a panel of countries belonging in the state system.
+- [`normalize_country()`](https://xmarquez.github.io/democracyData/reference/normalize_country.md)
+  : Normalize a country name for matching
 
 ## Utility functions
 

@@ -2,7 +2,8 @@
 
 A dataset containing Tatu Vanhanen's measures of democracy, T. Vanhanen.
 *Measures of Democracy 1810-2018 (Dataset). Version 8.0 (2019-06-17).*
-Tampere, 2019. Data available at
+Tampere: Finnish Social Science Data Archive (distributor), 2019.
+<https://urn.fi/urn:nbn:fi:fsd:T-FSD1289>. Data available at
 <https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en>.
 
 ## Usage
@@ -24,7 +25,9 @@ An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
 ## Source
 
 T. Vanhanen. *Measures of Democracy 1810-2018 (Dataset). Version 8.0
-(2019-06-17).* Tampere, 2019. Data available at
+(2019-06-17).* Tampere: Finnish Social Science Data Archive
+(distributor), 2019. <https://urn.fi/urn:nbn:fi:fsd:T-FSD1289>. Data
+available at
 <https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en>
 
 ## Variables
@@ -333,8 +336,9 @@ T. Vanhanen. *Measures of Democracy 1810-2018 (Dataset). Version 8.0
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -345,7 +349,7 @@ T. Vanhanen. *Measures of Democracy 1810-2018 (Dataset). Version 8.0
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -363,11 +367,11 @@ T. Vanhanen. *Measures of Democracy 1810-2018 (Dataset). Version 8.0
 The `vanhanen_pmm` version of this data is taken from D. Pemstein, S. A.
 Meserve, and J. Melton. *Replication Data for: Democratic Compromise: A
 Latent Variable Analysis of Ten Measures of Regime Type*. 2013. DOI:
-[10.7910/DVN/WWYOHU](https://dx.doi.org/10.7910/DVN/WWYOHU). The
-original dataset is found in vanhanen. The `vanhanen_pmm` data only goes
-back to 1945. There are some missing values in PMM's data compared to
-the original Vanhanen dataset. For more detail on the differences, see
-the vignette. The `vanhanen_pmm` data is included here for completeness.
+10.7910/DVN/WWYOHU. HDL: 1902.1/PMM. The original dataset is found in
+vanhanen. The `vanhanen_pmm` data only goes back to 1945. There are some
+missing values in PMM's data compared to the original Vanhanen dataset.
+For more detail on the differences, see the vignette. The `vanhanen_pmm`
+data is included here for completeness.
 
 ## See also
 
@@ -412,8 +416,10 @@ Other democracy:
 [`ulfelder`](https://xmarquez.github.io/democracyData/reference/ulfelder.md),
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
 [`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
 [`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
-[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
+[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
 
 Other continuous democracy indexes:
 [`arat_pmm`](https://xmarquez.github.io/democracyData/reference/arat_pmm.md),
@@ -424,4 +430,5 @@ Other continuous democracy indexes:
 [`hadenius_pmm`](https://xmarquez.github.io/democracyData/reference/hadenius_pmm.md),
 [`munck_pmm`](https://xmarquez.github.io/democracyData/reference/munck_pmm.md),
 [`svmdi`](https://xmarquez.github.io/democracyData/reference/svmdi.md),
-[`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md)
+[`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)

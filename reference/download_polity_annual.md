@@ -4,7 +4,7 @@ Downloads the 2020 update of the Polity 5 dataset (annual time series)
 and processes it using
 [country_year_coder](https://xmarquez.github.io/democracyData/reference/country_year_coder.md).
 The original data is available at
-[http://www.systemicpeace.org/inscrdata.html](http://www.systemicpeace.org/inscrdata.md)'.
+<https://www.systemicpeace.org/inscrdata.html>'.
 
 ## Usage
 
@@ -17,14 +17,14 @@ download_polity_annual(url, verbose = TRUE, return_raw = FALSE, ...)
 Marshall, Monty G., Ted Robert Gurr. 2020. "Polity5: Political Regime
 Characteristics and Transitions, 1800-2018". Dataset Users' Manual.
 Center for Systemic Peace. Available at
-<http://www.systemicpeace.org/inscr/p5manualv2018.pdf>
+<https://www.systemicpeace.org/inscr/p5manualv2018.pdf>
 
 ## Arguments
 
 - url:
 
   The URL of the dataset. Defaults to
-  <http://www.systemicpeace.org/inscr/p5v2018.sav>.
+  <https://www.systemicpeace.org/inscr/p5v2018.sav>.
 
 - verbose:
 
@@ -47,9 +47,9 @@ The annual time series version of the Polity 5 dataset, as a
 [`tibble::tibble()`](https://tibble.tidyverse.org/reference/tibble.html),
 with the additional columns produced by
 [country_year_coder](https://xmarquez.github.io/democracyData/reference/country_year_coder.md).
-Consult the [Polity 5
-codebook](http://www.systemicpeace.org/inscr/p5manualv2018.pdf) for
-further description.
+Consult the Polity 5 codebook at
+<https://www.systemicpeace.org/inscr/p5manualv2018.pdf> for further
+description.
 
 ## Variables
 
@@ -146,12 +146,12 @@ further description.
 - democ:
 
   Institutionalized democracy indicator, 0-10 scale. See PolityIV users'
-  manual at <http://www.systemicpeace.org/inscr/p5manualv2018.pdf>
+  manual at <https://www.systemicpeace.org/inscr/p5manualv2018.pdf>
 
 - autoc:
 
   Institutionalized autocracy indicator, 0-10 scale. See PolityIV users'
-  manual at <http://www.systemicpeace.org/inscr/p5manualv2018.pdf>
+  manual at <https://www.systemicpeace.org/inscr/p5manualv2018.pdf>
 
 - polity:
 
@@ -192,25 +192,26 @@ further description.
 - durable:
 
   Regime durability. See PolityIV users' manual at
-  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+  <https://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
 
 - xrreg:
 
   Regulation of Chief Executive Recruitment. 1 = unregulated, 2 =
   designational/transitional, 3 = regulated. See PolityIV users' manual
-  at <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+  at <https://www.systemicpeace.org/inscr/p5manualv2018.pdf> for
+  details.
 
 - xrcomp:
 
   Competitiveness of Chief Executive Recruitment. 1 = selection, 2 =
   dual/transitional, 3 = election. See PolityIV users' manual at
-  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+  <https://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
 
 - xropen:
 
   Openness of Chief Executive Recruitment. 1 = unlimited, 2 =
   dual/transitional, 3 = election. See PolityIV users' manual at
-  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+  <https://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
 
 - xconst:
 
@@ -218,14 +219,14 @@ further description.
   moderate limitation, 4 = intermediate, 5 = substantial limitations, 6
   = intermediate, 7 = executive parity or subordination. See PolityIV
   users' manual at
-  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+  <https://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
 
 - parcomp:
 
   Regulation of participation. 0 = Not applicable, 1 = repressed, 2 =
   suppressed, 3 = factional, 4 = transitional, 5 = competitive. See
   PolityIV users' manual at
-  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+  <https://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
 
 - exrec:
 
@@ -234,7 +235,7 @@ further description.
   gradual transition from self selection, 6 = dual (ascription +
   election), 7 = transitional or restricted election, 8 = competitive
   election. See PolityIV users' manual at
-  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+  <https://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
 
 - exconst:
 
@@ -242,7 +243,7 @@ further description.
   = intermediate, 3 = slight to moderate limitation, 4 = intermediate, 5
   = substantial limitations, 6 = intermediate, 7 = executive parity or
   subordination. See PolityIV users' manual at
-  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+  <https://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
 
 - polcomp:
 
@@ -252,7 +253,7 @@ further description.
   electoral transition: persistent conflict/coercion, 9 = electoral
   transition: limited conflict/coercion, 10 = institutionalized
   electoral. See PolityIV users' manual at
-  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+  <https://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
 
 - prior:
 
@@ -337,11 +338,11 @@ further description.
 - change:
 
   Net difference between `prior` and `post`. See PolityIV users' manual
-  at <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
-  Note the code 88 denotes a "pre-existing polity" (for polities that
-  existed before 1800), 96 indicates state disintegration, 0 a state in
-  transition, 97 state transformation, 98 state demise, and 99 state
-  creation.
+  at <https://www.systemicpeace.org/inscr/p5manualv2018.pdf> for
+  details. Note the code 88 denotes a "pre-existing polity" (for
+  polities that existed before 1800), 96 indicates state disintegration,
+  0 a state in transition, 97 state transformation, 98 state demise, and
+  99 state creation.
 
 - d4:
 
@@ -383,8 +384,9 @@ further description.
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -395,7 +397,7 @@ further description.
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:

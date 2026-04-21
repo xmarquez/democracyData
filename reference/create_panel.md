@@ -12,16 +12,15 @@ create_panel(system = c("cow", "GW", "polity"), max_year = NULL)
 
 - system:
 
-  The state system to target. The possibilities are "cow" ([Correlates
-  of
-  War](http://www.correlatesofwar.org/data-sets/state-system-membership),
-  the default), "GW" (Gleditsch and Ward, from Gleditsch, Kristian S. &
+  The state system to target. The possibilities are "cow"
+  (<https://correlatesofwar.org/data-sets/state-system-membership/>, the
+  default), "GW" (Gleditsch and Ward, from Gleditsch, Kristian S. &
   Michael D. Ward. 1999. "Interstate System Membership: A Revised List
   of the Independent States since 1816." International Interactions 25:
-  393-413, available at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md)),
-  or "polity" (for the [Polity
-  IV](http://www.systemicpeace.org/polityproject.md) system of states).
+  393-413, available via the Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>),
+  or "polity" (for the
+  <https://www.systemicpeace.org/polityproject.html> system of states).
 
 - max_year:
 

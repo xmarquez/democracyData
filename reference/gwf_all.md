@@ -5,7 +5,7 @@ The dataset described in B. Geddes, J. Wright, and E. Frantz.
 *Perspectives on Politics* 12.1 (2014), pp. 313-331. DOI:
 [10.1017/S1537592714000851](https://dx.doi.org/10.1017/S1537592714000851).
 The full data and codebook can be downloaded at
-<http://sites.psu.edu/dictators/>. The documentation below is derived
+<https://sites.psu.edu/dictators/>. The documentation below is derived
 from the codebook. Some variables apply to the country-year version,
 some to the case version and some to the "extended" version (extended
 back before 1945 with info from the case descriptions).
@@ -43,7 +43,7 @@ Transitions: A New Data Set". In: *Perspectives on Politics* 12.1
 (2014), pp. 313-331. DOI:
 [10.1017/S1537592714000851](https://dx.doi.org/10.1017/S1537592714000851).
 The full data and codebook can be downloaded here:
-<http://sites.psu.edu/dictators/>.
+<https://sites.psu.edu/dictators/>.
 
 ## Details
 
@@ -164,8 +164,9 @@ The full data and codebook can be downloaded here:
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -176,7 +177,7 @@ The full data and codebook can be downloaded here:
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -238,8 +239,10 @@ Other democracy:
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
 [`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
 [`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
 [`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
-[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
+[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
 
 Other authoritarianism:
 [`REIGN`](https://xmarquez.github.io/democracyData/reference/REIGN.md),

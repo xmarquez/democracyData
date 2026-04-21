@@ -20,8 +20,8 @@ An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
 
 M. G. Marshall, T. R. Gurr, and K. Jaggers. *Polity IV Project:
 Political Regime Characteristics and Transitions, 1800-2018. Dataset
-Users' Manual.* Manual. 2019. Available at
-[http://www.systemicpeace.org/inscrdata.html](http://www.systemicpeace.org/inscrdata.md)
+Users' Manual.* manual. Center for Systemic Peace, 2019. Available at
+<https://www.systemicpeace.org/inscrdata.html>
 
 ## Variables
 
@@ -129,12 +129,12 @@ Users' Manual.* Manual. 2019. Available at
 - democ:
 
   Institutionalized democracy indicator, 0-10 scale. See PolityIV users'
-  manual at <http://www.systemicpeace.org/inscr/p4manualv2018.pdf>
+  manual at <https://www.systemicpeace.org/inscr/p4manualv2018.pdf>
 
 - autoc:
 
   Institutionalized autocracy indicator, 0-10 scale. See PolityIV users'
-  manual at <http://www.systemicpeace.org/inscr/p4manualv2018.pdf>
+  manual at <https://www.systemicpeace.org/inscr/p4manualv2018.pdf>
 
 - polity:
 
@@ -175,25 +175,26 @@ Users' Manual.* Manual. 2019. Available at
 - durable:
 
   Regime durability. See PolityIV users' manual at
-  <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
+  <https://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
 
 - xrreg:
 
   Regulation of Chief Executive Recruitment. 1 = unregulated, 2 =
   designational/transitional, 3 = regulated. See PolityIV users' manual
-  at <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
+  at <https://www.systemicpeace.org/inscr/p4manualv2018.pdf> for
+  details.
 
 - xrcomp:
 
   Competitiveness of Chief Executive Recruitment. 1 = selection, 2 =
   dual/transitional, 3 = election. See PolityIV users' manual at
-  <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
+  <https://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
 
 - xropen:
 
   Openness of Chief Executive Recruitment. 1 = unlimited, 2 =
   dual/transitional, 3 = election. See PolityIV users' manual at
-  <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
+  <https://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
 
 - xconst:
 
@@ -201,14 +202,14 @@ Users' Manual.* Manual. 2019. Available at
   moderate limitation, 4 = intermediate, 5 = substantial limitations, 6
   = intermediate, 7 = executive parity or subordination. See PolityIV
   users' manual at
-  <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
+  <https://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
 
 - parcomp:
 
   Regulation of participation. 0 = Not applicable, 1 = repressed, 2 =
   suppressed, 3 = factional, 4 = transitional, 5 = competitive. See
   PolityIV users' manual at
-  <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
+  <https://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
 
 - exrec:
 
@@ -217,7 +218,7 @@ Users' Manual.* Manual. 2019. Available at
   gradual transition from self selection, 6 = dual (ascription +
   election), 7 = transitional or restricted election, 8 = competitive
   election. See PolityIV users' manual at
-  <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
+  <https://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
 
 - exconst:
 
@@ -225,7 +226,7 @@ Users' Manual.* Manual. 2019. Available at
   = intermediate, 3 = slight to moderate limitation, 4 = intermediate, 5
   = substantial limitations, 6 = intermediate, 7 = executive parity or
   subordination. See PolityIV users' manual at
-  <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
+  <https://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
 
 - polcomp:
 
@@ -235,7 +236,7 @@ Users' Manual.* Manual. 2019. Available at
   electoral transition: persistent conflict/coercion, 9 = electoral
   transition: limited conflict/coercion, 10 = institutionalized
   electoral. See PolityIV users' manual at
-  <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
+  <https://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
 
 - prior:
 
@@ -320,11 +321,11 @@ Users' Manual.* Manual. 2019. Available at
 - change:
 
   Net difference between `prior` and `post`. See PolityIV users' manual
-  at <http://www.systemicpeace.org/inscr/p4manualv2018.pdf> for details.
-  Note the code 88 denotes a "pre-existing polity" (for polities that
-  existed before 1800), 96 indicates state disintegration, 0 a state in
-  transition, 97 state transformation, 98 state demise, and 99 state
-  creation.
+  at <https://www.systemicpeace.org/inscr/p4manualv2018.pdf> for
+  details. Note the code 88 denotes a "pre-existing polity" (for
+  polities that existed before 1800), 96 indicates state disintegration,
+  0 a state in transition, 97 state transformation, 98 state demise, and
+  99 state creation.
 
 - d4:
 
@@ -366,8 +367,9 @@ Users' Manual.* Manual. 2019. Available at
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -378,7 +380,7 @@ Users' Manual.* Manual. 2019. Available at
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -440,8 +442,10 @@ Other democracy:
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
 [`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
 [`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
 [`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
-[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
+[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
 
 Other ordinal democracy indexes:
 [`download_fh()`](https://xmarquez.github.io/democracyData/reference/download_fh.md),

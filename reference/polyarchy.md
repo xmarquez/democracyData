@@ -61,7 +61,7 @@ available on request. For the 1985 data, multiple sources of information
 were used. For the 2000 data, all coders consulted only the State
 Department's Country Reports on Human Rights Practices for 2001 as their
 source of information. This information is available on line at
-<http://www.state.gov/g/drl/rls/hrrpt/2001/>.
+<https://web.archive.org/web/20020306003112/http://www.state.gov/g/drl/rls/hrrpt/2001/>.
 
 Every year, 82-86 percent of their ratings were in agreement. This is
 about the same level of reliability that Reinicke and Coppedge reported
@@ -266,8 +266,9 @@ you are applying them faithfully.
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -278,7 +279,7 @@ you are applying them faithfully.
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -296,13 +297,12 @@ you are applying them faithfully.
 The `polyarchy_pmm` version of this data is taken from D. Pemstein, S.
 A. Meserve, and J. Melton. *Replication Data for: Democratic Compromise:
 A Latent Variable Analysis of Ten Measures of Regime Type*. 2013. DOI:
-[10.7910/DVN/WWYOHU](https://dx.doi.org/10.7910/DVN/WWYOHU). The
-original dataset is found in polyarchy. It only contains a reversed
-version of the `poly` variable in the original polyarchy dataset (higher
-values being more democratic). 22 country-years differ between PMM's
-replication data and the original Polyarchy dataset (Coppedge and
-Reinicke 1990), and four are missing. These seem to be due to simple
-transcription errors:
+10.7910/DVN/WWYOHU. HDL: 1902.1/PMM. The original dataset is found in
+polyarchy. It only contains a reversed version of the `poly` variable in
+the original polyarchy dataset (higher values being more democratic). 22
+country-years differ between PMM's replication data and the original
+Polyarchy dataset (Coppedge and Reinicke 1990), and four are missing.
+These seem to be due to simple transcription errors:
 
     polyarchy |>
        dplyr::full_join(polyarchy_pmm) |>
@@ -385,8 +385,10 @@ Other democracy:
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
 [`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
 [`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
 [`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
-[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
+[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
 
 Other polyarchy:
 [`polyarchy_dimensions`](https://xmarquez.github.io/democracyData/reference/polyarchy_dimensions.md)

@@ -99,8 +99,9 @@ In: *Democratization* 9.4 (2002), pp. 1-24. DOI:
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -111,7 +112,7 @@ In: *Democratization* 9.4 (2002), pp. 1-24. DOI:
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -129,13 +130,12 @@ In: *Democratization* 9.4 (2002), pp. 1-24. DOI:
 The `prc_pmm` version of this data is taken from D. Pemstein, S. A.
 Meserve, and J. Melton. *Replication Data for: Democratic Compromise: A
 Latent Variable Analysis of Ten Measures of Regime Type*. 2013. DOI:
-[10.7910/DVN/WWYOHU](https://dx.doi.org/10.7910/DVN/WWYOHU). The
-original dataset is found in prc_gasiorowski. The prc_pmm data only goes
-back to 1945. It also differs from the original data in 245
-country-years, because it only includes one year per country - whereas
-prc_gasiorowski can include more than one regime classification for a
-given year. It is included here for completeness (and to enable one to
-replicate the
+10.7910/DVN/WWYOHU. HDL: 1902.1/PMM. The original dataset is found in
+prc_gasiorowski. The prc_pmm data only goes back to 1945. It also
+differs from the original data in 245 country-years, because it only
+includes one year per country - whereas prc_gasiorowski can include more
+than one regime classification for a given year. It is included here for
+completeness (and to enable one to replicate the
 [uds](https://xmarquez.github.io/democracyData/reference/uds_2014.md)
 index).
 
@@ -182,14 +182,18 @@ Other democracy:
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
 [`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
 [`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
 [`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
-[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
+[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
 
 Other trichotomous democracy indexes:
 [`blm`](https://xmarquez.github.io/democracyData/reference/blm.md),
 [`kailitz`](https://xmarquez.github.io/democracyData/reference/kailitz.md),
 [`mainwaring`](https://xmarquez.github.io/democracyData/reference/mainwaring.md),
-[`utip`](https://xmarquez.github.io/democracyData/reference/utip.md)
+[`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
+[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md)
 
 Other PMM replication data:
 [`arat_pmm`](https://xmarquez.github.io/democracyData/reference/arat_pmm.md),

@@ -7,9 +7,10 @@ Pérez-Liñán. "Classifying Political Regimes in Latin America". In:
 Extended in S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political
 Regimes in Latin America, 1900-2007 (with Daniel Brinks)". In:
 *Democracies and Dictatorships in Latin America: Emergence, Survival,
-and Fall*. New York: Cambridge University Press, 2014. Original data
-description archived at
-<https://web.archive.org/web/20120119050029/https://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf>.
+and Fall*. New York: Cambridge University Press, 2014.
+<https://web.archive.org/web/20120119050029/http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf>.
+Original data description archived at
+<https://web.archive.org/web/20120119050029/http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf>.
 
 ## Usage
 
@@ -33,11 +34,11 @@ S. Mainwaring, A. Pérez-Liñán, and D. Brinks. "Political Regimes in
 Latin America, 1900-2007 (with Daniel Brinks)". In: *Democracies and
 Dictatorships in Latin America: Emergence, Survival, and Fall*. New
 York: Cambridge University Press, 2014.
+<https://web.archive.org/web/20120119050029/http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf>.
 
 D. Pemstein, S. A. Meserve, and J. Melton. *Replication Data for:
 Democratic Compromise: A Latent Variable Analysis of Ten Measures of
-Regime Type*. 2013. DOI:
-[10.7910/DVN/WWYOHU](https://dx.doi.org/10.7910/DVN/WWYOHU).
+Regime Type*. 2013. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM.
 
 ## Variables
 
@@ -58,8 +59,9 @@ Regime Type*. 2013. DOI:
   Pérez-Liñán, and D. Brinks. "Political Regimes in Latin America,
   1900-2007 (with Daniel Brinks)". In: *Democracies and Dictatorships in
   Latin America: Emergence, Survival, and Fall*. New York: Cambridge
-  University Press, 2014. 0 = non-democracy, 0.5 = hybrid, 1 =
-  democracy.
+  University Press, 2014.
+  <https://web.archive.org/web/20120119050029/http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf>.
+  0 = non-democracy, 0.5 = hybrid, 1 = democracy.
 
 - Regime:
 
@@ -192,8 +194,9 @@ Regime Type*. 2013. DOI:
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -204,7 +207,7 @@ Regime Type*. 2013. DOI:
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -222,15 +225,14 @@ Regime Type*. 2013. DOI:
 The mainwaring_pmm version of this data is taken from D. Pemstein, S. A.
 Meserve, and J. Melton. *Replication Data for: Democratic Compromise: A
 Latent Variable Analysis of Ten Measures of Regime Type*. 2013. DOI:
-[10.7910/DVN/WWYOHU](https://dx.doi.org/10.7910/DVN/WWYOHU). It only
-contains a numeric version of the Mainwaring Regime indicator, ranging
-from -1 (Authoritarian) to 0 (Semidemocracy) to 1 (Democracy). The
-original dataset is found in mainwaring. PMM's replication data is
-actually missing a fair number of the data points in the original
-dataset, but the original dataset is not missing any of their data
-points, and there are no differences between the data points wherever
-both the original and the replication data have values. It is included
-here for completeness.
+10.7910/DVN/WWYOHU. HDL: 1902.1/PMM. It only contains a numeric version
+of the Mainwaring Regime indicator, ranging from -1 (Authoritarian) to 0
+(Semidemocracy) to 1 (Democracy). The original dataset is found in
+mainwaring. PMM's replication data is actually missing a fair number of
+the data points in the original dataset, but the original dataset is not
+missing any of their data points, and there are no differences between
+the data points wherever both the original and the replication data have
+values. It is included here for completeness.
 
 ## See also
 
@@ -275,8 +277,10 @@ Other democracy:
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
 [`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
 [`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
 [`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
-[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
+[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
 
 Other PMM replication data:
 [`arat_pmm`](https://xmarquez.github.io/democracyData/reference/arat_pmm.md),
@@ -296,4 +300,6 @@ Other trichotomous democracy indexes:
 [`blm`](https://xmarquez.github.io/democracyData/reference/blm.md),
 [`kailitz`](https://xmarquez.github.io/democracyData/reference/kailitz.md),
 [`prc_gasiorowski`](https://xmarquez.github.io/democracyData/reference/prc_gasiorowski.md),
-[`utip`](https://xmarquez.github.io/democracyData/reference/utip.md)
+[`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
+[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md)

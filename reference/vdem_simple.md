@@ -1,13 +1,14 @@
-# Simplified version of the V-Dem version 14 dataset
+# Simplified version of the V-Dem version 16 dataset
 
-This data frame contains a very reduced version of version 14 of the
+This data frame contains a very reduced version of version 16 of the
 V-Dem dataset, including only the 7 main indexes that measure democracy
 directly (v2x_polyarchy, v2x_libdem, v2x_partipdem, v2x_delibdem,
 v2x_egaldem, v2x_api, and v2x_mpi) and their associated uncertainty
 measures. The full VDem dataset is available via the
 [vdemdata](https://github.com/vdeminstitute/vdemdata) package. To cite
 VDem, use M. Coppedge, J. Gerring, C. H. Knutsen, et al. *V-Dem Codebook
-V14*. Tech. rep. Varieties of Democracy (V-Dem) Project, 2024.
+V16*. Report. Varieties of Democracy (V-Dem) Project, 2026.
+<https://www.v-dem.net/documents/70/codebook_v16.pdf>.
 
 ## Usage
 
@@ -18,7 +19,7 @@ vdem_simple
 ## Format
 
 An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
-27913 rows and 54 columns.
+28092 rows and 54 columns.
 
 ## Details
 
@@ -85,7 +86,7 @@ Variable descriptions taken from the V-Dem codebook directly.
   or the year when the country ceased to exist because it lost
   functional or formal sovereignty.
 
-- codingstart_contemporary:
+- codingstart_contemp:
 
   Contemporary start of coding period. Year in which the coding of
   Contemporary V-Dem project starts. Variables from "Contemporary"
@@ -266,8 +267,9 @@ asymmetric) and `_sd` (frequentist standard deviation).
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -278,7 +280,7 @@ asymmetric) and `_sd` (frequentist standard deviation).
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -293,13 +295,15 @@ asymmetric) and `_sd` (frequentist standard deviation).
 
 ## References
 
-M. Coppedge, J. Gerring, C. H. Knutsen, et al. *V-Dem Codebook V14*.
-Tech. rep. Varieties of Democracy (V-Dem) Project, 2024.
+M. Coppedge, J. Gerring, C. H. Knutsen, et al. *V-Dem Codebook V16*.
+Report. Varieties of Democracy (V-Dem) Project, 2026.
+<https://www.v-dem.net/documents/70/codebook_v16.pdf>.
 
 D. Pemstein, K. L. Marquardt, E. Tzelgov, et al. *The V-dem Measurement
 Model: Latent Variable Analysis for Cross-national and Cross-temporal
-Expert-coded Data*. Tech. rep. 21. Varieties of Democracy Institute,
+Expert-coded Data*. Report 21. Varieties of Democracy Institute,
 University of Gothenburg, 2022.
+<https://www.v-dem.net/media/publications/Working_Paper_21.pdf>.
 
 ## See also
 
@@ -345,7 +349,9 @@ Other democracy:
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
 [`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
 [`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
-[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
+[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
 
 Other continuous democracy indexes:
 [`arat_pmm`](https://xmarquez.github.io/democracyData/reference/arat_pmm.md),
@@ -356,4 +362,5 @@ Other continuous democracy indexes:
 [`hadenius_pmm`](https://xmarquez.github.io/democracyData/reference/hadenius_pmm.md),
 [`munck_pmm`](https://xmarquez.github.io/democracyData/reference/munck_pmm.md),
 [`svmdi`](https://xmarquez.github.io/democracyData/reference/svmdi.md),
-[`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md)
+[`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)

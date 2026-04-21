@@ -2,11 +2,12 @@
 
 Dataset described in C. Anckar and C. Fredriksson. "Classifying
 Political Regimes 1800–2016: A Typology and a New Dataset". In:
-*European Political Science* 18.1 (Mar. 2018), pp. 84-96. DOI:
-[10.1057/s41304-018-0149-8](https://dx.doi.org/10.1057/s41304-018-0149-8).
-Data and codebook at the link. This is version 2 of the data, available
-at
-<https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/7SSSAH/DIZXSI&version=2.0>.
+*European Political Science* 18.1 (2018), pp. 84-96. DOI:
+[10.1057/s41304-018-0149-8](https://dx.doi.org/10.1057/s41304-018-0149-8)..
+Version 3.0 of the data is available at
+<https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/AK8NVX&version=2.0>.
+Codebook at
+<https://dataverse.harvard.edu/api/access/datafile/11496290>.
 
 ## Usage
 
@@ -17,16 +18,18 @@ anckar
 ## Format
 
 An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
-18777 rows and 13 columns.
+19762 rows and 13 columns.
 
 ## Source
 
 C. Anckar and C. Fredriksson. "Classifying Political Regimes 1800–2016:
 A Typology and a New Dataset". In: *European Political Science* 18.1
-(Mar. 2018), pp. 84-96. DOI:
+(2018), pp. 84-96. DOI:
 [10.1057/s41304-018-0149-8](https://dx.doi.org/10.1057/s41304-018-0149-8).
-Version 2 available at
-<https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/7SSSAH/DIZXSI&version=2.0>.
+Version 3.0 available at
+<https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/AK8NVX&version=2.0>.
+Codebook at
+<https://dataverse.harvard.edu/api/access/datafile/11496290>.
 
 ## Variables
 
@@ -52,32 +55,38 @@ Version 2 available at
 
 - democracy:
 
-  This should be identical to version 2 of Boix, Miller and Rosato's
-  Dichotomous democracy measure (`democracy_omitteddata`; see
-  [bmr](https://xmarquez.github.io/democracyData/reference/bmr.md)).
-  Supplemented for all countries for the period 2011-2016, as well as
-  for Liechtenstein 1866-1990, Monaco 1862-2016, and San Marino
-  1800-1992, by Anckar and Fredriksson. 1 = democracy, 0 =
-  non-democracy.
+  Boix, Miller and Rosato's dichotomous democracy measure
+  (`democracy_omitteddata`; see
+  [bmr](https://xmarquez.github.io/democracyData/reference/bmr.md),
+  dataset version 4.0), supplemented for all countries for the period
+  2021-2024, as well as for Liechtenstein 1866-1990 and Monaco
+  1862-1993, by Anckar and Fredriksson. The codebook also lists several
+  country-year departures from the BMR classifications. Values: 1
+  democracy, 0 non-democracy, 99 unclear/not available; 99 is converted
+  to `NA` in the packaged object.
 
 - monarchy:
 
   Distinguishes between monarchies and republics in democratic
-  countries. It is `NA` for non-democracies. Vales: 0 Republic, 1
-  Monarchy, 7 Hybrid.
+  countries. It is `NA` for non-democracies. Values: 0 Republic, 1
+  Monarchy, 2 Hybrid.
 
 - regimebroadcat:
 
   Regime type. Classification with broad categories: Parliamentarism,
   Semi-presidentialism, Presidentialism, Semi-monarchy, Party-based
-  rule, Personalist rule, Military rule, Absolute monarchy, Oligarchy
+  rule, Personalist rule, Military rule, Absolute monarchy, Oligarchy.
+  The upstream value 99 (occupation, civil war, or otherwise unclear) is
+  converted to `NA`.
 
 - regimenarrowcat:
 
   Regime type. Classification with narrow categories: Parliamentarism,
   Semi-presidentialism, Presidentialism, Semi-monarchy, Single-party
   rule, Multi-party authoritarian rule, Personalist rule, Military rule,
-  Absolute monarchy, Monarchic oligarchy, Other oligarchy.
+  Absolute monarchy, Monarchic oligarchy, Other oligarchy. The upstream
+  value 99 (occupation, civil war, or otherwise unclear) is converted to
+  `NA`.
 
 - popelection:
 
@@ -100,8 +109,9 @@ Version 2 available at
   Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
   Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
   Membership: A Revised List of the Independent States since 1816."
-  International Interactions 25: 393-413. The list can be found at
-  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+  International Interactions 25: 393-413. The list can be found via the
+  Wayback Machine at
+  <https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html>.
 
 - GWn:
 
@@ -112,7 +122,7 @@ Version 2 available at
 
   The Correlates of War numeric country code, 2016 version. This differs
   from Gleditsch and Ward's numeric country code in a few cases. See
-  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  <https://correlatesofwar.org/data-sets/state-system-membership/> for
   the full list.
 
 - in_GW_system:
@@ -168,8 +178,10 @@ Other democracy:
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
 [`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
 [`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
 [`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
-[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
+[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md),
+[`wgi_legacy`](https://xmarquez.github.io/democracyData/reference/wgi_legacy.md)
 
 Other authoritarianism:
 [`REIGN`](https://xmarquez.github.io/democracyData/reference/REIGN.md),
@@ -190,4 +202,6 @@ Other dichotomous democracy indexes:
 [`svolik_regime`](https://xmarquez.github.io/democracyData/reference/svolik_regime.md),
 [`ulfelder`](https://xmarquez.github.io/democracyData/reference/ulfelder.md),
 [`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
+[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vaporeg_2024`](https://xmarquez.github.io/democracyData/reference/vaporeg_2024.md),
 [`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
