@@ -112,7 +112,11 @@ As we can see, the majority of datasets measure democracy between the end of the
 
 ggplot(data = long_data |>
   group_by(extended_country_name, year) |>
-  summarise(num_measures = n(), in_GW_system = unique(in_GW_system)) |>
+  summarise(
+    num_measures = n(),
+    in_GW_system = any(dplyr::coalesce(in_GW_system, FALSE)),
+    .groups = "drop"
+  ) |>
   filter(!is.na(num_measures)) |> 
   group_by(extended_country_name) |> 
   mutate(total_measures = sum(num_measures)) |>
