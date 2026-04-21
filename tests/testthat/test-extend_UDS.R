@@ -18,7 +18,8 @@ test_that("prepare_democracy_data applies default transformations", {
     polity_score = c(-11, -5, NA),
     v2x_index = c(0.1, 0.5, NA),
     peps_total = c(4.2, 7.8, NA),
-    anckar = c("low", "high", NA)
+    anckar = c("low", "high", NA),
+    vaporeg_trichotomous = c(0, 2, NA)
   )
 
   result <- prepare_democracy_data(input)
@@ -30,6 +31,7 @@ test_that("prepare_democracy_data applies default transformations", {
   expect_equal(result$v2x_index, c(1, 2))
   expect_equal(result$peps_total, c(1, 2))
   expect_equal(result$anckar, c(2, 1))
+  expect_equal(result$vaporeg_trichotomous, c(1, 2))
 })
 
 test_that("prob_more returns probabilities for same year and cross-year comparisons", {
@@ -48,4 +50,3 @@ test_that("prob_more returns probabilities for same year and cross-year comparis
   expected_cross <- stats::pnorm((0.1 - 0.2) / sqrt(0.3^2 + 0.2^2))
   expect_equal(cross_year, expected_cross)
 })
-

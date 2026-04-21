@@ -1,4 +1,3 @@
-
 #'Prepare democracy data before replicating the UDS model
 #'
 #'This function is designed to take the democracy data included in this package
@@ -14,8 +13,8 @@
 #'
 #'`arat`: Following Pemstein, Meserve, and Melton's replication code (Pemstein,
 #'Meserve, and Melton 2013), the function cuts Arat (1991)'s 0-109 democracy
-#'score ([arat_pmm]) into 7 intervals with the following cutoffs: 50, 60, 70,
-#'80, 90, and 100. The resulting score is ordinal from 1 to 8.
+#'score ([arat] or [arat_pmm]) into 7 intervals with the following cutoffs: 50,
+#'60, 70, 80, 90, and 100. The resulting score is ordinal from 1 to 8.
 #'
 #'`bollen`: Following Pemstein, Meserve, and Melton's replication code
 #'(Pemstein, Meserve, and Melton 2013), the function cuts Bollen's (2001)'s
@@ -61,6 +60,10 @@
 #'[svmdi]), and it will cut it into 20 categories. The resulting score is
 #'ordinal from 1 to 20.
 #'
+#'`vaporeg`: If a VaPoReg democracy measure such as
+#'`vaporeg_trichotomous` ([vaporeg]) is included, the function transforms it
+#'into an ordinal variable using the observed categories.
+#'
 #'`v2x`: If any of the `v2x_` continuous indexes of democracy from the V-Dem
 #'dataset (Coppedge et al 2021) are included in the file, the function cuts them
 #'into 20 categories. The resulting score is ordinal from 1 to 20.
@@ -92,8 +95,9 @@
 #'2016, [reign]), `svmdi` (from Grundler and Krieger 2018, 2016, [svmdi]),
 #'`svolik` (from Svolik 2012, democracy/dictatorship indicator only, [svolik]),
 #'`ulfelder` (from Ulfelder 2012, [ulfelder]), `utip` (from Hsu 2008, [utip]),
-#'and `wth` or `wahman_teorell_hadenius` (from Wahman, Teorell, and Hadenius
-#'2013, [wahman_teorell_hadenius]). In each of these cases the function
+#'`vaporeg` (from the current VaPoReg release, [vaporeg]), and `wth` or
+#'`wahman_teorell_hadenius` (from Wahman, Teorell, and Hadenius 2013,
+#'[wahman_teorell_hadenius]). In each of these cases the function
 #'transforms the values of these scores by running
 #'`as.numeric(unclass(factor(x)))`, which transforms them into ordinal variables
 #'from 1 to the number of categories.
@@ -113,7 +117,7 @@
 #'  [anckar], [anrr], [arat], [blm], [bmr], [bti], [bollen],
 #'  [doorenspleet], [wgi], [gwf], [hadenius], [kailitz], [lied],
 #'  [munck], [pacl], [peps], [polyarchy], [polity], [prc], [PIPE],
-#'  [svmdi], [svolik], [ulfelder], [utip], `v2x`,
+#'  [svmdi], [svolik], [ulfelder], [utip], [vaporeg], `v2x`,
 #'  `vanhanen_democratization` (from [vanhanen]), [vanhanen_pmm], or
 #'  [wth]. For details of these variables, see
 #'  the documentation for [generate_democracy_scores_dataset] or the
@@ -122,45 +126,37 @@
 #'@param .funs A named list of functions to modify the columns. It defaults to
 #'  the following:
 #'
-#'  \code{funs(arat = cut(., breaks = c(0, 50, 60, 70, 80, 90, 100, 109), labels
-#'  = 1:7, include.lowest = TRUE, right = FALSE),
-#'
-#'  hadenius = cut(., breaks =  c(0, 1, 2, 3, 4, 7, 8, 9, 10), labels = 1:8,
-#'  include.lowest = TRUE, right = FALSE),
-#'
-#'  bollen = cut(., breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100),
-#'  labels = 1:10, include.lowest = TRUE, right = FALSE),
-#'
-#'  bti = ~cut(.x, breaks = 20, include.lowest = TRUE, right = FALSE,
-#'  ordered_result = TRUE),
-#'
-#'  vanhanen = cut(., breaks = c(0, 5, 10, 15, 20, 25, 30, 35, 50), labels =
-#'  1:8, include.lowest = TRUE, right = FALSE),
-#'
-#'  munck = cut(., breaks = c(0, 0.5, 0.75, 0.99, 1), labels = 1:4,
-#'  include.lowest = TRUE, right = FALSE),
-#'
-#'  polyarchy_dimensions = cut(., breaks = 20, include.lowest = TRUE, right =
-#'  FALSE, ordered_result = TRUE),
-#'
-#'  polity = ifelse(. < -10, NA, .), v2x = cut(., breaks = 20, include.lowest =
-#'  TRUE, right = FALSE, ordered_result = TRUE),
-#'
-#'  v2x_* = cut(., breaks = 20, include.lowest = TRUE, right = FALSE,
-#'  ordered_result = TRUE),
-#'
-#'  svmdi = cut(., breaks = 20, include.lowest = TRUE, right = FALSE,
-#'  ordered_result = TRUE),
-#'
-#'  eiu = cut(., breaks = 20, include.lowest = TRUE, right = FALSE,
-#'  ordered_result = TRUE),
-#'
-#'  wgi = cut(., breaks = 20, include.lowest = TRUE, right = FALSE,
-#'  ordered_result = TRUE),
-#'
-#'  peps = round(.),
-#'
-#'  other = as.numeric(unclass(factor(.))))}
+#'  \preformatted{
+#'  list(
+#'    arat = cut(., breaks = c(0, 50, 60, 70, 80, 90, 100, 109),
+#'      labels = 1:7, include.lowest = TRUE, right = FALSE),
+#'    hadenius = cut(., breaks = c(0, 1, 2, 3, 4, 7, 8, 9, 10),
+#'      labels = 1:8, include.lowest = TRUE, right = FALSE),
+#'    bollen = cut(., breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100),
+#'      labels = 1:10, include.lowest = TRUE, right = FALSE),
+#'    bti = ~cut(.x, breaks = 20, include.lowest = TRUE, right = FALSE,
+#'      ordered_result = TRUE),
+#'    vanhanen = cut(., breaks = c(0, 5, 10, 15, 20, 25, 30, 35, 50),
+#'      labels = 1:8, include.lowest = TRUE, right = FALSE),
+#'    munck = cut(., breaks = c(0, 0.5, 0.75, 0.99, 1),
+#'      labels = 1:4, include.lowest = TRUE, right = FALSE),
+#'    polyarchy_dimensions = cut(., breaks = 20, include.lowest = TRUE,
+#'      right = FALSE, ordered_result = TRUE),
+#'    polity = ifelse(. < -10, NA, .),
+#'    v2x = cut(., breaks = 20, include.lowest = TRUE, right = FALSE,
+#'      ordered_result = TRUE),
+#'    v2x_* = cut(., breaks = 20, include.lowest = TRUE, right = FALSE,
+#'      ordered_result = TRUE),
+#'    svmdi = cut(., breaks = 20, include.lowest = TRUE, right = FALSE,
+#'      ordered_result = TRUE),
+#'    eiu = cut(., breaks = 20, include.lowest = TRUE, right = FALSE,
+#'      ordered_result = TRUE),
+#'    wgi = cut(., breaks = 20, include.lowest = TRUE, right = FALSE,
+#'      ordered_result = TRUE),
+#'    peps = round(.),
+#'    other = as.numeric(unclass(factor(.)))
+#'  )
+#'  }
 #'
 #'@return A data frame with the transformed scores, if any.
 #'@import dplyr
@@ -171,7 +167,7 @@
 #' democracy <- generate_democracy_scores_dataset(
 #'   selection = "pmm", output_format = "wide", exclude_pmm_duplicates = FALSE
 #'   )
-#' 
+#'
 #' summary(democracy)
 #' summary(prepare_democracy_data(democracy))
 #'
@@ -179,77 +175,163 @@
 #'
 #'`r roxygen_print_bibliography()`
 #'
-prepare_democracy_data <- function(data,
-                         .funs) {
+prepare_democracy_data <- function(data, .funs) {
+  other_vars <- c(
+    "anckar",
+    "anrr",
+    "blm",
+    "bmr",
+    "doorenspleet",
+    "fh|freedomhouse",
+    "gwf",
+    "lied|lexical_index",
+    "mainwaring",
+    "magaloni",
+    "pacl|cgv",
+    "pitf",
+    "polyarchy",
+    "prc",
+    "PIPE|przeworski",
+    "svolik",
+    "svmdi_2016",
+    "ulfelder",
+    "utip",
+    "vaporeg",
+    "kailitz",
+    "e_v2x",
+    "wth|wahman_teorell",
+    "reign",
+    "dsvmdi"
+  )
 
-  other_vars <- c("anckar", "anrr", "blm", "bmr",
-                  "doorenspleet", "fh|freedomhouse", "gwf",
-                  "lied|lexical_index", "mainwaring",
-                  "magaloni", "pacl|cgv", "pitf", "polyarchy",
-                  "prc", "PIPE|przeworski", "svolik", "svmdi_2016",
-                  "ulfelder", "utip", "kailitz", "e_v2x",
-                  "wth|wahman_teorell", "reign", "dsvmdi")
-
-  . <- NULL
-
-  if(missing(.funs)) {
+  if (missing(.funs)) {
     .funs <- list(
-      arat = ~cut(.x, breaks = c(0, 50, 60, 70, 80, 90, 100, 109),
-            labels = 1:7, include.lowest = TRUE, right = FALSE),
-      bti = ~cut(.x, breaks = 20, include.lowest = TRUE,
-                 right = FALSE, ordered_result = TRUE),
-      hadenius = ~cut(.x, breaks =  c(0, 1, 2, 3, 4, 7, 8, 9, 10),
-            labels = 1:8, include.lowest = TRUE, right = FALSE),
-      bollen = ~cut(.x, breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100),
-            labels = 1:10, include.lowest = TRUE, right = FALSE),
-      vanhanen = ~cut(.x, breaks = c(0, 5, 10, 15, 20, 25, 30, 35, 50),
-            labels = 1:8, include.lowest = TRUE, right = FALSE),
-      munck = ~cut(.x, breaks = c(0, 0.5, 0.75, 0.99, 1),
-            labels = 1:4, include.lowest = TRUE, right = FALSE),
-      polyarchy_dimensions = ~cut(.x, breaks = 20, include.lowest = TRUE,
-                right = FALSE, ordered_result = TRUE),
-      polity = ~ifelse(.x < -10, NA, .x),
-      v2x = ~cut(.x, breaks = 20, include.lowest = TRUE,
-                right = FALSE, ordered_result = TRUE),
-      svmdi = ~cut(.x, breaks = 20, include.lowest = TRUE,
-                right = FALSE, ordered_result = TRUE),
-      wgi = ~cut(.x, breaks = 20, include.lowest = TRUE,
-                right = FALSE, ordered_result = TRUE),
-      eiu = ~cut(.x, breaks = 20, include.lowest = TRUE,
-                right = FALSE, ordered_result = TRUE),
-      bti = ~cut(.x, breaks = 20, include.lowest = TRUE,
-                right = FALSE, ordered_result = TRUE),
-      peps = ~round(.x),
-      other = ~as.numeric(unclass(factor(.x))))
+      arat = ~ cut(
+        .x,
+        breaks = c(0, 50, 60, 70, 80, 90, 100, 109),
+        labels = 1:7,
+        include.lowest = TRUE,
+        right = FALSE
+      ),
+      bti = ~ cut(
+        .x,
+        breaks = 20,
+        include.lowest = TRUE,
+        right = FALSE,
+        ordered_result = TRUE
+      ),
+      hadenius = ~ cut(
+        .x,
+        breaks = c(0, 1, 2, 3, 4, 7, 8, 9, 10),
+        labels = 1:8,
+        include.lowest = TRUE,
+        right = FALSE
+      ),
+      bollen = ~ cut(
+        .x,
+        breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100),
+        labels = 1:10,
+        include.lowest = TRUE,
+        right = FALSE
+      ),
+      vanhanen = ~ cut(
+        .x,
+        breaks = c(0, 5, 10, 15, 20, 25, 30, 35, 50),
+        labels = 1:8,
+        include.lowest = TRUE,
+        right = FALSE
+      ),
+      munck = ~ cut(
+        .x,
+        breaks = c(0, 0.5, 0.75, 0.99, 1),
+        labels = 1:4,
+        include.lowest = TRUE,
+        right = FALSE
+      ),
+      polyarchy_dimensions = ~ cut(
+        .x,
+        breaks = 20,
+        include.lowest = TRUE,
+        right = FALSE,
+        ordered_result = TRUE
+      ),
+      polity = ~ ifelse(.x < -10, NA, .x),
+      v2x = ~ cut(
+        .x,
+        breaks = 20,
+        include.lowest = TRUE,
+        right = FALSE,
+        ordered_result = TRUE
+      ),
+      svmdi = ~ cut(
+        .x,
+        breaks = 20,
+        include.lowest = TRUE,
+        right = FALSE,
+        ordered_result = TRUE
+      ),
+      wgi = ~ cut(
+        .x,
+        breaks = 20,
+        include.lowest = TRUE,
+        right = FALSE,
+        ordered_result = TRUE
+      ),
+      eiu = ~ cut(
+        .x,
+        breaks = 20,
+        include.lowest = TRUE,
+        right = FALSE,
+        ordered_result = TRUE
+      ),
+      bti = ~ cut(
+        .x,
+        breaks = 20,
+        include.lowest = TRUE,
+        right = FALSE,
+        ordered_result = TRUE
+      ),
+      peps = ~ round(.x),
+      other = ~ as.numeric(unclass(factor(.x)))
+    )
   }
 
-  other_pattern <- paste(c(other_vars,
-                           "arat",
-                           "bti",
-                           "hadenius_pmm",
-                           "bollen",
-                           "munck",
-                           "polity",
-                           "vanhanen",
-                           "v2x",
-                           "svmdi",
-                           "wgi",
-                           "eiu",
-                           "peps"),collapse="|")
+  other_pattern <- paste(
+    c(
+      other_vars,
+      "arat",
+      "bti",
+      "hadenius_pmm",
+      "bollen",
+      "munck",
+      "polity",
+      "vanhanen",
+      "v2x",
+      "svmdi",
+      "wgi",
+      "eiu",
+      "peps"
+    ),
+    collapse = "|"
+  )
 
   data <- data |>
     mutate(across(matches("arat"), .funs[['arat']])) |>
     mutate(across(matches("hadenius_pmm"), .funs[['hadenius']])) |>
     mutate(across(matches("bollen"), .funs[['bollen']])) |>
     mutate(across(matches("bti"), .funs[['bti']])) |>
-    mutate(across(matches("pmm_vanhanen|vanhanen_"),
-              .funs[['vanhanen']])) |>
+    mutate(across(matches("pmm_vanhanen|vanhanen_"), .funs[['vanhanen']])) |>
     mutate(across(matches("munck"), .funs[['munck']])) |>
-    mutate(across(matches("polyarchy_(inclusion|contestation)_dimension"),
-              .funs[['polyarchy_dimensions']])) |>
+    mutate(across(
+      matches("polyarchy_(inclusion|contestation)_dimension"),
+      .funs[['polyarchy_dimensions']]
+    )) |>
     mutate(across(matches("polity"), .funs[['polity']])) |>
     mutate(across(starts_with("v2x"), .funs[['v2x']])) |>
-    mutate(across(c(starts_with("csvmdi"), starts_with("svmdi_2016")), .funs[['svmdi']])) |>
+    mutate(across(
+      c(starts_with("csvmdi"), starts_with("svmdi_2016")),
+      .funs[['svmdi']]
+    )) |>
     mutate(across(matches("wgi"), .funs[['wgi']])) |>
     mutate(across(matches("eiu"), .funs[['eiu']])) |>
     mutate(across(matches("peps"), .funs[['peps']])) |>
@@ -258,10 +340,8 @@ prepare_democracy_data <- function(data,
   democracy_vars <- names(data)[str_detect(names(data), other_pattern)]
 
   data |>
-    remove_empty_rows(democracy_vars)
-
+    remove_empty_rows(dplyr::all_of(democracy_vars))
 }
-
 
 #' Probability that a country-year is more democratic than another
 #'
@@ -301,25 +381,39 @@ prepare_democracy_data <- function(data,
 #' # according to 2010 release of UDS
 #' prob_more(uds_2010, "United States of America","United States of America",
 #'            years = c(2000,1950), mean_col="mean", sd_col="sd")
-prob_more <- function(data, country1, country2, years, mean_col = "z1",
-                      sd_col = "se_z1",
-                      country_col = "extended_country_name",
-                      year_col = "year") {
-
-  if(length(years) == 1) {
+prob_more <- function(
+  data,
+  country1,
+  country2,
+  years,
+  mean_col = "z1",
+  sd_col = "se_z1",
+  country_col = "extended_country_name",
+  year_col = "year"
+) {
+  if (length(years) == 1) {
     years <- c(years, years)
   }
-  mu <- data[[mean_col]][ data[[country_col]] == country1 &
-                            data[[year_col]] == years[1]] -
-    data[[mean_col]][data[[country_col]] == country2  &
-                       data[[year_col]] == years[2] ]
+  mu <- data[[mean_col]][
+    data[[country_col]] == country1 &
+      data[[year_col]] == years[1]
+  ] -
+    data[[mean_col]][
+      data[[country_col]] == country2 &
+        data[[year_col]] == years[2]
+    ]
 
-  sigma <- sqrt((data[[sd_col]][data[[country_col]] == country1
-                                & data[[year_col]] == years[1]])^2 +
-                  (data[[sd_col]][data[[country_col]] == country2 &
-                                    data[[year_col]] == years[2] ])^2)
+  sigma <- sqrt(
+    (data[[sd_col]][
+      data[[country_col]] == country1 & data[[year_col]] == years[1]
+    ])^2 +
+      (data[[sd_col]][
+        data[[country_col]] == country2 &
+          data[[year_col]] == years[2]
+      ])^2
+  )
 
-  prob <- 1-pnorm(-mu/sigma)
+  prob <- 1 - pnorm(-mu / sigma)
   prob
 }
 
@@ -358,7 +452,7 @@ prob_more <- function(data, country1, country2, years, mean_col = "z1",
 #'
 #' democracy_data <- prepare_democracy_data(democracy_data)
 #'
-#' replication_2011_model <- mirt(democracy_data |> 
+#' replication_2011_model <- mirt(democracy_data |>
 #'   select(matches("pmm")), model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
 #'
 #' cutpoints(replication_2011_model)
@@ -370,59 +464,49 @@ cutpoints <- function(model, type = "score") {
 
   # A hack to get around the "no visible binding for global variable" note
 
-  par <- CI_2.5 <- CI_97.5 <- variable <- se <- NULL
-
-  estimate <- pct025 <- pct975 <- coef_type <- coef <- NULL
-
   coefs <- as.data.frame(mirt::coef(model, as.data.frame = TRUE))
 
   coefs <- coefs |>
-    mutate(variable = rownames(coefs),
-           coef_type = stringr::str_extract(variable,"a([0-9]+)?$|d([0-9]+)?$"),
-           variable = stringr::str_replace(variable,"\\.a([0-9]+)?$|\\.d([0-9]+)?$",""))
+    mutate(
+      variable = rownames(coefs),
+      coef_type = stringr::str_extract(variable, "a([0-9]+)?$|d([0-9]+)?$"),
+      variable = stringr::str_replace(
+        variable,
+        "\\.a([0-9]+)?$|\\.d([0-9]+)?$",
+        ""
+      )
+    )
 
   coefs <- coefs |>
     group_by(variable) |>
-    mutate(estimate = (par)/-(par[1]),
-           pct975 = (CI_2.5)/-(CI_2.5[1]),
-           pct025 = (CI_97.5)/-(CI_97.5[1]),
-           se = abs(pct975 - estimate)/1.96) |>
+    mutate(
+      estimate = (par) / -(par[1]),
+      pct975 = (CI_2.5) / -(CI_2.5[1]),
+      pct025 = (CI_97.5) / -(CI_97.5[1]),
+      se = abs(pct975 - estimate) / 1.96
+    ) |>
     filter(!is.na(coef_type))
 
   num_obs <- model@Data$data |>
     as_tibble() |>
-    summarise_all(~sum(!is.na(.))) |>
+    summarise(across(everything(), \(x) sum(!is.na(x)))) |>
     tidyr::gather("variable", "num_obs")
 
   coefs <- coefs |>
-    left_join(num_obs,
-              by = "variable")
+    left_join(num_obs, by = "variable")
 
-  if(type == "score") {
+  if (type == "score") {
     coefs <- coefs |>
-      filter(!grepl("^a",coef_type)) |>
-      select(variable,
-             estimate,
-             pct025,
-             pct975,
-             se,
-             num_obs)
+      filter(!grepl("^a", coef_type)) |>
+      select(variable, estimate, pct025, pct975, se, num_obs)
   } else {
     coefs <- coefs |>
-      filter(grepl("^a",coef_type)) |>
-      mutate(estimate = par,
-             pct025 = CI_2.5,
-             pct975 = CI_97.5) |>
-      select(variable,
-             estimate,
-             pct025,
-             pct975,
-             num_obs)
+      filter(grepl("^a", coef_type)) |>
+      mutate(estimate = par, pct025 = CI_2.5, pct975 = CI_97.5) |>
+      select(variable, estimate, pct025, pct975, num_obs)
   }
 
   coefs |> ungroup()
-
-
 }
 
 #' Extract rater info from a UD model in a tidy format.
@@ -447,25 +531,28 @@ cutpoints <- function(model, type = "score") {
 #'
 #' democracy_data <- prepare_democracy_data(democracy_data)
 #'
-#' replication_2011_model <- mirt(democracy_data |> 
+#' replication_2011_model <- mirt(democracy_data |>
 #'   select(matches("pmm")), model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
 #'
 #' raterinfo(replication_2011_model)
 #' }
 raterinfo <- function(model) {
-    raters <- dimnames(model@Data$data)[[2]]
-    Theta <- model@Model$Theta
-    rater.info <- data.frame()
+  raters <- dimnames(model@Data$data)[[2]]
+  Theta <- model@Model$Theta
+  rater.info <- data.frame()
 
-    for (i in raters) {
-        rater.info <- suppressWarnings(bind_rows(rater.info,
-                                data.frame(rater = i,
-                                           theta = as.numeric(Theta),
-                                           info = iteminfo(extract.item(model, i),
-                                                           Theta = Theta))))
-    }
-    rater.info |>
-      as_tibble()
+  for (i in raters) {
+    rater.info <- suppressWarnings(bind_rows(
+      rater.info,
+      data.frame(
+        rater = i,
+        theta = as.numeric(Theta),
+        info = iteminfo(extract.item(model, i), Theta = Theta)
+      )
+    ))
+  }
+  rater.info |>
+    as_tibble()
 }
 
 #' Extract UD scores from a UD model
@@ -505,40 +592,46 @@ raterinfo <- function(model) {
 #'
 #' democracy_data <- prepare_democracy_data(democracy_data)
 #'
-#' replication_2011_model <- mirt(democracy_data |> 
+#' replication_2011_model <- mirt(democracy_data |>
 #'   select(matches("pmm")), model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
 #'
 #' democracy_scores(model = replication_2011_model)
 #'
 #' }
-democracy_scores <- function(model,
-                             adjust_to_dichotomous = TRUE,
-                             as_prob = TRUE) {
-
-  identifiers <- c("extended_country_name",
-                  "year",
-                  "GWn",
-                  "cown",
-                  "polity_ccode",
-                  "in_GW_system",
-                  "uds_2010_mean",
-                  "uds_2011_mean",
-                  "uds_2014_mean")
-
-  . <- se_z1 <- NULL
+democracy_scores <- function(
+  model,
+  adjust_to_dichotomous = TRUE,
+  as_prob = TRUE
+) {
+  identifiers <- c(
+    "extended_country_name",
+    "year",
+    "GWn",
+    "cown",
+    "polity_ccode",
+    "in_GW_system",
+    "uds_2010_mean",
+    "uds_2011_mean",
+    "uds_2014_mean"
+  )
 
   stopifnot("SingleGroupClass" %in% class(model))
 
   scores <- mirt::fscores(model, full.scores = TRUE, full.scores.SE = TRUE) |>
     dplyr::as_tibble() |>
-    dplyr::rename_with(~tolower(.) |>
-                         stringr::str_replace("f1", "z1"),
-                       dplyr::matches("F1"))  |>
-    dplyr::mutate(dplyr::across(dplyr::all_of("z1"),
-                         list(pct975 = ~. + 1.96 * se_z1,
-                              pct025 = ~. - 1.96 * se_z1)))
+    dplyr::rename_with(
+      \(x) {
+        tolower(x) |>
+          stringr::str_replace("f1", "z1")
+      },
+      dplyr::matches("F1")
+    ) |>
+    dplyr::mutate(dplyr::across(
+      dplyr::all_of("z1"),
+      list(pct975 = \(x) x + 1.96 * se_z1, pct025 = \(x) x - 1.96 * se_z1)
+    ))
 
-  if(adjust_to_dichotomous) {
+  if (adjust_to_dichotomous) {
     avg_dichotomous <- cutpoints(model) |>
       dplyr::group_by(dplyr::across(dplyr::all_of("variable"))) |>
       dplyr::filter(n() == 1)
@@ -546,19 +639,22 @@ democracy_scores <- function(model,
     avg_dichotomous <- mean(avg_dichotomous$estimate)
 
     scores <- scores |>
-      dplyr::mutate(dplyr::across(dplyr::starts_with("z1"),
-                    list(adj = ~. - avg_dichotomous)))
+      dplyr::mutate(dplyr::across(
+        dplyr::starts_with("z1"),
+        list(adj = \(x) x - avg_dichotomous)
+      ))
   }
 
-  if(as_prob) {
+  if (as_prob) {
     scores <- scores |>
-      dplyr::mutate(dplyr::across(dplyr::starts_with("z1"),
-                list(as_prob = ~stats::pnorm(.))))
+      dplyr::mutate(dplyr::across(
+        dplyr::starts_with("z1"),
+        list(as_prob = \(x) stats::pnorm(x))
+      ))
   }
 
   scores |> dplyr::ungroup()
 }
-
 
 #' Generates the extended UDS scores from the latest democracy data in this
 #' package
@@ -580,80 +676,126 @@ democracy_scores <- function(model,
 #' extended_uds <- generate_extended_uds()
 #' }
 generate_extended_uds <- function(verbose = FALSE) {
+  identifiers <- c(
+    "extended_country_name",
+    "GWn",
+    "cown",
+    "in_GW_system",
+    "year"
+  )
 
-  extended_country_name <- vdem_country_name <- name <- GWn <- cown <- in_GW_system <- year <- NULL
+  vars <- c(
+    "anckar_democracy",
+    "anrr_democracy",
+    "arat",
+    "blm",
+    "bmr_democracy_femalesuffrage",
+    "bnr_extended",
+    "bti",
+    "csvmdi",
+    "doorenspleet",
+    "eiu",
+    "fh_electoral",
+    "fh_total_reversed",
+    "gwf_democracy_extended_strict",
+    "lexical_index",
+    "magaloni_democracy_extended",
+    "mainwaring",
+    "pacl",
+    "pacl_update",
+    "PEPS1v",
+    "pitf",
+    "pmm_bollen",
+    "pmm_hadenius",
+    "pmm_munck",
+    "polity2",
+    "polyarchy_contestation_dimension",
+    "polyarchy_inclusion_dimension",
+    "polyarchy_original_contestation",
+    "polyarchy_original_polyarchy",
+    "prc",
+    "reign_democracy",
+    "svolik_democracy",
+    "ulfelder_democracy_extended",
+    "utip_trichotomous",
+    "v2x_polyarchy",
+    "vaporeg_trichotomous",
+    "vanhanen_democratization",
+    "wgi_democracy",
+    "wth_democrobust"
+  )
 
-  identifiers <- c("extended_country_name", "GWn", "cown", "in_GW_system", "year")
-
-  vars <- c("anckar_democracy", "anrr_democracy", "blm", "bmr_democracy_femalesuffrage",
-            "bnr_extended", "bti_democracy", "csvmdi", "doorenspleet", "eiu",
-            "fh_electoral", "fh_total_reversed", "gwf_democracy_extended_strict",
-            "kailitz_tri", "lexical_index", "magaloni_democracy_extended",
-            "mainwaring", "pacl", "pacl_update", "PEPS1v", "pitf", "pmm_arat",
-            "pmm_bollen", "pmm_hadenius", "pmm_munck", "polity2",
-            "polyarchy_contestation_dimension", "polyarchy_inclusion_dimension",
-            "polyarchy_original_contestation", "polyarchy_original_polyarchy",
-            "prc", "reign_democracy", "svolik_democracy", "ulfelder_democracy_extended",
-            "utip_trichotomous", "v2x_polyarchy", "vanhanen_democratization",
-            "wgi_democracy", "wth_democrobust")
-
-  extended_data <- generate_democracy_scores_dataset(output_format = "wide",
-                                                     verbose = verbose)
+  extended_data <- generate_democracy_scores_dataset(
+    output_format = "wide",
+    verbose = verbose,
+    wgi_version = "current",
+    vaporeg_version = "current"
+  )
 
   extended_data <- extended_data |>
     dplyr::select(dplyr::any_of(c(identifiers, vars)))
 
-  if(verbose) {
-    message(stringr::str_glue("Using {paste(vars, collapse = ", ")} to generate extended uds..."))
+  if (verbose) {
+    message(stringr::str_glue(
+      "Using {paste(vars, collapse = ",
+      ")} to generate extended uds..."
+    ))
     message("Now preparing data for use with mirt...")
   }
 
   extended_data <- prepare_democracy_data(extended_data)
 
-  if(verbose) {
+  if (verbose) {
     message("Now fitting mirt model...")
   }
 
-  extended_uds_model <- mirt::mirt(extended_data |>
-                                     select(-dplyr::any_of(identifiers)),
-                                   model = 1, itemtype = "graded", SE = TRUE,
-                                   verbose = verbose,
-                                   technical = list(NCYCLES = 1000))
+  extended_uds_model <- mirt::mirt(
+    extended_data |>
+      select(-dplyr::any_of(identifiers)),
+    model = 1,
+    itemtype = "graded",
+    SE = TRUE,
+    verbose = verbose,
+    technical = list(NCYCLES = 1000)
+  )
 
-  if(verbose) {
+  if (verbose) {
     print(extended_uds_model)
     print(summary(extended_uds_model))
     print(extended_uds_model@time)
-
   }
 
-  if(verbose) {
+  if (verbose) {
     message("Extracting scores and binding to identifiers...")
   }
 
   extended_uds <- democracy_scores(extended_uds_model)
 
-  extended_uds <- bind_cols(extended_data |>
-                              dplyr::select(any_of(identifiers)),
-                            extended_uds)
+  extended_uds <- bind_cols(
+    extended_data |>
+      dplyr::select(any_of(identifiers)),
+    extended_uds
+  )
 
-  if(verbose) {
+  if (verbose) {
     message("Adding number of measures and finalizing...")
   }
 
-  extended_data_vars <- extended_data  |>
-    tidyr::pivot_longer(-dplyr::any_of(identifiers),
-                        values_drop_na = TRUE) |>
+  extended_data_vars <- extended_data |>
+    tidyr::pivot_longer(-dplyr::any_of(identifiers), values_drop_na = TRUE) |>
     dplyr::group_by(dplyr::across(dplyr::any_of(identifiers))) |>
-    dplyr::summarise(num_measures = dplyr::n_distinct(name),
-                     measures = list(unique(name)))
+    dplyr::summarise(
+      num_measures = dplyr::n_distinct(name),
+      measures = list(unique(name))
+    )
 
   extended_uds <- extended_uds |>
-    dplyr::left_join(extended_data_vars, 
-      by = dplyr::join_by(extended_country_name, GWn, cown, in_GW_system, year))
+    dplyr::left_join(
+      extended_data_vars,
+      by = dplyr::join_by(extended_country_name, GWn, cown, in_GW_system, year)
+    )
 
   extended_uds
-
 }
 
 #' Removes empty rows (rows with all NAs) from a data frame
@@ -673,9 +815,8 @@ generate_extended_uds <- function(verbose = FALSE) {
 #' # Different from
 #' na.omit(df)
 remove_empty_rows <- function(df, vars) {
-
   empty_rows <- df |>
-    dplyr::select({{vars}})
+    dplyr::select({{ vars }})
 
   num_cols <- ncol(empty_rows)
 
@@ -688,4 +829,3 @@ remove_empty_rows <- function(df, vars) {
   df |>
     dplyr::filter(!empty_rows)
 }
-

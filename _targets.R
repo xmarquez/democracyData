@@ -33,98 +33,248 @@ devtools::load_all()
 
 verbose <- TRUE
 
-pmm <- tibble(dataset_name = c("polity_pmm", "munck_pmm", "arat_pmm", "hadenius_pmm",
-                               "bollen_pmm", "mainwaring_pmm", "polyarchy_pmm", "prc_pmm",
-                               "pacl_pmm", "fh_pmm", "vanhanen_pmm", "blm_pmm"),
-              replication_varname = c("pmm_polity", "pmm_munck", "pmm_arat", "pmm_hadenius",
-                                      "pmm_bollen", "pmm_mainwaring", "pmm_polyarchy", "pmm_prc",
-                                      "pmm_pacl", "pmm_freedomhouse", "pmm_vanhanen", "pmm_blm")) |>
-  mutate(obj_name = dataset_name,
-         add_obj_name = paste("add", obj_name, sep = "_"),
-         data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
-         across(any_of(c("replication_varname", "obj_name", "add_obj_name")), rlang::syms))
+pmm <- tibble(
+  dataset_name = c(
+    "polity_pmm",
+    "munck_pmm",
+    "arat_pmm",
+    "hadenius_pmm",
+    "bollen_pmm",
+    "mainwaring_pmm",
+    "polyarchy_pmm",
+    "prc_pmm",
+    "pacl_pmm",
+    "fh_pmm",
+    "vanhanen_pmm",
+    "blm_pmm"
+  ),
+  replication_varname = c(
+    "pmm_polity",
+    "pmm_munck",
+    "pmm_arat",
+    "pmm_hadenius",
+    "pmm_bollen",
+    "pmm_mainwaring",
+    "pmm_polyarchy",
+    "pmm_prc",
+    "pmm_pacl",
+    "pmm_freedomhouse",
+    "pmm_vanhanen",
+    "pmm_blm"
+  )
+) |>
+  mutate(
+    obj_name = dataset_name,
+    add_obj_name = paste("add", obj_name, sep = "_"),
+    data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+    across(
+      any_of(c("replication_varname", "obj_name", "add_obj_name")),
+      rlang::syms
+    )
+  )
 
 
-redownloadable <- tibble(dataset_name = c("blm", "peps", "polityIV", "REIGN", "bti", "bmr", "pacl", "pacl_update", "utip",
-                                          "LIED", "polyarchy", "polyarchy_dimensions", "anckar",
-                                          "vaporeg", "PIPE")) |>
-  mutate(obj_name = dataset_name,
-         add_obj_name = paste("add", obj_name, sep = "_"),
-         data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
-         fun = paste("redownload", dataset_name, sep = "_"),
-         fun = case_when(fun == "redownload_polyarchy" ~ "redownload_polyarchy_original",
-                         fun == "redownload_LIED" ~ "redownload_lied",
-                         fun == "redownload_REIGN" ~ "redownload_reign",
-                         fun == "redownload_PIPE" ~ "redownload_pipe",
-                         TRUE ~ fun),
-         across(any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")), rlang::syms))
+redownloadable <- tibble(
+  dataset_name = c(
+    "blm",
+    "peps",
+    "polityIV",
+    "REIGN",
+    "bti",
+    "bmr",
+    "pacl",
+    "pacl_update",
+    "utip",
+    "LIED",
+    "polyarchy",
+    "polyarchy_dimensions",
+    "anckar",
+    "vaporeg",
+    "PIPE"
+  )
+) |>
+  mutate(
+    obj_name = dataset_name,
+    add_obj_name = paste("add", obj_name, sep = "_"),
+    data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+    fun = paste("redownload", dataset_name, sep = "_"),
+    fun = case_when(
+      fun == "redownload_polyarchy" ~ "redownload_polyarchy_original",
+      fun == "redownload_LIED" ~ "redownload_lied",
+      fun == "redownload_REIGN" ~ "redownload_reign",
+      fun == "redownload_PIPE" ~ "redownload_pipe",
+      TRUE ~ fun
+    ),
+    across(
+      any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")),
+      rlang::syms
+    )
+  )
 
-gwf_df <- tibble(dataset_name = c("gwf_all", "gwf_autocratic"),
-                     dataset_param = c("all", "autocratic")) |>
+gwf_df <- tibble(
+  dataset_name = c("gwf_all", "gwf_autocratic"),
+  dataset_param = c("all", "autocratic")
+) |>
   expand_grid(extend_param = c(TRUE, FALSE)) |>
-  mutate(fun = paste("redownload", dataset_name, sep = "_"),
-         dataset_name = case_when(extend_param ~ paste(dataset_name, "extended", sep = "_"),
-                                  !extend_param ~ dataset_name),
-         obj_name = dataset_name,
-         add_obj_name = paste("add", obj_name, sep = "_"),
-         data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
-         fun = case_when(str_detect(fun, "redownload_gwf") ~ "redownload_gwf",
-                         TRUE ~ fun),
-         across(any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")), rlang::syms))
+  mutate(
+    fun = paste("redownload", dataset_name, sep = "_"),
+    dataset_name = case_when(
+      extend_param ~ paste(dataset_name, "extended", sep = "_"),
+      !extend_param ~ dataset_name
+    ),
+    obj_name = dataset_name,
+    add_obj_name = paste("add", obj_name, sep = "_"),
+    data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+    fun = case_when(
+      str_detect(fun, "redownload_gwf") ~ "redownload_gwf",
+      TRUE ~ fun
+    ),
+    across(
+      any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")),
+      rlang::syms
+    )
+  )
 
 other_extendable <- tibble(dataset_name = c("ulfelder", "magaloni")) |>
   expand_grid(extend_param = c(TRUE, FALSE)) |>
-  mutate(fun = paste("redownload", dataset_name, sep = "_"),
-         dataset_name = case_when(extend_param ~ paste(dataset_name, "extended", sep = "_"),
-                                  !extend_param ~ dataset_name),
-         obj_name = dataset_name,
-         add_obj_name = paste("add", obj_name, sep = "_"),
-         data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
-         across(any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")), rlang::syms))
+  mutate(
+    fun = paste("redownload", dataset_name, sep = "_"),
+    dataset_name = case_when(
+      extend_param ~ paste(dataset_name, "extended", sep = "_"),
+      !extend_param ~ dataset_name
+    ),
+    obj_name = dataset_name,
+    add_obj_name = paste("add", obj_name, sep = "_"),
+    data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+    across(
+      any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")),
+      rlang::syms
+    )
+  )
 
-multi_release <- tibble(dataset_name = c("svmdi", "svmdi", "uds", "uds", "uds"),
-                        release_year_param = c(2020, 2016, 2014, 2011, 2010)) |>
-  mutate(fun = paste("redownload", dataset_name, sep = "_"),
-         dataset_name = paste(dataset_name, release_year_param, sep = "_"),
-         dataset_name = case_when(dataset_name == "svmdi_2020" ~ "svmdi",
-                                  TRUE ~ dataset_name),
-         obj_name = dataset_name,
-         add_obj_name = paste("add", obj_name, sep = "_"),
-         data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
-         across(any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")), rlang::syms))
+multi_release <- tibble(
+  dataset_name = c("svmdi", "svmdi", "uds", "uds", "uds"),
+  release_year_param = c(2020, 2016, 2014, 2011, 2010)
+) |>
+  mutate(
+    fun = paste("redownload", dataset_name, sep = "_"),
+    dataset_name = paste(dataset_name, release_year_param, sep = "_"),
+    dataset_name = case_when(
+      dataset_name == "svmdi_2020" ~ "svmdi",
+      TRUE ~ dataset_name
+    ),
+    obj_name = dataset_name,
+    add_obj_name = paste("add", obj_name, sep = "_"),
+    data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+    across(
+      any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")),
+      rlang::syms
+    )
+  )
 
-preparable <- tibble(dataset_name = c("eiu", "vanhanen", "kailitz", "anrr", "doorenspleet", "mainwaring",
-                                      "prc_gasiorowski", "svolik_regime", "arat"),
-                     data_raw_filename =c("data-raw/EIU-democracy-index-2024.pdf",
-                                          "data-raw/FSD1289/FSD1289/Study/data/daF1289e.csv",
-                                          "data-raw/kailitz.yearly.rds",
-                                          "data-raw/DDCGdata_final.dta",
-                                          "data-raw/Doorenspleet data.csv",
-                                          "data-raw/Mainwaring Linan.txt",
-                                          "data-raw/Gasiorowski.csv",
-                                          "data-raw/regime and no authority spells, country-year, 1946-2008.dta",
-                                          "data-raw/arat-democracy-scores.csv"),
-                     dataset_name_filename = paste(dataset_name, "filename", sep = "_")) |>
-  mutate(obj_name = dataset_name,
-         add_obj_name = paste("add", obj_name, sep = "_"),
-         data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
-         fun = paste("prepare", dataset_name, sep = "_"),
-         fun = case_when(fun == "prepare_prc_gasiorowski" ~ "prepare_prc",
-                         TRUE ~ fun),
-         across(any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")), rlang::syms))
+preparable <- tibble(
+  dataset_name = c(
+    "eiu",
+    "vanhanen",
+    "kailitz",
+    "anrr",
+    "doorenspleet",
+    "mainwaring",
+    "prc_gasiorowski",
+    "svolik_regime",
+    "arat"
+  ),
+  data_raw_filename = c(
+    "data-raw/eiu_wikipedia_snapshot.csv",
+    "data-raw/FSD1289/FSD1289/Study/data/daF1289e.csv",
+    "data-raw/kailitz.yearly.rds",
+    "data-raw/DDCGdata_final.dta",
+    "data-raw/Doorenspleet data.csv",
+    "data-raw/Mainwaring Linan.txt",
+    "data-raw/Gasiorowski.csv",
+    "data-raw/regime and no authority spells, country-year, 1946-2008.dta",
+    "data-raw/arat-democracy-scores.csv"
+  ),
+  dataset_name_filename = paste(dataset_name, "filename", sep = "_")
+) |>
+  mutate(
+    obj_name = dataset_name,
+    add_obj_name = paste("add", obj_name, sep = "_"),
+    data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+    fun = paste("prepare", dataset_name, sep = "_"),
+    fun = case_when(
+      fun == "prepare_prc_gasiorowski" ~ "prepare_prc",
+      TRUE ~ fun
+    ),
+    across(
+      any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")),
+      rlang::syms
+    )
+  )
 
-track_only <- tibble(dataset_name = c("bnr", "bnr_extended",
-                                      "wahman_teorell_hadenius")) |>
-  mutate(obj_name = dataset_name,
-         add_obj_name = paste("add", obj_name, sep = "_"),
-         data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
-         across(any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")), rlang::syms))
+track_only <- tibble(
+  dataset_name = c("bnr", "bnr_extended", "wahman_teorell_hadenius")
+) |>
+  mutate(
+    obj_name = dataset_name,
+    add_obj_name = paste("add", obj_name, sep = "_"),
+    data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+    across(
+      any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")),
+      rlang::syms
+    )
+  )
 
 list(
   ## Country-year coder data
 
   internal_country_data,
 
+  ## Legacy packaged snapshots -----
+
+  tar_target(
+    name = vaporeg_2024_filename,
+    command = "data-raw/vaporeg_2024.rda",
+    format = "file"
+  ),
+
+  tar_target(
+    name = vaporeg_2024,
+    command = {
+      legacy_env <- new.env(parent = emptyenv())
+      load(vaporeg_2024_filename, envir = legacy_env)
+      legacy_env$vaporeg_2024
+    }
+  ),
+
+  tar_target(
+    name = add_vaporeg_2024,
+    command = usethis::use_data(vaporeg_2024, overwrite = TRUE) |>
+      c("data/vaporeg_2024.rda"),
+    format = "file"
+  ),
+
+  tar_target(
+    name = wgi_legacy_filename,
+    command = "data-raw/wgi_legacy.rda",
+    format = "file"
+  ),
+
+  tar_target(
+    name = wgi_legacy,
+    command = {
+      legacy_env <- new.env(parent = emptyenv())
+      load(wgi_legacy_filename, envir = legacy_env)
+      legacy_env$wgi_legacy
+    }
+  ),
+
+  tar_target(
+    name = add_wgi_legacy,
+    command = usethis::use_data(wgi_legacy, overwrite = TRUE) |>
+      c("data/wgi_legacy.rda"),
+    format = "file"
+  ),
 
   ## Democracy Info dataset -----
 
@@ -168,9 +318,12 @@ list(
     name = pmm_replication,
     command = {
       data
-      prepare_pmm_replication_data(pmm_replication_filename,
-                                           verbose = verbose,
-                                           include_in_output = include_in_output)}
+      prepare_pmm_replication_data(
+        pmm_replication_filename,
+        verbose = verbose,
+        include_in_output = include_in_output
+      )
+    }
   ),
 
   ## PMM datasets -----
@@ -181,9 +334,12 @@ list(
       name = obj_name,
       command = {
         data
-        extract_pmm_var(pmm_replication,
-                                replication_varname,
-                                include_in_output = include_in_output)}
+        extract_pmm_var(
+          pmm_replication,
+          replication_varname,
+          include_in_output = include_in_output
+        )
+      }
     )
   ),
 
@@ -205,8 +361,8 @@ list(
       name = obj_name,
       command = {
         data
-        fun(verbose = verbose,
-                    include_in_output = include_in_output)},
+        fun(verbose = verbose, include_in_output = include_in_output)
+      },
     )
   ),
 
@@ -228,10 +384,12 @@ list(
       name = obj_name,
       command = {
         data
-        fun(extend = extend_param,
-                    verbose = verbose,
-                    include_in_output = include_in_output,
-                    dataset = dataset_param)
+        fun(
+          extend = extend_param,
+          verbose = verbose,
+          include_in_output = include_in_output,
+          dataset = dataset_param
+        )
       }
     )
   ),
@@ -252,9 +410,12 @@ list(
       name = obj_name,
       command = {
         data
-        fun(extend = extend_param,
-                    verbose = verbose,
-                    include_in_output = include_in_output)}
+        fun(
+          extend = extend_param,
+          verbose = verbose,
+          include_in_output = include_in_output
+        )
+      }
     )
   ),
 
@@ -276,9 +437,12 @@ list(
       name = obj_name,
       command = {
         data
-        fun(release_year = release_year_param,
-                    verbose = verbose,
-                    include_in_output = include_in_output)}
+        fun(
+          release_year = release_year_param,
+          verbose = verbose,
+          include_in_output = include_in_output
+        )
+      }
     )
   ),
 
@@ -291,7 +455,6 @@ list(
       format = "file"
     )
   ),
-
 
   ## Preparable datasets
 
@@ -310,9 +473,11 @@ list(
       name = obj_name,
       command = {
         data
-        fun(data_raw_filename,
-                    verbose = verbose,
-                    include_in_output = include_in_output)
+        fun(
+          data_raw_filename,
+          verbose = verbose,
+          include_in_output = include_in_output
+        )
       }
     )
   ),
@@ -344,8 +509,10 @@ list(
     name = wgi,
     command = {
       data
-      download_wgi_voice_and_accountability(verbose = verbose,
-                                                    include_in_output = include_in_output)
+      download_wgi_voice_and_accountability(
+        verbose = verbose,
+        include_in_output = include_in_output
+      )
     }
   ),
 
@@ -356,16 +523,17 @@ list(
     format = "file"
   ),
 
-
   ## FH -----
 
   tar_target(
     name = fh,
     command = {
       data
-      download_fh(verbose = verbose,
-                          include_in_output = include_in_output,
-                          include_territories = TRUE)
+      download_fh(
+        verbose = verbose,
+        include_in_output = include_in_output,
+        include_territories = TRUE
+      )
     }
   ),
 
@@ -379,8 +547,11 @@ list(
     name = fh_electoral,
     command = {
       data
-      download_fh_electoral(verbose = verbose,
-                                    include_in_output = include_in_output)}
+      download_fh_electoral(
+        verbose = verbose,
+        include_in_output = include_in_output
+      )
+    }
   ),
 
   tar_target(
@@ -393,8 +564,8 @@ list(
     name = fh_full,
     command = {
       data
-      download_fh_full(verbose = verbose,
-                               include_in_output = include_in_output)}
+      download_fh_full(verbose = verbose, include_in_output = include_in_output)
+    }
   ),
 
   tar_target(
@@ -409,8 +580,11 @@ list(
     name = polity5,
     command = {
       data
-      download_polity_annual(verbose = verbose,
-                                     include_in_output = include_in_output)}
+      download_polity_annual(
+        verbose = verbose,
+        include_in_output = include_in_output
+      )
+    }
   ),
 
   tar_target(
@@ -426,9 +600,12 @@ list(
     name = pitf_p4,
     command = {
       data
-      create_pitf_scores(polityIV,
-                                 verbose = verbose,
-                                 include_in_output = include_in_output)}
+      create_pitf_scores(
+        polityIV,
+        verbose = verbose,
+        include_in_output = include_in_output
+      )
+    }
   ),
 
   tar_target(
@@ -442,9 +619,12 @@ list(
     name = pitf,
     command = {
       data
-      create_pitf_scores(polity5,
-                                 verbose = verbose,
-                                 include_in_output = include_in_output)}
+      create_pitf_scores(
+        polity5,
+        verbose = verbose,
+        include_in_output = include_in_output
+      )
+    }
   ),
 
   tar_target(
@@ -453,7 +633,6 @@ list(
       c("data/pitf.rda"),
     format = "file"
   ),
-
 
   ## Extended UDS ----
 
@@ -479,8 +658,12 @@ list(
     name = vdem_simple,
     command = {
       data
-      prepare_vdem_simple(version = "15.0", verbose = verbose,
-                                  include_in_output = include_in_output)}
+      prepare_vdem_simple(
+        version = "16.0",
+        verbose = verbose,
+        include_in_output = include_in_output
+      )
+    }
   ),
 
   tar_target(
@@ -499,8 +682,27 @@ list(
   ),
 
   tar_target(
+    name = prep_bibliography,
+    command = prepare_bibliography_file(bibliography_file),
+    format = "file"
+  ),
+
+  tar_target(
+    name = vignette_bibliography_file,
+    command = {
+      file.copy(
+        from = prep_bibliography,
+        to = "vignettes/articles/bibfile.bib",
+        overwrite = TRUE
+      )
+      "vignettes/articles/bibfile.bib"
+    },
+    format = "file"
+  ),
+
+  tar_target(
     name = bibliography,
-    command = RefManageR::ReadBib(bibliography_file)
+    command = RefManageR::ReadBib(prep_bibliography)
   ),
 
   tar_target(
@@ -534,9 +736,19 @@ list(
 
   ## README -----
 
-  tar_knit(
-    name = README,
-    path = "README.Rmd"
-  )
+  tar_target(
+    name = README_source,
+    command = "README.Rmd",
+    format = "file"
+  ),
 
+  tar_target(
+    name = README,
+    command = {
+      README_source
+      devtools::build_readme()
+      "README.md"
+    },
+    format = "file"
+  )
 )
