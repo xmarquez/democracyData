@@ -33,6 +33,14 @@ devtools::load_all()
 
 verbose <- TRUE
 
+describe_target <- function(action, dataset = NULL) {
+  if (is.null(dataset)) {
+    action
+  } else {
+    sprintf("%s: %s", action, dataset)
+  }
+}
+
 pmm <- tibble(
   dataset_name = c(
     "polity_pmm",
@@ -67,6 +75,11 @@ pmm <- tibble(
     obj_name = dataset_name,
     add_obj_name = paste("add", obj_name, sep = "_"),
     data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+    target_description = describe_target(
+      "Extract PMM replication scores",
+      dataset_name
+    ),
+    save_description = describe_target("Write packaged dataset", dataset_name),
     across(
       any_of(c("replication_varname", "obj_name", "add_obj_name")),
       rlang::syms
@@ -97,6 +110,11 @@ redownloadable <- tibble(
     obj_name = dataset_name,
     add_obj_name = paste("add", obj_name, sep = "_"),
     data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+    target_description = describe_target(
+      "Download and process archived dataset",
+      dataset_name
+    ),
+    save_description = describe_target("Write packaged dataset", dataset_name),
     fun = paste("redownload", dataset_name, sep = "_"),
     fun = case_when(
       fun == "redownload_polyarchy" ~ "redownload_polyarchy_original",
@@ -125,6 +143,11 @@ gwf_df <- tibble(
     obj_name = dataset_name,
     add_obj_name = paste("add", obj_name, sep = "_"),
     data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+    target_description = describe_target(
+      "Download and process GWF dataset",
+      dataset_name
+    ),
+    save_description = describe_target("Write packaged dataset", dataset_name),
     fun = case_when(
       str_detect(fun, "redownload_gwf") ~ "redownload_gwf",
       TRUE ~ fun
@@ -146,6 +169,11 @@ other_extendable <- tibble(dataset_name = c("ulfelder", "magaloni")) |>
     obj_name = dataset_name,
     add_obj_name = paste("add", obj_name, sep = "_"),
     data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+    target_description = describe_target(
+      "Download and extend dataset",
+      dataset_name
+    ),
+    save_description = describe_target("Write packaged dataset", dataset_name),
     across(
       any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")),
       rlang::syms
@@ -166,6 +194,11 @@ multi_release <- tibble(
     obj_name = dataset_name,
     add_obj_name = paste("add", obj_name, sep = "_"),
     data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+    target_description = describe_target(
+      "Download and process release snapshot",
+      dataset_name
+    ),
+    save_description = describe_target("Write packaged dataset", dataset_name),
     across(
       any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")),
       rlang::syms
@@ -201,6 +234,9 @@ preparable <- tibble(
     obj_name = dataset_name,
     add_obj_name = paste("add", obj_name, sep = "_"),
     data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+    file_description = describe_target("Track raw input file", dataset_name),
+    target_description = describe_target("Prepare dataset", dataset_name),
+    save_description = describe_target("Write packaged dataset", dataset_name),
     fun = paste("prepare", dataset_name, sep = "_"),
     fun = case_when(
       fun == "prepare_prc_gasiorowski" ~ "prepare_prc",
@@ -219,6 +255,10 @@ track_only <- tibble(
     obj_name = dataset_name,
     add_obj_name = paste("add", obj_name, sep = "_"),
     data_file_name = paste("data/", dataset_name, ".rda", sep = ""),
+    save_description = describe_target(
+      "Track packaged dataset file",
+      dataset_name
+    ),
     across(
       any_of(c("replication_varname", "obj_name", "add_obj_name", "fun")),
       rlang::syms
@@ -235,7 +275,8 @@ list(
   tar_target(
     name = vaporeg_2024_filename,
     command = "data-raw/vaporeg_2024.rda",
-    format = "file"
+    format = "file",
+    description = "Track raw legacy VaPoReg 2024 snapshot"
   ),
 
   tar_target(
@@ -244,20 +285,23 @@ list(
       legacy_env <- new.env(parent = emptyenv())
       load(vaporeg_2024_filename, envir = legacy_env)
       legacy_env$vaporeg_2024
-    }
+    },
+    description = "Load legacy VaPoReg 2024 snapshot"
   ),
 
   tar_target(
     name = add_vaporeg_2024,
     command = usethis::use_data(vaporeg_2024, overwrite = TRUE) |>
       c("data/vaporeg_2024.rda"),
-    format = "file"
+    format = "file",
+    description = "Write packaged legacy VaPoReg 2024 snapshot"
   ),
 
   tar_target(
     name = wgi_legacy_filename,
     command = "data-raw/wgi_legacy.rda",
-    format = "file"
+    format = "file",
+    description = "Track raw legacy WGI snapshot"
   ),
 
   tar_target(
@@ -266,14 +310,16 @@ list(
       legacy_env <- new.env(parent = emptyenv())
       load(wgi_legacy_filename, envir = legacy_env)
       legacy_env$wgi_legacy
-    }
+    },
+    description = "Load legacy WGI snapshot"
   ),
 
   tar_target(
     name = add_wgi_legacy,
     command = usethis::use_data(wgi_legacy, overwrite = TRUE) |>
       c("data/wgi_legacy.rda"),
-    format = "file"
+    format = "file",
+    description = "Write packaged legacy WGI snapshot"
   ),
 
   ## Democracy Info dataset -----
@@ -281,19 +327,22 @@ list(
   tar_target(
     name = democracy_info_filename,
     command = "data-raw/democracy_info.csv",
-    format = "file"
+    format = "file",
+    description = "Track democracy_info CSV input"
   ),
 
   tar_target(
     name = democracy_info,
-    command = read_csv(democracy_info_filename)
+    command = read_csv(democracy_info_filename),
+    description = "Read democracy_info metadata"
   ),
 
   tar_target(
     name = add_democracy_info,
     command = usethis::use_data(democracy_info, overwrite = TRUE) |>
       c("data/democracy_info.rda"),
-    format = "file"
+    format = "file",
+    description = "Write packaged democracy_info metadata"
   ),
 
   ## Basic params vars -----
@@ -303,7 +352,8 @@ list(
     command = {
       data
       c("extended_country_name", "GWn", "cown", "in_GW_system")
-    }
+    },
+    description = "Define common identifier columns for prepared datasets"
   ),
 
   ## PMM replication data -----
@@ -311,7 +361,8 @@ list(
   tar_target(
     name = pmm_replication_filename,
     command = "data-raw/democracy1946.2008.rda",
-    format = "file"
+    format = "file",
+    description = "Track PMM replication input file"
   ),
 
   tar_target(
@@ -323,7 +374,8 @@ list(
         verbose = verbose,
         include_in_output = include_in_output
       )
-    }
+    },
+    description = "Prepare PMM replication source data"
   ),
 
   ## PMM datasets -----
@@ -339,7 +391,8 @@ list(
           replication_varname,
           include_in_output = include_in_output
         )
-      }
+      },
+      description = target_description
     )
   ),
 
@@ -349,7 +402,8 @@ list(
       name = add_obj_name,
       command = usethis::use_data(obj_name, overwrite = TRUE) |>
         c(data_file_name),
-      format = "file"
+      format = "file",
+      description = save_description
     )
   ),
 
@@ -363,6 +417,7 @@ list(
         data
         fun(verbose = verbose, include_in_output = include_in_output)
       },
+      description = target_description
     )
   ),
 
@@ -372,7 +427,8 @@ list(
       name = add_obj_name,
       command = usethis::use_data(obj_name, overwrite = TRUE) |>
         c(data_file_name),
-      format = "file"
+      format = "file",
+      description = save_description
     )
   ),
 
@@ -390,7 +446,8 @@ list(
           include_in_output = include_in_output,
           dataset = dataset_param
         )
-      }
+      },
+      description = target_description
     )
   ),
 
@@ -400,7 +457,8 @@ list(
       name = add_obj_name,
       command = usethis::use_data(obj_name, overwrite = TRUE) |>
         c(data_file_name),
-      format = "file"
+      format = "file",
+      description = save_description
     )
   ),
 
@@ -415,7 +473,8 @@ list(
           verbose = verbose,
           include_in_output = include_in_output
         )
-      }
+      },
+      description = target_description
     )
   ),
 
@@ -425,7 +484,8 @@ list(
       name = add_obj_name,
       command = usethis::use_data(obj_name, overwrite = TRUE) |>
         c(data_file_name),
-      format = "file"
+      format = "file",
+      description = save_description
     )
   ),
 
@@ -442,7 +502,8 @@ list(
           verbose = verbose,
           include_in_output = include_in_output
         )
-      }
+      },
+      description = target_description
     )
   ),
 
@@ -452,7 +513,8 @@ list(
       name = add_obj_name,
       command = usethis::use_data(obj_name, overwrite = TRUE) |>
         c(data_file_name),
-      format = "file"
+      format = "file",
+      description = save_description
     )
   ),
 
@@ -463,7 +525,8 @@ list(
     tar_target(
       name = dataset_name_filename,
       command = data_raw_filename,
-      format = "file"
+      format = "file",
+      description = file_description
     )
   ),
 
@@ -478,7 +541,8 @@ list(
           verbose = verbose,
           include_in_output = include_in_output
         )
-      }
+      },
+      description = target_description
     )
   ),
 
@@ -488,7 +552,8 @@ list(
       name = add_obj_name,
       command = usethis::use_data(obj_name, overwrite = TRUE) |>
         c(data_file_name),
-      format = "file"
+      format = "file",
+      description = save_description
     )
   ),
 
@@ -499,7 +564,8 @@ list(
     tar_target(
       name = add_obj_name,
       command = c(data_file_name),
-      format = "file"
+      format = "file",
+      description = save_description
     )
   ),
 
@@ -513,14 +579,16 @@ list(
         verbose = verbose,
         include_in_output = include_in_output
       )
-    }
+    },
+    description = "Download and process current WGI voice and accountability"
   ),
 
   tar_target(
     name = add_wgi,
     command = usethis::use_data(wgi, overwrite = TRUE) |>
       c("data/wgi.rda"),
-    format = "file"
+    format = "file",
+    description = "Write packaged current WGI dataset"
   ),
 
   ## FH -----
@@ -534,13 +602,15 @@ list(
         include_in_output = include_in_output,
         include_territories = TRUE
       )
-    }
+    },
+    description = "Download and process archived Freedom House scores"
   ),
 
   tar_target(
     name = add_fh,
     command = usethis::use_data(fh, overwrite = TRUE) |>
-      c("data/fh.rda")
+      c("data/fh.rda"),
+    description = "Write packaged Freedom House dataset"
   ),
 
   tar_target(
@@ -551,13 +621,15 @@ list(
         verbose = verbose,
         include_in_output = include_in_output
       )
-    }
+    },
+    description = "Download and process Freedom House electoral scores"
   ),
 
   tar_target(
     name = add_fh_electoral,
     command = usethis::use_data(fh_electoral, overwrite = TRUE) |>
-      c("data/fh_electoral.rda")
+      c("data/fh_electoral.rda"),
+    description = "Write packaged Freedom House electoral dataset"
   ),
 
   tar_target(
@@ -565,13 +637,15 @@ list(
     command = {
       data
       download_fh_full(verbose = verbose, include_in_output = include_in_output)
-    }
+    },
+    description = "Download and process full archived Freedom House dataset"
   ),
 
   tar_target(
     name = add_fh_full,
     command = usethis::use_data(fh_full, overwrite = TRUE) |>
-      c("data/fh_full.rda")
+      c("data/fh_full.rda"),
+    description = "Write packaged full Freedom House dataset"
   ),
 
   ## Polity 5 -----
@@ -584,14 +658,16 @@ list(
         verbose = verbose,
         include_in_output = include_in_output
       )
-    }
+    },
+    description = "Download and process current annual Polity scores"
   ),
 
   tar_target(
     name = add_polity5,
     command = usethis::use_data(polity5, overwrite = TRUE) |>
       c("data/polity5.rda"),
-    format = "file"
+    format = "file",
+    description = "Write packaged annual Polity dataset"
   ),
 
   ## PITF -----
@@ -605,14 +681,16 @@ list(
         verbose = verbose,
         include_in_output = include_in_output
       )
-    }
+    },
+    description = "Create PITF scores using archived Polity IV"
   ),
 
   tar_target(
     name = add_pitf_p4,
     command = usethis::use_data(pitf_p4, overwrite = TRUE) |>
       c("data/pitf_p4.rda"),
-    format = "file"
+    format = "file",
+    description = "Write packaged PITF scores from Polity IV"
   ),
 
   tar_target(
@@ -624,14 +702,16 @@ list(
         verbose = verbose,
         include_in_output = include_in_output
       )
-    }
+    },
+    description = "Create PITF scores using annual Polity data"
   ),
 
   tar_target(
     name = add_pitf,
     command = usethis::use_data(pitf, overwrite = TRUE) |>
       c("data/pitf.rda"),
-    format = "file"
+    format = "file",
+    description = "Write packaged PITF scores"
   ),
 
   ## Extended UDS ----
@@ -639,17 +719,57 @@ list(
   tar_target(
     name = extended_uds,
     command = {
-      data
+      list(
+        data,
+        anckar,
+        anrr,
+        arat,
+        blm,
+        bmr,
+        add_bnr_extended,
+        bti,
+        svmdi,
+        doorenspleet,
+        eiu,
+        fh,
+        fh_electoral,
+        gwf_all_extended,
+        LIED,
+        magaloni_extended,
+        mainwaring,
+        pacl,
+        pacl_update,
+        peps,
+        pitf,
+        bollen_pmm,
+        hadenius_pmm,
+        munck_pmm,
+        polityIV,
+        polyarchy,
+        polyarchy_dimensions,
+        prc_gasiorowski,
+        REIGN,
+        svolik_regime,
+        ulfelder_extended,
+        utip,
+        vdem_simple,
+        vaporeg,
+        vanhanen,
+        wgi,
+        add_wahman_teorell_hadenius
+      )
       generate_extended_uds(verbose = verbose)
     },
-    error = "continue"
+    error = "continue",
+    description = "Fit extended UDS scores from current downstream datasets"
   ),
 
   tar_target(
     name = add_extended_uds,
     command = usethis::use_data(extended_uds, overwrite = TRUE) |>
       c("data/extended_uds.rda"),
-    format = "file"
+    format = "file",
+    description = "Write packaged extended UDS scores"
   ),
 
   ## VDEM (simplified) -----
@@ -663,14 +783,16 @@ list(
         verbose = verbose,
         include_in_output = include_in_output
       )
-    }
+    },
+    description = "Prepare simplified current V-Dem dataset"
   ),
 
   tar_target(
     name = add_vdem_simple,
     command = usethis::use_data(vdem_simple, overwrite = TRUE) |>
       c("data/vdem_simple.rda"),
-    format = "file"
+    format = "file",
+    description = "Write packaged simplified V-Dem dataset"
   ),
 
   ## Bibliography file
@@ -678,13 +800,15 @@ list(
   tar_target(
     name = bibliography_file,
     command = "data-raw/bibfile.bib",
-    format = "file"
+    format = "file",
+    description = "Track raw bibliography export"
   ),
 
   tar_target(
     name = prep_bibliography,
     command = prepare_bibliography_file(bibliography_file),
-    format = "file"
+    format = "file",
+    description = "Sanitize bibliography export for package outputs"
   ),
 
   tar_target(
@@ -697,19 +821,22 @@ list(
       )
       "vignettes/articles/bibfile.bib"
     },
-    format = "file"
+    format = "file",
+    description = "Copy cleaned bibliography into article sources"
   ),
 
   tar_target(
     name = bibliography,
-    command = RefManageR::ReadBib(prep_bibliography)
+    command = RefManageR::ReadBib(prep_bibliography),
+    description = "Read cleaned bibliography into package object"
   ),
 
   tar_target(
     name = add_bibliography,
     command = usethis::use_data(bibliography, overwrite = TRUE) |>
       c("data/bibliography.rda"),
-    format = "file"
+    format = "file",
+    description = "Write packaged bibliography object"
   ),
 
   ## State system data for country_year_coder -----
@@ -739,7 +866,8 @@ list(
   tar_target(
     name = README_source,
     command = "README.Rmd",
-    format = "file"
+    format = "file",
+    description = "Track README source file"
   ),
 
   tar_target(
@@ -749,6 +877,7 @@ list(
       devtools::build_readme()
       "README.md"
     },
-    format = "file"
+    format = "file",
+    description = "Render README from README.Rmd"
   )
 )
