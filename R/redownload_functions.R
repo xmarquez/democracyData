@@ -664,11 +664,28 @@ redownload_vaporeg <- function(url, verbose = TRUE, return_raw = FALSE, ...) {
     )
   }
 
+  original_nrow <- nrow(vaporeg)
+
   if (verbose) {
-    message("Returning VaPoReg data with the March 2026 upstream schema.")
+    message(sprintf("Original dataset has %d rows.", original_nrow))
+    message("Processing the VaPoReg data - adding state system info...")
   }
 
-  vaporeg
+  vaporeg <- prepare_vaporeg_for_standardization(vaporeg, ...)
+
+  if (verbose) {
+    message(sprintf(
+      "Resulting dataset after processing has %d rows.",
+      nrow(vaporeg)
+    ))
+    if (original_nrow != nrow(vaporeg)) {
+      message(
+        "Note: the number of rows in the processed VaPoReg data is different from the number of rows in the original data."
+      )
+    }
+  }
+
+  standardize_columns(vaporeg, country_name, cowcode, verbose = verbose)
 }
 
 #' @rdname redownload_blm

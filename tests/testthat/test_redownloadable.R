@@ -118,16 +118,19 @@ test_that("VaPoReg redownloads correctly", {
   expect_silent(vaporeg_redownloaded <- redownload_vaporeg(verbose = FALSE))
   expect_message(
     vaporeg_redownloaded <- redownload_vaporeg(verbose = TRUE),
-    "Returning VaPoReg data with the March 2026 upstream schema"
+    "Processing the VaPoReg data - adding state system info"
   )
-  expect_equal(ncol(vaporeg_redownloaded), 40)
+  expect_equal(ncol(vaporeg_redownloaded), 46)
   expect_equal(max(vaporeg_redownloaded$year), 2025)
-  expect_false(
-    any(
+  expect_true(
+    all(
       c(
+        "vaporeg_country",
+        "vaporeg_cowcode",
         "extended_country_name",
         "GWn",
         "cown",
+        "in_GW_system",
         "vaporeg_binary_strict",
         "vaporeg_binary_non_strict",
         "vaporeg_trichotomous"
@@ -135,6 +138,7 @@ test_that("VaPoReg redownloads correctly", {
         names(vaporeg_redownloaded)
     )
   )
+  expect_false(any(c("country_name", "cowcode") %in% names(vaporeg_redownloaded)))
   expect_identical(vaporeg, vaporeg_redownloaded)
 })
 

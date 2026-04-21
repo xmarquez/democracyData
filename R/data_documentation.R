@@ -1777,9 +1777,11 @@
 #' The Varieties of Political Regimes (VaPoReg) dataset
 #'
 #' `vaporeg` contains the March 2026 VaPoReg release in its current
-#' country-year schema. The package does not rename these variables into the
-#' legacy `democracyData` interface; use [vaporeg_2024] for the archived legacy
-#' schema.
+#' country-year schema. To follow package conventions, `democracyData` renames
+#' the upstream `country_name` and `cowcode` columns to `vaporeg_country` and
+#' `vaporeg_cowcode`, adds standardized state-system identifiers, and derives
+#' packaged democracy indicators from the current VaPoReg classifications. Use
+#' [vaporeg_2024] for the archived legacy schema.
 #'
 #' @section Introduction:
 #'
@@ -1795,7 +1797,8 @@
 #'
 #'   \describe{
 #'
-#'   \item{country_name}{Political unit name.}
+#'   \item{vaporeg_country}{Political unit name. This is the packaged name of
+#'   the upstream `country_name` column.}
 #'
 #'   \item{year}{Calendar year. Annual codings use July 1 as the reference date.}
 #'
@@ -1835,7 +1838,8 @@
 #'   \item{vaporeg_identifier}{VaPoReg unit identifier. The codebook describes
 #'   this as an identifier based on the Correlates of War dataset.}
 #'
-#'   \item{cowcode}{Correlates of War country code, where available.}
+#'   \item{vaporeg_cowcode}{Correlates of War country code, where available.
+#'   This is the packaged name of the upstream `cowcode` column.}
 #'
 #'   \item{vaporeg_dpa_country}{Dominant political authority in cases of dependence.}
 #'
@@ -1847,6 +1851,15 @@
 #'
 #'   \item{vaporeg_dpa_regcompact}{Compact regime classification of the dominant
 #'   political authority.}
+#'
+#'   \item{vaporeg_binary_strict}{A dichotomous democracy indicator coded 1
+#'   only for the most demanding VaPoReg democracy category.}
+#'
+#'   \item{vaporeg_binary_non_strict}{A dichotomous democracy indicator coded 1
+#'   for both full and defective democracies.}
+#'
+#'   \item{vaporeg_trichotomous}{A trichotomous democracy indicator coded 2 for
+#'   full democracy, 1 for defective democracy, and 0 otherwise.}
 #'
 #'   \item{vaporeg_monarchy}{Monarchy status. Codes: 10 Autocratic Monarchy;
 #'   20 Governed by Autocratic Monarchy; 30 Constitutional Monarchy;
@@ -1905,6 +1918,7 @@
 #'
 #'   }
 #'
+#' @template standard-variables
 #' @family democracy
 #' @family institutions
 #' @family dichotomous democracy indexes

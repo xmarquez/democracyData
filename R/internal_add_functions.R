@@ -698,6 +698,16 @@ standardize_kailitz <- function(
 }
 
 prepare_vaporeg_for_standardization <- function(vaporeg, ...) {
+  if ("vaporeg_country" %in% names(vaporeg) && !"country_name" %in% names(vaporeg)) {
+    vaporeg <- vaporeg |>
+      dplyr::rename(country_name = .data$vaporeg_country)
+  }
+
+  if ("vaporeg_cowcode" %in% names(vaporeg) && !"cowcode" %in% names(vaporeg)) {
+    vaporeg <- vaporeg |>
+      dplyr::rename(cowcode = .data$vaporeg_cowcode)
+  }
+
   vaporeg |>
     dplyr::filter(
       !(is.na(.data$vaporeg_identifier) &
@@ -725,7 +735,6 @@ prepare_vaporeg_for_standardization <- function(vaporeg, ...) {
       verbose = FALSE
     ) |>
     dplyr::mutate(
-      vaporeg_country = .data$country_name,
       extended_country_name = dplyr::case_when(
         is.na(.data$extended_country_name) &
           .data$country_name == "Alaska" ~ "Alaska",
@@ -824,8 +833,6 @@ standardize_vaporeg <- function(
     } else {
       vaporeg <- democracyData::vaporeg
     }
-
-    vaporeg <- prepare_vaporeg_for_standardization(vaporeg, ...)
   } else {
     if (force_redownload && verbose) {
       message(
