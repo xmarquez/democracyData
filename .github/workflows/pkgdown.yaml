@@ -45,6 +45,25 @@ jobs:
             local::.
           needs: website
 
+      - name: Debug quarto articles
+        run: |
+          options(error = function() {
+            traceback(2)
+            quit(save = "no", status = 1, runLast = FALSE)
+          })
+          articles <- list.files("vignettes/articles", pattern = "\\.qmd$", full.names = TRUE)
+          for (article in articles) {
+            message("\n=== Rendering ", article, " ===\n")
+            quarto::quarto_render(
+              input = article,
+              execute_dir = dirname(article),
+              quiet = FALSE,
+              debug = TRUE,
+              execute_debug = TRUE
+            )
+          }
+        shell: Rscript {0}
+
       - name: Build site
         run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
         shell: Rscript {0}
