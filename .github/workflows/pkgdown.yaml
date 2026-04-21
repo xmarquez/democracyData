@@ -32,7 +32,17 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::pkgdown, any::quarto, local::.
+          extra-packages: >-
+            any::pkgdown,
+            any::quarto,
+            any::tidyverse,
+            any::corrr,
+            any::factoextra,
+            any::ggridges,
+            any::skimr,
+            any::dendextend,
+            any::viridis,
+            local::.
           needs: website
 
       - name: Build site
