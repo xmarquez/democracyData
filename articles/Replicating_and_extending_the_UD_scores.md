@@ -371,7 +371,7 @@ replication_2011_model@time
 ```
 
     TOTAL:   Data  Estep  Mstep     SE   Post
-     5.053  0.099  0.599  3.424  0.906  0.000 
+     5.195  0.102  0.624  3.530  0.913  0.001 
 
 We can easily check that this model converges and that it accounts for
 most of the variance in the democracy indexes:
@@ -1029,7 +1029,7 @@ panel_model@time
 ```
 
     TOTAL:   Data  Estep  Mstep     SE   Post
-     7.996  0.053  1.060  5.804  1.054  0.001 
+     8.242  0.054  1.144  5.927  1.085  0.001 
 
 ``` r
 summary(panel_model)
@@ -1207,7 +1207,7 @@ panel_model@time
 ```
 
     TOTAL:   Data  Estep  Mstep     SE   Post
-    15.693  0.035  0.791 10.579  4.223  0.000 
+    16.011  0.038  0.803 10.744  4.358  0.001 
 
 ``` r
 summary(panel_model)
