@@ -4,6 +4,17 @@ author: "Xavier Marquez"
 date: "`r format(Sys.Date())`"
 bibliography: bibfile.bib
 csl: american-political-science-review.csl
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    code-fold: true
+    code-tools: true
+    fig-cap-location: top
+    tbl-cap-location: top
+    smooth-scroll: true
+    link-external-icon: true
 execute:
   echo: false
   warning: false
@@ -63,6 +74,8 @@ long_data <- anti_join(long_data, duplicated)
 [VDem](../../reference/vdem_simple.html) and [LIED](../../reference/LIED.html) code the largest total number of country-years, while specialist indexes like [BLM](../../reference/blm.html) (which covers only 5 countries in Latin America) code the smallest number. Given the increase in the number of states in the state system, it's no surprise that coverage increases greatly after WWII, with many datasets covering a large number of countries. 
 
 ```{r}
+#| label: fig-temporal-coverage-datasets
+#| fig-cap: "Temporal coverage of each dataset, ordered by total number of country-years. Shaded red bands mark the American and French revolutions, the First and Second World Wars, and the end of the Cold War."
 #| fig-height: 12
 #| warning: false
 #| message: false
@@ -84,6 +97,8 @@ ggplot(long_data |>
 ```
 
 ```{r}
+#| label: fig-temporal-coverage-measures
+#| fig-cap: "Temporal coverage of every individual democracy measure, ordered by total number of country-years."
 #| fig-height: 20
 #| warning: false
 #| message: false
@@ -106,6 +121,8 @@ ggplot() +
 As we can see, the majority of datasets measure democracy between the end of the Second World War and the first two decades after the end of the Cold War. The most heavily measured country is the United States; the earliest measurement is for Iran (1502, in the Ulfelder extended dataset; this is the regime start date). The vast majority of measurements are after 1945 (bluer = more measurements of democracy for a given country-year), but most datasets created in the 2000s were not updated, so the number of measurements decreases post 2010 (only a few datasets are updated to 2020).
 
 ```{r}
+#| label: fig-coverage-by-country
+#| fig-cap: "Coverage of democracy measures per country or territory, ordered by total number of measurements. Alpha shading marks whether the unit is in the Gleditsch-Ward state system in that year."
 #| fig-height: 30
 #| warning: false
 #| message: false
@@ -139,6 +156,8 @@ ggplot(data = long_data |>
 There can be a fair amount of disagreement in these measures, especially at regime transition points (see article on correlations between measures for more discussion). Consider the USA, Venezuela, and Russia (darker colors = more democratic):
 
 ```{r}
+#| label: fig-coverage-usa
+#| fig-cap: "Measurements of democracy for the United States of America across all indexes, rescaled to 0-1."
 #| fig-height: 20
 long_data |>
   filter(extended_country_name == "United States of America") |>
@@ -156,6 +175,8 @@ long_data |>
 ```
 
 ```{r}
+#| label: fig-coverage-venezuela
+#| fig-cap: "Measurements of democracy for Venezuela across all indexes, rescaled to 0-1."
 #| fig-height: 20
 long_data |>
   filter(extended_country_name == "Venezuela") |>
@@ -173,6 +194,8 @@ long_data |>
 ```
 
 ```{r}
+#| label: fig-coverage-russia
+#| fig-cap: "Measurements of democracy for Russia / the Soviet Union across all indexes, rescaled to 0-1."
 #| fig-height: 20
 long_data |>
   filter(extended_country_name == "Russia (Soviet Union)") |>
@@ -192,6 +215,8 @@ long_data |>
 We can also take a look at the average level of democracy for each measure, across the world. As we can see, the world has become more democratic (darker colors = more democratic), though the particular moment at which this happened varies from measure to measure.
 
 ```{r}
+#| label: fig-world-averages-by-dataset
+#| fig-cap: "Average level of democracy for the world by year, by dataset (rescaled to 0-1, darker = more democratic). Alpha shading reflects the number of countries measured in each year."
 #| fig-height: 12
 long_data |>
   group_by(dataset, year) |>
@@ -215,6 +240,8 @@ long_data |>
 ```
 
 ```{r}
+#| label: fig-world-averages-by-measure
+#| fig-cap: "Average level of democracy for the world by year, by individual measure (rescaled to 0-1, darker = more democratic)."
 #| message: false
 #| warning: false
 #| fig-height: 15
@@ -242,6 +269,8 @@ long_data |>
 Finally, we visualize the average level of democracy per country (averaging across all measures that code a country-year; darker colors = more democratic).
 
 ```{r}
+#| label: fig-average-level-by-country
+#| fig-cap: "Average level of democracy per country, averaged across all measures that code a given country-year (rescaled to 0-1, darker = more democratic)."
 #| message: false
 #| warning: false
 #| fig-height: 30

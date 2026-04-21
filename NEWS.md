@@ -12,7 +12,7 @@
 
 * Added `wgi_legacy`, an archived snapshot of the pre-0.7.0 WGI series (1996-2023) with the same variable schema as the revised `wgi` object.
 
-* **Freedom House.** Freedom House moved their machine-readable FIW data to email-request distribution in 2026. `fh`, `fh_full`, and `fh_electoral` therefore remain frozen at the 2024 report / 2025 release.
+* **Freedom House.** Freedom House moved their machine-readable FIW data to email-request distribution in 2026. `fh`, `fh_full`, and `fh_electoral` therefore remain frozen at the 2025 release.
 
 * **Freedom House download functions.** `download_fh()`, `download_fh_full()`, and `download_fh_electoral()` now explicitly target the archived 2025 release and are soft-deprecated to reflect that Freedom House no longer provides the latest machine-readable data as a public direct download.
 

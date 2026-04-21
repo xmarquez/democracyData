@@ -4,6 +4,25 @@ author: "Xavier Marquez"
 date: "`r format(Sys.Date())`"
 bibliography: bibfile.bib
 csl: american-political-science-review.csl
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    code-fold: true
+    code-tools: true
+    fig-cap-location: top
+    tbl-cap-location: top
+    smooth-scroll: true
+    link-external-icon: true
+execute:
+  echo: true
+  warning: false
+  message: false
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: "#>"
 ---
 
 We can use this package to replicate and extend the [Unified Democracy Scores](http://www.unified-democracy-scores.org/) of @pmm2010 (which are no longer being updated or maintained), and in general to calculate latent variable indexes of democracy.[^workingPaper] This article is a modified version of the vignette for my package [QuickUDS](https://xmarquez.github.io/QuickUDS), which I am no longer actively maintaining; I am slowly migrating the functions in that package to this package to avoid having to update two different data sets of democracy measures.
@@ -61,7 +80,7 @@ In particular, `prepare_democracy_data()` will try to do the following on your d
 
 * If a selected index contains the string `bollen`, the function assumes the index is Bollen's [@bollen2001] 0-100 democracy score, and cuts it into 10 intervals with the following cutoffs: 10,20,30,40,50,60,70,80, and 90. The resulting score is ordinal from 1 to 10 (following Pemstein, Meserve, and Melton's advice).
 
-* If a selected index contains the string `wgi`, the function assumes the index is the World Governance Indicator's "Voice and Accountability" index [@wgi2017], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
+* If a selected index contains the string `wgi`, the function assumes the index is the World Governance Indicator's "Voice and Accountability" index [@wgi2017]. Note that as of the 2025 data release, the WGI team rebuilt the aggregation model and recomputed all estimates back to 1996, so values returned by `download_wgi_voice_and_accountability()` are **not comparable** to those used in pre-0.7.0 releases of this package; the prior series is preserved as `wgi_legacy`. The function cuts the index into 20 categories, producing an ordinal score from 1 to 20.
 
 * If a selected index contains the string `eiu`, the function assumes the index is the Economist Intelligence Unit's democracy index [@eiu2025], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
 
@@ -91,8 +110,8 @@ In particular, `prepare_democracy_data()` will try to do the following on your d
 * `bmr` [assumes it's from @bmr2012]
 * `doorenspleet` [assumes it's from @doorenspleet2000]
 * `dsvmdi` [assumes it's the discrete machine-learning index @svmdi2018]
-* `e_v2x` [assumes it's one of the "ordinal" indexes from the V-dem project, @vdem15codebook]
-* `fh` or `freedomhouse` [assumes it's from @fh2025]
+* `e_v2x` [assumes it's one of the "ordinal" indexes from the V-dem project, @vdem16codebook]
+* `fh` or `freedomhouse` [assumes it's from @fh2025; note that the packaged Freedom House objects (`fh`, `fh_full`, `fh_electoral`) are frozen at the 2025 release (data through 2024), because Freedom House moved to email-request distribution in 2026]
 * `gwf` [assumes it's from @gwf2014 - the dichotomous democracy indicator only]
 * `kailitz` [assumes it's from from @kailitz2013 - democracy/electoral autocracy/non-democracy indicator only]
 * `lied` or `lexical_index` [assumes it's from @LIED2015]
@@ -193,10 +212,10 @@ For example, suppose we want to use:
 
 * The dichotomous indicator of democracy, adjusted for female suffrage, in version 3.0 of the Boix, Miller and Rosato dataset of political regimes [@bmr2012]
 * The full extent of the Political Regime Change dataset [@prc_gasiorowski2002; @Gasiorowski1996], Vanhanen's index of democratization [@vanhanen2019], Bowman, Lehoucq, and Mahoney's data on Central America [@blm2005] and Mainwaring, Brinks and Perez-Linan's data on Latin America [@mainwaring2014], all of which go back to the beginning of the 20th century or before but are not used to their fullest extent in the official UD releases.
-* One of the new V-Dem indexes of democracy, ordinal or continuous [@vdem15codebook]
+* One of the new V-Dem indexes of democracy, ordinal or continuous [@vdem16codebook]
 * Renske Doorenspleet's dichotomous indicator of democracy including suffrage info [@doorenspleet2000]
-* The World Governance Indicator's latest Voice and Accountability index 
-* The most current release of Freedom House's data, to 2020, and the most current Polity data, to 2018
+* The World Governance Indicator's latest Voice and Accountability index (note: the WGI was re-estimated under a new methodology in 2025, so current values are not comparable to those used in pre-0.7.0 analyses; the prior series is preserved as `wgi_legacy` for reproducibility)
+* The archived 2025 release of Freedom House's data (data through 2024, frozen because Freedom House no longer distributes machine-readable FIW data as a public download), and Polity 5 data through its most recent available update
 * The indicators of democracy in various autocratic regime datasets [@gwf2014; @svolikPoliticsAuthoritarianRule2012a; @kailitz2013; @wahman_teorell_hadenius2013]
 * The 7-level Lexical Index of Democracy and Autocracy [@LIED2015]
 * Jay Ulfelder's dichotomous indicator of democracy [@ulfelder2012]
@@ -245,9 +264,11 @@ extended_scores <- extended_scores |>
 One important point to note about latent variable democracy scores is that they are normalized with mean zero and standard deviation one, so a score of 1 just means that the country-year is 1 standard deviation more democratic than the average country-year in the sample. But this means that adding extra country-years to our model will typically result in scores that have a higher mean (though usually smaller standard errors) than the original UD model, given that the world has become substantially more democratic over the last two centuries:
 
 ```{r}
+#| label: fig-extended-vs-uds2014
+#| fig-cap: "Extended replication scores vs. the 2014 UDS release, for selected countries (1946-2008)."
 #| fig-height: 8
 #| fig-width: 7
-countries <- c("United States of America", 
+countries <- c("United States of America",
                "United Kingdom","Argentina",
                "Chile","Venezuela","Spain")
 
@@ -278,10 +299,12 @@ ggplot(data = data,
 If necessary, one can therefore "match" the extended scores to the official UD release by substracting the mean of the extended scores for the period of the UD release one wants to match from the extended scores (that is, making the mean of the extended scores equal to zero for the period of adjustment):
 
 ```{r}
+#| label: fig-matched-extended-scores
+#| fig-cap: "Extended replication scores, mean-adjusted to match the 2014 UDS release period, for selected countries."
 #| fig-height: 8
 #| fig-width: 7
 
-matched_data <- extended_scores |> 
+matched_data <- extended_scores |>
   filter(!is.na(uds_2014_mean)) |>
   mutate(z1_matched = z1 - mean(z1, na.rm = TRUE), 
          z1_pct975_matched = z1_pct975 - mean(z1, na.rm = TRUE), 
@@ -328,6 +351,8 @@ extended_scores |> filter(index != z1_as_prob)
 It is also possible to to set the cutpoint for this index at, for example, the average cutpoint in the latent variable of the dichotomous indexes of democracy (so that 0.5 correponds more naturally to the point at which a regime could be either democratic or non-democratic according to the dichotomous measures of democracy included in your model). These scores are also automatically calculated (they are in the column `z1_adj`) but they can also be manually added as follows: 
 
 ```{r}
+#| label: fig-extended-scores-probability
+#| fig-cap: "Extended scores transformed to a 0-1 probability scale, with the cutpoint set at the average cutpoint of the dichotomous rater indicators."
 #| fig-height: 8
 #| fig-width: 7
 cutpoints_extended <- cutpoints(extended_model)
@@ -364,7 +389,7 @@ ggplot(data = extended_scores |> filter(extended_country_name %in% countries),
   facet_wrap(~extended_country_name,ncol=2)  
 ```
 
-A pre-computed and documented version of the extended UDS scores, with data from all the indexes mentioned above, plus the participation-enhanced Polity Scores of @peps2006, a trichotomous democracy indicator calculated from Magaloni, Min, and Chu's "Autocracies of the World" datset [@MagaloniChuMin2013], a dichotomous democracy indicator calculated from @utip2008, the REIGN dataset of @reign2016, which extends @gwf2014, a dichotomous democracy indicator from @anrr2019, the Bertelsmann Transformation index [@bti2026], the new Varieties of Political Regimes dataset [@vaporeg32dataset], and an indicator of democracy used by the Political Instability Task Force [@pitf2010; @pitf2015], is included with the package; it can be loaded by simply typing `extended_uds`. Use `?extended_uds` to examine the documentation for all its variables, and see my working paper ([Marquez 2016](http://ssrn.com/abstract=2753830)) for more detail on the data and its uses.
+A pre-computed and documented version of the extended UDS scores, with data from all the indexes mentioned above, plus the participation-enhanced Polity Scores of @peps2006, a trichotomous democracy indicator calculated from Magaloni, Min, and Chu's "Autocracies of the World" datset [@MagaloniChuMin2013], a dichotomous democracy indicator calculated from @utip2008, the REIGN dataset of @reign2016, which extends @gwf2014, a dichotomous democracy indicator from @anrr2019, the Bertelsmann Transformation index [@bti2026], the Varieties of Political Regimes dataset [@vaporeg32dataset] (the 0.7.0 release refreshed VaPoReg to the March 2026 upstream schema; the legacy pre-0.7.0 VaPoReg variables are preserved separately as `vaporeg_2024`), and an indicator of democracy used by the Political Instability Task Force [@pitf2010; @pitf2015], is included with the package; it can be loaded by simply typing `extended_uds`. The `extended_uds` object shipped with 0.7.0 was rebuilt using the revised WGI and current VaPoReg inputs alongside the other refreshed datasets. Use `?extended_uds` to examine the documentation for all its variables, and see my working paper ([Marquez 2016](http://ssrn.com/abstract=2753830)) for more detail on the data and its uses.
 
 The function `generate_extended_uds()` recreates these scores in one line of code, at the cost of some flexibility. 
 
@@ -373,11 +398,13 @@ The function `generate_extended_uds()` recreates these scores in one line of cod
 We can also use this method to create indexes from specific types of scores, such as dichotomous measures of democracy. Here we compute a 2-parameter logistic model from all dichotomous indexes of democracy (excluding near-duplicates):
 
 ```{r}
+#| label: fig-dichotomous-only-scores
+#| fig-cap: "Latent democracy scores fit only from dichotomous raters (2-parameter logistic model), on the 0-1 probability scale."
 dichotomous_dem <- all_dem |>
   select(any_of(identifiers), where(~n_distinct(.) <= 3))  |>
-  select(-pacl, 
-         -bmr_democracy_omitteddata, -bmr_democracy, 
-         -wth_democ1, 
+  select(-pacl,
+         -bmr_democracy_omitteddata, -bmr_democracy,
+         -wth_democ1,
          -gwf_democracy_extended, -utip_dichotomous)
 
 dichotomous_dem <- prepare_democracy_data(dichotomous_dem)
@@ -393,15 +420,15 @@ dichotomous_scores <- bind_cols(dichotomous_dem |> select(any_of(identifiers)),
                                 dichotomous_scores)
 
 
-ggplot(data = dichotomous_scores |> filter(extended_country_name %in% countries), 
-       aes(x= year, y = z1_as_prob, 
-           ymin = z1_pct025_as_prob, ymax = z1_pct975_as_prob)) + 
-  geom_line() + 
-  geom_ribbon(alpha=0.2) + 
-  theme_bw() + 
-  labs(x = "Year", y = "Latent unified democracy scores,\nper year\nconverted to 0-1 probability scale")  + 
-  theme(legend.position="bottom") + 
-  guides(color = guide_legend(ncol=1),fill = guide_legend(nrow=1)) + 
+ggplot(data = dichotomous_scores |> filter(extended_country_name %in% countries),
+       aes(x= year, y = z1_as_prob,
+           ymin = z1_pct025_as_prob, ymax = z1_pct975_as_prob)) +
+  geom_line() +
+  geom_ribbon(alpha=0.2) +
+  theme_bw() +
+  labs(x = "Year", y = "Latent unified democracy scores,\nper year\nconverted to 0-1 probability scale")  +
+  theme(legend.position="bottom") +
+  guides(color = guide_legend(ncol=1),fill = guide_legend(nrow=1)) +
   geom_hline(yintercept=0.5,color="red") +
   facet_wrap(~extended_country_name,ncol=2)
 ```
@@ -409,8 +436,10 @@ ggplot(data = dichotomous_scores |> filter(extended_country_name %in% countries)
 As @svmdi2021 note, latent variable indexes suffer from arbitrary changes in level related to variables entering into or out of the source data. One way to get around this is to use a panel, with every measure present for every country-year in the panel. For example, suppose we're interested only in measures with long coverage. Here we select a set of indexes with coverage down to the 19th century and then select the set of rows for which all measures exist, producing a panel with 159 countries and scores from 1919 to 2003.
 
 ```{r}
+#| label: fig-long-coverage-panel
+#| fig-cap: "Latent democracy scores from a panel of long-coverage measures, constrained to country-years with no missing values."
 full_panel <- all_dem |>
-  select(any_of(identifiers), reign_democracy, polity2, 
+  select(any_of(identifiers), reign_democracy, polity2,
          bmr_democracy_femalesuffrage, v2x_polyarchy,
          ulfelder_democracy_extended, bnr_extended, 
          magaloni_democracy_extended, csvmdi, pitf,
@@ -455,6 +484,8 @@ ggplot(data = panel_scores |> filter(extended_country_name %in% countries),
 Or suppose we're interested in a particular coverage period, including only measures that have data to 2018:
 
 ```{r}
+#| label: fig-2018-coverage-panel
+#| fig-cap: "Latent democracy scores from a panel restricted to measures with data through 2018."
 full_panel <- all_dem |>
   pivot_longer(-any_of(identifiers), values_drop_na = TRUE) |>
   filter(name %in% name[year == 2018]) |>
@@ -506,6 +537,8 @@ ggplot(data = panel_scores |> filter(extended_country_name %in% countries),
 The [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html) package offers a great number of powerful tools to examine and diagnose the fitted model, including functions to extract model cutpoints and item information curves. But this package also contains two convenience functions that wrap [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html) tools to quickly extract democracy rater discrimination parameters, rater cutoffs, and rater information curves from a model produced by this procedure in a tidy data frame format suitable for graphing. Here, for example, we can replicate the figures in PMM's original paper:
 
 ```{r}
+#| label: fig-rater-cutpoints-and-info
+#| fig-cap: "Rater cutoffs, discrimination parameters, and item information curves for each democracy measure used in the 2011 UDS replication model."
 #| fig-height: 8
 #| fig-width: 7
 #| warning: false

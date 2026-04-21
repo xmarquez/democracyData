@@ -4,6 +4,17 @@ author: "Xavier Marquez"
 date: "`r format(Sys.Date())`"
 bibliography: bibfile.bib
 csl: american-political-science-review.csl
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    code-fold: true
+    code-tools: true
+    fig-cap-location: top
+    tbl-cap-location: top
+    smooth-scroll: true
+    link-external-icon: true
 execute:
   echo: false
   warning: false

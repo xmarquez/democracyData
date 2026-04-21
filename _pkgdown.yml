@@ -78,6 +78,15 @@ reference:
 - contents:
   - remove_empty_rows
   - count_sequence_breaks
+articles:
+- title: "Getting started"
+  contents:
+  - articles/Understanding_the_state_system
+  - articles/Understanding_the_coverage_of_existing_democracy_indexes
+- title: "Analysis"
+  contents:
+  - articles/Relationships_between_democracy_measures
+  - articles/Replicating_and_extending_the_UD_scores
 url: https://xmarquez.github.io/democracyData/
 template:
   bootstrap: 5
