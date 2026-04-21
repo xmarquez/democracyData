@@ -14,6 +14,8 @@
 
 * **Freedom House.** Freedom House moved their machine-readable FIW data to email-request distribution in 2026. `fh`, `fh_full`, and `fh_electoral` therefore remain frozen at the 2024 report / 2025 release.
 
+* **Freedom House download functions.** `download_fh()`, `download_fh_full()`, and `download_fh_electoral()` now explicitly target the archived 2025 release and are soft-deprecated to reflect that Freedom House no longer provides the latest machine-readable data as a public direct download.
+
 * **Anckar v3.0.** Updated `anckar` to version 3.0 using the May 16, 2025 Harvard Dataverse release (`doi:10.7910/DVN/AK8NVX`). It now covers 1800-2024.
 
 * **LIED 6.9.** Updated `LIED` to version 6.9 using the April 1, 2026 Harvard Dataverse file. It now covers up to 2025.
@@ -24,6 +26,8 @@
 
 * **PIPE constructed variables.** Recalculated the package-derived PIPE variables (`cum_salterel`, `cum_term`, `democracy`, `democracy2`, `democracy_age`, `regime`, and `regime_period`) to better match the PIPE codebook. In particular, only `salterel == 1` and `term == 1` now advance democratic spells, and `regime`/`regime_period` are now missing before independence.
 
+* **Extended UDS refresh.** Rebuilt `extended_uds` from the current datasets, replacing the old Kailitz-based path with the current VaPoReg and revised WGI inputs alongside the other refreshed component datasets.
+
 ## `country_year_coder()` rework
 
 * **Fixed a duplicated "between-periods" bug.** The same date-range gap check appeared at two sites (`is_between()` and the inline `test_condition()` tiebreaker). Both now delegate to a single helper (`date_year_in_gap()`), so fixes and future changes stay in one place.
@@ -33,6 +37,8 @@
 * Exported `normalize_country()` as a helper for callers that want to pre-normalize country names themselves.
 
 * Added `stringi` to `Imports`.
+
+* Raised the minimum supported R version to `4.2.0`.
 
 * A small number of successor-state country-year rows that previously fell into the "between-periods" gap may now resolve differently as a side effect of the bug fix. Behavior on the "golden" regression fixture is unchanged.
 
