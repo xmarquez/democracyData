@@ -56,7 +56,7 @@ jobs:
           for (article in articles) {
             message("\n--- Rendering ", article, " ---")
             tryCatch(
-              quarto::quarto_render(article, output_dir = tempdir(), quiet = FALSE),
+              quarto::quarto_render(article, quiet = FALSE),
               error = function(e) {
                 message("FAILED ARTICLE: ", article)
                 stop(e)
