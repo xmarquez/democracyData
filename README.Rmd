@@ -61,7 +61,7 @@ All datasets in this package are fully documented; type `?pacl` for example to s
 
 ## Downloading democracy data
 
-Though all datasets can be accessed directly from this package, most datasets can also be downloaded directly from the internet, including the family of datasets released by [Freedom House](https://freedomhouse.org/) and the full V-Dem dataset. To download the Freedom House dataset, use the the `download_*` family of functions; to download the full V-Dem dataset, use the [vdemdata](https://github.com/vdeminstitute/vdemdata) package. The package *does* include the main indexes of version 16.0 of V-Dem (see `vdem_simple`), so you don't need to use the [vdemdata](https://github.com/vdeminstitute/vdemdata) package if you are only interested in the higher-level indexes of democracy. You can also download directly the latest versions of the World Bank's Voice and Accountability Index from the [World Governance Indicators](https://www.worldbank.org/en/publication/worldwide-governance-indicators) and [Polity5](https://www.systemicpeace.org/inscrdata.html), though there are also archived versions of these two in the package.
+Though all datasets can be accessed directly from this package, most datasets can also be downloaded directly from elsewhere. For example, to download the full V-Dem dataset, use the [vdemdata](https://github.com/vdeminstitute/vdemdata) package. The package *does* include the main indexes of version 16.0 of V-Dem (see `vdem_simple`), so you don't need to use the [vdemdata](https://github.com/vdeminstitute/vdemdata) package if you are only interested in the higher-level indexes of democracy. You can also download directly the latest versions of the World Bank's Voice and Accountability Index from the [World Governance Indicators](https://www.worldbank.org/en/publication/worldwide-governance-indicators) and [Polity5](https://www.systemicpeace.org/inscrdata.html), though there are also archived versions of these two in the package.
 
 For example, we can download and process the Freedom House "Freedom in the World" dataset as follows:
 
@@ -72,7 +72,7 @@ fh_downloaded
 
 ```
 
-This downloads the latest update of the "Freedom in the World" dataset (1972-2024, corresponding to the 2025 report), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables `fh_total` and `fh_total_reversed`, and adds state system information, including a standardized country name, the [Gleditsch-Ward](https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html) country code and the [Correlates of War](https://correlatesofwar.org/data-sets/state-system-membership/) country code. You can also, however, use the archived version (`fh`):
+This downloads the latest archived update of the "Freedom in the World" dataset (1972-2024, corresponding to the 2025 report), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables `fh_total` and `fh_total_reversed`, and adds state system information, including a standardized country name, the [Gleditsch-Ward](https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html) country code and the [Correlates of War](https://correlatesofwar.org/data-sets/state-system-membership/) country code. You can also, however, use the archived version (`fh`):
 
 
 ```{r}
@@ -82,7 +82,7 @@ fh
 
 ```
 
-Other democracy datasets can often also be "re-downloaded" from the websites of their creators or maintainers if required. For example, one can either access PACL directly by typing
+(In fact, since Freedom House no longer offers freely available versions of their latest updated data, it is best to simply use the archived data). Other democracy datasets can often also be "re-downloaded" from the websites of their creators or maintainers if required. For example, one can either access PACL directly by typing
 
 ```{r}
 pacl
