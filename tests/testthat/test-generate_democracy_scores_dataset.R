@@ -2,11 +2,21 @@ library(dplyr)
 
 polity_problems <- data |>
   filter(cown != polity_ccode | GWn != polity_ccode) |>
-  select(ends_with("country_name"), cown, GWn, polity_ccode, ends_with("startdate"), ends_with("enddate"))
+  select(
+    ends_with("country_name"),
+    cown,
+    GWn,
+    polity_ccode,
+    ends_with("startdate"),
+    ends_with("enddate")
+  )
 
 polity_problems <- data |>
-  filter(polity_country_name %in% polity_problems$polity_country_name |
-           extended_country_name %in% polity_problems$extended_country_name) |>
+  filter(
+    polity_country_name %in%
+      polity_problems$polity_country_name |
+      extended_country_name %in% polity_problems$extended_country_name
+  ) |>
   filter(!is.na(polity_country_name)) |>
   select(starts_with("polity"), starts_with("GW"), starts_with("cow")) |>
   distinct()
@@ -15,22 +25,31 @@ GW_problems <- data |>
   filter(cown != GWn)
 
 GW_problems <- data |>
-  filter(GW_country_name %in% GW_problems$GW_country_name |
-           extended_country_name %in% GW_problems$extended_country_name) |>
+  filter(
+    GW_country_name %in%
+      GW_problems$GW_country_name |
+      extended_country_name %in% GW_problems$extended_country_name
+  ) |>
   filter(!is.na(GW_country_name)) |>
   select(starts_with("GW"), starts_with("cow")) |>
   distinct()
 
 test_that("pattern selection works", {
   expect_equal(
-    generate_democracy_scores_dataset(selection = "pmm", exclude_pmm_duplicates = FALSE) |>
+    generate_democracy_scores_dataset(
+      selection = "pmm",
+      exclude_pmm_duplicates = FALSE
+    ) |>
       pull(dataset) |>
       unique() |>
       length(),
     12
   )
   expect_equal(
-    generate_democracy_scores_dataset(selection = "pmm", exclude_pmm_duplicates = TRUE) |>
+    generate_democracy_scores_dataset(
+      selection = "pmm",
+      exclude_pmm_duplicates = TRUE
+    ) |>
       pull(dataset) |>
       unique() |>
       length(),
@@ -47,48 +66,154 @@ test_that("pattern selection works", {
 
 test_that("Release year mechanism works", {
   expect_equal(
-    generate_democracy_scores_dataset(selection = "uds", uds_release_year = 2014) |>
+    generate_democracy_scores_dataset(
+      selection = "uds",
+      uds_release_year = 2014
+    ) |>
       pull(dataset) |>
       unique(),
     "uds_2014"
   )
   expect_equal(
-    generate_democracy_scores_dataset(selection = "uds", uds_release_year = c(2014, 2011)) |>
+    generate_democracy_scores_dataset(
+      selection = "uds",
+      uds_release_year = c(2014, 2011)
+    ) |>
       pull(dataset) |>
       unique(),
     c("uds_2011", "uds_2014")
   )
   expect_error(
-    generate_democracy_scores_dataset(selection = "svmdi", svmdi_release_year = c(2022))
+    generate_democracy_scores_dataset(
+      selection = "svmdi",
+      svmdi_release_year = c(2022)
+    )
   )
   expect_equal(
-    generate_democracy_scores_dataset(selection = "svmdi", svmdi_release_year = c(2020)) |>
+    generate_democracy_scores_dataset(
+      selection = "svmdi",
+      svmdi_release_year = c(2020)
+    ) |>
       pull(dataset) |>
       unique(),
     "svmdi"
   )
   expect_equal(
-    generate_democracy_scores_dataset(selection = "svmdi", svmdi_release_year = c(2016)) |>
+    generate_democracy_scores_dataset(
+      selection = "svmdi",
+      svmdi_release_year = c(2016)
+    ) |>
       pull(dataset) |>
       unique(),
     "svmdi_2016"
   )
 })
 
-test_that("All datasets are included", {
-  all_datasets <- c("anckar", "anrr", "arat", "arat_pmm", "blm", "blm_pmm", "bmr",
-                    "bnr", "bollen_pmm", "bti", "doorenspleet", "eiu", "fh",
-                    "fh_electoral", "fh_pmm", "gwf", "hadenius_pmm", "kailitz",
-                    "LIED", "magaloni", "mainwaring",
-                    "mainwaring_pmm", "munck_pmm", "pacl", "pacl_pmm",
-                    "pacl_update", "peps", "PIPE", "pitf", "polity_pmm",
-                    "polity5", "polityIV", "polyarchy", "polyarchy_dimensions",
-                    "polyarchy_pmm", "prc_gasiorowski", "prc_pmm", "REIGN", "svmdi",
-                    "svmdi_2016", "svolik_regime", "uds_2010", "uds_2011", "uds_2014",
-                    "ulfelder", "utip", "vanhanen", "vanhanen_pmm", "vaporeg",
-                    "vdem", "wahman_teorell_hadenius", "wgi_democracy") |>
-    sort()
+test_that("version mechanism works", {
+  expect_equal(
+    generate_democracy_scores_dataset(
+      selection = "wgi",
+      wgi_version = "legacy",
+      verbose = FALSE
+    ) |>
+      pull(dataset) |>
+      unique(),
+    "wgi_legacy"
+  )
 
+  expect_equal(
+    generate_democracy_scores_dataset(
+      selection = "vaporeg",
+      vaporeg_version = "legacy",
+      verbose = FALSE
+    ) |>
+      pull(dataset) |>
+      unique(),
+    "vaporeg_2024"
+  )
+
+  pitf_current <- generate_democracy_scores_dataset(
+    selection = "pitf",
+    pitf_version = "current",
+    verbose = FALSE
+  )
+  pitf_polity5 <- generate_democracy_scores_dataset(
+    selection = "pitf",
+    pitf_version = "polity5",
+    verbose = FALSE
+  )
+  pitf_legacy <- generate_democracy_scores_dataset(
+    selection = "pitf",
+    pitf_version = "legacy",
+    verbose = FALSE
+  )
+  pitf_polity4 <- generate_democracy_scores_dataset(
+    selection = "pitf",
+    pitf_version = "polity4",
+    verbose = FALSE
+  )
+
+  expect_identical(pitf_current, pitf_polity5)
+  expect_identical(pitf_legacy, pitf_polity4)
+  expect_equal(unique(pitf_legacy$dataset), "pitf_p4")
+})
+
+test_that("All datasets are included", {
+  all_datasets <- c(
+    "anckar",
+    "anrr",
+    "arat",
+    "arat_pmm",
+    "blm",
+    "blm_pmm",
+    "bmr",
+    "bnr",
+    "bollen_pmm",
+    "bti",
+    "doorenspleet",
+    "eiu",
+    "fh",
+    "fh_electoral",
+    "fh_pmm",
+    "gwf",
+    "hadenius_pmm",
+    "kailitz",
+    "LIED",
+    "magaloni",
+    "mainwaring",
+    "mainwaring_pmm",
+    "munck_pmm",
+    "pacl",
+    "pacl_pmm",
+    "pacl_update",
+    "peps",
+    "PIPE",
+    "pitf",
+    "polity_pmm",
+    "polity5",
+    "polityIV",
+    "polyarchy",
+    "polyarchy_dimensions",
+    "polyarchy_pmm",
+    "prc_gasiorowski",
+    "prc_pmm",
+    "REIGN",
+    "svmdi",
+    "svmdi_2016",
+    "svolik_regime",
+    "uds_2010",
+    "uds_2011",
+    "uds_2014",
+    "ulfelder",
+    "utip",
+    "vanhanen",
+    "vanhanen_pmm",
+    "vaporeg",
+    "vdem",
+    "wahman_teorell_hadenius",
+    "wgi_democracy"
+  ) |>
+    sort()
 
   expect_equal(
     generate_democracy_scores_dataset(exclude_pmm_duplicates = FALSE) |>
@@ -101,12 +226,13 @@ test_that("All datasets are included", {
 
 
 test_that("extension mechanism works", {
-
   extended <- generate_democracy_scores_dataset(selection = "gwf") |>
     count(measure)
 
-  not_extended <- generate_democracy_scores_dataset(selection = "gwf",
-                                                    use_extended = FALSE) |>
+  not_extended <- generate_democracy_scores_dataset(
+    selection = "gwf",
+    use_extended = FALSE
+  ) |>
     count(measure)
 
   n <- c(extended$n, not_extended$n)
@@ -114,7 +240,6 @@ test_that("extension mechanism works", {
     n,
     c(nrow(gwf_all_extended), 9243, nrow(gwf_all), 7787)
   )
-
 })
 
 test_that("pmm duplicates are excluded", {
@@ -133,12 +258,57 @@ test_that("verbose = FALSE gives no message", {
   )
 })
 
+test_that("vaporeg output has no duplicate country-year measures", {
+  vaporeg_data <- generate_democracy_scores_dataset(
+    selection = "vaporeg",
+    output_format = "long",
+    verbose = FALSE
+  )
+
+  duplicates <- vaporeg_data |>
+    count(
+      extended_country_name,
+      GWn,
+      cown,
+      in_GW_system,
+      year,
+      measure
+    ) |>
+    filter(n > 1)
+
+  expect_equal(nrow(duplicates), 0)
+})
+
+test_that("anrr successor-state years map Serbia consistently", {
+  anrr_data <- generate_democracy_scores_dataset(
+    selection = "anrr",
+    output_format = "long",
+    verbose = FALSE
+  )
+
+  serbia_2007 <- anrr_data |>
+    filter(extended_country_name == "Serbia", year == 2007)
+
+  expect_equal(nrow(serbia_2007), 1)
+  expect_identical(serbia_2007$GWn, 340)
+  expect_identical(serbia_2007$cown, 345)
+  expect_identical(serbia_2007$in_GW_system, TRUE)
+  expect_identical(
+    as.character(serbia_2007$original_country_name),
+    "Serbia & Montenegro"
+  )
+})
+
 test_that("force_redownload works", {
   skip_on_cran()
   skip_on_ci()
   pacl <- generate_democracy_scores_dataset(selection = "pacl")
-  expect_no_message(pacl_redownload <- generate_democracy_scores_dataset(selection = "pacl",
-                                                                         force_redownload = TRUE,
-                                                                         verbose = FALSE))
- expect_identical(pacl, pacl_redownload)
+  expect_no_message(
+    pacl_redownload <- generate_democracy_scores_dataset(
+      selection = "pacl",
+      force_redownload = TRUE,
+      verbose = FALSE
+    )
+  )
+  expect_identical(pacl, pacl_redownload)
 })

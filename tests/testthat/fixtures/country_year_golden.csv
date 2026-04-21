@@ -1,0 +1,85 @@
+country,year,extended_country_name,GWn,cown,polity_ccode,in_GW_system,in_cow_system,in_polity_system
+Germany,2020,German Federal Republic,260,255,255,TRUE,TRUE,TRUE
+German Federal Republic,1988,German Federal Republic,260,260,260,TRUE,TRUE,TRUE
+East Germany,1988,German Democratic Republic,265,265,265,TRUE,TRUE,TRUE
+"Germany, West",1985,German Federal Republic,260,260,260,TRUE,TRUE,TRUE
+West Germany,1990,German Federal Republic,260,255,255,TRUE,TRUE,TRUE
+Germany,1945,German Federal Republic,260,260,260,FALSE,FALSE,TRUE
+Germany,1946,German Federal Republic,260,260,260,FALSE,FALSE,TRUE
+Germany,1989,German Federal Republic,260,260,260,TRUE,TRUE,TRUE
+Germany,1990,German Federal Republic,260,255,255,TRUE,TRUE,TRUE
+USSR,1990,Russia (Soviet Union),365,365,364,TRUE,TRUE,TRUE
+Soviet Union,1985,Russia (Soviet Union),365,365,364,TRUE,TRUE,TRUE
+Russia,1992,Russia (Soviet Union),365,365,365,TRUE,TRUE,TRUE
+Russia,2020,Russia (Soviet Union),365,365,365,TRUE,TRUE,TRUE
+Russia,1910,Russia (Soviet Union),365,365,365,TRUE,TRUE,TRUE
+Yugoslavia,1985,Yugoslavia,345,345,345,TRUE,TRUE,TRUE
+Yugoslavia,1992,Yugoslavia,345,345,347,TRUE,TRUE,TRUE
+Serbia,2010,Serbia,340,345,342,TRUE,TRUE,TRUE
+Serbia and Montenegro,2005,Yugoslavia,345,345,347,TRUE,TRUE,TRUE
+Czechoslovakia,1985,Czechoslovakia,315,315,315,TRUE,TRUE,TRUE
+Czech Republic,1995,Czech Republic,316,316,316,TRUE,TRUE,TRUE
+Czechia,2020,Czech Republic,316,316,316,TRUE,TRUE,TRUE
+Slovakia,1995,Slovakia,317,317,317,TRUE,TRUE,TRUE
+Vietnam,1970,"Vietnam, Democratic Republic of",816,816,816,TRUE,TRUE,TRUE
+North Vietnam,1970,"Vietnam, Democratic Republic of",816,816,816,TRUE,TRUE,TRUE
+South Vietnam,1970,"Vietnam, Republic of",817,817,817,TRUE,TRUE,TRUE
+"Vietnam, Democratic Republic of",1980,"Vietnam, Democratic Republic of",816,816,818,TRUE,TRUE,TRUE
+Republic of Vietnam,1970,"Vietnam, Republic of",817,817,817,TRUE,TRUE,TRUE
+Yemen,1988,Yemen (Arab Republic of Yemen),678,678,678,TRUE,TRUE,TRUE
+Yemen,2010,Yemen (Arab Republic of Yemen),678,679,679,TRUE,TRUE,TRUE
+North Yemen,1988,Yemen (Arab Republic of Yemen),678,678,678,TRUE,TRUE,TRUE
+South Yemen,1988,"Yemen, People's Republic of",680,680,680,TRUE,TRUE,TRUE
+Yemen Arab Republic,1988,Yemen (Arab Republic of Yemen),678,678,678,TRUE,TRUE,TRUE
+Turkey,2020,Turkey (Ottoman Empire),640,640,640,TRUE,TRUE,TRUE
+Ottoman Empire,1900,Turkey (Ottoman Empire),640,640,640,TRUE,TRUE,TRUE
+Türkiye,2024,Turkey (Ottoman Empire),640,640,640,TRUE,TRUE,TRUE
+Turkiye,2024,Turkey (Ottoman Empire),640,640,640,TRUE,TRUE,TRUE
+Côte d'Ivoire,2024,Cote D'Ivoire,437,437,437,TRUE,TRUE,TRUE
+Cote d'Ivoire,2024,Cote D'Ivoire,437,437,437,TRUE,TRUE,TRUE
+Ivory Coast,2024,Cote D'Ivoire,437,437,437,TRUE,TRUE,TRUE
+São Tomé and Príncipe,2024,Sao Tome and Principe,403,403,403,TRUE,TRUE,FALSE
+Sao Tome and Principe,2024,Sao Tome and Principe,403,403,403,TRUE,TRUE,FALSE
+"Congo, Dem. Rep.",2024,"Congo, Democratic Republic of (Zaire)",490,490,490,TRUE,TRUE,TRUE
+Democratic Republic of the Congo,2024,"Congo, Democratic Republic of (Zaire)",490,490,490,TRUE,TRUE,TRUE
+DR Congo,2024,"Congo, Democratic Republic of (Zaire)",490,490,490,TRUE,TRUE,TRUE
+Congo-Brazzaville,2024,Congo,484,484,484,TRUE,TRUE,TRUE
+Republic of the Congo,2024,Congo,484,484,484,TRUE,TRUE,TRUE
+"Korea, Republic of",2024,"Korea, Republic of",732,732,732,TRUE,TRUE,TRUE
+South Korea,2024,"Korea, Republic of",732,732,732,TRUE,TRUE,TRUE
+North Korea,2024,"Korea, People's Republic of",731,731,731,TRUE,TRUE,TRUE
+"Korea, Dem. People's Rep. of",2024,"Korea, People's Republic of",731,731,731,TRUE,TRUE,TRUE
+Timor-Leste,2024,East Timor,860,860,860,TRUE,TRUE,TRUE
+East Timor,2024,East Timor,860,860,860,TRUE,TRUE,TRUE
+Taiwan,2015,Taiwan,713,713,713,TRUE,TRUE,TRUE
+Chinese Taipei,2015,Taiwan,713,713,713,TRUE,TRUE,TRUE
+Republic of China,2015,China,710,710,710,TRUE,TRUE,TRUE
+Republic of China,2015,Taiwan,713,713,713,TRUE,TRUE,TRUE
+Republic of China,1940,China,710,710,710,TRUE,TRUE,TRUE
+United States,2020,United States of America,2,2,2,TRUE,TRUE,TRUE
+U.S.A.,2020,United States of America,2,2,2,TRUE,TRUE,TRUE
+USA,2020,United States of America,2,2,2,TRUE,TRUE,TRUE
+United States of America,2020,United States of America,2,2,2,TRUE,TRUE,TRUE
+United Kingdom,2020,United Kingdom,200,200,200,TRUE,TRUE,TRUE
+UK,2020,United Kingdom,200,200,200,TRUE,TRUE,TRUE
+Great Britain,2020,United Kingdom,200,200,200,TRUE,TRUE,TRUE
+Palestine,2020,"Palestine, State of",NA,NA,NA,FALSE,FALSE,FALSE
+State of Palestine,2020,NA,NA,NA,NA,FALSE,FALSE,FALSE
+West Bank and Gaza,2020,"Palestine, State of",NA,NA,NA,FALSE,FALSE,FALSE
+Israel,2020,Israel,666,666,666,TRUE,TRUE,TRUE
+France,2020,France,220,220,220,TRUE,TRUE,TRUE
+Vichy France,1942,Vichy France,NA,NA,NA,FALSE,FALSE,FALSE
+France,1942,France,220,220,220,TRUE,FALSE,TRUE
+Kashmir,2020,Kashmir,NA,NA,NA,FALSE,FALSE,FALSE
+Indian Kashmir,2020,Indian Kashmir,NA,NA,NA,FALSE,FALSE,FALSE
+Pakistani Kashmir,2020,Pakistani Kashmir,NA,NA,NA,FALSE,FALSE,FALSE
+Pakistan,2020,Pakistan,770,770,770,TRUE,TRUE,TRUE
+India,2020,India,750,750,750,TRUE,TRUE,TRUE
+Sudan,2020,Sudan,625,625,626,TRUE,TRUE,TRUE
+South Sudan,2015,South Sudan,626,626,525,TRUE,TRUE,TRUE
+"Sudan, South",2015,South Sudan,626,626,525,TRUE,TRUE,TRUE
+Somaliland,2015,Somaliland,NA,NA,NA,FALSE,FALSE,FALSE
+Somalia,2015,Somalia,520,520,520,TRUE,TRUE,TRUE
+Northern Cyprus,2020,Northern Cyprus,NA,NA,NA,FALSE,FALSE,FALSE
+Cyprus,2020,Cyprus,352,352,352,TRUE,TRUE,TRUE
+Nagorno-Karabakh,2020,Nagorno-Karabakh,NA,NA,NA,FALSE,FALSE,FALSE

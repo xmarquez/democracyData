@@ -1,0 +1,18 @@
+extended_country_name,regex,comment
+Turkey,"turkey|ottoman|türkiye|t(ü|u)rkiye|t(.){2}rkiye",Turkish republic + Ottoman Empire; tolerates diacritics
+Nagorno-Karabakh,nagorno.karabakh|artsakh,Recognised historical alternate name
+Northern Cyprus,\bn.+cyprus|cyprus.+northern,Avoid matching 'Cyprus' alone
+Indian Kashmir,^in.*kashmir|kashmir.*in,India-administered Kashmir
+Pakistani Kashmir,^pak.*kashmir|kashmir.*pak,Pakistan-administered Kashmir
+Pakistan,"^(?!.*east)(?!.*kashmir).*paki?stan(?!.*kashmir)",Exclude East Pakistan (now Bangladesh) and Kashmir variants
+India,"(?!.*kashmir.*)\bindia\b(?!.*ocea)(?!.*kashmir)",Exclude Indian Ocean and Kashmir variants
+Italy,italy|sardinia|italy|italian.?republic,Italy incl. Sardinia
+France,"^(?!.*vichy)(?!.*\bdep)(?!.*martinique).*france(?!.*vichy)|french.?republic|\bgaul",Modern France; exclude Vichy France and overseas departments
+Vichy France,vichy.*france|france.*vichy,Vichy France (1940-1944)
+British Mandate of Palestine,mandat.*palestine|british.*palestine|palestine.*british,British Mandate of Palestine (1920-1948)
+"Palestine, State of","^(?!.*british.*)(?!.*gaza.*)(?!.*west bank.*)palestin(?!.*british.*)(?!.*gaza.*)(?!.*west bank.*)|west bank and gaza|gaza and west bank",Modern Palestinian State; excludes British Mandate
+Vietnam (Annam/Cochin China/Tonkin),"^(?!.*republic)^(?!.*dem).*viet.?nam(?!.*democratic republic)|^(?!south)(?!republic).*viet.?nam(?!.*south)|democratic.republic.of.vietnam|socialist.republic.of.viet.?nam|north.viet.?nam|viet.?nam.north",Pre-1954 Vietnam and unified successor
+"Vietnam, Democratic Republic of","^(?!.*republic)(?!.*south).*viet.?nam(?!.*south)(?!.*s$)|^(?=.*socialist)(?!.*south).*viet.?nam(?!.*south)|(?!.*south).*viet.?nam.*(?=.*socialist)|viet.?nam.*(?=.*democr)|(?=.*democr).*viet.?nam|^(?!.*south)(?!.*republic).*viet.?nam|democratic.republic.of.vietnam|socialist.republic.of.viet.?nam|north.viet.?nam|viet.?nam.north|vietnam, n",DRV / North Vietnam 1954-1976
+Russia (Soviet Union),"\brussia(?!.*ukrain)|soviet.?union|u\.?s\.?s\.?r|socialist.?republics",Russia and USSR; excludes Russian-occupied Ukrainian territories
+Ukraine,^(?!russian-occupied territories of).*ukrain,Excludes Russian-occupied territories of Ukraine
+Israel,israel(?!.+occupied),Excludes Israeli-occupied territories

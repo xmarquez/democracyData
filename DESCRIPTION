@@ -1,7 +1,7 @@
 Package: democracyData
 Type: Package
-Title: Access and Manipulate Most Available Democracy Datasets 
-Version: 0.6.0
+Title: Access and Manipulate Most Available Democracy Datasets
+Version: 0.7.0
 Description: Archives a large number of democracy datasets, many of historical 
     interest. It also provides a number of functions to download these datasets 
     (where available) and determine membership of a country in standard 
@@ -15,12 +15,13 @@ Authors@R:
            comment = c(ORCID = "0000-0001-7653-9334"))
 License: GPL-3
 Depends:
-    R (>= 4.1.0)
+    R (>= 4.2.0)
 Imports:
     dplyr,
     tidyr,
     stringr,
     lubridate,
+    lifecycle,
     haven,
     rlang,
     fuzzyjoin,
@@ -30,18 +31,20 @@ Imports:
     RefManageR,
     knitr,
     mirt,
-    here
-RoxygenNote: 7.3.2
+    here,
+    stringi
+RoxygenNote: 7.3.3
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
 LazyData: true
 LazyDataCompression: bzip2 
-Suggests: 
+Suggests:
     testthat,
     rmarkdown,
-    vdemdata (>= 13.0),
+    vdemdata (>= 16.0),
     pdftools,
-    purrr
+    purrr,
+    tibble
 Config/testthat/edition: 3
 URL: https://xmarquez.github.io/democracyData/, https://github.com/xmarquez/democracyData
 BugReports: https://github.com/xmarquez/democracyData/issues

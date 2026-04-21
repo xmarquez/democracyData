@@ -1,59 +1,67 @@
 standardize_selection <- function(x, include_in_output) {
-
-  value <- NULL
-
   x |>
     dplyr::filter(!is.na(value)) |>
-    dplyr::select(dplyr::all_of(c(include_in_output, "year", "measure", "value")), dplyr::matches("_country$|ulfelder_scode|vdem_country_name")) |>
+    dplyr::select(
+      dplyr::all_of(c(include_in_output, "year", "measure", "value")),
+      dplyr::matches("_country$|ulfelder_scode|vdem_country_name")
+    ) |>
     dplyr::select(-dplyr::matches("governing_country")) |>
     dplyr::mutate(value = as.numeric(value)) |>
-    dplyr::rename_with(~"original_country_name", dplyr::matches("_country$|ulfelder_scode|vdem_country_name"))
-
+    dplyr::rename_with(
+      ~"original_country_name",
+      dplyr::matches("_country$|ulfelder_scode|vdem_country_name")
+    )
 }
 
-standardize_fh <- function(force_redownload = FALSE,
-                           include_in_output = c("extended_country_name",
-                                                 "GWn",
-                                                 "cown",
-                                                 "in_GW_system"),
-                           include_territories = FALSE,
-                           verbose = FALSE,
-                           measure = "fh_total_reversed",
-                           ...) {
-  if(verbose) {
+standardize_fh <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  include_territories = FALSE,
+  verbose = FALSE,
+  measure = "fh_total_reversed",
+  ...
+) {
+  if (verbose) {
     message("Adding Freedom House data")
   }
-  if(force_redownload) {
-    fh <- download_fh(verbose = verbose,
-                      include_in_output = include_in_output,
-                      include_territories = include_territories)
+  if (force_redownload) {
+    fh <- download_fh(
+      verbose = verbose,
+      include_in_output = include_in_output,
+      include_territories = include_territories
+    )
   } else {
     fh <- democracyData::fh
   }
 
   res <- fh |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value")  |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_fh_pmm <- function(include_in_output = c("extended_country_name",
-                                                     "GWn",
-                                                     "cown",
-                                                     "in_GW_system"),
-                               verbose = FALSE,
-                               measure = "pmm_freedomhouse",
-                               ...) {
-  if(verbose) {
+standardize_fh_pmm <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "pmm_freedomhouse",
+  ...
+) {
+  if (verbose) {
     message("Adding fh_pmm data")
   }
 
   res <- democracyData::fh_pmm |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     dplyr::mutate(measure = "pmm_fh") |>
     standardize_selection(include_in_output = include_in_output)
 
@@ -61,29 +69,33 @@ standardize_fh_pmm <- function(include_in_output = c("extended_country_name",
   res
 }
 
-standardize_fh_electoral <- function(force_redownload = FALSE,
-                                     include_in_output = c("extended_country_name",
-                                                           "GWn",
-                                                           "cown",
-                                                           "in_GW_system"),
-                                     include_territories = FALSE,
-                                     verbose = FALSE,
-                                     measure = "electoral",
-                                     ...) {
-  if(verbose) {
+standardize_fh_electoral <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  include_territories = FALSE,
+  verbose = FALSE,
+  measure = "electoral",
+  ...
+) {
+  if (verbose) {
     message("Adding Freedom House electoral data")
   }
-  if(force_redownload) {
-    fh_electoral <- download_fh_electoral(verbose = verbose,
-                                          include_in_output = include_in_output,
-                                          include_territories = include_territories)
+  if (force_redownload) {
+    fh_electoral <- download_fh_electoral(
+      verbose = verbose,
+      include_in_output = include_in_output,
+      include_territories = include_territories
+    )
   } else {
     fh_electoral <- democracyData::fh_electoral
   }
 
   res <- fh_electoral |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value")  |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     dplyr::mutate(measure = paste0("fh_", measure)) |>
     standardize_selection(include_in_output = include_in_output)
 
@@ -91,76 +103,90 @@ standardize_fh_electoral <- function(force_redownload = FALSE,
   res
 }
 
-standardize_polity5 <- function(force_redownload = FALSE,
-                                include_in_output = c("extended_country_name",
-                                                      "GWn",
-                                                      "cown",
-                                                      "in_GW_system"),
-                                verbose = FALSE,
-                                measure = c("polity", "polity2"),
-                                ...) {
-  if(verbose) {
+standardize_polity5 <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = c("polity", "polity2"),
+  ...
+) {
+  if (verbose) {
     message("Adding Polity V data")
   }
-  if(force_redownload) {
-    polity5 <- download_polity_annual(verbose = verbose,
-                                      include_in_output = include_in_output)
+  if (force_redownload) {
+    polity5 <- download_polity_annual(
+      verbose = verbose,
+      include_in_output = include_in_output
+    )
   } else {
     polity5 <- democracyData::polity5
   }
 
   res <- polity5 |>
-    dplyr::mutate(across(dplyr::all_of(measure), \(x) ifelse(x < -10, NA, x))) |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    dplyr::mutate(across(dplyr::all_of(measure), \(x) {
+      ifelse(x < -10, NA, x)
+    })) |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_polity4 <- function(force_redownload = FALSE,
-                                include_in_output = c("extended_country_name",
-                                                      "GWn",
-                                                      "cown",
-                                                      "in_GW_system"),
-                                verbose = FALSE,
-                                measure = c("polity", "polity2"),
-                                ...) {
-  if(verbose) {
+standardize_polity4 <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = c("polity", "polity2"),
+  ...
+) {
+  if (verbose) {
     message("Adding Polity IV data")
   }
-  if(force_redownload) {
-    polity4 <- redownload_polityIV(verbose = verbose,
-                                   include_in_output = include_in_output)
+  if (force_redownload) {
+    polity4 <- redownload_polityIV(
+      verbose = verbose,
+      include_in_output = include_in_output
+    )
   } else {
     polity4 <- democracyData::polityIV
   }
 
   res <- polity4 |>
-    dplyr::mutate(across(dplyr::all_of(measure), \(x) ifelse(x < -10, NA, x))) |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    dplyr::mutate(across(dplyr::all_of(measure), \(x) {
+      ifelse(x < -10, NA, x)
+    })) |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_polity_pmm <- function(include_in_output = c("extended_country_name",
-                                                         "GWn",
-                                                         "cown",
-                                                         "in_GW_system"),
-                                   verbose = FALSE,
-                                   measure = "pmm_polity",
-                                   ...) {
-  if(verbose) {
+standardize_polity_pmm <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "pmm_polity",
+  ...
+) {
+  if (verbose) {
     message("Adding polity_pmm data")
   }
 
   res <- democracyData::polity_pmm |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     dplyr::mutate(measure = "pmm_polity") |>
     standardize_selection(include_in_output = include_in_output)
 
@@ -168,26 +194,41 @@ standardize_polity_pmm <- function(include_in_output = c("extended_country_name"
   res
 }
 
-standardize_wgi <- function(force_redownload = FALSE,
-                            include_in_output = c("extended_country_name",
-                                                  "GWn",
-                                                  "cown",
-                                                  "in_GW_system"),
-                            verbose = FALSE,
-                            measure = "Estimate",
-                            ...) {
-  if(verbose) {
+standardize_wgi <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  version = c("current", "legacy"),
+  measure = "Estimate",
+  ...
+) {
+  version <- match.arg(version)
+
+  if (verbose) {
     message("Adding World Governance Indicators data")
   }
-  if(force_redownload) {
-    wgi <- download_wgi_voice_and_accountability(verbose = verbose)
+
+  if (version == "current") {
+    if (force_redownload) {
+      wgi <- download_wgi_voice_and_accountability(verbose = verbose)
+    } else {
+      wgi <- democracyData::wgi
+    }
   } else {
-    wgi <- democracyData::wgi
+    if (force_redownload && verbose) {
+      message(
+        "Using archived wgi_legacy snapshot; force_redownload is ignored."
+      )
+    }
+    wgi <- democracyData::wgi_legacy
   }
 
   res <- wgi |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     dplyr::mutate(measure = "wgi_democracy") |>
 
     standardize_selection(include_in_output = include_in_output)
@@ -196,28 +237,29 @@ standardize_wgi <- function(force_redownload = FALSE,
   res
 }
 
-standardize_anckar <- function(force_redownload = FALSE,
-                               include_in_output = c("extended_country_name",
-                                                     "GWn",
-                                                     "cown",
-                                                     "in_GW_system"),
-                               verbose = FALSE,
-                               measure = "democracy",
-                               ...) {
-  if(verbose) {
+standardize_anckar <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "democracy",
+  ...
+) {
+  if (verbose) {
     message("Adding Anckar data")
   }
 
-  if(force_redownload) {
+  if (force_redownload) {
     anckar <- redownload_anckar(verbose = verbose)
   } else {
     anckar <- democracyData::anckar
   }
 
-
   res <- anckar |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     dplyr::mutate(measure = "anckar_democracy") |>
     standardize_selection(include_in_output = include_in_output)
 
@@ -225,20 +267,22 @@ standardize_anckar <- function(force_redownload = FALSE,
   res
 }
 
-standardize_anrr <- function(include_in_output = c("extended_country_name",
-                                                   "GWn",
-                                                   "cown",
-                                                   "in_GW_system"),
-                             verbose = FALSE,
-                             measure = "dem",
-                             ...) {
-  if(verbose) {
+standardize_anrr <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "dem",
+  ...
+) {
+  if (verbose) {
     message("Adding Anrr data")
   }
 
   res <- democracyData::anrr |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     mutate(measure = "anrr_democracy") |>
     standardize_selection(include_in_output = include_in_output)
 
@@ -246,40 +290,44 @@ standardize_anrr <- function(include_in_output = c("extended_country_name",
   res
 }
 
-standardize_arat_pmm <- function(include_in_output = c("extended_country_name",
-                                                       "GWn",
-                                                       "cown",
-                                                       "in_GW_system"),
-                                 verbose = FALSE,
-                                 measure = "pmm_arat",
-                                 ...) {
-  if(verbose) {
+standardize_arat_pmm <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "pmm_arat",
+  ...
+) {
+  if (verbose) {
     message("Adding arat_pmm data")
   }
 
   res <- democracyData::arat_pmm |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_arat <- function(include_in_output = c("extended_country_name",
-                                                   "GWn",
-                                                   "cown",
-                                                   "in_GW_system"),
-                             verbose = FALSE,
-                             measure = "arat_dem",
-                             ...) {
-  if(verbose) {
+standardize_arat <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "arat_dem",
+  ...
+) {
+  if (verbose) {
     message("Adding Arat original data")
   }
 
   res <- democracyData::arat |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     mutate(measure = "arat") |>
     standardize_selection(include_in_output = include_in_output)
 
@@ -287,77 +335,89 @@ standardize_arat <- function(include_in_output = c("extended_country_name",
   res
 }
 
-standardize_blm <- function(force_redownload = FALSE,
-                            include_in_output = c("extended_country_name",
-                                                  "GWn",
-                                                  "cown",
-                                                  "in_GW_system"),
-                            verbose = FALSE,
-                            measure = "blm",
-                            ...) {
-  if(verbose) {
+standardize_blm <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "blm",
+  ...
+) {
+  if (verbose) {
     message("Adding BLM data")
   }
 
-  if(force_redownload) {
-    blm <- redownload_blm(verbose = verbose,
-                          include_in_output = include_in_output)
+  if (force_redownload) {
+    blm <- redownload_blm(
+      verbose = verbose,
+      include_in_output = include_in_output
+    )
   } else {
     blm <- democracyData::blm
   }
 
   res <- blm |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_blm_pmm <- function(include_in_output = c("extended_country_name",
-                                                      "GWn",
-                                                      "cown",
-                                                      "in_GW_system"),
-                                verbose = FALSE,
-                                measure = "pmm_blm",
-                                ...) {
-  if(verbose) {
+standardize_blm_pmm <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "pmm_blm",
+  ...
+) {
+  if (verbose) {
     message("Adding blm_pmm data")
   }
 
   res <- democracyData::blm_pmm |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_bmr <- function(force_redownload = FALSE,
-                            include_in_output = c("extended_country_name",
-                                                  "GWn",
-                                                  "cown",
-                                                  "in_GW_system"),
-                            verbose = FALSE,
-                            measure = c("democracy", "democracy_femalesuffrage", "democracy_omitteddata"),
-                            ...) {
-  if(verbose) {
+standardize_bmr <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = c("democracy", "democracy_femalesuffrage", "democracy_omitteddata"),
+  ...
+) {
+  if (verbose) {
     message("Adding BMR data")
   }
 
-  if(force_redownload) {
-    bmr <- redownload_bmr(verbose = verbose,
-                          include_in_output = include_in_output)
+  if (force_redownload) {
+    bmr <- redownload_bmr(
+      verbose = verbose,
+      include_in_output = include_in_output
+    )
   } else {
     bmr <- democracyData::bmr
   }
 
   res <- bmr |>
-    dplyr::mutate(dplyr::across(dplyr::all_of("democracy_omitteddata"), \(x) ifelse(x < 0, NA, x))) |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    dplyr::mutate(dplyr::across(dplyr::all_of("democracy_omitteddata"), \(x) {
+      ifelse(x < 0, NA, x)
+    })) |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     dplyr::mutate(measure = paste0("bmr_", measure)) |>
     standardize_selection(include_in_output = include_in_output)
 
@@ -365,22 +425,17 @@ standardize_bmr <- function(force_redownload = FALSE,
   res
 }
 
-standardize_bnr <- function(include_in_output = c("extended_country_name",
-                                                  "GWn",
-                                                  "cown",
-                                                  "in_GW_system"),
-                            verbose = FALSE,
-                            use_extended = TRUE,
-                            ...) {
-
-  event <- NULL
-
-  if(verbose) {
+standardize_bnr <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  use_extended = TRUE,
+  ...
+) {
+  if (verbose) {
     message("Adding BNR data")
   }
 
-  bnr <- NULL
-  if(use_extended) {
+  if (use_extended) {
     bnr <- democracyData::bnr_extended |>
       dplyr::rename(bnr_extended = bnr)
     measure <- "bnr_extended"
@@ -389,40 +444,46 @@ standardize_bnr <- function(include_in_output = c("extended_country_name",
     bnr <- bnr |>
       dplyr::mutate(bnr = 1 - event)
     measure <- "bnr"
-
   }
 
   res <- bnr |>
-    tidyr::pivot_longer(dplyr::any_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::any_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_bti <- function(force_redownload = FALSE,
-                            include_in_output = c("extended_country_name",
-                                                  "GWn",
-                                                  "cown",
-                                                  "in_GW_system"),
-                            verbose = FALSE,
-                            measure = "SI_Democracy_Status",
-                            ...) {
-  if(verbose) {
+standardize_bti <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "SI_Democracy_Status",
+  ...
+) {
+  if (verbose) {
     message("Adding BTI data")
   }
 
-  if(force_redownload) {
-    bti <- redownload_bti(verbose = verbose,
-                          include_in_output = include_in_output)
+  if (force_redownload) {
+    bti <- redownload_bti(
+      verbose = verbose,
+      include_in_output = include_in_output
+    )
   } else {
     bti <- democracyData::bti
   }
 
   res <- bti |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     dplyr::mutate(measure = "bti") |>
     standardize_selection(include_in_output = include_in_output)
 
@@ -430,245 +491,413 @@ standardize_bti <- function(force_redownload = FALSE,
   res
 }
 
-standardize_bollen_pmm <- function(include_in_output = c("extended_country_name",
-                                                         "GWn",
-                                                         "cown",
-                                                         "in_GW_system"),
-                                   verbose = FALSE,
-                                   measure = "pmm_bollen",
-                                   ...) {
-  if(verbose) {
+standardize_bollen_pmm <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "pmm_bollen",
+  ...
+) {
+  if (verbose) {
     message("Adding bollen_pmm data")
   }
 
   res <- democracyData::bollen_pmm |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_doorenspleet <- function(include_in_output = c("extended_country_name",
-                                                           "GWn",
-                                                           "cown",
-                                                           "in_GW_system"),
-                                     verbose = FALSE,
-                                     measure = "doorenspleet",
-                                     ...) {
-  if(verbose) {
+standardize_doorenspleet <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "doorenspleet",
+  ...
+) {
+  if (verbose) {
     message("Adding Doorenspleet data")
   }
 
   res <- democracyData::doorenspleet |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_eiu <- function(include_in_output = c("extended_country_name",
-                                                  "GWn",
-                                                  "cown",
-                                                  "in_GW_system"),
-                            verbose = FALSE,
-                            measure = "eiu",
-                            ...) {
-  if(verbose) {
+standardize_eiu <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "eiu",
+  ...
+) {
+  if (verbose) {
     message("Adding EIU data")
   }
 
   eiu <- democracyData::eiu
 
   res <- eiu |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_gwf <- function(force_redownload = FALSE,
-                            include_in_output = c("extended_country_name",
-                                                  "GWn",
-                                                  "cown",
-                                                  "in_GW_system"),
-                            verbose = FALSE,
-                            measure = c("gwf_democracy_extended",
-                                        "gwf_democracy_extended_strict",
-                                        "gwf_democracy_strict",
-                                        "gwf_democracy"),
-                            use_extended = TRUE,
-                            ...) {
-  if(verbose) {
+standardize_gwf <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = c(
+    "gwf_democracy_extended",
+    "gwf_democracy_extended_strict",
+    "gwf_democracy_strict",
+    "gwf_democracy"
+  ),
+  use_extended = TRUE,
+  ...
+) {
+  if (verbose) {
     message("Adding GWF data")
   }
 
-  if(force_redownload) {
-    gwf <- redownload_gwf(verbose = verbose,
-                          include_in_output = include_in_output,
-                          extend = use_extended)
-    if(use_extended) {
+  if (force_redownload) {
+    gwf <- redownload_gwf(
+      verbose = verbose,
+      include_in_output = include_in_output,
+      extend = use_extended
+    )
+    if (use_extended) {
       gwf <- gwf |>
-        dplyr::mutate(gwf_democracy_extended = dplyr::case_when(gwf_nonautocracy == "democracy" ~ 1, TRUE ~ 0),
-                      gwf_democracy_extended_strict = dplyr::case_when(gwf_nonautocracy == "democracy" ~ 1,
-                                                                       !is.na(gwf_nonautocracy) ~ NA_real_,
-                                                                       TRUE ~ 0))
+        dplyr::mutate(
+          gwf_democracy_extended = dplyr::case_when(
+            gwf_nonautocracy == "democracy" ~ 1,
+            TRUE ~ 0
+          ),
+          gwf_democracy_extended_strict = dplyr::case_when(
+            gwf_nonautocracy == "democracy" ~ 1,
+            !is.na(gwf_nonautocracy) ~ NA_real_,
+            TRUE ~ 0
+          )
+        )
     } else {
       gwf <- gwf |>
-        dplyr::mutate(gwf_democracy = dplyr::case_when(gwf_nonautocracy == "democracy" ~ 1, TRUE ~ 0),
-                      gwf_democracy_strict = dplyr::case_when(gwf_nonautocracy == "democracy" ~ 1,
-                                                              !is.na(gwf_nonautocracy) ~ NA_real_,
-                                                              TRUE ~ 0))    }
+        dplyr::mutate(
+          gwf_democracy = dplyr::case_when(
+            gwf_nonautocracy == "democracy" ~ 1,
+            TRUE ~ 0
+          ),
+          gwf_democracy_strict = dplyr::case_when(
+            gwf_nonautocracy == "democracy" ~ 1,
+            !is.na(gwf_nonautocracy) ~ NA_real_,
+            TRUE ~ 0
+          )
+        )
+    }
   } else {
-    if(use_extended) {
+    if (use_extended) {
       gwf <- democracyData::gwf_all_extended |>
-        dplyr::mutate(gwf_democracy_extended = dplyr::case_when(gwf_nonautocracy == "democracy" ~ 1, TRUE ~ 0),
-                      gwf_democracy_extended_strict = dplyr::case_when(gwf_nonautocracy == "democracy" ~ 1,
-                                                                       !is.na(gwf_nonautocracy) ~ NA_real_,
-                                                                       TRUE ~ 0))
+        dplyr::mutate(
+          gwf_democracy_extended = dplyr::case_when(
+            gwf_nonautocracy == "democracy" ~ 1,
+            TRUE ~ 0
+          ),
+          gwf_democracy_extended_strict = dplyr::case_when(
+            gwf_nonautocracy == "democracy" ~ 1,
+            !is.na(gwf_nonautocracy) ~ NA_real_,
+            TRUE ~ 0
+          )
+        )
     } else {
       gwf <- democracyData::gwf_all |>
-        dplyr::mutate(gwf_democracy = dplyr::case_when(gwf_nonautocracy == "democracy" ~ 1, TRUE ~ 0),
-                      gwf_democracy_strict = dplyr::case_when(gwf_nonautocracy == "democracy" ~ 1,
-                                                                       !is.na(gwf_nonautocracy) ~ NA_real_,
-                                                                       TRUE ~ 0))
+        dplyr::mutate(
+          gwf_democracy = dplyr::case_when(
+            gwf_nonautocracy == "democracy" ~ 1,
+            TRUE ~ 0
+          ),
+          gwf_democracy_strict = dplyr::case_when(
+            gwf_nonautocracy == "democracy" ~ 1,
+            !is.na(gwf_nonautocracy) ~ NA_real_,
+            TRUE ~ 0
+          )
+        )
     }
   }
 
   res <- gwf |>
-    tidyr::pivot_longer(dplyr::any_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::any_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_hadenius_pmm <- function(include_in_output = c("extended_country_name",
-                                                           "GWn",
-                                                           "cown",
-                                                           "in_GW_system"),
-                                     verbose = FALSE,
-                                     measure = "pmm_hadenius",
-                                     ...) {
-  if(verbose) {
+standardize_hadenius_pmm <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "pmm_hadenius",
+  ...
+) {
+  if (verbose) {
     message("Adding hadenius_pmm data")
   }
 
   res <- democracyData::hadenius_pmm |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_kailitz <- function(include_in_output = c("extended_country_name",
-                                                      "GWn",
-                                                      "cown",
-                                                      "in_GW_system"),
-                                verbose = FALSE,
-                                measure = c("kailitz_binary", "kailitz_tri"),
-                                ...) {
-  if(verbose) {
+standardize_kailitz <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = c("kailitz_binary", "kailitz_tri"),
+  ...
+) {
+  if (verbose) {
     message("Adding Kailitz data")
   }
 
   kailitz <- democracyData::kailitz
 
   res <- kailitz |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_vaporeg <- function(force_redownload = FALSE,
-                                include_in_output = c("extended_country_name",
-                                                      "GWn",
-                                                      "cown",
-                                                      "in_GW_system"),
-                                verbose = FALSE,
-                                measure = c("vaporeg_binary_strict",
-                                            "vaporeg_binary_non_strict",
-                                            "vaporeg_trichotomous"),
-                                ...) {
-  
-  if(verbose) {
+prepare_vaporeg_for_standardization <- function(vaporeg, ...) {
+  vaporeg |>
+    dplyr::filter(
+      !(is.na(.data$vaporeg_identifier) &
+        .data$country_name == "Uzbekistan"),
+      # Upstream 3.2 ships a legacy "Korea" series with no identifier that
+      # continues past 1945. If matched by bare name, it collides with the
+      # proper South Korea series and creates duplicate country-year measures.
+      !(.data$country_name == "Korea" &
+        .data$year >= 1946 &
+        is.na(.data$vaporeg_identifier))
+    ) |>
+    dplyr::mutate(
+      cowcode = dplyr::case_when(
+        (.data$cowcode == 0 | is.na(.data$cowcode)) &
+          .data$country_name == "Uzbekistan" ~ .data$vaporeg_identifier,
+        TRUE ~ .data$cowcode
+      )
+    ) |>
+    country_year_coder(
+      country_name,
+      year,
+      code_col = vaporeg_identifier,
+      code_type = "cown",
+      match_type = "country and code",
+      verbose = FALSE
+    ) |>
+    dplyr::mutate(
+      vaporeg_country = .data$country_name,
+      extended_country_name = dplyr::case_when(
+        is.na(.data$extended_country_name) &
+          .data$country_name == "Alaska" ~ "Alaska",
+        is.na(.data$extended_country_name) &
+          .data$country_name == "Hawaii" ~ "Hawaii",
+        is.na(.data$extended_country_name) &
+          .data$country_name == "Saarland" ~ "Saarland",
+        is.na(.data$extended_country_name) &
+          .data$country_name ==
+            "Transcaucasian Democratic Federative Republic" ~
+          "Transcaucasian Democratic Federative Republic",
+        .data$country_name == "Serbia" &
+          .data$year %in% 1919:2002 ~ "Serbia",
+        .data$country_name == "Vietnam" &
+          .data$year < 1954 ~ "Vietnam (Annam/Cochin China/Tonkin)",
+        TRUE ~ .data$extended_country_name
+      ),
+      GWn = dplyr::case_when(
+        .data$country_name == "Serbia" &
+          .data$year %in% 1919:2002 ~ 340,
+        .data$country_name == "Vietnam" &
+          .data$year < 1954 ~ 815,
+        TRUE ~ .data$GWn
+      ),
+      cown = dplyr::case_when(
+        .data$country_name == "Vietnam" &
+          .data$year < 1954 ~ NA_real_,
+        TRUE ~ .data$cown
+      ),
+      .vaporeg_regtype_reports_num = haven::zap_labels(
+        .data$vaporeg_regtype_reports
+      ),
+      .vaporeg_regtype_bindem_num = haven::zap_labels(
+        .data$vaporeg_regtype_bindem
+      ),
+      .vaporeg_regtype_triple_num = haven::zap_labels(
+        .data$vaporeg_regtype_triple
+      ),
+      vaporeg_binary_strict = dplyr::case_when(
+        is.na(.data$.vaporeg_regtype_bindem_num) ~ NA_real_,
+        .data$.vaporeg_regtype_reports_num == 10 ~ 1,
+        TRUE ~ 0
+      ),
+      vaporeg_binary_non_strict = dplyr::case_when(
+        is.na(.data$.vaporeg_regtype_bindem_num) ~ NA_real_,
+        TRUE ~ .data$.vaporeg_regtype_bindem_num
+      ),
+      vaporeg_trichotomous = dplyr::case_when(
+        .data$.vaporeg_regtype_triple_num == 1 ~ 2,
+        .data$.vaporeg_regtype_triple_num == 2 ~ 1,
+        .data$.vaporeg_regtype_triple_num == 3 ~ 0,
+        TRUE ~ NA_real_
+      )
+    ) |>
+    dplyr::filter(
+      !(.data$country_name == "Palestine" &
+        .data$year <= 1919 &
+        .data$extended_country_name == "Palestine, State of")
+    ) |>
+    dplyr::select(
+      -dplyr::all_of(
+        c(
+          "vaporeg_dpa_country",
+          ".vaporeg_regtype_reports_num",
+          ".vaporeg_regtype_bindem_num",
+          ".vaporeg_regtype_triple_num"
+        )
+      )
+    )
+}
+
+standardize_vaporeg <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  version = c("current", "legacy"),
+  measure = c(
+    "vaporeg_binary_strict",
+    "vaporeg_binary_non_strict",
+    "vaporeg_trichotomous"
+  ),
+  ...
+) {
+  version <- match.arg(version)
+
+  if (verbose) {
     message("Adding VaPoReg data")
   }
 
-  if(force_redownload) {
-    vaporeg <- redownload_vaporeg(verbose = verbose,
-                                  include_in_output = include_in_output)
+  if (version == "current") {
+    if (force_redownload) {
+      vaporeg <- redownload_vaporeg(
+        verbose = verbose,
+        include_in_output = include_in_output
+      )
+    } else {
+      vaporeg <- democracyData::vaporeg
+    }
+
+    vaporeg <- prepare_vaporeg_for_standardization(vaporeg, ...)
   } else {
-    vaporeg <- democracyData::vaporeg
+    if (force_redownload && verbose) {
+      message(
+        "Using archived vaporeg_2024 snapshot; force_redownload is ignored."
+      )
+    }
+    vaporeg <- democracyData::vaporeg_2024
   }
 
   res <- vaporeg |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_lied <- function(force_redownload = FALSE,
-                             include_in_output = c("extended_country_name",
-                                                   "GWn",
-                                                   "cown",
-                                                   "in_GW_system"),
-                             verbose = FALSE,
-                             measure = c("lexical_index", "lexical_index_plus"),
-                             ...) {
-  if(verbose) {
+standardize_lied <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = c("lexical_index", "lexical_index_plus"),
+  ...
+) {
+  if (verbose) {
     message("Adding Lied data")
   }
 
-
-  if(force_redownload) {
-    LIED <- redownload_lied(verbose = verbose,
-                            include_in_output = include_in_output)
+  if (force_redownload) {
+    LIED <- redownload_lied(
+      verbose = verbose,
+      include_in_output = include_in_output
+    )
   } else {
     LIED <- democracyData::LIED
   }
 
   res <- LIED |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_magaloni <- function(force_redownload = FALSE,
-                                 include_in_output = c("extended_country_name",
-                                                       "GWn",
-                                                       "cown",
-                                                       "in_GW_system"),
-                                 verbose = FALSE,
-                                 measure = "regime_nr",
-                                 use_extended = TRUE,
-                                 ...) {
-  if(verbose) {
+standardize_magaloni <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "regime_nr",
+  use_extended = TRUE,
+  ...
+) {
+  if (verbose) {
     message("Adding Magaloni data")
   }
 
-  if(force_redownload) {
-    magaloni <- redownload_magaloni(verbose = verbose,
-                                    include_in_output = include_in_output,
-                                    extend = use_extended)
+  if (force_redownload) {
+    magaloni <- redownload_magaloni(
+      verbose = verbose,
+      include_in_output = include_in_output,
+      extend = use_extended
+    )
   } else {
-    if(use_extended) {
+    if (use_extended) {
       magaloni <- democracyData::magaloni_extended
     } else {
       magaloni <- democracyData::magaloni
@@ -676,14 +905,17 @@ standardize_magaloni <- function(force_redownload = FALSE,
   }
 
   res <- magaloni |>
-    dplyr::mutate(dplyr::across(dplyr::all_of(measure), \(x) dplyr::case_when(x == "Democracy" ~ 1,
-                                                                             is.na(x) ~ NA,
-                                                                             TRUE ~ 0))) |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    dplyr::mutate(dplyr::across(dplyr::all_of(measure), \(x) {
+      dplyr::case_when(x == "Democracy" ~ 1, is.na(x) ~ NA, TRUE ~ 0)
+    })) |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
-  if(use_extended) {
+  if (use_extended) {
     res <- res |>
       dplyr::mutate(measure = "magaloni_democracy_extended")
   } else {
@@ -695,88 +927,98 @@ standardize_magaloni <- function(force_redownload = FALSE,
   res
 }
 
-standardize_mainwaring <- function(include_in_output = c("extended_country_name",
-                                                         "GWn",
-                                                         "cown",
-                                                         "in_GW_system"),
-                                   verbose = FALSE,
-                                   measure = "mainwaring",
-                                   ...) {
-  if(verbose) {
+standardize_mainwaring <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "mainwaring",
+  ...
+) {
+  if (verbose) {
     message("Adding Mainwaring data")
   }
 
   res <- democracyData::mainwaring |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_mainwaring_pmm <- function(include_in_output = c("extended_country_name",
-                                                             "GWn",
-                                                             "cown",
-                                                             "in_GW_system"),
-                                     verbose = FALSE,
-                                     measure = "pmm_mainwaring",
-                                     ...) {
-  if(verbose) {
+standardize_mainwaring_pmm <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "pmm_mainwaring",
+  ...
+) {
+  if (verbose) {
     message("Adding mainwaring_pmm data")
   }
 
   res <- democracyData::mainwaring_pmm |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_munck_pmm <- function(include_in_output = c("extended_country_name",
-                                                    "GWn",
-                                                    "cown",
-                                                    "in_GW_system"),
-                              verbose = FALSE,
-                              measure = "pmm_munck",
-                              ...) {
-  if(verbose) {
+standardize_munck_pmm <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "pmm_munck",
+  ...
+) {
+  if (verbose) {
     message("Adding Munck data")
   }
 
   res <- democracyData::munck_pmm |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_pacl <- function(force_redownload = FALSE,
-                             include_in_output = c("extended_country_name",
-                                                   "GWn",
-                                                   "cown",
-                                                   "in_GW_system"),
-                             verbose = FALSE,
-                             measure = "democracy",
-                             ...) {
-  if(verbose) {
+standardize_pacl <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "democracy",
+  ...
+) {
+  if (verbose) {
     message("Adding PACL/DD data")
   }
 
-  if(force_redownload) {
-    pacl <- redownload_pacl(verbose = verbose,
-                            include_in_output = include_in_output)
+  if (force_redownload) {
+    pacl <- redownload_pacl(
+      verbose = verbose,
+      include_in_output = include_in_output
+    )
   } else {
     pacl <- democracyData::pacl
   }
 
   res <- pacl |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     dplyr::mutate(measure = "pacl") |>
     standardize_selection(include_in_output = include_in_output)
 
@@ -784,48 +1026,54 @@ standardize_pacl <- function(force_redownload = FALSE,
   res
 }
 
-standardize_pacl_pmm <- function(include_in_output = c("extended_country_name",
-                                                       "GWn",
-                                                       "cown",
-                                                       "in_GW_system"),
-                                 verbose = FALSE,
-                                 measure = "pmm_pacl",
-                                 ...) {
-  if(verbose) {
+standardize_pacl_pmm <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "pmm_pacl",
+  ...
+) {
+  if (verbose) {
     message("Adding pacl_pmm data")
   }
 
   res <- democracyData::pacl_pmm |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_pacl_update <- function(force_redownload = FALSE,
-                                    include_in_output = c("extended_country_name",
-                                                          "GWn",
-                                                          "cown",
-                                                          "in_GW_system"),
-                                    verbose = FALSE,
-                                    measure = "Democracy",
-                                    ...) {
-  if(verbose) {
+standardize_pacl_update <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "Democracy",
+  ...
+) {
+  if (verbose) {
     message("Adding PACL/DD update data")
   }
 
-  if(force_redownload) {
-    pacl_update <- redownload_pacl_update(verbose = verbose,
-                                          include_in_output = include_in_output)
+  if (force_redownload) {
+    pacl_update <- redownload_pacl_update(
+      verbose = verbose,
+      include_in_output = include_in_output
+    )
   } else {
     pacl_update <- democracyData::pacl_update
   }
 
   res <- pacl_update |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     dplyr::mutate(measure = "pacl_update") |>
     standardize_selection(include_in_output = include_in_output)
 
@@ -833,130 +1081,178 @@ standardize_pacl_update <- function(force_redownload = FALSE,
   res
 }
 
-standardize_peps <- function(force_redownload = FALSE,
-                             include_in_output = c("extended_country_name",
-                                                   "GWn",
-                                                   "cown",
-                                                   "in_GW_system"),
-                             verbose = FALSE,
-                             measure = "PEPS[0-9]",
-                             ...) {
-  if(verbose) {
+standardize_peps <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "PEPS[0-9]",
+  ...
+) {
+  if (verbose) {
     message("Adding PEPS data")
   }
 
-  if(force_redownload) {
-    peps <- redownload_peps(verbose = verbose,
-                            include_in_output = include_in_output)
+  if (force_redownload) {
+    peps <- redownload_peps(
+      verbose = verbose,
+      include_in_output = include_in_output
+    )
   } else {
     peps <- democracyData::peps
   }
 
   res <- peps |>
-    tidyr::pivot_longer(dplyr::matches("PEPS[0-9]"),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::matches("PEPS[0-9]"),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_pitf <- function(force_redownload = FALSE,
-                             include_in_output = c("extended_country_name",
-                                                   "GWn",
-                                                   "cown",
-                                                   "in_GW_system"),
-                             verbose = FALSE,
-                             measure = c("pitf", "pitf_binary"),
-                             ...) {
-  if(verbose) {
+standardize_pitf <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  version = c("current", "legacy", "polity5", "polity4"),
+  measure = c("pitf", "pitf_binary"),
+  ...
+) {
+  version <- match.arg(version)
+  version <- switch(
+    version,
+    current = "polity5",
+    legacy = "polity4",
+    version
+  )
+
+  if (verbose) {
     message("Adding PITF data")
   }
 
-  if(force_redownload) {
-    pitf <- create_pitf_scores(verbose = verbose,
-                               include_in_output = include_in_output)
+  if (force_redownload) {
+    polity_source <- if (version == "polity4") {
+      redownload_polityIV(
+        verbose = verbose,
+        include_in_output = include_in_output
+      )
+    } else {
+      download_polity_annual(
+        verbose = verbose,
+        include_in_output = include_in_output
+      )
+    }
+
+    pitf <- create_pitf_scores(
+      polity_annual = polity_source,
+      verbose = verbose,
+      include_in_output = include_in_output
+    )
   } else {
-    pitf <- democracyData::pitf
+    pitf <- if (version == "polity4") {
+      democracyData::pitf_p4
+    } else {
+      democracyData::pitf
+    }
   }
 
   res <- pitf |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_polyarchy_original <- function(force_redownload = FALSE,
-                                           include_in_output= c("extended_country_name",
-                                                                "GWn",
-                                                                "cown",
-                                                                "in_GW_system"),
-                                           verbose = FALSE,
-                                           measure = c("polyarchy_original_contestation",
-                                                       "polyarchy_original_polyarchy"),
-                                           ...) {
-  if(verbose) {
+standardize_polyarchy_original <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = c(
+    "polyarchy_original_contestation",
+    "polyarchy_original_polyarchy"
+  ),
+  ...
+) {
+  if (verbose) {
     message("Adding Polyarchy Original data")
   }
 
-  if(force_redownload) {
-    polyarchy <- redownload_polyarchy_original(verbose = verbose,
-                                               include_in_output = include_in_output)
+  if (force_redownload) {
+    polyarchy <- redownload_polyarchy_original(
+      verbose = verbose,
+      include_in_output = include_in_output
+    )
   } else {
     polyarchy <- democracyData::polyarchy
   }
 
   res <- polyarchy |>
     dplyr::rename_with(~"polyarchy_original_contestation", "cont") |>
-    dplyr::mutate(across("poly", list("polyarchy_original_polyarchy" = ~(10 - .)),
-                         .names = "{.fn}")) |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    dplyr::mutate(across(
+      "poly",
+      list("polyarchy_original_polyarchy" = ~ (10 - .)),
+      .names = "{.fn}"
+    )) |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_polyarchy_pmm <- function(include_in_output = c("extended_country_name",
-                                                            "GWn",
-                                                            "cown",
-                                                            "in_GW_system"),
-                                      verbose = FALSE,
-                                      measure = "pmm_polyarchy",
-                                      ...) {
-  if(verbose) {
+standardize_polyarchy_pmm <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "pmm_polyarchy",
+  ...
+) {
+  if (verbose) {
     message("Adding polyarchy_pmm data")
   }
 
   res <- democracyData::polyarchy_pmm |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_polyarchy_dimensions <- function(force_redownload = FALSE,
-                                             include_in_output= c("extended_country_name",
-                                                                "GWn",
-                                                                "cown",
-                                                                "in_GW_system"),
-                                             verbose = FALSE,
-                                             measure = c("polyarchy_contestation_dimension",
-                                                         "polyarchy_inclusion_dimension"),
-                                             ...) {
-  if(verbose) {
+standardize_polyarchy_dimensions <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = c(
+    "polyarchy_contestation_dimension",
+    "polyarchy_inclusion_dimension"
+  ),
+  ...
+) {
+  if (verbose) {
     message("Adding Polyarchy Dimensions data")
   }
 
-  if(force_redownload) {
-    polyarchy_dimensions <- redownload_polyarchy_dimensions(verbose = verbose,
-                                                 include_in_output = include_in_output)
+  if (force_redownload) {
+    polyarchy_dimensions <- redownload_polyarchy_dimensions(
+      verbose = verbose,
+      include_in_output = include_in_output
+    )
   } else {
     polyarchy_dimensions <- democracyData::polyarchy_dimensions
   }
@@ -964,25 +1260,24 @@ standardize_polyarchy_dimensions <- function(force_redownload = FALSE,
   res <- polyarchy_dimensions |>
     dplyr::rename_with(~"polyarchy_contestation_dimension", "CONTEST") |>
     dplyr::rename_with(~"polyarchy_inclusion_dimension", "INCLUS") |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_prc_gasiorowski <- function(include_in_output = c("extended_country_name",
-                                                              "GWn",
-                                                              "cown",
-                                                              "in_GW_system"),
-                                        verbose = FALSE,
-                                        keep_only_last_in_year = TRUE,
-                                        measure = "regime",
-                                        ...) {
-
-  end <- prc_at_end_year <- NULL
-
+standardize_prc_gasiorowski <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  keep_only_last_in_year = TRUE,
+  measure = "regime",
+  ...
+) {
   if (verbose) {
     message("Adding PRC/Gasiorowski data")
   }
@@ -991,44 +1286,59 @@ standardize_prc_gasiorowski <- function(include_in_output = c("extended_country_
 
   if (keep_only_last_in_year) {
     prc <- prc |>
-      dplyr::group_by(dplyr::across(all_of(c("prc_gasiorowski_country", "year", include_in_output)))) |>
-      dplyr::summarise(prc = last(.data[["prc_at_end_year"]][.data[["end"]] == max(.data[["end"]])])) |>
+      dplyr::group_by(dplyr::across(all_of(c(
+        "prc_gasiorowski_country",
+        "year",
+        include_in_output
+      )))) |>
+      dplyr::summarise(
+        prc = last(.data[["prc_at_end_year"]][
+          .data[["end"]] == max(.data[["end"]])
+        ])
+      ) |>
       dplyr::ungroup() |>
       dplyr::distinct() |>
-      dplyr::mutate(prc = ifelse(prc == 2, NA_real_, prc)) 
+      dplyr::mutate(prc = ifelse(prc == 2, NA_real_, prc))
   } else {
     prc <- prc |>
-      dplyr::mutate(prc = dplyr::case_when(
-        .data[[measure]] == "A" ~ 1,
-        .data[[measure]] == "S" ~ 3,
-        .data[[measure]] == "D" ~ 4,
-        .data[[measure]] == "T" ~ NA_real_)
+      dplyr::mutate(
+        prc = dplyr::case_when(
+          .data[[measure]] == "A" ~ 1,
+          .data[[measure]] == "S" ~ 3,
+          .data[[measure]] == "D" ~ 4,
+          .data[[measure]] == "T" ~ NA_real_
+        )
       )
   }
 
   res <- prc |>
-    tidyr::pivot_longer(cols = dplyr::all_of("prc"),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      cols = dplyr::all_of("prc"),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_prc_pmm <- function(include_in_output = c("extended_country_name",
-                                                      "GWn",
-                                                      "cown",
-                                                      "in_GW_system"),
-                                verbose = FALSE,
-                                measure = "pmm_prc",
-                                ...) {
+standardize_prc_pmm <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "pmm_prc",
+  ...
+) {
   if (verbose) {
     message("Adding prc_pmm data")
   }
 
   res <- democracyData::prc_pmm |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     dplyr::mutate(measure = "pmm_prc") |>
     standardize_selection(include_in_output = include_in_output)
 
@@ -1036,21 +1346,22 @@ standardize_prc_pmm <- function(include_in_output = c("extended_country_name",
   res
 }
 
-standardize_PIPE <- function(force_redownload = FALSE,
-                             include_in_output = c("extended_country_name",
-                                                   "GWn",
-                                                   "cown",
-                                                   "in_GW_system"),
-                             verbose = FALSE,
-                             measure = c("democracy2", "regime"),
-                             ...) {
+standardize_PIPE <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = c("democracy2", "regime"),
+  ...
+) {
   if (verbose) {
     message("Adding PIPE data")
   }
 
   if (force_redownload) {
-    PIPE <- redownload_pipe(verbose = verbose,
-                            include_in_output = include_in_output)
+    PIPE <- redownload_pipe(
+      verbose = verbose,
+      include_in_output = include_in_output
+    )
   } else {
     PIPE <- democracyData::PIPE
   }
@@ -1058,33 +1369,34 @@ standardize_PIPE <- function(force_redownload = FALSE,
   res <- PIPE |>
     dplyr::rename_with(~"PIPE_democracy", "democracy2") |>
     dplyr::rename_with(~"PIPE_regime", "regime") |>
-    tidyr::pivot_longer(dplyr::all_of(c("PIPE_democracy", "PIPE_regime")),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(c("PIPE_democracy", "PIPE_regime")),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_REIGN <- function(force_redownload = FALSE,
-                              include_in_output = c("extended_country_name",
-                                                    "GWn",
-                                                    "cown",
-                                                    "in_GW_system"),
-                              verbose = FALSE,
-                              keep_only_last_in_year = TRUE,
-                              measure = "gwf_regimetype",
-                              ...) {
-
-  End <- NULL
-
+standardize_REIGN <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  keep_only_last_in_year = TRUE,
+  measure = "gwf_regimetype",
+  ...
+) {
   if (verbose) {
     message("Adding REIGN data")
   }
 
   if (force_redownload) {
-    reign <- redownload_reign(verbose = verbose,
-                              include_in_output = include_in_output)
+    reign <- redownload_reign(
+      verbose = verbose,
+      include_in_output = include_in_output
+    )
   } else {
     reign <- democracyData::REIGN
   }
@@ -1097,35 +1409,41 @@ standardize_REIGN <- function(force_redownload = FALSE,
   }
 
   res <- reign |>
-    dplyr::mutate(reign_democracy = dplyr::case_when(
-      .data[[measure]] %in% c("presidential", "parliamentary") ~ 1,
-      TRUE ~ 0
-    )) |>
-    tidyr::pivot_longer(cols = dplyr::all_of("reign_democracy"),
-                        names_to = "measure", values_to = "value") |>
+    dplyr::mutate(
+      reign_democracy = dplyr::case_when(
+        .data[[measure]] %in% c("presidential", "parliamentary") ~ 1,
+        TRUE ~ 0
+      )
+    ) |>
+    tidyr::pivot_longer(
+      cols = dplyr::all_of("reign_democracy"),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_svmdi <- function(force_redownload = FALSE,
-                              release_year = 2020,
-                              include_in_output = c("extended_country_name",
-                                                    "GWn",
-                                                    "cown",
-                                                    "in_GW_system"),
-                              verbose = FALSE,
-                              ...) {
+standardize_svmdi <- function(
+  force_redownload = FALSE,
+  release_year = 2020,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  ...
+) {
   if (verbose) {
     message(sprintf("Adding SVMDI data (%s release)", release_year))
   }
 
   # Load appropriate dataset
   svmdi <- if (force_redownload) {
-    redownload_svmdi(release_year = release_year,
-                     verbose = verbose,
-                     include_in_output = include_in_output)
+    redownload_svmdi(
+      release_year = release_year,
+      verbose = verbose,
+      include_in_output = include_in_output
+    )
   } else {
     if (release_year == 2020) {
       democracyData::svmdi
@@ -1145,21 +1463,23 @@ standardize_svmdi <- function(force_redownload = FALSE,
   }
 
   res <- svmdi |>
-    tidyr::pivot_longer(dplyr::all_of(measure_vars),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure_vars),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_svolik <- function(include_in_output = c("extended_country_name",
-                                                     "GWn",
-                                                     "cown",
-                                                     "in_GW_system"),
-                               verbose = FALSE,
-                               measure = "regime_numeric",
-                               ...) {
+standardize_svolik <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "regime_numeric",
+  ...
+) {
   if (verbose) {
     message("Adding Svolik data")
   }
@@ -1168,32 +1488,36 @@ standardize_svolik <- function(include_in_output = c("extended_country_name",
 
   res <- svolik |>
     dplyr::rename_with(~"svolik_democracy", .cols = dplyr::all_of(measure)) |>
-    tidyr::pivot_longer(cols = dplyr::all_of("svolik_democracy"),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      cols = dplyr::all_of("svolik_democracy"),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_uds <- function(force_redownload = FALSE,
-                            release_year = 2014,
-                            include_in_output = c("extended_country_name",
-                                                  "GWn",
-                                                  "cown",
-                                                  "in_GW_system"),
-                            verbose = FALSE,
-                            measure = c("mean", "median"),
-                            ...) {
+standardize_uds <- function(
+  force_redownload = FALSE,
+  release_year = 2014,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = c("mean", "median"),
+  ...
+) {
   if (verbose) {
     message(sprintf("Adding UDS data (%s release)", release_year))
   }
 
   # Load appropriate dataset
   uds <- if (force_redownload) {
-    redownload_uds(release_year = release_year,
-                   verbose = verbose,
-                   include_in_output = include_in_output)
+    redownload_uds(
+      release_year = release_year,
+      verbose = verbose,
+      include_in_output = include_in_output
+    )
   } else {
     if (release_year == 2014) {
       democracyData::uds_2014
@@ -1212,32 +1536,38 @@ standardize_uds <- function(force_redownload = FALSE,
     dplyr::rename_with(~new_names, .cols = dplyr::all_of(measure))
 
   res <- uds |>
-    tidyr::pivot_longer(cols = dplyr::all_of(new_names),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      cols = dplyr::all_of(new_names),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_ulfelder <- function(force_redownload = FALSE,
-                                 use_extended = TRUE,
-                                 include_in_output = c("extended_country_name",
-                                                       "GWn",
-                                                       "cown",
-                                                       "in_GW_system"),
-                                 verbose = FALSE,
-                                 measure = "rgjtype",
-                                 ...) {
+standardize_ulfelder <- function(
+  force_redownload = FALSE,
+  use_extended = TRUE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "rgjtype",
+  ...
+) {
   if (verbose) {
-    message(sprintf("Adding Ulfelder data (%s version)",
-                    ifelse(use_extended, "extended", "standard")))
+    message(sprintf(
+      "Adding Ulfelder data (%s version)",
+      ifelse(use_extended, "extended", "standard")
+    ))
   }
 
   ulfelder <- if (force_redownload) {
-    redownload_ulfelder(verbose = verbose,
-                        include_in_output = include_in_output,
-                        extend = use_extended)
+    redownload_ulfelder(
+      verbose = verbose,
+      include_in_output = include_in_output,
+      extend = use_extended
+    )
   } else {
     if (use_extended) {
       democracyData::ulfelder_extended
@@ -1246,62 +1576,75 @@ standardize_ulfelder <- function(force_redownload = FALSE,
     }
   }
 
-  var_name <- if (use_extended) "ulfelder_democracy_extended" else "ulfelder_democracy"
+  var_name <- if (use_extended) {
+    "ulfelder_democracy_extended"
+  } else {
+    "ulfelder_democracy"
+  }
 
   res <- ulfelder |>
-    dplyr::mutate(!!var_name := dplyr::case_when(
-      .data[[measure]] %in% c("-99", "NS") ~ NA_real_,
-      .data[[measure]] == "A" ~ 0,
-      .data[[measure]] == "D" ~ 1,
-      TRUE ~ NA_real_
-    )) |>
-    tidyr::pivot_longer(cols = dplyr::all_of(var_name),
-                        names_to = "measure", values_to = "value") |>
+    dplyr::mutate(
+      !!var_name := dplyr::case_when(
+        .data[[measure]] %in% c("-99", "NS") ~ NA_real_,
+        .data[[measure]] == "A" ~ 0,
+        .data[[measure]] == "D" ~ 1,
+        TRUE ~ NA_real_
+      )
+    ) |>
+    tidyr::pivot_longer(
+      cols = dplyr::all_of(var_name),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_utip <- function(force_redownload = FALSE,
-                             include_in_output = c("extended_country_name",
-                                                   "GWn",
-                                                   "cown",
-                                                   "in_GW_system"),
-                             verbose = FALSE,
-                             measure = c("utip_dichotomous",
-                                         "utip_dichotomous_strict",
-                                         "utip_trichotomous"),
-                             ...) {
+standardize_utip <- function(
+  force_redownload = FALSE,
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = c(
+    "utip_dichotomous",
+    "utip_dichotomous_strict",
+    "utip_trichotomous"
+  ),
+  ...
+) {
   if (verbose) {
     message("Adding UTIP data")
   }
 
   utip <- if (force_redownload) {
-    redownload_utip(verbose = verbose,
-                    include_in_output = include_in_output)
+    redownload_utip(verbose = verbose, include_in_output = include_in_output)
   } else {
     democracyData::utip
   }
 
   res <- utip |>
-    tidyr::pivot_longer(cols = dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      cols = dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_vanhanen <- function(include_in_output = c("extended_country_name",
-                                                       "GWn",
-                                                       "cown",
-                                                       "in_GW_system"),
-                                 verbose = FALSE,
-                                 measure = c("vanhanen_competition",
-                                             "vanhanen_participation",
-                                             "vanhanen_democratization"),
-                                 ...) {
+standardize_vanhanen <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = c(
+    "vanhanen_competition",
+    "vanhanen_participation",
+    "vanhanen_democratization"
+  ),
+  ...
+) {
   if (verbose) {
     message("Adding Vanhanen data")
   }
@@ -1309,41 +1652,45 @@ standardize_vanhanen <- function(include_in_output = c("extended_country_name",
   vanhanen <- democracyData::vanhanen
 
   res <- vanhanen |>
-    tidyr::pivot_longer(cols = dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      cols = dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_vanhanen_pmm <- function(include_in_output = c("extended_country_name",
-                                           "GWn",
-                                           "cown",
-                                           "in_GW_system"),
-                                         verbose = FALSE,
-                                         measure = "pmm_vanhanen",
-                                         ...) {
+standardize_vanhanen_pmm <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure = "pmm_vanhanen",
+  ...
+) {
   if (verbose) {
     message("Adding vanhanen_pmm data")
   }
 
   res <- democracyData::vanhanen_pmm |>
-    tidyr::pivot_longer(dplyr::all_of(measure),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      dplyr::all_of(measure),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_vdem <- function(include_in_output = c("extended_country_name",
-                                                   "GWn",
-                                                   "cown",
-                                                   "in_GW_system"),
-                             verbose = FALSE,
-                             measure_pattern = "^v2x_[a-z]+$",
-                             ...) {
+standardize_vdem <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  measure_pattern = "^v2x_[a-z]+$",
+  ...
+) {
   if (verbose) {
     message("Adding V-Dem data")
   }
@@ -1351,22 +1698,22 @@ standardize_vdem <- function(include_in_output = c("extended_country_name",
   vdem <- democracyData::vdem_simple
 
   res <- vdem |>
-    tidyr::pivot_longer(cols = dplyr::matches(measure_pattern),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      cols = dplyr::matches(measure_pattern),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
   res
 }
 
-standardize_wahman_teorell_hadenius <- function(include_in_output = c("extended_country_name",
-                                                                      "GWn",
-                                                                      "cown",
-                                                                      "in_GW_system"),
-                                                verbose = FALSE,
-                                                ...) {
-  regime1ny <- regimenyrobust <- NULL
-
+standardize_wahman_teorell_hadenius <- function(
+  include_in_output = c("extended_country_name", "GWn", "cown", "in_GW_system"),
+  verbose = FALSE,
+  ...
+) {
   if (verbose) {
     message("Adding Wahman, Teorell, and Hadenius data")
   }
@@ -1378,8 +1725,11 @@ standardize_wahman_teorell_hadenius <- function(include_in_output = c("extended_
       wth_democ1 = haven::zap_label(regime1ny) == 100,
       wth_democrobust = haven::zap_label(regimenyrobust) == 100
     ) |>
-    tidyr::pivot_longer(cols = dplyr::all_of(c("wth_democ1", "wth_democrobust")),
-                        names_to = "measure", values_to = "value") |>
+    tidyr::pivot_longer(
+      cols = dplyr::all_of(c("wth_democ1", "wth_democrobust")),
+      names_to = "measure",
+      values_to = "value"
+    ) |>
     standardize_selection(include_in_output = include_in_output)
 
   stopifnot(!any(is.na(res$extended_country_name)))
