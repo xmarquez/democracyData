@@ -1,0 +1,420 @@
+# The Lexical Index of Democracy, v. 6.8
+
+The Lexical Index of Democracy first described in S. Skaaning, J.
+Gerring, and H. Bartusevičius. "A Lexical Index of Electoral Democracy".
+In: *Comparative Political Studies* 48.12 (2015), pp. 1491-1525. DOI:
+[10.1177/0010414015581050](https://dx.doi.org/10.1177/0010414015581050).
+Original data and variable descriptions available at
+<https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT>.
+The dataset is now on version 6.8, and contains new variables. The
+documentation below is copied from their codebook, with some small
+additions for clarification purposes.
+
+## Usage
+
+``` r
+LIED
+```
+
+## Format
+
+An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
+32891 rows and 27 columns.
+
+## Source
+
+S. Skaaning, J. Gerring, and H. Bartusevičius. "A Lexical Index of
+Electoral Democracy". In: *Comparative Political Studies* 48.12 (2015),
+pp. 1491-1525. DOI:
+[10.1177/0010414015581050](https://dx.doi.org/10.1177/0010414015581050).
+Original data and variable descriptions available at
+<https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT>.
+
+## Description of the Construction of LIED
+
+To code the lexical index we make use of five variables developed
+initially in the Political Institutions and Events
+([PIPE](https://xmarquez.github.io/democracyData/reference/PIPE.md))
+dataset (Przeworski et al. 2013): LEGSELEC, EXSELEC, OPPOSITION, MALE
+SUFFRAGE, and FEMALE SUFFRAGE. Since
+[PIPE](https://xmarquez.github.io/democracyData/reference/PIPE.md) does
+not attempt to measure the quality of elections, we generate a sixth
+variable: COMPETITION. All variables are binary, coded 1 if the
+following circumstances obtain, and 0 otherwise.
+
+- lied_country:
+
+  The country name used in the original dataset. 2 country-years were
+  repeated in the original data and have been dropped.
+
+- lied_cow:
+
+  The COW country code used in the original dataset.
+
+- vdem:
+
+  The V-Dem country code.
+
+- year:
+
+  Calendar year.
+
+- legselec:
+
+  A legislative body issues at least some laws and does not perform
+  executive functions. The lower house (or unicameral chamber) of the
+  legislature is at least partly elected. The legislature has not been
+  closed.
+
+- exselec:
+
+  The chief executive is either directly or indirectly elected (i.e.,
+  chosen by people who have been elected)
+
+- opposition:
+
+  The lower house (or unicameral chamber) of the legislature is (at
+  least in part) elected by voters facing more than one choice.
+  Specifically, parties are not banned and (a) more than one party is
+  allowed to compete or (b) elections are nonpartisan (i.e., all
+  candidates run without party labels)
+
+- male_suffrage:
+
+  Virtually all male citizens are allowed to vote in national elections.
+  Legal restrictions pertaining to age, criminal conviction,
+  incompetence, and local residency are not considered. Informal
+  restrictions such as those obtaining in the American South prior to
+  1965 are also not considered.
+
+- female_suffrage:
+
+  Virtually all female citizens are allowed to vote in national
+  elections. Similar coding rules apply.
+
+- competition:
+
+  The chief executive offices and seats in the effective legislative
+  body are filled by elections characterized by uncertainty (see
+  Przeworski 2000: 16- 17), meaning that the elections are, in
+  principle, sufficiently free to enable the opposition to gain power if
+  they were to attract sufficient support from the electorate. This
+  presumes that control over key executive and legislative offices is
+  determined by elections, the executive and members of the legislature
+  have not been unconstitutionally removed, and the legislature has not
+  been dissolved. With respect to the electoral process, this presumes
+  that the constitutional timing of elections has not been violated (in
+  a more than marginal fashion), non-extremist parties are not banned,
+  opposition candidates are generally free to participate, voters
+  experience little systematic coercion in exercising their electoral
+  choice, and electoral fraud does not determine who wins. With respect
+  to the outcome, this presumes that the declared winner of executive
+  and legislative elections reflects the votes cast by the electorate,
+  as near as can be determined from extant sources. Incumbent turnover
+  (as a result of multi-party elections) is regarded as a strong
+  indicator of competition, but is neither necessary nor sufficient. In
+  addition, we rely on reports from outside observers (as reported in
+  books, articles, and country reports) about whether the foregoing
+  conditions have been met in a given election (see Svolik 2012: 24).
+  Coding for this variable does not take into account whether there is a
+  level playing field, whether all contestants gain access to funding
+  and media, whether media coverage is unbiased, whether civil liberties
+  are respected, or other features associated with fully free and fair
+  elections. COMPETITION thus sets a modest threshold.
+
+- lexical_index:
+
+  To generate the lexical index from these six binary variables, a
+  country-year is assigned the highest score (L0-6) for which it
+  fulfills all requisite criteria, as follows:
+
+  L0: LEGSELEC=0 & EXSELEC=0.
+
+  L1: LEGSELEC=1 or EXSELEC=1.
+
+  L2: LEGSELEC=1 & OPPOSITION=1.
+
+  L3: LEGSELEC=1 & OPPOSITION=1 & EXSELEC=1.
+
+  L4: LEGSELEC=1 & OPPOSITION=1 & EXSELEC=1 & COMPETITION=1.
+
+  L5: LEGSELEC=1 & OPPOSITION=1 & EXSELEC=1 & COMPETITION=1 & (MALE
+  SUFFRAGE=1 or FEMALE SUFFRAGE=1).
+
+  L6: LEGSELEC=1 & OPPOSITION=1 & EXSELEC=1 & COMPETITION=1 & MALE
+  SUFFRAGE=1 & FEMALE SUFFRAGE=1.
+
+  In a small number of cases, the resulting index appears to have been
+  incorrectly constructed:
+
+      LIED |>
+        dplyr::filter(lexical_index != lexical_index_original) |>
+        dplyr::select(lied_country, year, lexical_index, lexical_index_original)
+      #> # A tibble: 17 x 4
+      #>    lied_country  year lexical_index lexical_index_original
+      #>    <chr>        <dbl>         <dbl>                  <dbl>
+      #>  1 Newfoundland  1925             6                      4
+      #>  2 Newfoundland  1926             6                      4
+      #>  3 Newfoundland  1927             6                      4
+      #>  4 Newfoundland  1928             6                      4
+      #>  5 Newfoundland  1929             6                      4
+      #>  6 Newfoundland  1930             6                      4
+      #>  7 Newfoundland  1931             6                      4
+      #>  8 Newfoundland  1932             6                      4
+      #>  9 Ecuador       1934             3                      4
+      #> 10 Cyprus        1973             6                      3
+      #> 11 Somalia       1960             6                      5
+      #> 12 Somalia       1961             6                      5
+      #> 13 Somalia       1962             6                      5
+      #> 14 Somalia       1963             6                      5
+      #> 15 Sudan         1964             1                      0
+      #> 16 Thailand      2007             6                      4
+      #> 17 Cambodia      1946             2                      0
+
+  I've recalculated the index for these cases and put the original value
+  in the `lexical_index_original` variable.
+
+- political_liberties:
+
+  Freedom of expression, freedom of assembly, and freedom of association
+  are respected. All groups, which are not openly anti-democratic, are
+  allowed to organize freely and to assemble peacefully, and free
+  speech, including critique of government and state-authorities, is
+  tolerated and practiced freely by individuals and groups, including
+  private as well as public media outlets. 1=present, 0=absent.
+
+- lexical_index_plus:
+
+  This index, LIED+, adds an extra layer to the upper-end of LIED in the
+  form of political liberties. This is done to distinguish between
+  electoral democracies and polyarchies. The meaning of the scores from
+  0 to 5 are identical to LIED, whereas 6 and 7 refer to the following
+  configurations of indicator values:
+
+  L6: legislative_elections=1 & multi-party_legislative_elections=1 &
+  executive_elections=1 & competitive_elections=1 & male_suffrage=1 &
+  female_suffrage=1 & political_liberties=0 (regime type: electoral
+  democracies)
+
+  L7: legislative_elections=1 & multi-party_legislative_elections=1 &
+  executive_elections=1 & competitive_elections=1 & male_suffrage=1 &
+  female_suffrage=1 & political_liberties=1 (regime type: polyarchies)
+
+- democratic_transition:
+
+  Indicates whether a democratic transition took place in a given year
+  as signified by a change in the competitive_elections indicator from 0
+  in the previous year to 1 in the current year. 1=present, 0=absent.
+
+- transition_type:
+
+  For all country-years with democratic transitions, we have coded the
+  mode of transition based on a distinction between: 1=conversion
+  (incumbent-led), 2=cooperative (pact between incumbents and
+  opposition/balanced influence), 3=collapse (opposition-led), 4=foreign
+  supervision (imposition by foreign power based on intervention or
+  highly asymmetrical – partial or full – decolonization), 5=foreign
+  liberalization (democracy reemerges after occupational power has lost
+  war to foreign powers). Country-years without democratic transitions
+  are scored 0.
+
+- democratic_breakdown:
+
+  Indicates whether a democratic breakdown took place in a given year as
+  signified by a change in competitive_elections indicator from 1 in the
+  previous year to 0 in the current year. 1=present, 0=absent.
+
+- breakdown_type:
+
+  For all country-years with democratic transitions, we have coded the
+  mode of transition based on a distinction between: 1=implicit
+  regression induced by incumbents, 2=military coup, 3=foreign
+  occupation, 4=self-coup (incumbents close down parliament unduly and
+  take full political control), 5=coup or civil conflict headed by
+  opposition party/movement, 6=coup headed by monarch. Country-years
+  without democratic breakdowns are scored 0.
+
+- turnover_period:
+
+  Indicates whether a particular country-year is part of a period
+  between an initial electoral government alternation (as indicated by a
+  turnover event, see below) in a multi-party electoral regime and an
+  interruption of the same multi-party electoral regime (as indicated by
+  a score of 0 on executive elections or
+  multi-party_legislative_elections, see above). If another turnover
+  event happens later in the same polity, a new turnover period begins.
+  1=present, 0=absent.
+
+- turnover_event:
+
+  Indicates whether partisan control over government power alternated
+  from an elected chief executive to another party/coalition/candidate
+  representing the opposition as a consequence of a multi-party election
+  in a particular country-year. Multi-party legislative and (direct or
+  indirect) executive elections are considered necessary conditions for
+  a genuine turnover. 1=present, 0=absent.
+
+- two_turnover_period:
+
+  Indicates whether a particular country-year is part of a period
+  between a second electoral government alternation (as indicated by a
+  turnover event, see below) in a multi-party electoral regime and an
+  interruption of the same multi-party electoral regime (as indicated by
+  a score of 0 on executive elections or
+  multi-party_legislative_elections, see above). If two turnover events
+  happens later in the same polity under a new multi_party electoral
+  regime, a new two-turnover period begins. 1=present, 0=absent.
+
+- sovereign:
+
+  Indicates whether a polity/country is a separate unit in the
+  international system of states (1) or subjected to foreign
+  colonization or occupation with formal loss of autonomy (0).
+
+## Standard descriptive variables (generated by this package)
+
+- extended_country_name:
+
+  The name of the country in the Gleditsch-Ward system of states, or the
+  official name of the entity (for non-sovereign entities and states not
+  in the Gleditsch and Ward system of states) or else a common name for
+  disputed cases that do not have an official name (e.g., Western
+  Sahara, Hyderabad). The Gleditsch and Ward scheme sometimes indicates
+  the common name of the country and (in parentheses) the name of an
+  earlier incarnation of the state: thus, they have Germany (Prussia),
+  Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
+  Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
+  Membership: A Revised List of the Independent States since 1816."
+  International Interactions 25: 393-413. The list can be found at
+  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+
+- GWn:
+
+  Gleditsch and Ward's numeric country code, from the Gleditsch and Ward
+  list of independent states.
+
+- cown:
+
+  The Correlates of War numeric country code, 2016 version. This differs
+  from Gleditsch and Ward's numeric country code in a few cases. See
+  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  the full list.
+
+- in_GW_system:
+
+  Whether the state is "in system" (that is, is independent and
+  sovereign), according to Gleditsch and Ward, for this particular date.
+  Matches at the end of the year; so, for example South Vietnam 1975 is
+  `FALSE` because, according to Gleditsch and Ward, the country ended on
+  April 1975 (being absorbed by North Vietnam). It is also `TRUE` for
+  dates beyond 2012 for countries that did not end by then, depsite the
+  fact that the Gleditsch and Ward list has not been updated since.
+
+## Deviations from [PIPE](https://xmarquez.github.io/democracyData/reference/PIPE.md)
+
+The LIED compilers state that:
+
+Although we employ
+[PIPE](https://xmarquez.github.io/democracyData/reference/PIPE.md) as an
+initial source for coding LEGSELEC, EXSELEC, OPPOSITION, MALE SUFFRAGE,
+and FEMALE SUFFRAGE, we deviate from PIPE–based on our reading of
+country specific sources–in several ways. First, with respect to
+executive elections, in the
+[PIPE](https://xmarquez.github.io/democracyData/reference/PIPE.md)
+dataset "Prime ministers are always coded as elected if the legislature
+is open." However, for our purposes we need an indicator that also takes
+into account whether the government is responsible to an elected
+parliament if the executive is not directly elected–a situation
+generated by a number of European monarchies prior to World War I, by
+episodes of international supervision such as Bosnia-Herzegovina in the
+first years following the civil war, and by some monarchies in the
+Middle East and elsewhere (e.g., Liechtenstein, Monaco, and Tonga) in
+the contemporary era. To illustrate,
+[PIPE](https://xmarquez.github.io/democracyData/reference/PIPE.md) codes
+Denmark as having executive elections from 1849 to 1900 although the
+parliamentary principle was not established until 1901. Before then, the
+government was accountable to the king. Among the current cases with
+elected multiparty legislatures not fulfilling this condition, we find
+Jordan and Morocco. In order to achieve a higher level of
+concept-measure consistency, we have thus recoded all country-years
+(based on country-specific accounts) for this variable where our sources
+suggested doing so.
+
+We also conduct original coding for countries whose coding is incomplete
+in PIPE and for additional countries such as the German principalities
+that are not covered in PIPE. In this fashion, we generate a complete
+dataset for all six variables covering all independent countries of the
+world in the period under study (1800-2013 or 1789-2019 for v. 5.2).
+Whereas the numbers of observations for the PIPE variables range between
+14,465 and 15,302, our dataset provides 18,142 observations for all
+variables. Except for minor adjustments regarding executive elections
+(mentioned above), this additional coding follows the rules laid out in
+the PIPE codebook. Coding decisions are based on country-specific
+sources that are too numerous to specify. In rare instances we stumbled
+upon information that required a re-coding of PIPE variables, so the two
+datasets do not correspond exactly.
+
+Countries are coded across these conditions for the length of their
+sovereign existence within the 1800-2013 (1789-2019 for v. 5.2)
+timespan, generating a dataset with 221 countries. To identify
+independent countries we rely on Gleditsch (2013) and Correlates of War
+(2011), supplemented from 1800 to 1815 by various country-specific
+sources. Importantly, electoral democracy does not presume complete
+sovereignty. A polity may be constrained in its actions by other states,
+by imperial control (as over a colony), by international treaties, or by
+world markets. Thus, to say that a polity is an electoral democracy is
+to say that it functions as such for policies over which it enjoys
+decisionmaking power. Scores for each indicator reflect the status of a
+country on the last day of the calendar year (31 December) and are not
+intended to reflect the mean value of an indicator across the previous
+364 days.
+
+## See also
+
+Other democracy:
+[`PIPE`](https://xmarquez.github.io/democracyData/reference/PIPE.md),
+[`REIGN`](https://xmarquez.github.io/democracyData/reference/REIGN.md),
+[`anckar`](https://xmarquez.github.io/democracyData/reference/anckar.md),
+[`anrr`](https://xmarquez.github.io/democracyData/reference/anrr.md),
+[`arat_pmm`](https://xmarquez.github.io/democracyData/reference/arat_pmm.md),
+[`blm`](https://xmarquez.github.io/democracyData/reference/blm.md),
+[`bmr`](https://xmarquez.github.io/democracyData/reference/bmr.md),
+[`bnr`](https://xmarquez.github.io/democracyData/reference/bnr.md),
+[`bollen_pmm`](https://xmarquez.github.io/democracyData/reference/bollen_pmm.md),
+[`bti`](https://xmarquez.github.io/democracyData/reference/bti.md),
+[`doorenspleet`](https://xmarquez.github.io/democracyData/reference/doorenspleet.md),
+[`download_fh()`](https://xmarquez.github.io/democracyData/reference/download_fh.md),
+[`download_fh_electoral()`](https://xmarquez.github.io/democracyData/reference/download_fh_electoral.md),
+[`download_fh_full()`](https://xmarquez.github.io/democracyData/reference/download_fh_full.md),
+[`download_wgi_voice_and_accountability()`](https://xmarquez.github.io/democracyData/reference/download_wgi_voice_and_accountability.md),
+[`eiu`](https://xmarquez.github.io/democracyData/reference/eiu.md),
+[`extended_uds`](https://xmarquez.github.io/democracyData/reference/extended_uds.md),
+[`fh_pmm`](https://xmarquez.github.io/democracyData/reference/fh_pmm.md),
+[`gwf_all`](https://xmarquez.github.io/democracyData/reference/gwf_all.md),
+[`hadenius_pmm`](https://xmarquez.github.io/democracyData/reference/hadenius_pmm.md),
+[`kailitz`](https://xmarquez.github.io/democracyData/reference/kailitz.md),
+[`magaloni`](https://xmarquez.github.io/democracyData/reference/magaloni.md),
+[`mainwaring`](https://xmarquez.github.io/democracyData/reference/mainwaring.md),
+[`munck_pmm`](https://xmarquez.github.io/democracyData/reference/munck_pmm.md),
+[`pacl`](https://xmarquez.github.io/democracyData/reference/pacl.md),
+[`pacl_update`](https://xmarquez.github.io/democracyData/reference/pacl_update.md),
+[`peps`](https://xmarquez.github.io/democracyData/reference/peps.md),
+[`pitf`](https://xmarquez.github.io/democracyData/reference/pitf.md),
+[`polityIV`](https://xmarquez.github.io/democracyData/reference/polityIV.md),
+[`polity_pmm`](https://xmarquez.github.io/democracyData/reference/polity_pmm.md),
+[`polyarchy`](https://xmarquez.github.io/democracyData/reference/polyarchy.md),
+[`polyarchy_dimensions`](https://xmarquez.github.io/democracyData/reference/polyarchy_dimensions.md),
+[`prc_gasiorowski`](https://xmarquez.github.io/democracyData/reference/prc_gasiorowski.md),
+[`svmdi`](https://xmarquez.github.io/democracyData/reference/svmdi.md),
+[`svolik_regime`](https://xmarquez.github.io/democracyData/reference/svolik_regime.md),
+[`uds_2014`](https://xmarquez.github.io/democracyData/reference/uds_2014.md),
+[`ulfelder`](https://xmarquez.github.io/democracyData/reference/ulfelder.md),
+[`utip`](https://xmarquez.github.io/democracyData/reference/utip.md),
+[`vanhanen`](https://xmarquez.github.io/democracyData/reference/vanhanen.md),
+[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md),
+[`vdem_simple`](https://xmarquez.github.io/democracyData/reference/vdem_simple.md),
+[`wahman_teorell_hadenius`](https://xmarquez.github.io/democracyData/reference/wahman_teorell_hadenius.md)
+
+Other institutions:
+[`PIPE`](https://xmarquez.github.io/democracyData/reference/PIPE.md),
+[`vaporeg`](https://xmarquez.github.io/democracyData/reference/vaporeg.md)

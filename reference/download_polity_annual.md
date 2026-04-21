@@ -1,0 +1,430 @@
+# Polity 5
+
+Downloads the 2020 update of the Polity 5 dataset (annual time series)
+and processes it using
+[country_year_coder](https://xmarquez.github.io/democracyData/reference/country_year_coder.md).
+The original data is available at
+[http://www.systemicpeace.org/inscrdata.html](http://www.systemicpeace.org/inscrdata.md)'.
+
+## Usage
+
+``` r
+download_polity_annual(url, verbose = TRUE, return_raw = FALSE, ...)
+```
+
+## Source
+
+Marshall, Monty G., Ted Robert Gurr. 2020. "Polity5: Political Regime
+Characteristics and Transitions, 1800-2018". Dataset Users' Manual.
+Center for Systemic Peace. Available at
+<http://www.systemicpeace.org/inscr/p5manualv2018.pdf>
+
+## Arguments
+
+- url:
+
+  The URL of the dataset. Defaults to
+  <http://www.systemicpeace.org/inscr/p5v2018.sav>.
+
+- verbose:
+
+  Whether to print a running commentary of what the function is doing
+  while processing the data.
+
+- return_raw:
+
+  Whether to return the raw data, with minimal processing. Default is
+  `FALSE`.
+
+- ...:
+
+  Other parameters passed to
+  [country_year_coder](https://xmarquez.github.io/democracyData/reference/country_year_coder.md).
+
+## Value
+
+The annual time series version of the Polity 5 dataset, as a
+[`tibble::tibble()`](https://tibble.tidyverse.org/reference/tibble.html),
+with the additional columns produced by
+[country_year_coder](https://xmarquez.github.io/democracyData/reference/country_year_coder.md).
+Consult the [Polity 5
+codebook](http://www.systemicpeace.org/inscr/p5manualv2018.pdf) for
+further description.
+
+## Variables
+
+- p5:
+
+  Polity5 revision indicator. p5 = 1 if the country-year has undergone
+  systematic review in version 5. Country-years coded 0 report PolityIV
+  values.
+
+- cyear:
+
+  Unique country code-year identifier.
+
+- polity_annual_ccode:
+
+  Numeric Country Code. Derived from the Correlates of War country
+  codes, but with some small differences.
+
+- scode:
+
+  Alphabetical Country Code. Derived from the Correlates of War country
+  codes, but with some small differences.
+
+- polityIV_country:
+
+  The original country name in the Polity 5 data.
+
+- year:
+
+  The calendar year.
+
+- flag:
+
+  From the Polity 5 manual, 2020 edition:
+
+  Each case (country-year) is flagged with this trichotomous indicator
+  denoting the coders' general confidence in the component variable
+  scores assigned during a Polity annual update. A "0" code indicates
+  reasonable confidence in the codings listed and is assigned to all
+  historical cases. A "1" code indicates that codings covering a period
+  of up to five years since a recent polity change are considered
+  tentative as new authority patterns emerge and coalesce; these cases
+  are subject to review and possible revision or "smoothing" ... A "2"
+  code indicates that information is limited and, so, there are
+  reservations concerning the code assigned, often because a polity
+  change has occurred very recently and insufficient time has elapsed to
+  render a confident judgement of the nature of authority changes; the
+  codes assigned are considered a "best assessment" that require further
+  review and possible revision (p. 12).
+
+- fragment:
+
+  From the Polity5 manual, 2020 edition, pp. 12-13:
+
+  Polity Fragmentation: This variable codes the operational existence of
+  a separate polity, or polities, comprising substantial territory and
+  population within the recognized borders of the state and over which
+  the coded polity exercises no effective authority (effective authority
+  may be participatory or coercive). Local autonomy arrangements
+  voluntarily established and accepted by both central and local
+  authorities are not considered fragmentation. A polity that can not
+  exercise relatively effective authority over at least 50 percent of
+  its established territory is necessarily considered to be in a
+  condition of "state failure" (i.e., interruption or interregnum, see
+  below, that may or may not coincide with active civil war). Polity
+  fragmentation may result from open warfare (active or latent) or
+  foreign occupation and may continue in the absence of open warfare as
+  a situation of de facto separation remains unresolved and unchallenged
+  by the state. Examples of de facto separation are northern Cyprus
+  since 1975 (with Turkish occupation), NagornoKarabakh in Azerbaijan
+  since 1994 (with Armenian occupation), Republika Srpska in Bosnia
+  since 1995 (with NATO occupation), Abkhazia and South Ossetia in
+  Georgia from 1994, Chechnya in Russia from 1996 to 1999, and Kosovo in
+  Serbia from 1999 to 2008 (Kosovo became a contested, independent state
+  in 2008). This variable is coded beginning only in the year 2000; it
+  is blank for all prior years (i.e., it has not yet been coded
+  historically).
+
+  \(0\) No overt fragmentation
+
+  \(1\) Slight fragmentation: Less than ten percent of the country's
+  territory is effectively under local authority and actively separated
+  from the central authority of the regime.
+
+  \(2\) Moderate fragmentation: Ten to twenty-five percent of the
+  country's territory is effectively ruled by local authority and
+  actively separated from the central authority of the regime.
+
+  \(3\) Serious fragmentation: Over twenty-five percent (and up to fifty
+  percent) of the country's territory is effectively ruled by local
+  authority and actively separated from the central authority of the
+  regime.
+
+- democ:
+
+  Institutionalized democracy indicator, 0-10 scale. See PolityIV users'
+  manual at <http://www.systemicpeace.org/inscr/p5manualv2018.pdf>
+
+- autoc:
+
+  Institutionalized autocracy indicator, 0-10 scale. See PolityIV users'
+  manual at <http://www.systemicpeace.org/inscr/p5manualv2018.pdf>
+
+- polity:
+
+  Annual polity index (`autoc` - `democ`), including values for
+  interruption (-66), interregnum (-77), and transition periods (-88).
+  Higher values are more democratic. Note that the Polity users' manual
+  (pp. 16-17) says that "The POLITY score was added to the Polity IV
+  data series in recognition of its common usage by users in
+  quantitative research and in the overriding interest of maintaining
+  uniformity among users in this application. The simple combination of
+  the original DEMOC and AUTOC index values in a unitary POLITY scale,
+  in many ways, runs contrary to the original theory stated by Eckstein
+  and Gurr in Patterns of Authority (1975) and, so, should be treated
+  and interpreted with due caution. Its primary utility is in
+  investigative research which should be augmented by more detailed
+  analysis. The original theory posits that autocratic and democratic
+  authority are distinct patterns of authority, elements of which may
+  co-exist in any particular regime context. The inclusion of this
+  variable in the data series should not be seen as an acceptance of the
+  counter-proposal that autocracy and democracy are alternatives or
+  opposites in a unified authority spectrum, even though elements of
+  this perspective may be implied in the original theory. The POLITY
+  variable provides a convenient avenue for examining general regime
+  effects in analyses but researchers should note that the middle of the
+  implied POLITY "spectrum" is somewhat muddled in terms of the original
+  theory, masking various combinations of DEMOC and AUTOC scores with
+  the same POLITY score. Investigations involving hypotheses of varying
+  effects of democracy and/or autocracy should employ the original
+  Polity scheme and test DEMOC and AUTOC separately.
+
+- polity2:
+
+  Annual polity2 index, interpolating values for interruption (-66 is
+  treated as `NA`), interregnum \*-77 is treated as 0), and transition
+  periods (prorated across the transition). Higher values are more
+  democratic.
+
+- durable:
+
+  Regime durability. See PolityIV users' manual at
+  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+
+- xrreg:
+
+  Regulation of Chief Executive Recruitment. 1 = unregulated, 2 =
+  designational/transitional, 3 = regulated. See PolityIV users' manual
+  at <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+
+- xrcomp:
+
+  Competitiveness of Chief Executive Recruitment. 1 = selection, 2 =
+  dual/transitional, 3 = election. See PolityIV users' manual at
+  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+
+- xropen:
+
+  Openness of Chief Executive Recruitment. 1 = unlimited, 2 =
+  dual/transitional, 3 = election. See PolityIV users' manual at
+  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+
+- xconst:
+
+  Executive constraints. 1 = closed, 2 = intermediate, 3 = slight to
+  moderate limitation, 4 = intermediate, 5 = substantial limitations, 6
+  = intermediate, 7 = executive parity or subordination. See PolityIV
+  users' manual at
+  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+
+- parcomp:
+
+  Regulation of participation. 0 = Not applicable, 1 = repressed, 2 =
+  suppressed, 3 = factional, 4 = transitional, 5 = competitive. See
+  PolityIV users' manual at
+  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+
+- exrec:
+
+  Executive recruitment (concept). 1 = ascription, 2 = dual
+  (ascription + designation), 3 = designation, 4 = Self selection, 5 =
+  gradual transition from self selection, 6 = dual (ascription +
+  election), 7 = transitional or restricted election, 8 = competitive
+  election. See PolityIV users' manual at
+  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+
+- exconst:
+
+  Executive constraints (concept). Identical to `xconst`. 1 = closed, 2
+  = intermediate, 3 = slight to moderate limitation, 4 = intermediate, 5
+  = substantial limitations, 6 = intermediate, 7 = executive parity or
+  subordination. See PolityIV users' manual at
+  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+
+- polcomp:
+
+  Political competition (concept). 1 = suppressed, 2 = restricted 3 =
+  Imposed transition, 4 = Uninstitutionalized, 5 = gradual transition
+  from uninstitutionalized, 6 = factional/restricted, 7 = factional, 8 =
+  electoral transition: persistent conflict/coercion, 9 = electoral
+  transition: limited conflict/coercion, 10 = institutionalized
+  electoral. See PolityIV users' manual at
+  <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+
+- prior:
+
+  Regime Polity code immediately prior to regime end date. The polity
+  users' manual (p. 31) says "The PRIOR code may be a number from -10 to
+  10 or it may be a "begin state" code (88 or 99); it may not be a
+  standardized authority code (i.e., -66, -77, or -88) as those are
+  necessarily transitory conditions, not polities. The PRIOR code and
+  the corresponding EYEAR and EDATE of the initial polity change (i.e.,
+  the first year record) in a multi-year regime change is repeated in
+  the record of the final year of the multi-year change. This has been
+  done to facilitate retrieval of information concerning the beginning
+  and ending polities in multi-year regime changes, particularly when
+  the D3 "flag" variable is used to select regime transition cases out
+  of the larger dataset."
+
+- emonth:
+
+  Polity end month. End month of previous polity, start of current.
+
+- eday:
+
+  Polity end day. End day of previous polity, start of current.
+
+- eyear:
+
+  Polity end year. End year of previous polity, start of current.
+
+- eprec:
+
+  End date precision. 1 = exact date, 2 = assigned date (where more than
+  one event could be used, or event persisted for more than one day), 3
+  = approximate date (month could be identified, but not the day), 4 =
+  missing (year could be identified, but not month or day), 5 = unknown
+  (not recorded 1995-98).
+
+- interim:
+
+  The Polity users' manual says (p. 32) "Interim Polity Code: Interim
+  Polity coding is used to denote (1) the short-lived nature of a
+  distinct change in regime authority that spans only a portion of the
+  coded year (i.e., a POLITY code) that would not otherwise be recorded
+  due to the annualized structure of the Polity data, (2) a "transition"
+  period of three years or less while a new Polity is being established
+  (i.e., -88 code), (3) an "interruption" period of any length while a
+  Polity remains under foreign authority (i.e., -66 code), or (4) an
+  "interregnal" period denoting a collapse of central authority (i.e.,
+  -77 code). INTERIM is coded for each year between the end date (EDATE)
+  of the previous Polity and the begin date (BDATE) of the subsequent
+  Polity whenever standardized authority codes are used or when a series
+  of incremental changes over a period of three years orless combine for
+  a consistent POLITY change of three points or more ("consistent" here
+  means that the incremental changes are all in the same general
+  direction, positive or negative)."
+
+- bmonth:
+
+  Polity beginning month. Beginning month of next polity, end of
+  current.
+
+- bday:
+
+  Polity beginning day. Beginning day of next polity, end of current.
+
+- eyear:
+
+  Polity beginning year. Beginning year of previous polity, end of
+  current.
+
+- bprec:
+
+  Beginning date precision. 1 = exact date, 2 = assigned date (where
+  more than one event could be used, or event persisted for more than
+  one day), 3 = approximate date (month could be identified, but not the
+  day), 4 = missing (year could be identified, but not month or day), 5
+  = unknown (not recorded 1995-98).
+
+- post:
+
+  Regime `polity` code immediately after the current regime.
+
+- change:
+
+  Net difference between `prior` and `post`. See PolityIV users' manual
+  at <http://www.systemicpeace.org/inscr/p5manualv2018.pdf> for details.
+  Note the code 88 denotes a "pre-existing polity" (for polities that
+  existed before 1800), 96 indicates state disintegration, 0 a state in
+  transition, 97 state transformation, 98 state demise, and 99 state
+  creation.
+
+- d4:
+
+  Regime Transition Completed. Variable D4 is a flag variable that
+  designates (by code "1") the year of a regime change or the final year
+  of a multi-year regime transition.
+
+- sf:
+
+  State failure. Variable SF is a flag variable that designates (by code
+  "1") every year during which a Polity is considered to be in a
+  condition of "complete collapse of central authority" or "state
+  failure" (i.e., -77). The variable SF is also coded "1" for years when
+  a state disintegrates (variable CHANGE code "96") and when a profound
+  revolutionary change in political authority occurs (during which the
+  authority of the previous Polity is assumed to have collapsed
+  completely prior to the revolutionary seizure of power and subsequent
+  restructuring of authority).
+
+- regtrans:
+
+  Regime transition. 3 = major democratic transition, 2 = minor
+  democratic transition, 1 = positive regime change, 0 = little or no
+  change, -1 = negative regime change, -2 adverse regime change, -77
+  state failure, -66 interruption, 96 = state disintegration, 97 = state
+  transformation, 98 = state demise, 99 = state creation.
+
+## Standard descriptive variables (generated by this package)
+
+- extended_country_name:
+
+  The name of the country in the Gleditsch-Ward system of states, or the
+  official name of the entity (for non-sovereign entities and states not
+  in the Gleditsch and Ward system of states) or else a common name for
+  disputed cases that do not have an official name (e.g., Western
+  Sahara, Hyderabad). The Gleditsch and Ward scheme sometimes indicates
+  the common name of the country and (in parentheses) the name of an
+  earlier incarnation of the state: thus, they have Germany (Prussia),
+  Russia (Soviet Union), Madagascar (Malagasy), etc. For details, see
+  Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate System
+  Membership: A Revised List of the Independent States since 1816."
+  International Interactions 25: 393-413. The list can be found at
+  [http://privatewww.essex.ac.uk/~ksg/statelist.html](http://privatewww.essex.ac.uk/~ksg/statelist.md).
+
+- GWn:
+
+  Gleditsch and Ward's numeric country code, from the Gleditsch and Ward
+  list of independent states.
+
+- cown:
+
+  The Correlates of War numeric country code, 2016 version. This differs
+  from Gleditsch and Ward's numeric country code in a few cases. See
+  <http://www.correlatesofwar.org/data-sets/state-system-membership> for
+  the full list.
+
+- in_GW_system:
+
+  Whether the state is "in system" (that is, is independent and
+  sovereign), according to Gleditsch and Ward, for this particular date.
+  Matches at the end of the year; so, for example South Vietnam 1975 is
+  `FALSE` because, according to Gleditsch and Ward, the country ended on
+  April 1975 (being absorbed by North Vietnam). It is also `TRUE` for
+  dates beyond 2012 for countries that did not end by then, depsite the
+  fact that the Gleditsch and Ward list has not been updated since.
+
+## Note
+
+The datasets downloaded by the `download_*` family of functions are not
+directly available in this package. You will always need to directly
+download them in order to use them.
+
+## See also
+
+[polity_pmm](https://xmarquez.github.io/democracyData/reference/polity_pmm.md)
+
+[polityIV](https://xmarquez.github.io/democracyData/reference/polityIV.md)
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+polity_annual <- download_polity_annual()
+polity_annual
+} # }
+```

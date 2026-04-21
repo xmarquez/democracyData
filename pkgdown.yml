@@ -1,0 +1,12 @@
+pandoc: 3.1.11
+pkgdown: 2.2.0
+pkgdown_sha: ~
+articles:
+  articles/Relationships_between_democracy_measures: Relationships_between_democracy_measures.html
+  articles/Replicating_and_extending_the_UD_scores: Replicating_and_extending_the_UD_scores.html
+  articles/Understanding_the_coverage_of_existing_democracy_indexes: Understanding_the_coverage_of_existing_democracy_indexes.html
+  articles/Understanding_the_state_system: Understanding_the_state_system.html
+last_built: 2026-04-21T02:10Z
+urls:
+  reference: https://xmarquez.github.io/democracyData/reference
+  article: https://xmarquez.github.io/democracyData/articles
