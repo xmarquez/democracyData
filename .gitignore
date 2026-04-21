@@ -3,10 +3,17 @@
 .RData
 .Ruserdata
 .claude/
+_targets/
+README.html
+RELEASE-*.md
+data-raw/_targets.R
 data-raw/Adding_and_testing_all_democracy_datasets_cache/
 docs/
 inst/doc
 cache
+vignettes/articles/*_cache/
+vignettes/articles/*_files/
+vignettes/articles/*.knit.md
 vignettes/articles/Relationships_between_democracy_measures_cache/
 .Rd2pdf6593
 .Rd2pdf6605

@@ -21,4 +21,6 @@
 ^_targets.R$
 ^run.R$
 ^run.sh$
-
+^\.claude$
+^README\.html$
+^RELEASE-.*\.md$

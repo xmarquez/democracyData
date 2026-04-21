@@ -1,0 +1,4 @@
+exclusions: list(
+  "data-raw",
+  "vignettes"
+  )
