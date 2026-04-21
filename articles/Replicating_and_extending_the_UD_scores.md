@@ -369,7 +369,7 @@ replication_2011_model@time
 ```
 
     TOTAL:   Data  Estep  Mstep     SE   Post
-     5.204  0.117  0.629  3.514  0.914  0.000 
+     4.387  0.107  0.542  2.966  0.749  0.001 
 
 We can easily check that this model converges and that it accounts for
 most of the variance in the democracy indexes:
@@ -383,7 +383,7 @@ replication_2011_model
         model = 1, itemtype = "graded", SE = TRUE, verbose = FALSE)
 
     Full-information item factor analysis with 1 factor(s).
-    Converged within 1e-04 tolerance after 146 EM iterations.
+    Converged within 1e-04 tolerance after 153 EM iterations.
     mirt version: 1.46.1
     M-step optimizer: BFGS
     EM acceleration: Ramsay
@@ -392,12 +392,12 @@ replication_2011_model
 
     Information matrix estimated with method: Oakes
     Second-order test: model is a possible local maximum
-    Condition number of information matrix =  89112.81
+    Condition number of information matrix =  92210.37
 
-    Log-likelihood = -55716.18
+    Log-likelihood = -55716.14
     Estimated parameters: 97
-    AIC = 111626.4
-    BIC = 112317; SABIC = 112008.8
+    AIC = 111626.3
+    BIC = 112316.9; SABIC = 112008.7
 
 ``` r
 summary(replication_2011_model)
@@ -409,7 +409,7 @@ summary(replication_2011_model)
     pmm_bollen     0.951 0.904
     pmm_fh         0.941 0.885
     pmm_hadenius   0.986 0.972
-    pmm_mainwaring 0.994 0.989
+    pmm_mainwaring 0.995 0.989
     pmm_munck      0.955 0.912
     pmm_pacl       0.967 0.936
     pmm_polity     0.954 0.911
@@ -518,9 +518,9 @@ cor(replication_2011_scores |>
 ```
 
                     uds_2011_mean uds_2011_median        z1
-    uds_2011_mean       1.0000000       0.9999485 0.9996735
-    uds_2011_median     0.9999485       1.0000000 0.9995924
-    z1                  0.9996735       0.9995924 1.0000000
+    uds_2011_mean       1.0000000       0.9999485 0.9996730
+    uds_2011_median     0.9999485       1.0000000 0.9995921
+    z1                  0.9996730       0.9995921 1.0000000
 
 (For more details on the relationship between the original UD scores and
 the replicated scores produced using this method, see my [working
@@ -616,17 +616,17 @@ summary(extended_model)
     wgi_democracy                 0.00103
     fh_total_reversed             0.00111
     gwf_democracy_extended_strict 0.00162
-    pmm_hadenius                  0.00453
+    pmm_hadenius                  0.00454
     kailitz_tri                   0.00130
     svolik_democracy              0.00145
     lexical_index                 0.00073
     ulfelder_democracy_extended   0.00117
     prc                           0.00071
-    mainwaring                    0.00135
+    mainwaring                    0.00136
     vanhanen_democratization      0.00129
     v2x_polyarchy                 0.00047
 
-    SS loadings:  16.129
+    SS loadings:  16.128
     Proportion Var:  0.949
 
     Factor correlations:
@@ -796,16 +796,16 @@ cutpoints_extended
     # A tibble: 101 × 6
        variable                     estimate pct025 pct975      se num_obs
        <chr>                           <dbl>  <dbl>  <dbl>   <dbl>   <int>
-     1 arat                           -0.518 -0.523 -0.514 0.00245    3873
+     1 arat                           -0.519 -0.523 -0.514 0.00245    3873
      2 arat                           -0.191 -0.203 -0.177 0.00693    3873
-     3 arat                            0.239  0.206  0.276 0.0186     3873
+     3 arat                            0.239  0.206  0.275 0.0186     3873
      4 arat                            0.525  0.471  0.584 0.0302     3873
      5 arat                            0.908  0.822  1.00  0.0479     3873
-     6 arat                            1.69   1.54   1.86  0.0838     3873
-     7 blm                             0.480  0.302  0.761 0.143       505
-     8 blm                             1.06   0.678  1.67  0.309       505
+     6 arat                            1.69   1.54   1.86  0.0837     3873
+     7 blm                             0.479  0.302  0.760 0.143       505
+     8 blm                             1.06   0.677  1.67  0.309       505
      9 bmr_democracy_femalesuffrage    0.842  0.741  0.956 0.0583    19126
-    10 pmm_bollen                     -0.651 -0.660 -0.639 0.00612     510
+    10 pmm_bollen                     -0.652 -0.661 -0.640 0.00610     510
     # ℹ 91 more rows
 
 ``` r
@@ -823,8 +823,8 @@ dichotomous_cutpoints
     1 bmr_democracy_femalesuffrage     0.842  0.741  0.956 0.0583   19126
     2 doorenspleet                     0.925  0.816  1.05  0.0638   13009
     3 gwf_democracy_extended_strict    0.663  0.590  0.745 0.0417    9243
-    4 svolik_democracy                 0.720  0.635  0.817 0.0492    8554
-    5 ulfelder_democracy_extended      0.712  0.631  0.803 0.0464   11545
+    4 svolik_democracy                 0.720  0.635  0.816 0.0492    8554
+    5 ulfelder_democracy_extended      0.711  0.631  0.802 0.0464   11545
 
 ``` r
 avg_dichotomous <- mean(dichotomous_cutpoints$estimate)
@@ -832,7 +832,7 @@ avg_dichotomous <- mean(dichotomous_cutpoints$estimate)
 avg_dichotomous
 ```
 
-    [1] 0.7723956
+    [1] 0.7722639
 
 ``` r
 extended_scores <- extended_scores |> mutate(adj_z1 = z1 - avg_dichotomous, 
@@ -1028,7 +1028,7 @@ panel_model@time
 ```
 
     TOTAL:   Data  Estep  Mstep     SE   Post
-     8.327  0.052  1.186  6.012  1.049  0.000 
+     6.736  0.041  0.993  4.839  0.839  0.000 
 
 ``` r
 summary(panel_model)
@@ -1127,17 +1127,17 @@ Data summary
 |:----------------------|----------:|--------------:|----:|----:|------:|---------:|-----------:|
 | extended_country_name |         0 |             1 |   4 |  39 |     0 |      158 |          0 |
 | z1                    |         0 |             1 |  14 |  21 |     0 |     1625 |          0 |
-| se_z1                 |         0 |             1 |  14 |  18 |     0 |     1625 |          0 |
-| z1_pct975             |         0 |             1 |  13 |  20 |     0 |     1625 |          0 |
-| z1_pct025             |         0 |             1 |  14 |  21 |     0 |     1625 |          0 |
-| z1_adj                |         0 |             1 |  15 |  21 |     0 |     1625 |          0 |
+| se_z1                 |         0 |             1 |  15 |  18 |     0 |     1625 |          0 |
+| z1_pct975             |         0 |             1 |  14 |  20 |     0 |     1625 |          0 |
+| z1_pct025             |         0 |             1 |  14 |  20 |     0 |     1625 |          0 |
+| z1_adj                |         0 |             1 |  14 |  21 |     0 |     1625 |          0 |
 | z1_pct975_adj         |         0 |             1 |  14 |  20 |     0 |     1625 |          0 |
-| z1_pct025_adj         |         0 |             1 |  15 |  21 |     0 |     1625 |          0 |
+| z1_pct025_adj         |         0 |             1 |  13 |  21 |     0 |     1625 |          0 |
 | z1_as_prob            |         0 |             1 |  14 |  18 |     0 |     1625 |          0 |
-| z1_pct975_as_prob     |         0 |             1 |  14 |  18 |     0 |     1625 |          0 |
-| z1_pct025_as_prob     |         0 |             1 |  13 |  19 |     0 |     1625 |          0 |
+| z1_pct975_as_prob     |         0 |             1 |  15 |  18 |     0 |     1625 |          0 |
+| z1_pct025_as_prob     |         0 |             1 |  15 |  19 |     0 |     1625 |          0 |
 | z1_adj_as_prob        |         0 |             1 |  15 |  19 |     0 |     1625 |          0 |
-| z1_pct975_adj_as_prob |         0 |             1 |  13 |  18 |     0 |     1625 |          0 |
+| z1_pct975_adj_as_prob |         0 |             1 |  14 |  18 |     0 |     1625 |          0 |
 | z1_pct025_adj_as_prob |         0 |             1 |  15 |  20 |     0 |     1625 |          0 |
 
 **Variable type: logical**
@@ -1206,72 +1206,72 @@ panel_model@time
 ```
 
     TOTAL:   Data  Estep  Mstep     SE   Post
-    15.084  0.045  0.770  9.931  4.269  0.000 
+    12.225  0.028  0.601  8.239  3.306  0.000 
 
 ``` r
 summary(panel_model)
 ```
 
                                     F1    h2
-    fh_total_reversed            0.917 0.842
-    fh_electoral                 0.934 0.873
-    lexical_index                0.929 0.862
-    lexical_index_plus           0.926 0.858
+    fh_total_reversed            0.917 0.841
+    fh_electoral                 0.934 0.872
+    lexical_index                0.928 0.861
+    lexical_index_plus           0.926 0.857
     v2x_polyarchy                0.997 0.995
     v2x_libdem                   0.968 0.937
-    v2x_partipdem                0.960 0.922
-    v2x_api                      0.996 0.993
+    v2x_partipdem                0.960 0.921
+    v2x_api                      0.997 0.993
     v2x_mpi                      0.997 0.994
-    anckar_democracy             0.930 0.864
-    bmr_democracy                0.905 0.819
-    bmr_democracy_femalesuffrage 0.905 0.819
-    bmr_democracy_omitteddata    0.905 0.819
-    pitf                         0.849 0.721
-    polity2                      0.859 0.738
-    vaporeg_binary_strict        0.868 0.753
-    vaporeg_binary_non_strict    0.934 0.872
-    vaporeg_trichotomous         0.919 0.845
+    anckar_democracy             0.929 0.863
+    bmr_democracy                0.905 0.818
+    bmr_democracy_femalesuffrage 0.905 0.818
+    bmr_democracy_omitteddata    0.905 0.818
+    pitf                         0.848 0.719
+    polity2                      0.859 0.737
+    vaporeg_binary_strict        0.867 0.753
+    vaporeg_binary_non_strict    0.933 0.871
+    vaporeg_trichotomous         0.919 0.844
     v2x_delibdem                 0.945 0.893
-    v2x_egaldem                  0.909 0.827
-    csvmdi                       0.879 0.773
-    vanhanen_democratization     0.605 0.366
-    reign_democracy              0.831 0.690
-    pacl_update                  0.807 0.651
-    wgi_democracy                0.903 0.815
-    bti                          0.889 0.791
-    eiu                          0.834 0.696
+    v2x_egaldem                  0.909 0.826
+    csvmdi                       0.878 0.772
+    vanhanen_democratization     0.604 0.365
+    reign_democracy              0.830 0.689
+    pacl_update                  0.806 0.650
+    wgi_democracy                0.902 0.814
+    bti                          0.889 0.790
+    eiu                          0.834 0.695
 
                                    SE.F1
-    fh_total_reversed            0.00511
-    fh_electoral                 0.00997
-    lexical_index                0.00673
-    lexical_index_plus           0.00591
-    v2x_polyarchy                0.00038
-    v2x_libdem                   0.00215
-    v2x_partipdem                0.00262
-    v2x_api                      0.00040
-    v2x_mpi                      0.00040
-    anckar_democracy             0.01041
-    bmr_democracy                0.01258
-    bmr_democracy_femalesuffrage 0.01258
-    bmr_democracy_omitteddata    0.01258
-    pitf                         0.01061
-    polity2                      0.00810
-    vaporeg_binary_strict        0.02206
-    vaporeg_binary_non_strict    0.01041
-    vaporeg_trichotomous         0.00850
-    v2x_delibdem                 0.00343
-    v2x_egaldem                  0.00541
-    csvmdi                       0.00755
-    vanhanen_democratization     0.01789
-    reign_democracy              0.01743
-    pacl_update                  0.01893
-    wgi_democracy                0.00569
-    bti                          0.00639
-    eiu                          0.00907
+    fh_total_reversed            0.00512
+    fh_electoral                 0.01013
+    lexical_index                0.00808
+    lexical_index_plus           0.00691
+    v2x_polyarchy                0.00037
+    v2x_libdem                   0.00216
+    v2x_partipdem                0.00271
+    v2x_api                      0.00046
+    v2x_mpi                      0.00039
+    anckar_democracy             0.01061
+    bmr_democracy                0.01281
+    bmr_democracy_femalesuffrage 0.01281
+    bmr_democracy_omitteddata    0.01281
+    pitf                         0.01137
+    polity2                      0.00838
+    vaporeg_binary_strict        0.02209
+    vaporeg_binary_non_strict    0.01057
+    vaporeg_trichotomous         0.00886
+    v2x_delibdem                 0.00348
+    v2x_egaldem                  0.00553
+    csvmdi                       0.00839
+    vanhanen_democratization     0.01913
+    reign_democracy              0.01840
+    pacl_update                  0.01943
+    wgi_democracy                0.00586
+    bti                          0.00658
+    eiu                          0.00927
 
-    SS loadings:  22.026
-    Proportion Var:  0.816
+    SS loadings:  22.007
+    Proportion Var:  0.815
 
     Factor correlations:
 
@@ -1334,18 +1334,18 @@ Data summary
 | skim_variable         | n_missing | complete_rate | min | max | empty | n_unique | whitespace |
 |:----------------------|----------:|--------------:|----:|----:|------:|---------:|-----------:|
 | extended_country_name |         0 |             1 |   4 |  39 |     0 |      129 |          0 |
-| z1                    |         0 |             1 |  15 |  20 |     0 |      792 |          0 |
-| se_z1                 |         0 |             1 |  16 |  18 |     0 |      792 |          0 |
+| z1                    |         0 |             1 |  14 |  21 |     0 |      792 |          0 |
+| se_z1                 |         0 |             1 |  15 |  18 |     0 |      792 |          0 |
 | z1_pct975             |         0 |             1 |  13 |  19 |     0 |      792 |          0 |
-| z1_pct025             |         0 |             1 |  15 |  20 |     0 |      792 |          0 |
+| z1_pct025             |         0 |             1 |  14 |  20 |     0 |      792 |          0 |
 | z1_adj                |         0 |             1 |  14 |  20 |     0 |      792 |          0 |
-| z1_pct975_adj         |         0 |             1 |  14 |  20 |     0 |      792 |          0 |
-| z1_pct025_adj         |         0 |             1 |  14 |  20 |     0 |      792 |          0 |
-| z1_as_prob            |         0 |             1 |  15 |  19 |     0 |      792 |          0 |
+| z1_pct975_adj         |         0 |             1 |  15 |  20 |     0 |      792 |          0 |
+| z1_pct025_adj         |         0 |             1 |  15 |  20 |     0 |      792 |          0 |
+| z1_as_prob            |         0 |             1 |  13 |  19 |     0 |      792 |          0 |
 | z1_pct975_as_prob     |         0 |             1 |  15 |  18 |     0 |      792 |          0 |
 | z1_pct025_as_prob     |         0 |             1 |  15 |  19 |     0 |      792 |          0 |
-| z1_adj_as_prob        |         0 |             1 |  14 |  19 |     0 |      792 |          0 |
-| z1_pct975_adj_as_prob |         0 |             1 |  15 |  19 |     0 |      792 |          0 |
+| z1_adj_as_prob        |         0 |             1 |  15 |  19 |     0 |      792 |          0 |
+| z1_pct975_adj_as_prob |         0 |             1 |  14 |  19 |     0 |      792 |          0 |
 | z1_pct025_adj_as_prob |         0 |             1 |  15 |  19 |     0 |      792 |          0 |
 
 **Variable type: logical**
@@ -1407,15 +1407,15 @@ replication_2011_cutpoints
        variable   estimate  pct025   pct975      se num_obs
        <chr>         <dbl>   <dbl>    <dbl>   <dbl>   <int>
      1 pmm_arat   -1.43    -1.42   -1.44    0.00526    3873
-     2 pmm_arat   -1.02    -1.02   -1.01    0.00149    3873
+     2 pmm_arat   -1.02    -1.02   -1.01    0.00150    3873
      3 pmm_arat   -0.427   -0.449  -0.403   0.0123     3873
-     4 pmm_arat   -0.0428  -0.0801 -0.00145 0.0211     3873
+     4 pmm_arat   -0.0427  -0.0800 -0.00132 0.0211     3873
      5 pmm_arat    0.420    0.356   0.491   0.0361     3873
      6 pmm_arat    1.42     1.28    1.58    0.0797     3873
-     7 pmm_blm    -0.00455 -0.0459  0.0871  0.0468      275
-     8 pmm_blm     0.473    0.220   1.03    0.286       275
+     7 pmm_blm    -0.00425 -0.0456  0.0878  0.0470      275
+     8 pmm_blm     0.473    0.219   1.04    0.288       275
      9 pmm_bollen -1.53    -1.51   -1.55    0.0145      510
-    10 pmm_bollen -1.08    -1.07   -1.08    0.00244     510
+    10 pmm_bollen -1.08    -1.07   -1.08    0.00243     510
     # ℹ 75 more rows
 
 ``` r
@@ -1448,14 +1448,14 @@ replication_2011_discrimination
        <chr>             <dbl>  <dbl>  <dbl>   <int>
      1 pmm_arat           3.54   3.35   3.72    3873
      2 pmm_blm           13.6    8.45  18.8      275
-     3 pmm_bollen         5.22   4.48   5.96     510
+     3 pmm_bollen         5.21   4.48   5.95     510
      4 pmm_fh             4.72   4.51   4.92    6438
-     5 pmm_hadenius       9.97   6.45  13.5      129
-     6 pmm_mainwaring    16.1   11.2   21.1      835
-     7 pmm_munck          5.47   4.33   6.62     342
+     5 pmm_hadenius      10.1    6.47  13.6      129
+     6 pmm_mainwaring    16.2   11.2   21.2      835
+     7 pmm_munck          5.48   4.33   6.63     342
      8 pmm_pacl           6.50   6.05   6.95    9067
      9 pmm_polity         5.44   5.21   5.67    8050
-    10 pmm_polyarchy      6.30   5.21   7.38     353
+    10 pmm_polyarchy      6.29   5.21   7.37     353
     11 pmm_prc            6.64   6.22   7.06    6002
     12 pmm_vanhanen       4.23   4.07   4.39    8965
 
@@ -1485,14 +1485,14 @@ replication_2011_info
        <chr>    <dbl>      <dbl>
      1 pmm_arat  -6   0.00000122
      2 pmm_arat  -5.8 0.00000247
-     3 pmm_arat  -5.6 0.00000501
+     3 pmm_arat  -5.6 0.00000502
      4 pmm_arat  -5.4 0.0000102
      5 pmm_arat  -5.2 0.0000206
      6 pmm_arat  -5   0.0000418
-     7 pmm_arat  -4.8 0.0000848
+     7 pmm_arat  -4.8 0.0000849
      8 pmm_arat  -4.6 0.000172
      9 pmm_arat  -4.4 0.000349
-    10 pmm_arat  -4.2 0.000707
+    10 pmm_arat  -4.2 0.000708
     # ℹ 722 more rows
 
 ``` r
@@ -1517,13 +1517,13 @@ scores and our extended model:
 prob_more(replication_2011_scores, "United States of America","France", 2000)
 ```
 
-    [1] 0.8782654
+    [1] 0.8782352
 
 ``` r
 prob_more(extended_scores, "United States of America","France", 2000)
 ```
 
-    [1] 0.5768139
+    [1] 0.5768137
 
 Or perhaps we wish to know the probability that the United States was
 more democratic in the year 2000 than in the year 1953:
@@ -1535,7 +1535,7 @@ prob_more(replication_2011_scores,
           c(2000,1953))
 ```
 
-    [1] 0.9179056
+    [1] 0.9179133
 
 ``` r
 prob_more(extended_scores, 
@@ -1544,7 +1544,7 @@ prob_more(extended_scores,
           c(2000,1953))
 ```
 
-    [1] 0.9999967
+    [1] 0.9999966
 
 ## References
 
