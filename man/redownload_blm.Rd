@@ -27,8 +27,9 @@
 K. Bowman, F. Lehoucq, and J. Mahoney. "Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America". In: \emph{Comparative Political Studies} 38.8 (2005), pp. 939-970. DOI: \href{https://dx.doi.org/10.1177/0010414005277083}{10.1177/0010414005277083}.. Data and documentation archived at
 \url{https://web.archive.org/web/20221128114909/http://blmdemocracy.gatech.edu/}.
 
-C. Anckar and C. Fredriksson. "Classifying Political Regimes 1800–2016: A Typology and a New Dataset". In: \emph{European Political Science} 18.1 (2018), pp. 84-96. DOI: \href{https://dx.doi.org/10.1057/s41304-018-0149-8}{10.1057/s41304-018-0149-8}. Updated data (V2)
-available at \url{https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/7SSSAH/DIZXSI&version=2.0}
+C. Anckar and C. Fredriksson. "Classifying Political Regimes 1800–2016: A Typology and a New Dataset". In: \emph{European Political Science} 18.1 (2018), pp. 84-96. DOI: \href{https://dx.doi.org/10.1057/s41304-018-0149-8}{10.1057/s41304-018-0149-8}. Updated data (V3.0) available at
+\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/AK8NVX&version=2.0}. Codebook at
+\url{https://dataverse.harvard.edu/api/access/datafile/11496290}.
 
 C. Boix, M. Miller, and S. Rosato. "A Complete Data Set of Political Regimes, 1800–2007". In: \emph{Comparative Political Studies} 46.12 (2012), pp. 1523-1554. DOI: \href{https://dx.doi.org/10.1177/0010414012463905}{10.1177/0010414012463905}. Available at \url{https://sites.google.com/site/mkmtwo/data}.
 
@@ -159,7 +160,7 @@ redownload_reign(url, verbose = TRUE, return_raw = FALSE, ...)
 
 \itemize{
 
-\item For \link{anckar}: \url{https://dataverse.harvard.edu/api/access/datafile/3868064?format=original&gbrecs=true}.
+\item For \link{anckar}: \url{https://dataverse.harvard.edu/api/access/datafile/11496289?format=original&gbrecs=true}.
 
 \item For \link{blm}: \url{https://web.archive.org/web/20220418025439/https://blmdemocracy.gatech.edu/blm\%20final\%20data.xls}.
 

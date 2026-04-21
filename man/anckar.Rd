@@ -5,17 +5,20 @@
 \alias{anckar}
 \title{The Anckar-Fredriksson dataset of political regimes}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18777 rows and 13 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 19762 rows and 13 columns.
 }
 \source{
-C. Anckar and C. Fredriksson. "Classifying Political Regimes 1800–2016: A Typology and a New Dataset". In: \emph{European Political Science} 18.1 (2018), pp. 84-96. DOI: \href{https://dx.doi.org/10.1057/s41304-018-0149-8}{10.1057/s41304-018-0149-8}. Version 2 available at \url{https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/7SSSAH/DIZXSI&version=2.0}.
+C. Anckar and C. Fredriksson. "Classifying Political Regimes 1800–2016: A Typology and a New Dataset". In: \emph{European Political Science} 18.1 (2018), pp. 84-96. DOI: \href{https://dx.doi.org/10.1057/s41304-018-0149-8}{10.1057/s41304-018-0149-8}. Version 3.0 available at
+\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/AK8NVX&version=2.0}. Codebook at
+\url{https://dataverse.harvard.edu/api/access/datafile/11496290}.
 }
 \usage{
 anckar
 }
 \description{
-Dataset described in C. Anckar and C. Fredriksson. "Classifying Political Regimes 1800–2016: A Typology and a New Dataset". In: \emph{European Political Science} 18.1 (2018), pp. 84-96. DOI: \href{https://dx.doi.org/10.1057/s41304-018-0149-8}{10.1057/s41304-018-0149-8}. Data and codebook at the
-link. This is version 2 of the data, available at \url{https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/7SSSAH/DIZXSI&version=2.0}.
+Dataset described in C. Anckar and C. Fredriksson. "Classifying Political Regimes 1800–2016: A Typology and a New Dataset". In: \emph{European Political Science} 18.1 (2018), pp. 84-96. DOI: \href{https://dx.doi.org/10.1057/s41304-018-0149-8}{10.1057/s41304-018-0149-8}.. Version 3.0 of the data is
+available at \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/AK8NVX&version=2.0}. Codebook at
+\url{https://dataverse.harvard.edu/api/access/datafile/11496290}.
 }
 \section{Variables}{
 
@@ -34,26 +37,30 @@ modified version of the Polity code (with the USSR = 364, for example). Use
 
 \item{year}{The calendar year.}
 
-\item{democracy}{This should be identical to version 2 of Boix, Miller and
-Rosato's Dichotomous democracy measure (\code{democracy_omitteddata}; see
-\link{bmr}). Supplemented for all countries for the period
-2011-2016, as well as for Liechtenstein 1866-1990, Monaco 1862-2016, and
-San Marino 1800-1992, by Anckar and Fredriksson. 1 = democracy, 0 =
-non-democracy.}
+\item{democracy}{Boix, Miller and Rosato's dichotomous democracy measure
+(\code{democracy_omitteddata}; see \link{bmr}, dataset version 4.0),
+supplemented for all countries for the period 2021-2024, as well as for
+Liechtenstein 1866-1990 and Monaco 1862-1993, by Anckar and Fredriksson.
+The codebook also lists several country-year departures from the BMR
+classifications. Values: 1 democracy, 0 non-democracy, 99 unclear/not
+available; 99 is converted to \code{NA} in the packaged object.}
 
 \item{monarchy}{Distinguishes between monarchies and republics in
-democratic countries. It is \code{NA} for non-democracies. Vales: 0
-Republic, 1 Monarchy, 7 Hybrid.}
+democratic countries. It is \code{NA} for non-democracies. Values: 0
+Republic, 1 Monarchy, 2 Hybrid.}
 
 \item{regimebroadcat}{Regime type. Classification with broad categories:
 Parliamentarism, Semi-presidentialism, Presidentialism, Semi-monarchy,
 Party-based rule, Personalist rule, Military rule, Absolute monarchy,
-Oligarchy}
+Oligarchy. The upstream value 99 (occupation, civil war, or otherwise
+unclear) is converted to \code{NA}.}
 
 \item{regimenarrowcat}{Regime type. Classification with narrow categories:
 Parliamentarism, Semi-presidentialism, Presidentialism, Semi-monarchy,
 Single-party rule, Multi-party authoritarian rule, Personalist rule,
-Military rule, Absolute monarchy, Monarchic oligarchy, Other oligarchy.}
+Military rule, Absolute monarchy, Monarchic oligarchy, Other oligarchy.
+The upstream value 99 (occupation, civil war, or otherwise unclear) is
+converted to \code{NA}.}
 
 \item{popelection}{Indicates if the head of state is popularly elected or
 not in democratic republics. Values 0 Head of state not popularly elected;

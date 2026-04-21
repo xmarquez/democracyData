@@ -453,6 +453,7 @@ find_url <- function(
 
   if (type == "codebook") {
     codebook_urls <- c(
+      anckar = "https://dataverse.harvard.edu/api/access/datafile/11496290",
       bti = "https://bti-project.org/fileadmin/api/content/en/downloads/codebooks/BTI2026_Codebook.pdf",
       polityIV = "https://www.systemicpeace.org/inscr/p4manualv2018.pdf",
       polity_annual = "https://www.systemicpeace.org/inscr/p5manualv2018.pdf",

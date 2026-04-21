@@ -166,8 +166,9 @@ redownload_blm <- function(url, verbose = TRUE, return_raw = FALSE, ...) {
 
 #' @rdname redownload_blm
 #'
-#' @source `r roxygen_cite("anckar")` Updated data (V2)
-#'   available at <`r find_url("anckar", "documentation")`>
+#' @source `r roxygen_cite("anckar")` Updated data (V3.0) available at
+#'   <`r find_url("anckar", "documentation")`>. Codebook at
+#'   <`r find_url("anckar", "codebook")`>.
 #'
 #'
 #' @export
@@ -183,7 +184,7 @@ redownload_anckar <- function(url, verbose = TRUE, return_raw = FALSE, ...) {
   data <- read_data(
     url,
     verbose = verbose,
-    name = "Anckar and Fredricksson",
+    name = "Anckar and Fredriksson",
     file_extension = "xlsx"
   )
 

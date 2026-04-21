@@ -2,8 +2,9 @@
 
 #' The Anckar-Fredriksson dataset of political regimes
 #'
-#' Dataset described in `r roxygen_cite("anckar")` Data and codebook at the
-#' link. This is version 2 of the data, available at <`r find_url("anckar", "documentation")`>.
+#' Dataset described in `r roxygen_cite("anckar")`. Version 3.0 of the data is
+#' available at <`r find_url("anckar", "documentation")`>. Codebook at
+#' <`r find_url("anckar", "codebook")`>.
 #'
 #' @section Variables:
 #'
@@ -21,26 +22,30 @@
 #'
 #'   \item{year}{The calendar year.}
 #'
-#'   \item{democracy}{This should be identical to version 2 of Boix, Miller and
-#'   Rosato's Dichotomous democracy measure (\code{democracy_omitteddata}; see
-#'   [bmr]). Supplemented for all countries for the period
-#'   2011-2016, as well as for Liechtenstein 1866-1990, Monaco 1862-2016, and
-#'   San Marino 1800-1992, by Anckar and Fredriksson. 1 = democracy, 0 =
-#'   non-democracy.}
+#'   \item{democracy}{Boix, Miller and Rosato's dichotomous democracy measure
+#'   (\code{democracy_omitteddata}; see [bmr], dataset version 4.0),
+#'   supplemented for all countries for the period 2021-2024, as well as for
+#'   Liechtenstein 1866-1990 and Monaco 1862-1993, by Anckar and Fredriksson.
+#'   The codebook also lists several country-year departures from the BMR
+#'   classifications. Values: 1 democracy, 0 non-democracy, 99 unclear/not
+#'   available; 99 is converted to \code{NA} in the packaged object.}
 #'
 #'   \item{monarchy}{Distinguishes between monarchies and republics in
-#'   democratic countries. It is \code{NA} for non-democracies. Vales: 0
-#'   Republic, 1 Monarchy, 7 Hybrid.}
+#'   democratic countries. It is \code{NA} for non-democracies. Values: 0
+#'   Republic, 1 Monarchy, 2 Hybrid.}
 #'
 #'   \item{regimebroadcat}{Regime type. Classification with broad categories:
 #'   Parliamentarism, Semi-presidentialism, Presidentialism, Semi-monarchy,
 #'   Party-based rule, Personalist rule, Military rule, Absolute monarchy,
-#'   Oligarchy}
+#'   Oligarchy. The upstream value 99 (occupation, civil war, or otherwise
+#'   unclear) is converted to \code{NA}.}
 #'
 #'   \item{regimenarrowcat}{Regime type. Classification with narrow categories:
 #'   Parliamentarism, Semi-presidentialism, Presidentialism, Semi-monarchy,
 #'   Single-party rule, Multi-party authoritarian rule, Personalist rule,
-#'   Military rule, Absolute monarchy, Monarchic oligarchy, Other oligarchy.}
+#'   Military rule, Absolute monarchy, Monarchic oligarchy, Other oligarchy.
+#'   The upstream value 99 (occupation, civil war, or otherwise unclear) is
+#'   converted to \code{NA}.}
 #'
 #'   \item{popelection}{Indicates if the head of state is popularly elected or
 #'   not in democratic republics. Values 0 Head of state not popularly elected;
@@ -53,7 +58,9 @@
 #' @family democracy
 #' @family authoritarianism
 #' @family dichotomous democracy indexes
-#' @source `r roxygen_cite("anckar")` Version 2 available at <`r find_url("anckar", "documentation")`>.
+#' @source `r roxygen_cite("anckar")` Version 3.0 available at
+#'   <`r find_url("anckar", "documentation")`>. Codebook at
+#'   <`r find_url("anckar", "codebook")`>.
 "anckar"
 
 # ANRR ------------------------------------------------------------------
