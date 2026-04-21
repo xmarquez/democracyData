@@ -9,7 +9,8 @@
 #'
 #' @param datasets Character vector indicating which datasets to use in
 #'   producing the combined data frame. Can be any or all of (an unambiguous
-#'   abbreviation of) "[anckar]", "[anrr]", "[LIED]", "[PIPE]", "[arat_pmm]",
+#'   abbreviation of) "[anckar]", "[anrr]", "[LIED]", "[PIPE]", "[arat]",
+#'   "[arat_pmm]",
 #'   "[blm]", "[blm_pmm]", "[bmr]", "[bnr]", "[bnr_extended]", "[bti]",
 #'   "[bollen_pmm]", "[doorenspleet]", "[eiu]", "[fh_pmm]", "[gwf_all]",
 #'   "[gwf_all_extended]", "[hadenius_pmm]", "[kailitz]", "[magaloni]",
@@ -17,7 +18,8 @@
 #'   "[pacl]", "[pacl_pmm]", "[pacl_update]", "[peps]", "[pitf]",
 #'   "[polity_pmm]", "[polyarchy]", "[polyarchy_dimensions]", "[polyarchy_pmm]",
 #'   "[prc_gasiorowski]", "[prc_pmm]", "[svmdi]", "[svolik_regime]", "[uds]",
-#'   "[ulfelder]", "[ulfelder_extended]", "[utip]", "[vanhanen]", "[vdem]",
+#'   "[ulfelder]", "[ulfelder_extended]", "[utip]", "[vanhanen]", "[vaporeg]",
+#'   "[vdem]",
 #'   "[wahman_teorell_hadenius]", "[reign]" or "[REIGN]", "[polityIV]",
 #'   "[polity5]", "[fh]", "[fh_electoral]", "[wgi]". It can also be empty; the
 #'   default is all of them.
@@ -27,22 +29,22 @@
 #'
 #' @param output_format Character. Whether to output a "wide" (each measure of
 #'   democracy in a separate column) or a "long" (a column with measure names, a
-#'   column with values) version of the data frame. Default is "long". 
-#' 
+#'   column with values) version of the data frame. Default is "long".
+#'
 #' @param use_extended Whether to use "extended" (that is, including values
 #'   before 1945 for some regimes) versions of some datasets ([gwf], [ulfelder],
-#'   [bnr], and [magaloni]). Default is \code{TRUE}. 
-#' 
-#' @param verbose Provides a running commentary on what the function is is
-#' doing. Default is \code{TRUE}. 
-#' 
+#'   [bnr], and [magaloni]). Default is \code{TRUE}.
+#'
+#' @param verbose Provides a running commentary on what the function is
+#' doing. Default is \code{TRUE}.
+#'
 #' @param force_redownload Whether to re-download all datasets that can be
 #'   re-downloaded, including those archived with this package. Used only for
 #'   debugging; default is \code{FALSE}.
-#'   
-#' @param scale_scores Whether to scale each measure (substracting their mean
-#'   and dividing by their standard deviation). Default is \code{FALSE}. 
-#' 
+#'
+#' @param scale_scores Whether to scale each measure (subtracting their mean
+#'   and dividing by their standard deviation). Default is \code{FALSE}.
+#'
 #' @param keep_only_last_in_year Whether to keep only the last regime
 #'   measurement in a given country-year. Some datasets (e.g., [prc], [reign])
 #'   contain more than one regime measurement per country-year in some cases (if
@@ -51,23 +53,35 @@
 #'   the year, the standard practice in most datasets. Default is \code{TRUE}.
 #'   This setting is only of interest if you set \code{output_format = "long"},
 #'   since it is ignored when \code{output_format = "wide"}, which automatically
-#'   discards all regime measurements except the last in the year. 
-#' 
+#'   discards all regime measurements except the last in the year.
+#'
 #' @param uds_release_year Which release of the original [uds] dataset to
 #'   include. Defaults to the latest, 2014. Can be 2014, 2011, or 2010, or all
-#'   of them. 
-#' 
+#'   of them.
+#'
 #' @param svmdi_release_year Which release of the [svmdi] dataset to include.
-#'   Defaults to the latest, 2020. Can be 2020 or 2016, or both of them. 
-#' 
+#'   Defaults to the latest, 2020. Can be 2020 or 2016, or both of them.
+#'
+#' @param wgi_version Which WGI series to include. `"current"` uses the revised
+#'   [wgi] series; `"legacy"` uses the archived [wgi_legacy] series. Default is
+#'   `"current"`.
+#'
+#' @param vaporeg_version Which VaPoReg schema to include. `"current"` uses the
+#'   current [vaporeg] object; `"legacy"` uses the archived [vaporeg_2024]
+#'   object. Default is `"current"`.
+#'
+#' @param pitf_version Which PITF variant to include. `"current"` and
+#'   `"polity5"` use [pitf]; `"legacy"` and `"polity4"` use [pitf_p4]. Default
+#'   is `"current"`.
+#'
 #' @param exclude_pmm_duplicates Whether to exclude versions of some measures
 #'   found in Pemstein, Meserve, and Melton's replication dataset for their 2010
 #'   piece introducing the Unified Democracy Scores (Pemstein, Meserve, and
 #'   Melton 2010, 2013). See [blm_pmm], [prc_pmm], [fh_pmm], [pacl_pmm],
 #'   [vanhanen_pmm], and [polity_pmm] for details. This is included mostly to
 #'   extend or replicate the [uds] scores. Default is \code{TRUE}; set to
-#'   `FALSE` to keep these. 
-#' 
+#'   `FALSE` to keep these.
+#'
 #' @param prefer_successor In some cases (e.g., Italy 1861) some datasets
 #'   contain two measurements in the same year: one for the precursor state
 #'   (Piedmont-Sardinia, which is Italy/Sardinia in `extended_country_name`) and
@@ -82,13 +96,13 @@
 #'   successor state is preferentially the state in the Gleditsch-Ward system.
 #'   Setting it to `FALSE` ensures both measurements are included, which results
 #'   in two measurements for the same country-year (where country means the
-#'   country in `extended_country_name`). 
-#' 
+#'   country in `extended_country_name`).
+#'
 #' @param fix_PIPE The [PIPE] dataset uses a particularly tangled state system,
 #'   measuring some countries when they should not exist, or splitting some
 #'   countries into historical and modern states but measuring both during the
 #'   historical period:
-#' 
+#'
 #' |extended_country_name           |PIPE_country                | min_year| max_year|
 #' |:-------------------------------|:---------------------------|--------:|--------:|
 #' |Austria                         |Austria                     |     1918|     1918|
@@ -112,7 +126,7 @@
 #' |Yugoslavia                      |Serbia                      |     1990|     1990|
 #' |Yugoslavia                      |Serbia And Montenegro       |     1991|     1991|
 #' |Yugoslavia                      |Yugoslavia                  |     1990|     1991|
-#' 
+#'
 #' Some of these are fixed by setting `prefer_successor` to `TRUE` (the default)
 #' but others do not make much sense. `fix_PIPE = TRUE` (the default) deletes
 #' Austria-Hungary entirely (as there is no principled choice about which half
@@ -120,16 +134,16 @@
 #' North and South Korea from the 19th century; assumes Pakistan from 1950-1970
 #' must include Bangladesh, and Turkey from 1820-1913 refers to the Ottoman
 #' Empire; removes unified Vietnam from the period 1954-1975, Serbia from 1990,
-#' and Serbia and Montenegro from 1990 to 1991 (leaving only Yugoslabia from
+#' and Serbia and Montenegro from 1990 to 1991 (leaving only Yugoslavia from
 #' 1990 to 1991).
-#' 
+#'
 #' @param enforce_GW_enddates This enforces the Gleditsch-Ward enddates of
 #' historical states, so they are not measured after their dissolution. This
 #' only affects a limited number of entities: Tibet (ends in 1950),
 #' Czechoslovakia (ends in 1992), Gran Colombia (ends in 1831; Polity measures
 #' it until 1832), the Vatican (identified with the Papal States, ends in 1870)
 #' and Zanzibar (ends in 1964). The default is `FALSE`.
-#'  
+#'
 #' @import dplyr
 #'
 #' @return A [tibble::tibble()] with the selected democracy measures and state system
@@ -147,14 +161,15 @@
 #'
 #'   \item{year}{The calendar year. Most measures of democracy reflect the
 #'   country's situation as of 31 December of the year. If
-#'   \code{keep_last_in_year = FALSE} (and \code{format = "long"}), a single
+#'   \code{keep_only_last_in_year = FALSE} (and \code{output_format = "long"}),
+#'   a single
 #'   country year may nevertheless contain more than one measurement for some
 #'   measures (e.g., [prc]).}
 #'
 #'   \item{measure}{The name of the measure. (e.g., "blm", "fh_total_reversed").
 #'   }
 #'
-#'   \item{variable}{The numerical value of the measure, in the original scale
+#'   \item{value}{The numerical value of the measure, in the original scale
 #'   (if \code{scale_scores = FALSE}) or as a z-score (if \code{scale_scores =
 #'   TRUE}).}
 #'
@@ -216,7 +231,7 @@
 #'   [bnr_extended] for details of how this variable extends [bnr], filling in
 #'   years of non-democracy back to 1913.}
 #'
-#'   \item{bti}{The [bti] - Berteslmann Transformation Democracy Status index.
+#'   \item{bti}{The [bti] - Bertelsmann Transformation Democracy Status index.
 #'   Ranges from 1 to 10. }
 #'
 #'   \item{doorenspleet}{The [doorenspleet] measure of democracy, with 1
@@ -298,7 +313,7 @@
 #'   instructions and may contain errors.}
 #'
 #'   \item{pitf, pitf_binary}{The measures of democracy from [pitf], converted
-#'   to numberic values. Higher values indicate more democracy.}
+#'   to numeric values. Higher values indicate more democracy.}
 #'
 #'   \item{pmm_arat}{The measure of democracy in [arat_pmm].}
 #'
@@ -353,7 +368,7 @@
 #'
 #'   \item{polyarchy_original_polyarchy}{The original polyarchy scale
 #'   (\code{poly}) in [polyarchy], reversed so that higher values imply more
-#'   democracy. The codebook suggests this was superceded by
+#'   democracy. The codebook suggests this was superseded by
 #'   \code{polyarchy_original_contestation}.}
 #'
 #'   \item{prc}{The measure of democracy in [prc], where 1 is non-democracy, 3
@@ -381,7 +396,7 @@
 #'   [uds] index (2010, 2011, and 2014 releases). Higher values are more
 #'   democratic.}
 #'
-#'   \item{ulfelder_democracy}{The dichotmous measure of democracy in
+#'   \item{ulfelder_democracy}{The dichotomous measure of democracy in
 #'   [ulfelder].}
 #'
 #'   \item{ulfelder_democracy_extended}{The dichotomous measure of democracy in
@@ -406,21 +421,21 @@
 #'   \item{vanhanen_participation}{The participation index from [vanhanen].}
 #'
 #'   \item{vaporeg_binary_strict}{A dichotomous measure of democracy from the
-#'   [vaporeg] dataset. Coded as 1 if the regime is classified as a full
-#'   democracy (VaPoReg_s = 10), and 0 otherwise. This strict definition
-#'   excludes semi-democracies and other intermediate forms. See [vaporeg] for
-#'   details.}
+#'   [vaporeg] dataset. This is a package-derived strict democracy indicator:
+#'   it is coded 1 only when `vaporeg_regtype_reports == 10`, 0 for all other
+#'   observations that remain inside VaPoReg's binary democracy universe, and
+#'   `NA` where VaPoReg does not classify the observation in that universe.
+#'   See [vaporeg] for details.}
 #'
 #'   \item{vaporeg_binary_non_strict}{A less restrictive dichotomous measure of
-#'   democracy from [vaporeg], coded as 1 if the regime is a full democracy
-#'   (VaPoReg_s = 10) or a semi-democracy (VaPoReg_s = 20), and 0 otherwise. See
-#'   [vaporeg] for details.}
+#'   democracy from [vaporeg]. It is the package-facing version of the upstream
+#'   `vaporeg_regtype_bindem` variable, coded 1 for Democracy and 0 for
+#'   Non-Democracy. See [vaporeg] for details.}
 #'
 #'   \item{vaporeg_trichotomous}{A trichotomous democracy measure from
-#'   [vaporeg], based on the VaPoReg_s classification. Coded as 2 for full
-#'   democracies (10), 1 for semi-democracies (20), and 0 for all other regime
-#'   types. This measure distinguishes between fully and partially democratic
-#'   regimes. See [vaporeg] for details.}
+#'   [vaporeg]. It is a package-facing recode of the upstream
+#'   `vaporeg_regtype_triple` variable, with 2 for Democracy, 1 for Hybrid
+#'   Regime, and 0 for Autocracy. See [vaporeg] for details.}
 #'
 #'   \item{v2x_api}{The additive polyarchy index from [vdem].}
 #'
@@ -440,11 +455,11 @@
 #'   \item{wgi_democracy}{The voice and accountability index from [wgi].}
 #'
 #'   \item{wth_democ1}{A dichotomous measure of democracy from
-#'   [wahman_teorell_hadenius], obtaining by coding 1 all democracies according
+#'   [wahman_teorell_hadenius], obtained by coding 1 all democracies according
 #'   to the \code{regime1ny} variable, 0 all other regimes.}
 #'
 #'   \item{wth_democrobust}{A dichotomous measure of democracy from
-#'   [wahman_teorell_hadenius], obtaining by coding 1 all democracies according
+#'   [wahman_teorell_hadenius], obtained by coding 1 all democracies according
 #'   to the \code{regimenyrobust} variable, 0 all other regimes.}
 #'
 #'   }
@@ -456,13 +471,13 @@
 #'   states, though not consistently or entirely correctly (which is why this
 #'   package uses [country_year_coder]). There are a number of alternatives,
 #'   including the Gleditsch and Ward system, the Polity system (both based on
-#'   the COW system, with some modifications), and the V-Dem system (wich is at
+#'   the COW system, with some modifications), and the V-Dem system (which is at
 #'   the basis of [LIED], though [LIED] also draws on the idiosyncratic [PIPE]
 #'   system). Freedom House and VaPoReg also develop their own panel of states,
 #'   including many units considered non-sovereign by others. I have opted for
 #'   maximal coverage (including all non-sovereign units), with three
-#'   exceptions. 
-#' 
+#'   exceptions.
+#'
 #'   First, the default is to prefer the successor state where a country-year
 #'   unit is measured twice in a single year (for the precursor and the
 #'   successor state). This setting affects Ethiopia (Eritrea split in 1993);
@@ -472,7 +487,7 @@
 #'   Vietnam (1945-1953 period and reunification in 1976); Yemen (unification in
 #'   1990); Yugoslavia (1991 breakup). Use `prefer_successor = FALSE` to
 #'   override.
-#' 
+#'
 #'   Second, the default is to delete various entities in the [PIPE] dataset
 #'   that are measured before their appearance as states (e.g., North and South
 #'   Korea in the 19th century). To keep these entities, use `fix_PIPE = FALSE`.
@@ -533,23 +548,24 @@
 #'
 #' |extended_country_name               |original_country_name                          |dataset       | min_year| max_year|
 #' |:-----------------------------------|:----------------------------------------------|:-------------|--------:|--------:|
-#' |British Mandate of Palestine        |Palestine                                      |vaporeg       |     1919|     1947|
 #' |British Mandate of Palestine        |Palestine/British Mandate                      |LIED          |     1918|     1947|
-#' |British Mandate of Palestine        |Palestine/British Mandate                      |vdem          |     1918|     1947|
-#' |Israeli-Occupied Territories        |Israeli-Occupied Territories                   |fh            |     1996|     2009|
-#' |Palestine, State of                 |Palestine                                      |eiu           |     2006|     2024|
-#' |Palestine, State of                 |Palestine                                      |vaporeg       |     1948|     2006|
+#' |British Mandate of Palestine        |Palestine/British Mandate                      |vdem          |     1918|     1948|
+#' |Israel, occupied territories only   |Israeli-Occupied Territories                   |fh            |     1996|     2009|
+#' |Palestine, State of                 |Palestine                                      |eiu           |     2006|     2025|
 #' |Palestine, State of                 |Palestinian Authority-Administered Territories |fh            |     1996|     2009|
-#' |Palestine, State of                 |West Bank and Gaza                             |wgi_democracy |     1996|     2023|
 #' |Palestine, State of                 |West Bank and Gaza Strip                       |fh            |     1977|     1995|
-#' |Palestine, State of/Gaza Strip Only |Gaza Strip                                     |fh            |     2010|     2024|
-#' |Palestine, State of/Gaza Strip Only |Palestine Gaza Strip                           |vaporeg       |     2007|     2024|
-#' |Palestine, State of/Gaza Strip Only |Palestine/Gaza                                 |LIED          |     1948|     2023|
-#' |Palestine, State of/Gaza Strip Only |Palestine/Gaza                                 |vdem          |     1948|     2024|
-#' |Palestine, State of/West Bank Only  |Palestine West Bank                            |vaporeg       |     2007|     2024|
-#' |Palestine, State of/West Bank Only  |Palestine/West Bank                            |LIED          |     1948|     2023|
-#' |Palestine, State of/West Bank Only  |Palestine/West Bank                            |vdem          |     1948|     2024|
-#' |Palestine, State of/West Bank Only  |West Bank                                      |fh            |     2010|     2024|
+#' |Palestine, State of                 |Palestine                                      |vaporeg       |     1920|     1947|
+#' |Palestine, State of                 |West Bank and Gaza                             |wgi_democracy |     1996|     2024|
+#' |Palestine/Gaza                      |Gaza Strip                                     |fh            |     2010|     2024|
+#' |Palestine/Gaza                      |Gaza Strip                                     |fh_electoral  |     2017|     2024|
+#' |Palestine/Gaza                      |Palestine/Gaza                                 |LIED          |     1948|     2025|
+#' |Palestine/Gaza                      |Palestine, Gaza Strip                          |vaporeg       |     1948|     2025|
+#' |Palestine/Gaza                      |Palestine/Gaza                                 |vdem          |     1948|     2025|
+#' |Palestine/West Bank                 |West Bank                                      |fh            |     2010|     2024|
+#' |Palestine/West Bank                 |West Bank                                      |fh_electoral  |     2017|     2024|
+#' |Palestine/West Bank                 |Palestine/West Bank                            |LIED          |     1948|     2025|
+#' |Palestine/West Bank                 |Palestine, West Bank                           |vaporeg       |     1948|     2025|
+#' |Palestine/West Bank                 |Palestine/West Bank                            |vdem          |     1948|     2025|
 #'
 #' There are some other oddities, primarily concerning [fh] and the [polity] and
 #' Polity-derived datasets such as [pitf]. [fh] includes a measure for the
@@ -557,12 +573,12 @@
 #' (`extended_country_name = "Russian-occupied territories of Ukraine"`, not
 #' allocated to either Ukraine or Russia). And [polity] includes separate
 #' observations for both Russia 1922 and USSR 1922; I've excluded the USSR 1922
-#' observation since it officially began on 31 December 1922. 
+#' observation since it officially began on 31 December 1922.
 #'
 #' Note also that though I've kept Germany 1945 (COW code 255, per the table
 #' above, since it ends in 1945 in the Gleditsch-Ward panel), there are
 #' observations for the (occupied) territory of both the later German Federal
-#' Republic and the later German Democratic Republic in 1945. 
+#' Republic and the later German Democratic Republic in 1945.
 #'
 #' @export
 #'
@@ -576,7 +592,7 @@
 #' # You can select only some datasets
 #'
 #' democracy_data_gwf <- generate_democracy_scores_dataset(
-#'  datasets = c("gwf", "pacl", "bmr"), 
+#'  datasets = c("gwf", "pacl", "bmr"),
 #'  output_format = "wide"
 #'  )
 #'
@@ -596,93 +612,117 @@
 #' democracy_data_long <- generate_democracy_scores_dataset(
 #'  datasets = "pacl",
 #'  force_redownload = TRUE
-#' ) 
-#' 
+#' )
+#'
 #' democracy_data_wide <- generate_democracy_scores_dataset(
 #'  datasets = "pacl",
-#'  force_redownload = TRUE, 
+#'  force_redownload = TRUE,
 #'  output_format = "wide"
-#' ) 
+#' )
 #' }
-generate_democracy_scores_dataset <- function(datasets,
-                                              selection,
-                                              output_format = "long",
-                                              use_extended = TRUE,
-                                              verbose = TRUE,
-                                              force_redownload = FALSE,
-                                              scale_scores = FALSE,
-                                              keep_only_last_in_year = TRUE,
-                                              uds_release_year = c(2014, 2011, 2010),
-                                              svmdi_release_year = c(2020, 2016),
-                                              exclude_pmm_duplicates = TRUE,
-                                              prefer_successor = TRUE,
-                                              fix_PIPE = TRUE,
-                                              enforce_GW_enddates = FALSE) {
-
-  value <- dataset <- pmm_only <- release_year <- extend <- NULL
-  measure <- NULL
+generate_democracy_scores_dataset <- function(
+  datasets,
+  selection,
+  output_format = "long",
+  use_extended = TRUE,
+  verbose = TRUE,
+  force_redownload = FALSE,
+  scale_scores = FALSE,
+  keep_only_last_in_year = TRUE,
+  uds_release_year = c(2014, 2011, 2010),
+  svmdi_release_year = c(2020, 2016),
+  wgi_version = c("current", "legacy"),
+  vaporeg_version = c("current", "legacy"),
+  pitf_version = c("current", "legacy", "polity5", "polity4"),
+  exclude_pmm_duplicates = TRUE,
+  prefer_successor = TRUE,
+  fix_PIPE = TRUE,
+  enforce_GW_enddates = FALSE
+) {
   include_in_output <- c("extended_country_name", "GWn", "cown", "in_GW_system")
   output_format <- match.arg(output_format, c("long", "wide"))
 
   stopifnot(uds_release_year %in% c(2014, 2011, 2010))
   stopifnot(svmdi_release_year %in% c(2020, 2016))
-
-  standardizers <- dplyr::tribble(
-    ~dataset,                     ~standardize_fun,                        ~extend, ~pmm_only, ~release_year,
-    "anckar",                     standardize_anckar,                      FALSE,   FALSE,     NA,
-    "anrr",                       standardize_anrr,                        FALSE,   FALSE,     NA,
-    "arat",                       standardize_arat,                        FALSE,   FALSE,     NA,
-    "arat_pmm",                   standardize_arat_pmm,                    FALSE,   FALSE,     NA,
-    "blm",                        standardize_blm,                         FALSE,   FALSE,     NA,
-    "blm_pmm",                    standardize_blm_pmm,                     FALSE,   FALSE,     NA,
-    "bmr",                        standardize_bmr,                         FALSE,   FALSE,     NA,
-    "bnr",                        standardize_bnr,                         TRUE,    FALSE,     NA,
-    "bti",                        standardize_bti,                         FALSE,   FALSE,     NA,
-    "bollen_pmm",                 standardize_bollen_pmm,                  FALSE,   TRUE,      NA,
-    "doorenspleet",               standardize_doorenspleet,                FALSE,   FALSE,     NA,
-    "eiu",                        standardize_eiu,                         FALSE,   FALSE,     NA,
-    "fh",                         standardize_fh,                          FALSE,   FALSE,     NA,
-    "fh_pmm",                     standardize_fh_pmm,                      FALSE,   FALSE,     NA,
-    "fh_electoral",               standardize_fh_electoral,                FALSE,   FALSE,     NA,
-    "gwf",                        standardize_gwf,                         TRUE,    FALSE,     NA,
-    "hadenius_pmm",               standardize_hadenius_pmm,                FALSE,   TRUE,      NA,
-    "kailitz",                    standardize_kailitz,                     FALSE,   FALSE,     NA,
-    "LIED",                       standardize_lied,                        FALSE,   FALSE,     NA,
-    "magaloni",                   standardize_magaloni,                    TRUE,    FALSE,     NA,
-    "mainwaring",                 standardize_mainwaring,                  FALSE,   FALSE,     NA,
-    "mainwaring_pmm",             standardize_mainwaring_pmm,              FALSE,   FALSE,     NA,
-    "munck_pmm",                  standardize_munck_pmm,                   FALSE,   TRUE,      NA,
-    "pacl",                       standardize_pacl,                        FALSE,   FALSE,     NA,
-    "pacl_pmm",                   standardize_pacl_pmm,                    FALSE,   FALSE,     NA,
-    "pacl_update",                standardize_pacl_update,                 FALSE,   FALSE,     NA,
-    "peps",                       standardize_peps,                        FALSE,   FALSE,     NA,
-    "pitf",                       standardize_pitf,                        FALSE,   FALSE,     NA,
-    "PIPE",                       standardize_PIPE,                        FALSE,   FALSE,     NA,
-    "polityIV",                   standardize_polity4,                     FALSE,   FALSE,     NA,
-    "polity5",                    standardize_polity5,                     FALSE,   FALSE,     NA,
-    "polity_pmm",                 standardize_polity_pmm,                  FALSE,   FALSE,     NA,
-    "polyarchy",                  standardize_polyarchy_original,          FALSE,   FALSE,     NA,
-    "polyarchy_dimensions",       standardize_polyarchy_dimensions,        FALSE,   FALSE,     NA,
-    "polyarchy_pmm",              standardize_polyarchy_pmm,               FALSE,   FALSE,     NA,
-    "prc_gasiorowski",            standardize_prc_gasiorowski,             FALSE,   FALSE,     NA,
-    "prc_pmm",                    standardize_prc_pmm,                     FALSE,   FALSE,     NA,
-    "REIGN",                      standardize_REIGN,                       FALSE,   FALSE,     NA,
-    "svmdi",                      standardize_svmdi,                       FALSE,   FALSE,     2020,
-    "svmdi_2016",                 standardize_svmdi,                       FALSE,   FALSE,     2016,
-    "svolik_regime",              standardize_svolik,                      FALSE,   FALSE,     NA,
-    "uds_2010",                   standardize_uds,                         FALSE,   FALSE,     2010,
-    "uds_2011",                   standardize_uds,                         FALSE,   FALSE,     2011,
-    "uds_2014",                   standardize_uds,                         FALSE,   FALSE,     2014,
-    "ulfelder",                   standardize_ulfelder,                    TRUE,    FALSE,     NA,
-    "utip",                       standardize_utip,                        FALSE,   FALSE,     NA,
-    "vanhanen",                   standardize_vanhanen,                    FALSE,   FALSE,     NA,
-    "vanhanen_pmm",               standardize_vanhanen_pmm,                FALSE,   FALSE,     NA,
-    "vaporeg",                    standardize_vaporeg,                     FALSE,   FALSE,     NA,
-    "vdem",                       standardize_vdem,                        FALSE,   FALSE,     NA,
-    "wahman_teorell_hadenius",    standardize_wahman_teorell_hadenius,     FALSE,   FALSE,     NA,
-    "wgi_democracy",              standardize_wgi,                         FALSE,   FALSE,     NA
+  wgi_version <- match.arg(wgi_version)
+  vaporeg_version <- match.arg(vaporeg_version)
+  pitf_version <- match.arg(pitf_version)
+  pitf_version <- switch(
+    pitf_version,
+    current = "polity5",
+    legacy = "polity4",
+    pitf_version
   )
 
+  standardizers <- dplyr::tribble(
+    ~dataset                  , ~standardize_fun                    , ~extend , ~pmm_only , ~release_year ,
+    "anckar"                  , standardize_anckar                  , FALSE   , FALSE     , NA            ,
+    "anrr"                    , standardize_anrr                    , FALSE   , FALSE     , NA            ,
+    "arat"                    , standardize_arat                    , FALSE   , FALSE     , NA            ,
+    "arat_pmm"                , standardize_arat_pmm                , FALSE   , FALSE     , NA            ,
+    "blm"                     , standardize_blm                     , FALSE   , FALSE     , NA            ,
+    "blm_pmm"                 , standardize_blm_pmm                 , FALSE   , FALSE     , NA            ,
+    "bmr"                     , standardize_bmr                     , FALSE   , FALSE     , NA            ,
+    "bnr"                     , standardize_bnr                     , TRUE    , FALSE     , NA            ,
+    "bti"                     , standardize_bti                     , FALSE   , FALSE     , NA            ,
+    "bollen_pmm"              , standardize_bollen_pmm              , FALSE   , TRUE      , NA            ,
+    "doorenspleet"            , standardize_doorenspleet            , FALSE   , FALSE     , NA            ,
+    "eiu"                     , standardize_eiu                     , FALSE   , FALSE     , NA            ,
+    "fh"                      , standardize_fh                      , FALSE   , FALSE     , NA            ,
+    "fh_pmm"                  , standardize_fh_pmm                  , FALSE   , FALSE     , NA            ,
+    "fh_electoral"            , standardize_fh_electoral            , FALSE   , FALSE     , NA            ,
+    "gwf"                     , standardize_gwf                     , TRUE    , FALSE     , NA            ,
+    "hadenius_pmm"            , standardize_hadenius_pmm            , FALSE   , TRUE      , NA            ,
+    "kailitz"                 , standardize_kailitz                 , FALSE   , FALSE     , NA            ,
+    "LIED"                    , standardize_lied                    , FALSE   , FALSE     , NA            ,
+    "magaloni"                , standardize_magaloni                , TRUE    , FALSE     , NA            ,
+    "mainwaring"              , standardize_mainwaring              , FALSE   , FALSE     , NA            ,
+    "mainwaring_pmm"          , standardize_mainwaring_pmm          , FALSE   , FALSE     , NA            ,
+    "munck_pmm"               , standardize_munck_pmm               , FALSE   , TRUE      , NA            ,
+    "pacl"                    , standardize_pacl                    , FALSE   , FALSE     , NA            ,
+    "pacl_pmm"                , standardize_pacl_pmm                , FALSE   , FALSE     , NA            ,
+    "pacl_update"             , standardize_pacl_update             , FALSE   , FALSE     , NA            ,
+    "peps"                    , standardize_peps                    , FALSE   , FALSE     , NA            ,
+    "pitf"                    , standardize_pitf                    , FALSE   , FALSE     , NA            ,
+    "PIPE"                    , standardize_PIPE                    , FALSE   , FALSE     , NA            ,
+    "polityIV"                , standardize_polity4                 , FALSE   , FALSE     , NA            ,
+    "polity5"                 , standardize_polity5                 , FALSE   , FALSE     , NA            ,
+    "polity_pmm"              , standardize_polity_pmm              , FALSE   , FALSE     , NA            ,
+    "polyarchy"               , standardize_polyarchy_original      , FALSE   , FALSE     , NA            ,
+    "polyarchy_dimensions"    , standardize_polyarchy_dimensions    , FALSE   , FALSE     , NA            ,
+    "polyarchy_pmm"           , standardize_polyarchy_pmm           , FALSE   , FALSE     , NA            ,
+    "prc_gasiorowski"         , standardize_prc_gasiorowski         , FALSE   , FALSE     , NA            ,
+    "prc_pmm"                 , standardize_prc_pmm                 , FALSE   , FALSE     , NA            ,
+    "REIGN"                   , standardize_REIGN                   , FALSE   , FALSE     , NA            ,
+    "svmdi"                   , standardize_svmdi                   , FALSE   , FALSE     ,          2020 ,
+    "svmdi_2016"              , standardize_svmdi                   , FALSE   , FALSE     ,          2016 ,
+    "svolik_regime"           , standardize_svolik                  , FALSE   , FALSE     , NA            ,
+    "uds_2010"                , standardize_uds                     , FALSE   , FALSE     ,          2010 ,
+    "uds_2011"                , standardize_uds                     , FALSE   , FALSE     ,          2011 ,
+    "uds_2014"                , standardize_uds                     , FALSE   , FALSE     ,          2014 ,
+    "ulfelder"                , standardize_ulfelder                , TRUE    , FALSE     , NA            ,
+    "utip"                    , standardize_utip                    , FALSE   , FALSE     , NA            ,
+    "vanhanen"                , standardize_vanhanen                , FALSE   , FALSE     , NA            ,
+    "vanhanen_pmm"            , standardize_vanhanen_pmm            , FALSE   , FALSE     , NA            ,
+    "vaporeg"                 , standardize_vaporeg                 , FALSE   , FALSE     , NA            ,
+    "vdem"                    , standardize_vdem                    , FALSE   , FALSE     , NA            ,
+    "wahman_teorell_hadenius" , standardize_wahman_teorell_hadenius , FALSE   , FALSE     , NA            ,
+    "wgi_democracy"           , standardize_wgi                     , FALSE   , FALSE     , NA
+  ) |>
+    dplyr::mutate(
+      version = dplyr::case_when(
+        dataset == "pitf" ~ pitf_version,
+        dataset == "vaporeg" ~ vaporeg_version,
+        dataset == "wgi_democracy" ~ wgi_version,
+        TRUE ~ NA_character_
+      ),
+      dataset = dplyr::case_when(
+        dataset == "pitf" & version == "polity4" ~ "pitf_p4",
+        dataset == "vaporeg" & version == "legacy" ~ "vaporeg_2024",
+        dataset == "wgi_democracy" & version == "legacy" ~ "wgi_legacy",
+        TRUE ~ dataset
+      )
+    )
 
   # Dataset processing logic
   if (!missing(selection)) {
@@ -691,22 +731,27 @@ generate_democracy_scores_dataset <- function(datasets,
   }
 
   # PMM logic
-  if(exclude_pmm_duplicates) {
+  if (exclude_pmm_duplicates) {
     standardizers <- standardizers |>
       dplyr::filter(!(!pmm_only & stringr::str_detect(dataset, "pmm")))
   }
 
   # Release year logic
   standardizers <- standardizers |>
-    dplyr::filter(is.na(release_year) |
-                    (release_year %in% uds_release_year  & str_detect(dataset, "uds")) |
-                    (release_year %in% svmdi_release_year & str_detect(dataset, "svmdi")))
+    dplyr::filter(
+      is.na(release_year) |
+        (release_year %in% uds_release_year & str_detect(dataset, "uds")) |
+        (release_year %in% svmdi_release_year & str_detect(dataset, "svmdi"))
+    )
 
   if (missing(datasets)) {
     selected_standardizers <- standardizers
   } else {
     selected_standardizers <- standardizers |>
-      dplyr::filter(dataset %in% match.arg(datasets, standardizers$dataset, several.ok = TRUE))
+      dplyr::filter(
+        dataset %in%
+          match.arg(datasets, standardizers$dataset, several.ok = TRUE)
+      )
   }
 
   # Main list of datasets
@@ -714,7 +759,7 @@ generate_democracy_scores_dataset <- function(datasets,
 
   # Gather data from each standardizer
   gather_data <- function(row) {
-    row$standardize_fun[[1]](
+    args <- list(
       verbose = verbose,
       force_redownload = force_redownload,
       use_extended = use_extended && row$extend,
@@ -722,18 +767,28 @@ generate_democracy_scores_dataset <- function(datasets,
       keep_only_last_in_year = keep_only_last_in_year,
       release_year = row$release_year
     )
+
+    if (!is.na(row$version)) {
+      args$version <- row$version
+    }
+
+    do.call(row$standardize_fun[[1]], args)
   }
 
   # Loop over rows of selected_standardizers to gather data
   democracy_data <- purrr::map(
     split(selected_standardizers, selected_standardizers$dataset),
-    ~gather_data(.x)
+    ~ gather_data(.x)
   ) |>
     purrr::list_rbind(names_to = "dataset")
 
   democracy_data <- democracy_data |>
-    dplyr::mutate(measure = dplyr::case_when(dataset == "polityIV" ~ paste0(measure, "IV"),
-                                             TRUE ~ measure))
+    dplyr::mutate(
+      measure = dplyr::case_when(
+        dataset == "polityIV" ~ paste0(measure, "IV"),
+        TRUE ~ measure
+      )
+    )
 
   # Optionally scale scores
   if (scale_scores) {
@@ -743,15 +798,15 @@ generate_democracy_scores_dataset <- function(datasets,
       dplyr::ungroup()
   }
 
-  if(prefer_successor) {
+  if (prefer_successor) {
     democracy_data <- select_successor(democracy_data)
   }
 
-  if(fix_PIPE) {
+  if (fix_PIPE) {
     democracy_data <- fix_PIPE(democracy_data)
   }
 
-  if(enforce_GW_enddates) {
+  if (enforce_GW_enddates) {
     democracy_data <- enforce_enddates(democracy_data)
   }
 
@@ -778,172 +833,237 @@ generate_democracy_scores_dataset <- function(datasets,
   }
 
   democracy_data |>
-    dplyr::arrange(across(all_of(c("extended_country_name", "GWn", "cown", "year"))))
+    dplyr::arrange(across(all_of(c(
+      "extended_country_name",
+      "GWn",
+      "cown",
+      "year"
+    ))))
 }
 
 select_successor <- function(democracy_data) {
-  year <- cown <- dataset <- panel <- extended_country_name <- NULL
-  original_country_name <- value <- NULL
-
   # Germany 1990
   democracy_data <- democracy_data |>
-    dplyr::filter(!(extended_country_name == "German Federal Republic" & 
-                    year == 1990 & cown == 260))
+    dplyr::filter(
+      !(extended_country_name == "German Federal Republic" &
+        year == 1990 &
+        cown == 260)
+    )
 
   # Yugoslavia
   democracy_data <- democracy_data |>
-    dplyr::filter(!((extended_country_name == "Yugoslavia" & year == 1991 & 
-                     original_country_name %in% "YUGOSLAVIA, FED. REP." &
-                     dataset == "bmr"))) |>
+    dplyr::filter(
+      !((extended_country_name == "Yugoslavia" &
+        year == 1991 &
+        original_country_name %in% "YUGOSLAVIA, FED. REP." &
+        dataset == "bmr"))
+    ) |>
     dplyr::distinct()
 
   # Austria
   democracy_data <- democracy_data |>
-    dplyr::filter(!((extended_country_name == "Austria" & year == 1918 & 
-                     original_country_name %in% c("Austria-Hungary (Austria)") &
-                     dataset == "PIPE"))) 
+    dplyr::filter(
+      !((extended_country_name == "Austria" &
+        year == 1918 &
+        original_country_name %in% c("Austria-Hungary (Austria)") &
+        dataset == "PIPE"))
+    )
 
   # Ethiopia
   democracy_data <- democracy_data |>
-    dplyr::filter(!((extended_country_name == "Ethiopia" & year == 1993 & 
-                     dataset %in% c("polity5", "polityIV") &
-                     value == 0))) 
+    dplyr::filter(
+      !((extended_country_name == "Ethiopia" &
+        year == 1993 &
+        dataset %in% c("polity5", "polityIV") &
+        value == 0))
+    )
 
   # Italy
   democracy_data <- democracy_data |>
-    dplyr::filter(!((extended_country_name == "Italy/Sardinia" & year == 1861 & 
-                     original_country_name == "Sardinia"))) 
+    dplyr::filter(
+      !((extended_country_name == "Italy/Sardinia" &
+        year == 1861 &
+        original_country_name == "Sardinia"))
+    )
 
   # Russia
   democracy_data <- democracy_data |>
-    dplyr::filter(!((extended_country_name == "Russia (Soviet Union)" & 
-                     year %in% c(1991, 1922) & 
-                     original_country_name == "USSR"))) 
-  
+    dplyr::filter(
+      !((extended_country_name == "Russia (Soviet Union)" &
+        year %in% c(1991, 1922) &
+        original_country_name == "USSR"))
+    )
+
   # Sudan
   democracy_data <- democracy_data |>
-    dplyr::filter(!((extended_country_name == "Sudan" & 
-                     year %in% c(2011) & 
-                     original_country_name == "Sudan"))) 
-  
+    dplyr::filter(
+      !((extended_country_name == "Sudan" &
+        year %in% c(2011) &
+        original_country_name == "Sudan"))
+    )
+
   # Vietnam
   democracy_data <- democracy_data |>
-    dplyr::filter(!((extended_country_name == "Vietnam (Annam/Cochin China/Tonkin)" & 
-                     year %in% c(1945:1953) & 
-                     original_country_name == "Vietnam, North"))) 
+    dplyr::filter(
+      !((extended_country_name == "Vietnam (Annam/Cochin China/Tonkin)" &
+        year %in% c(1945:1953) &
+        original_country_name == "Vietnam, North"))
+    )
 
   democracy_data <- democracy_data |>
-    dplyr::filter(!((extended_country_name == "Vietnam, Democratic Republic of" & 
-                     year %in% c(1975) & 
-                     original_country_name == "Vietnam, Republic of"))) 
+    dplyr::filter(
+      !((extended_country_name == "Vietnam, Democratic Republic of" &
+        year %in% c(1975) &
+        original_country_name == "Vietnam, Republic of"))
+    )
 
   democracy_data <- democracy_data |>
-    dplyr::filter(!((extended_country_name == "Vietnam, Democratic Republic of" & 
-                     year %in% c(1976) & 
-                     dataset %in% c("pitf", "polity5", "polityIV") &
-                     original_country_name == "Vietnam"))) 
+    dplyr::filter(
+      !((extended_country_name == "Vietnam, Democratic Republic of" &
+        year %in% c(1976) &
+        dataset %in% c("pitf", "pitf_p4", "polity5", "polityIV") &
+        original_country_name == "Vietnam"))
+    )
 
   democracy_data <- democracy_data |>
-    dplyr::filter(!((extended_country_name == "Vietnam, Democratic Republic of" & 
-                     year %in% c(1976) & 
-                     dataset == "uds_2010" &
-                     value < -0.7))) 
-  
-  democracy_data <- democracy_data |>
-    dplyr::filter(!((original_country_name  == "Vietnam" & 
-                     year %in% c(1945:1953) & 
-                     dataset %in% c("LIED")))) 
+    dplyr::filter(
+      !((extended_country_name == "Vietnam, Democratic Republic of" &
+        year %in% c(1976) &
+        dataset == "uds_2010" &
+        value < -0.7))
+    )
 
- 
+  democracy_data <- democracy_data |>
+    dplyr::filter(
+      !((original_country_name == "Vietnam" &
+        year %in% c(1945:1953) &
+        dataset %in% c("LIED")))
+    )
+
   # Yemen
   democracy_data <- democracy_data |>
-    dplyr::filter(!((extended_country_name == "Yemen (Arab Republic of Yemen)" & 
-                     year %in% c(1990) & 
-                     dataset %in% c("PIPE", "polity5", "polityIV", "polyarchy_dimensions") &
-                     original_country_name %in% c("Yemen North",
-                                                  "Yemen, North",
-                                                   "Yemennorth")))) 
-  
+    dplyr::filter(
+      !((extended_country_name == "Yemen (Arab Republic of Yemen)" &
+        year %in% c(1990) &
+        dataset %in% c("PIPE", "polity5", "polityIV", "polyarchy_dimensions") &
+        original_country_name %in%
+          c("Yemen North", "Yemen, North", "Yemennorth")))
+    )
+
   democracy_data <- democracy_data |>
-    dplyr::filter(!((extended_country_name == "Yemen (Arab Republic of Yemen)" & 
-                     year %in% c(1990) & 
-                     cown != 679))) 
-  
+    dplyr::filter(
+      !((extended_country_name == "Yemen (Arab Republic of Yemen)" &
+        year %in% c(1990) &
+        cown != 679))
+    )
+
   democracy_data <- democracy_data |>
-    dplyr::filter(!((extended_country_name == "Yemen (Arab Republic of Yemen)" & 
-                     year %in% c(1990) & 
-                     dataset == "uds_2010" &
-                     value < -0.5))) 
-  
+    dplyr::filter(
+      !((extended_country_name == "Yemen (Arab Republic of Yemen)" &
+        year %in% c(1990) &
+        dataset == "uds_2010" &
+        value < -0.5))
+    )
+
   democracy_data
 }
 
 fix_PIPE <- function(democracy_data) {
-  dataset <- original_country_name <- year <- NULL
   # PIPE
   democracy_data <- democracy_data |>
-    dplyr::filter(!(dataset == "PIPE" & original_country_name == "Austria-Hungary (Austria)" & year <= 1918),
-                  !(dataset == "PIPE" & original_country_name == "Czech Republic" & year <= 1992),
-                  !(dataset == "PIPE" & original_country_name == "Austria-Hungary (Hungary)" & year <= 1918),
-                  !(dataset == "PIPE" & original_country_name == "Vietnam, North" & year <= 1870),
-                  !(dataset == "PIPE" & original_country_name == "Vietnam" & year %in% c(1954:1975)),
-                  !(dataset == "PIPE" & original_country_name == "Turkey" & year < 1922),
-                  !(dataset == "PIPE" & original_country_name == "North Korea" & year <= 1870),
-                  !(dataset == "PIPE" & original_country_name == "South Korea" & year <= 1870),
-                  !(dataset == "PIPE" & original_country_name == "Pakistan" & year %in% c(1950:1970)),
-                  !(dataset == "PIPE" & original_country_name == "Serbia" & year %in% c(1990)),
-                  !(dataset == "PIPE" & original_country_name == "Serbia And Montenegro" & year %in% c(1990:1991)))
-  
+    dplyr::filter(
+      !(dataset == "PIPE" &
+        original_country_name == "Austria-Hungary (Austria)" &
+        year <= 1918),
+      !(dataset == "PIPE" &
+        original_country_name == "Czech Republic" &
+        year <= 1992),
+      !(dataset == "PIPE" &
+        original_country_name == "Austria-Hungary (Hungary)" &
+        year <= 1918),
+      !(dataset == "PIPE" &
+        original_country_name == "Vietnam, North" &
+        year <= 1870),
+      !(dataset == "PIPE" &
+        original_country_name == "Vietnam" &
+        year %in% c(1954:1975)),
+      !(dataset == "PIPE" & original_country_name == "Turkey" & year < 1922),
+      !(dataset == "PIPE" &
+        original_country_name == "North Korea" &
+        year <= 1870),
+      !(dataset == "PIPE" &
+        original_country_name == "South Korea" &
+        year <= 1870),
+      !(dataset == "PIPE" &
+        original_country_name == "Pakistan" &
+        year %in% c(1950:1970)),
+      !(dataset == "PIPE" &
+        original_country_name == "Serbia" &
+        year %in% c(1990)),
+      !(dataset == "PIPE" &
+        original_country_name == "Serbia And Montenegro" &
+        year %in% c(1990:1991))
+    )
+
   democracy_data
 }
 
 enforce_enddates <- function(democracy_data, target_panel = "GW") {
-  dataset <- measure <- extended_country_name <- year <- panel <- NULL
-  enddate <- closest <- last_year <- NULL
   browser()
   DEBUG <- FALSE
- 
+
   # Check for duplicates
-  if(DEBUG) {
+  if (DEBUG) {
     democracy_data |>
       distinct() |>
       count(dataset, measure, extended_country_name, year) |>
       filter(n > 1)
   }
-  
+
   # Fix endddates
   countries_no_longer_existing <- data |>
     dplyr::select(extended_country_name, ends_with("GW_enddate")) |>
-    tidyr::pivot_longer(cols = ends_with("GW_enddate"), names_to = "panel", values_to = "enddate") |>
-    dplyr::mutate(panel = stringr::str_remove(panel, "_enddate"),
-                  panel = ifelse(panel %in% c("GW", "cow"), paste0(panel, "n"), panel)) |>
+    tidyr::pivot_longer(
+      cols = ends_with("GW_enddate"),
+      names_to = "panel",
+      values_to = "enddate"
+    ) |>
+    dplyr::mutate(
+      panel = stringr::str_remove(panel, "_enddate"),
+      panel = ifelse(panel %in% c("GW", "cow"), paste0(panel, "n"), panel)
+    ) |>
     dplyr::filter(panel %in% "GWn") |>
-    group_by(extended_country_name ) |>
+    group_by(extended_country_name) |>
     filter(!any(is.na(enddate))) |>
     distinct() |>
     dplyr::group_by(extended_country_name, panel) |>
     dplyr::distinct() |>
     dplyr::group_by(extended_country_name) |>
-    dplyr::filter(enddate == max(enddate),
-                  !extended_country_name %in% c("Vietnam (Annam/Cochin China/Tonkin)",
-                                                "Korea")) |>
+    dplyr::filter(
+      enddate == max(enddate),
+      !extended_country_name %in%
+        c("Vietnam (Annam/Cochin China/Tonkin)", "Korea")
+    ) |>
     dplyr::mutate(last_year = lubridate::year(enddate + 1))
 
   democracy_data <- democracy_data |>
-    anti_join(countries_no_longer_existing,
-              by = join_by(extended_country_name, closest(year > last_year)))
+    anti_join(
+      countries_no_longer_existing,
+      by = join_by(extended_country_name, closest(year > last_year))
+    )
 
-
-  if(DEBUG) {
+  if (DEBUG) {
     # Check for other problem cases
     democracy_data <- democracy_data |>
       dplyr::group_by(dataset, measure, extended_country_name, year) |>
-      dplyr::mutate(problem_case =
-                      dplyr::case_when(dplyr::n_distinct(original_country_name) > 1 ~ TRUE,
-                                       TRUE ~ FALSE),
-                    more_than_one = n() > 1) |>
+      dplyr::mutate(
+        problem_case = dplyr::case_when(
+          dplyr::n_distinct(original_country_name) > 1 ~ TRUE,
+          TRUE ~ FALSE
+        ),
+        more_than_one = n() > 1
+      ) |>
       dplyr::ungroup()
-
   }
 
   democracy_data

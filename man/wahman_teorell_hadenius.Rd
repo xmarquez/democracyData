@@ -72,8 +72,8 @@ Kosovo is treated as a new case from 2009.
 195) Country code. Numeric country code.}
 
 \item{wahman_teorell_hadenius_cow}{(n:7150, N: 192)
-Corralates of war country code. Source: Corralates of war 2 project
-\url{http://www.correlatesofwar.org/.}}
+Correlates of war country code. Source: Correlates of war 2 project
+\url{https://correlatesofwar.org/}.}
 
 \item{ccode}{(n:5867, N: 168)
 Polity country code (polity IV) Example: 85- Kenya 200- United Kingdom
@@ -84,7 +84,7 @@ database: Germany West (original code: 260) = Germany (ccode 255) Ethiopia
 (ccode 364) Source: Marshall, Monty G & Jaggers, Keith: Polity IV project,
 Integrated Network for societal Conflict research (INSCR) Program Center
 for International Development and Conflict Management (CIDCM) University of
-Maryland, Collage Park 20742, \url{http://www.cidcm.umd.edu/inscr/polity.}}
+Maryland, Collage Park 20742, \url{https://www.systemicpeace.org/polity/polity4.htm}.}
 
 \item{ccode_qog}{(n:7527, N:193) ISO country code. In the following cases
 the ISO country numbers has been changed to match the countrycoding
@@ -92,8 +92,8 @@ principles of our database: Germany West before 1991 (original code: 280) =
 Germany (ccode 276) Ethiopia before 1993 (original code: 230) = Ethiopia
 (ccode 231) North Vietnam before 1976 (original code: 998) = Vietnam (ccode
 704) Source:
-\url{http://www.iso.org/en/prods-services/iso3166ma/02iso-3166-code-lists/index.html},
-\url{http://en.wikipedia.org/wiki/ISO3166-1}} \item{year}{(n: 7991, N:
+\url{https://www.iso.org/iso-3166-country-codes.html},
+\url{https://en.wikipedia.org/wiki/ISO_3166-1}} \item{year}{(n: 7991, N:
 195) Year of observation.}}
 }
 
@@ -112,7 +112,7 @@ indicates strongly democratic and 0 strongly autocratic. Source: Marshall,
 Monty G & Jaggers, Keith: Polity IV project, Integrated Network for
 societal Conflict research (INSCR) Program Center for International
 Development and Conflict Management (CIDCM) University of Maryland, Collage
-Park 20742, \url{http://www.systemicpeace.org/polity/polity4.htm}.}
+Park 20742, \url{https://www.systemicpeace.org/polity/polity4.htm}.}
 
 \item{fhpol}{(n: 5789, N: 170) Average Polity (revpol2) & Freedom House
 (fhadd) scores, scaled 0-10.1 Source: See fhadd and revpol2.}
@@ -200,28 +200,27 @@ multiparty regimes with sub-types are treated as multiparty regimes
 respectively. The minor types (regimeny=9, 19, 20, 21, 22) are treated as
 other. Our regime classification pertains to December 31 as of each year.
 Sources: Banks and Wilson (2012), supplemented with: Elections in the world
-\url{http://www.electionworld.org}, IFES Election guide
-\url{http://209.50.195.230}, Journal of democracy: Election watch
+\url{https://www.electionworld.org/}, IFES Election guide
+\url{https://www.electionguide.org/home/}, Journal of democracy: Election watch
 \url{http://muse.jhu.edu/journals/journal_of_democracy/election_watch/},
 Parties and elections in Europe
 \url{http://www.parties-and-elections.de/index.html}, Freedom House
-"Freedom in the World Reports" \url{http://www.freedomhouse.org}, The
-interparliamentary Union \url{http://www.ipu.org/english/home.htm},
-Political Database of the Americas \url{http://www.georgetown.edu/pdba/},
+"Freedom in the World Reports" \url{https://freedomhouse.org}, The
+interparliamentary Union \url{https://web.archive.org/web/20000301171839/http://www.ipu.org/english/home.htm},
+Political Database of the Americas \url{https://pdba.georgetown.edu/},
 Rulers \url{http://www.rulers.org}, Keesing's Record of World Events
-\url{http://keesings.gvpi.net/keesings/lpext.dll?f=templates&fn=main-h.htm},
-The Swedish Institute of International affairs, Country guides
-\url{http://www.landguiden.se}, The US Library of congress Country Studies
+\url{https://www.keesings.com/}, The Swedish Institute of International affairs, Country guides
+\url{https://www.ui.se/landguiden/}, The US Library of congress Country Studies
 (Federal Research Division of Library of Congress)
-\url{http://memory.loc.gov/frd/cs/cshome.html#toc}, Banks and Mueller:
+\url{https://web.archive.org/web/20000413181827/http://memory.loc.gov/frd/cs/cshome.html}, Banks and Mueller:
 Political handbook of the world 1979, The Europe world tear book, various
 years, The Economist Intelligence Unit: Quaterly Economic Reviews, Country
 profiles and Country Reports, various years, The CIA World Fact book
-\url{http://www.cia.gov/cia/publications/factbook}, Country Reports on
+\url{https://web.archive.org/web/20010413164935/http://www.cia.gov/cia/publications/factbook/}, Country Reports on
 Human Rights practices (Reports submitted to Congress by US Department of
 State), various years, later editions on
-\url{http://www.state.gov/g/drl/hr/c1470.htm}, Encycopledia Britannica
-online \url{http://search.eb.com.}}
+\url{https://web.archive.org/web/20020202063224/http://www.state.gov/g/drl/hr/c1470.htm}, Encycopledia Britannica
+online \url{https://academic.eb.com}.}
 
 \item{regime1nyrobust}{Same as
 regime1ny, but with 7.5 democracy threshold.}
@@ -294,17 +293,17 @@ fractions) Counts the largest parties' number of seats divided with the
 legislative assembles' total number of seats expressed in fractions. In
 countries with a two-chamber parliament the lower house is counted. Source:
 Banks and Wilson (2012), Elections in the world
-\url{http://www.electionworld.org}, Beck et al (2001), IFES Election guide
-http:// 209.50.195.230, Journal of democracy: Election watch
+\url{https://www.electionworld.org/}, Beck et al (2001), IFES Election guide
+\url{https://www.electionguide.org/home/}, Journal of democracy: Election watch
 \url{http://muse.jhu.edu/journals/journal_of_democracy/election_watch/},
 Parties and elections in Europe
 \url{http://www.parties-and-elections.de/index.html}, The
-interparliamentary Union \url{http://www.ipu.org/english/home.htm},
-Political Database of the Americas \url{http://www.georgetown.edu/pdba/},
+interparliamentary Union \url{https://web.archive.org/web/20000301171839/http://www.ipu.org/english/home.htm},
+Political Database of the Americas \url{https://pdba.georgetown.edu/},
 Rulers \url{http://www.rulers.org}, Keesing's Record of World Events
-\url{http://keesings.gvpi.net/keesings/lpext.dll?f=templates&fn=main-h.htm},
+\url{https://www.keesings.com/},
 The CIA World Fact book
-\url{http://www.cia.gov/cia/publications/factbook}}
+\url{https://web.archive.org/web/20010413164935/http://www.cia.gov/cia/publications/factbook/}}
 
 \item{partsz1}{(n:6504,
 N:193) size of largest party (in fraction), zero for one party regime Codes
@@ -413,13 +412,13 @@ the years of regime spell duration, according to the classification of
 regime1ny. The effective executive may be the president, prime minister,
 leader of the ruling party, the monarch or the ruling military junta, or
 someone else, working behind political figure heads. Source: Banks and
-Wilson (2012), Elections in the world \url{http://www.electionworld.org},
+Wilson (2012), Elections in the world \url{https://www.electionworld.org/},
 Rulers \url{http://www.rulers.org}, Keesing's Record of World Events
-\url{http://keesings.gvpi.net/keesings/lpext.dll?f=templates&fn=main-h.htm},
+\url{https://www.keesings.com/},
 The Swedish Institute of International affairs: Country guides
-\url{http://www.landguiden.se}, Country Reports on Human Rights practices
+\url{https://www.ui.se/landguiden/}, Country Reports on Human Rights practices
 (Reports submitted to Congress by US Department of State), Encyclopedia
-Britannica \url{http://search.eb.com} }
+Britannica \url{https://academic.eb.com} }
 
 \item{persagg1nyrobust}{Same as
 persagg1ny, but with 7.5 democracy threshold.}
@@ -466,15 +465,16 @@ parentheses) the name of an earlier incarnation of the state: thus, they
 have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
 For details, see Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
+International Interactions 25: 393-413. The list can be found via the
+Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
 
 \item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.}
 
 \item{cown}{The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
-\url{http://www.correlatesofwar.org/data-sets/state-system-membership} for
+\url{https://correlatesofwar.org/data-sets/state-system-membership/} for
 the full list.}
 
 \item{in_GW_system}{Whether the state is "in system" (that is, is
@@ -529,7 +529,9 @@ Other democracy:
 \code{\link{utip}},
 \code{\link{vanhanen}},
 \code{\link{vaporeg}},
-\code{\link{vdem_simple}}
+\code{\link{vaporeg_2024}},
+\code{\link{vdem_simple}},
+\code{\link{wgi_legacy}}
 
 Other dichotomous democracy indexes: 
 \code{\link{anckar}},
@@ -542,7 +544,9 @@ Other dichotomous democracy indexes:
 \code{\link{pacl_update}},
 \code{\link{svolik_regime}},
 \code{\link{ulfelder}},
-\code{\link{utip}}
+\code{\link{utip}},
+\code{\link{vaporeg}},
+\code{\link{vaporeg_2024}}
 
 Other authoritarianism: 
 \code{\link{REIGN}},

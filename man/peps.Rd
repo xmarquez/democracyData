@@ -16,7 +16,7 @@ peps
 \description{
 A dataset containing the Participation-Enhanced Polity score described in
 B. E. Moon, J. H. Birdsall, S. Ciesluk, et al. "Voting Counts: Participation in the Measurement of Democracy". In: \emph{Studies in Comparative International Development} 41.2 (2006), pp. 3-32. DOI: \href{https://dx.doi.org/10.1007/BF02686309}{10.1007/BF02686309}. The complete
-dataset is available at \url{http://www.lehigh.edu/~bm05/democracy/Obtain_data.htm}. The
+dataset is available at \url{https://www.lehigh.edu/~bm05/democracy/Obtain_data.htm}. The
 documentation below is based on the information in that website.
 }
 \details{
@@ -98,15 +98,16 @@ parentheses) the name of an earlier incarnation of the state: thus, they
 have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
 For details, see Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
+International Interactions 25: 393-413. The list can be found via the
+Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
 
 \item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.}
 
 \item{cown}{The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
-\url{http://www.correlatesofwar.org/data-sets/state-system-membership} for
+\url{https://correlatesofwar.org/data-sets/state-system-membership/} for
 the full list.}
 
 \item{in_GW_system}{Whether the state is "in system" (that is, is
@@ -160,8 +161,10 @@ Other democracy:
 \code{\link{utip}},
 \code{\link{vanhanen}},
 \code{\link{vaporeg}},
+\code{\link{vaporeg_2024}},
 \code{\link{vdem_simple}},
-\code{\link{wahman_teorell_hadenius}}
+\code{\link{wahman_teorell_hadenius}},
+\code{\link{wgi_legacy}}
 
 Other continuous indexes of democracy: 
 \code{\link{polyarchy_dimensions}}

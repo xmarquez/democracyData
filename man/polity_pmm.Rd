@@ -8,15 +8,15 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8050 rows and 7 columns.
 }
 \source{
-D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}.
+D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM.
 
-M. G. Marshall, T. R. Gurr, and K. Jaggers. \emph{Polity IV Project: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual.} Manual. 2019.
+M. G. Marshall, T. R. Gurr, and K. Jaggers. \emph{Polity IV Project: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual.} manual. Center for Systemic Peace, 2019.
 }
 \usage{
 polity_pmm
 }
 \description{
-Polity 2 Index from Polity IV. 2013. Taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}.
+Polity 2 Index from Polity IV. 2013. Taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM.
 Higher values are more democratic. Use \link{polityIV} for the latest
 version of the Polity IV data or \link{download_polity_annual} to download the
 Polity 5 revision.
@@ -32,7 +32,7 @@ Polity 5 revision.
 
 \item{polity_pmm}{Annual polity2 index, interpolating values for
 interruption, interregnum, and transition periods. Higher values are more
-democratic. Taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}. In
+democratic. Taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM. In
 this version the indicator only goes to 1945, and it differs from polity2
 in a few cases:
 
@@ -86,15 +86,16 @@ parentheses) the name of an earlier incarnation of the state: thus, they
 have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
 For details, see Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
+International Interactions 25: 393-413. The list can be found via the
+Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
 
 \item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.}
 
 \item{cown}{The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
-\url{http://www.correlatesofwar.org/data-sets/state-system-membership} for
+\url{https://correlatesofwar.org/data-sets/state-system-membership/} for
 the full list.}
 
 \item{in_GW_system}{Whether the state is "in system" (that is, is
@@ -154,8 +155,10 @@ Other democracy:
 \code{\link{utip}},
 \code{\link{vanhanen}},
 \code{\link{vaporeg}},
+\code{\link{vaporeg_2024}},
 \code{\link{vdem_simple}},
-\code{\link{wahman_teorell_hadenius}}
+\code{\link{wahman_teorell_hadenius}},
+\code{\link{wgi_legacy}}
 
 Other PMM replication data: 
 \code{\link{arat_pmm}},

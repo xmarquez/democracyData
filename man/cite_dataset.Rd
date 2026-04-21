@@ -22,9 +22,9 @@ using the \link[RefManageR:RefManageR-package]{RefManageR::RefManageR} package f
 }
 \examples{
 
-cite_dataset("gwf") 
+cite_dataset("gwf")
 
-cite_dataset("pmm") 
+cite_dataset("pmm")
 
 cite_dataset("uds") # Same output as the previous one
 }

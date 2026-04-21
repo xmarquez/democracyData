@@ -11,7 +11,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8965 rows and 7 columns.
 }
 \source{
-T. Vanhanen. \emph{Measures of Democracy 1810-2018 (Dataset). Version 8.0 (2019-06-17).} Tampere, 2019. Data available at \url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}
+T. Vanhanen. \emph{Measures of Democracy 1810-2018 (Dataset). Version 8.0 (2019-06-17).} Tampere: Finnish Social Science Data Archive (distributor), 2019. \url{https://urn.fi/urn:nbn:fi:fsd:T-FSD1289}. Data available at \url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}
 }
 \usage{
 vanhanen
@@ -19,7 +19,7 @@ vanhanen
 vanhanen_pmm
 }
 \description{
-A dataset containing Tatu Vanhanen's measures of democracy, T. Vanhanen. \emph{Measures of Democracy 1810-2018 (Dataset). Version 8.0 (2019-06-17).} Tampere, 2019.
+A dataset containing Tatu Vanhanen's measures of democracy, T. Vanhanen. \emph{Measures of Democracy 1810-2018 (Dataset). Version 8.0 (2019-06-17).} Tampere: Finnish Social Science Data Archive (distributor), 2019. \url{https://urn.fi/urn:nbn:fi:fsd:T-FSD1289}.
 Data available at \url{https://services.fsd.tuni.fi/catalogue/FSD1289?tab=summary&lang=en&study_language=en}.
 }
 \section{Variables}{
@@ -309,15 +309,16 @@ parentheses) the name of an earlier incarnation of the state: thus, they
 have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
 For details, see Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
+International Interactions 25: 393-413. The list can be found via the
+Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
 
 \item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.}
 
 \item{cown}{The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
-\url{http://www.correlatesofwar.org/data-sets/state-system-membership} for
+\url{https://correlatesofwar.org/data-sets/state-system-membership/} for
 the full list.}
 
 \item{in_GW_system}{Whether the state is "in system" (that is, is
@@ -332,7 +333,7 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 \section{Note}{
 
 
-The \code{vanhanen_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}. The
+The \code{vanhanen_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM. The
 original dataset is found in \link{vanhanen}. The \code{vanhanen_pmm} data only goes
 back to 1945. There are some missing values in PMM's data compared to the
 original Vanhanen dataset. For more detail on the differences, see the
@@ -381,8 +382,10 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vaporeg}},
+\code{\link{vaporeg_2024}},
 \code{\link{vdem_simple}},
-\code{\link{wahman_teorell_hadenius}}
+\code{\link{wahman_teorell_hadenius}},
+\code{\link{wgi_legacy}}
 
 Other continuous democracy indexes: 
 \code{\link{arat_pmm}},
@@ -393,7 +396,8 @@ Other continuous democracy indexes:
 \code{\link{hadenius_pmm}},
 \code{\link{munck_pmm}},
 \code{\link{svmdi}},
-\code{\link{vdem_simple}}
+\code{\link{vdem_simple}},
+\code{\link{wgi_legacy}}
 }
 \concept{continuous democracy indexes}
 \concept{democracy}

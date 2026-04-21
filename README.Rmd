@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 
 # democracyData
 
-This package archives a large number of datasets measuring democracy in use in the scholarly literature, and it provides functions to access many others. You can use it to access some widely used datasets, including [Polity5](http://www.systemicpeace.org/inscrdata.html), [Freedom House](https://freedomhouse.org/), [Geddes, Wright, and Frantz' autocratic regimes dataset](http://sites.psu.edu/dictators/), the [Lexical Index of Electoral Democracy](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106), the [DD/ACLP/PACL/CGV dataset](https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited), the main indexes of the [V-Dem dataset](https://www.v-dem.net/vdemds.html), and many others.
+This package archives a large number of datasets measuring democracy in use in the scholarly literature, and it provides functions to access many others. You can use it to access some widely used datasets, including [Polity5](https://www.systemicpeace.org/inscrdata.html), [Freedom House](https://freedomhouse.org/), [Geddes, Wright, and Frantz' autocratic regimes dataset](https://sites.psu.edu/dictators/), the [Lexical Index of Electoral Democracy](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29106), the [DD/ACLP/PACL/CGV dataset](https://sites.google.com/site/joseantoniocheibub/datasets/dd), the main indexes of the [V-Dem dataset](https://www.v-dem.net/data/the-v-dem-dataset/), and many others.
 
 ## Installation
 
@@ -32,7 +32,7 @@ remotes::install_github("xmarquez/democracyData")
 
 ## Basic usage
 
-For the vast majority of use cases, you can just type the name of the dataset you require. For example, here's the [DD/ACLP/PACL/CGV](https://sites.google.com/site/joseantoniocheibub/datasets/democracy-and-dictatorship-revisited) dataset:
+For the vast majority of use cases, you can just type the name of the dataset you require. For example, here's the [DD/ACLP/PACL/CGV](https://sites.google.com/site/joseantoniocheibub/datasets/dd) dataset:
 
 ```{r}
 library(democracyData)
@@ -45,7 +45,7 @@ pacl
 dd()
 ```
 
-Here's [Polity IV](http://www.systemicpeace.org/inscrdata.html):
+Here's [Polity IV](https://www.systemicpeace.org/inscrdata.html):
 
 ```{r}
 polityIV
@@ -61,7 +61,7 @@ All datasets in this package are fully documented; type `?pacl` for example to s
 
 ## Downloading democracy data
 
-Though all datasets can be accessed directly from this package, most datasets can also be downloaded directly from the internet, including the family of datasets released by [Freedom House](https://freedomhouse.org/) and the full V-Dem dataset. To download the Freedom House dataset, use the the `download_*` family of functions; to download the full V-Dem dataset, use the [vdemdata](https://github.com/vdeminstitute/vdemdata) package. The package *does* include the main indexes of version 15.0 of V-Dem (see `vdem_simple`), so you don't need to use the [vdemdata](https://github.com/vdeminstitute/vdemdata) package if you are only interested in the higher-level indexes of democracy. You can also download directly the latest versions of the World Bank's Voice and Accountability Index from the [World Governance Indicators](http://info.worldbank.org/governance/wgi/) and [Polity5](http://www.systemicpeace.org/inscrdata.html), though there are also archived versions of these two in the package.
+Though all datasets can be accessed directly from this package, most datasets can also be downloaded directly from the internet, including the family of datasets released by [Freedom House](https://freedomhouse.org/) and the full V-Dem dataset. To download the Freedom House dataset, use the the `download_*` family of functions; to download the full V-Dem dataset, use the [vdemdata](https://github.com/vdeminstitute/vdemdata) package. The package *does* include the main indexes of version 16.0 of V-Dem (see `vdem_simple`), so you don't need to use the [vdemdata](https://github.com/vdeminstitute/vdemdata) package if you are only interested in the higher-level indexes of democracy. You can also download directly the latest versions of the World Bank's Voice and Accountability Index from the [World Governance Indicators](https://www.worldbank.org/en/publication/worldwide-governance-indicators) and [Polity5](https://www.systemicpeace.org/inscrdata.html), though there are also archived versions of these two in the package.
 
 For example, we can download and process the Freedom House "Freedom in the World" dataset as follows:
 
@@ -72,7 +72,7 @@ fh_downloaded
 
 ```
 
-This downloads the latest update of the "Freedom in the World" dataset (1972-2024, corresponding to the 2025 report), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables `fh_total` and `fh_total_reversed`, and adds state system information, including a standardized country name, the [Gleditsch-Ward](http://privatewww.essex.ac.uk/~ksg/statelist.html) country code and the [Correlates of War](http://www.correlatesofwar.org/data-sets/state-system-membership) country code. You can also, however, use the archived version (`fh`):
+This downloads the latest update of the "Freedom in the World" dataset (1972-2024, corresponding to the 2025 report), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables `fh_total` and `fh_total_reversed`, and adds state system information, including a standardized country name, the [Gleditsch-Ward](https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html) country code and the [Correlates of War](https://correlatesofwar.org/data-sets/state-system-membership/) country code. You can also, however, use the archived version (`fh`):
 
 
 ```{r}

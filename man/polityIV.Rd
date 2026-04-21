@@ -8,7 +8,7 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 17562 rows and 40 columns.
 }
 \source{
-M. G. Marshall, T. R. Gurr, and K. Jaggers. \emph{Polity IV Project: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual.} Manual. 2019. Available at \url{http://www.systemicpeace.org/inscrdata.html}
+M. G. Marshall, T. R. Gurr, and K. Jaggers. \emph{Polity IV Project: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual.} manual. Center for Systemic Peace, 2019. Available at \url{https://www.systemicpeace.org/inscrdata.html}
 }
 \usage{
 polityIV
@@ -110,10 +110,10 @@ percent) of the country's territory is effectively ruled by local authority
 and actively separated from the central authority of the regime.}
 
 \item{democ}{Institutionalized democracy indicator, 0-10 scale. See PolityIV
-users' manual at \url{http://www.systemicpeace.org/inscr/p4manualv2018.pdf}}
+users' manual at \url{https://www.systemicpeace.org/inscr/p4manualv2018.pdf}}
 
 \item{autoc}{Institutionalized autocracy indicator, 0-10 scale. See PolityIV
-users' manual at \url{http://www.systemicpeace.org/inscr/p4manualv2018.pdf}}
+users' manual at \url{https://www.systemicpeace.org/inscr/p4manualv2018.pdf}}
 
 \item{polity}{Annual polity index (\code{autoc} - \code{democ}), including values for
 interruption (-66), interregnum (-77), and transition periods (-88). Higher
@@ -146,43 +146,43 @@ periods (prorated across the transition). Higher values are more
 democratic.}
 
 \item{durable}{Regime durability. See PolityIV users' manual at
-\url{http://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.}
+\url{https://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.}
 
 \item{xrreg}{Regulation of Chief Executive Recruitment. 1 = unregulated, 2 =
 designational/transitional, 3 = regulated. See PolityIV users' manual at
-\url{http://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.}
+\url{https://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.}
 
 \item{xrcomp}{Competitiveness of Chief Executive Recruitment. 1 = selection,
 2 = dual/transitional, 3 = election. See PolityIV users' manual at
-\url{http://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.}
+\url{https://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.}
 
 \item{xropen}{Openness of Chief Executive Recruitment. 1 = unlimited, 2 =
 dual/transitional, 3 = election. See PolityIV users' manual at
-\url{http://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.}
+\url{https://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.}
 
 \item{xconst}{Executive constraints. 1 = closed, 2 = intermediate, 3 =
 slight to moderate limitation, 4 = intermediate, 5 = substantial
 limitations, 6 = intermediate, 7 = executive parity or subordination. See
 PolityIV users' manual at
-\url{http://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.}
+\url{https://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.}
 
 \item{parcomp}{Regulation of participation. 0 = Not applicable, 1 =
 repressed, 2 = suppressed, 3 = factional, 4 = transitional, 5 = competitive.
 See PolityIV users' manual at
-\url{http://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.}
+\url{https://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.}
 
 \item{exrec}{Executive recruitment (concept). 1 = ascription, 2 = dual
 (ascription + designation), 3 = designation, 4 = Self selection, 5 = gradual
 transition from self selection, 6 = dual (ascription + election), 7 =
 transitional or restricted election, 8 = competitive election. See PolityIV
-users' manual at \url{http://www.systemicpeace.org/inscr/p4manualv2018.pdf} for
+users' manual at \url{https://www.systemicpeace.org/inscr/p4manualv2018.pdf} for
 details.}
 
 \item{exconst}{Executive constraints (concept). Identical to \code{xconst}. 1 =
 closed, 2 = intermediate, 3 = slight to moderate limitation, 4 =
 intermediate, 5 = substantial limitations, 6 = intermediate, 7 = executive
 parity or subordination. See PolityIV users' manual at
-\url{http://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.}
+\url{https://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.}
 
 \item{polcomp}{Political competition (concept). 1 = suppressed, 2 =
 restricted 3 = Imposed transition, 4 = Uninstitutionalized, 5 = gradual
@@ -190,7 +190,7 @@ transition from uninstitutionalized, 6 = factional/restricted, 7 =
 factional, 8 = electoral transition: persistent conflict/coercion, 9 =
 electoral transition: limited conflict/coercion, 10 = institutionalized
 electoral. See PolityIV users' manual at
-\url{http://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.}
+\url{https://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.}
 
 \item{prior}{Regime Polity code immediately prior to regime end date. The
 polity users' manual (p. 31) says "The PRIOR code may be a number from -10
@@ -252,7 +252,7 @@ one day), 3 = approximate date (month could be identified, but not the day),
 \item{post}{Regime \code{polity} code immediately after the current regime.}
 
 \item{change}{Net difference between \code{prior} and \code{post}. See PolityIV users'
-manual at \url{http://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.
+manual at \url{https://www.systemicpeace.org/inscr/p4manualv2018.pdf} for details.
 Note the code 88 denotes a "pre-existing polity" (for polities that existed
 before 1800), 96 indicates state disintegration, 0 a state in transition, 97
 state transformation, 98 state demise, and 99 state creation.}
@@ -293,15 +293,16 @@ parentheses) the name of an earlier incarnation of the state: thus, they
 have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
 For details, see Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
+International Interactions 25: 393-413. The list can be found via the
+Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
 
 \item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.}
 
 \item{cown}{The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
-\url{http://www.correlatesofwar.org/data-sets/state-system-membership} for
+\url{https://correlatesofwar.org/data-sets/state-system-membership/} for
 the full list.}
 
 \item{in_GW_system}{Whether the state is "in system" (that is, is
@@ -361,8 +362,10 @@ Other democracy:
 \code{\link{utip}},
 \code{\link{vanhanen}},
 \code{\link{vaporeg}},
+\code{\link{vaporeg_2024}},
 \code{\link{vdem_simple}},
-\code{\link{wahman_teorell_hadenius}}
+\code{\link{wahman_teorell_hadenius}},
+\code{\link{wgi_legacy}}
 
 Other ordinal democracy indexes: 
 \code{\link{download_fh}()},

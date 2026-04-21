@@ -5,21 +5,21 @@
 \name{vdem_simple}
 \alias{vdem_simple}
 \alias{vdem}
-\title{Simplified version of the V-Dem version 14 dataset}
+\title{Simplified version of the V-Dem version 16 dataset}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 27913 rows and 54 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 28092 rows and 54 columns.
 }
 \usage{
 vdem_simple
 }
 \description{
-This data frame contains a very reduced version of version 14 of the V-Dem
+This data frame contains a very reduced version of version 16 of the V-Dem
 dataset, including only the 7 main indexes that measure democracy directly
 (v2x_polyarchy, v2x_libdem, v2x_partipdem, v2x_delibdem, v2x_egaldem,
 v2x_api, and v2x_mpi) and their associated uncertainty measures. The full
 VDem dataset is available via the
 \href{https://github.com/vdeminstitute/vdemdata}{vdemdata} package. To cite VDem,
-use M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem Codebook V14}. Tech. rep. Varieties of Democracy (V-Dem) Project, 2024.
+use M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem Codebook V16}. Report. Varieties of Democracy (V-Dem) Project, 2026. \url{https://www.v-dem.net/documents/70/codebook_v16.pdf}.
 }
 \details{
 Variable descriptions taken from the V-Dem codebook directly.
@@ -72,7 +72,7 @@ formal sovereignty.}
 coding period or the year when the country ceased to exist because it lost
 functional or formal sovereignty.}
 
-\item{codingstart_contemporary}{Contemporary start of coding period. Year
+\item{codingstart_contemp}{Contemporary start of coding period. Year
 in which the coding of Contemporary V-Dem project starts. Variables from
 "Contemporary" project can have different question formulation, variable
 type, or number of coders as opposed to the "Historical" one.}
@@ -233,15 +233,16 @@ parentheses) the name of an earlier incarnation of the state: thus, they
 have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
 For details, see Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
+International Interactions 25: 393-413. The list can be found via the
+Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
 
 \item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.}
 
 \item{cown}{The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
-\url{http://www.correlatesofwar.org/data-sets/state-system-membership} for
+\url{https://correlatesofwar.org/data-sets/state-system-membership/} for
 the full list.}
 
 \item{in_GW_system}{Whether the state is "in system" (that is, is
@@ -254,9 +255,9 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 }
 
 \references{
-M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem Codebook V14}. Tech. rep. Varieties of Democracy (V-Dem) Project, 2024.
+M. Coppedge, J. Gerring, C. H. Knutsen, et al. \emph{V-Dem Codebook V16}. Report. Varieties of Democracy (V-Dem) Project, 2026. \url{https://www.v-dem.net/documents/70/codebook_v16.pdf}.
 
-D. Pemstein, K. L. Marquardt, E. Tzelgov, et al. \emph{The V-dem Measurement Model: Latent Variable Analysis for Cross-national and Cross-temporal Expert-coded Data}. Tech. rep. 21. Varieties of Democracy Institute, University of Gothenburg, 2022.
+D. Pemstein, K. L. Marquardt, E. Tzelgov, et al. \emph{The V-dem Measurement Model: Latent Variable Analysis for Cross-national and Cross-temporal Expert-coded Data}. Report 21. Varieties of Democracy Institute, University of Gothenburg, 2022. \url{https://www.v-dem.net/media/publications/Working_Paper_21.pdf}.
 }
 \seealso{
 Other democracy: 
@@ -301,7 +302,9 @@ Other democracy:
 \code{\link{utip}},
 \code{\link{vanhanen}},
 \code{\link{vaporeg}},
-\code{\link{wahman_teorell_hadenius}}
+\code{\link{vaporeg_2024}},
+\code{\link{wahman_teorell_hadenius}},
+\code{\link{wgi_legacy}}
 
 Other continuous democracy indexes: 
 \code{\link{arat_pmm}},
@@ -312,7 +315,8 @@ Other continuous democracy indexes:
 \code{\link{hadenius_pmm}},
 \code{\link{munck_pmm}},
 \code{\link{svmdi}},
-\code{\link{vanhanen}}
+\code{\link{vanhanen}},
+\code{\link{wgi_legacy}}
 }
 \concept{continuous democracy indexes}
 \concept{democracy}

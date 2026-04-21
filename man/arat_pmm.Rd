@@ -13,7 +13,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 \source{
 Z. F. Arat. \emph{Democracy and Human Rights in Developing Countries}. Boulder: Lynne Rienner Publishers, 1991.
 
-D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}.
+D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM.
 }
 \usage{
 arat_pmm
@@ -22,7 +22,7 @@ arat
 }
 \description{
 Democracy score from Z. F. Arat. \emph{Democracy and Human Rights in Developing Countries}. Boulder: Lynne Rienner Publishers, 1991. \code{arat_pmm} is taken from
-D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}. \code{arat} is taken directly from a scan of Arat's book.
+D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM. \code{arat} is taken directly from a scan of Arat's book.
 }
 \details{
 The original Arat dataset (in \code{arat}) is different from \code{arat_pmm}
@@ -74,15 +74,16 @@ parentheses) the name of an earlier incarnation of the state: thus, they
 have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
 For details, see Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
+International Interactions 25: 393-413. The list can be found via the
+Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
 
 \item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.}
 
 \item{cown}{The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
-\url{http://www.correlatesofwar.org/data-sets/state-system-membership} for
+\url{https://correlatesofwar.org/data-sets/state-system-membership/} for
 the full list.}
 
 \item{in_GW_system}{Whether the state is "in system" (that is, is
@@ -136,8 +137,10 @@ Other democracy:
 \code{\link{utip}},
 \code{\link{vanhanen}},
 \code{\link{vaporeg}},
+\code{\link{vaporeg_2024}},
 \code{\link{vdem_simple}},
-\code{\link{wahman_teorell_hadenius}}
+\code{\link{wahman_teorell_hadenius}},
+\code{\link{wgi_legacy}}
 
 Other PMM replication data: 
 \code{\link{blm}},
@@ -159,7 +162,8 @@ Other continuous democracy indexes:
 \code{\link{munck_pmm}},
 \code{\link{svmdi}},
 \code{\link{vanhanen}},
-\code{\link{vdem_simple}}
+\code{\link{vdem_simple}},
+\code{\link{wgi_legacy}}
 }
 \concept{PMM replication data}
 \concept{continuous democracy indexes}

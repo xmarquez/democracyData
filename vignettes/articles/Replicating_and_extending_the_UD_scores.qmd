@@ -8,9 +8,9 @@ csl: american-political-science-review.csl
 
 We can use this package to replicate and extend the [Unified Democracy Scores](http://www.unified-democracy-scores.org/) of @pmm2010 (which are no longer being updated or maintained), and in general to calculate latent variable indexes of democracy.[^workingPaper] This article is a modified version of the vignette for my package [QuickUDS](https://xmarquez.github.io/QuickUDS), which I am no longer actively maintaining; I am slowly migrating the functions in that package to this package to avoid having to update two different data sets of democracy measures.
 
-[^workingPaper]: For more detail on the models used to generate these indexes, and their characteristics, see my working paper [@Marquez2016], available at [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830). 
+[^workingPaper]: For more detail on the models used to generate these indexes, and their characteristics, see my working paper [@extended_uds_marquez2016], available at [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830). 
 
-You will need the package [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html) [@Chalmers2012], which can quickly compute full-information factor analyses. 
+You will need the package [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html) [@chalmersMirtMultidimensionalItem2012], which can quickly compute full-information factor analyses. 
 
 The basic procedure for replicating or extending the UD scores is very simple. 
 
@@ -57,15 +57,15 @@ The function `prepare_democracy_data()` gets rid of "empty rows" (country-years 
 
 In particular, `prepare_democracy_data()` will try to do the following on your dataset: 
 
-* If a selected index contains the string `arat`, the function assumes the index is Arat's [@Arat1991] 0-109 democracy score, and cuts it into 7 intervals with the following cutoffs: 50, 60, 70, 80, 90, and 100. The resulting score is ordinal from 1 to 8 (following Pemstein, Meserve, and Melton's advice).
+* If a selected index contains the string `arat`, the function assumes the index is Arat's [@arat1991] 0-109 democracy score, and cuts it into 7 intervals with the following cutoffs: 50, 60, 70, 80, 90, and 100. The resulting score is ordinal from 1 to 8 (following Pemstein, Meserve, and Melton's advice).
 
-* If a selected index contains the string `bollen`, the function assumes the index is Bollen's [@Bollen2001] 0-100 democracy score, and cuts it into 10 intervals with the following cutoffs: 10,20,30,40,50,60,70,80, and 90. The resulting score is ordinal from 1 to 10 (following Pemstein, Meserve, and Melton's advice).
+* If a selected index contains the string `bollen`, the function assumes the index is Bollen's [@bollen2001] 0-100 democracy score, and cuts it into 10 intervals with the following cutoffs: 10,20,30,40,50,60,70,80, and 90. The resulting score is ordinal from 1 to 10 (following Pemstein, Meserve, and Melton's advice).
 
 * If a selected index contains the string `wgi`, the function assumes the index is the World Governance Indicator's "Voice and Accountability" index [@wgi2017], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
 
-* If a selected index contains the string `eiu`, the function assumes the index is the Economist Intelligence Unit's democracy index [@eiu2021], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
+* If a selected index contains the string `eiu`, the function assumes the index is the Economist Intelligence Unit's democracy index [@eiu2025], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
 
-* If a selected index contains the string `hadenius_pmm`, the function assumes the index is Hadenius's 0-10 democracy score [@hadenius1992], and it will cut it into 8 intervals with the following cutoffs: 1, 2,3,4, 7, 8, and 9. The resulting score is ordinal from 1 to 8 (following Pemstein, Meserve, and Melton's advice). 
+* If a selected index contains the string `hadenius_pmm`, the function assumes the index is Hadenius's 0-10 democracy score [@Hadenius1992], and it will cut it into 8 intervals with the following cutoffs: 1, 2,3,4, 7, 8, and 9. The resulting score is ordinal from 1 to 8 (following Pemstein, Meserve, and Melton's advice). 
 
 * If the selected index contains the string `munck`, the function assumes the index is Munck's 0-1 democracy score [@munck2009], and it will cut it into 4 intervals with the following cutoffs: 0.5,0.5,0.75, and 0.99. The resulting score is ordinal from 1 to 4 (following Pemstein, Meserve, and Melton's advice).
 
@@ -75,36 +75,36 @@ In particular, `prepare_democracy_data()` will try to do the following on your d
 
 * If the selected index contains the string `polyarchy_inclusion_dimension` or `polyarchy_contestation_dimension`, the function assumes this is one of the two dimensions of polyarchy estimated by @polyarchy_dimensions2008, and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
 
-* If the selected index contains the string `v2x`, the function assumes this is one of the v2x_ continuous indexes of democracy from the V-Dem dataset [@vdem11dataset], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
+* If the selected index contains the string `v2x`, the function assumes this is one of the v2x_ continuous indexes of democracy from the V-Dem dataset [@vdem16codebook], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
 
 * If the selected index contains the string `csvdmi` or `svdmi_2016`, the function assumes this is one of the continuous indexes of democracy from the SVMDI dataset [@svmdi2016; @svmdi2018], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
 
-* If the selected index contains the string `bti`, the function assumes this is the Bertelsman Transformation Index [@bti2020], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
+* If the selected index contains the string `bti`, the function assumes this is the Bertelsman Transformation Index [@bti2026], and it will cut it into 20 categories. The resulting score is ordinal from 1 to 20.
 
-* If the selected index contains the string `vanhanen_democratization` or `vanhanen_pmm`, the function assumes this is Vanhanen's index of democratization [@vanhanen2014], and it will cut it into 8 intervals with the following cutoffs: 5,10,15,20,25,30, and 35 (following Pemstein, Meserve, and Melton's advice). The resulting score is ordinal from 1 to 8.
+* If the selected index contains the string `vanhanen_democratization` or `vanhanen_pmm`, the function assumes this is Vanhanen's index of democratization [@vanhanen2019], and it will cut it into 8 intervals with the following cutoffs: 5,10,15,20,25,30, and 35 (following Pemstein, Meserve, and Melton's advice). The resulting score is ordinal from 1 to 8.
 
 `prepare_democracy_data()` will also work on column names that contain the following strings: 
 
-* `anckar` [assumes it's the democracy indicator from @AnckarFredriksson2018]
+* `anckar` [assumes it's the democracy indicator from @anckarClassifyingPoliticalRegimes2018a]
 * `anrr` [assumes it's the democracy indicator from @anrr2019]
 * `blm` [assumes it's from @blm2005]
-* `bmr` [assumes it's from @bmr2007]
+* `bmr` [assumes it's from @bmr2012]
 * `doorenspleet` [assumes it's from @doorenspleet2000]
 * `dsvmdi` [assumes it's the discrete machine-learning index @svmdi2018]
 * `e_v2x` [assumes it's one of the "ordinal" indexes from the V-dem project, @vdem15codebook]
-* `fh` or `freedomhouse` [assumes it's from @fh2020]
+* `fh` or `freedomhouse` [assumes it's from @fh2025]
 * `gwf` [assumes it's from @gwf2014 - the dichotomous democracy indicator only]
-* `kailitz` [assumes it's from from @Kailitz2013 - democracy/electoral autocracy/non-democracy indicator only]
+* `kailitz` [assumes it's from from @kailitz2013 - democracy/electoral autocracy/non-democracy indicator only]
 * `lied` or `lexical_index` [assumes it's from @LIED2015]
 * `mainwaring` [assumes it's from @mainwaring2014]
 * `magaloni` [assumes it's from @MagaloniChuMin2013]
 * `pacl` or `cgv` [assumes it's from @pacl2010 or its later updates]
 * `pitf` [assumes it's the measure of democracy used in @pitf2010; @pitf2015]
 * `polyarchy` [assumes it's from @polyarchy1990]
-* `prc` [assumes it's from @prc_gasiorowski1996 or its later update]
+* `prc` [assumes it's from @Gasiorowski1996 or its later update]
 * `przeworski` [assumes it's the "regime" variable from @PIPE2013]
 * `reign` [assumes it's the democracy/dictatorship indicator from @reign2016]
-* `svolik` [assumes it's the democracy/dictatorship indicator from @svolik2012]
+* `svolik` [assumes it's the democracy/dictatorship indicator from @svolikPoliticsAuthoritarianRule2012a]
 * `ulfelder` [assumes it's from @ulfelder2012]
 * `utip` [assumes it's from @utip2008]
 * `wahman_teorell_hadenius` or `wth` [assumes it's a democracy/non-democracy indicator from @wahman_teorell_hadenius2013]. 
@@ -131,7 +131,7 @@ replication_2011_model <- mirt(
                                
 ```
 
-This just tells [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html) to fit a one-factor, full information graded response model like that in @pmm2010uds2010, and to calculate the standard errors for the coefficients. (See `?mirt` for details of the many options you can use to tweak your model, and see [my paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830) for a fuller description of why this model is useful here). 
+This just tells [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html) to fit a one-factor, full information graded response model like that in @pmm2010, and to calculate the standard errors for the coefficients. (See `?mirt` for details of the many options you can use to tweak your model, and see [my paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830) for a fuller description of why this model is useful here). 
 
 Fitting this model is reasonably fast:
 
@@ -191,13 +191,13 @@ Now suppose you want to create a new latent score derived but want to include ot
 
 For example, suppose we want to use:
 
-* The dichotomous indicator of democracy, adjusted for female suffrage, in version 3.0 of the Boix, Miller and Rosato dataset of political regimes [@bmr2007]
-* The full extent of the Political Regime Change dataset [@prc_gasiorowski2002; @prc_gasiorowski1996], Vanhanen's index of democratization [@vanhanen2014], Bowman, Lehoucq, and Mahoney's data on Central America [@blm2005] and Mainwaring, Brinks and Perez-Linan's data on Latin America [@mainwaring2014], all of which go back to the beginning of the 20th century or before but are not used to their fullest extent in the official UD releases.
+* The dichotomous indicator of democracy, adjusted for female suffrage, in version 3.0 of the Boix, Miller and Rosato dataset of political regimes [@bmr2012]
+* The full extent of the Political Regime Change dataset [@prc_gasiorowski2002; @Gasiorowski1996], Vanhanen's index of democratization [@vanhanen2019], Bowman, Lehoucq, and Mahoney's data on Central America [@blm2005] and Mainwaring, Brinks and Perez-Linan's data on Latin America [@mainwaring2014], all of which go back to the beginning of the 20th century or before but are not used to their fullest extent in the official UD releases.
 * One of the new V-Dem indexes of democracy, ordinal or continuous [@vdem15codebook]
 * Renske Doorenspleet's dichotomous indicator of democracy including suffrage info [@doorenspleet2000]
 * The World Governance Indicator's latest Voice and Accountability index 
 * The most current release of Freedom House's data, to 2020, and the most current Polity data, to 2018
-* The indicators of democracy in various autocratic regime datasets [@gwf2014; @svolik2012; @Kailitz2013; @wahman_teorell_hadenius2013]
+* The indicators of democracy in various autocratic regime datasets [@gwf2014; @svolikPoliticsAuthoritarianRule2012a; @kailitz2013; @wahman_teorell_hadenius2013]
 * The 7-level Lexical Index of Democracy and Autocracy [@LIED2015]
 * Jay Ulfelder's dichotomous indicator of democracy [@ulfelder2012]
 
@@ -364,7 +364,7 @@ ggplot(data = extended_scores |> filter(extended_country_name %in% countries),
   facet_wrap(~extended_country_name,ncol=2)  
 ```
 
-A pre-computed and documented version of the extended UDS scores, with data from all the indexes mentioned above, plus the participation-enhanced Polity Scores of @peps2006, a trichotomous democracy indicator calculated from Magaloni, Min, and Chu's "Autocracies of the World" datset [@MagaloniChuMin2013], a dichotomous democracy indicator calculated from @utip2008, the REIGN dataset of @reign2016, which extends @gwf2014, a dichotomous democracy indicator from @anrr2019, the Bertelsmann Transformation index [@bti2020], the new Varieties of Political Regimes dataset [@kailitz2024dataset], and an indicator of democracy used by the Political Instability Task Force [@pitf2010; @pitf2015], is included with the package; it can be loaded by simply typing `extended_uds`. Use `?extended_uds` to examine the documentation for all its variables, and see my working paper ([Marquez 2016](http://ssrn.com/abstract=2753830)) for more detail on the data and its uses.
+A pre-computed and documented version of the extended UDS scores, with data from all the indexes mentioned above, plus the participation-enhanced Polity Scores of @peps2006, a trichotomous democracy indicator calculated from Magaloni, Min, and Chu's "Autocracies of the World" datset [@MagaloniChuMin2013], a dichotomous democracy indicator calculated from @utip2008, the REIGN dataset of @reign2016, which extends @gwf2014, a dichotomous democracy indicator from @anrr2019, the Bertelsmann Transformation index [@bti2026], the new Varieties of Political Regimes dataset [@vaporeg32dataset], and an indicator of democracy used by the Political Instability Task Force [@pitf2010; @pitf2015], is included with the package; it can be loaded by simply typing `extended_uds`. Use `?extended_uds` to examine the documentation for all its variables, and see my working paper ([Marquez 2016](http://ssrn.com/abstract=2753830)) for more detail on the data and its uses.
 
 The function `generate_extended_uds()` recreates these scores in one line of code, at the cost of some flexibility. 
 

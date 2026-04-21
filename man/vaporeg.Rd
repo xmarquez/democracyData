@@ -5,54 +5,34 @@
 \alias{vaporeg}
 \title{The Varieties of Political Regimes (VaPoReg) dataset}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 29840 rows and 30 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 30674 rows and 40 columns.
 }
 \source{
-S. Kailitz. \emph{Varieties of Political Regimes (va-PoReg). Dataset}. Dresden, 2024.
+S. Kailitz. \emph{Varieties of Political Regimes (va-PoReg). Dataset. Version 3.2}. Hannah Arendt Institute for Totalitarianism Studies. Dresden, 2026. Dataset download at
+\url{https://www.va-poreg.de/download/Kailitz,\%20Varieties\%20of\%20Political\%20Regimes\%20March\%202026.rds}.
 
-S. Kailitz. \emph{Varieties of Political Regimes (va-PoReg). Codebook. Version 1.7}. Tech. rep. Dresden: Hannah Arendt Institute for Totalitarianism Studies, 2024.
+S. Kailitz. \emph{Varieties of Political Regimes (va-PoReg). Codebook. Version 3.2}. Tech. rep. Dresden: Hannah Arendt Institute for Totalitarianism Studies, 2026. Codebook PDF at
+\url{https://www.va-poreg.de/download/Kailitz\%2C\%20Varieties\%20of\%20Political\%20Regimes\%2C\%20Codebook\%203.2.pdf}.
 }
 \usage{
 vaporeg
 }
 \description{
-S. Kailitz. \emph{Varieties of Political Regimes (va-PoReg). Codebook. Version 1.7}. Tech. rep. Dresden: Hannah Arendt Institute for Totalitarianism Studies, 2024. The original data
-and codebook can be downloaded from <`r find_url("vaporeg",
-"documentation")>. The documentation below is derived from the codebook, with
-modifications.
+\code{vaporeg} contains the March 2026 VaPoReg release in its current
+country-year schema. The package does not rename these variables into the
+legacy \code{democracyData} interface; use \link{vaporeg_2024} for the archived legacy
+schema.
 }
-\section{Credits}{
- The data were originally compiled by Steffen Kailitz and
-the Varieties of Political Regimes project. The dataset has been revised
-and expanded based on historical sources, country reports, and
-international political datasets.
-}
-
 \section{Introduction}{
 
 
-The VaPoReg dataset provides a classification of political regimes globally
-from 1900 to 2024. It covers independent states, colonial regimes,
-occupation regimes, and semi-sovereign entities such as protectorates. The
-dataset codes each country-year according to different regime typologies,
-integrating various sources of political regime data.
-
-The dataset includes unique features such as:
-\itemize{
-\item Distinguishing between \strong{electoral} and \strong{non-electoral} autocracies.
-\item Differentiating between \strong{constitutional monarchies, absolute monarchies, and personalist regimes}.
-\item Identifying \strong{colonial and occupation regimes} separately from independent states.
-\item Incorporating non-sovereign entities that have historically been excluded from other datasets.
-}
-}
-
-\section{Conceptual Framework}{
-
-
-The dataset classifies regimes based on their \strong{institutional structure,
-political legitimation, and origin of rule}. The classification emphasizes
-observable characteristics, such as whether a regime emerged from a coup,
-follows ideological principles, or relies on military governance.
+VaPoReg classifies political regimes from 1900 to 2025 using multiple
+classification schemes, including detailed, compact, quadruple, triple,
+binary-democracy, and binary-autocracy versions. It also codes dominant
+political authorities in dependent entities, monarchy status, regime spell
+timing, and population. The documentation below is based on the VaPoReg
+Codebook, Version 3.2 (March 2026), especially the variable list on
+pages 163-167.
 }
 
 \section{Variables}{
@@ -60,163 +40,117 @@ follows ideological principles, or relies on military governance.
 
 \describe{
 
-\item{country_name}{The name of the country for a given year.}
+\item{country_name}{Political unit name.}
 
-\item{year}{The calendar year.}
+\item{year}{Calendar year. Annual codings use July 1 as the reference date.}
 
-\item{vaporeg_code}{The country code based on the Correlates of War (COW) dataset.}
+\item{vaporeg_regtype_detailed}{Detailed regime classification. Codes:
+10 Liberal Democracy; 20 Electoral Democracy; 30 Electoral Oligarchy;
+40 Democratizing Regime; 50 Electoral Hybrid Regime; 60 Electoral
+Autocracy; 70 Electoral Oligarchical Autocracy; 80 Non-Electoral
+Transitional Regime; 90 Constitutional Monarchy; 100 Autocratic Monarchy;
+110 One-Party Autocracy; 120 Right-Wing Autocracy; 130 Communist
+Ideocracy; 140 Islamist Ideocracy; 150 Military Autocracy; 160 Personalist
+Autocracy; 170 Direct Rule Colonial Regime; 180 Indirect Rule Colonial
+Regime; 190 Direct Rule Occupation Regime; 200 Indirect Rule Occupation
+Regime; 210 No Central Authority; 220 Part of Other Country.}
 
-\item{GeoNames_ID}{Geographic identifier for linking with spatial datasets.}
+\item{vaporeg_regtype_reports}{Country reports regime classification. Uses
+the same 22-category coding as \code{vaporeg_regtype_detailed}.}
 
-\item{vaporeg_s}{The \strong{standard classification} of political regimes. Coded as:
-\itemize{
-\item 10: Democracy
-\item 20: Semidemocracy
-\item 30: Electoral Oligarchy
-\item 40: Non-electoral Transitional Regime
-\item 50: Electoral Autocracy
-\item 60: Constitutional Monarchy
-\item 70: Absolute Monarchy
-\item 80: One-party Autocracy
-\item 90: Right-wing Autocracy
-\item 100: Communist Ideocracy
-\item 110: Islamist Ideocracy
-\item 120: Military Autocracy
-\item 130: Personalist Autocracy
-\item 140: Colonial Regime
-\item 150: Occupation Regime
-\item 160: No Central Authority
+\item{vaporeg_regtype_compact}{Compact regime classification. Codes:
+10 Democracy; 20 Electoral and Liberal Hybrid Regime; 30 Provisional
+Regime; 40 Electoral Autocracy; 50 Ruling Monarchy; 60 One-Party
+Autocracy; 70 Right-Wing Autocracy; 80 Communist Ideocracy; 90 Islamist
+Ideocracy; 100 Military Autocracy; 110 Personalist Autocracy;
+120 Colonial Regime; 130 Occupation Regime; 140 No Central Authority.}
+
+\item{vaporeg_regtype_quadruple}{Four-category regime classification:
+1 Democracy; 2 Hybrid Regime; 3 Electoral Autocracy; 4 Closed Autocracy.}
+
+\item{vaporeg_regtype_triple}{Three-category regime classification:
+1 Democracy; 2 Hybrid Regime; 3 Autocracy.}
+
+\item{vaporeg_regtype_bindem}{Binary democracy classification:
+0 Non-Democracy; 1 Democracy.}
+
+\item{vaporeg_regtype_binaut}{Binary autocracy classification:
+0 Non-Autocracy; 1 Autocracy.}
+
+\item{vaporeg_identifier}{VaPoReg unit identifier. The codebook describes
+this as an identifier based on the Correlates of War dataset.}
+
+\item{cowcode}{Correlates of War country code, where available.}
+
+\item{vaporeg_dpa_country}{Dominant political authority in cases of dependence.}
+
+\item{vaporeg_dpa_regdetailed}{Detailed regime classification of the
+dominant political authority. It uses the same coding structure as the
+detailed regime scale, but the current codebook labels category 20 as
+Defective Democracy and category 80 as Non-Electoral Autocratic
+Transitional Regime.}
+
+\item{vaporeg_dpa_regcompact}{Compact regime classification of the dominant
+political authority.}
+
+\item{vaporeg_monarchy}{Monarchy status. Codes: 10 Autocratic Monarchy;
+20 Governed by Autocratic Monarchy; 30 Constitutional Monarchy;
+40 Governed by Constitutional Monarchy; 50 Ceremonial Monarchy;
+60 Governed by Ceremonial Monarchy; 70 Republic; 80 Governed by Republic.}
+
+\item{vaporeg_regtype_rwasubtype}{Right-wing autocracy subtype.
+Codes: 0 Not applicable; 1 Fascist; 2 Corporatist.}
+
+\item{vaporeg_continent}{Continent code. Codes: 0 missing or not assigned;
+1 Africa; 2 Americas; 3 Asia; 4 Europe; 5 Oceania.}
+
+\item{vaporeg_region}{UN-style region code. Codes: 0 missing or not
+assigned; 1 Australia and New Zealand; 2 Caribbean; 3 Central America;
+4 Central Asia; 5 Eastern Africa; 6 Eastern Asia; 7 Eastern Europe;
+8 Melanesia, Micronesia, Polynesia; 9 Middle Africa; 10 Northern Africa;
+11 Northern America; 12 Northern Europe; 13 South America;
+14 South-Eastern Asia; 15 Southern Africa; 16 Southern Asia;
+17 Southern Europe; 18 Western Africa; 19 Western Asia; 20 Western Europe.}
+
+\item{vaporeg_regstart_reports, vaporeg_regend_reports, vaporeg_regduration_reports,
+vaporeg_regchange_reports}{Spell start date, end date, duration in years,
+and annual change indicator for the country reports classification. Change
+equals 1 if the July 1 regime differs from the previous July 1.}
+
+\item{vaporeg_regstart_detailed, vaporeg_regend_detailed, vaporeg_regduration_detailed,
+vaporeg_regchange_detailed}{Spell start date, end date, duration in years,
+and annual change indicator for the detailed classification.}
+
+\item{vaporeg_regstart_compact, vaporeg_regend_compact, vaporeg_regduration_compact,
+vaporeg_regchange_compact}{Spell start date, end date, duration in years,
+and annual change indicator for the compact classification.}
+
+\item{vaporeg_regduration_quadruple, vaporeg_regchange_quadruple}{Spell
+duration in years and annual change indicator for the quadruple
+classification.}
+
+\item{vaporeg_regduration_triple, vaporeg_regchange_triple}{Spell duration
+in years and annual change indicator for the triple classification.}
+
+\item{vaporeg_regduration_binaut, vaporeg_regchange_binaut}{Spell duration
+in years and annual change indicator for the binary autocracy
+classification.}
+
+\item{vaporeg_regduration_bindem, vaporeg_regchange_bindem}{Spell duration
+in years and annual change indicator for the binary democracy
+classification.}
+
+\item{vaporeg_population}{Population series based on Gapminder and UN
+data. The codebook notes that units coded as "Part of Other Country" are
+excluded from this series.}
+
+\item{vaporeg_population_sources}{Source flag for \code{vaporeg_population}.
+Codes: 1 Modified based on Gapminder; 2 Modified based on UN;
+3 UN Data; 4 Gapminder Data.}
+
 }
 }
 
-\item{vaporeg_a}{An \strong{alternative classification}, which merges democracy and semidemocracy and groups
-monarchies together as ruling monarchies.}
-
-\item{vaporeg_cr}{A classification similar to \strong{VaPoReg_s}, but includes an additional category for \strong{"Part of Other Country"}.}
-
-\item{vaporeg_governing_country}{For colonial and occupation regimes, this variable identifies the ruling country.}
-
-\item{vaporeg_s_of_gc}{The \strong{standard regime classification} for the governing country.}
-
-\item{vaporeg_a_of_gc}{The \strong{alternative regime classification} for the governing country.}
-
-\item{vaporeg_s_start}{The date on which the political regime type,
-as defined by the standard version of our political regime categorization,
-began.}
-
-\item{vaporeg_s_end}{The date on which the political regime type,
-as defined by the standard version of our political regime categorization,
-ended.}
-
-\item{vaporeg_s_duration}{The number of years the political regime has lasted,
-as defined by the standard version of our political regime categorization,
-counting only if the regime was still in power on July 1st of each year.}
-
-\item{vaporeg_s_change}{The variable identifies regime changes based on the
-standard version of our political regimecategorization. It takes a value of
-one if a different regime is in place on July 1st compared to July 1st of
-the previous year.}
-
-\item{vaporeg_a_start}{The date on which the political regime type,
-according to the alternative version of our political regime categorization,
-began.}
-
-\item{vaporeg_a_end}{The date on which the political regime type,
-according to the alternative version of our political regime categorization,
-ended.}
-
-\item{vaporeg_a_duration}{The number of years the political regime has lasted,
-as defined by the alternative version of our political regime categorization,
-counting only if the regime was still in power on July 1st ofeach year.}
-
-\item{vaporeg_a_change}{The variable identifies regime changes based on the
-standard version of our political regime categorization. It takes a value of
-one if a different regime is in place on July 1st compared to July 1st of the
-previous year.}
-
-\item{vaporeg_binary_strict}{A \strong{dichotomous classification} of democracy, based
-on \code{VaPoReg_s}. Coded as 1 if \code{VaPoReg_s} is a Democracy (10), 0 otherwise.}
-
-\item{vaporeg_binary_non-strict}{A \strong{dichotomous classification} of democracy, based
-on \code{VaPoReg_s}, but less strict. Coded as 1 if \code{VaPoReg_s} is a Democracy (10) or a Semidemocracy (20),
-0 otherwise.}
-
-\item{vaporeg_trichotomous}{A \strong{trichotomous classification} of democracy, based
-on \code{VaPoReg_s}. Coded as 2 if \code{VaPoReg_s} is a Democracy (10), 1 if it is a Semidemocracy (20),
-0 otherwise.}
-
-\item{Gapminder_pop}{Population, per the Gapminder dataset.}
-
-\item{gm_world_pop}{World population, per the Gapminder dataset}
-
-\item{un_region}{UN region}
-
-\item{un_cntinent}{UN continent}
-
-}
-}
-
-\section{Special Cases}{
-
-\itemize{
-\item \strong{Colonial Regimes}: Defined by foreign rule, legal discrimination, and lack of sovereignty.
-\item \strong{Occupation Regimes}: Military-controlled administrations imposed by foreign powers.
-\item \strong{No Central Authority}: Cases where no governing entity holds effective control (e.g., Somalia post-1991).
-\item \strong{Protectorates and Mandates}: Semi-sovereign territories coded separately in some instances.
-}
-}
-
-\section{Sources}{
-
-
-The dataset integrates multiple sources, including:
-\itemize{
-\item \strong{Freedom House}
-\item \strong{Polity IV}
-\item \strong{V-Dem (Varieties of Democracy Project)}
-\item \strong{LIED (Lexical Index of Electoral Democracy)}
-\item \strong{Historical country reports, election archives, and secondary literature}
-}
-}
-
-\section{Standard descriptive variables (generated by this package)}{
-
-\describe{
-
-\item{extended_country_name}{The name of the country in the Gleditsch-Ward
-system of states, or the official name of the
-entity (for non-sovereign entities and states not in the Gleditsch and Ward
-system of states) or else a common name for disputed cases that do not have
-an official name (e.g., Western Sahara, Hyderabad). The Gleditsch and Ward
-scheme sometimes indicates the common name of the country and (in
-parentheses) the name of an earlier incarnation of the state: thus, they
-have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
-For details, see Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate
-System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
-
-\item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
-Ward list of independent states.}
-
-\item{cown}{The Correlates of War numeric country code, 2016 version. This
-differs from Gleditsch and Ward's numeric country code in a few cases. See
-\url{http://www.correlatesofwar.org/data-sets/state-system-membership} for
-the full list.}
-
-\item{in_GW_system}{Whether the state is "in system" (that is, is
-independent and sovereign), according to Gleditsch and Ward, for this
-particular date. Matches at the end of the year; so, for example South
-Vietnam 1975 is \code{FALSE} because, according to Gleditsch and Ward, the
-country ended on April 1975 (being absorbed by North Vietnam). It is also
-\code{TRUE} for dates beyond 2012 for countries that did not end by then, depsite
-the fact that the Gleditsch and Ward list has not been updated since.} }
-}
-
-\references{
-Kailitz, Steffen. "Varieties of Political Regimes." Available at
-\url{https://www.va-poreg.de/home}.
-}
 \seealso{
 Other democracy: 
 \code{\link{LIED}},
@@ -259,13 +193,41 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{utip}},
 \code{\link{vanhanen}},
+\code{\link{vaporeg_2024}},
 \code{\link{vdem_simple}},
-\code{\link{wahman_teorell_hadenius}}
+\code{\link{wahman_teorell_hadenius}},
+\code{\link{wgi_legacy}}
 
 Other institutions: 
 \code{\link{LIED}},
-\code{\link{PIPE}}
+\code{\link{PIPE}},
+\code{\link{vaporeg_2024}}
+
+Other dichotomous democracy indexes: 
+\code{\link{anckar}},
+\code{\link{anrr}},
+\code{\link{bmr}},
+\code{\link{bnr}},
+\code{\link{doorenspleet}},
+\code{\link{kailitz}},
+\code{\link{pacl}},
+\code{\link{pacl_update}},
+\code{\link{svolik_regime}},
+\code{\link{ulfelder}},
+\code{\link{utip}},
+\code{\link{vaporeg_2024}},
+\code{\link{wahman_teorell_hadenius}}
+
+Other trichotomous democracy indexes: 
+\code{\link{blm}},
+\code{\link{kailitz}},
+\code{\link{mainwaring}},
+\code{\link{prc_gasiorowski}},
+\code{\link{utip}},
+\code{\link{vaporeg_2024}}
 }
 \concept{democracy}
+\concept{dichotomous democracy indexes}
 \concept{institutions}
+\concept{trichotomous democracy indexes}
 \keyword{datasets}

@@ -144,9 +144,12 @@ PIPE |>
 #| label: tbl-vaporeg-not-cow
 #| tbl-cap: "VaPoReg countries not in the COW system"
 vaporeg |>
-  distinct(vaporeg_country, vaporeg_code, vaporeg_cowcode ) |> 
-  mutate(vaporeg_cowcode  = ifelse(is.na(vaporeg_cowcode ), -1, vaporeg_cowcode )) |>
-  anti_join(state_system_data |> distinct(extended_country_name, cown), by = join_by(vaporeg_cowcode == cown)) |>
+  distinct(vaporeg_country, vaporeg_code, vaporeg_cowcode) |>
+  mutate(vaporeg_cowcode = ifelse(is.na(vaporeg_cowcode), -1, vaporeg_cowcode)) |>
+  anti_join(
+    state_system_data |> distinct(extended_country_name, cown),
+    by = join_by(vaporeg_cowcode == cown)
+  ) |>
   mutate(vaporeg_cowcode = NA) |>
   knitr::kable()
 ```

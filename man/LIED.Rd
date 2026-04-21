@@ -5,9 +5,9 @@
 \name{LIED}
 \alias{LIED}
 \alias{lied}
-\title{The Lexical Index of Democracy, v. 6.8}
+\title{The Lexical Index of Democracy, v. 6.9}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 32891 rows and 27 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 33090 rows and 27 columns.
 }
 \source{
 S. Skaaning, J. Gerring, and H. Bartusevičius. "A Lexical Index of Electoral Democracy". In: \emph{Comparative Political Studies} 48.12 (2015), pp. 1491-1525. DOI: \href{https://dx.doi.org/10.1177/0010414015581050}{10.1177/0010414015581050}. Original data and variable
@@ -20,7 +20,8 @@ LIED
 The Lexical Index of Democracy first described in S. Skaaning, J. Gerring, and H. Bartusevičius. "A Lexical Index of Electoral Democracy". In: \emph{Comparative Political Studies} 48.12 (2015), pp. 1491-1525. DOI: \href{https://dx.doi.org/10.1177/0010414015581050}{10.1177/0010414015581050}.
 Original data and variable descriptions available at
 \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}.
-The dataset is now on version 6.8, and contains new variables. The
+The dataset is now on version 6.9, extends through 2025, and contains new
+variables. The
 documentation below is copied from their codebook, with some small additions
 for clarification purposes.
 }
@@ -122,26 +123,11 @@ incorrectly constructed:
 LIED |>
   dplyr::filter(lexical_index != lexical_index_original) |>
   dplyr::select(lied_country, year, lexical_index, lexical_index_original)
-#> # A tibble: 17 x 4
-#>    lied_country  year lexical_index lexical_index_original
-#>    <chr>        <dbl>         <dbl>                  <dbl>
-#>  1 Newfoundland  1925             6                      4
-#>  2 Newfoundland  1926             6                      4
-#>  3 Newfoundland  1927             6                      4
-#>  4 Newfoundland  1928             6                      4
-#>  5 Newfoundland  1929             6                      4
-#>  6 Newfoundland  1930             6                      4
-#>  7 Newfoundland  1931             6                      4
-#>  8 Newfoundland  1932             6                      4
-#>  9 Ecuador       1934             3                      4
-#> 10 Cyprus        1973             6                      3
-#> 11 Somalia       1960             6                      5
-#> 12 Somalia       1961             6                      5
-#> 13 Somalia       1962             6                      5
-#> 14 Somalia       1963             6                      5
-#> 15 Sudan         1964             1                      0
-#> 16 Thailand      2007             6                      4
-#> 17 Cambodia      1946             2                      0
+#> # A tibble: 2 x 4
+#>   lied_country  year lexical_index lexical_index_original
+#>   <chr>        <dbl>         <dbl>                  <dbl>
+#> 1 Cyprus        1973             6                      4
+#> 2 Cambodia      1946             2                      0
 }\if{html}{\out{</div>}}
 
 I've recalculated the index for these cases and put the original value in
@@ -242,15 +228,16 @@ parentheses) the name of an earlier incarnation of the state: thus, they
 have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
 For details, see Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
+International Interactions 25: 393-413. The list can be found via the
+Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
 
 \item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.}
 
 \item{cown}{The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
-\url{http://www.correlatesofwar.org/data-sets/state-system-membership} for
+\url{https://correlatesofwar.org/data-sets/state-system-membership/} for
 the full list.}
 
 \item{in_GW_system}{Whether the state is "in system" (that is, is
@@ -358,12 +345,15 @@ Other democracy:
 \code{\link{utip}},
 \code{\link{vanhanen}},
 \code{\link{vaporeg}},
+\code{\link{vaporeg_2024}},
 \code{\link{vdem_simple}},
-\code{\link{wahman_teorell_hadenius}}
+\code{\link{wahman_teorell_hadenius}},
+\code{\link{wgi_legacy}}
 
 Other institutions: 
 \code{\link{PIPE}},
-\code{\link{vaporeg}}
+\code{\link{vaporeg}},
+\code{\link{vaporeg_2024}}
 }
 \concept{democracy}
 \concept{institutions}

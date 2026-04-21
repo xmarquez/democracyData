@@ -5,21 +5,31 @@
 \alias{eiu}
 \title{The Economist Intelligence Unit's Democracy Index}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 2839 rows and 7 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 3006 rows and 7 columns.
 }
 \source{
-The Economist Intelligence Unit. \emph{Democracy Index 2024: What's Wrong with Representative Democracy?} Tech. rep. London, UK: The Economist Intelligence Unit Limited, 2025..
+The Economist Intelligence Unit. \emph{Democracy Index 2024: What's Wrong with Representative Democracy?} Report. London, UK: The Economist Intelligence Unit Limited, 2025. \url{https://www.eiu.com/n/global-themes/democracy-index/}.  The Economist Intelligence Unit. \emph{Democracy Index 2025: Democracy Stabilises after Eight Years of Decline}. Report. London: Economist Intelligence Unit, 2026. \url{https://www.eiu.com/n/campaigns/democracy-index-2025/}..
 
-T. E. I. Unit. \emph{Democracy Index 2023: Age of Conflict}. Tech. rep. London, United Kingdom: Economist Intelligence Unit, 2024..
+The Economist Intelligence Unit. \emph{Democracy Index 2023: Age of Conflict}. Report. London, United Kingdom: Economist Intelligence Unit, 2024..
 }
 \usage{
 eiu
 }
 \description{
-A dataset containing the country-year version of the democracy index compiled
-by the Economist Intelligence Unit.
+A country-year panel of the democracy index compiled by the Economist
+Intelligence Unit. Covers 2006, 2008, and 2010-2025 (EIU did not publish
+annual updates before 2010) for 167 countries.
 }
 \details{
+The 2025 EIU report is the first edition that does not include a
+country-by-country appendix of scores — EIU moved per-country data behind
+its paid Country Analysis / Snowflake services. From v0.7.0 onward this
+dataset is built from the Wikipedia aggregation at
+\url{https://en.wikipedia.org/wiki/The_Economist_Democracy_Index}, which was
+validated against the previously shipped PDF-derived snapshot (99.8\%
+agreement for 2006-2024). A Niger / Nigeria swap for 2015 in the earlier
+version of this dataset is corrected here.
+
 \describe{
 
 \item{eiu_country}{Country name as in the original tables.}
@@ -46,15 +56,16 @@ parentheses) the name of an earlier incarnation of the state: thus, they
 have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
 For details, see Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
+International Interactions 25: 393-413. The list can be found via the
+Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
 
 \item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.}
 
 \item{cown}{The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
-\url{http://www.correlatesofwar.org/data-sets/state-system-membership} for
+\url{https://correlatesofwar.org/data-sets/state-system-membership/} for
 the full list.}
 
 \item{in_GW_system}{Whether the state is "in system" (that is, is
@@ -108,8 +119,10 @@ Other democracy:
 \code{\link{utip}},
 \code{\link{vanhanen}},
 \code{\link{vaporeg}},
+\code{\link{vaporeg_2024}},
 \code{\link{vdem_simple}},
-\code{\link{wahman_teorell_hadenius}}
+\code{\link{wahman_teorell_hadenius}},
+\code{\link{wgi_legacy}}
 
 Other continuous democracy indexes: 
 \code{\link{arat_pmm}},
@@ -120,7 +133,8 @@ Other continuous democracy indexes:
 \code{\link{munck_pmm}},
 \code{\link{svmdi}},
 \code{\link{vanhanen}},
-\code{\link{vdem_simple}}
+\code{\link{vdem_simple}},
+\code{\link{wgi_legacy}}
 }
 \concept{continuous democracy indexes}
 \concept{democracy}

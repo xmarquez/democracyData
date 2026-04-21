@@ -57,7 +57,7 @@ available on request. For the 1985 data, multiple sources of information
 were used. For the 2000 data, all coders consulted only the State
 Department's Country Reports on Human Rights Practices for 2001 as their
 source of information. This information is available on line at
-\url{http://www.state.gov/g/drl/rls/hrrpt/2001/}.
+\url{https://web.archive.org/web/20020306003112/http://www.state.gov/g/drl/rls/hrrpt/2001/}.
 
 Every year, 82-86 percent of their ratings were in agreement. This is about
 the same level of reliability that Reinicke and Coppedge reported in 1990.
@@ -244,15 +244,16 @@ parentheses) the name of an earlier incarnation of the state: thus, they
 have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
 For details, see Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
+International Interactions 25: 393-413. The list can be found via the
+Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
 
 \item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.}
 
 \item{cown}{The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
-\url{http://www.correlatesofwar.org/data-sets/state-system-membership} for
+\url{https://correlatesofwar.org/data-sets/state-system-membership/} for
 the full list.}
 
 \item{in_GW_system}{Whether the state is "in system" (that is, is
@@ -267,7 +268,7 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 \section{Note}{
 
 
-The \code{polyarchy_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}. The
+The \code{polyarchy_pmm} version of this data is taken from D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM. The
 original dataset is found in \link{polyarchy}. It only contains a reversed
 version of the \code{poly} variable in the original \link{polyarchy} dataset (higher
 values being more democratic). 22 country-years differ between PMM's
@@ -357,8 +358,10 @@ Other democracy:
 \code{\link{utip}},
 \code{\link{vanhanen}},
 \code{\link{vaporeg}},
+\code{\link{vaporeg_2024}},
 \code{\link{vdem_simple}},
-\code{\link{wahman_teorell_hadenius}}
+\code{\link{wahman_teorell_hadenius}},
+\code{\link{wgi_legacy}}
 
 Other polyarchy: 
 \code{\link{polyarchy_dimensions}}

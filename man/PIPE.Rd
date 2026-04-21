@@ -8,13 +8,13 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18151 rows and 101 columns.
 }
 \source{
-A. Przeworski. \emph{Political Institutions and Political Events (PIPE) Data Set}. Data Set. 2013.
+A. Przeworski. \emph{Political Institutions and Political Events (PIPE) Data Set}. Data set. Department of Politics, New York University, 2013. \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}.
 }
 \usage{
 PIPE
 }
 \description{
-A. Przeworski. \emph{Political Institutions and Political Events (PIPE) Data Set}. Data Set. 2013. The original
+A. Przeworski. \emph{Political Institutions and Political Events (PIPE) Data Set}. Data set. Department of Politics, New York University, 2013. \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}. The original
 data and codebook can be downloaded from
 \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}. The
 documentation below is directly derived from the codebook, with some
@@ -1548,15 +1548,16 @@ parentheses) the name of an earlier incarnation of the state: thus, they
 have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
 For details, see Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
+International Interactions 25: 393-413. The list can be found via the
+Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
 
 \item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.}
 
 \item{cown}{The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
-\url{http://www.correlatesofwar.org/data-sets/state-system-membership} for
+\url{https://correlatesofwar.org/data-sets/state-system-membership/} for
 the full list.}
 
 \item{in_GW_system}{Whether the state is "in system" (that is, is
@@ -1572,9 +1573,9 @@ the fact that the Gleditsch and Ward list has not been updated since.} }
 Caramani, Daniele. 2000. Elections in Western Europe since 1815:
 electoral results by constituencies. London: Macmillan. CD-ROM.
 
-Elections Canada On-Line, \url{http://www.elections.ca}
+Elections Canada On-Line, \url{https://www.elections.ca/}
 
-Federal Election Commission, \url{http://www.fec.gov} (USA) Historical
+Federal Election Commission, \url{https://www.fec.gov/} (USA) Historical
 Statistics of the United States. Colonial times to 1957. Washington, DC: US
 Department of Commerce. Series Y 146-149.
 
@@ -1606,7 +1607,7 @@ Volume 1: North America, Central America, and the Caribbean. New York:
 Oxford University Press.
 
 Vanhanen, Tatu. The Polyarchy Dataset, Norwegian University of Science and
-Technology. \url{http://www.svt.ntnu.no/iss/data/vanhanen}
+Technology. \url{https://web.archive.org/web/20010604084154/http://www.svt.ntnu.no/iss/data/vanhanen/}
 
 Historical Statistics Of The United States. Colonial Times To 1970.
 Washington, Dc: Us Department Of Commerce. Series Y 135-186.
@@ -1662,12 +1663,15 @@ Other democracy:
 \code{\link{utip}},
 \code{\link{vanhanen}},
 \code{\link{vaporeg}},
+\code{\link{vaporeg_2024}},
 \code{\link{vdem_simple}},
-\code{\link{wahman_teorell_hadenius}}
+\code{\link{wahman_teorell_hadenius}},
+\code{\link{wgi_legacy}}
 
 Other institutions: 
 \code{\link{LIED}},
-\code{\link{vaporeg}}
+\code{\link{vaporeg}},
+\code{\link{vaporeg_2024}}
 }
 \concept{democracy}
 \concept{institutions}

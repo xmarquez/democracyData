@@ -1,4 +1,52 @@
 citHeader("To cite any of the datasets included in this package use:")
 
-sort(democracyData::bibliography)
+as_base_citation <- function(entry) {
+  inner <- unclass(entry)[[1]]
+  fields <- list()
+
+  for (field_name in names(inner)) {
+    fields[[field_name]] <- inner[[field_name]]
+  }
+
+  bibtype <- attr(inner, "bibtype")
+
+  if (length(bibtype) != 1L || !is.character(bibtype) || !nzchar(bibtype)) {
+    bibtype <- "Misc"
+  }
+
+  if (identical(bibtype, "Report")) {
+    bibtype <- "TechReport"
+  }
+
+  if (!bibtype %in% names(tools:::BibTeX_entry_field_db)) {
+    bibtype <- "Misc"
+  }
+
+  if ("location" %in% names(fields) && !("address" %in% names(fields))) {
+    fields$address <- fields$location
+    fields$location <- NULL
+  }
+
+  if ("journaltitle" %in% names(fields) && !("journal" %in% names(fields))) {
+    fields$journal <- fields$journaltitle
+    fields$journaltitle <- NULL
+  }
+
+  fields$abstract <- NULL
+  fields$annotation <- NULL
+  fields$file <- NULL
+  fields$keywords <- NULL
+  fields$language <- NULL
+  fields$shorttitle <- NULL
+  fields$urldate <- NULL
+  fields$key <- attr(inner, "key")
+  fields$bibtype <- bibtype
+
+  do.call(utils::bibentry, fields)
+}
+
+do.call(
+  c,
+  lapply(as.list(sort(democracyData::bibliography)), as_base_citation)
+)
 

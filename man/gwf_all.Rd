@@ -19,7 +19,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 }
 \source{
 B. Geddes, J. Wright, and E. Frantz. "Autocratic Breakdown and Regime Transitions: A New Data Set". In: \emph{Perspectives on Politics} 12.1 (2014), pp. 313-331. DOI: \href{https://dx.doi.org/10.1017/S1537592714000851}{10.1017/S1537592714000851}. The full data and codebook can be
-downloaded here: \url{http://sites.psu.edu/dictators/}.
+downloaded here: \url{https://sites.psu.edu/dictators/}.
 }
 \usage{
 gwf_all
@@ -32,7 +32,7 @@ gwf_autocratic_extended
 }
 \description{
 The dataset described in B. Geddes, J. Wright, and E. Frantz. "Autocratic Breakdown and Regime Transitions: A New Data Set". In: \emph{Perspectives on Politics} 12.1 (2014), pp. 313-331. DOI: \href{https://dx.doi.org/10.1017/S1537592714000851}{10.1017/S1537592714000851}. The full data and codebook can be
-downloaded at \url{http://sites.psu.edu/dictators/}. The documentation
+downloaded at \url{https://sites.psu.edu/dictators/}. The documentation
 below is derived from the codebook. Some variables apply to the country-year
 version, some to the case version and some to the "extended" version
 (extended back before 1945 with info from the case descriptions).
@@ -119,15 +119,16 @@ parentheses) the name of an earlier incarnation of the state: thus, they
 have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
 For details, see Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
+International Interactions 25: 393-413. The list can be found via the
+Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
 
 \item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.}
 
 \item{cown}{The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
-\url{http://www.correlatesofwar.org/data-sets/state-system-membership} for
+\url{https://correlatesofwar.org/data-sets/state-system-membership/} for
 the full list.}
 
 \item{in_GW_system}{Whether the state is "in system" (that is, is
@@ -188,8 +189,10 @@ Other democracy:
 \code{\link{utip}},
 \code{\link{vanhanen}},
 \code{\link{vaporeg}},
+\code{\link{vaporeg_2024}},
 \code{\link{vdem_simple}},
-\code{\link{wahman_teorell_hadenius}}
+\code{\link{wahman_teorell_hadenius}},
+\code{\link{wgi_legacy}}
 
 Other authoritarianism: 
 \code{\link{REIGN}},

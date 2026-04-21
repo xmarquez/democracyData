@@ -18,7 +18,7 @@ utip
 The University of Texas Inequality Project Categorical Dataset of Political
 Regimes. Described in S. Hsu. "The Effect of Political Regimes on Inequality, 1963-2002". In: \emph{UTIP Working Paper} (2008).
 \url{http://utip.gov.utexas.edu/papers/utip_53.pdf}. Data available for
-download at \url{http://utip.gov.utexas.edu/data/}.
+download at \url{https://utip.gov.utexas.edu/datasets.html}.
 }
 \section{Description}{
 
@@ -88,15 +88,16 @@ parentheses) the name of an earlier incarnation of the state: thus, they
 have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
 For details, see Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
+International Interactions 25: 393-413. The list can be found via the
+Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
 
 \item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.}
 
 \item{cown}{The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
-\url{http://www.correlatesofwar.org/data-sets/state-system-membership} for
+\url{https://correlatesofwar.org/data-sets/state-system-membership/} for
 the full list.}
 
 \item{in_GW_system}{Whether the state is "in system" (that is, is
@@ -150,8 +151,10 @@ Other democracy:
 \code{\link{ulfelder}},
 \code{\link{vanhanen}},
 \code{\link{vaporeg}},
+\code{\link{vaporeg_2024}},
 \code{\link{vdem_simple}},
-\code{\link{wahman_teorell_hadenius}}
+\code{\link{wahman_teorell_hadenius}},
+\code{\link{wgi_legacy}}
 
 Other authoritarianism: 
 \code{\link{REIGN}},
@@ -172,13 +175,17 @@ Other dichotomous democracy indexes:
 \code{\link{pacl_update}},
 \code{\link{svolik_regime}},
 \code{\link{ulfelder}},
+\code{\link{vaporeg}},
+\code{\link{vaporeg_2024}},
 \code{\link{wahman_teorell_hadenius}}
 
 Other trichotomous democracy indexes: 
 \code{\link{blm}},
 \code{\link{kailitz}},
 \code{\link{mainwaring}},
-\code{\link{prc_gasiorowski}}
+\code{\link{prc_gasiorowski}},
+\code{\link{vaporeg}},
+\code{\link{vaporeg_2024}}
 }
 \concept{authoritarianism}
 \concept{democracy}

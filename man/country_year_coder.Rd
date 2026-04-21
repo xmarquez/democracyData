@@ -40,12 +40,14 @@ following:
 \itemize{
 
 \item "GWn": Numeric code for the country in the Gleditsch-Ward system of
-states (\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}). This is very
+states (\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}).
+This is very
 similar, but not identical, to the Correlates of War and Polity codes. See
 the vignette in this package for the differences.
 
 \item "GWc": Three letter code for the country in the Gleditsch-Ward system of
-states (\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}). This is very
+states (\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}).
+This is very
 similar, but not identical, to the Correlates of War and Polity codes. See
 the vignette in this package for an overview of the differences between
 these systems.
@@ -65,25 +67,25 @@ some UCDP/PRIO (\url{https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO/})
 datasets.
 
 \item "cown": Numeric code for the country in the Correlates of War system of
-states (\url{http://www.correlatesofwar.org/data-sets/cow-country-codes}). This
+states (\url{https://correlatesofwar.org/data-sets/cow-country-codes/}). This
 is very similar, but not identical, to the Gleditsch and Ward and Polity
 codes. See the vignette in this package for an overview of the differences
 between these systems.
 
 \item "cowc": Three letter code for the country in the Correlates of War
 system of
-states (\url{http://www.correlatesofwar.org/data-sets/cow-country-codes}). This
+states (\url{https://correlatesofwar.org/data-sets/cow-country-codes/}). This
 is very similar, but not identical, to the Gleditsch and Ward and Polity
 codes. See the vignette in this package for an overview of the differences
 between these systems.
 
 \item "polity_ccode": Numeric code for the country in the Polity IV
-dataset (\url{http://www.systemicpeace.org/polity/polity4.htm}). This is very
+dataset (\url{https://www.systemicpeace.org/polity/polity4.htm}). This is very
 similar, but not identical, to the Gleditsch and Ward and COW codes. See
 the vignette in this package for the differences.
 
 \item "polity_scode": Three letter code for the country in the Polity IV
-dataset (\url{http://www.systemicpeace.org/polity/polity4.htm}). This is very
+dataset (\url{https://www.systemicpeace.org/polity/polity4.htm}). This is very
 similar, but not identical, to the Gleditsch and Ward and COW codes. See
 the vignette in this package for an overview of the differences between
 these systems.
@@ -151,11 +153,13 @@ The possibilities are:
 \itemize{
 
 \item "GW_country_name": The name of the country in the
-Gleditsch-Ward system of states (\url{http://privatewww.essex.ac.uk/~ksg/statelist.html})
+Gleditsch-Ward system of states
+(\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html})
 (Gleditsch and War 1999).
 
 \item "extended_country_name": The name of the country in the
-Gleditsch-Ward system of states (\url{http://privatewww.essex.ac.uk/~ksg/statelist.html})
+Gleditsch-Ward system of states
+(\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html})
 (Gleditsch and War 1999), of the official name of the
 entity (for non-sovereign entities and states not in the Gleditsch and Ward
 system of states) or else a common name for disputed cases that do not have
@@ -163,7 +167,7 @@ an official name (e.g., Western Sahara, Hyderabad).
 
 \item "cow_country_name": The name of the state in the Correlates of War state
 system (2016 version). See
-\url{http://www.correlatesofwar.org/data-sets/cow-country-codes} for details. Is
+\url{https://correlatesofwar.org/data-sets/cow-country-codes/} for details. Is
 \code{NA} if the country is not in the COW system of states.
 
 \item "polity_country_name": The name of the state in the official Polity
@@ -175,7 +179,9 @@ English country name), as defined by the ISO organization. Taken from \link[coun
 Some names are missing because the state no longer exists or there is
 controversy about its sovereign status.
 
-\item "GWn": Numeric code for the country in the Gleditsch-Ward system of states (\url{http://privatewww.essex.ac.uk/~ksg/statelist.html})
+\item "GWn": Numeric code for the country in the Gleditsch-Ward system of
+states
+(\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html})
 (Gleditsch and War 1999). This is very
 similar, but not identical, to the Correlates of War and Polity codes. See
 the vignette in this package for the differences.
@@ -187,7 +193,9 @@ amd occupied territories, and 605 for Western Sahara). These codes are used
 in some UCDP/PRIO (\url{https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO/})
 datasets.
 
-\item "GWc": Three letter code for the country in the Gleditsch-Ward system of states (\url{http://privatewww.essex.ac.uk/~ksg/statelist.html})
+\item "GWc": Three letter code for the country in the Gleditsch-Ward system
+of states
+(\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html})
 (Gleditsch and War 1999). This is very
 similar, but not identical, to the Correlates of War and Polity codes. See
 the vignette in this package for an overview of the differences between
@@ -201,25 +209,25 @@ in some UCDP/PRIO (\url{https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO/})
 datasets.
 
 \item "cown": Numeric code for the country in the Correlates of War system of
-states (\url{http://www.correlatesofwar.org/data-sets/cow-country-codes}), 2016
+states (\url{https://correlatesofwar.org/data-sets/cow-country-codes/}), 2016
 release. This is very similar, but not identical, to the Gleditsch and Ward
 and Polity codes. See the vignette in this package for an overview of the
 differences between these systems.
 
 \item "cowc": Three letter code for the country in the Correlates of War
 system of
-states (\url{http://www.correlatesofwar.org/data-sets/cow-country-codes}), 2016
+states (\url{https://correlatesofwar.org/data-sets/cow-country-codes/}), 2016
 release. This is very similar, but not identical, to the Gleditsch and Ward
 and Polity codes. See the vignette in this package for an overview of the
 differences between these systems.
 
 \item "polity_ccode": Numeric code for the country in the Polity IV
-dataset (\url{http://www.systemicpeace.org/polity/polity4.htm}). This is very
+dataset (\url{https://www.systemicpeace.org/polity/polity4.htm}). This is very
 similar, but not identical, to the Gleditsch and Ward and COW codes. See
 the vignette in this package for the differences.
 
 \item "polity_scode": Three letter code for the country in the Polity IV
-dataset (\url{http://www.systemicpeace.org/polity/polity4.htm}). This is very
+dataset (\url{https://www.systemicpeace.org/polity/polity4.htm}). This is very
 similar, but not identical, to the Gleditsch and Ward and COW codes. See
 the vignette in this package for an overview of the differences between
 these systems.
@@ -277,8 +285,8 @@ official country name via \link[ggmap:geocode]{ggmap::geocode} (with some manual
 for historical states).
 
 \item "microstate": Whether the state is a microstate, according to Gleditsch.
-His tentative list of microstates is available at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.
+His tentative list of microstates is available via the Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}.
 
 \item "in_GW_system": Whether the state is "in system" (that is, is independent
 and sovereign), according to Gleditsch and Ward, for a particular date.

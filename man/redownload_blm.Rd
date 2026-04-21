@@ -27,26 +27,26 @@
 K. Bowman, F. Lehoucq, and J. Mahoney. "Measuring Political Democracy: Case Expertise, Data Adequacy, and Central America". In: \emph{Comparative Political Studies} 38.8 (2005), pp. 939-970. DOI: \href{https://dx.doi.org/10.1177/0010414005277083}{10.1177/0010414005277083}.. Data and documentation archived at
 \url{https://web.archive.org/web/20221128114909/http://blmdemocracy.gatech.edu/}.
 
-C. Anckar and C. Fredriksson. "Classifying Political Regimes 1800–2016: A Typology and a New Dataset". In: \emph{European Political Science} 18.1 (Mar. 2018), pp. 84-96. DOI: \href{https://dx.doi.org/10.1057/s41304-018-0149-8}{10.1057/s41304-018-0149-8}. Updated data (V2)
+C. Anckar and C. Fredriksson. "Classifying Political Regimes 1800–2016: A Typology and a New Dataset". In: \emph{European Political Science} 18.1 (2018), pp. 84-96. DOI: \href{https://dx.doi.org/10.1057/s41304-018-0149-8}{10.1057/s41304-018-0149-8}. Updated data (V2)
 available at \url{https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/7SSSAH/DIZXSI&version=2.0}
 
 C. Boix, M. Miller, and S. Rosato. "A Complete Data Set of Political Regimes, 1800–2007". In: \emph{Comparative Political Studies} 46.12 (2012), pp. 1523-1554. DOI: \href{https://dx.doi.org/10.1177/0010414012463905}{10.1177/0010414012463905}. Available at \url{https://sites.google.com/site/mkmtwo/data}.
 
 B. Geddes, J. Wright, and E. Frantz. "Autocratic Breakdown and Regime Transitions: A New Data Set". In: \emph{Perspectives on Politics} 12.1 (2014), pp. 313-331. DOI: \href{https://dx.doi.org/10.1017/S1537592714000851}{10.1017/S1537592714000851}. The full data and codebook can be
-downloaded here: \url{http://sites.psu.edu/dictators/}.
+downloaded here: \url{https://sites.psu.edu/dictators/}.
 
 S. Skaaning, J. Gerring, and H. Bartusevičius. "A Lexical Index of Electoral Democracy". In: \emph{Comparative Political Studies} 48.12 (2015), pp. 1491-1525. DOI: \href{https://dx.doi.org/10.1177/0010414015581050}{10.1177/0010414015581050}.. Original data and variable descriptions available at
-\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}. This is for version 6.6 (2023 update).
+\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WPKNIT}. This is for version 6.9 (2026 update).
 
-S. Kailitz. \emph{Varieties of Political Regimes (va-PoReg). Dataset}. Dresden, 2024.
-Original data and variable descriptions available at \url{https://www.va-poreg.de/home}.
+The current dataset and documentation are available at
+\url{https://www.va-poreg.de/home}.
 
 J. A. Cheibub, J. Gandhi, and J. R. Vreeland. "Democracy and Dictatorship Revisited". In: \emph{Public Choice} 143.1-2 (2009), pp. 67-101. DOI: \href{https://dx.doi.org/10.1007/s11127-009-9491-2}{10.1007/s11127-009-9491-2}. The full data and codebook can be
 downloaded here: \url{https://sites.google.com/site/joseantoniocheibub/datasets/dd}.
 
-B. E. Moon, J. H. Birdsall, S. Ciesluk, et al. "Voting Counts: Participation in the Measurement of Democracy". In: \emph{Studies in Comparative International Development} 41.2 (2006), pp. 3-32. DOI: \href{https://dx.doi.org/10.1007/BF02686309}{10.1007/BF02686309}. The complete dataset is available here: \url{http://www.lehigh.edu/~bm05/democracy/Obtain_data.htm}.
+B. E. Moon, J. H. Birdsall, S. Ciesluk, et al. "Voting Counts: Participation in the Measurement of Democracy". In: \emph{Studies in Comparative International Development} 41.2 (2006), pp. 3-32. DOI: \href{https://dx.doi.org/10.1007/BF02686309}{10.1007/BF02686309}. The complete dataset is available here: \url{https://www.lehigh.edu/~bm05/democracy/Obtain_data.htm}.
 
-S. Hsu. "The Effect of Political Regimes on Inequality, 1963-2002". In: \emph{UTIP Working Paper} (2008). Data available for download at \url{http://utip.gov.utexas.edu/data/}.
+S. Hsu. "The Effect of Political Regimes on Inequality, 1963-2002". In: \emph{UTIP Working Paper} (2008). Data available for download at \url{https://utip.gov.utexas.edu/datasets.html}.
 
 M. Wahman, J. Teorell, and A. Hadenius. "Authoritarian Regime Types Revisited: Updated Data in Comparative Perspective". In: \emph{Contemporary Politics} 19.1 (2013), pp. 19-34. DOI: \href{https://dx.doi.org/10.1080/13569775.2013.773200}{10.1080/13569775.2013.773200}. The dataset and codebook can be
 downloaded from \url{https://sites.google.com/site/authoritarianregimedataset/data}.
@@ -55,25 +55,25 @@ M. Coppedge and W. H. Reinicke. "Measuring Polyarchy". In: \emph{Studies in Comp
 
 M. Coppedge, A. Alvarez, and C. Maldonado. "Two Persistent Dimensions of Democracy: Contestation and Inclusiveness". In: \emph{The journal of politics} 70.03 (2008), pp. 632-647. DOI: \href{https://dx.doi.org/10.1017/S0022381608080663}{10.1017/S0022381608080663}. Data available at \url{https://web.archive.org/web/20160309180905/http://www3.nd.edu/~mcoppedg/crd/datacrd.htm}.
 
-B. Magaloni, J. Chu, and E. Min. \emph{Autocracies of the World, 1950-2012 (Version 1.0)}. Dataset. 2013. Original data and codebook used to be
+B. Magaloni, J. Chu, and E. Min. \emph{Autocracies of the World, 1950-2012 (Version 1.0)}. Dataset. 2013. \url{https://dx.doi.org/10.2139/ssrn.4346003}. Original data and codebook used to be
 available at \url{https://cddrl.fsi.stanford.edu/research/autocracies_of_the_world_dataset}.
 
-K. Gründler and T. Krieger. \emph{Machine Learning Indices, Political Institutions, and Economic Development}. Report. CESifo Group Munich, 2018. Original data available at \url{https://ml-democracy-index.net/}.
+K. Gründler and T. Krieger. \emph{Machine Learning Indices, Political Institutions, and Economic Development}. Report. CESifo Group Munich, 2018. \url{https://dx.doi.org/10.2139/ssrn.3171982}. Original data available at \url{https://ml-democracy-index.net/}.
 
 D. Pemstein, S. Meserve, and J. Melton. "Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type". In: \emph{Political Analysis} 18.4 (2010), pp. 426-449. DOI: \href{https://dx.doi.org/10.1093/pan/mpq020}{10.1093/pan/mpq020}. Original data and codebook archived at
 \url{https://web.archive.org/web/20191224160254/http://www.unified-democracy-scores.org/}.
 
-J. Ulfelder. \emph{Democracy/Autocracy Data Set}. 2012. DOI: \href{https://dx.doi.org/10.7910/DVN/M11WFC}{10.7910/DVN/M11WFC}. Original data available at \url{https://doi.org/10.7910/DVN/M11WFC}.
+J. Ulfelder. \emph{Democracy/Autocracy Data Set}. 2012. DOI: 10.7910/DVN/M11WFC. HDL: 1902.1/18836. Original data available at \url{https://doi.org/10.7910/DVN/M11WFC}.
 
-A. Przeworski. \emph{Political Institutions and Political Events (PIPE) Data Set}. Data Set. 2013. Original data available at \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}.
+A. Przeworski. \emph{Political Institutions and Political Events (PIPE) Data Set}. Data set. Department of Politics, New York University, 2013. \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}. Original data available at \url{https://sites.google.com/a/nyu.edu/adam-przeworski/home/data}.
 
-M. G. Marshall, T. R. Gurr, and K. Jaggers. \emph{Polity IV Project: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual.} Manual. 2019. Data and codebook available at \url{http://www.systemicpeace.org/inscrdata.html}.
+M. G. Marshall, T. R. Gurr, and K. Jaggers. \emph{Polity IV Project: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual.} manual. Center for Systemic Peace, 2019. Data and codebook available at \url{https://www.systemicpeace.org/inscrdata.html}.
 
-Bertelsmann Stiftung. \emph{Transformation Index of the Bertelsmann Stiftung 2024}. Tech. rep. Bertelsmann Stiftung, 2024. Available at \url{https://bti-project.org/en/index/political-transformation}.
+Bertelsmann Stiftung. \emph{Transformation Index of the Bertelsmann Stiftung 2024}. Report. Bertelsmann Stiftung, 2024.  Bertelsmann Stiftung. \emph{Transformation Index BTI 2026: Governance in International Comparison}. Report. Gütersloh: Bertelsmann Stiftung, 2026. \url{https://www.bertelsmann-stiftung.de/en/publications/publication/did/transformation-index-bti-2026}. Available at \url{https://bti-project.org/en/index/political-transformation}.
 
-C. Bjørnskov and M. Rode. "Regime Types and Regime Change: A New Dataset on Democracy, Coups, and Political Institutions". In: \emph{The Review of International Organizations} 15.2 (2020), pp. 531-551. DOI: \href{https://dx.doi.org/10.1007/s11558-019-09345-1}{10.1007/s11558-019-09345-1}. Available at \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}.
+C. Bjørnskov and M. Rode. "Regime Types and Regime Change: A New Dataset on Democracy, Coups, and Political Institutions". In: \emph{The Review of International Organizations} 15.2 (2020), pp. 531-551. DOI: 10.1007/s11558-019-09345-1.  C. Bjørnskov and M. Rode. \emph{Bjørnskov-Rode Integrated Dataset v6.2}. 2025. \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}. Available at \url{http://www.christianbjoernskov.com/bjoernskovrodedata/}.
 
-C. Bell. \emph{The Rulers, Elections, and Irregular Governance Dataset (REIGN)}. 2016. Data available at \url{https://oefdatascience.github.io/REIGN.github.io/}.
+C. Bell. \emph{The Rulers, Elections, and Irregular Governance Dataset (REIGN)}. OEF Research, 2016. \url{https://oefdatascience.github.io/REIGN.github.io/}. Data available at \url{https://oefdatascience.github.io/REIGN.github.io/}.
 }
 \usage{
 redownload_blm(url, verbose = TRUE, return_raw = FALSE, ...)
@@ -165,33 +165,33 @@ redownload_reign(url, verbose = TRUE, return_raw = FALSE, ...)
 
 \item For \link{bmr}: \url{https://drive.google.com/uc?export=download&id=1T5Kzs7iu8w26UrTJuyskugcD6Z3uR_tX}.
 
-\item For \link{bti}: \url{https://bti-project.org/fileadmin/api/content/en/downloads/data/BTI_2006-2024_Scores.xlsx}.
+\item For \link{bti}: \url{https://bti-project.org/fileadmin/api/content/en/downloads/data/BTI_2006-2026_Scores.xlsx}.
 
-\item For \link{gwf_all} and \link{gwf_autocratic}: \url{http://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip}.
+\item For \link{gwf_all} and \link{gwf_autocratic}: \url{https://sites.psu.edu/dictators/wp-content/uploads/sites/12570/2016/05/GWF-Autocratic-Regimes-1.2.zip}.
 
-\item For \link{LIED}: \url{https://dataverse.harvard.edu/api/access/datafile/11068563}.
+\item For \link{LIED}: \url{https://dataverse.harvard.edu/api/access/datafile/13640161}.
 
 \item For \link{pacl}: \url{https://www.dropbox.com/scl/fi/c7q60zhkj5sqsidjunath/ddrevisited_data_v1.dta?rlkey=xdptpr1wniu2zlm8xi9ny9q1x&e=1&dl=1}.
 
-\item For \link{pacl_update}: \url{http://www.christianbjoernskov.com/wp-content/uploads/2020/09/Bj\%C3\%B8rnskov-Rode-integrated-dataset-v3.2.xlsx}.
+\item For \link{pacl_update}: \url{http://www.christianbjoernskov.com/wp-content/uploads/2025/09/Bjornskov-Rode-integrated-dataset-v6.2.xlsx}.
 
-\item For \link{peps}: \url{http://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta}.
+\item For \link{peps}: \url{https://www.lehigh.edu/~bm05/democracy/PEPS1pub.dta}.
 
-\item For \link{polityIV}: \url{http://www.systemicpeace.org/inscr/p4v2018.xls}.
+\item For \link{polityIV}: \url{https://www.systemicpeace.org/inscr/p4v2018.xls}.
 
-\item For \link{svmdi}: \url{https://ml-democracy-index.net/downloadfiles/ML\%20indices.xlsx} or \url{http://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta},
+\item For \link{svmdi}: \url{https://ml-democracy-index.net/downloadfiles/ML\%20indices.xlsx} or \url{https://www.wiwi.uni-wuerzburg.de/fileadmin/12010400/Data.dta},
 depending on \code{release_year} (2020 or 2016).
 
 \item For \link{REIGN}: \url{https://github.com/OEFDataScience/REIGN.github.io/blob/gh-pages/data_sets/regime_list.csv?raw=true}.
 
-\item For \link{utip}: \url{http://utip.lbj.utexas.edu/data/political\%20regime\%20data\%20set\%20RV.xls}.
+\item For \link{utip}: \url{https://utip.gov.utexas.edu/data/political\%20regime\%20data\%20set\%20RV.xls}.
 
 \item For \link{uds}: \url{https://web.archive.org/web/20191224154817/http://www.unified-democracy-scores.org/files/20140312/z/uds_summary.csv.gz}, \url{https://web.archive.org/web/20191224154817/http://www.unified-democracy-scores.org/files/20110104/uds_summary.csv.gz} or
 \url{https://web.archive.org/web/20191224154817/http://www.unified-democracy-scores.org/files/20100726/uds_summary.csv.gz}, depending on \code{release_year} (2014, 2011, or 2010).
 
-\item For \link{vaporeg}: \url{https://www.va-poreg.de/download/Kailitz,\%20Varieties\%20of\%20Political\%20Regimes\%20April\%202025.rds}.
+\item For \link{vaporeg}: \url{https://www.va-poreg.de/download/Kailitz,\%20Varieties\%20of\%20Political\%20Regimes\%20March\%202026.rds}.
 
-\item For \link{wahman_teorell_hadenius}: \url{https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&d=1}.
+\item For \link{wahman_teorell_hadenius}: \url{https://web.archive.org/web/20201023083736/https://sites.google.com/site/authoritarianregimedataset/data/ARD_V6.dta?attredirects=0&d=1}.
 
 \item For \link{polyarchy}: \url{https://web.archive.org/web/20161001221658/https://www3.nd.edu/~mcoppedg/crd/poly8500.sav}.
 
@@ -235,6 +235,10 @@ democratic and non-democratic regimes ("all"). Default is "all".}
 A \code{\link[tibble:tibble]{tibble::tibble()}} with the processed dataset, unless \code{return_raw}
 is \code{TRUE}, in which case the function returns the raw data without
 processing.
+
+By default, a tibble with the March 2026 VaPoReg country-year schema.
+If \code{return_raw = TRUE}, returns the full nested download object, including
+the \code{data} and \code{labels} elements from the upstream \code{.rds} file.
 }
 \description{
 Download and process various democracy datasets. Note that the datasets
@@ -254,7 +258,7 @@ TRUE}) or suspect they have changed since the package was installed.
 \details{
 \code{redownload_polityIV} downloads the 2019 update of the Polity IV dataset (annual time series, to
 2018) and processes it using \link{country_year_coder}. The original data is available at
-\url{http://www.systemicpeace.org/inscrdata.html}.
+\url{https://www.systemicpeace.org/inscrdata.html}.
 Polity is now in version 5, which incorporates substantial changes; this
 redownloads the archived version of \link{polityIV} data. Use
 \link{download_polity_annual} to download version 5 of Polity.

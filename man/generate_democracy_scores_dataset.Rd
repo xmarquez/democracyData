@@ -16,6 +16,9 @@ generate_democracy_scores_dataset(
   keep_only_last_in_year = TRUE,
   uds_release_year = c(2014, 2011, 2010),
   svmdi_release_year = c(2020, 2016),
+  wgi_version = c("current", "legacy"),
+  vaporeg_version = c("current", "legacy"),
+  pitf_version = c("current", "legacy", "polity5", "polity4"),
   exclude_pmm_duplicates = TRUE,
   prefer_successor = TRUE,
   fix_PIPE = TRUE,
@@ -25,7 +28,8 @@ generate_democracy_scores_dataset(
 \arguments{
 \item{datasets}{Character vector indicating which datasets to use in
 producing the combined data frame. Can be any or all of (an unambiguous
-abbreviation of) "\link{anckar}", "\link{anrr}", "\link{LIED}", "\link{PIPE}", "\link{arat_pmm}",
+abbreviation of) "\link{anckar}", "\link{anrr}", "\link{LIED}", "\link{PIPE}", "\link{arat}",
+"\link{arat_pmm}",
 "\link{blm}", "\link{blm_pmm}", "\link{bmr}", "\link{bnr}", "\link{bnr_extended}", "\link{bti}",
 "\link{bollen_pmm}", "\link{doorenspleet}", "\link{eiu}", "\link{fh_pmm}", "\link{gwf_all}",
 "\link{gwf_all_extended}", "\link{hadenius_pmm}", "\link{kailitz}", "\link{magaloni}",
@@ -33,7 +37,8 @@ abbreviation of) "\link{anckar}", "\link{anrr}", "\link{LIED}", "\link{PIPE}", "
 "\link{pacl}", "\link{pacl_pmm}", "\link{pacl_update}", "\link{peps}", "\link{pitf}",
 "\link{polity_pmm}", "\link{polyarchy}", "\link{polyarchy_dimensions}", "\link{polyarchy_pmm}",
 "\link{prc_gasiorowski}", "\link{prc_pmm}", "\link{svmdi}", "\link{svolik_regime}", "\link{uds}",
-"\link{ulfelder}", "\link{ulfelder_extended}", "\link{utip}", "\link{vanhanen}", "\link{vdem}",
+"\link{ulfelder}", "\link{ulfelder_extended}", "\link{utip}", "\link{vanhanen}", "\link{vaporeg}",
+"\link{vdem}",
 "\link{wahman_teorell_hadenius}", "\link{reign}" or "\link[=reign]{REIGN}", "\link{polityIV}",
 "\link{polity5}", "\link{fh}", "\link{fh_electoral}", "\link{wgi}". It can also be empty; the
 default is all of them.}
@@ -49,14 +54,14 @@ column with values) version of the data frame. Default is "long".}
 before 1945 for some regimes) versions of some datasets (\link{gwf}, \link{ulfelder},
 \link{bnr}, and \link{magaloni}). Default is \code{TRUE}.}
 
-\item{verbose}{Provides a running commentary on what the function is is
+\item{verbose}{Provides a running commentary on what the function is
 doing. Default is \code{TRUE}.}
 
 \item{force_redownload}{Whether to re-download all datasets that can be
 re-downloaded, including those archived with this package. Used only for
 debugging; default is \code{FALSE}.}
 
-\item{scale_scores}{Whether to scale each measure (substracting their mean
+\item{scale_scores}{Whether to scale each measure (subtracting their mean
 and dividing by their standard deviation). Default is \code{FALSE}.}
 
 \item{keep_only_last_in_year}{Whether to keep only the last regime
@@ -75,6 +80,18 @@ of them.}
 
 \item{svmdi_release_year}{Which release of the \link{svmdi} dataset to include.
 Defaults to the latest, 2020. Can be 2020 or 2016, or both of them.}
+
+\item{wgi_version}{Which WGI series to include. \code{"current"} uses the revised
+\link{wgi} series; \code{"legacy"} uses the archived \link{wgi_legacy} series. Default is
+\code{"current"}.}
+
+\item{vaporeg_version}{Which VaPoReg schema to include. \code{"current"} uses the
+current \link{vaporeg} object; \code{"legacy"} uses the archived \link{vaporeg_2024}
+object. Default is \code{"current"}.}
+
+\item{pitf_version}{Which PITF variant to include. \code{"current"} and
+\code{"polity5"} use \link{pitf}; \code{"legacy"} and \code{"polity4"} use \link{pitf_p4}. Default
+is \code{"current"}.}
 
 \item{exclude_pmm_duplicates}{Whether to exclude versions of some measures
 found in Pemstein, Meserve, and Melton's replication dataset for their 2010
@@ -136,7 +153,7 @@ to retain); removes the Czech Republic from the period 1990-1992; removes
 North and South Korea from the 19th century; assumes Pakistan from 1950-1970
 must include Bangladesh, and Turkey from 1820-1913 refers to the Ottoman
 Empire; removes unified Vietnam from the period 1954-1975, Serbia from 1990,
-and Serbia and Montenegro from 1990 to 1991 (leaving only Yugoslabia from
+and Serbia and Montenegro from 1990 to 1991 (leaving only Yugoslavia from
 1990 to 1991).}
 
 \item{enforce_GW_enddates}{This enforces the Gleditsch-Ward enddates of
@@ -172,15 +189,16 @@ parentheses) the name of an earlier incarnation of the state: thus, they
 have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
 For details, see Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
+International Interactions 25: 393-413. The list can be found via the
+Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
 
 \item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.}
 
 \item{cown}{The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
-\url{http://www.correlatesofwar.org/data-sets/state-system-membership} for
+\url{https://correlatesofwar.org/data-sets/state-system-membership/} for
 the full list.}
 
 \item{in_GW_system}{Whether the state is "in system" (that is, is
@@ -202,14 +220,15 @@ output data frame also contains the following variables:
 
 \item{year}{The calendar year. Most measures of democracy reflect the
 country's situation as of 31 December of the year. If
-\code{keep_last_in_year = FALSE} (and \code{format = "long"}), a single
+\code{keep_only_last_in_year = FALSE} (and \code{output_format = "long"}),
+a single
 country year may nevertheless contain more than one measurement for some
 measures (e.g., \link{prc}).}
 
 \item{measure}{The name of the measure. (e.g., "blm", "fh_total_reversed").
 }
 
-\item{variable}{The numerical value of the measure, in the original scale
+\item{value}{The numerical value of the measure, in the original scale
 (if \code{scale_scores = FALSE}) or as a z-score (if \code{scale_scores =
   TRUE}).}
 
@@ -273,7 +292,7 @@ non-democracy and 1 indicating democracy. See the documentation for
 \link{bnr_extended} for details of how this variable extends \link{bnr}, filling in
 years of non-democracy back to 1913.}
 
-\item{bti}{The \link{bti} - Berteslmann Transformation Democracy Status index.
+\item{bti}{The \link{bti} - Bertelsmann Transformation Democracy Status index.
 Ranges from 1 to 10. }
 
 \item{doorenspleet}{The \link{doorenspleet} measure of democracy, with 1
@@ -355,7 +374,7 @@ large caveats - these measures are calculated on the basis of unclear
 instructions and may contain errors.}
 
 \item{pitf, pitf_binary}{The measures of democracy from \link{pitf}, converted
-to numberic values. Higher values indicate more democracy.}
+to numeric values. Higher values indicate more democracy.}
 
 \item{pmm_arat}{The measure of democracy in \link{arat_pmm}.}
 
@@ -410,7 +429,7 @@ documentation in the polity manual).}
 
 \item{polyarchy_original_polyarchy}{The original polyarchy scale
 (\code{poly}) in \link{polyarchy}, reversed so that higher values imply more
-democracy. The codebook suggests this was superceded by
+democracy. The codebook suggests this was superseded by
 \code{polyarchy_original_contestation}.}
 
 \item{prc}{The measure of democracy in \link{prc}, where 1 is non-democracy, 3
@@ -438,7 +457,7 @@ uds_2014_mean, uds_2014_median}{The mean and median posterior scores of the
 \link{uds} index (2010, 2011, and 2014 releases). Higher values are more
 democratic.}
 
-\item{ulfelder_democracy}{The dichotmous measure of democracy in
+\item{ulfelder_democracy}{The dichotomous measure of democracy in
 \link{ulfelder}.}
 
 \item{ulfelder_democracy_extended}{The dichotomous measure of democracy in
@@ -463,21 +482,21 @@ if it is a one-party democracy, 0 otherwise.}
 \item{vanhanen_participation}{The participation index from \link{vanhanen}.}
 
 \item{vaporeg_binary_strict}{A dichotomous measure of democracy from the
-\link{vaporeg} dataset. Coded as 1 if the regime is classified as a full
-democracy (VaPoReg_s = 10), and 0 otherwise. This strict definition
-excludes semi-democracies and other intermediate forms. See \link{vaporeg} for
-details.}
+\link{vaporeg} dataset. This is a package-derived strict democracy indicator:
+it is coded 1 only when \code{vaporeg_regtype_reports == 10}, 0 for all other
+observations that remain inside VaPoReg's binary democracy universe, and
+\code{NA} where VaPoReg does not classify the observation in that universe.
+See \link{vaporeg} for details.}
 
 \item{vaporeg_binary_non_strict}{A less restrictive dichotomous measure of
-democracy from \link{vaporeg}, coded as 1 if the regime is a full democracy
-(VaPoReg_s = 10) or a semi-democracy (VaPoReg_s = 20), and 0 otherwise. See
-\link{vaporeg} for details.}
+democracy from \link{vaporeg}. It is the package-facing version of the upstream
+\code{vaporeg_regtype_bindem} variable, coded 1 for Democracy and 0 for
+Non-Democracy. See \link{vaporeg} for details.}
 
 \item{vaporeg_trichotomous}{A trichotomous democracy measure from
-\link{vaporeg}, based on the VaPoReg_s classification. Coded as 2 for full
-democracies (10), 1 for semi-democracies (20), and 0 for all other regime
-types. This measure distinguishes between fully and partially democratic
-regimes. See \link{vaporeg} for details.}
+\link{vaporeg}. It is a package-facing recode of the upstream
+\code{vaporeg_regtype_triple} variable, with 2 for Democracy, 1 for Hybrid
+Regime, and 0 for Autocracy. See \link{vaporeg} for details.}
 
 \item{v2x_api}{The additive polyarchy index from \link{vdem}.}
 
@@ -497,11 +516,11 @@ regimes. See \link{vaporeg} for details.}
 \item{wgi_democracy}{The voice and accountability index from \link{wgi}.}
 
 \item{wth_democ1}{A dichotomous measure of democracy from
-\link{wahman_teorell_hadenius}, obtaining by coding 1 all democracies according
+\link{wahman_teorell_hadenius}, obtained by coding 1 all democracies according
 to the \code{regime1ny} variable, 0 all other regimes.}
 
 \item{wth_democrobust}{A dichotomous measure of democracy from
-\link{wahman_teorell_hadenius}, obtaining by coding 1 all democracies according
+\link{wahman_teorell_hadenius}, obtained by coding 1 all democracies according
 to the \code{regimenyrobust} variable, 0 all other regimes.}
 
 }
@@ -515,7 +534,7 @@ democracy datasets use some version of the Correlates of War system of
 states, though not consistently or entirely correctly (which is why this
 package uses \link{country_year_coder}). There are a number of alternatives,
 including the Gleditsch and Ward system, the Polity system (both based on
-the COW system, with some modifications), and the V-Dem system (wich is at
+the COW system, with some modifications), and the V-Dem system (which is at
 the basis of \link{LIED}, though \link{LIED} also draws on the idiosyncratic \link{PIPE}
 system). Freedom House and VaPoReg also develop their own panel of states,
 including many units considered non-sovereign by others. I have opted for
@@ -589,23 +608,24 @@ Gaza; \link{fh} includes the West Bank, Gaza, and "Israeli-Occupied Territories"
 (I'm assuming the occupied territories in Lebanon and Syria). I've labeled
 them as follows:\tabular{lllrr}{
    extended_country_name \tab original_country_name \tab dataset \tab min_year \tab max_year \cr
-   British Mandate of Palestine \tab Palestine \tab vaporeg \tab 1919 \tab 1947 \cr
    British Mandate of Palestine \tab Palestine/British Mandate \tab LIED \tab 1918 \tab 1947 \cr
-   British Mandate of Palestine \tab Palestine/British Mandate \tab vdem \tab 1918 \tab 1947 \cr
-   Israeli-Occupied Territories \tab Israeli-Occupied Territories \tab fh \tab 1996 \tab 2009 \cr
-   Palestine, State of \tab Palestine \tab eiu \tab 2006 \tab 2024 \cr
-   Palestine, State of \tab Palestine \tab vaporeg \tab 1948 \tab 2006 \cr
+   British Mandate of Palestine \tab Palestine/British Mandate \tab vdem \tab 1918 \tab 1948 \cr
+   Israel, occupied territories only \tab Israeli-Occupied Territories \tab fh \tab 1996 \tab 2009 \cr
+   Palestine, State of \tab Palestine \tab eiu \tab 2006 \tab 2025 \cr
    Palestine, State of \tab Palestinian Authority-Administered Territories \tab fh \tab 1996 \tab 2009 \cr
-   Palestine, State of \tab West Bank and Gaza \tab wgi_democracy \tab 1996 \tab 2023 \cr
    Palestine, State of \tab West Bank and Gaza Strip \tab fh \tab 1977 \tab 1995 \cr
-   Palestine, State of/Gaza Strip Only \tab Gaza Strip \tab fh \tab 2010 \tab 2024 \cr
-   Palestine, State of/Gaza Strip Only \tab Palestine Gaza Strip \tab vaporeg \tab 2007 \tab 2024 \cr
-   Palestine, State of/Gaza Strip Only \tab Palestine/Gaza \tab LIED \tab 1948 \tab 2023 \cr
-   Palestine, State of/Gaza Strip Only \tab Palestine/Gaza \tab vdem \tab 1948 \tab 2024 \cr
-   Palestine, State of/West Bank Only \tab Palestine West Bank \tab vaporeg \tab 2007 \tab 2024 \cr
-   Palestine, State of/West Bank Only \tab Palestine/West Bank \tab LIED \tab 1948 \tab 2023 \cr
-   Palestine, State of/West Bank Only \tab Palestine/West Bank \tab vdem \tab 1948 \tab 2024 \cr
-   Palestine, State of/West Bank Only \tab West Bank \tab fh \tab 2010 \tab 2024 \cr
+   Palestine, State of \tab Palestine \tab vaporeg \tab 1920 \tab 1947 \cr
+   Palestine, State of \tab West Bank and Gaza \tab wgi_democracy \tab 1996 \tab 2024 \cr
+   Palestine/Gaza \tab Gaza Strip \tab fh \tab 2010 \tab 2024 \cr
+   Palestine/Gaza \tab Gaza Strip \tab fh_electoral \tab 2017 \tab 2024 \cr
+   Palestine/Gaza \tab Palestine/Gaza \tab LIED \tab 1948 \tab 2025 \cr
+   Palestine/Gaza \tab Palestine, Gaza Strip \tab vaporeg \tab 1948 \tab 2025 \cr
+   Palestine/Gaza \tab Palestine/Gaza \tab vdem \tab 1948 \tab 2025 \cr
+   Palestine/West Bank \tab West Bank \tab fh \tab 2010 \tab 2024 \cr
+   Palestine/West Bank \tab West Bank \tab fh_electoral \tab 2017 \tab 2024 \cr
+   Palestine/West Bank \tab Palestine/West Bank \tab LIED \tab 1948 \tab 2025 \cr
+   Palestine/West Bank \tab Palestine, West Bank \tab vaporeg \tab 1948 \tab 2025 \cr
+   Palestine/West Bank \tab Palestine/West Bank \tab vdem \tab 1948 \tab 2025 \cr
 }
 
 
@@ -627,7 +647,7 @@ Republic and the later German Democratic Republic in 1945.
 # You can select only some datasets
 
 democracy_data_gwf <- generate_democracy_scores_dataset(
- datasets = c("gwf", "pacl", "bmr"), 
+ datasets = c("gwf", "pacl", "bmr"),
  output_format = "wide"
  )
 
@@ -647,17 +667,17 @@ generate_democracy_scores_dataset(
 democracy_data_long <- generate_democracy_scores_dataset(
  datasets = "pacl",
  force_redownload = TRUE
-) 
+)
 
 democracy_data_wide <- generate_democracy_scores_dataset(
  datasets = "pacl",
- force_redownload = TRUE, 
+ force_redownload = TRUE,
  output_format = "wide"
-) 
+)
 }
 }
 \references{
 D. Pemstein, S. Meserve, and J. Melton. "Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type". In: \emph{Political Analysis} 18.4 (2010), pp. 426-449. DOI: \href{https://dx.doi.org/10.1093/pan/mpq020}{10.1093/pan/mpq020}.
 
-D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: \href{https://dx.doi.org/10.7910/DVN/WWYOHU}{10.7910/DVN/WWYOHU}.
+D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM.
 }

@@ -8,12 +8,14 @@ create_panel(system = c("cow", "GW", "polity"), max_year = NULL)
 }
 \arguments{
 \item{system}{The state system to target. The possibilities are "cow"
-(\href{http://www.correlatesofwar.org/data-sets/state-system-membership}{Correlates of War}, the
+(\url{https://correlatesofwar.org/data-sets/state-system-membership/}, the
 default), "GW" (Gleditsch and Ward, from Gleditsch, Kristian S. & Michael
 D. Ward. 1999. "Interstate System Membership: A Revised List of the
 Independent States since 1816." International Interactions 25: 393-413,
-available at \url{http://privatewww.essex.ac.uk/~ksg/statelist.html}), or
-"polity" (for the \href{http://www.systemicpeace.org/polityproject.html}{Polity IV} system of states).}
+available via the Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}),
+or "polity" (for the \url{https://www.systemicpeace.org/polityproject.html}
+system of states).}
 
 \item{max_year}{The maximum year in the panel. If NULL, uses the current year.}
 }

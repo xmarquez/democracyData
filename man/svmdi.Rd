@@ -21,7 +21,7 @@ svmdi
 svmdi_2016
 }
 \description{
-This is the index described in K. Gründler and T. Krieger. \emph{Machine Learning Indices, Political Institutions, and Economic Development}. Report. CESifo Group Munich, 2018. An earlier
+This is the index described in K. Gründler and T. Krieger. \emph{Machine Learning Indices, Political Institutions, and Economic Development}. Report. CESifo Group Munich, 2018. \url{https://dx.doi.org/10.2139/ssrn.3171982}. An earlier
 version of this index (used in K. Gründler and T. Krieger. "Democracy and Growth: Evidence from a Machine Learning Indicator". In: \emph{European Journal of Political Economy} 45 (2016), pp. 85-107. DOI: \href{https://dx.doi.org/10.1016/j.ejpoleco.2016.05.005}{10.1016/j.ejpoleco.2016.05.005}.) is available as
 \link{svmdi_2016}; there are some important differences between the values of the
 earlier and later versions of the index.
@@ -81,15 +81,16 @@ parentheses) the name of an earlier incarnation of the state: thus, they
 have Germany (Prussia), Russia (Soviet Union), Madagascar (Malagasy), etc.
 For details, see Gleditsch, Kristian S. & Michael D. Ward. 1999. "Interstate
 System Membership: A Revised List of the Independent States since 1816."
-International Interactions 25: 393-413. The list can be found at
-\url{http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
+International Interactions 25: 393-413. The list can be found via the
+Wayback Machine at
+\url{https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html}.}
 
 \item{GWn}{Gleditsch and Ward's numeric country code, from the Gleditsch and
 Ward list of independent states.}
 
 \item{cown}{The Correlates of War numeric country code, 2016 version. This
 differs from Gleditsch and Ward's numeric country code in a few cases. See
-\url{http://www.correlatesofwar.org/data-sets/state-system-membership} for
+\url{https://correlatesofwar.org/data-sets/state-system-membership/} for
 the full list.}
 
 \item{in_GW_system}{Whether the state is "in system" (that is, is
@@ -143,8 +144,10 @@ Other democracy:
 \code{\link{utip}},
 \code{\link{vanhanen}},
 \code{\link{vaporeg}},
+\code{\link{vaporeg_2024}},
 \code{\link{vdem_simple}},
-\code{\link{wahman_teorell_hadenius}}
+\code{\link{wahman_teorell_hadenius}},
+\code{\link{wgi_legacy}}
 
 Other continuous democracy indexes: 
 \code{\link{arat_pmm}},
@@ -155,7 +158,8 @@ Other continuous democracy indexes:
 \code{\link{hadenius_pmm}},
 \code{\link{munck_pmm}},
 \code{\link{vanhanen}},
-\code{\link{vdem_simple}}
+\code{\link{vdem_simple}},
+\code{\link{wgi_legacy}}
 }
 \concept{continuous democracy indexes}
 \concept{democracy}
