@@ -80,9 +80,9 @@ middle category (updated in the
 There are also measures that distinguish among different “grades” of
 democracy, though the intervals between grades may not have a consistent
 meaning. For example, [Freedom
-House](https://xmarquez.github.io/reference/download_fh.md) ([House
-2025](#ref-fh2025)) distinguishes 14 different “grades” between the most
-unfree and the most free category, but it is not clear that the
+House](https://xmarquez.github.io/reference/download_fh.md) ([Freedom
+House 2025](#ref-fh2025)) distinguishes 14 different “grades” between
+the most unfree and the most free category, but it is not clear that the
 difference between one grade and another means the same across all
 grades. Note that the Freedom House objects bundled with this package
 (`fh`, `fh_full`, `fh_electoral`) are frozen at the 2025 release (data
@@ -265,14 +265,13 @@ Doorenspleet, Renske. 2000. “Reassessing the Three Waves of
 Democratization.” *World Politics* 52(03): 384–406.
 doi:[10.1017/S0043887100016580](https://doi.org/10.1017/S0043887100016580).
 
+Freedom House. 2025. *Freedom in the World 2025: The Uphill Battle to
+Safeguard Rights*. Freedom House.
+
 Geddes, Barbara, Joseph Wright, and Erica Frantz. 2014. “Autocratic
 Breakdown and Regime Transitions: A New Data Set.” *Perspectives on
 Politics* 12(1): 313–31.
 doi:[10.1017/S1537592714000851](https://doi.org/10.1017/S1537592714000851).
-
-House, Freedom. 2025. *Freedom in the World 2025: The Uphill Battle to
-Safeguard Rights*. Freedom House. Report.
-<https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights>.
 
 Hsu, Sara. 2008. “The Effect of Political Regimes on Inequality,
 1963-2002.” *UTIP Working Paper* (53).

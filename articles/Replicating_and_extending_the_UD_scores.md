@@ -260,7 +260,7 @@ will also work on column names that contain the following strings:
   and Krieger 2018](#ref-svmdi2018))
 - `e_v2x` (assumes it’s one of the “ordinal” indexes from the V-dem
   project, [Coppedge et al. 2026](#ref-vdem16codebook))
-- `fh` or `freedomhouse` \[assumes it’s from House
+- `fh` or `freedomhouse` \[assumes it’s from Freedom House
   ([2025](#ref-fh2025)); note that the packaged Freedom House objects
   (`fh`, `fh_full`, `fh_electoral`) are frozen at the 2025 release (data
   through 2024), because Freedom House moved to email-request
@@ -354,7 +354,7 @@ Code
 ``` r
 replication_2011_model@time
 #> TOTAL:   Data  Estep  Mstep     SE   Post 
-#>  5.245  0.300  0.595  3.422  0.902  0.001
+#>  5.453  0.314  0.620  3.539  0.954  0.001
 ```
 
 We can easily check that this model converges and that it accounts for
@@ -991,7 +991,7 @@ panel_model <- mirt(full_panel |> select(-any_of(identifiers)),
 
 panel_model@time
 #> TOTAL:   Data  Estep  Mstep     SE   Post 
-#>  8.440  0.053  1.112  6.197  1.047  0.001
+#>  8.356  0.062  1.174  6.042  1.046  0.000
 
 summary(panel_model)
 #>                                 F1    h2
@@ -1140,7 +1140,7 @@ panel_model <- mirt(full_panel |> select(-any_of(identifiers)),
 
 panel_model@time
 #> TOTAL:   Data  Estep  Mstep     SE   Post 
-#> 16.942  0.037  0.770 11.970  4.099  0.001
+#> 16.863  0.037  0.776 11.852  4.127  0.001
 
 summary(panel_model)
 #>                                 F1    h2
@@ -1509,6 +1509,9 @@ Doorenspleet, Renske. 2000. “Reassessing the Three Waves of
 Democratization.” *World Politics* 52(03): 384–406.
 doi:[10.1017/S0043887100016580](https://doi.org/10.1017/S0043887100016580).
 
+Freedom House. 2025. *Freedom in the World 2025: The Uphill Battle to
+Safeguard Rights*. Freedom House.
+
 Gasiorowski, Mark. 1996. “An Overview of the Political Regime Change
 Dataset.” *Comparative Political Studies* 29(4): 469–83.
 doi:[10.1177/0010414096029004004](https://doi.org/10.1177/0010414096029004004).
@@ -1541,10 +1544,6 @@ Report. <https://dx.doi.org/10.2139/ssrn.3171982>.
 
 Hadenius, Axel. 1992. *Democracy and Development*. New York: Cambridge
 University Press.
-
-House, Freedom. 2025. *Freedom in the World 2025: The Uphill Battle to
-Safeguard Rights*. Freedom House. Report.
-<https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights>.
 
 Hsu, Sara. 2008. “The Effect of Political Regimes on Inequality,
 1963-2002.” *UTIP Working Paper* (53).

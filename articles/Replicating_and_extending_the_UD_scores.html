@@ -596,7 +596,7 @@
 <code>e_v2x</code> <span class="citation" data-cites="vdem16codebook">(assumes it’s one of the “ordinal” indexes from the V-dem project, <a href="#ref-vdem16codebook" role="doc-biblioref">Coppedge et al. 2026</a>)</span>
 </li>
 <li>
-<code>fh</code> or <code>freedomhouse</code> [assumes it’s from <span class="citation" data-cites="fh2025">House (<a href="#ref-fh2025" role="doc-biblioref">2025</a>)</span>; note that the packaged Freedom House objects (<code>fh</code>, <code>fh_full</code>, <code>fh_electoral</code>) are frozen at the 2025 release (data through 2024), because Freedom House moved to email-request distribution in 2026]</li>
+<code>fh</code> or <code>freedomhouse</code> [assumes it’s from <span class="citation" data-cites="fh2025">Freedom House (<a href="#ref-fh2025" role="doc-biblioref">2025</a>)</span>; note that the packaged Freedom House objects (<code>fh</code>, <code>fh_full</code>, <code>fh_electoral</code>) are frozen at the 2025 release (data through 2024), because Freedom House moved to email-request distribution in 2026]</li>
 <li>
 <code>gwf</code> <span class="citation" data-cites="gwf2014">(assumes it’s from <a href="#ref-gwf2014" role="doc-biblioref">Geddes, Wright, and Frantz 2014</a> - the dichotomous democracy indicator only)</span>
 </li>
@@ -668,7 +668,7 @@
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">replication_2011_model</span><span class="op">@</span><span class="va">time</span></span>
 <span><span class="co">#&gt; TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">#&gt;  5.245  0.300  0.595  3.422  0.902  0.001</span></span></code></pre></div>
+<span><span class="co">#&gt;  5.453  0.314  0.620  3.539  0.954  0.001</span></span></code></pre></div>
 </details>
 </div>
 <p>We can easily check that this model converges and that it accounts for most of the variance in the democracy indexes:</p>
@@ -1197,7 +1197,7 @@ Figure 4: Latent democracy scores fit only from dichotomous raters (2-parameter
 <span></span>
 <span><span class="va">panel_model</span><span class="op">@</span><span class="va">time</span></span>
 <span><span class="co">#&gt; TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">#&gt;  8.440  0.053  1.112  6.197  1.047  0.001</span></span>
+<span><span class="co">#&gt;  8.356  0.062  1.174  6.042  1.046  0.000</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">panel_model</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                 F1    h2</span></span>
@@ -1596,7 +1596,7 @@ Figure 6: Latent democracy scores from a panel of long-coverage measures, const
 <span></span>
 <span><span class="va">panel_model</span><span class="op">@</span><span class="va">time</span></span>
 <span><span class="co">#&gt; TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">#&gt; 16.942  0.037  0.770 11.970  4.099  0.001</span></span>
+<span><span class="co">#&gt; 16.863  0.037  0.776 11.852  4.127  0.001</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">panel_model</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                 F1    h2</span></span>
@@ -2190,6 +2190,9 @@ Coppedge, Michael, and Wolfgang H. Reinicke. 1990. <span>“Measuring Polyarchy.
 <div id="ref-doorenspleet2000" class="csl-entry" role="listitem">
 Doorenspleet, Renske. 2000. <span>“Reassessing the Three Waves of Democratization.”</span> <em>World Politics</em> 52(03): 384–406. doi:<a href="https://doi.org/10.1017/S0043887100016580" class="external-link">10.1017/S0043887100016580</a>.
 </div>
+<div id="ref-fh2025" class="csl-entry" role="listitem">
+Freedom House. 2025. <em>Freedom in the World 2025: <span>The Uphill Battle</span> to <span>Safeguard Rights</span></em>. Freedom House.
+</div>
 <div id="ref-Gasiorowski1996" class="csl-entry" role="listitem">
 Gasiorowski, Mark. 1996. <span>“An Overview of the Political Regime Change Dataset.”</span> <em>Comparative Political Studies</em> 29(4): 469–83. doi:<a href="https://doi.org/10.1177/0010414096029004004" class="external-link">10.1177/0010414096029004004</a>.
 </div>
@@ -2210,9 +2213,6 @@ Gründler, Klaus, and Tommy Krieger. 2018. <em>Machine Learning Indices, Politic
 </div>
 <div id="ref-Hadenius1992" class="csl-entry" role="listitem">
 Hadenius, Axel. 1992. <em>Democracy and Development</em>. New York: Cambridge University Press.
-</div>
-<div id="ref-fh2025" class="csl-entry" role="listitem">
-House, Freedom. 2025. <em>Freedom in the World 2025: <span>The Uphill Battle</span> to <span>Safeguard Rights</span></em>. Freedom House. Report. <a href="https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights" class="external-link">https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights</a>.
 </div>
 <div id="ref-utip2008" class="csl-entry" role="listitem">
 Hsu, Sara. 2008. <span>“The Effect of Political Regimes on Inequality, 1963-2002.”</span> <em>UTIP Working Paper</em> (53).

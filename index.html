@@ -1041,20 +1041,20 @@
 <p>The package also offers a series of convenience functions to calculate latent variable indexes of democracy (following Pemstein, Meserve, and Melton’s <a href="https://www.jstor.org/stable/25792023?seq=1" class="external-link">2010 article</a> “Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type”); see the vignette on <a href="https://xmarquez.github.io/democracyData/articles/Replicating_and_extending_the_UD_scores.html">Replicating and Extending the UD scores of Pemstein, Meserve, and Melton</a>. It also contains a pre-calculated extended version of these scores, available as <code>extended_uds</code>:</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">extended_uds</span></span>
-<span><span class="co">#&gt; # A tibble: 41,979 × 20</span></span>
+<span><span class="co">#&gt; # A tibble: 41,986 × 20</span></span>
 <span><span class="co">#&gt;    extended_country_name   GWn  cown in_GW_system  year     z1 se_z1 z1_pct975</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;                 &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;        &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Abkhazia                396    NA FALSE         1997 0.0397 0.322     0.671</span></span>
-<span><span class="co">#&gt;  2 Abkhazia                396    NA FALSE         1998 0.0397 0.322     0.671</span></span>
-<span><span class="co">#&gt;  3 Abkhazia                396    NA FALSE         1999 0.0397 0.322     0.671</span></span>
-<span><span class="co">#&gt;  4 Abkhazia                396    NA FALSE         2000 0.0397 0.322     0.671</span></span>
-<span><span class="co">#&gt;  5 Abkhazia                396    NA FALSE         2001 0.0397 0.322     0.671</span></span>
-<span><span class="co">#&gt;  6 Abkhazia                396    NA FALSE         2002 0.0397 0.322     0.671</span></span>
-<span><span class="co">#&gt;  7 Abkhazia                396    NA FALSE         2003 0.0397 0.322     0.671</span></span>
-<span><span class="co">#&gt;  8 Abkhazia                396    NA FALSE         2004 0.0397 0.322     0.671</span></span>
-<span><span class="co">#&gt;  9 Abkhazia                396    NA FALSE         2005 0.244  0.320     0.871</span></span>
-<span><span class="co">#&gt; 10 Abkhazia                396    NA FALSE         2006 0.244  0.320     0.871</span></span>
-<span><span class="co">#&gt; # ℹ 41,969 more rows</span></span>
+<span><span class="co">#&gt;  1 Abkhazia                396    NA FALSE         1997 0.0419 0.320     0.670</span></span>
+<span><span class="co">#&gt;  2 Abkhazia                396    NA FALSE         1998 0.0419 0.320     0.670</span></span>
+<span><span class="co">#&gt;  3 Abkhazia                396    NA FALSE         1999 0.0419 0.320     0.670</span></span>
+<span><span class="co">#&gt;  4 Abkhazia                396    NA FALSE         2000 0.0419 0.320     0.670</span></span>
+<span><span class="co">#&gt;  5 Abkhazia                396    NA FALSE         2001 0.0419 0.320     0.670</span></span>
+<span><span class="co">#&gt;  6 Abkhazia                396    NA FALSE         2002 0.0419 0.320     0.670</span></span>
+<span><span class="co">#&gt;  7 Abkhazia                396    NA FALSE         2003 0.0419 0.320     0.670</span></span>
+<span><span class="co">#&gt;  8 Abkhazia                396    NA FALSE         2004 0.0419 0.320     0.670</span></span>
+<span><span class="co">#&gt;  9 Abkhazia                396    NA FALSE         2005 0.245  0.319     0.870</span></span>
+<span><span class="co">#&gt; 10 Abkhazia                396    NA FALSE         2006 0.245  0.319     0.870</span></span>
+<span><span class="co">#&gt; # ℹ 41,976 more rows</span></span>
 <span><span class="co">#&gt; # ℹ 12 more variables: z1_pct025 &lt;dbl&gt;, z1_adj &lt;dbl&gt;, z1_pct975_adj &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   z1_pct025_adj &lt;dbl&gt;, z1_as_prob &lt;dbl&gt;, z1_pct975_as_prob &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   z1_pct025_as_prob &lt;dbl&gt;, z1_adj_as_prob &lt;dbl&gt;, z1_pct975_adj_as_prob &lt;dbl&gt;,</span></span>
@@ -1085,22 +1085,22 @@
 <span><span class="co">#&gt; # A tibble: 16 × 3</span></span>
 <span><span class="co">#&gt;    country                      year my_measure</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;                       &lt;dbl&gt;      &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Germany                      2015    -0.334 </span></span>
-<span><span class="co">#&gt;  2 Germany                      1930    -1.21  </span></span>
-<span><span class="co">#&gt;  3 Germany                      1970     1.57  </span></span>
-<span><span class="co">#&gt;  4 Germany                      1945    -1.07  </span></span>
-<span><span class="co">#&gt;  5 East Germany                 1949     1.37  </span></span>
-<span><span class="co">#&gt;  6 Federal Republic of Germany  1992    -0.100 </span></span>
-<span><span class="co">#&gt;  7 Somaliland                   1990    -0.135 </span></span>
-<span><span class="co">#&gt;  8 Somalia                      1990     1.29  </span></span>
-<span><span class="co">#&gt;  9 Palestine                    1940     0.481 </span></span>
-<span><span class="co">#&gt; 10 Russia                       1917    -0.889 </span></span>
-<span><span class="co">#&gt; 11 Russia                       1912    -0.826 </span></span>
-<span><span class="co">#&gt; 12 USSR                         1922     1.62  </span></span>
-<span><span class="co">#&gt; 13 Republic of Vietnam          1975    -1.28  </span></span>
-<span><span class="co">#&gt; 14 Yugoslavia                   1990     0.0800</span></span>
-<span><span class="co">#&gt; 15 Yugoslavia                   1991     0.647 </span></span>
-<span><span class="co">#&gt; 16 Vietnam, South               1954     1.52</span></span></code></pre></div>
+<span><span class="co">#&gt;  1 Germany                      2015    -0.0464</span></span>
+<span><span class="co">#&gt;  2 Germany                      1930    -0.180 </span></span>
+<span><span class="co">#&gt;  3 Germany                      1970    -2.26  </span></span>
+<span><span class="co">#&gt;  4 Germany                      1945     0.645 </span></span>
+<span><span class="co">#&gt;  5 East Germany                 1949    -0.356 </span></span>
+<span><span class="co">#&gt;  6 Federal Republic of Germany  1992    -1.31  </span></span>
+<span><span class="co">#&gt;  7 Somaliland                   1990     1.47  </span></span>
+<span><span class="co">#&gt;  8 Somalia                      1990     1.16  </span></span>
+<span><span class="co">#&gt;  9 Palestine                    1940     0.736 </span></span>
+<span><span class="co">#&gt; 10 Russia                       1917    -0.547 </span></span>
+<span><span class="co">#&gt; 11 Russia                       1912     0.571 </span></span>
+<span><span class="co">#&gt; 12 USSR                         1922     1.88  </span></span>
+<span><span class="co">#&gt; 13 Republic of Vietnam          1975    -1.59  </span></span>
+<span><span class="co">#&gt; 14 Yugoslavia                   1990    -1.71  </span></span>
+<span><span class="co">#&gt; 15 Yugoslavia                   1991    -0.974 </span></span>
+<span><span class="co">#&gt; 16 Vietnam, South               1954    -0.535</span></span></code></pre></div>
 <p>and you then want to add state system information. <code>country_year_coder</code> does that for you!</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
@@ -1153,7 +1153,7 @@
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="right">2015</td>
-<td align="right">-0.3339655</td>
+<td align="right">-0.0464479</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -1167,7 +1167,7 @@
 <tr class="even">
 <td align="left">Germany</td>
 <td align="right">1930</td>
-<td align="right">-1.2103712</td>
+<td align="right">-0.1801533</td>
 <td align="left">Germany (Prussia)</td>
 <td align="right">255</td>
 <td align="right">255</td>
@@ -1181,7 +1181,7 @@
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="right">1970</td>
-<td align="right">1.5707061</td>
+<td align="right">-2.2629547</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -1195,7 +1195,7 @@
 <tr class="even">
 <td align="left">Germany</td>
 <td align="right">1945</td>
-<td align="right">-1.0686942</td>
+<td align="right">0.6454211</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -1209,7 +1209,7 @@
 <tr class="odd">
 <td align="left">East Germany</td>
 <td align="right">1949</td>
-<td align="right">1.3721177</td>
+<td align="right">-0.3560058</td>
 <td align="left">German Democratic Republic</td>
 <td align="right">265</td>
 <td align="right">265</td>
@@ -1223,7 +1223,7 @@
 <tr class="even">
 <td align="left">Federal Republic of Germany</td>
 <td align="right">1992</td>
-<td align="right">-0.1003748</td>
+<td align="right">-1.3052748</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -1237,7 +1237,7 @@
 <tr class="odd">
 <td align="left">Somaliland</td>
 <td align="right">1990</td>
-<td align="right">-0.1347330</td>
+<td align="right">1.4664221</td>
 <td align="left">Somaliland</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -1251,7 +1251,7 @@
 <tr class="even">
 <td align="left">Somalia</td>
 <td align="right">1990</td>
-<td align="right">1.2865279</td>
+<td align="right">1.1580588</td>
 <td align="left">Somalia</td>
 <td align="right">520</td>
 <td align="right">520</td>
@@ -1265,7 +1265,7 @@
 <tr class="odd">
 <td align="left">Palestine</td>
 <td align="right">1940</td>
-<td align="right">0.4813558</td>
+<td align="right">0.7356530</td>
 <td align="left">Palestine, State of</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -1279,7 +1279,7 @@
 <tr class="even">
 <td align="left">Russia</td>
 <td align="right">1917</td>
-<td align="right">-0.8893088</td>
+<td align="right">-0.5469135</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1293,7 +1293,7 @@
 <tr class="odd">
 <td align="left">Russia</td>
 <td align="right">1912</td>
-<td align="right">-0.8258849</td>
+<td align="right">0.5709414</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1307,7 +1307,7 @@
 <tr class="even">
 <td align="left">USSR</td>
 <td align="right">1922</td>
-<td align="right">1.6179244</td>
+<td align="right">1.8826326</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1321,7 +1321,7 @@
 <tr class="odd">
 <td align="left">Republic of Vietnam</td>
 <td align="right">1975</td>
-<td align="right">-1.2821376</td>
+<td align="right">-1.5934750</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
@@ -1335,7 +1335,7 @@
 <tr class="even">
 <td align="left">Yugoslavia</td>
 <td align="right">1990</td>
-<td align="right">0.0800486</td>
+<td align="right">-1.7109352</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1349,7 +1349,7 @@
 <tr class="odd">
 <td align="left">Yugoslavia</td>
 <td align="right">1991</td>
-<td align="right">0.6471602</td>
+<td align="right">-0.9740215</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1363,7 +1363,7 @@
 <tr class="even">
 <td align="left">Vietnam, South</td>
 <td align="right">1954</td>
-<td align="right">1.5236184</td>
+<td align="right">-0.5349674</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
@@ -1444,6 +1444,8 @@
 <p>Correlates of War Project (2017). “State System Membership List, V2016.” <a href="https://correlatesofwar.org" class="external-link uri">https://correlatesofwar.org</a>.</p>
 <p>Doorenspleet R (2000). “Reassessing the Three Waves of Democratization.” <em>World Politics</em>, <em>52</em>(03), 384-406. <a href="doi:10.1017/S0043887100016580" class="uri">doi:10.1017/S0043887100016580</a> <a href="https://doi.org/10.1017/S0043887100016580" class="external-link uri">https://doi.org/10.1017/S0043887100016580</a>.</p>
 <p>Freedom House (2024). “Freedom in the World 2024: The Mounting Damage of Flawed Elections and Armed Conflict.” Freedom House. <a href="https://freedomhouse.org/report/freedom-world/2024/mounting-damage-flawed-elections-and-armed-conflict" class="external-link uri">https://freedomhouse.org/report/freedom-world/2024/mounting-damage-flawed-elections-and-armed-conflict</a>.</p>
+<p>Freedom House (2025). “Freedom in the World 2025: The Uphill Battle to Safeguard Rights.” Freedom House.</p>
+<p>Freedom House (2026). “Freedom in the World 2026: The Growing Shadow of Autocracy.” Freedom House.</p>
 <p>Gasiorowski M (1996). “An Overview of the Political Regime Change Dataset.” <em>Comparative Political Studies</em>, <em>29</em>(4), 469-483. <a href="doi:10.1177/0010414096029004004" class="uri">doi:10.1177/0010414096029004004</a> <a href="https://doi.org/10.1177/0010414096029004004" class="external-link uri">https://doi.org/10.1177/0010414096029004004</a>.</p>
 <p>Geddes B, Wright J, Frantz E (2014). “Autocratic Breakdown and Regime Transitions: A New Data Set.” <em>Perspectives on Politics</em>, <em>12</em>(1), 313-331. <a href="doi:10.1017/S1537592714000851" class="uri">doi:10.1017/S1537592714000851</a> <a href="https://doi.org/10.1017/S1537592714000851" class="external-link uri">https://doi.org/10.1017/S1537592714000851</a>.</p>
 <p>Gleditsch KS, Ward MD (1999). “Interstate System Membership: A Revised List of Independent States since the Congress of Vienna.” <em>International Interactions</em>, <em>25</em>(4), 393-413. <a href="doi:10.1080/03050629908434958" class="uri">doi:10.1080/03050629908434958</a> <a href="https://doi.org/10.1080/03050629908434958" class="external-link uri">https://doi.org/10.1080/03050629908434958</a>.</p>
@@ -1453,7 +1455,6 @@
 <p>Gründler K, Krieger T (2021/05/17/). “Using Machine Learning for Measuring Democracy: A Practitioners Guide and a New Updated Dataset for 186 Countries from 1919 to 2019.” <em>European Journal of Political Economy</em>, 102047. <a href="doi:10.1016/j.ejpoleco.2021.102047" class="uri">doi:10.1016/j.ejpoleco.2021.102047</a> <a href="https://doi.org/10.1016/j.ejpoleco.2021.102047" class="external-link uri">https://doi.org/10.1016/j.ejpoleco.2021.102047</a>.</p>
 <p>Hadenius A (1992). <em>Democracy and Development</em>. Cambridge University Press, New York.</p>
 <p>Hadenius A, Teorell J (2007). “Pathways from Authoritarianism.” <em>Journal of Democracy</em>, <em>18</em>(1), 143-157. <a href="doi:10.1353/jod.2007.0009" class="uri">doi:10.1353/jod.2007.0009</a> <a href="https://doi.org/10.1353/jod.2007.0009" class="external-link uri">https://doi.org/10.1353/jod.2007.0009</a>.</p>
-<p>House F (2025). “Freedom in the World 2025: The Uphill Battle to Safeguard Rights.” Freedom House. <a href="https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights" class="external-link uri">https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights</a>.</p>
 <p>Hsu S (2008). “The Effect of Political Regimes on Inequality, 1963-2002.” <em>UTIP Working Paper</em>.</p>
 <p>Kailitz S (2013). “Classifying Political Regimes Revisited: Legitimation and Durability.” <em>Democratization</em>, <em>20</em>(1), 39-60.</p>
 <p>Kailitz S (2024). “Varieties of Political Regimes (va-PoReg). Codebook. Version 1.7.” Hannah Arendt Institute for Totalitarianism Studies, Dresden.</p>

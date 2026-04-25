@@ -373,6 +373,28 @@ Flawed Elections and Armed Conflict.” Freedom House.
       url = {https://freedomhouse.org/report/freedom-world/2024/mounting-damage-flawed-elections-and-armed-conflict},
     }
 
+Freedom House (2025). “Freedom in the World 2025: The Uphill Battle to
+Safeguard Rights.” Freedom House.
+
+    @TechReport{fh2025,
+      title = {Freedom in the World 2025: {{The Uphill Battle}} to {{Safeguard Rights}}},
+      author = {{Freedom House}},
+      year = {2025},
+      month = {feb},
+      institution = {Freedom House},
+    }
+
+Freedom House (2026). “Freedom in the World 2026: The Growing Shadow of
+Autocracy.” Freedom House.
+
+    @TechReport{fh2026,
+      title = {Freedom in the World 2026: {{The}} Growing Shadow of Autocracy},
+      author = {{Freedom House}},
+      year = {2026},
+      month = {mar},
+      institution = {Freedom House},
+    }
+
 Gasiorowski M (1996). “An Overview of the Political Regime Change
 Dataset.” *Comparative Political Studies*, **29**(4), 469–483.
 [doi:10.1177/0010414096029004004](https://doi.org/10.1177/0010414096029004004).
@@ -435,17 +457,6 @@ Instability.” *American Journal of Political Science*, **54**(1),
       number = {1},
       pages = {190--208},
       doi = {10.1111/j.1540-5907.2009.00426.x},
-    }
-
-Gorokhovskaia Y, Grothe C, Slipowitz A (2026). “Freedom in the World
-2026: The Growing Shadow of Autocracy.” Freedom House.
-
-    @TechReport{fh2026,
-      title = {Freedom in the World 2026: {{The}} Growing Shadow of Autocracy},
-      author = {Yana Gorokhovskaia and Cathryn Grothe and Amy Slipowitz},
-      year = {2026},
-      month = {mar},
-      institution = {Freedom House},
     }
 
 Gründler K, Krieger T (2016). “Democracy and Growth: Evidence from a
@@ -516,19 +527,6 @@ of Democracy*, **18**(1), 143–157.
       number = {1},
       pages = {143--157},
       doi = {10.1353/jod.2007.0009},
-    }
-
-House F (2025). “Freedom in the World 2025: The Uphill Battle to
-Safeguard Rights.” Freedom House.
-<https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights>.
-
-    @TechReport{fh2025,
-      type = {Report},
-      title = {Freedom in the World 2025: {{The Uphill Battle}} to {{Safeguard Rights}}},
-      author = {Freedom House},
-      year = {2025},
-      institution = {Freedom House},
-      url = {https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights},
     }
 
 Hsu S (2008). “The Effect of Political Regimes on Inequality,
