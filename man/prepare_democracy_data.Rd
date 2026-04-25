@@ -235,6 +235,10 @@ R. Doorenspleet. "Reassessing the Three Waves of Democratization".In: \emph{Worl
 
 Freedom House. \emph{Freedom in the World 2024: The Mounting Damage ofFlawed Elections and Armed Conflict}. Report. Freedom House, 2024.\verb{https://freedomhouse.org/report/freedom-world/2024/mounting-damage-flawed-elections-and-armed-conflict}.
 
+Freedom House. \emph{Freedom in the World 2025: The Uphill Battle toSafeguard Rights}. Tech. rep. Freedom House, Feb. 2025.
+
+Freedom House. \emph{Freedom in the World 2026: The Growing Shadow ofAutocracy}. Tech. rep. Freedom House, Mar. 2026.
+
 M. Gasiorowski. "An Overview of the Political Regime ChangeDataset". In: \emph{Comparative Political Studies} 29.4 (1996), pp. 469-483.DOI: 10.1177/0010414096029004004.
 
 B. Geddes, J. Wright, and E. Frantz. "Autocratic Breakdown andRegime Transitions: A New Data Set". In: _Perspectives on Politics_12.1 (2014), pp. 313-331. DOI: 10.1017/S1537592714000851.
@@ -242,8 +246,6 @@ B. Geddes, J. Wright, and E. Frantz. "Autocratic Breakdown andRegime Transitions
 K. S. Gleditsch and M. D. Ward. "Interstate System Membership: ARevised List of Independent States since the Congress of Vienna". In:\emph{International Interactions} 25.4 (1999), pp. 393-413. DOI:10.1080/03050629908434958.
 
 J. Goldstone, R. Bates, D. Epstein, et al. "A Global Model forForecasting Political Instability". In: \emph{American Journal of PoliticalScience} 54.1 (2010), pp. 190-208. DOI:10.1111/j.1540-5907.2009.00426.x.
-
-Y. Gorokhovskaia, C. Grothe, and A. Slipowitz. \emph{Freedom in theWorld 2026: The Growing Shadow of Autocracy}. Tech. rep. Freedom House,Mar. 2026.
 
 K. Gründler and T. Krieger. "Democracy and Growth: Evidence from aMachine Learning Indicator". In: \emph{European Journal of PoliticalEconomy} 45 (2016), pp. 85-107. DOI: 10.1016/j.ejpoleco.2016.05.005.
 
@@ -254,8 +256,6 @@ K. Gründler and T. Krieger. "Using Machine Learning for MeasuringDemocracy: A P
 A. Hadenius. \emph{Democracy and Development}. New York: CambridgeUniversity Press, 1992.
 
 A. Hadenius and J. Teorell. "Pathways from Authoritarianism". In:\emph{Journal of Democracy} 18.1 (2007), pp. 143-157. DOI:10.1353/jod.2007.0009.
-
-F. House. \emph{Freedom in the World 2025: The Uphill Battle toSafeguard Rights}. Report. Freedom House, 2025.\verb{https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights}.
 
 S. Hsu. "The Effect of Political Regimes on Inequality,1963-2002". In: \emph{UTIP Working Paper} (2008).
 
