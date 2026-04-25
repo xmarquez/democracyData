@@ -594,16 +594,45 @@ list(
   ## FH -----
 
   tar_target(
+    name = fh_country_status_source,
+    command = "data-raw/fh_country_status_1973_2026.xlsx",
+    format = "file",
+    description = "Track Freedom House country and territory ratings workbook"
+  ),
+
+  tar_target(
+    name = fh_full_source,
+    command = "data-raw/fh_all_data_2013_2026.xlsx",
+    format = "file",
+    description = "Track Freedom House detailed full-score workbook"
+  ),
+
+  tar_target(
+    name = fh_aggregate_source,
+    command = "data-raw/fh_aggregate_scores_2003_2026.xlsx",
+    format = "file",
+    description = "Track Freedom House aggregate score workbook"
+  ),
+
+  tar_target(
+    name = fh_electoral_source,
+    command = "data-raw/fh_electoral_2026.xlsx",
+    format = "file",
+    description = "Track Freedom House current electoral democracies workbook"
+  ),
+
+  tar_target(
     name = fh,
     command = {
       data
-      download_fh(
+      prepare_fh(
+        path = fh_country_status_source,
+        include_territories = TRUE,
         verbose = verbose,
-        include_in_output = include_in_output,
-        include_territories = TRUE
+        include_in_output = include_in_output
       )
     },
-    description = "Download and process archived Freedom House scores"
+    description = "Prepare current Freedom House country and territory scores"
   ),
 
   tar_target(
@@ -617,12 +646,14 @@ list(
     name = fh_electoral,
     command = {
       data
-      download_fh_electoral(
+      prepare_fh_electoral(
+        current_path = fh_electoral_source,
+        full_data = fh_full,
         verbose = verbose,
         include_in_output = include_in_output
       )
     },
-    description = "Download and process Freedom House electoral scores"
+    description = "Prepare Freedom House direct and recalculated electoral scores"
   ),
 
   tar_target(
@@ -636,9 +667,15 @@ list(
     name = fh_full,
     command = {
       data
-      download_fh_full(verbose = verbose, include_in_output = include_in_output)
+      prepare_fh_full(
+        detailed_path = fh_full_source,
+        aggregate_path = fh_aggregate_source,
+        status_path = fh_country_status_source,
+        verbose = verbose,
+        include_in_output = include_in_output
+      )
     },
-    description = "Download and process full archived Freedom House dataset"
+    description = "Prepare current Freedom House full and aggregate score data"
   ),
 
   tar_target(

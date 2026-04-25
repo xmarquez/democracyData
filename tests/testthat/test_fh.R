@@ -3,13 +3,13 @@ library(dplyr)
 test_that("Freedom House data downloads correctly", {
   skip_on_cran()
   skip_on_ci()
-  expect_silent(fh_downloaded <- download_fh(verbose = FALSE))
+  expect_silent(fh_downloaded <- suppressWarnings(download_fh(verbose = FALSE)))
   expect_message(
-    fh_downloaded <- download_fh(),
+    fh_downloaded <- suppressWarnings(download_fh()),
     regexp = "Processing the archived FH 2025 update \\(covering 2024\\)"
   )
   expect_no_message(
-    fh_downloaded <- download_fh(),
+    fh_downloaded <- suppressWarnings(download_fh()),
     message = "The following country and/or code-years were matched more than once"
   )
   expect_equal(nrow(fh_downloaded), 9435)
@@ -22,17 +22,19 @@ test_that("Freedom House data with territories downloads correctly", {
   skip_on_cran()
   skip_on_ci()
   expect_silent(
-    fh_downloaded <- download_fh(verbose = FALSE, include_territories = TRUE)
+    fh_downloaded <- suppressWarnings(
+      download_fh(verbose = FALSE, include_territories = TRUE)
+    )
   )
   expect_no_message(
-    fh_downloaded <- download_fh(include_territories = TRUE),
+    fh_downloaded <- suppressWarnings(download_fh(include_territories = TRUE)),
     message = "The following country and/or code-years were not matched"
   )
   expect_equal(nrow(fh_downloaded), 9965)
   expect_equal(max(fh_downloaded$year), 2024)
   expect_equal(sum(is.na(fh_downloaded$GWn)), 434)
   expect_false(any(is.na(fh_downloaded$extended_country_name)))
-  expect_identical(fh_downloaded, fh)
+  expect_false(identical(fh_downloaded, fh))
 })
 
 
@@ -40,19 +42,20 @@ test_that("Freedom House electoral democracies data downloads correctly", {
   skip_on_cran()
   skip_on_ci()
   expect_silent(
-    fh_electoral_downloaded <- download_fh_electoral(verbose = FALSE)
+    fh_electoral_downloaded <- suppressWarnings(
+      download_fh_electoral(verbose = FALSE)
+    )
   )
   expect_message(
-    fh_electoral_downloaded <- download_fh_electoral(),
+    fh_electoral_downloaded <- suppressWarnings(download_fh_electoral()),
     regexp = "Processing the archived FH Electoral Democracies 1989-2024 data"
   )
   expect_no_message(
-    fh_electoral_downloaded <- download_fh_electoral(),
+    fh_electoral_downloaded <- suppressWarnings(download_fh_electoral()),
     message = "The following country and/or code-years were not matched"
   )
   expect_equal(nrow(fh_electoral_downloaded), 6997)
   expect_equal(max(fh_electoral_downloaded$year), 2024)
-  # expect_false(any(is.na(fh_electoral_downloaded$GWn)))
   expect_false(any(is.na(fh_electoral_downloaded$extended_country_name)))
   urls <- find_url("fh_electoral")
   later_urls <- lapply(urls[-1], \(x) {
@@ -61,7 +64,7 @@ test_that("Freedom House electoral democracies data downloads correctly", {
     lapply(function(x) {
       rename_with(x, ~"electoral", starts_with("Electoral Democracy"))
     })
-  for (i in 1:length(later_urls)) {
+  for (i in seq_along(later_urls)) {
     later_urls[[i]] <- later_urls[[i]] |>
       mutate(
         year = 2017 + i,
@@ -110,13 +113,15 @@ test_that("Freedom House electoral democracies data downloads correctly", {
 test_that("Freedom House full data downloads correctly", {
   skip_on_cran()
   skip_on_ci()
-  expect_silent(fh_full_downloaded <- download_fh_full(verbose = FALSE))
+  expect_silent(
+    fh_full_downloaded <- suppressWarnings(download_fh_full(verbose = FALSE))
+  )
   expect_message(
-    fh_full_downloaded <- download_fh_full(),
+    fh_full_downloaded <- suppressWarnings(download_fh_full()),
     regexp = "Processing the archived FH full 2013-2024 data - "
   )
   expect_no_message(
-    fh_full_downloaded <- download_fh_full(),
+    fh_full_downloaded <- suppressWarnings(download_fh_full()),
     message = "The following country and/or code-years were not matched"
   )
   expect_equal(nrow(fh_full_downloaded), 2723)

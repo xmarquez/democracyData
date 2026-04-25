@@ -677,15 +677,13 @@ download_fh <- function(
 
   nYears <- (ncol(data) - 1) / 3
   var_years <- expand.grid(
-    x = c('pr', 'cl', 'status'),
+    x = c("pr", "cl", "status"),
     y = c(1972:1980, 1982:(1972 + nYears))
   )
-  names(data) <- c('country', paste(var_years$x, var_years$y, sep = "_"))
+  names(data) <- c("country", paste(var_years$x, var_years$y, sep = "_"))
 
   data$pr_1972 <- suppressWarnings(as.double(data$pr_1972))
   data$cl_1972 <- suppressWarnings(as.double(data$cl_1972))
-
-  # melt the data, split the variable_year column and voila!
 
   data <- data |>
     tidyr::pivot_longer(
@@ -854,8 +852,6 @@ download_fh_electoral <- function(verbose = TRUE, return_raw = FALSE, ...) {
   }
 
   names(data) <- c("country", paste("electoral", 1989:2016, sep = "_"))
-
-  # melt the data, split the variable_year column and voila!
 
   data <- data |>
     tidyr::pivot_longer(

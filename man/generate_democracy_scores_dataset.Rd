@@ -304,9 +304,9 @@ based on five categories: electoral process and pluralism; civil liberties;
 the functioning of government; political participation; and political
 culture" which form "one interrelated whole"}
 
-\item{fh_electoral}{The \link{fh_electoral} measure of electoral democracy, with
-0 indicating a lack of electoral democracy, 1 indicating electoral
-democracy status.}
+\item{fh_electoral}{The direct \link{fh_electoral} Freedom House measure of
+electoral democracy, with 0 indicating a lack of electoral democracy and 1
+indicating electoral democracy status.}
 
 \item{fh_total_reversed}{The \href{fh}{Freedom House} combined measure of
 political and civil rights, reversed, so that 0 is least free and 12 is
@@ -616,13 +616,13 @@ them as follows:\tabular{lllrr}{
    Palestine, State of \tab West Bank and Gaza Strip \tab fh \tab 1977 \tab 1995 \cr
    Palestine, State of \tab Palestine \tab vaporeg \tab 1920 \tab 1947 \cr
    Palestine, State of \tab West Bank and Gaza \tab wgi_democracy \tab 1996 \tab 2024 \cr
-   Palestine/Gaza \tab Gaza Strip \tab fh \tab 2010 \tab 2024 \cr
-   Palestine/Gaza \tab Gaza Strip \tab fh_electoral \tab 2017 \tab 2024 \cr
+   Palestine/Gaza \tab Gaza Strip \tab fh \tab 2010 \tab 2025 \cr
+   Palestine/Gaza \tab Gaza Strip \tab fh_electoral \tab 2017 \tab 2025 \cr
    Palestine/Gaza \tab Palestine/Gaza \tab LIED \tab 1948 \tab 2025 \cr
    Palestine/Gaza \tab Palestine, Gaza Strip \tab vaporeg \tab 1948 \tab 2025 \cr
    Palestine/Gaza \tab Palestine/Gaza \tab vdem \tab 1948 \tab 2025 \cr
-   Palestine/West Bank \tab West Bank \tab fh \tab 2010 \tab 2024 \cr
-   Palestine/West Bank \tab West Bank \tab fh_electoral \tab 2017 \tab 2024 \cr
+   Palestine/West Bank \tab West Bank \tab fh \tab 2010 \tab 2025 \cr
+   Palestine/West Bank \tab West Bank \tab fh_electoral \tab 2017 \tab 2025 \cr
    Palestine/West Bank \tab Palestine/West Bank \tab LIED \tab 1948 \tab 2025 \cr
    Palestine/West Bank \tab Palestine, West Bank \tab vaporeg \tab 1948 \tab 2025 \cr
    Palestine/West Bank \tab Palestine/West Bank \tab vdem \tab 1948 \tab 2025 \cr

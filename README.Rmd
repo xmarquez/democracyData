@@ -72,7 +72,7 @@ fh_downloaded
 
 ```
 
-This downloads the latest archived update of the "Freedom in the World" dataset (1972-2024, corresponding to the 2025 report), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables `fh_total` and `fh_total_reversed`, and adds state system information, including a standardized country name, the [Gleditsch-Ward](https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html) country code and the [Correlates of War](https://correlatesofwar.org/data-sets/state-system-membership/) country code. You can also, however, use the archived version (`fh`):
+This downloads the latest archived update of the "Freedom in the World" dataset (1972-2024, corresponding to the 2025 report), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables `fh_total` and `fh_total_reversed`, and adds state system information, including a standardized country name, the [Gleditsch-Ward](https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html) country code and the [Correlates of War](https://correlatesofwar.org/data-sets/state-system-membership/) country code. You can also, however, use the packaged version (`fh`), which tracks the newer 2026 workbook:
 
 
 ```{r}
@@ -82,7 +82,7 @@ fh
 
 ```
 
-(In fact, since Freedom House no longer offers freely available versions of their latest updated data, it is best to simply use the archived data). Other democracy datasets can often also be "re-downloaded" from the websites of their creators or maintainers if required. For example, one can either access PACL directly by typing
+(In fact, since Freedom House no longer offers freely available versions of their latest updated data, it is usually best to use the packaged data if you need the most recent Freedom House snapshot, and the archived downloader if you specifically want the last public release). Other democracy datasets can often also be "re-downloaded" from the websites of their creators or maintainers if required. For example, one can either access PACL directly by typing
 
 ```{r}
 pacl

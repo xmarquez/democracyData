@@ -243,9 +243,9 @@
 #'   the functioning of government; political participation; and political
 #'   culture" which form "one interrelated whole"}
 #'
-#'   \item{fh_electoral}{The [fh_electoral] measure of electoral democracy, with
-#'   0 indicating a lack of electoral democracy, 1 indicating electoral
-#'   democracy status.}
+#'   \item{fh_electoral}{The direct [fh_electoral] Freedom House measure of
+#'   electoral democracy, with 0 indicating a lack of electoral democracy and 1
+#'   indicating electoral democracy status.}
 #'
 #'   \item{fh_total_reversed}{The [Freedom House](fh) combined measure of
 #'   political and civil rights, reversed, so that 0 is least free and 12 is
@@ -556,13 +556,13 @@
 #' |Palestine, State of                 |West Bank and Gaza Strip                       |fh            |     1977|     1995|
 #' |Palestine, State of                 |Palestine                                      |vaporeg       |     1920|     1947|
 #' |Palestine, State of                 |West Bank and Gaza                             |wgi_democracy |     1996|     2024|
-#' |Palestine/Gaza                      |Gaza Strip                                     |fh            |     2010|     2024|
-#' |Palestine/Gaza                      |Gaza Strip                                     |fh_electoral  |     2017|     2024|
+#' |Palestine/Gaza                      |Gaza Strip                                     |fh            |     2010|     2025|
+#' |Palestine/Gaza                      |Gaza Strip                                     |fh_electoral  |     2017|     2025|
 #' |Palestine/Gaza                      |Palestine/Gaza                                 |LIED          |     1948|     2025|
 #' |Palestine/Gaza                      |Palestine, Gaza Strip                          |vaporeg       |     1948|     2025|
 #' |Palestine/Gaza                      |Palestine/Gaza                                 |vdem          |     1948|     2025|
-#' |Palestine/West Bank                 |West Bank                                      |fh            |     2010|     2024|
-#' |Palestine/West Bank                 |West Bank                                      |fh_electoral  |     2017|     2024|
+#' |Palestine/West Bank                 |West Bank                                      |fh            |     2010|     2025|
+#' |Palestine/West Bank                 |West Bank                                      |fh_electoral  |     2017|     2025|
 #' |Palestine/West Bank                 |Palestine/West Bank                            |LIED          |     1948|     2025|
 #' |Palestine/West Bank                 |Palestine, West Bank                           |vaporeg       |     1948|     2025|
 #' |Palestine/West Bank                 |Palestine/West Bank                            |vdem          |     1948|     2025|
@@ -1009,7 +1009,6 @@ fix_PIPE <- function(democracy_data) {
 }
 
 enforce_enddates <- function(democracy_data, target_panel = "GW") {
-  browser()
   DEBUG <- FALSE
 
   # Check for duplicates

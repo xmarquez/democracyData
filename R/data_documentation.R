@@ -769,10 +769,9 @@
 #' Freedom House "Freedom in the World" data
 #'
 #' `fh_pmm` archives the Freedom House data included in `r roxygen_cite("pmm2013")`,
-#' while `fh` archives the 2025 edition of the Freedom
-#' in the World data (updated to 2024). Freedom House no longer makes new versions
-#' of the data available for free download; contact <research@freedomhouse.org> for
-#' details. Use [download_fh] to download the older 2025 dataset directly.
+#' while `fh` archives the Freedom in the World 2026 workbook
+#' (updated to 2025). Use [download_fh] to redownload the current packaged
+#' source workbook directly.
 #'
 #' @section Variables:
 #'
@@ -794,17 +793,17 @@
 #'   actual FH data). To convert to the same scale as `pmm_freedomhouse`, divide by two and add 1,
 #'   or average `pr` and `cl` and then reverse.}
 #'
-#'   \item{pr}{The political rights scores (from 1 to 7) in the archived Freedom House data (`fh`).}
+#'   \item{pr}{The political rights scores (from 1 to 7) in the packaged Freedom House data (`fh`).}
 #'
-#'   \item{cl}{The civil rights scores (from 1 to 7) in the archived Freedom House data (`fh`).}
+#'   \item{cl}{The civil rights scores (from 1 to 7) in the packaged Freedom House data (`fh`).}
 #'
-#'   \item{status}{The status of the country in the archived Freedom House data (Free, Partly Free, Not Free).}
+#'   \item{status}{The status of the country in the packaged Freedom House data (Free, Partly Free, Not Free).}
 #'
 #'   \item{fh_total}{The sum of the political rights and civil liberties scores. Ranges from 2 to 14.}
 #'   }
 #'
 #' @details
-#' The Freedom House dataset released in 2025 is different from the archived
+#' The packaged Freedom House dataset is different from the archived
 #' PMM data for 49 country years:
 #'
 #' ```{r}
@@ -828,7 +827,9 @@
 "fh_pmm"
 
 #'@rdname fh_pmm
-#'@source `r roxygen_cite("fh2025")`
+#'@source Freedom House, *Freedom in the World* country and territory ratings
+#'  workbook. Original data and methodology are available at
+#'  <`r find_url("fh_2026", "documentation")`>.
 "fh"
 
 # Hadenius ----------------------------------------------------------------

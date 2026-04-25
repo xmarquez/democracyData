@@ -8,12 +8,14 @@
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 6438 rows and 7 columns.
 
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 9965 rows and 11 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 12108 rows and 11 columns.
 }
 \source{
 D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM.
 
-F. House. \emph{Freedom in the World 2025: The Uphill Battle to Safeguard Rights}. Report. Freedom House, 2025. \url{https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights}.
+Freedom House, \emph{Freedom in the World} country and territory ratings
+workbook. Original data and methodology are available at
+\url{https://freedomhouse.org/reports/freedom-world/freedom-world-research-methodology}.
 }
 \usage{
 fh_pmm
@@ -22,13 +24,12 @@ fh
 }
 \description{
 \code{fh_pmm} archives the Freedom House data included in D. Pemstein, S. A. Meserve, and J. Melton. \emph{Replication Data for: Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type}. 2013. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM.,
-while \code{fh} archives the 2025 edition of the Freedom
-in the World data (updated to 2024). Freedom House no longer makes new versions
-of the data available for free download; contact \href{mailto:research@freedomhouse.org}{research@freedomhouse.org} for
-details. Use \link{download_fh} to download the older 2025 dataset directly.
+while \code{fh} archives the Freedom in the World 2026 workbook
+(updated to 2025). Use \link{download_fh} to redownload the current packaged
+source workbook directly.
 }
 \details{
-The Freedom House dataset released in 2025 is different from the archived
+The packaged Freedom House dataset is different from the archived
 PMM data for 49 country years:
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{fh |>
@@ -116,11 +117,11 @@ from 0 to 12, with higher values being more democratic (the opposite of the
 actual FH data). To convert to the same scale as \code{pmm_freedomhouse}, divide by two and add 1,
 or average \code{pr} and \code{cl} and then reverse.}
 
-\item{pr}{The political rights scores (from 1 to 7) in the archived Freedom House data (\code{fh}).}
+\item{pr}{The political rights scores (from 1 to 7) in the packaged Freedom House data (\code{fh}).}
 
-\item{cl}{The civil rights scores (from 1 to 7) in the archived Freedom House data (\code{fh}).}
+\item{cl}{The civil rights scores (from 1 to 7) in the packaged Freedom House data (\code{fh}).}
 
-\item{status}{The status of the country in the archived Freedom House data (Free, Partly Free, Not Free).}
+\item{status}{The status of the country in the packaged Freedom House data (Free, Partly Free, Not Free).}
 
 \item{fh_total}{The sum of the political rights and civil liberties scores. Ranges from 2 to 14.}
 }

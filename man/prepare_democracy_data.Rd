@@ -243,6 +243,8 @@ K. S. Gleditsch and M. D. Ward. "Interstate System Membership: ARevised List of 
 
 J. Goldstone, R. Bates, D. Epstein, et al. "A Global Model forForecasting Political Instability". In: \emph{American Journal of PoliticalScience} 54.1 (2010), pp. 190-208. DOI:10.1111/j.1540-5907.2009.00426.x.
 
+Y. Gorokhovskaia, C. Grothe, and A. Slipowitz. \emph{Freedom in theWorld 2026: The Growing Shadow of Autocracy}. Tech. rep. Freedom House,Mar. 2026.
+
 K. Gründler and T. Krieger. "Democracy and Growth: Evidence from aMachine Learning Indicator". In: \emph{European Journal of PoliticalEconomy} 45 (2016), pp. 85-107. DOI: 10.1016/j.ejpoleco.2016.05.005.
 
 K. Gründler and T. Krieger. \emph{Machine Learning Indices, PoliticalInstitutions, and Economic Development}. Report. CESifo Group Munich,2018. \verb{https://dx.doi.org/10.2139/ssrn.3171982}.

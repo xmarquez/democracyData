@@ -27,6 +27,7 @@ vanhanen,https://services.fsd.tuni.fi/catalogue/receipt?id=7e6339d1-7e2c-45e4-80
 bollen_pmm,,https://www.icpsr.umich.edu/web/ICPSR/studies/2532/publications
 eiu,,https://www.eiu.com/n/global-themes/democracy-index/
 fh_2024,https://freedomhouse.org/sites/default/files/2025-02/Country_and_Territory_Ratings_and_Statuses_FIW_1973-2024.xlsx,https://freedomhouse.org/report/freedom-world
+fh_2026,https://raw.githubusercontent.com/xmarquez/democracyData/master/data-raw/fh_country_status_1973_2026.xlsx,https://freedomhouse.org/reports/freedom-world/freedom-world-research-methodology
 fh_electoral,https://freedomhouse.org/sites/default/files/FIW2017_Data.zip,https://freedomhouse.org/report/freedom-world
 fh_electoral,https://freedomhouse.org/sites/default/files/List%20of%20Electoral%20Democracies%20FIW%202018.xlsx,https://freedomhouse.org/report/freedom-world
 fh_electoral,https://freedomhouse.org/sites/default/files/List_of_Electoral_Democracies_FIW19.xls,https://freedomhouse.org/report/freedom-world
@@ -34,7 +35,10 @@ fh_electoral,https://freedomhouse.org/sites/default/files/2020-02/2020_List_of_E
 fh_electoral,https://freedomhouse.org/sites/default/files/2022-03/List_of_Electoral_Democracies_FIW22.xlsx,https://freedomhouse.org/report/freedom-world
 fh_electoral,https://freedomhouse.org/sites/default/files/2023-02/List_of_Electoral_Democracies_FIW23.xlsx,https://freedomhouse.org/report/freedom-world
 fh_electoral,https://freedomhouse.org/sites/default/files/2025-02/List_of_Electoral_Democracies_FIW24.xlsx,https://freedomhouse.org/report/freedom-world
+fh_electoral_current,https://raw.githubusercontent.com/xmarquez/democracyData/master/data-raw/fh_electoral_2026.xlsx,https://freedomhouse.org/report/freedom-world
 fh_full_2025,https://freedomhouse.org/sites/default/files/2025-02/All_data_FIW_2013-2024.xlsx,https://freedomhouse.org/report/freedom-world
+fh_full_2026,https://raw.githubusercontent.com/xmarquez/democracyData/master/data-raw/fh_all_data_2013_2026.xlsx,https://freedomhouse.org/reports/freedom-world/freedom-world-research-methodology
+fh_aggregate_2026,https://raw.githubusercontent.com/xmarquez/democracyData/master/data-raw/fh_aggregate_scores_2003_2026.xlsx,https://freedomhouse.org/reports/freedom-world/freedom-world-research-methodology
 wgi,https://www.worldbank.org/content/dam/sites/govindicators/doc/wgidataset_with_sourcedata-2025.xlsx,https://www.worldbank.org/en/publication/worldwide-governance-indicators
 polity_annual,https://www.systemicpeace.org/inscr/p5v2018.sav,https://www.systemicpeace.org/inscrdata.html
 mainwaring,,https://web.archive.org/web/20120119050029/http://kellogg.nd.edu/scottmainwaring/Political_Regimes.pdf
