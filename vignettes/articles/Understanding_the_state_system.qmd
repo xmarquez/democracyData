@@ -46,7 +46,7 @@ This full list is as follows:
 
 ```{r}
 #| label: tbl-cow-membership
-#| tbl-cap: "Membership in the Correlates of War state system. Data from "
+#| tbl-cap: "Membership in the Correlates of War state system. Data from @correlatesofwarprojectStateSystemMembership2017."
 state_system_data |>
   filter(cow_membership) |>
   select(contains("cow")) |>
@@ -71,7 +71,7 @@ state_system_data |>
 
 ```{r}
 #| label: tbl-differences-cow-polity
-#| tbl-cap: "Differences between the state membership lists of COW and Gleditsch and Ward"
+#| tbl-cap: "Differences between the state membership lists of COW and Polity"
 state_system_data |> 
   filter((cown != polity_ccode) | (!is.na(cown) & is.na(polity_ccode)) | (is.na(cown) & !is.na(polity_ccode)))  |>
   select(cow_country_name, cown, polity_country_name, polity_ccode, cow_startdate, cow_enddate, polity_startdate, polity_enddate) |>
@@ -82,7 +82,7 @@ state_system_data |>
 
 ```{r}
 #| label: tbl-differences-cow-polity-gw-dates
-#| tbl-cap: "Differences between the state membership lists of COW and Gleditsch and Ward"
+#| tbl-cap: "Differences in start and end dates between COW and Polity, restricted to states in the Gleditsch-Ward system"
 state_system_data |> 
   filter((cown == polity_ccode),
          GW_membership)  |>
@@ -165,4 +165,7 @@ vaporeg |>
   knitr::kable()
 ```
 
-When generating a comprehensive dataset of all democracy measures using [generate_democracy_scores_dataset], some decisions about the composition of the broader universe of states have to be made, and in particular about the end dates of some states. The main problem are states that "split" and "reunify", like Germany. 
+When generating a comprehensive dataset of all democracy measures using [generate_democracy_scores_dataset], some decisions about the composition of the broader universe of states have to be made, and in particular about the end dates of some states. The hardest cases are states that "split" and "reunify": Germany (1949 split, 1990 unification), Yemen (1990 unification), Vietnam (1976 unification), and Yugoslavia / its successors, where COW, Gleditsch-Ward, and Polity all draw the boundaries slightly differently.
+
+This package resolves these cases through the internal `democracyData:::data` table, which is the canonical reconciliation: it stores one row per `extended_country_name`/`GWn`/year combination together with start and end dates from each source system and a set of `_membership` flags (`cow_membership`, `GW_membership`, `polity_membership`). The user-facing function [country_year_coder] uses this table to attach standardised country codes, names, and state-system membership flags to any data frame with country and year columns; it also flags country-years where the source systems disagree, so users can decide which convention to follow rather than inheriting one silently. For an analysis that needs to follow a particular state system end-to-end (e.g. COW for a study using Correlates of War covariates), filter on the corresponding `_membership` column after coding; for the broadest possible coverage, including limited-suffrage and non-sovereign units, use `extended_country_name` directly without filtering.
+

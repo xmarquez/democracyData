@@ -485,7 +485,7 @@ Or suppose we're interested in a particular coverage period, including only meas
 
 ```{r}
 #| label: fig-2018-coverage-panel
-#| fig-cap: "Latent democracy scores from a panel restricted to measures with data through 2018."
+#| fig-cap: "Latent democracy scores from a panel restricted to measures with data through 2018. Holding the set of input raters fixed across the entire window prevents the arbitrary level shifts that @svmdi2021 flag, at the cost of dropping country-years that fall outside any rater's coverage."
 full_panel <- all_dem |>
   pivot_longer(-any_of(identifiers), values_drop_na = TRUE) |>
   filter(name %in% name[year == 2018]) |>
@@ -610,6 +610,17 @@ prob_more(extended_scores,
 
 ```
 
+
+## When to use which score
+
+The four latent-variable indexes in this article have different uses:
+
+- **Replication score** (`replication_2011_model` above): you would only use this if you need to reproduce a published analysis that relied on the 2010 or 2011 UDS release. For new work, the original UDS is now out of date. You can at any rate use the archived `uds_2010`, `uds_2011`, or `uds_2014` objects in this package.
+- **`extended_uds`** (the precomputed object shipped with the package): the right default for most users. It uses the widest set of contemporary raters, including the refreshed VaPoReg and the rebuilt WGI, and covers the longest country-year span. Use this when you want a single democracy score for a panel of countries and years and don't have a specific reason to prefer something else.
+- **Dichotomous-only score**: use when you want a latent score that depends only on the strict "is this regime a democracy?" judgments -- e.g., when an analysis pairs a continuous measure with a regime-classification literature (Boix-Miller-Rosato, Cheibub-Gandhi-Vreeland, Geddes-Wright-Frantz, etc.). It avoids the implicit weighting that more graded indexes (Polity, V-Dem) impose.
+- **Fixed panel** (the long-coverage and 2018-coverage panels above): use when level comparability over time matters more than coverage -- for instance, when documenting a trend in democracy over the 20th century. As @svmdi2021 note, latent scores built from changing rater sets can show artefactual level shifts at the points where new raters enter; holding the rater panel fixed eliminates those shifts at the cost of dropping country-years that no longer have full coverage.
+
+If you are unsure, start with `extended_uds` and switch to a fixed panel only if you can see the rater-entry artefacts contaminating your time series.
 
 # References
 
