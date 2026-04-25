@@ -268,6 +268,8 @@ This full list is as follows:
 | Zimbabwe                         | 1965-11-11    | NA          | TRUE           |  552 | ZIM  |
 
 Table 1: Membership in the Correlates of War state system. Data from
+Correlates of War Project
+([2017](#ref-correlatesofwarprojectStateSystemMembership2017)).
 
 The list includes 217 distinct units, 172 of which still exist. 24 of
 the 217 countries have “gaps” in statehood - they were incorporated into
@@ -333,7 +335,7 @@ Gleditsch and Ward
 | NA                  |       NA | United Provinces       |          89 | NA             | NA           | 1824-01-01        | 1838-12-31      |
 
 Table 3: Differences between the state membership lists of COW and
-Gleditsch and Ward
+Polity
 
 | Country name in COW              | COW code | Country name in Polity   | Polity code | COW start date | COW end date | Polity start date | Polity end date |
 |:---------------------------------|---------:|:-------------------------|------------:|:---------------|:-------------|:------------------|:----------------|
@@ -578,8 +580,8 @@ Gleditsch and Ward
 | Zanzibar                         |      511 | NA                       |         511 | 1963-12-19     | 1964-04-26   | NA                | NA              |
 | Zimbabwe                         |      552 | Zimbabwe                 |         552 | 1965-11-11     | NA           | 1970-04-18        | NA              |
 
-Table 4: Differences between the state membership lists of COW and
-Gleditsch and Ward
+Table 4: Differences in start and end dates between COW and Polity,
+restricted to states in the Gleditsch-Ward system
 
 Across other measurement projects, there are also 145 units that are
 either non-sovereign or fail to meet the criteria for membership in the
@@ -860,8 +862,28 @@ Table 10: VaPoReg countries not in the COW system
 When generating a comprehensive dataset of all democracy measures using
 \[generate_democracy_scores_dataset\], some decisions about the
 composition of the broader universe of states have to be made, and in
-particular about the end dates of some states. The main problem are
-states that “split” and “reunify”, like Germany.
+particular about the end dates of some states. The hardest cases are
+states that “split” and “reunify”: Germany (1949 split, 1990
+unification), Yemen (1990 unification), Vietnam (1976 unification), and
+Yugoslavia / its successors, where COW, Gleditsch-Ward, and Polity all
+draw the boundaries slightly differently.
+
+This package resolves these cases through the internal
+`democracyData:::data` table, which is the canonical reconciliation: it
+stores one row per `extended_country_name`/`GWn`/year combination
+together with start and end dates from each source system and a set of
+`_membership` flags (`cow_membership`, `GW_membership`,
+`polity_membership`). The user-facing function \[country_year_coder\]
+uses this table to attach standardised country codes, names, and
+state-system membership flags to any data frame with country and year
+columns; it also flags country-years where the source systems disagree,
+so users can decide which convention to follow rather than inheriting
+one silently. For an analysis that needs to follow a particular state
+system end-to-end (e.g. COW for a study using Correlates of War
+covariates), filter on the corresponding `_membership` column after
+coding; for the broadest possible coverage, including limited-suffrage
+and non-sovereign units, use `extended_country_name` directly without
+filtering.
 
 Correlates of War Project. 2017. “State System Membership List, V2016.”
 <https://correlatesofwar.org>.

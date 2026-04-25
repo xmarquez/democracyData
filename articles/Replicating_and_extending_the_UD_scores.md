@@ -354,7 +354,7 @@ Code
 ``` r
 replication_2011_model@time
 #> TOTAL:   Data  Estep  Mstep     SE   Post 
-#>  5.430  0.315  0.641  3.529  0.915  0.000
+#>  5.369  0.314  0.625  3.470  0.929  0.001
 ```
 
 We can easily check that this model converges and that it accounts for
@@ -991,7 +991,7 @@ panel_model <- mirt(full_panel |> select(-any_of(identifiers)),
 
 panel_model@time
 #> TOTAL:   Data  Estep  Mstep     SE   Post 
-#>  8.300  0.055  1.149  6.036  1.030  0.001
+#>  8.437  0.056  1.113  6.217  1.022  0.001
 
 summary(panel_model)
 #>                                 F1    h2
@@ -1140,7 +1140,7 @@ panel_model <- mirt(full_panel |> select(-any_of(identifiers)),
 
 panel_model@time
 #> TOTAL:   Data  Estep  Mstep     SE   Post 
-#> 16.864  0.037  0.769 11.846  4.141  0.001
+#> 16.902  0.037  0.786 11.848  4.159  0.001
 
 summary(panel_model)
 #>                                 F1    h2
@@ -1266,7 +1266,10 @@ Data summary
 | year          |         0 |             1 | 2012.06 |   4.02 | 2006 | 2008 | 2012 | 2016 | 2018 | ▇▃▃▃▇ |
 
 Figure 7: Latent democracy scores from a panel restricted to measures
-with data through 2018.
+with data through 2018. Holding the set of input raters fixed across the
+entire window prevents the arbitrary level shifts that Gründler and
+Krieger ([2021/05/17/](#ref-svmdi2021)) flag, at the cost of dropping
+country-years that fall outside any rater’s coverage.
 
 Code
 
@@ -1288,7 +1291,10 @@ ggplot(data = panel_scores |> filter(extended_country_name %in% countries),
 ![](Replicating_and_extending_the_UD_scores_files/figure-html/fig-2018-coverage-panel-1.png)
 
 Figure 8: Latent democracy scores from a panel restricted to measures
-with data through 2018.
+with data through 2018. Holding the set of input raters fixed across the
+entire window prevents the arbitrary level shifts that Gründler and
+Krieger ([2021/05/17/](#ref-svmdi2021)) flag, at the cost of dropping
+country-years that fall outside any rater’s coverage.
 
 ### Extracting useful information from a model
 
@@ -1445,6 +1451,40 @@ prob_more(extended_scores,
           c(2000,1953))
 #> [1] 0.9999968
 ```
+
+### When to use which score
+
+The four latent-variable indexes in this article have different uses:
+
+- **Replication score** (`replication_2011_model` above): you would only
+  use this if you need to reproduce a published analysis that relied on
+  the 2010 or 2011 UDS release. For new work, the original UDS is now
+  out of date. You can at any rate use the archived `uds_2010`,
+  `uds_2011`, or `uds_2014` objects in this package.
+- **`extended_uds`** (the precomputed object shipped with the package):
+  the right default for most users. It uses the widest set of
+  contemporary raters, including the refreshed VaPoReg and the rebuilt
+  WGI, and covers the longest country-year span. Use this when you want
+  a single democracy score for a panel of countries and years and don’t
+  have a specific reason to prefer something else.
+- **Dichotomous-only score**: use when you want a latent score that
+  depends only on the strict “is this regime a democracy?” judgments –
+  e.g., when an analysis pairs a continuous measure with a
+  regime-classification literature (Boix-Miller-Rosato,
+  Cheibub-Gandhi-Vreeland, Geddes-Wright-Frantz, etc.). It avoids the
+  implicit weighting that more graded indexes (Polity, V-Dem) impose.
+- **Fixed panel** (the long-coverage and 2018-coverage panels above):
+  use when level comparability over time matters more than coverage –
+  for instance, when documenting a trend in democracy over the 20th
+  century. As Gründler and Krieger ([2021/05/17/](#ref-svmdi2021)) note,
+  latent scores built from changing rater sets can show artefactual
+  level shifts at the points where new raters enter; holding the rater
+  panel fixed eliminates those shifts at the cost of dropping
+  country-years that no longer have full coverage.
+
+If you are unsure, start with `extended_uds` and switch to a fixed panel
+only if you can see the rater-entry artefacts contaminating your time
+series.
 
 ## References
 

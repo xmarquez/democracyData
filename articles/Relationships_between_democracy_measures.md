@@ -18,7 +18,8 @@ democracy, reordered by hierarchical clustering.
 ![](Relationships_between_democracy_measures_files/figure-html/fig-dichotomous-density-1.png)
 
 Figure 2: Distribution of pairwise correlation coefficients among
-dichotomous measures of democracy.
+dichotomous measures of democracy. The red vertical line marks the
+median.
 
 Nevertheless, a few of these measures are poorly correlated with the
 rest, in particular, the
@@ -61,7 +62,8 @@ and Vreeland 2009](#ref-pacl2010)).
 
 There are a number of measures of democracy that distinguish between
 democracy, non-democracy, and some hybrid or intermediate category.
-These trichotomous measures are also highly correlated.
+These trichotomous measures are also highly correlated (median pairwise
+correlation coefficient = 0.86).
 
 ![](Relationships_between_democracy_measures_files/figure-html/fig-trichotomous-correlations-1.png)
 
@@ -88,7 +90,7 @@ grades. Note that the Freedom House objects bundled with this package
 (`fh`, `fh_full`, `fh_electoral`) are frozen at the 2025 release (data
 through 2024), since Freedom House moved to email-request distribution
 in 2026. In any case, these measures are highly correlated among
-themselves.
+themselves (median pairwise correlation coefficient = 0.87).
 
 ![](Relationships_between_democracy_measures_files/figure-html/fig-ordinal-correlations-1.png)
 
@@ -98,8 +100,8 @@ democracy.
 ## Continous Measures of Democracy
 
 Finally, there are a number of continuous measures of democracy (usually
-in the 0-1 range), which like other measures, are very highly
-correlated.
+in the 0-1 range), which like other measures, are very highly correlated
+(median pairwise correlation coefficient = 0.89).
 
 ![](Relationships_between_democracy_measures_files/figure-html/fig-continuous-correlations-1.png)
 
@@ -122,32 +124,41 @@ the relationships among these measures.
 At the top of the figure below, we find the main outlier, the measure of
 democracy from [PIPE](https://xmarquez.github.io/reference/PIPE.md)
 ([Przeworski 2013](#ref-PIPE2013)). The next cluster includes a set of
-continous measures, mostly from V-Dem ([Coppedge et al.
-2026](#ref-vdem16codebook)), but also the
+continuous, “thick” measures of democracy, mostly from V-Dem ([Coppedge
+et al. 2026](#ref-vdem16codebook)) (`v2x_libdem`, `v2x_egaldem`,
+`v2x_delibdem`, `v2x_partipdem`, `v2x_mpi`), but also the
 [vanhanen](https://xmarquez.github.io/reference/vanhanen.md) measure
 ([Vanhanen 2019](#ref-vanhanen2019)) that includes information about
-participation. These are “thicker” measures of democracy. The bottom two
-clusters, by contrast, contain measures derived from
-[pacl](https://xmarquez.github.io/reference/pacl.md) ([Cheibub, Gandhi,
-and Vreeland 2009](#ref-pacl2010)), including
+participation. The middle of the dendrogram contains the
+[pacl](https://xmarquez.github.io/reference/pacl.md)-derived family of
+dichotomous measures ([Cheibub, Gandhi, and Vreeland
+2009](#ref-pacl2010)) –
 [bmr](https://xmarquez.github.io/reference/bmr.md) ([Boix, Miller, and
 Rosato 2012](#ref-bmr2012)),
 [gwf](https://xmarquez.github.io/reference/gwf_all.md) ([Geddes, Wright,
-and Frantz 2014](#ref-gwf2014)) and a recent update of
-[pacl](https://xmarquez.github.io/reference/pacl.md),
+and Frantz 2014](#ref-gwf2014)), the
 [pacl_update](https://xmarquez.github.io/reference/pacl_update.md)
-([Bjørnskov and Rode 2020](#ref-pacl_update_2020)), as well as measures
-derived from [polity](https://xmarquez.github.io/reference/polityIV.md)
-([Marshall, Gurr, and Jaggers 2019](#ref-polity2019)), including
-[peps](https://xmarquez.github.io/reference/peps.md) ([Moon et al.
-2006](#ref-peps2006)), latent variable indexes like
-[uds](https://xmarquez.github.io/reference/uds_2014.md), which are
-heavily influenced by the inclusion of
-[polity](https://xmarquez.github.io/reference/polityIV.md) scores
-([Pemstein, Meserve, and Melton 2013](#ref-pmm2013uds2010)), and
-[pitf](https://xmarquez.github.io/reference/pitf.md) scores ([Taylor and
-Ulfelder 2015](#ref-pitf2015)), which are built from
-[polity](https://xmarquez.github.io/reference/polityIV.md).
+([Bjørnskov and Rode 2020](#ref-pacl_update_2020)),
+[svolik](https://xmarquez.github.io/reference/svolik_regime.md), and
+[anckar](https://xmarquez.github.io/reference/anckar.md) – alongside the
+autocratic-regime classifications
+([kailitz](https://xmarquez.github.io/reference/kailitz.md),
+[vaporeg](https://xmarquez.github.io/reference/vaporeg.md),
+[magaloni](https://xmarquez.github.io/reference/magaloni.md),
+[reign](https://xmarquez.github.io/reference/REIGN.md)). The bottom
+clusters are dominated by
+[polity](https://xmarquez.github.io/reference/polityIV.md)-based indexes
+([Marshall, Gurr, and Jaggers 2019](#ref-polity2019)) – the various
+Polity vintages, the participation-enhanced Polity scores ([Moon et al.
+2006](#ref-peps2006)), the
+[pitf](https://xmarquez.github.io/reference/pitf.md) measure ([Taylor
+and Ulfelder 2015](#ref-pitf2015)), and the latent-variable
+[uds](https://xmarquez.github.io/reference/uds_2014.md) family
+([Pemstein, Meserve, and Melton 2013](#ref-pmm2013uds2010)) – which are
+all heavily influenced by the inclusion of Polity in their construction.
+Notably, V-Dem’s `v2x_polyarchy` – the project’s “thin”,
+electoral-democracy index – groups with this Polity/UDS cluster rather
+than with V-Dem’s thicker indexes.
 
 ![](Relationships_between_democracy_measures_files/figure-html/fig-hclust-dendrogram-1.png)
 
@@ -173,9 +184,11 @@ rescaled to 0-1. Shaded red bands are the American and French
 revolutions, the two World Wars, and the end of the Cold War.
 
 A latent variable analysis of most of these measures (using the
-\[extended_uds\] measure - see the vignette on replicating and extended
-the UD scores in this package) makes the evolution of democracy in the
-USA look like this:
+[extended_uds](https://xmarquez.github.io/reference/extended_uds.md)
+measure – see the [vignette on replicating and extending the UD
+scores](https://xmarquez.github.io/democracyData/articles/Replicating_and_extending_the_UD_scores.md)
+in this package) makes the evolution of democracy in the USA look like
+this:
 
 ![](Relationships_between_democracy_measures_files/figure-html/fig-usa-extended-uds-1.png)
 
@@ -192,14 +205,20 @@ independent states); it becomes lower in the 19th century, with more
 countries in difficult-to-classify hybrid forms, and more difficulties
 for researchers in finding appropriate historical information; and it
 increases in the mid-twentieth century, where most of the classificatory
-effort has been focused. It is worth noting that correlations also dip
-after the Cold War, as more countries take on difficult to classify
-hybrid forms.
+effort has been focused. The series also dips after the Cold War, as
+more countries take on difficult-to-classify hybrid forms; this dip is
+sustained roughly from the mid-1990s through about 2020 and coincides
+with the recent wave of democratic backsliding – as established
+democracies acquire authoritarian features and authoritarian regimes
+adopt democratic facades, raters disagree more – before partially
+recovering in the last few years.
 
 ![](Relationships_between_democracy_measures_files/figure-html/fig-avg-correlation-per-year-1.png)
 
-Figure 10: Average pairwise correlation among all democracy measures, by
-year, with 95% confidence intervals.
+Figure 10: Mean pairwise correlation among democracy measures by year
+(line). The shaded band shows the interquartile range of the pairwise
+correlations in each year – a wider band means raters disagree more on
+which measures track each other.
 
 Correlations among measures can also vary substantially within a given
 country.

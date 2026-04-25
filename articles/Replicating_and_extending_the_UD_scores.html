@@ -668,7 +668,7 @@
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">replication_2011_model</span><span class="op">@</span><span class="va">time</span></span>
 <span><span class="co">#&gt; TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">#&gt;  5.430  0.315  0.641  3.529  0.915  0.000</span></span></code></pre></div>
+<span><span class="co">#&gt;  5.369  0.314  0.625  3.470  0.929  0.001</span></span></code></pre></div>
 </details>
 </div>
 <p>We can easily check that this model converges and that it accounts for most of the variance in the democracy indexes:</p>
@@ -1197,7 +1197,7 @@ Figure 4: Latent democracy scores fit only from dichotomous raters (2-parameter
 <span></span>
 <span><span class="va">panel_model</span><span class="op">@</span><span class="va">time</span></span>
 <span><span class="co">#&gt; TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">#&gt;  8.300  0.055  1.149  6.036  1.030  0.001</span></span>
+<span><span class="co">#&gt;  8.437  0.056  1.113  6.217  1.022  0.001</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">panel_model</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                 F1    h2</span></span>
@@ -1596,7 +1596,7 @@ Figure 6: Latent democracy scores from a panel of long-coverage measures, const
 <span></span>
 <span><span class="va">panel_model</span><span class="op">@</span><span class="va">time</span></span>
 <span><span class="co">#&gt; TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">#&gt; 16.864  0.037  0.769 11.846  4.141  0.001</span></span>
+<span><span class="co">#&gt; 16.902  0.037  0.786 11.848  4.159  0.001</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">panel_model</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                 F1    h2</span></span>
@@ -1673,7 +1673,7 @@ Figure 6: Latent democracy scores from a panel of long-coverage measures, const
 <span><span class="fu">skimr</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html" class="external-link">skim</a></span><span class="op">(</span><span class="va">panel_scores</span><span class="op">)</span></span></code></pre></div>
 </details><div id="fig-2018-coverage-panel-1" class="cell-output-display quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-2018-coverage-panel-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure 7: Latent democracy scores from a panel restricted to measures with data through 2018.
+Figure 7: Latent democracy scores from a panel restricted to measures with data through 2018. Holding the set of input raters fixed across the entire window prevents the arbitrary level shifts that <span class="citation" data-cites="svmdi2021">Gründler and Krieger (<a href="#ref-svmdi2021" role="doc-biblioref">2021/05/17/</a>)</span> flag, at the cost of dropping country-years that fall outside any rater’s coverage.
 </figcaption><div aria-describedby="fig-2018-coverage-panel-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table caption-top">
 <caption>Data summary</caption>
@@ -1991,7 +1991,7 @@ Figure 7: Latent democracy scores from a panel restricted to measures with data
 </details><div class="cell-output-display">
 <div id="fig-2018-coverage-panel-2" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-2018-coverage-panel-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure 8: Latent democracy scores from a panel restricted to measures with data through 2018.
+Figure 8: Latent democracy scores from a panel restricted to measures with data through 2018. Holding the set of input raters fixed across the entire window prevents the arbitrary level shifts that <span class="citation" data-cites="svmdi2021">Gründler and Krieger (<a href="#ref-svmdi2021" role="doc-biblioref">2021/05/17/</a>)</span> flag, at the cost of dropping country-years that fall outside any rater’s coverage.
 </figcaption><div aria-describedby="fig-2018-coverage-panel-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Replicating_and_extending_the_UD_scores_files/figure-html/fig-2018-coverage-panel-1.png" width="672">
 </div>
@@ -2145,6 +2145,20 @@ Figure 11: Rater cutoffs, discrimination parameters, and item information curve
 <span><span class="co">#&gt; [1] 0.9999968</span></span></code></pre></div>
 </details>
 </div>
+</section><section class="section level3"><h3 id="when-to-use-which-score">When to use which score<a class="anchor" aria-label="anchor" href="#when-to-use-which-score"></a>
+</h3>
+<p>The four latent-variable indexes in this article have different uses:</p>
+<ul>
+<li>
+<strong>Replication score</strong> (<code>replication_2011_model</code> above): you would only use this if you need to reproduce a published analysis that relied on the 2010 or 2011 UDS release. For new work, the original UDS is now out of date. You can at any rate use the archived <code>uds_2010</code>, <code>uds_2011</code>, or <code>uds_2014</code> objects in this package.</li>
+<li>
+<strong><code>extended_uds</code></strong> (the precomputed object shipped with the package): the right default for most users. It uses the widest set of contemporary raters, including the refreshed VaPoReg and the rebuilt WGI, and covers the longest country-year span. Use this when you want a single democracy score for a panel of countries and years and don’t have a specific reason to prefer something else.</li>
+<li>
+<strong>Dichotomous-only score</strong>: use when you want a latent score that depends only on the strict “is this regime a democracy?” judgments – e.g., when an analysis pairs a continuous measure with a regime-classification literature (Boix-Miller-Rosato, Cheibub-Gandhi-Vreeland, Geddes-Wright-Frantz, etc.). It avoids the implicit weighting that more graded indexes (Polity, V-Dem) impose.</li>
+<li>
+<strong>Fixed panel</strong> (the long-coverage and 2018-coverage panels above): use when level comparability over time matters more than coverage – for instance, when documenting a trend in democracy over the 20th century. As <span class="citation" data-cites="svmdi2021">Gründler and Krieger (<a href="#ref-svmdi2021" role="doc-biblioref">2021/05/17/</a>)</span> note, latent scores built from changing rater sets can show artefactual level shifts at the points where new raters enter; holding the rater panel fixed eliminates those shifts at the cost of dropping country-years that no longer have full coverage.</li>
+</ul>
+<p>If you are unsure, start with <code>extended_uds</code> and switch to a fixed panel only if you can see the rater-entry artefacts contaminating your time series.</p>
 </section><section class="section level2"><h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">

@@ -73,7 +73,7 @@
 <figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-dichotomous-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure 1: Pairwise correlations among all dichotomous measures of democracy, reordered by hierarchical clustering.
 </figcaption><div aria-describedby="fig-dichotomous-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Relationships_between_democracy_measures_files/figure-html/fig-dichotomous-correlations-1.png" width="672">
+<img src="Relationships_between_democracy_measures_files/figure-html/fig-dichotomous-correlations-1.png" width="1152">
 </div>
 </figure>
 </div>
@@ -83,7 +83,7 @@ Figure 1: Pairwise correlations among all dichotomous measures of democracy, re
 <div class="cell-output-display">
 <div id="fig-dichotomous-density" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-dichotomous-density-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure 2: Distribution of pairwise correlation coefficients among dichotomous measures of democracy.
+Figure 2: Distribution of pairwise correlation coefficients among dichotomous measures of democracy. The red vertical line marks the median.
 </figcaption><div aria-describedby="fig-dichotomous-density-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Relationships_between_democracy_measures_files/figure-html/fig-dichotomous-density-1.png" width="672">
 </div>
@@ -95,7 +95,7 @@ Figure 2: Distribution of pairwise correlation coefficients among dichotomous m
 <p>The <a href="../../reference/bnr.html">bnr</a> measure is different from most other dichotomous measures of democracy because it was constructed with survival analysis in mind, and hence only includes democracies; when extended to non-democracies (in <a href="../../reference/bnr.html">bnr_extended</a>) it is well-correlated with the rest. <a href="../../reference/utip.html">utip</a> <span class="citation" data-cites="utip2008">(<a href="#ref-utip2008" role="doc-biblioref">Hsu 2008</a>)</span> and <a href="../../reference/doorenspleet.html">doorenspleet</a> <span class="citation" data-cites="doorenspleet2000">(<a href="#ref-doorenspleet2000" role="doc-biblioref">Doorenspleet 2000</a>)</span> also have below average correlations with the other measures; these are somewhat idiosyncratic measures that are not widely used, and doorenspleet in particular is based on an earlier version of <a href="../../reference/polityIV.html">Polity</a> (Polity III) and also adds an “inclusion” criterion, whereas most of the other dichotomous measures are based on <a href="../../reference/pacl.html">pacl</a> <span class="citation" data-cites="pacl2010">(<a href="#ref-pacl2010" role="doc-biblioref">Cheibub, Gandhi, and Vreeland 2009</a>)</span>.</p>
 </section><section class="level2"><h2 id="trichotomous-measures-of-democracy">Trichotomous Measures of Democracy<a class="anchor" aria-label="anchor" href="#trichotomous-measures-of-democracy"></a>
 </h2>
-<p>There are a number of measures of democracy that distinguish between democracy, non-democracy, and some hybrid or intermediate category. These trichotomous measures are also highly correlated.</p>
+<p>There are a number of measures of democracy that distinguish between democracy, non-democracy, and some hybrid or intermediate category. These trichotomous measures are also highly correlated (median pairwise correlation coefficient = 0.86).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-trichotomous-correlations" class="quarto-float quarto-figure quarto-figure-center">
@@ -111,7 +111,7 @@ Figure 3: Pairwise correlations among all trichotomous measures of democracy.
 <p>Most of these are specialist measures that are no longer maintained, but remain of historical interest. The lowest correlation levels are with the <a href="../../reference/kailitz.html">Kailitz</a> trichotomous index calculated by taking “electoral autocracy” as the middle category (updated in the <a href="../../reference/vaporeg.html">VaPoReg</a> measure).</p>
 </section><section class="level2"><h2 id="ordinalgraded-measures-of-democracy">Ordinal/Graded Measures of Democracy<a class="anchor" aria-label="anchor" href="#ordinalgraded-measures-of-democracy"></a>
 </h2>
-<p>There are also measures that distinguish among different “grades” of democracy, though the intervals between grades may not have a consistent meaning. For example, <a href="../../reference/download_fh.html">Freedom House</a> <span class="citation" data-cites="fh2025">(<a href="#ref-fh2025" role="doc-biblioref">Freedom House 2025</a>)</span> distinguishes 14 different “grades” between the most unfree and the most free category, but it is not clear that the difference between one grade and another means the same across all grades. Note that the Freedom House objects bundled with this package (<code>fh</code>, <code>fh_full</code>, <code>fh_electoral</code>) are frozen at the 2025 release (data through 2024), since Freedom House moved to email-request distribution in 2026. In any case, these measures are highly correlated among themselves.</p>
+<p>There are also measures that distinguish among different “grades” of democracy, though the intervals between grades may not have a consistent meaning. For example, <a href="../../reference/download_fh.html">Freedom House</a> <span class="citation" data-cites="fh2025">(<a href="#ref-fh2025" role="doc-biblioref">Freedom House 2025</a>)</span> distinguishes 14 different “grades” between the most unfree and the most free category, but it is not clear that the difference between one grade and another means the same across all grades. Note that the Freedom House objects bundled with this package (<code>fh</code>, <code>fh_full</code>, <code>fh_electoral</code>) are frozen at the 2025 release (data through 2024), since Freedom House moved to email-request distribution in 2026. In any case, these measures are highly correlated among themselves (median pairwise correlation coefficient = 0.87).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-ordinal-correlations" class="quarto-float quarto-figure quarto-figure-center">
@@ -126,14 +126,14 @@ Figure 4: Pairwise correlations among all ordinal/graded measures of democracy.
 </div>
 </section><section class="level2"><h2 id="continous-measures-of-democracy">Continous Measures of Democracy<a class="anchor" aria-label="anchor" href="#continous-measures-of-democracy"></a>
 </h2>
-<p>Finally, there are a number of continuous measures of democracy (usually in the 0-1 range), which like other measures, are very highly correlated.</p>
+<p>Finally, there are a number of continuous measures of democracy (usually in the 0-1 range), which like other measures, are very highly correlated (median pairwise correlation coefficient = 0.89).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-continuous-correlations" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-continuous-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure 5: Pairwise correlations among all continuous measures of democracy.
 </figcaption><div aria-describedby="fig-continuous-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Relationships_between_democracy_measures_files/figure-html/fig-continuous-correlations-1.png" width="672">
+<img src="Relationships_between_democracy_measures_files/figure-html/fig-continuous-correlations-1.png" width="1152">
 </div>
 </figure>
 </div>
@@ -155,14 +155,14 @@ Figure 6: Distribution of pairwise correlation coefficients among all democracy
 </div>
 </div>
 <p>A simple hierarchical cluster analysis can help us to better visualize the relationships among these measures.</p>
-<p>At the top of the figure below, we find the main outlier, the measure of democracy from <a href="../../reference/PIPE.html">PIPE</a> <span class="citation" data-cites="PIPE2013">(<a href="#ref-PIPE2013" role="doc-biblioref">Przeworski 2013</a>)</span>. The next cluster includes a set of continous measures, mostly from V-Dem <span class="citation" data-cites="vdem16codebook">(<a href="#ref-vdem16codebook" role="doc-biblioref">Coppedge et al. 2026</a>)</span>, but also the <a href="../../reference/vanhanen.html">vanhanen</a> measure <span class="citation" data-cites="vanhanen2019">(<a href="#ref-vanhanen2019" role="doc-biblioref">Vanhanen 2019</a>)</span> that includes information about participation. These are “thicker” measures of democracy. The bottom two clusters, by contrast, contain measures derived from <a href="../../reference/pacl.html">pacl</a> <span class="citation" data-cites="pacl2010">(<a href="#ref-pacl2010" role="doc-biblioref">Cheibub, Gandhi, and Vreeland 2009</a>)</span>, including <a href="../../reference/bmr.html">bmr</a> <span class="citation" data-cites="bmr2012">(<a href="#ref-bmr2012" role="doc-biblioref">Boix, Miller, and Rosato 2012</a>)</span>, <a href="../../reference/gwf_all.html">gwf</a> <span class="citation" data-cites="gwf2014">(<a href="#ref-gwf2014" role="doc-biblioref">Geddes, Wright, and Frantz 2014</a>)</span> and a recent update of <a href="../../reference/pacl.html">pacl</a>, <a href="../../reference/pacl_update.html">pacl_update</a> <span class="citation" data-cites="pacl_update_2020">(<a href="#ref-pacl_update_2020" role="doc-biblioref">Bjørnskov and Rode 2020</a>)</span>, as well as measures derived from <a href="../../reference/polityIV.html">polity</a> <span class="citation" data-cites="polity2019">(<a href="#ref-polity2019" role="doc-biblioref">Marshall, Gurr, and Jaggers 2019</a>)</span>, including <a href="../../reference/peps.html">peps</a> <span class="citation" data-cites="peps2006">(<a href="#ref-peps2006" role="doc-biblioref">Moon et al. 2006</a>)</span>, latent variable indexes like <a href="../../reference/uds_2014.html">uds</a>, which are heavily influenced by the inclusion of <a href="../../reference/polityIV.html">polity</a> scores <span class="citation" data-cites="pmm2013uds2010">(<a href="#ref-pmm2013uds2010" role="doc-biblioref">Pemstein, Meserve, and Melton 2013</a>)</span>, and <a href="../../reference/pitf.html">pitf</a> scores <span class="citation" data-cites="pitf2015">(<a href="#ref-pitf2015" role="doc-biblioref">Taylor and Ulfelder 2015</a>)</span>, which are built from <a href="../../reference/polityIV.html">polity</a>.</p>
+<p>At the top of the figure below, we find the main outlier, the measure of democracy from <a href="../../reference/PIPE.html">PIPE</a> <span class="citation" data-cites="PIPE2013">(<a href="#ref-PIPE2013" role="doc-biblioref">Przeworski 2013</a>)</span>. The next cluster includes a set of continuous, “thick” measures of democracy, mostly from V-Dem <span class="citation" data-cites="vdem16codebook">(<a href="#ref-vdem16codebook" role="doc-biblioref">Coppedge et al. 2026</a>)</span> (<code>v2x_libdem</code>, <code>v2x_egaldem</code>, <code>v2x_delibdem</code>, <code>v2x_partipdem</code>, <code>v2x_mpi</code>), but also the <a href="../../reference/vanhanen.html">vanhanen</a> measure <span class="citation" data-cites="vanhanen2019">(<a href="#ref-vanhanen2019" role="doc-biblioref">Vanhanen 2019</a>)</span> that includes information about participation. The middle of the dendrogram contains the <a href="../../reference/pacl.html">pacl</a>-derived family of dichotomous measures <span class="citation" data-cites="pacl2010">(<a href="#ref-pacl2010" role="doc-biblioref">Cheibub, Gandhi, and Vreeland 2009</a>)</span> – <a href="../../reference/bmr.html">bmr</a> <span class="citation" data-cites="bmr2012">(<a href="#ref-bmr2012" role="doc-biblioref">Boix, Miller, and Rosato 2012</a>)</span>, <a href="../../reference/gwf_all.html">gwf</a> <span class="citation" data-cites="gwf2014">(<a href="#ref-gwf2014" role="doc-biblioref">Geddes, Wright, and Frantz 2014</a>)</span>, the <a href="../../reference/pacl_update.html">pacl_update</a> <span class="citation" data-cites="pacl_update_2020">(<a href="#ref-pacl_update_2020" role="doc-biblioref">Bjørnskov and Rode 2020</a>)</span>, <a href="../../reference/svolik_regime.html">svolik</a>, and <a href="../../reference/anckar.html">anckar</a> – alongside the autocratic-regime classifications (<a href="../../reference/kailitz.html">kailitz</a>, <a href="../../reference/vaporeg.html">vaporeg</a>, <a href="../../reference/magaloni.html">magaloni</a>, <a href="../../reference/REIGN.html">reign</a>). The bottom clusters are dominated by <a href="../../reference/polityIV.html">polity</a>-based indexes <span class="citation" data-cites="polity2019">(<a href="#ref-polity2019" role="doc-biblioref">Marshall, Gurr, and Jaggers 2019</a>)</span> – the various Polity vintages, the participation-enhanced Polity scores <span class="citation" data-cites="peps2006">(<a href="#ref-peps2006" role="doc-biblioref">Moon et al. 2006</a>)</span>, the <a href="../../reference/pitf.html">pitf</a> measure <span class="citation" data-cites="pitf2015">(<a href="#ref-pitf2015" role="doc-biblioref">Taylor and Ulfelder 2015</a>)</span>, and the latent-variable <a href="../../reference/uds_2014.html">uds</a> family <span class="citation" data-cites="pmm2013uds2010">(<a href="#ref-pmm2013uds2010" role="doc-biblioref">Pemstein, Meserve, and Melton 2013</a>)</span> – which are all heavily influenced by the inclusion of Polity in their construction. Notably, V-Dem’s <code>v2x_polyarchy</code> – the project’s “thin”, electoral-democracy index – groups with this Polity/UDS cluster rather than with V-Dem’s thicker indexes.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-hclust-dendrogram" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-hclust-dendrogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure 7: Hierarchical cluster analysis of most democracy measures, using Euclidean distance on the rescaled value series.
 </figcaption><div aria-describedby="fig-hclust-dendrogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Relationships_between_democracy_measures_files/figure-html/fig-hclust-dendrogram-1.png" width="672">
+<img src="Relationships_between_democracy_measures_files/figure-html/fig-hclust-dendrogram-1.png" width="960">
 </div>
 </figure>
 </div>
@@ -183,7 +183,7 @@ Figure 8: Measurements of democracy for the USA across all indexes, rescaled to
 </div>
 </div>
 </div>
-<p>A latent variable analysis of most of these measures (using the [extended_uds] measure - see the vignette on replicating and extended the UD scores in this package) makes the evolution of democracy in the USA look like this:</p>
+<p>A latent variable analysis of most of these measures (using the <a href="../../reference/extended_uds.html">extended_uds</a> measure – see the <a href="Replicating_and_extending_the_UD_scores.html">vignette on replicating and extending the UD scores</a> in this package) makes the evolution of democracy in the USA look like this:</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-usa-extended-uds" class="quarto-float quarto-figure quarto-figure-center">
@@ -196,12 +196,12 @@ Figure 9: Extended UD scores for the United States, with annotated political mi
 </div>
 </div>
 </div>
-<p>The average correlation between democracy measures varies substantially year by year, due in part to the particular states that are measured on any given year, the availability of historical information, and the prevalence of hybrid or ambiguous regime forms. It is thus high in the late 18th and early 19th century, as most countries were clearly non-democratic and relatively easy to classify (and there were fewer independent states); it becomes lower in the 19th century, with more countries in difficult-to-classify hybrid forms, and more difficulties for researchers in finding appropriate historical information; and it increases in the mid-twentieth century, where most of the classificatory effort has been focused. It is worth noting that correlations also dip after the Cold War, as more countries take on difficult to classify hybrid forms.</p>
+<p>The average correlation between democracy measures varies substantially year by year, due in part to the particular states that are measured on any given year, the availability of historical information, and the prevalence of hybrid or ambiguous regime forms. It is thus high in the late 18th and early 19th century, as most countries were clearly non-democratic and relatively easy to classify (and there were fewer independent states); it becomes lower in the 19th century, with more countries in difficult-to-classify hybrid forms, and more difficulties for researchers in finding appropriate historical information; and it increases in the mid-twentieth century, where most of the classificatory effort has been focused. The series also dips after the Cold War, as more countries take on difficult-to-classify hybrid forms; this dip is sustained roughly from the mid-1990s through about 2020 and coincides with the recent wave of democratic backsliding – as established democracies acquire authoritarian features and authoritarian regimes adopt democratic facades, raters disagree more – before partially recovering in the last few years.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-avg-correlation-per-year" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-avg-correlation-per-year-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure 10: Average pairwise correlation among all democracy measures, by year, with 95% confidence intervals.
+Figure 10: Mean pairwise correlation among democracy measures by year (line). The shaded band shows the interquartile range of the pairwise correlations in each year – a wider band means raters disagree more on which measures track each other.
 </figcaption><div aria-describedby="fig-avg-correlation-per-year-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Relationships_between_democracy_measures_files/figure-html/fig-avg-correlation-per-year-1.png" width="672">
 </div>
