@@ -668,7 +668,7 @@
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">replication_2011_model</span><span class="op">@</span><span class="va">time</span></span>
 <span><span class="co">#&gt; TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">#&gt;  5.453  0.314  0.620  3.539  0.954  0.001</span></span></code></pre></div>
+<span><span class="co">#&gt;  5.430  0.315  0.641  3.529  0.915  0.000</span></span></code></pre></div>
 </details>
 </div>
 <p>We can easily check that this model converges and that it accounts for most of the variance in the democracy indexes:</p>
@@ -1197,7 +1197,7 @@ Figure 4: Latent democracy scores fit only from dichotomous raters (2-parameter
 <span></span>
 <span><span class="va">panel_model</span><span class="op">@</span><span class="va">time</span></span>
 <span><span class="co">#&gt; TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">#&gt;  8.356  0.062  1.174  6.042  1.046  0.000</span></span>
+<span><span class="co">#&gt;  8.300  0.055  1.149  6.036  1.030  0.001</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">panel_model</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                 F1    h2</span></span>
@@ -1596,7 +1596,7 @@ Figure 6: Latent democracy scores from a panel of long-coverage measures, const
 <span></span>
 <span><span class="va">panel_model</span><span class="op">@</span><span class="va">time</span></span>
 <span><span class="co">#&gt; TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">#&gt; 16.863  0.037  0.776 11.852  4.127  0.001</span></span>
+<span><span class="co">#&gt; 16.864  0.037  0.769 11.846  4.141  0.001</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">panel_model</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                 F1    h2</span></span>

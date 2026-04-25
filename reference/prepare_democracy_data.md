@@ -360,6 +360,12 @@ Freedom House. *Freedom in the World 2024: The Mounting Damage ofFlawed
 Elections and Armed Conflict*. Report. Freedom House,
 2024.`https://freedomhouse.org/report/freedom-world/2024/mounting-damage-flawed-elections-and-armed-conflict`.
 
+Freedom House. *Freedom in the World 2025: The Uphill Battle toSafeguard
+Rights*. Tech. rep. Freedom House, Feb. 2025.
+
+Freedom House. *Freedom in the World 2026: The Growing Shadow
+ofAutocracy*. Tech. rep. Freedom House, Mar. 2026.
+
 M. Gasiorowski. "An Overview of the Political Regime ChangeDataset". In:
 *Comparative Political Studies* 29.4 (1996), pp. 469-483.DOI:
 10.1177/0010414096029004004.
@@ -377,10 +383,6 @@ J. Goldstone, R. Bates, D. Epstein, et al. "A Global Model
 forForecasting Political Instability". In: *American Journal of
 PoliticalScience* 54.1 (2010), pp. 190-208.
 DOI:10.1111/j.1540-5907.2009.00426.x.
-
-Y. Gorokhovskaia, C. Grothe, and A. Slipowitz. *Freedom in theWorld
-2026: The Growing Shadow of Autocracy*. Tech. rep. Freedom House,Mar.
-2026.
 
 K. Gründler and T. Krieger. "Democracy and Growth: Evidence from
 aMachine Learning Indicator". In: *European Journal of PoliticalEconomy*
@@ -401,10 +403,6 @@ Press, 1992.
 A. Hadenius and J. Teorell. "Pathways from Authoritarianism".
 In:*Journal of Democracy* 18.1 (2007), pp. 143-157.
 DOI:10.1353/jod.2007.0009.
-
-F. House. *Freedom in the World 2025: The Uphill Battle toSafeguard
-Rights*. Report. Freedom House,
-2025.`https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights`.
 
 S. Hsu. "The Effect of Political Regimes on Inequality,1963-2002". In:
 *UTIP Working Paper* (2008).

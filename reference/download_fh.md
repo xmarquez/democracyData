@@ -21,10 +21,9 @@ download_fh(
 
 ## Source
 
-F. House. *Freedom in the World 2025: The Uphill Battle to Safeguard
-Rights*. Report. Freedom House, 2025.
-<https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights>.
-Original data and methodology are available at
+Freedom House. *Freedom in the World 2025: The Uphill Battle to
+Safeguard Rights*. Tech. rep. Freedom House, Feb. 2025. Original data
+and methodology are available at
 <https://freedomhouse.org/report/freedom-world>.
 
 ## Arguments

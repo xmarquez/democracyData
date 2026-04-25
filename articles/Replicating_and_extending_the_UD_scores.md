@@ -354,7 +354,7 @@ Code
 ``` r
 replication_2011_model@time
 #> TOTAL:   Data  Estep  Mstep     SE   Post 
-#>  5.453  0.314  0.620  3.539  0.954  0.001
+#>  5.430  0.315  0.641  3.529  0.915  0.000
 ```
 
 We can easily check that this model converges and that it accounts for
@@ -991,7 +991,7 @@ panel_model <- mirt(full_panel |> select(-any_of(identifiers)),
 
 panel_model@time
 #> TOTAL:   Data  Estep  Mstep     SE   Post 
-#>  8.356  0.062  1.174  6.042  1.046  0.000
+#>  8.300  0.055  1.149  6.036  1.030  0.001
 
 summary(panel_model)
 #>                                 F1    h2
@@ -1140,7 +1140,7 @@ panel_model <- mirt(full_panel |> select(-any_of(identifiers)),
 
 panel_model@time
 #> TOTAL:   Data  Estep  Mstep     SE   Post 
-#> 16.863  0.037  0.776 11.852  4.127  0.001
+#> 16.864  0.037  0.769 11.846  4.141  0.001
 
 summary(panel_model)
 #>                                 F1    h2
