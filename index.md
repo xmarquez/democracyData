@@ -186,14 +186,15 @@ including a standardized country name, the
 [Gleditsch-Ward](https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html)
 country code and the [Correlates of
 War](https://correlatesofwar.org/data-sets/state-system-membership/)
-country code. You can also, however, use the archived version (`fh`):
+country code. You can also, however, use the packaged version (`fh`),
+which tracks the newer 2026 workbook:
 
 ``` r
 identical(fh_downloaded, fh)
 #> [1] FALSE
 
 fh
-#> # A tibble: 9,965 × 11
+#> # A tibble: 12,108 × 11
 #>    fh_country   year    pr    cl status fh_total fh_total_reversed
 #>    <chr>       <dbl> <dbl> <dbl> <fct>     <dbl>             <dbl>
 #>  1 Afghanistan  1972     4     5 PF            9                 5
@@ -206,16 +207,18 @@ fh
 #>  8 Afghanistan  1979     7     7 NF           14                 0
 #>  9 Afghanistan  1980     7     7 NF           14                 0
 #> 10 Afghanistan  1982     7     7 NF           14                 0
-#> # ℹ 9,955 more rows
+#> # ℹ 12,098 more rows
 #> # ℹ 4 more variables: extended_country_name <chr>, GWn <dbl>, cown <dbl>,
 #> #   in_GW_system <lgl>
 ```
 
 (In fact, since Freedom House no longer offers freely available versions
-of their latest updated data, it is best to simply use the archived
-data). Other democracy datasets can often also be “re-downloaded” from
-the websites of their creators or maintainers if required. For example,
-one can either access PACL directly by typing
+of their latest updated data, it is usually best to use the packaged
+data if you need the most recent Freedom House snapshot, and the
+archived downloader if you specifically want the last public release).
+Other democracy datasets can often also be “re-downloaded” from the
+websites of their creators or maintainers if required. For example, one
+can either access PACL directly by typing
 
 ``` r
 pacl
@@ -316,9 +319,9 @@ democracy_info |>
 | bollen_pmm              | The Bollen measure of democracy                                                                               | pmm_bollen                                                                      | continuous   | NA              | TRUE               | FALSE                    | FALSE           | FALSE        | TRUE                |                1978 | NA                                                                                                                                                   | Unknown. Assumed CC0 1.0 | The original data was compiled in 1978, for Bollen’s dissertation; existing data seems to be from the 2000 update. I do not know how much it changed over time. Only available via the Pemstein, Meserve, and Melton (2013) replication data. I have not been able to access the original data.                                        |
 | doorenspleet            | Renske Doorenspleet’s Democracy Dataset                                                                       | doorenspleet,regime                                                             | dichotomous  | Polity          | FALSE              | FALSE                    | FALSE           | FALSE        | TRUE                |                2000 | <https://www.cambridge.org/core/journals/world-politics/article/abs/reassessing-the-three-waves-of-democratization/25A6CB38E6746F98D882DFC43A54D211> | Unknown. Assumed CC0 1.0 | NA                                                                                                                                                                                                                                                                                                                                     |
 | eiu                     | The Economist Intelligence Unit’s Democracy Index                                                             | eiu                                                                             | continuous   | NA              | FALSE              | FALSE                    | FALSE           | FALSE        | TRUE                |                2006 | <https://www.eiu.com/n/global-themes/democracy-index/>                                                                                               | Unknown.                 | The original data has to be manually extracted from the tables in the EIU’s pdf report on the index.                                                                                                                                                                                                                                   |
-| fh                      | Freedom House “Freedom in the World” data                                                                     | status,fh_total,fh_total_reversed                                               | ordinal      | FH              | TRUE               | FALSE                    | FALSE           | TRUE         | FALSE               |                1973 | <https://freedomhouse.org/reports/publication-archives>                                                                                              | Unknown.                 | NA                                                                                                                                                                                                                                                                                                                                     |
-| fh_full                 | Freedom House “Freedom in the World” data                                                                     | total                                                                           | continuous   | FH              | FALSE              | FALSE                    | FALSE           | TRUE         | FALSE               |                2013 | NA                                                                                                                                                   | Unknown.                 | This is the 0-100 score Freedom House uses for its more aggregated ratings. Freedom House changed its methodology in 2013, so the full data is different for this period; full data from 2003-2012 is available in their website, but is not yet included in this package.                                                             |
-| fh_electoral            | Freedom House “Electoral Democracies” List                                                                    | electoral                                                                       | dichotomous  | FH              | FALSE              | FALSE                    | FALSE           | TRUE         | FALSE               |                1990 | NA                                                                                                                                                   | Unknown.                 | The electoral democracy list seems to have only been compiled since the 1990s, but I have not been able to find an exact date of first compilation.                                                                                                                                                                                    |
+| fh                      | Freedom House “Freedom in the World” data                                                                     | status,fh_total,fh_total_reversed                                               | ordinal      | FH              | TRUE               | FALSE                    | FALSE           | TRUE         | FALSE               |                1973 | <https://freedomhouse.org/reports/freedom-world/freedom-world-research-methodology>                                                                  | Unknown.                 | Updated to the Freedom in the World 2026 workbook, with coverage through 2025.                                                                                                                                                                                                                                                         |
+| fh_full                 | Freedom House “Freedom in the World” data                                                                     | total                                                                           | continuous   | FH              | FALSE              | FALSE                    | FALSE           | TRUE         | FALSE               |                2003 | <https://freedomhouse.org/reports/freedom-world/freedom-world-research-methodology>                                                                  | Unknown.                 | This is the 0-100 score Freedom House uses for its more aggregated ratings. The package now combines the detailed 2013-2026 workbook (calendar years 2012-2025) with the aggregate 2003-2026 workbook (calendar years 2002-2025), preserving the existing schema by filling unavailable item-level questions with missing values.      |
+| fh_electoral            | Freedom House “Electoral Democracies” List                                                                    | electoral                                                                       | dichotomous  | FH              | FALSE              | FALSE                    | FALSE           | TRUE         | FALSE               |                1990 | <https://freedomhouse.org/report/freedom-world>                                                                                                      | Unknown.                 | The package now preserves both the direct official electoral-democracy lists (`electoral`) and the recalculated series from full scores (`electoral_calc`). Direct official lists still have known gaps, including 2020 and 2024.                                                                                                      |
 | gwf                     | The Geddes Wright and Frantz Autocratic Regimes dataset                                                       | gwf_regimetype,gwf_nonautocracy                                                 | dichotomous  | PACL            | FALSE              | TRUE                     | TRUE            | TRUE         | TRUE                |                2014 | <https://sites.psu.edu/dictators/>                                                                                                                   | Unknown. Assumed CC0 1.0 | Can be extended using the gwf_duration variable. Extended version included in this package.                                                                                                                                                                                                                                            |
 | hadenius_pmm            | Axel Hadenius’ Index of Democracy                                                                             | pmm_hadenius                                                                    | continuous   | NA              | TRUE               | FALSE                    | FALSE           | FALSE        | TRUE                |                1992 | NA                                                                                                                                                   | Unknown. Assumed CC0 1.0 | Only available via the Pemstein, Meserve, and Melton (2013) replication data. I have not been able to access the original data.                                                                                                                                                                                                        |
 | kailitz                 | The Steffen Kailitz Dataset of Authoritarian Regime Types                                                     | combined_regime,kailitz_binary,kailitz_tri                                      | dichotomous  | NA              | FALSE              | TRUE                     | FALSE           | FALSE        | TRUE                |                2013 | <https://journals.sagepub.com/doi/full/10.1177/0192512115616830>                                                                                     | Unknown.                 | NA                                                                                                                                                                                                                                                                                                                                     |
@@ -361,7 +364,7 @@ democracy_data <- generate_democracy_scores_dataset(output_format = "wide",
                                                     verbose = FALSE)
 
 democracy_data
-#> # A tibble: 42,371 × 81
+#> # A tibble: 42,377 × 81
 #>    extended_country_name   GWn  cown in_GW_system  year anckar_democracy
 #>    <chr>                 <dbl> <dbl> <lgl>        <dbl>            <dbl>
 #>  1 Abkhazia                396    NA FALSE         1997               NA
@@ -374,7 +377,7 @@ democracy_data
 #>  8 Abkhazia                396    NA FALSE         2004               NA
 #>  9 Abkhazia                396    NA FALSE         2005               NA
 #> 10 Abkhazia                396    NA FALSE         2006               NA
-#> # ℹ 42,361 more rows
+#> # ℹ 42,367 more rows
 #> # ℹ 75 more variables: anrr_democracy <dbl>, arat <dbl>, blm <dbl>,
 #> #   bmr_democracy <dbl>, bmr_democracy_femalesuffrage <dbl>,
 #> #   bmr_democracy_omitteddata <dbl>, bnr_extended <dbl>, pmm_bollen <dbl>,
@@ -452,22 +455,22 @@ my_weird_democracy_data
 #> # A tibble: 16 × 3
 #>    country                      year my_measure
 #>    <chr>                       <dbl>      <dbl>
-#>  1 Germany                      2015    -0.324 
-#>  2 Germany                      1930     0.344 
-#>  3 Germany                      1970    -3.35  
-#>  4 Germany                      1945     0.805 
-#>  5 East Germany                 1949    -0.649 
-#>  6 Federal Republic of Germany  1992    -1.16  
-#>  7 Somaliland                   1990    -1.88  
-#>  8 Somalia                      1990     0.502 
-#>  9 Palestine                    1940    -0.934 
-#> 10 Russia                       1917     0.268 
-#> 11 Russia                       1912     0.379 
-#> 12 USSR                         1922     1.41  
-#> 13 Republic of Vietnam          1975     0.0802
-#> 14 Yugoslavia                   1990    -1.76  
-#> 15 Yugoslavia                   1991    -0.215 
-#> 16 Vietnam, South               1954    -0.179
+#>  1 Germany                      2015    -0.334 
+#>  2 Germany                      1930    -1.21  
+#>  3 Germany                      1970     1.57  
+#>  4 Germany                      1945    -1.07  
+#>  5 East Germany                 1949     1.37  
+#>  6 Federal Republic of Germany  1992    -0.100 
+#>  7 Somaliland                   1990    -0.135 
+#>  8 Somalia                      1990     1.29  
+#>  9 Palestine                    1940     0.481 
+#> 10 Russia                       1917    -0.889 
+#> 11 Russia                       1912    -0.826 
+#> 12 USSR                         1922     1.62  
+#> 13 Republic of Vietnam          1975    -1.28  
+#> 14 Yugoslavia                   1990     0.0800
+#> 15 Yugoslavia                   1991     0.647 
+#> 16 Vietnam, South               1954     1.52
 ```
 
 and you then want to add state system information. `country_year_coder`
@@ -495,22 +498,22 @@ my_weird_democracy_data |>
 
 | country                     | year | my_measure | extended_country_name      | GWn | cown | polity_ccode | in_GW_system | in_cow_system | in_polity_system | polity_startdate | polity_enddate |
 |:----------------------------|-----:|-----------:|:---------------------------|----:|-----:|-------------:|:-------------|:--------------|:-----------------|:-----------------|:---------------|
-| Germany                     | 2015 | -0.3244904 | German Federal Republic    | 260 |  255 |          255 | TRUE         | TRUE          | TRUE             | 1990-10-02       | NA             |
-| Germany                     | 1930 |  0.3441600 | Germany (Prussia)          | 255 |  255 |          255 | TRUE         | TRUE          | TRUE             | 1871-01-19       | 1945-05-07     |
-| Germany                     | 1970 | -3.3522148 | German Federal Republic    | 260 |  260 |          260 | TRUE         | TRUE          | TRUE             | 1945-05-08       | 1990-10-02     |
-| Germany                     | 1945 |  0.8048752 | German Federal Republic    | 260 |  260 |          260 | FALSE        | FALSE         | TRUE             | 1945-05-08       | 1990-10-02     |
-| East Germany                | 1949 | -0.6492471 | German Democratic Republic | 265 |  265 |          265 | TRUE         | FALSE         | TRUE             | 1945-05-08       | 1990-10-02     |
-| Federal Republic of Germany | 1992 | -1.1588847 | German Federal Republic    | 260 |  255 |          255 | TRUE         | TRUE          | TRUE             | 1990-10-02       | NA             |
-| Somaliland                  | 1990 | -1.8838051 | Somaliland                 |  NA |   NA |           NA | FALSE        | FALSE         | FALSE            | NA               | NA             |
-| Somalia                     | 1990 |  0.5019781 | Somalia                    | 520 |  520 |          520 | TRUE         | TRUE          | TRUE             | 1960-07-01       | NA             |
-| Palestine                   | 1940 | -0.9338654 | Palestine, State of        |  NA |   NA |           NA | FALSE        | FALSE         | FALSE            | NA               | NA             |
-| Russia                      | 1917 |  0.2683674 | Russia (Soviet Union)      | 365 |  365 |          365 | TRUE         | TRUE          | TRUE             | 1800-01-01       | 1922-12-29     |
-| Russia                      | 1912 |  0.3788085 | Russia (Soviet Union)      | 365 |  365 |          365 | TRUE         | TRUE          | TRUE             | 1800-01-01       | 1922-12-29     |
-| USSR                        | 1922 |  1.4104689 | Russia (Soviet Union)      | 365 |  365 |          364 | TRUE         | TRUE          | TRUE             | 1922-12-30       | 1991-12-31     |
-| Republic of Vietnam         | 1975 |  0.0802301 | Vietnam, Republic of       | 817 |  817 |          817 | FALSE        | FALSE         | TRUE             | 1955-10-26       | 1975-12-31     |
-| Yugoslavia                  | 1990 | -1.7575981 | Yugoslavia                 | 345 |  345 |          345 | TRUE         | TRUE          | TRUE             | 1921-01-01       | 1991-07-01     |
-| Yugoslavia                  | 1991 | -0.2146556 | Yugoslavia                 | 345 |  345 |          347 | TRUE         | TRUE          | TRUE             | 1991-07-01       | 2003-03-11     |
-| Vietnam, South              | 1954 | -0.1790490 | Vietnam, Republic of       | 817 |  817 |          817 | TRUE         | TRUE          | FALSE            | 1955-10-26       | 1975-12-31     |
+| Germany                     | 2015 | -0.3339655 | German Federal Republic    | 260 |  255 |          255 | TRUE         | TRUE          | TRUE             | 1990-10-02       | NA             |
+| Germany                     | 1930 | -1.2103712 | Germany (Prussia)          | 255 |  255 |          255 | TRUE         | TRUE          | TRUE             | 1871-01-19       | 1945-05-07     |
+| Germany                     | 1970 |  1.5707061 | German Federal Republic    | 260 |  260 |          260 | TRUE         | TRUE          | TRUE             | 1945-05-08       | 1990-10-02     |
+| Germany                     | 1945 | -1.0686942 | German Federal Republic    | 260 |  260 |          260 | FALSE        | FALSE         | TRUE             | 1945-05-08       | 1990-10-02     |
+| East Germany                | 1949 |  1.3721177 | German Democratic Republic | 265 |  265 |          265 | TRUE         | FALSE         | TRUE             | 1945-05-08       | 1990-10-02     |
+| Federal Republic of Germany | 1992 | -0.1003748 | German Federal Republic    | 260 |  255 |          255 | TRUE         | TRUE          | TRUE             | 1990-10-02       | NA             |
+| Somaliland                  | 1990 | -0.1347330 | Somaliland                 |  NA |   NA |           NA | FALSE        | FALSE         | FALSE            | NA               | NA             |
+| Somalia                     | 1990 |  1.2865279 | Somalia                    | 520 |  520 |          520 | TRUE         | TRUE          | TRUE             | 1960-07-01       | NA             |
+| Palestine                   | 1940 |  0.4813558 | Palestine, State of        |  NA |   NA |           NA | FALSE        | FALSE         | FALSE            | NA               | NA             |
+| Russia                      | 1917 | -0.8893088 | Russia (Soviet Union)      | 365 |  365 |          365 | TRUE         | TRUE          | TRUE             | 1800-01-01       | 1922-12-29     |
+| Russia                      | 1912 | -0.8258849 | Russia (Soviet Union)      | 365 |  365 |          365 | TRUE         | TRUE          | TRUE             | 1800-01-01       | 1922-12-29     |
+| USSR                        | 1922 |  1.6179244 | Russia (Soviet Union)      | 365 |  365 |          364 | TRUE         | TRUE          | TRUE             | 1922-12-30       | 1991-12-31     |
+| Republic of Vietnam         | 1975 | -1.2821376 | Vietnam, Republic of       | 817 |  817 |          817 | FALSE        | FALSE         | TRUE             | 1955-10-26       | 1975-12-31     |
+| Yugoslavia                  | 1990 |  0.0800486 | Yugoslavia                 | 345 |  345 |          345 | TRUE         | TRUE          | TRUE             | 1921-01-01       | 1991-07-01     |
+| Yugoslavia                  | 1991 |  0.6471602 | Yugoslavia                 | 345 |  345 |          347 | TRUE         | TRUE          | TRUE             | 1991-07-01       | 2003-03-11     |
+| Vietnam, South              | 1954 |  1.5236184 | Vietnam, Republic of       | 817 |  817 |          817 | TRUE         | TRUE          | FALSE            | 1955-10-26       | 1975-12-31     |
 
 `country_year_coder` tries to match not just the country name or the
 country code (as `countrycode` does), but also to figure out the

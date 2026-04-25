@@ -378,6 +378,10 @@ forForecasting Political Instability". In: *American Journal of
 PoliticalScience* 54.1 (2010), pp. 190-208.
 DOI:10.1111/j.1540-5907.2009.00426.x.
 
+Y. Gorokhovskaia, C. Grothe, and A. Slipowitz. *Freedom in theWorld
+2026: The Growing Shadow of Autocracy*. Tech. rep. Freedom House,Mar.
+2026.
+
 K. Gründler and T. Krieger. "Democracy and Growth: Evidence from
 aMachine Learning Indicator". In: *European Journal of PoliticalEconomy*
 45 (2016), pp. 85-107. DOI: 10.1016/j.ejpoleco.2016.05.005.
@@ -559,11 +563,11 @@ democracy <- generate_democracy_scores_dataset(
 
 summary(democracy)
 #>  extended_country_name      GWn             cown       in_GW_system   
-#>  Length:9137           Min.   :  2.0   Min.   :  2.0   Mode :logical  
-#>  Class :character      1st Qu.:225.0   1st Qu.:225.0   FALSE:12       
-#>  Mode  :character      Median :450.0   Median :450.0   TRUE :9125     
-#>                        Mean   :458.8   Mean   :458.5                  
-#>                        3rd Qu.:678.0   3rd Qu.:678.0                  
+#>  Length   :9137        Min.   :  2.0   Min.   :  2.0   Mode :logical  
+#>  N.unique : 198        1st Qu.:225.0   1st Qu.:225.0   FALSE:12       
+#>  N.blank  :   0        Median :450.0   Median :450.0   TRUE :9125     
+#>  Min.nchar:   4        Mean   :458.8   Mean   :458.5                  
+#>  Max.nchar:  39        3rd Qu.:678.0   3rd Qu.:678.0                  
 #>                        Max.   :990.0   Max.   :990.0                  
 #>                                                                       
 #>       year         pmm_arat        pmm_blm       pmm_bollen         pmm_fh    
@@ -573,15 +577,15 @@ summary(democracy)
 #>  Mean   :1982   Mean   : 73.2   Mean   :0.36   Mean   : 55.46   Mean   :4.15  
 #>  3rd Qu.:1997   3rd Qu.: 92.0   3rd Qu.:0.50   3rd Qu.: 90.95   3rd Qu.:6.00  
 #>  Max.   :2008   Max.   :109.0   Max.   :1.00   Max.   :100.00   Max.   :7.00  
-#>                 NA's   :5264    NA's   :8862   NA's   :8627     NA's   :2699  
+#>                 NAs    :5264    NAs    :8862   NAs    :8627     NAs    :2699  
 #>   pmm_hadenius    pmm_mainwaring      pmm_munck         pmm_pacl     
 #>  Min.   : 0.000   Min.   :-1.0000   Min.   :0.0000   Min.   :0.0000  
 #>  1st Qu.: 1.500   1st Qu.:-1.0000   1st Qu.:0.7500   1st Qu.:0.0000  
 #>  Median : 3.100   Median : 0.0000   Median :1.0000   Median :0.0000  
-#>  Mean   : 4.508   Mean   : 0.1222   Mean   :0.8382   Mean   :0.4355  
+#>  Mean   : 4.509   Mean   : 0.1222   Mean   :0.8382   Mean   :0.4355  
 #>  3rd Qu.: 8.300   3rd Qu.: 1.0000   3rd Qu.:1.0000   3rd Qu.:1.0000  
 #>  Max.   :10.000   Max.   : 1.0000   Max.   :1.0000   Max.   :1.0000  
-#>  NA's   :9008     NA's   :8302      NA's   :8795     NA's   :70      
+#>  NAs    :9008     NAs    :8302      NAs    :8795     NAs    :70      
 #>    pmm_polity       pmm_polyarchy       pmm_prc       pmm_vanhanen  
 #>  Min.   :-10.0000   Min.   : 0.000   Min.   :1.000   Min.   : 0.00  
 #>  1st Qu.: -7.0000   1st Qu.: 3.000   1st Qu.:1.000   1st Qu.: 0.00  
@@ -589,14 +593,14 @@ summary(democracy)
 #>  Mean   :  0.1286   Mean   : 6.329   Mean   :2.147   Mean   :11.31  
 #>  3rd Qu.:  8.0000   3rd Qu.:10.000   3rd Qu.:4.000   3rd Qu.:20.70  
 #>  Max.   : 10.0000   Max.   :10.000   Max.   :4.000   Max.   :49.00  
-#>  NA's   :1087       NA's   :8784     NA's   :3135    NA's   :172    
+#>  NAs    :1087       NAs    :8784     NAs    :3135    NAs    :172    
 summary(prepare_democracy_data(democracy))
 #>  extended_country_name      GWn             cown       in_GW_system   
-#>  Length:9137           Min.   :  2.0   Min.   :  2.0   Mode :logical  
-#>  Class :character      1st Qu.:225.0   1st Qu.:225.0   FALSE:12       
-#>  Mode  :character      Median :450.0   Median :450.0   TRUE :9125     
-#>                        Mean   :458.8   Mean   :458.5                  
-#>                        3rd Qu.:678.0   3rd Qu.:678.0                  
+#>  Length   :9137        Min.   :  2.0   Min.   :  2.0   Mode :logical  
+#>  N.unique : 198        1st Qu.:225.0   1st Qu.:225.0   FALSE:12       
+#>  N.blank  :   0        Median :450.0   Median :450.0   TRUE :9125     
+#>  Min.nchar:   4        Mean   :458.8   Mean   :458.5                  
+#>  Max.nchar:  39        3rd Qu.:678.0   3rd Qu.:678.0                  
 #>                        Max.   :990.0   Max.   :990.0                  
 #>                                                                       
 #>       year         pmm_arat        pmm_blm       pmm_bollen    
@@ -606,15 +610,15 @@ summary(prepare_democracy_data(democracy))
 #>  Mean   :1982   Mean   :3.878   Mean   :1.72   Mean   : 6.006  
 #>  3rd Qu.:1997   3rd Qu.:6.000   3rd Qu.:2.00   3rd Qu.:10.000  
 #>  Max.   :2008   Max.   :7.000   Max.   :3.00   Max.   :10.000  
-#>                 NA's   :5264    NA's   :8862   NA's   :8627    
+#>                 NAs    :5264    NAs    :8862   NAs    :8627    
 #>      pmm_fh        pmm_hadenius    pmm_mainwaring    pmm_munck    
 #>  Min.   : 1.000   Min.   : 0.000   Min.   :1.000   Min.   :1.000  
 #>  1st Qu.: 4.000   1st Qu.: 1.500   1st Qu.:1.000   1st Qu.:3.000  
 #>  Median : 7.000   Median : 3.100   Median :2.000   Median :4.000  
-#>  Mean   : 7.301   Mean   : 4.508   Mean   :2.122   Mean   :3.333  
+#>  Mean   : 7.301   Mean   : 4.509   Mean   :2.122   Mean   :3.333  
 #>  3rd Qu.:11.000   3rd Qu.: 8.300   3rd Qu.:3.000   3rd Qu.:4.000  
 #>  Max.   :13.000   Max.   :10.000   Max.   :3.000   Max.   :4.000  
-#>  NA's   :2699     NA's   :9008     NA's   :8302    NA's   :8795   
+#>  NAs    :2699     NAs    :9008     NAs    :8302    NAs    :8795   
 #>     pmm_pacl       pmm_polity    pmm_polyarchy       pmm_prc     
 #>  Min.   :1.000   Min.   : 1.00   Min.   : 1.000   Min.   :1.000  
 #>  1st Qu.:1.000   1st Qu.: 4.00   1st Qu.: 4.000   1st Qu.:1.000  
@@ -622,7 +626,7 @@ summary(prepare_democracy_data(democracy))
 #>  Mean   :1.436   Mean   :11.13   Mean   : 7.329   Mean   :2.147  
 #>  3rd Qu.:2.000   3rd Qu.:19.00   3rd Qu.:11.000   3rd Qu.:4.000  
 #>  Max.   :2.000   Max.   :21.00   Max.   :11.000   Max.   :4.000  
-#>  NA's   :70      NA's   :1087    NA's   :8784     NA's   :3135   
+#>  NAs    :70      NAs    :1087    NAs    :8784     NAs    :3135   
 #>   pmm_vanhanen  
 #>  Min.   :1.000  
 #>  1st Qu.:1.000  
@@ -630,5 +634,5 @@ summary(prepare_democracy_data(democracy))
 #>  Mean   :2.939  
 #>  3rd Qu.:5.000  
 #>  Max.   :8.000  
-#>  NA's   :172    
+#>  NAs    :172    
 ```

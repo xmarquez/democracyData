@@ -437,6 +437,17 @@ Instability.” *American Journal of Political Science*, **54**(1),
       doi = {10.1111/j.1540-5907.2009.00426.x},
     }
 
+Gorokhovskaia Y, Grothe C, Slipowitz A (2026). “Freedom in the World
+2026: The Growing Shadow of Autocracy.” Freedom House.
+
+    @TechReport{fh2026,
+      title = {Freedom in the World 2026: {{The}} Growing Shadow of Autocracy},
+      author = {Yana Gorokhovskaia and Cathryn Grothe and Amy Slipowitz},
+      year = {2026},
+      month = {mar},
+      institution = {Freedom House},
+    }
+
 Gründler K, Krieger T (2016). “Democracy and Growth: Evidence from a
 Machine Learning Indicator.” *European Journal of Political Economy*,
 **45**, 85–107.
@@ -754,7 +765,7 @@ Gothenburg.
 Pemstein D, Meserve SA, Melton J (2013). “Replication Data for:
 Democratic Compromise: A Latent Variable Analysis of Ten Measures of
 Regime Type.”
-[doi:10.7910/DVN/WWYOHU](https://doi.org/10.7910/DVN/WWYOHU),
+[doi:10.7910/DVN/WWYOHU](https://doi.org/10.7910/DVN/WWYOHU).
 1902.1/PMM.
 
     @Misc{pmm2013uds2010,
@@ -906,7 +917,7 @@ Conflict.” Economist Intelligence Unit, London, United Kingdom.
     }
 
 Ulfelder J (2012). “Democracy/Autocracy Data Set.”
-[doi:10.7910/DVN/M11WFC](https://doi.org/10.7910/DVN/M11WFC),
+[doi:10.7910/DVN/M11WFC](https://doi.org/10.7910/DVN/M11WFC).
 1902.1/18836.
 
     @Misc{ulfelder2012,

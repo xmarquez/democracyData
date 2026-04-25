@@ -463,10 +463,10 @@ the measures are converted to z-scores):
 
 - fh_electoral:
 
-  The
+  The direct
   [fh_electoral](https://xmarquez.github.io/democracyData/reference/download_fh_electoral.md)
-  measure of electoral democracy, with 0 indicating a lack of electoral
-  democracy, 1 indicating electoral democracy status.
+  Freedom House measure of electoral democracy, with 0 indicating a lack
+  of electoral democracy and 1 indicating electoral democracy status.
 
 - fh_total_reversed:
 
@@ -998,13 +998,13 @@ them as follows:
 | Palestine, State of               | West Bank and Gaza Strip                       | fh            | 1977     | 1995     |
 | Palestine, State of               | Palestine                                      | vaporeg       | 1920     | 1947     |
 | Palestine, State of               | West Bank and Gaza                             | wgi_democracy | 1996     | 2024     |
-| Palestine/Gaza                    | Gaza Strip                                     | fh            | 2010     | 2024     |
-| Palestine/Gaza                    | Gaza Strip                                     | fh_electoral  | 2017     | 2024     |
+| Palestine/Gaza                    | Gaza Strip                                     | fh            | 2010     | 2025     |
+| Palestine/Gaza                    | Gaza Strip                                     | fh_electoral  | 2017     | 2025     |
 | Palestine/Gaza                    | Palestine/Gaza                                 | LIED          | 1948     | 2025     |
 | Palestine/Gaza                    | Palestine, Gaza Strip                          | vaporeg       | 1948     | 2025     |
 | Palestine/Gaza                    | Palestine/Gaza                                 | vdem          | 1948     | 2025     |
-| Palestine/West Bank               | West Bank                                      | fh            | 2010     | 2024     |
-| Palestine/West Bank               | West Bank                                      | fh_electoral  | 2017     | 2024     |
+| Palestine/West Bank               | West Bank                                      | fh            | 2010     | 2025     |
+| Palestine/West Bank               | West Bank                                      | fh_electoral  | 2017     | 2025     |
 | Palestine/West Bank               | Palestine/West Bank                            | LIED          | 1948     | 2025     |
 | Palestine/West Bank               | Palestine, West Bank                           | vaporeg       | 1948     | 2025     |
 | Palestine/West Bank               | Palestine/West Bank                            | vdem          | 1948     | 2025     |

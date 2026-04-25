@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">democracyData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -181,13 +181,13 @@
 <span><span class="co">#&gt; # ℹ 9,425 more rows</span></span>
 <span><span class="co">#&gt; # ℹ 4 more variables: extended_country_name &lt;chr&gt;, GWn &lt;dbl&gt;, cown &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   in_GW_system &lt;lgl&gt;</span></span></code></pre></div>
-<p>This downloads the latest archived update of the “Freedom in the World” dataset (1972-2024, corresponding to the 2025 report), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables <code>fh_total</code> and <code>fh_total_reversed</code>, and adds state system information, including a standardized country name, the <a href="https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html" class="external-link">Gleditsch-Ward</a> country code and the <a href="https://correlatesofwar.org/data-sets/state-system-membership/" class="external-link">Correlates of War</a> country code. You can also, however, use the archived version (<code>fh</code>):</p>
+<p>This downloads the latest archived update of the “Freedom in the World” dataset (1972-2024, corresponding to the 2025 report), puts it in country-year format (extracting the relevant info from the awful Excel table that Freedom House makes available), calculates the variables <code>fh_total</code> and <code>fh_total_reversed</code>, and adds state system information, including a standardized country name, the <a href="https://web.archive.org/web/20130627160240/http://privatewww.essex.ac.uk/~ksg/statelist.html" class="external-link">Gleditsch-Ward</a> country code and the <a href="https://correlatesofwar.org/data-sets/state-system-membership/" class="external-link">Correlates of War</a> country code. You can also, however, use the packaged version (<code>fh</code>), which tracks the newer 2026 workbook:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/identical.html" class="external-link">identical</a></span><span class="op">(</span><span class="va">fh_downloaded</span>, <span class="va">fh</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] FALSE</span></span>
 <span></span>
 <span><span class="va">fh</span></span>
-<span><span class="co">#&gt; # A tibble: 9,965 × 11</span></span>
+<span><span class="co">#&gt; # A tibble: 12,108 × 11</span></span>
 <span><span class="co">#&gt;    fh_country   year    pr    cl status fh_total fh_total_reversed</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;     &lt;dbl&gt;             &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt;  1 Afghanistan  1972     4     5 PF            9                 5</span></span>
@@ -200,10 +200,10 @@
 <span><span class="co">#&gt;  8 Afghanistan  1979     7     7 NF           14                 0</span></span>
 <span><span class="co">#&gt;  9 Afghanistan  1980     7     7 NF           14                 0</span></span>
 <span><span class="co">#&gt; 10 Afghanistan  1982     7     7 NF           14                 0</span></span>
-<span><span class="co">#&gt; # ℹ 9,955 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 12,098 more rows</span></span>
 <span><span class="co">#&gt; # ℹ 4 more variables: extended_country_name &lt;chr&gt;, GWn &lt;dbl&gt;, cown &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   in_GW_system &lt;lgl&gt;</span></span></code></pre></div>
-<p>(In fact, since Freedom House no longer offers freely available versions of their latest updated data, it is best to simply use the archived data). Other democracy datasets can often also be “re-downloaded” from the websites of their creators or maintainers if required. For example, one can either access PACL directly by typing</p>
+<p>(In fact, since Freedom House no longer offers freely available versions of their latest updated data, it is usually best to use the packaged data if you need the most recent Freedom House snapshot, and the archived downloader if you specifically want the last public release). Other democracy datasets can often also be “re-downloaded” from the websites of their creators or maintainers if required. For example, one can either access PACL directly by typing</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pacl</span></span>
 <span><span class="co">#&gt; # A tibble: 9,159 × 82</span></span>
@@ -482,9 +482,9 @@
 <td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="right">1973</td>
-<td align="left"><a href="https://freedomhouse.org/reports/publication-archives" class="external-link uri">https://freedomhouse.org/reports/publication-archives</a></td>
+<td align="left"><a href="https://freedomhouse.org/reports/freedom-world/freedom-world-research-methodology" class="external-link uri">https://freedomhouse.org/reports/freedom-world/freedom-world-research-methodology</a></td>
 <td align="left">Unknown.</td>
-<td align="left">NA</td>
+<td align="left">Updated to the Freedom in the World 2026 workbook, with coverage through 2025.</td>
 </tr>
 <tr class="even">
 <td align="left">fh_full</td>
@@ -497,10 +497,10 @@
 <td align="left">FALSE</td>
 <td align="left">TRUE</td>
 <td align="left">FALSE</td>
-<td align="right">2013</td>
-<td align="left">NA</td>
+<td align="right">2003</td>
+<td align="left"><a href="https://freedomhouse.org/reports/freedom-world/freedom-world-research-methodology" class="external-link uri">https://freedomhouse.org/reports/freedom-world/freedom-world-research-methodology</a></td>
 <td align="left">Unknown.</td>
-<td align="left">This is the 0-100 score Freedom House uses for its more aggregated ratings. Freedom House changed its methodology in 2013, so the full data is different for this period; full data from 2003-2012 is available in their website, but is not yet included in this package.</td>
+<td align="left">This is the 0-100 score Freedom House uses for its more aggregated ratings. The package now combines the detailed 2013-2026 workbook (calendar years 2012-2025) with the aggregate 2003-2026 workbook (calendar years 2002-2025), preserving the existing schema by filling unavailable item-level questions with missing values.</td>
 </tr>
 <tr class="odd">
 <td align="left">fh_electoral</td>
@@ -514,9 +514,9 @@
 <td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="right">1990</td>
-<td align="left">NA</td>
+<td align="left"><a href="https://freedomhouse.org/report/freedom-world" class="external-link uri">https://freedomhouse.org/report/freedom-world</a></td>
 <td align="left">Unknown.</td>
-<td align="left">The electoral democracy list seems to have only been compiled since the 1990s, but I have not been able to find an exact date of first compilation.</td>
+<td align="left">The package now preserves both the direct official electoral-democracy lists (<code>electoral</code>) and the recalculated series from full scores (<code>electoral_calc</code>). Direct official lists still have known gaps, including 2020 and 2024.</td>
 </tr>
 <tr class="even">
 <td align="left">gwf</td>
@@ -1013,7 +1013,7 @@
 <span>                                                    verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">democracy_data</span></span>
-<span><span class="co">#&gt; # A tibble: 42,371 × 81</span></span>
+<span><span class="co">#&gt; # A tibble: 42,377 × 81</span></span>
 <span><span class="co">#&gt;    extended_country_name   GWn  cown in_GW_system  year anckar_democracy</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;                 &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;        &lt;dbl&gt;            &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt;  1 Abkhazia                396    NA FALSE         1997               NA</span></span>
@@ -1026,7 +1026,7 @@
 <span><span class="co">#&gt;  8 Abkhazia                396    NA FALSE         2004               NA</span></span>
 <span><span class="co">#&gt;  9 Abkhazia                396    NA FALSE         2005               NA</span></span>
 <span><span class="co">#&gt; 10 Abkhazia                396    NA FALSE         2006               NA</span></span>
-<span><span class="co">#&gt; # ℹ 42,361 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 42,367 more rows</span></span>
 <span><span class="co">#&gt; # ℹ 75 more variables: anrr_democracy &lt;dbl&gt;, arat &lt;dbl&gt;, blm &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   bmr_democracy &lt;dbl&gt;, bmr_democracy_femalesuffrage &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   bmr_democracy_omitteddata &lt;dbl&gt;, bnr_extended &lt;dbl&gt;, pmm_bollen &lt;dbl&gt;,</span></span>
@@ -1085,22 +1085,22 @@
 <span><span class="co">#&gt; # A tibble: 16 × 3</span></span>
 <span><span class="co">#&gt;    country                      year my_measure</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;                       &lt;dbl&gt;      &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Germany                      2015    -0.324 </span></span>
-<span><span class="co">#&gt;  2 Germany                      1930     0.344 </span></span>
-<span><span class="co">#&gt;  3 Germany                      1970    -3.35  </span></span>
-<span><span class="co">#&gt;  4 Germany                      1945     0.805 </span></span>
-<span><span class="co">#&gt;  5 East Germany                 1949    -0.649 </span></span>
-<span><span class="co">#&gt;  6 Federal Republic of Germany  1992    -1.16  </span></span>
-<span><span class="co">#&gt;  7 Somaliland                   1990    -1.88  </span></span>
-<span><span class="co">#&gt;  8 Somalia                      1990     0.502 </span></span>
-<span><span class="co">#&gt;  9 Palestine                    1940    -0.934 </span></span>
-<span><span class="co">#&gt; 10 Russia                       1917     0.268 </span></span>
-<span><span class="co">#&gt; 11 Russia                       1912     0.379 </span></span>
-<span><span class="co">#&gt; 12 USSR                         1922     1.41  </span></span>
-<span><span class="co">#&gt; 13 Republic of Vietnam          1975     0.0802</span></span>
-<span><span class="co">#&gt; 14 Yugoslavia                   1990    -1.76  </span></span>
-<span><span class="co">#&gt; 15 Yugoslavia                   1991    -0.215 </span></span>
-<span><span class="co">#&gt; 16 Vietnam, South               1954    -0.179</span></span></code></pre></div>
+<span><span class="co">#&gt;  1 Germany                      2015    -0.334 </span></span>
+<span><span class="co">#&gt;  2 Germany                      1930    -1.21  </span></span>
+<span><span class="co">#&gt;  3 Germany                      1970     1.57  </span></span>
+<span><span class="co">#&gt;  4 Germany                      1945    -1.07  </span></span>
+<span><span class="co">#&gt;  5 East Germany                 1949     1.37  </span></span>
+<span><span class="co">#&gt;  6 Federal Republic of Germany  1992    -0.100 </span></span>
+<span><span class="co">#&gt;  7 Somaliland                   1990    -0.135 </span></span>
+<span><span class="co">#&gt;  8 Somalia                      1990     1.29  </span></span>
+<span><span class="co">#&gt;  9 Palestine                    1940     0.481 </span></span>
+<span><span class="co">#&gt; 10 Russia                       1917    -0.889 </span></span>
+<span><span class="co">#&gt; 11 Russia                       1912    -0.826 </span></span>
+<span><span class="co">#&gt; 12 USSR                         1922     1.62  </span></span>
+<span><span class="co">#&gt; 13 Republic of Vietnam          1975    -1.28  </span></span>
+<span><span class="co">#&gt; 14 Yugoslavia                   1990     0.0800</span></span>
+<span><span class="co">#&gt; 15 Yugoslavia                   1991     0.647 </span></span>
+<span><span class="co">#&gt; 16 Vietnam, South               1954     1.52</span></span></code></pre></div>
 <p>and you then want to add state system information. <code>country_year_coder</code> does that for you!</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
@@ -1153,7 +1153,7 @@
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="right">2015</td>
-<td align="right">-0.3244904</td>
+<td align="right">-0.3339655</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -1167,7 +1167,7 @@
 <tr class="even">
 <td align="left">Germany</td>
 <td align="right">1930</td>
-<td align="right">0.3441600</td>
+<td align="right">-1.2103712</td>
 <td align="left">Germany (Prussia)</td>
 <td align="right">255</td>
 <td align="right">255</td>
@@ -1181,7 +1181,7 @@
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="right">1970</td>
-<td align="right">-3.3522148</td>
+<td align="right">1.5707061</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -1195,7 +1195,7 @@
 <tr class="even">
 <td align="left">Germany</td>
 <td align="right">1945</td>
-<td align="right">0.8048752</td>
+<td align="right">-1.0686942</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">260</td>
@@ -1209,7 +1209,7 @@
 <tr class="odd">
 <td align="left">East Germany</td>
 <td align="right">1949</td>
-<td align="right">-0.6492471</td>
+<td align="right">1.3721177</td>
 <td align="left">German Democratic Republic</td>
 <td align="right">265</td>
 <td align="right">265</td>
@@ -1223,7 +1223,7 @@
 <tr class="even">
 <td align="left">Federal Republic of Germany</td>
 <td align="right">1992</td>
-<td align="right">-1.1588847</td>
+<td align="right">-0.1003748</td>
 <td align="left">German Federal Republic</td>
 <td align="right">260</td>
 <td align="right">255</td>
@@ -1237,7 +1237,7 @@
 <tr class="odd">
 <td align="left">Somaliland</td>
 <td align="right">1990</td>
-<td align="right">-1.8838051</td>
+<td align="right">-0.1347330</td>
 <td align="left">Somaliland</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -1251,7 +1251,7 @@
 <tr class="even">
 <td align="left">Somalia</td>
 <td align="right">1990</td>
-<td align="right">0.5019781</td>
+<td align="right">1.2865279</td>
 <td align="left">Somalia</td>
 <td align="right">520</td>
 <td align="right">520</td>
@@ -1265,7 +1265,7 @@
 <tr class="odd">
 <td align="left">Palestine</td>
 <td align="right">1940</td>
-<td align="right">-0.9338654</td>
+<td align="right">0.4813558</td>
 <td align="left">Palestine, State of</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
@@ -1279,7 +1279,7 @@
 <tr class="even">
 <td align="left">Russia</td>
 <td align="right">1917</td>
-<td align="right">0.2683674</td>
+<td align="right">-0.8893088</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1293,7 +1293,7 @@
 <tr class="odd">
 <td align="left">Russia</td>
 <td align="right">1912</td>
-<td align="right">0.3788085</td>
+<td align="right">-0.8258849</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1307,7 +1307,7 @@
 <tr class="even">
 <td align="left">USSR</td>
 <td align="right">1922</td>
-<td align="right">1.4104689</td>
+<td align="right">1.6179244</td>
 <td align="left">Russia (Soviet Union)</td>
 <td align="right">365</td>
 <td align="right">365</td>
@@ -1321,7 +1321,7 @@
 <tr class="odd">
 <td align="left">Republic of Vietnam</td>
 <td align="right">1975</td>
-<td align="right">0.0802301</td>
+<td align="right">-1.2821376</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>
@@ -1335,7 +1335,7 @@
 <tr class="even">
 <td align="left">Yugoslavia</td>
 <td align="right">1990</td>
-<td align="right">-1.7575981</td>
+<td align="right">0.0800486</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1349,7 +1349,7 @@
 <tr class="odd">
 <td align="left">Yugoslavia</td>
 <td align="right">1991</td>
-<td align="right">-0.2146556</td>
+<td align="right">0.6471602</td>
 <td align="left">Yugoslavia</td>
 <td align="right">345</td>
 <td align="right">345</td>
@@ -1363,7 +1363,7 @@
 <tr class="even">
 <td align="left">Vietnam, South</td>
 <td align="right">1954</td>
-<td align="right">-0.1790490</td>
+<td align="right">1.5236184</td>
 <td align="left">Vietnam, Republic of</td>
 <td align="right">817</td>
 <td align="right">817</td>

@@ -1,5 +1,33 @@
 # Changelog
 
+## democracyData 0.7.1
+
+### Dataset updates
+
+- **Freedom House 2026.** Updated `fh` to the Freedom in the World 2026
+  country-and-territory ratings workbook, extending coverage through
+  2025.
+
+- **Freedom House full scores.** Updated `fh_full` to combine the
+  detailed 2013-2026 workbook with the aggregate 2003-2026 workbook,
+  extending coverage through 2025 while preserving the existing schema
+  by filling unavailable item-level questions with missing values.
+
+- **Freedom House electoral democracies.** Updated `fh_electoral`
+  through 2025 and clarified the two routes in the data: `electoral` now
+  follows the direct official Freedom House lists where available, while
+  `electoral_calc` remains the recalculated series from the full scores.
+
+- **Freedom House download functions.** The packaged `fh`, `fh_full`,
+  and `fh_electoral` objects now track the newer 2026 Freedom House
+  workbooks, but
+  [`download_fh()`](https://xmarquez.github.io/democracyData/reference/download_fh.md),
+  [`download_fh_full()`](https://xmarquez.github.io/democracyData/reference/download_fh_full.md),
+  and
+  [`download_fh_electoral()`](https://xmarquez.github.io/democracyData/reference/download_fh_electoral.md)
+  remain soft-deprecated archived downloaders for the last public 2025
+  release.
+
 ## democracyData 0.7.0
 
 ### Dataset updates

@@ -3,12 +3,10 @@
 `fh_pmm` archives the Freedom House data included in D. Pemstein, S. A.
 Meserve, and J. Melton. *Replication Data for: Democratic Compromise: A
 Latent Variable Analysis of Ten Measures of Regime Type*. 2013. DOI:
-10.7910/DVN/WWYOHU. HDL: 1902.1/PMM., while `fh` archives the 2025
-edition of the Freedom in the World data (updated to 2024). Freedom
-House no longer makes new versions of the data available for free
-download; contact <research@freedomhouse.org> for details. Use
+10.7910/DVN/WWYOHU. HDL: 1902.1/PMM., while `fh` archives the Freedom in
+the World 2026 workbook (updated to 2025). Use
 [download_fh](https://xmarquez.github.io/democracyData/reference/download_fh.md)
-to download the older 2025 dataset directly.
+to redownload the current packaged source workbook directly.
 
 ## Usage
 
@@ -24,7 +22,7 @@ An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
 6438 rows and 7 columns.
 
 An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
-9965 rows and 11 columns.
+12108 rows and 11 columns.
 
 ## Source
 
@@ -32,14 +30,14 @@ D. Pemstein, S. A. Meserve, and J. Melton. *Replication Data for:
 Democratic Compromise: A Latent Variable Analysis of Ten Measures of
 Regime Type*. 2013. DOI: 10.7910/DVN/WWYOHU. HDL: 1902.1/PMM.
 
-F. House. *Freedom in the World 2025: The Uphill Battle to Safeguard
-Rights*. Report. Freedom House, 2025.
-<https://freedomhouse.org/report/freedom-world/2025/uphill-battle-safeguard-rights>.
+Freedom House, *Freedom in the World* country and territory ratings
+workbook. Original data and methodology are available at
+<https://freedomhouse.org/reports/freedom-world/freedom-world-research-methodology>.
 
 ## Details
 
-The Freedom House dataset released in 2025 is different from the
-archived PMM data for 49 country years:
+The packaged Freedom House dataset is different from the archived PMM
+data for 49 country years:
 
     fh |>
       dplyr::inner_join(fh_pmm) |>
@@ -133,17 +131,17 @@ problematic year of 1982.
 
 - pr:
 
-  The political rights scores (from 1 to 7) in the archived Freedom
+  The political rights scores (from 1 to 7) in the packaged Freedom
   House data (`fh`).
 
 - cl:
 
-  The civil rights scores (from 1 to 7) in the archived Freedom House
+  The civil rights scores (from 1 to 7) in the packaged Freedom House
   data (`fh`).
 
 - status:
 
-  The status of the country in the archived Freedom House data (Free,
+  The status of the country in the packaged Freedom House data (Free,
   Partly Free, Not Free).
 
 - fh_total:

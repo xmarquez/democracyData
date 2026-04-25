@@ -14,4 +14,4 @@ bibliography
 
 ## Format
 
-An object of class `BibEntry` (inherits from `bibentry`) of length 70.
+An object of class `BibEntry` (inherits from `bibentry`) of length 71.

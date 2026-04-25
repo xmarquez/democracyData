@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">democracyData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,6 +33,16 @@
       <small>Source: <a href="https://github.com/xmarquez/democracyData/blob/master/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.7.1" id="democracydata-071">democracyData 0.7.1<a class="anchor" aria-label="anchor" href="#democracydata-071"></a></h2>
+<div class="section level3">
+<h3 id="dataset-updates-0-7-1">Dataset updates<a class="anchor" aria-label="anchor" href="#dataset-updates-0-7-1"></a></h3>
+<ul><li><p><strong>Freedom House 2026.</strong> Updated <code>fh</code> to the Freedom in the World 2026 country-and-territory ratings workbook, extending coverage through 2025.</p></li>
+<li><p><strong>Freedom House full scores.</strong> Updated <code>fh_full</code> to combine the detailed 2013-2026 workbook with the aggregate 2003-2026 workbook, extending coverage through 2025 while preserving the existing schema by filling unavailable item-level questions with missing values.</p></li>
+<li><p><strong>Freedom House electoral democracies.</strong> Updated <code>fh_electoral</code> through 2025 and clarified the two routes in the data: <code>electoral</code> now follows the direct official Freedom House lists where available, while <code>electoral_calc</code> remains the recalculated series from the full scores.</p></li>
+<li><p><strong>Freedom House download functions.</strong> The packaged <code>fh</code>, <code>fh_full</code>, and <code>fh_electoral</code> objects now track the newer 2026 Freedom House workbooks, but <code><a href="../reference/download_fh.html">download_fh()</a></code>, <code><a href="../reference/download_fh_full.html">download_fh_full()</a></code>, and <code><a href="../reference/download_fh_electoral.html">download_fh_electoral()</a></code> remain soft-deprecated archived downloaders for the last public 2025 release.</p></li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.7.0" id="democracydata-070">democracyData 0.7.0<a class="anchor" aria-label="anchor" href="#democracydata-070"></a></h2>
 <div class="section level3">

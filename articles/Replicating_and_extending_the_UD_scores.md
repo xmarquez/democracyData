@@ -354,7 +354,7 @@ Code
 ``` r
 replication_2011_model@time
 #> TOTAL:   Data  Estep  Mstep     SE   Post 
-#>  5.297  0.124  0.630  3.579  0.930  0.001
+#>  5.245  0.300  0.595  3.422  0.902  0.001
 ```
 
 We can easily check that this model converges and that it accounts for
@@ -567,17 +567,17 @@ extended_model <- mirt(other_dem |> select(-any_of(identifiers)),
 summary(extended_model)
 #>                                  F1    h2
 #> arat                          0.962 0.925
-#> blm                           0.991 0.981
+#> blm                           0.991 0.982
 #> bmr_democracy_femalesuffrage  0.989 0.978
-#> pmm_bollen                    0.966 0.933
+#> pmm_bollen                    0.967 0.934
 #> doorenspleet                  0.979 0.959
-#> wgi_democracy                 0.973 0.947
-#> fh_total_reversed             0.960 0.921
+#> wgi_democracy                 0.974 0.948
+#> fh_total_reversed             0.960 0.922
 #> gwf_democracy_extended_strict 0.970 0.941
-#> pmm_hadenius                  0.982 0.964
+#> pmm_hadenius                  0.983 0.966
 #> kailitz_tri                   0.965 0.932
 #> svolik_democracy              0.976 0.952
-#> lexical_index                 0.969 0.939
+#> lexical_index                 0.969 0.938
 #> ulfelder_democracy_extended   0.980 0.960
 #> prc                           0.986 0.972
 #> mainwaring                    0.986 0.972
@@ -586,14 +586,14 @@ summary(extended_model)
 #> 
 #>                                 SE.F1
 #> arat                          0.00172
-#> blm                           0.00213
+#> blm                           0.00211
 #> bmr_democracy_femalesuffrage  0.00072
-#> pmm_bollen                    0.00396
+#> pmm_bollen                    0.00392
 #> doorenspleet                  0.00134
-#> wgi_democracy                 0.00103
-#> fh_total_reversed             0.00111
+#> wgi_democracy                 0.00102
+#> fh_total_reversed             0.00109
 #> gwf_democracy_extended_strict 0.00162
-#> pmm_hadenius                  0.00453
+#> pmm_hadenius                  0.00431
 #> kailitz_tri                   0.00130
 #> svolik_democracy              0.00145
 #> lexical_index                 0.00073
@@ -603,7 +603,7 @@ summary(extended_model)
 #> vanhanen_democratization      0.00129
 #> v2x_polyarchy                 0.00047
 #> 
-#> SS loadings:  16.129 
+#> SS loadings:  16.134 
 #> Proportion Var:  0.949 
 #> 
 #> Factor correlations: 
@@ -770,16 +770,16 @@ cutpoints_extended
 #> # A tibble: 101 × 6
 #>    variable                     estimate pct025 pct975      se num_obs
 #>    <chr>                           <dbl>  <dbl>  <dbl>   <dbl>   <int>
-#>  1 arat                           -0.518 -0.523 -0.514 0.00245    3873
-#>  2 arat                           -0.191 -0.203 -0.177 0.00693    3873
-#>  3 arat                            0.239  0.206  0.276 0.0186     3873
+#>  1 arat                           -0.518 -0.522 -0.513 0.00246    3873
+#>  2 arat                           -0.190 -0.203 -0.177 0.00693    3873
+#>  3 arat                            0.239  0.206  0.275 0.0186     3873
 #>  4 arat                            0.525  0.471  0.584 0.0302     3873
 #>  5 arat                            0.908  0.822  1.00  0.0479     3873
-#>  6 arat                            1.69   1.54   1.86  0.0838     3873
-#>  7 blm                             0.480  0.302  0.761 0.143       505
-#>  8 blm                             1.06   0.678  1.67  0.309       505
-#>  9 bmr_democracy_femalesuffrage    0.842  0.741  0.956 0.0583    19126
-#> 10 pmm_bollen                     -0.651 -0.660 -0.639 0.00612     510
+#>  6 arat                            1.69   1.54   1.86  0.0837     3873
+#>  7 blm                             0.479  0.300  0.762 0.144       505
+#>  8 blm                             1.06   0.674  1.67  0.312       505
+#>  9 bmr_democracy_femalesuffrage    0.841  0.741  0.955 0.0581    19126
+#> 10 pmm_bollen                     -0.649 -0.658 -0.637 0.00604     510
 #> # ℹ 91 more rows
 
 dichotomous_cutpoints <- cutpoints_extended |> 
@@ -791,16 +791,16 @@ dichotomous_cutpoints
 #> # Groups:   variable [5]
 #>   variable                      estimate pct025 pct975     se num_obs
 #>   <chr>                            <dbl>  <dbl>  <dbl>  <dbl>   <int>
-#> 1 bmr_democracy_femalesuffrage     0.842  0.741  0.956 0.0583   19126
-#> 2 doorenspleet                     0.925  0.816  1.05  0.0638   13009
-#> 3 gwf_democracy_extended_strict    0.663  0.590  0.745 0.0417    9243
-#> 4 svolik_democracy                 0.720  0.635  0.817 0.0492    8554
-#> 5 ulfelder_democracy_extended      0.712  0.631  0.803 0.0464   11545
+#> 1 bmr_democracy_femalesuffrage     0.841  0.741  0.955 0.0581   19126
+#> 2 doorenspleet                     0.925  0.815  1.05  0.0638   13009
+#> 3 gwf_democracy_extended_strict    0.663  0.590  0.744 0.0417    9243
+#> 4 svolik_democracy                 0.720  0.635  0.816 0.0491    8554
+#> 5 ulfelder_democracy_extended      0.711  0.630  0.802 0.0464   11545
 
 avg_dichotomous <- mean(dichotomous_cutpoints$estimate)
 
 avg_dichotomous
-#> [1] 0.7723956
+#> [1] 0.7720065
 
 extended_scores <- extended_scores |> mutate(adj_z1 = z1 - avg_dichotomous, 
                                         adj_pct025 = z1_pct025 - avg_dichotomous, 
@@ -886,20 +886,20 @@ summary(dichotomous_model)
 #> anckar_democracy              0.996 0.992
 #> anrr_democracy                0.985 0.971
 #> bmr_democracy_femalesuffrage  0.996 0.992
-#> bnr_extended                  0.974 0.948
+#> bnr_extended                  0.973 0.948
 #> doorenspleet                  0.978 0.956
-#> fh_electoral                  0.982 0.965
+#> fh_electoral                  0.982 0.964
 #> gwf_democracy_extended_strict 0.978 0.956
 #> kailitz_binary                0.981 0.963
 #> magaloni_democracy_extended   0.983 0.966
 #> pacl_update                   0.971 0.943
-#> PIPE_democracy                0.813 0.661
+#> PIPE_democracy                0.813 0.660
 #> pitf_binary                   0.975 0.951
 #> reign_democracy               0.971 0.942
-#> dsvmdi                        0.959 0.919
+#> dsvmdi                        0.958 0.919
 #> svolik_democracy              0.979 0.959
-#> ulfelder_democracy_extended   0.979 0.959
-#> utip_dichotomous_strict       0.930 0.865
+#> ulfelder_democracy_extended   0.979 0.958
+#> utip_dichotomous_strict       0.930 0.864
 #> vaporeg_binary_strict         0.982 0.964
 #> vaporeg_binary_non_strict     0.981 0.962
 #> wth_democrobust               0.976 0.953
@@ -910,23 +910,23 @@ summary(dichotomous_model)
 #> bmr_democracy_femalesuffrage  0.00056
 #> bnr_extended                  0.00164
 #> doorenspleet                  0.00154
-#> fh_electoral                  0.00138
+#> fh_electoral                  0.00143
 #> gwf_democracy_extended_strict 0.00147
-#> kailitz_binary                0.00127
+#> kailitz_binary                0.00128
 #> magaloni_democracy_extended   0.00119
 #> pacl_update                   0.00155
 #> PIPE_democracy                0.00538
 #> pitf_binary                   0.00130
 #> reign_democracy               0.00156
-#> dsvmdi                        0.00195
+#> dsvmdi                        0.00196
 #> svolik_democracy              0.00144
 #> ulfelder_democracy_extended   0.00130
-#> utip_dichotomous_strict       0.00398
+#> utip_dichotomous_strict       0.00399
 #> vaporeg_binary_strict         0.00156
-#> vaporeg_binary_non_strict     0.00097
-#> wth_democrobust               0.00175
+#> vaporeg_binary_non_strict     0.00098
+#> wth_democrobust               0.00176
 #> 
-#> SS loadings:  18.787 
+#> SS loadings:  18.782 
 #> Proportion Var:  0.939 
 #> 
 #> Factor correlations: 
@@ -991,7 +991,7 @@ panel_model <- mirt(full_panel |> select(-any_of(identifiers)),
 
 panel_model@time
 #> TOTAL:   Data  Estep  Mstep     SE   Post 
-#>  8.405  0.052  1.216  6.077  1.033  0.001
+#>  8.440  0.053  1.112  6.197  1.047  0.001
 
 summary(panel_model)
 #>                                 F1    h2
@@ -1140,69 +1140,69 @@ panel_model <- mirt(full_panel |> select(-any_of(identifiers)),
 
 panel_model@time
 #> TOTAL:   Data  Estep  Mstep     SE   Post 
-#> 15.113  0.045  0.768  9.953  4.274  0.001
+#> 16.942  0.037  0.770 11.970  4.099  0.001
 
 summary(panel_model)
 #>                                 F1    h2
-#> fh_total_reversed            0.917 0.842
-#> fh_electoral                 0.934 0.873
-#> lexical_index                0.929 0.862
-#> lexical_index_plus           0.926 0.858
-#> v2x_polyarchy                0.997 0.995
-#> v2x_libdem                   0.968 0.937
-#> v2x_partipdem                0.960 0.922
-#> v2x_api                      0.996 0.993
+#> fh_total_reversed            0.925 0.856
+#> lexical_index                0.936 0.876
+#> lexical_index_plus           0.932 0.869
+#> v2x_polyarchy                0.998 0.995
+#> v2x_libdem                   0.971 0.943
+#> v2x_partipdem                0.964 0.930
+#> v2x_api                      0.997 0.995
 #> v2x_mpi                      0.997 0.994
-#> anckar_democracy             0.930 0.864
-#> bmr_democracy                0.905 0.819
-#> bmr_democracy_femalesuffrage 0.905 0.819
-#> bmr_democracy_omitteddata    0.905 0.819
-#> pitf                         0.849 0.721
-#> polity2                      0.859 0.738
-#> vaporeg_binary_strict        0.868 0.753
-#> vaporeg_binary_non_strict    0.934 0.872
-#> vaporeg_trichotomous         0.919 0.845
-#> v2x_delibdem                 0.945 0.893
-#> v2x_egaldem                  0.909 0.827
-#> csvmdi                       0.879 0.773
-#> vanhanen_democratization     0.605 0.366
-#> reign_democracy              0.831 0.690
-#> pacl_update                  0.807 0.651
-#> wgi_democracy                0.903 0.815
-#> bti                          0.889 0.791
-#> eiu                          0.834 0.696
+#> anckar_democracy             0.932 0.868
+#> bmr_democracy                0.908 0.825
+#> bmr_democracy_femalesuffrage 0.908 0.825
+#> bmr_democracy_omitteddata    0.908 0.825
+#> pitf                         0.859 0.737
+#> polity2                      0.867 0.751
+#> vaporeg_binary_strict        0.874 0.765
+#> vaporeg_binary_non_strict    0.937 0.878
+#> vaporeg_trichotomous         0.923 0.852
+#> v2x_delibdem                 0.951 0.904
+#> v2x_egaldem                  0.919 0.844
+#> csvmdi                       0.886 0.785
+#> vanhanen_democratization     0.620 0.385
+#> reign_democracy              0.841 0.708
+#> pacl_update                  0.815 0.665
+#> fh_electoral                 0.937 0.879
+#> wgi_democracy                0.911 0.830
+#> bti                          0.897 0.805
+#> eiu                          0.846 0.716
 #> 
 #>                                SE.F1
-#> fh_total_reversed            0.00511
-#> fh_electoral                 0.00997
-#> lexical_index                0.00673
-#> lexical_index_plus           0.00591
-#> v2x_polyarchy                0.00038
-#> v2x_libdem                   0.00215
-#> v2x_partipdem                0.00262
+#> fh_total_reversed            0.00486
+#> lexical_index                0.00693
+#> lexical_index_plus           0.00593
+#> v2x_polyarchy                0.00053
+#> v2x_libdem                   0.00222
+#> v2x_partipdem                0.00242
 #> v2x_api                      0.00040
-#> v2x_mpi                      0.00040
-#> anckar_democracy             0.01041
-#> bmr_democracy                0.01258
-#> bmr_democracy_femalesuffrage 0.01258
-#> bmr_democracy_omitteddata    0.01258
-#> pitf                         0.01061
-#> polity2                      0.00810
-#> vaporeg_binary_strict        0.02206
-#> vaporeg_binary_non_strict    0.01041
-#> vaporeg_trichotomous         0.00850
-#> v2x_delibdem                 0.00343
-#> v2x_egaldem                  0.00541
-#> csvmdi                       0.00755
-#> vanhanen_democratization     0.01789
-#> reign_democracy              0.01743
-#> pacl_update                  0.01893
-#> wgi_democracy                0.00569
-#> bti                          0.00639
-#> eiu                          0.00907
+#> v2x_mpi                      0.00043
+#> anckar_democracy             0.01013
+#> bmr_democracy                0.01233
+#> bmr_democracy_femalesuffrage 0.01233
+#> bmr_democracy_omitteddata    0.01233
+#> pitf                         0.01065
+#> polity2                      0.00836
+#> vaporeg_binary_strict        0.02094
+#> vaporeg_binary_non_strict    0.01082
+#> vaporeg_trichotomous         0.00896
+#> v2x_delibdem                 0.00331
+#> v2x_egaldem                  0.00509
+#> csvmdi                       0.00795
+#> vanhanen_democratization     0.01849
+#> reign_democracy              0.01720
+#> pacl_update                  0.01888
+#> fh_electoral                 0.01017
+#> wgi_democracy                0.00552
+#> bti                          0.00640
+#> eiu                          0.00898
 #> 
-#> SS loadings:  22.026 
-#> Proportion Var:  0.816 
+#> SS loadings:  22.305 
+#> Proportion Var:  0.826 
 #> 
 #> Factor correlations: 
 #> 
@@ -1237,19 +1237,19 @@ Data summary
 | skim_variable         | n_missing | complete_rate | min | max | empty | n_unique | whitespace |
 |:----------------------|----------:|--------------:|----:|----:|------:|---------:|-----------:|
 | extended_country_name |         0 |             1 |   4 |  39 |     0 |      129 |          0 |
-| z1                    |         0 |             1 |  15 |  20 |     0 |      792 |          0 |
-| se_z1                 |         0 |             1 |  16 |  18 |     0 |      792 |          0 |
-| z1_pct975             |         0 |             1 |  13 |  19 |     0 |      792 |          0 |
-| z1_pct025             |         0 |             1 |  15 |  20 |     0 |      792 |          0 |
+| z1                    |         0 |             1 |  14 |  21 |     0 |      792 |          0 |
+| se_z1                 |         0 |             1 |  15 |  18 |     0 |      792 |          0 |
+| z1_pct975             |         0 |             1 |  14 |  20 |     0 |      792 |          0 |
+| z1_pct025             |         0 |             1 |  13 |  20 |     0 |      792 |          0 |
 | z1_adj                |         0 |             1 |  14 |  20 |     0 |      792 |          0 |
 | z1_pct975_adj         |         0 |             1 |  14 |  20 |     0 |      792 |          0 |
-| z1_pct025_adj         |         0 |             1 |  14 |  20 |     0 |      792 |          0 |
+| z1_pct025_adj         |         0 |             1 |  13 |  19 |     0 |      792 |          0 |
 | z1_as_prob            |         0 |             1 |  15 |  19 |     0 |      792 |          0 |
-| z1_pct975_as_prob     |         0 |             1 |  15 |  18 |     0 |      792 |          0 |
+| z1_pct975_as_prob     |         0 |             1 |  14 |  18 |     0 |      792 |          0 |
 | z1_pct025_as_prob     |         0 |             1 |  15 |  19 |     0 |      792 |          0 |
 | z1_adj_as_prob        |         0 |             1 |  14 |  19 |     0 |      792 |          0 |
-| z1_pct975_adj_as_prob |         0 |             1 |  15 |  19 |     0 |      792 |          0 |
-| z1_pct025_adj_as_prob |         0 |             1 |  15 |  19 |     0 |      792 |          0 |
+| z1_pct975_adj_as_prob |         0 |             1 |  14 |  18 |     0 |      792 |          0 |
+| z1_pct025_adj_as_prob |         0 |             1 |  13 |  19 |     0 |      792 |          0 |
 
 **Variable type: logical**
 
@@ -1425,7 +1425,7 @@ Code
 prob_more(replication_2011_scores, "United States of America","France", 2000)
 #> [1] 0.8782654
 prob_more(extended_scores, "United States of America","France", 2000)
-#> [1] 0.5768139
+#> [1] 0.5778274
 ```
 
 Or perhaps we wish to know the probability that the United States was
@@ -1443,7 +1443,7 @@ prob_more(extended_scores,
           "United States of America",
           "United States of America", 
           c(2000,1953))
-#> [1] 0.9999967
+#> [1] 0.9999968
 ```
 
 ## References

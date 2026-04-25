@@ -737,6 +737,7 @@ Table 7: LIED countries not in the COW system
 
 | fh_country                                     | cown |
 |:-----------------------------------------------|:-----|
+| South Vietnam                                  | NA   |
 | Abkhazia                                       | NA   |
 | Chechnya                                       | NA   |
 | Crimea                                         | NA   |

@@ -13,7 +13,7 @@ names, which variables contain democracy scores."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">democracyData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -236,6 +236,7 @@ check that the results make sense.</p>
 <p>B. Geddes, J. Wright, and E. Frantz. "Autocratic Breakdown andRegime Transitions: A New Data Set". In: _Perspectives on Politics_12.1 (2014), pp. 313-331. DOI: 10.1017/S1537592714000851.</p>
 <p>K. S. Gleditsch and M. D. Ward. "Interstate System Membership: ARevised List of Independent States since the Congress of Vienna". In:<em>International Interactions</em> 25.4 (1999), pp. 393-413. DOI:10.1080/03050629908434958.</p>
 <p>J. Goldstone, R. Bates, D. Epstein, et al. "A Global Model forForecasting Political Instability". In: <em>American Journal of PoliticalScience</em> 54.1 (2010), pp. 190-208. DOI:10.1111/j.1540-5907.2009.00426.x.</p>
+<p>Y. Gorokhovskaia, C. Grothe, and A. Slipowitz. <em>Freedom in theWorld 2026: The Growing Shadow of Autocracy</em>. Tech. rep. Freedom House,Mar. 2026.</p>
 <p>K. Gründler and T. Krieger. "Democracy and Growth: Evidence from aMachine Learning Indicator". In: <em>European Journal of PoliticalEconomy</em> 45 (2016), pp. 85-107. DOI: 10.1016/j.ejpoleco.2016.05.005.</p>
 <p>K. Gründler and T. Krieger. <em>Machine Learning Indices, PoliticalInstitutions, and Economic Development</em>. Report. CESifo Group Munich,2018. <code>https://dx.doi.org/10.2139/ssrn.3171982</code>.</p>
 <p>K. Gründler and T. Krieger. "Using Machine Learning for MeasuringDemocracy: A Practitioners Guide and a New Updated Dataset for 186Countries from 1919 to 2019". In: <em>European Journal of PoliticalEconomy</em> (), p. 102047. DOI: 10.1016/j.ejpoleco.2021.102047.</p>
@@ -299,11 +300,11 @@ check that the results make sense.</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">democracy</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  extended_country_name      GWn             cown       in_GW_system   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Length:9137           Min.   :  2.0   Min.   :  2.0   Mode :logical  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Class :character      1st Qu.:225.0   1st Qu.:225.0   FALSE:12       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mode  :character      Median :450.0   Median :450.0   TRUE :9125     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        Mean   :458.8   Mean   :458.5                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        3rd Qu.:678.0   3rd Qu.:678.0                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Length   :9137        Min.   :  2.0   Min.   :  2.0   Mode :logical  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  N.unique : 198        1st Qu.:225.0   1st Qu.:225.0   FALSE:12       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  N.blank  :   0        Median :450.0   Median :450.0   TRUE :9125     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.nchar:   4        Mean   :458.8   Mean   :458.5                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.nchar:  39        3rd Qu.:678.0   3rd Qu.:678.0                  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                        Max.   :990.0   Max.   :990.0                  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       year         pmm_arat        pmm_blm       pmm_bollen         pmm_fh    </span>
@@ -313,15 +314,15 @@ check that the results make sense.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   :1982   Mean   : 73.2   Mean   :0.36   Mean   : 55.46   Mean   :4.15  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:1997   3rd Qu.: 92.0   3rd Qu.:0.50   3rd Qu.: 90.95   3rd Qu.:6.00  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :2008   Max.   :109.0   Max.   :1.00   Max.   :100.00   Max.   :7.00  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                 NA's   :5264    NA's   :8862   NA's   :8627     NA's   :2699  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 NAs    :5264    NAs    :8862   NAs    :8627     NAs    :2699  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   pmm_hadenius    pmm_mainwaring      pmm_munck         pmm_pacl     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   : 0.000   Min.   :-1.0000   Min.   :0.0000   Min.   :0.0000  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 1.500   1st Qu.:-1.0000   1st Qu.:0.7500   1st Qu.:0.0000  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 3.100   Median : 0.0000   Median :1.0000   Median :0.0000  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 4.508   Mean   : 0.1222   Mean   :0.8382   Mean   :0.4355  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 4.509   Mean   : 0.1222   Mean   :0.8382   Mean   :0.4355  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 8.300   3rd Qu.: 1.0000   3rd Qu.:1.0000   3rd Qu.:1.0000  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :10.000   Max.   : 1.0000   Max.   :1.0000   Max.   :1.0000  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :9008     NA's   :8302      NA's   :8795     NA's   :70      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  NAs    :9008     NAs    :8302      NAs    :8795     NAs    :70      </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    pmm_polity       pmm_polyarchy       pmm_prc       pmm_vanhanen  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :-10.0000   Min.   : 0.000   Min.   :1.000   Min.   : 0.00  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: -7.0000   1st Qu.: 3.000   1st Qu.:1.000   1st Qu.: 0.00  </span>
@@ -329,14 +330,14 @@ check that the results make sense.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   :  0.1286   Mean   : 6.329   Mean   :2.147   Mean   :11.31  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:  8.0000   3rd Qu.:10.000   3rd Qu.:4.000   3rd Qu.:20.70  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   : 10.0000   Max.   :10.000   Max.   :4.000   Max.   :49.00  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :1087       NA's   :8784     NA's   :3135    NA's   :172    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  NAs    :1087       NAs    :8784     NAs    :3135    NAs    :172    </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="fu">prepare_democracy_data</span><span class="op">(</span><span class="va">democracy</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  extended_country_name      GWn             cown       in_GW_system   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Length:9137           Min.   :  2.0   Min.   :  2.0   Mode :logical  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Class :character      1st Qu.:225.0   1st Qu.:225.0   FALSE:12       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mode  :character      Median :450.0   Median :450.0   TRUE :9125     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        Mean   :458.8   Mean   :458.5                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        3rd Qu.:678.0   3rd Qu.:678.0                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Length   :9137        Min.   :  2.0   Min.   :  2.0   Mode :logical  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  N.unique : 198        1st Qu.:225.0   1st Qu.:225.0   FALSE:12       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  N.blank  :   0        Median :450.0   Median :450.0   TRUE :9125     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.nchar:   4        Mean   :458.8   Mean   :458.5                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.nchar:  39        3rd Qu.:678.0   3rd Qu.:678.0                  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                        Max.   :990.0   Max.   :990.0                  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       year         pmm_arat        pmm_blm       pmm_bollen    </span>
@@ -346,15 +347,15 @@ check that the results make sense.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   :1982   Mean   :3.878   Mean   :1.72   Mean   : 6.006  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:1997   3rd Qu.:6.000   3rd Qu.:2.00   3rd Qu.:10.000  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :2008   Max.   :7.000   Max.   :3.00   Max.   :10.000  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                 NA's   :5264    NA's   :8862   NA's   :8627    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 NAs    :5264    NAs    :8862   NAs    :8627    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      pmm_fh        pmm_hadenius    pmm_mainwaring    pmm_munck    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   : 1.000   Min.   : 0.000   Min.   :1.000   Min.   :1.000  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 4.000   1st Qu.: 1.500   1st Qu.:1.000   1st Qu.:3.000  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 7.000   Median : 3.100   Median :2.000   Median :4.000  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 7.301   Mean   : 4.508   Mean   :2.122   Mean   :3.333  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 7.301   Mean   : 4.509   Mean   :2.122   Mean   :3.333  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:11.000   3rd Qu.: 8.300   3rd Qu.:3.000   3rd Qu.:4.000  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :13.000   Max.   :10.000   Max.   :3.000   Max.   :4.000  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :2699     NA's   :9008     NA's   :8302    NA's   :8795   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  NAs    :2699     NAs    :9008     NAs    :8302    NAs    :8795   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     pmm_pacl       pmm_polity    pmm_polyarchy       pmm_prc     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :1.000   Min.   : 1.00   Min.   : 1.000   Min.   :1.000  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.:1.000   1st Qu.: 4.00   1st Qu.: 4.000   1st Qu.:1.000  </span>
@@ -362,7 +363,7 @@ check that the results make sense.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   :1.436   Mean   :11.13   Mean   : 7.329   Mean   :2.147  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:2.000   3rd Qu.:19.00   3rd Qu.:11.000   3rd Qu.:4.000  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :2.000   Max.   :21.00   Max.   :11.000   Max.   :4.000  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :70      NA's   :1087    NA's   :8784     NA's   :3135   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  NAs    :70      NAs    :1087    NAs    :8784     NAs    :3135   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   pmm_vanhanen  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :1.000  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.:1.000  </span>
@@ -370,7 +371,7 @@ check that the results make sense.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   :2.939  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:5.000  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :8.000  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :172    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  NAs    :172    </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
