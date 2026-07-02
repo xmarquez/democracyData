@@ -565,7 +565,7 @@ redownload_lied <- function(url, verbose = TRUE, return_raw = FALSE, ...) {
         TRUE ~ extended_country_name
       ),
       cown = case_when(cow == 817 & year < 1945 ~ NA_real_, TRUE ~ cown),
-      GWn = case_when(cow == 817 & year < 1945 ~ 815, TRUE ~ cown)
+      GWn = case_when(cow == 817 & year < 1945 ~ 815, TRUE ~ GWn)
     )
 
   lied <- lied |>

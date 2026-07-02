@@ -25,3 +25,4 @@
 ^README\.html$
 ^RELEASE-.*\.md$
 ^\.lintr$
+^CLAUDE\.md$

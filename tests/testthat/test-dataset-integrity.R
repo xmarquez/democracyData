@@ -115,6 +115,29 @@ test_that("all packaged datasets have sane year ranges", {
   }
 })
 
+test_that("extended_uds has no duplicate country-years within the GW system", {
+  # Regression test for #20: inconsistent identifier tuples in a source
+  # dataset (LIED's GWn was overwritten with COW codes) created phantom
+  # duplicate units in the extended UDS panel
+  extended <- democracyData:::get_packaged_dataset("extended_uds")
+
+  gw_duplicates <- extended |>
+    filter(in_GW_system, !is.na(GWn)) |>
+    filter(n() > 1, .by = c(GWn, year))
+
+  expect_equal(
+    nrow(gw_duplicates),
+    0,
+    info = paste(
+      "Duplicate GW country-years in extended_uds:",
+      paste(
+        unique(gw_duplicates$extended_country_name),
+        collapse = ", "
+      )
+    )
+  )
+})
+
 test_that("declared measure columns exist and contain data", {
   registry <- registry_with_keys()
   known_keys <- registry$key

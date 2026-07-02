@@ -41,14 +41,16 @@ get_packaged_dataset <- function(dataset_name) {
 #'   year range, and collapsed column name/type signature.
 #' @noRd
 dataset_manifest_row <- function(dataset_name) {
-  dataset <- get_packaged_dataset(dataset_name)
+  # NB: compute all fields before the tibble() call; a `dataset =` column
+  # assigned inside tibble() would shadow later references to the data
+  data_object <- get_packaged_dataset(dataset_name)
 
-  if (!is.data.frame(dataset)) {
+  if (!is.data.frame(data_object)) {
     return(
       dplyr::tibble(
         dataset = dataset_name,
-        class = class(dataset)[[1]],
-        n_row = length(dataset),
+        class = class(data_object)[[1]],
+        n_row = length(data_object),
         n_col = NA_integer_,
         min_year = NA_integer_,
         max_year = NA_integer_,
@@ -57,26 +59,36 @@ dataset_manifest_row <- function(dataset_name) {
     )
   }
 
+  data_class <- class(data_object)[[1]]
+  n_row <- nrow(data_object)
+  n_col <- ncol(data_object)
+
   column_types <- vapply(
-    dataset,
+    data_object,
     function(column) class(column)[[1]],
     character(1)
   )
+  column_signature <- paste(
+    names(data_object),
+    column_types,
+    sep = ":",
+    collapse = "; "
+  )
 
-  years <- if ("year" %in% names(dataset)) {
-    suppressWarnings(range(dataset$year, na.rm = TRUE))
+  years <- if ("year" %in% names(data_object)) {
+    suppressWarnings(range(data_object$year, na.rm = TRUE))
   } else {
     c(NA_real_, NA_real_)
   }
 
   dplyr::tibble(
     dataset = dataset_name,
-    class = class(dataset)[[1]],
-    n_row = nrow(dataset),
-    n_col = ncol(dataset),
+    class = data_class,
+    n_row = n_row,
+    n_col = n_col,
     min_year = suppressWarnings(as.integer(years[[1]])),
     max_year = suppressWarnings(as.integer(years[[2]])),
-    columns = paste(names(dataset), column_types, sep = ":", collapse = "; ")
+    columns = column_signature
   )
 }
 
