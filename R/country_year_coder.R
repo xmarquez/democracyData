@@ -1096,6 +1096,10 @@ print_diagnostic <- function(
   date_col,
   print_as_table = TRUE
 ) {
+  # Table formatting needs knitr; fall back to plain printing without it
+  print_as_table <- print_as_table &&
+    requireNamespace("knitr", quietly = TRUE)
+
   tbl <- tbl |>
     distinct()
 

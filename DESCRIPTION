@@ -30,9 +30,6 @@ Imports:
     readxl,
     readr,
     RefManageR,
-    knitr,
-    mirt,
-    here,
     stringi
 RoxygenNote: 7.3.3
 Roxygen: list(markdown = TRUE)
@@ -45,7 +42,10 @@ Suggests:
     vdemdata (>= 16.0),
     pdftools,
     purrr,
-    tibble
+    tibble,
+    mirt,
+    knitr,
+    here
 Config/testthat/edition: 3
 URL: https://xmarquez.github.io/democracyData/, https://github.com/xmarquez/democracyData
 BugReports: https://github.com/xmarquez/democracyData/issues

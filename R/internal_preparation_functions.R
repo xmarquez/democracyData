@@ -1,3 +1,14 @@
+# Resolve a data-raw path relative to the package root when the working
+# directory is elsewhere (e.g. inside a targets worker or a vignette). Only
+# needs the here package when the relative path doesn't resolve directly.
+resolve_data_raw_path <- function(path) {
+  if (file.exists(path)) {
+    return(path)
+  }
+  rlang::check_installed("here")
+  here::here(path)
+}
+
 prepare_pmm_replication_data <- function(
   path = "data-raw/democracy1946.2008.rda",
   verbose = TRUE,
@@ -139,7 +150,7 @@ prepare_eiu <- function(
     message("Preparing EIU data...")
   }
 
-  snapshot_path <- if (file.exists(path)) path else here::here(path)
+  snapshot_path <- resolve_data_raw_path(path)
 
   rlang::check_installed("readr")
 
@@ -505,13 +516,13 @@ prepare_vanhanen <- function(
 }
 
 prepare_anrr <- function(
-  path = here::here("data-raw/DDCGdata_final.dta"),
+  path = "data-raw/DDCGdata_final.dta",
   verbose = TRUE,
   ...
 ) {
   country_name <- wbcode <- year <- dem <- country_name_matched <- NULL
 
-  anrr <- haven::read_dta(path)
+  anrr <- haven::read_dta(resolve_data_raw_path(path))
 
   anrr <- anrr |>
     dplyr::select(country_name, wbcode, year, dem) |>

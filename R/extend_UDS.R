@@ -439,7 +439,6 @@ prob_more <- function(
 #' @export
 #'
 #' @import dplyr
-#' @import mirt
 #'
 #' @examples
 #' \donttest{
@@ -458,6 +457,7 @@ prob_more <- function(
 #' cutpoints(replication_2011_model)
 #' }
 cutpoints <- function(model, type = "score") {
+  rlang::check_installed("mirt")
   stopifnot(class(model) == "SingleGroupClass")
 
   type <- match.arg(type, c("score", "discrimination"))
@@ -537,6 +537,7 @@ cutpoints <- function(model, type = "score") {
 #' raterinfo(replication_2011_model)
 #' }
 raterinfo <- function(model) {
+  rlang::check_installed("mirt")
   raters <- dimnames(model@Data$data)[[2]]
   Theta <- model@Model$Theta
   rater.info <- data.frame()
@@ -547,7 +548,7 @@ raterinfo <- function(model) {
       data.frame(
         rater = i,
         theta = as.numeric(Theta),
-        info = iteminfo(extract.item(model, i), Theta = Theta)
+        info = mirt::iteminfo(mirt::extract.item(model, i), Theta = Theta)
       )
     ))
   }
@@ -577,7 +578,6 @@ raterinfo <- function(model) {
 #' @export
 #'
 #' @import dplyr
-#' @import mirt
 #' @importFrom rlang .data
 #' @importFrom stats pnorm
 #'
@@ -615,6 +615,7 @@ democracy_scores <- function(
     "uds_2014_mean"
   )
 
+  rlang::check_installed("mirt")
   stopifnot("SingleGroupClass" %in% class(model))
 
   scores <- mirt::fscores(model, full.scores = TRUE, full.scores.SE = TRUE) |>
@@ -676,6 +677,7 @@ democracy_scores <- function(
 #' extended_uds <- generate_extended_uds()
 #' }
 generate_extended_uds <- function(verbose = FALSE) {
+  rlang::check_installed("mirt")
   identifiers <- c(
     "extended_country_name",
     "GWn",

@@ -480,10 +480,10 @@ find_url <- function(
     dplyr::pull(url_column)
 }
 
-#' @import knitr
-knit_print.tbl = function(x, ...) {
-  res = paste(c("", "", kable(x)), collapse = "\n")
-  asis_output(res)
+knit_print.tbl <- function(x, ...) {
+  rlang::check_installed("knitr")
+  res <- paste(c("", "", knitr::kable(x)), collapse = "\n")
+  knitr::asis_output(res)
 }
 
 # External objects imported into package ----------------------------------
