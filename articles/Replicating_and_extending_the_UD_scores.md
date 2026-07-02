@@ -4,11 +4,11 @@ We can use this package to replicate and extend the [Unified Democracy
 Scores](http://www.unified-democracy-scores.org/) of Pemstein, Meserve,
 and Melton ([2010](#ref-pmm2010)) (which are no longer being updated or
 maintained), and in general to calculate latent variable indexes of
-democracy.[¹](#fn1) This article is a modified version of the vignette
-for my package [QuickUDS](https://xmarquez.github.io/QuickUDS), which I
-am no longer actively maintaining; I am slowly migrating the functions
-in that package to this package to avoid having to update two different
-data sets of democracy measures.
+democracy.[^1] This article is a modified version of the vignette for my
+package [QuickUDS](https://xmarquez.github.io/QuickUDS), which I am no
+longer actively maintaining; I am slowly migrating the functions in that
+package to this package to avoid having to update two different data
+sets of democracy measures.
 
 You will need the package
 [`mirt`](https://cran.r-project.org/web/packages/mirt/index.html)
@@ -50,6 +50,7 @@ Code
 
 ``` r
 
+
 library(mirt)
 library(tidyverse)
 library(democracyData)
@@ -69,61 +70,63 @@ the data looks like this:
 Code
 
 ``` r
+
 skimr::skim(democracy_data |> select(matches("pmm")))
 ```
 
-|                                                  |                            |
-|:-------------------------------------------------|:---------------------------|
-| Name                                             | select(democracy_data, ma… |
-| Number of rows                                   | 9137                       |
-| Number of columns                                | 12                         |
-| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_   |                            |
-| Column type frequency:                           |                            |
-| numeric                                          | 12                         |
-| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |                            |
-| Group variables                                  | None                       |
+|  |  |
+|:---|:---|
+| Name | select(democracy_data, ma… |
+| Number of rows | 9137 |
+| Number of columns | 12 |
+| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |  |
+| Column type frequency: |  |
+| numeric | 12 |
+| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |  |
+| Group variables | None |
 
-Data summary
+Data summary {.table .caption-top}
 
 **Variable type: numeric**
 
-| skim_variable  | n_missing | complete_rate |  mean |    sd |  p0 |   p25 |   p50 |   p75 | p100 | hist  |
-|:---------------|----------:|--------------:|------:|------:|----:|------:|------:|------:|-----:|:------|
-| pmm_arat       |      5264 |          0.42 | 73.20 | 18.91 |  29 | 58.00 | 69.00 | 92.00 |  109 | ▂▇▇▅▆ |
-| pmm_blm        |      8862 |          0.03 |  0.36 |  0.41 |   0 |  0.00 |  0.00 |  0.50 |    1 | ▇▁▃▁▃ |
-| pmm_bollen     |      8627 |          0.06 | 55.46 | 33.70 |   0 | 22.84 | 53.59 | 90.95 |  100 | ▅▅▃▂▇ |
-| pmm_fh         |      2699 |          0.70 |  4.15 |  2.07 |   1 |  2.50 |  4.00 |  6.00 |    7 | ▆▅▃▃▇ |
-| pmm_hadenius   |      9008 |          0.01 |  4.51 |  3.56 |   0 |  1.50 |  3.10 |  8.30 |   10 | ▇▅▁▂▆ |
-| pmm_mainwaring |      8302 |          0.09 |  0.12 |  0.85 |  -1 | -1.00 |  0.00 |  1.00 |    1 | ▆▁▅▁▇ |
-| pmm_munck      |      8795 |          0.04 |  0.84 |  0.26 |   0 |  0.75 |  1.00 |  1.00 |    1 | ▁▁▂▂▇ |
-| pmm_pacl       |        70 |          0.99 |  0.44 |  0.50 |   0 |  0.00 |  0.00 |  1.00 |    1 | ▇▁▁▁▆ |
-| pmm_polity     |      1087 |          0.88 |  0.13 |  7.50 | -10 | -7.00 | -1.00 |  8.00 |   10 | ▇▂▂▂▆ |
-| pmm_polyarchy  |      8784 |          0.04 |  6.33 |  3.51 |   0 |  3.00 |  7.00 | 10.00 |   10 | ▅▂▃▃▇ |
-| pmm_prc        |      3135 |          0.66 |  2.15 |  1.37 |   1 |  1.00 |  1.00 |  4.00 |    4 | ▇▁▁▂▅ |
-| pmm_vanhanen   |       172 |          0.98 | 11.31 | 12.67 |   0 |  0.00 |  5.90 | 20.70 |   49 | ▇▂▂▂▁ |
+| skim_variable | n_missing | complete_rate | mean | sd | p0 | p25 | p50 | p75 | p100 | hist |
+|:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|:---|
+| pmm_arat | 5264 | 0.42 | 73.20 | 18.91 | 29 | 58.00 | 69.00 | 92.00 | 109 | ▂▇▇▅▆ |
+| pmm_blm | 8862 | 0.03 | 0.36 | 0.41 | 0 | 0.00 | 0.00 | 0.50 | 1 | ▇▁▃▁▃ |
+| pmm_bollen | 8627 | 0.06 | 55.46 | 33.70 | 0 | 22.84 | 53.59 | 90.95 | 100 | ▅▅▃▂▇ |
+| pmm_fh | 2699 | 0.70 | 4.15 | 2.07 | 1 | 2.50 | 4.00 | 6.00 | 7 | ▆▅▃▃▇ |
+| pmm_hadenius | 9008 | 0.01 | 4.51 | 3.56 | 0 | 1.50 | 3.10 | 8.30 | 10 | ▇▅▁▂▆ |
+| pmm_mainwaring | 8302 | 0.09 | 0.12 | 0.85 | -1 | -1.00 | 0.00 | 1.00 | 1 | ▆▁▅▁▇ |
+| pmm_munck | 8795 | 0.04 | 0.84 | 0.26 | 0 | 0.75 | 1.00 | 1.00 | 1 | ▁▁▂▂▇ |
+| pmm_pacl | 70 | 0.99 | 0.44 | 0.50 | 0 | 0.00 | 0.00 | 1.00 | 1 | ▇▁▁▁▆ |
+| pmm_polity | 1087 | 0.88 | 0.13 | 7.50 | -10 | -7.00 | -1.00 | 8.00 | 10 | ▇▂▂▂▆ |
+| pmm_polyarchy | 8784 | 0.04 | 6.33 | 3.51 | 0 | 3.00 | 7.00 | 10.00 | 10 | ▅▂▃▃▇ |
+| pmm_prc | 3135 | 0.66 | 2.15 | 1.37 | 1 | 1.00 | 1.00 | 4.00 | 4 | ▇▁▁▂▅ |
+| pmm_vanhanen | 172 | 0.98 | 11.31 | 12.67 | 0 | 0.00 | 5.90 | 20.70 | 49 | ▇▂▂▂▁ |
 
 After transformation, it looks like this:
 
 Code
 
 ``` r
+
 democracy_data_transformed <- prepare_democracy_data(democracy_data)
 
 skimr::skim(democracy_data_transformed |> select(matches("pmm")))
 ```
 
-|                                                  |                            |
-|:-------------------------------------------------|:---------------------------|
-| Name                                             | select(democracy_data_tra… |
-| Number of rows                                   | 9137                       |
-| Number of columns                                | 12                         |
-| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_   |                            |
-| Column type frequency:                           |                            |
-| numeric                                          | 12                         |
-| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |                            |
-| Group variables                                  | None                       |
+|  |  |
+|:---|:---|
+| Name | select(democracy_data_tra… |
+| Number of rows | 9137 |
+| Number of columns | 12 |
+| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |  |
+| Column type frequency: |  |
+| numeric | 12 |
+| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |  |
+| Group variables | None |
 
-Data summary
+Data summary {.table .caption-top}
 
 **Variable type: numeric**
 
@@ -325,6 +328,7 @@ Code
 
 ``` r
 
+
 replication_2011_model <- mirt(
   democracy_data_transformed |> 
     select(
@@ -352,9 +356,10 @@ Fitting this model is reasonably fast:
 Code
 
 ``` r
+
 replication_2011_model@time
 #> TOTAL:   Data  Estep  Mstep     SE   Post 
-#>  5.369  0.314  0.625  3.470  0.929  0.001
+#>  5.466  0.303  0.600  3.646  0.889  0.001
 ```
 
 We can easily check that this model converges and that it accounts for
@@ -363,6 +368,7 @@ most of the variance in the democracy indexes:
 Code
 
 ``` r
+
 replication_2011_model
 #> 
 #> Call:
@@ -431,6 +437,7 @@ and automatically calculates 95% confidence intervals):
 Code
 
 ``` r
+
 replication_2011_scores <-  fscores(replication_2011_model, 
                                     full.scores = TRUE, 
                                     full.scores.SE = TRUE)
@@ -476,6 +483,7 @@ with Pemstein, Meserve, and Melton’s 2011 UDS release:
 Code
 
 ``` r
+
 
 uds <- generate_democracy_scores_dataset(
   selection = "uds", 
@@ -545,6 +553,7 @@ This package makes the process extremely simple:
 Code
 
 ``` r
+
 
 all_dem <- generate_democracy_scores_dataset(
   output_format = "wide",
@@ -646,6 +655,7 @@ substantially more democratic over the last two centuries:
 Code
 
 ``` r
+
 countries <- c("United States of America",
                "United Kingdom","Argentina",
                "Chile","Venezuela","Spain")
@@ -687,6 +697,7 @@ period of adjustment):
 Code
 
 ``` r
+
 matched_data <- extended_scores |>
   filter(!is.na(uds_2014_mean)) |>
   mutate(z1_matched = z1 - mean(z1, na.rm = TRUE), 
@@ -735,6 +746,7 @@ as follows:
 Code
 
 ``` r
+
 extended_scores <- extended_scores |> 
   mutate(index = pnorm(z1), 
          index_pct025 = pnorm(z1_pct025), 
@@ -764,6 +776,7 @@ scores are also automatically calculated (they are in the column
 Code
 
 ``` r
+
 cutpoints_extended <- cutpoints(extended_model)
 
 cutpoints_extended
@@ -869,6 +882,7 @@ scores, such as dichotomous measures of democracy. Here we compute a
 Code
 
 ``` r
+
 dichotomous_dem <- all_dem |>
   select(any_of(identifiers), where(~n_distinct(.) <= 3))  |>
   select(-pacl,
@@ -971,6 +985,7 @@ scores from 1919 to 2003.
 Code
 
 ``` r
+
 full_panel <- all_dem |>
   select(any_of(identifiers), reign_democracy, polity2,
          bmr_democracy_femalesuffrage, v2x_polyarchy,
@@ -991,7 +1006,7 @@ panel_model <- mirt(full_panel |> select(-any_of(identifiers)),
 
 panel_model@time
 #> TOTAL:   Data  Estep  Mstep     SE   Post 
-#>  8.437  0.056  1.113  6.217  1.022  0.001
+#>  8.251  0.053  1.131  5.987  1.047  0.000
 
 summary(panel_model)
 #>                                 F1    h2
@@ -1051,7 +1066,7 @@ skimr::skim(panel_scores)
 | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |              |
 | Group variables                                  | None         |
 
-Data summary
+Data summary {.table .caption-top}
 
 **Variable type: character**
 
@@ -1080,11 +1095,11 @@ Data summary
 
 **Variable type: numeric**
 
-| skim_variable | n_missing | complete_rate |    mean |     sd |   p0 |  p25 |  p50 |  p75 | p100 | hist  |
-|:--------------|----------:|--------------:|--------:|-------:|-----:|-----:|-----:|-----:|-----:|:------|
-| GWn           |         0 |             1 |  455.34 | 246.18 |   20 |  230 |  451 |  663 |  950 | ▇▇▇▇▅ |
-| cown          |         0 |             1 |  455.33 | 246.19 |   20 |  230 |  451 |  663 |  950 | ▇▇▇▇▅ |
-| year          |         0 |             1 | 1976.28 |  18.27 | 1919 | 1964 | 1978 | 1992 | 2003 | ▁▂▅▇▇ |
+| skim_variable | n_missing | complete_rate | mean | sd | p0 | p25 | p50 | p75 | p100 | hist |
+|:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|:---|
+| GWn | 0 | 1 | 455.34 | 246.18 | 20 | 230 | 451 | 663 | 950 | ▇▇▇▇▅ |
+| cown | 0 | 1 | 455.33 | 246.19 | 20 | 230 | 451 | 663 | 950 | ▇▇▇▇▅ |
+| year | 0 | 1 | 1976.28 | 18.27 | 1919 | 1964 | 1978 | 1992 | 2003 | ▁▂▅▇▇ |
 
 Figure 5: Latent democracy scores from a panel of long-coverage
 measures, constrained to country-years with no missing values.
@@ -1092,6 +1107,7 @@ measures, constrained to country-years with no missing values.
 Code
 
 ``` r
+
 
 ggplot(data = panel_scores |> filter(extended_country_name %in% countries), 
        aes(x= year, y = z1_as_prob, 
@@ -1117,6 +1133,7 @@ only measures that have data to 2018:
 Code
 
 ``` r
+
 full_panel <- all_dem |>
   pivot_longer(-any_of(identifiers), values_drop_na = TRUE) |>
   filter(name %in% name[year == 2018]) |>
@@ -1140,7 +1157,7 @@ panel_model <- mirt(full_panel |> select(-any_of(identifiers)),
 
 panel_model@time
 #> TOTAL:   Data  Estep  Mstep     SE   Post 
-#> 16.902  0.037  0.786 11.848  4.159  0.001
+#> 17.099  0.037  0.760 12.112  4.123  0.000
 
 summary(panel_model)
 #>                                 F1    h2
@@ -1230,7 +1247,7 @@ skimr::skim(panel_scores)
 | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |              |
 | Group variables                                  | None         |
 
-Data summary
+Data summary {.table .caption-top}
 
 **Variable type: character**
 
@@ -1259,11 +1276,11 @@ Data summary
 
 **Variable type: numeric**
 
-| skim_variable | n_missing | complete_rate |    mean |     sd |   p0 |  p25 |  p50 |  p75 | p100 | hist  |
-|:--------------|----------:|--------------:|--------:|-------:|-----:|-----:|-----:|-----:|-----:|:------|
-| GWn           |         0 |             1 |  483.69 | 226.96 |   40 |  355 |  500 |  690 |  910 | ▆▆▇▇▅ |
-| cown          |         0 |             1 |  483.69 | 226.96 |   40 |  355 |  500 |  690 |  910 | ▆▆▇▇▅ |
-| year          |         0 |             1 | 2012.06 |   4.02 | 2006 | 2008 | 2012 | 2016 | 2018 | ▇▃▃▃▇ |
+| skim_variable | n_missing | complete_rate | mean | sd | p0 | p25 | p50 | p75 | p100 | hist |
+|:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|:---|
+| GWn | 0 | 1 | 483.69 | 226.96 | 40 | 355 | 500 | 690 | 910 | ▆▆▇▇▅ |
+| cown | 0 | 1 | 483.69 | 226.96 | 40 | 355 | 500 | 690 | 910 | ▆▆▇▇▅ |
+| year | 0 | 1 | 2012.06 | 4.02 | 2006 | 2008 | 2012 | 2016 | 2018 | ▇▃▃▃▇ |
 
 Figure 7: Latent democracy scores from a panel restricted to measures
 with data through 2018. Holding the set of input raters fixed across the
@@ -1274,6 +1291,7 @@ country-years that fall outside any rater’s coverage.
 Code
 
 ``` r
+
 
 ggplot(data = panel_scores |> filter(extended_country_name %in% countries), 
        aes(x= year, y = z1_as_prob, 
@@ -1312,6 +1330,7 @@ example, we can replicate the figures in PMM’s original paper:
 Code
 
 ``` r
+
 replication_2011_cutpoints <- cutpoints(replication_2011_model, type ="score")
 replication_2011_cutpoints
 #> # A tibble: 85 × 6
@@ -1428,6 +1447,7 @@ scores and our extended model:
 Code
 
 ``` r
+
 prob_more(replication_2011_scores, "United States of America","France", 2000)
 #> [1] 0.8782654
 prob_more(extended_scores, "United States of America","France", 2000)
@@ -1440,6 +1460,7 @@ more democratic in the year 2000 than in the year 1953:
 Code
 
 ``` r
+
 prob_more(replication_2011_scores, 
           "United States of America",
           "United States of America", 
@@ -1673,9 +1694,7 @@ Regime Types Revisited: Updated Data in Comparative Perspective.”
 *Contemporary Politics* 19(1): 19–34.
 doi:[10.1080/13569775.2013.773200](https://doi.org/10.1080/13569775.2013.773200).
 
-------------------------------------------------------------------------
-
-1.  For more detail on the models used to generate these indexes, and
+[^1]: For more detail on the models used to generate these indexes, and
     their characteristics, see my working paper ([Márquez
     2016](#ref-extended_uds_marquez2016)), available at
     <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2753830>.

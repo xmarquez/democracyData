@@ -33,6 +33,7 @@ object.
 ## Examples
 
 ``` r
+
 cite_dataset("gwf")
 #> [1] B. Geddes, J. Wright, and E. Frantz. “Autocratic Breakdown and
 #> Regime Transitions: A New Data Set”. In: _Perspectives on Politics_

@@ -26,6 +26,7 @@ removed
 ## Examples
 
 ``` r
+
 df <- data.frame(a = c(1,2,3,NA, 5), b = c(NA,1,2,NA, 3), c = 1:5)
 remove_empty_rows(df, a:b)
 #>   a  b c

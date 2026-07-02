@@ -227,30 +227,30 @@ generate_democracy_scores_dataset(
   historical and modern states but measuring both during the historical
   period:
 
-  |                                 |                             |          |          |
-  |---------------------------------|-----------------------------|----------|----------|
-  | extended_country_name           | PIPE_country                | min_year | max_year |
-  | Austria                         | Austria                     | 1918     | 1918     |
-  | Austria                         | Austria-Hungary (Austria)   | 1918     | 1918     |
-  | Austria-Hungary                 | Austria-Hungary (Austria)   | 1848     | 1917     |
-  | Austria-Hungary                 | Austria-Hungary (Hungary)   | 1848     | 1917     |
-  | Czechoslovakia                  | Czech Republic              | 1990     | 1992     |
-  | Czechoslovakia                  | Czechoslovakia              | 1990     | 1992     |
-  | German Federal Republic         | Germany                     | 1990     | 1990     |
-  | German Federal Republic         | Germanywest                 | 1990     | 1990     |
-  | Korea                           | North Korea                 | 1820     | 1870     |
-  | Korea                           | South Korea                 | 1820     | 1870     |
-  | Pakistan                        | Pakistan                    | 1950     | 1970     |
-  | Pakistan                        | Pakistanincludingbangladesh | 1950     | 1970     |
-  | Turkey (Ottoman Empire)         | Ottoman Empire              | 1820     | 1913     |
-  | Turkey (Ottoman Empire)         | Turkey                      | 1820     | 1913     |
-  | Vietnam, Democratic Republic of | Vietnam                     | 1954     | 1975     |
-  | Vietnam, Democratic Republic of | Vietnam, North              | 1954     | 1975     |
-  | Yemen (Arab Republic of Yemen)  | Yemen                       | 1990     | 1990     |
-  | Yemen (Arab Republic of Yemen)  | Yemennorth                  | 1990     | 1990     |
-  | Yugoslavia                      | Serbia                      | 1990     | 1990     |
-  | Yugoslavia                      | Serbia And Montenegro       | 1991     | 1991     |
-  | Yugoslavia                      | Yugoslavia                  | 1990     | 1991     |
+  |  |  |  |  |
+  |----|----|----|----|
+  | extended_country_name | PIPE_country | min_year | max_year |
+  | Austria | Austria | 1918 | 1918 |
+  | Austria | Austria-Hungary (Austria) | 1918 | 1918 |
+  | Austria-Hungary | Austria-Hungary (Austria) | 1848 | 1917 |
+  | Austria-Hungary | Austria-Hungary (Hungary) | 1848 | 1917 |
+  | Czechoslovakia | Czech Republic | 1990 | 1992 |
+  | Czechoslovakia | Czechoslovakia | 1990 | 1992 |
+  | German Federal Republic | Germany | 1990 | 1990 |
+  | German Federal Republic | Germanywest | 1990 | 1990 |
+  | Korea | North Korea | 1820 | 1870 |
+  | Korea | South Korea | 1820 | 1870 |
+  | Pakistan | Pakistan | 1950 | 1970 |
+  | Pakistan | Pakistanincludingbangladesh | 1950 | 1970 |
+  | Turkey (Ottoman Empire) | Ottoman Empire | 1820 | 1913 |
+  | Turkey (Ottoman Empire) | Turkey | 1820 | 1913 |
+  | Vietnam, Democratic Republic of | Vietnam | 1954 | 1975 |
+  | Vietnam, Democratic Republic of | Vietnam, North | 1954 | 1975 |
+  | Yemen (Arab Republic of Yemen) | Yemen | 1990 | 1990 |
+  | Yemen (Arab Republic of Yemen) | Yemennorth | 1990 | 1990 |
+  | Yugoslavia | Serbia | 1990 | 1990 |
+  | Yugoslavia | Serbia And Montenegro | 1991 | 1991 |
+  | Yugoslavia | Yugoslavia | 1990 | 1991 |
 
   Some of these are fixed by setting `prefer_successor` to `TRUE` (the
   default) but others do not make much sense. `fix_PIPE = TRUE` (the
@@ -934,37 +934,37 @@ for no longer existing entities, but delete any subsequent years (if
 they appear). Thus the following entities should have no observations in
 the years after their dissolution:
 
-|                                     |        |                  |                  |
-|-------------------------------------|--------|------------------|------------------|
-| extended_country_name               | panel  | dissolution_date | last_observation |
-| Austria-Hungary                     | GWn    | 1918-11-13       | 1918             |
-| Baden                               | GWn    | 1871-01-17       | 1871             |
-| Bavaria                             | GWn    | 1871-01-17       | 1871             |
-| British Mandate of Palestine        | none   | 1948-05-14       | 1948             |
-| Czechoslovakia                      | GWn    | 1992-12-31       | 1992             |
-| German Democratic Republic          | GWn    | 1990-10-02       | 1990             |
-| Germany (Prussia)                   | GWn    | 1945-05-07       | 1945             |
-| Hanover                             | GWn    | 1871-01-17       | 1871             |
-| Hesse-Kassel (Electoral)            | GWn    | 1871-01-17       | 1871             |
-| Hesse-Darmstadt (Ducal)             | GWn    | 1871-01-17       | 1871             |
-| Mecklenburg-Schwerin                | GWn    | 1871-01-17       | 1871             |
-| Modena                              | GWn    | 1861-03-16       | 1861             |
-| Papal States                        | GWn    | 1870-09-22       | 1870             |
-| Parma                               | GWn    | 1861-03-16       | 1860             |
-| Vietnam, Republic of                | GWn    | 1975-04-30       | 1974             |
-| Sardinia                            | polity | 1861-03-16       | 1861             |
-| Saxony                              | GWn    | 1871-01-17       | 1871             |
-| Tuscany                             | GWn    | 1861-03-16       | 1861             |
-| Sicily (Two Sicilies)               | GWn    | 1861-03-16       | 1861             |
-| Wurttemberg                         | GWn    | 1871-01-17       | 1871             |
-| Yemen, People's Republic of         | GWn    | 1990-05-21       | 1990             |
-| Yugoslavia                          | GWn    | 2006-06-04       | 2006             |
-| Zanzibar                            | GWn    | 1964-04-26       | 1964             |
-| Great Colombia                      | GWn    | 1830-09-22       | 1830             |
-| Orange Free State                   | GWn    | 1910-05-30       | 1910             |
-| Tibet                               | GWn    | 1950-10-01       | 1950             |
-| Transvaal                           | GWn    | 1910-05-30       | 1910             |
-| United Provinces of Central America | GWn    | 1839-12-31       | 1839             |
+|  |  |  |  |
+|----|----|----|----|
+| extended_country_name | panel | dissolution_date | last_observation |
+| Austria-Hungary | GWn | 1918-11-13 | 1918 |
+| Baden | GWn | 1871-01-17 | 1871 |
+| Bavaria | GWn | 1871-01-17 | 1871 |
+| British Mandate of Palestine | none | 1948-05-14 | 1948 |
+| Czechoslovakia | GWn | 1992-12-31 | 1992 |
+| German Democratic Republic | GWn | 1990-10-02 | 1990 |
+| Germany (Prussia) | GWn | 1945-05-07 | 1945 |
+| Hanover | GWn | 1871-01-17 | 1871 |
+| Hesse-Kassel (Electoral) | GWn | 1871-01-17 | 1871 |
+| Hesse-Darmstadt (Ducal) | GWn | 1871-01-17 | 1871 |
+| Mecklenburg-Schwerin | GWn | 1871-01-17 | 1871 |
+| Modena | GWn | 1861-03-16 | 1861 |
+| Papal States | GWn | 1870-09-22 | 1870 |
+| Parma | GWn | 1861-03-16 | 1860 |
+| Vietnam, Republic of | GWn | 1975-04-30 | 1974 |
+| Sardinia | polity | 1861-03-16 | 1861 |
+| Saxony | GWn | 1871-01-17 | 1871 |
+| Tuscany | GWn | 1861-03-16 | 1861 |
+| Sicily (Two Sicilies) | GWn | 1861-03-16 | 1861 |
+| Wurttemberg | GWn | 1871-01-17 | 1871 |
+| Yemen, People's Republic of | GWn | 1990-05-21 | 1990 |
+| Yugoslavia | GWn | 2006-06-04 | 2006 |
+| Zanzibar | GWn | 1964-04-26 | 1964 |
+| Great Colombia | GWn | 1830-09-22 | 1830 |
+| Orange Free State | GWn | 1910-05-30 | 1910 |
+| Tibet | GWn | 1950-10-01 | 1950 |
+| Transvaal | GWn | 1910-05-30 | 1910 |
+| United Provinces of Central America | GWn | 1839-12-31 | 1839 |
 
 As noted, Korea and Vietnam do contain observations for years after
 their exit from the system of states in the Gleditsch and Ward panel in
@@ -987,27 +987,27 @@ includes the West Bank, Gaza, and "Israeli-Occupied Territories" (I'm
 assuming the occupied territories in Lebanon and Syria). I've labeled
 them as follows:
 
-|                                   |                                                |               |          |          |
-|-----------------------------------|------------------------------------------------|---------------|----------|----------|
-| extended_country_name             | original_country_name                          | dataset       | min_year | max_year |
-| British Mandate of Palestine      | Palestine/British Mandate                      | LIED          | 1918     | 1947     |
-| British Mandate of Palestine      | Palestine/British Mandate                      | vdem          | 1918     | 1948     |
-| Israel, occupied territories only | Israeli-Occupied Territories                   | fh            | 1996     | 2009     |
-| Palestine, State of               | Palestine                                      | eiu           | 2006     | 2025     |
-| Palestine, State of               | Palestinian Authority-Administered Territories | fh            | 1996     | 2009     |
-| Palestine, State of               | West Bank and Gaza Strip                       | fh            | 1977     | 1995     |
-| Palestine, State of               | Palestine                                      | vaporeg       | 1920     | 1947     |
-| Palestine, State of               | West Bank and Gaza                             | wgi_democracy | 1996     | 2024     |
-| Palestine/Gaza                    | Gaza Strip                                     | fh            | 2010     | 2025     |
-| Palestine/Gaza                    | Gaza Strip                                     | fh_electoral  | 2017     | 2025     |
-| Palestine/Gaza                    | Palestine/Gaza                                 | LIED          | 1948     | 2025     |
-| Palestine/Gaza                    | Palestine, Gaza Strip                          | vaporeg       | 1948     | 2025     |
-| Palestine/Gaza                    | Palestine/Gaza                                 | vdem          | 1948     | 2025     |
-| Palestine/West Bank               | West Bank                                      | fh            | 2010     | 2025     |
-| Palestine/West Bank               | West Bank                                      | fh_electoral  | 2017     | 2025     |
-| Palestine/West Bank               | Palestine/West Bank                            | LIED          | 1948     | 2025     |
-| Palestine/West Bank               | Palestine, West Bank                           | vaporeg       | 1948     | 2025     |
-| Palestine/West Bank               | Palestine/West Bank                            | vdem          | 1948     | 2025     |
+|  |  |  |  |  |
+|----|----|----|----|----|
+| extended_country_name | original_country_name | dataset | min_year | max_year |
+| British Mandate of Palestine | Palestine/British Mandate | LIED | 1918 | 1947 |
+| British Mandate of Palestine | Palestine/British Mandate | vdem | 1918 | 1948 |
+| Israel, occupied territories only | Israeli-Occupied Territories | fh | 1996 | 2009 |
+| Palestine, State of | Palestine | eiu | 2006 | 2025 |
+| Palestine, State of | Palestinian Authority-Administered Territories | fh | 1996 | 2009 |
+| Palestine, State of | West Bank and Gaza Strip | fh | 1977 | 1995 |
+| Palestine, State of | Palestine | vaporeg | 1920 | 1947 |
+| Palestine, State of | West Bank and Gaza | wgi_democracy | 1996 | 2024 |
+| Palestine/Gaza | Gaza Strip | fh | 2010 | 2025 |
+| Palestine/Gaza | Gaza Strip | fh_electoral | 2017 | 2025 |
+| Palestine/Gaza | Palestine/Gaza | LIED | 1948 | 2025 |
+| Palestine/Gaza | Palestine, Gaza Strip | vaporeg | 1948 | 2025 |
+| Palestine/Gaza | Palestine/Gaza | vdem | 1948 | 2025 |
+| Palestine/West Bank | West Bank | fh | 2010 | 2025 |
+| Palestine/West Bank | West Bank | fh_electoral | 2017 | 2025 |
+| Palestine/West Bank | Palestine/West Bank | LIED | 1948 | 2025 |
+| Palestine/West Bank | Palestine, West Bank | vaporeg | 1948 | 2025 |
+| Palestine/West Bank | Palestine/West Bank | vdem | 1948 | 2025 |
 
 There are some other oddities, primarily concerning
 [fh](https://xmarquez.github.io/democracyData/reference/fh_pmm.md) and

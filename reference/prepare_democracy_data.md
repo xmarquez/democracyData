@@ -58,6 +58,7 @@ prepare_democracy_data(data, .funs)
   A named list of functions to modify the columns. It defaults to the
   following:
 
+
        list(
          arat = cut(., breaks = c(0, 50, 60, 70, 80, 90, 100, 109),
            labels = 1:7, include.lowest = TRUE, right = FALSE),

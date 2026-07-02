@@ -12,7 +12,7 @@ democracy_info
 ## Format
 
 An object of class `spec_tbl_df` (inherits from `tbl_df`, `tbl`,
-`data.frame`) with 43 rows and 14 columns.
+`data.frame`) with 44 rows and 14 columns.
 
 ## Variables
 

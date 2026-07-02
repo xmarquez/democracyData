@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Replicating and Extending the UD scores of Pemstein, Meserve, and Melton • democracyData</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><script src="Replicating_and_extending_the_UD_scores_files/libs/quarto-html/popper.min.js"></script><script src="Replicating_and_extending_the_UD_scores_files/libs/quarto-html/tippy.umd.min.js"></script><link href="Replicating_and_extending_the_UD_scores_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="Replicating_and_extending_the_UD_scores_files/libs/quarto-html/light-border.css" rel="stylesheet">
@@ -52,7 +52,7 @@
       <h1>Replicating and Extending the UD scores of Pemstein, Meserve, and Melton</h1>
 
       <p class="author">Xavier Marquez</p>
-      <p class="date">2026-04-25</p>
+      <p class="date">2026-07-02</p>
 
       <small class="dont-index">Source: <a href="https://github.com/xmarquez/democracyData/blob/master/vignettes/articles/Replicating_and_extending_the_UD_scores.qmd" class="external-link"><code>vignettes/articles/Replicating_and_extending_the_UD_scores.qmd</code></a></small>
       <div class="d-none name"><code></code></div>
@@ -668,7 +668,7 @@
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">replication_2011_model</span><span class="op">@</span><span class="va">time</span></span>
 <span><span class="co">#&gt; TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">#&gt;  5.369  0.314  0.625  3.470  0.929  0.001</span></span></code></pre></div>
+<span><span class="co">#&gt;  5.466  0.303  0.600  3.646  0.889  0.001</span></span></code></pre></div>
 </details>
 </div>
 <p>We can easily check that this model converges and that it accounts for most of the variance in the democracy indexes:</p>
@@ -1197,7 +1197,7 @@ Figure 4: Latent democracy scores fit only from dichotomous raters (2-parameter
 <span></span>
 <span><span class="va">panel_model</span><span class="op">@</span><span class="va">time</span></span>
 <span><span class="co">#&gt; TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">#&gt;  8.437  0.056  1.113  6.217  1.022  0.001</span></span>
+<span><span class="co">#&gt;  8.251  0.053  1.131  5.987  1.047  0.000</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">panel_model</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                 F1    h2</span></span>
@@ -1596,7 +1596,7 @@ Figure 6: Latent democracy scores from a panel of long-coverage measures, const
 <span></span>
 <span><span class="va">panel_model</span><span class="op">@</span><span class="va">time</span></span>
 <span><span class="co">#&gt; TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">#&gt; 16.902  0.037  0.786 11.848  4.159  0.001</span></span>
+<span><span class="co">#&gt; 17.099  0.037  0.760 12.112  4.123  0.000</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">panel_model</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                 F1    h2</span></span>

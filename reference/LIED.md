@@ -147,6 +147,7 @@ following circumstances obtain, and 0 otherwise.
   In a small number of cases, the resulting index appears to have been
   incorrectly constructed:
 
+
       LIED |>
         dplyr::filter(lexical_index != lexical_index_original) |>
         dplyr::select(lied_country, year, lexical_index, lexical_index_original)
