@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">democracyData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.1.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,6 +33,20 @@
       <small>Source: <a href="https://github.com/xmarquez/democracyData/blob/master/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="development version" id="democracydata-development-version">democracyData (development version)<a class="anchor" aria-label="anchor" href="#democracydata-development-version"></a></h2>
+<div class="section level3">
+<h3 id="bug-fixes-development-version">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-development-version"></a></h3>
+<ul><li>
+<strong>LIED Gleditsch-Ward codes (<a href="https://github.com/xmarquez/democracyData/issues/20" class="external-link">#20</a>).</strong> Fixed a bug in <code><a href="../reference/redownload_blm.html">redownload_lied()</a></code> that overwrote the <code>GWn</code> column with Correlates of War codes for the entire dataset. Wherever the two state systems assign different codes (unified Germany, Serbia, unified Yemen, and the Pacific microstates Kiribati, Nauru, Tonga, and Tuvalu), LIED’s rows carried identifier tuples that matched no other dataset, so <code>extended_uds</code> fitted phantom duplicate country-years whose only measure was <code>lexical_index</code>. The rebuilt <code>LIED</code> corrects 710 <code>GWn</code> values (no other columns change), and the refitted <code>extended_uds</code> drops 732 phantom rows; scores for unaffected country-years are essentially unchanged (r &gt; 0.999). <code>extended_uds</code> is now unique by <code>GWn</code> and <code>year</code> among in-system country-years, and a regression test enforces this. Thanks to Steve Miller (<a href="https://github.com/svmiller" class="external-link">@svmiller</a>) for the report.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="infrastructure-development-version">Infrastructure<a class="anchor" aria-label="anchor" href="#infrastructure-development-version"></a></h3>
+<ul><li><p><strong>Dataset integrity tests.</strong> New offline tests validate every packaged dataset against the <code>democracy_info</code> registry (coverage in both directions, standard identifier columns, no missing <code>extended_country_name</code>, plausible year ranges, and presence of the declared measure columns), and compare every dataset’s structure (class, dimensions, column names and types, year range) against a recorded manifest, catching accidental data corruption without network access. Regenerate the manifest with <code>data-raw/capture_dataset_manifest.R</code> after legitimate data updates.</p></li>
+<li><p><strong>Registry fixes.</strong> Added the missing <code>democracy_info</code> row for <code>arat</code> and corrected the stale measure columns and <code>downloadable</code> flag for <code>vaporeg</code>.</p></li>
+<li><p><strong>Lighter dependencies.</strong> <code>mirt</code>, <code>knitr</code>, and <code>here</code> moved from Imports to Suggests; the UDS modeling functions prompt for <code>mirt</code> when needed, and diagnostic tables fall back to plain printing without <code>knitr</code>.</p></li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.7.1" id="democracydata-071">democracyData 0.7.1<a class="anchor" aria-label="anchor" href="#democracydata-071"></a></h2>
 <div class="section level3">

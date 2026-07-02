@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">democracyData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.1.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -668,7 +668,7 @@
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">replication_2011_model</span><span class="op">@</span><span class="va">time</span></span>
 <span><span class="co">#&gt; TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">#&gt;  5.466  0.303  0.600  3.646  0.889  0.001</span></span></code></pre></div>
+<span><span class="co">#&gt;  5.477  0.307  0.593  3.659  0.890  0.001</span></span></code></pre></div>
 </details>
 </div>
 <p>We can easily check that this model converges and that it accounts for most of the variance in the democracy indexes:</p>
@@ -842,45 +842,45 @@
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">extended_model</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                  F1    h2</span></span>
-<span><span class="co">#&gt; arat                          0.962 0.925</span></span>
-<span><span class="co">#&gt; blm                           0.991 0.982</span></span>
-<span><span class="co">#&gt; bmr_democracy_femalesuffrage  0.989 0.978</span></span>
-<span><span class="co">#&gt; pmm_bollen                    0.967 0.934</span></span>
-<span><span class="co">#&gt; doorenspleet                  0.979 0.959</span></span>
-<span><span class="co">#&gt; wgi_democracy                 0.974 0.948</span></span>
-<span><span class="co">#&gt; fh_total_reversed             0.960 0.922</span></span>
+<span><span class="co">#&gt; arat                          0.961 0.924</span></span>
+<span><span class="co">#&gt; blm                           0.990 0.981</span></span>
+<span><span class="co">#&gt; bmr_democracy_femalesuffrage  0.989 0.977</span></span>
+<span><span class="co">#&gt; pmm_bollen                    0.966 0.933</span></span>
+<span><span class="co">#&gt; doorenspleet                  0.979 0.958</span></span>
+<span><span class="co">#&gt; wgi_democracy                 0.973 0.947</span></span>
+<span><span class="co">#&gt; fh_total_reversed             0.959 0.920</span></span>
 <span><span class="co">#&gt; gwf_democracy_extended_strict 0.970 0.941</span></span>
-<span><span class="co">#&gt; pmm_hadenius                  0.983 0.966</span></span>
+<span><span class="co">#&gt; pmm_hadenius                  0.981 0.963</span></span>
 <span><span class="co">#&gt; kailitz_tri                   0.965 0.932</span></span>
-<span><span class="co">#&gt; svolik_democracy              0.976 0.952</span></span>
+<span><span class="co">#&gt; svolik_democracy              0.975 0.952</span></span>
 <span><span class="co">#&gt; lexical_index                 0.969 0.938</span></span>
 <span><span class="co">#&gt; ulfelder_democracy_extended   0.980 0.960</span></span>
 <span><span class="co">#&gt; prc                           0.986 0.972</span></span>
-<span><span class="co">#&gt; mainwaring                    0.986 0.972</span></span>
-<span><span class="co">#&gt; vanhanen_democratization      0.944 0.892</span></span>
+<span><span class="co">#&gt; mainwaring                    0.986 0.971</span></span>
+<span><span class="co">#&gt; vanhanen_democratization      0.944 0.891</span></span>
 <span><span class="co">#&gt; v2x_polyarchy                 0.980 0.961</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;                                 SE.F1</span></span>
-<span><span class="co">#&gt; arat                          0.00172</span></span>
-<span><span class="co">#&gt; blm                           0.00211</span></span>
+<span><span class="co">#&gt; arat                          0.00173</span></span>
+<span><span class="co">#&gt; blm                           0.00214</span></span>
 <span><span class="co">#&gt; bmr_democracy_femalesuffrage  0.00072</span></span>
-<span><span class="co">#&gt; pmm_bollen                    0.00392</span></span>
+<span><span class="co">#&gt; pmm_bollen                    0.00398</span></span>
 <span><span class="co">#&gt; doorenspleet                  0.00134</span></span>
-<span><span class="co">#&gt; wgi_democracy                 0.00102</span></span>
-<span><span class="co">#&gt; fh_total_reversed             0.00109</span></span>
-<span><span class="co">#&gt; gwf_democracy_extended_strict 0.00162</span></span>
-<span><span class="co">#&gt; pmm_hadenius                  0.00431</span></span>
-<span><span class="co">#&gt; kailitz_tri                   0.00130</span></span>
+<span><span class="co">#&gt; wgi_democracy                 0.00104</span></span>
+<span><span class="co">#&gt; fh_total_reversed             0.00111</span></span>
+<span><span class="co">#&gt; gwf_democracy_extended_strict 0.00163</span></span>
+<span><span class="co">#&gt; pmm_hadenius                  0.00463</span></span>
+<span><span class="co">#&gt; kailitz_tri                   0.00129</span></span>
 <span><span class="co">#&gt; svolik_democracy              0.00145</span></span>
 <span><span class="co">#&gt; lexical_index                 0.00073</span></span>
-<span><span class="co">#&gt; ulfelder_democracy_extended   0.00117</span></span>
-<span><span class="co">#&gt; prc                           0.00071</span></span>
-<span><span class="co">#&gt; mainwaring                    0.00135</span></span>
-<span><span class="co">#&gt; vanhanen_democratization      0.00129</span></span>
+<span><span class="co">#&gt; ulfelder_democracy_extended   0.00118</span></span>
+<span><span class="co">#&gt; prc                           0.00072</span></span>
+<span><span class="co">#&gt; mainwaring                    0.00136</span></span>
+<span><span class="co">#&gt; vanhanen_democratization      0.00130</span></span>
 <span><span class="co">#&gt; v2x_polyarchy                 0.00047</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; SS loadings:  16.134 </span></span>
-<span><span class="co">#&gt; Proportion Var:  0.949 </span></span>
+<span><span class="co">#&gt; SS loadings:  16.123 </span></span>
+<span><span class="co">#&gt; Proportion Var:  0.948 </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Factor correlations: </span></span>
 <span><span class="co">#&gt; </span></span>
@@ -1013,16 +1013,16 @@ Figure 2: Extended replication scores, mean-adjusted to match the 2014 UDS rele
 <span><span class="co">#&gt; # A tibble: 101 × 6</span></span>
 <span><span class="co">#&gt;    variable                     estimate pct025 pct975      se num_obs</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;                           &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt;</span></span>
-<span><span class="co">#&gt;  1 arat                           -0.518 -0.522 -0.513 0.00246    3873</span></span>
-<span><span class="co">#&gt;  2 arat                           -0.190 -0.203 -0.177 0.00693    3873</span></span>
-<span><span class="co">#&gt;  3 arat                            0.239  0.206  0.275 0.0186     3873</span></span>
-<span><span class="co">#&gt;  4 arat                            0.525  0.471  0.584 0.0302     3873</span></span>
-<span><span class="co">#&gt;  5 arat                            0.908  0.822  1.00  0.0479     3873</span></span>
-<span><span class="co">#&gt;  6 arat                            1.69   1.54   1.86  0.0837     3873</span></span>
-<span><span class="co">#&gt;  7 blm                             0.479  0.300  0.762 0.144       505</span></span>
-<span><span class="co">#&gt;  8 blm                             1.06   0.674  1.67  0.312       505</span></span>
-<span><span class="co">#&gt;  9 bmr_democracy_femalesuffrage    0.841  0.741  0.955 0.0581    19126</span></span>
-<span><span class="co">#&gt; 10 pmm_bollen                     -0.649 -0.658 -0.637 0.00604     510</span></span>
+<span><span class="co">#&gt;  1 arat                           -0.514 -0.518 -0.509 0.00253    3873</span></span>
+<span><span class="co">#&gt;  2 arat                           -0.185 -0.198 -0.172 0.00704    3873</span></span>
+<span><span class="co">#&gt;  3 arat                            0.245  0.211  0.282 0.0188     3873</span></span>
+<span><span class="co">#&gt;  4 arat                            0.531  0.477  0.591 0.0305     3873</span></span>
+<span><span class="co">#&gt;  5 arat                            0.915  0.829  1.01  0.0483     3873</span></span>
+<span><span class="co">#&gt;  6 arat                            1.70   1.55   1.87  0.0841     3873</span></span>
+<span><span class="co">#&gt;  7 blm                             0.485  0.306  0.766 0.144       505</span></span>
+<span><span class="co">#&gt;  8 blm                             1.07   0.684  1.68  0.310       505</span></span>
+<span><span class="co">#&gt;  9 bmr_democracy_femalesuffrage    0.850  0.749  0.964 0.0582    19126</span></span>
+<span><span class="co">#&gt; 10 pmm_bollen                     -0.648 -0.658 -0.636 0.00636     510</span></span>
 <span><span class="co">#&gt; # ℹ 91 more rows</span></span>
 <span></span>
 <span><span class="va">dichotomous_cutpoints</span> <span class="op">&lt;-</span> <span class="va">cutpoints_extended</span> <span class="op">|&gt;</span> </span>
@@ -1034,16 +1034,16 @@ Figure 2: Extended replication scores, mean-adjusted to match the 2014 UDS rele
 <span><span class="co">#&gt; # Groups:   variable [5]</span></span>
 <span><span class="co">#&gt;   variable                      estimate pct025 pct975     se num_obs</span></span>
 <span><span class="co">#&gt;   &lt;chr&gt;                            &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;int&gt;</span></span>
-<span><span class="co">#&gt; 1 bmr_democracy_femalesuffrage     0.841  0.741  0.955 0.0581   19126</span></span>
-<span><span class="co">#&gt; 2 doorenspleet                     0.925  0.815  1.05  0.0638   13009</span></span>
-<span><span class="co">#&gt; 3 gwf_democracy_extended_strict    0.663  0.590  0.744 0.0417    9243</span></span>
-<span><span class="co">#&gt; 4 svolik_democracy                 0.720  0.635  0.816 0.0491    8554</span></span>
-<span><span class="co">#&gt; 5 ulfelder_democracy_extended      0.711  0.630  0.802 0.0464   11545</span></span>
+<span><span class="co">#&gt; 1 bmr_democracy_femalesuffrage     0.850  0.749  0.964 0.0582   19126</span></span>
+<span><span class="co">#&gt; 2 doorenspleet                     0.934  0.824  1.06  0.0641   13009</span></span>
+<span><span class="co">#&gt; 3 gwf_democracy_extended_strict    0.670  0.596  0.752 0.0421    9243</span></span>
+<span><span class="co">#&gt; 4 svolik_democracy                 0.727  0.641  0.824 0.0494    8554</span></span>
+<span><span class="co">#&gt; 5 ulfelder_democracy_extended      0.718  0.637  0.810 0.0467   11545</span></span>
 <span></span>
 <span><span class="va">avg_dichotomous</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">dichotomous_cutpoints</span><span class="op">$</span><span class="va">estimate</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">avg_dichotomous</span></span>
-<span><span class="co">#&gt; [1] 0.7720065</span></span>
+<span><span class="co">#&gt; [1] 0.7797117</span></span>
 <span></span>
 <span><span class="va">extended_scores</span> <span class="op">&lt;-</span> <span class="va">extended_scores</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>adj_z1 <span class="op">=</span> <span class="va">z1</span> <span class="op">-</span> <span class="va">avg_dichotomous</span>, </span>
 <span>                                        adj_pct025 <span class="op">=</span> <span class="va">z1_pct025</span> <span class="op">-</span> <span class="va">avg_dichotomous</span>, </span>
@@ -1197,7 +1197,7 @@ Figure 4: Latent democracy scores fit only from dichotomous raters (2-parameter
 <span></span>
 <span><span class="va">panel_model</span><span class="op">@</span><span class="va">time</span></span>
 <span><span class="co">#&gt; TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">#&gt;  8.251  0.053  1.131  5.987  1.047  0.000</span></span>
+<span><span class="co">#&gt;  8.281  0.054  1.095  6.081  1.023  0.001</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">panel_model</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                 F1    h2</span></span>
@@ -1596,69 +1596,69 @@ Figure 6: Latent democracy scores from a panel of long-coverage measures, const
 <span></span>
 <span><span class="va">panel_model</span><span class="op">@</span><span class="va">time</span></span>
 <span><span class="co">#&gt; TOTAL:   Data  Estep  Mstep     SE   Post </span></span>
-<span><span class="co">#&gt; 17.099  0.037  0.760 12.112  4.123  0.000</span></span>
+<span><span class="co">#&gt; 19.826  0.038  1.064 14.492  4.164  0.000</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">panel_model</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                 F1    h2</span></span>
-<span><span class="co">#&gt; fh_total_reversed            0.925 0.856</span></span>
-<span><span class="co">#&gt; lexical_index                0.936 0.876</span></span>
-<span><span class="co">#&gt; lexical_index_plus           0.932 0.869</span></span>
-<span><span class="co">#&gt; v2x_polyarchy                0.998 0.995</span></span>
-<span><span class="co">#&gt; v2x_libdem                   0.971 0.943</span></span>
+<span><span class="co">#&gt; fh_total_reversed            0.925 0.855</span></span>
+<span><span class="co">#&gt; lexical_index                0.933 0.870</span></span>
+<span><span class="co">#&gt; lexical_index_plus           0.931 0.867</span></span>
+<span><span class="co">#&gt; v2x_polyarchy                0.997 0.994</span></span>
+<span><span class="co">#&gt; v2x_libdem                   0.972 0.945</span></span>
 <span><span class="co">#&gt; v2x_partipdem                0.964 0.930</span></span>
-<span><span class="co">#&gt; v2x_api                      0.997 0.995</span></span>
+<span><span class="co">#&gt; v2x_api                      0.997 0.994</span></span>
 <span><span class="co">#&gt; v2x_mpi                      0.997 0.994</span></span>
-<span><span class="co">#&gt; anckar_democracy             0.932 0.868</span></span>
-<span><span class="co">#&gt; bmr_democracy                0.908 0.825</span></span>
-<span><span class="co">#&gt; bmr_democracy_femalesuffrage 0.908 0.825</span></span>
-<span><span class="co">#&gt; bmr_democracy_omitteddata    0.908 0.825</span></span>
-<span><span class="co">#&gt; pitf                         0.859 0.737</span></span>
-<span><span class="co">#&gt; polity2                      0.867 0.751</span></span>
-<span><span class="co">#&gt; vaporeg_binary_strict        0.874 0.765</span></span>
-<span><span class="co">#&gt; vaporeg_binary_non_strict    0.937 0.878</span></span>
-<span><span class="co">#&gt; vaporeg_trichotomous         0.923 0.852</span></span>
-<span><span class="co">#&gt; v2x_delibdem                 0.951 0.904</span></span>
-<span><span class="co">#&gt; v2x_egaldem                  0.919 0.844</span></span>
-<span><span class="co">#&gt; csvmdi                       0.886 0.785</span></span>
-<span><span class="co">#&gt; vanhanen_democratization     0.620 0.385</span></span>
-<span><span class="co">#&gt; reign_democracy              0.841 0.708</span></span>
-<span><span class="co">#&gt; pacl_update                  0.815 0.665</span></span>
-<span><span class="co">#&gt; fh_electoral                 0.937 0.879</span></span>
-<span><span class="co">#&gt; wgi_democracy                0.911 0.830</span></span>
-<span><span class="co">#&gt; bti                          0.897 0.805</span></span>
-<span><span class="co">#&gt; eiu                          0.846 0.716</span></span>
+<span><span class="co">#&gt; anckar_democracy             0.934 0.872</span></span>
+<span><span class="co">#&gt; bmr_democracy                0.912 0.832</span></span>
+<span><span class="co">#&gt; bmr_democracy_femalesuffrage 0.912 0.832</span></span>
+<span><span class="co">#&gt; bmr_democracy_omitteddata    0.912 0.832</span></span>
+<span><span class="co">#&gt; pitf                         0.863 0.744</span></span>
+<span><span class="co">#&gt; polity2                      0.870 0.757</span></span>
+<span><span class="co">#&gt; vaporeg_binary_strict        0.876 0.767</span></span>
+<span><span class="co">#&gt; vaporeg_binary_non_strict    0.942 0.887</span></span>
+<span><span class="co">#&gt; vaporeg_trichotomous         0.930 0.864</span></span>
+<span><span class="co">#&gt; v2x_delibdem                 0.952 0.905</span></span>
+<span><span class="co">#&gt; v2x_egaldem                  0.920 0.846</span></span>
+<span><span class="co">#&gt; csvmdi                       0.889 0.791</span></span>
+<span><span class="co">#&gt; vanhanen_democratization     0.624 0.389</span></span>
+<span><span class="co">#&gt; reign_democracy              0.847 0.717</span></span>
+<span><span class="co">#&gt; pacl_update                  0.823 0.678</span></span>
+<span><span class="co">#&gt; fh_electoral                 0.941 0.886</span></span>
+<span><span class="co">#&gt; wgi_democracy                0.913 0.833</span></span>
+<span><span class="co">#&gt; bti                          0.898 0.806</span></span>
+<span><span class="co">#&gt; eiu                          0.848 0.720</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;                                SE.F1</span></span>
-<span><span class="co">#&gt; fh_total_reversed            0.00486</span></span>
-<span><span class="co">#&gt; lexical_index                0.00693</span></span>
-<span><span class="co">#&gt; lexical_index_plus           0.00593</span></span>
-<span><span class="co">#&gt; v2x_polyarchy                0.00053</span></span>
-<span><span class="co">#&gt; v2x_libdem                   0.00222</span></span>
-<span><span class="co">#&gt; v2x_partipdem                0.00242</span></span>
-<span><span class="co">#&gt; v2x_api                      0.00040</span></span>
-<span><span class="co">#&gt; v2x_mpi                      0.00043</span></span>
-<span><span class="co">#&gt; anckar_democracy             0.01013</span></span>
-<span><span class="co">#&gt; bmr_democracy                0.01233</span></span>
-<span><span class="co">#&gt; bmr_democracy_femalesuffrage 0.01233</span></span>
-<span><span class="co">#&gt; bmr_democracy_omitteddata    0.01233</span></span>
-<span><span class="co">#&gt; pitf                         0.01065</span></span>
-<span><span class="co">#&gt; polity2                      0.00836</span></span>
-<span><span class="co">#&gt; vaporeg_binary_strict        0.02094</span></span>
-<span><span class="co">#&gt; vaporeg_binary_non_strict    0.01082</span></span>
-<span><span class="co">#&gt; vaporeg_trichotomous         0.00896</span></span>
-<span><span class="co">#&gt; v2x_delibdem                 0.00331</span></span>
-<span><span class="co">#&gt; v2x_egaldem                  0.00509</span></span>
-<span><span class="co">#&gt; csvmdi                       0.00795</span></span>
-<span><span class="co">#&gt; vanhanen_democratization     0.01849</span></span>
-<span><span class="co">#&gt; reign_democracy              0.01720</span></span>
-<span><span class="co">#&gt; pacl_update                  0.01888</span></span>
-<span><span class="co">#&gt; fh_electoral                 0.01017</span></span>
-<span><span class="co">#&gt; wgi_democracy                0.00552</span></span>
-<span><span class="co">#&gt; bti                          0.00640</span></span>
-<span><span class="co">#&gt; eiu                          0.00898</span></span>
+<span><span class="co">#&gt; fh_total_reversed            0.00472</span></span>
+<span><span class="co">#&gt; lexical_index                0.00672</span></span>
+<span><span class="co">#&gt; lexical_index_plus           0.00586</span></span>
+<span><span class="co">#&gt; v2x_polyarchy                0.00039</span></span>
+<span><span class="co">#&gt; v2x_libdem                   0.00187</span></span>
+<span><span class="co">#&gt; v2x_partipdem                0.00237</span></span>
+<span><span class="co">#&gt; v2x_api                      0.00045</span></span>
+<span><span class="co">#&gt; v2x_mpi                      0.00040</span></span>
+<span><span class="co">#&gt; anckar_democracy             0.00981</span></span>
+<span><span class="co">#&gt; bmr_democracy                0.01183</span></span>
+<span><span class="co">#&gt; bmr_democracy_femalesuffrage 0.01183</span></span>
+<span><span class="co">#&gt; bmr_democracy_omitteddata    0.01183</span></span>
+<span><span class="co">#&gt; pitf                         0.01010</span></span>
+<span><span class="co">#&gt; polity2                      0.00774</span></span>
+<span><span class="co">#&gt; vaporeg_binary_strict        0.02074</span></span>
+<span><span class="co">#&gt; vaporeg_binary_non_strict    0.00945</span></span>
+<span><span class="co">#&gt; vaporeg_trichotomous         0.00782</span></span>
+<span><span class="co">#&gt; v2x_delibdem                 0.00304</span></span>
+<span><span class="co">#&gt; v2x_egaldem                  0.00489</span></span>
+<span><span class="co">#&gt; csvmdi                       0.00727</span></span>
+<span><span class="co">#&gt; vanhanen_democratization     0.01805</span></span>
+<span><span class="co">#&gt; reign_democracy              0.01638</span></span>
+<span><span class="co">#&gt; pacl_update                  0.01796</span></span>
+<span><span class="co">#&gt; fh_electoral                 0.00920</span></span>
+<span><span class="co">#&gt; wgi_democracy                0.00525</span></span>
+<span><span class="co">#&gt; bti                          0.00605</span></span>
+<span><span class="co">#&gt; eiu                          0.00854</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; SS loadings:  22.305 </span></span>
-<span><span class="co">#&gt; Proportion Var:  0.826 </span></span>
+<span><span class="co">#&gt; SS loadings:  22.406 </span></span>
+<span><span class="co">#&gt; Proportion Var:  0.83 </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Factor correlations: </span></span>
 <span><span class="co">#&gt; </span></span>
@@ -1684,7 +1684,7 @@ Figure 7: Latent democracy scores from a panel restricted to measures with data
 </tr>
 <tr class="even">
 <td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">832</td>
+<td style="text-align: left;">843</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
@@ -1750,7 +1750,7 @@ Figure 7: Latent democracy scores from a panel restricted to measures with data
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">39</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">129</td>
+<td style="text-align: right;">131</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
@@ -1758,9 +1758,9 @@ Figure 7: Latent democracy scores from a panel restricted to measures with data
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">14</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">20</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">792</td>
+<td style="text-align: right;">803</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
@@ -1770,7 +1770,7 @@ Figure 7: Latent democracy scores from a panel restricted to measures with data
 <td style="text-align: right;">15</td>
 <td style="text-align: right;">18</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">792</td>
+<td style="text-align: right;">803</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
@@ -1780,7 +1780,7 @@ Figure 7: Latent democracy scores from a panel restricted to measures with data
 <td style="text-align: right;">14</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">792</td>
+<td style="text-align: right;">803</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
@@ -1788,9 +1788,9 @@ Figure 7: Latent democracy scores from a panel restricted to measures with data
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">13</td>
-<td style="text-align: right;">20</td>
+<td style="text-align: right;">21</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">792</td>
+<td style="text-align: right;">803</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
@@ -1800,57 +1800,57 @@ Figure 7: Latent democracy scores from a panel restricted to measures with data
 <td style="text-align: right;">14</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">792</td>
+<td style="text-align: right;">803</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">z1_pct975_adj</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">20</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">19</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">792</td>
+<td style="text-align: right;">803</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">z1_pct025_adj</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: right;">14</td>
 <td style="text-align: right;">19</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">792</td>
+<td style="text-align: right;">803</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">z1_as_prob</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">15</td>
+<td style="text-align: right;">14</td>
 <td style="text-align: right;">19</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">792</td>
+<td style="text-align: right;">803</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">z1_pct975_as_prob</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">14</td>
+<td style="text-align: right;">15</td>
 <td style="text-align: right;">18</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">792</td>
+<td style="text-align: right;">803</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">z1_pct025_as_prob</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">15</td>
+<td style="text-align: right;">14</td>
 <td style="text-align: right;">19</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">792</td>
+<td style="text-align: right;">803</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
@@ -1860,27 +1860,27 @@ Figure 7: Latent democracy scores from a panel restricted to measures with data
 <td style="text-align: right;">14</td>
 <td style="text-align: right;">19</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">792</td>
+<td style="text-align: right;">803</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">z1_pct975_adj_as_prob</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">14</td>
+<td style="text-align: right;">15</td>
 <td style="text-align: right;">18</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">792</td>
+<td style="text-align: right;">803</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">z1_pct025_adj_as_prob</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: right;">15</td>
 <td style="text-align: right;">19</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">792</td>
+<td style="text-align: right;">803</td>
 <td style="text-align: right;">0</td>
 </tr>
 </tbody>
@@ -1899,7 +1899,7 @@ Figure 7: Latent democracy scores from a panel restricted to measures with data
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">TRU: 832</td>
+<td style="text-align: left;">TRU: 843</td>
 </tr></tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
@@ -1935,33 +1935,33 @@ Figure 7: Latent democracy scores from a panel restricted to measures with data
 <td style="text-align: left;">GWn</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">483.69</td>
-<td style="text-align: right;">226.96</td>
+<td style="text-align: right;">483.42</td>
+<td style="text-align: right;">226.25</td>
 <td style="text-align: right;">40</td>
-<td style="text-align: right;">355</td>
+<td style="text-align: right;">349</td>
 <td style="text-align: right;">500</td>
-<td style="text-align: right;">690</td>
+<td style="text-align: right;">678</td>
 <td style="text-align: right;">910</td>
-<td style="text-align: left;">▆▆▇▇▅</td>
+<td style="text-align: left;">▅▆▇▇▅</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">cown</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">483.69</td>
-<td style="text-align: right;">226.96</td>
+<td style="text-align: right;">483.47</td>
+<td style="text-align: right;">226.23</td>
 <td style="text-align: right;">40</td>
-<td style="text-align: right;">355</td>
+<td style="text-align: right;">349</td>
 <td style="text-align: right;">500</td>
-<td style="text-align: right;">690</td>
+<td style="text-align: right;">679</td>
 <td style="text-align: right;">910</td>
-<td style="text-align: left;">▆▆▇▇▅</td>
+<td style="text-align: left;">▅▆▇▇▅</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">year</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">2012.06</td>
+<td style="text-align: right;">2012.04</td>
 <td style="text-align: right;">4.02</td>
 <td style="text-align: right;">2006</td>
 <td style="text-align: right;">2008</td>
@@ -2127,7 +2127,7 @@ Figure 11: Rater cutoffs, discrimination parameters, and item information curve
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/prob_more.html">prob_more</a></span><span class="op">(</span><span class="va">replication_2011_scores</span>, <span class="st">"United States of America"</span>,<span class="st">"France"</span>, <span class="fl">2000</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.8782654</span></span>
 <span><span class="fu"><a href="../reference/prob_more.html">prob_more</a></span><span class="op">(</span><span class="va">extended_scores</span>, <span class="st">"United States of America"</span>,<span class="st">"France"</span>, <span class="fl">2000</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.5778274</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 0.5756979</span></span></code></pre></div>
 </details>
 </div>
 <p>Or perhaps we wish to know the probability that the United States was more democratic in the year 2000 than in the year 1953:</p>
@@ -2142,7 +2142,7 @@ Figure 11: Rater cutoffs, discrimination parameters, and item information curve
 <span>          <span class="st">"United States of America"</span>,</span>
 <span>          <span class="st">"United States of America"</span>, </span>
 <span>          <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2000</span>,<span class="fl">1953</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.9999968</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 0.9999967</span></span></code></pre></div>
 </details>
 </div>
 </section><section class="section level3"><h3 id="when-to-use-which-score">When to use which score<a class="anchor" aria-label="anchor" href="#when-to-use-which-score"></a>

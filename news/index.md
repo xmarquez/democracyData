@@ -1,5 +1,47 @@
 # Changelog
 
+## democracyData (development version)
+
+### Bug fixes
+
+- **LIED Gleditsch-Ward codes
+  ([\#20](https://github.com/xmarquez/democracyData/issues/20)).** Fixed
+  a bug in
+  [`redownload_lied()`](https://xmarquez.github.io/democracyData/reference/redownload_blm.md)
+  that overwrote the `GWn` column with Correlates of War codes for the
+  entire dataset. Wherever the two state systems assign different codes
+  (unified Germany, Serbia, unified Yemen, and the Pacific microstates
+  Kiribati, Nauru, Tonga, and Tuvalu), LIED’s rows carried identifier
+  tuples that matched no other dataset, so `extended_uds` fitted phantom
+  duplicate country-years whose only measure was `lexical_index`. The
+  rebuilt `LIED` corrects 710 `GWn` values (no other columns change),
+  and the refitted `extended_uds` drops 732 phantom rows; scores for
+  unaffected country-years are essentially unchanged (r \> 0.999).
+  `extended_uds` is now unique by `GWn` and `year` among in-system
+  country-years, and a regression test enforces this. Thanks to Steve
+  Miller ([@svmiller](https://github.com/svmiller)) for the report.
+
+### Infrastructure
+
+- **Dataset integrity tests.** New offline tests validate every packaged
+  dataset against the `democracy_info` registry (coverage in both
+  directions, standard identifier columns, no missing
+  `extended_country_name`, plausible year ranges, and presence of the
+  declared measure columns), and compare every dataset’s structure
+  (class, dimensions, column names and types, year range) against a
+  recorded manifest, catching accidental data corruption without network
+  access. Regenerate the manifest with
+  `data-raw/capture_dataset_manifest.R` after legitimate data updates.
+
+- **Registry fixes.** Added the missing `democracy_info` row for `arat`
+  and corrected the stale measure columns and `downloadable` flag for
+  `vaporeg`.
+
+- **Lighter dependencies.** `mirt`, `knitr`, and `here` moved from
+  Imports to Suggests; the UDS modeling functions prompt for `mirt` when
+  needed, and diagnostic tables fall back to plain printing without
+  `knitr`.
+
 ## democracyData 0.7.1
 
 ### Dataset updates
